@@ -1,0 +1,1594 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-size: 14px !important;
+}
+*{
+	margin:0;
+	padding:0;
+}
+/* for bootstrap horizontal menu  */
+.margin_botton_30{
+	margin-bottom: 30px;
+}
+.w100{
+	width: 100%;
+}
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+	margin:0px auto;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #000;
+	text-transform:uppercase;
+	font-size:14px;
+	margin-left:-8px;
+	font-weight:bold;
+}
+.navbar-default .navbar-nav>li>a:hover{
+	color:#67B5D4;
+}
+.navbar-default .navbar-nav>li>a:focus{
+	color:#000;
+}
+.top-menu{
+	display:none;
+}
+.slider_img{
+	width:auto;
+	height:135px;
+}
+#top-page {
+    width: 100%;
+    height: 77px;
+}
+.header{
+	margin-top:10px;
+}
+.logo{
+	width:120px;
+}
+.login{
+	font-family:"Eras Demi ITC";
+	font-weight:bold;
+	font-size:18px;
+	margin-right:80px;
+}
+.header-right{
+	margin-top:8px;
+}
+.hr-bar{
+	width:100%;
+	height:3px;
+}
+.footer-text p{
+	margin-top:7px;
+}
+.find-bar {
+    margin-top: 17%;
+    text-align: center;
+}
+
+.device-bg{
+	width:100%;
+	height:350px;
+	background-color:#9e9e9e;
+	background-attachment:fixed;
+}
+.device-img{
+	height:auto;
+	width:100%;
+	margin-top:53px;
+}
+
+/* Category Icon */
+#CategoryIcon{
+	height:500px;
+	width:auto;
+}
+.catagory-icon{
+	margin-top:20px;
+}
+.catagory-icon h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 20px;
+}
+.catagory-icon p{
+	font-size:15px;
+	font-weight:bold;
+	margin-top:10px;
+	color:gray;
+}
+.Cicon{
+	text-align:center;
+	margin:20px 10px;
+}
+.Cicon a{
+	text-decoration:none;
+}
+.Cicon img{
+	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+}
+.Cicon img:hover{
+	-webkit-filter: grayscale(0%);
+	filter:grayscale(0%);
+}
+
+/*for forth page*/
+#forth-page{
+	clear:both;
+	margin-bottom:25px;
+}
+.card-deposit h1{
+	font-size:50px;
+	color:#3390b6;
+	font-family:SaintAndrewsQueen;
+}
+.card-deposit p{
+	color:#000;
+	text-align:justify;
+	font-family:Kalpurush Regular;
+}
+.see-more{
+	font-family:SaintAndrewsQueen;
+	color:#3390b6;
+	font-weight:bolder;
+}
+.btn-aplly{
+	float:right;
+	margin-bottom:10px;
+}
+@font-face {
+    font-family: SaintAndrewsQueen;
+	src:url(../fonts/SaintAndrewsQueen.ttf);
+}
+/*for slider*/
+.carousel-indicators .active {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    background-color: #9a9a9b;
+}
+.carousel-indicators {
+    bottom: -60px;
+}
+.carousel-indicators li{
+	background-color:#cdcece;
+	width:15px;
+	height: 15px;
+	border-radius:25px;
+}
+.carousel-inner>.item img{
+	margin-left:auto; 
+	margin-right: auto;
+	float: none;
+}
+.remittance{
+	font-size:30px;
+}
+.rem-readmore{
+	float:right;
+	margin-right:180px;
+}
+.rem-readmore a{
+	text-decoration:none;
+}
+/* Finculator */
+.fincal{
+	height:450px;
+	width:auto;
+	background-image:url(../images/bgFinculator.png);
+	position:relative;
+}
+.fincal h1{
+	font-size:30px;
+	margin-top:20px;
+}
+.fincal-box{
+	background-image: url(../images/Finculator.png);
+	width: 380px;
+	height: 366px;
+	position:absolute;
+	margin:28px 15px;
+}
+.fincal-textbox {
+    position: absolute;
+    margin: 48px 80px;
+}
+.Btnequal{
+	width:90px;
+}
+.fincal-textbox .form-control:focus {
+    border-color: #64bc47;
+}
+.fincal-result-box{
+	height:40px;
+	text-align:right;
+	font-size:20px;
+	font-weight:bold;
+}
+.btn-group{
+	position:relative;
+	margin:50px 50px;
+}
+.btn-default {
+    color: #fff;
+    background-color: #6c6d6e;
+	border:3px solid #e6e6e7;
+    border-color: #e6e6e7;
+	border-radius:15px;
+}
+.scale{
+	margin-left:25px;
+}
+/*  DTI Calculator/ Credit Card Payoff  */
+.vline{
+	margin-top:20px;
+}
+.fincal-2nd{
+	width:auto;
+	min-height:500px;
+	margin-left:40px;
+}
+.fincal-2nd h1{
+	font-size:25px;
+	text-align:center;
+	margin:15px;
+}
+.fincal-2nd-box{
+	background-image:url(../images/dti-cal.png);
+	width:378px;
+	height:262px;
+}
+.fincal-2nd-box2{
+	background-image:url(../images/ccpayoff.png);
+	width:378px;
+	height:262px;
+}
+.text-content{
+	clear:both;
+	color:#000;
+	text-align:justify;
+	padding:15px;
+	width:378px;
+	margin-top:20px;
+}
+.text-arrow{
+	margin-top:5px;
+	color:#328fb5;
+}
+.fincal-textbox2 {
+    position: absolute;
+    margin: 50px -20px;
+}
+.fincal-result-box2{
+	height:40px;
+	text-align:right;
+	font-size:20px;
+	font-weight:bold;
+	margin-left:31px;
+}
+
+/* for savings cal */
+.savings-header{
+	width:100%;
+	text-align:center;
+	color:#000;
+	font-size:45px;
+	margin:15px;
+	font-family: SaintAndrewsQueen;
+	font-weight:bold;
+}
+.savings-text-box{
+	position:relative;
+	background-image:url(../images/Finculator-Savings-1-bg.png);
+	background-repeat:no-repeat;
+	width:390px;
+	height:409px;
+}
+.savings-text-box2{
+	position:absolute;
+	margin: 24px 40px;
+}
+.savings-text-box2 h1{
+	color:#000;
+	margin-bottom:5px;
+	margin-left:61px;
+	font-size:13px;
+}
+.savings-text-box2 p{
+	color:#000;
+	margin-bottom:5px;
+	margin-left:50px;
+	font-size:13px;
+}
+.savings-result-box{
+	height:40px;
+	text-align:right;
+	font-size:20px;
+	font-weight:bold;
+	margin-left:32px;
+}
+.savings-string p{
+	margin:20px 30px;
+	text-align:justify;
+	color:#000;
+	line-height:20px;
+}
+.savings-text-box3{
+	position:relative;
+	background-image:url(../images/Finculator-Savings-2.png);
+	background-repeat:no-repeat;
+	width:390px;
+	height:409px;
+}
+.savings-text-box4{
+	position:relative;
+	background-image:url(../images/Finculator-Savings-3.png);
+	background-repeat:no-repeat;
+	width:390px;
+	height:409px;
+}
+.savings-text-box5{
+	position:relative;
+	background-image:url(../images/Finculator-Savings-4.png);
+	background-repeat:no-repeat;
+	width:390px;
+	height:409px;
+}
+/* for Deposit Cal */
+.depositCal{
+	min-height:420px;
+	width:880px;
+	background-color:#534c5c;
+	border-radius:20px;
+	margin:0px auto;
+}
+.depositCal h1{
+	text-align:center;
+	color:#fff;
+	font-size:18px;
+	padding:10px;
+}
+.deposit-cal-1{
+	position:relative;
+	background-image:url(../images/deposit-bg1.png);
+	width:353px;
+	height:366px;
+	margin-left:28px;
+}
+.deposit-cal-2{
+	background-image:url(../images/deposit-bg1.png);
+	width:353px;
+	height:366px;
+	margin-left:21px;
+}
+.DepositHline{
+	margin:25px 0 0 50px;
+}
+.deposit-cal-1-textbox{
+	position:absolute;
+	margin:20px;
+}
+.deposit-cal-string p{
+	margin:15px;
+	color:#000;
+	text-align:justify;
+	line-height:18px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.deposit-cal-1-textbox p{
+	color:#fff;
+	margin:0 0 5px 4px;
+	font-size:14px;
+}
+/* for Auto Loan Calculator */
+.AutoLoanCal{
+	position:relative;
+	min-height:255px;
+	width:800px;
+	background-color:#5f5a4d;
+	border-radius:20px;
+	margin:40px auto;
+}
+.autoLoanBg{
+	background-image:url(../images/Auto-Loan-cal-bg.png);
+	width:790px;
+	height:242px;
+	margin:5px 5px;
+	position:absolute;
+}
+.autoLoan-result-box {
+    width: 330px;
+    height: 40px;
+    margin: 20px 190px;
+}
+.autoLoanForm{
+	margin-left:38px;
+}
+.autoLoanTxtBox {
+    height: 30px;
+    width: 160px;
+	margin-right:30px;
+}
+.auto-loan-name{
+	margin:50px 38px;
+	color:#fff;
+	font-family:rockwell bold italic;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.Btnequal-autLoan{
+	width:80px;
+	margin:30px 42px;
+}
+/* for EMI Calculator */
+.emi-cal-bg{
+	position:relative;
+	height:363px;
+	width:349px;
+	background-color:#4f5050;
+	border-radius:21px;
+	margin:20px 20px;
+}
+.emi-cal-bgimg{
+	background-image:url(../images/EMI-calculator.png);
+	width:352px;
+	height:366px;
+}
+.emi-form{
+	margin:20px 35px;
+	position:absolute;
+}
+.emi-result-box{
+	margin:5px 15px;	
+}
+.emi-form p{
+	margin-left:18px;
+	color:#fff;
+}
+.emi-string{
+	margin:20px;
+	color:#000;
+	text-align:justify;
+	line-height:18px;
+}
+.emi-string h1{
+	font-size:18px;
+	font-weight:bold;
+	font-family:Myriad Pro Bold Italic;
+	margin-bottom:5px;
+}
+.emi-string h3{
+	margin-bottom:10px;
+}
+/* for EasyPayOffCal */
+.early-payoff-cal{
+	position:relative;
+	background-image:url(../images/Early-pay-off-calculator-bg.png);
+	height:468px;
+}
+.early-cal-head{
+	height:auto;
+	max-width:100px;
+	position:relative;
+}
+.early-cal-head p {
+    position: absolute;
+    transform: rotate(-90deg);
+    margin-top: 225px;
+    width: 240px;
+    font-family: SaintAndrewsQueen;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+.early-cal-overlay{
+	background-image:url(../images/Early-pay-off-calculator-overlay.png);
+	width:800px;
+	height:440px;
+	margin-top:15px;
+}
+.early-cal-overlay p{
+	margin-left: 307px;
+	padding:10px 0 5px 0;
+	color:#fff;
+}
+.early-result-box-top{
+	margin-left: 190px;
+}
+.early-cal-left{
+	margin-right:33px;
+	margin-left:20px;
+}
+.early-cal-left h1{
+	color:#fff;
+	margin:5px 0 0 18px;
+}
+.early-cal-right{
+	margin-right:37px;
+	margin-left:17px;
+}
+.early-cal-right h1{
+	color:#fff;
+	margin:5px 0 0 18px;
+}
+.early-payoff-string{
+	color:#000;
+	margin:36px 0;
+	text-align:center;
+	line-height:18px;
+}
+/* for Loan Prequalification Calculator */
+#LoanPrequalificationCalculator{
+	min-height:400px;
+	width:auto;
+}
+.LoanPrequali-head{
+	height:auto;
+	max-width:100px;
+	position:relative;
+}
+.LoanPrequali-head p {
+    position: absolute;
+    transform: rotate(-90deg);
+    margin-top: 225px;
+    width: 295px;
+    font-family: SaintAndrewsQueen;
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+}
+.loan-prequalifiacation-bg{
+	background-color:#6d5454;
+	height:364px;
+	width:349px;
+	position:relative;
+	border-radius:23px;
+	margin-top:50px;
+}
+.loan-prequalifiacation-overlay{
+	background-image:url(../images/Loan-Prequalification-overlay.png);
+	position:absolute;
+	height:365px;
+	width:351px;
+}
+.loan-prequalifiacation-form{
+	margin:10px 40px 10px 0;
+}
+.loan-prequalifiacation-string h1{
+	font-family:Myriad Pro Bold Italic;
+	font-size:22px;
+	color:#000;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+.loan-prequalifiacation-string h3{
+	font-family:Myriad Pro Bold Italic;
+	font-size:20px;
+	color:#000;
+	margin-bottom:5px;
+}
+.loan-prequalifiacation-string{
+	margin:55px 20px 0 0;
+}
+.loan-prequalifiacation-string p{
+	line-height:20px;
+	color:#000;
+	font-size:12px;
+	text-align:justify;
+}
+
+.card_right_bar {
+    background-color: #F9F9F9;
+    padding: 15px 15px;
+    margin-bottom: 15px;
+    clear: both;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 0px 2px 2px #f2f2f2;
+}
+.card_right_bar:hover {
+    box-shadow: 0px 0px 9px 3px #f2f2f2;
+}
+.w20{
+	width:20% !important;
+}
+
+.card_text2 p {
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	margin: 0;
+}
+
+.card_description{
+	font-size:12px;
+}
+
+.cc_menu{
+	background-image:url(../images/cc_menu_bg.png);
+}
+.query_radio{
+	margin-left:14px;
+}
+.btnCardApply{
+	margin-left:9px;
+	margin-top:8px;
+}
+.card_text1{
+	margin-top:6px;
+}
+.card_text2 {
+    margin-top: 6px;
+    position: relative;
+    min-height: 80px;
+}
+.card_text2 h5{
+	font-weight:bold;
+	font-size: 12px;
+}
+.more_info_icon{
+	margin-top:20px;
+	font-size:14px;
+}
+.more_info_icon a{
+	text-decoration:none;
+}
+.more_info_icon i{
+	color:#2c8aca;
+}
+#tab{
+	margin-bottom:20px;
+}
+.card_more_info {
+    background-color: #FBFBFB;
+    margin-bottom: 20px;
+    margin-top: -14px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 0px 2px 2px #f2f2f2;
+}
+.tab-content{
+	margin-top:10px;
+}
+.tab_body{
+	margin-left:20px;
+}
+.tab-pane h3{
+	margin-left:30px;
+}
+.tab_td_text{
+	margin: 10px 0 0 5px;
+}
+.tab_body_icon{
+	height:15px;
+	width:15px;
+}
+.more_filter{
+	border:1px solid #ececec;
+	text-align:center;
+}
+.more_filter a{
+	text-decoration:none;
+}
+.more_filter p{
+	margin-top:10px;
+}
+.card_btn_apllication{
+	margin:56px 24px;
+}
+.rating{
+	font-size:12px;
+}
+
+/* for custome radio & checkbox */
+.material_check_radio {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+}
+.material_check_radio:after {
+   width: 5px;
+    height: 5px;
+    left: 3px;
+    top: 3px;
+}
+.material_radio_group {
+    cursor: pointer;
+    font-size: 12px !important;
+}
+.material_label_checkbox:before {
+    width: 22px;
+    height: 22px;
+	font-size:12px;
+}
+.material_label_checkbox{
+	font-size:14px;
+	font-weight: 100;
+}
+/* for Card Compare Page */
+.card_compare_head{
+	font-family:SaintAndrewsQueen;
+	font-size:60px;
+}
+.compare_btnApplication{
+	margin-left:39px;
+}
+.compare_btnApplication1{
+	margin-left: 35px;
+    margin-top: 121px;
+
+}
+.Card-Compare-hr{
+	height:2px;
+	width: 43%;
+}
+.Card-Compare-hr1{
+	width: 44.7%;
+}
+.Card-Compare-hr2{
+	width: 42%;
+}
+
+.Card-Compare-hr3{
+	width: 45%;
+}
+.Card-Compare-hr4{
+	width: 42.8%;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: none !important;
+}
+
+.comparison_email{
+	width: 33.33333333%;
+	height:auto;
+	margin: 0px auto;
+}
+
+/* for Card Details Page */
+ .card_details_head{
+	 height:auto;
+	 width:100%;
+	 background-color:#DEDDDD;
+	 color:#000;
+	 text-align:center;
+	 border-bottom:2px solid #9D9A9A;
+	 margin-bottom:10px;
+	 font-size:11px;
+	 padding-top:3px;
+	 font-weight:bold;
+ }
+ .card_details_ImgCard{
+	 width:165px;
+	 height:auto;
+ }
+ .card_details_features{
+	 font-size:11px;
+	 text-align:justify;
+ }
+ .card_details_Btransfer{
+	 text-align:center;
+ }
+ .card_details_head2{
+	 font-size:12px;
+	 font-weight:bold;
+ }
+ .add_comp_icon{
+	margin-top:20px;
+	font-size:15px;
+}
+.add_comp_icon a{
+	text-decoration:none;
+}
+.add_comp_icon i{
+	color:#2c8aca;
+}
+#card_details_2nd{
+	margin-top:40px;
+}
+.card_details_pronsCons{
+	background-color:#F2F2F3;
+	padding:10px;
+	margin-top:50px;
+	border-bottom:2px solid #C1C1C0;
+}
+.card_details_pronsCons_head{
+	margin-left:18px;
+}
+.prosCons_body{
+	margin-left:20px;
+}
+.prosCons_body b{
+	font-size:15px;
+}
+.prosCons_body2{
+	margin-left:20px;
+}
+.prosCons_body2 ul li{
+	font-size:12px;
+	margin-bottom:10px;
+}
+.prosConsHr{
+	height:2px;
+	width:auto;
+	background-color:#C1C1C0;
+	margin:5px 0;
+}
+.userReview_body{
+	text-align:center;
+}
+.userReviewLeft1{
+	font-size:46px;
+}
+.userReviewLeft2{
+	font-size:22px;
+	color:#999999;
+}
+.userReviewLeft3{
+	font-size:12px;
+	color:#999999;
+	text-decoration:underline;
+}
+.userreviw_note{
+	font-size:12px;
+	color:#999999;
+}
+.prosCons_body ul li {
+    list-style-type: none;
+}
+.prosCons_body ol, ul {
+   padding-left:30px;
+}
+.w20{
+	width:20% !important;
+}
+
+.card_text2 p {
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	margin: 0;
+}
+
+.card_description{
+	font-size:12px;
+}
+
+.cc_menu{
+	background-image:url(../images/cc_menu_bg.png);
+}
+.query_radio{
+	margin-left:14px;
+}
+.btnCardApply{
+	margin-left:9px;
+	margin-top:8px;
+}
+.card_text1{
+	margin-top:6px;
+}
+.card_text2 {
+    margin-top: 6px;
+    position: relative;
+    min-height: 80px;
+}
+.card_text2 h5{
+	font-weight:bold;
+	font-size: 12px;
+}
+.more_info_icon{
+	margin-top:20px;
+	font-size:14px;
+}
+.more_info_icon a{
+	text-decoration:none;
+}
+.more_info_icon i{
+	color:#2c8aca;
+}
+#tab{
+	margin-bottom:20px;
+}
+
+.tab-content{
+	margin-top:10px;
+}
+.tab_body{
+	margin-left:20px;
+}
+.tab-pane h3{
+	margin-left:30px;
+}
+.tab_td_text{
+	margin: 10px 0 0 5px;
+}
+.tab_body_icon{
+	height:15px;
+	width:15px;
+}
+.more_filter{
+	border:1px solid #ececec;
+	text-align:center;
+}
+.more_filter a{
+	text-decoration:none;
+}
+.more_filter p{
+	margin-top:10px;
+}
+.card_btn_apllication{
+	margin:56px 24px;
+}
+.rating{
+	font-size:12px;
+}
+
+/* for custome radio & checkbox */
+.material_check_radio {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+}
+.material_check_radio:after {
+   width: 5px;
+    height: 5px;
+    left: 3px;
+    top: 3px;
+}
+.material_radio_group {
+    cursor: pointer;
+    font-size: 12px !important;
+}
+.material_label_checkbox:before {
+    width: 22px;
+    height: 22px;
+	font-size:12px;
+}
+.material_label_checkbox{
+	font-size:14px;
+	font-weight: 100;
+}
+/* for Card Compare Page */
+.card_compare_head{
+	font-family:SaintAndrewsQueen;
+	font-size:60px;
+}
+.compare_btnApplication{
+	margin-left:39px;
+}
+.compare_btnApplication1{
+	margin-left: 35px;
+    margin-top: 121px;
+
+}
+.Card-Compare-hr{
+	height:2px;
+	width: 43%;
+}
+.Card-Compare-hr1{
+	width: 44.7%;
+}
+.Card-Compare-hr2{
+	width: 42%;
+}
+
+.Card-Compare-hr3{
+	width: 45%;
+}
+.Card-Compare-hr4{
+	width: 42.8%;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: none !important;
+}
+
+.comparison_email{
+	width: 33.33333333%;
+	height:auto;
+	margin: 0px auto;
+}
+
+/* for Card Details Page */
+ .card_details_head{
+	 height:auto;
+	 width:100%;
+	 background-color:#DEDDDD;
+	 color:#000;
+	 text-align:center;
+	 border-bottom:2px solid #9D9A9A;
+	 margin-bottom:10px;
+	 font-size:11px;
+	 padding-top:3px;
+	 font-weight:bold;
+ }
+ .card_details_ImgCard{
+	 width:165px;
+	 height:auto;
+ }
+ .card_details_features{
+	 font-size:11px;
+	 text-align:justify;
+ }
+ .card_details_Btransfer{
+	 text-align:center;
+ }
+ .card_details_head2{
+	 font-size:12px;
+	 font-weight:bold;
+ }
+ .add_comp_icon{
+	margin-top:20px;
+	font-size:15px;
+}
+.add_comp_icon a{
+	text-decoration:none;
+}
+.add_comp_icon i{
+	color:#2c8aca;
+}
+#card_details_2nd{
+	margin-top:40px;
+}
+.card_details_pronsCons{
+	background-color:#F2F2F3;
+	padding:10px;
+	margin-top:50px;
+	border-bottom:2px solid #C1C1C0;
+}
+.card_details_pronsCons_head{
+	margin-left:18px;
+}
+.prosCons_body{
+	margin-left:20px;
+}
+.prosCons_body b{
+	font-size:15px;
+}
+.prosCons_body2{
+	margin-left:20px;
+}
+.prosCons_body2 ul li{
+	font-size:12px;
+	margin-bottom:10px;
+}
+.prosConsHr{
+	height:2px;
+	width:auto;
+	background-color:#C1C1C0;
+	margin:5px 0;
+}
+.userReview_body{
+	text-align:center;
+}
+.userReviewLeft1{
+	font-size:46px;
+}
+.userReviewLeft2{
+	font-size:22px;
+	color:#999999;
+}
+.userReviewLeft3{
+	font-size:12px;
+	color:#999999;
+	text-decoration:underline;
+}
+.userreviw_note{
+	font-size:12px;
+	color:#999999;
+}
+.prosCons_body ul li {
+    list-style-type: none;
+}
+.prosCons_body ol, ul {
+   padding-left:30px;
+}
+
+.w20{
+	width:20% !important;
+}
+
+.card_text2 p {
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	margin: 0;
+}
+
+.card_description{
+	font-size:12px;
+}
+
+.cc_menu{
+	background-image:url(../images/cc_menu_bg.png);
+}
+.query_radio{
+	margin-left:14px;
+}
+.btnCardApply{
+	margin-left:9px;
+	margin-top:8px;
+}
+.card_text1{
+	margin-top:6px;
+}
+.card_text2 {
+    margin-top: 6px;
+    position: relative;
+    min-height: 80px;
+}
+.card_text2 h5{
+	font-weight:bold;
+	font-size: 12px;
+}
+.more_info_icon{
+	margin-top:20px;
+	font-size:14px;
+}
+.more_info_icon a{
+	text-decoration:none;
+}
+.more_info_icon i{
+	color:#2c8aca;
+}
+#tab{
+	margin-bottom:20px;
+}
+
+.tab-content{
+	margin-top:10px;
+}
+.tab_body{
+	margin-left:20px;
+}
+.tab-pane h3{
+	margin-left:30px;
+}
+.tab_td_text{
+	margin: 10px 0 0 5px;
+}
+.tab_body_icon{
+	height:15px;
+	width:15px;
+}
+.more_filter{
+	border:1px solid #ececec;
+	text-align:center;
+}
+.more_filter a{
+	text-decoration:none;
+}
+.more_filter p{
+	margin-top:10px;
+}
+.card_btn_apllication{
+	margin:56px 24px;
+}
+.rating{
+	font-size:12px;
+}
+
+/* for custome radio & checkbox */
+.material_check_radio {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+}
+.material_check_radio:after {
+   width: 5px;
+    height: 5px;
+    left: 3px;
+    top: 3px;
+}
+.material_radio_group {
+    cursor: pointer;
+    font-size: 12px !important;
+}
+.material_label_checkbox:before {
+    width: 22px;
+    height: 22px;
+	font-size:12px;
+}
+.material_label_checkbox{
+	font-size:14px;
+	font-weight: 100;
+}
+/* for Card Compare Page */
+.card_compare_head{
+	font-family:SaintAndrewsQueen;
+	font-size:60px;
+}
+.compare_btnApplication{
+	margin-left:39px;
+}
+.compare_btnApplication1{
+	margin-left: 35px;
+    margin-top: 121px;
+
+}
+.Card-Compare-hr{
+	height:2px;
+	width: 43%;
+}
+.Card-Compare-hr1{
+	width: 44.7%;
+}
+.Card-Compare-hr2{
+	width: 42%;
+}
+
+.Card-Compare-hr3{
+	width: 45%;
+}
+.Card-Compare-hr4{
+	width: 42.8%;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: none !important;
+}
+
+.comparison_email{
+	width: 33.33333333%;
+	height:auto;
+	margin: 0px auto;
+}
+
+/* for Card Details Page */
+ .card_details_head{
+	 height:auto;
+	 width:100%;
+	 background-color:#DEDDDD;
+	 color:#000;
+	 text-align:center;
+	 border-bottom:2px solid #9D9A9A;
+	 margin-bottom:10px;
+	 font-size:11px;
+	 padding-top:3px;
+	 font-weight:bold;
+ }
+ .card_details_ImgCard{
+	 width:165px;
+	 height:auto;
+ }
+ .card_details_features{
+	 font-size:11px;
+	 text-align:justify;
+ }
+ .card_details_Btransfer{
+	 text-align:center;
+ }
+ .card_details_head2{
+	 font-size:12px;
+	 font-weight:bold;
+ }
+ .add_comp_icon{
+	margin-top:20px;
+	font-size:15px;
+}
+.add_comp_icon a{
+	text-decoration:none;
+}
+.add_comp_icon i{
+	color:#2c8aca;
+}
+#card_details_2nd{
+	margin-top:40px;
+}
+.card_details_pronsCons{
+	background-color:#F2F2F3;
+	padding:10px;
+	margin-top:50px;
+	border-bottom:2px solid #C1C1C0;
+}
+.card_details_pronsCons_head{
+	margin-left:18px;
+}
+.prosCons_body{
+	margin-left:20px;
+}
+.prosCons_body b{
+	font-size:15px;
+}
+.prosCons_body2{
+	margin-left:20px;
+}
+.prosCons_body2 ul li{
+	font-size:12px;
+	margin-bottom:10px;
+}
+.prosConsHr{
+	height:2px;
+	width:auto;
+	background-color:#C1C1C0;
+	margin:5px 0;
+}
+.userReview_body{
+	text-align:center;
+}
+.userReviewLeft1{
+	font-size:46px;
+}
+.userReviewLeft2{
+	font-size:22px;
+	color:#999999;
+}
+.userReviewLeft3{
+	font-size:12px;
+	color:#999999;
+	text-decoration:underline;
+}
+.userreviw_note{
+	font-size:12px;
+	color:#999999;
+}
+.prosCons_body ul li {
+    list-style-type: none;
+}
+.prosCons_body ol, ul {
+   padding-left:30px;
+}
+
+.w20{
+	width:20% !important;
+}
+
+.card_text2 p {
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	margin: 0;
+}
+
+.card_description{
+	font-size:12px;
+}
+
+.cc_menu{
+	background-image:url(../images/cc_menu_bg.png);
+}
+.query_radio{
+	margin-left:14px;
+}
+.btnCardApply{
+	margin-left:9px;
+	margin-top:8px;
+}
+.card_text1{
+	margin-top:6px;
+}
+.card_text2 {
+    margin-top: 6px;
+    position: relative;
+    min-height: 80px;
+}
+.card_text2 h5{
+	font-weight:bold;
+	font-size: 12px;
+}
+.more_info_icon{
+	margin-top:20px;
+	font-size:14px;
+}
+.more_info_icon a{
+	text-decoration:none;
+}
+.more_info_icon i{
+	color:#2c8aca;
+}
+#tab{
+	margin-bottom:20px;
+}
+
+.tab-content{
+	margin-top:10px;
+}
+.tab_body{
+	margin-left:20px;
+}
+.tab-pane h3{
+	margin-left:30px;
+}
+.tab_td_text{
+	margin: 10px 0 0 5px;
+}
+.tab_body_icon{
+	height:15px;
+	width:15px;
+}
+.more_filter{
+	border:1px solid #ececec;
+	text-align:center;
+}
+.more_filter a{
+	text-decoration:none;
+}
+.more_filter p{
+	margin-top:10px;
+}
+.card_btn_apllication{
+	margin:56px 24px;
+}
+.rating{
+	font-size:12px;
+}
+
+/* for custome radio & checkbox */
+.material_check_radio {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+}
+.material_check_radio:after {
+   width: 5px;
+    height: 5px;
+    left: 3px;
+    top: 3px;
+}
+.material_radio_group {
+    cursor: pointer;
+    font-size: 12px !important;
+}
+.material_label_checkbox:before {
+    width: 22px;
+    height: 22px;
+	font-size:12px;
+}
+.material_label_checkbox{
+	font-size:14px;
+	font-weight: 100;
+}
+/* for Card Compare Page */
+.card_compare_head{
+	font-family:SaintAndrewsQueen;
+	font-size:60px;
+}
+.compare_btnApplication{
+	margin-left:39px;
+}
+.compare_btnApplication1{
+	margin-left: 35px;
+    margin-top: 121px;
+
+}
+.Card-Compare-hr{
+	height:2px;
+	width: 43%;
+}
+.Card-Compare-hr1{
+	width: 44.7%;
+}
+.Card-Compare-hr2{
+	width: 42%;
+}
+
+.Card-Compare-hr3{
+	width: 45%;
+}
+.Card-Compare-hr4{
+	width: 42.8%;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: none !important;
+}
+
+.comparison_email{
+	width: 33.33333333%;
+	height:auto;
+	margin: 0px auto;
+}
+
+/* for Card Details Page */
+ .card_details_head{
+	 height:auto;
+	 width:100%;
+	 background-color:#DEDDDD;
+	 color:#000;
+	 text-align:center;
+	 border-bottom:2px solid #9D9A9A;
+	 margin-bottom:10px;
+	 font-size:11px;
+	 padding-top:3px;
+	 font-weight:bold;
+ }
+ .card_details_ImgCard{
+	 width:165px;
+	 height:auto;
+ }
+ .card_details_features{
+	 font-size:11px;
+	 text-align:justify;
+ }
+ .card_details_Btransfer{
+	 text-align:center;
+ }
+ .card_details_head2{
+	 font-size:12px;
+	 font-weight:bold;
+ }
+ .add_comp_icon{
+	margin-top:20px;
+	font-size:15px;
+}
+.add_comp_icon a{
+	text-decoration:none;
+}
+.add_comp_icon i{
+	color:#2c8aca;
+}
+#card_details_2nd{
+	margin-top:40px;
+}
+.card_details_pronsCons{
+	background-color:#F2F2F3;
+	padding:10px;
+	margin-top:50px;
+	border-bottom:2px solid #C1C1C0;
+}
+.card_details_pronsCons_head{
+	margin-left:18px;
+}
+.prosCons_body{
+	margin-left:20px;
+}
+.prosCons_body b{
+	font-size:15px;
+}
+.prosCons_body2{
+	margin-left:20px;
+}
+.prosCons_body2 ul li{
+	font-size:12px;
+	margin-bottom:10px;
+}
+.prosConsHr{
+	height:2px;
+	width:auto;
+	background-color:#C1C1C0;
+	margin:5px 0;
+}
+.userReview_body{
+	text-align:center;
+}
+.userReviewLeft1{
+	font-size:46px;
+}
+.userReviewLeft2{
+	font-size:22px;
+	color:#999999;
+}
+.userReviewLeft3{
+	font-size:12px;
+	color:#999999;
+	text-decoration:underline;
+}
+.userreviw_note{
+	font-size:12px;
+	color:#999999;
+}
+.prosCons_body ul li {
+    list-style-type: none;
+}
+.prosCons_body ol, ul {
+   padding-left:30px;
+}

@@ -1,0 +1,205 @@
+@media screen and (max-width:1024px){
+	.card_text1 {
+		margin-left: 10px;
+	}
+	.card_text2 {
+		min-height: 100px !important;
+	}
+	.btnCardApply {
+		margin-left: 0px !important;
+	}
+	.card_btn_apllication {
+		margin: 56px 11px !important;
+	}
+        
+        .Card-Compare-hr {
+		width: 43.8% !important;
+	}
+	.Card-Compare-hr1 {
+		width: 45.3% !important;
+	}
+	.Card-Compare-hr2 {
+		width: 42.8% !important;
+	}
+	.Card-Compare-hr3 {
+		width: 45.9% !important;
+	}
+	.Card-Compare-hr4 {
+		width: 43.3% !important;
+	}
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1279px){
+	.catagory-icon p {
+		font-size: 10px !important;
+	}
+}
+@media screen and (min-width:768px)and (max-width:801px){
+	.catagory-icon p {
+		font-size: 10px !important;
+	}
+	.slider_img {
+		width: auto;
+		height: 135px !important;
+		margin-top: 80px;
+	}
+	.carousel-indicators {
+		bottom: -80px !important;
+	}
+	.btn-aplly {
+		float: none !important;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width:768px){
+	.catagory-icon h1{
+		font-size:25px;
+	}
+	.card-deposit h1{
+		margin-left:10px;
+	}
+	.carousel-indicators {
+		bottom: -56px;
+	}
+	.vMenu{
+		display:none;
+	}
+	.top-menu{
+		display:inherit;
+	}
+	.carousel-indicators {
+		bottom: -80px !important;
+	}
+
+        .cc_menu{
+		display:none;
+	}
+	.card_text1{
+		margin-left:53px;
+	}
+	.card_btn_apllication {
+               margin: 56px -22px !important;
+	}
+	.card_text2 {
+		min-height: 120px !important;
+	}
+
+        .Card-Compare-hr {
+		width: 42% !important;
+	}
+	.Card-Compare-hr1 {
+		width: 43.9% !important;
+	}
+	.Card-Compare-hr2 {
+		width: 40.7% !important;
+	}
+	.Card-Compare-hr3 {
+		width: 44.9% !important;
+	}
+	.Card-Compare-hr4 {
+		width: 41.4% !important;
+	}
+	
+}
+
+@media screen and (max-width:640px){
+	.login{
+		margin-right:70px;
+	}
+	.header-right{
+		margin-top:0px;
+	}
+
+        .Card-Compare-hr {
+		width: 40% !important;
+	}
+	.Card-Compare-hr1 {
+		width: 42.6% !important;
+	}
+	.Card-Compare-hr2 {
+		width: 38.7% !important;
+	}
+	.Card-Compare-hr3 {
+		width: 43.6% !important;
+	}
+	.Card-Compare-hr4 {
+		width: 39.5% !important;
+	}
+}
+
+
+@media screen and (max-width:480px){
+	.carousel-inner{
+		margin-top:80px;
+	}
+	.margin_left_body{
+		margin-right:0px !important;
+	}
+	.container{
+		width:100% !important;
+	}
+	.overlay {
+		position: fixed;
+		display: none;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		z-index: 1;
+	}
+	.hamburger.is-open .hamb-top {
+		background-color: #F7F7F7 !important;
+	}
+	.hamburger.is-open .hamb-bottom {
+		background-color: #F7F7F7 !important;
+	}
+
+        .Card-Compare-hr {
+		width: 37% !important;
+	}
+	.Card-Compare-hr1 {
+		width: 39.6% !important;
+	}
+	.Card-Compare-hr2 {
+		width: 35% !important;
+	}
+	.Card-Compare-hr3 {
+		width: 41.5% !important;
+	}
+	.Card-Compare-hr4 {
+		width: 35.6% !important;
+	}
+}
+
+@media screen and (max-width:360px){
+	.carousel-indicators li,.carousel-indicators li.active {
+		width: 10px !important;
+		height: 10px !important;
+	}
+	.card-deposit h1 {
+		font-size: 40px !important;
+	}
+	.catagory-icon p {
+    font-size: 10px !important;
+}
+}
+
+
+@media screen and (max-width:320px){
+	.find-bar .logo-lg{
+		width:150px;
+	}
+	.margin_left_body{
+		margin-right:0px !important;
+	}
+	.container{
+		width:100% !important;
+	}
+	.catagory-icon p {
+    font-size: 10px !important;
+}
+}

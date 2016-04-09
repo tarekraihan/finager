@@ -1,0 +1,16 @@
+.dataTables_wrapper table tr th:first-child{
+       width: 30px;
+   }
+.dataTables_wrapper table tr th:last-child{
+    width: 100px;
+}
+
+.edit{
+    padding-left: 30%;
+}
+.delete{
+    padding-left: 20%;
+}
+.red{
+    color: #c5000b;
+}
