@@ -175,7 +175,7 @@ if(isset($_GET['id']))
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
                                             <td ><?php echo $row->reward_name;?></td>
-                                            <td><a href="<?php echo base_url(); ?>card/edit_card_benefit?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?reward_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td><a href="<?php echo base_url(); ?>card/edit_card_reward?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?reward_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;

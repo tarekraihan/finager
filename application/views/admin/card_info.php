@@ -116,7 +116,7 @@
                                                     <label class="label">Bank Name</label>
                                                     <label class="select">
                                                         <select name="txtBankName">
-                                                            <?php echo $this->select_model->select_bank();?>
+                                                            <?php echo $this->Select_model->select_bank();?>
                                                         </select>
                                                     </label>
                                                      <label class="red"><?php echo form_error('txtBankName');?></label>
@@ -161,7 +161,7 @@
                                                     <label class="red"><?php echo form_error('txtCardName');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">File input</label>
+                                                    <label class="label"> Card Image</label>
                                                     <div class="input input-file">
                                                         <span class="button"><input type="file" id="file" name="file"  onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text" placeholder="Include some files" readonly="">
                                                     </div>

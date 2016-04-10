@@ -708,7 +708,7 @@ class Card extends CI_Controller
             return $this->upload->data();
         }
     }
-    public function card_benefit($msg=''){
+    public function card_reward($msg=''){
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
@@ -720,7 +720,7 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtCardReward', 'Card Reward', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Income Range";
+                $data['title'] = "Card Reward";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/card_reward');
@@ -732,9 +732,9 @@ class Card extends CI_Controller
                 $result = $this->Common_model->insert();
 
                 if ($result) {
-                    redirect(base_url().'card/card_benefit/success');
+                    redirect(base_url().'card/card_reward/success');
                 } else {
-                    redirect(base_url().'card/card_benefit/error');
+                    redirect(base_url().'card/card_reward/error');
                 }
             }
 
@@ -744,7 +744,7 @@ class Card extends CI_Controller
         }
     }
 
-    public function edit_card_benefit($msg='')
+    public function edit_card_reward($msg='')
     {
         if ($this->session->userdata('email_address')) {
 
@@ -757,7 +757,7 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtCardReward', 'Card Reward ', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Income Range";
+                $data['title'] = "Edit Card Reward";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/edit_card_reward');
@@ -770,9 +770,9 @@ class Card extends CI_Controller
                 $result = $this->Common_model->update();
 
                 if ($result) {
-                    redirect(base_url().'card/edit_card_benefit/success');
+                    redirect(base_url().'card/edit_card_reward/success');
                 } else {
-                    redirect(base_url().'card/edit_card_benefit/error');
+                    redirect(base_url().'card/edit_card_reward/error');
                 }
             }
 

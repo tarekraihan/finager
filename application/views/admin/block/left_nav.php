@@ -95,7 +95,7 @@
                         <a href="<?php /*echo base_url(); */?>card/card_interest_free_period">Interest Free Period</a>
                     </li>-->
                     <li>
-                        <a href="<?php echo base_url();?>card/card_benefit">Card Benefit</a>
+                        <a href="<?php echo base_url();?>card/card_reward">Card Reward</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url();?>card/card_fees_charges">Card Fees and Charges</a>
