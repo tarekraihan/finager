@@ -86,7 +86,7 @@ if(isset($_GET['bank_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/bank" class="smart-form" novalidate="novalidate">
+                                <form id="bank" method="post" action="<?php echo base_url();?>card/bank" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -97,7 +97,7 @@ if(isset($_GET['bank_id']))
                                         <section>
                                             <label class="label">Bank Name</label>
                                             <label class="input">
-                                                <input type="text" name="txtBank" placeholder="Bank Name" value ="<?php set_value('txtBank') ? set_value('txtBank') : ''?>" />
+                                                <input type="text" name="txtBank" placeholder="Bank Name" value ="<?php echo set_value('txtBank') ;?>" />
 
                                             </label>
                                             <div class="form-group">
@@ -210,3 +210,28 @@ if(isset($_GET['bank_id']))
 
 </div>
 <!-- END MAIN PANEL -->
+<!--
+<script>
+    $(document).ready(function(){
+        $('#save').click(function(event){
+            ///alert(2);
+            $.ajax({
+                type:"POST",
+                url:"<?php /*echo base_url();*/?>card/save_bank_name",
+                data:$("#bank").serialize(),
+                success: function(response){
+                    if(response != "error"){
+                        //console.log(response);return;
+//                        window.location.href = "<?php /*//echo base_url();*/?>//backdoor/dashboard"
+                        location.reload();
+                        console.log('error');
+                    }else{
+                        location.reload();
+                        console.log('error');
+                    }
+                }
+            });
+        });
+    });
+</script>
+-->

@@ -102,6 +102,15 @@ you can add as many as you like
     }
 </script>
 
+<script type="text/javascript" language="JavaScript">
+    $(document).ready(function(){
+        $("#message").show();
+        setTimeout(function(){
+            $('#message').fadeOut(5000);
+        });
+    });
+</script>
+
 <!-- IMPORTANT: APP CONFIG -->
 <script src="<?php echo base_url();?>resource/admin/js/app.config.js"></script>
 

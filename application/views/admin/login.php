@@ -265,8 +265,7 @@
 					}
 				});
 
-                $('#btnSubmit').click(function(event){
-                    ///alert(2);
+                $(document).on("click touchstart ","#btnSubmit",function(){
                     $.ajax({
                         type:"POST",
                         url:"<?php echo base_url();?>backdoor/admin_login",
@@ -281,7 +280,26 @@
                             }
                         }
                     });
-                })
+                });
+
+              /*  $('#btnSubmit').on('click touchstart',function(event){
+                    ///alert(2);
+                    console.log(("#login_form").serialize());
+                    $.ajax({
+                        type:"POST",
+                        url:"<?php echo base_url();?>backdoor/admin_login",
+                        data:$("#login_form").serialize(),
+                        success: function(response){
+                            if(response != "error"){
+                                //console.log(response);return;
+                                window.location.href = "<?php echo base_url();?>backdoor/dashboard"
+                            }else{
+                                location.reload();
+                                console.log('error');
+                            }
+                        }
+                    });
+                });*/
 			});
 		</script>
 

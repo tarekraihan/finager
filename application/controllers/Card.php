@@ -93,12 +93,12 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message"  class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message"  class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
-            $this->form_validation->set_rules('txtBank', 'Bank Name ', 'trim|required');
+            $this->form_validation->set_rules('txtBank', 'Bank Name ', 'trim|required|is_unique[card_bank.bank_name]');
 
             if ($this->form_validation->run() == FALSE){
                 $data['title'] = "Card-Add Bank";
@@ -123,6 +123,10 @@ class Card extends CI_Controller
             $this->session->set_flashdata('error_message', '1');
             redirect(base_url().'backdoor/dashboard');
         }
+    }
+
+    public function save_bank_name(){
+
     }
 
     public function edit_bank($msg='')
@@ -168,9 +172,9 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
             $this->form_validation->set_rules('txtCardIssuer', 'Card Issuer', 'trim|required');
@@ -185,7 +189,7 @@ class Card extends CI_Controller
                 $date = date('Y-m-d h:i:s');
                 $this->Common_model->data = array('card_issuer_name' => $this->input->post('txtCardIssuer'), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
                 $this->Common_model->table_name = 'card_card_issuer';
-                $result = $this->common_model->insert();
+                $result = $this->Common_model->insert();
 
                 if ($result) {
                     redirect(base_url().'card/card_issuer/success');
@@ -210,7 +214,7 @@ class Card extends CI_Controller
                 $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
-            $this->form_validation->set_rules('txtCardIssuer', 'Card Issuer ', 'trim|required');
+            $this->form_validation->set_rules('txtCardIssuer', 'Card Issuer ', 'trim|required|alpha_dash');
 
             if ($this->form_validation->run() == FALSE){
                 $data['title'] = "Card-Edit Issuer";
@@ -946,7 +950,7 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtBankName', ' Bank Name', 'trim|required');
             $this->form_validation->set_rules('txtCardName', ' Card Name', 'trim|required');
             $this->form_validation->set_rules('txtCardType', ' Card Type', 'trim|required');
-            $this->form_validation->set_rules('txtCreditCardType', ' Credit Card Type', 'trim|required');
+            $this->form_validation->set_rules('txtCardCategory', ' Credit Card Category', 'trim|required');
             $this->form_validation->set_rules('txtCardIssuer', ' Card Issuer', 'trim|required');
             $this->form_validation->set_rules('txtIncomeRangeMinBusiness', '  Income Range MinBusiness', 'trim|required');
             $this->form_validation->set_rules('txtIncomeRangeMaxBusiness', 'Income Range Max Business', 'trim|required');

@@ -97,7 +97,7 @@ if(isset($_GET['issuer_id']))
                                         <section>
                                             <label class="label">Card Issuer Name</label>
                                             <label class="input">
-                                                <input type="text" name="txtCardIssuer" placeholder="Issuer Name" value ="<?php set_value('txtCardIssuer') ? set_value('txtCardIssuer') : ''?>" />
+                                                <input type="text" name="txtCardIssuer" placeholder="Issuer Name" value ="<?php echo set_value('txtCardIssuer') ;?>" />
 
                                             </label>
                                             <div class="form-group">

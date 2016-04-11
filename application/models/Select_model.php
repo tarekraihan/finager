@@ -120,7 +120,7 @@ class Select_Model extends CI_Model
         $option="<option value=''>-- Select One --</option>";
         foreach($query->result() as $row)
         {
-            $option.='<option value="'.$row->id.'" '.set_select("txtCreditCardType",$row->id).'>'.$row->cc_card_type.'</option>';
+            $option.='<option value="'.$row->id.'" '.set_select("txtCardCategory",$row->id).'>'.$row->cc_card_type.'</option>';
         }
         return $option;
     }

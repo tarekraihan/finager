@@ -1,6 +1,6 @@
 <?php
 
-class Common_Model extends CI_Model
+class Common_model extends CI_Model
 {
     var $select = '*';
     # Example : $this->mhs_model->select = '*';
