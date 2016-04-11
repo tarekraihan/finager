@@ -97,7 +97,7 @@ if(isset($_GET['a_user_id']))
                                         <section>
                                             <label class="label">Admin Role</label>
                                             <label class="input">
-                                                <input type="text" name="txtAdminRole" placeholder="Admin Role" value ="<?php set_value('txtAdminRole') ? set_value('txtAdminRole') : ''?>" />
+                                                <input type="text" name="txtAdminRole" placeholder="Admin Role" value ="<?php echo set_value('txtAdminRole');?>" />
 
                                             </label>
                                             <div class="form-group">

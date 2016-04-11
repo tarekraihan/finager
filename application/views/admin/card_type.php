@@ -97,7 +97,7 @@ if(isset($_GET['type_id']))
                                         <section>
                                             <label class="label">Card Type</label>
                                             <label class="input">
-                                                <input type="text" name="txtCardType" placeholder="Card Type" value ="<?php set_value('txtCardType') ? set_value('txtCardType') : ''?>" />
+                                                <input type="text" name="txtCardType" placeholder="Card Type" value ="<?php echo set_value('txtCardType'); ?>" />
 
                                             </label>
                                             <div class="form-group">

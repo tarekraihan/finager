@@ -97,7 +97,7 @@ if(isset($_GET['cc_type_id']))
                                         <section>
                                             <label class="label">Credit Card Type</label>
                                             <label class="input">
-                                                <input type="text" name="txtCreditCardType" placeholder="Credit Card Type" value ="<?php set_value('txtCreditCardType') ? set_value('txtCreditCardType') : ''?>" />
+                                                <input type="text" name="txtCreditCardType" placeholder="Credit Card Type" value ="<?php echo set_value('txtCreditCardType'); ?>" />
 
                                             </label>
                                             <div class="form-group">

@@ -28,9 +28,9 @@ class Backdoor extends CI_Controller {
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
             $this->form_validation->set_rules('txtAdminRole', 'Admin Role', 'trim|required');
@@ -65,15 +65,15 @@ class Backdoor extends CI_Controller {
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Updated !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
             $this->form_validation->set_rules('txtAdminRole', 'Admin Role ', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Income Range";
+                $data['title'] = "Edit Admin Role";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/edit_admin_user_role');

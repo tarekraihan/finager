@@ -97,14 +97,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Card Annual Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCardAnnualFee" value="<?php set_value('txtCardAnnualFee') ? set_value('txtCardAnnualFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCardAnnualFee" value="<?php echo set_value('txtCardAnnualFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCardAnnualFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Card Annual Fee Plus</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCardAnnualFeePlus" value="<?php set_value('txtCardAnnualFeePlus') ? set_value('txtCardAnnualFeePlus') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCardAnnualFeePlus" value="<?php echo set_value('txtCardAnnualFeePlus') ; ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCardAnnualFeePlus');?></label>
                                                 </section>
@@ -113,14 +113,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Supplementary Card Annual Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="200" name="txtSupplementaryFee" value="<?php set_value('txtSupplementaryFee') ? set_value('txtSupplementaryFee') : ''?>">
+                                                        <input type="text" maxlength="200" name="txtSupplementaryFee" value="<?php echo set_value('txtSupplementaryFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtSupplementaryFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Purchase Fee </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="30" name="txtPurchaseFee" value="<?php set_value('txtPurchaseFee') ? set_value('txtPurchaseFee') : ''?>">
+                                                        <input type="text" maxlength="30" name="txtPurchaseFee" value="<?php echo set_value('txtPurchaseFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPurchaseFee');?></label>
                                                 </section>
@@ -129,14 +129,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Balance Transfer Fee(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBalanceTransferFee" value="<?php set_value('txtBalanceTransferFee') ? set_value('txtBalanceTransferFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtBalanceTransferFee" value="<?php echo set_value('txtBalanceTransferFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBalanceTransferFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Fee(Own ATM)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceFeeOwnATM" value="<?php set_value('txtCashAdvanceFeeOwnATM') ? set_value('txtCashAdvanceFeeOwnATM') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCashAdvanceFeeOwnATM" value="<?php echo set_value('txtCashAdvanceFeeOwnATM'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceFeeOwnATM');?></label>
                                                 </section>
@@ -145,14 +145,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Fee (Other ATM)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceFeeOtherATM" value="<?php set_value('txtCashAdvanceFeeOtherATM') ? set_value('txtCashAdvanceFeeOtherATM') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCashAdvanceFeeOtherATM" value="<?php echo set_value('txtCashAdvanceFeeOtherATM'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceFeeOtherATM');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Fee(Other ATM) Plus</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="30" name="txtCashAdvanceFeeOtherATMPlus" value="<?php set_value('txtCashAdvanceFeeOtherATMPlus') ? set_value('txtCashAdvanceFeeOtherATMPlus') : ''?>">
+                                                        <input type="text" maxlength="30" name="txtCashAdvanceFeeOtherATMPlus" value="<?php echo set_value('txtCashAdvanceFeeOtherATMPlus'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceFeeOtherATMPlus');?></label>
                                                 </section>
@@ -161,14 +161,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Fee (International)USD</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceFeeInternationalUSD" value="<?php set_value('txtCashAdvanceFeeInternationalUSD') ? set_value('txtCashAdvanceFeeInternationalUSD') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCashAdvanceFeeInternationalUSD" value="<?php echo set_value('txtCashAdvanceFeeInternationalUSD'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceFeeInternationalUSD');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Fee(International) Percentage(%) </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceFeeInternationalPercentage" value="<?php set_value('txtCashAdvanceFeeInternationalPercentage') ? set_value('txtCashAdvanceFeeInternationalPercentage') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCashAdvanceFeeInternationalPercentage" value="<?php echo set_value('txtCashAdvanceFeeInternationalPercentage'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceFeeInternationalPercentage');?></label>
                                                 </section>
@@ -177,14 +177,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Fee (International) Remarks</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="100" name="txtCashAdvanceFeeInternationalRemarks" value="<?php set_value('txtCashAdvanceFeeInternationalRemarks') ? set_value('txtCashAdvanceFeeInternationalRemarks') : ''?>">
+                                                        <input type="text" maxlength="100" name="txtCashAdvanceFeeInternationalRemarks" value="<?php echo set_value('txtCashAdvanceFeeInternationalRemarks'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceFeeInternationalRemarks');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Late Payment Fee BDT </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtLatePaymentFeeBDT" value="<?php set_value('txtLatePaymentFeeBDT') ? set_value('txtLatePaymentFeeBDT') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtLatePaymentFeeBDT" value="<?php echo set_value('txtLatePaymentFeeBDT'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLatePaymentFeeBDT');?></label>
                                                 </section>
@@ -193,14 +193,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Late Payment Fee USD </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtLatePaymentFeeUSD" value="<?php set_value('txtLatePaymentFeeUSD') ? set_value('txtLatePaymentFeeUSD') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtLatePaymentFeeUSD" value="<?php echo set_value('txtLatePaymentFeeUSD'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLatePaymentFeeUSD');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Card Replacement Fee BDT</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtReplacementFee" value="<?php set_value('txtReplacementFee') ? set_value('txtReplacementFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtReplacementFee" value="<?php echo set_value('txtReplacementFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtReplacementFee');?></label>
                                                 </section>
@@ -209,14 +209,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Pin Replacement Fee BDT</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPinReplacementFee" value="<?php set_value('txtPinReplacementFee') ? set_value('txtPinReplacementFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtPinReplacementFee" value="<?php echo set_value('txtPinReplacementFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPinReplacementFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Over limit Charge BDT</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtOverLimitChargeBDT" value="<?php set_value('txtOverLimitChargeBDT') ? set_value('txtOverLimitChargeBDT') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtOverLimitChargeBDT" value="<?php echo set_value('txtOverLimitChargeBDT'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtOverLimitChargeBDT');?></label>
                                                 </section>
@@ -225,14 +225,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Over limit Charge USD</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtOverLimitChargeUSD" value="<?php set_value('txtOverLimitChargeUSD') ? set_value('txtOverLimitChargeUSD') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtOverLimitChargeUSD" value="<?php echo set_value('txtOverLimitChargeUSD'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtOverLimitChargeUSD');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Transaction Alert Service BDT</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtTransactionAlertService" value="<?php set_value('txtTransactionAlertService') ? set_value('txtTransactionAlertService') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtTransactionAlertService" value="<?php echo set_value('txtTransactionAlertService'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtTransactionAlertService');?></label>
                                                 </section>
@@ -241,14 +241,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Transaction Alert Service Plus</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="100" name="txtTransactionAlertServicePlus" value="<?php set_value('txtTransactionAlertServicePlus') ? set_value('txtTransactionAlertServicePlus') : ''?>">
+                                                        <input type="text" maxlength="100" name="txtTransactionAlertServicePlus" value="<?php echo set_value('txtTransactionAlertServicePlus');?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtTransactionAlertServicePlus');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Credit Assurance Program Fee(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditAssuranceProgramFee" value="<?php set_value('txtCreditAssuranceProgramFee') ? set_value('txtCreditAssuranceProgramFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCreditAssuranceProgramFee" value="<?php echo set_value('txtCreditAssuranceProgramFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditAssuranceProgramFee');?></label>
                                                 </section>
@@ -257,14 +257,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Credit Assurance Program Fee Remarks</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="200" name="txtCreditAssuranceProgramFeeRemarks" value="<?php set_value('txtCreditAssuranceProgramFeeRemarks') ? set_value('txtCreditAssuranceProgramFeeRemarks') : ''?>">
+                                                        <input type="text" maxlength="200" name="txtCreditAssuranceProgramFeeRemarks" value="<?php echo set_value('txtCreditAssuranceProgramFeeRemarks'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditAssuranceProgramFeeRemarks');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Monthly E-Statement Fee BDT</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMonthlyEStatementFee" value="<?php set_value('txtMonthlyEStatementFee') ? set_value('txtMonthlyEStatementFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtMonthlyEStatementFee" value="<?php echo set_value('txtMonthlyEStatementFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMonthlyEStatementFee');?></label>
                                                 </section>
@@ -273,14 +273,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Cheque Book Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtChequeBookFee" value="<?php set_value('txtChequeBookFee') ? set_value('txtChequeBookFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtChequeBookFee" value="<?php echo set_value('txtChequeBookFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtChequeBookFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Payment BDT</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumPaymentBDT" value="<?php set_value('txtMinimumPaymentBDT') ? set_value('txtMinimumPaymentBDT') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtMinimumPaymentBDT" value="<?php echo set_value('txtMinimumPaymentBDT'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumPaymentBDT');?></label>
                                                 </section>
@@ -289,14 +289,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Payment USD</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumPaymentUSD" value="<?php set_value('txtMinimumPaymentUSD') ? set_value('txtMinimumPaymentUSD') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtMinimumPaymentUSD" value="<?php echo set_value('txtMinimumPaymentUSD'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumPaymentUSD');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Payment Percentage(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumPaymentPercentage" value="<?php set_value('txtMinimumPaymentPercentage') ? set_value('txtMinimumPaymentPercentage') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtMinimumPaymentPercentage" value="<?php echo set_value('txtMinimumPaymentPercentage'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumPaymentPercentage');?></label>
                                                 </section>
@@ -305,14 +305,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Payment Remarks</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="200" name="txtMinimumPaymentRemarks" value="<?php set_value('txtMinimumPaymentRemarks') ? set_value('txtMinimumPaymentRemarks') : ''?>">
+                                                        <input type="text" maxlength="200" name="txtMinimumPaymentRemarks" value="<?php echo set_value('txtMinimumPaymentRemarks'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumPaymentRemarks');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Cheque Return Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtChequeReturnFee" value="<?php set_value('txtChequeReturnFee') ? set_value('txtChequeReturnFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtChequeReturnFee" value="<?php echo set_value('txtChequeReturnFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtChequeReturnFee');?></label>
                                                 </section>
@@ -321,14 +321,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Duplicate Statement</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDuplicateStatement" value="<?php set_value('txtDuplicateStatement') ? set_value('txtDuplicateStatement') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtDuplicateStatement" value="<?php echo set_value('txtDuplicateStatement'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtDuplicateStatement');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Card Cheque Processing Fee(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCardChequeProcessingFee" value="<?php set_value('txtCardChequeProcessingFee ') ? set_value('txtCardChequeProcessingFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCardChequeProcessingFee" value="<?php echo set_value('txtCardChequeProcessingFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCardChequeProcessingFee');?></label>
                                                 </section>
@@ -337,7 +337,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Card Cheque Issuing Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCardCheckIssuingFee" value="<?php set_value('txtCardCheckIssuingFee') ? set_value('txtCardCheckIssuingFee') : ''?>">
+                                                        <input type="text" maxlength="10" name="txtCardCheckIssuingFee" value="<?php echo set_value('txtCardCheckIssuingFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCardCheckIssuingFee');?></label>
                                                 </section>

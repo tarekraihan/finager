@@ -125,18 +125,14 @@ class Card extends CI_Controller
         }
     }
 
-    public function save_bank_name(){
-
-    }
-
     public function edit_bank($msg='')
     {
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Updated !!</div>';
+                $data['feedback'] = '<div id="message"  class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
+                $data['feedback'] = '<div id="message"  class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
             $this->form_validation->set_rules('txtBank', 'Bank Name ', 'trim|required');
@@ -209,12 +205,12 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Updated !!</div>';
+                $data['feedback'] = '<div id="message"  class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
-            $this->form_validation->set_rules('txtCardIssuer', 'Card Issuer ', 'trim|required|alpha_dash');
+            $this->form_validation->set_rules('txtCardIssuer', 'Card Issuer ', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
                 $data['title'] = "Card-Edit Issuer";
@@ -322,22 +318,22 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
             $this->form_validation->set_rules('txtCardType', 'Card Type', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Card Limit";
+                $data['title'] = "Card-Card Type";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/card_type');
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $this->Common_model->data = array('card_type_name' => $this->input->post('txtCardType'), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
+                $this->Common_model->data = array('card_type_name' =>  htmlentities($this->input->post('txtCardType')), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
                 $this->Common_model->table_name = 'card_card_type';
                 $result = $this->Common_model->insert();
 
@@ -359,15 +355,15 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Updated !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
             $this->form_validation->set_rules('txtCardType', 'Card Type ', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Edit Card Limit";
+                $data['title'] = "Card-Edit Card Type";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/edit_card_type');
@@ -397,22 +393,22 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
             $this->form_validation->set_rules('txtCardUser', 'Card User', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Card Limit";
+                $data['title'] = "Card-Card User";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/card_user');
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $this->Common_model->data = array('card_user' => $this->input->post('txtCardUser'), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
+                $this->Common_model->data = array('card_user' =>  htmlentities($this->input->post('txtCardUser')), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
                 $this->Common_model->table_name = 'card_card_user';
                 $result = $this->Common_model->insert();
 
@@ -434,15 +430,15 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Updated !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
             $this->form_validation->set_rules('txtCardUser', 'Card User ', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Edit Card Limit";
+                $data['title'] = "Edit Card User";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/edit_card_user');
@@ -473,22 +469,22 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
             $this->form_validation->set_rules('txtCreditCardType', 'Credit Card Type', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Card Limit";
+                $data['title'] = "Credit Card Type";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/credit_card_type');
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $this->Common_model->data = array('cc_card_type' => $this->input->post('txtCreditCardType'), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
+                $this->Common_model->data = array('cc_card_type' =>  htmlentities($this->input->post('txtCreditCardType')), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
                 $this->Common_model->table_name = 'card_credit_card_type';
                 $result = $this->Common_model->insert();
 
@@ -510,15 +506,15 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Updated !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
             $this->form_validation->set_rules('txtCreditCardType', 'Credit Card Type ', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Edit Card Limit";
+                $data['title'] = "Credit Card Type";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/edit_credit_card_type');
@@ -716,9 +712,9 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
             $this->form_validation->set_rules('txtCardReward', 'Card Reward', 'trim|required');
@@ -731,7 +727,7 @@ class Card extends CI_Controller
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $this->Common_model->data = array('reward_name' => $this->input->post('txtCardReward'), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
+                $this->Common_model->data = array('reward_name' => htmlentities($this->input->post('txtCardReward')), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
                 $this->Common_model->table_name = 'card_reward';
                 $result = $this->Common_model->insert();
 
@@ -753,9 +749,9 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Updated !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
             $this->form_validation->set_rules('txtCardReward', 'Card Reward ', 'trim|required');
@@ -792,9 +788,9 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
             $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
@@ -832,7 +828,7 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtCardCheckIssuingFee', 'Card Check Issuing Fee', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Card-Income Range";
+                $data['title'] = "Card Charges Fees";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/card_fees_charges');
@@ -840,38 +836,38 @@ class Card extends CI_Controller
             }else{
                 $date = date('Y-m-d h:i:s');
                 $this->Common_model->data = array(
-                    'card_id' => $this->input->post('txtCardName'),
-                    'basic_card_annual_fee' => $this->input->post('txtCardAnnualFee'),
-                    'basic_card_annual_fee_plus' => $this->input->post('txtCardAnnualFeePlus'),
-                    'supplementary_card_annual_fee' => $this->input->post('txtSupplementaryFee'),
-                    'purchase_fee' => $this->input->post('txtPurchaseFee'),
-                    'balance_transfer_fee' => $this->input->post('txtBalanceTransferFee'),
-                    'cash_advance_fee_own_atm' => $this->input->post('txtCashAdvanceFeeOwnATM'),
-                    'cash_advance_fee_other_atm' => $this->input->post('txtCashAdvanceFeeOtherATM'),
-                    'cash_advance_fee_other_atm_plus' => $this->input->post('txtCashAdvanceFeeOtherATMPlus'),
-                    'cash_advance_fee_international_usd' => $this->input->post('txtCashAdvanceFeeInternationalUSD'),
-                    'cash_advance_fee_international_percentage' => $this->input->post('txtCashAdvanceFeeInternationalPercentage'),
-                    'cash_advance_fee_international_remarks' => $this->input->post('txtCashAdvanceFeeInternationalRemarks'),
-                    'late_payment_fee_bdt' => $this->input->post('txtLatePaymentFeeBDT'),
-                    'late_payment_fee_usd' => $this->input->post('txtLatePaymentFeeUSD'),
-                    'card_replacement_fee' => $this->input->post('txtReplacementFee'),
-                    'pin_replacement_fee' => $this->input->post('txtPinReplacementFee'),
-                    'over_limit_charge_bdt' => $this->input->post('txtOverLimitChargeBDT'),
-                    'over_limit_charge_usd' => $this->input->post('txtOverLimitChargeUSD'),
-                    'transaction_alert_service' => $this->input->post('txtTransactionAlertService'),
-                    'transaction_alert_service_plus' => $this->input->post('txtTransactionAlertServicePlus'),
-                    'credit_assurance_program_fee' => $this->input->post('txtCreditAssuranceProgramFee'),
-                    'credit_assurance_program_fee_remarks' => $this->input->post('txtCreditAssuranceProgramFeeRemarks'),
-                    'monthly_e_statement_fee' => $this->input->post('txtMonthlyEStatementFee'),
-                    'check_book_fee' => $this->input->post('txtChequeBookFee'),
-                    'minimum_payment_bdt' => $this->input->post('txtMinimumPaymentBDT'),
-                    'minimum_payment_usd' => $this->input->post('txtMinimumPaymentUSD'),
-                    'minimum_payment_percentage' => $this->input->post('txtMinimumPaymentPercentage'),
-                    'minimum_payment_remarks' => $this->input->post('txtMinimumPaymentRemarks'),
-                    'cheque_return_fee' => $this->input->post('txtChequeReturnFee'),
-                    'duplicate_statement' => $this->input->post('txtDuplicateStatement'),
-                    'card_cheque_processing_fee' => $this->input->post('txtCardChequeProcessingFee'),
-                    'card_cheque_issuing_fee' => $this->input->post('txtCardCheckIssuingFee'),
+                    'card_id' => htmlentities($this->input->post('txtCardName')),
+                    'basic_card_annual_fee' => htmlentities($this->input->post('txtCardAnnualFee')),
+                    'basic_card_annual_fee_plus' => htmlentities($this->input->post('txtCardAnnualFeePlus')),
+                    'supplementary_card_annual_fee' => htmlentities($this->input->post('txtSupplementaryFee')),
+                    'purchase_fee' => htmlentities($this->input->post('txtPurchaseFee')),
+                    'balance_transfer_fee' => htmlentities($this->input->post('txtBalanceTransferFee')),
+                    'cash_advance_fee_own_atm' => htmlentities($this->input->post('txtCashAdvanceFeeOwnATM')),
+                    'cash_advance_fee_other_atm' => htmlentities($this->input->post('txtCashAdvanceFeeOtherATM')),
+                    'cash_advance_fee_other_atm_plus' => htmlentities($this->input->post('txtCashAdvanceFeeOtherATMPlus')),
+                    'cash_advance_fee_international_usd' => htmlentities($this->input->post('txtCashAdvanceFeeInternationalUSD')),
+                    'cash_advance_fee_international_percentage' => htmlentities($this->input->post('txtCashAdvanceFeeInternationalPercentage')),
+                    'cash_advance_fee_international_remarks' => htmlentities($this->input->post('txtCashAdvanceFeeInternationalRemarks')),
+                    'late_payment_fee_bdt' => htmlentities($this->input->post('txtLatePaymentFeeBDT')),
+                    'late_payment_fee_usd' => htmlentities($this->input->post('txtLatePaymentFeeUSD')),
+                    'card_replacement_fee' => htmlentities($this->input->post('txtReplacementFee')),
+                    'pin_replacement_fee' => htmlentities($this->input->post('txtPinReplacementFee')),
+                    'over_limit_charge_bdt' => htmlentities($this->input->post('txtOverLimitChargeBDT')),
+                    'over_limit_charge_usd' => htmlentities($this->input->post('txtOverLimitChargeUSD')),
+                    'transaction_alert_service' => htmlentities($this->input->post('txtTransactionAlertService')),
+                    'transaction_alert_service_plus' => htmlentities($this->input->post('txtTransactionAlertServicePlus')),
+                    'credit_assurance_program_fee' => htmlentities($this->input->post('txtCreditAssuranceProgramFee')),
+                    'credit_assurance_program_fee_remarks' => htmlentities($this->input->post('txtCreditAssuranceProgramFeeRemarks')),
+                    'monthly_e_statement_fee' => htmlentities($this->input->post('txtMonthlyEStatementFee')),
+                    'check_book_fee' => htmlentities($this->input->post('txtChequeBookFee')),
+                    'minimum_payment_bdt' => htmlentities($this->input->post('txtMinimumPaymentBDT')),
+                    'minimum_payment_usd' => htmlentities($this->input->post('txtMinimumPaymentUSD')),
+                    'minimum_payment_percentage' => htmlentities($this->input->post('txtMinimumPaymentPercentage')),
+                    'minimum_payment_remarks' => htmlentities($this->input->post('txtMinimumPaymentRemarks')),
+                    'cheque_return_fee' => htmlentities($this->input->post('txtChequeReturnFee')),
+                    'duplicate_statement' => htmlentities($this->input->post('txtDuplicateStatement')),
+                    'card_cheque_processing_fee' => htmlentities($this->input->post('txtCardChequeProcessingFee')),
+                    'card_cheque_issuing_fee' => htmlentities($this->input->post('txtCardCheckIssuingFee')),
                     'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id')
                 );
 
@@ -931,7 +927,7 @@ class Card extends CI_Controller
     }*/
 
     public function card_info_list(){
-        $data['title'] = "Card-Income Range";
+        $data['title'] = "Card Information";
         $this->load->view('admin/block/header',$data);
         $this->load->view('admin/block/left_nav');
         $this->load->view('admin/card_info_list');
@@ -942,9 +938,9 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
             $this->form_validation->set_rules('txtBankName', ' Bank Name', 'trim|required');
@@ -1023,28 +1019,28 @@ class Card extends CI_Controller
                 $card_benifit =substr($card_benifit,0,-1);
                 $this->Common_model->data = array(
                     'bank_id' =>$this->input->post('txtBankName'),
-                    'cc_type_id'=>$this->input->post('txtCardType'),
-                    'card_category'=>$this->input->post('txtCreditCardType'),
-                    'card_name'=>$this->input->post('txtCardName'),
-                    'card_image_name'=>$upload_result['file_name'],
+                    'cc_type_id'=> htmlentities($this->input->post('txtCardType')),
+                    'card_category'=>htmlentities($this->input->post('txtCreditCardType')),
+                    'card_name'=>htmlentities($this->input->post('txtCardName')),
+                    'card_image_name'=>htmlentities($upload_result['file_name']),
                     //`card_image_url`,
                     'card_user_id'=>$card_user,
-                    'income_range_min_business'=>$this->input->post('txtIncomeRangeMinBusiness'),
-                    'income_range_min_salaried'=>$this->input->post('txtIncomeRangeMinSalaried'),
-                    'income_range_max_business'=>$this->input->post('txtIncomeRangeMaxBusiness'),
-                    'income_range_max_salaried'=>$this->input->post('txtIncomeRangeMaxSalaried'),
-                    'credit_limit_min_business'=>$this->input->post('txtCreditLimitMinBusiness'),
-                    'credit_limit_min_salaried'=>$this->input->post('txtCreditLimitMinSalaried'),
-                    'credit_limit_max_business'=>$this->input->post('txtCreditLimitMaxBusiness'),
-                    'credit_limit_max_salaried'=>$this->input->post('txtCreditLimitMaxSalaried'),
-                    'age_limit_min'=>$this->input->post('txtUserAgeMin'),
-                    'age_limit_max'=>$this->input->post('txtUserAgeMax'),
-                    'experience_salaried'=>$this->input->post('txtYearOfExperienceSalaried'),
-                    'experience_business'=> $this->input->post('txtYearOfExperienceBusiness'),
-                    'cc_issuer_id'=>$this->input->post('txtCardIssuer'),
+                    'income_range_min_business'=>htmlentities($this->input->post('txtIncomeRangeMinBusiness')),
+                    'income_range_min_salaried'=>htmlentities($this->input->post('txtIncomeRangeMinSalaried')),
+                    'income_range_max_business'=>htmlentities($this->input->post('txtIncomeRangeMaxBusiness')),
+                    'income_range_max_salaried'=>htmlentities($this->input->post('txtIncomeRangeMaxSalaried')),
+                    'credit_limit_min_business'=>htmlentities($this->input->post('txtCreditLimitMinBusiness')),
+                    'credit_limit_min_salaried'=>htmlentities($this->input->post('txtCreditLimitMinSalaried')),
+                    'credit_limit_max_business'=>htmlentities($this->input->post('txtCreditLimitMaxBusiness')),
+                    'credit_limit_max_salaried'=>htmlentities($this->input->post('txtCreditLimitMaxSalaried')),
+                    'age_limit_min'=>htmlentities($this->input->post('txtUserAgeMin')),
+                    'age_limit_max'=>htmlentities($this->input->post('txtUserAgeMax')),
+                    'experience_salaried'=>htmlentities($this->input->post('txtYearOfExperienceSalaried')),
+                    'experience_business'=> htmlentities($this->input->post('txtYearOfExperienceBusiness')),
+                    'cc_issuer_id'=> htmlentities($this->input->post('txtCardIssuer')),
                     'card_benifit_id'=>$card_benifit,
-                    'interest_free_period_min'=>$this->input->post('txtInterestFreePeriodMin'),
-                    'interest_free_pefiod_max'=>$this->input->post('txtInterestFreePeriodMax'),
+                    'interest_free_period_min'=> htmlentities($this->input->post('txtInterestFreePeriodMin')),
+                    'interest_free_pefiod_max'=> htmlentities($this->input->post('txtInterestFreePeriodMax')),
                     'card_summary'=>$this->input->post('txtCardSummary'),
                     'pros'=>$this->input->post('txtPros'),
                     'cons'=>$this->input->post('txtCons'),
@@ -1056,12 +1052,12 @@ class Card extends CI_Controller
                     'billing_cycle_end'=>$this->input->post('txtBillingCycleEnd'),
                     'eligibility'=>$this->input->post('txtEligibility'),
                     'purchase_interest_rate'=>$this->input->post('txtPurchaseInterestRate'),
-                    'purchase_interest_rate_monthly'=>$this->input->post('txtPurchaseInterestRateMonthly'),
-                    'balance_transfer_rate'=>$this->input->post('txtBalanceTransferRate'),
-                    'balance_transfer_rate_monthly'=>$this->input->post('txtBalanceTransferRateMonthly'),
-                    'cash_advance_interest_rate_yearly'=>$this->input->post('txtCashAdvanceRateYearly'),
-                    'cash_advance_interest_rate'=>$this->input->post('txtCashAdvanceInterestRateMonthly'),
-                    'cash_advance_limit'=>$this->input->post('txtCashAdvanceLimit'),
+                    'purchase_interest_rate_monthly'=> htmlentities($this->input->post('txtPurchaseInterestRateMonthly')),
+                    'balance_transfer_rate'=> htmlentities($this->input->post('txtBalanceTransferRate')),
+                    'balance_transfer_rate_monthly'=> htmlentities($this->input->post('txtBalanceTransferRateMonthly')),
+                    'cash_advance_interest_rate_yearly'=> htmlentities($this->input->post('txtCashAdvanceRateYearly')),
+                    'cash_advance_interest_rate'=> htmlentities($this->input->post('txtCashAdvanceInterestRateMonthly')),
+                    'cash_advance_limit'=> htmlentities($this->input->post('txtCashAdvanceLimit')),
                     'featured'=> $featured,
                     'status'=> $status,
                     'created' => $date ,
@@ -1089,9 +1085,9 @@ class Card extends CI_Controller
         if ($this->session->userdata('email_address')) {
 
             if ($msg == 'success') {
-                $data['feedback'] = '<div class="text-center alert alert-success">Successfully Updated !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
-                $data['feedback'] = '<div class=" text-center alert alert-danger">Problem to Update !!</div>';
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
             $this->form_validation->set_rules('txtBankName', ' Bank Name', 'trim|required');
