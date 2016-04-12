@@ -310,12 +310,12 @@
             <!-- Left bar query content end -->
 
             <!-- Right bar content start -->
-            <div class="col-sm-9 col-xs-9">
+            <div class="col-sm-9 col-xs-9" id="SearchCard">
                 <?php
                 $card = $this->Front_end_select_model->select_card_info();
                 foreach($card->result() as $row){
                     ?>
-                <div class="full-card">
+                <div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-3 col-xs-3">
                             <img class="img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $row->card_image_name; ?>" />
@@ -325,7 +325,7 @@
                             </p>
                             <p class="rating text-center">Rated By 5 Person</p>
                             <span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
-                            <span class="more_info_icon"><a id="displayText" href="javascript:toggle();"><i class="fa fa-info-circle"></i> More info</a></span>
+                            <span class="more_info_icon"><button class="card_show" rel="1" data-card_id="<?php echo $row->id;?>"><i class="fa fa-info-circle"></i> More info</button></span>
                         </div>
 
                         <div class="col-sm-9 col-xs-9">
@@ -660,6 +660,14 @@
             text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
         }
     }
+    $('#SearchCard').on('click', '.card_show', function () {
+        var no = parseInt($(this).attr('rel')),
+            formData = $(this).data();
+
+        console.log(no);
+        console.log(formData);
+
+            });
 
     //for more more filter
     function toggle2() {

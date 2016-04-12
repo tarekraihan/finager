@@ -66,7 +66,7 @@ body {
 	margin-top:7px;
 }
 .find-bar {
-    margin-top: 17%;
+    margin-top: 15%;
     text-align: center;
 }
 
@@ -86,6 +86,7 @@ body {
 #CategoryIcon{
 	height:500px;
 	width:auto;
+	margin-top:10%;
 }
 .catagory-icon{
 	margin-top:20px;
