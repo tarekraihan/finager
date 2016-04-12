@@ -138,9 +138,9 @@
                         </div>
                     </div>
                     <div class="more_filter">
-                        <p><a id="displayText2" href="javascript:toggle2();">More Filter <i class="fa fa-sort-desc fa-lg"></i></a></p>
+                        <p><a id="displayMoreFilter" href="javascript:toggle2();">More Filter <i class="fa fa-sort-desc fa-lg"></i></a></p>
                     </div><br/>
-                    <div id="toggleText2" style="display: none">
+                    <div id="moreFilterText" style="display: none">
                         <div class="card_query"  >
                             <p>Features & Benefits</p>
                             <div class="query_radio">
@@ -318,6 +318,7 @@
                 <div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-3 col-xs-3">
+
                             <img class="img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $row->card_image_name; ?>" />
                             <img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">
@@ -325,7 +326,7 @@
                             </p>
                             <p class="rating text-center">Rated By 5 Person</p>
                             <span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
-                            <span class="more_info_icon"><button class="card_show" rel="1" data-card_id="<?php echo $row->id;?>"><i class="fa fa-info-circle"></i> More info</button></span>
+                            <span class="more_info_icon"><button class="displayText"  data-card_id="<?php echo $row->id;?>"><i class="fa fa-info-circle"></i> More info</button></span>
                         </div>
 
                         <div class="col-sm-9 col-xs-9">
@@ -398,7 +399,7 @@
 
                     <!-- More Info Tab content start -->
                     <div class="col-sm-12 card_more_info">
-                        <div id="toggleText" style="display: none">
+                        <div id="toggleText<?php echo $row->id; ?>" style="display: none">
                             <section id="tab">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
@@ -634,7 +635,7 @@
 
 <script type="text/javascript">
     //for more info search
-    function toggle() {
+    /*function toggle() {
         var ele = document.getElementById("toggleText");
         var text = document.getElementById("displayText");
         if(ele.style.display == "block") {
@@ -645,34 +646,47 @@
             ele.style.display = "block";
             text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
         }
-    }
+    }*/
 
     //for more info search
-    function toggle1() {
-        var ele = document.getElementById("toggleText1");
-        var text = document.getElementById("displayText1");
+    /*function toggle1() {
+     var ele = document.getElementById("toggleText1");
+     var text = document.getElementById("displayText1");
+     if(ele.style.display == "block") {
+     ele.style.display = "none";
+     text.html("<i class='fa fa-info-circle'></i> more info");
+     }
+     else {
+     ele.style.display = "block";
+     text.html("<i class='fa fa-info-circle'></i> Less info");
+     }
+     }*/
+
+
+
+    $('#SearchCard').on('click', '.displayText', function () {
+        var  formData = $(this).data();
+        var card_id = formData.card_id;
+        var ele = document.getElementById("toggleText"+card_id);
+        var text = document.getElementById("displayText");
+
+        console.log(ele);
         if(ele.style.display == "block") {
             ele.style.display = "none";
-            text.innerHTML = "<i class='fa fa-info-circle'></i> More info";
+            text.html("<i class='fa fa-info-circle'></i> more info");
         }
         else {
             ele.style.display = "block";
-            text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
+            text.html("<i class='fa fa-info-circle'></i> Less info");
         }
-    }
-    $('#SearchCard').on('click', '.card_show', function () {
-        var no = parseInt($(this).attr('rel')),
-            formData = $(this).data();
-
-        console.log(no);
-        console.log(formData);
+//        console.log(formData);
 
             });
 
     //for more more filter
     function toggle2() {
-        var ele = document.getElementById("toggleText2");
-        var text = document.getElementById("displayText2");
+        var ele = document.getElementById("moreFilterText");
+        var text = document.getElementById("displayMoreFilter");
         if(ele.style.display == "block") {
             ele.style.display = "none";
             text.innerHTML = "More Filters <i class='fa fa-sort-desc fa-lg'></li>";

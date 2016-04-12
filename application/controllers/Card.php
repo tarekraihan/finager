@@ -963,6 +963,7 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtYearOfExperienceSalaried', 'Year Of Experience Salaried', 'trim|required');
             $this->form_validation->set_rules('txtYearOfExperienceBusiness', 'Year Of Experience Business', 'trim|required');
             $this->form_validation->set_rules('txtCardBenefit[]', 'Card Benefit ', 'trim|required');
+            $this->form_validation->set_rules('txtBenefit', 'Card Benefit ', 'trim|required');
             $this->form_validation->set_rules('txtInterestFreePeriodMin', 'Interest Free Period Min', 'trim|required');
             $this->form_validation->set_rules('txtInterestFreePeriodMax', 'Interest Free Period Max', 'trim|required');
             $this->form_validation->set_rules('txtCashAdvanceRateYearly', 'Cash Advance Interest Rate Yearly', 'trim|required');//Cash Withdraw same as cash advance rate yearly
@@ -1039,6 +1040,7 @@ class Card extends CI_Controller
                     'experience_business'=> htmlentities($this->input->post('txtYearOfExperienceBusiness')),
                     'cc_issuer_id'=> htmlentities($this->input->post('txtCardIssuer')),
                     'card_benifit_id'=>$card_benifit,
+                    'benefit_details'=>htmlentities($this->input->post('txtBenefit')),
                     'interest_free_period_min'=> htmlentities($this->input->post('txtInterestFreePeriodMin')),
                     'interest_free_pefiod_max'=> htmlentities($this->input->post('txtInterestFreePeriodMax')),
                     'card_summary'=>$this->input->post('txtCardSummary'),
