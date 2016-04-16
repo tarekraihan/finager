@@ -629,40 +629,54 @@
 
 
 
+
         </div>
     </div>
 </section>
 
 <script type="text/javascript">
-    //for more info search
-    /*function toggle() {
-        var ele = document.getElementById("toggleText");
-        var text = document.getElementById("displayText");
-        if(ele.style.display == "block") {
-            ele.style.display = "none";
-            text.innerHTML = "<i class='fa fa-info-circle'></i> More info";
+    $(document).ready(function(){
+
+        function loading_show(){
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loder.gif' width='30' />").fadeIn('fast');
         }
-        else {
-            ele.style.display = "block";
-            text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
+        function loading_hide(){
+            $('#loading').html("");
         }
-    }*/
 
-    //for more info search
-    /*function toggle1() {
-     var ele = document.getElementById("toggleText1");
-     var text = document.getElementById("displayText1");
-     if(ele.style.display == "block") {
-     ele.style.display = "none";
-     text.html("<i class='fa fa-info-circle'></i> more info");
-     }
-     else {
-     ele.style.display = "block";
-     text.html("<i class='fa fa-info-circle'></i> Less info");
-     }
-     }*/
+        function loadData(){
+            loading_show();
+           /* var book_id=document.frm_search.txt_book.value;
+            var limit=document.frm_search.txt_limit.value;
+            var keyword=document.frm_search.txt_keyword.value;
+            var editor_id=document.frm_search.txt_editor.value;
+            var ques_id=document.frm_search.txt_quesid.value;
+            var page_from=document.frm_search.txt_pagefrom.value;
+            var page_to=document.frm_search.txt_pageto.value;
+            var topic=document.frm_search.txt_topic.value;
+            var tf=$('input[name=chk_tf]').is(':checked')==true?1:0;
+            var ma=$('input[name=chk_ma]').is(':checked')==true?1:0;
+            var sa=$('input[name=chk_sa]').is(':checked')==true?1:0;
+            var fg=$('input[name=chk_fg]').is(':checked')==true?1:0;
+            var sq=$('input[name=chk_sq]').is(':checked')==true?1:0;*/
 
+            $.ajax
+            ({
+                type: "GET",
+                url: "Card/get_credit_card",
+                data: {data:'I Love You'},
+                success: function(msg)
+                {
 
+                    loading_hide();
+                    $("#SearchCard").html(msg);
+
+                }
+            });
+        }
+
+        //loadData();
+    })
 
     $('#SearchCard').on('click', '.displayText', function () {
         var  formData = $(this).data();
