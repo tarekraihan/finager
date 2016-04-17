@@ -1182,6 +1182,7 @@ class Card extends CI_Controller
                     }else{
                         $summary = $row->card_summary;
                     }
+
                     $credit_card .='<div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-3 col-xs-3">
@@ -1193,7 +1194,7 @@ class Card extends CI_Controller
                             </p>
                             <p class="rating text-center">Rated By 5 Person</p>
                             <span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
-                            <span class="more_info_icon"><button class="displayText"  data-card_id="<?php echo $row->id;?>"><i class="fa fa-info-circle"></i> More info</button></span>
+                            <span class="more_info_icon"><button class="displayText"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</button></span>
                         </div>
 
                         <div class="col-sm-9 col-xs-9">
@@ -1440,7 +1441,7 @@ class Card extends CI_Controller
                                             </tr>
                                             <tr>
                                                 <td>Duplicate Statement</td>
-                                                <td><?php echo $row->duplicate_statement;?></td>
+                                                <td>'. $row->duplicate_statement .'</td>
                                             </tr>
                                             <tr>
                                                 <td>Card Cheque Processing Fee</td>
@@ -1472,7 +1473,7 @@ class Card extends CI_Controller
 
                ';
                 }
-        return $credit_card;
+        echo $credit_card;
 
     }
 

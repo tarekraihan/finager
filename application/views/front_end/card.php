@@ -37,21 +37,19 @@
                     <div class="card_query">
                         <p>I Am</p>
                         <div class="query_radio">
-                            <label class="material_radio_group">
-                                <input type="radio" name="iAm" value="generalConsumer" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                Business Person
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                Salaried Person
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                Professional
-                            </label>
+                            <?php
+                                $query= $this->Front_end_select_model->select_all('card_card_user');
+                                foreach($query->result() as $card_user){
+                                    ?>
+                                    <label class="material_radio_group">
+                                        <input type="radio" name="iAm" value="<?php echo $card_user->id;?>" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        <?php echo $card_user->card_user;?>
+                                    </label><br/>
+
+                            <?php
+                                }
+                            ?>
                         </div>
                         <hr/>
                     </div>
@@ -89,6 +87,7 @@
                     <div class="card_query">
                         <p>Want Credit Limit</p>
                         <div class="query_radio">
+
                             <label class="material_radio_group">
                                 <input type="radio" name="WantCreditLimit" value="Excellent" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
@@ -120,21 +119,20 @@
                     <div class="card_query">
                         <p>Looking For</p>
                         <div class="query_radio">
-                            <label class="material_radio_group">
-                                <input type="radio" name="LookingFor" value="Excellent" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                Local Card
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="LookingFor" value="Good" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                Local & International Card
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="LookingFor" value="Fair" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                International Card
-                            </label><br/><br/>
+                            <?php
+                            $query= $this->Front_end_select_model->select_all('card_credit_card_type');
+                            foreach($query->result() as $cc_type){
+                                ?>
+                                <label class="material_radio_group">
+                                    <input type="radio" name="lookingFor" value="<?php echo $cc_type->id;?>" class="material_radiobox"/>
+                                    <span class="material_check_radio"></span>
+                                    <?php echo $cc_type->cc_card_type;?>
+                                </label><br/>
+
+                            <?php
+                            }
+                            ?>
+
                         </div>
                     </div>
                     <div class="more_filter">
@@ -242,44 +240,38 @@
                         <div class="card_query">
                             <p>Card Type</p>
                             <div class="query_radio">
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="CardType" name="CardType" value="Classic" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="CardType">Classic</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="CardType1" name="CardType" value="Gold" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="CardType1">Gold</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="CardType2" name="CardType" value="Platinum" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="CardType2">Platinum</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="CardType3" name="CardType" value="Signature" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="CardType3">Signature</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="CardType4" name="CardType" value="Titanium" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="CardType4">Titanium</label>
-                                </div>
+
+                                <?php
+                                $query= $this->Front_end_select_model->select_all('card_card_type');
+                                foreach($query->result() as $card_type){
+                                    ?>
+                                    <div class="material_checkbox_group">
+                                        <input type="checkbox" id="CardType<?php echo $card_type->id;?>" name="CardType" value="<?php echo $card_type->id;?>" class="material_checkbox" />
+                                        <label class="material_label_checkbox" for="CardType<?php echo $card_type->id;?>"><?php echo $card_type->card_type_name;?></label>
+                                    </div>
+
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                         <hr/>
                         <div class="card_query">
                             <p>Card Issuer</p>
                             <div class="query_radio">
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="noChip" name="CardIssuer" value="noChip" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="noChip">Visa</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="ChipPIN" name="CardIssuer" value="ChipPIN" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="ChipPIN">MasterCard</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="ChipSignature" name="CardIssuer" value="ChipSignature" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="ChipSignature">American Express</label>
-                                </div>
+                                <?php
+                                $query= $this->Front_end_select_model->select_all('card_card_issuer');
+                                foreach($query->result() as $card_issuer){
+                                    ?>
+                                    <label class="material_radio_group">
+                                        <input type="radio" name="CardIssuer" value="<?php echo $card_issuer->id;?>" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        <?php echo $card_issuer->card_issuer_name;?>
+                                    </label><br/>
+
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                         <hr/>
@@ -311,318 +303,8 @@
 
             <!-- Right bar content start -->
             <div class="col-sm-9 col-xs-9" id="SearchCard">
-                <?php
-                $card = $this->Front_end_select_model->select_card_info();
-                foreach($card->result() as $row){
-                    ?>
-                <div class="full-card" >
-                    <div class="row card_right_bar no-margin-lr">
-                        <div class="col-sm-3 col-xs-3">
+                <div id="loading" class="text-center"></div>
 
-                            <img class="img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $row->card_image_name; ?>" />
-                            <img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/BtnCard_apply.png" />
-                            <p class="text-center">
-                                <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
-                            </p>
-                            <p class="rating text-center">Rated By 5 Person</p>
-                            <span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
-                            <span class="more_info_icon"><button class="displayText"  data-card_id="<?php echo $row->id;?>"><i class="fa fa-info-circle"></i> More info</button></span>
-                        </div>
-
-                        <div class="col-sm-9 col-xs-9">
-                            <div class="row">
-                                <div class="col-sm-9 col-xs-9">
-                                    <div class="card_text1">
-                                        <b><?php echo $row->bank_name; ?> <?php echo $row->card_name; ?></b>
-                                        <p class="card_description">
-                                        <?php
-                                        $length = strlen($row->card_summary);
-                                        if($length > 250){
-                                            $rest = substr($row->card_summary, 0,250);
-                                            echo $rest." <a href='".base_url()."en/card_details'>read more..</a>";
-                                        }else{
-                                            echo $row->card_summary;
-                                        }
-                                        /*function trunc($row->card_summary, $max_words) {
-                                            $phrase_array = explode(' ',$phrase);
-                                            if(count($phrase_array) > $max_words && $max_words > 0)
-                                                $phrase = implode(' ',array_slice($phrase_array, 0, $max_words)).'...';
-                                            return $phrase;
-                                        }*/
-                                         ?>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3 col-xs-3">
-                                    <div class="card_text1 card_btn_apllication">
-                                        <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/card_btn_apllication.png" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-2 col-xs-2 w20">
-                                    <div class="card_text2">
-                                        <h5>Purchase Interest Rate</h5>
-                                        <p><?php echo $row->purchase_interest_rate; ?>%,<br> Monthly <?php echo $row->purchase_interest_rate_monthly; ?>%</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2 col-xs-2 w20">
-                                    <div class="card_text2">
-                                        <h5>Balance Transfer Interest Rate</h5>
-                                        <p><?php echo $row->balance_transfer_rate; ?>%,<br> Monthly <?php echo $row->balance_transfer_rate_monthly; ?>%</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2 col-xs-2 w20">
-                                    <div class="card_text2">
-                                        <h5>Cash Advance Interest Rate</h5>
-                                        <p><?php echo $row->cash_advance_interest_rate_yearly; ?>%,<br> Monthly <?php echo $row->cash_advance_interest_rate; ?>%</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2 col-xs-2 w20">
-                                    <div class="card_text2">
-                                        <h5>Cash Advance Limit</h5>
-                                        <p><?php echo $row->cash_advance_limit; ?>%</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2 col-xs-1 w20">
-                                    <div class="card_text2">
-                                        <h5>Annual Fee</h5>
-                                        <p>BDT <?php echo $row->annual_fee; ?>% +<?php echo $row->annual_fee_vat; ?></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-
-
-                    <!-- More Info Tab content start -->
-                    <div class="col-sm-12 card_more_info">
-                        <div id="toggleText<?php echo $row->id; ?>" style="display: none">
-                            <section id="tab">
-                                <!-- Nav tabs -->
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#ProsCons" aria-controls="home" role="tab" data-toggle="tab">Pros & cons</a></li>
-                                    <li role="presentation"><a href="#Review" aria-controls="profile" role="tab" data-toggle="tab">Review</a></li>
-                                    <li role="presentation"><a href="#UserReviews" aria-controls="messages" role="tab" data-toggle="tab">User reviews</a></li>
-                                    <li role="presentation"><a href="#Basics" aria-controls="settings" role="tab" data-toggle="tab">Basics</a></li>
-                                    <li role="presentation"><a href="#FeesCharges" aria-controls="settings" role="tab" data-toggle="tab">Fees & Charges </a></li>
-                                    <li role="presentation"><a href="#Rates" aria-controls="settings" role="tab" data-toggle="tab">Rates</a></li>
-                                    <li role="presentation"><a href="#Benefits" aria-controls="settings" role="tab" data-toggle="tab">Benefits</a></li>
-                                    <li role="presentation"><a href="#Eligibility" aria-controls="settings" role="tab" data-toggle="tab">Eligibility</a></li>
-                                </ul>
-
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="ProsCons">
-                                        <h3>Pros & cons</h3>
-                                        <div class="col-sm-6">
-                                            <div class="tab_body">
-                                                <h4>What's good?</h4>
-                                                <hr/>
-                                                <?php echo $row->pros;?>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="tab_body">
-                                                <h4>What's not so good?</h4>
-                                                <hr/>
-                                                <ul>
-                                                    <li>	Monthly fee 10 taka+vat for sms service & transaction alert.</li>
-                                                    <li>	0.35 paisa for every 100/= taka will be deducted for insurance program.</li>
-                                                    <li>	Out of 18    transactions, there must be 10 POS transaction to get waiver on annual fee.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="pull-right">
-                                            <img src="<?php echo base_url();?>resource/front_end/images/card_btn_apllication.png" />
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane" id="Review">
-                                        <h3>Our review of the NAB Low Rate Card</h3>
-                                        <div class="col-sm-12">
-                                            <div class="tab_body">
-                                                <h4>Review</h4>
-                                                <hr/>
-                                                <?php echo $row->review;?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane" id="UserReviews">
-                                        1914 translation by H. Rackham<br/>
-                                        "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane" id="Basics">
-                                        <section id="card_details_basic">
-                                            <div class="card_details_pronsCons">
-                                                <h4>Basics</h4>
-                                                <div class="prosConsHr"></div>
-                                                <div class="prosCons_body">
-                                                    <table class="table table-striped table-bordered">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>Minimum Income</td>
-                                                            <td><?php echo 'BDT '. $row->income_range_min_salaried." and ".$row->income_range_min_business;?> (both salaried & self-employed)</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Minimum Age</td>
-
-                                                            <td><?php echo $row->age_limit_min;?> Years</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Minimum Credit</td>
-                                                            <td><?php echo $row->credit_limit_min_salaried;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Maximum Credit</td>
-                                                            <td><?php echo $row->credit_limit_max_salaried;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Year of Experience on Earning</td>
-                                                            <td>Latest <?php echo $row->experience_salaried;?> months’ bank statement for salaried person Latest <?php echo $row->experience_business;?> Year bank statement for business person</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Maximum Interest Free Days</td>
-                                                            <td><?php echo $row->interest_free_pefiod_max;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Card Use</td>
-                                                            <td><?php echo $row->cc_card_type;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Card Issuer</td>
-                                                            <td><?php echo $row->card_issuer_name;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Card Type</td>
-                                                            <td><?php echo $row->card_type_name;?></td>
-
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane" id="FeesCharges">
-                                        <section id="card_details_FeesCharges">
-                                            <div class="card_details_pronsCons">
-                                                <h4>Fees & Charges</h4>
-                                                <div class="prosConsHr"></div><br/>
-                                                <div class="prosCons_body2">
-                                                    <table class="table table-striped table-bordered">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>Basic Card Annual Fee</td>
-                                                            <td>BDT <?php echo $row->basic_card_annual_fee;?> + <?php echo $row->basic_card_annual_fee_plus;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Supplementary Card Annual Fee</td>
-                                                            <td><?php echo $row->supplementary_card_annual_fee;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Purchase Fee</td>
-                                                            <td><?php echo $row->purchase_fee;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Balance Transfer Fee</td>
-                                                            <td><?php echo $row->balance_transfer_fee;?> %</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Cash Advance Fee
-                                                                <ul>
-                                                                    <li>From own ATM</li>
-                                                                    <li>From other bank ATM</li>
-                                                                    <li>International</li>
-                                                                </ul>
-                                                            </td>
-                                                            <td><br/>
-                                                                <ul>
-                                                                    <li><?php echo $row->cash_advance_fee_own_atm;?> %</li>
-                                                                    <li><?php echo $row->cash_advance_fee_other_atm;?>% + <?php echo $row->cash_advance_fee_other_atm_plus;?></li>
-                                                                    <li>USD <?php echo $row->cash_advance_fee_international_usd;?> or <?php echo $row->cash_advance_fee_international_percentage;?>% <?php echo $row->cash_advance_fee_international_remarks;?></li>
-                                                                </ul>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Late Payment Fee</td>
-                                                            <td>BDT <?php echo $row->late_payment_fee_bdt;?> or USD <?php echo $row->late_payment_fee_usd;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Card Replacement Fee</td>
-                                                            <td>BDT <?php echo $row->card_replacement_fee;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Pin Replacement Fee</td>
-                                                            <td>BDT <?php echo $row->pin_replacement_fee;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Over limit Charge</td>
-                                                            <td>BDT <?php echo $row->over_limit_charge_bdt;?> or USD <?php echo $row->over_limit_charge_usd;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Transaction Alert Service</td>
-                                                            <td>BDT <?php echo $row->transaction_alert_service;?> +<?php echo $row->transaction_alert_service_plus;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Credit Assurance Program Fee</td>
-                                                            <td><?php echo $row->credit_assurance_program_fee;?>% <?php echo $row->credit_assurance_program_fee_remarks;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Monthly E-Statement Fee</td>
-                                                            <td>BDT <?php echo $row->monthly_e_statement_fee;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Cheque Book Fee</td>
-                                                            <td><?php echo $row->check_book_fee;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Minimum Payment</td>
-                                                            <td>BDT <?php echo $row->minimum_payment_bdt;?> or USD <?php echo $row->minimum_payment_usd;?> or <?php echo $row->minimum_payment_percentage;?>% <?php echo $row->	minimum_payment_remarks;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Cheque Return Fee</td>
-                                                            <td><?php echo $row->cheque_return_fee;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Duplicate Statement</td>
-                                                            <td><?php echo $row->duplicate_statement;?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Card Cheque Processing Fee</td>
-                                                            <td><?php echo $row->card_cheque_processing_fee;?>%</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Card Cheque Issuing Fee</td>
-                                                            <td><?php echo $row->card_cheque_issuing_fee;?></td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                        </section>
-
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane" id="Rates">...</div>
-                                    <div role="tabpanel" class="tab-pane" id="Benefits">...</div>
-                                    <div role="tabpanel" class="tab-pane" id="Eligibility">
-                                        <?php
-                                            echo $row->eligibility;
-                                        ?>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                    <!-- More Info Tab content end -->
-                </div>
-
-                <?php
-
-                }
-                ?>
 
             </div>
             <!-- Right bar content end -->
@@ -638,7 +320,7 @@
     $(document).ready(function(){
 
         function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loder.gif' width='30' />").fadeIn('fast');
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30' />").fadeIn('fast');
         }
         function loading_hide(){
             $('#loading').html("");
@@ -662,21 +344,23 @@
 
             $.ajax
             ({
-                type: "GET",
-                url: "Card/get_credit_card",
+                type: "POST",
+                url: "http://localhost/git/finager/Card/get_credit_card",
                 data: {data:'I Love You'},
                 success: function(msg)
                 {
 
                     loading_hide();
+                   // console.log(msg);
+
                     $("#SearchCard").html(msg);
 
                 }
             });
         }
 
-        //loadData();
-    })
+        loadData();
+    });
 
     $('#SearchCard').on('click', '.displayText', function () {
         var  formData = $(this).data();

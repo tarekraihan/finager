@@ -27,4 +27,12 @@ LEFT JOIN card_card_issuer ON card_card_issuer.id=card_card_informations.cc_issu
         return $query;
     }
 
+    function select_all($table=null)
+    {
+        $sql="SELECT * FROM $table ";
+        $query=$this->db->query($sql);
+        return $query;
+    }
+
+
 }
