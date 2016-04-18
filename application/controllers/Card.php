@@ -946,7 +946,7 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtBankName', ' Bank Name', 'trim|required');
             $this->form_validation->set_rules('txtCardName', ' Card Name', 'trim|required');
             $this->form_validation->set_rules('txtCardType', ' Card Type', 'trim|required');
-            $this->form_validation->set_rules('txtCardCategory', ' Credit Card Category', 'trim|required');
+            $this->form_validation->set_rules('txtCreditCardType', ' Credit Card Category', 'trim|required');
             $this->form_validation->set_rules('txtCardIssuer', ' Card Issuer', 'trim|required');
             $this->form_validation->set_rules('txtIncomeRangeMinBusiness', '  Income Range MinBusiness', 'trim|required');
             $this->form_validation->set_rules('txtIncomeRangeMaxBusiness', 'Income Range Max Business', 'trim|required');
@@ -1020,8 +1020,8 @@ class Card extends CI_Controller
                 $card_benifit =substr($card_benifit,0,-1);
                 $this->Common_model->data = array(
                     'bank_id' =>$this->input->post('txtBankName'),
-                    'cc_type_id'=> htmlentities($this->input->post('txtCardType')),
-                    'card_category'=>htmlentities($this->input->post('txtCreditCardType')),
+                    'card_type_id'=> htmlentities($this->input->post('txtCardType')),
+                    'cc_type_id'=>htmlentities($this->input->post('txtCreditCardType')),
                     'card_name'=>htmlentities($this->input->post('txtCardName')),
                     'card_image_name'=>htmlentities($upload_result['file_name']),
                     //`card_image_url`,

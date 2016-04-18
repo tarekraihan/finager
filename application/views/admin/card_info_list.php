@@ -75,7 +75,7 @@ if(isset($_GET['card_id']))
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Bank Name</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Issuer</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Type</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> CC Category</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Credit Card Type</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created By</th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 

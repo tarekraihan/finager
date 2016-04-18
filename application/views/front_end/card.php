@@ -345,7 +345,7 @@
             $.ajax
             ({
                 type: "POST",
-                url: "http://localhost/git/finager/Card/get_credit_card",
+                url: "<?php echo base_url();?>card/get_credit_card",
                 data: {data:'I Love You'},
                 success: function(msg)
                 {

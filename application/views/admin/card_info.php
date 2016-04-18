@@ -135,11 +135,11 @@
                                                 <section class="col col-6">
                                                     <label class="label">Credit Card Category</label>
                                                     <label class="select" >
-                                                        <select name="txtCardCategory">
+                                                        <select name="txtCreditCardType">
                                                             <?php echo $this->Select_model->select_credit_card_type();?>
                                                         </select>
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtCardCategory');?></label>
+                                                    <label class="red"><?php echo form_error('txtCreditCardType');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Credit Card Issuer</label>
@@ -163,7 +163,7 @@
                                                 <section class="col col-6">
                                                     <label class="label"> Card Image</label>
                                                     <div class="input input-file">
-                                                        <span class="button"><input type="file" id="file" name="file"  onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text" placeholder="Include some files" readonly="">
+                                                        <span class="button"><input type="file" id="file" required="required" name="file"  onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text" placeholder="Include some files" readonly="">
                                                     </div>
                                                     <label class="red"><?php echo form_error('file');?></label>
                                                 </section>
@@ -265,7 +265,7 @@
                                                     <label class="red"><?php echo form_error('txtCreditLimitMaxSalaried');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Supplementary</label>
+                                                    <label class="label">Supplementary Card</label>
                                                     <label class="input">
                                                         <input type="text" maxlength="200" name="txtSupplementary"  value="<?php echo set_value('txtSupplementary'); ?>">
                                                     </label>
