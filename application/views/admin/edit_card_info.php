@@ -13,7 +13,7 @@ if(isset($_GET['id']))
     $row['id']='';
     $row['bank_id']='';
     $row['cc_type_id']='';
-    $row['card_category']='';
+    $row['card_type_id']='';
     $row['card_name']='';
     //$row['card_user_id']='';
     $row['income_range_min_business']='';
@@ -172,7 +172,7 @@ if(isset($_GET['id']))
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Bank Name</label>
-                                                    <input type="hidden" value="<?php// echo $row['id'];?>" name="txtCardId">
+                                                    <input type="hidden" value="<?php echo $row['id'];?>" name="txtCardId">
                                                     <label class="select">
                                                         <select name="txtBankName">
                                                             <option value=''>-- Select One --</option>
@@ -196,7 +196,7 @@ if(isset($_GET['id']))
                                                             $result=$this->Select_model->select_all('card_card_type');
                                                             foreach($result->result() as $row1){
                                                                 ?>
-                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["cc_type_id"]) && $row["cc_type_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtCardType",$row1->id)?>><?php echo $row1->card_type_name ; ?></option>';
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["card_type_id"]) && $row["card_type_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtCardType",$row1->id)?>><?php echo $row1->card_type_name ; ?></option>';
                                                            <?php
                                                             }
                                                             ?>
@@ -214,7 +214,7 @@ if(isset($_GET['id']))
                                                             $result=$this->Select_model->select_all('card_credit_card_type');
                                                             foreach($result->result() as $row1){
                                                                 ?>
-                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["card_category"]) && $row["card_category"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtCreditCardType",$row1->id)?>><?php echo $row1->cc_card_type ; ?></option>';
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["cc_type_id"]) && $row["cc_type_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtCreditCardType",$row1->id)?>><?php echo $row1->cc_card_type ; ?></option>';
                                                            <?php
                                                             }
                                                             ?>
@@ -694,6 +694,45 @@ if(isset($_GET['id']))
                                                     </div>
                                                     <!-- end widget content -->
                                                     <label class="red"><?php echo form_error('txtCons');?></label>
+                                                </div>
+                                                <!-- end widget div -->
+
+                                            </div>
+                                            <!-- end widget -->
+
+                                        </article>
+                                        <article class="col-sm-12 col-md-12 col-lg-12">
+
+                                            <!-- Widget ID (each widget will need unique ID)-->
+                                            <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                                                <header>
+                                                    <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                                                    <h2>Benefit</h2>
+
+                                                </header>
+
+                                                <!-- widget div-->
+                                                <div>
+
+                                                    <!-- widget edit box -->
+                                                    <div class="jarviswidget-editbox">
+                                                        <!-- This area used as dropdown edit box -->
+
+                                                    </div>
+                                                    <!-- end widget edit box -->
+
+                                                    <!-- widget content -->
+                                                    <div class="widget-body no-padding">
+                                                        <section class="col col-12">
+
+                                                            <label class="input" style="width:100%;">
+                                                                <textarea type="text" id="txtBenefit" class="ckeditor" name="txtBenefit"><?php echo set_value('txtBenefit'); ?></textarea>
+                                                            </label>
+                                                        </section>
+
+                                                    </div>
+                                                    <!-- end widget content -->
+                                                    <label class="red"><?php echo form_error('txtBenefit');?></label>
                                                 </div>
                                                 <!-- end widget div -->
 

@@ -275,14 +275,14 @@
 
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Year of Experience Salaried </label>
+                                                    <label class="label">Year of Experience Salaried (Month)</label>
                                                     <label class="input">
                                                         <input type="text" maxlength="10" name="txtYearOfExperienceSalaried" value="<?php echo set_value('txtYearOfExperienceSalaried'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtYearOfExperienceSalaried');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Year of Experience Business</label>
+                                                    <label class="label">Year of Experience Business(Year)</label>
                                                     <label class="input">
                                                         <input type="text" maxlength="10" name="txtYearOfExperienceBusiness" value="<?php echo set_value('txtYearOfExperienceBusiness'); ?>">
                                                     </label>

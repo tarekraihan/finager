@@ -195,11 +195,7 @@ class Select_Model extends CI_Model
 
     public function select_card_info_list()//To show Card Info list
     {
-        $sql="SELECT `card_card_informations`.`id`,`card_card_informations`.`card_name`,`card_card_informations`.`card_image_name`,`card_bank`.`bank_name`,
-`card_card_issuer`.`card_issuer_name`,`card_card_type`.`card_type_name`,`card_credit_card_type`.`cc_card_type`,`tbl_admin_user`.`first_name`,
-`tbl_admin_user`.`last_name` FROM `card_card_informations` INNER JOIN `card_bank`ON `card_bank`.`id` = `card_card_informations`.`bank_id` INNER JOIN
-`card_card_issuer` ON `card_card_issuer`.id = `card_card_informations`.`cc_issuer_id` INNER JOIN `card_card_type` ON `card_card_type`.`id`=`card_card_informations`.`card_type_id`
-INNER JOIN `card_credit_card_type` ON `card_credit_card_type`.`id` = `card_card_informations`.`cc_type_id` INNER JOIN `tbl_admin_user` ON `tbl_admin_user`.`id` = `card_card_informations`.`created_by`";
+        $sql="SELECT card_card_informations.id,card_card_informations.card_image_name,card_card_informations.card_name, card_bank.bank_name,card_card_issuer.card_issuer_name, card_card_type.card_type_name,card_credit_card_type.cc_card_type, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `card_card_informations` INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_card_issuer ON card_card_issuer.id=card_card_informations.cc_issuer_id INNER JOIN card_card_type ON card_card_type.id=card_card_informations.card_type_id INNER JOIN card_credit_card_type ON card_credit_card_type.id=card_card_informations.cc_type_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=card_card_informations.created_by";
         $query=$this->db->query($sql);
         $result="";
         if($query->num_rows() > 0)

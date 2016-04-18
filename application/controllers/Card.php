@@ -1182,19 +1182,24 @@ class Card extends CI_Controller
                     }else{
                         $summary = $row->card_summary;
                     }
+                    $card_image='';
+                    if($row->card_image_name == '&lt;'){
+                        $card_image = ' <img class="img-responsive" src="'.base_url().'resource/front_end/images/demo_card.png" />';
+                    }else{
+                        $card_image ='<img class="img-responsive" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" />';
+                    }
 
                     $credit_card .='<div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-3 col-xs-3">
-
-                            <img class="img-responsive" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" />
+                            '.$card_image.'
                             <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                             </p>
                             <p class="rating text-center">Rated By 5 Person</p>
                             <span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
-                            <span class="more_info_icon"><button class="displayText"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</button></span>
+                            <span class="more_info_icon"><a class="displayText" style="cursor:pointer"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                         </div>
 
                         <div class="col-sm-9 col-xs-9">
@@ -1208,7 +1213,7 @@ class Card extends CI_Controller
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text1 card_btn_apllication">
-                                        <img class="img-responsive" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
+                                        <img class="img-responsive" src="'.base_url().'resource/front_end/images/card_btn_application.png" />
                                     </div>
                                 </div>
                             </div>
@@ -1257,19 +1262,19 @@ class Card extends CI_Controller
                     <section id="tab">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#ProsCons" aria-controls="home" role="tab" data-toggle="tab">Pros & cons</a></li>
-                        <li role="presentation"><a href="#Review" aria-controls="profile" role="tab" data-toggle="tab">Review</a></li>
-                        <li role="presentation"><a href="#UserReviews" aria-controls="messages" role="tab" data-toggle="tab">User reviews</a></li>
-                        <li role="presentation"><a href="#Basics" aria-controls="settings" role="tab" data-toggle="tab">Basics</a></li>
-                        <li role="presentation"><a href="#FeesCharges" aria-controls="settings" role="tab" data-toggle="tab">Fees & Charges </a></li>
-                        <li role="presentation"><a href="#Rates" aria-controls="settings" role="tab" data-toggle="tab">Rates</a></li>
-                        <li role="presentation"><a href="#Benefits" aria-controls="settings" role="tab" data-toggle="tab">Benefits</a></li>
-                        <li role="presentation"><a href="#Eligibility" aria-controls="settings" role="tab" data-toggle="tab">Eligibility</a></li>
+                        <li role="presentation" class="active"><a href="#ProsCons'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Pros & cons</a></li>
+                        <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Review</a></li>
+                        <li role="presentation"><a href="#UserReviews'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">User reviews</a></li>
+                        <li role="presentation"><a href="#Basics'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Basics</a></li>
+                        <li role="presentation"><a href="#FeesCharges'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Fees & Charges </a></li>
+                        <li role="presentation"><a href="#Rates'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Rates</a></li>
+                        <li role="presentation"><a href="#Benefits'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Benefits</a></li>
+                        <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Eligibility</a></li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="ProsCons">
+                        <div role="tabpanel" class="tab-pane active" id="ProsCons'.$row->id.'">
                             <h3>Pros & cons</h3>
                             <div class="col-sm-6">
                                 <div class="tab_body">
@@ -1290,10 +1295,10 @@ class Card extends CI_Controller
                                 </div>
                             </div>
                             <div class="pull-right">
-                                <img src="'. base_url().'esource/front_end/images/card_btn_apllication.png" />
+                                <img src="'. base_url().'resource/front_end/images/card_btn_application.png" />
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="Review">
+                        <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
                             <h3>Our review of the NAB Low Rate Card</h3>
                             <div class="col-sm-12">
                                 <div class="tab_body">
@@ -1303,11 +1308,11 @@ class Card extends CI_Controller
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="UserReviews">
+                        <div role="tabpanel" class="tab-pane" id="UserReviews'.$row->id.'">
                             1914 translation by H. Rackham<br/>
                             "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="Basics">
+                        <div role="tabpanel" class="tab-pane" id="Basics'.$row->id.'">
                             <section id="card_details_basic">
                                 <div class="card_details_pronsCons">
                                     <h4>Basics</h4>
@@ -1334,7 +1339,7 @@ class Card extends CI_Controller
                                             </tr>
                                             <tr>
                                                 <td>Year of Experience on Earning</td>
-                                                <td>Latest '.$row->experience_salaried.' months’ bank statement for salaried person Latest '.$row->experience_business.'ear bank statement for business person</td>
+                                                <td>Latest '.$row->experience_salaried.' month\'s bank statement for salaried person Latest '.$row->experience_business.' year bank statement for business person</td>
                                             </tr>
                                             <tr>
                                                 <td>Maximum Interest Free Days</td>
@@ -1359,7 +1364,7 @@ class Card extends CI_Controller
                                 </div>
                             </section>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="FeesCharges">
+                        <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
                             <section id="card_details_FeesCharges">
                                 <div class="card_details_pronsCons">
                                     <h4>Fees & Charges</h4>
@@ -1459,9 +1464,12 @@ class Card extends CI_Controller
                             </section>
 
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="Rates">...</div>
-                        <div role="tabpanel" class="tab-pane" id="Benefits">...</div>
-                        <div role="tabpanel" class="tab-pane" id="Eligibility">
+                        <div role="tabpanel" class="tab-pane" id="Rates'.$row->id.'">...</div>
+                        <div role="tabpanel" class="tab-pane" id="Benefits'.$row->id.'">
+                            <h4>Benefits</h4>
+                        '.$row->benifit_details.'
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="Eligibility'.$row->id.'">
                            '.$row->eligibility.'
                         </div>
                     </div>

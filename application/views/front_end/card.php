@@ -33,273 +33,283 @@
             </div>
             <!-- Left bar query content start -->
             <div class="col-sm-3 col-xs-3">
-                <div class="card_left_bar">
-                    <div class="card_query">
-                        <p>I Am</p>
-                        <div class="query_radio">
-                            <?php
-                                $query= $this->Front_end_select_model->select_all('card_card_user');
-                                foreach($query->result() as $card_user){
-                                    ?>
-                                    <label class="material_radio_group">
-                                        <input type="radio" name="iAm" value="<?php echo $card_user->id;?>" class="material_radiobox"/>
-                                        <span class="material_check_radio"></span>
-                                        <?php echo $card_user->card_user;?>
-                                    </label><br/>
-
-                            <?php
-                                }
-                            ?>
+            <div class="card_left_bar">
+            <div class="card_query">
+                <p>I Am</p>
+                <div class="query_radio">
+                    <label class="material_radio_group">
+                        <input type="radio" name="iAm" value="generalConsumer" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        Business Person
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        Salaried Person
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        Professional
+                    </label>
+                </div>
+                <hr/>
+            </div>
+            <div class="card_query">
+                <p>My Income Range</p>
+                <div class="query_radio">
+                    <label class="material_radio_group">
+                        <input type="radio" name="MyIncomeRange" value="10000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 10000- BDT 19999
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="MyIncomeRange" value="20000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 20000- BDT 49999
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="MyIncomeRange" value="50000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 50000- BDT 199999
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="MyIncomeRange" value="200000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 200000- BDT 500000
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="MyIncomeRange" value="500000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 500000+
+                    </label>
+                </div>
+                <hr/>
+            </div>
+            <div class="card_query">
+                <p>Want Credit Limit</p>
+                <div class="query_radio">
+                    <label class="material_radio_group">
+                        <input type="radio" name="WantCreditLimit" value="10000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 10000- BDT 49999
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="WantCreditLimit" value="50000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 50000- BDT 99999
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="WantCreditLimit" value="100000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 100000- BDT 199999
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="WantCreditLimit" value="200000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 200000- BDT 500000
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="WantCreditLimit" value="500000" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        BDT 500000+
+                    </label>
+                </div>
+                <hr/>
+            </div>
+            <div class="card_query">
+                <p>Looking For</p>
+                <div class="query_radio">
+                    <label class="material_radio_group">
+                        <input type="radio" name="LookingFor" value="local_card" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        Local Card
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="LookingFor" value="local_international" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        Local & International Card
+                    </label><br/>
+                    <label class="material_radio_group">
+                        <input type="radio" name="LookingFor" value="international" class="material_radiobox"/>
+                        <span class="material_check_radio"></span>
+                        International Card
+                    </label><br/><br/>
+                </div>
+            </div>
+            <div class="more_filter">
+                <p><a id="displayMoreFilter" href="javascript:toggle2();">More Filter <i class="fa fa-sort-desc fa-lg"></i></a></p>
+            </div><br/>
+            <div id="moreFilterText" style="display: none">
+                <div class="card_query">
+                    <p>Featurs& Benefits</p>
+                    <div class="query_radio">
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits" name="FeatursBenefits" value="23" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits">Waiver on Annual Fee</label>
                         </div>
-                        <hr/>
-                    </div>
-                    <div class="card_query">
-                        <p>My Income Range</p>
-                        <div class="query_radio">
-                            <label class="material_radio_group">
-                                <input type="radio" name="MyIncomeRange" value="Excellent" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 10000- BDT 19999
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="MyIncomeRange" value="Good" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 20000- BDT 49999
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="MyIncomeRange" value="Fair" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 50000- BDT 199999
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="MyIncomeRange" value="Bad" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 200000- BDT 500000
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="MyIncomeRange" value="NoCreditLimitHistory" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 500000+
-                            </label>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits1" name="FeatursBenefits" value="22" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits1">Low Interest Rate</label>
                         </div>
-                        <hr/>
-                    </div>
-                    <div class="card_query">
-                        <p>Want Credit Limit</p>
-                        <div class="query_radio">
-
-                            <label class="material_radio_group">
-                                <input type="radio" name="WantCreditLimit" value="Excellent" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 10000- BDT 19999
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="WantCreditLimit" value="Good" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 20000- BDT 49999
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="WantCreditLimit" value="Fair" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 50000- BDT 199999
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="WantCreditLimit" value="Bad" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 200000- BDT 500000
-                            </label><br/>
-                            <label class="material_radio_group">
-                                <input type="radio" name="WantCreditLimit" value="NoCreditLimitHistory" class="material_radiobox"/>
-                                <span class="material_check_radio"></span>
-                                BDT 500000+
-                            </label>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits2" name="FeatursBenefits" value="21" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits2">Discounts</label>
                         </div>
-                        <hr/>
-                    </div>
-                    <div class="card_query">
-                        <p>Looking For</p>
-                        <div class="query_radio">
-                            <?php
-                            $query= $this->Front_end_select_model->select_all('card_credit_card_type');
-                            foreach($query->result() as $cc_type){
-                                ?>
-                                <label class="material_radio_group">
-                                    <input type="radio" name="lookingFor" value="<?php echo $cc_type->id;?>" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    <?php echo $cc_type->cc_card_type;?>
-                                </label><br/>
-
-                            <?php
-                            }
-                            ?>
-
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits3" name="FeatursBenefits" value="20" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits3">Fund Transfer Facility</label>
                         </div>
-                    </div>
-                    <div class="more_filter">
-                        <p><a id="displayMoreFilter" href="javascript:toggle2();">More Filter <i class="fa fa-sort-desc fa-lg"></i></a></p>
-                    </div><br/>
-                    <div id="moreFilterText" style="display: none">
-                        <div class="card_query"  >
-                            <p>Features & Benefits</p>
-                            <div class="query_radio">
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits" name="FeatursBenefits" value="balanceTransferFeeNone" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits">Waiver on Annual Fee</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits1" name="FeatursBenefits" value="balanceTransferFee3" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits1">Low Interest Rate</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits2" name="FeatursBenefits" value="balanceTransferFee4" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits2">Discounts</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits3" name="FeatursBenefits" value="balanceTransferFee5" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits3">Fund Transfer Facility</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits4" name="FeatursBenefits" value="foreignTransactionFeeNone" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits4">Airport Lounge Facility & Priority Pass</label>
-                                </div><br/>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits5" name="FeatursBenefits" value="foreignTransactionFee1" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits5">Installment Payment for bill & Purchase</label>
-                                </div><br/>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits6" name="FeatursBenefits" value="foreignTransactionFee2" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits6">Reward Program</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits7" name="FeatursBenefits" value="foreignTransactionFee3" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits7">Cashback/Rebate</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits8" name="FeatursBenefits" value="foreignTransactionFee1" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits8">No Issuance Fee</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits9" name="FeatursBenefits" value="foreignTransactionFee2" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits9">Travel Benefit</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits10" name="FeatursBenefits" value="foreignTransactionFee3" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits10">Worldwide Cash Advance Facility</label>
-                                </div><br/>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits11" name="FeatursBenefits" value="foreignTransactionFee3" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits11">Convenient Payment Option</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits12" name="FeatursBenefits" value="foreignTransactionFee1" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits12">Zero Cash Advance Fee</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits13" name="FeatursBenefits" value="foreignTransactionFee2" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits13">Multiple Supplementary Card</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits14" name="FeatursBenefits" value="foreignTransactionFee3" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits14">Credit Assurance Program</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits15" name="FeatursBenefits" value="foreignTransactionFee2" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits15">Accidental Death Insurance Coverage</label>
-                                </div><br/>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits16" name="FeatursBenefits" value="foreignTransactionFee3" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits16">Travel Accident Insurance</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits17" name="FeatursBenefits" value="foreignTransactionFee1" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits17">Self Set Limit</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits18" name="FeatursBenefits" value="foreignTransactionFee2" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits18">Free Supplementary Card</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits19" name="FeatursBenefits" value="foreignTransactionFee3" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits19">Auto Debit Payment Service</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits20" name="FeatursBenefits" value="foreignTransactionFee3" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits20">Global Emergency Assistance Service</label>
-                                </div><br/>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits21" name="FeatursBenefits" value="foreignTransactionFee1" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits21">Utility Bill Pay Service</label>
-                                </div>
-                                <div class="material_checkbox_group">
-                                    <input type="checkbox" id="FeatursBenefits22" name="FeatursBenefits" value="foreignTransactionFee2" class="material_checkbox" />
-                                    <label class="material_label_checkbox" for="FeatursBenefits22">Cheque Book Facility</label>
-                                </div>
-                            </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits4" name="FeatursBenefits" value="19" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits4">Airport Lounge Facility & Priority Pass</label>
+                        </div><br/>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits5" name="FeatursBenefits" value="18" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits5">Installment Payment for bill & Purchase</label>
+                        </div><br/>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits6" name="FeatursBenefits" value="17" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits6">Reward Program</label>
                         </div>
-                        <hr/>
-                        <div class="card_query">
-                            <p>Card Type</p>
-                            <div class="query_radio">
-
-                                <?php
-                                $query= $this->Front_end_select_model->select_all('card_card_type');
-                                foreach($query->result() as $card_type){
-                                    ?>
-                                    <div class="material_checkbox_group">
-                                        <input type="checkbox" id="CardType<?php echo $card_type->id;?>" name="CardType" value="<?php echo $card_type->id;?>" class="material_checkbox" />
-                                        <label class="material_label_checkbox" for="CardType<?php echo $card_type->id;?>"><?php echo $card_type->card_type_name;?></label>
-                                    </div>
-
-                                <?php
-                                }
-                                ?>
-                            </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits7" name="FeatursBenefits" value="16" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits7">Cashback/Rebate</label>
                         </div>
-                        <hr/>
-                        <div class="card_query">
-                            <p>Card Issuer</p>
-                            <div class="query_radio">
-                                <?php
-                                $query= $this->Front_end_select_model->select_all('card_card_issuer');
-                                foreach($query->result() as $card_issuer){
-                                    ?>
-                                    <label class="material_radio_group">
-                                        <input type="radio" name="CardIssuer" value="<?php echo $card_issuer->id;?>" class="material_radiobox"/>
-                                        <span class="material_check_radio"></span>
-                                        <?php echo $card_issuer->card_issuer_name;?>
-                                    </label><br/>
-
-                                <?php
-                                }
-                                ?>
-                            </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits8" name="FeatursBenefits" value="15" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits8">No Issuance Fee</label>
                         </div>
-                        <hr/>
-                        <div class="card_query">
-                            <p>Maximum Interest Free Period</p>
-                            <div class="query_radio">
-                                <label class="material_radio_group">
-                                    <input type="radio" name="MaximumInterestFreePeriod" value="PhotoCardsOnly" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    15-30 Days
-                                </label><br/>
-                                <label class="material_radio_group">
-                                    <input type="radio" name="MaximumInterestFreePeriod" value="AllCardsPhoto" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    31-45 Days
-                                </label><br/>
-                                <label class="material_radio_group">
-                                    <input type="radio" name="MaximumInterestFreePeriod" value="AllCardsPhoto" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    More than 45 Days
-                                </label><br/>
-                            </div>
-                            <hr/>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits9" name="FeatursBenefits" value="14" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits9">Travel Benefit</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits10" name="FeatursBenefits" value="13" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits10">Worldwide Cash Advance Facility</label>
+                        </div><br/>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits11" name="FeatursBenefits" value="12" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits11">Convenient Payment Option</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits12" name="FeatursBenefits" value="11" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits12">Zero Cash Advance Fee</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits13" name="FeatursBenefits" value="10" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits13">Multiple Supplementary Card</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits14" name="FeatursBenefits" value="9" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits14">Credit Assurance Program</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits15" name="FeatursBenefits" value="8" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits15">Accidental Death Insurance Coverage</label>
+                        </div><br/>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits16" name="FeatursBenefits" value="7" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits16">Travel Accident Insurance</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits17" name="FeatursBenefits" value="6" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits17">Self Set Limit</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits18" name="FeatursBenefits" value="5" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits18">Free Supplementary Card</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits19" name="FeatursBenefits" value="4" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits19">Auto Debit Payment Service</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits20" name="FeatursBenefits" value="3" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits20">Global Emergency Assistance Service</label>
+                        </div><br/>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits21" name="FeatursBenefits" value="2" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits21">Utility Bill Pay Service</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="FeatursBenefits22" name="FeatursBenefits" value="1" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="FeatursBenefits22">Cheque Book Facility</label>
                         </div>
                     </div>
                 </div>
+                <hr/>
+                <div class="card_query">
+                    <p>Maximum Interest Free Period</p>
+                    <div class="query_radio">
+                        <label class="material_radio_group">
+                            <input type="radio" name="MaximumInterestFreePeriod" value="PhotoCardsOnly" class="material_radiobox"/>
+                            <span class="material_check_radio"></span>
+                            15-30 Days
+                        </label><br/>
+                        <label class="material_radio_group">
+                            <input type="radio" name="MaximumInterestFreePeriod" value="AllCardsPhoto" class="material_radiobox"/>
+                            <span class="material_check_radio"></span>
+                            31-45 Days
+                        </label><br/>
+                        <label class="material_radio_group">
+                            <input type="radio" name="MaximumInterestFreePeriod" value="AllCardsPhoto" class="material_radiobox"/>
+                            <span class="material_check_radio"></span>
+                            More than 45 Days
+                        </label><br/>
+                    </div>
+
+                </div>
+                <hr/>
+                <div class="card_query">
+                    <p>Card Type</p>
+                    <div class="query_radio">
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="CardType" name="CardType" value="Classic" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="CardType">Classic</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="CardType1" name="CardType" value="Gold" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="CardType1">Gold</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="CardType2" name="CardType" value="Platinum" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="CardType2">Platinum</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="CardType3" name="CardType" value="Signature" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="CardType3">Signature</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="CardType4" name="CardType" value="Titanium" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="CardType4">Titanium</label>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="card_query">
+                    <p>Card Issuer</p>
+                    <div class="query_radio">
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="noChip" name="CardIssuer" value="noChip" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="noChip">Visa</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="ChipPIN" name="CardIssuer" value="ChipPIN" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="ChipPIN">MasterCard</label>
+                        </div>
+                        <div class="material_checkbox_group">
+                            <input type="checkbox" id="ChipSignature" name="CardIssuer" value="ChipSignature" class="material_checkbox" />
+                            <label class="material_label_checkbox" for="ChipSignature">American Express</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
             </div>
             <!-- Left bar query content end -->
+
 
             <!-- Right bar content start -->
             <div class="col-sm-9 col-xs-9" id="SearchCard">

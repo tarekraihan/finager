@@ -97,14 +97,16 @@
                     <li>
                         <a href="<?php echo base_url();?>card/card_reward">Card Reward</a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url();?>card/card_fees_charges">Card Fees and Charges</a>
-                    </li>
+
                     <li>
                         <a href="<?php echo base_url();?>card/card_info">Card Information</a>
                     </li>
+
                     <li>
                         <a href="<?php echo base_url();?>card/card_info_list">Card Information List</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>card/card_fees_charges">Card Fees and Charges</a>
                     </li>
                 </ul>
             </li>
