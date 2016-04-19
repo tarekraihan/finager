@@ -825,10 +825,18 @@ class Card extends CI_Controller
     }
 
     public function get_credit_card(){
-        //return    $_POST['data'];
+
+        $businessPerson = $this->input->post('businessPerson');
+        $salariedPerson = $this->input->post('salariedPerson');
+        $query ='';
+        if($businessPerson != 0){
+            $query = "WHERE MATCH (card_card_informations.card_user_id)
+    AGAINST ('3' IN NATURAL LANGUAGE MODE)";
+        }
 
 
-                $card = $this->Front_end_select_model->select_card_info();
+
+                $card = $this->Front_end_select_model->select_card_info($query);
                 $credit_card='';
                 foreach($card->result() as $row){
 

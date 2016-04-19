@@ -7,7 +7,7 @@ class Front_end_select_model extends CI_Model{
         parent::__construct();
     }
 
-    public function select_card_info(){
+    public function select_card_info($query){
      /*   $sql='SELECT card_card_informations.*,card_bank.bank_name,card_card_type.card_type_name,card_credit_card_type.cc_card_type,card_card_issuer.card_issuer_name,card_fees_charges.*
 FROM card_card_informations INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_card_type ON card_card_type.id=card_card_informations.cc_type_id INNER JOIN
  card_credit_card_type ON card_credit_card_type.id=card_card_informations.card_category
@@ -22,7 +22,7 @@ card_fees_charges.`basic_card_annual_fee`, card_fees_charges.`basic_card_annual_
   card_fees_charges.`minimum_payment_remarks`, card_fees_charges.`cheque_return_fee`, card_fees_charges.`duplicate_statement`, card_fees_charges.`card_cheque_processing_fee`, card_fees_charges.`card_cheque_issuing_fee`
 FROM card_card_informations INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_card_type ON card_card_type.id=card_card_informations.card_type_id INNER JOIN
  card_credit_card_type ON card_credit_card_type.id=card_card_informations.cc_type_id
-INNER JOIN card_card_issuer ON card_card_issuer.id=card_card_informations.cc_issuer_id LEFT JOIN card_fees_charges ON card_fees_charges.card_id = card_card_informations.id");
+INNER JOIN card_card_issuer ON card_card_issuer.id=card_card_informations.cc_issuer_id LEFT JOIN card_fees_charges ON card_fees_charges.card_id = card_card_informations.id $query");
 
         return $query;
     }

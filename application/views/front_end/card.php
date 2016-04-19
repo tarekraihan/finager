@@ -59,27 +59,27 @@
                 <p>My Income Range</p>
                 <div class="query_radio">
                     <label class="material_radio_group">
-                        <input type="radio" name="MyIncomeRange" id="MyIncomeRangeTen" value="10000" class="material_radiobox"/>
+                        <input type="radio" name="MyIncomeRange" id="myIncomeRangeTen" value="10000" class="material_radiobox"/>
                         <span class="material_check_radio"></span>
                         BDT 10000- BDT 19999
                     </label><br/>
                     <label class="material_radio_group">
-                        <input type="radio" name="MyIncomeRange" id="MyIncomeRangeTwenty" value="20000" class="material_radiobox"/>
+                        <input type="radio" name="MyIncomeRange" id="myIncomeRangeTwenty" value="20000" class="material_radiobox"/>
                         <span class="material_check_radio"></span>
                         BDT 20000- BDT 49999
                     </label><br/>
                     <label class="material_radio_group">
-                        <input type="radio" name="MyIncomeRange" id="MyIncomeRangeFifty" value="50000" class="material_radiobox"/>
+                        <input type="radio" name="MyIncomeRange" id="myIncomeRangeFifty" value="50000" class="material_radiobox"/>
                         <span class="material_check_radio"></span>
                         BDT 50000- BDT 199999
                     </label><br/>
                     <label class="material_radio_group">
-                        <input type="radio" name="MyIncomeRange" id="MyIncomeRangeTwoLac" value="200000" class="material_radiobox"/>
+                        <input type="radio" name="MyIncomeRange" id="myIncomeRangeTwoLac" value="200000" class="material_radiobox"/>
                         <span class="material_check_radio"></span>
                         BDT 200000- BDT 500000
                     </label><br/>
                     <label class="material_radio_group">
-                        <input type="radio" name="MyIncomeRange" id="MyIncomeRangeFiveLac" value="500000" class="material_radiobox"/>
+                        <input type="radio" name="MyIncomeRange" id="myIncomeRangeFiveLac" value="500000" class="material_radiobox"/>
                         <span class="material_check_radio"></span>
                         BDT 500000+
                     </label>
@@ -338,29 +338,75 @@
 
         function loadData(){
             loading_show();
-           /* var book_id=document.frm_search.txt_book.value;
-            var limit=document.frm_search.txt_limit.value;
-            var keyword=document.frm_search.txt_keyword.value;
-            var editor_id=document.frm_search.txt_editor.value;
-            var ques_id=document.frm_search.txt_quesid.value;
-            var page_from=document.frm_search.txt_pagefrom.value;
-            var page_to=document.frm_search.txt_pageto.value;
-            var topic=document.frm_search.txt_topic.value;
-            var tf=$('input[name=chk_tf]').is(':checked')==true?1:0;
-            var ma=$('input[name=chk_ma]').is(':checked')==true?1:0;
-            var sa=$('input[name=chk_sa]').is(':checked')==true?1:0;
-            var fg=$('input[name=chk_fg]').is(':checked')==true?1:0;
-            var sq=$('input[name=chk_sq]').is(':checked')==true?1:0;*/
             var businessPerson = $('input[id=businessPerson]').is(':checked') == true ? $('#businessPerson').val() : 0;
             var salariedPerson = $('input[id=salariedPerson]').is(':checked') == true ? $('#salariedPerson').val() : 0;
             var professional = $('input[id=professional]').is(':checked') == true ? $('#professional').val() : 0;
-            console.log(businessPerson);
+            var myIncomeRangeTen = $('input[id=myIncomeRangeTen]').is(':checked') == true ? $('#MyIncomeRangeTen').val() : 0;
+            var myIncomeRangeTwenty = $('input[id=myIncomeRangeTwenty]').is(':checked') == true ? $('#myIncomeRangeTwenty').val() : 0;
+            var myIncomeRangeFifty = $('input[id=myIncomeRangeFifty]').is(':checked') == true ? $('#myIncomeRangeFifty').val() : 0;
+            var myIncomeRangeTwoLac = $('input[id=myIncomeRangeTwoLac]').is(':checked') == true ? $('#myIncomeRangeTwoLac').val() : 0;
+            var myIncomeRangeFiveLac = $('input[id=myIncomeRangeFiveLac]').is(':checked') == true ? $('#myIncomeRangeFiveLac').val() : 0;
+            var wantCreditLimitTen = $('input[id=wantCreditLimitTen]').is(':checked') == true ? $('#wantCreditLimitTen').val() : 0;
+            var wantCreditLimitFifty = $('input[id=wantCreditLimitFifty]').is(':checked') == true ? $('#wantCreditLimitFifty').val() : 0;
+            var wantCreditLimitOneLac = $('input[id=wantCreditLimitOneLac]').is(':checked') == true ? $('#wantCreditLimitOneLac').val() : 0;
+            var wantCreditLimitTwoLac = $('input[id=wantCreditLimitTwoLac]').is(':checked') == true ? $('#wantCreditLimitTwoLac').val() : 0;
+            var wantCreditLimitFiveLac = $('input[id=wantCreditLimitFiveLac]').is(':checked') == true ? $('#wantCreditLimitFiveLac').val() : 0;
+            var lookingLocalCard = $('input[id=lookingLocalCard]').is(':checked') == true ? $('#lookingLocalCard').val() : 0;
+            var lookingLocalInternationalCard = $('input[id=lookingLocalInternationalCard]').is(':checked') == true ? $('#lookingLocalInternationalCard').val() : 0;
+            var lookingInternational = $('input[id=lookingInternational]').is(':checked') == true ? $('#lookingInternational').val() : 0;
+            var featursBenefits23 = $('input[id=featursBenefits23]').is(':checked') == true ? $('#featursBenefits23').val() : 0;
+            var featursBenefits22 = $('input[id=featursBenefits22]').is(':checked') == true ? $('#featursBenefits22').val() : 0;
+            var featursBenefits21 = $('input[id=featursBenefits21]').is(':checked') == true ? $('#featursBenefits21').val() : 0;
+            var featursBenefits20 = $('input[id=featursBenefits20]').is(':checked') == true ? $('#featursBenefits20').val() : 0;
+            var featursBenefits19 = $('input[id=featursBenefits19]').is(':checked') == true ? $('#featursBenefits19').val() : 0;
+            var featursBenefits18 = $('input[id=featursBenefits18]').is(':checked') == true ? $('#featursBenefits18 ').val() : 0;
+            var featursBenefits17 = $('input[id=featursBenefits17]').is(':checked') == true ? $('#featursBenefits17').val() : 0;
+            var featursBenefits16 = $('input[id=featursBenefits16]').is(':checked') == true ? $('#featursBenefits16').val() : 0;
+            var featursBenefits15 = $('input[id=featursBenefits15]').is(':checked') == true ? $('#featursBenefits15').val() : 0;
+            var featursBenefits14 = $('input[id=featursBenefits14]').is(':checked') == true ? $('#featursBenefits14').val() : 0;
+            var featursBenefits13 = $('input[id=featursBenefits13]').is(':checked') == true ? $('#featursBenefits13').val() : 0;
+            var featursBenefits12 = $('input[id=featursBenefits12]').is(':checked') == true ? $('#featursBenefits12').val() : 0;
+            var featursBenefits11 = $('input[id=featursBenefits11]').is(':checked') == true ? $('#featursBenefits11').val() : 0;
+            var featursBenefits10 = $('input[id=featursBenefits10]').is(':checked') == true ? $('#featursBenefits10').val() : 0;
+            var featursBenefits9 = $('input[id=featursBenefits9]').is(':checked') == true ? $('#featursBenefits9').val() : 0;
+            var featursBenefits8 = $('input[id=featursBenefits8]').is(':checked') == true ? $('#featursBenefits8').val() : 0;
+            var featursBenefits7 = $('input[id=featursBenefits7]').is(':checked') == true ? $('#featursBenefits7').val() : 0;
+            var featursBenefits6 = $('input[id=featursBenefits6]').is(':checked') == true ? $('#featursBenefits6').val() : 0;
+            var featursBenefits5 = $('input[id=featursBenefits5]').is(':checked') == true ? $('#featursBenefits5').val() : 0;
+            var featursBenefits4 = $('input[id=featursBenefits4]').is(':checked') == true ? $('#featursBenefits4').val() : 0;
+            var featursBenefits3 = $('input[id=featursBenefits3]').is(':checked') == true ? $('#featursBenefits3').val() : 0;
+            var featursBenefits2 = $('input[id=featursBenefits2]').is(':checked') == true ? $('#featursBenefits2').val() : 0;
+            var featursBenefits1 = $('input[id=featursBenefits1]').is(':checked') == true ? $('#featursBenefits1').val() : 0;
+            var maximumInterestFreePeriod15 = $('input[id=maximumInterestFreePeriod15]').is(':checked') == true ? $('#maximumInterestFreePeriod15').val() : 0;
+            var maximumInterestFreePeriod31 = $('input[id=maximumInterestFreePeriod31]').is(':checked') == true ? $('#maximumInterestFreePeriod31').val() : 0;
+            var maximumInterestFreePeriod46 = $('input[id=maximumInterestFreePeriod46]').is(':checked') == true ? $('#maximumInterestFreePeriod46').val() : 0;
+            var CardTypeClassic = $('input[id=CardTypeClassic]').is(':checked') == true ? $('#CardTypeClassic').val() : 0;
+            var CardTypeGold = $('input[id=CardTypeGold]').is(':checked') == true ? $('#CardTypeGold').val() : 0;
+            var CardTypePlatinum = $('input[id=CardTypePlatinum]').is(':checked') == true ? $('#CardTypePlatinum').val() : 0;
+            var CardTypeSignature = $('input[id=CardTypeSignature]').is(':checked') == true ? $('#CardTypeSignature').val() : 0;
+            var CardTypeTitanium = $('input[id=CardTypeTitanium]').is(':checked') == true ? $('#CardTypeTitanium').val() : 0;
+            var cardIssuerVisa = $('input[id=cardIssuerVisa]').is(':checked') == true ? $('#cardIssuerVisa').val() : 0;
+            var cardIssuerMasterCard = $('input[id=cardIssuerMasterCard]').is(':checked') == true ? $('#cardIssuerMasterCard').val() : 0;
+            var cardIssuerAmericanExpress = $('input[id=cardIssuerAmericanExpress]').is(':checked') == true ? $('#cardIssuerAmericanExpress').val() : 0;
+            //console.log(businessPerson);
 
             $.ajax
             ({
                 type: "POST",
                 url: "<?php echo base_url();?>card/get_credit_card",
-                data: {data:'I Love You'},
+                data: {
+                    businessPerson:businessPerson,salariedPerson:salariedPerson,professional:professional,myIncomeRangeTen:myIncomeRangeTen,myIncomeRangeTwenty:myIncomeRangeTwenty,
+                    myIncomeRangeFifty:myIncomeRangeFifty,myIncomeRangeTwoLac:myIncomeRangeTwoLac,myIncomeRangeFiveLac:myIncomeRangeFiveLac,wantCreditLimitTen:wantCreditLimitTen,
+                    wantCreditLimitFifty:wantCreditLimitFifty,wantCreditLimitOneLac:wantCreditLimitOneLac,wantCreditLimitTwoLac:wantCreditLimitTwoLac,wantCreditLimitFiveLac:wantCreditLimitFiveLac,
+                    lookingLocalCard:lookingLocalCard,lookingLocalInternationalCard:lookingLocalInternationalCard,lookingInternational:lookingInternational,featursBenefits23:featursBenefits23,
+                    featursBenefits22:featursBenefits22,featursBenefits21:featursBenefits21,featursBenefits20:featursBenefits20,featursBenefits19:featursBenefits19,featursBenefits18:featursBenefits18,
+                    featursBenefits17:featursBenefits17,featursBenefits16:featursBenefits16,featursBenefits15:featursBenefits15,featursBenefits14:featursBenefits14,featursBenefits13:featursBenefits13,
+                    featursBenefits12:featursBenefits12,featursBenefits11:featursBenefits11,featursBenefits10:featursBenefits10,featursBenefits9:featursBenefits9,featursBenefits8:featursBenefits8,
+                    featursBenefits7:featursBenefits7,featursBenefits6:featursBenefits6,featursBenefits5:featursBenefits5,featursBenefits4:featursBenefits4,featursBenefits3:featursBenefits3,
+                    featursBenefits2:featursBenefits2,featursBenefits1:featursBenefits1,maximumInterestFreePeriod15:maximumInterestFreePeriod15,maximumInterestFreePeriod31:maximumInterestFreePeriod31,
+                    maximumInterestFreePeriod46:maximumInterestFreePeriod46,CardTypeClassic:CardTypeClassic,CardTypeGold:CardTypeGold,CardTypePlatinum:CardTypePlatinum,CardTypeSignature:CardTypeSignature,
+                    CardTypeTitanium:CardTypeTitanium,cardIssuerVisa:cardIssuerVisa,cardIssuerMasterCard:cardIssuerMasterCard,cardIssuerAmericanExpress:cardIssuerAmericanExpress
+                },
                 success: function(msg)
                 {
 
