@@ -828,16 +828,78 @@ class Card extends CI_Controller
 
         $businessPerson = $this->input->post('businessPerson');
         $salariedPerson = $this->input->post('salariedPerson');
-        $query ='';
-        if($businessPerson != 0){
-            $query = "WHERE MATCH (card_card_informations.card_user_id)
-    AGAINST ('3' IN NATURAL LANGUAGE MODE)";
+        $professional = $this->input->post('professional');
+        $myIncomeRangeTen = $this->input->post('myIncomeRangeTen');
+        $myIncomeRangeTwenty = $this->input->post('myIncomeRangeTwenty');
+        $myIncomeRangeFifty = $this->input->post('myIncomeRangeFifty');
+        $myIncomeRangeTwoLac = $this->input->post('myIncomeRangeTwoLac');
+        $myIncomeRangeFiveLac = $this->input->post('myIncomeRangeFiveLac');
+        $wantCreditLimitTen = $this->input->post('wantCreditLimitTen');
+        $wantCreditLimitFifty = $this->input->post('wantCreditLimitFifty');
+        $wantCreditLimitOneLac = $this->input->post('wantCreditLimitOneLac');
+        $wantCreditLimitTwoLac = $this->input->post('wantCreditLimitTwoLac');
+        $wantCreditLimitFiveLac = $this->input->post('wantCreditLimitFiveLac');
+        $lookingLocalCard = $this->input->post('lookingLocalCard');
+        $lookingLocalInternationalCard = $this->input->post('lookingLocalInternationalCard');
+        $lookingInternational = $this->input->post('lookingInternational');
+        $featursBenefits23 = $this->input->post('featursBenefits23');
+        $featursBenefits22 = $this->input->post('featursBenefits22');
+        $featursBenefits21 = $this->input->post('featursBenefits21');
+        $featursBenefits20 = $this->input->post('featursBenefits20');
+        $featursBenefits19 = $this->input->post('featursBenefits19');
+        $featursBenefits18 = $this->input->post('featursBenefits18');
+        $featursBenefits17 = $this->input->post('featursBenefits17');
+        $featursBenefits16 = $this->input->post('featursBenefits16');
+        $featursBenefits15 = $this->input->post('featursBenefits15');
+        $featursBenefits14 = $this->input->post('featursBenefits14');
+        $featursBenefits13 = $this->input->post('featursBenefits13');
+        $featursBenefits12 = $this->input->post('featursBenefits12');
+        $featursBenefits11 = $this->input->post('featursBenefits11');
+        $featursBenefits10 = $this->input->post('featursBenefits10');
+        $featursBenefits9 = $this->input->post('featursBenefits9');
+        $featursBenefits8 = $this->input->post('featursBenefits8');
+        $featursBenefits7 = $this->input->post('featursBenefits7');
+        $featursBenefits6 = $this->input->post('featursBenefits6');
+        $featursBenefits5 = $this->input->post('featursBenefits5');
+        $featursBenefits4 = $this->input->post('featursBenefits4');
+        $featursBenefits3 = $this->input->post('featursBenefits3');
+        $featursBenefits2 = $this->input->post('featursBenefits2');
+        $featursBenefits1 = $this->input->post('featursBenefits1');
+        $maximumInterestFreePeriod15 = $this->input->post('maximumInterestFreePeriod15');
+        $maximumInterestFreePeriod31 = $this->input->post('maximumInterestFreePeriod31');
+        $maximumInterestFreePeriod46 = $this->input->post('maximumInterestFreePeriod46');
+        $CardTypeClassic = $this->input->post('CardTypeClassic');
+        $CardTypeGold = $this->input->post('CardTypeGold');
+        $CardTypePlatinum = $this->input->post('CardTypePlatinum');
+        $CardTypeSignature = $this->input->post('CardTypeSignature');
+        $CardTypeTitanium = $this->input->post('CardTypeTitanium');
+        $cardIssuerVisa = $this->input->post('cardIssuerVisa');
+        $cardIssuerMasterCard = $this->input->post('cardIssuerMasterCard');
+        $cardIssuerAmericanExpress = $this->input->post('cardIssuerAmericanExpress');
+
+        /*$credit_card_user = $this->Front_end_select_model->select_credit_card_user();
+            foreach($credit_card_user->result() as $user){
+                switch ($user) {
+                    case label1:
+
+                        break;
+                }
+            }*/
+
+        echo $myIncomeRangeTen;
+        $query = " WHERE status = 1 ";
+            if($myIncomeRangeTen != 0){
+                $query .= " AND income_range_min_business >= 10000 AND income_range_max_business <=19999";
+            }
+        if($wantCreditLimitTen != 0){
+            $query .= " AND income_range_min_business >= 10000 OR income_range_max_business <=25000";
         }
 
 
 
                 $card = $this->Front_end_select_model->select_card_info($query);
                 $credit_card='';
+
                 foreach($card->result() as $row){
 
                     $length = strlen($row->card_summary);
@@ -1149,6 +1211,12 @@ class Card extends CI_Controller
                 }
         echo $credit_card;
 
+    }
+
+    public function select_credit_card_user(){
+        $sql= "SELECT id , card_user_id From card_card_informations";
+        $query=$this->db->query($sql);
+        return $query;
     }
 
 

@@ -420,6 +420,10 @@
         }
 
         loadData();
+
+        $('#wantCreditLimitTen').click(function(e){
+            loadData();
+        })
     });
 
     $('#SearchCard').on('click', '.displayText', function () {
