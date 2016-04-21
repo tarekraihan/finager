@@ -36,7 +36,7 @@
 </script>
 <!- for Simple interest calculation ->
 <script>
-    $(document).ready(function(){
+   /* $(document).ready(function(){
         //alert (1);
         // initial load fro calc
         simpleCalc();
@@ -86,7 +86,7 @@
             }
 
         }
-    });
+    });*/
 </script>
 </body>
 </html>

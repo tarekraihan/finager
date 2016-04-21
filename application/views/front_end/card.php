@@ -293,9 +293,10 @@
             });
             var card_issuer_list = "&card_issuer="+card_issuer;
 
-            var main_string = card_user_list+income_range_list+credit_limit_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list;
-            main_string = main_string.substring(1, main_string.length)
+            var main_string = card_user_list+income_range_list+credit_limit_list+credit_card_type_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list;
+            main_string = main_string.substring(1, main_string.length);
 
+//            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
@@ -315,11 +316,10 @@
         }
 
         loadData();
+        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
 
-        $('#wantCreditLimitTen').click(function(e){
-            loadData();
-        })
     });
+
 
     $('#SearchCard').on('click', '.displayText', function () {
         var  formData = $(this).data();

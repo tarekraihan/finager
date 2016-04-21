@@ -698,7 +698,7 @@ class Card extends CI_Controller
                     'experience_business'=> htmlentities($this->input->post('txtYearOfExperienceBusiness')),
                     'cc_issuer_id'=> htmlentities($this->input->post('txtCardIssuer')),
                     'card_benifit_id'=>$card_benifit,
-                    'benefit_details'=>htmlentities($this->input->post('txtBenefit')),
+                    'benifit_details'=>htmlentities($this->input->post('txtBenefit')),
                     'interest_free_period_min'=> htmlentities($this->input->post('txtInterestFreePeriodMin')),
                     'interest_free_pefiod_max'=> htmlentities($this->input->post('txtInterestFreePeriodMax')),
                     'card_summary'=>$this->input->post('txtCardSummary'),
@@ -725,7 +725,29 @@ class Card extends CI_Controller
                 );
 
                 $this->Common_model->table_name = 'card_card_informations';
-                $result = $this->Common_model->insert();
+                $last_insert_id = $this->Common_model->insert();
+
+                foreach($this->input->post('txtIm[]') as $user){
+                    $this->Common_model->data = array(
+                        'card_info_id'=>$last_insert_id,
+                        'card_user_id'=> $user,
+                        'created' => $date
+                    );
+                    $this->Common_model->table_name = 'card_info_card_user';
+                    $this->Common_model->insert();
+                }
+
+                $result='';
+                foreach($this->input->post('txtCardBenefit[]') as $benefit){
+                    $this->Common_model->data = array(
+                        'card_info_id'=>$last_insert_id,
+                        'card_reward_id'=> $benefit,
+                        'created' => $date ,
+                    );
+                    $this->Common_model->table_name = 'card_info_card_reward';
+                    $result = $this->Common_model->insert();
+                }
+                echo $result;
 
                 if ($result) {
                     redirect(base_url().'card/card_info/success');
@@ -825,81 +847,109 @@ class Card extends CI_Controller
     }
 
     public function get_credit_card(){
+        $card_user = $this->input->post('card_user');
+        $income_range = $this->input->post('income_range');
+        $credit_limit = $this->input->post('credit_limit');
+        $feature_benefits = $this->input->post('feature_benefits');
+        $credit_card_type = $this->input->post('credit_card_type');
+        $max_interest_free_period = $this->input->post('max_interest_free_period');
+        $card_type = $this->input->post('card_type');
+        $card_issuer = $this->input->post('card_issuer');
 
-        $businessPerson = $this->input->post('businessPerson');
-        $salariedPerson = $this->input->post('salariedPerson');
-        $professional = $this->input->post('professional');
-        $myIncomeRangeTen = $this->input->post('myIncomeRangeTen');
-        $myIncomeRangeTwenty = $this->input->post('myIncomeRangeTwenty');
-        $myIncomeRangeFifty = $this->input->post('myIncomeRangeFifty');
-        $myIncomeRangeTwoLac = $this->input->post('myIncomeRangeTwoLac');
-        $myIncomeRangeFiveLac = $this->input->post('myIncomeRangeFiveLac');
-        $wantCreditLimitTen = $this->input->post('wantCreditLimitTen');
-        $wantCreditLimitFifty = $this->input->post('wantCreditLimitFifty');
-        $wantCreditLimitOneLac = $this->input->post('wantCreditLimitOneLac');
-        $wantCreditLimitTwoLac = $this->input->post('wantCreditLimitTwoLac');
-        $wantCreditLimitFiveLac = $this->input->post('wantCreditLimitFiveLac');
-        $lookingLocalCard = $this->input->post('lookingLocalCard');
-        $lookingLocalInternationalCard = $this->input->post('lookingLocalInternationalCard');
-        $lookingInternational = $this->input->post('lookingInternational');
-        $featursBenefits23 = $this->input->post('featursBenefits23');
-        $featursBenefits22 = $this->input->post('featursBenefits22');
-        $featursBenefits21 = $this->input->post('featursBenefits21');
-        $featursBenefits20 = $this->input->post('featursBenefits20');
-        $featursBenefits19 = $this->input->post('featursBenefits19');
-        $featursBenefits18 = $this->input->post('featursBenefits18');
-        $featursBenefits17 = $this->input->post('featursBenefits17');
-        $featursBenefits16 = $this->input->post('featursBenefits16');
-        $featursBenefits15 = $this->input->post('featursBenefits15');
-        $featursBenefits14 = $this->input->post('featursBenefits14');
-        $featursBenefits13 = $this->input->post('featursBenefits13');
-        $featursBenefits12 = $this->input->post('featursBenefits12');
-        $featursBenefits11 = $this->input->post('featursBenefits11');
-        $featursBenefits10 = $this->input->post('featursBenefits10');
-        $featursBenefits9 = $this->input->post('featursBenefits9');
-        $featursBenefits8 = $this->input->post('featursBenefits8');
-        $featursBenefits7 = $this->input->post('featursBenefits7');
-        $featursBenefits6 = $this->input->post('featursBenefits6');
-        $featursBenefits5 = $this->input->post('featursBenefits5');
-        $featursBenefits4 = $this->input->post('featursBenefits4');
-        $featursBenefits3 = $this->input->post('featursBenefits3');
-        $featursBenefits2 = $this->input->post('featursBenefits2');
-        $featursBenefits1 = $this->input->post('featursBenefits1');
-        $maximumInterestFreePeriod15 = $this->input->post('maximumInterestFreePeriod15');
-        $maximumInterestFreePeriod31 = $this->input->post('maximumInterestFreePeriod31');
-        $maximumInterestFreePeriod46 = $this->input->post('maximumInterestFreePeriod46');
-        $CardTypeClassic = $this->input->post('CardTypeClassic');
-        $CardTypeGold = $this->input->post('CardTypeGold');
-        $CardTypePlatinum = $this->input->post('CardTypePlatinum');
-        $CardTypeSignature = $this->input->post('CardTypeSignature');
-        $CardTypeTitanium = $this->input->post('CardTypeTitanium');
-        $cardIssuerVisa = $this->input->post('cardIssuerVisa');
-        $cardIssuerMasterCard = $this->input->post('cardIssuerMasterCard');
-        $cardIssuerAmericanExpress = $this->input->post('cardIssuerAmericanExpress');
-
-        /*$credit_card_user = $this->Front_end_select_model->select_credit_card_user();
-            foreach($credit_card_user->result() as $user){
-                switch ($user) {
-                    case label1:
-
-                        break;
+        $WHERE = array(); $query = '';
+        if(!empty($card_user)) {
+            if(strstr($card_user,',')) {
+                $data1 = explode(',',$card_user);
+                $card_user_array = array();
+                foreach($data1 as $c_user) {
+                    $card_user_array[] = "card_info_card_user.card_user_id = $c_user";
                 }
-            }*/
-
-        echo $myIncomeRangeTen;
-        $query = " WHERE status = 1 ";
-            if($myIncomeRangeTen != 0){
-                $query .= " AND income_range_min_business >= 10000 AND income_range_max_business <=19999";
+                $WHERE[] = '('.implode(' OR ',$card_user_array).')';
+            } else {
+                $WHERE[] = '(card_info_card_user.card_user_id = '.$card_user.')';
             }
-        if($wantCreditLimitTen != 0){
-            $query .= " AND income_range_min_business >= 10000 OR income_range_max_business <=25000";
         }
 
-        // SELECT * FROM `card_card_informations` inner join card_info_card_user ON card_card_informations.id=card_info_card_user.card_info_id where card_info_card_user.card_user_id = 3
+
+        if(!empty($income_range)) {
+            $data2 = explode('-',$income_range);
+            if($card_user == '4'){ // check business person or salaried person
+
+                $WHERE[] = "(card_card_informations.income_range_min_business >= $data2[0] AND card_card_informations.income_range_max_business <= $data2[1])";
+            }else{
+                $WHERE[] = "(card_card_informations.income_range_min_salaried >= $data2[0] AND card_card_informations.income_range_max_salaried <= $data2[1])";
+            }
+        }
+
+        if(!empty($credit_limit)) {
+            $data3 = explode('-',$credit_limit);
+            if($card_user == '4'){ //check business person or salaried person
+
+                $WHERE[] = "(card_card_informations.credit_limit_min_business >= $data3[0] AND card_card_informations.credit_limit_max_business <= $data3[1])";
+            }else{
+                $WHERE[] = "(card_card_informations.credit_limit_min_salaried >= $data3[0] AND card_card_informations.credit_limit_max_salaried <= $data3[1])";
+            }
+        }
+
+
+        if(!empty($feature_benefits)) {
+            if(strstr($feature_benefits,',')) {
+                $data4 = explode(',',$feature_benefits);
+                $feature_benefits_array = array();
+                foreach($data4 as $c_benefits) {
+                    $feature_benefits_array[] = "card_info_card_reward.card_reward_id = $c_benefits";
+                }
+                $WHERE[] = '('.implode(' OR ',$feature_benefits_array).')';
+            } else {
+                $WHERE[] = '(card_info_card_reward.card_reward_id = '.$feature_benefits.')';
+            }
+        }
+
+        if(!empty($credit_card_type)) {
+            $WHERE[] = '(card_card_informations.cc_type_id = '.$credit_card_type.')';
+        }
+
+        if(!empty($max_interest_free_period)) {
+            $data5 = explode('-',$max_interest_free_period);
+            $WHERE[] = "(card_card_informations.interest_free_period_min >= $data5[0] AND card_card_informations.interest_free_pefiod_max <= $data5[1])";
+        }
+
+        if(!empty($card_type)) {
+            if(strstr($card_type,',')) {
+                $data6 = explode(',',$card_type);
+                $card_type_array = array();
+                foreach($data6 as $c_type) {
+                    $card_type_array[] = "card_card_informations.card_type_id = $c_type";
+                }
+                $WHERE[] = '('.implode(' OR ',$card_type_array).')';
+            } else {
+                $WHERE[] = '(card_card_informations.card_type_id = '.$card_type.')';
+            }
+        }
+
+        if(!empty($card_issuer)) {
+            if(strstr($card_issuer,',')) {
+                $data7 = explode(',',$card_issuer);
+                $card_issuer_array = array();
+                foreach($data7 as $c_issuer) {
+                    $card_issuer_array[] = "card_card_informations.cc_issuer_id = $c_issuer";
+                }
+                $WHERE[] = '('.implode(' OR ',$card_issuer_array).')';
+            } else {
+                $WHERE[] = '(card_card_informations.cc_issuer_id = '.$card_issuer.')';
+            }
+        }
+
+
+//        print_r($WHERE);
+        $query = implode(' AND ',$WHERE);
+
+//        echo $WHERE;
+        if(!empty($query)) {$query = 'WHERE '.$query;}
 
 
 
-                $card = $this->Front_end_select_model->select_card_info($query);
+        $card = $this->Front_end_select_model->select_card_info($query);
                 $credit_card='';
 
                 foreach($card->result() as $row){
@@ -914,16 +964,16 @@ class Card extends CI_Controller
                     }
                     $card_image='';
                     if($row->card_image_name == '&lt;'){
-                        $card_image = ' <img class="img-responsive" src="'.base_url().'resource/front_end/images/demo_card.png" />';
+                        $card_image = ' <img class="img-responsive" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" />';
                     }else{
-                        $card_image ='<img class="img-responsive" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" />';
+                        $card_image ='<img class="img-responsive" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" />';
                     }
 
                     $credit_card .='<div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-3 col-xs-3">
                             '.$card_image.'
-                            <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
+                            <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" alt="Apply Image" />
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                             </p>
@@ -943,7 +993,7 @@ class Card extends CI_Controller
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text1 card_btn_apllication">
-                                        <img class="img-responsive" src="'.base_url().'resource/front_end/images/card_btn_application.png" />
+                                        <img class="img-responsive" src="'.base_url().'resource/front_end/images/card_btn_application.png" alt="Apply Image" />
                                     </div>
                                 </div>
                             </div>
@@ -1025,7 +1075,7 @@ class Card extends CI_Controller
                                 </div>
                             </div>
                             <div class="pull-right">
-                                <img src="'. base_url().'resource/front_end/images/card_btn_application.png" />
+                                <img src="'. base_url().'resource/front_end/images/card_btn_application.png" alt="application_image" /><br/><br/>
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
