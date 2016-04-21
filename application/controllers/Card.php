@@ -895,6 +895,8 @@ class Card extends CI_Controller
             $query .= " AND income_range_min_business >= 10000 OR income_range_max_business <=25000";
         }
 
+        // SELECT * FROM `card_card_informations` inner join card_info_card_user ON card_card_informations.id=card_info_card_user.card_info_id where card_info_card_user.card_user_id = 3
+
 
 
                 $card = $this->Front_end_select_model->select_card_info($query);

@@ -57,9 +57,12 @@ class Select_Model extends CI_Model
         return $row;
     }
 
-    function select_all($bank=null)
+    function select_all($table=null,$order=null)
     {
-        $sql="SELECT * FROM $bank";
+        if($order == null){
+            $order = 'DESC';
+        }
+        $sql="SELECT * FROM $table ORDER BY id $order";
         $query=$this->db->query($sql);
         return $query;
 
