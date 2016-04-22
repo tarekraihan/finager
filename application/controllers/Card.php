@@ -698,7 +698,7 @@ class Card extends CI_Controller
                     'experience_business'=> htmlentities($this->input->post('txtYearOfExperienceBusiness')),
                     'cc_issuer_id'=> htmlentities($this->input->post('txtCardIssuer')),
                     'card_benifit_id'=>$card_benifit,
-                    'benifit_details'=>htmlentities($this->input->post('txtBenefit')),
+                    'benifit_details'=>$this->input->post('txtBenefit'),
                     'interest_free_period_min'=> htmlentities($this->input->post('txtInterestFreePeriodMin')),
                     'interest_free_pefiod_max'=> htmlentities($this->input->post('txtInterestFreePeriodMax')),
                     'card_summary'=>$this->input->post('txtCardSummary'),
