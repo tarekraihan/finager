@@ -31,6 +31,7 @@ if(isset($_GET['id']))
     $row['experience_max']='';
     $row['cc_issuer_id']='';
     $row['card_benifit_id']='';
+    $row['benifit_details']='';
     $row['interest_free_period_min']='';
     $row['interest_free_pefiod_max']='';
     $row['card_summary']='';
@@ -249,7 +250,7 @@ if(isset($_GET['id']))
                                                     <label class="red"><?php echo form_error('txtCardName');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">File input</label>
+                                                    <label class="label">Card Image </label>
                                                     <div class="input input-file">
                                                         <span class="button"><input type="file" id="file" name="file"  onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text" placeholder="Include some files" readonly="">
                                                     </div>
@@ -353,7 +354,7 @@ if(isset($_GET['id']))
                                                     <label class="red"><?php echo form_error('txtCreditLimitMaxSalaried');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Supplementary</label>
+                                                    <label class="label">Supplementary Card</label>
                                                     <label class="input">
                                                         <input type="text" maxlength="200" name="txtSupplementary"  value="<?php if(isset($row["supplimentary"]) && $row["supplimentary"] != ""){echo $row["supplimentary"];}else{echo set_value('txtSupplementary');} ?>">
                                                     </label>
@@ -726,7 +727,7 @@ if(isset($_GET['id']))
                                                         <section class="col col-12">
 
                                                             <label class="input" style="width:100%;">
-                                                                <textarea type="text" id="txtBenefit" class="ckeditor" name="txtBenefit"><?php echo set_value('txtBenefit'); ?></textarea>
+                                                                <textarea type="text" id="txtBenefit" class="ckeditor" name="txtBenefit"><?php if(isset($row["benifit_details"]) && $row["benifit_details"] != ""){echo $row["benifit_details"];}else{echo set_value('txtBenefits');} ?></textarea>
                                                             </label>
                                                         </section>
 
@@ -740,6 +741,7 @@ if(isset($_GET['id']))
                                             <!-- end widget -->
 
                                         </article>
+
                                         <article class="col-sm-12 col-md-12 col-lg-12">
 
                                             <!-- Widget ID (each widget will need unique ID)-->
