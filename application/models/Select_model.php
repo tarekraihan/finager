@@ -217,7 +217,36 @@ class Select_Model extends CI_Model
 					 <td class="center">'.$row->first_name.' '.$row->last_name. '</td>';
 
                 $result.='</td>
-                    <td><a href="'. base_url().'card/edit_card_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?card_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'. base_url().'card/edit_card_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?fees_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+    public function select_card_fees_charges_list()//To show Card card_fees_charges_list
+    {
+        $sql="SELECT card_bank.bank_name, card_card_informations.card_name, card_credit_card_type.cc_card_type,card_fees_charges.id, card_fees_charges.basic_card_annual_fee,card_fees_charges.supplementary_card_annual_fee, card_fees_charges.late_payment_fee_bdt,card_fees_charges.card_replacement_fee FROM card_card_informations INNER JOIN `card_fees_charges`ON card_card_informations.id=card_fees_charges.card_id INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_credit_card_type ON card_credit_card_type.id=card_card_informations.cc_type_id";
+        $query=$this->db->query($sql);
+        $result="";
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center">'.$row->bank_name.'</td>
+					 <td class="center">'.$row->card_name.'</td>
+					 <td class="center">'.$row->cc_card_type.'</td>
+					 <td class="center"> BDT '.$row->basic_card_annual_fee.'</td>
+					 <td class="center"> BDT '.$row->supplementary_card_annual_fee.'</td>
+					 <td class="center"> BDT '.$row->late_payment_fee_bdt.'</td>
+					 <td class="center"> BDT '.$row->card_replacement_fee.'</td>';
+
+                $result.='</td>
+                    <td><a href="'. base_url().'card/edit_fees_charges?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?card_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 					</tr>';
                 $sl++;
             }

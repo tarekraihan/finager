@@ -615,9 +615,9 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtCreditLimitMinSalaried', 'Credit Limit Min Salaried', 'trim|required');
             $this->form_validation->set_rules('txtCreditLimitMaxSalaried', 'Credit Limit max Salaried', 'trim|required');
             $this->form_validation->set_rules('txtSupplementary', 'Supplementary', 'trim|required');
-            $this->form_validation->set_rules('txtYearOfExperienceSalaried', 'Year Of Experience Salaried', 'trim|required');
-            $this->form_validation->set_rules('txtYearOfExperienceBusiness', 'Year Of Experience Business', 'trim|required');
-            $this->form_validation->set_rules('txtCardBenefit[]', 'Card Benefit ', 'trim|required');
+            $this->form_validation->set_rules('txtYearOfExperienceSalaried', 'Experience Salaried', 'trim|required');
+            $this->form_validation->set_rules('txtYearOfExperienceBusiness', 'Experience Business', 'trim|required');
+            $this->form_validation->set_rules('txtCardBenefit[]', 'Card Rewards ', 'trim|required');
             $this->form_validation->set_rules('txtBenefit', 'Card Benefit ', 'trim|required');
             $this->form_validation->set_rules('txtInterestFreePeriodMin', 'Interest Free Period Min', 'trim|required');
             $this->form_validation->set_rules('txtInterestFreePeriodMax', 'Interest Free Period Max', 'trim|required');
@@ -744,7 +744,7 @@ class Card extends CI_Controller
                     $this->Common_model->table_name = 'card_info_card_reward';
                     $result = $this->Common_model->insert();
                 }
-                echo $result;
+                //echo $result;
 
                 if ($result) {
                     redirect(base_url().'card/card_info/success');
@@ -785,9 +785,9 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtCreditLimitMaxBusiness', 'Credit Limit Max Business', 'trim|required');
             $this->form_validation->set_rules('txtCreditLimitMinSalaried', 'Credit Limit Min Salaried', 'trim|required');
             $this->form_validation->set_rules('txtCreditLimitMaxSalaried', 'Credit Limit max Salaried', 'trim|required');
-            $this->form_validation->set_rules('txtSupplementary', 'Supplementary', 'trim|required');
-            $this->form_validation->set_rules('txtYearOfExperienceMin', 'Year Of Experience Min', 'trim|required');
-            $this->form_validation->set_rules('txtYearOfExperienceMax', 'Year Of Experience Max', 'trim|required');
+            $this->form_validation->set_rules('txtSupplementary', 'Supplementary Card', 'trim|required');
+            $this->form_validation->set_rules('txtYearOfExperienceSalaried', 'Year Of Experience Salaried', 'trim|required');
+            $this->form_validation->set_rules('txtYearOfExperienceBusiness', 'Year Of Experience Business', 'trim|required');
             $this->form_validation->set_rules('txtCardBenefit[]', 'Card Benefit ', 'trim|required');
             $this->form_validation->set_rules('txtInterestFreePeriodMin', 'Interest Free Period Min', 'trim|required');
             $this->form_validation->set_rules('txtInterestFreePeriodMax', 'Interest Free Period Max', 'trim|required');
@@ -804,6 +804,7 @@ class Card extends CI_Controller
             $this->form_validation->set_rules('txtBillingCycleEnd', 'Billing Cycle End', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
             $this->form_validation->set_rules('txtCardSummary', 'Card Summary', 'trim|required');
+            $this->form_validation->set_rules('txtBenefit', 'Benefit', 'trim|required');
             $this->form_validation->set_rules('txtPros', 'Pros', 'trim|required');
             $this->form_validation->set_rules('txtCons', 'Cons', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim|required');
@@ -834,57 +835,155 @@ class Card extends CI_Controller
                     $featured =0;
                 }
 
-                $this->Common_model->data = array(
-                    'id'    => $this->input->post('txtCardId'),
-                    'bank_id' =>$this->input->post('txtBankName'),
-                    'card_type_id'=> htmlentities($this->input->post('txtCardType')),
-                    'cc_type_id'=>htmlentities($this->input->post('txtCreditCardType')),
-                    'card_name'=>htmlentities($this->input->post('txtCardName')),
-                    'card_image_name'=>htmlentities($upload_result['file_name']),
-                    //`card_image_url`,
-                    'card_user_id'=>$card_user,
-                    'income_range_min_business'=>htmlentities($this->input->post('txtIncomeRangeMinBusiness')),
-                    'income_range_min_salaried'=>htmlentities($this->input->post('txtIncomeRangeMinSalaried')),
-                    'income_range_max_business'=>htmlentities($this->input->post('txtIncomeRangeMaxBusiness')),
-                    'income_range_max_salaried'=>htmlentities($this->input->post('txtIncomeRangeMaxSalaried')),
-                    'credit_limit_min_business'=>htmlentities($this->input->post('txtCreditLimitMinBusiness')),
-                    'credit_limit_min_salaried'=>htmlentities($this->input->post('txtCreditLimitMinSalaried')),
-                    'credit_limit_max_business'=>htmlentities($this->input->post('txtCreditLimitMaxBusiness')),
-                    'credit_limit_max_salaried'=>htmlentities($this->input->post('txtCreditLimitMaxSalaried')),
-                    'age_limit_min'=>htmlentities($this->input->post('txtUserAgeMin')),
-                    'age_limit_max'=>htmlentities($this->input->post('txtUserAgeMax')),
-                    'experience_salaried'=>htmlentities($this->input->post('txtYearOfExperienceSalaried')),
-                    'experience_business'=> htmlentities($this->input->post('txtYearOfExperienceBusiness')),
-                    'cc_issuer_id'=> htmlentities($this->input->post('txtCardIssuer')),
-                    'card_benifit_id'=>$card_benifit,
-                    'benifit_details'=>$this->input->post('txtBenefit'),
-                    'interest_free_period_min'=> htmlentities($this->input->post('txtInterestFreePeriodMin')),
-                    'interest_free_pefiod_max'=> htmlentities($this->input->post('txtInterestFreePeriodMax')),
-                    'card_summary'=>$this->input->post('txtCardSummary'),
-                    'pros'=>$this->input->post('txtPros'),
-                    'cons'=>$this->input->post('txtCons'),
-                    'review'=>$this->input->post('txtReview'),
-                    'annual_fee'=>$this->input->post('txtAnnualFee'),
-                    'annual_fee_vat'=>$this->input->post('txtAnnualFeeVat'),
-                    'supplimentary'=>$this->input->post('txtSupplementary'),
-                    'billing_cycle_start'=>$this->input->post('txtBillingCycleStart'),
-                    'billing_cycle_end'=>$this->input->post('txtBillingCycleEnd'),
-                    'eligibility'=>$this->input->post('txtEligibility'),
-                    'purchase_interest_rate'=>$this->input->post('txtPurchaseInterestRate'),
-                    'purchase_interest_rate_monthly'=> htmlentities($this->input->post('txtPurchaseInterestRateMonthly')),
-                    'balance_transfer_rate'=> htmlentities($this->input->post('txtBalanceTransferRate')),
-                    'balance_transfer_rate_monthly'=> htmlentities($this->input->post('txtBalanceTransferRateMonthly')),
-                    'cash_advance_interest_rate_yearly'=> htmlentities($this->input->post('txtCashAdvanceRateYearly')),
-                    'cash_advance_interest_rate'=> htmlentities($this->input->post('txtCashAdvanceInterestRateMonthly')),
-                    'cash_advance_limit'=> htmlentities($this->input->post('txtCashAdvanceLimit')),
-                    'featured'=> $featured,
-                    'status'=> $status,
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
-                );
-                $this->Common_model->table_name = 'card_year_of_experience';
-                $this->Common_model->where = array('id' => $this->input->post('txtYearOfExperienceId'));
-                $result = $this->Common_model->update();
+                //------ Convert array into a variable
+                $card_user ="";
+                foreach($this->input->post('txtIm[]') as $user){
+                    $card_user .= $user.',';
+                }
+                $card_user =substr($card_user,0,-1);//remove last comma
+                $card_benifit ="";
+                foreach($this->input->post('txtCardBenefit[]') as $benifit){
+                    $card_benifit .= $benifit.',';
+                }
+                $card_benifit =substr($card_benifit,0,-1);
+
+
+                if(htmlentities($upload_result['file_name']) != "&lt;"){
+                    $this->Common_model->data = array(
+                        'bank_id' =>$this->input->post('txtBankName'),
+                        'card_type_id'=> htmlentities($this->input->post('txtCardType')),
+                        'cc_type_id'=>htmlentities($this->input->post('txtCreditCardType')),
+                        'card_name'=>htmlentities($this->input->post('txtCardName')),
+                        'card_image_name'=>htmlentities($upload_result['file_name']),
+                        //`card_image_url`,
+                        'card_user_id'=>$card_user,
+                        'income_range_min_business'=>htmlentities($this->input->post('txtIncomeRangeMinBusiness')),
+                        'income_range_min_salaried'=>htmlentities($this->input->post('txtIncomeRangeMinSalaried')),
+                        'income_range_max_business'=>htmlentities($this->input->post('txtIncomeRangeMaxBusiness')),
+                        'income_range_max_salaried'=>htmlentities($this->input->post('txtIncomeRangeMaxSalaried')),
+                        'credit_limit_min_business'=>htmlentities($this->input->post('txtCreditLimitMinBusiness')),
+                        'credit_limit_min_salaried'=>htmlentities($this->input->post('txtCreditLimitMinSalaried')),
+                        'credit_limit_max_business'=>htmlentities($this->input->post('txtCreditLimitMaxBusiness')),
+                        'credit_limit_max_salaried'=>htmlentities($this->input->post('txtCreditLimitMaxSalaried')),
+                        'age_limit_min'=>htmlentities($this->input->post('txtUserAgeMin')),
+                        'age_limit_max'=>htmlentities($this->input->post('txtUserAgeMax')),
+                        'experience_salaried'=>htmlentities($this->input->post('txtYearOfExperienceSalaried')),
+                        'experience_business'=> htmlentities($this->input->post('txtYearOfExperienceBusiness')),
+                        'cc_issuer_id'=> htmlentities($this->input->post('txtCardIssuer')),
+                        'card_benifit_id'=>$card_benifit,
+                        'benifit_details'=>$this->input->post('txtBenefit'),
+                        'interest_free_period_min'=> htmlentities($this->input->post('txtInterestFreePeriodMin')),
+                        'interest_free_pefiod_max'=> htmlentities($this->input->post('txtInterestFreePeriodMax')),
+                        'card_summary'=>$this->input->post('txtCardSummary'),
+                        'pros'=>$this->input->post('txtPros'),
+                        'cons'=>$this->input->post('txtCons'),
+                        'review'=>$this->input->post('txtReview'),
+                        'annual_fee'=>$this->input->post('txtAnnualFee'),
+                        'annual_fee_vat'=>$this->input->post('txtAnnualFeeVat'),
+                        'supplimentary'=>$this->input->post('txtSupplementary'),
+                        'billing_cycle_start'=>$this->input->post('txtBillingCycleStart'),
+                        'billing_cycle_end'=>$this->input->post('txtBillingCycleEnd'),
+                        'eligibility'=>$this->input->post('txtEligibility'),
+                        'purchase_interest_rate'=>$this->input->post('txtPurchaseInterestRate'),
+                        'purchase_interest_rate_monthly'=> htmlentities($this->input->post('txtPurchaseInterestRateMonthly')),
+                        'balance_transfer_rate'=> htmlentities($this->input->post('txtBalanceTransferRate')),
+                        'balance_transfer_rate_monthly'=> htmlentities($this->input->post('txtBalanceTransferRateMonthly')),
+                        'cash_advance_interest_rate_yearly'=> htmlentities($this->input->post('txtCashAdvanceRateYearly')),
+                        'cash_advance_interest_rate'=> htmlentities($this->input->post('txtCashAdvanceInterestRateMonthly')),
+                        'cash_advance_limit'=> htmlentities($this->input->post('txtCashAdvanceLimit')),
+                        'featured'=> $featured,
+                        'status'=> $status,
+                        'modified_by'=>$this->session->userdata('admin_user_id')
+                    );
+
+                }else{
+                    $this->Common_model->data = array(
+                        'bank_id' =>$this->input->post('txtBankName'),
+                        'card_type_id'=> htmlentities($this->input->post('txtCardType')),
+                        'cc_type_id'=>htmlentities($this->input->post('txtCreditCardType')),
+                        'card_name'=>htmlentities($this->input->post('txtCardName')),
+//                        'card_image_name'=>htmlentities($upload_result['file_name']),
+                        //`card_image_url`,
+                        'card_user_id'=>$card_user,
+                        'income_range_min_business'=>htmlentities($this->input->post('txtIncomeRangeMinBusiness')),
+                        'income_range_min_salaried'=>htmlentities($this->input->post('txtIncomeRangeMinSalaried')),
+                        'income_range_max_business'=>htmlentities($this->input->post('txtIncomeRangeMaxBusiness')),
+                        'income_range_max_salaried'=>htmlentities($this->input->post('txtIncomeRangeMaxSalaried')),
+                        'credit_limit_min_business'=>htmlentities($this->input->post('txtCreditLimitMinBusiness')),
+                        'credit_limit_min_salaried'=>htmlentities($this->input->post('txtCreditLimitMinSalaried')),
+                        'credit_limit_max_business'=>htmlentities($this->input->post('txtCreditLimitMaxBusiness')),
+                        'credit_limit_max_salaried'=>htmlentities($this->input->post('txtCreditLimitMaxSalaried')),
+                        'age_limit_min'=>htmlentities($this->input->post('txtUserAgeMin')),
+                        'age_limit_max'=>htmlentities($this->input->post('txtUserAgeMax')),
+                        'experience_salaried'=>htmlentities($this->input->post('txtYearOfExperienceSalaried')),
+                        'experience_business'=> htmlentities($this->input->post('txtYearOfExperienceBusiness')),
+                        'cc_issuer_id'=> htmlentities($this->input->post('txtCardIssuer')),
+                        'card_benifit_id'=>$card_benifit,
+                        'benifit_details'=>$this->input->post('txtBenefit'),
+                        'interest_free_period_min'=> htmlentities($this->input->post('txtInterestFreePeriodMin')),
+                        'interest_free_pefiod_max'=> htmlentities($this->input->post('txtInterestFreePeriodMax')),
+                        'card_summary'=>$this->input->post('txtCardSummary'),
+                        'pros'=>$this->input->post('txtPros'),
+                        'cons'=>$this->input->post('txtCons'),
+                        'review'=>$this->input->post('txtReview'),
+                        'annual_fee'=>$this->input->post('txtAnnualFee'),
+                        'annual_fee_vat'=>$this->input->post('txtAnnualFeeVat'),
+                        'supplimentary'=>$this->input->post('txtSupplementary'),
+                        'billing_cycle_start'=>$this->input->post('txtBillingCycleStart'),
+                        'billing_cycle_end'=>$this->input->post('txtBillingCycleEnd'),
+                        'eligibility'=>$this->input->post('txtEligibility'),
+                        'purchase_interest_rate'=>$this->input->post('txtPurchaseInterestRate'),
+                        'purchase_interest_rate_monthly'=> htmlentities($this->input->post('txtPurchaseInterestRateMonthly')),
+                        'balance_transfer_rate'=> htmlentities($this->input->post('txtBalanceTransferRate')),
+                        'balance_transfer_rate_monthly'=> htmlentities($this->input->post('txtBalanceTransferRateMonthly')),
+                        'cash_advance_interest_rate_yearly'=> htmlentities($this->input->post('txtCashAdvanceRateYearly')),
+                        'cash_advance_interest_rate'=> htmlentities($this->input->post('txtCashAdvanceInterestRateMonthly')),
+                        'cash_advance_limit'=> htmlentities($this->input->post('txtCashAdvanceLimit')),
+                        'featured'=> $featured,
+                        'status'=> $status,
+                        'modified_by'=>$this->session->userdata('admin_user_id')
+                    );
+                }
+                $this->Common_model->table_name = 'card_card_informations';
+                $this->Common_model->where = array('id' => $this->input->post('txtCardId'));
+                $last_insert_id = $this->Common_model->update();
+
+                // delete row from card_info_card_user
+                $id=$this->input->post('txtCardId');
+                $table='card_info_card_user';
+                $id_field='card_info_id';
+                $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+//                die;
+
+                foreach($this->input->post('txtIm[]') as $user){
+                    $this->Common_model->data = array(
+                        'card_info_id'=>$this->input->post('txtCardId'),
+                        'card_user_id'=> $user,
+                        'created' => $date
+                    );
+                    $this->Common_model->table_name = 'card_info_card_user';
+                    $this->Common_model->insert();
+                }
+
+
+
+                // delete row from card_info_card_reward
+                $id=$this->input->post('txtCardId');
+                $table='card_info_card_reward';
+                $id_field='card_info_id';
+                $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+
+                $result='';
+                foreach($this->input->post('txtCardBenefit[]') as $benefit){
+                    $this->Common_model->data = array(
+                        'card_info_id'=>$this->input->post('txtCardId'),
+                        'card_reward_id'=> $benefit,
+                        'created' => $date ,
+                    );
+                    $this->Common_model->table_name = 'card_info_card_reward';
+                    $result = $this->Common_model->insert();
+                }
+
 
                 if ($result) {
                     redirect(base_url().'card/edit_card_info/success');
@@ -1330,6 +1429,14 @@ class Card extends CI_Controller
         $sql= "SELECT id , card_user_id From card_card_informations";
         $query=$this->db->query($sql);
         return $query;
+    }
+
+    public function card_fees_charges_list(){
+        $data['title'] = "Card Information";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/card_fees_charges_list');
+        $this->load->view('admin/block/footer');
     }
 
 

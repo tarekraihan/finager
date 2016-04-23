@@ -81,34 +81,7 @@ if(isset($_GET['id']))
 <!-- MAIN PANEL -->
 <div id="main" role="main">
 
-    <!-- RIBBON -->
-    <div id="ribbon">
 
-				<span class="ribbon-button-alignment">
-					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
-						<i class="fa fa-refresh"></i>
-					</span>
-				</span>
-
-        <!-- breadcrumb -->
-        <ol class="breadcrumb">
-            <li>Home</li><li>Forms</li><li>Smart Form Elements</li>
-        </ol>
-        <!-- end breadcrumb -->
-
-        <!-- You can also add more buttons to the
-        ribbon for further usability
-
-        Example below:
-
-        <span class="ribbon-button-alignment pull-right">
-        <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-        <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
-        <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-        </span> -->
-
-    </div>
-    <!-- END RIBBON -->
 
     <!-- MAIN CONTENT -->
     <div id="content">
@@ -296,7 +269,20 @@ if(isset($_GET['id']))
                                                     <label class="label">I'm (Card User)</label>
                                                     <label class="select">
                                                         <select multiple style="width:100%" class="select2" name="txtIm[]">
-                                                            <?php echo $this->Select_model->card_card_user();?>
+                                                            <?php
+                                                            $result1=$this->Select_model->select_all('card_card_user');
+                                                            $card_user_id= explode(",", $row["card_user_id"]);
+                                                            $count = count($card_user_id);
+
+                                                            foreach($result1->result() as $row1){
+                                                                for($i=0;$i<$count;$i++) {
+                                                                    ?>
+                                                                    <option value="<?php echo $row1->id;?>" <?php if ($card_user_id[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtIm[]", $row1->id)?>><?php echo $row1->card_user; ?></option>';
+                                                                <?php
+                                                                }
+                                                            }
+                                                            ?>
+
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIm[]');?></label>
@@ -364,24 +350,24 @@ if(isset($_GET['id']))
 
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Year of Experience Min</label>
+                                                    <label class="label">Experience Salaried (Month)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtYearOfExperienceMin" value="<?php if(isset($row["experience_min"]) && $row["experience_min"] != ""){echo $row["experience_min"];}else{echo set_value('txtYearOfExperienceMin');} ?>">
+                                                        <input type="text" maxlength="10" name="txtYearOfExperienceSalaried" value="<?php if(isset($row["experience_salaried"]) && $row["experience_salaried"] != ""){echo $row["experience_salaried"];}else{echo set_value('txtYearOfExperienceSalaried');} ?>">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtYearOfExperienceMin');?></label>
+                                                    <label class="red"><?php echo form_error('txtYearOfExperienceSalaried');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Year of Experience Max</label>
+                                                    <label class="label">Experience Business (year)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtYearOfExperienceMax" value="<?php if(isset($row["interest_free_pefiod_max"]) && $row["interest_free_pefiod_max"] != ""){echo $row["interest_free_pefiod_max"];}else{echo set_value('txtYearOfExperienceMax');} ?>">
+                                                        <input type="text" maxlength="10" name="txtYearOfExperienceBusiness" value="<?php if(isset($row["experience_business"]) && $row["experience_business"] != ""){echo $row["experience_business"];}else{echo set_value('txtYearOfExperienceBusiness');} ?>">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtYearOfExperienceMax');?></label>
+                                                    <label class="red"><?php echo form_error('txtYearOfExperienceBusiness');?></label>
                                                 </section>
 
                                             </div>
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Card Benefit</label>
+                                                    <label class="label">Card Rewards</label>
                                                     <label class="select">
                                                         <select multiple style="width:100%" class="select2" name="txtCardBenefit[]">
                                                             <?php
@@ -523,12 +509,12 @@ if(isset($_GET['id']))
                                             <div class="row">
                                                 <div class="col col-3">
                                                     <label class="checkbox">
-                                                        <input type="checkbox" name="txtFeaturedProduct" value="featured"  >
+                                                        <input type="checkbox" name="txtFeaturedProduct" value="featured" <?php if(isset($row["featured"]) && $row["featured"]==1){echo "checked='checked'";}?> >
                                                         <i></i>Featured Product</label>
                                                 </div>
                                                 <div class="col col-3">
                                                     <label class="checkbox">
-                                                        <input type="checkbox" name="isActive" value="active" >
+                                                        <input type="checkbox" name="isActive" value="active" <?php if(isset($row["status"]) && $row["status"]==1){echo "checked='checked'";}?>>
                                                         <i></i>Is Active</label>
                                                 </div>
                                             </div>
@@ -727,7 +713,7 @@ if(isset($_GET['id']))
                                                         <section class="col col-12">
 
                                                             <label class="input" style="width:100%;">
-                                                                <textarea type="text" id="txtBenefit" class="ckeditor" name="txtBenefit"><?php if(isset($row["benifit_details"]) && $row["benifit_details"] != ""){echo $row["benifit_details"];}else{echo set_value('txtBenefits');} ?></textarea>
+                                                                <textarea type="text" id="txtBenefit" class="ckeditor" name="txtBenefit"><?php if(isset($row["benifit_details"]) && $row["benifit_details"] != ""){echo $row["benifit_details"];}else{echo set_value('txtBenefit');} ?></textarea>
                                                             </label>
                                                         </section>
 
