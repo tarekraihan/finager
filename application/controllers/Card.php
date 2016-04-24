@@ -1006,7 +1006,7 @@ class Card extends CI_Controller
         echo $response;
     }
 
-    public function get_credit_card(){
+    public function ajax_get_credit_card(){
         $card_user = $this->input->post('card_user');
         $income_range = $this->input->post('income_range');
         $credit_limit = $this->input->post('credit_limit');
@@ -1124,9 +1124,9 @@ class Card extends CI_Controller
                     }
                     $card_image='';
                     if($row->card_image_name == '&lt;'){
-                        $card_image = ' <img class="img-responsive" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" />';
+                        $card_image = ' <a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
                     }else{
-                        $card_image ='<img class="img-responsive" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" />';
+                        $card_image ='<a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
                     }
 
                     $credit_card .='<div class="full-card" >
@@ -1438,6 +1438,7 @@ class Card extends CI_Controller
         $this->load->view('admin/card_fees_charges_list');
         $this->load->view('admin/block/footer');
     }
+
 
 
 

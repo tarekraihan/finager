@@ -591,7 +591,7 @@ body {
 	font-size:12px;
 	text-align:justify;
 }
-
+/*for card page*/
 .card_right_bar {
     background-color: #F9F9F9;
     padding: 15px 15px;
@@ -675,9 +675,12 @@ body {
 .tab_td_text{
 	margin: 10px 0 0 5px;
 }
-.tab_body_icon{
-	height:15px;
-	width:15px;
+.tab_body_icon li{
+    list-style:circle url("../images/Icon-For-Credit-Card 2.2.png");
+}
+.tab_body_icon2 li{
+    list-style:circle url("../images/Icon-For-Credit-Card2.png");
+    list-style-position:initial;
 }
 .more_filter{
 	border:1px solid #ececec;
@@ -920,10 +923,6 @@ body {
 }
 .tab_td_text{
 	margin: 10px 0 0 5px;
-}
-.tab_body_icon{
-	height:15px;
-	width:15px;
 }
 .more_filter{
 	border:1px solid #ececec;

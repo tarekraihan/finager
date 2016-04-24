@@ -17,4 +17,12 @@ class En extends CI_Controller {
         $this->load->view('front_end/card');
         $this->load->view('front_end/block/footer');
     }
+
+    public function card_details(){
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/card_details');
+        $this->load->view('front_end/block/footer');
+    }
 }

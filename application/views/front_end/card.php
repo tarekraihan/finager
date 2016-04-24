@@ -300,7 +300,7 @@
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>card/get_credit_card",
+                url: "<?php echo base_url();?>card/ajax_get_credit_card",
                 data: main_string,
                 cache: false,
                 success: function(msg)
