@@ -581,6 +581,112 @@ class Card extends CI_Controller
         }
     }
 
+    public function edit_fees_charges($msg=''){
+        if ($this->session->userdata('email_address')) {
+
+            if ($msg == 'success') {
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
+            }
+
+            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
+            $this->form_validation->set_rules('txtCardName', 'Card Name', 'trim|required');
+            $this->form_validation->set_rules('txtCardAnnualFee', 'Card Annual Fee', 'trim|required');
+            $this->form_validation->set_rules('txtCardAnnualFeePlus', 'Card Annual Fee Plus', 'trim');
+            $this->form_validation->set_rules('txtSupplementaryFee', ' Supplementary Fee', 'trim|required');
+            $this->form_validation->set_rules('txtPurchaseFee', 'Purchase Fee', 'trim');
+            $this->form_validation->set_rules('txtBalanceTransferFee', 'Balance Transfer Fee', 'trim|required');
+            $this->form_validation->set_rules('txtCashAdvanceFeeOwnATM', 'Cash Advance Fee Own ATM', 'trim|required');
+            $this->form_validation->set_rules('txtCashAdvanceFeeOtherATM', 'Cash Advance Fee Other ATM', 'trim|required');
+            $this->form_validation->set_rules('txtCashAdvanceFeeOtherATMPlus', 'Cash Advance Fee Other ATM Plus', 'trim|required');
+            $this->form_validation->set_rules('txtCashAdvanceFeeInternationalUSD', 'Cash Advance Fee International USD', 'trim|required');
+            $this->form_validation->set_rules('txtCashAdvanceFeeInternationalPercentage', 'Cash Advance Fee International Percentage', 'trim|required');
+            $this->form_validation->set_rules('txtCashAdvanceFeeInternationalRemarks', 'Cash Advance Fee International Remarks', 'trim|required');
+            $this->form_validation->set_rules('txtLatePaymentFeeBDT', 'Late Payment Fee BDT', 'trim|required');
+            $this->form_validation->set_rules('txtLatePaymentFeeUSD', 'Late Payment Fee USD', 'trim|required');
+            $this->form_validation->set_rules('txtReplacementFee', 'Replacement Fee', 'trim|required');
+            $this->form_validation->set_rules('txtPinReplacementFee', 'Pin Replacement Fee', 'trim|required');
+            $this->form_validation->set_rules('txtOverLimitChargeBDT', 'Over Limit Charge BDT', 'trim|required');
+            $this->form_validation->set_rules('txtOverLimitChargeUSD', 'Over Limit Charge USD', 'trim|required');
+            $this->form_validation->set_rules('txtTransactionAlertService', 'Transaction Alert Service', 'trim|required');
+            $this->form_validation->set_rules('txtTransactionAlertServicePlus', 'Transaction Alert Service Plus', 'trim|required');
+            $this->form_validation->set_rules('txtCreditAssuranceProgramFee', 'Credit Assurance Program Fee', 'trim|required');
+            $this->form_validation->set_rules('txtCreditAssuranceProgramFeeRemarks', 'Credit Assurance Program Fee Remarks', 'trim|required');
+            $this->form_validation->set_rules('txtMonthlyEStatementFee', 'Monthly E-Statement Fee', 'trim|required');
+            $this->form_validation->set_rules('txtChequeBookFee', 'Cheque Book Fee', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumPaymentBDT', 'Minimum Payment BDT', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumPaymentUSD', 'Minimum Payment USD', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumPaymentPercentage', 'Minimum Payment Percentage', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumPaymentRemarks', 'Minimum Payment Remarks', 'trim|required');
+            $this->form_validation->set_rules('txtChequeReturnFee', 'Cheque Return Fee', 'trim|required');
+            $this->form_validation->set_rules('txtDuplicateStatement', 'Duplicate Statement', 'trim|required');
+            $this->form_validation->set_rules('txtCardChequeProcessingFee', 'Card Cheque Processing Fee', 'trim|required');
+            $this->form_validation->set_rules('txtCardCheckIssuingFee', 'Card Check Issuing Fee', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Card Charges Fees";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/edit_fees_charges');
+                $this->load->view('admin/block/footer');
+            }else{
+                //$date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array(
+                    'card_id' => htmlentities($this->input->post('txtCardName')),
+                    'basic_card_annual_fee' => htmlentities($this->input->post('txtCardAnnualFee')),
+                    'basic_card_annual_fee_plus' => htmlentities($this->input->post('txtCardAnnualFeePlus')),
+                    'supplementary_card_annual_fee' => htmlentities($this->input->post('txtSupplementaryFee')),
+                    'purchase_fee' => htmlentities($this->input->post('txtPurchaseFee')),
+                    'balance_transfer_fee' => htmlentities($this->input->post('txtBalanceTransferFee')),
+                    'cash_advance_fee_own_atm' => htmlentities($this->input->post('txtCashAdvanceFeeOwnATM')),
+                    'cash_advance_fee_other_atm' => htmlentities($this->input->post('txtCashAdvanceFeeOtherATM')),
+                    'cash_advance_fee_other_atm_plus' => htmlentities($this->input->post('txtCashAdvanceFeeOtherATMPlus')),
+                    'cash_advance_fee_international_usd' => htmlentities($this->input->post('txtCashAdvanceFeeInternationalUSD')),
+                    'cash_advance_fee_international_percentage' => htmlentities($this->input->post('txtCashAdvanceFeeInternationalPercentage')),
+                    'cash_advance_fee_international_remarks' => htmlentities($this->input->post('txtCashAdvanceFeeInternationalRemarks')),
+                    'late_payment_fee_bdt' => htmlentities($this->input->post('txtLatePaymentFeeBDT')),
+                    'late_payment_fee_usd' => htmlentities($this->input->post('txtLatePaymentFeeUSD')),
+                    'card_replacement_fee' => htmlentities($this->input->post('txtReplacementFee')),
+                    'pin_replacement_fee' => htmlentities($this->input->post('txtPinReplacementFee')),
+                    'over_limit_charge_bdt' => htmlentities($this->input->post('txtOverLimitChargeBDT')),
+                    'over_limit_charge_usd' => htmlentities($this->input->post('txtOverLimitChargeUSD')),
+                    'transaction_alert_service' => htmlentities($this->input->post('txtTransactionAlertService')),
+                    'transaction_alert_service_plus' => htmlentities($this->input->post('txtTransactionAlertServicePlus')),
+                    'credit_assurance_program_fee' => htmlentities($this->input->post('txtCreditAssuranceProgramFee')),
+                    'credit_assurance_program_fee_remarks' => htmlentities($this->input->post('txtCreditAssuranceProgramFeeRemarks')),
+                    'monthly_e_statement_fee' => htmlentities($this->input->post('txtMonthlyEStatementFee')),
+                    'check_book_fee' => htmlentities($this->input->post('txtChequeBookFee')),
+                    'minimum_payment_bdt' => htmlentities($this->input->post('txtMinimumPaymentBDT')),
+                    'minimum_payment_usd' => htmlentities($this->input->post('txtMinimumPaymentUSD')),
+                    'minimum_payment_percentage' => htmlentities($this->input->post('txtMinimumPaymentPercentage')),
+                    'minimum_payment_remarks' => htmlentities($this->input->post('txtMinimumPaymentRemarks')),
+                    'cheque_return_fee' => htmlentities($this->input->post('txtChequeReturnFee')),
+                    'duplicate_statement' => htmlentities($this->input->post('txtDuplicateStatement')),
+                    'card_cheque_processing_fee' => htmlentities($this->input->post('txtCardChequeProcessingFee')),
+                    'card_cheque_issuing_fee' => htmlentities($this->input->post('txtCardCheckIssuingFee')),
+//                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+
+
+                $this->Common_model->table_name = 'card_fees_charges';
+                $this->Common_model->where = array('id'=>$this->input->post('txtFeesId'));
+                $result = $this->Common_model->insert();
+
+                if ($result) {
+                    redirect(base_url().'card/edit_fees_charges/success');
+                } else {
+                    redirect(base_url().'card/edit_fees_charges/error');
+                }
+            }
+
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
     public function card_info_list(){
         $data['title'] = "Card Information";
         $this->load->view('admin/block/header',$data);

@@ -53,5 +53,6 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     }
 
-//WHERE income_range_min_business >= 10000 AND income_range_max_business <=19999
+//
+
 }

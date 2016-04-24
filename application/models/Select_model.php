@@ -246,7 +246,7 @@ class Select_Model extends CI_Model
 					 <td class="center"> BDT '.$row->card_replacement_fee.'</td>';
 
                 $result.='</td>
-                    <td><a href="'. base_url().'card/edit_fees_charges?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?card_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'. base_url().'card/edit_fees_charges/'.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?card_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 					</tr>';
                 $sl++;
             }
@@ -255,6 +255,15 @@ class Select_Model extends CI_Model
     }
 
 
+    public function select_fees_charges($fees_id){
+        $sql="SELECT card_fees_charges.*,card_bank.bank_name,card_card_informations.bank_id,card_card_informations.card_name FROM
+ `card_fees_charges` inner join card_card_informations on card_card_informations.id=card_fees_charges.card_id
+Inner join card_bank ON card_card_informations.bank_id=card_bank.id WHERE card_fees_charges.id=$fees_id";
+
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
 
 	
 }
