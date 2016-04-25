@@ -487,7 +487,7 @@ class Card extends CI_Controller
             }
 
             $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
-            $this->form_validation->set_rules('txtCardName', 'Card Name', 'trim|required');
+            $this->form_validation->set_rules('txtCardName', 'Card Name', 'trim|required|is_unique[card_fees_charges.card_id]');
             $this->form_validation->set_rules('txtCardAnnualFee', 'Card Annual Fee', 'trim|required');
             $this->form_validation->set_rules('txtCardAnnualFeePlus', 'Card Annual Fee Plus', 'trim');
             $this->form_validation->set_rules('txtSupplementaryFee', ' Supplementary Fee', 'trim|required');
@@ -590,8 +590,7 @@ class Card extends CI_Controller
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
-            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
-            $this->form_validation->set_rules('txtCardName', 'Card Name', 'trim|required');
+            $this->form_validation->set_rules('txtFeesChargesId', 'Fees Id', 'trim|required');
             $this->form_validation->set_rules('txtCardAnnualFee', 'Card Annual Fee', 'trim|required');
             $this->form_validation->set_rules('txtCardAnnualFeePlus', 'Card Annual Fee Plus', 'trim');
             $this->form_validation->set_rules('txtSupplementaryFee', ' Supplementary Fee', 'trim|required');
@@ -633,7 +632,7 @@ class Card extends CI_Controller
             }else{
                 //$date = date('Y-m-d h:i:s');
                 $this->Common_model->data = array(
-                    'card_id' => htmlentities($this->input->post('txtCardName')),
+//                    'card_id' => htmlentities($this->input->post('txtCardName')),
                     'basic_card_annual_fee' => htmlentities($this->input->post('txtCardAnnualFee')),
                     'basic_card_annual_fee_plus' => htmlentities($this->input->post('txtCardAnnualFeePlus')),
                     'supplementary_card_annual_fee' => htmlentities($this->input->post('txtSupplementaryFee')),
@@ -666,13 +665,13 @@ class Card extends CI_Controller
                     'card_cheque_processing_fee' => htmlentities($this->input->post('txtCardChequeProcessingFee')),
                     'card_cheque_issuing_fee' => htmlentities($this->input->post('txtCardCheckIssuingFee')),
 //                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
 
 
                 $this->Common_model->table_name = 'card_fees_charges';
-                $this->Common_model->where = array('id'=>$this->input->post('txtFeesId'));
-                $result = $this->Common_model->insert();
+                $this->Common_model->where = array('id'=>$this->input->post('txtFeesChargesId'));
+                $result = $this->Common_model->update();
 
                 if ($result) {
                     redirect(base_url().'card/edit_fees_charges/success');
