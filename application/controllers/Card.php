@@ -1229,9 +1229,9 @@ class Card extends CI_Controller
                     }
                     $card_image='';
                     if($row->card_image_name == '&lt;'){
-                        $card_image = ' <a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
+                        $card_image = ' <a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
                     }else{
-                        $card_image ='<a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
+                        $card_image ='<a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
                     }
 
                     $credit_card .='<div class="full-card" >
@@ -1243,7 +1243,9 @@ class Card extends CI_Controller
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                             </p>
                             <p class="rating text-center">Rated By 5 Person</p>
-                            <span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
+                            <span class="more_info_icon">
+                                <a id="" href="javascript:void(0);" class="add-to-compare" ><i class="fa fa-plus-circle"></i> Add to comparison</a>
+                            </span><br/>
                             <span class="more_info_icon"><a class="displayText" style="cursor:pointer"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                         </div>
 

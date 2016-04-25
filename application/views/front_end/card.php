@@ -228,8 +228,45 @@
     </div>
 </section>
 
+<!-- card compare section starts-->
+
+<section id="hiden_div">
+    <div class="container no-padding">
+        <div class="row">
+            <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
+                <div class="card-holder">
+                    <div class="hidden_div relative">
+                        <div class="hidden_div_container">
+                            <ul class="no-padding pull-left">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <a class="cart_anchor">
+                                <img class="compare-cross-btn" src="<?php echo base_url();?>resource/front_end/images/dialog_close.png"/>
+                            </a>
+                            <a class="cart_anchor01">
+                                <img class="compare-cross-btn" src="<?php echo base_url();?>resource/front_end/images/dialog_close.png"/>
+                            </a>
+                            <a href="" class="btn common-btn v-middle-btn">
+                                Compare
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- card compare section ends-->
+
 <script type="text/javascript">
     $(document).ready(function(){
+        $('.add-to-compare').on('click',function(){
+            console.log('hl');
+            alert();
+        });
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30' />").fadeIn('fast');
@@ -354,3 +391,39 @@
         }
     }
 </script>
+
+<script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.add-to-compare').on('click',function(){
+            //$(".card-holder").removeClass("hidden").slideDown();
+
+            alert("sad");
+            //Scroll to top if cart icon is hidden on top
+            $('html, body').animate({
+                'scrollTop' : $(".cart_anchor").position().top
+            });
+            //Select item image and pass to the function
+            //var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+            //flyToElement($(itemImg), $('.cart_anchor'));
+
+            if($(".cart_anchor").hasClass("img_active")){
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                flyToElement($(itemImg), $('.cart_anchor01'));
+                $(this).addClass("hidden");
+            }
+            else{
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                flyToElement($(itemImg), $('.cart_anchor'));
+
+                $(".cart_anchor").addClass("img_active");
+                $(this).addClass("hidden");
+
+            }
+        });
+    });
+</script>
+<!-- add card compare ends-->
