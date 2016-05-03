@@ -107,6 +107,13 @@ if(isset($_GET['id']))
 
                                             </div>
                                         </section>
+                                        <section>
+                                            <label class="label"> Bank Logo</label>
+                                            <div class="input input-file">
+                                                <span class="button"><input type="file" id="file"  name="file"  onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text" placeholder="Bank logo" readonly="">
+                                            </div>
+                                            <label class="red"><?php echo form_error('file');?></label>
+                                        </section>
                                     </fieldset>
                                     <footer>
                                         <button type="submit" id="save" class="btn btn-primary"  >
