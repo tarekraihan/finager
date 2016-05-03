@@ -137,7 +137,7 @@
             </div><br/>
             <div id="moreFilterText" style="display: none">
                 <div class="card_query">
-                    <p>Featurs& Benefits</p>
+                    <p>Features & Benefits</p>
                     <div class="query_radio">
                     <?php
                         $card_benefits = $this->Select_model->select_all('card_reward');

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.5.1
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 25, 2016 at 02:07 AM
--- Server version: 5.5.45-cll-lve
--- PHP Version: 5.6.20
+-- Host: 127.0.0.1
+-- Generation Time: May 03, 2016 at 05:52 PM
+-- Server version: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,10 +14,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `finakknl_finager`
+-- Database: `finager_db`
 --
 
 -- --------------------------------------------------------
@@ -26,76 +26,77 @@ SET time_zone = "+00:00";
 -- Table structure for table `card_bank`
 --
 
-CREATE TABLE `card_bank` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_bank` (
+`id` int(10) NOT NULL,
   `bank_name` varchar(150) DEFAULT NULL,
+  `bank_logo` varchar(100) DEFAULT NULL,
   `created_by` int(10) DEFAULT NULL,
   `modified_by` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=64 ;
 
 --
 -- Dumping data for table `card_bank`
 --
 
-INSERT INTO `card_bank` (`id`, `bank_name`, `created_by`, `modified_by`, `created`, `modified`) VALUES
-(8, 'Brac Bank Limited', 1, 0, '2016-04-11 05:15:15', '0000-00-00 00:00:00'),
-(9, 'Meghna Bank Limited', 1, 0, '2016-04-11 05:16:01', '0000-00-00 00:00:00'),
-(10, 'Bank Asia Limited', 1, 0, '2016-04-11 05:16:11', '0000-00-00 00:00:00'),
-(11, 'Eastern Bank Limited', 1, 0, '2016-04-11 05:16:22', '0000-00-00 00:00:00'),
-(12, 'Bangladesh Commerce Bank Limited', 1, 0, '2016-04-11 05:18:41', '0000-00-00 00:00:00'),
-(13, 'AB Bank Limited', 1, 0, '2016-04-11 05:18:53', '0000-00-00 00:00:00'),
-(14, 'Dhaka Bank Limited', 1, 0, '2016-04-11 05:19:55', '0000-00-00 00:00:00'),
-(15, 'Dutch Bangla Bank Limited', 1, 0, '2016-04-11 05:20:06', '0000-00-00 00:00:00'),
-(16, 'IFIC Bank Limited', 1, 0, '2016-04-11 05:20:17', '0000-00-00 00:00:00'),
-(17, 'Jamuna Bank Limited', 1, 0, '2016-04-11 05:20:24', '0000-00-00 00:00:00'),
-(18, 'Mercantile Bank Limited', 1, 0, '2016-04-11 05:20:29', '0000-00-00 00:00:00'),
-(19, 'Midland Bank Limited', 1, 0, '2016-04-11 05:20:36', '0000-00-00 00:00:00'),
-(20, 'Modhumoti Bank Limited', 1, 0, '2016-04-11 05:20:47', '0000-00-00 00:00:00'),
-(21, 'Mutual Trust Bank Limited', 1, 0, '2016-04-11 05:20:58', '0000-00-00 00:00:00'),
-(22, 'National Bank Limited', 1, 0, '2016-04-12 05:49:06', '0000-00-00 00:00:00'),
-(23, 'NCC Bank Limited', 1, 0, '2016-04-12 05:49:17', '0000-00-00 00:00:00'),
-(24, 'NRB Bank Limited', 1, 0, '2016-04-12 05:49:23', '0000-00-00 00:00:00'),
-(25, 'NRB Commercial Bank Limited', 1, 0, '2016-04-12 05:49:31', '0000-00-00 00:00:00'),
-(26, 'NRB Global Bank Limited', 1, 0, '2016-04-12 05:49:40', '0000-00-00 00:00:00'),
-(27, 'One Bank Limited', 1, 0, '2016-04-12 05:49:46', '0000-00-00 00:00:00'),
-(28, 'Prime Bank Limited', 1, 0, '2016-04-12 05:49:51', '0000-00-00 00:00:00'),
-(29, 'Pubali Bank Limited', 1, 0, '2016-04-12 05:49:58', '0000-00-00 00:00:00'),
-(30, 'South Bangla Agriculture and Commerce Bank Limited', 1, 0, '2016-04-12 05:50:07', '0000-00-00 00:00:00'),
-(31, 'Southeast Bank Limited', 1, 0, '2016-04-12 05:50:22', '0000-00-00 00:00:00'),
-(32, 'Standard Bank Limited', 1, 0, '2016-04-12 05:50:26', '0000-00-00 00:00:00'),
-(33, 'The City Bank Limited', 1, 0, '2016-04-12 05:50:33', '0000-00-00 00:00:00'),
-(34, 'The Farmers Bank Limited', 1, 0, '2016-04-12 05:50:38', '0000-00-00 00:00:00'),
-(35, 'The Premier Bank Limited', 1, 0, '2016-04-12 05:50:44', '0000-00-00 00:00:00'),
-(36, 'Trust Bank Bangladesh Limited', 1, 0, '2016-04-12 05:50:54', '0000-00-00 00:00:00'),
-(37, 'United Commercial Bank Limited', 1, 0, '2016-04-12 05:51:09', '0000-00-00 00:00:00'),
-(38, 'Uttara Bank Limited', 1, 0, '2016-04-12 05:51:22', '0000-00-00 00:00:00'),
-(39, 'Islami Bank Bangladesh Limited', 1, 0, '2016-04-12 05:51:33', '0000-00-00 00:00:00'),
-(40, 'Al-Arafah Islami Bank Limited', 1, 0, '2016-04-12 05:51:39', '0000-00-00 00:00:00'),
-(41, 'Export Import Bank of Bangladesh Limited', 1, 0, '2016-04-12 05:51:45', '0000-00-00 00:00:00'),
-(42, 'Social Islami Bank Limited', 1, 0, '2016-04-12 05:51:52', '0000-00-00 00:00:00'),
-(43, 'Shahjalal islami Bank Limited', 1, 0, '2016-04-12 05:52:00', '0000-00-00 00:00:00'),
-(44, 'First Security Islami Bank Limited', 1, 0, '2016-04-12 05:52:07', '0000-00-00 00:00:00'),
-(45, 'Union Bank Limited', 1, 0, '2016-04-12 05:52:13', '0000-00-00 00:00:00'),
-(46, 'ICB Islamic Bank Limited', 1, 0, '2016-04-12 05:52:20', '0000-00-00 00:00:00'),
-(47, 'Bank Al-Falah', 1, 0, '2016-04-12 05:52:28', '0000-00-00 00:00:00'),
-(48, 'Citibank NA', 1, 0, '2016-04-12 05:52:35', '0000-00-00 00:00:00'),
-(49, 'Commercial Bank of Ceylon', 1, 0, '2016-04-12 05:52:42', '0000-00-00 00:00:00'),
-(50, 'Habib Bank Limited', 1, 0, '2016-04-12 05:52:48', '0000-00-00 00:00:00'),
-(51, 'HSBC', 1, 0, '2016-04-12 05:52:56', '0000-00-00 00:00:00'),
-(52, 'National Bank of Pakistan', 1, 0, '2016-04-12 05:53:02', '0000-00-00 00:00:00'),
-(53, 'Standard Chartered Bank', 1, 0, '2016-04-12 05:53:08', '0000-00-00 00:00:00'),
-(54, 'State Bank of India', 1, 0, '2016-04-12 05:53:13', '0000-00-00 00:00:00'),
-(55, 'Woori Bank', 1, 0, '2016-04-12 05:53:20', '0000-00-00 00:00:00'),
-(56, 'Sonali Bank Limited', 1, 0, '2016-04-12 05:53:36', '0000-00-00 00:00:00'),
-(57, 'Janata Bank Limited', 1, 0, '2016-04-12 05:53:42', '0000-00-00 00:00:00'),
-(58, 'Agrani Bank Limited', 1, 0, '2016-04-12 05:53:50', '0000-00-00 00:00:00'),
-(59, 'Rupali Bank Limited', 1, 0, '2016-04-12 05:53:56', '0000-00-00 00:00:00'),
-(60, 'BASIC Bank Limited', 1, 0, '2016-04-12 05:54:02', '0000-00-00 00:00:00'),
-(61, 'Bangladesh Development Bank Limited', 1, 0, '2016-04-12 05:54:10', '0000-00-00 00:00:00'),
-(62, 'Rajshahi Krishi Unnoyon Bank', 1, 0, '2016-04-12 05:54:21', '0000-00-00 00:00:00'),
-(63, 'Bangladesh Krishi Bank Limited', 1, 1, '2016-04-12 05:54:28', '0000-00-00 00:00:00');
+INSERT INTO `card_bank` (`id`, `bank_name`, `bank_logo`, `created_by`, `modified_by`, `created`, `modified`) VALUES
+(8, 'Brac Bank Limited', NULL, 1, 0, '2016-04-11 05:15:15', '0000-00-00 00:00:00'),
+(9, 'Meghna Bank Limited', NULL, 1, 0, '2016-04-11 05:16:01', '0000-00-00 00:00:00'),
+(10, 'Bank Asia Limited', NULL, 1, 0, '2016-04-11 05:16:11', '0000-00-00 00:00:00'),
+(11, 'Eastern Bank Limited', NULL, 1, 0, '2016-04-11 05:16:22', '0000-00-00 00:00:00'),
+(12, 'Bangladesh Commerce Bank Limited', NULL, 1, 0, '2016-04-11 05:18:41', '0000-00-00 00:00:00'),
+(13, 'AB Bank Limited', NULL, 1, 0, '2016-04-11 05:18:53', '0000-00-00 00:00:00'),
+(14, 'Dhaka Bank Limited', NULL, 1, 0, '2016-04-11 05:19:55', '0000-00-00 00:00:00'),
+(15, 'Dutch Bangla Bank Limited', NULL, 1, 0, '2016-04-11 05:20:06', '0000-00-00 00:00:00'),
+(16, 'IFIC Bank Limited', NULL, 1, 0, '2016-04-11 05:20:17', '0000-00-00 00:00:00'),
+(17, 'Jamuna Bank Limited', NULL, 1, 0, '2016-04-11 05:20:24', '0000-00-00 00:00:00'),
+(18, 'Mercantile Bank Limited', NULL, 1, 0, '2016-04-11 05:20:29', '0000-00-00 00:00:00'),
+(19, 'Midland Bank Limited', NULL, 1, 0, '2016-04-11 05:20:36', '0000-00-00 00:00:00'),
+(20, 'Modhumoti Bank Limited', NULL, 1, 0, '2016-04-11 05:20:47', '0000-00-00 00:00:00'),
+(21, 'Mutual Trust Bank Limited', NULL, 1, 0, '2016-04-11 05:20:58', '0000-00-00 00:00:00'),
+(22, 'National Bank Limited', NULL, 1, 0, '2016-04-12 05:49:06', '0000-00-00 00:00:00'),
+(23, 'NCC Bank Limited', NULL, 1, 0, '2016-04-12 05:49:17', '0000-00-00 00:00:00'),
+(24, 'NRB Bank Limited', NULL, 1, 0, '2016-04-12 05:49:23', '0000-00-00 00:00:00'),
+(25, 'NRB Commercial Bank Limited', NULL, 1, 0, '2016-04-12 05:49:31', '0000-00-00 00:00:00'),
+(26, 'NRB Global Bank Limited', NULL, 1, 0, '2016-04-12 05:49:40', '0000-00-00 00:00:00'),
+(27, 'One Bank Limited', NULL, 1, 0, '2016-04-12 05:49:46', '0000-00-00 00:00:00'),
+(28, 'Prime Bank Limited', NULL, 1, 0, '2016-04-12 05:49:51', '0000-00-00 00:00:00'),
+(29, 'Pubali Bank Limited', NULL, 1, 0, '2016-04-12 05:49:58', '0000-00-00 00:00:00'),
+(30, 'South Bangla Agriculture and Commerce Bank Limited', NULL, 1, 0, '2016-04-12 05:50:07', '0000-00-00 00:00:00'),
+(31, 'Southeast Bank Limited', NULL, 1, 0, '2016-04-12 05:50:22', '0000-00-00 00:00:00'),
+(32, 'Standard Bank Limited', NULL, 1, 0, '2016-04-12 05:50:26', '0000-00-00 00:00:00'),
+(33, 'The City Bank Limited', NULL, 1, 0, '2016-04-12 05:50:33', '0000-00-00 00:00:00'),
+(34, 'The Farmers Bank Limited', NULL, 1, 0, '2016-04-12 05:50:38', '0000-00-00 00:00:00'),
+(35, 'The Premier Bank Limited', NULL, 1, 0, '2016-04-12 05:50:44', '0000-00-00 00:00:00'),
+(36, 'Trust Bank Bangladesh Limited', NULL, 1, 0, '2016-04-12 05:50:54', '0000-00-00 00:00:00'),
+(37, 'United Commercial Bank Limited', NULL, 1, 0, '2016-04-12 05:51:09', '0000-00-00 00:00:00'),
+(38, 'Uttara Bank Limited', NULL, 1, 0, '2016-04-12 05:51:22', '0000-00-00 00:00:00'),
+(39, 'Islami Bank Bangladesh Limited', NULL, 1, 0, '2016-04-12 05:51:33', '0000-00-00 00:00:00'),
+(40, 'Al-Arafah Islami Bank Limited', NULL, 1, 0, '2016-04-12 05:51:39', '0000-00-00 00:00:00'),
+(41, 'Export Import Bank of Bangladesh Limited', NULL, 1, 0, '2016-04-12 05:51:45', '0000-00-00 00:00:00'),
+(42, 'Social Islami Bank Limited', NULL, 1, 0, '2016-04-12 05:51:52', '0000-00-00 00:00:00'),
+(43, 'Shahjalal islami Bank Limited', NULL, 1, 0, '2016-04-12 05:52:00', '0000-00-00 00:00:00'),
+(44, 'First Security Islami Bank Limited', NULL, 1, 0, '2016-04-12 05:52:07', '0000-00-00 00:00:00'),
+(45, 'Union Bank Limited', NULL, 1, 0, '2016-04-12 05:52:13', '0000-00-00 00:00:00'),
+(46, 'ICB Islamic Bank Limited', NULL, 1, 0, '2016-04-12 05:52:20', '0000-00-00 00:00:00'),
+(47, 'Bank Al-Falah', NULL, 1, 0, '2016-04-12 05:52:28', '0000-00-00 00:00:00'),
+(48, 'Citibank NA', NULL, 1, 0, '2016-04-12 05:52:35', '0000-00-00 00:00:00'),
+(49, 'Commercial Bank of Ceylon', NULL, 1, 0, '2016-04-12 05:52:42', '0000-00-00 00:00:00'),
+(50, 'Habib Bank Limited', NULL, 1, 0, '2016-04-12 05:52:48', '0000-00-00 00:00:00'),
+(51, 'HSBC', NULL, 1, 0, '2016-04-12 05:52:56', '0000-00-00 00:00:00'),
+(52, 'National Bank of Pakistan', NULL, 1, 0, '2016-04-12 05:53:02', '0000-00-00 00:00:00'),
+(53, 'Standard Chartered Bank', NULL, 1, 0, '2016-04-12 05:53:08', '0000-00-00 00:00:00'),
+(54, 'State Bank of India', NULL, 1, 0, '2016-04-12 05:53:13', '0000-00-00 00:00:00'),
+(55, 'Woori Bank', NULL, 1, 0, '2016-04-12 05:53:20', '0000-00-00 00:00:00'),
+(56, 'Sonali Bank Limited', NULL, 1, 0, '2016-04-12 05:53:36', '0000-00-00 00:00:00'),
+(57, 'Janata Bank Limited', NULL, 1, 0, '2016-04-12 05:53:42', '0000-00-00 00:00:00'),
+(58, 'Agrani Bank Limited', NULL, 1, 0, '2016-04-12 05:53:50', '0000-00-00 00:00:00'),
+(59, 'Rupali Bank Limited', NULL, 1, 0, '2016-04-12 05:53:56', '0000-00-00 00:00:00'),
+(60, 'BASIC Bank Limited', NULL, 1, 0, '2016-04-12 05:54:02', '0000-00-00 00:00:00'),
+(61, 'Bangladesh Development Bank Limited', NULL, 1, 0, '2016-04-12 05:54:10', '0000-00-00 00:00:00'),
+(62, 'Rajshahi Krishi Unnoyon Bank', NULL, 1, 0, '2016-04-12 05:54:21', '0000-00-00 00:00:00'),
+(63, 'Bangladesh Krishi Bank Limited', NULL, 1, 1, '2016-04-12 05:54:28', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -103,8 +104,8 @@ INSERT INTO `card_bank` (`id`, `bank_name`, `created_by`, `modified_by`, `create
 -- Table structure for table `card_card_informations`
 --
 
-CREATE TABLE `card_card_informations` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_card_informations` (
+`id` int(10) NOT NULL,
   `bank_id` int(10) DEFAULT NULL,
   `cc_type_id` int(10) DEFAULT NULL,
   `card_type_id` int(10) DEFAULT NULL,
@@ -152,14 +153,14 @@ CREATE TABLE `card_card_informations` (
   `modified_by` int(10) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `card_card_informations`
 --
 
 INSERT INTO `card_card_informations` (`id`, `bank_id`, `cc_type_id`, `card_type_id`, `card_name`, `card_image_name`, `card_image_url`, `card_user_id`, `income_range_min_business`, `income_range_min_salaried`, `income_range_max_business`, `income_range_max_salaried`, `credit_limit_min_business`, `credit_limit_min_salaried`, `credit_limit_max_business`, `credit_limit_max_salaried`, `age_limit_min`, `age_limit_max`, `experience_salaried`, `experience_business`, `cc_issuer_id`, `card_benifit_id`, `benifit_details`, `interest_free_period_min`, `interest_free_pefiod_max`, `card_summary`, `pros`, `cons`, `review`, `annual_fee`, `annual_fee_vat`, `supplimentary`, `billing_cycle_start`, `billing_cycle_end`, `eligibility`, `purchase_interest_rate`, `balance_transfer_rate`, `cash_advance_interest_rate_yearly`, `purchase_interest_rate_monthly`, `balance_transfer_rate_monthly`, `cash_advance_interest_rate`, `cash_advance_limit`, `featured`, `status`, `created_by`, `modified_by`, `created`, `modified`) VALUES
-(1, 8, 1, 6, 'Visa Classic Dual Card', '&lt;', NULL, '3,4,5', '20000', '20000', '49999', '49999', '10000', '10000', '75000', '75000', '21', '60', '6', '1', 3, '1,3,4,5,6,9,10,12,13,17,18,22,23', '<ul>\n	<li>Waiver on Annual Fee if transact at least 18 times (including 10 POS transactions) in a physical year.</li>\n	<li>Discount is Available</li>\n	<li>Installment payment for bill &amp; purchase</li>\n	<li>Reward program is applicable</li>\n	<li>Worldwide cash advance facility</li>\n	<li>Convenient payment option</li>\n	<li>Credit assurance program</li>\n	<li>Multiple supplementary card</li>\n	<li>Auto debit payment service</li>\n	<li>Check book facility</li>\n	<li>Global emergency assistance service</li>\n</ul>\n\n<p>Free supplementary card</p>\n', '15', '45', '<p>Dual Currency Visa Classic Card of Brac Bank Ltd. is a valid both in Bangladesh &amp; outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) are done in a physical year.</p>', '<ul>\r\n	<li>Triple benefits insurance plan for the cardholders (See review for details)</li>\r\n	<li>Use of 100% limit through card cheque (See review for details)</li>\r\n	<li>Convenient payment option (See review for details)</li>\r\n	<li>You can set your own limit</li>\r\n	<li>Installment program is available</li>\r\n	<li>Cash withdraw 50% of the limit</li>\r\n</ul>', '<ul>\r\n	<li>Monthly fee 10 taka+vat for sms service &amp; transaction alert</li>\r\n	<li>0.35 paisa for every 100/= taka will be deducted for insurance program</li>\r\n	<li>Out of 18&nbsp;&nbsp;&nbsp; transactions, there must be 10 POS transaction to get waiver on annual fee.</li>\r\n</ul>', '<table border="0" cellpadding="0" cellspacing="0" style="width:670px">\r\n	<tbody>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Waiver on Annual Fee</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:675px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:675px">\r\n						<p style="margin-left:-6.0pt">Now payment of Annual fee for your Credit Card is totally your choice. BRAC Bank allows you to pay no Annual fee as long as you transact at least 18 times (including 10 POS transactions) in a physical year.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:675px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Cheque Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:674px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:674px">\r\n						<p style="margin-left:-6.0pt">With BRAC Bank Credit Card now you can enjoy cheque facility against your credit card limit. You can make payment (account payee only) to any person or organization where Credit Card facility is not available. You can use your 100% limit through Card cheque with a minimum processing fee. You will get your first cheque book absolutely for free.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:674px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Rewards Program</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:674px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:674px">\r\n						<p style="margin-left:-6.0pt">A special loyalty program that allows you to earn some points every time whenever you spend your money through POS with your Credit Card in Bangladesh only. For every Tk. 50 spent through POS on your credit Card, you get the opportunity to earn 1 Reward point. The accumulated Reward Points can be redeemed against exciting gift items from our Reward Catalogue. The enrollment of this program is free.&nbsp;</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:674px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>E-Statement Service</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>BRAC Bank brings more convenience for you through e-statement that will enable you to receive your monthly Credit Card statement via e-mail and this is absolutely free. No doubt nowadays e-statement is the fastest, reliable and efficient service, which ultimately minimizes your paper work and maximizes your convenience. E-Statement will be sent maximum up to 3 (Three) e-mail addresses. For enrollment you have to fill up the enrollment form and send /drop it to any branch of BRAC Bank.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Credit Shield Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Credit shield facility is a triple benefits Insurance Plan for the BBL Cardholders. The entire dues on the Credit Card, in the event of death or permanent total disability of BBL credit Cardholder, will be waived and the cardholder or his/her family will receive equal amount to meet immediate expenses. For any kind of accidental death, gold card holder is covered up to BDT 2-lacs and Classic Cardholder up to BDT 1 lac &ndash; under Credit Shield. A very nominal charge of 0.35 paisa for every TK.100/- of your Credit Card outstanding balance will be applicable for this coverage.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Extensive SMS Service &amp; Transaction Alert</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>BBL SMS Service is the simplest way to find out your Credit Card details through your mobile. This includes Push &amp; Pull service which you can avail free of cost. Through Pull Service you can access to your Credit Card information from anywhere anytime within Bangladesh. Through Push service BBL provides you with information on your BBL Card even when you are on the move. Now you would no longer miss a payment or exhaust your Credit limit without any warning.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>For the first time in Bangladesh, BRAC Bank brings you an extensive Transaction Alert Service for its Cardholders. BRAC Bank Transaction Alert - a service that allows you to stay updated on your Credit Card transactions. For each predefined transaction an alert will be generated and sent to your mobile instantly. At a nominal monthly fee of BDT 10 + VAT, you can enroll to the service.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><img alt="http://bracbank.com/images/arrow3.gif" src="file:///C:/Users/user/AppData/Local/Temp/msohtmlclip1/01/clip_image001.gif" style="height:11px; width:8px" /><strong>E-Alerts</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>In our effort to serve you further, we have now introduced E-Alerts (email alerts) for your BRAC Bank Credit Card usage abroad and online foreign currency transactions. This will ensure safety of your card and help you be informed - all the time - all over the world! All you have you do is ensure that your valid e-mail address is registered with us. Call 16221 for questions or details.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">\r\n						<p>&nbsp;</p>\r\n\r\n						<p>&nbsp;</p>\r\n						</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Real Time Payment Update</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Now you can avail your limit within a short time after making payment. Through IVR &amp; ATM you can instantly refresh your limit upon making payment. As for cash payment, limit will be refreshed within 2 hours during weekdays and end of the day during weekends.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Installment Program</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>This is an installment program that allows BBL Credit Cardholders to convert any retail transaction of BDT 3000 and above into an easy and convenient repayment schedule only @ 16.95%. You can also purchase your items of choice from some of our selected PayFlex partner outlets for 0% interest and payback in easy monthly installment.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Immediate Cash Advance Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>You don&#39;t need to worry about carrying cash anywhere &ndash; not even on a foreign trip where there is no one to give you hard cash at times of your need. You can withdraw cash up to 50% of your Credit Limit from any of our branches or any ATMs with Visa/MasterCard Logo across the country and outside the country.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Worldwide Acceptance</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Our Credit Card is accepted at over 5,000 outlets across the country and over 24 million Visa/MasterCard outlets worldwide. Use your Credit Card for everyday purchases as well as high valued transactions with wide range of products and services including hotels, restaurants, airlines, travel agents, shopping malls, department stores, hospitals, diagnostic centers, jewelers, electronics, computer shops and many more! This number is increasing rapidly to cater your growing needs. So, no matter where you are in the world BBL Credit Card gives you the power to purchase whatever you desire for.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Global Emergency Assistance Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>When you travel abroad, please remember that you have the option of using the Global Emergency Assistance Service provided by the Visa/MasterCard for our cardholders. These can be availed for: 1. Reporting Lost/ Stolen Credit Cards 2. Requesting for emergency card replacement 3. Emergency Cash Advance and 4. Miscellaneous enquiries. The toll free telephone numbers for accessing these emergency assistance Help line are available in local telephone directories/yellow pages and other local listings in each country.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Supplementary Card</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>With BBL credit Card you can share the exclusive benefits with your dearest and nearest one through providing supplementary card. As a primary cardholder you can also set spending limits for each of your supplementary cards. For your convenience all transactions on your Supplementary Card will be shown separately on your monthly Credit Card statement.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Convenient Payment option</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>When you receive your bill, you need not pay the entire bill amount. You have the flexibility of selecting any of the following payment options:</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:5px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:630px">\r\n							<tbody>\r\n								<tr>\r\n									<td style="width:15px">\r\n									<p><img alt="http://bracbank.com/images/arrow.gif" src="file:///C:/Users/user/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif" style="height:11px; width:6px" /></p>\r\n									</td>\r\n									<td style="width:615px">\r\n									<p>Pay the total amount due.</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:5px">&nbsp;</td>\r\n									<td style="height:5px">&nbsp;</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:71px">\r\n									<p><img alt="http://bracbank.com/images/arrow.gif" src="file:///C:/Users/user/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif" style="height:11px; width:6px" /></p>\r\n									</td>\r\n									<td style="height:71px">\r\n									<p>Pay the minimum amount due (5% of your total outstanding or BDT 500 whichever is higher of local card and for Dual card 5% of your outstanding or USD 10 whichever is higher) and the balance is carried forward to subsequent statements.</p>\r\n									</td>\r\n								</tr>\r\n							</tbody>\r\n						</table>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:5px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>You can pay your payment conveniently, without creating any extra pressure on your finances.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Auto debit option</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>If you have an account with any BRAC Bank branch, you have the option of making the payment of your monthly credit statement (either minimum amount due or total due amount) directly through your bank account.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Self-set limit</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>BRAC Bank Credit Card allows you to set your own card limit. You can request for a limit lower than what you are eligible for. You can even preset the monthly spending limits on the supplementary card. Any transaction above that specific spending limit will be declined.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">\r\n						<p>&nbsp;</p>\r\n						</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>BBL 24-hours Call Center</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>We offer Customer Services 24-hours a day, 7 days a week through our State-of&ndash;the Art Call Center and experienced customer service staffs. BRAC Bank Call Center facility provides you one stop solution for your banking needs.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Alternative Payment channels</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>BRAC Bank provides you different payment channels. Now you don&rsquo;t need to wait in queue to pay your credit card bill. You can easily pay your credit card bill through Cash Deposit Machine, ATM or through IVR (interactive voice recorder) and even through Internet Banking. For IVR, ATM &amp; Internet Banking you need to have an account with BRAC Bank.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Internet Banking</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>We understand the pressures on your time. For you to get information when you need it and where you need it, we offer you access to BRAC Bank Credit Card related information through the Internet at http://www.bracbank.com. You can also clear your Credit Card bills via Internet Banking from you BBL account. Please visit our branch or call our Phone Banking to learn about the enrollment.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>Soon you can also avail facilities like accessing account information - current and last statement - getting your payment status, viewing your monthly statement by e-mail, requesting a duplicate PIN, recording a change of address, ordering a draft, giving auto debit instructions, requesting a replacement card or an add-on card, redeeming points online from the Rewards catalogue and subscribing to statement by e-mail and mobile alert. The program will be available shortly and we will notify you soon.</p>\r\n						</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '1300', 'VAT', 'First Card Free, Second Card 600 + VAT', '1', '30', '<p>Any Bangladeshi National</p>\r\n\r\n<p>For salaried person minimum monthly income after tax is BDT 25,000</p>\r\n\r\n<p>For self-employed person minimum monthly income after tax is BDT 25,000</p>\r\n\r\n<p><strong>Age:</strong></p>\r\n\r\n<ul>\r\n	<li>Minimum 21 years for primary card</li>\r\n	<li>Minimum 18 years for supplementary card</li>\r\n	<li>Maximum 60 years for any card.</li>\r\n</ul>\r\n\r\n<p><strong>Document:</strong></p>\r\n\r\n<ul>\r\n	<li>Duly filled Credit Card Application form</li>\r\n	<li>Salary Certificate (salaried) / Valid and Updated Trade License (self-employed)</li>\r\n	<li>Partnership deed (self-employed)</li>\r\n	<li>Memorandum of Association(self-employed)</li>\r\n	<li>Certificate of Incorporation (self-employed)</li>\r\n	<li>Photocopy of updated TIN Certificate</li>\r\n	<li>Valid Photo ID (National ID/Passport)</li>\r\n	<li>Photocopy of Office ID</li>\r\n	<li>2 passport sized photographs</li>\r\n	<li>Latest Six Months Bank statement for salaried applicant</li>\r\n	<li>Latest One Year Bank statement for self employed</li>\r\n	<li>Latest Three Months Bank statement for those who maintain salary account with a reputed bank</li>\r\n	<li>Latest two months&rsquo; bank statement or 2 salary reflection for Corporate Offer Pack for Salaried and 4 months for Non Salaried</li>\r\n</ul>', '28', '28', '28', '2.33', '2.33', '2.33', '50', '0', '0', 1, NULL, '2016-04-12 11:43:43', '2016-04-21 18:14:29'),
+(1, 8, 1, 6, 'Visa Classic Dual Card', '&lt;', NULL, '3,4,5', '20000', '20000', '49999', '49999', '10000', '10000', '75000', '75000', '21', '60', '6', '1', 3, '1,3,4,5,6,9,10,12,13,17,18,22,23', '<ul>\n	<li>Waiver on Annual Fee if transact at least 18 times (including 10 POS transactions) in a physical year.</li>\n	<li>Discount is Available</li>\n	<li>Installment payment for bill &amp; purchase</li>\n	<li>Reward program is applicable</li>\n	<li>Worldwide cash advance facility</li>\n	<li>Convenient payment option</li>\n	<li>Credit assurance program</li>\n	<li>Multiple supplementary card</li>\n	<li>Auto debit payment service</li>\n	<li>Check book facility</li>\n	<li>Global emergency assistance service</li>\n</ul>\n\n<p>Free supplementary card</p>\n', '15', '45', '<p>Dual Currency Visa Classic Card of Brac Bank Ltd. is a valid both in Bangladesh &amp; outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) are done in a physical year.</p>', '<ul>	<li>Triple benefits insurance plan for the cardholders (See review for details)</li>	<li>Use of 100% limit through card cheque (See review for details)</li>	<li>Convenient payment option (See review for details)</li>	<li>You can set your own limit</li>	<li>Installment program is available</li>	<li>Cash withdraw 50% of the limit</li></ul>', '<ul>\r\n	<li>Monthly fee 10 taka+vat for sms service &amp; transaction alert</li>\r\n	<li>0.35 paisa for every 100/= taka will be deducted for insurance program</li>\r\n	<li>Out of 18&nbsp;&nbsp;&nbsp; transactions, there must be 10 POS transaction to get waiver on annual fee.</li>\r\n</ul>', '<table border="0" cellpadding="0" cellspacing="0" style="width:670px">\r\n	<tbody>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Waiver on Annual Fee</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:675px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:675px">\r\n						<p style="margin-left:-6.0pt">Now payment of Annual fee for your Credit Card is totally your choice. BRAC Bank allows you to pay no Annual fee as long as you transact at least 18 times (including 10 POS transactions) in a physical year.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:675px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Cheque Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:674px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:674px">\r\n						<p style="margin-left:-6.0pt">With BRAC Bank Credit Card now you can enjoy cheque facility against your credit card limit. You can make payment (account payee only) to any person or organization where Credit Card facility is not available. You can use your 100% limit through Card cheque with a minimum processing fee. You will get your first cheque book absolutely for free.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:674px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Rewards Program</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:674px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:674px">\r\n						<p style="margin-left:-6.0pt">A special loyalty program that allows you to earn some points every time whenever you spend your money through POS with your Credit Card in Bangladesh only. For every Tk. 50 spent through POS on your credit Card, you get the opportunity to earn 1 Reward point. The accumulated Reward Points can be redeemed against exciting gift items from our Reward Catalogue. The enrollment of this program is free.&nbsp;</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:674px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>E-Statement Service</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>BRAC Bank brings more convenience for you through e-statement that will enable you to receive your monthly Credit Card statement via e-mail and this is absolutely free. No doubt nowadays e-statement is the fastest, reliable and efficient service, which ultimately minimizes your paper work and maximizes your convenience. E-Statement will be sent maximum up to 3 (Three) e-mail addresses. For enrollment you have to fill up the enrollment form and send /drop it to any branch of BRAC Bank.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Credit Shield Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Credit shield facility is a triple benefits Insurance Plan for the BBL Cardholders. The entire dues on the Credit Card, in the event of death or permanent total disability of BBL credit Cardholder, will be waived and the cardholder or his/her family will receive equal amount to meet immediate expenses. For any kind of accidental death, gold card holder is covered up to BDT 2-lacs and Classic Cardholder up to BDT 1 lac &ndash; under Credit Shield. A very nominal charge of 0.35 paisa for every TK.100/- of your Credit Card outstanding balance will be applicable for this coverage.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Extensive SMS Service &amp; Transaction Alert</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>BBL SMS Service is the simplest way to find out your Credit Card details through your mobile. This includes Push &amp; Pull service which you can avail free of cost. Through Pull Service you can access to your Credit Card information from anywhere anytime within Bangladesh. Through Push service BBL provides you with information on your BBL Card even when you are on the move. Now you would no longer miss a payment or exhaust your Credit limit without any warning.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>For the first time in Bangladesh, BRAC Bank brings you an extensive Transaction Alert Service for its Cardholders. BRAC Bank Transaction Alert - a service that allows you to stay updated on your Credit Card transactions. For each predefined transaction an alert will be generated and sent to your mobile instantly. At a nominal monthly fee of BDT 10 + VAT, you can enroll to the service.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><img alt="http://bracbank.com/images/arrow3.gif" src="file:///C:/Users/user/AppData/Local/Temp/msohtmlclip1/01/clip_image001.gif" style="height:11px; width:8px" /><strong>E-Alerts</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>In our effort to serve you further, we have now introduced E-Alerts (email alerts) for your BRAC Bank Credit Card usage abroad and online foreign currency transactions. This will ensure safety of your card and help you be informed - all the time - all over the world! All you have you do is ensure that your valid e-mail address is registered with us. Call 16221 for questions or details.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">\r\n						<p>&nbsp;</p>\r\n\r\n						<p>&nbsp;</p>\r\n						</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Real Time Payment Update</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Now you can avail your limit within a short time after making payment. Through IVR &amp; ATM you can instantly refresh your limit upon making payment. As for cash payment, limit will be refreshed within 2 hours during weekdays and end of the day during weekends.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Installment Program</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>This is an installment program that allows BBL Credit Cardholders to convert any retail transaction of BDT 3000 and above into an easy and convenient repayment schedule only @ 16.95%. You can also purchase your items of choice from some of our selected PayFlex partner outlets for 0% interest and payback in easy monthly installment.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Immediate Cash Advance Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>You don&#39;t need to worry about carrying cash anywhere &ndash; not even on a foreign trip where there is no one to give you hard cash at times of your need. You can withdraw cash up to 50% of your Credit Limit from any of our branches or any ATMs with Visa/MasterCard Logo across the country and outside the country.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Worldwide Acceptance</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Our Credit Card is accepted at over 5,000 outlets across the country and over 24 million Visa/MasterCard outlets worldwide. Use your Credit Card for everyday purchases as well as high valued transactions with wide range of products and services including hotels, restaurants, airlines, travel agents, shopping malls, department stores, hospitals, diagnostic centers, jewelers, electronics, computer shops and many more! This number is increasing rapidly to cater your growing needs. So, no matter where you are in the world BBL Credit Card gives you the power to purchase whatever you desire for.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Global Emergency Assistance Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>When you travel abroad, please remember that you have the option of using the Global Emergency Assistance Service provided by the Visa/MasterCard for our cardholders. These can be availed for: 1. Reporting Lost/ Stolen Credit Cards 2. Requesting for emergency card replacement 3. Emergency Cash Advance and 4. Miscellaneous enquiries. The toll free telephone numbers for accessing these emergency assistance Help line are available in local telephone directories/yellow pages and other local listings in each country.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Supplementary Card</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>With BBL credit Card you can share the exclusive benefits with your dearest and nearest one through providing supplementary card. As a primary cardholder you can also set spending limits for each of your supplementary cards. For your convenience all transactions on your Supplementary Card will be shown separately on your monthly Credit Card statement.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Convenient Payment option</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>When you receive your bill, you need not pay the entire bill amount. You have the flexibility of selecting any of the following payment options:</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:5px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:630px">\r\n							<tbody>\r\n								<tr>\r\n									<td style="width:15px">\r\n									<p><img alt="http://bracbank.com/images/arrow.gif" src="file:///C:/Users/user/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif" style="height:11px; width:6px" /></p>\r\n									</td>\r\n									<td style="width:615px">\r\n									<p>Pay the total amount due.</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:5px">&nbsp;</td>\r\n									<td style="height:5px">&nbsp;</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:71px">\r\n									<p><img alt="http://bracbank.com/images/arrow.gif" src="file:///C:/Users/user/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif" style="height:11px; width:6px" /></p>\r\n									</td>\r\n									<td style="height:71px">\r\n									<p>Pay the minimum amount due (5% of your total outstanding or BDT 500 whichever is higher of local card and for Dual card 5% of your outstanding or USD 10 whichever is higher) and the balance is carried forward to subsequent statements.</p>\r\n									</td>\r\n								</tr>\r\n							</tbody>\r\n						</table>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:5px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>You can pay your payment conveniently, without creating any extra pressure on your finances.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Auto debit option</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>If you have an account with any BRAC Bank branch, you have the option of making the payment of your monthly credit statement (either minimum amount due or total due amount) directly through your bank account.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Self-set limit</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>BRAC Bank Credit Card allows you to set your own card limit. You can request for a limit lower than what you are eligible for. You can even preset the monthly spending limits on the supplementary card. Any transaction above that specific spending limit will be declined.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">\r\n						<p>&nbsp;</p>\r\n						</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>BBL 24-hours Call Center</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>We offer Customer Services 24-hours a day, 7 days a week through our State-of&ndash;the Art Call Center and experienced customer service staffs. BRAC Bank Call Center facility provides you one stop solution for your banking needs.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Alternative Payment channels</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>BRAC Bank provides you different payment channels. Now you don&rsquo;t need to wait in queue to pay your credit card bill. You can easily pay your credit card bill through Cash Deposit Machine, ATM or through IVR (interactive voice recorder) and even through Internet Banking. For IVR, ATM &amp; Internet Banking you need to have an account with BRAC Bank.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Internet Banking</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>We understand the pressures on your time. For you to get information when you need it and where you need it, we offer you access to BRAC Bank Credit Card related information through the Internet at http://www.bracbank.com. You can also clear your Credit Card bills via Internet Banking from you BBL account. Please visit our branch or call our Phone Banking to learn about the enrollment.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>Soon you can also avail facilities like accessing account information - current and last statement - getting your payment status, viewing your monthly statement by e-mail, requesting a duplicate PIN, recording a change of address, ordering a draft, giving auto debit instructions, requesting a replacement card or an add-on card, redeeming points online from the Rewards catalogue and subscribing to statement by e-mail and mobile alert. The program will be available shortly and we will notify you soon.</p>\r\n						</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '1300', 'VAT', 'First Card Free, Second Card 600 + VAT', '1', '30', '<p>Any Bangladeshi National</p>\r\n\r\n<p>For salaried person minimum monthly income after tax is BDT 25,000</p>\r\n\r\n<p>For self-employed person minimum monthly income after tax is BDT 25,000</p>\r\n\r\n<p><strong>Age:</strong></p>\r\n\r\n<ul>\r\n	<li>Minimum 21 years for primary card</li>\r\n	<li>Minimum 18 years for supplementary card</li>\r\n	<li>Maximum 60 years for any card.</li>\r\n</ul>\r\n\r\n<p><strong>Document:</strong></p>\r\n\r\n<ul>\r\n	<li>Duly filled Credit Card Application form</li>\r\n	<li>Salary Certificate (salaried) / Valid and Updated Trade License (self-employed)</li>\r\n	<li>Partnership deed (self-employed)</li>\r\n	<li>Memorandum of Association(self-employed)</li>\r\n	<li>Certificate of Incorporation (self-employed)</li>\r\n	<li>Photocopy of updated TIN Certificate</li>\r\n	<li>Valid Photo ID (National ID/Passport)</li>\r\n	<li>Photocopy of Office ID</li>\r\n	<li>2 passport sized photographs</li>\r\n	<li>Latest Six Months Bank statement for salaried applicant</li>\r\n	<li>Latest One Year Bank statement for self employed</li>\r\n	<li>Latest Three Months Bank statement for those who maintain salary account with a reputed bank</li>\r\n	<li>Latest two months&rsquo; bank statement or 2 salary reflection for Corporate Offer Pack for Salaried and 4 months for Non Salaried</li>\r\n</ul>', '28', '28', '28', '2.33', '2.33', '2.33', '50', '0', '0', 1, NULL, '2016-04-12 11:43:43', '2016-04-24 14:57:28'),
 (2, 10, 1, 5, 'Mastercard Gold', '&lt;', NULL, '4,5', '45000', '30000', '45000', '30000', '99000', '99000', '500000', '50000', '21', '70', '6', '1', 2, '1,9,12,17,18', NULL, '15', '45', '<p>Mastercard Gold of Bank Asia Ltd. is a local currency credit card which is valid only in Bangladesh. It has double credit shield program.</p>', '<ul>\r\n	<li>Double benefits insurance plan for the cardholders (See review for details)</li>\r\n	<li>Convenient payment option (See review for details)</li>\r\n	<li>Installment program is available</li>\r\n	<li>Cash withdraw 50% of the limit</li>\r\n</ul>', '<ul>\r\n	<li>Monthly fee 10 taka + vat for sms service &amp; transaction alert</li>\r\n	<li>0.33% for double shield program on the total outstanding balance</li>\r\n</ul>', '<table border="0" cellpadding="0" cellspacing="0" style="width:680px">\r\n	<tbody>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Local Currency Credit Card</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:675px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:675px">\r\n						<p style="margin-left:-6.0pt">MasterCard Gold is a local currency credit card; users can use this card anyone in Bangladesh where Bank Asia ATM service and POS service is available.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:675px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Cheque Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:674px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:674px">\r\n						<p style="margin-left:-6.0pt">With Bank Asia Mastercard Gold now you can enjoy cheque facility against your credit card limit. You can make payment (account payee only) to any person or organization where Credit Card facility is not available. Check processing fee is 1.50% and check issue fee is BDT 100.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:674px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Rewards Program</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>&ldquo;Reward&rdquo; means a product, gift, service, voucher or entitlement available to a cardholder under Rewards Program, as publish in the catalogue that is current at the date of redemption of points by a cardholder during the same Rewards Program.</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<p>Bank Asia Mastercard Gold offers Tk. 50 which is equivalent to 1 Treasure Point&rdquo; for every Retail purchase.</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<p>&ldquo;Treasure Point&rdquo; means a port accumulated by a cardholder towards participation in the Rewards Program through Credit Card use by that Cardholder. Treasure points calculation is determined by the Bank &amp; can be varied from time to time.</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<p>Following are the reward catalogue of Bank Asia Ltd. Mastercard Gold. Cardholders can redeem monetary value against their treasure points.</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<table align="center" border="0" cellpadding="0" cellspacing="0" style="width:680px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Reward Redemption Schedule</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="width:670px">\r\n						<table align="center" border="1" cellpadding="0" cellspacing="0" style="width:664px">\r\n							<tbody>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p><strong>Bank Asia Credit Cards Treasure Point</strong></p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p><strong>Value (TK)</strong></p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>2000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk. 500.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>5000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk. 1100.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>7500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.2100.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>10000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.2800.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>12500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.3800.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>15000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.4600.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>17500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.5500.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>20000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.6100.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>22500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.7500.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>25000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.8000.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>27500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.9000.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>30000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.10000.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>40000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.15000.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>50000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.20000.00</p>\r\n									</td>\r\n								</tr>\r\n							</tbody>\r\n						</table>\r\n\r\n						<div style="clear:both;">&nbsp;</div>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>Rewards Catalogue</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p><strong>Easy tips to Earn More Treasure Points</strong></p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:660px">\r\n							<tbody>\r\n								<tr>\r\n									<td style="width:15px">\r\n									<p><img alt="http://www.bankasia-bd.com/images/square1.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" style="height:11px; width:9px" /></p>\r\n									</td>\r\n									<td style="width:645px">\r\n									<p>Do not leave home without your Bank Asia Credit Card. Shop, Dine and entertain using your Bank Asia Credit Card every day. Enjoy the recognition and financial power while earning more points.</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:5px">&nbsp;</td>\r\n									<td style="height:5px">&nbsp;</td>\r\n								</tr>\r\n								<tr>\r\n									<td>\r\n									<p><img alt="http://www.bankasia-bd.com/images/square1.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" style="height:11px; width:9px" /></p>\r\n									</td>\r\n									<td>\r\n									<p>Use your Credit Card for all payments, For Example, Mobile Bill, Electricity Bill etc. Enjoy total flexibility while earning MORE points.</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:5px">&nbsp;</td>\r\n									<td style="height:5px">&nbsp;</td>\r\n								</tr>\r\n								<tr>\r\n									<td>\r\n									<p><img alt="http://www.bankasia-bd.com/images/square1.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" style="height:11px; width:9px" /></p>\r\n									</td>\r\n									<td>\r\n									<p>Use your Credit Card while re-fueling your car or buying groceries. Enjoy MORE points for frequent purchases.</p>\r\n									</td>\r\n								</tr>\r\n							</tbody>\r\n						</table>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:20px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n\r\n			<div style="clear:both;">&nbsp;</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>E-Statement Service</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Bank Asia Ltd. brings more convenience for you through e-statement that will enable you to receive your monthly Credit Card statement via e-mail and this is absolutely free. No doubt nowadays e-statement is the fastest, reliable and efficient service, which ultimately minimizes your paper work and maximizes your convenience. E-Statement will be sent maximum up to 3 (Three) e-mail addresses. For enrollment you have to fill up the enrollment form and send /drop it to any branch of Bank Asia.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Credit Shield Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Credit shield facility of Bank Asia is a double benefits Insurance Plan for the Cardholders. The entire dues on the Credit Card, in the event of death or permanent total disability of credit Cardholder, will be waived and the cardholder or his/her family will receive equal amount to meet immediate expenses. A very nominal premium of 0.33% of your Credit Card total outstanding balance will be applicable for this coverage.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Extensive SMS Service &amp; Transaction Alert</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Bank Asia provides SMS Service in the simplest way to find out your Credit Card details through your mobile. This includes Push &amp; Pull service which you can avail free of cost. Through Pull Service you can access to your Credit Card information from anywhere anytime within Bangladesh. Through Push service BBL provides you with information on your BBL Card even when you are on the move. Now you would no longer miss a payment or exhaust your Credit limit without any warning.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>Transaction Alert service that allows you to stay updated on your Credit Card transactions. For each predefined transaction an alert will be generated and sent to your mobile instantly. At a nominal monthly fee of BDT 10 + VAT, you can enroll to the service.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p>&nbsp;</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<p><strong>Installment Program</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p>&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>This is an installment program that allows Bank Asia Credit Cardholders to convert any retail transaction of BDT 3000 and above into an easy and convenient repayment schedule only @ 16.95%. You can also purchase your items of choice from some of our selected PayFlex partner outlets for 0% interest and payback in easy monthly installment.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Supplementary Card</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>With BBL credit Card you can share the exclusive benefits with your dearest and nearest one through providing supplementary card. For your convenience all transactions on your Supplementary Card will be shown separately on your monthly Credit Card statement.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Convenient Payment option</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>When you receive your bill, you need not pay the entire bill amount. You have the flexibility of selecting any of the following payment options:</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:5px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:630px">\r\n							<tbody>\r\n								<tr>\r\n									<td style="width:15px">\r\n									<p><img alt="http://bracbank.com/images/arrow.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image003.gif" style="height:11px; width:6px" /></p>\r\n									</td>\r\n									<td style="width:615px">\r\n									<p>Pay the total amount due.</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:5px">&nbsp;</td>\r\n									<td style="height:5px">&nbsp;</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:71px">\r\n									<p><img alt="http://bracbank.com/images/arrow.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image003.gif" style="height:11px; width:6px" /></p>\r\n									</td>\r\n									<td style="height:71px">\r\n									<p>Pay the minimum amount due (5% of your total outstanding or BDT 500 whichever is higher of local card and for Dual card 5% of your outstanding or USD 10 whichever is higher) and the balance is carried forward to subsequent statements.</p>\r\n									</td>\r\n								</tr>\r\n							</tbody>\r\n						</table>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:5px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>You can pay your payment conveniently, without creating any extra pressure on your finances.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Bank Asia 24-hours Call Center</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Bank Asia Ltd. offers Customer Services 24-hours a day, 7 days a week through our State-of&ndash;the Art Call Center and experienced customer service staffs. Bank Asia Call Center facility provides you one stops solution for your banking needs.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '1000', 'N/A', 'Free', '1', '30', '<ul>\r\n	<li><strong>Eligibility</strong></li>\r\n</ul>\r\n\r\n<p>Any Bangladeshi National</p>\r\n\r\n<p>For salaried person minimum monthly income after tax is BDT 30,000</p>\r\n\r\n<p>For self-employed person minimum monthly income after tax is BDT 45,000</p>\r\n\r\n<p><strong>Age:</strong></p>\r\n\r\n<ul>\r\n	<li>Minimum 21 years for primary card</li>\r\n	<li>Minimum 18 years for supplementary card</li>\r\n	<li>Maximum 70 years for any card.</li>\r\n</ul>\r\n\r\n<p><strong>Document:</strong></p>\r\n\r\n<p>List of Documents:</p>\r\n\r\n<p><strong>Salaried Group</strong></p>\r\n\r\n<ul>\r\n	<li>Two copies Color Photograph (P.P. Size) duly attested by the applicant</li>\r\n	<li>Salary Certificate</li>\r\n	<li>Last Six Months&rsquo; Salary Account Statement</li>\r\n	<li>TIN Certificate</li>\r\n	<li>Copy of National ID card</li>\r\n	<li>Copy of driving license (If any)</li>\r\n	<li>CIB Undertaking Form</li>\r\n	<li>Photocopy of Passport (1st to 7th pages &amp; dollar endorsement pages)</li>\r\n	<li>Proof of Residence (Electricity/WASA/ Gas Bill, if any)</li>\r\n	<li>Proof of Car ownership (Photocopy of Blue Book of the car, if any)</li>\r\n	<li>Proof of T&amp;T ownership (Photocopy of T&amp;T Bill, if any)</li>\r\n</ul>\r\n\r\n<p><strong>Self-employed Group</strong></p>\r\n\r\n<ul>\r\n	<li>Two copies Color Photograph (P.P. Size) duly attested by the applicant</li>\r\n	<li>Valid Trade License (if Proprietor)/ Partnership Deed (if partnership)/ Memorandum of Articles with Incorporation Certificate (for Ltd. Co.)</li>\r\n	<li>Current six months Bank Statement (personal &amp; Company)</li>\r\n	<li>TIN Certificate (only personal TIN)</li>\r\n	<li>Copy of National ID card</li>\r\n	<li>Copy of driving license (If any)</li>\r\n	<li>CIB Undertaking Form</li>\r\n	<li>Photocopy of Passport (1st to 7th pages &amp; dollar endorsement pages)</li>\r\n	<li>Proof of Residence (Electricity/WASA/Gas Bill, if any)</li>\r\n	<li>Proof of Car ownership (Photocopy of Blue Book of the car, if any)</li>\r\n	<li>Proof of T&amp;T ownership (Photocopy of T&amp;T Bill, if any)</li>\r\n</ul>', '28', '28', '28', '2.33', '2.33', '2.33', '50', '0', '0', 1, NULL, '2016-04-18 04:20:22', '2016-04-18 19:04:43');
 INSERT INTO `card_card_informations` (`id`, `bank_id`, `cc_type_id`, `card_type_id`, `card_name`, `card_image_name`, `card_image_url`, `card_user_id`, `income_range_min_business`, `income_range_min_salaried`, `income_range_max_business`, `income_range_max_salaried`, `credit_limit_min_business`, `credit_limit_min_salaried`, `credit_limit_max_business`, `credit_limit_max_salaried`, `age_limit_min`, `age_limit_max`, `experience_salaried`, `experience_business`, `cc_issuer_id`, `card_benifit_id`, `benifit_details`, `interest_free_period_min`, `interest_free_pefiod_max`, `card_summary`, `pros`, `cons`, `review`, `annual_fee`, `annual_fee_vat`, `supplimentary`, `billing_cycle_start`, `billing_cycle_end`, `eligibility`, `purchase_interest_rate`, `balance_transfer_rate`, `cash_advance_interest_rate_yearly`, `purchase_interest_rate_monthly`, `balance_transfer_rate_monthly`, `cash_advance_interest_rate`, `cash_advance_limit`, `featured`, `status`, `created_by`, `modified_by`, `created`, `modified`) VALUES
 (3, 10, 1, 5, 'Mastercard Gold', '&lt;', NULL, '4,5', '45000', '30000', '45000', '30000', '99000', '99000', '500000', '50000', '21', '70', '6', '1', 2, '1,9,12,17,18', NULL, '15', '45', '<p>Mastercard Gold of Bank Asia Ltd. is a local currency credit card which is valid only in Bangladesh. It has double credit shield program.</p>', '<ul>\r\n	<li>Double benefits insurance plan for the cardholders (See review for details)</li>\r\n	<li>Convenient payment option (See review for details)</li>\r\n	<li>Installment program is available</li>\r\n	<li>Cash withdraw 50% of the limit</li>\r\n</ul>', '<ul>\r\n	<li>Monthly fee 10 taka + vat for sms service &amp; transaction alert</li>\r\n	<li>0.33% for double shield program on the total outstanding balance</li>\r\n</ul>', '<table border="0" cellpadding="0" cellspacing="0" style="width:680px">\r\n	<tbody>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Local Currency Credit Card</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:675px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:675px">\r\n						<p style="margin-left:-6.0pt">MasterCard Gold is a local currency credit card; users can use this card anyone in Bangladesh where Bank Asia ATM service and POS service is available.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:675px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Cheque Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:674px">\r\n				<tbody>\r\n					<tr>\r\n						<td style="width:674px">\r\n						<p style="margin-left:-6.0pt">With Bank Asia Mastercard Gold now you can enjoy cheque facility against your credit card limit. You can make payment (account payee only) to any person or organization where Credit Card facility is not available. Check processing fee is 1.50% and check issue fee is BDT 100.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px; width:674px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Rewards Program</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<p>&ldquo;Reward&rdquo; means a product, gift, service, voucher or entitlement available to a cardholder under Rewards Program, as publish in the catalogue that is current at the date of redemption of points by a cardholder during the same Rewards Program.</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<p>Bank Asia Mastercard Gold offers Tk. 50 which is equivalent to 1 Treasure Point&rdquo; for every Retail purchase.</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<p>&ldquo;Treasure Point&rdquo; means a port accumulated by a cardholder towards participation in the Rewards Program through Credit Card use by that Cardholder. Treasure points calculation is determined by the Bank &amp; can be varied from time to time.</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<p>Following are the reward catalogue of Bank Asia Ltd. Mastercard Gold. Cardholders can redeem monetary value against their treasure points.</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<table align="center" border="0" cellpadding="0" cellspacing="0" style="width:680px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Reward Redemption Schedule</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="width:670px">\r\n						<table align="center" border="1" cellpadding="0" cellspacing="0" style="width:664px">\r\n							<tbody>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p><strong>Bank Asia Credit Cards Treasure Point</strong></p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p><strong>Value (TK)</strong></p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>2000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk. 500.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>5000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk. 1100.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>7500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.2100.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>10000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.2800.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>12500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.3800.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>15000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.4600.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>17500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.5500.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>20000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.6100.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>22500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.7500.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>25000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.8000.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>27500</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.9000.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>30000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.10000.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>40000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.15000.00</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="width:514px">\r\n									<p>50000</p>\r\n									</td>\r\n									<td style="width:150px">\r\n									<p>Tk.20000.00</p>\r\n									</td>\r\n								</tr>\r\n							</tbody>\r\n						</table>\r\n\r\n						<div style="clear:both;">&nbsp;</div>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>Rewards Catalogue</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p><strong>Easy tips to Earn More Treasure Points</strong></p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<table align="right" border="0" cellpadding="0" cellspacing="0" style="width:660px">\r\n							<tbody>\r\n								<tr>\r\n									<td style="width:15px">\r\n									<p><img alt="http://www.bankasia-bd.com/images/square1.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" style="height:11px; width:9px" /></p>\r\n									</td>\r\n									<td style="width:645px">\r\n									<p>Do not leave home without your Bank Asia Credit Card. Shop, Dine and entertain using your Bank Asia Credit Card every day. Enjoy the recognition and financial power while earning more points.</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:5px">&nbsp;</td>\r\n									<td style="height:5px">&nbsp;</td>\r\n								</tr>\r\n								<tr>\r\n									<td>\r\n									<p><img alt="http://www.bankasia-bd.com/images/square1.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" style="height:11px; width:9px" /></p>\r\n									</td>\r\n									<td>\r\n									<p>Use your Credit Card for all payments, For Example, Mobile Bill, Electricity Bill etc. Enjoy total flexibility while earning MORE points.</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:5px">&nbsp;</td>\r\n									<td style="height:5px">&nbsp;</td>\r\n								</tr>\r\n								<tr>\r\n									<td>\r\n									<p><img alt="http://www.bankasia-bd.com/images/square1.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png" style="height:11px; width:9px" /></p>\r\n									</td>\r\n									<td>\r\n									<p>Use your Credit Card while re-fueling your car or buying groceries. Enjoy MORE points for frequent purchases.</p>\r\n									</td>\r\n								</tr>\r\n							</tbody>\r\n						</table>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:20px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n\r\n			<div style="clear:both;">&nbsp;</div>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>E-Statement Service</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Bank Asia Ltd. brings more convenience for you through e-statement that will enable you to receive your monthly Credit Card statement via e-mail and this is absolutely free. No doubt nowadays e-statement is the fastest, reliable and efficient service, which ultimately minimizes your paper work and maximizes your convenience. E-Statement will be sent maximum up to 3 (Three) e-mail addresses. For enrollment you have to fill up the enrollment form and send /drop it to any branch of Bank Asia.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Credit Shield Facility</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Credit shield facility of Bank Asia is a double benefits Insurance Plan for the Cardholders. The entire dues on the Credit Card, in the event of death or permanent total disability of credit Cardholder, will be waived and the cardholder or his/her family will receive equal amount to meet immediate expenses. A very nominal premium of 0.33% of your Credit Card total outstanding balance will be applicable for this coverage.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Extensive SMS Service &amp; Transaction Alert</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Bank Asia provides SMS Service in the simplest way to find out your Credit Card details through your mobile. This includes Push &amp; Pull service which you can avail free of cost. Through Pull Service you can access to your Credit Card information from anywhere anytime within Bangladesh. Through Push service BBL provides you with information on your BBL Card even when you are on the move. Now you would no longer miss a payment or exhaust your Credit limit without any warning.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>Transaction Alert service that allows you to stay updated on your Credit Card transactions. For each predefined transaction an alert will be generated and sent to your mobile instantly. At a nominal monthly fee of BDT 10 + VAT, you can enroll to the service.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p>&nbsp;</p>\r\n\r\n			<p>&nbsp;</p>\r\n\r\n			<p><strong>Installment Program</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p>&nbsp;</p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>This is an installment program that allows Bank Asia Credit Cardholders to convert any retail transaction of BDT 3000 and above into an easy and convenient repayment schedule only @ 16.95%. You can also purchase your items of choice from some of our selected PayFlex partner outlets for 0% interest and payback in easy monthly installment.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Supplementary Card</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>With BBL credit Card you can share the exclusive benefits with your dearest and nearest one through providing supplementary card. For your convenience all transactions on your Supplementary Card will be shown separately on your monthly Credit Card statement.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Convenient Payment option</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>When you receive your bill, you need not pay the entire bill amount. You have the flexibility of selecting any of the following payment options:</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:5px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:630px">\r\n							<tbody>\r\n								<tr>\r\n									<td style="width:15px">\r\n									<p><img alt="http://bracbank.com/images/arrow.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image003.gif" style="height:11px; width:6px" /></p>\r\n									</td>\r\n									<td style="width:615px">\r\n									<p>Pay the total amount due.</p>\r\n									</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:5px">&nbsp;</td>\r\n									<td style="height:5px">&nbsp;</td>\r\n								</tr>\r\n								<tr>\r\n									<td style="height:71px">\r\n									<p><img alt="http://bracbank.com/images/arrow.gif" src="file:///C:/Users/Atif/AppData/Local/Temp/msohtmlclip1/01/clip_image003.gif" style="height:11px; width:6px" /></p>\r\n									</td>\r\n									<td style="height:71px">\r\n									<p>Pay the minimum amount due (5% of your total outstanding or BDT 500 whichever is higher of local card and for Dual card 5% of your outstanding or USD 10 whichever is higher) and the balance is carried forward to subsequent statements.</p>\r\n									</td>\r\n								</tr>\r\n							</tbody>\r\n						</table>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:5px">&nbsp;</td>\r\n					</tr>\r\n					<tr>\r\n						<td>\r\n						<p>You can pay your payment conveniently, without creating any extra pressure on your finances.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:20px">\r\n			<p><strong>Bank Asia 24-hours Call Center</strong></p>\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td style="height:5px">&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:650px">\r\n				<tbody>\r\n					<tr>\r\n						<td>\r\n						<p>Bank Asia Ltd. offers Customer Services 24-hours a day, 7 days a week through our State-of&ndash;the Art Call Center and experienced customer service staffs. Bank Asia Call Center facility provides you one stops solution for your banking needs.</p>\r\n						</td>\r\n					</tr>\r\n					<tr>\r\n						<td style="height:10px">&nbsp;</td>\r\n					</tr>\r\n				</tbody>\r\n			</table>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '1000', 'N/A', 'Free', '1', '30', '<ul>\r\n	<li><strong>Eligibility</strong></li>\r\n</ul>\r\n\r\n<p>Any Bangladeshi National</p>\r\n\r\n<p>For salaried person minimum monthly income after tax is BDT 30,000</p>\r\n\r\n<p>For self-employed person minimum monthly income after tax is BDT 45,000</p>\r\n\r\n<p><strong>Age:</strong></p>\r\n\r\n<ul>\r\n	<li>Minimum 21 years for primary card</li>\r\n	<li>Minimum 18 years for supplementary card</li>\r\n	<li>Maximum 70 years for any card.</li>\r\n</ul>\r\n\r\n<p><strong>Document:</strong></p>\r\n\r\n<p>List of Documents:</p>\r\n\r\n<p><strong>Salaried Group</strong></p>\r\n\r\n<ul>\r\n	<li>Two copies Color Photograph (P.P. Size) duly attested by the applicant</li>\r\n	<li>Salary Certificate</li>\r\n	<li>Last Six Months&rsquo; Salary Account Statement</li>\r\n	<li>TIN Certificate</li>\r\n	<li>Copy of National ID card</li>\r\n	<li>Copy of driving license (If any)</li>\r\n	<li>CIB Undertaking Form</li>\r\n	<li>Photocopy of Passport (1st to 7th pages &amp; dollar endorsement pages)</li>\r\n	<li>Proof of Residence (Electricity/WASA/ Gas Bill, if any)</li>\r\n	<li>Proof of Car ownership (Photocopy of Blue Book of the car, if any)</li>\r\n	<li>Proof of T&amp;T ownership (Photocopy of T&amp;T Bill, if any)</li>\r\n</ul>\r\n\r\n<p><strong>Self-employed Group</strong></p>\r\n\r\n<ul>\r\n	<li>Two copies Color Photograph (P.P. Size) duly attested by the applicant</li>\r\n	<li>Valid Trade License (if Proprietor)/ Partnership Deed (if partnership)/ Memorandum of Articles with Incorporation Certificate (for Ltd. Co.)</li>\r\n	<li>Current six months Bank Statement (personal &amp; Company)</li>\r\n	<li>TIN Certificate (only personal TIN)</li>\r\n	<li>Copy of National ID card</li>\r\n	<li>Copy of driving license (If any)</li>\r\n	<li>CIB Undertaking Form</li>\r\n	<li>Photocopy of Passport (1st to 7th pages &amp; dollar endorsement pages)</li>\r\n	<li>Proof of Residence (Electricity/WASA/Gas Bill, if any)</li>\r\n	<li>Proof of Car ownership (Photocopy of Blue Book of the car, if any)</li>\r\n	<li>Proof of T&amp;T ownership (Photocopy of T&amp;T Bill, if any)</li>\r\n</ul>', '28', '28', '28', '2.33', '2.33', '2.33', '50', '0', '0', 1, NULL, '2016-04-18 04:20:26', '2016-04-18 19:04:51'),
@@ -172,14 +173,14 @@ INSERT INTO `card_card_informations` (`id`, `bank_id`, `cc_type_id`, `card_type_
 -- Table structure for table `card_card_issuer`
 --
 
-CREATE TABLE `card_card_issuer` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_card_issuer` (
+`id` int(10) NOT NULL,
   `card_issuer_name` varchar(225) DEFAULT NULL,
   `created_by` int(10) NOT NULL,
   `modified_by` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `card_card_issuer`
@@ -196,14 +197,14 @@ INSERT INTO `card_card_issuer` (`id`, `card_issuer_name`, `created_by`, `modifie
 -- Table structure for table `card_card_type`
 --
 
-CREATE TABLE `card_card_type` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_card_type` (
+`id` int(10) NOT NULL,
   `card_type_name` varchar(200) DEFAULT NULL,
   `created_by` int(10) NOT NULL,
   `modified_by` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='local, International';
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='local, International' AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `card_card_type`
@@ -222,14 +223,14 @@ INSERT INTO `card_card_type` (`id`, `card_type_name`, `created_by`, `modified_by
 -- Table structure for table `card_card_user`
 --
 
-CREATE TABLE `card_card_user` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_card_user` (
+`id` int(10) NOT NULL,
   `card_user` varchar(225) DEFAULT NULL,
   `created_by` int(10) NOT NULL,
   `modified_by` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `card_card_user`
@@ -246,14 +247,14 @@ INSERT INTO `card_card_user` (`id`, `card_user`, `created_by`, `modified_by`, `c
 -- Table structure for table `card_credit_card_type`
 --
 
-CREATE TABLE `card_credit_card_type` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_credit_card_type` (
+`id` int(10) NOT NULL,
   `cc_card_type` varchar(225) DEFAULT NULL,
   `created_by` int(10) NOT NULL,
   `modified_by` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `card_credit_card_type`
@@ -270,8 +271,8 @@ INSERT INTO `card_credit_card_type` (`id`, `cc_card_type`, `created_by`, `modifi
 -- Table structure for table `card_fees_charges`
 --
 
-CREATE TABLE `card_fees_charges` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_fees_charges` (
+`id` int(10) NOT NULL,
   `card_id` int(10) DEFAULT NULL,
   `basic_card_annual_fee` varchar(10) DEFAULT NULL,
   `basic_card_annual_fee_plus` varchar(25) DEFAULT NULL,
@@ -308,7 +309,7 @@ CREATE TABLE `card_fees_charges` (
   `modified_by` int(10) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `card_fees_charges`
@@ -327,13 +328,13 @@ INSERT INTO `card_fees_charges` (`id`, `card_id`, `basic_card_annual_fee`, `basi
 -- Table structure for table `card_info_card_reward`
 --
 
-CREATE TABLE `card_info_card_reward` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_info_card_reward` (
+`id` int(10) NOT NULL,
   `card_info_id` int(10) NOT NULL,
   `card_reward_id` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `card_info_card_reward`
@@ -387,13 +388,13 @@ INSERT INTO `card_info_card_reward` (`id`, `card_info_id`, `card_reward_id`, `cr
 -- Table structure for table `card_info_card_user`
 --
 
-CREATE TABLE `card_info_card_user` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_info_card_user` (
+`id` int(10) NOT NULL,
   `card_info_id` int(10) NOT NULL,
   `card_user_id` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `card_info_card_user`
@@ -420,14 +421,14 @@ INSERT INTO `card_info_card_user` (`id`, `card_info_id`, `card_user_id`, `create
 -- Table structure for table `card_reward`
 --
 
-CREATE TABLE `card_reward` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `card_reward` (
+`id` int(10) NOT NULL,
   `reward_name` varchar(225) DEFAULT NULL,
   `created_by` int(10) DEFAULT NULL,
   `modified_by` int(10) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `card_reward`
@@ -461,11 +462,186 @@ INSERT INTO `card_reward` (`id`, `reward_name`, `created_by`, `modified_by`, `cr
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `home_loan_applicant_type`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_applicant_type` (
+`id` int(10) NOT NULL,
+  `home_loan_applicant_type` varchar(100) DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  `modified_by` int(10) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_loan_applicant_type_home_loan_info`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_applicant_type_home_loan_info` (
+`id` int(10) NOT NULL,
+  `home_loan_applicant_type_id` int(10) DEFAULT NULL,
+  `home_loan_info_id` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_loan_features`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_features` (
+`id` int(10) NOT NULL,
+  `home_loan_feature` varchar(200) DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  `modified_by` int(10) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_loan_feature_home_loan_info`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_feature_home_loan_info` (
+`id` int(10) NOT NULL,
+  `home_loan_feature_id` int(10) DEFAULT NULL,
+  `home_loan_info_id` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_loan_info`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_info` (
+`id` int(10) NOT NULL,
+  `bank_id` int(10) DEFAULT NULL,
+  `loan_type_id` int(10) DEFAULT NULL,
+  `min_income_salaried` varchar(15) DEFAULT NULL,
+  `max_income_salaried` varchar(15) DEFAULT NULL,
+  `min_income_professional` varchar(15) DEFAULT NULL,
+  `max_income_professional` varchar(15) DEFAULT NULL,
+  `min_income_businessman` varchar(15) DEFAULT NULL,
+  `max_income_businessman` varchar(15) DEFAULT NULL,
+  `min_income_landloard` varchar(15) DEFAULT NULL,
+  `max_income_landloard` varchar(15) DEFAULT NULL,
+  `downpayment_flat` varchar(10) DEFAULT NULL,
+  `downpayment_home_construction` varchar(10) DEFAULT NULL,
+  `downpayment_housing_plot` varchar(10) DEFAULT NULL,
+  `downpayment_extension_finish_work` varchar(10) DEFAULT NULL,
+  `downpayment_home_loan_take_over` varchar(10) DEFAULT NULL,
+  `security_required` varchar(255) DEFAULT NULL,
+  `repayment_type` varchar(200) DEFAULT NULL,
+  `repayment_option` varchar(255) DEFAULT NULL,
+  `early_settlement_fee` varchar(10) DEFAULT NULL,
+  `partial_payment_fee` varchar(10) DEFAULT NULL,
+  `penalty_charge` varchar(10) DEFAULT NULL,
+  `quotation_charge_fee_bdt` varchar(10) DEFAULT NULL,
+  `quotation_charge_fee_percentage` varchar(10) DEFAULT NULL,
+  `minimum_term` varchar(15) DEFAULT NULL,
+  `maximum_term` varchar(15) DEFAULT NULL,
+  `grace_period` varchar(15) DEFAULT NULL,
+  `availability_of_early_settlement` varchar(1) DEFAULT NULL,
+  `availability_of_partial_payment` varchar(1) DEFAULT NULL,
+  `try_party_agreement_up_to` varchar(25) DEFAULT NULL,
+  `min_experience_salaried` varchar(10) DEFAULT NULL,
+  `min_experience_professional` varchar(10) DEFAULT NULL,
+  `min_experience_businessman` varchar(10) DEFAULT NULL,
+  `min_age` varchar(10) DEFAULT NULL,
+  `max` varchar(10) DEFAULT NULL,
+  `required_document` longtext,
+  `additional_doc_for_salaried` longtext,
+  `additional_doc_for_businessman` longtext,
+  `additional_doc_for_landloard` longtext,
+  `created_by` int(10) DEFAULT NULL,
+  `modified_by` int(10) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_loan_looking_for`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_looking_for` (
+  `id` int(10) NOT NULL,
+  `home_loan_looking_for` varchar(100) NOT NULL,
+  `created_by` int(10) NOT NULL,
+  `modified_by` int(10) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_loan_looking_for_home_loan_info`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_looking_for_home_loan_info` (
+`id` int(10) NOT NULL,
+  `home_loan_looking_for_id` int(10) DEFAULT NULL,
+  `home_loan_info_id` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_loan_user`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_user` (
+`id` int(10) NOT NULL,
+  `home_loan_user` varchar(100) DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  `modified_by` int(10) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_loan_user_home_loan_info`
+--
+
+CREATE TABLE IF NOT EXISTS `home_loan_user_home_loan_info` (
+`id` int(10) NOT NULL,
+  `home_loan_user_id` int(10) DEFAULT NULL,
+  `home_loan_info_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loan_type`
+--
+
+CREATE TABLE IF NOT EXISTS `loan_type` (
+`id` int(10) NOT NULL,
+  `loan_type` varchar(100) DEFAULT NULL,
+  `created_by` int(10) DEFAULT NULL,
+  `modified_by` int(10) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `map_map_location`
 --
 
-CREATE TABLE `map_map_location` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `map_map_location` (
+`id` int(10) NOT NULL,
   `map_location_category_id` int(10) NOT NULL,
   `map_location_name` varchar(250) NOT NULL,
   `image_name` varchar(100) NOT NULL,
@@ -476,7 +652,7 @@ CREATE TABLE `map_map_location` (
   `created_by` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -484,13 +660,13 @@ CREATE TABLE `map_map_location` (
 -- Table structure for table `map_map_location_category`
 --
 
-CREATE TABLE `map_map_location_category` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `map_map_location_category` (
+`id` int(10) NOT NULL,
   `category_name` varchar(100) NOT NULL,
   `image_name` varchar(100) NOT NULL,
   `image_url` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -498,8 +674,8 @@ CREATE TABLE `map_map_location_category` (
 -- Table structure for table `tbl_admin_user`
 --
 
-CREATE TABLE `tbl_admin_user` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_admin_user` (
+`id` int(10) NOT NULL,
   `first_name` varchar(25) NOT NULL,
   `last_name` varchar(25) NOT NULL,
   `user_name` varchar(15) NOT NULL,
@@ -515,7 +691,7 @@ CREATE TABLE `tbl_admin_user` (
   `last_login` datetime NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `tbl_admin_user`
@@ -530,14 +706,14 @@ INSERT INTO `tbl_admin_user` (`id`, `first_name`, `last_name`, `user_name`, `ema
 -- Table structure for table `tbl_admin_user_role`
 --
 
-CREATE TABLE `tbl_admin_user_role` (
-  `id` int(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tbl_admin_user_role` (
+`id` int(10) NOT NULL,
   `admin_role` varchar(100) NOT NULL,
   `created_by` int(10) NOT NULL,
   `modified_by` int(2) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `tbl_admin_user_role`
@@ -555,85 +731,139 @@ INSERT INTO `tbl_admin_user_role` (`id`, `admin_role`, `created_by`, `modified_b
 -- Indexes for table `card_bank`
 --
 ALTER TABLE `card_bank`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_card_informations`
 --
 ALTER TABLE `card_card_informations`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_card_issuer`
 --
 ALTER TABLE `card_card_issuer`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_card_type`
 --
 ALTER TABLE `card_card_type`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_card_user`
 --
 ALTER TABLE `card_card_user`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_credit_card_type`
 --
 ALTER TABLE `card_credit_card_type`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_fees_charges`
 --
 ALTER TABLE `card_fees_charges`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_info_card_reward`
 --
 ALTER TABLE `card_info_card_reward`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_info_card_user`
 --
 ALTER TABLE `card_info_card_user`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `card_reward`
 --
 ALTER TABLE `card_reward`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_loan_applicant_type`
+--
+ALTER TABLE `home_loan_applicant_type`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_loan_applicant_type_home_loan_info`
+--
+ALTER TABLE `home_loan_applicant_type_home_loan_info`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_loan_features`
+--
+ALTER TABLE `home_loan_features`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_loan_feature_home_loan_info`
+--
+ALTER TABLE `home_loan_feature_home_loan_info`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_loan_info`
+--
+ALTER TABLE `home_loan_info`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_loan_looking_for_home_loan_info`
+--
+ALTER TABLE `home_loan_looking_for_home_loan_info`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_loan_user`
+--
+ALTER TABLE `home_loan_user`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_loan_user_home_loan_info`
+--
+ALTER TABLE `home_loan_user_home_loan_info`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `loan_type`
+--
+ALTER TABLE `loan_type`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `map_map_location`
 --
 ALTER TABLE `map_map_location`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `map_map_location_category`
 --
 ALTER TABLE `map_map_location_category`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_admin_user`
 --
 ALTER TABLE `tbl_admin_user`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_admin_user_role`
 --
 ALTER TABLE `tbl_admin_user_role`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -643,72 +873,117 @@ ALTER TABLE `tbl_admin_user_role`
 -- AUTO_INCREMENT for table `card_bank`
 --
 ALTER TABLE `card_bank`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT for table `card_card_informations`
 --
 ALTER TABLE `card_card_informations`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `card_card_issuer`
 --
 ALTER TABLE `card_card_issuer`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `card_card_type`
 --
 ALTER TABLE `card_card_type`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `card_card_user`
 --
 ALTER TABLE `card_card_user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `card_credit_card_type`
 --
 ALTER TABLE `card_credit_card_type`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `card_fees_charges`
 --
 ALTER TABLE `card_fees_charges`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `card_info_card_reward`
 --
 ALTER TABLE `card_info_card_reward`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT for table `card_info_card_user`
 --
 ALTER TABLE `card_info_card_user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `card_reward`
 --
 ALTER TABLE `card_reward`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT for table `home_loan_applicant_type`
+--
+ALTER TABLE `home_loan_applicant_type`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `home_loan_applicant_type_home_loan_info`
+--
+ALTER TABLE `home_loan_applicant_type_home_loan_info`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `home_loan_features`
+--
+ALTER TABLE `home_loan_features`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `home_loan_feature_home_loan_info`
+--
+ALTER TABLE `home_loan_feature_home_loan_info`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `home_loan_info`
+--
+ALTER TABLE `home_loan_info`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `home_loan_looking_for_home_loan_info`
+--
+ALTER TABLE `home_loan_looking_for_home_loan_info`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `home_loan_user`
+--
+ALTER TABLE `home_loan_user`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `home_loan_user_home_loan_info`
+--
+ALTER TABLE `home_loan_user_home_loan_info`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `loan_type`
+--
+ALTER TABLE `loan_type`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `map_map_location`
 --
 ALTER TABLE `map_map_location`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `map_map_location_category`
 --
 ALTER TABLE `map_map_location_category`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_admin_user`
 --
 ALTER TABLE `tbl_admin_user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_admin_user_role`
 --
 ALTER TABLE `tbl_admin_user_role`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
