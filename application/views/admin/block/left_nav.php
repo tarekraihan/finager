@@ -111,16 +111,17 @@
                         <a href="<?php echo base_url();?>card/card_fees_charges_list">Card Fees and Charges List</a>
                     </li>
             </li>
+
         </ul>
             </li>
-            <!--<li class="top-menu-invisible">
-                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">SmartAdmin Intel</span></a>
+            <li class="top-menu-invisible">
+                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Home Loan</span></a>
                 <ul>
                     <li>
-                        <a href=""><i class="fa fa-stack-overflow"></i> Different Versions</a>
+                        <a href="<?php echo base_url();?>home_loan/loan_type/""><i class="fa fa-stack-overflow"></i> Loan Type</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-cube"></i> App Settings</a>
+                        <a href="<?php echo base_url();?>home_loan/home_loan_applicant_type/""><i class="fa fa-stack-overflow"></i> Applicant Type</a>
                     </li>
                     <li>
                         <a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/documentation/index.html" target="_blank"><i class="fa fa-book"></i> Documentation</a>
@@ -129,7 +130,7 @@
                         <a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/" target="_blank"><i class="fa fa-bug"></i> Bug Tracker</a>
                     </li>
                 </ul>
-            </li>-->
+            </li>
 
 
         </ul>
