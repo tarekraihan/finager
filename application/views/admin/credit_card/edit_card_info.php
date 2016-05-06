@@ -81,7 +81,22 @@ if(isset($_GET['id']))
 <!-- MAIN PANEL -->
 <div id="main" role="main">
 
+    <!-- RIBBON -->
+    <div id="ribbon">
 
+                    <span class="ribbon-button-alignment">
+                        <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+                            <i class="fa fa-refresh"></i>
+                        </span>
+                    </span>
+
+        <!-- breadcrumb -->
+        <ol class="breadcrumb">
+            <li>Home</li><li>Card</li><li>Edit Card Information</li>
+        </ol>
+
+    </div>
+    <!-- END RIBBON -->
 
     <!-- MAIN CONTENT -->
     <div id="content">
@@ -95,6 +110,9 @@ if(isset($_GET['id']))
 								Edit Card Information
 							</span>
                 </h1>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+                <a href="<?php echo base_url();?>card/card_info_list/" class="btn btn-primary pull-right">Card List </a>
             </div>
         </div>
 
@@ -110,7 +128,7 @@ if(isset($_GET['id']))
                 <article class="col-sm-12 col-md-12 col-lg-12">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
 
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>

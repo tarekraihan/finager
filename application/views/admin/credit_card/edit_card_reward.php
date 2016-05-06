@@ -1,24 +1,22 @@
 <?php
-
-if(isset($_GET['type_id']))
+if(isset($_GET['reward_id']))
 {
-    $id=$_GET['type_id'];
-    $table='card_card_type';
+    $id=$_GET['reward_id'];
+    $table='card_reward';
     $id_field='id';
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
 }
-
 if(isset($_GET['id']))
 {
     $id=$_GET['id'];
-    $table='card_card_type';
+    $table='card_reward';
     $id_field='id';
     $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
     /*print_r($row);
         die;*/
 }else{
     $row['id']='';
-    $row['card_type_name']='';
+    $row['reward_name']='';
 }
 ?>
 <!-- MAIN PANEL -->
@@ -35,7 +33,7 @@ if(isset($_GET['id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Home</li><li>Card</li><li>Card Type</li>
+            <li>Home</li><li>Card</li><li>Edit Card Reward</li>
         </ol>
 
     </div>
@@ -50,9 +48,12 @@ if(isset($_GET['id']))
                     <i class="fa fa-table fa-fw "></i>
                     Management
 							<span>> 
-								Edit Card Type
+								Edit Card Reward
 							</span>
                 </h1>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+                <a href="<?php echo base_url();?>card/card_reward/" class="btn btn-primary pull-right">Add +</a>
             </div>
 
         </div>
@@ -67,10 +68,10 @@ if(isset($_GET['id']))
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2> Edit Card Type </h2>
+                            <h2> Edit Card Reward</h2>
 
                         </header>
 
@@ -87,7 +88,7 @@ if(isset($_GET['id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/edit_card_type" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/edit_card_reward" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -96,14 +97,14 @@ if(isset($_GET['id']))
                                     ?>
                                     <fieldset>
                                         <section>
-                                            <label class="label">Card Type </label>
+                                            <label class="label">Interest Free Period </label>
                                             <label class="input">
-                                                <input type="hidden" name="txtCardTypeId" value ="<?php echo $row['id']; ?>" />
-                                                <input type="text" name="txtCardType" placeholder="Card Type" value ="<?php echo $row['card_type_name']; ?>" />
+                                                <input type="hidden" name="txtCardRewardId" value ="<?php echo $row['id']; ?>" />
+                                                <input type="text" name="txtCardReward" placeholder="Card Reward" value ="<?php echo $row['reward_name']; ?>" />
 
                                             </label>
                                             <div class="form-group">
-                                                <label class="red"><?php echo form_error('txtAgeLimit');?></label>
+                                                <label class="red"><?php echo form_error('txtCardReward');?></label>
 
                                             </div>
                                         </section>
@@ -129,6 +130,8 @@ if(isset($_GET['id']))
                 </article>
                 <!-- END COL -->
 
+
+
                 <!-- NEW WIDGET START -->
                 <article class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 
@@ -136,7 +139,7 @@ if(isset($_GET['id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Card Type Tables </h2>
+                            <h2>Card Reward List </h2>
 
                         </header>
 
@@ -156,8 +159,8 @@ if(isset($_GET['id']))
                                 <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
                                     <thead>
                                     <tr>
-                                        <th data-hide="phone">NO.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Type</th>
+                                        <th data-hide="phone">No.</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Reward</th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -166,7 +169,7 @@ if(isset($_GET['id']))
 
                                     <?php
                                     $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'card_card_type';
+                                    $this->Common_model->table_name = 'card_reward';
                                     $query=$this->Common_model->select_all();
                                     $sl=1;
                                     foreach ($query->result() as $row)
@@ -174,8 +177,8 @@ if(isset($_GET['id']))
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->card_type_name;?></td>
-                                            <td><a href="<?php echo base_url(); ?>card/edit_card_type?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?type_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td ><?php echo $row->reward_name;?></td>
+                                            <td><a href="<?php echo base_url(); ?>card/edit_card_reward?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?reward_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;

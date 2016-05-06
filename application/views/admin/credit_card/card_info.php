@@ -79,7 +79,7 @@
                 <article class="col-sm-12 col-md-12 col-lg-12">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
 
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
@@ -434,213 +434,213 @@
 
 
 											</article>
-										<!-- WIDGET END -->
-										
-										<!-- NEW WIDGET START -->
-										<article class="col-sm-6 col-md-6 col-lg-6">
+                            <!-- WIDGET END -->
 
-											<!-- Widget ID (each widget will need unique ID)-->
-											<div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-												<header>
-													<span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-													<h2>Eligibility</h2>
+                            <!-- NEW WIDGET START -->
+                            <article class="col-sm-6 col-md-6 col-lg-6">
 
-												</header>
+                                <!-- Widget ID (each widget will need unique ID)-->
+                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                                    <header>
+                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                                        <h2>Eligibility</h2>
 
-												<!-- widget div-->
-												<div>
+                                    </header>
 
-													<!-- widget edit box -->
-													<div class="jarviswidget-editbox">
-														<!-- This area used as dropdown edit box -->
+                                    <!-- widget div-->
+                                    <div>
 
-													</div>
-													<!-- end widget edit box -->
+                                        <!-- widget edit box -->
+                                        <div class="jarviswidget-editbox">
+                                            <!-- This area used as dropdown edit box -->
 
-													<!-- widget content -->
-													<div class="widget-body no-padding">
-                                                        <section class="col col-12">
+                                        </div>
+                                        <!-- end widget edit box -->
 
-                                                            <label class="input">
-                                                                <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo set_value('txtEligibility'); ?></textarea>
-                                                            </label>
-                                                        </section>
+                                        <!-- widget content -->
+                                        <div class="widget-body no-padding">
+                                            <section class="col col-12">
 
-													</div>
-													<!-- end widget content -->
-                                                    <label class="red"><?php echo form_error('txtEligibility');?></label>
-												</div>
-												<!-- end widget div -->
+                                                <label class="input">
+                                                    <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo set_value('txtEligibility'); ?></textarea>
+                                                </label>
+                                            </section>
 
-											</div>
-											<!-- end widget -->
+                                        </div>
+                                        <!-- end widget content -->
+                                        <label class="red"><?php echo form_error('txtEligibility');?></label>
+                                    </div>
+                                    <!-- end widget div -->
 
-										</article>
-										<!-- WIDGET END -->
+                                </div>
+                                <!-- end widget -->
 
-
-
-                                        <article class="col-sm-6 col-md-6 col-lg-6">
-
-                                            <!-- Widget ID (each widget will need unique ID)-->
-                                            <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                                                <header>
-                                                    <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                                                    <h2>Card Summary</h2>
-
-                                                </header>
-
-                                                <!-- widget div-->
-                                                <div>
-
-                                                    <!-- widget edit box -->
-                                                    <div class="jarviswidget-editbox">
-                                                        <!-- This area used as dropdown edit box -->
-
-                                                    </div>
-                                                    <!-- end widget edit box -->
-
-                                                    <!-- widget content -->
-                                                    <div class="widget-body no-padding">
-                                                        <section class="col col-12">
-
-                                                            <label class="input">
-                                                                <textarea type="text" id="txtCardSummary" class="ckeditor" name="txtCardSummary"><?php echo set_value('txtCardSummary'); ?></textarea>
-                                                            </label>
-                                                        </section>
-
-                                                    </div>
-                                                    <!-- end widget content -->
-                                                    <label class="red"><?php echo form_error('txtCardSummary');?></label>
-                                                </div>
-                                                <!-- end widget div -->
-
-                                            </div>
-                                            <!-- end widget -->
-
-                                        </article>
-                                        <article class="col-sm-6 col-md-6 col-lg-6">
-
-											<!-- Widget ID (each widget will need unique ID)-->
-											<div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-												<header>
-													<span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-													<h2>Pros</h2>
-
-												</header>
-
-												<!-- widget div-->
-												<div>
-
-													<!-- widget edit box -->
-													<div class="jarviswidget-editbox">
-														<!-- This area used as dropdown edit box -->
-
-													</div>
-													<!-- end widget edit box -->
-
-													<!-- widget content -->
-													<div class="widget-body no-padding">
-                                                        <section class="col col-12">
-
-                                                            <label class="input">
-                                                                <textarea type="text" id="txtPros" class="ckeditor" name="txtPros"><?php echo set_value('txtPros'); ?></textarea>
-                                                            </label>
-                                                        </section>
-
-													</div>
-													<!-- end widget content -->
-                                                    <label class="red"><?php echo form_error('txtPros');?></label>
-												</div>
-												<!-- end widget div -->
-
-											</div>
-											<!-- end widget -->
-
-										</article>
-										<!-- WIDGET END -->
+                            </article>
+                            <!-- WIDGET END -->
 
 
 
-                                        <article class="col-sm-6 col-md-6 col-lg-6">
+                            <article class="col-sm-6 col-md-6 col-lg-6">
 
-                                            <!-- Widget ID (each widget will need unique ID)-->
-                                            <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                                                <header>
-                                                    <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                                                    <h2>Cons</h2>
+                                <!-- Widget ID (each widget will need unique ID)-->
+                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                                    <header>
+                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                                        <h2>Card Summary</h2>
 
-                                                </header>
+                                    </header>
 
-                                                <!-- widget div-->
-                                                <div>
+                                    <!-- widget div-->
+                                    <div>
 
-                                                    <!-- widget edit box -->
-                                                    <div class="jarviswidget-editbox">
-                                                        <!-- This area used as dropdown edit box -->
+                                        <!-- widget edit box -->
+                                        <div class="jarviswidget-editbox">
+                                            <!-- This area used as dropdown edit box -->
 
-                                                    </div>
-                                                    <!-- end widget edit box -->
+                                        </div>
+                                        <!-- end widget edit box -->
 
-                                                    <!-- widget content -->
-                                                    <div class="widget-body no-padding">
-                                                        <section class="col col-12">
+                                        <!-- widget content -->
+                                        <div class="widget-body no-padding">
+                                            <section class="col col-12">
 
-                                                            <label class="input">
-                                                                <textarea type="text" id="txtCons" class="ckeditor" name="txtCons"><?php echo set_value('txtCons'); ?></textarea>
-                                                            </label>
-                                                        </section>
+                                                <label class="input">
+                                                    <textarea type="text" id="txtCardSummary" class="ckeditor" name="txtCardSummary"><?php echo set_value('txtCardSummary'); ?></textarea>
+                                                </label>
+                                            </section>
 
-                                                    </div>
-                                                    <!-- end widget content -->
-                                                    <label class="red"><?php echo form_error('txtCons');?></label>
-                                                </div>
-                                                <!-- end widget div -->
+                                        </div>
+                                        <!-- end widget content -->
+                                        <label class="red"><?php echo form_error('txtCardSummary');?></label>
+                                    </div>
+                                    <!-- end widget div -->
 
-                                            </div>
-                                            <!-- end widget -->
+                                </div>
+                                <!-- end widget -->
 
-                                        </article>
-                                        <article class="col-sm-12 col-md-12 col-lg-12">
+                            </article>
+                            <article class="col-sm-6 col-md-6 col-lg-6">
 
-                                            <!-- Widget ID (each widget will need unique ID)-->
-                                            <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                                                <header>
-                                                    <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                                                    <h2>Benefit</h2>
+                                <!-- Widget ID (each widget will need unique ID)-->
+                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                                    <header>
+                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                                        <h2>Pros</h2>
 
-                                                </header>
+                                    </header>
 
-                                                <!-- widget div-->
-                                                <div>
+                                    <!-- widget div-->
+                                    <div>
 
-                                                    <!-- widget edit box -->
-                                                    <div class="jarviswidget-editbox">
-                                                        <!-- This area used as dropdown edit box -->
+                                        <!-- widget edit box -->
+                                        <div class="jarviswidget-editbox">
+                                            <!-- This area used as dropdown edit box -->
 
-                                                    </div>
-                                                    <!-- end widget edit box -->
+                                        </div>
+                                        <!-- end widget edit box -->
 
-                                                    <!-- widget content -->
-                                                    <div class="widget-body no-padding">
-                                                        <section class="col col-12">
+                                        <!-- widget content -->
+                                        <div class="widget-body no-padding">
+                                            <section class="col col-12">
 
-                                                            <label class="input" style="width:100%;">
-                                                                <textarea type="text" id="txtBenefit" class="ckeditor" name="txtBenefit"><?php echo set_value('txtBenefit'); ?></textarea>
-                                                            </label>
-                                                        </section>
+                                                <label class="input">
+                                                    <textarea type="text" id="txtPros" class="ckeditor" name="txtPros"><?php echo set_value('txtPros'); ?></textarea>
+                                                </label>
+                                            </section>
 
-                                                    </div>
-                                                    <!-- end widget content -->
-                                                    <label class="red"><?php echo form_error('txtBenefit');?></label>
-                                                </div>
-                                                <!-- end widget div -->
+                                        </div>
+                                        <!-- end widget content -->
+                                        <label class="red"><?php echo form_error('txtPros');?></label>
+                                    </div>
+                                    <!-- end widget div -->
 
-                                            </div>
-                                            <!-- end widget -->
+                                </div>
+                                <!-- end widget -->
 
-                                        </article>
-                                        <article class="col-sm-12 col-md-12 col-lg-12">
+                            </article>
+                            <!-- WIDGET END -->
+
+
+
+                            <article class="col-sm-6 col-md-6 col-lg-6">
+
+                                <!-- Widget ID (each widget will need unique ID)-->
+                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                                    <header>
+                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                                        <h2>Cons</h2>
+
+                                    </header>
+
+                                    <!-- widget div-->
+                                    <div>
+
+                                        <!-- widget edit box -->
+                                        <div class="jarviswidget-editbox">
+                                            <!-- This area used as dropdown edit box -->
+
+                                        </div>
+                                        <!-- end widget edit box -->
+
+                                        <!-- widget content -->
+                                        <div class="widget-body no-padding">
+                                            <section class="col col-12">
+
+                                                <label class="input">
+                                                    <textarea type="text" id="txtCons" class="ckeditor" name="txtCons"><?php echo set_value('txtCons'); ?></textarea>
+                                                </label>
+                                            </section>
+
+                                        </div>
+                                        <!-- end widget content -->
+                                        <label class="red"><?php echo form_error('txtCons');?></label>
+                                    </div>
+                                    <!-- end widget div -->
+
+                                </div>
+                                <!-- end widget -->
+
+                            </article>
+                            <article class="col-sm-12 col-md-12 col-lg-12">
+
+                                <!-- Widget ID (each widget will need unique ID)-->
+                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                                    <header>
+                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                                        <h2>Benefit</h2>
+
+                                    </header>
+
+                                    <!-- widget div-->
+                                    <div>
+
+                                        <!-- widget edit box -->
+                                        <div class="jarviswidget-editbox">
+                                            <!-- This area used as dropdown edit box -->
+
+                                        </div>
+                                        <!-- end widget edit box -->
+
+                                        <!-- widget content -->
+                                        <div class="widget-body no-padding">
+                                            <section class="col col-12">
+
+                                                <label class="input" style="width:100%;">
+                                                    <textarea type="text" id="txtBenefit" class="ckeditor" name="txtBenefit"><?php echo set_value('txtBenefit'); ?></textarea>
+                                                </label>
+                                            </section>
+
+                                        </div>
+                                        <!-- end widget content -->
+                                        <label class="red"><?php echo form_error('txtBenefit');?></label>
+                                    </div>
+                                    <!-- end widget div -->
+
+                                </div>
+                                <!-- end widget -->
+
+                            </article>
+                            <article class="col-sm-12 col-md-12 col-lg-12">
 
                                             <!-- Widget ID (each widget will need unique ID)-->
                                             <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">

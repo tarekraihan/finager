@@ -66,7 +66,7 @@ if(isset($_GET['c_user_id']))
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
                             <h2>Add Card User </h2>

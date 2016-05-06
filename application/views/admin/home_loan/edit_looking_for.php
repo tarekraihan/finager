@@ -1,12 +1,26 @@
 <?php
 
-if(isset($_GET['reward_id']))
-{
-    $id=$_GET['reward_id'];
-    $table='card_reward';
-    $id_field='id';
-    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
-}
+    if(isset($_GET['looking_id']))
+    {
+        $id=$_GET['looking_id'];
+        $table='home_loan_looking_for';
+        $id_field='id';
+        $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+    }
+
+
+    if(isset($_GET['id'])){
+        $id=$_GET['id'];
+        $table='home_loan_looking_for';
+        $id_field='id';
+        $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+        /*print_r($row);
+
+            die;*/
+    }else{
+        $row['id']='';
+        $row['home_loan_looking_for']='';
+    }
 ?>
 <!-- MAIN PANEL -->
 <div id="main" role="main">
@@ -22,21 +36,9 @@ if(isset($_GET['reward_id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Home</li><li>Card</li><li> Card Reward</li>
+            <li>Loan</li><li>Home Loan</li><li>Update Looking For</li>
         </ol>
         <!-- end breadcrumb -->
-
-        <!-- You can also add more buttons to the
-        ribbon for further usability
-
-        Example below:
-
-        <span class="ribbon-button-alignment pull-right">
-        <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-        <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
-        <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-        </span> -->
-
     </div>
     <!-- END RIBBON -->
 
@@ -47,11 +49,15 @@ if(isset($_GET['reward_id']))
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
-                    Management
+                    Home Loan
 							<span>> 
-								Card Reward
+								Update Looking For
 							</span>
                 </h1>
+            </div>
+
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+                <a href="<?php echo base_url();?>home_loan/looking_for/" class="btn btn-primary pull-right">Add +</a>
             </div>
 
         </div>
@@ -66,10 +72,10 @@ if(isset($_GET['reward_id']))
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Add Card Reward </h2>
+                            <h2>Update Looking Fro </h2>
 
                         </header>
 
@@ -86,7 +92,7 @@ if(isset($_GET['reward_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/card_reward" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>home_loan/edit_feature" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -95,20 +101,21 @@ if(isset($_GET['reward_id']))
                                     ?>
                                     <fieldset>
                                         <section>
-                                            <label class="label">Card Reward</label>
+                                            <label class="label">Looking For </label>
                                             <label class="input">
-                                                <input type="text" name="txtCardReward" placeholder="Card Reward" value ="<?php echo set_value('txtCardReward'); ?>" />
+                                                <input type="hidden" name="txtLookingForId" value ="<?php echo $row['id']; ?>" />
+                                                <input type="text" name="txtLookingFor" placeholder="Write Looking For" value ="<?php echo $row['home_loan_looking_for']; ?>" />
 
                                             </label>
                                             <div class="form-group">
-                                                <label class="red"><?php echo form_error('txtCardReward');?></label>
+                                                <label class="red"><?php echo form_error('txtLookingFor');?></label>
 
                                             </div>
                                         </section>
                                     </fieldset>
                                     <footer>
                                         <button type="submit" id="save" class="btn btn-primary"  >
-                                            Save
+                                            Update
                                         </button>
                                     </footer>
                                 </form>
@@ -134,7 +141,7 @@ if(isset($_GET['reward_id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Card Reward List </h2>
+                            <h2>Loan Looking For List </h2>
 
                         </header>
 
@@ -155,7 +162,7 @@ if(isset($_GET['reward_id']))
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">No.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Reward</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Loan Looking For </th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -164,7 +171,7 @@ if(isset($_GET['reward_id']))
 
                                     <?php
                                     $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'card_reward';
+                                    $this->Common_model->table_name = 'home_loan_looking_for';
                                     $query=$this->Common_model->select_all();
                                     $sl=1;
                                     foreach ($query->result() as $row)
@@ -172,8 +179,8 @@ if(isset($_GET['reward_id']))
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->reward_name;?></td>
-                                            <td><a href="<?php echo base_url(); ?>card/edit_card_reward?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?reward_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td ><?php echo $row->home_loan_looking_for;?></td>
+                                            <td><a href="<?php echo base_url(); ?>home_loan/edit_looking_for?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?looking_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;

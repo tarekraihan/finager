@@ -69,10 +69,13 @@
         <h1 class="page-title txt-color-blueDark">
             <i class="fa fa-table fa-fw "></i>
             Credit Card
-							<span>> 
-								Edit Fees and Charges
-							</span>
+                <span>>
+                    Edit Fees and Charges
+                </span>
         </h1>
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+        <a href="<?php echo base_url();?>card/card_fees_charges_list/" class="btn btn-primary pull-right">Fees and Charges List </a>
     </div>
 
 </div>
@@ -87,7 +90,7 @@
 <article class="col-sm-12 col-md-12 col-lg-12">
 
 <!-- Widget ID (each widget will need unique ID)-->
-<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+<div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
 <header>
     <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
     <h2>Add Card Fees and Charges</h2>

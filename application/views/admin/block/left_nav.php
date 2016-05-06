@@ -105,10 +105,10 @@
                     <li>
                         <a href="<?php echo base_url();?>card/card_info_list">Card Information List</a>
                     <li>
-                    <a href="<?php echo base_url();?>card/card_fees_charges">Card Fees and Charges</a>
+                    <a href="<?php echo base_url();?>card/card_fees_charges">Fees and Charges</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url();?>card/card_fees_charges_list">Card Fees and Charges List</a>
+                        <a href="<?php echo base_url();?>card/card_fees_charges_list">Fees and Charges List</a>
                     </li>
             </li>
 
@@ -118,16 +118,22 @@
                 <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Home Loan</span></a>
                 <ul>
                     <li>
-                        <a href="<?php echo base_url();?>home_loan/loan_type/""><i class="fa fa-stack-overflow"></i> Loan Type</a>
+                        <a href="<?php echo base_url();?>home_loan/loan_type/"><i class="fa fa-stack-overflow"></i>Add Loan Type</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url();?>home_loan/home_loan_applicant_type/""><i class="fa fa-stack-overflow"></i> Applicant Type</a>
+                        <a href="<?php echo base_url();?>home_loan/applicant_type/"><i class="fa fa-stack-overflow"></i> Add Applicant Type</a>
                     </li>
                     <li>
-                        <a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/documentation/index.html" target="_blank"><i class="fa fa-book"></i> Documentation</a>
+                        <a href="<?php echo base_url();?>home_loan/feature/"><i class="fa fa-stack-overflow"></i> Add Feature</a>
                     </li>
                     <li>
-                        <a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/" target="_blank"><i class="fa fa-bug"></i> Bug Tracker</a>
+                        <a href="<?php echo base_url();?>home_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>home_loan/user/"><i class="fa fa-stack-overflow"></i> Add Loan User</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>home_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
                     </li>
                 </ul>
             </li>

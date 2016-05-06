@@ -11,7 +11,7 @@
 
     if(isset($_GET['id'])){
         $id=$_GET['id'];
-        $table='loan_type';
+        $table='home_loan_applicant_type';
         $id_field='id';
         $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
         /*print_r($row);
@@ -19,7 +19,7 @@
             die;*/
     }else{
         $row['id']='';
-        $row['loan_type']='';
+        $row['home_loan_applicant_type']='';
     }
 ?>
 <!-- MAIN PANEL -->
@@ -36,7 +36,7 @@
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Loan</li><li>Home Loan</li><li>Update Loan Type</li>
+            <li>Loan</li><li>Home Loan</li><li>Update Applicant Type</li>
         </ol>
         <!-- end breadcrumb -->
     </div>
@@ -51,9 +51,12 @@
                     <i class="fa fa-table fa-fw "></i>
                     Home Loan
 							<span>> 
-								Update Loan Type
+								Update Applicant Type
 							</span>
                 </h1>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+                <a href="<?php echo base_url();?>home_loan/applicant_type/" class="btn btn-primary pull-right">Add +</a>
             </div>
 
         </div>
@@ -68,10 +71,10 @@
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Update Loan Type </h2>
+                            <h2>Update Applicant Type </h2>
 
                         </header>
 
@@ -88,7 +91,7 @@
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>home_loan/edit_loan_type" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>home_loan/edit_applicant_type" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -97,14 +100,14 @@
                                     ?>
                                     <fieldset>
                                         <section>
-                                            <label class="label">Loan Type </label>
+                                            <label class="label">Applicant Type </label>
                                             <label class="input">
-                                                <input type="hidden" name="txtLoanTypeId" value ="<?php echo $row['id']; ?>" />
-                                                <input type="text" name="txtLoanType" placeholder="Loan Type" value ="<?php echo $row['loan_type']; ?>" />
+                                                <input type="hidden" name="txtHomeLoanApplicantTypeId" value ="<?php echo $row['id']; ?>" />
+                                                <input type="text" name="txtHomeLoanApplicantType" placeholder="Applicant Type" value ="<?php echo $row['home_loan_applicant_type']; ?>" />
 
                                             </label>
                                             <div class="form-group">
-                                                <label class="red"><?php echo form_error('txtLoanType');?></label>
+                                                <label class="red"><?php echo form_error('txtHomeLoanApplicantType');?></label>
 
                                             </div>
                                         </section>
@@ -137,7 +140,7 @@
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Loan Type List </h2>
+                            <h2>Applicant Type List </h2>
 
                         </header>
 
@@ -158,7 +161,7 @@
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">No.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Loan Type </th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Applicant Type </th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -167,7 +170,7 @@
 
                                     <?php
                                     $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'loan_type';
+                                    $this->Common_model->table_name = 'home_loan_applicant_type';
                                     $query=$this->Common_model->select_all();
                                     $sl=1;
                                     foreach ($query->result() as $row)
@@ -175,8 +178,8 @@
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->loan_type;?></td>
-                                            <td><a href="<?php echo base_url(); ?>home_loan/edit_loan_type?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_type_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td ><?php echo $row->home_loan_applicant_type;?></td>
+                                            <td><a href="<?php echo base_url(); ?>home_loan/edit_applicant_type?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?applicant_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;

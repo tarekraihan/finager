@@ -55,6 +55,9 @@
 							</span>
                 </h1>
             </div>
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+                <a href="<?php echo base_url();?>home_loan/loan_type/" class="btn btn-primary pull-right">Add +</a>
+            </div>
 
         </div>
 
@@ -68,7 +71,7 @@
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
                             <h2>Update Loan Type </h2>

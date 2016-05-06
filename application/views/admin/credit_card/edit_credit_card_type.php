@@ -1,11 +1,23 @@
 <?php
-
-if(isset($_GET['type_id']))
+if(isset($_GET['cc_type_id']))
 {
-    $id=$_GET['type_id'];
-    $table='card_card_type';
+    $id=$_GET['cc_type_id'];
+    $table='card_credit_card_type';
     $id_field='id';
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+}
+
+if(isset($_GET['id']))
+{
+    $id=$_GET['id'];
+    $table='card_credit_card_type';
+    $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+    /*print_r($row);
+        die;*/
+}else{
+    $row['id']='';
+    $row['cc_card_type']='';
 }
 ?>
 <!-- MAIN PANEL -->
@@ -22,20 +34,8 @@ if(isset($_GET['type_id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Home</li><li>Card</li><li>Card Type</li>
+            <li>Home</li><li>Card</li><li>Edit Credit Card Type</li>
         </ol>
-        <!-- end breadcrumb -->
-
-        <!-- You can also add more buttons to the
-        ribbon for further usability
-
-        Example below:
-
-        <span class="ribbon-button-alignment pull-right">
-        <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-        <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
-        <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-        </span> -->
 
     </div>
     <!-- END RIBBON -->
@@ -49,9 +49,12 @@ if(isset($_GET['type_id']))
                     <i class="fa fa-table fa-fw "></i>
                     Management
 							<span>> 
-								Card Type
+								Edit Credit Card Type
 							</span>
                 </h1>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+                <a href="<?php echo base_url();?>card/credit_card_type/" class="btn btn-primary pull-right">Add +</a>
             </div>
 
         </div>
@@ -66,10 +69,10 @@ if(isset($_GET['type_id']))
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Add Card Type </h2>
+                            <h2> Edit Credit Card Type </h2>
 
                         </header>
 
@@ -86,7 +89,7 @@ if(isset($_GET['type_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/card_type" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/edit_credit_card_type" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -95,20 +98,21 @@ if(isset($_GET['type_id']))
                                     ?>
                                     <fieldset>
                                         <section>
-                                            <label class="label">Card Type</label>
+                                            <label class="label">Credit Card Type </label>
                                             <label class="input">
-                                                <input type="text" name="txtCardType" placeholder="Card Type" value ="<?php echo set_value('txtCardType'); ?>" />
+                                                <input type="hidden" name="txtCreditCardTypeId" value ="<?php echo $row['id']; ?>" />
+                                                <input type="text" name="txtCreditCardType" placeholder="Card Type" value ="<?php echo $row['cc_card_type']; ?>" />
 
                                             </label>
                                             <div class="form-group">
-                                                <label class="red"><?php echo form_error('txtCardType');?></label>
+                                                <label class="red"><?php echo form_error('txtCreditCardType');?></label>
 
                                             </div>
                                         </section>
                                     </fieldset>
                                     <footer>
                                         <button type="submit" id="save" class="btn btn-primary"  >
-                                            Save
+                                            Update
                                         </button>
                                     </footer>
                                 </form>
@@ -134,7 +138,7 @@ if(isset($_GET['type_id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Card Type List </h2>
+                            <h2>Credit Card Type List </h2>
 
                         </header>
 
@@ -155,7 +159,7 @@ if(isset($_GET['type_id']))
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">NO.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Type </th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Credit Card Type </th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -164,7 +168,7 @@ if(isset($_GET['type_id']))
 
                                     <?php
                                     $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'card_card_type';
+                                    $this->Common_model->table_name = 'card_credit_card_type';
                                     $query=$this->Common_model->select_all();
                                     $sl=1;
                                     foreach ($query->result() as $row)
@@ -172,8 +176,8 @@ if(isset($_GET['type_id']))
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->card_type_name;?></td>
-                                            <td><a href="<?php echo base_url(); ?>card/edit_card_type?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?type_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td ><?php echo $row->cc_card_type;?></td>
+                                            <td><a href="<?php echo base_url(); ?>card/edit_credit_card_type?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?cc_type_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;
@@ -193,7 +197,6 @@ if(isset($_GET['type_id']))
 
                 </article>
                 <!-- WIDGET END -->
-
 
 
             </div>

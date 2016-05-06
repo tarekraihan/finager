@@ -1,24 +1,11 @@
 <?php
 
-if(isset($_GET['c_user_id']))
+if(isset($_GET['issuer_id']))
 {
-    $id=$_GET['c_user_id'];
-    $table='card_card_user';
+    $id=$_GET['issuer_id'];
+    $table='card_card_issuer';
     $id_field='id';
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
-}
-
-if(isset($_GET['id']))
-{
-    $id=$_GET['id'];
-    $table='card_card_user';
-    $id_field='id';
-    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
-    /*print_r($row);
-        die;*/
-}else{
-    $row['id']='';
-    $row['card_user']='';
 }
 ?>
 <!-- MAIN PANEL -->
@@ -35,8 +22,20 @@ if(isset($_GET['id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Home</li><li>Card</li><li>Card User</li>
+            <li>Home</li><li>Card</li><li>Card Issuer</li>
         </ol>
+        <!-- end breadcrumb -->
+
+        <!-- You can also add more buttons to the
+        ribbon for further usability
+
+        Example below:
+
+        <span class="ribbon-button-alignment pull-right">
+        <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+        <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+        <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+        </span> -->
 
     </div>
     <!-- END RIBBON -->
@@ -50,7 +49,7 @@ if(isset($_GET['id']))
                     <i class="fa fa-table fa-fw "></i>
                     Management
 							<span>> 
-								Edit Card User
+								Card Issuer
 							</span>
                 </h1>
             </div>
@@ -67,10 +66,10 @@ if(isset($_GET['id']))
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2> Edit Card User </h2>
+                            <h2>Add Card Issuer Name </h2>
 
                         </header>
 
@@ -87,7 +86,7 @@ if(isset($_GET['id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/edit_card_user" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/card_issuer" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -96,21 +95,20 @@ if(isset($_GET['id']))
                                     ?>
                                     <fieldset>
                                         <section>
-                                            <label class="label">Card User </label>
+                                            <label class="label">Card Issuer Name</label>
                                             <label class="input">
-                                                <input type="hidden" name="txtCardUserId" value ="<?php echo $row['id']; ?>" />
-                                                <input type="text" name="txtCardUser" placeholder="Card User" value ="<?php echo $row['card_user']; ?>" />
+                                                <input type="text" name="txtCardIssuer" placeholder="Issuer Name" value ="<?php echo set_value('txtCardIssuer') ;?>" />
 
                                             </label>
                                             <div class="form-group">
-                                                <label class="red"><?php echo form_error('txtCardUser');?></label>
+                                                <label class="red"><?php echo form_error('txtCardIssuer');?></label>
 
                                             </div>
                                         </section>
                                     </fieldset>
                                     <footer>
                                         <button type="submit" id="save" class="btn btn-primary"  >
-                                            Update
+                                            Save
                                         </button>
                                     </footer>
                                 </form>
@@ -136,7 +134,7 @@ if(isset($_GET['id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Card User List </h2>
+                            <h2>Card Issuer List </h2>
 
                         </header>
 
@@ -157,7 +155,7 @@ if(isset($_GET['id']))
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">NO.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card User </th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Issuer Name</th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -166,7 +164,7 @@ if(isset($_GET['id']))
 
                                     <?php
                                     $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'card_card_user';
+                                    $this->Common_model->table_name = 'card_card_issuer';
                                     $query=$this->Common_model->select_all();
                                     $sl=1;
                                     foreach ($query->result() as $row)
@@ -174,8 +172,8 @@ if(isset($_GET['id']))
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->card_user;?></td>
-                                            <td><a href="<?php echo base_url(); ?>card/edit_card_user?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?c_user_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td ><?php echo $row->card_issuer_name;?></td>
+                                            <td><a href="<?php echo base_url(); ?>card/edit_card_issuer?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?issuer_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;
@@ -195,7 +193,6 @@ if(isset($_GET['id']))
 
                 </article>
                 <!-- WIDGET END -->
-
 
 
 

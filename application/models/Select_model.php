@@ -78,6 +78,17 @@ class Select_Model extends CI_Model
         }
         return $option;
     }
+    function loan_type()
+    {
+        $sql="SELECT * FROM `loan_type`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtLoanType",$row->id).'>'.$row->loan_type.'</option>';
+        }
+        return $option;
+    }
 
     function select_card_type()
     {
@@ -138,6 +149,33 @@ class Select_Model extends CI_Model
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtIm[]",$row->id).'>'.$row->card_user.'</option>';
+
+        }
+        return $option;
+    }
+
+    function looking_for()
+    {
+        $sql="SELECT * FROM `home_loan_looking_for`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtLookingFor[]",$row->id).'>'.$row->home_loan_looking_for.'</option>';
+
+        }
+        return $option;
+    }
+
+
+    function home_loan_user()
+    {
+        $sql="SELECT * FROM `home_loan_user`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanUser[]",$row->id).'>'.$row->home_loan_user.'</option>';
 
         }
         return $option;

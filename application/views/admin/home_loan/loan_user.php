@@ -1,9 +1,9 @@
 <?php
 
-if(isset($_GET['issuer_id']))
+if(isset($_GET['user_id']))
 {
-    $id=$_GET['issuer_id'];
-    $table='card_card_issuer';
+    $id=$_GET['user_id'];
+    $table='home_loan_user';
     $id_field='id';
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
 }
@@ -22,21 +22,9 @@ if(isset($_GET['issuer_id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Home</li><li>Card</li><li>Card Issuer</li>
+            <li>Loan</li><li>Home Loan</li><li> User</li>
         </ol>
         <!-- end breadcrumb -->
-
-        <!-- You can also add more buttons to the
-        ribbon for further usability
-
-        Example below:
-
-        <span class="ribbon-button-alignment pull-right">
-        <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-        <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
-        <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-        </span> -->
-
     </div>
     <!-- END RIBBON -->
 
@@ -47,9 +35,9 @@ if(isset($_GET['issuer_id']))
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
-                    Management
+                    Home Loan
 							<span>> 
-								Card Issuer
+								User
 							</span>
                 </h1>
             </div>
@@ -66,10 +54,10 @@ if(isset($_GET['issuer_id']))
                 <article class="col-sm-12 col-md-12 col-lg-6">
 
                     <!-- Widget ID (each widget will need unique ID)-->
-                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+                    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Add Card Issuer Name </h2>
+                            <h2>Add Loan User </h2>
 
                         </header>
 
@@ -86,7 +74,7 @@ if(isset($_GET['issuer_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>card/card_issuer" class="smart-form" novalidate="novalidate">
+                                <form id="loan_user" method="post" action="<?php echo base_url();?>home_loan/user" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -95,13 +83,13 @@ if(isset($_GET['issuer_id']))
                                     ?>
                                     <fieldset>
                                         <section>
-                                            <label class="label">Card Issuer Name</label>
+                                            <label class="label">Loan User </label>
                                             <label class="input">
-                                                <input type="text" name="txtCardIssuer" placeholder="Issuer Name" value ="<?php echo set_value('txtCardIssuer') ;?>" />
+                                                <input type="text" name="txtUser" placeholder="Write Loan user" value ="<?php echo set_value('txtUser') ;?>" />
 
                                             </label>
                                             <div class="form-group">
-                                                <label class="red"><?php echo form_error('txtCardIssuer');?></label>
+                                                <label class="red"><?php echo form_error('txtUser');?></label>
 
                                             </div>
                                         </section>
@@ -134,7 +122,7 @@ if(isset($_GET['issuer_id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Card Issuer List </h2>
+                            <h2>Loan User List </h2>
 
                         </header>
 
@@ -154,8 +142,8 @@ if(isset($_GET['issuer_id']))
                                 <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
                                     <thead>
                                     <tr>
-                                        <th data-hide="phone">NO.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Issuer Name</th>
+                                        <th data-hide="phone">No.</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Loan User </th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -164,7 +152,7 @@ if(isset($_GET['issuer_id']))
 
                                     <?php
                                     $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'card_card_issuer';
+                                    $this->Common_model->table_name = 'home_loan_user';
                                     $query=$this->Common_model->select_all();
                                     $sl=1;
                                     foreach ($query->result() as $row)
@@ -172,8 +160,8 @@ if(isset($_GET['issuer_id']))
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->card_issuer_name;?></td>
-                                            <td><a href="<?php echo base_url(); ?>card/edit_card_issuer?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?issuer_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td ><?php echo $row->home_loan_user;?></td>
+                                            <td><a href="<?php echo base_url(); ?>home_loan/edit_user?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?user_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;

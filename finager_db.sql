@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2016 at 05:52 PM
--- Server version: 5.6.20
--- PHP Version: 5.5.15
+-- Generation Time: May 06, 2016 at 10:03 PM
+-- Server version: 5.5.39
+-- PHP Version: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -472,7 +472,14 @@ CREATE TABLE IF NOT EXISTS `home_loan_applicant_type` (
   `modified_by` int(10) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `home_loan_applicant_type`
+--
+
+INSERT INTO `home_loan_applicant_type` (`id`, `home_loan_applicant_type`, `created_by`, `modified_by`, `created`, `modified`) VALUES
+(2, 'Single Applicant', 1, 1, '2016-05-05 11:28:00', '2016-05-05 21:33:58');
 
 -- --------------------------------------------------------
 
@@ -499,7 +506,14 @@ CREATE TABLE IF NOT EXISTS `home_loan_features` (
   `modified_by` int(10) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `home_loan_features`
+--
+
+INSERT INTO `home_loan_features` (`id`, `home_loan_feature`, `created_by`, `modified_by`, `created`, `modified`) VALUES
+(1, 'Lower Interest Rate', 1, 1, '2016-05-05 10:12:02', '2016-05-05 21:14:33');
 
 -- --------------------------------------------------------
 
@@ -539,6 +553,7 @@ CREATE TABLE IF NOT EXISTS `home_loan_info` (
   `security_required` varchar(255) DEFAULT NULL,
   `repayment_type` varchar(200) DEFAULT NULL,
   `repayment_option` varchar(255) DEFAULT NULL,
+  `processing_fee` varchar(10) DEFAULT NULL,
   `early_settlement_fee` varchar(10) DEFAULT NULL,
   `partial_payment_fee` varchar(10) DEFAULT NULL,
   `penalty_charge` varchar(10) DEFAULT NULL,
@@ -554,7 +569,7 @@ CREATE TABLE IF NOT EXISTS `home_loan_info` (
   `min_experience_professional` varchar(10) DEFAULT NULL,
   `min_experience_businessman` varchar(10) DEFAULT NULL,
   `min_age` varchar(10) DEFAULT NULL,
-  `max` varchar(10) DEFAULT NULL,
+  `max_age` varchar(10) DEFAULT NULL,
   `required_document` longtext,
   `additional_doc_for_salaried` longtext,
   `additional_doc_for_businessman` longtext,
@@ -572,13 +587,20 @@ CREATE TABLE IF NOT EXISTS `home_loan_info` (
 --
 
 CREATE TABLE IF NOT EXISTS `home_loan_looking_for` (
-  `id` int(10) NOT NULL,
-  `home_loan_looking_for` varchar(100) NOT NULL,
+`id` int(10) NOT NULL,
+  `home_loan_looking_for` varchar(220) NOT NULL,
   `created_by` int(10) NOT NULL,
   `modified_by` int(10) NOT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `home_loan_looking_for`
+--
+
+INSERT INTO `home_loan_looking_for` (`id`, `home_loan_looking_for`, `created_by`, `modified_by`, `created`, `modified`) VALUES
+(1, 'Purchase Apartment/Flat3', 1, 0, '2016-05-05 11:08:34', '2016-05-05 21:08:34');
 
 -- --------------------------------------------------------
 
@@ -605,7 +627,14 @@ CREATE TABLE IF NOT EXISTS `home_loan_user` (
   `modified_by` int(10) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `home_loan_user`
+--
+
+INSERT INTO `home_loan_user` (`id`, `home_loan_user`, `created_by`, `modified_by`, `created`, `modified`) VALUES
+(1, 'Salaried Person', 1, NULL, '2016-05-05 11:25:42', '2016-05-05 21:25:42');
 
 -- --------------------------------------------------------
 
@@ -632,7 +661,14 @@ CREATE TABLE IF NOT EXISTS `loan_type` (
   `modified_by` int(10) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `loan_type`
+--
+
+INSERT INTO `loan_type` (`id`, `loan_type`, `created_by`, `modified_by`, `created`, `modified`) VALUES
+(1, 'Home Loan', 1, NULL, '2016-05-05 09:33:36', '2016-05-05 19:33:36');
 
 -- --------------------------------------------------------
 
@@ -818,6 +854,12 @@ ALTER TABLE `home_loan_info`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `home_loan_looking_for`
+--
+ALTER TABLE `home_loan_looking_for`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `home_loan_looking_for_home_loan_info`
 --
 ALTER TABLE `home_loan_looking_for_home_loan_info`
@@ -923,7 +965,7 @@ MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 -- AUTO_INCREMENT for table `home_loan_applicant_type`
 --
 ALTER TABLE `home_loan_applicant_type`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `home_loan_applicant_type_home_loan_info`
 --
@@ -933,7 +975,7 @@ MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `home_loan_features`
 --
 ALTER TABLE `home_loan_features`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `home_loan_feature_home_loan_info`
 --
@@ -945,6 +987,11 @@ MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `home_loan_info`
 MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `home_loan_looking_for`
+--
+ALTER TABLE `home_loan_looking_for`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `home_loan_looking_for_home_loan_info`
 --
 ALTER TABLE `home_loan_looking_for_home_loan_info`
@@ -953,7 +1000,7 @@ MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `home_loan_user`
 --
 ALTER TABLE `home_loan_user`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `home_loan_user_home_loan_info`
 --
@@ -963,7 +1010,7 @@ MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `loan_type`
 --
 ALTER TABLE `loan_type`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `map_map_location`
 --

@@ -1,9 +1,9 @@
 <?php
 
-if(isset($_GET['applicant_id']))
+if(isset($_GET['feature_id']))
 {
-    $id=$_GET['applicant_id'];
-    $table='home_loan_applicant_type';
+    $id=$_GET['feature_id'];
+    $table='home_loan_features';
     $id_field='id';
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
 }
@@ -22,7 +22,7 @@ if(isset($_GET['applicant_id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Loan</li><li>Home Loan</li><li> Applicant Type</li>
+            <li>Loan</li><li>Home Loan</li><li> Features</li>
         </ol>
         <!-- end breadcrumb -->
     </div>
@@ -37,7 +37,7 @@ if(isset($_GET['applicant_id']))
                     <i class="fa fa-table fa-fw "></i>
                     Home Loan
 							<span>> 
-								Applicant Type
+								Features
 							</span>
                 </h1>
             </div>
@@ -57,7 +57,7 @@ if(isset($_GET['applicant_id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Add Applicant Type </h2>
+                            <h2>Add Features </h2>
 
                         </header>
 
@@ -74,7 +74,7 @@ if(isset($_GET['applicant_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>home_loan/applicant_type" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>home_loan/feature" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -83,13 +83,13 @@ if(isset($_GET['applicant_id']))
                                     ?>
                                     <fieldset>
                                         <section>
-                                            <label class="label">Applicant Type </label>
+                                            <label class="label">Feature</label>
                                             <label class="input">
-                                                <input type="text" name="txtHomeLoanApplicantType" placeholder="Applicant Type" value ="<?php echo set_value('txtHomeLoanApplicantType') ;?>" />
+                                                <input type="text" name="txtFeature" placeholder="Write Loan Feature" value ="<?php echo set_value('txtFeature') ;?>" />
 
                                             </label>
                                             <div class="form-group">
-                                                <label class="red"><?php echo form_error('txtHomeLoanApplicantType');?></label>
+                                                <label class="red"><?php echo form_error('txtFeature');?></label>
 
                                             </div>
                                         </section>
@@ -122,7 +122,7 @@ if(isset($_GET['applicant_id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Home Loan Applicant Type List </h2>
+                            <h2>Home Loan Feature List </h2>
 
                         </header>
 
@@ -143,7 +143,7 @@ if(isset($_GET['applicant_id']))
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">No.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Home Loan Applicant Type </th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Loan Features </th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -152,7 +152,7 @@ if(isset($_GET['applicant_id']))
 
                                     <?php
                                     $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'home_loan_applicant_type';
+                                    $this->Common_model->table_name = 'home_loan_features';
                                     $query=$this->Common_model->select_all();
                                     $sl=1;
                                     foreach ($query->result() as $row)
@@ -160,8 +160,8 @@ if(isset($_GET['applicant_id']))
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->home_loan_applicant_type;?></td>
-                                            <td><a href="<?php echo base_url(); ?>home_loan/edit_applicant_type?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?applicant_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td ><?php echo $row->home_loan_feature;?></td>
+                                            <td><a href="<?php echo base_url(); ?>home_loan/edit_feature?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?feature_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;
