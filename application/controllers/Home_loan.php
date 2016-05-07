@@ -382,7 +382,9 @@ class Home_Loan extends CI_Controller {
             } else if ($msg == 'error') {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
-            $this->form_validation->set_rules('txtUser', ' Loan User ', 'trim|required|is_unique[home_loan_user.home_loan_user]');
+            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
+            $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
+            $this->form_validation->set_rules('txtMinIncomeSalaried', 'Min Income Salaried ', 'trim');
 
 
             if ($this->form_validation->run() == FALSE) {

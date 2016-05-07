@@ -121,7 +121,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Looking For</label>
                                                     <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtLookingFor[]">
+                                                        <select multiple style="width:100%" class="select2" name="txtLookingFor[]" required>
                                                             <?php echo $this->Select_model->looking_for();?>
                                                         </select>
                                                     </label>
@@ -130,7 +130,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Loan User</label>
                                                     <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtHomeLoanUser[]">
+                                                        <select multiple style="width:100%" class="select2" name="txtHomeLoanUser[]" required>
                                                             <?php echo $this->Select_model->home_loan_user();?>
                                                         </select>
                                                     </label>
@@ -141,14 +141,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Min Income Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMinIncomeSalaried" value="<?php echo set_value('txtMinIncomeSalaried'); ?>">
+                                                        <input type="text" maxlength="20" name="txtMinIncomeSalaried" value="<?php echo set_value('txtMinIncomeSalaried'); ?>" placeholder="Write Min Income for Salaried Person">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinIncomeSalaried');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Max Income Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMaxIncomeSalaried" value="<?php echo set_value('txtMaxIncomeSalaried'); ?>">
+                                                        <input type="text" maxlength="20" name="txtMaxIncomeSalaried" value="<?php echo set_value('txtMaxIncomeSalaried'); ?>" placeholder="Write Max Income for Salaried Person">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaxIncomeSalaried');?></label>
                                                 </section>
@@ -157,46 +157,46 @@
                                                 <section class="col col-6">
                                                     <label class="label">Min Income Professional</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMinIncomeProfessional" value="<?php echo set_value('txtMinIncomeProfessional'); ?>">
+                                                        <input type="text" maxlength="20" name="txtMinIncomeProfessional" value="<?php echo set_value('txtMinIncomeProfessional'); ?>" placeholder="Write Min Income for Professional">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinIncomeProfessional');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Max Income Professional</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMaxIncomeProfessional" value="<?php echo set_value('txtMaxIncomeProfessional'); ?>">
+                                                        <input type="text" maxlength="20" name="txtMaxIncomeProfessional" value="<?php echo set_value('txtMaxIncomeProfessional'); ?>" placeholder="Write Max Income for Professional">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaxIncomeProfessional');?></label>
                                                 </section>
                                             </div>
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Min Income Businessman</label>
+                                                    <label class="label">Min Income Businessmen</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMinIncomeBusinessman" value="<?php echo set_value('txtMinIncomeBusinessman'); ?>">
+                                                        <input type="text" maxlength="20" name="txtMinIncomeBusinessmen" value="<?php echo set_value('txtMinIncomeBusinessmen'); ?>" placeholder="Write Min Income for Businessmen">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtMinIncomeBusinessman');?></label>
+                                                    <label class="red"><?php echo form_error('txtMinIncomeBusinessmen');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Max Income Businessman</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMaxIncomeBusinessman" value="<?php echo set_value('txtMaxIncomeBusinessman'); ?>">
+                                                        <input type="text" maxlength="20" name="txtMaxIncomeBusinessmen" value="<?php echo set_value('txtMaxIncomeBusinessmen'); ?>" placeholder="Write Max Income for Businessmen">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtMaxIncomeBusinessman');?></label>
+                                                    <label class="red"><?php echo form_error('txtMaxIncomeBusinessmen');?></label>
                                                 </section>
                                             </div>
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Min Income Landlord</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMinIncomeLandlord" value="<?php echo set_value('txtMinIncomeLandlord'); ?>">
+                                                        <input type="text" maxlength="20" name="txtMinIncomeLandlord" value="<?php echo set_value('txtMinIncomeLandlord'); ?>"  placeholder="Write Min Income for Landlord">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinIncomeLandlord');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Max Income Landlord</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMaxIncomeLandlord" value="<?php echo set_value('txtMaxIncomeLandlord'); ?>">
+                                                        <input type="text" maxlength="20" name="txtMaxIncomeLandlord" value="<?php echo set_value('txtMaxIncomeLandlord'); ?>"  placeholder="Write Max Income for Landlord">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaxIncomeLandlord');?></label>
                                                 </section>
@@ -206,14 +206,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Down Payment For Flat(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentFlat" value="<?php echo set_value('txtDownPaymentFlat'); ?>">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentFlat" value="<?php echo set_value('txtDownPaymentFlat'); ?>" placeholder="Write Down payment without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtDownPaymentFlat');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Down Payment for Home Construction (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeConstruction" value="<?php echo set_value('txtDownPaymentHomeConstruction'); ?>">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeConstruction" value="<?php echo set_value('txtDownPaymentHomeConstruction'); ?>" placeholder="Write Down payment without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtDownPaymentHomeConstruction');?></label>
                                                 </section>
@@ -222,14 +222,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Down Payment for Housing Plot (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHousingPlot" value="<?php echo set_value('txtDownPaymentHousingPlot'); ?>">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentHousingPlot" value="<?php echo set_value('txtDownPaymentHousingPlot'); ?>" placeholder="Write Down payment without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtDownPaymentHousingPlot');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Down Payment for Extension Finish Work (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentExtensionFinishWork" value="<?php echo set_value('txtDownPaymentExtensionFinishWork'); ?>">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentExtensionFinishWork" value="<?php echo set_value('txtDownPaymentExtensionFinishWork'); ?>" placeholder="Write Down payment without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtDownPaymentExtensionFinishWork');?></label>
                                                 </section>
@@ -238,14 +238,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Down Payment for Home Loan Take Over (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeLoanTakeOver" value="<?php echo set_value('txtDownPaymentHomeLoanTakeOver'); ?>">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeLoanTakeOver" value="<?php echo set_value('txtDownPaymentHomeLoanTakeOver'); ?>" placeholder="Write Down payment without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtDownPaymentHomeLoanTakeOver');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label"> Security Required</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="250" name="txtSecurityRequired" value="<?php echo set_value('txtSecurityRequired'); ?>">
+                                                        <input type="text" maxlength="250" name="txtSecurityRequired" value="<?php echo set_value('txtSecurityRequired'); ?>" placeholder="Write Security Required">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtSecurityRequired');?></label>
                                                 </section>
@@ -254,14 +254,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Repayment Types</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="200" name="txtRepaymentType" value="<?php echo set_value('txtRepaymentType'); ?>">
+                                                        <input type="text" maxlength="200" name="txtRepaymentType" value="<?php echo set_value('txtRepaymentType'); ?>" placeholder="Write Repayment Types">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtRepaymentType');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Repayment Option </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="200" name="txtRepaymentOption" value="<?php echo set_value('txtRepaymentOption'); ?>">
+                                                        <input type="text" maxlength="200" name="txtRepaymentOption" value="<?php echo set_value('txtRepaymentOption'); ?>"  placeholder="Write Repayment Option">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtRepaymentOption');?></label>
                                                 </section>
@@ -270,14 +270,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Processing Fee (%) </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtProcessingFee" value="<?php echo set_value('txtProcessingFee'); ?>">
+                                                        <input type="text" maxlength="10" name="txtProcessingFee" value="<?php echo set_value('txtProcessingFee'); ?>"  placeholder="Write Processing fee without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtProcessingFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Early Settlement Fee (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtEarlySettlementFee" value="<?php echo set_value('txtEarlySettlementFee'); ?>">
+                                                        <input type="text" maxlength="10" name="txtEarlySettlementFee" value="<?php echo set_value('txtEarlySettlementFee'); ?>"  placeholder="Write Early Settlement fee without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtEarlySettlementFee');?></label>
                                                 </section>
@@ -286,14 +286,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Partial Payment Fee (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPartialPaymentFee" value="<?php echo set_value('txtPartialPaymentFee'); ?>">
+                                                        <input type="text" maxlength="10" name="txtPartialPaymentFee" value="<?php echo set_value('txtPartialPaymentFee'); ?>"  placeholder="Write partial payment fee without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPartialPaymentFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Penalty Charge (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPenaltyCharge" value="<?php echo set_value('txtPenaltyCharge'); ?>">
+                                                        <input type="text" maxlength="10" name="txtPenaltyCharge" value="<?php echo set_value('txtPenaltyCharge'); ?>"  placeholder="Write penalty charge without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPenaltyCharge');?></label>
                                                 </section>
@@ -302,14 +302,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Quotation Fee BDT</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtQuotationFeeBdt" value="<?php echo set_value('txtQuotationFeeBdt'); ?>">
+                                                        <input type="text" maxlength="10" name="txtQuotationFeeBdt" value="<?php echo set_value('txtQuotationFeeBdt'); ?>"  placeholder="Write Quotation Fee BDT ">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtQuotationFeeBdt');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Quotation Fee Percentage (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtQuotationFeePercentage" value="<?php echo set_value('txtQuotationFeePercentage'); ?>">
+                                                        <input type="text" maxlength="10" name="txtQuotationFeePercentage" value="<?php echo set_value('txtQuotationFeePercentage'); ?>" placeholder="Write Quotation Fee without percentage.">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtQuotationFeePercentage');?></label>
                                                 </section>
@@ -318,14 +318,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Term</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumTerm" value="<?php echo set_value('txtMinimumTerm');?>">
+                                                        <input type="text" maxlength="10" name="txtMinimumTerm" value="<?php echo set_value('txtMinimumTerm');?>"  placeholder="Write minimum term.">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumTerm');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Maximum Term</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMaximumTerm" value="<?php echo set_value('txtMaximumTerm'); ?>">
+                                                        <input type="text" maxlength="10" name="txtMaximumTerm" value="<?php echo set_value('txtMaximumTerm'); ?>"   placeholder="Write maximum term.">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaximumTerm');?></label>
                                                 </section>
@@ -334,7 +334,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Grace Period (Month/Year)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="15" name="txtGracePeriod" value="<?php echo set_value('txtGracePeriod'); ?>">
+                                                        <input type="text" maxlength="15" name="txtGracePeriod" value="<?php echo set_value('txtGracePeriod'); ?>"  placeholder="Write grace period with month/year word">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtGracePeriod');?></label>
                                                 </section>
@@ -353,14 +353,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Try Party Agreement Allowed up to</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="50" name="txtTryPartyAgreement" value="<?php echo set_value('txtTryPartyAgreement'); ?>">
+                                                        <input type="text" maxlength="50" name="txtTryPartyAgreement" value="<?php echo set_value('txtTryPartyAgreement'); ?>"  placeholder="Write try party agreement allowed up to ">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtTryPartyAgreement');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Experience Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumExperienceSalaried" value="<?php echo set_value('txtMinimumExperienceSalaried'); ?>">
+                                                        <input type="text" maxlength="10" name="txtMinimumExperienceSalaried" value="<?php echo set_value('txtMinimumExperienceSalaried'); ?>"  placeholder="Write minimum experience salaried person">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumExperienceSalaried');?></label>
                                                 </section>
@@ -369,30 +369,30 @@
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Experience Professional</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumExperienceProfessional" value="<?php echo set_value('txtMinimumExperienceProfessional'); ?>">
+                                                        <input type="text" maxlength="10" name="txtMinimumExperienceProfessional" value="<?php echo set_value('txtMinimumExperienceProfessional'); ?>"  placeholder="Write minimum experience professional">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumExperienceProfessional');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Minimum Experience Businessman</label>
+                                                    <label class="label">Minimum Experience Businessmen</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumExperienceBusinessman" value="<?php echo set_value('txtMinimumExperienceBusinessman'); ?>">
+                                                        <input type="text" maxlength="10" name="txtMinimumExperienceBusinessmen" value="<?php echo set_value('txtMinimumExperienceBusinessmen'); ?>"  placeholder="Write minimum experience businessmen" >
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtMinimumExperienceBusinessman');?></label>
+                                                    <label class="red"><?php echo form_error('txtMinimumExperienceBusinessmen');?></label>
                                                 </section>
                                             </div>
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Age</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumAge" value="<?php echo set_value('txtMinimumAge'); ?>">
+                                                        <input type="text" maxlength="10" name="txtMinimumAge" value="<?php echo set_value('txtMinimumAge'); ?>" placeholder="Write Minimum age ">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumAge');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Maximum Age</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMaximumAge" value="<?php echo set_value('txtMaximumAge'); ?>">
+                                                        <input type="text" maxlength="10" name="txtMaximumAge" value="<?php echo set_value('txtMaximumAge'); ?>" placeholder="Write Maximum Age">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaximumAge');?></label>
                                                 </section>
