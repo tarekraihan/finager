@@ -65,7 +65,7 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Card Management</span></a>
+                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Credit Card</span></a>
                 <ul>
                     <!--<li>
                         <a href="<?php /*echo base_url();*/?>card/age_limit">Age Limit</a>

@@ -247,10 +247,11 @@
                                 <li></li>
                             </ul>
                             <a class="cart_anchor">
-								<img src="http://localhost/git/finager/resource/front_end/images/demo_card.png" class="img-responsive"/> 
+								<img src="" class="img-responsive anchor-00"/>
                                 <img class="compare-cross-btn" src="<?php echo base_url();?>resource/front_end/images/dialog_close.png"/>
                             </a>
                             <a class="cart_anchor01">
+                                <img src="" class="img-responsive anchor-01"/>
                                 <img class="compare-cross-btn" src="<?php echo base_url();?>resource/front_end/images/dialog_close.png"/>
                             </a>
                             <a href="" class="btn common-btn v-middle-btn">
