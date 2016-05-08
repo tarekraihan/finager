@@ -7,6 +7,10 @@ body {
 	margin:0;
 	padding:0;
 }
+
+.no-list-style{
+	list-style:none;
+}
 /* for bootstrap horizontal menu  */
 .margin_botton_30{
 	margin-bottom: 30px;
@@ -565,6 +569,7 @@ body {
     margin: 10px;
     position:relative;
 }
+/*
 .card-holder {
     background-color: rgb(93, 93, 94);
     padding: 0px;
@@ -574,6 +579,26 @@ body {
     position: absolute;
     bottom: 0;
 }
+*/
+.card-holder {
+    background-color: rgb(93, 93, 94);
+    padding: 0px;
+    border-radius: 0px;
+    height: 130px;
+    width: 100%;
+}
+.common-btn.v-middle-btn {
+    background-color: #F9F9F9;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 32px;
+    vertical-align: middle;
+    margin: auto;
+    font-weight: 600;
+}
+
 .hidden_div {
     height: 130px;
     width: 100%;

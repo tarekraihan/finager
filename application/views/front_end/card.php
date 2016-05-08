@@ -1,3 +1,6 @@
+
+
+
 <section id="card">
     <div class="container">
         <div class="row">
@@ -237,11 +240,14 @@
                 <div class="card-holder">
                     <div class="hidden_div relative">
                         <div class="hidden_div_container">
-                            <ul class="no-padding pull-left">
-                                <li></li>
+                            <ul class="no-padding pull-left no-list-style">
+                                <li>
+									
+								</li>
                                 <li></li>
                             </ul>
                             <a class="cart_anchor">
+								<img src="http://localhost/git/finager/resource/front_end/images/demo_card.png" class="img-responsive"/> 
                                 <img class="compare-cross-btn" src="<?php echo base_url();?>resource/front_end/images/dialog_close.png"/>
                             </a>
                             <a class="cart_anchor01">
@@ -260,43 +266,14 @@
 </section>
 
 <!-- card compare section ends-->
-<script type='text/javascript' src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
+
+
 <script type="text/javascript">
     $(document).ready(function(){
-      $('.add-to-compare').on('click',function(){
-        Console.log("dkaljlsdjl");
-            alert(1);
-
-
-        });
-
-
-        function add_for_compare(){
-            //Scroll to top if cart icon is hidden on top
-            $('html, body').animate({
-                'scrollTop' : $(".cart_anchor").position().top
-            });
-            //Select item image and pass to the function
-            //var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-            //flyToElement($(itemImg), $('.cart_anchor'));
-
-            if($(".cart_anchor").hasClass("img_active")){
-                //Select item image and pass to the function
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-                flyToElement($(itemImg), $('.cart_anchor01'));
-                $(this).addClass("hidden");
-            }
-            else{
-                //Select item image and pass to the function
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-                flyToElement($(itemImg), $('.cart_anchor'));
-
-                $(".cart_anchor").addClass("img_active");
-                $(this).addClass("hidden");
-
-            }
-        }
-
+        // $('.add-to-compare').on('click',function(){
+            // console.log('hl');
+            // alert();
+        // });
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30' />").fadeIn('fast');
         }
@@ -420,5 +397,3 @@
         }
     }
 </script>
-
-<script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
