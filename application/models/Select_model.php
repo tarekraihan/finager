@@ -102,6 +102,30 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function home_loan_feature()
+    {
+        $sql="SELECT * FROM `home_loan_features`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanFeature[]",$row->id).'>'.$row->home_loan_feature.'</option>';
+        }
+        return $option;
+    }
+
+    function home_loan_applicant_type()
+    {
+        $sql="SELECT * FROM `home_loan_applicant_type`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtApplicantType[]",$row->id).'>'.$row->home_loan_applicant_type.'</option>';
+        }
+        return $option;
+    }
+
 
     function select_credit_card_type()
     {
@@ -202,7 +226,7 @@ class Select_Model extends CI_Model
 
     }
 
-    function Select_Single_Employee_Info($admin_id)
+   /* function Select_Single_Employee_Info($admin_id)
     {
         $query="SELECT a.`admin_user_id`,a.admin_first_name,a.admin_last_name,a.admin_email,a.admin_address,a.admin_phone,a.status,a.last_login,a.profile_picture,a.created,a.modified,b.role_name FROM admin_user AS a INNER JOIN admin_user_role AS b ON a.admin_role=b.role_id WHERE a.admin_user_id=$admin_id";
         $result=mysql_query($query);
@@ -232,7 +256,7 @@ class Select_Model extends CI_Model
                 </div>
             </div>';
         return $feedback;
-    }
+    }*/
 
     public function select_card_info_list()//To show Card Info list
     {
@@ -285,6 +309,36 @@ class Select_Model extends CI_Model
 
                 $result.='</td>
                     <td><a href="'. base_url().'card/edit_fees_charges/'.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?card_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+ public function select_home_loan_information()//To show Home loan list
+    {
+        $sql="SELECT home_loan_info.id,home_loan_info.home_loan_name,home_loan_info.min_loan_amount,home_loan_info.max_loan_amount,home_loan_info.interest_rate,home_loan_info.processing_fee,home_loan_info.minimum_term, home_loan_info.maximum_term,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `home_loan_info` INNER JOIN card_bank ON card_bank.id=home_loan_info.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=home_loan_info.created_by ORDER BY home_loan_info.id ASC";
+        $query=$this->db->query($sql);
+        $result="";
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center"><img src="\'. base_url().\'resource/common_logo/bank_logo/\'.$row->bank_logo.\'" style="height:auto; width:80px;"/></td>
+					<td class="center">'.$row->home_loan_name.'</td>
+					 <td class="center">'.$row->bank_name.'</td>
+					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
+					 <td class="center"> '.$row->interest_rate.' %</td>
+					 <td class="center"> '.$row->processing_fee.' %</td>
+					 <td class="center"> '.$row->minimum_term.' - '.$row->maximum_term.'</td>
+					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
+
+                $result.='</td>
+                    <td><a href="'. base_url().'home_loan/edit_loan_info/'.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 					</tr>';
                 $sl++;
             }

@@ -1,3 +1,46 @@
+<?php
+/*$fees_id= $this->uri->segment(3,0);
+if(!empty($fees_id) && is_numeric($fees_id) ){
+    $query=$this->Select_model->select_fees_charges($fees_id);
+    $row=$query->row_array();
+}else if(!empty($fees_id) && ($fees_id == 'success' || $fees_id =='error')){
+    $row['id']='';
+    $row['basic_card_annual_fee']='';
+    $row['basic_card_annual_fee_plus']='';
+    $row['supplementary_card_annual_fee']='';
+    $row['purchase_fee']='';
+    $row['balance_transfer_fee']='';
+    $row['cash_advance_fee_own_atm']='';
+    $row['cash_advance_fee_other_atm']='';
+    $row['cash_advance_fee_other_atm_plus']='';
+    $row['cash_advance_fee_international_usd']='';
+    $row['cash_advance_fee_international_percentage']='';
+    $row['cash_advance_fee_international_remarks']='';
+    $row['late_payment_fee_bdt']='';
+    $row['late_payment_fee_usd']='';
+    $row['card_replacement_fee']='';
+    $row['pin_replacement_fee']='';
+    $row['over_limit_charge_bdt']='';
+    $row['over_limit_charge_usd']='';
+    $row['transaction_alert_service']='';
+    $row['transaction_alert_service_plus']='';
+    $row['credit_assurance_program_fee']='';
+    $row['credit_assurance_program_fee_remarks']='';
+    $row['monthly_e_statement_fee']='';
+    $row['check_book_fee']='';
+    $row['minimum_payment_bdt']='';
+    $row['minimum_payment_usd']='';
+    $row['minimum_payment_percentage']='';
+    $row['minimum_payment_remarks']='';
+    $row['cheque_return_fee']='';
+    $row['duplicate_statement']='';
+    $row['card_cheque_processing_fee']='';
+    $row['card_cheque_issuing_fee']='';
+}else{
+    redirect(base_url().'My404');
+}*/
+?>
+
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
