@@ -247,7 +247,7 @@
                                 <li></li>
                             </ul>
                             <a class="cart_anchor">
-								<img src="" class="img-responsive anchor-00"/>
+								<img src="<img src='<?php echo base_url();?>resource/card/credit_card/" class="img-responsive anchor-00"/>
                                 <img class="compare-cross-btn" src="<?php echo base_url();?>resource/front_end/images/dialog_close.png"/>
                             </a>
                             <a class="cart_anchor01">
@@ -349,6 +349,7 @@
                 cache: false,
                 success: function(msg)
                 {
+                    $('.anchor-00').attr('src','resource/card/credit_card/'+msg);
 
                     loading_hide();
                    // console.log(msg);
@@ -382,7 +383,7 @@
         }
 //        console.log(formData);
 
-            });
+    });
 
     //for more more filter
     function toggle2() {

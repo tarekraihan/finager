@@ -316,7 +316,7 @@ class Select_Model extends CI_Model
         return $result;
     }
 
- public function select_home_loan_information()//To show Home loan list
+    public function select_home_loan_information()//To show Home loan list
     {
         $sql="SELECT home_loan_info.id,home_loan_info.home_loan_name,home_loan_info.min_loan_amount,home_loan_info.max_loan_amount,home_loan_info.interest_rate,home_loan_info.processing_fee,home_loan_info.minimum_term, home_loan_info.maximum_term,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `home_loan_info` INNER JOIN card_bank ON card_bank.id=home_loan_info.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=home_loan_info.created_by ORDER BY home_loan_info.id ASC";
         $query=$this->db->query($sql);
@@ -355,5 +355,12 @@ class Select_Model extends CI_Model
         return $query;
     }
 
-	
+
+    public function select_card_image($id){
+        $sql="SELECT card_image_name FROM `card_card_informations`  WHERE id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
 }

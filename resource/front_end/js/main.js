@@ -21,8 +21,28 @@ jQuery(document).ready(function(){
 
 $(document).on('click','.add-to-compare',function(){
 	//$(".card-holder").removeClass("hidden").slideDown();
-    var itemImg = $(this).parents('div:eq(0)').('.selected_card').eq(0);
-    alert(itemImg);
+    var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+
+    var  formData = $(this).data();
+    var card_id = "&card_id="+formData.card_id;
+
+    $.ajax
+    ({
+        type: "POST",
+        url: "<?php echo base_url();?>home_loan/ajax_compare_card_image",
+        data: card_id,
+        cache: false,
+        success: function(msg)
+        {
+
+            loading_hide();
+            // console.log(msg);
+
+            $("#SearchCard").html(msg);
+
+        }
+    });
+
 	//Scroll to top if cart icon is hidden on top
 
 	$('html, body').animate({
