@@ -626,3 +626,44 @@ body {
 }
 /*Compare section end*/
 /*hidden div*/
+
+/* for Card Compare Page====Saddam Start===== */
+.card_compare_head{
+	font-family:SaintAndrewsQueen;
+	font-size:60px;
+}
+.compare_btnApplication{
+	margin-left:39px;
+}
+.compare_btnApplication1{
+	margin-left: 35px;
+	margin-top: 121px;
+
+}
+.Card-Compare-hr{
+	height:2px;
+	width: 43%;
+}
+.Card-Compare-hr1{
+	width: 44.7%;
+}
+.Card-Compare-hr2{
+	width: 42%;
+}
+
+.Card-Compare-hr3{
+	width: 45.7%;
+}
+.Card-Compare-hr4{
+	width: 42.8%;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	border-top: none !important;
+}
+.comparison_email{
+	width: 33.33333333%;
+	height:auto;
+	margin: 0px auto;
+}
+/*------Card compare Saddam End----------*/

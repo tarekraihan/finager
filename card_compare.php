@@ -9,7 +9,7 @@
 }
 .compare_btnApplication1{
 	margin-left: 35px;
-    margin-top: 121px;
+	margin-top: 121px;
 
 }
 .Card-Compare-hr{
@@ -31,7 +31,7 @@
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-    border-top: none !important;
+	border-top: none !important;
 }
 .comparison_email{
 	width: 33.33333333%;
