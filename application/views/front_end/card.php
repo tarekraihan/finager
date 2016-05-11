@@ -244,14 +244,13 @@
                                 <li></li>
                             </ul>
                             <a class="cart_anchor">
-								<img src="<img src='<?php echo base_url();?>resource/card/credit_card/" class="img-responsive anchor-00"/>
-                                <img class="compare-cross-btn" src="<?php echo base_url();?>resource/front_end/images/dialog_close.png"/>
+
+
                             </a>
                             <a class="cart_anchor01">
-                                <img src="" class="img-responsive anchor-01"/>
-                                <img class="compare-cross-btn" src="<?php echo base_url();?>resource/front_end/images/dialog_close.png"/>
+
                             </a>
-                            <a href="" class="btn common-btn v-middle-btn">
+                            <a href="<?php echo base_url();?>en/card_compare" class="btn common-btn v-middle-btn">
                                 Compare
                             </a>
                         </div>
@@ -399,24 +398,29 @@
             var  formData = $(this).data();
             var card_id = "card_id="+formData.card_id;
 
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>card/ajax_compare_card_image",
-                data: card_id,
-                success: function(msg)
-                {
+            setTimeout(function(){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                    data: card_id,
+                    success: function(msg)
+                    {
 
-                    //loading_hide();
-                    //console.log(msg);
-                    if($(".cart_anchor01").hasClass("img_active")){
-                        $(".cart_anchor01").html(msg);
-                    }else{
-                    $(".cart_anchor").html(msg);
+                        //loading_hide();
+                        //console.log(msg);
+                        if($(".cart_anchor01").hasClass("img_active")){
+                            $(".cart_anchor01").html(msg);
+
+                        }else{
+                            $(".cart_anchor").html(msg);
+                        }
+
                     }
+                });
+            },850);
 
-                }
-            });
+
 
 
 
@@ -445,11 +449,21 @@
     $(this).addClass("hidden");
 
     }
-
-
-
-
-
     });
+
+
+    $(document).on('click','.compare-cross-btn',function(){
+        $(this).parent(".cart_anchor").removeClass("img_active");
+        $(this).parent(".cart_anchor").html('');
+    });
+
+    $(document).on('click','.compare-cross-btn',function(){
+        $(this).parent(".cart_anchor01").removeClass("img_active");
+        $(this).parent(".cart_anchor01").html('');
+    });
+
+
+
+
 
 </script>

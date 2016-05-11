@@ -712,7 +712,6 @@ class Home_Loan extends CI_Controller {
 
     public function ajax_compare_card_image()
     {
-
         $card_user = $this->input->post('card_id');
         $response = $this->Select_model->select_card_image($card_user);
         echo $response;

@@ -1,11 +1,26 @@
 <pre>
     <?php
-        print_r($this->session->userdata()) ;
+       // print_r($this->session->userdata()) ;
 
-        echo $_SESSION['username']['developer'];
+       //echo $_SESSION['username']['developer'];
     ?>
 </pre>
+<section id="card_compare_default">
+    <div class="container">
+        <div class="row">
+            <table class="table">
+                <tr>
+                    <td> <p><img class="pull-left" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></p></td>
+                    <td><b> <p class="text-center com_title">Comparison </p></b></td>
+                    <td> <p><img class="pull-right" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></p></td>
+                </tr>
 
+
+
+            </table>
+        </div>
+    </div>
+</section>
 
 <section id="basic_info">
     <div class="container">
