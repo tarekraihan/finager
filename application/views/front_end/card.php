@@ -1,6 +1,3 @@
-
-
-
 <section id="card">
     <div class="container">
         <div class="row">
@@ -271,10 +268,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        // $('.add-to-compare').on('click',function(){
-            // console.log('hl');
-            // alert();
-        // });
+
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30' />").fadeIn('fast');
         }
@@ -339,7 +333,6 @@
 
             var main_string = card_user_list+income_range_list+credit_limit_list+credit_card_type_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list;
             main_string = main_string.substring(1, main_string.length);
-
 //            console.log(main_string);
             $.ajax
             ({
@@ -349,10 +342,9 @@
                 cache: false,
                 success: function(msg)
                 {
-                    $('.anchor-00').attr('src','resource/card/credit_card/'+msg);
 
                     loading_hide();
-                   // console.log(msg);
+                    // console.log(msg);
 
                     $("#SearchCard").html(msg);
 
@@ -381,7 +373,6 @@
             ele.style.display = "block";
             text.html("<i class='fa fa-info-circle'></i> Less info");
         }
-//        console.log(formData);
 
     });
 
@@ -398,4 +389,67 @@
             text.innerHTML = "Fewer Filters <i class='fa fa-sort-asc fa-lg'></i>";
         }
     }
+</script>
+<script>
+
+    $(document).on('click','.add-to-compare',function(){
+
+            //$(".card-holder").removeClass("hidden").slideDown();
+            var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+            var  formData = $(this).data();
+            var card_id = "card_id="+formData.card_id;
+
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                data: card_id,
+                success: function(msg)
+                {
+
+                    //loading_hide();
+                    //console.log(msg);
+                    if($(".cart_anchor01").hasClass("img_active")){
+                        $(".cart_anchor01").html(msg);
+                    }else{
+                    $(".cart_anchor").html(msg);
+                    }
+
+                }
+            });
+
+
+
+
+
+        //Scroll to top if cart icon is hidden on top
+
+    $('html, body').animate({
+    'scrollTop' : $(".cart_anchor").position().top+1500
+    });
+
+    if($(".cart_anchor").hasClass("img_active")){
+    //Select item image and pass to the function
+    var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+    flyToElement($(itemImg), $('.cart_anchor01'));
+        $(".cart_anchor01").addClass("img_active");
+    $(this).addClass("hidden");
+
+    }
+    else{
+    //Select item image and pass to the function
+    var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+    flyToElement($(itemImg), $('.cart_anchor'));
+
+    $(".cart_anchor").addClass("img_active");
+    $(this).addClass("hidden");
+
+    }
+
+
+
+
+
+    });
+
 </script>
