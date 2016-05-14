@@ -36,7 +36,7 @@
 .comparison_email{
 	width: 33.33333333%;
 	height:auto;
-	margin: 0px auto;
+	margin: 0 auto;
 }
 </style>
 
@@ -89,12 +89,9 @@
 				<table class="table">
 					<tr>
 						<td> <p><img class="pull-left" src="images/visa_card.png" /></p></td>
-						<td><b> <p class="text-center com_title">Comparison </p></b></td>
+						<td><b><p class="text-center com_title">Comparison </p></b></td>
 						<td> <p><img class="pull-right" src="images/visa_card.png" /></p></td>
 					</tr>
-					
-				
-					
 				</table>
 			</div>
 		</div>

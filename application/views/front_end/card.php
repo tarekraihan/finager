@@ -245,7 +245,6 @@
                             </ul>
                             <a class="cart_anchor">
 
-
                             </a>
                             <a class="cart_anchor01">
 
@@ -263,8 +262,6 @@
 </section>
 
 <!-- card compare section ends-->
-
-
 <script type="text/javascript">
     $(document).ready(function(){
 
@@ -393,7 +390,7 @@
 
     $(document).on('click','.add-to-compare',function(){
 
-            //$(".card-holder").removeClass("hidden").slideDown();
+          /*  //$(".card-holder").removeClass("hidden").slideDown();
             var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
             var  formData = $(this).data();
             var card_id = "card_id="+formData.card_id;
@@ -406,9 +403,9 @@
                     data: card_id,
                     success: function(msg)
                     {
-
                         //loading_hide();
                         //console.log(msg);
+
                         if($(".cart_anchor01").hasClass("img_active")){
                             $(".cart_anchor01").html(msg);
 
@@ -419,51 +416,85 @@
                     }
                 });
             },850);
-
-
-
-
-
-
-
+*/
         //Scroll to top if cart icon is hidden on top
 
     $('html, body').animate({
     'scrollTop' : $(".cart_anchor").position().top+1500
     });
 
-    if($(".cart_anchor").hasClass("img_active")){
-    //Select item image and pass to the function
-    var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-    flyToElement($(itemImg), $('.cart_anchor01'));
-        $(".cart_anchor01").addClass("img_active");
-    $(this).addClass("hidden");
+        if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
+            alert("Sorry");
+        }else{
+            if($(".cart_anchor").hasClass("img_active")){
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                flyToElement($(itemImg), $('.cart_anchor01'));
+                $(".cart_anchor01").addClass("img_active");
+                $(this).addClass("hidden");
 
-    }
-    else{
-    //Select item image and pass to the function
-    var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-    flyToElement($(itemImg), $('.cart_anchor'));
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var  formData = $(this).data();
+                var card_id = "card_id="+formData.card_id;
 
-    $(".cart_anchor").addClass("img_active");
-    $(this).addClass("hidden");
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                        data: card_id,
+                        success: function(msg)
+                        {
+                            //loading_hide();
+                            //console.log(msg);
+                            $(".cart_anchor01").html(msg);
+                        }
+                    });
+                },850);
 
-    }
+            }
+            else{
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                flyToElement($(itemImg), $('.cart_anchor'));
+
+                $(".cart_anchor").addClass("img_active");
+                $(this).addClass("hidden");
+
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var  formData = $(this).data();
+                var card_id = "card_id="+formData.card_id;
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                        data: card_id,
+                        success: function(msg)
+                        {
+                            //loading_hide();
+                            //console.log(msg);
+                            $(".cart_anchor").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+        }
+
     });
 
 
     $(document).on('click','.compare-cross-btn',function(){
         $(this).parent(".cart_anchor").removeClass("img_active");
         $(this).parent(".cart_anchor").html('');
+        $(this).addClass("hidden");
     });
 
     $(document).on('click','.compare-cross-btn',function(){
         $(this).parent(".cart_anchor01").removeClass("img_active");
         $(this).parent(".cart_anchor01").html('');
     });
-
-
-
-
 
 </script>
