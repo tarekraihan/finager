@@ -249,7 +249,7 @@
                             <a class="cart_anchor01">
 
                             </a>
-                            <a href="<?php echo base_url();?>en/card_compare" class="btn common-btn v-middle-btn">
+                            <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
                                 Compare
                             </a>
                         </div>
@@ -487,14 +487,54 @@
 
 
     $(document).on('click','.compare-cross-btn',function(){
+
         $(this).parent(".cart_anchor").removeClass("img_active");
         $(this).parent(".cart_anchor").html('');
         $(this).addClass("hidden");
     });
+/*
+
+    $(document).on('click','.compare-cross-btn',function(){
+        $(this).parent(".cart_anchor").removeClass("img_active");
+        $(this).parent(".cart_anchor").html('');
+        $(this).addClass("hidden");
+    });
+*/
 
     $(document).on('click','.compare-cross-btn',function(){
         $(this).parent(".cart_anchor01").removeClass("img_active");
         $(this).parent(".cart_anchor01").html('');
+    });
+
+    $('#go_compare').click(function(){
+        //alert(1);
+        var  formData = $('.cart_anchor').children('img').data();
+        var card_id1 = "card_id1="+formData.card_id;
+
+        var  formData = $('.cart_anchor01').children('img').data();
+        var card_id2 = "&card_id2="+formData.card_id;
+
+        var card_ids = card_id1+card_id2;
+        if(card_id1 != '' && card_id2 != ''){
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>card/ajax_go_card_compare_page",
+                data: card_ids,
+                success: function(msg)
+                {
+                    if(msg != 'error'){
+
+                        window.location.href = "<?php echo base_url();?>en/card_compare";
+                    }
+                }
+            });
+        }else{
+            alert("Please add 2 card for compare ! ")
+        }
+
+        //alert(card_ids);
+
     });
 
 </script>

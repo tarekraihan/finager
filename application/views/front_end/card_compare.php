@@ -1,8 +1,12 @@
 <pre>
     <?php
-        //print_r($this->session->userdata()) ;
+        $id = $this->session->userdata('first_card') ;
+        $result = $this->Front_end_select_model->select_card_details($id);
+        $first_card = $result->row();
+    print_r($this->session->userdata());
 
-       //echo $_SESSION['username']['developer'];
+       //echo $_SESSION['first_card']['developer'];
+
     ?>
 </pre>
 <section id="card_compare_default">
@@ -10,7 +14,7 @@
         <div class="row">
             <table class="table">
                 <tr>
-                    <td> <p><img class="pull-left" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></p></td>
+                    <td> <p><img class="pull-left" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $first_card->card_image_name; ?>" /></p></td>
                     <td><b> <p class="text-center com_title">Comparison </p></b></td>
                     <td> <p><img class="pull-right" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></p></td>
                 </tr>
@@ -65,55 +69,55 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center table-align  compare_table">
                     <tr>
-                        <td> Bank Asia Ltd </td>
+                        <td> <?php echo $first_card->bank_name; ?></td>
                         <td class="abc"><b> Bank Name </b></td>
                         <td> Brac Bank Ltd </td>
                     </tr>
 
                     <tr>
-                        <td> Mastercard </td>
+                        <td> <?php echo $first_card->card_issuer_name; ?> </td>
                         <td><b> Network</b></td>
                         <td> Visa </td>
                     </tr>
 
                     <tr>
-                        <td> Gold </td>
+                        <td> <?php echo $first_card->card_type_name; ?>  </td>
                         <td><b> Card Type</b></td>
                         <td> Classic </td>
                     </tr>
 
                     <tr>
-                        <td> 30000 for Salaried & 45000 for self-employed </td>
+                        <td> <?php echo $first_card->income_range_min_salaried; ?>  for Salaried & <?php echo $first_card->income_range_min_business; ?>  for self-employed </td>
                         <td><b> Income Range</b></td>
                         <td> 25000 (both salaried & self-employed) </td>
                     </tr>
 
                     <tr>
-                        <td> 500000 </td>
+                        <td> <?php echo $first_card->credit_limit_max_business; ?> </td>
                         <td><b> Maximum Credit Limit</b></td>
                         <td> 75000 </td>
                     </tr>
 
                     <tr>
-                        <td> Local </td>
+                        <td>  <?php echo $first_card->cc_card_type; ?>  </td>
                         <td><b> Use Availability</b></td>
                         <td> Local & International </td>
                     </tr>
 
                     <tr>
-                        <td> 45 </td>
+                        <td>  <?php echo $first_card->interest_free_pefiod_max; ?> </td>
                         <td><b> Maximum Interest Free Days</b></td>
                         <td> 20 </td>
                     </tr>
 
                     <tr>
-                        <td> 15 </td>
+                        <td> <?php echo $first_card->interest_free_period_min; ?> </td>
                         <td><b> Minimum Interest Free Days</b></td>
                         <td> 20 </td>
                     </tr>
 
                     <tr>
-                        <td> 50% </td>
+                        <td> <?php echo $first_card->cash_advance_limit; ?>% </td>
                         <td><b> Transferable Balance Limit</b></td>
                         <td> 50% </td>
                     </tr>

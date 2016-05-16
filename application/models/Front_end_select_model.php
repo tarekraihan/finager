@@ -55,7 +55,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_card_image($id){
-        $sql="SELECT card_image_name FROM `card_card_informations`  WHERE id=$id";
+        $sql="SELECT id,card_image_name FROM `card_card_informations`  WHERE id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
