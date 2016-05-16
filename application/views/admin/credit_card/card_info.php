@@ -430,6 +430,14 @@
                                                         <input type="checkbox" name="isActive" value="active" >
                                                         <i></i>Is Active</label>
                                                 </div>
+
+                                                <section class="col col-6">
+                                                    <label class="label">Balance Transfer Limit (%)</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="3" name="txtBalanceTransferLimit"  value="<?php echo set_value('txtBalanceTransferLimit') ;?>">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtBalanceTransferLimit');?></label>
+                                                </section>
                                             </div>
 
 

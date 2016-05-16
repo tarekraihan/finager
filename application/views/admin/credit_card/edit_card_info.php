@@ -44,6 +44,7 @@ if(isset($_GET['id']))
     $row['billing_cycle_start']='';
     $row['billing_cycle_end']='';
     $row['eligibility']='';
+    $row['balance_transfer_limit']='';
     $row['purchase_interest_rate']='';
     $row['balance_transfer_rate']='';
     $row['cash_advance_interest_rate_yearly']='';
@@ -534,6 +535,13 @@ if(isset($_GET['id']))
                                                     <label class="checkbox">
                                                         <input type="checkbox" name="isActive" value="active" <?php if(isset($row["status"]) && $row["status"]==1){echo "checked='checked'";}?>>
                                                         <i></i>Is Active</label>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <label class="label">Balance Transfer Limit (%)</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="3" name="txtBalanceTransferLimit"   value="<?php if(isset($row["balance_transfer_limit"]) && $row["balance_transfer_limit"] != ""){echo $row["balance_transfer_limit"];}else{echo set_value('txtBalanceTransferLimit');} ?>">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtBalanceTransferLimit');?></label>
                                                 </div>
                                             </div>
 

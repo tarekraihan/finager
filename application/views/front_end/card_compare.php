@@ -3,7 +3,13 @@
         $id = $this->session->userdata('first_card') ;
         $result = $this->Front_end_select_model->select_card_details($id);
         $first_card = $result->row();
-    print_r($this->session->userdata());
+
+    $id1 = $this->session->userdata('second_card') ;
+    $result1 = $this->Front_end_select_model->select_card_details($id1);
+    $second_card = $result1->row();
+    //print_r($this->session->userdata());
+
+    //print_r($first_card);
 
        //echo $_SESSION['first_card']['developer'];
 
@@ -16,7 +22,7 @@
                 <tr>
                     <td> <p><img class="pull-left" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $first_card->card_image_name; ?>" /></p></td>
                     <td><b> <p class="text-center com_title">Comparison </p></b></td>
-                    <td> <p><img class="pull-right" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></p></td>
+                    <td> <p><img class="pull-right" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $second_card->card_image_name; ?>" /></p></td>
                 </tr>
 
 
@@ -71,55 +77,55 @@
                     <tr>
                         <td> <?php echo $first_card->bank_name; ?></td>
                         <td class="abc"><b> Bank Name </b></td>
-                        <td> Brac Bank Ltd </td>
+                        <td> <?php echo $second_card->bank_name; ?></td>
                     </tr>
 
                     <tr>
                         <td> <?php echo $first_card->card_issuer_name; ?> </td>
                         <td><b> Network</b></td>
-                        <td> Visa </td>
+                        <td> <?php echo $second_card->card_issuer_name; ?> </td>
                     </tr>
 
                     <tr>
                         <td> <?php echo $first_card->card_type_name; ?>  </td>
                         <td><b> Card Type</b></td>
-                        <td> Classic </td>
+                        <td> <?php echo $second_card->card_type_name; ?>  </td>
                     </tr>
 
                     <tr>
                         <td> <?php echo $first_card->income_range_min_salaried; ?>  for Salaried & <?php echo $first_card->income_range_min_business; ?>  for self-employed </td>
                         <td><b> Income Range</b></td>
-                        <td> 25000 (both salaried & self-employed) </td>
+                        <td> <?php echo $second_card->income_range_min_salaried; ?>  for Salaried & <?php echo $second_card->income_range_min_business; ?>  for self-employed </td>
                     </tr>
 
                     <tr>
                         <td> <?php echo $first_card->credit_limit_max_business; ?> </td>
                         <td><b> Maximum Credit Limit</b></td>
-                        <td> 75000 </td>
+                        <td> <?php echo $second_card->credit_limit_max_business; ?> </td>
                     </tr>
 
                     <tr>
                         <td>  <?php echo $first_card->cc_card_type; ?>  </td>
                         <td><b> Use Availability</b></td>
-                        <td> Local & International </td>
+                        <td>  <?php echo $second_card->cc_card_type; ?>  </td>
                     </tr>
 
                     <tr>
                         <td>  <?php echo $first_card->interest_free_pefiod_max; ?> </td>
                         <td><b> Maximum Interest Free Days</b></td>
-                        <td> 20 </td>
+                        <td>  <?php echo $second_card->interest_free_pefiod_max; ?> </td>
                     </tr>
 
                     <tr>
                         <td> <?php echo $first_card->interest_free_period_min; ?> </td>
                         <td><b> Minimum Interest Free Days</b></td>
-                        <td> 20 </td>
+                        <td> <?php echo $second_card->interest_free_period_min; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> <?php echo $first_card->cash_advance_limit; ?>% </td>
+                        <td> <?php echo $first_card->balance_transfer_limit; ?>% </td>
                         <td><b> Transferable Balance Limit</b></td>
-                        <td> 50% </td>
+                        <td> <?php echo $second_card->balance_transfer_limit; ?>% </td>
                     </tr>
                 </table>
             </div>
@@ -131,123 +137,123 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center compare_table">
                     <tr>
-                        <td> Dutch Bangla Bank </td>
+                        <td> BDT <?php echo $first_card->basic_card_annual_fee; ?> + <?php echo $first_card->basic_card_annual_fee_plus; ?></td>
                         <td class="def"><b> Basic Card Annual Fee</b></td>
-                        <td> Dutch Bangla Bank </td>
+                        <td> BDT <?php echo $second_card->basic_card_annual_fee; ?> + <?php echo $second_card->basic_card_annual_fee_plus; ?></td>
                     </tr>
 
                     <tr>
-                        <td> Master Card </td>
+                        <td> <?php echo $first_card->supplementary_card_annual_fee; ?> </td>
                         <td><b> Supplementary Card Annual Fee</b></td>
-                        <td> Master Card </td>
+                        <td> <?php echo $second_card->supplementary_card_annual_fee; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Nexus-Pro </td>
+                        <td><?php echo $first_card->purchase_fee; ?>  </td>
                         <td><b> Purchase Fee</b></td>
-                        <td> Nexus-Pro </td>
+                        <td><?php echo $second_card->purchase_fee; ?>  </td>
                     </tr>
 
                     <tr>
-                        <td> 30,000 tk </td>
+                        <td> <?php echo $first_card->balance_transfer_fee; ?>  %</td>
                         <td><b> Balance Transfer Fee</b></td>
-                        <td> 30,000 tk </td>
+                        <td> <?php echo $second_card->balance_transfer_fee; ?> %</td>
                     </tr>
 
                     <tr>
-                        <td> 1,00,000 tk </td>
+                        <td> <?php echo $first_card->cash_advance_fee_own_atm; ?> % </td>
                         <td><b> Cash Advance Fee From own ATM</b></td>
-                        <td> 1,00,000 tk </td>
+                        <td> <?php echo $second_card->cash_advance_fee_own_atm; ?> %  </td>
                     </tr>
 
                     <tr>
-                        <td> Sample </td>
+                        <td><?php echo $first_card->cash_advance_fee_other_atm; ?> + <?php echo $first_card->cash_advance_fee_other_atm_plus; ?>  </td>
                         <td><b> Cash Advance Fee From other bank ATM</b></td>
-                        <td> Sample </td>
+                        <td><?php echo $second_card->cash_advance_fee_other_atm; ?> + <?php echo $second_card->cash_advance_fee_other_atm_plus; ?>  </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td>USD <?php echo $first_card->cash_advance_fee_international_usd; ?> + <?php echo $first_card->cash_advance_fee_international_percentage; ?> % <?php echo $first_card->cash_advance_fee_international_remarks; ?> </td>
                         <td><b> Cash Advance Fee International</b></td>
-                        <td> Sample 45 </td>
+                        <td>USD <?php echo $second_card->cash_advance_fee_international_usd; ?> + <?php echo $second_card->cash_advance_fee_international_percentage; ?> % <?php echo $second_card->cash_advance_fee_international_remarks; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $first_card->late_payment_fee_bdt; ?> or  USD <?php echo $first_card->late_payment_fee_usd; ?> </td>
                         <td><b> Late Payment Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $second_card->late_payment_fee_bdt; ?> or  USD <?php echo $second_card->late_payment_fee_usd; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td>  BDT <?php echo $first_card->card_replacement_fee; ?> </td>
                         <td><b> Card Replacement Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td>  BDT <?php echo $second_card->card_replacement_fee; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $first_card->pin_replacement_fee; ?>  </td>
                         <td><b> Pin Replacement Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $second_card->pin_replacement_fee; ?>  </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $first_card->over_limit_charge_bdt; ?> or USD  <?php echo $first_card->over_limit_charge_usd; ?></td>
                         <td><b> Over Limit Charge</b> </td>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $second_card->over_limit_charge_bdt; ?> or USD  <?php echo $second_card->over_limit_charge_usd; ?></td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $first_card->transaction_alert_service; ?> +  <?php echo $first_card->transaction_alert_service_plus; ?> </td>
                         <td><b> Transaction Alert Service</b> </td>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $second_card->transaction_alert_service; ?> +  <?php echo $second_card->transaction_alert_service_plus; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $first_card->credit_assurance_program_fee; ?> % <?php echo $first_card->credit_assurance_program_fee_remarks; ?> </td>
                         <td><b> Credit Assurance Program Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $second_card->transaction_alert_service; ?> +  <?php echo $second_card->transaction_alert_service_plus; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td><?php echo $first_card->monthly_e_statement_fee; ?>  </td>
                         <td><b> Monthly E-Statement Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td><?php echo $second_card->monthly_e_statement_fee; ?>  </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $first_card->check_book_fee; ?> </td>
                         <td><b> Check Book Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $second_card->check_book_fee; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $first_card->minimum_payment_bdt; ?> or USD <?php echo $first_card->minimum_payment_usd; ?> or <?php echo $first_card->minimum_payment_percentage; ?>% <?php echo $first_card->minimum_payment_remarks; ?></td>
                         <td><b> Minimum Payment</b> </td>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $second_card->minimum_payment_bdt; ?> or USD <?php echo $second_card->minimum_payment_usd; ?> or <?php echo $second_card->minimum_payment_percentage; ?>% <?php echo $second_card->minimum_payment_remarks; ?></td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $first_card->cheque_return_fee; ?>  </td>
                         <td><b> Check Return Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td> BDT <?php echo $second_card->cheque_return_fee; ?>  </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $first_card->duplicate_statement; ?>  </td>
                         <td><b> Duplicate Statement</b> </td>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $second_card->duplicate_statement; ?>  </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $first_card->card_cheque_processing_fee; ?>% </td>
                         <td><b> Card Cheque Processing Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $second_card->card_cheque_processing_fee; ?>% </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $first_card->card_cheque_issuing_fee; ?> </td>
                         <td><b> Card Cheque Issuing Fee</b> </td>
-                        <td> Sample 45 </td>
+                        <td> <?php echo $second_card->card_cheque_issuing_fee; ?> </td>
                     </tr>
 
                 </table>
