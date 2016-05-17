@@ -11,7 +11,10 @@
 
     //print_r($first_card);
 
-       //echo $_SESSION['first_card']['developer'];
+    //echo $_SESSION['first_card']['developer'];
+
+    $result = $this->Select_model->get_card_benefit();
+    print_r($result);
 
     ?>
 </pre>
@@ -24,14 +27,10 @@
                     <td><b> <p class="text-center com_title">Comparison </p></b></td>
                     <td> <p><img class="pull-right" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $second_card->card_image_name; ?>" /></p></td>
                 </tr>
-
-
-
             </table>
         </div>
     </div>
 </section>
-
 <section id="basic_info">
     <div class="container">
 

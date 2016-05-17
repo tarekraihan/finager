@@ -331,5 +331,12 @@ class Select_Model extends CI_Model
         return $query;
     }
 
+    public function get_card_benefit(){
+        $sql="SELECT * FROM `card_reward`";
+        $query=$this->db->query($sql);
+        return $query->result_array();
+
+    }
+
 
 }
