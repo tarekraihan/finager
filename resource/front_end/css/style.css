@@ -541,7 +541,9 @@ body {
 	font-size:12px;
 }
 
-
+.prosCons_body2 table {
+    width: 100% !important;
+}
 
 
 /*Compare section starts*/
@@ -665,5 +667,10 @@ body {
 	width: 33.33333333%;
 	height:auto;
 	margin: 0px auto;
+}
+
+.compare_image{
+    width:250px;
+    height: auto;
 }
 /*------Card compare Saddam End----------*/

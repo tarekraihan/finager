@@ -21,7 +21,7 @@
                     <div>
                          <?php if($row->card_image_name != "&lt;") {
                              ?>
-                             <img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/card/<?php echo $row->card_image_name; ?>"/>
+                             <img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/card/credit_card/<?php echo $row->card_image_name; ?>"/>
 
                          <?php
                          }else{
@@ -44,7 +44,7 @@
                         <p class="card_details_features">
                             <?php echo $row->card_summary;?>
                         </p>
-                        <p class="add_comp_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></p>
+                        <!--<p class="add_comp_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></p>-->
                     </div>
                 </div>
 

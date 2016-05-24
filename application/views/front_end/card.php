@@ -488,6 +488,19 @@
 
     $(document).on('click','.compare-cross-btn',function(){
 
+        var  formData = $('.cart_anchor').children('img').data();
+        var card_id1 = "card_id1="+formData.card_id;
+        alert(card_id1);
+
+        var  formData = $(this).data();
+        var card_id = "card_id="+formData.card_id;
+
+        $( ".add-to-compare" ).each(function() {
+            if($)
+        });
+
+
+
         $(this).parent(".cart_anchor").removeClass("img_active");
         $(this).parent(".cart_anchor").html('');
         $(this).addClass("hidden");
@@ -510,7 +523,7 @@
         //alert(1);
         var  formData = $('.cart_anchor').children('img').data();
         var card_id1 = "card_id1="+formData.card_id;
-
+        //alert(card_id1);
         var  formData = $('.cart_anchor01').children('img').data();
         var card_id2 = "&card_id2="+formData.card_id;
 

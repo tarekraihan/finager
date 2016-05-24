@@ -14,7 +14,7 @@
     //echo $_SESSION['first_card']['developer'];
 
     $result = $this->Select_model->get_card_benefit();
-    print_r($result);
+    // print_r($result);
 
     ?>
 </pre>
@@ -23,9 +23,9 @@
         <div class="row">
             <table class="table">
                 <tr>
-                    <td> <p><img class="pull-left" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $first_card->card_image_name; ?>" /></p></td>
+                    <td> <p><img class="pull-left compare_image img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $first_card->card_image_name; ?>" /></p></td>
                     <td><b> <p class="text-center com_title">Comparison </p></b></td>
-                    <td> <p><img class="pull-right" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $second_card->card_image_name; ?>" /></p></td>
+                    <td> <p><img class="pull-right compare_image img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $second_card->card_image_name; ?>" /></p></td>
                 </tr>
             </table>
         </div>
