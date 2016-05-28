@@ -512,14 +512,14 @@ if(isset($_GET['id']))
 												<section class="col col-6">
                                                     <label class="label">Billing cycle (Start)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBillingCycleStart"  value="<?php if(isset($row["billing_cycle_start"]) && $row["billing_cycle_start"] != ""){echo $row["billing_cycle_start"];}else{echo set_value('txtBillingCycleStart');} ?>">
+                                                        <input type="text" maxlength="250" name="txtBillingCycleStart"  value="<?php if(isset($row["billing_cycle_start"]) && $row["billing_cycle_start"] != ""){echo $row["billing_cycle_start"];}else{echo set_value('txtBillingCycleStart');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBillingCycleStart');?></label>
                                                 </section>
 												<section class="col col-6">
                                                     <label class="label">Billing cycle (End)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBillingCycleEnd"  value="<?php if(isset($row["billing_cycle_end"]) && $row["billing_cycle_end"] != ""){echo $row["billing_cycle_end"];}else{echo set_value('txtBillingCycleEnd');} ?>">
+                                                        <input type="text" maxlength="250" name="txtBillingCycleEnd"  value="<?php if(isset($row["billing_cycle_end"]) && $row["billing_cycle_end"] != ""){echo $row["billing_cycle_end"];}else{echo set_value('txtBillingCycleEnd');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBillingCycleEnd');?></label>
                                                 </section>

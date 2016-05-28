@@ -406,14 +406,14 @@
 												<section class="col col-6">
                                                     <label class="label">Billing cycle (Start)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBillingCycleStart"  value="<?php echo set_value('txtBillingCycleStart') ;?>">
+                                                        <input type="text" maxlength="250" name="txtBillingCycleStart"  value="<?php echo set_value('txtBillingCycleStart') ;?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBillingCycleStart');?></label>
                                                 </section>
 												<section class="col col-6">
                                                     <label class="label">Billing cycle (End)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBillingCycleEnd"  value="<?php echo set_value('txtBillingCycleEnd'); ?>">
+                                                        <input type="text" maxlength="250" name="txtBillingCycleEnd"  value="<?php echo set_value('txtBillingCycleEnd'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBillingCycleEnd');?></label>
                                                 </section>

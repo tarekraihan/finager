@@ -14,7 +14,7 @@
     //echo $_SESSION['first_card']['developer'];
 
     $result = $this->Select_model->get_card_benefit();
-    // print_r($result);
+     print_r($result);
 
     ?>
 </pre>
