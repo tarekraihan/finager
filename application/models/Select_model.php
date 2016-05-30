@@ -258,7 +258,7 @@ class Select_Model extends CI_Model
 
     public function select_card_fees_charges_list()//To show Card card_fees_charges_list
     {
-        $sql="SELECT card_bank.bank_name, card_card_informations.card_name, card_credit_card_type.cc_card_type,card_fees_charges.id, card_fees_charges.basic_card_annual_fee,card_fees_charges.supplementary_card_annual_fee, card_fees_charges.late_payment_fee_bdt,card_fees_charges.card_replacement_fee FROM card_card_informations INNER JOIN `card_fees_charges`ON card_card_informations.id=card_fees_charges.card_id INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_credit_card_type ON card_credit_card_type.id=card_card_informations.cc_type_id";
+        $sql="SELECT card_bank.bank_name, card_card_informations.card_name, card_credit_card_type.cc_card_type,card_fees_charges.id, card_fees_charges.basic_card_annual_fee,card_fees_charges.supplementary_card_annual_fee, card_fees_charges.late_payment_fee,card_fees_charges.card_replacement_fee FROM card_card_informations INNER JOIN `card_fees_charges`ON card_card_informations.id=card_fees_charges.card_id INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_credit_card_type ON card_credit_card_type.id=card_card_informations.cc_type_id";
         $query=$this->db->query($sql);
         $result="";
         if($query->num_rows() > 0)
@@ -273,7 +273,7 @@ class Select_Model extends CI_Model
 					 <td class="center">'.$row->cc_card_type.'</td>
 					 <td class="center"> BDT '.$row->basic_card_annual_fee.'</td>
 					 <td class="center"> BDT '.$row->supplementary_card_annual_fee.'</td>
-					 <td class="center"> BDT '.$row->late_payment_fee_bdt.'</td>
+					 <td class="center"> BDT '.$row->late_payment_fee.'</td>
 					 <td class="center"> BDT '.$row->card_replacement_fee.'</td>';
 
                 $result.='</td>
