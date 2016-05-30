@@ -4,6 +4,7 @@
     if(!empty($id) && is_numeric($id) ){
         $query=$this->Front_end_select_model->select_card_details($id);
         $row=$query->row();
+//        print_r($row);die;
     }else{
         redirect(base_url().'My404');
     }
@@ -246,7 +247,7 @@
                     <tbody>
                     <tr>
                         <td>Basic Card Annual Fee</td>
-                        <td>BDT <?php echo $row->basic_card_annual_fee;?> + <?php echo $row->basic_card_annual_fee_plus; ?></td>
+                        <td><?php echo $row->basic_card_annual_fee; ?></td>
                     </tr>
                     <tr>
                         <td>Supplementary Card Annual Fee</td>
@@ -258,7 +259,7 @@
                     </tr>
                     <tr>
                         <td>Balance Transfer Fee</td>
-                        <td><?php echo $row->balance_transfer_fee; ?>%</td>
+                        <td><?php echo $row->balance_transfer_fee; ?></td>
                     </tr>
                     <tr>
                         <td>Cash Advance Fee
@@ -270,39 +271,39 @@
                         </td>
                         <td><br/>
                             <ul>
-                                <li><?php echo $row->cash_advance_fee_own_atm; ?> %</li>
-                                <li><?php echo $row->cash_advance_fee_other_atm; ?>% + <?php echo $row->cash_advance_fee_other_atm_plus; ?></li>
-                                <li>USD <?php echo $row->cash_advance_fee_international_usd; ?> or <?php echo $row->cash_advance_fee_international_percentage ;?>% <?php echo $row->cash_advance_fee_international_remarks;?></li>
+                                <li><?php echo $row->cash_advance_fee_own_atm; ?></li>
+                                <li><?php echo $row->cash_advance_fee_other_atm; ?></li>
+                                <li><?php echo $row->cash_advance_fee_international; ?></li>
                             </ul>
                         </td>
                     </tr>
                     <tr>
                         <td>Late Payment Fee</td>
-                        <td>BDT <?php $row->late_payment_fee_bdt; ?> or USD <?php echo $row->late_payment_fee_usd; ?></td>
+                        <td><?php echo $row->late_payment_fee; ?></td>
                     </tr>
                     <tr>
                         <td>Card Replacement Fee</td>
-                        <td>BDT <?php echo $row->card_replacement_fee; ?></td>
+                        <td><?php echo $row->card_replacement_fee; ?></td>
                     </tr>
                     <tr>
                         <td>Pin Replacement Fee</td>
-                        <td>BDT <?php echo $row->pin_replacement_fee; ?></td>
+                        <td><?php echo $row->pin_replacement_fee; ?></td>
                     </tr>
                     <tr>
                         <td>Over limit Charge</td>
-                        <td>BDT <?php echo $row->over_limit_charge_bdt; ?> or USD <?php echo $row->over_limit_charge_usd; ?></td>
+                        <td><?php echo $row->over_limit_charge; ?></td>
                     </tr>
                     <tr>
                         <td>Transaction Alert Service</td>
-                        <td>BDT <?php echo $row->transaction_alert_service; ?> + <?php echo $row->transaction_alert_service_plus; ?></td>
+                        <td><?php echo $row->transaction_alert_service; ?></td>
                     </tr>
                     <tr>
                         <td>Credit Assurance Program Fee</td>
-                        <td><?php echo $row->credit_assurance_program_fee; ?>% <?php echo $row->credit_assurance_program_fee_remarks; ?></td>
+                        <td><?php echo $row->credit_assurance_program_fee; ?></td>
                     </tr>
                     <tr>
                         <td>Monthly E-Statement Fee</td>
-                        <td>BDT <?php echo $row->monthly_e_statement_fee; ?></td>
+                        <td><?php echo $row->monthly_e_statement_fee; ?></td>
                     </tr>
                     <tr>
                         <td>Cheque Book Fee</td>
@@ -310,7 +311,7 @@
                     </tr>
                     <tr>
                         <td>Minimum Payment</td>
-                        <td>BDT <?php echo $row->minimum_payment_bdt; ?> or USD <?php echo $row->minimum_payment_usd;?> or <?php echo $row->minimum_payment_percentage; ?>% <?php echo $row->minimum_payment_remarks; ?></td>
+                        <td><?php echo $row->minimum_payment; ?></td>
                     </tr>
                     <tr>
                         <td>Cheque Return Fee</td>
@@ -318,11 +319,11 @@
                     </tr>
                     <tr>
                         <td>Duplicate Statement</td>
-                        <td><?php echo $row->duplicate_statement; ?></td>
+                        <td><?php echo  $row->duplicate_statement ; ?></td>
                     </tr>
                     <tr>
                         <td>Card Cheque Processing Fee</td>
-                        <td><?php echo $row->card_cheque_processing_fee; ?>%</td>
+                        <td><?php echo $row->card_cheque_processing_fee; ?></td>
                     </tr>
                     <tr>
                         <td>Card Cheque Issuing Fee</td>
