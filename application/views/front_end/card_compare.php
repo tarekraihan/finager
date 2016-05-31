@@ -9,12 +9,18 @@
     $second_card = $result1->row();
     //print_r($this->session->userdata());
 
-    //print_r($first_card);
+//    print_r($first_card); die;
 
-    //echo $_SESSION['first_card']['developer'];
+    $first_card_benefit = explode(',',$first_card->card_benifit_id);
+    $second_card_benefit = explode(',',$second_card->card_benifit_id);
 
     $result = $this->Select_model->get_card_benefit();
-     print_r($result);
+//    $row = $query->result_array();
+
+
+    //if(in_array($result[0]['id'], $first_card_benifit)){echo " YES";}else{ echo "No"; }
+    //echo $result[0]['id'];die;
+    //print_r($result);
 
     ?>
 </pre>
@@ -136,9 +142,9 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center compare_table">
                     <tr>
-                        <td> BDT <?php echo $first_card->basic_card_annual_fee; ?> + <?php echo $first_card->basic_card_annual_fee_plus; ?></td>
+                        <td><?php echo $first_card->basic_card_annual_fee; ?></td>
                         <td class="def"><b> Basic Card Annual Fee</b></td>
-                        <td> BDT <?php echo $second_card->basic_card_annual_fee; ?> + <?php echo $second_card->basic_card_annual_fee_plus; ?></td>
+                        <td><?php echo $second_card->basic_card_annual_fee; ?></td>
                     </tr>
 
                     <tr>
@@ -154,63 +160,63 @@
                     </tr>
 
                     <tr>
-                        <td> <?php echo $first_card->balance_transfer_fee; ?>  %</td>
+                        <td> <?php echo $first_card->balance_transfer_fee; ?></td>
                         <td><b> Balance Transfer Fee</b></td>
-                        <td> <?php echo $second_card->balance_transfer_fee; ?> %</td>
+                        <td> <?php echo $second_card->balance_transfer_fee; ?></td>
                     </tr>
 
                     <tr>
-                        <td> <?php echo $first_card->cash_advance_fee_own_atm; ?> % </td>
+                        <td> <?php echo $first_card->cash_advance_fee_own_atm; ?> </td>
                         <td><b> Cash Advance Fee From own ATM</b></td>
-                        <td> <?php echo $second_card->cash_advance_fee_own_atm; ?> %  </td>
+                        <td> <?php echo $second_card->cash_advance_fee_own_atm; ?></td>
                     </tr>
 
                     <tr>
-                        <td><?php echo $first_card->cash_advance_fee_other_atm; ?> + <?php echo $first_card->cash_advance_fee_other_atm_plus; ?>  </td>
+                        <td><?php echo $first_card->cash_advance_fee_other_atm; ?></td>
                         <td><b> Cash Advance Fee From other bank ATM</b></td>
-                        <td><?php echo $second_card->cash_advance_fee_other_atm; ?> + <?php echo $second_card->cash_advance_fee_other_atm_plus; ?>  </td>
+                        <td><?php echo $second_card->cash_advance_fee_other_atm; ?></td>
                     </tr>
 
                     <tr>
-                        <td>USD <?php echo $first_card->cash_advance_fee_international_usd; ?> + <?php echo $first_card->cash_advance_fee_international_percentage; ?> % <?php echo $first_card->cash_advance_fee_international_remarks; ?> </td>
+                        <td><?php echo $first_card->cash_advance_fee_international; ?> </td>
                         <td><b> Cash Advance Fee International</b></td>
-                        <td>USD <?php echo $second_card->cash_advance_fee_international_usd; ?> + <?php echo $second_card->cash_advance_fee_international_percentage; ?> % <?php echo $second_card->cash_advance_fee_international_remarks; ?> </td>
+                        <td><?php echo $second_card->cash_advance_fee_international; ?></td>
                     </tr>
 
                     <tr>
-                        <td> BDT <?php echo $first_card->late_payment_fee_bdt; ?> or  USD <?php echo $first_card->late_payment_fee_usd; ?> </td>
+                        <td><?php echo $first_card->late_payment_fee; ?></td>
                         <td><b> Late Payment Fee</b> </td>
-                        <td> BDT <?php echo $second_card->late_payment_fee_bdt; ?> or  USD <?php echo $second_card->late_payment_fee_usd; ?> </td>
+                        <td><?php echo $second_card->late_payment_fee; ?></td>
                     </tr>
 
                     <tr>
-                        <td>  BDT <?php echo $first_card->card_replacement_fee; ?> </td>
+                        <td><?php echo $first_card->card_replacement_fee; ?> </td>
                         <td><b> Card Replacement Fee</b> </td>
-                        <td>  BDT <?php echo $second_card->card_replacement_fee; ?> </td>
+                        <td><?php echo $second_card->card_replacement_fee; ?> </td>
                     </tr>
 
                     <tr>
-                        <td> BDT <?php echo $first_card->pin_replacement_fee; ?>  </td>
+                        <td>  <?php echo $first_card->pin_replacement_fee; ?>  </td>
                         <td><b> Pin Replacement Fee</b> </td>
-                        <td> BDT <?php echo $second_card->pin_replacement_fee; ?>  </td>
+                        <td> <?php echo $second_card->pin_replacement_fee; ?>  </td>
                     </tr>
 
                     <tr>
-                        <td> BDT <?php echo $first_card->over_limit_charge_bdt; ?> or USD  <?php echo $first_card->over_limit_charge_usd; ?></td>
+                        <td><?php echo $first_card->over_limit_charge; ?></td>
                         <td><b> Over Limit Charge</b> </td>
-                        <td> BDT <?php echo $second_card->over_limit_charge_bdt; ?> or USD  <?php echo $second_card->over_limit_charge_usd; ?></td>
+                        <td> <?php echo $second_card->over_limit_charge; ?></td>
                     </tr>
 
                     <tr>
-                        <td> BDT <?php echo $first_card->transaction_alert_service; ?> +  <?php echo $first_card->transaction_alert_service_plus; ?> </td>
+                        <td><?php echo $first_card->transaction_alert_service; ?></td>
                         <td><b> Transaction Alert Service</b> </td>
-                        <td> BDT <?php echo $second_card->transaction_alert_service; ?> +  <?php echo $second_card->transaction_alert_service_plus; ?> </td>
+                        <td><?php echo $second_card->transaction_alert_service; ?></td>
                     </tr>
 
                     <tr>
-                        <td> <?php echo $first_card->credit_assurance_program_fee; ?> % <?php echo $first_card->credit_assurance_program_fee_remarks; ?> </td>
+                        <td><?php echo $first_card->credit_assurance_program_fee; ?></td>
                         <td><b> Credit Assurance Program Fee</b> </td>
-                        <td> BDT <?php echo $second_card->transaction_alert_service; ?> +  <?php echo $second_card->transaction_alert_service_plus; ?> </td>
+                        <td><?php echo $second_card->credit_assurance_program_fee; ?></td>
                     </tr>
 
                     <tr>
@@ -226,15 +232,15 @@
                     </tr>
 
                     <tr>
-                        <td> BDT <?php echo $first_card->minimum_payment_bdt; ?> or USD <?php echo $first_card->minimum_payment_usd; ?> or <?php echo $first_card->minimum_payment_percentage; ?>% <?php echo $first_card->minimum_payment_remarks; ?></td>
+                        <td><?php echo $first_card->minimum_payment; ?></td>
                         <td><b> Minimum Payment</b> </td>
-                        <td> BDT <?php echo $second_card->minimum_payment_bdt; ?> or USD <?php echo $second_card->minimum_payment_usd; ?> or <?php echo $second_card->minimum_payment_percentage; ?>% <?php echo $second_card->minimum_payment_remarks; ?></td>
+                        <td><?php echo $second_card->minimum_payment; ?></td>
                     </tr>
 
                     <tr>
-                        <td> BDT <?php echo $first_card->cheque_return_fee; ?>  </td>
+                        <td><?php echo $first_card->cheque_return_fee; ?>  </td>
                         <td><b> Check Return Fee</b> </td>
-                        <td> BDT <?php echo $second_card->cheque_return_fee; ?>  </td>
+                        <td><?php echo $second_card->cheque_return_fee; ?>  </td>
                     </tr>
 
                     <tr>
@@ -244,9 +250,9 @@
                     </tr>
 
                     <tr>
-                        <td> <?php echo $first_card->card_cheque_processing_fee; ?>% </td>
+                        <td> <?php echo $first_card->card_cheque_processing_fee; ?> </td>
                         <td><b> Card Cheque Processing Fee</b> </td>
-                        <td> <?php echo $second_card->card_cheque_processing_fee; ?>% </td>
+                        <td> <?php echo $second_card->card_cheque_processing_fee; ?></td>
                     </tr>
 
                     <tr>
@@ -263,82 +269,134 @@
             <h3 class="text-center"> <img class="Card-Compare-hr3" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Benefits <img class="Card-Compare-hr3" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center compare_table">
+
+
                     <tr>
-                        <td> Dutch Bangla Bank </td>
-                        <td class="third"><b> Waiver on Annual Fee</b></td>
-                        <td> Dutch Bangla Bank </td>
+                        <td><?php if(in_array($result[0]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[0]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[0]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Master Card </td>
-                        <td><b> Discount Facility</b></td>
-                        <td> Master Card </td>
+                        <td><?php if(in_array($result[1]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[1]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[1]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Nexus-Pro </td>
-                        <td><b> Airport Lounge Facility & Priority Pass</b></td>
-                        <td> Nexus-Pro </td>
+                        <td><?php if(in_array($result[2]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[2]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[2]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
                     </tr>
 
                     <tr>
-                        <td> 30,000 tk </td>
-                        <td><b> Installment Payment for Bill & Purchase</b></td>
-                        <td> 30,000 tk </td>
+                        <td><?php if(in_array($result[3]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[3]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[3]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
                     </tr>
 
                     <tr>
-                        <td> 1,00,000 tk </td>
-                        <td><b> Reward Program</b></td>
-                        <td> 1,00,000 tk </td>
+                        <td><?php if(in_array($result[4]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[4]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[4]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample </td>
-                        <td><b> Credit Assurance Program</b></td>
-                        <td> Sample </td>
+                        <td><?php if(in_array($result[5]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[5]['reward_name'];?></b></td>
+                        <td> <?php if(in_array($result[5]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
-                        <td><b> Worldwide Cash Advance Facility</b></td>
-                        <td> Sample 45 </td>
+                        <td><?php if(in_array($result[6]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[6]['reward_name'];?></b></td>
+                        <td> <?php if(in_array($result[6]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[7]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[7]['reward_name'];?></b></td>
+                        <td> <?php if(in_array($result[0]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
-                        <td><b> Convenient Payment Option</b></td>
-                        <td> Sample 45 </td>
-                    </tr>
-                    <tr>
-                        <td> Sample 45 </td>
-                        <td><b> Multiple Supplementary Card</b></td>
-                        <td> Sample 45 </td>
+                        <td><?php if(in_array($result[8]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[8]['reward_name'];?></b> </td>
+                        <td> <?php if(in_array($result[8]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
-                        <td><b> Auto Debit Payment Service</b> </td>
-                        <td> Sample 45 </td>
+                        <td><?php if(in_array($result[9]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[9]['reward_name'];?></b></td>
+                        <td> <?php if(in_array($result[9]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
-                        <td><b> Check Book Facility</b></td>
-                        <td> Sample 45 </td>
+                        <td><?php if(in_array($result[10]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[10]['reward_name'];?></b></td>
+                        <td> <?php if(in_array($result[0]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
                     </tr>
 
                     <tr>
-                        <td> Sample 45 </td>
-                        <td><b> Multiple Suplementary Card</b></td>
-                        <td> Sample 45 </td>
+                        <td><?php if(in_array($result[11]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[11]['reward_name'];?></b></td>
+                        <td> <?php if(in_array($result[0]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[12]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[12]['reward_name'];?></b></td>
+                        <td> <?php if(in_array($result[12]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[13]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[13]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[13]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[14]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[14]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[14]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[15]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[15]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[15]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[16]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[16]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[16]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[17]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[17]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[17]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[18]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[18]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[18]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[19]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[19]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[19]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[20]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[20]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[20]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[21]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                        <td><b><?php echo $result[21]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[21]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php if(in_array($result[22]['id'], $first_card_benefit)){echo " Yes";}else{ echo "No"; } ?> </td>
+                        <td><b><?php echo $result[22]['reward_name'];?></b></td>
+                        <td><?php if(in_array($result[22]['id'], $second_card_benefit)){echo " Yes";}else{ echo "No"; } ?></td>
                     </tr>
 
-                    <tr>
-                        <td> Sample 45 </td>
-                        <td><b> Global Emergency ASSISTANCE SERVICE</b></td>
-                        <td> Sample 45 </td>
-                    </tr>
                 </table>
             </div>
         </div>
