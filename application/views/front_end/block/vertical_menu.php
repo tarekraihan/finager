@@ -25,7 +25,7 @@
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cards<span class="caret"></span></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="card.php">Credit Cards</a></li>
+                                                <li><a href="<?php echo base_url(); ?>en/credit_card">Credit Cards</a></li>
                                                 <li><a href="#">Debit Cards</a></li>
                                                 <li><a href="#">Others</a></li>
                                             </ul>
@@ -35,7 +35,7 @@
                                             <ul class="dropdown-menu">
                                                 <li><a href="#">Personal loan</a></li>
                                                 <li><a href="#">Car loan</a></li>
-                                                <li><a href="#">Home loan</a></li>
+                                                <li><a href="<?php echo base_url(); ?>en/home_loan">Home loan</a></li>
                                                 <li><a href="#">Any purpose loan</a></li>
                                             </ul>
                                         </li>

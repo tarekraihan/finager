@@ -674,3 +674,180 @@ body {
     height: auto;
 }
 /*------Card compare Saddam End----------*/
+
+
+/*for home loan */
+.home_loan_left_bar{
+    border:2px solid #DADADA;
+}
+.home_loan_left_bar p{
+    border-bottom:1px solid #DADADA;
+    background-color:#DADADA;
+    padding-left:8px;
+}
+.no-margin-lr2 {
+    margin-right: 0 !important;
+}
+.home_loan_right_bar {
+    padding: 11px 0 0 0;
+    margin-bottom: 15px;
+    clear: both;
+    border: 2px solid #DADADA;
+}
+.loan_query{
+    padding:6px;
+    margin-bottom: 14px;
+}
+.Hloan_more_icon{
+    margin:10px;
+}
+.home_loan_more_info{
+    text-align:center;
+    font-size:12px;
+}
+.Hlborder{
+    border-right:2px solid #DADADA;
+}
+.home_loan_more_info h3{
+    color:gray;
+}
+.home_loan_button{
+    /* border-bottom:2px solid #DADADA; */
+    padding-bottom:10px;
+}
+.panel {
+    margin-bottom: 0px;
+    background-color: none;
+    border:none;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.pietd{
+    border-top:1px solid #DADADA;
+}
+.loan_div{
+    height:10px;
+    width:10px;
+    border-radius:50%;
+    border:1px solid gray;
+}
+/* for home loan slider */
+.wrapper{
+    margin-bottom:10px;
+}
+.wrapper p{
+    margin-left:10px;
+}
+.slider-box {
+    height: 60px;
+    width: 515px;
+    margin: 0 auto;
+    float: none;
+    background-color: #f3f3f3;
+    position: relative;
+}
+.slider-rangebar {
+    height: 10px;
+    width: 465px;
+    margin: 24px auto;
+    float: none;
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    color: #222222;
+    border-radius: 4px;
+    position: absolute;
+    margin-left: 30px;
+}
+#slider-button {
+    height: 14px;
+    width: 14px;
+    margin: -3px auto;
+    float: none;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+    margin-left: 0px;
+    background-color: #c2c2c2;
+    position: absolute;
+    cursor: pointer;
+}
+.slider-range-list {
+    width: 458px;
+    overflow: hidden;
+    position: absolute;
+    height: 30px;
+    bottom: 0;
+    margin-left: 27px;
+}
+.slider-range {
+    list-style: none;
+    width: 2500px;
+    overflow: hidden;
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+    padding-left: 0;
+}
+.slider-range li{
+    display: inline;
+    width: auto;
+    margin-right: 10px;
+}
+.prev, .next {
+    width: 15px;
+    font-size: 25px;
+    position: absolute;
+    cursor: pointer;
+}
+.prev {
+    left: 15px;
+    top: 12px;
+}
+.next {
+    right: 0;
+    top: 11px;
+}
+/* for home loan grap table */
+.pric_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin:50px auto;
+}
+.pric_table th {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+}
+.pric_table td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 18px;
+}
+.labels tr td {
+    background-color: #2cc16a;
+    font-weight: bold;
+    color: #fff;
+}
+.label tr td label {
+    display: block;
+}
+[data-toggle="toggle"] {
+    display: none;
+}
+/* for home loan emi cal */
+.Hloan_emi_cal{
+    border:1px solid #E2DBDB;
+    margin:5px;
+    padding:5px;
+    border-radius:14px;
+}
+.loan_input {
+    margin: 5px;
+    height: 26px;
+    width: 110px;
+    border-radius:5px;
+}
+#chart1{
+    width:100%;
+}

@@ -42,5 +42,12 @@ class En extends CI_Controller {
         $this->load->view('front_end/card_compare');
         $this->load->view('front_end/block/footer');
     }
+    public function home_loan(){
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/home_loan');
+        $this->load->view('front_end/block/footer_home');
+    }
 
 }

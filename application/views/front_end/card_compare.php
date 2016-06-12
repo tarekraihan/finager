@@ -129,7 +129,7 @@
 
                     <tr>
                         <td> <?php echo $first_card->balance_transfer_limit; ?>% </td>
-                        <td><b> Transferable Balance Limit</b></td>
+                        <td><b>Balance Transfer Limit</b></td>
                         <td> <?php echo $second_card->balance_transfer_limit; ?>% </td>
                     </tr>
                 </table>
@@ -409,66 +409,32 @@
 
                     <tr>
                         <td class="text-left">
-                            <ul>
-                                <li> Any Bangladeshi National</li>
-                                <li>For salaried person minimum monthly income after tax is BDT 25,000</li>
-                                <li>For self-employed person minimum monthly income after tax is BDT 25,000 </li>
-                            </ul>
-                            <ul> <b> Age: </b>
-                                <li> Any Bangladeshi National</li>
-                                <li>For salaried person minimum monthly income after tax is BDT 25,000</li>
-                                <li>For self-employed person minimum monthly income after tax is BDT 25,000 </li>
-                            </ul>
+                            <?php echo $first_card->eligibility; ?>
                         </td>
                         <td class="fourth text-center"><b> Eligibility </b></td>
                         <td class="text-left">
-                            <ul>
-                                <li> Any Bangladeshi National</li>
-                                <li>For salaried person minimum monthly income after tax is BDT 25,000</li>
-                                <li>For self-employed person minimum monthly income after tax is BDT 25,000 </li>
-                            </ul>
-                            <ul> <b> Age: </b>
-                                <li> Any Bangladeshi National</li>
-                                <li>For salaried person minimum monthly income after tax is BDT 25,000</li>
-                                <li>For self-employed person minimum monthly income after tax is BDT 25,000 </li>
-                            </ul>
+                            <?php echo $second_card->eligibility; ?>
                         </td>
                     </tr>
 
                     <tr>
                         <td class="text-left">
                             <ul> <b> Pros: </b>
-                                <li>Triple benefits insurance plan for the cardholders (See review for details).</li>
-                                <li>Use of 100% limit through card cheque (See review for details).</li>
-                                <li>Convenient payment option (See review for details). </li>
-                                <li>You can set your own limit.</li>
-                                <li>Installment program is available. </li>
+                                <?php echo $first_card->pros; ?>
                             </ul>
 
                             <ul> <b> Cons: </b>
-                                <li>Triple benefits insurance plan for the cardholders (See review for details).</li>
-                                <li>Use of 100% limit through card cheque (See review for details).</li>
-                                <li>Convenient payment option (See review for details). </li>
-                                <li>You can set your own limit.</li>
-                                <li>Installment program is available. </li>
+                                <?php echo $first_card->cons; ?>
                             </ul>
                         </td>
                         <td class="text-center"><b> Pros & Cons </b></td>
                         <td class="text-left">
                             <ul> <b> Pros: </b>
-                                <li>Triple benefits insurance plan for the cardholders (See review for details).</li>
-                                <li>Use of 100% limit through card cheque (See review for details).</li>
-                                <li>Convenient payment option (See review for details). </li>
-                                <li>You can set your own limit.</li>
-                                <li>Installment program is available. </li>
+                                <?php echo $first_card->pros; ?>
                             </ul>
 
                             <ul> <b> Cons: </b>
-                                <li>Triple benefits insurance plan for the cardholders (See review for details).</li>
-                                <li>Use of 100% limit through card cheque (See review for details).</li>
-                                <li>Convenient payment option (See review for details). </li>
-                                <li>You can set your own limit.</li>
-                                <li>Installment program is available. </li>
+                                <?php echo $first_card->cons; ?>
                             </ul>
                         </td>
                     </tr>
@@ -476,9 +442,6 @@
                 </table>
             </div>
         </div>
-
-
-
         <div class="row">
             <h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
             <div class="col-md-12">
