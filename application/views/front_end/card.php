@@ -1,3 +1,5 @@
+
+
 <section id="card">
     <div class="container">
         <div class="row">
@@ -235,31 +237,36 @@
         <div class="row">
             <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
                 <div class="card-holder">
-                    <div class="hidden_div relative">
-                        <div class="hidden_div_container">
-                            <ul class="no-padding pull-left no-list-style">
-                                <li>
-									
-								</li>
-                                <li></li>
-                            </ul>
-                            <a class="cart_anchor">
+					<div class="card-bg">
+						<img src="<?php echo base_url();?>resource/front_end/images/hidendivshead.png" alt="" />
+						<div class="hidden_div relative">
+							<div class="hidden_div_container">
+								<ul class="no-padding pull-left no-list-style">
+									<li>
+										
+									</li>
+									<li></li>
+								</ul>
+								<a class="cart_anchor">
 
-                            </a>
-                            <a class="cart_anchor01">
+								</a>
+								<a class="cart_anchor01">
 
-                            </a>
-                            <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
-                                Compare
-                            </a>
-                        </div>
-                    </div>
+								</a>
+								<a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
+									Compare
+								</a>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
         </div>
 
     </div>
 </section>
+
+
 
 <!-- card compare section ends-->
 <script type="text/javascript">
@@ -389,38 +396,12 @@
 <script>
 
     $(document).on('click','.add-to-compare',function(){
-
-          /*  //$(".card-holder").removeClass("hidden").slideDown();
-            var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-            var  formData = $(this).data();
-            var card_id = "card_id="+formData.card_id;
-
-            setTimeout(function(){
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "<?php echo base_url();?>card/ajax_compare_card_image",
-                    data: card_id,
-                    success: function(msg)
-                    {
-                        //loading_hide();
-                        //console.log(msg);
-
-                        if($(".cart_anchor01").hasClass("img_active")){
-                            $(".cart_anchor01").html(msg);
-
-                        }else{
-                            $(".cart_anchor").html(msg);
-                        }
-
-                    }
-                });
-            },850);
-*/
-        //Scroll to top if cart icon is hidden on top
+ 
+        $("#hiden_div").animate({bottom:'0px'});
+        //$("#hiden_div").addClass("hiddenHalfDown");
 
     $('html, body').animate({
-    'scrollTop' : $(".cart_anchor").position().top+1500
+    //'scrollTop' : $(".cart_anchor").position().top+1500
     });
 
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
@@ -484,13 +465,37 @@
         }
 
     });
-
-
+/*
     $(document).on('click','.compare-cross-btn',function(){
 
         $(this).parent(".cart_anchor").removeClass("img_active");
         $(this).parent(".cart_anchor").html('');
         $(this).addClass("hidden");
+    });
+*/
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var collected_card = $(this).prev().attr("data-card_id");
+        //var card_id = collected_card.card_id;
+
+        //var card_id = "data-card_id="+collected_card.card_id;
+        //alert(collected_card);
+
+        $(".full-card").each(function(){
+            var obj=$(this).children().find('.add-to-compare');
+            var index=$(this).children().find('.add-to-compare').attr('data-card_id');
+            //alert(index);
+            //if()
+            if(parseInt(collected_card)==parseInt(index)){
+                obj.removeClass("hidden");
+            }
+
+        });
+
+        $(this).parent(".cart_anchor").removeClass("img_active");
+        $(this).parent(".cart_anchor").html('');
+        $(this).addClass("hidden");
+
     });
 /*
 
@@ -502,6 +507,7 @@
 */
 
     $(document).on('click','.compare-cross-btn',function(){
+
         $(this).parent(".cart_anchor01").removeClass("img_active");
         $(this).parent(".cart_anchor01").html('');
     });
@@ -538,3 +544,4 @@
     });
 
 </script>
+

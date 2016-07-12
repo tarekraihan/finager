@@ -25,7 +25,7 @@
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cards<span class="caret"></span></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="<?php echo base_url(); ?>en/credit_card">Credit Cards</a></li>
+                                                <li><a href="<?php echo base_url(); ?>en/card">Credit Cards</a></li>
                                                 <li><a href="#">Debit Cards</a></li>
                                                 <li><a href="#">Others</a></li>
                                             </ul>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-xs-2 col-sm-2 header-right">
                     <div class="pull-right">
-                        <span class="login"><a href='signout.php'>Logout</a></span>
+                        <span class="login"><a href='<?php echo base_url();?>en/logout'>Logout</a></span>
                     </div>
                 </div>
             </div>
