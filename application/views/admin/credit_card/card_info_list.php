@@ -70,6 +70,7 @@ if(isset($_GET['card_id']))
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">No.</th>
+                                        <th data-hide="phone">Card ID.</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Image</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Card Name</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Bank Name</th>

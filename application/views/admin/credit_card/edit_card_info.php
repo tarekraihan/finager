@@ -237,7 +237,7 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Card Name</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="30" name="txtCardName" value="<?php if(isset($row["card_name"]) && $row["card_name"] != ""){echo $row["card_name"];}else{echo set_value('txtCardName');} ?>">
+                                                        <input type="text" maxlength="50" name="txtCardName" value="<?php if(isset($row["card_name"]) && $row["card_name"] != ""){echo $row["card_name"];}else{echo set_value('txtCardName');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCardName');?></label>
                                                 </section>
@@ -254,14 +254,14 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Income range (Min) Business</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtIncomeRangeMinBusiness" value="<?php if(isset($row["income_range_min_business"]) && $row["income_range_min_business"] != ""){echo $row["income_range_min_business"];}else{echo set_value('txtIncomeRangeMinBusiness');} ?>">
+                                                        <input type="text" maxlength="50" name="txtIncomeRangeMinBusiness" value="<?php if(isset($row["income_range_min_business"]) && $row["income_range_min_business"] != ""){echo $row["income_range_min_business"];}else{echo set_value('txtIncomeRangeMinBusiness');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIncomeRangeMinBusiness');?></label>
                                                 </section>
 												<section class="col col-6">
                                                     <label class="label">Income range (Max) Business</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtIncomeRangeMaxBusiness" value="<?php if(isset($row["income_range_max_business"]) && $row["income_range_max_business"] != ""){echo $row["income_range_max_business"];}else{echo set_value('txtIncomeRangeMaxBusiness');} ?>">
+                                                        <input type="text" maxlength="50" name="txtIncomeRangeMaxBusiness" value="<?php if(isset($row["income_range_max_business"]) && $row["income_range_max_business"] != ""){echo $row["income_range_max_business"];}else{echo set_value('txtIncomeRangeMaxBusiness');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIncomeRangeMaxBusiness');?></label>
                                                 </section>
@@ -270,14 +270,14 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Income range (Min) Salaried </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtIncomeRangeMinSalaried" value="<?php if(isset($row["income_range_min_salaried"]) && $row["income_range_min_salaried"] != ""){echo $row["income_range_min_salaried"];}else{echo set_value('txtIncomeRangeMinSalaried');} ?>">
+                                                        <input type="text" maxlength="50" name="txtIncomeRangeMinSalaried" value="<?php if(isset($row["income_range_min_salaried"]) && $row["income_range_min_salaried"] != ""){echo $row["income_range_min_salaried"];}else{echo set_value('txtIncomeRangeMinSalaried');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIncomeRangeMinSalaried');?></label>
                                                 </section>
 												<section class="col col-6">
                                                     <label class="label">Income range (Max) Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtIncomeRangeMaxSalaried"  value="<?php if(isset($row["income_range_max_salaried"]) && $row["income_range_max_salaried"] != ""){echo $row["income_range_max_salaried"];}else{echo set_value('txtIncomeRangeMaxSalaried');} ?>">
+                                                        <input type="text" maxlength="50" name="txtIncomeRangeMaxSalaried"  value="<?php if(isset($row["income_range_max_salaried"]) && $row["income_range_max_salaried"] != ""){echo $row["income_range_max_salaried"];}else{echo set_value('txtIncomeRangeMaxSalaried');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIncomeRangeMaxSalaried');?></label>
                                                 </section>
@@ -310,7 +310,7 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">User Age Min</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtUserAgeMin"  value="<?php if(isset($row["age_limit_min"]) && $row["age_limit_min"] != ""){echo $row["age_limit_min"];}else{echo set_value('txtUserAgeMin');} ?>">
+                                                        <input type="text" maxlength="50" name="txtUserAgeMin"  value="<?php if(isset($row["age_limit_min"]) && $row["age_limit_min"] != ""){echo $row["age_limit_min"];}else{echo set_value('txtUserAgeMin');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtUserAgeMin');?></label>
                                                 </section>
@@ -320,14 +320,14 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">User Age Max</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtUserAgeMax" value="<?php if(isset($row["age_limit_max"]) && $row["age_limit_max"] != ""){echo $row["age_limit_max"];}else{echo set_value('txtUserAgeMax');} ?>">
+                                                        <input type="text" maxlength="50" name="txtUserAgeMax" value="<?php if(isset($row["age_limit_max"]) && $row["age_limit_max"] != ""){echo $row["age_limit_max"];}else{echo set_value('txtUserAgeMax');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtUserAgeMax');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Credit Limit Min Business</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditLimitMinBusiness" value="<?php if(isset($row["credit_limit_min_business"]) && $row["credit_limit_min_business"] != ""){echo $row["credit_limit_min_business"];}else{echo set_value('txtCreditLimitMinBusiness');} ?>">
+                                                        <input type="text" maxlength="50" name="txtCreditLimitMinBusiness" value="<?php if(isset($row["credit_limit_min_business"]) && $row["credit_limit_min_business"] != ""){echo $row["credit_limit_min_business"];}else{echo set_value('txtCreditLimitMinBusiness');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditLimitMinBusiness');?></label>
                                                 </section>
@@ -337,14 +337,14 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Credit Limit Max Business</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditLimitMaxBusiness" value="<?php if(isset($row["credit_limit_max_business"]) && $row["credit_limit_max_business"] != ""){echo $row["credit_limit_max_business"];}else{echo set_value('txtCreditLimitMaxBusiness');} ?>">
+                                                        <input type="text" maxlength="50" name="txtCreditLimitMaxBusiness" value="<?php if(isset($row["credit_limit_max_business"]) && $row["credit_limit_max_business"] != ""){echo $row["credit_limit_max_business"];}else{echo set_value('txtCreditLimitMaxBusiness');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditLimitMaxBusiness');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Credit Limit Min Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditLimitMinSalaried" value="<?php if(isset($row["credit_limit_min_salaried"]) && $row["credit_limit_min_salaried"] != ""){echo $row["credit_limit_min_salaried"];}else{echo set_value('txtCreditLimitMinSalaried');} ?>">
+                                                        <input type="text" maxlength="50" name="txtCreditLimitMinSalaried" value="<?php if(isset($row["credit_limit_min_salaried"]) && $row["credit_limit_min_salaried"] != ""){echo $row["credit_limit_min_salaried"];}else{echo set_value('txtCreditLimitMinSalaried');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditLimitMinSalaried');?></label>
                                                 </section>
@@ -354,7 +354,7 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Credit Limit Max Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditLimitMaxSalaried" value="<?php if(isset($row["credit_limit_max_salaried"]) && $row["credit_limit_max_salaried"] != ""){echo $row["credit_limit_max_salaried"];}else{echo set_value('txtCreditLimitMaxSalaried');} ?>">
+                                                        <input type="text" maxlength="50" name="txtCreditLimitMaxSalaried" value="<?php if(isset($row["credit_limit_max_salaried"]) && $row["credit_limit_max_salaried"] != ""){echo $row["credit_limit_max_salaried"];}else{echo set_value('txtCreditLimitMaxSalaried');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditLimitMaxSalaried');?></label>
                                                 </section>
@@ -371,14 +371,14 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Experience Salaried (Month)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtYearOfExperienceSalaried" value="<?php if(isset($row["experience_salaried"]) && $row["experience_salaried"] != ""){echo $row["experience_salaried"];}else{echo set_value('txtYearOfExperienceSalaried');} ?>">
+                                                        <input type="text" maxlength="50" name="txtYearOfExperienceSalaried" value="<?php if(isset($row["experience_salaried"]) && $row["experience_salaried"] != ""){echo $row["experience_salaried"];}else{echo set_value('txtYearOfExperienceSalaried');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtYearOfExperienceSalaried');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Experience Business (year)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtYearOfExperienceBusiness" value="<?php if(isset($row["experience_business"]) && $row["experience_business"] != ""){echo $row["experience_business"];}else{echo set_value('txtYearOfExperienceBusiness');} ?>">
+                                                        <input type="text" maxlength="50" name="txtYearOfExperienceBusiness" value="<?php if(isset($row["experience_business"]) && $row["experience_business"] != ""){echo $row["experience_business"];}else{echo set_value('txtYearOfExperienceBusiness');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtYearOfExperienceBusiness');?></label>
                                                 </section>
@@ -419,7 +419,7 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Interest Free Period Max</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtInterestFreePeriodMax"  value="<?php if(isset($row["interest_free_pefiod_max"]) && $row["interest_free_pefiod_max"] != ""){echo $row["interest_free_pefiod_max"];}else{echo set_value('txtInterestFreePeriodMax');} ?>">
+                                                        <input type="text" maxlength="50" name="txtInterestFreePeriodMax"  value="<?php if(isset($row["interest_free_pefiod_max"]) && $row["interest_free_pefiod_max"] != ""){echo $row["interest_free_pefiod_max"];}else{echo set_value('txtInterestFreePeriodMax');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtInterestFreePeriodMax');?></label>
                                                 </section>
@@ -427,7 +427,7 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Interest Rate (Yearly)</label><!--Cash Withdraw same as Cash Advance rate Yearly -->
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceRateYearly" value="<?php if(isset($row["cash_advance_interest_rate_yearly"]) && $row["cash_advance_interest_rate_yearly"] != ""){echo $row["cash_advance_interest_rate_yearly"];}else{echo set_value('txtCashAdvanceRateYearly');} ?>">
+                                                        <input type="text" maxlength="50" name="txtCashAdvanceRateYearly" value="<?php if(isset($row["cash_advance_interest_rate_yearly"]) && $row["cash_advance_interest_rate_yearly"] != ""){echo $row["cash_advance_interest_rate_yearly"];}else{echo set_value('txtCashAdvanceRateYearly');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceRateYearly');?></label>
                                                 </section>
@@ -438,14 +438,14 @@ if(isset($_GET['id']))
 												<section class="col col-6">
                                                     <label class="label">Annual Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtAnnualFee" value="<?php if(isset($row["annual_fee"]) && $row["annual_fee"] != ""){echo $row["annual_fee"];}else{echo set_value('txtAnnualFee');} ?>">
+                                                        <input type="text" maxlength="50" name="txtAnnualFee" value="<?php if(isset($row["annual_fee"]) && $row["annual_fee"] != ""){echo $row["annual_fee"];}else{echo set_value('txtAnnualFee');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtAnnualFee');?></label>
                                                 </section>
 												<section class="col col-6">
                                                     <label class="label">Annual Fee Vat(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtAnnualFeeVat" value="<?php if(isset($row["annual_fee_vat"]) && $row["annual_fee_vat"] != ""){echo $row["annual_fee_vat"];}else{echo set_value('txtAnnualFeeVat');} ?>">
+                                                        <input type="text" maxlength="50" name="txtAnnualFeeVat" value="<?php if(isset($row["annual_fee_vat"]) && $row["annual_fee_vat"] != ""){echo $row["annual_fee_vat"];}else{echo set_value('txtAnnualFeeVat');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtAnnualFeeVat');?></label>
                                                 </section>
@@ -456,14 +456,14 @@ if(isset($_GET['id']))
 												<section class="col col-6">
                                                     <label class="label">Purchase Interest Rate(Yearly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPurchaseInterestRate" value="<?php if(isset($row["purchase_interest_rate"]) && $row["purchase_interest_rate"] != ""){echo $row["purchase_interest_rate"];}else{echo set_value('txtPurchaseInterestRate');} ?>">
+                                                        <input type="text" maxlength="50" name="txtPurchaseInterestRate" value="<?php if(isset($row["purchase_interest_rate"]) && $row["purchase_interest_rate"] != ""){echo $row["purchase_interest_rate"];}else{echo set_value('txtPurchaseInterestRate');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPurchaseInterestRate');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Purchase Interest Rate (Monthly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPurchaseInterestRateMonthly"  value="<?php if(isset($row["purchase_interest_rate_monthly"]) && $row["purchase_interest_rate_monthly"] != ""){echo $row["purchase_interest_rate_monthly"];}else{echo set_value('txtPurchaseInterestRateMonthly');} ?>">
+                                                        <input type="text" maxlength="50" name="txtPurchaseInterestRateMonthly"  value="<?php if(isset($row["purchase_interest_rate_monthly"]) && $row["purchase_interest_rate_monthly"] != ""){echo $row["purchase_interest_rate_monthly"];}else{echo set_value('txtPurchaseInterestRateMonthly');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPurchaseInterestRateMonthly');?></label>
                                                 </section>
@@ -475,14 +475,14 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Balance Transfer Rate (Yearly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBalanceTransferRate"  value="<?php if(isset($row["balance_transfer_rate"]) && $row["balance_transfer_rate"] != ""){echo $row["balance_transfer_rate"];}else{echo set_value('txtBalanceTransferRate');} ?>">
+                                                        <input type="text" maxlength="50" name="txtBalanceTransferRate"  value="<?php if(isset($row["balance_transfer_rate"]) && $row["balance_transfer_rate"] != ""){echo $row["balance_transfer_rate"];}else{echo set_value('txtBalanceTransferRate');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBalanceTransferRate');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Balance Transfer Rate (Monthly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBalanceTransferRateMonthly"  value="<?php if(isset($row["balance_transfer_rate_monthly"]) && $row["balance_transfer_rate_monthly"] != ""){echo $row["balance_transfer_rate_monthly"];}else{echo set_value('txtBalanceTransferRateMonthly');} ?>">
+                                                        <input type="text" maxlength="50" name="txtBalanceTransferRateMonthly"  value="<?php if(isset($row["balance_transfer_rate_monthly"]) && $row["balance_transfer_rate_monthly"] != ""){echo $row["balance_transfer_rate_monthly"];}else{echo set_value('txtBalanceTransferRateMonthly');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBalanceTransferRateMonthly');?></label>
                                                 </section>
@@ -494,14 +494,14 @@ if(isset($_GET['id']))
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Interest Rate(Monthly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceInterestRateMonthly"  value="<?php if(isset($row["cash_advance_interest_rate"]) && $row["cash_advance_interest_rate"] != ""){echo $row["cash_advance_interest_rate"];}else{echo set_value('txtCashAdvanceInterestRateMonthly');} ?>">
+                                                        <input type="text" maxlength="50" name="txtCashAdvanceInterestRateMonthly"  value="<?php if(isset($row["cash_advance_interest_rate"]) && $row["cash_advance_interest_rate"] != ""){echo $row["cash_advance_interest_rate"];}else{echo set_value('txtCashAdvanceInterestRateMonthly');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceInterestRateMonthly');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Limit(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceLimit"  value="<?php if(isset($row["cash_advance_limit"]) && $row["cash_advance_limit"] != ""){echo $row["cash_advance_limit"];}else{echo set_value('txtCashAdvanceLimit');} ?>">
+                                                        <input type="text" maxlength="50" name="txtCashAdvanceLimit"  value="<?php if(isset($row["cash_advance_limit"]) && $row["cash_advance_limit"] != ""){echo $row["cash_advance_limit"];}else{echo set_value('txtCashAdvanceLimit');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceLimit');?></label>
                                                 </section>
@@ -539,7 +539,7 @@ if(isset($_GET['id']))
                                                 <div class="col col-6">
                                                     <label class="label">Balance Transfer Limit (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="3" name="txtBalanceTransferLimit"   value="<?php if(isset($row["balance_transfer_limit"]) && $row["balance_transfer_limit"] != ""){echo $row["balance_transfer_limit"];}else{echo set_value('txtBalanceTransferLimit');} ?>">
+                                                        <input type="text" maxlength="50" name="txtBalanceTransferLimit"   value="<?php if(isset($row["balance_transfer_limit"]) && $row["balance_transfer_limit"] != ""){echo $row["balance_transfer_limit"];}else{echo set_value('txtBalanceTransferLimit');} ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBalanceTransferLimit');?></label>
                                                 </div>

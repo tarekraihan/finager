@@ -173,14 +173,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Income range (Min) Business</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtIncomeRangeMinBusiness" value="<?php echo set_value('txtIncomeRangeMinBusiness') ;?>">
+                                                        <input type="text" maxlength="30" name="txtIncomeRangeMinBusiness" value="<?php echo set_value('txtIncomeRangeMinBusiness') ;?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIncomeRangeMinBusiness');?></label>
                                                 </section>
 												<section class="col col-6">
                                                     <label class="label">Income range (Max) Business</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtIncomeRangeMaxBusiness" value="<?php echo set_value('txtIncomeRangeMaxBusiness');?>">
+                                                        <input type="text" maxlength="30" name="txtIncomeRangeMaxBusiness" value="<?php echo set_value('txtIncomeRangeMaxBusiness');?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIncomeRangeMaxBusiness');?></label>
                                                 </section>
@@ -189,14 +189,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Income range (Min) Salaried </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtIncomeRangeMinSalaried" value="<?php echo set_value('txtIncomeRangeMinSalaried'); ?>">
+                                                        <input type="text" maxlength="30" name="txtIncomeRangeMinSalaried" value="<?php echo set_value('txtIncomeRangeMinSalaried'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIncomeRangeMinSalaried');?></label>
                                                 </section>
 												<section class="col col-6">
                                                     <label class="label">Income range (Max) Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtIncomeRangeMaxSalaried"  value="<?php echo set_value('txtIncomeRangeMaxSalaried'); ?>">
+                                                        <input type="text" maxlength="30" name="txtIncomeRangeMaxSalaried"  value="<?php echo set_value('txtIncomeRangeMaxSalaried'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIncomeRangeMaxSalaried');?></label>
                                                 </section>
@@ -216,7 +216,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">User Age Min</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtUserAgeMin"  value="<?php echo set_value('txtUserAgeMin'); ?>">
+                                                        <input type="text" maxlength="30" name="txtUserAgeMin"  value="<?php echo set_value('txtUserAgeMin'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtUserAgeMin');?></label>
                                                 </section>
@@ -226,14 +226,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">User Age Max</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtUserAgeMax" value="<?php echo set_value('txtUserAgeMax'); ?>">
+                                                        <input type="text" maxlength="30" name="txtUserAgeMax" value="<?php echo set_value('txtUserAgeMax'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtUserAgeMax');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Credit Limit Min Business</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditLimitMinBusiness" value="<?php echo set_value('txtCreditLimitMinBusiness'); ?>">
+                                                        <input type="text" maxlength="30" name="txtCreditLimitMinBusiness" value="<?php echo set_value('txtCreditLimitMinBusiness'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditLimitMinBusiness');?></label>
                                                 </section>
@@ -243,14 +243,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Credit Limit Max Business</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditLimitMaxBusiness" value="<?php echo set_value('txtCreditLimitMaxBusiness'); ?>">
+                                                        <input type="text" maxlength="30" name="txtCreditLimitMaxBusiness" value="<?php echo set_value('txtCreditLimitMaxBusiness'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditLimitMaxBusiness');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Credit Limit Min Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditLimitMinSalaried" value="<?php echo set_value('txtCreditLimitMinSalaried'); ?>">
+                                                        <input type="text" maxlength="30" name="txtCreditLimitMinSalaried" value="<?php echo set_value('txtCreditLimitMinSalaried'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditLimitMinSalaried');?></label>
                                                 </section>
@@ -260,7 +260,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Credit Limit Max Salaried</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCreditLimitMaxSalaried" value="<?php echo set_value('txtCreditLimitMaxSalaried');?>">
+                                                        <input type="text" maxlength="30" name="txtCreditLimitMaxSalaried" value="<?php echo set_value('txtCreditLimitMaxSalaried');?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCreditLimitMaxSalaried');?></label>
                                                 </section>
@@ -277,14 +277,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Year of Experience Salaried (Month)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtYearOfExperienceSalaried" value="<?php echo set_value('txtYearOfExperienceSalaried'); ?>">
+                                                        <input type="text" maxlength="30" name="txtYearOfExperienceSalaried" value="<?php echo set_value('txtYearOfExperienceSalaried'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtYearOfExperienceSalaried');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Year of Experience Business(Year)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtYearOfExperienceBusiness" value="<?php echo set_value('txtYearOfExperienceBusiness'); ?>">
+                                                        <input type="text" maxlength="30" name="txtYearOfExperienceBusiness" value="<?php echo set_value('txtYearOfExperienceBusiness'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtYearOfExperienceBusiness');?></label>
                                                 </section>
@@ -303,7 +303,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Interest Free Period Min</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtInterestFreePeriodMin"  value="<?php echo set_value('txtInterestFreePeriodMin'); ?>">
+                                                        <input type="text" maxlength="30" name="txtInterestFreePeriodMin"  value="<?php echo set_value('txtInterestFreePeriodMin'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtInterestFreePeriodMin');?></label>
                                                 </section>
@@ -321,7 +321,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Interest Rate (Yearly)</label><!--Cash Withdraw same as Cash Advance rate Yearly -->
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceRateYearly" value="<?php echo set_value('txtCashAdvanceRateYearly'); ?>">
+                                                        <input type="text" maxlength="30" name="txtCashAdvanceRateYearly" value="<?php echo set_value('txtCashAdvanceRateYearly'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceRateYearly');?></label>
                                                 </section>
@@ -332,14 +332,14 @@
 												<section class="col col-6">
                                                     <label class="label">Annual Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtAnnualFee" value="<?php echo set_value('txtAnnualFee'); ?>">
+                                                        <input type="text" maxlength="30" name="txtAnnualFee" value="<?php echo set_value('txtAnnualFee'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtAnnualFee');?></label>
                                                 </section>
 												<section class="col col-6">
                                                     <label class="label">Annual Fee Vat(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtAnnualFeeVat" value="<?php echo set_value('txtAnnualFeeVat'); ?>">
+                                                        <input type="text" maxlength="30" name="txtAnnualFeeVat" value="<?php echo set_value('txtAnnualFeeVat'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtAnnualFeeVat');?></label>
                                                 </section>
@@ -350,14 +350,14 @@
 												<section class="col col-6">
                                                     <label class="label">Purchase Interest Rate(Yearly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPurchaseInterestRate" value="<?php echo set_value('txtPurchaseInterestRate'); ?>">
+                                                        <input type="text" maxlength="30" name="txtPurchaseInterestRate" value="<?php echo set_value('txtPurchaseInterestRate'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPurchaseInterestRate');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Purchase Interest Rate (Monthly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPurchaseInterestRateMonthly"  value="<?php echo set_value('txtPurchaseInterestRateMonthly'); ?>">
+                                                        <input type="text" maxlength="30" name="txtPurchaseInterestRateMonthly"  value="<?php echo set_value('txtPurchaseInterestRateMonthly'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPurchaseInterestRateMonthly');?></label>
                                                 </section>
@@ -369,14 +369,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Balance Transfer Rate (Yearly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBalanceTransferRate"  value="<?php echo set_value('txtBalanceTransferRate'); ?>">
+                                                        <input type="text" maxlength="30" name="txtBalanceTransferRate"  value="<?php echo set_value('txtBalanceTransferRate'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBalanceTransferRate');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Balance Transfer Rate (Monthly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtBalanceTransferRateMonthly"  value="<?php echo set_value('txtBalanceTransferRateMonthly')?>">
+                                                        <input type="text" maxlength="30" name="txtBalanceTransferRateMonthly"  value="<?php echo set_value('txtBalanceTransferRateMonthly')?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBalanceTransferRateMonthly');?></label>
                                                 </section>
@@ -388,14 +388,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Interest Rate(Monthly)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceInterestRateMonthly"  value="<?php echo set_value('txtCashAdvanceInterestRateMonthly'); ?>">
+                                                        <input type="text" maxlength="30" name="txtCashAdvanceInterestRateMonthly"  value="<?php echo set_value('txtCashAdvanceInterestRateMonthly'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceInterestRateMonthly');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Cash Advance Limit(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtCashAdvanceLimit"  value="<?php echo set_value('txtCashAdvanceLimit'); ?>">
+                                                        <input type="text" maxlength="30" name="txtCashAdvanceLimit"  value="<?php echo set_value('txtCashAdvanceLimit'); ?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCashAdvanceLimit');?></label>
                                                 </section>
@@ -434,7 +434,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Balance Transfer Limit (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="3" name="txtBalanceTransferLimit"  value="<?php echo set_value('txtBalanceTransferLimit') ;?>">
+                                                        <input type="text" maxlength="30" name="txtBalanceTransferLimit"  value="<?php echo set_value('txtBalanceTransferLimit') ;?>">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBalanceTransferLimit');?></label>
                                                 </section>

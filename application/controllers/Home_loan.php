@@ -385,7 +385,9 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRate', 'Interest Rate ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateAverage', 'Interest Rate Average ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateMin', 'Interest Rate Min ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateMax', 'Interest Rate Max ', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtApplicantType[]', ' Looking For ', 'trim|required');
@@ -482,7 +484,9 @@ class Home_Loan extends CI_Controller {
                     'additional_doc_for_salaried' => htmlentities($this->input->post('txtAdditionalDocForSalaried')),
                     'additional_doc_for_businessmen' => htmlentities($this->input->post('txtAdditionalDocForBusinessmen')),
                     'additional_doc_for_landlord' => htmlentities($this->input->post('txtAdditionalDocForLandlord')),
-                    'interest_rate' => htmlentities($this->input->post('txtInterestRate')),
+                    'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
+                    'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
+                    'interest_rate_average' => htmlentities($this->input->post('txtInterestRateAverage')),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
@@ -556,7 +560,9 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRate', 'Interest Rate ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateAverage', 'Interest Rate Average ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateMin', 'Interest Rate Min ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateMax', 'Interest Rate Max ', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtApplicantType[]', ' Looking For ', 'trim|required');
@@ -653,7 +659,9 @@ class Home_Loan extends CI_Controller {
                     'additional_doc_for_salaried' => htmlentities($this->input->post('txtAdditionalDocForSalaried')),
                     'additional_doc_for_businessmen' => htmlentities($this->input->post('txtAdditionalDocForBusinessmen')),
                     'additional_doc_for_landlord' => htmlentities($this->input->post('txtAdditionalDocForLandlord')),
-                    'interest_rate' => htmlentities($this->input->post('txtInterestRate')),
+                    'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
+                    'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
+                    'interest_rate_average' => htmlentities($this->input->post('txtInterestRateAverage')),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
