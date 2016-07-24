@@ -126,6 +126,18 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function auto_loan_applicant_type()
+    {
+        $sql="SELECT * FROM `auto_applicant`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtApplicantType[]",$row->id).'>'.$row->applicant.'</option>';
+        }
+        return $option;
+    }
+
 
     function select_credit_card_type()
     {
@@ -191,6 +203,19 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function auto_loan_looking_for()
+    {
+        $sql="SELECT * FROM `auto_i_want`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtLookingFor[]",$row->id).'>'.$row->i_want.'</option>';
+
+        }
+        return $option;
+    }
+
 
     function home_loan_user()
     {
@@ -200,6 +225,20 @@ class Select_Model extends CI_Model
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanUser[]",$row->id).'>'.$row->home_loan_user.'</option>';
+
+        }
+        return $option;
+    }
+
+
+    function auto_loan_user()
+    {
+        $sql="SELECT * FROM `auto_i_am`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanUser[]",$row->id).'>'.$row->i_am.'</option>';
 
         }
         return $option;

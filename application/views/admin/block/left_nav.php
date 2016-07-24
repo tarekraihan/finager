@@ -115,31 +115,56 @@
         </ul>
             </li>
             <li class="top-menu-invisible">
-                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Home Loan</span></a>
-                <ul>
-                    <li>
-                        <a href="<?php echo base_url();?>home_loan/loan_type/"><i class="fa fa-stack-overflow"></i>Add Loan Type</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>home_loan/applicant_type/"><i class="fa fa-stack-overflow"></i> Add Applicant Type</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>home_loan/feature/"><i class="fa fa-stack-overflow"></i> Add Feature</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>home_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>home_loan/user/"><i class="fa fa-stack-overflow"></i> Add Loan User</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>home_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>home_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
-                    </li>
-                </ul>
-            </li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Home Loan</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>home_loan/loan_type/"><i class="fa fa-stack-overflow"></i>Add Loan Type</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>home_loan/applicant_type/"><i class="fa fa-stack-overflow"></i> Add Applicant Type</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>home_loan/feature/"><i class="fa fa-stack-overflow"></i> Add Feature</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>home_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>home_loan/user/"><i class="fa fa-stack-overflow"></i> Add Loan User</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>home_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>home_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="top-menu-invisible">
+            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Auto Loan</span></a>
+            <ul>
+
+                <li>
+                    <a href="<?php echo base_url();?>auto_loan/applicant_type/"><i class="fa fa-stack-overflow"></i> Add Applicant Type</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>auto_loan/feature/"><i class="fa fa-stack-overflow"></i> Add Feature</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>auto_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>auto_loan/user/"><i class="fa fa-stack-overflow"></i> Add Loan User</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>auto_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>auto_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                </li>
+            </ul>
+        </li>
 
 
         </ul>
