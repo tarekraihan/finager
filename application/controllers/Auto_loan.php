@@ -315,4 +315,138 @@ class Auto_loan extends CI_Controller
         }
     }
 
+    public function loan_info($msg=''){
+        if ($this->session->userdata('email_address')) {
+            if ($msg == 'success') {
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
+            }
+            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
+            $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
+            $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
+            $this->form_validation->set_rules('txtApplicantType[]', ' Applicant Type ', 'trim|required');
+            $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
+            $this->form_validation->set_rules('txtHomeLoanUser[]', ' Loan User ', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateAverage', 'Interest Rate Average ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateMin', 'Interest Rate Min ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateMax', 'Interest Rate Max ', 'trim|required');
+            $this->form_validation->set_rules('txtMinIncomeSalaried', 'Min Income Salaried ', 'trim');
+            $this->form_validation->set_rules('txtMinIncomeProfessional', 'Min Income Professional ', 'trim');
+            $this->form_validation->set_rules('txtMinIncomeBusinessmen', 'Min income businessmen ', 'trim');
+            $this->form_validation->set_rules('txtMinIncomeLandlord', 'Min income landlord ', 'trim');
+            $this->form_validation->set_rules('txtMinIncomeNrb', 'Min Income NRB', 'trim');
+            $this->form_validation->set_rules('txtDownPaymentNewCar', 'new car down payment ', 'trim');
+            $this->form_validation->set_rules('txtDownPaymentOldCar', 'old car down payment ', 'trim');
+            $this->form_validation->set_rules('txtSecurityRequired', 'Security Required ', 'trim|required');
+            $this->form_validation->set_rules('txtRePaymentType', 'Repayment Type ', 'trim|required');
+            $this->form_validation->set_rules('txtRePaymentOption', 'Repayment Option ', 'trim|required');
+            $this->form_validation->set_rules('txtProcessingFee', 'Processing Fee', 'trim|required');
+            $this->form_validation->set_rules('txtEarlySettlementFee', 'Early Settlement Fee', 'trim|required');
+            $this->form_validation->set_rules('txtPenaltyCharge', 'Partial Payment Fee', 'trim|required');
+            $this->form_validation->set_rules('txtLoanReschedulingCharge', 'Loan Rescheduling Charge', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumTerm', 'Minimum Term', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumTerm', 'Maximum Term', 'trim|required');
+            $this->form_validation->set_rules('txtAvailableOfEarlySettlement', 'Availability Of Early Settlement', 'trim|required');
+            $this->form_validation->set_rules('txtAvailableOfPartialSettlement', 'Availability Of Partial Payment', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumAge', 'Minimum Age', 'trim|required');
+            $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
+            $this->form_validation->set_rules('txtAutoLoanFeature[]', 'Auto loan feature', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $data['title'] = "Finager - Loan Information";
+                $this->load->view('admin/block/header', $data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/auto_loan/loan_information');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array(
+                    'bank_id' => $this->input->post('txtBankName'),
+                    'loan_type_id' => $this->input->post('txtLoanType'),
+                    'auto_loan_name' => htmlentities($this->input->post('txtLoanName')),
+                    'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
+                    'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
+                    'min_income_salaried' => htmlentities($this->input->post('txtMinIncomeSalaried')),
+                    'min_income_businessman' => htmlentities($this->input->post('txtMinIncomeBusinessmen')),
+                    'min_income_professional' => htmlentities($this->input->post('txtMinIncomeProfessional')),
+                    'min_income_landlord' => htmlentities($this->input->post('txtMinIncomeLandlord')),
+                    'min_income_nrb' => htmlentities($this->input->post('txtMinIncomeNrb')),
+                    'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
+                    'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
+                    'interest_rate_average' => htmlentities($this->input->post('txtInterestRateMax')),
+                    'downpayment_new_car' => htmlentities($this->input->post('txtDownPaymentNewCar')),
+                    'downpayment_old_car' => htmlentities($this->input->post('txtDownPaymentOldCar')),
+                    'security_required' => htmlentities($this->input->post('txtSecurityRequired')),
+                    'repayment_type' => htmlentities($this->input->post('txtRePaymentType')),
+                    'repayment_option' => htmlentities($this->input->post('txtRePaymentOption')),
+                    'processing_fee' => htmlentities($this->input->post('txtProcessingFee')),
+                    'early_settlement_fee' => htmlentities($this->input->post('txtEarlySettlementFee')),
+                    'penalty_charge' => htmlentities($this->input->post('txtPenaltyCharge')),
+                    'loan_rescheduliling_charge' => htmlentities($this->input->post('txtLoanReschedulingCharge')),
+                    'minimum_term' => htmlentities($this->input->post('txtMinimumTerm')),
+                    'maximum_term' => htmlentities($this->input->post('txtMaximumTerm')),
+                    'availability_of_early_settlement' => $this->input->post('txtAvailableOfEarlySettlement'),
+                    'availablity_of_partial_settlement' => $this->input->post('txtAvailableOfPartialSettlement'),
+                    'minimum_age' => htmlentities($this->input->post('txtMinimumAge')),
+                    'required_document' => htmlentities($this->input->post('txtRequiredDocument')),
+
+                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'auto_loan_info';
+//                $last_insert_id = $this->Common_model->insert();
+                $result = $this->Common_model->insert();
+/*
+                foreach($this->input->post('txtLookingFor[]') as $lookingFor){
+                    $this->Common_model->data = array(
+                        'home_loan_info_id'=>$last_insert_id,
+                        'home_loan_looking_for_id'=> $lookingFor
+                    );
+                    $this->Common_model->table_name = 'home_loan_looking_for_home_loan_info';
+                    $this->Common_model->insert();
+                }
+
+                foreach($this->input->post('txtApplicantType[]') as $applicant){
+                    $this->Common_model->data = array(
+                        'home_loan_info_id'=>$last_insert_id,
+                        'home_loan_applicant_type_id'=> $applicant
+                    );
+                    $this->Common_model->table_name = 'home_loan_applicant_type_home_loan_info';
+                    $this->Common_model->insert();
+                }
+
+                foreach($this->input->post('txtHomeLoanFeature[]') as $feature){
+                    $this->Common_model->data = array(
+                        'home_loan_info_id'=>$last_insert_id,
+                        'home_loan_feature_id'=> $feature
+                    );
+                    $this->Common_model->table_name = 'home_loan_feature_home_loan_info';
+                    $this->Common_model->insert();
+                }
+
+
+                $result='';
+                foreach($this->input->post('txtHomeLoanUser[]') as $user){
+                    $this->Common_model->data = array(
+                        'home_loan_info_id'=>$last_insert_id,
+                        'home_loan_user_id'=> $user
+                    );
+                    $this->Common_model->table_name = 'home_loan_user_home_loan_info';
+                    $result = $this->Common_model->insert();
+                }*/
+
+                if ($result) {
+                    redirect(base_url().'auto_loan/loan_info/success');
+                } else {
+                    redirect(base_url().'auto_loan/loan_info/error');
+                }
+            }
+        }else {
+            redirect(base_url().'backdoor');
+        }
+    }
+
 }

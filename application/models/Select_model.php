@@ -71,7 +71,7 @@ class Select_Model extends CI_Model
     {
         $sql="SELECT * FROM `card_bank`";
         $query=$this->db->query($sql);
-        $option="<option value=''>-- Select One --</option>";
+        $option="";
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtBankName",$row->id).'>'.$row->bank_name.'</option>';
@@ -82,7 +82,7 @@ class Select_Model extends CI_Model
     {
         $sql="SELECT * FROM `loan_type`";
         $query=$this->db->query($sql);
-        $option="<option value=''>-- Select One --</option>";
+        $option="";
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtLoanType",$row->id).'>'.$row->loan_type.'</option>';
@@ -94,7 +94,7 @@ class Select_Model extends CI_Model
     {
         $sql="SELECT * FROM `card_card_type`";
         $query=$this->db->query($sql);
-        $option="<option value=''>-- Select One --</option>";
+        $option=">";
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtCardType",$row->id).'>'.$row->card_type_name.'</option>';
@@ -106,10 +106,22 @@ class Select_Model extends CI_Model
     {
         $sql="SELECT * FROM `home_loan_features`";
         $query=$this->db->query($sql);
-        $option="<option value=''>-- Select One --</option>";
+        $option="";
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanFeature[]",$row->id).'>'.$row->home_loan_feature.'</option>';
+        }
+        return $option;
+    }
+
+    function auto_loan_feature()
+    {
+        $sql="SELECT * FROM `auto_features`";
+        $query=$this->db->query($sql);
+        $option="";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtAutoLoanFeature[]",$row->id).'>'.$row->auto_feature.'</option>';
         }
         return $option;
     }
@@ -238,7 +250,7 @@ class Select_Model extends CI_Model
         $option="<option value=''>-- Select One --</option>";
         foreach($query->result() as $row)
         {
-            $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanUser[]",$row->id).'>'.$row->i_am.'</option>';
+            $option.='<option value="'.$row->id.'" '.set_select("txtAutoLoanUser[]",$row->id).'>'.$row->i_am.'</option>';
 
         }
         return $option;
@@ -337,7 +349,7 @@ class Select_Model extends CI_Model
             {
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
-					<td class="center"><img src="\'. base_url().\'resource/common_logo/bank_logo/\'.$row->bank_logo.\'" style="height:auto; width:80px;"/></td>
+					<td class="center"><img src="'. base_url().'resource/common_logo/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
 					<td class="center">'.$row->home_loan_name.'</td>
 					 <td class="center">'.$row->bank_name.'</td>
 					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
@@ -347,7 +359,7 @@ class Select_Model extends CI_Model
 					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
 
                 $result.='</td>
-                    <td><a href="'. base_url().'home_loan/edit_loan_info/'.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'. base_url().'home_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 					</tr>';
                 $sl++;
             }

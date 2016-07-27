@@ -1,44 +1,51 @@
 <?php
-/*$fees_id= $this->uri->segment(3,0);
-if(!empty($fees_id) && is_numeric($fees_id) ){
-    $query=$this->Select_model->select_fees_charges($fees_id);
-    $row=$query->row_array();
-}else if(!empty($fees_id) && ($fees_id == 'success' || $fees_id =='error')){
-    $row['id']='';
-    $row['basic_card_annual_fee']='';
-    $row['basic_card_annual_fee_plus']='';
-    $row['supplementary_card_annual_fee']='';
-    $row['purchase_fee']='';
-    $row['balance_transfer_fee']='';
-    $row['cash_advance_fee_own_atm']='';
-    $row['cash_advance_fee_other_atm']='';
-    $row['cash_advance_fee_other_atm_plus']='';
-    $row['cash_advance_fee_international_usd']='';
-    $row['cash_advance_fee_international_percentage']='';
-    $row['cash_advance_fee_international_remarks']='';
-    $row['late_payment_fee_bdt']='';
-    $row['late_payment_fee_usd']='';
-    $row['card_replacement_fee']='';
-    $row['pin_replacement_fee']='';
-    $row['over_limit_charge_bdt']='';
-    $row['over_limit_charge_usd']='';
-    $row['transaction_alert_service']='';
-    $row['transaction_alert_service_plus']='';
-    $row['credit_assurance_program_fee']='';
-    $row['credit_assurance_program_fee_remarks']='';
-    $row['monthly_e_statement_fee']='';
-    $row['check_book_fee']='';
-    $row['minimum_payment_bdt']='';
-    $row['minimum_payment_usd']='';
-    $row['minimum_payment_percentage']='';
-    $row['minimum_payment_remarks']='';
-    $row['cheque_return_fee']='';
-    $row['duplicate_statement']='';
-    $row['card_cheque_processing_fee']='';
-    $row['card_cheque_issuing_fee']='';
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $table='home_loan_info';
+    $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+//    print_r($row);die;
 }else{
-    redirect(base_url().'My404');
-}*/
+    $row['id']='';
+    $row['bank_id']='';
+    $row['loan_type_id']='';
+    $row['home_loan_name']='';
+    $row['min_loan_amount']='';
+    $row['max_loan_amount']='';
+    $row['min_income_salaried']='';
+    $row['min_income_salaried']='';
+    $row['min_income_professional']='';
+    $row['min_income_businessmen']='';
+    $row['min_income_landlord']='';
+    $row['interest_rate_min']='';
+    $row['interest_rate_max']='';
+    $row['interest_rate_average']='';
+    $row['downpayment_flat']='';
+    $row['downpayment_housing_plot']='';
+    $row['downpayment_extension_finish_work']='';
+    $row['downpayment_home_loan_take_over']='';
+    $row['security_required']='';
+    $row['repayment_type']='';
+    $row['repayment_option']='';
+    $row['processing_fee']='';
+    $row['early_settlement_fee']='';
+    $row['partial_payment_fee']='';
+    $row['penalty_charge']='';
+    $row['quotation_charge_fee']='';
+    $row['minimum_term']='';
+    $row['maximum_term']='';
+    $row['grace_period']='';
+    $row['availability_of_early_settlement']='';
+    $row['availability_of_partial_payment']='';
+    $row['try_party_agreement_up_to']='';
+    $row['min_experience_salaried']='';
+    $row['min_experience_professional']='';
+    $row['min_experience_businessmen']='';
+    $row['min_age']='';
+    $row['max_age']='';
+    $row['required_document']='';
+
+}
 ?>
 
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
@@ -92,7 +99,7 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                     <i class="fa fa-table fa-fw "></i>
                     Home Loan
 							<span>> 
-								Loan Information
+							Update Loan Information
                             </span>
                 </h1>
             </div>
@@ -112,7 +119,7 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Add Loan Information</h2>
+                            <h2>Update Loan Information</h2>
 
                         </header>
 
@@ -129,12 +136,13 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>home_loan/loan_info" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>home_loan/edit_loan_info" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
                                         echo $feedback;
                                     }
+
                                     ?>
                                     <fieldset>
                                         <section>
@@ -142,8 +150,16 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                                 <section class="col col-6">
                                                     <label class="label">Bank Name</label>
                                                     <label class="select">
-                                                        <select name="txtBankName" id="txtBankName">
-                                                            <?php echo $this->Select_model->select_bank();?>
+                                                        <select name="txtBankName">
+                                                            <option value=''>-- Select One --</option>
+                                                            <?php
+                                                            $result=$this->Select_model->select_all('card_bank');
+                                                            foreach($result->result() as $row1){
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>';
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBankName');?></label>
@@ -152,7 +168,17 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                                     <label class="label">Loan Type</label>
                                                     <label class="select">
                                                         <select name="txtLoanType" id="txtLoanType">
-                                                            <?php echo $this->Select_model->loan_type();?>
+<!--                                                            --><?php //echo $this->Select_model->loan_type();?>
+                                                            <?php
+                                                                $result = $this->Select_model->select_all('loan_type');
+                                                            foreach($result->result() as $row2){
+                                                                ?>
+                                                                <option value="<?php echo $row2->id;?>" <?php if(isset($row["loan_type_id"]) && $row['loan_type_id']==$row2->id){echo "selected='selected'";} ?><?php echo set_select("txtLoanType", $row2->id)?> ><?php echo $row2->loan_type; ?></option>
+                                                                <?php
+                                                            }
+
+
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanType');?></label>
@@ -163,7 +189,7 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                                 <section class="col col-6">
                                                     <label class="label">Loan Name </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php echo set_value('txtLoanName'); ?>" placeholder="Write Loan Name">
+                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php if(isset($row["home_loan_name"]) && $row["home_loan_name"] != ""){echo $row["home_loan_name"];}else{echo set_value('txtLoanName');} ?>" placeholder="Write Loan Name">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanName');?></label>
                                                 </section>
@@ -171,7 +197,16 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                                     <label class="label">Applicant Type</label>
                                                     <label class="select">
                                                         <select multiple style="width:100%" class="select2" name="txtApplicantType[]" required>
-                                                            <?php echo $this->Select_model->home_loan_applicant_type();?>
+                                                            <?php
+                                                            $result = $this->Select_model->select_all('home_loan_applicant_type');
+                                                            foreach($result->result() as $row3){
+                                                                ?>
+                                                                <option value="<?php echo $row3->id;?>" <?php if(isset($row["loan_type_id"]) && $row['loan_type_id']==$row3->id){echo "selected='selected'";} ?><?php echo set_select("txtApplicantType[]", $row3->id)?> ><?php echo $row3->home_loan_applicant_type; ?></option>
+                                                            <?php
+                                                            }
+
+
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtApplicantType[]');?></label>
@@ -225,29 +260,14 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                                     <label class="red"><?php echo form_error('txtMinIncomeSalaried');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Max Income Salaried</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMaxIncomeSalaried" value="<?php echo set_value('txtMaxIncomeSalaried'); ?>" placeholder="Write Max Income for Salaried Person">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMaxIncomeSalaried');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
                                                     <label class="label">Min Income Professional</label>
                                                     <label class="input">
                                                         <input type="text" maxlength="20" name="txtMinIncomeProfessional" value="<?php echo set_value('txtMinIncomeProfessional'); ?>" placeholder="Write Min Income for Professional">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinIncomeProfessional');?></label>
                                                 </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Max Income Professional</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMaxIncomeProfessional" value="<?php echo set_value('txtMaxIncomeProfessional'); ?>" placeholder="Write Max Income for Professional">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMaxIncomeProfessional');?></label>
-                                                </section>
                                             </div>
+
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Min Income Businessmen</label>
@@ -257,27 +277,11 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                                     <label class="red"><?php echo form_error('txtMinIncomeBusinessmen');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Max Income Businessman</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMaxIncomeBusinessmen" value="<?php echo set_value('txtMaxIncomeBusinessmen'); ?>" placeholder="Write Max Income for Businessmen">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMaxIncomeBusinessmen');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
                                                     <label class="label">Min Income Landlord</label>
                                                     <label class="input">
                                                         <input type="text" maxlength="20" name="txtMinIncomeLandlord" value="<?php echo set_value('txtMinIncomeLandlord'); ?>"  placeholder="Write Min Income for Landlord">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinIncomeLandlord');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Max Income Landlord</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMaxIncomeLandlord" value="<?php echo set_value('txtMaxIncomeLandlord'); ?>"  placeholder="Write Max Income for Landlord">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMaxIncomeLandlord');?></label>
                                                 </section>
                                             </div>
 
@@ -347,14 +351,14 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                             </div>
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Processing Fee (%) </label>
+                                                    <label class="label">Processing Fee </label>
                                                     <label class="input">
                                                         <input type="text" maxlength="10" name="txtProcessingFee" value="<?php echo set_value('txtProcessingFee'); ?>"  placeholder="Write Processing fee without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtProcessingFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Early Settlement Fee (%)</label>
+                                                    <label class="label">Early Settlement Fee</label>
                                                     <label class="input">
                                                         <input type="text" maxlength="10" name="txtEarlySettlementFee" value="<?php echo set_value('txtEarlySettlementFee'); ?>"  placeholder="Write Early Settlement fee without percentage sign">
                                                     </label>
@@ -363,34 +367,18 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                             </div>
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Partial Payment Fee (%)</label>
+                                                    <label class="label">Partial Payment Fee </label>
                                                     <label class="input">
                                                         <input type="text" maxlength="10" name="txtPartialPaymentFee" value="<?php echo set_value('txtPartialPaymentFee'); ?>"  placeholder="Write partial payment fee without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPartialPaymentFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Penalty Charge (%)</label>
+                                                    <label class="label">Penalty Charge </label>
                                                     <label class="input">
                                                         <input type="text" maxlength="10" name="txtPenaltyCharge" value="<?php echo set_value('txtPenaltyCharge'); ?>"  placeholder="Write penalty charge without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPenaltyCharge');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Quotation Fee BDT</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtQuotationFeeBdt" value="<?php echo set_value('txtQuotationFeeBdt'); ?>"  placeholder="Write Quotation Fee BDT ">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtQuotationFeeBdt');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Quotation Fee Percentage (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtQuotationFeePercentage" value="<?php echo set_value('txtQuotationFeePercentage'); ?>" placeholder="Write Quotation Fee without percentage.">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtQuotationFeePercentage');?></label>
                                                 </section>
                                             </div>
                                             <div class="row">
@@ -492,12 +480,11 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                                 <section class="col col-6">
                                                     <label class="label">Maximum Age</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMaximumAge" value="<?php echo set_value('txtMaximumAge'); ?>" placeholder="Write Maximum Age">
+                                                        <input type="text" maxlength="50" name="txtMaximumAge" value="<?php echo set_value('txtMaximumAge'); ?>" placeholder="Write Maximum Age">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaximumAge');?></label>
                                                 </section>
                                             </div>
-
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Interest Rate Min(%)</label>
@@ -526,219 +513,101 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtInterestRateAverage');?></label>
                                                 </section>
+                                                <section class="col col-6">
+                                                    <label class="label">Quotation Fee</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="220" name="txtQuotationFeeBdt" value="<?php echo set_value('txtQuotationFeeBdt'); ?>"  placeholder="Write Quotation Fee BDT ">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtQuotationFeeBdt');?></label>
+                                                </section>
                                             </div>
 
 
                 </article>
-                        <!-- WIDGET END -->
-                                            <!-- NEW WIDGET START -->
-                                            <article class="col-sm-6 col-md-6 col-lg-6">
+                <!-- WIDGET END -->
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
 
-                                                <!-- Widget ID (each widget will need unique ID)-->
-                                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                                                    <header>
-                                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                                                        <h2>Required Documents</h2>
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Required Documents</h2>
 
-                                                    </header>
+                        </header>
 
-                                                    <!-- widget div-->
-                                                    <div>
+                        <!-- widget div-->
+                        <div>
 
-                                                        <!-- widget edit box -->
-                                                        <div class="jarviswidget-editbox">
-                                                            <!-- This area used as dropdown edit box -->
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
 
-                                                        </div>
-                                                        <!-- end widget edit box -->
+                            </div>
+                            <!-- end widget edit box -->
 
-                                                        <!-- widget content -->
-                                                        <div class="widget-body no-padding">
-                                                            <section class="col col-12">
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
 
-                                                                <label class="input">
-                                                                    <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
-                                                                </label>
-                                                            </section>
-
-                                                        </div>
-                                                        <!-- end widget content -->
-                                                        <label class="red"><?php echo form_error('txtRequiredDocument');?></label>
-                                                    </div>
-                                                    <!-- end widget div -->
-
-                                                </div>
-                                                <!-- end widget -->
-
-                                            </article>
-                                            <!-- WIDGET END -->
-
-
-
-                                            <article class="col-sm-6 col-md-6 col-lg-6">
-
-                                                <!-- Widget ID (each widget will need unique ID)-->
-                                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                                                    <header>
-                                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                                                        <h2>Additional Doc for Salaried Person</h2>
-
-                                                    </header>
-
-                                                    <!-- widget div-->
-                                                    <div>
-
-                                                        <!-- widget edit box -->
-                                                        <div class="jarviswidget-editbox">
-                                                            <!-- This area used as dropdown edit box -->
-
-                                                        </div>
-                                                        <!-- end widget edit box -->
-
-                                                        <!-- widget content -->
-                                                        <div class="widget-body no-padding">
-                                                            <section class="col col-12">
-
-                                                                <label class="input">
-                                                                    <textarea type="text" id="txtAdditionalDocForSalaried" class="ckeditor" name="txtAdditionalDocForSalaried"><?php echo set_value('txtAdditionalDocForSalaried'); ?></textarea>
-                                                                </label>
-                                                            </section>
-
-                                                        </div>
-                                                        <!-- end widget content -->
-                                                        <label class="red"><?php echo form_error('txtAdditionalDocForSalaried');?></label>
-                                                    </div>
-                                                    <!-- end widget div -->
-
-                                                </div>
-                                                <!-- end widget -->
-
-                                            </article>
-                                            <!-- NEW WIDGET START -->
-                                            <article class="col-sm-6 col-md-6 col-lg-6">
-
-                                                <!-- Widget ID (each widget will need unique ID)-->
-                                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                                                    <header>
-                                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                                                        <h2>Additional Doc for Businessmen</h2>
-
-                                                    </header>
-
-                                                    <!-- widget div-->
-                                                    <div>
-
-                                                        <!-- widget edit box -->
-                                                        <div class="jarviswidget-editbox">
-                                                            <!-- This area used as dropdown edit box -->
-
-                                                        </div>
-                                                        <!-- end widget edit box -->
-
-                                                        <!-- widget content -->
-                                                        <div class="widget-body no-padding">
-                                                            <section class="col col-12">
-
-                                                                <label class="input">
-                                                                    <textarea type="text" id="txtAdditionalDocForBusinessmen" class="ckeditor" name="txtAdditionalDocForBusinessmen"><?php echo set_value('txtAdditionalDocForBusinessmen'); ?></textarea>
-                                                                </label>
-                                                            </section>
-
-                                                        </div>
-                                                        <!-- end widget content -->
-                                                        <label class="red"><?php echo form_error('txtAdditionalDocForBusinessmen');?></label>
-                                                    </div>
-                                                    <!-- end widget div -->
-
-                                                </div>
-                                                <!-- end widget -->
-
-                                            </article>
-                                            <!-- WIDGET END -->
-
-
-
-                                            <article class="col-sm-6 col-md-6 col-lg-6">
-
-                                                <!-- Widget ID (each widget will need unique ID)-->
-                                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                                                    <header>
-                                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                                                        <h2>Additional documents required for Landlord/Landlady</h2>
-
-                                                    </header>
-
-                                                    <!-- widget div-->
-                                                    <div>
-
-                                                        <!-- widget edit box -->
-                                                        <div class="jarviswidget-editbox">
-                                                            <!-- This area used as dropdown edit box -->
-
-                                                        </div>
-                                                        <!-- end widget edit box -->
-
-                                                        <!-- widget content -->
-                                                        <div class="widget-body no-padding">
-                                                            <section class="col col-12">
-
-                                                                <label class="input">
-                                                                    <textarea type="text" id="txtAdditionalDocForLandlord" class="ckeditor" name="txtAdditionalDocForLandlord"><?php echo set_value('txtAdditionalDocForLandlord'); ?></textarea>
-                                                                </label>
-                                                            </section>
-
-                                                        </div>
-                                                        <!-- end widget content -->
-                                                        <label class="red"><?php echo form_error('txtAdditionalDocForLandlord');?></label>
-                                                    </div>
-                                                    <!-- end widget div -->
-
-                                                </div>
-                                                <!-- end widget -->
-
-                                            </article>
-
-                                    </fieldset>
-                                    <footer>
-                                        <div class="row">
-                                            <section class='col-md-6'>
-
-                                            </section>
-                                            <section class="col-md-6">
-                                                <label class="input">
-                                                    <button class="btn btn-primary" type="submit" >Save</button>
-                                                </label>
-                                            </section>
-
-                                        </div>
-                                    </footer>
-                                </form>
+                                    <label class="input">
+                                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
+                                    </label>
+                                </section>
 
                             </div>
                             <!-- end widget content -->
-
+                            <label class="red"><?php echo form_error('txtRequiredDocument');?></label>
                         </div>
                         <!-- end widget div -->
 
                     </div>
                     <!-- end widget -->
 
-                    <!-- Widget ID (each widget will need unique ID)-->
-
                 </article>
-                <!-- END COL -->
+                <!-- WIDGET END -->
+
+                </fieldset>
+                <footer>
+                    <div class="row">
+                        <section class='col-md-6'>
+
+                        </section>
+                        <section class="col-md-6">
+                            <label class="input">
+                                <button class="btn btn-primary" type="submit" >Save</button>
+                            </label>
+                        </section>
+
+                    </div>
+                </footer>
+                </form>
 
             </div>
-
-            <!-- end row -->
-
-            <!-- end row -->
-
-        </section>
-        <!-- end widget grid -->
+            <!-- end widget content -->
 
     </div>
-    <!-- END MAIN CONTENT -->
+    <!-- end widget div -->
+
+</div>
+<!-- end widget -->
+
+<!-- Widget ID (each widget will need unique ID)-->
+
+</article>
+<!-- END COL -->
+
+</div>
+
+<!-- end row -->
+
+<!-- end row -->
+
+</section>
+<!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->
 
 </div>
 <!-- END MAIN PANEL -->
@@ -747,7 +616,7 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
     $(function() {
         $("#txtBankName").change(function () {
             var data = $("#txtBankName").val();
-           //console.log(data);
+            //console.log(data);
             $.ajax({
                 type:"POST",
                 url:"<?php echo base_url();?>card/get_card_name",
@@ -755,7 +624,7 @@ if(!empty($fees_id) && is_numeric($fees_id) ){
                 success: function(response){
                     if(response != "error"){
                         //console.log(response);return;
-                       document.getElementById('txtCardName').innerHTML = response;
+                        document.getElementById('txtCardName').innerHTML = response;
                     }else{
                         alert(response);
                     }
