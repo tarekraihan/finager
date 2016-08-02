@@ -204,17 +204,12 @@ if(isset($_GET['id'])){
                                                                 <option value="<?php echo $row3->id;?>" <?php if(isset($row["loan_type_id"]) && $row['loan_type_id']==$row3->id){echo "selected='selected'";} ?><?php echo set_select("txtApplicantType[]", $row3->id)?> ><?php echo $row3->home_loan_applicant_type; ?></option>
                                                             <?php
                                                             }
-
-
                                                             ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtApplicantType[]');?></label>
                                                 </section>
-
                                             </div>
-
-
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Looking For</label>

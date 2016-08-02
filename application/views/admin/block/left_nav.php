@@ -145,12 +145,12 @@
             <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Auto Loan</span></a>
             <ul>
 
-                <li>
-                    <a href="<?php echo base_url();?>auto_loan/applicant_type/"><i class="fa fa-stack-overflow"></i> Add Applicant Type</a>
+                <!--<li>
+                    <a href="<?php /*echo base_url();*/?>auto_loan/applicant_type/"><i class="fa fa-stack-overflow"></i> Add Applicant Type</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>auto_loan/feature/"><i class="fa fa-stack-overflow"></i> Add Feature</a>
-                </li>
+                    <a href="<?php /*echo base_url();*/?>auto_loan/feature/"><i class="fa fa-stack-overflow"></i> Add Feature</a>
+                </li>-->
                 <li>
                     <a href="<?php echo base_url();?>auto_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
                 </li>
