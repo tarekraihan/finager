@@ -325,6 +325,92 @@ class Auto_loan extends CI_Controller
             $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
+            $this->form_validation->set_rules('txtLoanShortDescription', ' Short Description', 'trim|required');
+            $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
+            $this->form_validation->set_rules('txtAutoLoanUser[]', ' Loan User ', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateAverage', 'Interest Rate Average ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateMin', 'Interest Rate Min ', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRateMax', 'Interest Rate Max ', 'trim|required');
+            $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
+            $this->form_validation->set_rules('txtSecurityRequired', 'Security Required', 'trim|required');
+            $this->form_validation->set_rules('txtFeatures', 'Features', 'trim|required');
+            $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
+            $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $data['title'] = "Finager - Loan Information";
+                $this->load->view('admin/block/header', $data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/auto_loan/loan_information_new');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array(
+                    'bank_id' => $this->input->post('txtBankName'),
+                    'loan_type_id' => $this->input->post('txtLoanType'),
+                    'auto_loan_name' => htmlentities($this->input->post('txtLoanName')),
+                    'loan_short_description' => htmlentities($this->input->post('txtLoanShortDescription')),
+                    'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
+                    'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
+                    'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
+                    'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
+                    'interest_rate_average' => htmlentities($this->input->post('txtInterestRateMax')),
+                    'security_required' => htmlentities($this->input->post('txtSecurityRequired')),
+                    'fees_and_charges' => htmlentities($this->input->post('txtFeesAndCharges')),
+                    'features' => htmlentities($this->input->post('txtFeatures')),
+                    'eligibility_for_applying' => htmlentities($this->input->post('txtEligibility')),
+                    'required_document' => htmlentities($this->input->post('txtRequiredDocument')),
+
+                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'auto_loan_info';
+//              $last_insert_id = $this->Common_model->insert();
+                $result = $this->Common_model->insert();
+/*
+                foreach($this->input->post('txtLookingFor[]') as $lookingFor){
+                    $this->Common_model->data = array(
+                        'auto_loan_info_id'=>$last_insert_id,
+                        'i_want_id'=> $lookingFor
+                    );
+                    $this->Common_model->table_name = 'auto_loan_info_vs_i_want';
+                    $this->Common_model->insert();
+                }
+
+
+                $result='';
+                foreach($this->input->post('txtAutoLoanUser[]') as $user){
+                    $this->Common_model->data = array(
+                        'auto_loan_info_id'=>$last_insert_id,
+                        'i_am_id'=> $user
+                    );
+                    $this->Common_model->table_name = 'auto_loan_info_vs_i_am';
+                    $result = $this->Common_model->insert();
+                }*/
+
+                if ($result) {
+                    redirect(base_url().'auto_loan/loan_info/success');
+                } else {
+                    redirect(base_url().'auto_loan/loan_info/error');
+                }
+            }
+        }else {
+            redirect(base_url().'backdoor');
+        }
+    }
+
+    public function loan_info_backed_by_tarek_03_07_2016($msg=''){
+        if ($this->session->userdata('email_address')) {
+            if ($msg == 'success') {
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
+            }
+            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
+            $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
+            $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
             $this->form_validation->set_rules('txtApplicantType[]', ' Applicant Type ', 'trim|required');
             $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
             $this->form_validation->set_rules('txtHomeLoanUser[]', ' Loan User ', 'trim|required');
@@ -399,44 +485,44 @@ class Auto_loan extends CI_Controller
                 $this->Common_model->table_name = 'auto_loan_info';
 //                $last_insert_id = $this->Common_model->insert();
                 $result = $this->Common_model->insert();
-/*
-                foreach($this->input->post('txtLookingFor[]') as $lookingFor){
-                    $this->Common_model->data = array(
-                        'home_loan_info_id'=>$last_insert_id,
-                        'home_loan_looking_for_id'=> $lookingFor
-                    );
-                    $this->Common_model->table_name = 'home_loan_looking_for_home_loan_info';
-                    $this->Common_model->insert();
-                }
+                /*
+                                foreach($this->input->post('txtLookingFor[]') as $lookingFor){
+                                    $this->Common_model->data = array(
+                                        'home_loan_info_id'=>$last_insert_id,
+                                        'home_loan_looking_for_id'=> $lookingFor
+                                    );
+                                    $this->Common_model->table_name = 'home_loan_looking_for_home_loan_info';
+                                    $this->Common_model->insert();
+                                }
 
-                foreach($this->input->post('txtApplicantType[]') as $applicant){
-                    $this->Common_model->data = array(
-                        'home_loan_info_id'=>$last_insert_id,
-                        'home_loan_applicant_type_id'=> $applicant
-                    );
-                    $this->Common_model->table_name = 'home_loan_applicant_type_home_loan_info';
-                    $this->Common_model->insert();
-                }
+                                foreach($this->input->post('txtApplicantType[]') as $applicant){
+                                    $this->Common_model->data = array(
+                                        'home_loan_info_id'=>$last_insert_id,
+                                        'home_loan_applicant_type_id'=> $applicant
+                                    );
+                                    $this->Common_model->table_name = 'home_loan_applicant_type_home_loan_info';
+                                    $this->Common_model->insert();
+                                }
 
-                foreach($this->input->post('txtHomeLoanFeature[]') as $feature){
-                    $this->Common_model->data = array(
-                        'home_loan_info_id'=>$last_insert_id,
-                        'home_loan_feature_id'=> $feature
-                    );
-                    $this->Common_model->table_name = 'home_loan_feature_home_loan_info';
-                    $this->Common_model->insert();
-                }
+                                foreach($this->input->post('txtHomeLoanFeature[]') as $feature){
+                                    $this->Common_model->data = array(
+                                        'home_loan_info_id'=>$last_insert_id,
+                                        'home_loan_feature_id'=> $feature
+                                    );
+                                    $this->Common_model->table_name = 'home_loan_feature_home_loan_info';
+                                    $this->Common_model->insert();
+                                }
 
 
-                $result='';
-                foreach($this->input->post('txtHomeLoanUser[]') as $user){
-                    $this->Common_model->data = array(
-                        'home_loan_info_id'=>$last_insert_id,
-                        'home_loan_user_id'=> $user
-                    );
-                    $this->Common_model->table_name = 'home_loan_user_home_loan_info';
-                    $result = $this->Common_model->insert();
-                }*/
+                                $result='';
+                                foreach($this->input->post('txtHomeLoanUser[]') as $user){
+                                    $this->Common_model->data = array(
+                                        'home_loan_info_id'=>$last_insert_id,
+                                        'home_loan_user_id'=> $user
+                                    );
+                                    $this->Common_model->table_name = 'home_loan_user_home_loan_info';
+                                    $result = $this->Common_model->insert();
+                                }*/
 
                 if ($result) {
                     redirect(base_url().'auto_loan/loan_info/success');
