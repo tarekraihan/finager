@@ -453,7 +453,7 @@ html{min-height:100%;margin-bottom:1px}
 a{text-decoration:none}
 a:hover{text-decoration:underline}
 img,a{border:0}
-ul{list-style:none}
+/* ul{list-style:none} */
 .clear{clear:both;font-size:1%;height:0}
 .clearfix{display:block}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}

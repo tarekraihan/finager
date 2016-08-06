@@ -86,6 +86,10 @@ class En extends CI_Controller {
         }
     }
 
+    public function home_loan_chart(){
+        $this->load->view('front_end/home_loan_chart');
+    }
+
     public function logout(){
         $this->session->unset_userdata('lovemebaby');
 
