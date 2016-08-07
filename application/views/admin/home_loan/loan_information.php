@@ -125,20 +125,6 @@
                                                     <label class="red"><?php echo form_error('txtLoanName');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Applicant Type</label>
-                                                    <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtApplicantType[]" required>
-                                                            <?php echo $this->Select_model->home_loan_applicant_type();?>
-                                                        </select>
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtApplicantType[]');?></label>
-                                                </section>
-
-                                            </div>
-
-
-                                            <div class="row">
-                                                <section class="col col-6">
                                                     <label class="label">Looking For</label>
                                                     <label class="select">
                                                         <select multiple style="width:100%" class="select2" name="txtLookingFor[]" required>
@@ -147,16 +133,10 @@
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLookingFor[]');?></label>
                                                 </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Loan User</label>
-                                                    <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtHomeLoanUser[]" required>
-                                                            <?php echo $this->Select_model->home_loan_user();?>
-                                                        </select>
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtHomeLoanUser[]');?></label>
-                                                </section>
                                             </div>
+
+
+
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Loan Amount</label>
@@ -173,240 +153,29 @@
                                                     <label class="red"><?php echo form_error('txtMaximumLonAmount');?></label>
                                                 </section>
                                             </div>
+
+
                                             <div class="row">
+
                                                 <section class="col col-6">
-                                                    <label class="label">Min Income Salaried</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMinIncomeSalaried" value="<?php echo set_value('txtMinIncomeSalaried'); ?>" placeholder="Write Min Income for Salaried Person">
+                                                    <label class="label">Loan User</label>
+                                                    <label class="select">
+                                                        <select multiple style="width:100%" class="select2" name="txtHomeLoanUser[]" required>
+                                                            <?php echo $this->Select_model->home_loan_user();?>
+                                                        </select>
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtMinIncomeSalaried');?></label>
+                                                    <label class="red"><?php echo form_error('txtHomeLoanUser[]');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Min Income Professional</label>
+                                                    <label class="label">Interest Rate Average(%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMinIncomeProfessional" value="<?php echo set_value('txtMinIncomeProfessional'); ?>" placeholder="Write Min Income for Professional">
+                                                        <input type="text" maxlength="50" name="txtInterestRateAverage" value="<?php echo set_value('txtInterestRateAverage'); ?>" placeholder="Write Interest Rate without percentage sign">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtMinIncomeProfessional');?></label>
+                                                    <label class="red"><?php echo form_error('txtInterestRateAverage');?></label>
                                                 </section>
                                             </div>
 
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Min Income Businessmen</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMinIncomeBusinessmen" value="<?php echo set_value('txtMinIncomeBusinessmen'); ?>" placeholder="Write Min Income for Businessmen">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMinIncomeBusinessmen');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Min Income Landlord</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="20" name="txtMinIncomeLandlord" value="<?php echo set_value('txtMinIncomeLandlord'); ?>"  placeholder="Write Min Income for Landlord">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMinIncomeLandlord');?></label>
-                                                </section>
-                                            </div>
 
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment For Flat(%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentFlat" value="<?php echo set_value('txtDownPaymentFlat'); ?>" placeholder="Write Down payment without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentFlat');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment for Home Construction (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeConstruction" value="<?php echo set_value('txtDownPaymentHomeConstruction'); ?>" placeholder="Write Down payment without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentHomeConstruction');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment for Housing Plot (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHousingPlot" value="<?php echo set_value('txtDownPaymentHousingPlot'); ?>" placeholder="Write Down payment without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentHousingPlot');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment for Extension Finish Work (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentExtensionFinishWork" value="<?php echo set_value('txtDownPaymentExtensionFinishWork'); ?>" placeholder="Write Down payment without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentExtensionFinishWork');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment for Home Loan Take Over (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeLoanTakeOver" value="<?php echo set_value('txtDownPaymentHomeLoanTakeOver'); ?>" placeholder="Write Down payment without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentHomeLoanTakeOver');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label"> Security Required</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="250" name="txtSecurityRequired" value="<?php echo set_value('txtSecurityRequired'); ?>" placeholder="Write Security Required">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtSecurityRequired');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Repayment Types</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="200" name="txtRepaymentType" value="<?php echo set_value('txtRepaymentType'); ?>" placeholder="Write Repayment Types">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtRepaymentType');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Repayment Option </label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="200" name="txtRepaymentOption" value="<?php echo set_value('txtRepaymentOption'); ?>"  placeholder="Write Repayment Option">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtRepaymentOption');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Processing Fee </label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtProcessingFee" value="<?php echo set_value('txtProcessingFee'); ?>"  placeholder="Write Processing fee without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtProcessingFee');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Early Settlement Fee</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtEarlySettlementFee" value="<?php echo set_value('txtEarlySettlementFee'); ?>"  placeholder="Write Early Settlement fee without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtEarlySettlementFee');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Partial Payment Fee </label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPartialPaymentFee" value="<?php echo set_value('txtPartialPaymentFee'); ?>"  placeholder="Write partial payment fee without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtPartialPaymentFee');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Penalty Charge </label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtPenaltyCharge" value="<?php echo set_value('txtPenaltyCharge'); ?>"  placeholder="Write penalty charge without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtPenaltyCharge');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Minimum Term</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumTerm" value="<?php echo set_value('txtMinimumTerm');?>"  placeholder="Write minimum term.">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMinimumTerm');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Maximum Term</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMaximumTerm" value="<?php echo set_value('txtMaximumTerm'); ?>"   placeholder="Write maximum term.">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMaximumTerm');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Grace Period (Month/Year)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="15" name="txtGracePeriod" value="<?php echo set_value('txtGracePeriod'); ?>"  placeholder="Write grace period with month/year word">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtGracePeriod');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Availability of Early Settlement</label>
-                                                    <label class="select">
-                                                        <select name="txtAvailabilityOfEarlySettlement">
-                                                            <option value="1" <?php echo set_select('txtAvailabilityOfEarlySettlement',1);?>>Yes</option>
-                                                            <option value="0" <?php echo set_select('txtAvailabilityOfEarlySettlement',0);?>>No</option>
-                                                        </select>
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtAvailabilityOfEarlySettlement');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Availability of Partial Payment</label>
-                                                    <label class="select">
-                                                        <select name="txtAvailabilityOfPartialPayment">
-                                                            <option value="1" <?php echo set_select('txtAvailabilityOfPartialPayment',1);?>>Yes</option>
-                                                            <option value="0" <?php echo set_select('txtAvailabilityOfPartialPayment',0);?>>No</option>
-                                                        </select>
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtAvailabilityOfPartialPayment');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Home Loan Feature</label>
-                                                    <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtHomeLoanFeature[]" required>
-                                                            <?php echo $this->Select_model->home_loan_feature();?>
-                                                        </select>
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtHomeLoanFeature[]');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Try Party Agreement Allowed up to</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="50" name="txtTryPartyAgreement" value="<?php echo set_value('txtTryPartyAgreement'); ?>"  placeholder="Write try party agreement allowed up to ">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtTryPartyAgreement');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Minimum Experience Salaried</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumExperienceSalaried" value="<?php echo set_value('txtMinimumExperienceSalaried'); ?>"  placeholder="Write minimum experience salaried person">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMinimumExperienceSalaried');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Minimum Experience Professional</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumExperienceProfessional" value="<?php echo set_value('txtMinimumExperienceProfessional'); ?>"  placeholder="Write minimum experience professional">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMinimumExperienceProfessional');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Minimum Experience Businessmen</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumExperienceBusinessmen" value="<?php echo set_value('txtMinimumExperienceBusinessmen'); ?>"  placeholder="Write minimum experience businessmen" >
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMinimumExperienceBusinessmen');?></label>
-                                                </section>
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Minimum Age</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtMinimumAge" value="<?php echo set_value('txtMinimumAge'); ?>" placeholder="Write Minimum age ">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMinimumAge');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Maximum Age</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="50" name="txtMaximumAge" value="<?php echo set_value('txtMaximumAge'); ?>" placeholder="Write Maximum Age">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMaximumAge');?></label>
-                                                </section>
-                                            </div>
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Interest Rate Min(%)</label>
@@ -427,69 +196,303 @@
 
                                             </div>
 
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Interest Rate Average(%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="50" name="txtInterestRateAverage" value="<?php echo set_value('txtInterestRateAverage'); ?>" placeholder="Write Interest Rate without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtInterestRateAverage');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Quotation Fee</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="220" name="txtQuotationFeeBdt" value="<?php echo set_value('txtQuotationFeeBdt'); ?>"  placeholder="Write Quotation Fee BDT ">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtQuotationFeeBdt');?></label>
-                                                </section>
-                                            </div>
-
 
                         </article>
                         <!-- WIDGET END -->
-                            <!-- NEW WIDGET START -->
-                            <article class="col-sm-6 col-md-6 col-lg-6">
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
 
-                                <!-- Widget ID (each widget will need unique ID)-->
-                                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-                                    <header>
-                                        <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                                        <h2>Required Documents</h2>
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Loan Short Description</h2>
 
-                                    </header>
+                        </header>
 
-                                    <!-- widget div-->
-                                    <div>
+                        <!-- widget div-->
+                        <div>
 
-                                        <!-- widget edit box -->
-                                        <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
 
-                                        </div>
-                                        <!-- end widget edit box -->
+                            </div>
+                            <!-- end widget edit box -->
 
-                                        <!-- widget content -->
-                                        <div class="widget-body no-padding">
-                                            <section class="col col-12">
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
 
-                                                <label class="input">
-                                                    <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
-                                                </label>
-                                            </section>
+                                    <label class="input">
+                                        <textarea type="text" id="txtLoanShortDescription" class="ckeditor" name="txtLoanShortDescription"><?php echo set_value('txtLoanShortDescription'); ?></textarea>
+                                    </label>
+                                </section>
 
-                                        </div>
-                                        <!-- end widget content -->
-                                        <label class="red"><?php echo form_error('txtRequiredDocument');?></label>
-                                    </div>
-                                    <!-- end widget div -->
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
+                        </div>
+                        <!-- end widget div -->
 
-                                </div>
-                                <!-- end widget -->
+                    </div>
+                    <!-- end widget -->
 
-                            </article>
-                            <!-- WIDGET END -->
+                </article>
+                <!-- WIDGET END -->
 
-                                    </fieldset>
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Security Required</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+
+                                    <label class="input">
+                                        <textarea type="text" id="txtSecurityRequired" class="ckeditor" name="txtSecurityRequired"><?php echo set_value('txtSecurityRequired'); ?></textarea>
+                                    </label>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtSecurityRequired');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Fees and Charges</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+
+                                    <label class="input">
+                                        <textarea type="text" id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo set_value('txtFeesAndCharges'); ?></textarea>
+                                    </label>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtFeesAndCharges');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Features</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+
+                                    <label class="input">
+                                        <textarea type="text" id="txtFeatures" class="ckeditor" name="txtFeatures"><?php echo set_value('txtFeatures'); ?></textarea>
+                                    </label>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtFeatures');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Eligibility for Applying</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+
+                                    <label class="input">
+                                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo set_value('txtEligibility'); ?></textarea>
+                                    </label>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtEligibility');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Required Documents</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+
+                                    <label class="input">
+                                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
+                                    </label>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtRequiredDocument');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Review</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+
+                                    <label class="input">
+                                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php echo set_value('txtReview'); ?></textarea>
+                                    </label>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtReview');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+
+                </fieldset>
                                     <footer>
                                         <div class="row">
                                             <section class='col-md-6'>
