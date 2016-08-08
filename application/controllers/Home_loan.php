@@ -399,6 +399,11 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtFeatures', 'Features ', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility ', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
+            $this->form_validation->set_rules('txtDownPaymentFlat', 'Flat down payment ', 'trim');
+            $this->form_validation->set_rules('txtDownPaymentHomeConstruction', 'Home Construction down payment ', 'trim');
+            $this->form_validation->set_rules('txtDownPaymentHousingPlot', 'Housing Plot down payment ', 'trim');
+            $this->form_validation->set_rules('txtDownPaymentExtensionFinishWork', 'Extension Finish Work down payment ', 'trim');
+            $this->form_validation->set_rules('txtDownPaymentHomeLoanTakeOver', 'Home Loan Take Over down payment ', 'trim');
 
 
 
@@ -420,6 +425,11 @@ class Home_Loan extends CI_Controller {
                     'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
                     'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
                     'interest_rate_average' => htmlentities($this->input->post('txtInterestRateAverage')),
+                    'downpayment_flat' => htmlentities($this->input->post('txtDownPaymentFlat')),
+                    'downpayment_home_construction' => htmlentities($this->input->post('txtDownPaymentHomeConstruction')),
+                    'downpayment_housing_plot' => htmlentities($this->input->post('txtDownPaymentHousingPlot')),
+                    'downpayment_extension_finish_work' => htmlentities($this->input->post('txtDownPaymentExtensionFinishWork')),
+                    'downpayment_home_loan_take_over' => htmlentities($this->input->post('txtDownPaymentHomeLoanTakeOver')),
                     'security_required' => htmlentities($this->input->post('txtSecurityRequired')),
                     'fees_and_charges' => htmlentities($this->input->post('txtFeesAndCharges')),
                     'features' => htmlentities($this->input->post('txtFeatures')),
@@ -648,5 +658,22 @@ class Home_Loan extends CI_Controller {
         echo $response;
 
     }
+
+
+//    Front End query--------------------------------
+
+    public function ajax_get_credit_card(){
+
+
+        $home_loan = $this->Front_end_select_model->select_home_loan_info();
+
+//        $credit_card='';
+        foreach($home_loan->result() as $row){
+                   print_r($row);die;
+
+        }
+//        echo $credit_card;
+    }
+
 
 }

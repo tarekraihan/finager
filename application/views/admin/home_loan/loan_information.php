@@ -193,6 +193,47 @@
                                                     <label class="red"><?php echo form_error('txtInterestRateMax');?></label>
                                                 </section>
 
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="label">Down Payment For Flat(%)</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentFlat" value="<?php echo set_value('txtDownPaymentFlat'); ?>" placeholder="Write Down payment without percentage sign">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtDownPaymentFlat');?></label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label class="label">Down Payment for Home Construction (%)</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeConstruction" value="<?php echo set_value('txtDownPaymentHomeConstruction'); ?>" placeholder="Write Down payment without percentage sign">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtDownPaymentHomeConstruction');?></label>
+                                                </section>
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="label">Down Payment for Housing Plot (%)</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentHousingPlot" value="<?php echo set_value('txtDownPaymentHousingPlot'); ?>" placeholder="Write Down payment without percentage sign">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtDownPaymentHousingPlot');?></label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label class="label">Down Payment for Extension Finish Work (%)</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentExtensionFinishWork" value="<?php echo set_value('txtDownPaymentExtensionFinishWork'); ?>" placeholder="Write Down payment without percentage sign">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtDownPaymentExtensionFinishWork');?></label>
+                                                </section>
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="label">Down Payment for Home Loan Take Over (%)</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeLoanTakeOver" value="<?php echo set_value('txtDownPaymentHomeLoanTakeOver'); ?>" placeholder="Write Down payment without percentage sign">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtDownPaymentHomeLoanTakeOver');?></label>
+                                                </section>
 
                                             </div>
 

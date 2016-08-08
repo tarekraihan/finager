@@ -49,6 +49,13 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         $query = $this->db->query($sql);
         return $query;
     }
+
+    function select_home_loan_info(){
+        $sql = "SELECT home_loan_info.*,card_bank.bank_name,card_bank.bank_logo FROM `home_loan_info` inner join card_bank on card_bank.id=home_loan_info.bank_id ";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
 //
 
 }
