@@ -74,25 +74,7 @@
         });
     });
 
-    $(document).ready(function() {
-        $('#hideDetailsDiv3').hide();
-        $('a#hideDetailsButton3').click(function() {
-            if (!$('#hideDetailsDiv3').is(':visible')) {
-                $('.hideMe').hide(400);
-            }
-            $('#hideDetailsDiv3').toggle(800);
-        });
-    });
 
-    $(document).ready(function() {
-        $('#hideDetailsDiv4').hide();
-        $('a#hideDetailsButton4').click(function() {
-            if (!$('#hideDetailsDiv4').is(':visible')) {
-                $('.hideMe').hide(400);
-            }
-            $('#hideDetailsDiv4').toggle(400);
-        });
-    });
 </script>
 </body>
 </html>

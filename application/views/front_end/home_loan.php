@@ -226,12 +226,11 @@
                $home_loan = $this->Front_end_select_model->select_home_loan_info();
                $home = '';
                foreach($home_loan->result() as $row){
-                  echo $row->security_required;
 
-                   $home ='<div class="full-card">
+                   $home .='<div class="full-card">
                        <div class="row home_loan_right_bar no-margin-lr2">
                            <div class="col-sm-3 col-xs-3">
-                               <a href="home_loan_details.php"><img title="click here to details" class="img-responsive" src="'.base_url().'resource/front_end/images/visa_card.png" /></a>
+                               <a href="home_loan_details.php"><img title="'.$row->id.'" class="img-responsive" src="'.base_url().'resource/front_end/images/visa_card.png" /></a>
                            </div>
                            <div class="col-sm-9 col-xs-9">
                                <div class="row">
@@ -244,37 +243,37 @@
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Interest (Mid Rate)</h5>
-                                            <p>'.$row->interest_rate_average.'</p>
-                                           <p>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>
+
+                                           <p>'.$row->interest_rate_average.' % <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>
                                        </div>
                                    </div>
-                                   <div class="col-sm-1 col-xs-1 w20">
+                                   <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>EMI</h5>
-                                           <p>28%,<br> Monthly 2.33%</p>
+                                           <p>3500</p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Total Payable Amount</h5>
-                                           <p>50%</p>
+                                           <p>120000</p>
                                        </div>
                                    </div>
-                                   <div class="col-sm-3 col-xs-1 w20">
+                                   <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Down Payment (Min)</h5>
-                                           <p>BDT 1300 + VAT</p>
+                                           <p>20000</p>
                                        </div>
                                    </div>
                                </div>
                            </div>
                            <div class="col-sm-12 col-xs-12 home_loan_button">
                                <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
-                               <span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton3" href="#"><i class="fa fa-info-circle"></i> More info</a></span>
+                               <span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton'.$row->id.'" href="#"><i class="fa fa-info-circle"></i> More info</a></span>
                                <span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
-                               <span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton4" href="#"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
+                               <span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton'.$row->id.'" href="#"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
                            </div>
-                           <div id="hideDetailsDiv3" class="row hideMe">
+                           <div id="moreInfo'.$row->id.'" class="row hideMe">
                                <div class="col-md-12">
                                    <section id="tab">
                                        <!-- Nav tabs -->
@@ -339,7 +338,7 @@
                                </div>
                            </div>
 
-                           <div id="hideDetailsDiv4" class="row hideMe">
+                           <div id="rePaymentSchedule'.$row->id.'" class="row hideMe">
                                <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
                                <iframe src="'.base_url().'en/home_loan_chart"  frameborder="0"  width="100%" height="1660" scrolling="no" ></iframe>
                            </div>
@@ -349,7 +348,7 @@
 
                }
 
-//               echo $home;
+               echo $home;
                ?>
 
 

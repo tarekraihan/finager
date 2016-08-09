@@ -404,8 +404,7 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtDownPaymentHousingPlot', 'Housing Plot down payment ', 'trim');
             $this->form_validation->set_rules('txtDownPaymentExtensionFinishWork', 'Extension Finish Work down payment ', 'trim');
             $this->form_validation->set_rules('txtDownPaymentHomeLoanTakeOver', 'Home Loan Take Over down payment ', 'trim');
-
-
+//            echo validation_errors('<div class="error">', '</div>'); die;
 
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
