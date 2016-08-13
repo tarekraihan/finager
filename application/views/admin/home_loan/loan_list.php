@@ -73,10 +73,8 @@ if(isset($_GET['loan_id']))
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Bank Image</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Loan Name</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Bank Name</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Loan Amount</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Interest Rate</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Processing Fee</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Loan Term</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Max Loan Amount</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Interest Rate Avg</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created By</th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 

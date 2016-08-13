@@ -243,23 +243,52 @@
                                                 </section>
 
                                             </div>
-                                            <div class="row">
-
-<section class="col col-6">
-                                                    <label class="label">Security Required</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="255" name="txtSecurityRequired" value="<?php echo set_value('txtSecurityRequired'); ?>" placeholder="Write Security Required">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtSecurityRequired');?></label>
-                                                </section>
-
-                                            </div>
 
 
                         </article>
                         <!-- WIDGET END -->
 
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
 
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Security Required</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+
+                                    <label class="input">
+                                        <textarea type="text" id="txtSecurityRequired" class="ckeditor" name="txtSecurityRequired"><?php echo set_value('txtSecurityRequired'); ?></textarea>
+                                    </label>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtSecurityRequired');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
                 <!-- NEW WIDGET START -->
                 <article class="col-sm-6 col-md-6 col-lg-6">
 

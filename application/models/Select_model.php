@@ -339,7 +339,7 @@ class Select_Model extends CI_Model
 
     public function select_home_loan_information()//To show Home loan list
     {
-        $sql="SELECT home_loan_info.id,home_loan_info.home_loan_name,home_loan_info.min_loan_amount,home_loan_info.max_loan_amount,home_loan_info.interest_rate_average,home_loan_info.processing_fee,home_loan_info.minimum_term, home_loan_info.maximum_term,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `home_loan_info` INNER JOIN card_bank ON card_bank.id=home_loan_info.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=home_loan_info.created_by ORDER BY home_loan_info.id ASC";
+        $sql="SELECT home_loan_info.id,home_loan_info.home_loan_name,home_loan_info.min_loan_amount,home_loan_info.max_loan_amount,home_loan_info.interest_rate_average,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `home_loan_info` INNER JOIN card_bank ON card_bank.id=home_loan_info.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=home_loan_info.created_by ORDER BY home_loan_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
         if($query->num_rows() > 0)
@@ -349,17 +349,16 @@ class Select_Model extends CI_Model
             {
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
-					<td class="center"><img src="'. base_url().'resource/common_logo/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
 					<td class="center">'.$row->home_loan_name.'</td>
 					 <td class="center">'.$row->bank_name.'</td>
 					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
 					 <td class="center"> '.$row->interest_rate_average.' %</td>
-					 <td class="center"> '.$row->processing_fee.' %</td>
-					 <td class="center"> '.$row->minimum_term.' - '.$row->maximum_term.'</td>
 					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
 
                 $result.='</td>
-                    <td><a href="'. base_url().'home_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="#" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
 					</tr>';
                 $sl++;
             }
