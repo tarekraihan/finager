@@ -45,6 +45,11 @@
         $('[data-toggle="toggle"]').change(function(){
             $(this).parents().next('.hide').toggle();
         });
+
+        $("#more").click(function(){
+            $("#rePaymentSchedule2").hide();
+        });
+
     });
 </script>
 
@@ -55,24 +60,26 @@
     //for show hide (more info & Repayment Schedule)
 
     $(document).ready(function() {
-        $('#hideDetailsDiv').hide();
-        $('a#hideDetailsButton').click(function() {
-            if (!$('#hideDetailsDiv').is(':visible')) {
-                $('.hideMe').hide(400);
+       /* $('#searchHomeLoan').on('click', '.hideDetailsButton', function () {
+            var  formData = $(this).data();
+            var moreinfo_id = formData.moreinfo;
+            var ele = document.getElementById("toggleText"+moreinfo_id);
+            var text = document.getElementById("displayText");
+
+            console.log(ele);
+            if(ele.style.display == "block") {
+                ele.style.display = "none";
+                text.html("<i class='fa fa-info-circle'></i> more info");
             }
-            $('#hideDetailsDiv').toggle(800);
-        });
+            else {
+                ele.style.display = "block";
+                text.html("<i class='fa fa-info-circle'></i> Less info");
+            }
+
+        });*/
     });
 
-    $(document).ready(function() {
-        $('#hideDetailsDiv2').hide();
-        $('a#hideDetailsButton2').click(function() {
-            if (!$('#hideDetailsDiv2').is(':visible')) {
-                $('.hideMe').hide(400);
-            }
-            $('#hideDetailsDiv2').toggle(400);
-        });
-    });
+
 
 
 </script>
