@@ -127,36 +127,26 @@
                                                 <section class="col col-6">
                                                     <label class="label">Looking For</label>
                                                     <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtLookingFor[]" required>
+                                                        <select name="txtLookingFor" id="txtLookingFor">
                                                             <?php echo $this->Select_model->looking_for();?>
                                                         </select>
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtLookingFor[]');?></label>
+                                                    <label class="red"><?php echo form_error('txtLookingFor');?></label>
                                                 </section>
+
+                                                <!--
+                                                <section class="col col-6">
+                                                    <label class="label">Looking For</label>
+                                                    <label class="select">
+                                                        <select multiple style="width:100%" class="select2" name="txtLookingFor[]" required>
+                                                            <?php /*echo $this->Select_model->looking_for();*/?>
+                                                        </select>
+                                                    </label>
+                                                    <label class="red"><?php /*echo form_error('txtLookingFor[]');*/?></label>
+                                                </section>-->
                                             </div>
 
-
-
                                             <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Minimum Loan Amount</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="15" name="txtMinimumLoanAmount" value="<?php echo set_value('txtMinimumLoanAmount'); ?>" placeholder="Write min loan amount">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMinimumLoanAmount');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Maximum Loan Amount</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="15" name="txtMaximumLonAmount" value="<?php echo set_value('txtMaximumLonAmount'); ?>" placeholder="Write Max loan amount">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtMaximumLonAmount');?></label>
-                                                </section>
-                                            </div>
-
-
-                                            <div class="row">
-
                                                 <section class="col col-6">
                                                     <label class="label">Loan User</label>
                                                     <label class="select">
@@ -167,83 +157,47 @@
                                                     <label class="red"><?php echo form_error('txtHomeLoanUser[]');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Interest Rate Average(%)</label>
+                                                    <label class="label">Minimum Loan Amount</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="50" name="txtInterestRateAverage" value="<?php echo set_value('txtInterestRateAverage'); ?>" placeholder="Write Interest Rate without percentage sign">
+                                                        <input type="text" maxlength="15" name="txtMinimumLoanAmount" value="<?php echo set_value('txtMinimumLoanAmount'); ?>" placeholder="Write min loan amount">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtInterestRateAverage');?></label>
+                                                    <label class="red"><?php echo form_error('txtMinimumLoanAmount');?></label>
                                                 </section>
                                             </div>
-
-
                                             <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Interest Rate Min(%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="50" name="txtInterestRateMin" value="<?php echo set_value('txtInterestRateMin'); ?>" placeholder="Write Interest Rate without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtInterestRateMin');?></label>
-                                                </section>
 
                                                 <section class="col col-6">
-                                                    <label class="label">Interest Rate Max(%)</label>
+                                                    <label class="label">Maximum Loan Amount</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="50" name="txtInterestRateMax" value="<?php echo set_value('txtInterestRateMax'); ?>" placeholder="Write Interest Rate without percentage sign">
+                                                        <input type="text" maxlength="15" name="txtMaximumLonAmount" value="<?php echo set_value('txtMaximumLonAmount'); ?>" placeholder="Write Max loan amount">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtInterestRateMax');?></label>
-                                                </section>
-
-                                            </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment For Flat(%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentFlat" value="<?php echo set_value('txtDownPaymentFlat'); ?>" placeholder="Write Down payment without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentFlat');?></label>
+                                                    <label class="red"><?php echo form_error('txtMaximumLonAmount');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Down Payment for Home Construction (%)</label>
+                                                    <label class="label">Down Payment (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeConstruction" value="<?php echo set_value('txtDownPaymentHomeConstruction'); ?>" placeholder="Write Down payment without percentage sign">
+                                                        <input type="text" maxlength="10" name="txtDownPayment" value="<?php echo set_value('txtDownPayment'); ?>" placeholder="Write Down payment without percentage sign">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentHomeConstruction');?></label>
+                                                    <label class="red"><?php echo form_error('txtDownPayment');?></label>
                                                 </section>
                                             </div>
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Down Payment for Housing Plot (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHousingPlot" value="<?php echo set_value('txtDownPaymentHousingPlot'); ?>" placeholder="Write Down payment without percentage sign">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_fixed">Variable Interest
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentHousingPlot');?></label>
-                                                </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment for Extension Finish Work (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentExtensionFinishWork" value="<?php echo set_value('txtDownPaymentExtensionFinishWork'); ?>" placeholder="Write Down payment without percentage sign">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" name="is_fixed">Fixed Interest
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentExtensionFinishWork');?></label>
+
                                                 </section>
                                             </div>
-                                            <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment for Home Loan Take Over (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPaymentHomeLoanTakeOver" value="<?php echo set_value('txtDownPaymentHomeLoanTakeOver'); ?>" placeholder="Write Down payment without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtDownPaymentHomeLoanTakeOver');?></label>
-                                                </section>
-<section class="col col-6">
-                                                    <label class="label">Loan Short Description</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="255" name="txtLoanShortDescription" value="<?php echo set_value('txtLoanShortDescription'); ?>" placeholder="Write Loan short Description">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
-                                                </section>
+
+
+                                            <div id="interest_rate">
+
 
                                             </div>
-
 
                         </article>
                         <!-- WIDGET END -->
