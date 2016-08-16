@@ -237,7 +237,7 @@ Use search to find needed section.
         <!-- end search mobile button -->
 
         <!-- input: search field -->
-        <form action="search.html" class="header-search pull-right">
+        <form action="" class="header-search pull-right">
             <input id="search-fld"  type="text" name="param" placeholder="Find reports and more" data-autocomplete='[
 					"ActionScript",
 					"AppleScript",

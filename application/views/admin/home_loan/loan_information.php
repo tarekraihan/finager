@@ -184,10 +184,10 @@
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="is_fixed">Variable Interest
+                                                        <input type="checkbox" name="is_fixeds">Variable Interest
                                                     </label>
                                                     <label class="radio-inline">
-                                                        <input type="radio" name="is_fixed">Fixed Interest
+                                                        <input type="radio" name="is_fixed" id="is_fixed" value="fixed">Fixed Interest
                                                     </label>
 
                                                 </section>
@@ -516,5 +516,36 @@
                 }
             });
         });
+
+    });
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+//        alert(1);
+
+        $('input[name="is_fixed"]:checked').each(function(){
+            alert(1);
+        });
+
+          $('input[type="radio"]:checked').change(function(){
+           /* if($(this).val()=="fixed")
+            {*/
+                alert();
+               $.ajax({
+                        type: 'post',
+                        url: <?php echo base_url(); ?>'home_loan/ajax_home_loan_interest_variable',
+                        dataType: 'html'
+                    })
+                    .done(function(data) {
+                        $('#interest_rate').html(data);
+                });
+            }
+            else
+            {
+                $('#interest_rate').html('');
+            }
+
+        })
     });
 </script>

@@ -106,8 +106,6 @@ class Backdoor extends CI_Controller {
         }
     }
 
-
-
     public function admin_login(){
         $email = htmlentities($this->input->post('txtEmail'));
         $password = trim($this->input->post('txtPassword'));
@@ -159,8 +157,5 @@ class Backdoor extends CI_Controller {
         $this->output->set_header("Pragma: no-cache");
         redirect(base_url().'backdoor', 'refresh');
     }
-
-
-
 
 }

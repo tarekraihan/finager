@@ -658,6 +658,10 @@ class Home_Loan extends CI_Controller {
 
     }
 
+    public function ajax_home_loan_interest_variable(){
+        $this->load->view('admin/home_loan/home_loan_interest_variable');
+    }
+
 
 //    Front End query--------------------------------
 
