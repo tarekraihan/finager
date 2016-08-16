@@ -181,21 +181,37 @@
                                                     <label class="red"><?php echo form_error('txtDownPayment');?></label>
                                                 </section>
                                             </div>
+
                                             <div class="row">
-                                                <section class="col col-6">
-                                                    <label class="radio-inline">
-                                                        <input type="checkbox" name="is_fixeds">Variable Interest
+                                                <section class="col col-6"  >
+                                                    <label class="radio-inline" style="margin-left: 25px ">
+                                                        <input type="radio" name="is_fixed" value="variable" > Variable Interest
                                                     </label>
-                                                    <label class="radio-inline">
-                                                        <input type="radio" name="is_fixed" id="is_fixed" value="fixed">Fixed Interest
+                                                    <label class="radio-inline" style=" margin-left:35px">
+                                                        <input type="radio" name="is_fixed" id="is_fixed" value="fixed" checked > Fixed Interest
                                                     </label>
 
                                                 </section>
+                                                <section class="col col-6">
+                                                    <label class="label">Loan Short Description</label>
+                                                    <label class="input">
+                                                        <input type="text"  name="txtLoanShortDescription" value="<?php echo set_value('txtLoanShortDescription'); ?>" placeholder="Write short description">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
+                                                </section>
                                             </div>
-
-
                                             <div id="interest_rate">
 
+                                                <div class="row">
+                                                    <section class="col col-6">
+                                                        <label class="label">Interest Rate Fixed (%)</label>
+                                                        <label class="input">
+                                                            <input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php echo set_value('txtInterestRateFixed'); ?>" placeholder="Write Interest Rate without percentage sign">
+                                                        </label>
+                                                        <label class="red"><?php echo form_error('txtInterestRateFixed');?></label>
+                                                    </section>
+
+                                                </div>
 
                                             </div>
 
@@ -497,55 +513,33 @@
 </div>
 <!-- END MAIN PANEL -->
 
-<script>
-    $(function() {
-        $("#txtBankName").change(function () {
-            var data = $("#txtBankName").val();
-           //console.log(data);
-            $.ajax({
-                type:"POST",
-                url:"<?php echo base_url();?>card/get_card_name",
-                data:{id : data},
-                success: function(response){
-                    if(response != "error"){
-                        //console.log(response);return;
-                       document.getElementById('txtCardName').innerHTML = response;
-                    }else{
-                        alert(response);
-                    }
-                }
-            });
-        });
-
-    });
-</script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-//        alert(1);
+        $("input[name ='is_fixed']").click(function() {
+            var v_value = $(this).val();
+            if(v_value == 'fixed'){
+                $.ajax({
+                    url: "<?php echo base_url(); ?>home_loan/ajax_home_loan_interest_variable",
+                    type : "POST",
+                    dataType : "html"
+                })
+                .done(function( data ) {
+                    $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php echo set_value('txtInterestRateFixed'); ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
+                });
 
-        $('input[name="is_fixed"]:checked').each(function(){
-            alert(1);
-        });
+            }
 
-          $('input[type="radio"]:checked').change(function(){
-           /* if($(this).val()=="fixed")
-            {*/
-                alert();
-               $.ajax({
-                        type: 'post',
-                        url: <?php echo base_url(); ?>'home_loan/ajax_home_loan_interest_variable',
-                        dataType: 'html'
-                    })
-                    .done(function(data) {
-                        $('#interest_rate').html(data);
+            if(v_value == 'variable'){
+                $.ajax({
+                    url: "<?php echo base_url(); ?>home_loan/ajax_home_loan_interest_variable",
+                    type : "POST",
+                    dataType : "html"
+                })
+                .done(function( data ) {
+                    $('#interest_rate').html(data);
                 });
             }
-            else
-            {
-                $('#interest_rate').html('');
-            }
-
-        })
+        });
     });
 </script>

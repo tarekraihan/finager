@@ -365,53 +365,34 @@
     </div>
 </section>
 
-<script>
-    $(document).ready(function(){
-//        loadData();
-    });
-
-
-    function loading_show(){
-        $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30' />").fadeIn('fast');
-    }
-    function loading_hide(){
-        $('#loading').html("");
-    }
-
-    function loadData(){
-        loading_show();
-
-
-        $.ajax
-        ({
-            type: "POST",
-            url: "<?php echo base_url();?>home_loan/ajax_get_credit_card",
-            data: main_string,
-            cache: false,
-            success: function(msg)
-            {
-
-                loading_hide();
-                // console.log(msg);
-
-                $("#SearchHomeLoan").html(msg);
-
-            }
-        });
-    }
-</script>
 
 
 <script>
     $(document).ready(function(){
         $("#repbtn").click(function(){
+
             $("#moreInfo2").removeClass("in");
         });
+/*
+
+        $("#more").click(function(){
+            $("#rePaymentSchedule2").hide();
+        });
+*/
+
 
         $("#more").click(function(){
             $("#rePaymentSchedule2").removeClass("in");
         });
 
 
+        /*$('[data-toggle="toggle"]').change(function(){
+            $(this).parents().next('.hide').toggle();
+        });*/
+
+
+
     });
+
+
 </script>

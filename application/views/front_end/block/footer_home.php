@@ -40,17 +40,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jquery.ui.touch-punch.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
 <script>
-    $(document).ready(function() {
 
-        $('[data-toggle="toggle"]').change(function(){
-            $(this).parents().next('.hide').toggle();
-        });
-
-        $("#more").click(function(){
-            $("#rePaymentSchedule2").hide();
-        });
-
-    });
 </script>
 
 

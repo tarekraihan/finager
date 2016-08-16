@@ -385,13 +385,11 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRateAverage', 'Interest Rate Average ', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRateMin', 'Interest Rate Min ', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRateMax', 'Interest Rate Max ', 'trim|required');
+            $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
 //            $this->form_validation->set_rules('txtApplicantType[]', ' Looking For ', 'trim|required');
-            $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
+//            $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
             $this->form_validation->set_rules('txtHomeLoanUser[]', ' Loan User ', 'trim|required');
             $this->form_validation->set_rules('txtSecurityRequired', 'Security Required ', 'trim|required');
             $this->form_validation->set_rules('txtLoanShortDescription', 'Short Description', 'trim|required');
@@ -399,12 +397,9 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtFeatures', 'Features ', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility ', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
-            $this->form_validation->set_rules('txtDownPaymentFlat', 'Flat down payment ', 'trim');
-            $this->form_validation->set_rules('txtDownPaymentHomeConstruction', 'Home Construction down payment ', 'trim');
-            $this->form_validation->set_rules('txtDownPaymentHousingPlot', 'Housing Plot down payment ', 'trim');
-            $this->form_validation->set_rules('txtDownPaymentExtensionFinishWork', 'Extension Finish Work down payment ', 'trim');
-            $this->form_validation->set_rules('txtDownPaymentHomeLoanTakeOver', 'Home Loan Take Over down payment ', 'trim');
-//            echo validation_errors('<div class="error">', '</div>'); die;
+            $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
+
+            echo validation_errors('<div class="error">', '</div>');// die;
 
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
@@ -414,9 +409,15 @@ class Home_Loan extends CI_Controller {
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
+                $is_fixed =$this->input->post('is_fixed');
+                $fixed = 0;
+                if($is_fixed == 'fixed'){
+                    $fixed =1;
+                }
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
                     'loan_type_id' => $this->input->post('txtLoanType'),
+                    'home_loan_looking_for_id' => $this->input->post('txtLookingFor'),
                     'home_loan_name' => htmlentities($this->input->post('txtLoanName')),
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
                     'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
@@ -424,23 +425,21 @@ class Home_Loan extends CI_Controller {
                     'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
                     'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
                     'interest_rate_average' => htmlentities($this->input->post('txtInterestRateAverage')),
-                    'downpayment_flat' => htmlentities($this->input->post('txtDownPaymentFlat')),
-                    'downpayment_home_construction' => htmlentities($this->input->post('txtDownPaymentHomeConstruction')),
-                    'downpayment_housing_plot' => htmlentities($this->input->post('txtDownPaymentHousingPlot')),
-                    'downpayment_extension_finish_work' => htmlentities($this->input->post('txtDownPaymentExtensionFinishWork')),
-                    'downpayment_home_loan_take_over' => htmlentities($this->input->post('txtDownPaymentHomeLoanTakeOver')),
+                    'interest_rate_fixed' => htmlentities($this->input->post('txtInterestRateFixed')),
                     'security_required' => $this->input->post('txtSecurityRequired'),
                     'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'features' => $this->input->post('txtFeatures'),
                     'eligibility_for_applying' => $this->input->post('txtEligibility'),
                     'review' => $this->input->post('txtReview'),
+                    'is_fixed' => $fixed,
                     'required_document' => $this->input->post('txtRequiredDocument'),
+                    'downpayment' => $this->input->post('txtDownPayment'),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
                 $this->Common_model->table_name = 'home_loan_info';
                 $last_insert_id = $this->Common_model->insert();
-
+/*
                 foreach($this->input->post('txtLookingFor[]') as $lookingFor){
                     $this->Common_model->data = array(
                         'home_loan_info_id'=>$last_insert_id,
@@ -449,7 +448,7 @@ class Home_Loan extends CI_Controller {
                     $this->Common_model->table_name = 'home_loan_looking_for_home_loan_info';
                     $this->Common_model->insert();
                 }
-
+*/
 
 
 
@@ -599,7 +598,7 @@ class Home_Loan extends CI_Controller {
                 );
                 $this->Common_model->table_name = 'home_loan_info';
                 $last_insert_id = $this->Common_model->insert();
-
+/*
                 foreach($this->input->post('txtLookingFor[]') as $lookingFor){
                     $this->Common_model->data = array(
                         'home_loan_info_id'=>$last_insert_id,
@@ -607,7 +606,7 @@ class Home_Loan extends CI_Controller {
                     );
                     $this->Common_model->table_name = 'home_loan_looking_for_home_loan_info';
                     $this->Common_model->insert();
-                }
+                }*/
 
                 foreach($this->input->post('txtApplicantType[]') as $applicant){
                     $this->Common_model->data = array(
@@ -617,7 +616,7 @@ class Home_Loan extends CI_Controller {
                     $this->Common_model->table_name = 'home_loan_applicant_type_home_loan_info';
                     $this->Common_model->insert();
                 }
-
+/*
                 foreach($this->input->post('txtHomeLoanFeature[]') as $feature){
                     $this->Common_model->data = array(
                         'home_loan_info_id'=>$last_insert_id,
@@ -625,7 +624,7 @@ class Home_Loan extends CI_Controller {
                     );
                     $this->Common_model->table_name = 'home_loan_feature_home_loan_info';
                     $this->Common_model->insert();
-                }
+                }*/
 
 
                 $result='';
