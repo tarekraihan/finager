@@ -398,6 +398,7 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtEligibility', 'Eligibility ', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
+            $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
 
             echo validation_errors('<div class="error">', '</div>');// die;
 
@@ -434,6 +435,7 @@ class Home_Loan extends CI_Controller {
                     'is_fixed' => $fixed,
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'downpayment' => $this->input->post('txtDownPayment'),
+                    'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
