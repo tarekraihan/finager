@@ -325,50 +325,59 @@ class Auto_loan extends CI_Controller
             $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
-            $this->form_validation->set_rules('txtLoanShortDescription', ' Short Description', 'trim|required');
-            $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
-            $this->form_validation->set_rules('txtAutoLoanUser[]', ' Loan User ', 'trim|required');
+            $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRateAverage', 'Interest Rate Average ', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRateMin', 'Interest Rate Min ', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRateMax', 'Interest Rate Max ', 'trim|required');
+            $this->form_validation->set_rules('txtAutoLoanUser[]', ' Loan User ', 'trim|required');
+            $this->form_validation->set_rules('txtSecurityRequired', 'Security Required ', 'trim|required');
+            $this->form_validation->set_rules('txtLoanShortDescription', 'Short Description', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
-            $this->form_validation->set_rules('txtSecurityRequired', 'Security Required', 'trim|required');
-            $this->form_validation->set_rules('txtFeatures', 'Features', 'trim|required');
-            $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
+            $this->form_validation->set_rules('txtFeatures', 'Features ', 'trim|required');
+            $this->form_validation->set_rules('txtEligibility', 'Eligibility ', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
-
+            $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
+            $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
                 $this->load->view('admin/block/header', $data);
                 $this->load->view('admin/block/left_nav');
-                $this->load->view('admin/auto_loan/loan_information_new');
+                $this->load->view('admin/auto_loan/loan_information');
                 $this->load->view('admin/block/footer');
             }else{
+                $date = date('Y-m-d h:i:s');
+                $is_fixed =$this->input->post('is_fixed');
+                $fixed = 0;
+                if($is_fixed == 'fixed'){
+                    $fixed =1;
+                }
                 $date = date('Y-m-d h:i:s');
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
                     'loan_type_id' => $this->input->post('txtLoanType'),
                     'auto_loan_name' => htmlentities($this->input->post('txtLoanName')),
-                    'loan_short_description' => htmlentities($this->input->post('txtLoanShortDescription')),
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
                     'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
+                    'auto_loan_looking_for_id' => $this->input->post('txtLookingFor'),
+                    'loan_short_description' => $this->input->post('txtLoanShortDescription'),
                     'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
                     'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
-                    'interest_rate_average' => htmlentities($this->input->post('txtInterestRateMax')),
-                    'security_required' => htmlentities($this->input->post('txtSecurityRequired')),
-                    'fees_and_charges' => htmlentities($this->input->post('txtFeesAndCharges')),
-                    'features' => htmlentities($this->input->post('txtFeatures')),
-                    'eligibility_for_applying' => htmlentities($this->input->post('txtEligibility')),
-                    'required_document' => htmlentities($this->input->post('txtRequiredDocument')),
-
+                    'interest_rate_average' => htmlentities($this->input->post('txtInterestRateAverage')),
+                    'interest_rate_fixed' => htmlentities($this->input->post('txtInterestRateFixed')),
+                    'security_required' => $this->input->post('txtSecurityRequired'),
+                    'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
+                    'features' => $this->input->post('txtFeatures'),
+                    'eligibility_for_applying' => $this->input->post('txtEligibility'),
+                    'review' => $this->input->post('txtReview'),
+                    'is_fixed' => $fixed,
+                    'required_document' => $this->input->post('txtRequiredDocument'),
+                    'downpayment' => $this->input->post('txtDownPayment'),
+                    'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
                 $this->Common_model->table_name = 'auto_loan_info';
-//              $last_insert_id = $this->Common_model->insert();
-                $result = $this->Common_model->insert();
+              $last_insert_id = $this->Common_model->insert();
+//                $result = $this->Common_model->insert();
 /*
                 foreach($this->input->post('txtLookingFor[]') as $lookingFor){
                     $this->Common_model->data = array(
@@ -378,8 +387,7 @@ class Auto_loan extends CI_Controller
                     $this->Common_model->table_name = 'auto_loan_info_vs_i_want';
                     $this->Common_model->insert();
                 }
-
-
+*/
                 $result='';
                 foreach($this->input->post('txtAutoLoanUser[]') as $user){
                     $this->Common_model->data = array(
@@ -388,7 +396,7 @@ class Auto_loan extends CI_Controller
                     );
                     $this->Common_model->table_name = 'auto_loan_info_vs_i_am';
                     $result = $this->Common_model->insert();
-                }*/
+                }
 
                 if ($result) {
                     redirect(base_url().'auto_loan/loan_info/success');
@@ -399,6 +407,14 @@ class Auto_loan extends CI_Controller
         }else {
             redirect(base_url().'backdoor');
         }
+    }
+
+    public function loan_list(){
+        $data['title'] = "Loan Information";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/auto_loan/loan_list');
+        $this->load->view('admin/block/footer');
     }
 
     public function loan_info_backed_by_tarek_03_07_2016($msg=''){

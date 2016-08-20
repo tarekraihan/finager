@@ -400,7 +400,7 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
 
-            echo validation_errors('<div class="error">', '</div>');// die;
+//            echo validation_errors('<div class="error">', '</div>');// die;
 
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
