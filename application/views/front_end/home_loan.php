@@ -277,11 +277,11 @@
                            <div class="col-sm-12 col-xs-12 home_loan_button">
                                <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
 
-                               <span class="more_info_icon Hloan_more_icon"><a role="button" id="more" data-toggle="collapse" href="#moreInfo'.$row->id.'" aria-expanded="false" aria-controls="moreInfo'.$row->id.'" data-moreinfo="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
+                               <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
                                <span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
-                               <span class="more_info_icon Hloan_more_icon"><a id="repbtn" role="button" data-toggle="collapse" href="#rePaymentSchedule'.$row->id.'" aria-expanded="false" aria-controls="rePaymentSchedule'.$row->id.'" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
+                               <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
                            </div>
-                           <div class="collapse" id="moreInfo' .$row->id.'">
+                           <div class="collapse" id="moreInfo'.$row->id.' ">
                              <div class="col-md-12">
                                    <section id="tab">
                                        <!-- Nav tabs -->
@@ -337,15 +337,12 @@
                                                    </div>
                                                </div>
                                            </div>
-                                           <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
-                                               '.$row->review.'
-                                           </div>
+                                           <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">'.$row->review.'</div>
                                            <div role="tabpanel" class="tab-pane" id="UserReviews'.$row->id.'">...</div>
                                        </div>
                                    </section>
                                </div>
                             </div>
-
                            <div class="collapse" id="rePaymentSchedule'.$row->id.'">
                                <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
                                <iframe  src="'.base_url().'en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>
@@ -369,30 +366,28 @@
 
 <script>
     $(document).ready(function(){
-        $("#repbtn").click(function(){
+        $('#searchHomeLoan').on('click', '.rePaymentSchedule', function (){
 
-            $("#moreInfo2").removeClass("in");
+            var  formData = $(this).data();
+            var repayment = formData.repayment;
+            console.log(repayment);
+            //$("#repbtn").click(function(){
+
+                $("#moreInfo2").removeClass("in");
+
         });
-/*
+        // });
 
-        $("#more").click(function(){
-            $("#rePaymentSchedule2").hide();
+        $('#searchHomeLoan').on('click', '.more_info', function (){
+
+            var  formData = $(this).data();
+            var loan_id = formData.loan_id;
+            console.log(loan_id);
+            //$("#more").click(function(){
+                $("#rePaymentSchedule2").removeClass("in");
+            //});
+
         });
-*/
-
-
-        $("#more").click(function(){
-            $("#rePaymentSchedule2").removeClass("in");
-        });
-
-
-        /*$('[data-toggle="toggle"]').change(function(){
-            $(this).parents().next('.hide').toggle();
-        });*/
-
-
-
     });
-
 
 </script>
