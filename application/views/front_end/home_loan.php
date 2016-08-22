@@ -281,7 +281,7 @@
                                <span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                                <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
                            </div>
-                           <div class="collapse" id="moreInfo'.$row->id.' ">
+                           <div class="collapse" id="moreInfo'.$row->id.'">
                              <div class="col-md-12">
                                    <section id="tab">
                                        <!-- Nav tabs -->
@@ -320,7 +320,7 @@
                                            </div>
                                            <div role="tabpanel" class="tab-pane" id="Eligibility'.$row->id.'">
                                                <div class="card_details_pronsCons">
-                                                   <h4>Eligibility for Applying</h4>
+                                                   <h4>Eligibility</h4>
                                                    <div class="prosConsHr"></div><br/>
                                                    <div class="prosCons_body2">
                                                        <h4>Minimum Income:</h4>
@@ -363,31 +363,38 @@
 </section>
 
 
-
 <script>
     $(document).ready(function(){
+
+        $('#searchHomeLoan').on('click', '.more_info', function (){
+
+            var  formData = $(this).data();
+            var loan_id = formData.loan_id;
+            //});
+
+            console.log(loan_id);
+
+            $("#moreInfo"+loan_id).toggleClass("in");
+            $('#rePaymentSchedule'+loan_id).removeClass("in");
+            alert('#moreInfo'+loan_id);
+
+        });
+
         $('#searchHomeLoan').on('click', '.rePaymentSchedule', function (){
 
             var  formData = $(this).data();
             var repayment = formData.repayment;
             console.log(repayment);
             //$("#repbtn").click(function(){
-
-                $("#moreInfo2").removeClass("in");
+            $('#rePaymentSchedule'+repayment).toggleClass("in");
+            $('#moreInfo'+repayment).removeClass("in");
+//            alert('#moreInfo'+repayment);
 
         });
         // });
 
-        $('#searchHomeLoan').on('click', '.more_info', function (){
 
-            var  formData = $(this).data();
-            var loan_id = formData.loan_id;
-            console.log(loan_id);
-            //$("#more").click(function(){
-                $("#rePaymentSchedule2").removeClass("in");
-            //});
-
-        });
     });
 
 </script>
+
