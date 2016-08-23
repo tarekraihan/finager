@@ -1,9 +1,3 @@
-<style>
-    .collapse.in {
-        display: block !important;
-    }
-</style>
-
 <section id="card">
     <div class="container">
         <div class="row">
@@ -233,25 +227,27 @@
                     $home_loan = $this->Front_end_select_model->select_home_loan_info();
                     $home = '';
                     foreach($home_loan->result() as $row){
+                        $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg)' : $row->interest_rate_fixed.' % (Fixed)';
+                        $interest_min_max =($row->is_fixed =='0')? 'min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>' : '';
 
                         $home .='<div class="full-card">
                        <div class="row home_loan_right_bar no-margin-lr2">
                            <div class="col-sm-3 col-xs-3">
-                               <a href="home_loan_details.php"><img title="'.$row->id.'" class="img-responsive" src="'.base_url().'resource/front_end/images/visa_card.png" /></a>
+                               <a href="home_loan_details.php"><img title="'.$row->id.'" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
                            </div>
                            <div class="col-sm-9 col-xs-9">
                                <div class="row">
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
-                                           <h5>Security Required </h5>
-                                           <p>'.$row->security_required.'</p>
+                                           <h5>Amount</h5>
+                                           <p>100000</p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Interest (Mid Rate)</h5>
-
-                                           <p>'.$row->interest_rate_average.' % <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>
+                                           <p>'.$interest.'<br/>
+                                           '.$interest_min_max.'
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
@@ -263,7 +259,7 @@
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Total Payable Amount</h5>
-                                           <p>120000</p>
+                                           <p>50%,<br/><span class="tPaybleAmount">based on 100000</span></p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
@@ -286,17 +282,30 @@
                                    <section id="tab">
                                        <!-- Nav tabs -->
                                        <ul class="nav nav-tabs" role="tablist">
-                                           <li role="presentation" class="active"><a href="#FeesCharges'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Fees & Charges</a></li>
-                                           <li role="presentation"><a href="#Features'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Features</a></li>
-                                           <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Eligibility for Applying</a></li>
-                                           <li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Required Documents</a></li>
+                                           <li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Features</a></li>
+                                           <li role="presentation" ><a href="#FeesCharges'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Fees & Charges</a></li>
+                                           <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Eligibility</a></li>
+                                           <li role="presentation"><a href="#Security'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Security</a></li>
+                                           <li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Required Doc</a></li>
+                                           <li role="presentation"><a href="#TermsConditions" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
                                            <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
                                            <li role="presentation"><a href="#UserReviews'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User reviews</a></li>
                                        </ul>
 
                                        <!-- Tab panes -->
                                        <div class="tab-content">
-                                           <div role="tabpanel" class="tab-pane active" id="FeesCharges'.$row->id.'">
+                                           <div role="tabpanel" class="tab-pane  active" id="Features'.$row->id.'">
+                                                   <section id="card_details_FeesCharges">
+                                                       <div class="card_details_pronsCons">
+                                                           <h4>Features</h4>
+                                                           <div class="prosConsHr"></div><br/>
+                                                           <div class="prosCons_body2 trbodywidth">
+                                                           '.$row->features.'
+                                                       </div>
+                                                   </div>
+                                               </section>
+                                           </div>
+                                           <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
                                                <section id="card_details_FeesCharges">
                                                    <div class="card_details_pronsCons">
                                                        <h4>Fees & Charges</h4>
@@ -307,17 +316,18 @@
                                                    </div>
                                                </section>
                                            </div>
-                                           <div role="tabpanel" class="tab-pane" id="Features'.$row->id.'">
+
+                                           <div role="tabpanel" class="tab-pane" id="Security'.$row->id.'">
                                                <section id="card_details_FeesCharges">
                                                    <div class="card_details_pronsCons">
-                                                       <h4>Features</h4>
+                                                       <h4>Security Required</h4>
                                                        <div class="prosConsHr"></div><br/>
                                                        <div class="prosCons_body2 trbodywidth">
-                                                           '.$row->features.'
-                                                       </div>
-                                                   </div>
+                                                       '.$row->security_required.'</div>
+                                                    </div>
                                                </section>
                                            </div>
+
                                            <div role="tabpanel" class="tab-pane" id="Eligibility'.$row->id.'">
                                                <div class="card_details_pronsCons">
                                                    <h4>Eligibility</h4>
@@ -329,13 +339,21 @@
                                                </div>
                                            </div>
                                            <div role="tabpanel" class="tab-pane" id="RequiredDocuments'.$row->id.'">
-                                               <div class="card_details_pronsCons">
-                                                   <h4>Required Documents</h4>
-                                                   <div class="prosConsHr"></div><br/>
-                                                   <div class="prosCons_body2">
-                                                       '.$row->required_document.'
-                                                   </div>
-                                               </div>
+                                              <section id="card_details_FeesCharges">
+                                                   <div class="card_details_pronsCons">
+                                                       <h4>Required Documents</h4>
+                                                       <div class="prosConsHr"></div><br/>
+                                                       <div class="prosCons_body2 trbodywidth">
+                                                       '.$row->required_document.'</div>
+                                                    </div>
+                                              </section>
+                                           </div>
+                                           <div role="tabpanel" class="tab-pane" id="TermsConditions">
+                                                    <h4>Terms and Conditions</h4>
+                                                    <div class="prosConsHr"></div><br/>
+                                                    <div class="prosCons_body2">
+                                                       '.$row->terms_and_conditions.'
+                                                    </div>
                                            </div>
                                            <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">'.$row->review.'</div>
                                            <div role="tabpanel" class="tab-pane" id="UserReviews'.$row->id.'">...</div>
@@ -345,7 +363,7 @@
                             </div>
                            <div class="collapse" id="rePaymentSchedule'.$row->id.'">
                                <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
-                               <iframe  src="'.base_url().'en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>
+
                            </div>
                        </div>
                    </div>';
@@ -376,7 +394,7 @@
 
             $("#moreInfo"+loan_id).toggleClass("in");
             $('#rePaymentSchedule'+loan_id).removeClass("in");
-            alert('#moreInfo'+loan_id);
+//            alert('#moreInfo'+loan_id);
 
         });
 
@@ -386,6 +404,7 @@
             var repayment = formData.repayment;
             console.log(repayment);
             //$("#repbtn").click(function(){
+            $('#rePaymentSchedule'+repayment).html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#rePaymentSchedule'+repayment).toggleClass("in");
             $('#moreInfo'+repayment).removeClass("in");
 //            alert('#moreInfo'+repayment);

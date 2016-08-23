@@ -39,39 +39,5 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/clientlib.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jquery.ui.touch-punch.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
-<script>
-
-</script>
-
-
-<script type="text/javascript">
-
-
-    //for show hide (more info & Repayment Schedule)
-
-    $(document).ready(function() {
-       /* $('#searchHomeLoan').on('click', '.hideDetailsButton', function () {
-            var  formData = $(this).data();
-            var moreinfo_id = formData.moreinfo;
-            var ele = document.getElementById("toggleText"+moreinfo_id);
-            var text = document.getElementById("displayText");
-
-            console.log(ele);
-            if(ele.style.display == "block") {
-                ele.style.display = "none";
-                text.html("<i class='fa fa-info-circle'></i> more info");
-            }
-            else {
-                ele.style.display = "block";
-                text.html("<i class='fa fa-info-circle'></i> Less info");
-            }
-
-        });*/
-    });
-
-
-
-
-</script>
 </body>
 </html>

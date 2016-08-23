@@ -41,8 +41,22 @@
             background: none;
         }
         .card_details_pronsCons {
-            margin-top:0px;
-            border-bottom:0px;
+            margin-top:0;
+            border-bottom:0;
+        }
+
+        .tPaybleAmount{
+            font-size:9px;
+            font-style: italic;
+        }
+
+        .collapse.in {
+            display: block !important;
+        }
+        .nav>li>a {
+            position: relative;
+            display: block;
+            padding: 10px 10px !important;
         }
 
     </style>
