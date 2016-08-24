@@ -360,7 +360,7 @@ class Select_Model extends CI_Model
 					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
 
                 $result.='</td>
-                    <td><a href="#" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'home_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

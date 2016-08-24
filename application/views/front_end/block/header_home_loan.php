@@ -58,6 +58,19 @@
             display: block;
             padding: 10px 10px !important;
         }
+        .home_loan_logo{
+            border:1px solid #EAEAEC;
+        }
+        .home_loan_bank_name{
+            text-align: center;
+            font-weight: 700;
+            display: block;
+            margin-top: 5px;
+        }
+        .home_loan_bank_name a{
+            text-decoration: none;
+            color: #000000;
+        }
 
     </style>
 </head>

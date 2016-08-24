@@ -227,13 +227,14 @@
                     $home_loan = $this->Front_end_select_model->select_home_loan_info();
                     $home = '';
                     foreach($home_loan->result() as $row){
-                        $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg)' : $row->interest_rate_fixed.' % (Fixed)';
-                        $interest_min_max =($row->is_fixed =='0')? 'min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>' : '';
+                        $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
+                        $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
 
                         $home .='<div class="full-card">
                        <div class="row home_loan_right_bar no-margin-lr2">
                            <div class="col-sm-3 col-xs-3">
-                               <a href="home_loan_details.php"><img title="'.$row->id.'" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+                               <a href="home_loan_details.php"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+                               <small class="home_loan_bank_name"><a  href="">'.$row->bank_name.'</a></small>
                            </div>
                            <div class="col-sm-9 col-xs-9">
                                <div class="row">
@@ -245,7 +246,7 @@
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
-                                           <h5>Interest (Mid Rate)</h5>
+                                           <h5>Interest Rate</h5>
                                            <p>'.$interest.'<br/>
                                            '.$interest_min_max.'
                                        </div>
@@ -258,24 +259,24 @@
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
-                                           <h5>Total Payable Amount</h5>
+                                           <h5>Payable Amount</h5>
                                            <p>50%,<br/><span class="tPaybleAmount">based on 100000</span></p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
-                                           <h5>Down Payment (Min)</h5>
+                                           <h5>Down Payment</h5>
                                            <p>20000</p>
                                        </div>
                                    </div>
                                </div>
                            </div>
                            <div class="col-sm-12 col-xs-12 home_loan_button">
-                               <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
 
                                <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
                                <span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                                <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
+                               <img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
                            </div>
                            <div class="collapse" id="moreInfo'.$row->id.'">
                              <div class="col-md-12">
