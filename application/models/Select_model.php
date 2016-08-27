@@ -425,5 +425,12 @@ class Select_Model extends CI_Model
 
     }
 
+    public function get_home_loan_looking_for_home_loan_info($id){
+        $sql="SELECT home_loan_looking_for_id FROM `home_loan_looking_for_home_loan_info` WHERE home_loan_info_id = $id";
+        $query=$this->db->query($sql);
+        return $query->result_array();
+
+    }
+
 
 }

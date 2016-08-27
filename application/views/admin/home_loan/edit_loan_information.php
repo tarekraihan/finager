@@ -148,7 +148,15 @@ if(isset($_GET['id'])){
                                                     <label class="label">Loan Type</label>
                                                     <label class="select">
                                                         <select name="txtLoanType" id="txtLoanType">
-                                                            <?php echo $this->Select_model->loan_type();?>
+                                                            <?php
+                                                            $result=$this->Select_model->select_all('loan_type');
+//                                                            print_r($result);die;
+                                                            foreach($result->result() as $row1){
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["loan_type_id"]) && $row["loan_type_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLoanType",$row1->id)?>><?php echo $row1->loan_type ; ?></option>';
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanType');?></label>
@@ -159,7 +167,7 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Loan Name </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php echo set_value('txtLoanName'); ?>" placeholder="Write Loan Name">
+                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php if(isset($row["home_loan_name"]) && $row["home_loan_name"] != ""){echo $row["home_loan_name"];}else{echo set_value('txtLoanName');} ?>" placeholder="Write Loan Name">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanName');?></label>
                                                 </section>
@@ -167,7 +175,16 @@ if(isset($_GET['id'])){
                                                     <label class="label">Looking For</label>
                                                     <label class="select">
                                                         <select name="txtLookingFor" id="txtLookingFor">
-                                                            <?php echo $this->Select_model->looking_for();?>
+                                                            <?php
+                                                            $result=$this->Select_model->select_all('home_loan_looking_for');
+                                                            //  print_r($result);die;
+
+                                                            foreach($result->result() as $row1){
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["home_loan_looking_for_id"]) && $row["home_loan_looking_for_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLookingFor",$row1->id)?>><?php echo $row1->home_loan_looking_for ; ?></option>';
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLookingFor');?></label>
@@ -190,7 +207,23 @@ if(isset($_GET['id'])){
                                                     <label class="label">Loan User</label>
                                                     <label class="select">
                                                         <select multiple style="width:100%" class="select2" name="txtHomeLoanUser[]" required>
-                                                            <?php echo $this->Select_model->home_loan_user();?>
+                                                            <?php
+                                                            $result1=$this->Select_model->select_all('home_loan_user');
+                                                            $user_id =$this->Select_model->get_home_loan_looking_for_home_loan_info($row['id']);
+                                                            $user = arry();
+                                                            foreach($user_id->result() as $p){
+                                                                array_push($user,$p);
+                                                            }
+
+
+                                                            foreach($result1->result() as $row1){
+                                                                for($i=0;$i<$count;$i++) {
+                                                                    ?>
+                                                                    <option value="<?php echo $row1->id;?>" <?php if ($user_id[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtHomeLoanUser[]", $row1->id)?>><?php echo $row1->home_loan_user; ?></option>';
+                                                                <?php
+                                                                }
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtHomeLoanUser[]');?></label>
