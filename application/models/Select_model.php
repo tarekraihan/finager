@@ -233,13 +233,13 @@ class Select_Model extends CI_Model
     {
         $sql="SELECT * FROM `home_loan_user`";
         $query=$this->db->query($sql);
-        $option="<option value=''>-- Select One --</option>";
+       /* $option="<option value=''>-- Select One --</option>";
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanUser[]",$row->id).'>'.$row->home_loan_user.'</option>';
 
-        }
-        return $option;
+        }*/
+        return $query;
     }
 
 
@@ -425,8 +425,8 @@ class Select_Model extends CI_Model
 
     }
 
-    public function get_home_loan_looking_for_home_loan_info($id){
-        $sql="SELECT home_loan_looking_for_id FROM `home_loan_looking_for_home_loan_info` WHERE home_loan_info_id = $id";
+    public function get_home_loan_user_home_loan_info($id){
+        $sql="SELECT home_loan_user_id FROM `home_loan_user_home_loan_info` WHERE home_loan_info_id = $id";
         $query=$this->db->query($sql);
         return $query->result_array();
 

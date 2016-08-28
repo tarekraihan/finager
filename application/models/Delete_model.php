@@ -30,4 +30,12 @@ class Delete_Model extends CI_Model {
 
     }
 
+    function Delete_All_Row($id,$table,$id_field)
+    {
+
+        $query="DELETE FROM ".$table." WHERE ".$id_field."='$id'";
+        $result=$this->db->query($query);
+    }
+
+
 } 

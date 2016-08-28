@@ -288,7 +288,7 @@
                                            <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Eligibility</a></li>
                                            <li role="presentation"><a href="#Security'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Security</a></li>
                                            <li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Required Doc</a></li>
-                                           <li role="presentation"><a href="#TermsConditions" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+                                           <li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
                                            <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
                                            <li role="presentation"><a href="#UserReviews'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User reviews</a></li>
                                        </ul>
@@ -349,7 +349,7 @@
                                                     </div>
                                               </section>
                                            </div>
-                                           <div role="tabpanel" class="tab-pane" id="TermsConditions">
+                                           <div role="tabpanel" class="tab-pane" id="TermsConditions'.$row->id.'">
                                                     <h4>Terms and Conditions</h4>
                                                     <div class="prosConsHr"></div><br/>
                                                     <div class="prosCons_body2">
