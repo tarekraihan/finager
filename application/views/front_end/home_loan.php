@@ -235,6 +235,7 @@
                            <div class="col-sm-3 col-xs-3">
                                <a href="home_loan_details.php"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
                                <small class="home_loan_bank_name"><a  href="">'.$row->bank_name.'</a></small>
+                               <small class="home_loan_bank_name">'.$row->home_loan_looking_for.'</small>
                            </div>
                            <div class="col-sm-9 col-xs-9">
                                <div class="row">

@@ -233,12 +233,13 @@ class Select_Model extends CI_Model
     {
         $sql="SELECT * FROM `home_loan_user`";
         $query=$this->db->query($sql);
-       /* $option="<option value=''>-- Select One --</option>";
-        foreach($query->result() as $row)
-        {
-            $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanUser[]",$row->id).'>'.$row->home_loan_user.'</option>';
+        return $query;
+    }
 
-        }*/
+    function auto_loan_all_user()
+    {
+        $sql="SELECT * FROM `auto_i_am`";
+        $query=$this->db->query($sql);
         return $query;
     }
 
@@ -393,7 +394,7 @@ class Select_Model extends CI_Model
 					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
 
                 $result.='</td>
-                    <td><a href="#" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'auto_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;
@@ -426,9 +427,21 @@ class Select_Model extends CI_Model
     }
 
     public function get_home_loan_user_home_loan_info($id){
-        $sql="SELECT home_loan_user_id FROM `home_loan_user_home_loan_info` WHERE home_loan_info_id = $id";
-        $query=$this->db->query($sql);
-        return $query->result_array();
+        if(!empty($id)) {
+            $sql = "SELECT home_loan_user_id FROM `home_loan_user_home_loan_info` WHERE home_loan_info_id = $id";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
+
+    }
+
+    public function get_auto_loan_info_vs_i_am($id){
+        if(!empty($id)){
+
+            $sql="SELECT i_am_id FROM `auto_loan_info_vs_i_am` WHERE auto_loan_info_id = $id";
+            $query=$this->db->query($sql);
+            return $query->result_array();
+        }
 
     }
 

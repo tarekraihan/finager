@@ -1,12 +1,7 @@
 <?php
-/*$result1=$this->Select_model->select_all('home_loan_user');
-foreach($result1->result() as $k){
-    echo $k->home_loan_user;
-}
-die;*/
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $table='home_loan_info';
+    $table='auto_loan_info';
     $id_field='id';
     $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
 //    print_r($row);die;
@@ -14,8 +9,8 @@ if(isset($_GET['id'])){
     $row['id']='';
     $row['bank_id']='';
     $row['loan_type_id']='';
-    $row['home_loan_looking_for_id']='';
-    $row['home_loan_name']='';
+    $row['auto_loan_looking_for_id']='';
+    $row['auto_loan_name']='';
     $row['loan_short_description']='';
     $row['min_loan_amount']='';
     $row['max_loan_amount']='';
@@ -33,8 +28,10 @@ if(isset($_GET['id'])){
     $row['terms_and_conditions']='';
     $row['review']='';
 
+
 }
 ?>
+
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
@@ -64,15 +61,15 @@ if(isset($_GET['id'])){
     <!-- RIBBON -->
     <div id="ribbon">
 
-				<span class="ribbon-button-alignment">
+				<span class="ribbon-button-alignment"> 
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
 						<i class="fa fa-refresh"></i>
-					</span>
+					</span> 
 				</span>
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Loan</li><li>Home Loan</li><li> Edit Loan Information</li>
+            <li>Loan</li><li>Auto Loan</li><li> Edit Loan Information</li>
         </ol>
     </div>
     <!-- END RIBBON -->
@@ -84,8 +81,8 @@ if(isset($_GET['id'])){
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
-                    Home Loan
-							<span>>
+                    Auto Loan
+							<span>> 
 								Edit Loan Information
                             </span>
                 </h1>
@@ -123,7 +120,7 @@ if(isset($_GET['id'])){
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>home_loan/edit_loan_info" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>auto_loan/edit_loan_info" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -135,7 +132,7 @@ if(isset($_GET['id'])){
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Bank Name</label>
-                                                    <input type="hidden" value="<?php echo $row['id'];?>" name="txtHomeLoanId">
+                                                    <input type="hidden" value="<?php echo $row['id'];?>" name="txtAutoLoanId">
                                                     <label class="select">
                                                         <select name="txtBankName" id="txtBankName">
                                                             <?php
@@ -156,7 +153,7 @@ if(isset($_GET['id'])){
                                                         <select name="txtLoanType" id="txtLoanType">
                                                             <?php
                                                             $result=$this->Select_model->select_all('loan_type');
-//                                                            print_r($result);die;
+                                                            //                                                            print_r($result);die;
                                                             foreach($result->result() as $row1){
                                                                 ?>
                                                                 <option value="<?php echo $row1->id;?>" <?php if(isset($row["loan_type_id"]) && $row["loan_type_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLoanType",$row1->id)?>><?php echo $row1->loan_type ; ?></option>';
@@ -173,21 +170,21 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Loan Name </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php if(isset($row["home_loan_name"]) && $row["home_loan_name"] != ""){echo $row["home_loan_name"];}else{echo set_value('txtLoanName');} ?>" placeholder="Write Loan Name">
+                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php if(isset($row["auto_loan_name"]) && $row["auto_loan_name"] != ""){echo $row["auto_loan_name"];}else{echo set_value('txtLoanName');} ?>" placeholder="Write Loan Name">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanName');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Looking For</label>
+                                                    <label class="label">I Want</label>
                                                     <label class="select">
                                                         <select name="txtLookingFor" id="txtLookingFor">
                                                             <?php
-                                                            $result=$this->Select_model->select_all('home_loan_looking_for');
+                                                            $result=$this->Select_model->select_all('auto_i_want');
                                                             //  print_r($result);die;
 
                                                             foreach($result->result() as $row1){
                                                                 ?>
-                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["home_loan_looking_for_id"]) && $row["home_loan_looking_for_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLookingFor",$row1->id)?>><?php echo $row1->home_loan_looking_for ; ?></option>';
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_want"]) && $row["i_want"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLookingFor",$row1->id)?>><?php echo $row1->i_want ; ?></option>';
                                                             <?php
                                                             }
                                                             ?>
@@ -210,16 +207,16 @@ if(isset($_GET['id'])){
 
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Loan User</label>
+                                                    <label class="label">I Am</label>
                                                     <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtHomeLoanUser[]" required>
+                                                        <select multiple style="width:100%" class="select2" name="txtAutoLoanUser[]" required>
                                                             <?php
-                                                            $result1=$this->Select_model->home_loan_user();
+                                                            $result1=$this->Select_model->auto_loan_all_user();
 
-                                                            $user_id =$this->Select_model->get_home_loan_user_home_loan_info($row['id']);
+                                                            $user_id =$this->Select_model->get_auto_loan_info_vs_i_am($row['id']);
 
                                                             $user = array();
-//                                                            print_r($user_id);
+                                                            //  print_r($user_id);
                                                             foreach($user_id as $k){
                                                                 foreach($k as $v){
                                                                     array_push($user,$v);
@@ -229,14 +226,14 @@ if(isset($_GET['id'])){
                                                             foreach($result1->result() as $row1){
                                                                 for($i=0;$i<$count;$i++) {
                                                                     ?>
-                                                                    <option value="<?php echo $row1->id;?>" <?php if ($user[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtHomeLoanUser[]", $row1->id)?>><?php echo $row1->home_loan_user; ?></option>';
+                                                                    <option value="<?php echo $row1->id;?>" <?php if ($user[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtAutoLoanUser[]", $row1->id)?>><?php echo $row1->i_am; ?></option>';
                                                                 <?php
                                                                 }
                                                             }
                                                             ?>
                                                         </select>
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtHomeLoanUser[]');?></label>
+                                                    <label class="red"><?php echo form_error('txtAutoLoanUser[]');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Loan Amount</label>
@@ -264,6 +261,7 @@ if(isset($_GET['id'])){
                                                 </section>
                                             </div>
 
+
                                             <div class="row">
                                                 <section class="col col-6"  >
                                                     <label class="radio-inline" style="margin-left: 25px ">
@@ -282,10 +280,10 @@ if(isset($_GET['id'])){
                                                     <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
                                                 </section>
                                             </div>
+
                                             <div id="interest_rate">
 
                                             </div>
-
 
                 </article>
                 <!-- WIDGET END -->
@@ -297,7 +295,7 @@ if(isset($_GET['id'])){
                     <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                            <h2>Security Required</h2>
+                            <h2>Security</h2>
 
                         </header>
 
@@ -463,7 +461,7 @@ if(isset($_GET['id'])){
                     <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-                            <h2>Required Documents</h2>
+                            <h2>Documents</h2>
 
                         </header>
 
@@ -482,7 +480,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php if(isset($row["required_document"]) && $row["required_document"] != ""){echo $row["required_document"];}else{echo set_value('txtRequiredDocument');} ?></textarea>
+                                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php if(isset($row["required_document"]) && $row["required_document"] != ""){echo $row["required_document"];}else{echo set_value('txtRequiredDocument');} ?>></textarea>
                                     </label>
                                 </section>
 

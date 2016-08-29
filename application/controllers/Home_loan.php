@@ -545,8 +545,8 @@ class Home_Loan extends CI_Controller {
                     'modified' => $date ,
                     'modified_by'=>$this->session->userdata('admin_user_id')
                 );
-                $this->Common_model->table_name = 'home_loan_info';
-                $last_insert_id = $this->Common_model->insert();
+               /* $this->Common_model->table_name = 'home_loan_info';
+                $last_insert_id = $this->Common_model->insert();*/
 
                 $this->Common_model->table_name = 'home_loan_info';
                 $this->Common_model->where = array('id' => $this->input->post('txtHomeLoanId'));
@@ -557,7 +557,7 @@ class Home_Loan extends CI_Controller {
 
                 foreach($this->input->post('txtApplicantType[]') as $applicant){
                     $this->Common_model->data = array(
-                        'home_loan_info_id'=>$last_insert_id,
+                        'home_loan_info_id'=>$this->input->post('txtHomeLoanId'),
                         'home_loan_applicant_type_id'=> $applicant
                     );
                     $this->Common_model->table_name = 'home_loan_applicant_type_home_loan_info';
@@ -568,7 +568,7 @@ class Home_Loan extends CI_Controller {
                 $result='';
                 foreach($this->input->post('txtHomeLoanUser[]') as $user){
                     $this->Common_model->data = array(
-                        'home_loan_info_id'=>$last_insert_id,
+                        'home_loan_info_id'=>$this->input->post('txtHomeLoanId'),
                         'home_loan_user_id'=> $user
                     );
                     $this->Common_model->table_name = 'home_loan_user_home_loan_info';
