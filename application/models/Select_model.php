@@ -257,6 +257,19 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function personal_loan_user()
+    {
+        $sql="SELECT * FROM `personal_loan_i_am`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtPersonalLoanUser[]",$row->id).'>'.$row->i_am.'</option>';
+
+        }
+        return $option;
+    }
+
 
     function card_benefit()
     {

@@ -34,7 +34,7 @@
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Loans<span class="caret"></span></a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="#">Personal loan</a></li>
-                                                <li><a href="#">Car loan</a></li>
+                                                <li><a href="<?php echo base_url(); ?>en/car_loan">Car loan</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/home_loan">Home loan</a></li>
                                                 <li><a href="#">Any purpose loan</a></li>
                                             </ul>

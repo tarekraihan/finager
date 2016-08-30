@@ -153,13 +153,13 @@
             font-weight: 500;
         }
         .jqplot-highlighter-tooltip{
-		background-color: #fff;
-		z-index: 999;
-		padding:3px 6px;
-		font-size: 13px;
-		border: 1px solid #c2c2c2;
-		font-style: italic;
-	}
+            background-color: #fff;
+            z-index: 999;
+            padding:3px 6px;
+            font-size: 13px;
+            border: 1px solid #c2c2c2;
+            font-style: italic;
+        }
     </style>
 </head>
 
@@ -615,36 +615,36 @@
 <script src="<?php echo base_url();?>resource/front_end/js/canvasjs.min.js"></script>
 
 <script>
-	<!-- for chart-->
-	$(document).ready(function(){
-	    var plot2 = $.jqplot('pie2', [[['Total Amount',7],['Loan Amount	',88],['Tenure',5],['Interest Rate',5]]], {
-	    	animate: true,
-	        seriesDefaults:{ renderer:$.jqplot.PieRenderer, trendline:{ show: true } },
+    <!-- for chart-->
+    $(document).ready(function(){
+        var plot2 = $.jqplot('pie2', [[['Total Amount',7],['Loan Amount	',88],['Tenure',5],['Interest Rate',5]]], {
+            animate: true,
+            seriesDefaults:{ renderer:$.jqplot.PieRenderer, trendline:{ show: true } },
 
-	        /*
-	        legend:{
-	            show:true, 
-	            placement: 'outside', 
-	            rendererOptions: {
-	                numberRows: 4
-	            }, 
-	            location:'s',
-	            marginTop: '15px'
-	        },
-			*/ 
-		seriesColors: [ "#868686","#dcdcdc","#e7af7d", "#ffffff"],
-			
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true, background: '#ffffff'},
-	        highlighter: {
-		      show: true,
-		      useAxesFormatters: false,
-			  sizeAdjust: 10,
-			  lineWidthAdjust:10,
-		      tooltipFormatString: '%s'
-		    }
+            /*
+             legend:{
+                         show:true,
+                         placement: 'outside',
+                         rendererOptions: {
+                             numberRows: 4
+                         },
+                         location:'s',
+                         marginTop: '15px'
+                     },
+             */
+            seriesColors: [ "#868686","#dcdcdc","#e7af7d", "#ffffff"],
 
-	    });
-	});
+            grid: {borderColor: 'white', shadow: false, drawBorder: true, background: '#ffffff'},
+            highlighter: {
+                show: true,
+                useAxesFormatters: false,
+                sizeAdjust: 10,
+                lineWidthAdjust:10,
+                tooltipFormatString: '%s'
+            }
+
+        });
+    });
 </script>
 
 

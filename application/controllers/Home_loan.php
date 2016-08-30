@@ -5,9 +5,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Developer Email : tarekraihan@yahoo.com    *
  * Project : FINAGER.COM                      *
  * Module : Home Loan                         *
- * Script : front end  controller             *
+ * Script : back end  controller              *
  * Start Date : 12-03-2016                    *
- * Last Update : 08-05-2016                   *
+ * Last Update : 08-08-2016                   *
  **********************************************/
 
 class Home_Loan extends CI_Controller {

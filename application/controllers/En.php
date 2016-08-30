@@ -114,7 +114,6 @@ class En extends CI_Controller {
     public function home_loan_chart(){
         $this->load->view('front_end/home_loan_chart');
     }
-
     public function logout(){
         $this->session->unset_userdata('lovemebaby');
 
@@ -122,6 +121,23 @@ class En extends CI_Controller {
         $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
         $this->output->set_header("Pragma: no-cache");
         redirect(base_url().'en', 'refresh');
+    }
+
+    public function car_loan(){
+        if ($this->session->userdata('lovemebaby')) {
+            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/auto_loan');
+            $this->load->view('front_end/block/footer_home');
+        }else{
+            redirect(base_url().'en/login/');
+        }
+    }
+
+
+    public function auto_loan_chart(){
+        $this->load->view('front_end/auto_loan_chart');
     }
 
 }
