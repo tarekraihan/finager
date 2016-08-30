@@ -483,19 +483,9 @@ class Auto_loan extends CI_Controller
                 $this->Common_model->table_name = 'auto_loan_info';
                 $this->Common_model->where = array('id' => $this->input->post('txtAutoLoanId'));
                 $this->Common_model->update();
-//                $result = $this->Common_model->insert();
-                /*
-                                foreach($this->input->post('txtLookingFor[]') as $lookingFor){
-                                    $this->Common_model->data = array(
-                                        'auto_loan_info_id'=>$last_insert_id,
-                                        'i_want_id'=> $lookingFor
-                                    );
-                                    $this->Common_model->table_name = 'auto_loan_info_vs_i_want';
-                                    $this->Common_model->insert();
-                                }
-                */
+
                 $result='';
-                $this->Delete_model->Delete_All_Row($id='$this->input->post("txtAutoLoanId")',$table='auto_loan_info_vs_i_am',$id_field='auto_loan_info_id');
+                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtAutoLoanId"),$table='auto_loan_info_vs_i_am',$id_field='auto_loan_info_id');
                 foreach($this->input->post('txtAutoLoanUser[]') as $user){
                     $this->Common_model->data = array(
                         'auto_loan_info_id'=>$this->input->post('txtAutoLoanId'),

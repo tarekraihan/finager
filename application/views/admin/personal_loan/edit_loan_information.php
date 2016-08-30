@@ -1,16 +1,17 @@
 <?php
+
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $table='auto_loan_info';
+    $table='personal_loan_info';
     $id_field='id';
     $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
 //    print_r($row);die;
 }else{
     $row['id']='';
     $row['bank_id']='';
-    $row['loan_type_id']='';
-    $row['auto_loan_looking_for_id']='';
-    $row['auto_loan_name']='';
+//    $row['loan_type_id']='';
+//    $row['auto_loan_looking_for_id']='';
+    $row['personal_loan_name']='';
     $row['loan_short_description']='';
     $row['min_loan_amount']='';
     $row['max_loan_amount']='';
@@ -19,7 +20,7 @@ if(isset($_GET['id'])){
     $row['interest_rate_average']='';
     $row['is_fixed']='';
     $row['interest_rate_fixed']='';
-    $row['downpayment']='';
+//    $row['downpayment']='';
     $row['security_required']='';
     $row['fees_and_charges']='';
     $row['features']='';
@@ -31,7 +32,6 @@ if(isset($_GET['id'])){
 
 }
 ?>
-
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
@@ -69,7 +69,7 @@ if(isset($_GET['id'])){
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Loan</li><li>Auto Loan</li><li> Edit Loan Information</li>
+            <li>Loan</li><li>Personal Loan</li><li>Edit Loan Information</li>
         </ol>
     </div>
     <!-- END RIBBON -->
@@ -81,7 +81,7 @@ if(isset($_GET['id'])){
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
-                    Auto Loan
+                    Personal Loan
 							<span>> 
 								Edit Loan Information
                             </span>
@@ -120,7 +120,7 @@ if(isset($_GET['id'])){
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>auto_loan/edit_loan_info" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>personal_loan/edit_loan_info" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -132,7 +132,7 @@ if(isset($_GET['id'])){
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Bank Name</label>
-                                                    <input type="hidden" value="<?php echo $row['id'];?>" name="txtAutoLoanId">
+                                                    <input type="hidden" value="<?php echo $row['id'];?>" name="txtPersonalLoanId">
                                                     <label class="select">
                                                         <select name="txtBankName" id="txtBankName">
                                                             <?php
@@ -170,69 +170,49 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Loan Name </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php if(isset($row["auto_loan_name"]) && $row["auto_loan_name"] != ""){echo $row["auto_loan_name"];}else{echo set_value('txtLoanName');} ?>" placeholder="Write Loan Name">
+                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php if(isset($row["personal_loan_name"]) && $row["personal_loan_name"] != ""){echo $row["personal_loan_name"];}else{echo set_value('txtLoanName');} ?>" placeholder="Write Loan Name">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanName');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">I Want</label>
-                                                    <label class="select">
-                                                        <select name="txtLookingFor" id="txtLookingFor">
-                                                            <?php
-                                                            $result=$this->Select_model->select_all('auto_i_want');
-                                                            //  print_r($result);die;
-
-                                                            foreach($result->result() as $row1){
-                                                                ?>
-                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_want"]) && $row["i_want"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLookingFor",$row1->id)?>><?php echo $row1->i_want ; ?></option>';
-                                                            <?php
-                                                            }
-                                                            ?>
-                                                        </select>
+                                                    <label class="label">Loan Short Description</label>
+                                                    <label class="input">
+                                                        <input type="text"  name="txtLoanShortDescription" value="<?php if(isset($row["loan_short_description"]) && $row["loan_short_description"] != ""){echo $row["loan_short_description"];}else{echo set_value('txtLoanShortDescription');} ?>" placeholder="Write short description">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtLookingFor');?></label>
+                                                    <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
                                                 </section>
-
-                                                <!--
-                                                <section class="col col-6">
-                                                    <label class="label">Looking For</label>
-                                                    <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtLookingFor[]" required>
-                                                            <?php /*echo $this->Select_model->looking_for();*/?>
-                                                        </select>
-                                                    </label>
-                                                    <label class="red"><?php /*echo form_error('txtLookingFor[]');*/?></label>
-                                                </section>-->
                                             </div>
 
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">I Am</label>
+                                                    <label class="label">Loan User( I Am )</label>
                                                     <label class="select">
-                                                        <select multiple style="width:100%" class="select2" name="txtAutoLoanUser[]" required>
+                                                        <select multiple style="width:100%" class="select2" name="txtPersonalLoanUser[]" required>
                                                             <?php
-                                                            $result1=$this->Select_model->auto_loan_all_user();
+                                                            $result1=$this->Select_model->personal_loan_all_user();
 
-                                                            $user_id =$this->Select_model->get_auto_loan_info_vs_i_am($row['id']);
+                                                            $user_id =$this->Select_model->get_personal_loan_info_vs_i_am($row['id']);
 
                                                             $user = array();
-                                                            //  print_r($user_id);
+//                                                              print_r($user_id);die;
                                                             foreach($user_id as $k){
                                                                 foreach($k as $v){
                                                                     array_push($user,$v);
                                                                 }
                                                             }
+//                                                            $count = count($user);
                                                             $i=0;
                                                             foreach($result1->result() as $row1){
+
                                                                     ?>
-                                                                    <option value="<?php echo $row1->id;?>" <?php if ($user[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtAutoLoanUser[]", $row1->id)?>><?php echo $row1->i_am; ?></option>';
-                                                                <?php
-                                                             $i++;
+                                                                    <option value="<?php echo $row1->id;?>" <?php if ($user[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtPersonalLoanUser[]", $row1->id)?>><?php echo $row1->i_am; ?></option>';
+                                                            <?php
+                                                                $i++;
                                                             }
                                                             ?>
                                                         </select>
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtAutoLoanUser[]');?></label>
+                                                    <label class="red"><?php echo form_error('txtPersonalLoanUser[]');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Loan Amount</label>
@@ -251,17 +231,6 @@ if(isset($_GET['id'])){
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaximumLonAmount');?></label>
                                                 </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Down Payment (%)</label>
-                                                    <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPayment" value="<?php if(isset($row["downpayment"]) && $row["downpayment"] != ""){echo $row["downpayment"];}else{echo set_value('txtDownPayment');} ?>" placeholder="Write Down payment without percentage sign">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtDownPayment');?></label>
-                                                </section>
-                                            </div>
-
-
-                                            <div class="row">
                                                 <section class="col col-6"  >
                                                     <label class="radio-inline" style="margin-left: 25px ">
                                                         <input type="radio" name="is_fixed" value="variable" id="is_variable" <?php if($row['is_fixed'] == '0'){echo 'checked'; }?>> Variable Interest
@@ -271,21 +240,26 @@ if(isset($_GET['id'])){
                                                     </label>
 
                                                 </section>
-                                                <section class="col col-6">
-                                                    <label class="label">Loan Short Description</label>
-                                                    <label class="input">
-                                                        <input type="text"  name="txtLoanShortDescription" value="<?php if(isset($row["loan_short_description"]) && $row["loan_short_description"] != ""){echo $row["loan_short_description"];}else{echo set_value('txtLoanShortDescription');} ?>" placeholder="Write short description">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
-                                                </section>
                                             </div>
 
                                             <div id="interest_rate">
+
+                                                <div class="row">
+                                                    <section class="col col-6">
+                                                        <label class="label">Interest Rate Fixed (%)</label>
+                                                        <label class="input">
+                                                            <input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php echo set_value('txtInterestRateFixed'); ?>" placeholder="Write Interest Rate without percentage sign">
+                                                        </label>
+                                                        <label class="red"><?php echo form_error('txtInterestRateFixed');?></label>
+                                                    </section>
+
+                                                </div>
 
                                             </div>
 
                 </article>
                 <!-- WIDGET END -->
+
 
                 <!-- NEW WIDGET START -->
                 <article class="col-sm-6 col-md-6 col-lg-6">
@@ -578,6 +552,8 @@ if(isset($_GET['id'])){
                 </article>
                 <!-- WIDGET END -->
 
+                <!-- WIDGET END -->
+
                 </fieldset>
                 <footer>
                     <div class="row">
@@ -586,7 +562,7 @@ if(isset($_GET['id'])){
                         </section>
                         <section class="col-md-6">
                             <label class="input">
-                                <button class="btn btn-primary" type="submit" >Update</button>
+                                <button class="btn btn-primary" type="submit" >Save</button>
                             </label>
                         </section>
 

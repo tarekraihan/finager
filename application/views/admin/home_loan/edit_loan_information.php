@@ -225,13 +225,13 @@ if(isset($_GET['id'])){
                                                                     array_push($user,$v);
                                                                 }
                                                             }
-                                                            $count = count($user);
+                                                            $i=0;
                                                             foreach($result1->result() as $row1){
-                                                                for($i=0;$i<$count;$i++) {
+
                                                                     ?>
                                                                     <option value="<?php echo $row1->id;?>" <?php if ($user[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtHomeLoanUser[]", $row1->id)?>><?php echo $row1->home_loan_user; ?></option>';
                                                                 <?php
-                                                                }
+                                                                    $i++;
                                                             }
                                                             ?>
                                                         </select>
