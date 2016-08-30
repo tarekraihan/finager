@@ -225,7 +225,7 @@ if(isset($_GET['id'])){
                                                             $i=0;
                                                             foreach($result1->result() as $row1){
                                                                     ?>
-                                                                    <option value="<?php echo $row1->id;?>" <?php if ($user[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtAutoLoanUser[]", $row1->id)?>><?php echo $row1->i_am; ?></option>';
+                                                                    <option value="<?php echo $row1->id;?>" <?php if(isset($user[$i]) ? ($user[$i] == $row1->id) : false) { echo "selected='select'"; }else{ echo set_select("txtAutoLoanUser[]", $row1->id);}?>><?php echo $row1->i_am; ?></option>';
                                                                 <?php
                                                              $i++;
                                                             }

@@ -229,7 +229,7 @@ if(isset($_GET['id'])){
                                                             foreach($result1->result() as $row1){
 
                                                                     ?>
-                                                                    <option value="<?php echo $row1->id;?>" <?php if ($user[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtHomeLoanUser[]", $row1->id)?>><?php echo $row1->home_loan_user; ?></option>';
+                                                                    <option value="<?php echo $row1->id;?>" <?php if(isset($user[$i]) ? ($user[$i] == $row1->id) : false) { echo "selected='select'"; }else{ echo set_select("txtHomeLoanUser[]", $row1->id);}?>><?php echo $row1->home_loan_user; ?></option>';
                                                                 <?php
                                                                     $i++;
                                                             }
