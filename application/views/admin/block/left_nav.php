@@ -120,12 +120,7 @@
                 <li>
                     <a href="<?php echo base_url();?>home_loan/loan_type/"><i class="fa fa-stack-overflow"></i>Add Loan Type</a>
                 </li>
-                <li>
-                    <a href="<?php echo base_url();?>home_loan/applicant_type/"><i class="fa fa-stack-overflow"></i> Add Applicant Type</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>home_loan/feature/"><i class="fa fa-stack-overflow"></i> Add Feature</a>
-                </li>
+
                 <li>
                     <a href="<?php echo base_url();?>home_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
                 </li>

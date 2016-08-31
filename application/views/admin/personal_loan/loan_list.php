@@ -2,10 +2,13 @@
 if(isset($_GET['loan_id']))
 {
     $id=$_GET['loan_id'];
-    $table='auto_loan_info';
+    $table='personal_loan_info';
     $id_field='id';
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
-    $this->Delete_model->Delete_All_Row($id=$id,$table='auto_loan_info_vs_i_am',$id_field='auto_loan_info_id');
+
+    $this->Delete_model->Delete_All_Row($id=$id,$table='personal_loan_info_vs_i_am',$id_field='personal_loan_info_id');
+
+
 }
 ?>
 
@@ -23,7 +26,7 @@ if(isset($_GET['loan_id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Loan</li><li>Auto Loan</li><li>Loan Info List</li>
+            <li>Loan</li><li>Personal Loan</li><li>Loan Info List</li>
         </ol>
 
 
@@ -50,7 +53,7 @@ if(isset($_GET['loan_id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Auto Loan Information List </h2>
+                            <h2>Personal Loan Information List </h2>
 
                         </header>
 
@@ -74,7 +77,6 @@ if(isset($_GET['loan_id']))
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Bank Image</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Loan Name</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Bank Name</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Looking For</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Loan Amount</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Interest Rate</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created By</th>
@@ -85,7 +87,7 @@ if(isset($_GET['loan_id']))
                                     <tbody>
 
                                     <?php
-                                        echo $this->Select_model->select_auto_loan_information();
+                                    echo $this->Select_model->select_personal_loan_information();
                                     ?>
                                     </tbody>
                                 </table>

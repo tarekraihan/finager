@@ -553,7 +553,7 @@ class Home_Loan extends CI_Controller {
                 $this->Common_model->update();
 
 
-                $this->Delete_model->Delete_All_Row($id='$this->input->post("txtHomeLoanId")',$table='home_loan_applicant_type_home_loan_info',$id_field='home_loan_info_id');
+                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtHomeLoanId"),$table='home_loan_applicant_type_home_loan_info',$id_field='home_loan_info_id');
 
                 foreach($this->input->post('txtApplicantType[]') as $applicant){
                     $this->Common_model->data = array(
@@ -564,7 +564,7 @@ class Home_Loan extends CI_Controller {
                     $this->Common_model->insert();
                 }
 
-                $this->Delete_model->Delete_All_Row($id='$this->input->post("txtHomeLoanId")',$table='home_loan_user_home_loan_info',$id_field='home_loan_info_id');
+                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtHomeLoanId"),$table='home_loan_user_home_loan_info',$id_field='home_loan_info_id');
                 $result='';
                 foreach($this->input->post('txtHomeLoanUser[]') as $user){
                     $this->Common_model->data = array(
