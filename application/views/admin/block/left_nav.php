@@ -168,6 +168,9 @@
                     <a href="<?php echo base_url();?>personal_loan/i_am/"><i class="fa fa-stack-overflow"></i> Add I Am</a>
                 </li>
                 <li>
+                    <a href="<?php echo base_url();?>personal_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                </li>
+                <li>
                     <a href="<?php echo base_url();?>personal_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
                 </li>
                 <li>

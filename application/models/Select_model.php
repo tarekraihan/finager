@@ -215,6 +215,33 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+
+    function personal_loan_looking_for()
+    {
+        $sql="SELECT * FROM `personal_loan_looking_for`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtLookingFor[]",$row->id).'>'.$row->personal_loan_looking_for.'</option>';
+
+        }
+        return $option;
+    }
+
+    function home_loan_user_list()
+    {
+        $sql="SELECT * FROM `home_loan_user`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanUser[]",$row->id).'>'.$row->home_loan_user.'</option>';
+
+        }
+        return $option;
+    }
+
     function auto_loan_looking_for()
     {
         $sql="SELECT * FROM `auto_i_want`";

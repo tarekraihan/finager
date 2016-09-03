@@ -151,7 +151,7 @@
                                                     <label class="label">Loan User</label>
                                                     <label class="select">
                                                         <select multiple style="width:100%" class="select2" name="txtHomeLoanUser[]" required>
-                                                            <?php echo $this->Select_model->home_loan_user();?>
+                                                            <?php echo $this->Select_model->home_loan_user_list();?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtHomeLoanUser[]');?></label>

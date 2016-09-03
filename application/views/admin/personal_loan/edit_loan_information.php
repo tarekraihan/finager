@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
     $row['id']='';
     $row['bank_id']='';
 //    $row['loan_type_id']='';
-//    $row['auto_loan_looking_for_id']='';
+    $row['personal_loan_looking_for_id']='';
     $row['personal_loan_name']='';
     $row['loan_short_description']='';
     $row['min_loan_amount']='';
@@ -175,15 +175,33 @@ if(isset($_GET['id'])){
                                                     <label class="red"><?php echo form_error('txtLoanName');?></label>
                                                 </section>
                                                 <section class="col col-6">
+                                                    <label class="label">Looking For</label>
+                                                    <label class="select">
+                                                        <select name="txtLookingFor" id="txtLookingFor">
+                                                            <?php
+                                                            $result=$this->Select_model->select_all('personal_loan_looking_for');
+                                                            //  print_r($result);die;
+
+                                                            foreach($result->result() as $row1){
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["personal_loan_looking_for_id"]) && $row["personal_loan_looking_for_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLookingFor",$row1->id)?>><?php echo $row1->personal_loan_looking_for ; ?></option>';
+                                                            <?php
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtLookingFor');?></label>
+                                                </section>
+
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
                                                     <label class="label">Loan Short Description</label>
                                                     <label class="input">
                                                         <input type="text"  name="txtLoanShortDescription" value="<?php if(isset($row["loan_short_description"]) && $row["loan_short_description"] != ""){echo $row["loan_short_description"];}else{echo set_value('txtLoanShortDescription');} ?>" placeholder="Write short description">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
                                                 </section>
-                                            </div>
-
-                                            <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Loan User( I Am )</label>
                                                     <label class="select">
@@ -194,19 +212,19 @@ if(isset($_GET['id'])){
                                                             $user_id =$this->Select_model->get_personal_loan_info_vs_i_am($row['id']);
 
                                                             $user = array();
-//                                                              print_r($user_id);die;
+                                                            //                                                              print_r($user_id);die;
                                                             foreach($user_id as $k){
                                                                 foreach($k as $v){
                                                                     array_push($user,$v);
                                                                 }
                                                             }
-//                                                            $count = count($user);
+                                                            //                                                            $count = count($user);
                                                             $i=0;
                                                             foreach($result1->result() as $row1){
 
-                                                                    ?>
-                                                                    <option value="<?php echo $row1->id;?>" <?php if(isset($user[$i]) ? ($user[$i] == $row1->id) : false) { echo "selected='select'"; }else{ echo set_select("txtPersonalLoanUser[]", $row1->id);} ?>><?php echo $row1->i_am; ?></option>';
-                                                            <?php
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($user[$i]) ? ($user[$i] == $row1->id) : false) { echo "selected='select'"; }else{ echo set_select("txtPersonalLoanUser[]", $row1->id);} ?>><?php echo $row1->i_am; ?></option>';
+                                                                <?php
                                                                 $i++;
                                                             }
                                                             ?>
@@ -214,6 +232,11 @@ if(isset($_GET['id'])){
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPersonalLoanUser[]');?></label>
                                                 </section>
+                                            </div>
+
+
+                                            <div class="row">
+
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Loan Amount</label>
                                                     <label class="input">
@@ -221,9 +244,6 @@ if(isset($_GET['id'])){
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumLoanAmount');?></label>
                                                 </section>
-                                            </div>
-                                            <div class="row">
-
                                                 <section class="col col-6">
                                                     <label class="label">Maximum Loan Amount</label>
                                                     <label class="input">
@@ -231,6 +251,10 @@ if(isset($_GET['id'])){
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaximumLonAmount');?></label>
                                                 </section>
+                                            </div>
+                                            <div class="row">
+
+
                                                 <section class="col col-6"  >
                                                     <label class="radio-inline" style="margin-left: 25px ">
                                                         <input type="radio" name="is_fixed" value="variable" id="is_variable" <?php if($row['is_fixed'] == '0'){echo 'checked'; }?>> Variable Interest

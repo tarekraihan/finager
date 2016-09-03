@@ -125,12 +125,15 @@
                                                     <label class="red"><?php echo form_error('txtLoanName');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Loan Short Description</label>
-                                                    <label class="input">
-                                                        <input type="text"  name="txtLoanShortDescription" value="<?php echo set_value('txtLoanShortDescription'); ?>" placeholder="Write short description">
+                                                    <label class="label">Looking For</label>
+                                                    <label class="select">
+                                                        <select name="txtLookingFor" id="txtLookingFor">
+                                                            <?php echo $this->Select_model->personal_loan_looking_for();?>
+                                                        </select>
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
+                                                    <label class="red"><?php echo form_error('txtLookingFor');?></label>
                                                 </section>
+
                                             </div>
 
                                             <div class="row">
@@ -185,7 +188,13 @@
                                                         </label>
                                                         <label class="red"><?php echo form_error('txtInterestRateFixed');?></label>
                                                     </section>
-
+                                                    <section class="col col-6">
+                                                        <label class="label">Loan Short Description</label>
+                                                        <label class="input">
+                                                            <input type="text"  name="txtLoanShortDescription" value="<?php echo set_value('txtLoanShortDescription'); ?>" placeholder="Write short description">
+                                                        </label>
+                                                        <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
+                                                    </section>
                                                 </div>
 
                                             </div>

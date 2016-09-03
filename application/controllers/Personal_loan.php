@@ -85,6 +85,81 @@ class Personal_Loan extends CI_Controller {
         }
     }
 
+
+    public function looking_for($msg=''){
+        if ($this->session->userdata('email_address')) {
+            if ($msg == 'success') {
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
+            }
+            $this->form_validation->set_rules('txtLookingFor', ' Looking For', 'trim|required|is_unique[personal_loan_looking_for.personal_loan_looking_for]');
+
+
+            if ($this->form_validation->run() == FALSE) {
+                $data['title'] = "Finager - Looking For";
+                $this->load->view('admin/block/header', $data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/personal_loan/looking_for');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array(
+                    'personal_loan_looking_for' => $this->input->post('txtLookingFor'),
+                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'personal_loan_looking_for';
+                $result = $this->Common_model->insert();
+//                echo $result; die;
+                if ($result) {
+                    redirect(base_url().'personal_loan/looking_for/success');
+                } else {
+                    redirect(base_url().'personal_loan/looking_for/error');
+                }
+            }
+        }else {
+            redirect(base_url().'backdoor');
+        }
+    }
+
+    public function edit_looking_for($msg=''){
+        if ($this->session->userdata('email_address')) {
+            if ($msg == 'success') {
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Update !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
+            }
+            $this->form_validation->set_rules('txtLookingFor', 'Looking For', 'trim|required');
+
+
+            if ($this->form_validation->run() == FALSE) {
+                $data['title'] = "Finager -Edit Looking For";
+                $this->load->view('admin/block/header', $data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/personal_loan/edit_looking_for');
+                $this->load->view('admin/block/footer');
+            }else{
+                $this->Common_model->data = array(
+                    'personal_loan_looking_for' => htmlentities($this->input->post('txtLookingFor')),
+                    'modified_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'personal_loan_looking_for';
+                $this->Common_model->where = array('id' => $this->input->post('txtLookingForId'));
+                $result = $this->Common_model->update();
+
+                if ($result) {
+                    redirect(base_url().'personal_loan/edit_looking_for/success');
+                } else {
+                    redirect(base_url().'personal_loan/edit_looking_for/error');
+                }
+            }
+        }else {
+            redirect(base_url().'backdoor');
+        }
+    }
+
+
     public function loan_info($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -95,7 +170,7 @@ class Personal_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
-//            $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
+            $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
 //            $this->form_validation->set_rules('txtApplicantType[]', ' Looking For ', 'trim|required');
@@ -128,7 +203,7 @@ class Personal_Loan extends CI_Controller {
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
                     'loan_type_id' => $this->input->post('txtLoanType'),
-//                    'home_loan_looking_for_id' => $this->input->post('txtLookingFor'),
+                    'personal_loan_looking_for_id' => $this->input->post('txtLookingFor'),
                     'personal_loan_name' => htmlentities($this->input->post('txtLoanName')),
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
                     'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
@@ -191,7 +266,7 @@ class Personal_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
-//            $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
+            $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
 //            $this->form_validation->set_rules('txtApplicantType[]', ' Looking For ', 'trim|required');
@@ -224,7 +299,7 @@ class Personal_Loan extends CI_Controller {
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
                     'loan_type_id' => $this->input->post('txtLoanType'),
-//                    'home_loan_looking_for_id' => $this->input->post('txtLookingFor'),
+                    'personal_loan_looking_for_id' => $this->input->post('txtLookingFor'),
                     'personal_loan_name' => htmlentities($this->input->post('txtLoanName')),
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
                     'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
