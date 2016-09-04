@@ -140,4 +140,22 @@ class En extends CI_Controller {
         $this->load->view('front_end/auto_loan_chart');
     }
 
+    public function personal_loan(){
+        if ($this->session->userdata('lovemebaby')) {
+            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/personal_loan');
+            $this->load->view('front_end/block/footer_home');
+        }else{
+            redirect(base_url().'en/login/');
+        }
+    }
+
+
+    public function personal_loan_chart(){
+        $this->load->view('front_end/personal_loan_chart.php');
+    }
+
+
 }

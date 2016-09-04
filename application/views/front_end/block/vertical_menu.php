@@ -33,10 +33,10 @@
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Loans<span class="caret"></span></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="#">Personal loan</a></li>
+                                                <li><a href="<?php echo base_url(); ?>en/personal_loan">Personal loan</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/car_loan">Car loan</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/home_loan">Home loan</a></li>
-                                                <li><a href="#">Any purpose loan</a></li>
+                                                <li><a href="">Personal Loan</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown">

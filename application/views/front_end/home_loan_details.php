@@ -1,3 +1,22 @@
+<?php
+
+$id=$this->uri->segment(3, 0);
+if(!empty($id) && is_numeric($id) ){
+    $query=$this->Front_end_select_model->select_home_loan_details($id);
+    $row=$query->row();
+
+    $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
+    $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
+
+   /* echo "<pre>";
+        print_r($row);die;
+
+    echo "</pre>";*/
+
+}else{
+    redirect(base_url().'My404');
+}
+?>
 <section id="card_details_top">
     <div class="container">
         <div class="row">
@@ -11,28 +30,21 @@
                 </div>
                 <div class="col-sm-2 col-xs-8">
                     <div>
-                        <p class="card_details_head2">Prime Bank Home Loan</p>
+                        <p class="card_details_head2"><?php echo $row->bank_name;?></p>
                         <p class="card_details_features">
-                            Purchase Apartment/Flat
+                            <?php echo $row->home_loan_looking_for;?>
                         </p>
                     </div>
                 </div>
 
                 <div class="col-sm-8 col-xs-12">
                     <div class="row">
-                        <div class="col-sm-3 col-xs-6">
-                            <div>
-                                <p class="card_details_head2">Security Required </p>
-                                <p class="card_details_features">
-                                    Mortgage on Property
-                                </p>
-                            </div>
-                        </div>
                         <div class="col-sm-2 col-xs-6">
                             <div>
                                 <p class="card_details_head2">Interest Rate</p>
                                 <p class="card_details_features">
-                                    11%
+                                   <?php echo $interest.'<br/>
+                                    '.$interest_min_max;?>
                                 </p>
                             </div>
                         </div>
@@ -79,6 +91,8 @@
             <h4>Features:</h4>
             <div class="prosConsHr"></div><br/>
             <div class="prosCons_body2 trbodywidth">
+                <?php echo $row->features;?>
+                <!--
                 <table class="table table-striped table-bordered">
                     <tbody>
                     <tr>
@@ -131,7 +145,7 @@
                         </td>
                     </tr>
                     </tbody>
-                </table>
+                </table>-->
             </div>
         </div>
     </div>
@@ -144,7 +158,9 @@
             <h4>Fees & Charges:</h4>
             <div class="prosConsHr"></div><br/>
             <div class="prosCons_body2 trbodywidth">
-                <table class="table table-striped table-bordered">
+
+                <?php echo $row->fees_and_charges;?>
+               <!-- <table class="table table-striped table-bordered">
                     <tbody>
                     <tr>
                         <td>Processing Fee</td>
@@ -163,7 +179,7 @@
                         <td>2.00% only on overdue loan amount</td>
                     </tr>
                     </tbody>
-                </table>
+                </table>-->
             </div>
         </div>
     </div>
@@ -174,7 +190,8 @@
         <div class="card_details_pronsCons">
             <h4>Eligibility for Applying: </h4>
             <div class="prosConsHr"></div><br/>
-            <div class="prosCons_body2 trbodywidth">
+            <?php echo $row->eligibility_for_applying;?>
+            <!--<div class="prosCons_body2 trbodywidth">
                 <h4>Minimum Monthly Income:</h4>
                 <div class="prosCons_body2">
                     <ul>
@@ -199,7 +216,7 @@
                         <li>Maximum Age: 60 at the end of loan tenor</li>
                     </ul>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>
@@ -211,14 +228,15 @@
             <h4>Security Required:</h4>
             <div class="prosConsHr"></div><br/>
             <div class="prosCons_body2">
-                <ul>
+                <?php echo $row->security_required;?>
+                <!--<ul>
                     <li>Mortgage of the property itself or any other equivalent security as acceptable</li>
                     <li>Registered irrevocable power of attorney (RIGPA).</li>
                     <li>Insurance coverage.</li>
                     <li>One personal guarantee.</li>
                     <li>Others</li>
                     <li>Try Party Agreement between Bank, Applicant & Developer.</li>
-                </ul>
+                </ul>-->
             </div>
         </div>
     </div>
@@ -229,7 +247,9 @@
         <div class="card_details_pronsCons">
             <h4>Required Documents:</h4>
             <div class="prosConsHr"></div><br/>
-            <div class="prosCons_body2">
+
+            <?php echo $row->required_document;?>
+            <!--<div class="prosCons_body2">
                 <h4>Pre-Sanction Documents</h4>
                 <ul>
                     <li>Application form (payment structure & schedule must be reflected)</li>
@@ -317,7 +337,7 @@
                     <li>Ground rent payment and municipal tax payment receipt.</li>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 
@@ -328,7 +348,9 @@
         <div class="card_details_pronsCons">
             <h4>Review</h4>
             <div class="prosConsHr"></div>
-            <div class="prosCons_body2">
+
+            <?php echo $row->review;?>
+            <!--<div class="prosCons_body2">
                 <p>
                     <b>Waiver on Annual Fee</b><br/>
                     Now payment of Annual fee for your Credit Card is totally your choice. BRAC Bank allows you to pay no Annual fee as long as you transact at least 18 times (including 10 POS transactions) in a physical year.
@@ -338,7 +360,7 @@
                     <b>Cheque Facility</b><br/>
                     With BRAC Bank Credit Card now you can enjoy cheque facility against your credit card limit. You can make payment (account payee only) to any person or organization where Credit Card facility is not available. You can use your 100% limit through Card cheque with a minimum processing fee. You will get your first cheque book absolutely for free.
                 </p>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>
@@ -396,7 +418,9 @@
             <div class="row">
                 <div class="col-sm-12 col-xs-12">
                     <div class="prosCons_body2 home_loan_terms">
-                        <ol>
+
+                        <?php echo $row->terms_and_conditions;?>
+                        <!--<ol>
                             <li>The facility shall be made available for the customer from the date of Bank's approval of this application until such time is stipulated in any letter and this facility shall be continuing on until the adjustment of the dues of the Bank with interest and other charges.</li>
                             <li>The Bank reserves the right to withdraw the credit facility and demand repayment if there has been any default in repayment of the loan.</li>
                             <li>The Bank shall not be obliged to make the credit facility available until it has received formal written acknowledgement from you accepting the credit facility on the basis of outline and subject to the terms and conditions specified in the banking arrangement letter.</li>
@@ -421,7 +445,7 @@
                             <li>Any notice made by the Bank in respect of the facility shall be in writing and made to the address given by the Customer to the Bank and shall be deemed to have been received by customer within 3 (three) business days from the date of posting.</li>
                             <li> If the declaration below is signed by more than one person as customer, the liability of each such person there under and these terms and conditions shall be joint and similar.</li>
                             <li>These terms and conditions shall be constructed with the laws of Bangladesh and the customer and the Bank hereby irrevocably submit to the nonexclusive of the courts of Bangladesh.</li>
-                        </ol>
+                        </ol>-->
                     </div>
                 </div>
             </div>

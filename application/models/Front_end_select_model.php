@@ -44,6 +44,15 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
 
+    public function select_home_loan_details($id){
+        $sql="SELECT home_loan_info.*,card_bank.bank_name,card_bank.bank_logo,home_loan_looking_for.home_loan_looking_for FROM `home_loan_info` inner join card_bank on card_bank.id=home_loan_info.bank_id INNER JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id WHERE home_loan_info.id=$id";
+        $query = $this->db->query($sql);
+
+        return $query;
+
+    }
+
+
     public function select_card_image($id){
         $sql="SELECT id,card_image_name FROM `card_card_informations`  WHERE id=$id";
         $query = $this->db->query($sql);
@@ -59,6 +68,13 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     function select_auto_loan_info(){
         $sql = "SELECT auto_loan_info.*,card_bank.bank_name,card_bank.bank_logo,auto_i_want.i_want,loan_type.loan_type FROM `auto_loan_info` inner join card_bank on card_bank.id=auto_loan_info.bank_id INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id INNER JOIN loan_type ON loan_type.id = auto_loan_info.loan_type_id";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
+    function select_personal_loan_info(){
+        $sql = "SELECT personal_loan_info.*,card_bank.bank_name,card_bank.bank_logo,personal_loan_looking_for.personal_loan_looking_for,loan_type.loan_type FROM `personal_loan_info` inner join card_bank on card_bank.id=personal_loan_info.bank_id INNER JOIN personal_loan_looking_for ON personal_loan_looking_for.id = personal_loan_info.personal_loan_looking_for_id INNER JOIN loan_type ON loan_type.id = personal_loan_info.loan_type_id";
         $query = $this->db->query($sql);
 
         return $query;
