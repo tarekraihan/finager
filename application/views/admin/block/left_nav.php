@@ -180,6 +180,27 @@
         </li>
 
 
+        <li class="top-menu-invisible">
+            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Fixed Deposit</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>fdr/deposit_type/"><i class="fa fa-stack-overflow"></i> Add Deposit Type</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>fdr/i_want/"><i class="fa fa-stack-overflow"></i> Add I Want</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>personal_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>personal_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                </li>
+            </ul>
+        </li>
+
+
         </ul>
     </nav>
 			<span class="minifyme" data-action="minifyMenu"> 

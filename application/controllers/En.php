@@ -16,7 +16,7 @@ class En extends CI_Controller {
         $email = htmlentities($this->input->post('txtEmail'));
         $password = htmlentities($this->input->post('txtPassword'));
 
-        if($email == "imvirgin" && $password == "MeToo"){
+        if($email == "secret_login" && $password == "babydragon"){
             $data['lovemebaby'] = "lovemebaby";
             $this->session->set_userdata($data);
             redirect(base_url().'en/index/');

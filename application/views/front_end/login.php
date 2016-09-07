@@ -3,7 +3,7 @@
 <html >
 <head>
     <meta charset="UTF-8">
-    <title>Bootstrap Snippet: Login Form</title>
+    <title>Finager.com</title>
 
 
 
