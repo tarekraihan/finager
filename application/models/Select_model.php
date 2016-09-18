@@ -90,6 +90,18 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function deposit_type()
+    {
+        $sql="SELECT * FROM `deposit_type`";
+        $query=$this->db->query($sql);
+        $option="";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtDepositType",$row->id).'>'.$row->deposit_name.'</option>';
+        }
+        return $option;
+    }
+
     function select_card_type()
     {
         $sql="SELECT * FROM `card_card_type`";
@@ -184,6 +196,55 @@ class Select_Model extends CI_Model
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtCardIssuer",$row->id).'>'.$row->card_issuer_name.'</option>';
+        }
+        return $option;
+    }
+
+
+    function select_deposit_type()
+    {
+        $sql="SELECT * FROM `deposit_type`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtDepositType",$row->id).'>'.$row->deposit_name.'</option>';
+        }
+        return $option;
+    }
+
+    function select_fdr_i_am()
+    {
+        $sql="SELECT * FROM `fdr_i_am`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtIAm",$row->id).'>'.$row->i_am.'</option>';
+        }
+        return $option;
+    }
+
+    function select_fdr_i_want()
+    {
+        $sql="SELECT * FROM `fdr_i_want`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtIWant",$row->id).'>'.$row->i_want.'</option>';
+        }
+        return $option;
+    }
+
+    function select_fdr_tenure()
+    {
+        $sql="SELECT * FROM `fdr_tenure`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtTenure",$row->id).'>'.$row->tenure.'</option>';
         }
         return $option;
     }
@@ -474,6 +535,37 @@ class Select_Model extends CI_Model
 
                 $result.='</td>
                     <td><a href="'.base_url().'personal_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+
+    public function select_fdr_draft_info()//To show FDR Common Info list
+    {
+        $sql="SELECT fdr_info_draft.id,fdr_info_draft.available_feature,deposit_type.deposit_name,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info_draft` INNER JOIN card_bank ON card_bank.id=fdr_info_draft.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info_draft.created_by INNER JOIN deposit_type ON deposit_type.id= fdr_info_draft.deposit_type_id ORDER BY fdr_info_draft.id ASC";
+        $query=$this->db->query($sql);
+        $result="";
+
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
+					 <td class="center">'.$row->bank_name.'</td>
+					<td class="center">'.$row->deposit_name.'</td>
+					 <td class="center"> '.$row->available_feature.'</td>
+					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
+
+                $result.='</td>
+                    <td><a href="'.base_url().'fdr/edit_draft_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

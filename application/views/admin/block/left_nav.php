@@ -192,7 +192,23 @@
                 </li>
 
                 <li>
-                    <a href="<?php echo base_url();?>personal_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
+                    <a href="<?php echo base_url();?>fdr/tenure/"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>fdr/i_am/"><i class="fa fa-stack-overflow"></i> Add I Am</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>fdr/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft/Common Info</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>fdr/draft_list/"><i class="fa fa-stack-overflow"></i>  Draft List</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>fdr/fdr_info/"><i class="fa fa-stack-overflow"></i> Add fdr Information</a>
                 </li>
                 <li>
                     <a href="<?php echo base_url();?>personal_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
