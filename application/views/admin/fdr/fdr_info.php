@@ -152,7 +152,7 @@
                                 </section>
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                        <input type="checkbox" name="is_minimum_amount_no_limit" value="1" > Is Minimum Amount No limit
+                                        <input type="checkbox" name="is_minimum_amount_no_limit" id="is_minimum_amount_no_limit" value="1" > Is Minimum Amount No limit
                                     </label>
                                     <label class="radio-inline" style=" margin-left:35px; margin-top:25px;">
                                         <input type="checkbox" name="is_maximum_amount_no_limit" id="is_maximum_amount_no_limit" value="1" > Is Maximum Amount No limit
@@ -165,14 +165,14 @@
                                 <section class="col col-6">
                                     <label class="label">Minimum Deposit Amount</label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="txtMinimumDepositAmount" value="<?php echo set_value('txtMinimumDepositAmount'); ?>" placeholder="Write min deposit amount">
+                                        <input type="text" maxlength="25" name="txtMinimumDepositAmount" id="txtMinimumDepositAmount" value="<?php echo set_value('txtMinimumDepositAmount'); ?>" placeholder="Write min deposit amount">
                                     </label>
                                     <label class="red"><?php echo form_error('txtMinimumDepositAmount');?></label>
                                 </section>
                                 <section class="col col-6">
                                     <label class="label">Maximum Deposit Amount</label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="txtMaximumDepositAmount" value="<?php echo set_value('txtMaximumDepositAmount'); ?>" placeholder="Write Max deposit amount">
+                                        <input type="text" maxlength="25" name="txtMaximumDepositAmount" id="txtMaximumDepositAmount" value="<?php echo set_value('txtMaximumDepositAmount'); ?>" placeholder="Write Max deposit amount">
                                     </label>
                                     <label class="red"><?php echo form_error('txtMaximumDepositAmount');?></label>
                                 </section>
@@ -440,11 +440,12 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        $("input[name ='is_fixed']").click(function() {
-            var v_value = $(this).val();
-            if(v_value == 'fixed'){
+        $("#txtDepositType").on('change', function(){
+            var deposit_type = $(this).val();
+            var bank_id = $('#txtBankName').val();
+            if(bank_id != '' && deposit_type != ''){
                 $.ajax({
-                    url: "<?php echo base_url(); ?>home_loan/ajax_home_loan_interest_variable",
+                    url: "<?php echo base_url(); ?>fdr/ajax_get_draft_fdr_info",
                     type : "POST",
                     dataType : "html"
                 })
@@ -463,6 +464,26 @@
                     .done(function( data ) {
                         $('#interest_rate').html(data);
                     });
+            }
+        });
+
+        $("#is_minimum_amount_no_limit").click(function () {
+            if ($(this).is(":checked")) {
+
+                $("#txtMinimumDepositAmount").attr("disabled", "disabled");
+            } else {
+                $("#txtMinimumDepositAmount").removeAttr("disabled");
+                $("#txtMinimumDepositAmount").focus();
+            }
+        });
+
+        $("#is_maximum_amount_no_limit").click(function () {
+            if ($(this).is(":checked")) {
+
+                $("#txtMaximumDepositAmount").attr("disabled", "disabled");
+            } else {
+                $("#txtMaximumDepositAmount").removeAttr("disabled");
+                $("#txtMaximumDepositAmount").focus();
             }
         });
     });

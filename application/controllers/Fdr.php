@@ -450,4 +450,14 @@ class Fdr extends CI_Controller {
             redirect(base_url().'backdoor');
         }
     }
+
+    public function ajax_get_draft_fdr_info(){
+        if ($this->session->userdata('email_address')) {
+
+
+        }else{
+            redirect(base_url().'backdoor');
+        }
+
+    }
 }
