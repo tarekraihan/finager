@@ -152,10 +152,10 @@
                                 </section>
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                        <input type="checkbox" name="is_minimum_amount_no_limit" id="is_minimum_amount_no_limit" value="1" > Is Minimum Amount No limit
+                                        <input type="checkbox" name="is_minimum_amount_no_limit" id="is_minimum_amount_no_limit" value="1"> Is Minimum Amount No limit
                                     </label>
                                     <label class="radio-inline" style=" margin-left:35px; margin-top:25px;">
-                                        <input type="checkbox" name="is_maximum_amount_no_limit" id="is_maximum_amount_no_limit" value="1" > Is Maximum Amount No limit
+                                        <input type="checkbox" name="is_maximum_amount_no_limit" id="is_maximum_amount_no_limit" value="1"> Is Maximum Amount No limit
                                     </label>
 
                                 </section>
@@ -177,6 +177,15 @@
                                     <label class="red"><?php echo form_error('txtMaximumDepositAmount');?></label>
                                 </section>
 
+                            </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Interest Rate</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="50" name="txtInterestRate" value="<?php echo set_value('txtInterestRate'); ?>" placeholder="Write Interest Rate without percentage sign">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtInterestRate');?></label>
+                                </section>
                             </div>
 
 </article>
@@ -443,34 +452,43 @@
         $("#txtDepositType").on('change', function(){
             var deposit_type = $(this).val();
             var bank_id = $('#txtBankName').val();
+            var param = 'bank_id='+bank_id+'&deposit_type='+deposit_type;
             if(bank_id != '' && deposit_type != ''){
                 $.ajax({
                     url: "<?php echo base_url(); ?>fdr/ajax_get_draft_fdr_info",
                     type : "POST",
-                    dataType : "html"
+                    dataType : "json",
+                    data : param
                 })
-                    .done(function( data ) {
-                        $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php echo set_value('txtInterestRateFixed'); ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
-                    });
+                .done(function( data ) {
+
+                        if(data.process){
+
+                            CKEDITOR.instances['txtAvailableFeatures'].setData(data.available_feature);
+                            CKEDITOR.instances['txtEligibility'].setData(data.eligibility);
+                            CKEDITOR.instances['txtRequiredDocument'].setData(data.required_document);
+                            CKEDITOR.instances['txtTermsAndConditions'].setData(data.terms_and_conditions);
+                            CKEDITOR.instances['txtReview'].setData(data.review);
+                        }else{
+                            CKEDITOR.instances['txtAvailableFeatures'].setData('');
+                            CKEDITOR.instances['txtEligibility'].setData('');
+                            CKEDITOR.instances['txtRequiredDocument'].setData('');
+                            CKEDITOR.instances['txtTermsAndConditions'].setData('');
+                            CKEDITOR.instances['txtReview'].setData('');
+                        }
+
+                    console.log(data.available_feature);
+                });
 
             }
 
-            if(v_value == 'variable'){
-                $.ajax({
-                    url: "<?php echo base_url(); ?>home_loan/ajax_home_loan_interest_variable",
-                    type : "POST",
-                    dataType : "html"
-                })
-                    .done(function( data ) {
-                        $('#interest_rate').html(data);
-                    });
-            }
         });
 
         $("#is_minimum_amount_no_limit").click(function () {
             if ($(this).is(":checked")) {
 
                 $("#txtMinimumDepositAmount").attr("disabled", "disabled");
+                $('#txtMinimumDepositAmount').val("");
             } else {
                 $("#txtMinimumDepositAmount").removeAttr("disabled");
                 $("#txtMinimumDepositAmount").focus();
@@ -481,6 +499,7 @@
             if ($(this).is(":checked")) {
 
                 $("#txtMaximumDepositAmount").attr("disabled", "disabled");
+                $('#txtMaximumDepositAmount').val("");
             } else {
                 $("#txtMaximumDepositAmount").removeAttr("disabled");
                 $("#txtMaximumDepositAmount").focus();

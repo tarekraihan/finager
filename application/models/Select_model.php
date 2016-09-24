@@ -625,5 +625,11 @@ class Select_Model extends CI_Model
 
     }
 
+    public function get_all_fdr_draft_info($bank_id,$deposit_type){
+        $sql = "SELECT `id`, `bank_id`, `deposit_type_id`, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `fdr_info_draft` WHERE `bank_id`=$bank_id AND `deposit_type_id`=$deposit_type";
+        $query=$this->db->query($sql);
+        return $query->row();
+    }
+
 
 }
