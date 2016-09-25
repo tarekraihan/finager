@@ -312,7 +312,7 @@ class Fdr extends CI_Controller {
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
-            $this->form_validation->set_rules('txtReview', 'Review', 'trim|required');
+            $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Draft Info";
                 $this->load->view('admin/block/header', $data);
@@ -361,7 +361,7 @@ class Fdr extends CI_Controller {
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
-            $this->form_validation->set_rules('txtReview', 'Review', 'trim|required');
+            $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Draft Info";
                 $this->load->view('admin/block/header', $data);
@@ -420,7 +420,7 @@ class Fdr extends CI_Controller {
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
-            $this->form_validation->set_rules('txtReview', 'Review', 'trim|required');
+            $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - FDR Info";
                 $this->load->view('admin/block/header', $data);

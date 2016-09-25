@@ -211,7 +211,7 @@
                     <a href="<?php echo base_url();?>fdr/fdr_info/"><i class="fa fa-stack-overflow"></i> Add fdr Information</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>personal_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                    <a href="<?php echo base_url();?>fdr/fdr_info_list/"><i class="fa fa-stack-overflow"></i>  FDR Info List</a>
                 </li>
             </ul>
         </li>
