@@ -1,3 +1,35 @@
+<?php
+/*$result1=$this->Select_model->select_all('home_loan_user');
+foreach($result1->result() as $k){
+    echo $k->home_loan_user;
+}
+die;*/
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $table='fdr_info_draft';
+    $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+//    print_r($row);die;
+}else{
+    $row['id']='';
+    $row['bank_id']='';
+    $row['deposit_type_id']='';
+    $row['i_am_id']='';
+    $row['i_want_id']='';
+    $row['tenure_id']='';
+    $row['no_limit_min_amount']='';
+    $row['min_amount']='';
+    $row['no_limit_max_amount']='';
+    $row['max_amount']='';
+    $row['interest_rate']='';
+    $row['available_feature']='';
+    $row['eligibility']='';
+    $row['required_document']='';
+    $row['terms_and_conditions']='';
+    $row['review']='';
+
+}
+?>
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
@@ -35,7 +67,7 @@
 
     <!-- breadcrumb -->
     <ol class="breadcrumb">
-        <li>Deposit</li><li>FDR</li><li> Edit Fdr Information</li>
+        <li>Deposit</li><li>FDR</li><li> Fdr Information</li>
     </ol>
 </div>
 <!-- END RIBBON -->
@@ -49,7 +81,7 @@
             <i class="fa fa-table fa-fw "></i>
             FDR
 							<span>> 
-								Edit Fdr Information
+								Fdr Information
                             </span>
         </h1>
     </div>
@@ -100,7 +132,14 @@
                                     <label class="label">Bank Name</label>
                                     <label class="select">
                                         <select name="txtBankName" id="txtBankName">
-                                            <?php echo $this->Select_model->select_bank();?>
+                                            <?php
+                                            $result=$this->Select_model->select_all('card_bank');
+                                            foreach($result->result() as $row1){
+                                                ?>
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>';
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtBankName');?></label>
@@ -109,7 +148,15 @@
                                     <label class="label">Deposit Type</label>
                                     <label class="select">
                                         <select name="txtDepositType" id="txtDepositType">
-                                            <?php echo $this->Select_model->select_deposit_type();?>
+                                            <?php
+                                            $result=$this->Select_model->select_all('deposit_type');
+                                            //                                                            print_r($result);die;
+                                            foreach($result->result() as $row1){
+                                                ?>
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["deposit_type_id"]) && $row["deposit_type_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtDepositType",$row1->id)?>><?php echo $row1->deposit_name ; ?></option>';
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtDepositType');?></label>
@@ -122,22 +169,36 @@
                                     <label class="label">I Am</label>
                                     <label class="select">
                                         <select name="txtIAm" id="txtIAm">
-                                            <?php echo $this->Select_model->select_fdr_i_am();?>
+                                            <?php
+                                            $result=$this->Select_model->select_all('fdr_i_am');
+                                            foreach($result->result() as $row1){
+                                                ?>
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_am_id"]) && $row["i_am_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtIAm",$row1->id)?>><?php echo $row1->i_am ; ?></option>';
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtIAm');?></label>
                                 </section>
-<!--
-                                <section class="col col-6">
+
+                                <!--<section class="col col-6">
                                     <label class="label">I Want</label>
                                     <label class="select">
                                         <select name="txtIWant" id="txtIWant">
-                                            <?php /*echo $this->Select_model->select_fdr_i_want();*/?>
+                                            <?php
+/*                                            $result=$this->Select_model->select_all('fdr_i_want');
+                                            foreach($result->result() as $row1){
+                                                */?>
+                                                <option value="<?php /*echo $row1->id;*/?>" <?php /*if(isset($row["i_want_id"]) && $row["i_want_id"]==$row1->id){echo "selected='select'";}*/?><?php /*echo set_select("txtIWant",$row1->id)*/?>><?php /*echo $row1->i_want ; */?></option>';
+                                            <?php
+/*                                            }
+                                            */?>
                                         </select>
                                     </label>
                                     <label class="red"><?php /*echo form_error('txtIWant');*/?></label>
-                                </section>
--->
+                                </section>-->
+
                                 <section class="col col-6">
                                     <label class="label">Interest Rate</label>
                                     <label class="input">
@@ -145,6 +206,7 @@
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestRate');?></label>
                                 </section>
+
                             </div>
 
                             <div class="row">
@@ -152,7 +214,14 @@
                                     <label class="label">Tenure</label>
                                     <label class="select">
                                         <select name="txtTenure" id="txtTenure">
-                                            <?php echo $this->Select_model->select_fdr_tenure();?>
+                                            <?php
+                                            $result=$this->Select_model->select_all('fdr_tenure');
+                                            foreach($result->result() as $row1){
+                                                ?>
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_want_id"]) && $row["i_want_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtIWant",$row1->id)?>><?php echo $row1->i_want ; ?></option>';
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtTenure');?></label>
@@ -185,6 +254,7 @@
                                 </section>
 
                             </div>
+
 
 </article>
 <!-- WIDGET END -->
@@ -448,13 +518,38 @@
 <script>
     $(document).ready(function(){
         $("#txtDepositType").on('change', function(){
-            call_draft_info();
-        });
-        $("#txtBankName").on('change', function(){
-            call_draft_info();
-        });
-        $("#txtIAm").on('change', function(){
-            call_draft_info();
+            var deposit_type = $(this).val();
+            var bank_id = $('#txtBankName').val();
+            var param = 'bank_id='+bank_id+'&deposit_type='+deposit_type;
+            if(bank_id != '' && deposit_type != ''){
+                $.ajax({
+                    url: "<?php echo base_url(); ?>fdr/ajax_get_draft_fdr_info",
+                    type : "POST",
+                    dataType : "json",
+                    data : param
+                })
+                .done(function( data ) {
+
+                        if(data.process){
+
+                            CKEDITOR.instances['txtAvailableFeatures'].setData(data.available_feature);
+                            CKEDITOR.instances['txtEligibility'].setData(data.eligibility);
+                            CKEDITOR.instances['txtRequiredDocument'].setData(data.required_document);
+                            CKEDITOR.instances['txtTermsAndConditions'].setData(data.terms_and_conditions);
+                            CKEDITOR.instances['txtReview'].setData(data.review);
+                        }else{
+                            CKEDITOR.instances['txtAvailableFeatures'].setData('');
+                            CKEDITOR.instances['txtEligibility'].setData('');
+                            CKEDITOR.instances['txtRequiredDocument'].setData('');
+                            CKEDITOR.instances['txtTermsAndConditions'].setData('');
+                            CKEDITOR.instances['txtReview'].setData('');
+                        }
+
+                    console.log(data.available_feature);
+                });
+
+            }
+
         });
 
         $("#is_minimum_amount_no_limit").click(function () {
@@ -479,39 +574,4 @@
             }
         });
     });
-
-    function call_draft_info(){
-        var deposit_type = $('#txtDepositType').val();
-        var i_am = $('#txtIAm').val();
-        var bank_id = $('#txtBankName').val();
-        var param = 'bank_id='+bank_id+'&deposit_type='+deposit_type+'&i_am='+i_am;
-        if(bank_id != '' && deposit_type != '' && i_am != ''){
-            $.ajax({
-                url: "<?php echo base_url(); ?>fdr/ajax_get_draft_fdr_info",
-                type : "POST",
-                dataType : "json",
-                data : param
-            })
-                .done(function( data ) {
-
-                    if(data.process){
-
-                        CKEDITOR.instances['txtAvailableFeatures'].setData(data.available_feature);
-                        CKEDITOR.instances['txtEligibility'].setData(data.eligibility);
-                        CKEDITOR.instances['txtRequiredDocument'].setData(data.required_document);
-                        CKEDITOR.instances['txtTermsAndConditions'].setData(data.terms_and_conditions);
-                        CKEDITOR.instances['txtReview'].setData(data.review);
-                    }else{
-                        CKEDITOR.instances['txtAvailableFeatures'].setData('');
-                        CKEDITOR.instances['txtEligibility'].setData('');
-                        CKEDITOR.instances['txtRequiredDocument'].setData('');
-                        CKEDITOR.instances['txtTermsAndConditions'].setData('');
-                        CKEDITOR.instances['txtReview'].setData('');
-                    }
-
-//                    console.log(data.available_feature);
-                });
-
-        }
-    }
 </script>

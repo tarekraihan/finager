@@ -116,6 +116,17 @@
                                             </section>
 
                                         </div>
+                                        <div class="row">
+                                            <section class="col col-6">
+                                                <label class="label">I Am</label>
+                                                <label class="select">
+                                                    <select name="txtIAm" id="txtIAm">
+                                                        <?php echo $this->Select_model->select_fdr_i_am();?>
+                                                    </select>
+                                                </label>
+                                                <label class="red"><?php echo form_error('txtIAm');?></label>
+                                            </section>
+                                        </div>
                                     </section>
                                 </fieldset>
                         </article>

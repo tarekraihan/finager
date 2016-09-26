@@ -13,6 +13,7 @@ if(isset($_GET['id'])){
 }else{
     $row['id']='';
     $row['bank_id']='';
+    $row["i_am_id"] ='';
     $row['deposit_type_id']='';
     $row['available_feature']='';
     $row['eligibility']='';
@@ -155,6 +156,24 @@ if(isset($_GET['id'])){
                                                 <label class="red"><?php echo form_error('txtDepositType');?></label>
                                             </section>
 
+                                        </div>
+                                        <div class="row">
+                                            <section class="col col-6">
+                                                <label class="label">I Am</label>
+                                                <label class="select">
+                                                    <select name="txtIAm" id="txtIAm">
+                                                        <?php
+                                                        $result=$this->Select_model->select_all('fdr_i_am');
+                                                        foreach($result->result() as $row1){
+                                                            ?>
+                                                            <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_am_id"]) && $row["i_am_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtIAm",$row1->id)?>><?php echo $row1->i_am ; ?></option>';
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </label>
+                                                <label class="red"><?php echo form_error('txtIAm');?></label>
+                                            </section>
                                         </div>
                                     </section>
                                 </fieldset>

@@ -186,11 +186,11 @@
                 <li>
                     <a href="<?php echo base_url();?>fdr/deposit_type/"><i class="fa fa-stack-overflow"></i> Add Deposit Type</a>
                 </li>
-
+<!--
                 <li>
-                    <a href="<?php echo base_url();?>fdr/i_want/"><i class="fa fa-stack-overflow"></i> Add I Want</a>
+                    <a href="<?php /*echo base_url();*/?>fdr/i_want/"><i class="fa fa-stack-overflow"></i> Add I Want</a>
                 </li>
-
+-->
                 <li>
                     <a href="<?php echo base_url();?>fdr/tenure/"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
                 </li>

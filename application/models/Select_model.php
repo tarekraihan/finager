@@ -625,8 +625,8 @@ class Select_Model extends CI_Model
 
     }
 
-    public function get_all_fdr_draft_info($bank_id,$deposit_type){
-        $sql = "SELECT `id`, `bank_id`, `deposit_type_id`, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `fdr_info_draft` WHERE `bank_id`=$bank_id AND `deposit_type_id`=$deposit_type";
+    public function get_all_fdr_draft_info($bank_id,$deposit_type,$i_am){
+        $sql = "SELECT `id`, `bank_id`, `deposit_type_id`, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `fdr_info_draft` WHERE `bank_id`=$bank_id AND `deposit_type_id`=$deposit_type AND i_am_id = $i_am";
         $query=$this->db->query($sql);
         return $query->row();
     }
@@ -666,7 +666,7 @@ class Select_Model extends CI_Model
 					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
 
                 $result.='</td>
-                    <td><a href="'.base_url().'fdr/edit_draft_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'fdr/fdr_edit_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;
