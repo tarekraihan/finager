@@ -29,26 +29,19 @@
           <!--  <li>
                 <a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
             </li>
+            -->
             <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Graphs</span></a>
+                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">General Settings</span></a>
                 <ul>
                     <li>
-                        <a href="flot.html">Flot Chart</a>
+                        <a href="<?php echo base_url();?>card/bank">Add Bank Name</a>
                     </li>
                     <li>
-                        <a href="morris.html">Morris Charts</a>
+                        <a href="<?php echo base_url();?>general/non_bank">Add Non Bank Institution</a>
                     </li>
-                    <li>
-                        <a href="inline-charts.html">Inline Charts</a>
-                    </li>
-                    <li>
-                        <a href="dygraphs.html">Dygraphs</a>
-                    </li>
-                    <li>
-                        <a href="chartjs.html">Chart.js <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
-                    </li>
+
                 </ul>
-            </li>-->
+            </li>
             <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">User Manage</span></a>
                 <ul>
@@ -58,9 +51,7 @@
                     <li>
                         <a href="<?php echo base_url();?>backdoor/edit_admin">Edit User </a>
                     </li>
-                    <li>
-                        <a href="jqgrid.html">Jquery Grid</a>
-                    </li>
+
                 </ul>
             </li>
 
@@ -70,9 +61,7 @@
                     <!--<li>
                         <a href="<?php /*echo base_url();*/?>card/age_limit">Age Limit</a>
                     </li>-->
-                    <li>
-                        <a href="<?php echo base_url();?>card/bank">Add Bank Name</a>
-                    </li>
+
                     <li>
                         <a href="<?php echo base_url();?>card/card_issuer">Card Issuer </a>
                     </li>

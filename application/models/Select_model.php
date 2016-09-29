@@ -632,7 +632,7 @@ class Select_Model extends CI_Model
     }
 
     public function get_fdr_info(){
-        $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_i_am.i_am, fdr_i_want.i_want,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_i_want ON fdr_i_want.id = fdr_info.i_want_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id INNER JOIN card_bank ON card_bank.id = fdr_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info.created_by ORDER BY fdr_info.id ASC ";
+        $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_i_am.i_am,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id INNER JOIN card_bank ON card_bank.id = fdr_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info.created_by ORDER BY fdr_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -646,7 +646,7 @@ class Select_Model extends CI_Model
                 if($row->no_limit_max_amount != 1){
                     $max_amount = $row->max_amount;
                 }else{
-                    $max_amount = 0;
+                    $max_amount = 'Unlimited';
                 }
                 $min_amount ='';
                 if($row->no_limit_min_amount != 1){
@@ -658,7 +658,6 @@ class Select_Model extends CI_Model
 					<td lang="bn">'. $sl.'</td>
 					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
 					 <td class="text-center">'.$row->bank_name.'</td>
-					<td class="text-center">'.$row->i_want.'</td>
 					 <td class="text-center"> '.$row->tenure.'</td>
 					 <td class="text-center"> '.$min_amount.'</td>
 					 <td class="text-center"> '.$max_amount.'</td>
