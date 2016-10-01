@@ -78,6 +78,17 @@ class Select_Model extends CI_Model
         }
         return $option;
     }
+    function select_non_bank()
+    {
+        $sql="SELECT * FROM `general_non_bank`";
+        $query=$this->db->query($sql);
+        $option="";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtNonBankName",$row->id).'>'.$row->non_bank_name.'</option>';
+        }
+        return $option;
+    }
     function loan_type()
     {
         $sql="SELECT * FROM `loan_type`";

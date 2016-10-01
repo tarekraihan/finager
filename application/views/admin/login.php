@@ -282,24 +282,48 @@
                     });
                 });
 
-              /*  $('#btnSubmit').on('click touchstart',function(event){
-                    ///alert(2);
-                    console.log(("#login_form").serialize());
-                    $.ajax({
-                        type:"POST",
-                        url:"<?php echo base_url();?>backdoor/admin_login",
-                        data:$("#login_form").serialize(),
-                        success: function(response){
-                            if(response != "error"){
-                                //console.log(response);return;
-                                window.location.href = "<?php echo base_url();?>backdoor/dashboard"
-                            }else{
-                                location.reload();
-                                console.log('error');
-                            }
-                        }
-                    });
-                });*/
+				$("#login_form").keypress(function (e) {
+					if ((e.keyCode == 13) && (e.target.type != "textbox")) {
+						e.preventDefault();
+						// Get input field values
+						var user_email = $('input[name=txtEmail]').val();
+						var user_pass = $('input[name=txtPassword]').val();
+
+						// Simple validation at client's end
+						// We simply change border color to red if empty field using .css()
+						var proceed = true;
+
+						if (user_email === "") {
+							$('input[name=email]').css('border-color', 'red');
+							proceed = false;
+						}
+						if (user_pass === "") {
+							$('input[name=txtPasword]').css('border-color', 'red');
+							proceed = false;
+						}
+
+						if (proceed) {
+							// Insert the AJAX here.
+							$.ajax({
+								type:"POST",
+								url:"<?php echo base_url();?>backdoor/admin_login",
+								data:$("#login_form").serialize(),
+								success: function(response){
+									if(response != "error"){
+										//console.log(response);return;
+										window.location.href = "<?php echo base_url();?>backdoor/dashboard"
+									}else{
+										location.reload();
+										console.log('error');
+									}
+								}
+							});
+						}
+
+
+					}
+				});
+
 			});
 		</script>
 

@@ -414,7 +414,7 @@ class Fdr extends CI_Controller {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 //            print_r($this->input->post()); die;
-            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
+//            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
             $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
 //            $this->form_validation->set_rules('txtIWant', 'I Want', 'trim|required');
@@ -436,11 +436,18 @@ class Fdr extends CI_Controller {
                 $min_limit = $this->input->post('is_minimum_amount_no_limit');
                 $max_limit = $this->input->post('is_maximum_amount_no_limit');
 
+                $is_non_bank =$this->input->post('txtNonBankName');
+                $non_bank = 0;
+                if($is_non_bank == '1'){
+                    $non_bank =1;
+                }
+
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
                     'deposit_type_id' => $this->input->post('txtDepositType'),
                     'i_am_id' => $this->input->post('txtIAm'),
-//                    'i_want_id' => $this->input->post('txtIWant'),
+                    'is_non_bnk' => $non_bank,
+                    'non_bank_id' => $this->input->post('txtNonBankName'),
                     'tenure_id' => $this->input->post('txtTenure'),
                     'no_limit_max_amount' => $max_limit,
                     'max_amount' => $this->input->post('txtMaximumDepositAmount'),

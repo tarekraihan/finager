@@ -35,7 +35,7 @@
 
     <!-- breadcrumb -->
     <ol class="breadcrumb">
-        <li>Deposit</li><li>FDR</li><li> Edit Fdr Information</li>
+        <li>Deposit</li><li>FDR</li><li> Add Fdr Information</li>
     </ol>
 </div>
 <!-- END RIBBON -->
@@ -48,9 +48,9 @@
         <h1 class="page-title txt-color-blueDark">
             <i class="fa fa-table fa-fw "></i>
             FDR
-							<span>> 
-								Edit Fdr Information
-                            </span>
+                <span>>
+                    Add Fdr Information
+                </span>
         </h1>
     </div>
 
@@ -69,7 +69,7 @@
     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
         <header>
             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-            <h2>Edit Fdr Information</h2>
+            <h2>Add Fdr Information</h2>
 
         </header>
 
@@ -97,6 +97,13 @@
                         <section>
                             <div class="row">
                                 <section class="col col-6">
+                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-6" id="institution">
                                     <label class="label">Bank Name</label>
                                     <label class="select">
                                         <select name="txtBankName" id="txtBankName">
@@ -478,6 +485,22 @@
                 $("#txtMaximumDepositAmount").focus();
             }
         });
+
+        $("input[name ='is_non_bank']").click(function() {
+            var v_value = $(this).val();
+            if ($(this).is(":checked")) {
+                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+
+            }else {
+                $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+            }
+        });
+
+        if($("input[name ='is_non_bank']").is(':checked')){
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+        }else{
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+        }
     });
 
     function call_draft_info(){
