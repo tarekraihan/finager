@@ -446,7 +446,7 @@ class Fdr extends CI_Controller {
                     'bank_id' => $this->input->post('txtBankName'),
                     'deposit_type_id' => $this->input->post('txtDepositType'),
                     'i_am_id' => $this->input->post('txtIAm'),
-                    'is_non_bnk' => $non_bank,
+                    'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
                     'tenure_id' => $this->input->post('txtTenure'),
                     'no_limit_max_amount' => $max_limit,
@@ -488,7 +488,7 @@ class Fdr extends CI_Controller {
                 $data['process'] = true;
                 $result = array_merge( $data, $result);
             }
-            echo  json_encode($result);
+            echo json_encode($result);
         }else{
             redirect(base_url().'backdoor');
         }

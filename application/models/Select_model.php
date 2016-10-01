@@ -643,7 +643,7 @@ class Select_Model extends CI_Model
     }
 
     public function get_fdr_info(){
-        $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_i_am.i_am,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id INNER JOIN card_bank ON card_bank.id = fdr_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info.created_by ORDER BY fdr_info.id ASC";
+        $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_i_am.i_am,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, fdr_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id LEFT JOIN card_bank ON card_bank.id = fdr_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id ORDER BY fdr_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -665,10 +665,22 @@ class Select_Model extends CI_Model
                 }else{
                     $min_amount = 0;
                 }
+                $bank = "";
+                if($row->is_non_bank != 0){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank != 0){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
-					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
-					 <td class="text-center">'.$row->bank_name.'</td>
+					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
+					 <td class="text-center">'.$bank.'</td>
 					 <td class="text-center"> '.$row->tenure.'</td>
 					 <td class="text-center"> '.$min_amount.'</td>
 					 <td class="text-center"> '.$max_amount.'</td>
