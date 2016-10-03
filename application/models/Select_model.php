@@ -78,6 +78,17 @@ class Select_Model extends CI_Model
         }
         return $option;
     }
+    function select_district()
+    {
+        $sql="SELECT * FROM `district`";
+        $query=$this->db->query($sql);
+        $option="";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtDistrict",$row->id).'>'.$row->district.'</option>';
+        }
+        return $option;
+    }
     function select_non_bank()
     {
         $sql="SELECT * FROM `general_non_bank`";
@@ -194,6 +205,19 @@ class Select_Model extends CI_Model
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'">'.$row->card_name.'</option>';
+        }
+        return $option;
+    }
+
+
+    function select_thana($id)
+    {
+        $sql="SELECT `id`,`thana` FROM `thana` WHERE `district_id`=$id";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'">'.$row->thana.'</option>';
         }
         return $option;
     }

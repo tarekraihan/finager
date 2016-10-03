@@ -205,7 +205,18 @@
             </ul>
         </li>
 
+        <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>map/add">Add Map Info</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>backdoor/edit_admin">Edit User </a>
+                </li>
 
+            </ul>
+        </li>
         </ul>
     </nav>
 			<span class="minifyme" data-action="minifyMenu"> 
