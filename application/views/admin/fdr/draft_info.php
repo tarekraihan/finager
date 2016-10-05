@@ -95,27 +95,33 @@
                                     ?>
                                     <fieldset>
                                         <section>
-                                        <div class="row">
-                                            <section class="col col-6">
-                                                <label class="label">Bank Name</label>
-                                                <label class="select">
-                                                    <select name="txtBankName" id="txtBankName">
-                                                        <?php echo $this->Select_model->select_bank();?>
-                                                    </select>
-                                                </label>
-                                                <label class="red"><?php echo form_error('txtBankName');?></label>
-                                            </section>
-                                            <section class="col col-6">
-                                                <label class="label">Deposit Type</label>
-                                                <label class="select">
-                                                    <select name="txtDepositType" id="txtDepositType">
-                                                        <?php echo $this->Select_model->deposit_type();?>
-                                                    </select>
-                                                </label>
-                                                <label class="red"><?php echo form_error('txtDepositType');?></label>
-                                            </section>
-
-                                        </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                                    </label>
+                                                </section>
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6" id="institution">
+                                                    <label class="label">Bank Name</label>
+                                                    <label class="select">
+                                                        <select name="txtBankName" id="txtBankName">
+                                                            <?php echo $this->Select_model->select_bank();?>
+                                                        </select>
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtBankName');?></label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label class="label">Deposit Type</label>
+                                                    <label class="select">
+                                                        <select name="txtDepositType" id="txtDepositType">
+                                                            <?php echo $this->Select_model->deposit_type();?>
+                                                        </select>
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtDepositType');?></label>
+                                                </section>
+                                            </div>
                                         <div class="row">
                                             <section class="col col-6">
                                                 <label class="label">I Am</label>
@@ -413,5 +419,20 @@
                 });
             }
         });
+        $("input[name ='is_non_bank']").click(function() {
+            var v_value = $(this).val();
+            if ($(this).is(":checked")) {
+                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+
+            }else {
+                $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+            }
+        });
+
+        if($("input[name ='is_non_bank']").is(':checked')){
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+        }else{
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+        }
     });
 </script>

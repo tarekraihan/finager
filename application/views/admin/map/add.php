@@ -168,7 +168,13 @@
                                             </div>
 
                                             <div id="images">
-
+                                                <div class="form-group">
+                                                    <label class="control-label">Select Images</label>
+                                                    <input id="images" name="images[]" type="file" multiple class="file-loading"  data-allowed-file-extensions='["jpg", "JPG", "png","PNG","jpeg","JPEG"]'>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="red"><?php echo form_error('file');?></label>
+                                                </div>
                                             </div>
 
                 </article>
