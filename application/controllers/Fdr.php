@@ -299,7 +299,7 @@ class Fdr extends CI_Controller {
         }
     }
 
-    public function do_upload($path, $field = '')
+   /* public function do_upload($path, $field = '')
     {
         $this->load->library('upload');
         $config['upload_path'] = $path;
@@ -314,7 +314,7 @@ class Fdr extends CI_Controller {
         } else {
             return $this->upload->data();
         }
-    }
+    }*/
 
     public function draft_info($msg=''){
         if ($this->session->userdata('email_address')) {

@@ -581,7 +581,7 @@ class Select_Model extends CI_Model
 
     public function select_fdr_draft_info()//To show FDR Common Info list
     {
-        $sql="SELECT fdr_info_draft.id,fdr_info_draft.available_feature,deposit_type.deposit_name,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info_draft` INNER JOIN card_bank ON card_bank.id=fdr_info_draft.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info_draft.created_by INNER JOIN deposit_type ON deposit_type.id= fdr_info_draft.deposit_type_id ORDER BY fdr_info_draft.id ASC";
+        $sql="SELECT fdr_info_draft.id,fdr_info_draft.available_feature,fdr_info_draft.is_non_bank,deposit_type.deposit_name,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info_draft` LEFT JOIN card_bank ON card_bank.id=fdr_info_draft.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=fdr_info_draft.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info_draft.created_by INNER JOIN deposit_type ON deposit_type.id= fdr_info_draft.deposit_type_id ORDER BY fdr_info_draft.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -590,11 +590,22 @@ class Select_Model extends CI_Model
             $sl=1;
             foreach($query->result() as $row)
             {
-
+                $bank = "";
+                if($row->is_non_bank != 0){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank != 0){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
-					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
-					 <td class="center">'.$row->bank_name.'</td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
+					 <td class="center">'.$bank.'</td>
 					<td class="center">'.$row->deposit_name.'</td>
 					 <td class="center"> '.$row->available_feature.'</td>
 					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
