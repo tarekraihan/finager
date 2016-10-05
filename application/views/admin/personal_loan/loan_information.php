@@ -163,23 +163,26 @@
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaximumLonAmount');?></label>
                                                 </section>
-                                                <section class="col col-6"  >
+                                                <section class="col col-6">
+                                                    <label class="label">Loan Short Description</label>
+                                                    <label class="input">
+                                                        <input type="text"  name="txtLoanShortDescription" value="<?php echo set_value('txtLoanShortDescription'); ?>" placeholder="Write short description">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
+                                                </section>
+                                            </div>
+
+                                            <div class="row">
+                                                <section class="col col-6">
                                                     <label class="radio-inline" style="margin-left: 25px ">
                                                         <input type="radio" name="is_fixed" value="variable" > Variable Interest
                                                     </label>
                                                     <label class="radio-inline" style=" margin-left:35px">
                                                         <input type="radio" name="is_fixed" id="is_fixed" value="fixed" checked > Fixed Interest
                                                     </label>
-
                                                 </section>
                                             </div>
-
-                                            <div class="row">
-
-
-                                            </div>
                                             <div id="interest_rate">
-
                                                 <div class="row">
                                                     <section class="col col-6">
                                                         <label class="label">Interest Rate Fixed (%)</label>
@@ -188,13 +191,7 @@
                                                         </label>
                                                         <label class="red"><?php echo form_error('txtInterestRateFixed');?></label>
                                                     </section>
-                                                    <section class="col col-6">
-                                                        <label class="label">Loan Short Description</label>
-                                                        <label class="input">
-                                                            <input type="text"  name="txtLoanShortDescription" value="<?php echo set_value('txtLoanShortDescription'); ?>" placeholder="Write short description">
-                                                        </label>
-                                                        <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
-                                                    </section>
+
                                                 </div>
 
                                             </div>
