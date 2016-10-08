@@ -441,7 +441,7 @@ class Fdr extends CI_Controller {
 //            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
             $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
-//            $this->form_validation->set_rules('txtIWant', 'I Want', 'trim|required');
+            $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
             $this->form_validation->set_rules('txtTenure', 'Tenure', 'trim|required');
             $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|required');
             $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
@@ -468,16 +468,17 @@ class Fdr extends CI_Controller {
 
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
-                    'deposit_type_id' => $this->input->post('txtDepositType'),
                     'i_am_id' => $this->input->post('txtIAm'),
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
+                    'deposit_type_id' => $this->input->post('txtDepositType'),
                     'tenure_id' => $this->input->post('txtTenure'),
                     'no_limit_max_amount' => $max_limit,
                     'max_amount' => $this->input->post('txtMaximumDepositAmount'),
                     'no_limit_min_amount' => $min_limit,
                     'min_amount' => $this->input->post('txtMinimumDepositAmount'),
                     'interest_rate' => $this->input->post('txtInterestRate'),
+                    'loan_facility' => $this->input->post('txtLoanFacility'),
                     'available_feature' => $this->input->post('txtAvailableFeatures'),
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),
@@ -539,7 +540,7 @@ class Fdr extends CI_Controller {
             $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
             $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
-//            $this->form_validation->set_rules('txtIWant', 'I Want', 'trim|required');
+            $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
             $this->form_validation->set_rules('txtTenure', 'Tenure', 'trim|required');
             $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|required');
             $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
@@ -569,6 +570,7 @@ class Fdr extends CI_Controller {
                     'no_limit_min_amount' => $min_limit,
                     'min_amount' => $this->input->post('txtMinimumDepositAmount'),
                     'interest_rate' => $this->input->post('txtInterestRate'),
+                    'loan_facility' => $this->input->post('txtLoanFacility'),
                     'available_feature' => $this->input->post('txtAvailableFeatures'),
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),

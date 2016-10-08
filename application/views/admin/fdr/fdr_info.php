@@ -190,7 +190,6 @@
                                     </label>
                                     <label class="red"><?php echo form_error('txtMaximumDepositAmount');?></label>
                                 </section>
-
                             </div>
 
 </article>

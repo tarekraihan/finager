@@ -129,6 +129,13 @@ if(isset($_GET['id'])){
                         <section>
                             <div class="row">
                                 <section class="col col-6">
+                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-6">
                                     <label class="label">Bank Name</label>
                                     <label class="select">
                                         <select name="txtBankName" id="txtBankName">
@@ -140,6 +147,15 @@ if(isset($_GET['id'])){
                                             <?php
                                             }
                                             ?>
+                                        </select>
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtBankName');?></label>
+                                </section>
+                                <section class="col col-6" id="institution">
+                                    <label class="label">Bank Name</label>
+                                    <label class="select">
+                                        <select name="txtBankName" id="txtBankName">
+                                            <?php echo $this->Select_model->select_bank();?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtBankName');?></label>
@@ -164,7 +180,6 @@ if(isset($_GET['id'])){
 
                             </div>
                             <div class="row">
-
                                 <section class="col col-6">
                                     <label class="label">I Am</label>
                                     <label class="select">
@@ -181,24 +196,6 @@ if(isset($_GET['id'])){
                                     </label>
                                     <label class="red"><?php echo form_error('txtIAm');?></label>
                                 </section>
-
-                                <!--<section class="col col-6">
-                                    <label class="label">I Want</label>
-                                    <label class="select">
-                                        <select name="txtIWant" id="txtIWant">
-                                            <?php
-/*                                            $result=$this->Select_model->select_all('fdr_i_want');
-                                            foreach($result->result() as $row1){
-                                                */?>
-                                                <option value="<?php /*echo $row1->id;*/?>" <?php /*if(isset($row["i_want_id"]) && $row["i_want_id"]==$row1->id){echo "selected='select'";}*/?><?php /*echo set_select("txtIWant",$row1->id)*/?>><?php /*echo $row1->i_want ; */?></option>';
-                                            <?php
-/*                                            }
-                                            */?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php /*echo form_error('txtIWant');*/?></label>
-                                </section>-->
-
                                 <section class="col col-6">
                                     <label class="label">Interest Rate</label>
                                     <label class="input">
@@ -206,7 +203,6 @@ if(isset($_GET['id'])){
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestRate');?></label>
                                 </section>
-
                             </div>
 
                             <div class="row">
@@ -237,7 +233,6 @@ if(isset($_GET['id'])){
                                 </section>
                             </div>
                             <div class="row">
-
                                 <section class="col col-6">
                                     <label class="label">Minimum Deposit Amount</label>
                                     <label class="input">
@@ -254,6 +249,16 @@ if(isset($_GET['id'])){
                                 </section>
 
                             </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Loan Facility (%)</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="5" name="txtLoanFacility" value="<?php echo set_value('txtLoanFacility'); ?>" placeholder="Write Loan Facility without percentage sign">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtLoanFacility');?></label>
+                                </section>
+                            </div>
+
 
 
 </article>
@@ -573,5 +578,21 @@ if(isset($_GET['id'])){
                 $("#txtMaximumDepositAmount").focus();
             }
         });
+
+        $("input[name ='is_non_bank']").click(function() {
+            var v_value = $(this).val();
+            if ($(this).is(":checked")) {
+                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+
+            }else {
+                $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+            }
+        });
+
+        if($("input[name ='is_non_bank']").is(':checked')){
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+        }else{
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+        }
     });
 </script>

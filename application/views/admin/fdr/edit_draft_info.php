@@ -13,6 +13,8 @@ if(isset($_GET['id'])){
 }else{
     $row['id']='';
     $row['bank_id']='';
+    $row['is_non_bank']='';
+    $row['non_bank_id']='';
     $row["i_am_id"] ='';
     $row['deposit_type_id']='';
     $row['available_feature']='';
@@ -73,9 +75,9 @@ if(isset($_GET['id'])){
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
                     FDR
-							<span>> 
-								Draft/Common Information
-                            </span>
+                    <span>>
+                        Draft/Common Information
+                    </span>
                 </h1>
             </div>
 
@@ -120,14 +122,25 @@ if(isset($_GET['id'])){
                                     ?>
                                     <fieldset>
                                         <section>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?><?php if($row['is_non_bank'] == '1'){echo 'checked'; }?> > Is Non Bank Institution ?
+                                                        <input type="hidden" name="txtDraftId" value="<?php echo $row['id'];?>">
+                                                    </label>
+                                                </section>
+                                            </div>
+
                                         <div class="row">
+
                                             <section class="col col-6">
+
                                                 <label class="label">Bank Name</label>
-                                                <input type="hidden" name="txtDraftId" value="<?php echo $row['id'];?>">
+
                                                 <label class="select">
                                                     <select name="txtBankName" id="txtBankName">
                                                         <?php
-                                                        $result=$this->Select_model->select_all('card_bank');
+                                                        $result=$this->Select_model->select_all("card_bank");
                                                         foreach($result->result() as $row1){
                                                             ?>
                                                             <option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>';
@@ -138,13 +151,23 @@ if(isset($_GET['id'])){
                                                 </label>
                                                 <label class="red"><?php echo form_error('txtBankName');?></label>
                                             </section>
+                                            <section class="col col-6" id="institution">
+                                                <label class="label">Bank Name</label>
+                                                <label class="select">
+                                                    <select name="txtBankName" id="txtBankName">
+                                                        <?php echo $this->Select_model->select_bank();?>
+                                                    </select>
+                                                </label>
+                                                <label class="red"><?php echo form_error('txtBankName');?></label>
+                                            </section>
+
                                             <section class="col col-6">
                                                 <label class="label">Deposit Type</label>
                                                 <label class="select">
                                                     <select name="txtDepositType" id="txtDepositType">
                                                         <?php
                                                         $result=$this->Select_model->select_all('deposit_type');
-                                                        //                                                            print_r($result);die;
+                                                        //   print_r($result);die;
                                                         foreach($result->result() as $row1){
                                                             ?>
                                                             <option value="<?php echo $row1->id;?>" <?php if(isset($row["deposit_type_id"]) && $row["deposit_type_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtDepositType",$row1->id)?>><?php echo $row1->deposit_name ; ?></option>';
@@ -461,5 +484,27 @@ if(isset($_GET['id'])){
                 });
             }
         });
+        $("input[name ='is_non_bank']").click(function() {
+            var v_value = $(this).val();
+            if ($(this).is(":checked")) {
+                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+
+            }else {
+                $('#institution').html('<label class="select"><select name="txtBankName" id="txtBankName"><?php $result=$this->Select_model->select_all("card_bank");
+                foreach($result->result() as $row1){
+                    ?><option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>';
+                <?php
+                }
+                ?>
+                </select>
+                </label>');
+            }
+        });
+
+        if($("input[name ='is_non_bank']").is(':checked')){
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+        }else{
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+        }
     });
 </script>
