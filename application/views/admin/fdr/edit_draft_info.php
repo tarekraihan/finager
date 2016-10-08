@@ -495,9 +495,7 @@ if(isset($_GET['id'])){
                     ?><option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>';
                 <?php
                 }
-                ?>
-                </select>
-                </label>');
+                ?>'</select></label>');
             }
         });
 
