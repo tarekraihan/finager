@@ -75,4 +75,21 @@ class Map extends CI_Controller {
         echo $response;
     }
 
+    public function do_upload($path, $field = '')
+    {
+        $this->load->library('upload');
+        $config['upload_path'] = $path;
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size'] = '4096';
+        $config['file_name'] = '1';
+
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload($field)) {
+            return $this->upload->display_errors();
+        } else {
+            return $this->upload->data();
+        }
+    }
+
 }

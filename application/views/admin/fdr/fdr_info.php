@@ -101,8 +101,6 @@
                                         <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
                                     </label>
                                 </section>
-                            </div>
-                            <div class="row">
                                 <section class="col col-6" id="institution">
                                     <label class="label">Bank Name</label>
                                     <label class="select">
@@ -112,6 +110,9 @@
                                     </label>
                                     <label class="red"><?php echo form_error('txtBankName');?></label>
                                 </section>
+                            </div>
+                            <div class="row">
+
                                 <section class="col col-6">
                                     <label class="label">Deposit Type</label>
                                     <label class="select">
@@ -121,10 +122,6 @@
                                     </label>
                                     <label class="red"><?php echo form_error('txtDepositType');?></label>
                                 </section>
-
-                            </div>
-                            <div class="row">
-
                                 <section class="col col-6">
                                     <label class="label">I Am</label>
                                     <label class="select">
@@ -133,6 +130,17 @@
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtIAm');?></label>
+                                </section>
+                            </div>
+                            <div class="row">
+
+                                <section class="col col-6">
+                                    <label class="label">Loan Facility (%)</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="10" name="txtLoanFacility" value="<?php echo set_value('txtLoanFacility'); ?>" placeholder="Write Loan Facility without percentage sign">
+                                    </label>
+
+                                    <label class="red"><?php echo form_error('txtLoanFacility');?></label>
                                 </section>
 <!--
                                 <section class="col col-6">
@@ -459,6 +467,9 @@
         $("#txtBankName").on('change', function(){
             call_draft_info();
         });
+        $("#txtNonBankName").on('change', function(){
+            call_draft_info();
+        });
         $("#txtIAm").on('change', function(){
             call_draft_info();
         });
@@ -506,7 +517,12 @@
         var deposit_type = $('#txtDepositType').val();
         var i_am = $('#txtIAm').val();
         var bank_id = $('#txtBankName').val();
-        var param = 'bank_id='+bank_id+'&deposit_type='+deposit_type+'&i_am='+i_am;
+        var non_bank_id = $('#txtNonBankName').val();
+        if($("input[name ='is_non_bank']").is(':checked')){
+            var param = 'non_bank_id='+non_bank_id+'&deposit_type='+deposit_type+'&i_am='+i_am+'&is_non_bank=1';
+        }else{
+            var param = 'bank_id='+bank_id+'&deposit_type='+deposit_type+'&i_am='+i_am+'&is_non_bank=0';
+        }
         if(bank_id != '' && deposit_type != '' && i_am != ''){
             $.ajax({
                 url: "<?php echo base_url(); ?>fdr/ajax_get_draft_fdr_info",

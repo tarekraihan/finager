@@ -80,9 +80,9 @@ if(isset($_GET['id'])){
         <h1 class="page-title txt-color-blueDark">
             <i class="fa fa-table fa-fw "></i>
             FDR
-							<span>> 
-								Fdr Information
-                            </span>
+                <span>>
+                    Fdr Information
+                </span>
         </h1>
     </div>
 
@@ -133,8 +133,6 @@ if(isset($_GET['id'])){
                                         <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
                                     </label>
                                 </section>
-                            </div>
-                            <div class="row">
                                 <section class="col col-6">
                                     <label class="label">Bank Name</label>
                                     <label class="select">
@@ -151,15 +149,8 @@ if(isset($_GET['id'])){
                                     </label>
                                     <label class="red"><?php echo form_error('txtBankName');?></label>
                                 </section>
-                                <section class="col col-6" id="institution">
-                                    <label class="label">Bank Name</label>
-                                    <label class="select">
-                                        <select name="txtBankName" id="txtBankName">
-                                            <?php echo $this->Select_model->select_bank();?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtBankName');?></label>
-                                </section>
+                            </div>
+                            <div class="row">
                                 <section class="col col-6">
                                     <label class="label">Deposit Type</label>
                                     <label class="select">
@@ -177,9 +168,6 @@ if(isset($_GET['id'])){
                                     </label>
                                     <label class="red"><?php echo form_error('txtDepositType');?></label>
                                 </section>
-
-                            </div>
-                            <div class="row">
                                 <section class="col col-6">
                                     <label class="label">I Am</label>
                                     <label class="select">
@@ -195,6 +183,16 @@ if(isset($_GET['id'])){
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtIAm');?></label>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Loan Facility (%)</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="5" name="txtLoanFacility" value="<?php echo set_value('txtLoanFacility'); ?>" placeholder="Write Loan Facility without percentage sign">
+                                    </label>
+
+                                    <label class="red"><?php echo form_error('txtLoanFacility');?></label>
                                 </section>
                                 <section class="col col-6">
                                     <label class="label">Interest Rate</label>

@@ -460,7 +460,8 @@ class Fdr extends CI_Controller {
                 $min_limit = $this->input->post('is_minimum_amount_no_limit');
                 $max_limit = $this->input->post('is_maximum_amount_no_limit');
 
-                $is_non_bank =$this->input->post('txtNonBankName');
+                $is_non_bank =$this->input->post('is_non_bank');
+//                echo $is_non_bank; die;
                 $non_bank = 0;
                 if($is_non_bank == '1'){
                     $non_bank =1;
@@ -505,9 +506,16 @@ class Fdr extends CI_Controller {
     public function ajax_get_draft_fdr_info(){
         if ($this->session->userdata('email_address')) {
             $bank_id =$this->input->post('bank_id');
+            $non_bank_id =$this->input->post('non_bank_id');
+            $is_non_bank =$this->input->post('is_non_bank');
             $deposit_type =$this->input->post('deposit_type');
             $i_am =$this->input->post('i_am');
-            $result =  $this->Select_model->get_all_fdr_draft_info($bank_id,$deposit_type,$i_am);
+            if($is_non_bank == 1){
+                $result =  $this->Select_model->get_all_fdr_draft_info($non_bank_id,$deposit_type,$i_am,$is_non_bank);
+            }else{
+
+                $result =  $this->Select_model->get_all_fdr_draft_info($bank_id,$deposit_type,$i_am,$is_non_bank='0');
+            }
             $result = (array)$result;
             if($result){
                 $data['process'] = true;
