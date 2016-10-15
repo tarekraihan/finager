@@ -9,10 +9,13 @@ if(isset($_GET['id'])){
     $table='fdr_info_draft';
     $id_field='id';
     $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
-//    print_r($row);die;
+//    echo $row['is_non_bank']; die;
+    print_r($row);die;
 }else{
     $row['id']='';
     $row['bank_id']='';
+    $row['is_non_bank']='';
+    $row['non_bank_id']='';
     $row['deposit_type_id']='';
     $row['i_am_id']='';
     $row['i_want_id']='';
@@ -22,6 +25,7 @@ if(isset($_GET['id'])){
     $row['no_limit_max_amount']='';
     $row['max_amount']='';
     $row['interest_rate']='';
+    $row['loan_facility']='';
     $row['available_feature']='';
     $row['eligibility']='';
     $row['required_document']='';
@@ -67,7 +71,7 @@ if(isset($_GET['id'])){
 
     <!-- breadcrumb -->
     <ol class="breadcrumb">
-        <li>Deposit</li><li>FDR</li><li> Fdr Information</li>
+        <li>Deposit</li><li>FDR</li><li> Edit Fdr Information</li>
     </ol>
 </div>
 <!-- END RIBBON -->
@@ -81,7 +85,7 @@ if(isset($_GET['id'])){
             <i class="fa fa-table fa-fw "></i>
             FDR
                 <span>>
-                    Fdr Information
+                   Edit Fdr Information
                 </span>
         </h1>
     </div>
@@ -130,7 +134,7 @@ if(isset($_GET['id'])){
                             <div class="row">
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> <?php echo ($row['is_non_bank'] =='1') ? 'checked' : '' ;?>> Is Non Bank Institution ?
                                     </label>
                                 </section>
                                 <section class="col col-6">
