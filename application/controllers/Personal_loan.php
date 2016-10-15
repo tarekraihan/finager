@@ -167,7 +167,7 @@ class Personal_Loan extends CI_Controller {
             } else if ($msg == 'error') {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
-            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
+//            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
             $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
@@ -200,8 +200,15 @@ class Personal_Loan extends CI_Controller {
                 if($is_fixed == 'fixed'){
                     $fixed =1;
                 }
+                $is_non_bank =$this->input->post('is_non_bank');
+                $non_bank = 0;
+                if($is_non_bank == '1'){
+                    $non_bank =1;
+                }
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
+                    'is_non_bank' => $non_bank,
+                    'non_bank_id' => $this->input->post('txtNonBankName'),
                     'loan_type_id' => $this->input->post('txtLoanType'),
                     'personal_loan_looking_for_id' => $this->input->post('txtLookingFor'),
                     'personal_loan_name' => htmlentities($this->input->post('txtLoanName')),

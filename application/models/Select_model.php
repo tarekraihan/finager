@@ -484,21 +484,35 @@ class Select_Model extends CI_Model
 
     public function select_home_loan_information()//To show Home loan list
     {
-        $sql="SELECT home_loan_info.id,home_loan_info.home_loan_name,home_loan_info.min_loan_amount,home_loan_info.max_loan_amount,home_loan_info.interest_rate_average,home_loan_info.is_fixed,home_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name,home_loan_looking_for.home_loan_looking_for FROM `home_loan_info` INNER JOIN card_bank ON card_bank.id=home_loan_info.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=home_loan_info.created_by INNER JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id ORDER BY home_loan_info.id ASC";
+        $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank, home_loan_info.home_loan_name,home_loan_info.min_loan_amount,home_loan_info.max_loan_amount,home_loan_info.interest_rate_average,home_loan_info.is_fixed,home_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name,home_loan_looking_for.home_loan_looking_for FROM `home_loan_info` LEFT JOIN card_bank ON card_bank.id=home_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=home_loan_info.created_by INNER JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id ORDER BY home_loan_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
         if($query->num_rows() > 0)
         {
+
             $sl=1;
             foreach($query->result() as $row)
             {
+                $bank = "";
+                if($row->is_non_bank == 1){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank == 1){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
+
                 $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg)' : $row->interest_rate_fixed.' % (Fixed)';
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
-					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					<td class="center">'.$row->home_loan_name.'</td>
-					 <td class="center">'.$row->bank_name.'</td>
+					 <td class="center">'.$bank.'</td>
 					 <td class="center">'.$row->home_loan_looking_for.'</td>
 					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
 					 <td class="center"> '.$interest.'</td>
@@ -517,7 +531,7 @@ class Select_Model extends CI_Model
 
     public function select_auto_loan_information()//To show Home loan list
     {
-        $sql="SELECT auto_loan_info.id,auto_loan_info.auto_loan_name,auto_loan_info.min_loan_amount,auto_loan_info.max_loan_amount,auto_loan_info.interest_rate_average,auto_loan_info.is_fixed,auto_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name,auto_i_want.i_want FROM `auto_loan_info` INNER JOIN card_bank ON card_bank.id=auto_loan_info.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=auto_loan_info.created_by INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id ORDER BY auto_loan_info.id ASC";
+        $sql="SELECT auto_loan_info.id,auto_loan_info.is_non_bank,auto_loan_info.auto_loan_name,auto_loan_info.min_loan_amount,auto_loan_info.max_loan_amount,auto_loan_info.interest_rate_average,auto_loan_info.is_fixed,auto_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name,auto_i_want.i_want FROM `auto_loan_info`  LEFT JOIN card_bank ON card_bank.id=auto_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=auto_loan_info.created_by INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id ORDER BY auto_loan_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -526,12 +540,24 @@ class Select_Model extends CI_Model
             $sl=1;
             foreach($query->result() as $row)
             {
+                $bank = "";
+                if($row->is_non_bank != 0){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank != 0){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
                 $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg)' : $row->interest_rate_fixed.' % (Fixed)';
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
-					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					<td class="center">'.$row->auto_loan_name.'</td>
-					 <td class="center">'.$row->bank_name.'</td>
+					 <td class="center">'.$bank.'</td>
 					 <td class="center">'.$row->i_want.'</td>
 					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
 					 <td class="center"> '.$interest.'</td>
@@ -549,7 +575,7 @@ class Select_Model extends CI_Model
 
     public function select_personal_loan_information()//To show Home loan list
     {
-        $sql="SELECT personal_loan_info.id,personal_loan_info.personal_loan_name,personal_loan_info.min_loan_amount,personal_loan_info.max_loan_amount,personal_loan_info.interest_rate_average,personal_loan_info.is_fixed,personal_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `personal_loan_info` INNER JOIN card_bank ON card_bank.id=personal_loan_info.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=personal_loan_info.created_by  ORDER BY personal_loan_info.id ASC";
+        $sql="SELECT personal_loan_info.id,personal_loan_info.is_non_bank,personal_loan_info.personal_loan_name,personal_loan_info.min_loan_amount,personal_loan_info.max_loan_amount,personal_loan_info.interest_rate_average,personal_loan_info.is_fixed,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo,personal_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `personal_loan_info`  LEFT JOIN card_bank ON card_bank.id=personal_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = personal_loan_info.non_bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=personal_loan_info.created_by  ORDER BY personal_loan_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -558,12 +584,24 @@ class Select_Model extends CI_Model
             $sl=1;
             foreach($query->result() as $row)
             {
+                $bank = "";
+                if($row->is_non_bank != 0){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank != 0){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
                 $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg)' : $row->interest_rate_fixed.' % (Fixed)';
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
-					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					<td class="center">'.$row->personal_loan_name.'</td>
-					 <td class="center">'.$row->bank_name.'</td>
+					 <td class="center">'.$bank.'</td>
 					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
 					 <td class="center"> '.$interest.'</td>
 					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
