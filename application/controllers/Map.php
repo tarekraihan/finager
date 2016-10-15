@@ -6,7 +6,6 @@ class Map extends CI_Controller {
     public function add($msg=""){
 
         if ($this->session->userdata('email_address')) {
-
             if ($msg == 'success') {
                 $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Update !!</div>';
             } else if ($msg == 'error') {
