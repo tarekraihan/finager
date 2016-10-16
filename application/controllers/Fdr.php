@@ -461,9 +461,8 @@ class Fdr extends CI_Controller {
                 $max_limit = $this->input->post('is_maximum_amount_no_limit');
 
                 $is_non_bank =$this->input->post('is_non_bank');
-//                echo $is_non_bank; die;
                 $non_bank = 0;
-                if($is_non_bank == '1'){
+                if($is_non_bank == 1){
                     $non_bank =1;
                 }
 
@@ -490,8 +489,6 @@ class Fdr extends CI_Controller {
                 );
                 $this->Common_model->table_name = 'fdr_info';
                 $result = $this->Common_model->insert();
-//                print_r($this->Common_model->data);die;
-//                echo $result; die;
                 if ($result) {
                     redirect(base_url().'fdr/fdr_info/success');
                 } else {
@@ -544,8 +541,6 @@ class Fdr extends CI_Controller {
             } else if ($msg == 'error') {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
-//            print_r($this->input->post()); die;
-            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
             $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
@@ -557,7 +552,7 @@ class Fdr extends CI_Controller {
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
-                $data['title'] = "Finager - FDR Info";
+                $data['title'] = "Finager - Edit FDR Info";
                 $this->load->view('admin/block/header', $data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/fdr/fdr_edit_info');
@@ -567,11 +562,18 @@ class Fdr extends CI_Controller {
                 $min_limit = $this->input->post('is_minimum_amount_no_limit');
                 $max_limit = $this->input->post('is_maximum_amount_no_limit');
 
+                $is_non_bank =$this->input->post('is_non_bank');
+//                echo $is_non_bank; die;
+                $non_bank = 0;
+                if($is_non_bank == 1){
+                    $non_bank =1;
+                }
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
                     'deposit_type_id' => $this->input->post('txtDepositType'),
                     'i_am_id' => $this->input->post('txtIAm'),
-//                    'i_want_id' => $this->input->post('txtIWant'),
+                    'is_non_bank' => $non_bank,
+                    'non_bank_id' => $this->input->post('txtNonBankName'),
                     'tenure_id' => $this->input->post('txtTenure'),
                     'no_limit_max_amount' => $max_limit,
                     'max_amount' => $this->input->post('txtMaximumDepositAmount'),
@@ -587,10 +589,11 @@ class Fdr extends CI_Controller {
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
+
                 $this->Common_model->table_name = 'fdr_info';
-                $result = $this->Common_model->insert();
-//                print_r($this->Common_model->data);die;
-//                echo $result; die;
+                $this->Common_model->where = array('id' => $this->input->post('txtFdrInfoId'));
+                $result = $this->Common_model->update();
+
                 if ($result) {
                     redirect(base_url().'fdr/fdr_edit_info/success');
                 } else {

@@ -6,11 +6,11 @@ foreach($result1->result() as $k){
 die;*/
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $table='fdr_info_draft';
+    $table='fdr_info';
     $id_field='id';
     $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
 //    echo $row['is_non_bank']; die;
-    print_r($row);die;
+//    print_r($row);die;
 }else{
     $row['id']='';
     $row['bank_id']='';
@@ -122,7 +122,7 @@ if(isset($_GET['id'])){
             <!-- widget content -->
             <div class="widget-body no-padding">
 
-                <form id="age_limit" method="post" action="<?php echo base_url();?>fdr/fdr_info" class="smart-form" novalidate="novalidate">
+                <form id="age_limit" method="post" action="<?php echo base_url();?>fdr/fdr_edit_info" class="smart-form" novalidate="novalidate">
                     <?php
                     //-----Display Success or Error message---
                     if(isset($feedback)){
@@ -134,24 +134,12 @@ if(isset($_GET['id'])){
                             <div class="row">
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> <?php echo ($row['is_non_bank'] =='1') ? 'checked' : '' ;?>> Is Non Bank Institution ?
+                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> <?php echo ($row['is_non_bank'] ==1) ? 'checked' : '' ;?>> Is Non Bank Institution ?
+                                        <input type="hidden" name="txtFdrInfoId" value="<?php echo $row['id'];?>">
                                     </label>
                                 </section>
-                                <section class="col col-6">
-                                    <label class="label">Bank Name</label>
-                                    <label class="select">
-                                        <select name="txtBankName" id="txtBankName">
-                                            <?php
-                                            $result=$this->Select_model->select_all('card_bank');
-                                            foreach($result->result() as $row1){
-                                                ?>
-                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>';
-                                            <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtBankName');?></label>
+                                <section class="col col-6" id="institution">
+
                                 </section>
                             </div>
                             <div class="row">
@@ -193,7 +181,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-6">
                                     <label class="label">Loan Facility (%)</label>
                                     <label class="input">
-                                        <input type="text" maxlength="5" name="txtLoanFacility" value="<?php echo set_value('txtLoanFacility'); ?>" placeholder="Write Loan Facility without percentage sign">
+                                        <input type="text" maxlength="5" name="txtLoanFacility" value="<?php echo $row['loan_facility']; ?>" placeholder="Write Loan Facility without percentage sign">
                                     </label>
 
                                     <label class="red"><?php echo form_error('txtLoanFacility');?></label>
@@ -201,7 +189,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-6">
                                     <label class="label">Interest Rate</label>
                                     <label class="input">
-                                        <input type="text" maxlength="50" name="txtInterestRate" value="<?php echo set_value('txtInterestRate'); ?>" placeholder="Write Interest Rate without percentage sign">
+                                        <input type="text" maxlength="50" name="txtInterestRate" value="<?php echo $row['interest_rate']; ?>" placeholder="Write Interest Rate without percentage sign">
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestRate');?></label>
                                 </section>
@@ -216,7 +204,7 @@ if(isset($_GET['id'])){
                                             $result=$this->Select_model->select_all('fdr_tenure');
                                             foreach($result->result() as $row1){
                                                 ?>
-                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_want_id"]) && $row["i_want_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtIWant",$row1->id)?>><?php echo $row1->i_want ; ?></option>';
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["tenure_id"]) && $row["tenure_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtTenure",$row1->id)?>><?php echo $row1->tenure ; ?></option>';
                                             <?php
                                             }
                                             ?>
@@ -226,10 +214,10 @@ if(isset($_GET['id'])){
                                 </section>
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                        <input type="checkbox" name="is_minimum_amount_no_limit" id="is_minimum_amount_no_limit" value="1"> Is Minimum Amount No limit
+                                        <input type="checkbox" name="is_minimum_amount_no_limit" id="is_minimum_amount_no_limit" value="1" <?php echo ($row['no_limit_min_amount'] ==1) ? 'checked' : '' ;?>> Is Minimum Amount No limit
                                     </label>
                                     <label class="radio-inline" style=" margin-left:35px; margin-top:25px;">
-                                        <input type="checkbox" name="is_maximum_amount_no_limit" id="is_maximum_amount_no_limit" value="1"> Is Maximum Amount No limit
+                                        <input type="checkbox" name="is_maximum_amount_no_limit" id="is_maximum_amount_no_limit" value="1" <?php echo ($row['no_limit_max_amount'] ==1) ? 'checked' : '' ;?>> Is Maximum Amount No limit
                                     </label>
 
                                 </section>
@@ -238,29 +226,19 @@ if(isset($_GET['id'])){
                                 <section class="col col-6">
                                     <label class="label">Minimum Deposit Amount</label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="txtMinimumDepositAmount" id="txtMinimumDepositAmount" value="<?php echo set_value('txtMinimumDepositAmount'); ?>" placeholder="Write min deposit amount">
+                                        <input type="text" maxlength="25" name="txtMinimumDepositAmount" id="txtMinimumDepositAmount" value="<?php echo $row['min_amount']; ?>" placeholder="Write min deposit amount">
                                     </label>
                                     <label class="red"><?php echo form_error('txtMinimumDepositAmount');?></label>
                                 </section>
                                 <section class="col col-6">
                                     <label class="label">Maximum Deposit Amount</label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="txtMaximumDepositAmount" id="txtMaximumDepositAmount" value="<?php echo set_value('txtMaximumDepositAmount'); ?>" placeholder="Write Max deposit amount">
+                                        <input type="text" maxlength="25" name="txtMaximumDepositAmount" id="txtMaximumDepositAmount" value="<?php echo $row['max_amount']; ?>" placeholder="Write Max deposit amount">
                                     </label>
                                     <label class="red"><?php echo form_error('txtMaximumDepositAmount');?></label>
                                 </section>
 
                             </div>
-                            <div class="row">
-                                <section class="col col-6">
-                                    <label class="label">Loan Facility (%)</label>
-                                    <label class="input">
-                                        <input type="text" maxlength="5" name="txtLoanFacility" value="<?php echo set_value('txtLoanFacility'); ?>" placeholder="Write Loan Facility without percentage sign">
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtLoanFacility');?></label>
-                                </section>
-                            </div>
-
 
 
 </article>
@@ -294,7 +272,7 @@ if(isset($_GET['id'])){
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php echo set_value('txtAvailableFeatures'); ?></textarea>
+                        <textarea type="text" id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php if(isset($row["available_feature"]) && $row["available_feature"] != ""){echo $row["available_feature"];}else{echo set_value('txtAvailableFeatures');} ?></textarea>
                     </label>
                 </section>
 
@@ -335,7 +313,7 @@ if(isset($_GET['id'])){
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo set_value('txtEligibility'); ?></textarea>
+                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php if(isset($row["eligibility"]) && $row["eligibility"] != ""){echo $row["eligibility"];}else{echo set_value('txtEligibility');} ?></textarea>
                     </label>
                 </section>
 
@@ -377,7 +355,7 @@ if(isset($_GET['id'])){
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
+                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php if(isset($row["required_document"]) && $row["required_document"] != ""){echo $row["required_document"];}else{echo set_value('txtRequiredDocument');} ?></textarea>
                     </label>
                 </section>
 
@@ -419,7 +397,7 @@ if(isset($_GET['id'])){
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo set_value('txtTermsAndConditions'); ?></textarea>
+                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php if(isset($row["terms_and_conditions"]) && $row["terms_and_conditions"] != ""){echo $row["terms_and_conditions"];}else{echo set_value('txtTermsAndConditions');} ?></textarea>
                     </label>
                 </section>
 
@@ -460,7 +438,7 @@ if(isset($_GET['id'])){
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php echo set_value('txtReview'); ?></textarea>
+                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php if(isset($row["review"]) && $row["review"] != ""){echo $row["review"];}else{echo set_value('txtReview');} ?></textarea>
                     </label>
                 </section>
 
@@ -592,9 +570,15 @@ if(isset($_GET['id'])){
         });
 
         if($("input[name ='is_non_bank']").is(':checked')){
-            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName">' +
+            '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
+            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["non_bank_id"]) && $row["non_bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option>;<?php } ?>'+
+            '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
         }else{
-            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName">' +
+            '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
+            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
+            '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
         }
     });
 </script>

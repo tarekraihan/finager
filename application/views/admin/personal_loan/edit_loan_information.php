@@ -607,8 +607,6 @@ if(isset($_GET['id'])){
 
 <!-- end row -->
 
-<!-- end row -->
-
 </section>
 <!-- end widget grid -->
 
@@ -617,7 +615,6 @@ if(isset($_GET['id'])){
 
 </div>
 <!-- END MAIN PANEL -->
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
@@ -625,7 +622,6 @@ if(isset($_GET['id'])){
             var v_value = $(this).val();
             if(v_value == 'fixed'){
                 $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php if(isset($row["interest_rate_fixed"]) && $row["interest_rate_fixed"] != ""){echo $row["interest_rate_fixed"];}else{echo set_value('txtInterestRateFixed');} ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
-
             }
 
             if(v_value == 'variable'){
@@ -659,8 +655,6 @@ if(isset($_GET['id'])){
         });
 
         if($("input[id='is_fixed']").is(':checked')){
-
-
             $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php if(isset($row["interest_rate_fixed"]) && $row["interest_rate_fixed"] != ""){echo $row["interest_rate_fixed"];}else{echo set_value('txtInterestRateFixed');} ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
 
         }else{
@@ -691,10 +685,11 @@ if(isset($_GET['id'])){
 
             '</div>');
         }
+
         $("input[name ='is_non_bank']").click(function() {
             var v_value = $(this).val();
             if ($(this).is(":checked")) {
-                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+                $('#institution').html('<label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
 
             }else {
                 $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
@@ -712,5 +707,6 @@ if(isset($_GET['id'])){
             '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
             '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
         }
+
     });
 </script>
