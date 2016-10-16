@@ -341,7 +341,7 @@ class Fdr extends CI_Controller {
                 $date = date('Y-m-d h:i:s');
                 $is_non_bank =$this->input->post('txtNonBankName');
                 $non_bank = 0;
-                if($is_non_bank == '1'){
+                if($is_non_bank == 1){
                     $non_bank =1;
                 }
                 $this->Common_model->data = array(
@@ -514,7 +514,7 @@ class Fdr extends CI_Controller {
                 $result =  $this->Select_model->get_all_fdr_draft_info($non_bank_id,$deposit_type,$i_am,$is_non_bank);
             }else{
 
-                $result =  $this->Select_model->get_all_fdr_draft_info($bank_id,$deposit_type,$i_am,$is_non_bank='0');
+                $result =  $this->Select_model->get_all_fdr_draft_info($bank_id,$deposit_type,$i_am,$is_non_bank);
             }
             $result = (array)$result;
             if($result){

@@ -715,9 +715,9 @@ class Select_Model extends CI_Model
         if($is_non_bank == 1){
             $where = 'non_bank_id='.$bank_id.' AND deposit_type_id='.$deposit_type.' AND i_am_id = '.$i_am;
         }else{
-            $where = 'non_bank_id='.$bank_id.' AND deposit_type_id='.$deposit_type.' AND i_am_id = '.$i_am;
+            $where = 'bank_id='.$bank_id.' AND deposit_type_id='.$deposit_type.' AND i_am_id = '.$i_am;
         }
-        $sql = "SELECT `id`, `bank_id`, `deposit_type_id`, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `fdr_info_draft` WHERE $where";
+        $sql = "SELECT `id`, `bank_id`,non_bank_id, `deposit_type_id`, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `fdr_info_draft` WHERE $where";
         $query=$this->db->query($sql);
         return $query->row();
     }
