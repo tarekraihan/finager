@@ -205,6 +205,25 @@
             </ul>
         </li>
 
+
+        <li class="top-menu-invisible">
+            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">DPS</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>dps/tenure"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>personal_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>personal_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>personal_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                </li>
+            </ul>
+        </li>
+
         <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
             <ul>
