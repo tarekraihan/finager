@@ -160,7 +160,7 @@ if(isset($_GET['tenure_id']))
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->tenure;?> Year(s)</td>
+                                            <td ><?php echo $row->tenure; echo ($row->tenure == 1) ? ' Year' : ' Years';?></td>
                                             <td ><?php echo $row->no_of_installment;?> </td>
                                             <td><a href="<?php echo base_url(); ?>dps/edit_tenure?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?tenure_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>

@@ -213,7 +213,7 @@
                     <a href="<?php echo base_url();?>dps/tenure"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>personal_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                    <a href="<?php echo base_url();?>dps/monthly_installment/"><i class="fa fa-stack-overflow"></i> Add Monthly Installment</a>
                 </li>
                 <li>
                     <a href="<?php echo base_url();?>personal_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
