@@ -284,6 +284,18 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function select_dps_tenure()
+    {
+        $sql="SELECT * FROM `dps_tenure`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtTenure",$row->id).'>'.$row->tenure.' Year</option>';
+        }
+        return $option;
+    }
+
 
     function card_card_user()
     {
