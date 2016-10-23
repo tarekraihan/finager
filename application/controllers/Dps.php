@@ -162,5 +162,249 @@ class Dps extends CI_Controller
         }
     }
 
+    function add_info($msg=''){
+        if ($this->session->userdata('email_address')) {
+            if ($msg == 'success') {
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Update !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
+            }
+
+            $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
+            $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
+            $this->form_validation->set_rules('txtTenure', 'Tenure', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|required');
+            $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
+            $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
+            $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
+            $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
+            $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
+
+
+            $this->form_validation->set_rules('two_hundred_maturity', 'two_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('two_hundred_interest', 'two_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('three_hundred_maturity', 'three_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('three_hundred_interest', 'three_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('four_hundred_maturity', 'four_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('four_hundred_interest', 'four_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('five_hundred_maturity', 'five_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('five_hundred_interest', 'five_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('one_thousand_maturity', 'one_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('one_thousand_interest', 'one_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('one_thousand_five_hundred_maturity', 'one_thousand_five_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('one_thousand_five_hundred_interest', 'one_thousand_five_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('two_thousand_maturity', 'two_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('two_thousand_interest', 'two_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('two_thousand_five_hundred_maturity', 'two_thousand_five_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('two_thousand_five_hundred_interest', 'two_thousand_five_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('three_thousand_maturity', 'three_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('three_thousand_interest', 'three_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('three_thousand_five_hundred_maturity', 'three_thousand_five_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('three_thousand_five_hundred_interest', 'three_thousand_five_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('four_thousand_maturity', 'four_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('four_thousand_interest', 'four_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('four_thousand_five_hundred_maturity', 'four_thousand_five_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('four_thousand_five_hunderd_interest', 'four_thousand_five_hunderd_interest', 'trim|numeric');
+            $this->form_validation->set_rules('five_thousand_maturity', 'five_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('five_thousand_interest', 'five_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('five_thousand_five_hundred_maturity', 'five_thousand_five_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('five_thousand_five_hundred_interest', 'five_thousand_five_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('six_thousand_maturity', 'six_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('six_thousand_interest', 'six_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('six_thousand_five_hundred_maturity', 'six_thousand_five_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('six_thousand_five_hundred_interest', 'six_thousand_five_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('seven_thousand_maturity', 'seven_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('seven_thousand_interest', 'seven_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('seven_thousand_five_hundred_maturity', 'seven_thousand_five_hundred_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('seven_thousand_five_hundred_interest', 'seven_thousand_five_hundred_interest', 'trim|numeric');
+            $this->form_validation->set_rules('eight_thousand_maturity', 'eight_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('eight_thousand_interest', 'eight_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('nine_thousand_maturity', 'nine_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('nine_thousand_interest', 'nine_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('ten_thousand_maturity', 'ten_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('ten_thousand_interest', 'ten_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('eleven_thousand_maturity', 'eleven_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('eleven_thousand_interest', 'eleven_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twelve_thousand_maturity', 'twelve_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twelve_thousand_interest', 'twelve_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('thirteen_thousadn_maturity', 'thirteen_thousadn_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('thirteen_thousand_interest', 'thirteen_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('fourteen_thousand_maturity', 'fourteen_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('fourteen_thousand_interest', 'fourteen_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('fifteen_thousand_maturity', 'fifteen_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('fifteen_thousand_interest', 'fifteen_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('sixteen_thousand_maturity', 'sixteen_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('sixteen_thousand_interest', 'sixteen_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('seventeen_thousand_maturity', 'seventeen_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('seventeen_thousand_interest', 'seventeen_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('eighteen_thousand_maturity', 'eighteen_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('eighteen_thousand_interest', 'eighteen_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('nineteen_thousand_maturity', 'nineteen_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('nineteen_thousand_interest', 'nineteen_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_thousand_maturity', 'twenty_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_thousand_interest', 'twenty_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_one_thousand_maturity', 'twenty_one_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_one_thousand_interest', 'twenty_one_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_two_thousand_maturity', 'twenty_two_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_two_thousand_interest', 'twenty_two_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_three_thousand_maturity', 'twenty_three_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_three_thousand_interest', 'twenty_three_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_four_thousand_maturity', 'twenty_four_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_four_thousand_interest', 'twenty_four_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_five_thousand_maturity', 'twenty_five_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_five_thousand_interest', 'twenty_five_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_six_thousand_maturity', 'twenty_six_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_six_thousand_interest', 'twenty_six_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_seven_thousand_maturity', 'twenty_seven_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_seven_thousand_interest', 'twenty_seven_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_eight_thousand_maturity', 'twenty_eight_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_eight_thousand_interest', 'twenty_eight_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_nine_thousand_maturity', 'twenty_nine_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('twenty_nine_thousand_interest', 'twenty_nine_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('thirty_thousand_maturity', 'thirty_thousand_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('thirty_thousand_interest', 'thirty_thousand_interest', 'trim|numeric');
+            $this->form_validation->set_rules('one_lac_maturity', 'one_lac_maturity', 'trim|numeric');
+            $this->form_validation->set_rules('one_lac_interest', 'one_lac_interest', 'trim|numeric');
+
+            if ($this->form_validation->run() == FALSE) {
+                $data['title'] = "Finager - Add Info";
+                $this->load->view('admin/block/header', $data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/dps/dps_info');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $is_non_bank =$this->input->post('is_non_bank');
+                $non_bank = 0;
+                if($is_non_bank == 1){
+                    $non_bank =1;
+                }
+
+                $this->Common_model->data = array(
+                    'bank_id' => $this->input->post('txtBankName'),
+                    'i_am_id' => $this->input->post('txtIAm'),
+                    'is_non_bank' => $non_bank,
+                    'non_bank_id' => $this->input->post('txtNonBankName'),
+                    'tenure_id' => $this->input->post('txtTenure'),
+                    'interest_rate' => htmlentities($this->input->post('txtInterestRate')),
+                    'loan_facility' => htmlentities($this->input->post('txtLoanFacility')),
+                    'available_feature' => $this->input->post('txtAvailableFeatures'),
+                    'eligibility' => $this->input->post('txtEligibility'),
+                    'required_document' => $this->input->post('txtRequiredDocument'),
+                    'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
+                    'available_benefit' => $this->input->post('txtAvailableBenefit'),
+                    'review' => $this->input->post('txtReview'),
+                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'dps_info';
+                $res = $this->Common_model->insert();
+                if($res){
+                    $this->Common_model->data = array(
+                        'dps_info_id' => $res,
+                        'dps_tenure_id' => $this->input->post('txtTenure'),
+                        'two_hundred_maturity' => htmlentities($this->input->post('two_hundred_maturity')),
+                        'two_hundred_interest' => htmlentities($this->input->post('two_hundred_interest')),
+                        'three_hundred_maturity' => htmlentities($this->input->post('three_hundred_maturity')),
+                        'three_hundred_interest' => htmlentities($this->input->post('three_hundred_interest')),
+                        'four_hundred_maturity' => htmlentities($this->input->post('four_hundred_maturity')),
+                        'four_hundred_interest' => htmlentities($this->input->post('four_hundred_interest')),
+                        'five_hundred_maturity' => htmlentities($this->input->post('five_hundred_maturity')),
+                        'five_hundred_interest' => htmlentities($this->input->post('five_hundred_interest')),
+                        'one_thousand_maturity' => htmlentities($this->input->post('one_thousand_maturity')),
+                        'one_thousand_interest' => htmlentities($this->input->post('one_thousand_interest')),
+                        'one_thousand_five_hundred_maturity' => htmlentities($this->input->post('one_thousand_five_hundred_maturity')),
+                        'one_thousand_five_hundred_interest' => htmlentities($this->input->post('one_thousand_five_hundred_interest')),
+                        'two_thousand_maturity' => htmlentities($this->input->post('two_thousand_maturity')),
+                        'two_thousand_interest' => htmlentities($this->input->post('two_thousand_interest')),
+                        'two_thousand_five_hundred_maturity' => htmlentities($this->input->post('two_thousand_five_hundred_maturity')),
+                        'two_thousand_five_hundred_interest' => htmlentities($this->input->post('two_thousand_five_hundred_interest')),
+                        'three_thousand_maturity' => htmlentities($this->input->post('three_thousand_maturity')),
+                        'three_thousand_interest' => htmlentities($this->input->post('three_thousand_interest')),
+                        'three_thousand_five_hundred_maturity' => htmlentities($this->input->post('three_thousand_five_hundred_maturity')),
+                        'three_thousand_five_hundred_interest' => htmlentities($this->input->post('three_thousand_five_hundred_interest')),
+                        'four_thousand_maturity' => htmlentities($this->input->post('four_thousand_maturity')),
+                        'four_thousand_interest' => htmlentities($this->input->post('four_thousand_interest')),
+                        'four_thousand_five_hundred_maturity' => htmlentities($this->input->post('four_thousand_five_hundred_maturity')),
+                        'four_thousand_five_hunderd_interest' => htmlentities($this->input->post('four_thousand_five_hunderd_interest')),
+                        'five_thousand_maturity' => htmlentities($this->input->post('five_thousand_maturity')),
+                        'five_thousand_interest' => htmlentities($this->input->post('five_thousand_interest')),
+                        'five_thousand_five_hundred_maturity' => htmlentities($this->input->post('five_thousand_five_hundred_maturity')),
+                        'five_thousand_five_hundred_interest' => htmlentities($this->input->post('five_thousand_five_hundred_interest')),
+                        'six_thousand_maturity' => htmlentities($this->input->post('six_thousand_maturity')),
+                        'six_thousand_interest' => htmlentities($this->input->post('six_thousand_interest')),
+                        'six_thousand_five_hundred_maturity' => htmlentities($this->input->post('six_thousand_five_hundred_maturity')),
+                        'six_thousand_five_hundred_interest' => htmlentities($this->input->post('six_thousand_five_hundred_interest')),
+                        'seven_thousand_maturity' => htmlentities($this->input->post('seven_thousand_maturity')),
+                        'seven_thousand_interest' => htmlentities($this->input->post('seven_thousand_interest')),
+                        'seven_thousand_five_hundred_maturity' => htmlentities($this->input->post('seven_thousand_five_hundred_maturity')),
+                        'seven_thousand_five_hundred_interest' => htmlentities($this->input->post('seven_thousand_five_hundred_interest')),
+                        'eight_thousand_maturity' => htmlentities($this->input->post('eight_thousand_maturity')),
+                        'eight_thousand_interest' => htmlentities($this->input->post('eight_thousand_interest')),
+                        'nine_thousand_maturity' => htmlentities($this->input->post('nine_thousand_maturity')),
+                        'nine_thousand_interest' => htmlentities($this->input->post('nine_thousand_interest')),
+                        'ten_thousand_maturity' => htmlentities($this->input->post('ten_thousand_maturity')),
+                        'ten_thousand_interest' => htmlentities($this->input->post('ten_thousand_interest')),
+                        'eleven_thousand_maturity' => htmlentities($this->input->post('eleven_thousand_maturity')),
+                        'eleven_thousand_interest' => htmlentities($this->input->post('eleven_thousand_interest')),
+                        'twelve_thousand_maturity' => htmlentities($this->input->post('twelve_thousand_maturity')),
+                        'twelve_thousand_interest' => htmlentities($this->input->post('twelve_thousand_interest')),
+                        'thirteen_thousadn_maturity' => htmlentities($this->input->post('thirteen_thousadn_maturity')),
+                        'thirteen_thousand_interest' => htmlentities($this->input->post('thirteen_thousand_interest')),
+                        'fourteen_thousand_maturity' => htmlentities($this->input->post('fourteen_thousand_maturity')),
+                        'fourteen_thousand_interest' => htmlentities($this->input->post('fourteen_thousand_interest')),
+                        'fifteen_thousand_maturity' => htmlentities($this->input->post('fifteen_thousand_maturity')),
+                        'fifteen_thousand_interest' => htmlentities($this->input->post('fifteen_thousand_interest')),
+                        'sixteen_thousand_maturity' => htmlentities($this->input->post('sixteen_thousand_maturity')),
+                        'sixteen_thousand_interest' => htmlentities($this->input->post('sixteen_thousand_interest')),
+                        'seventeen_thousand_maturity' => htmlentities($this->input->post('seventeen_thousand_maturity')),
+                        'seventeen_thousand_interest' => htmlentities($this->input->post('seventeen_thousand_interest')),
+                        'eighteen_thousand_maturity' => htmlentities($this->input->post('eighteen_thousand_maturity')),
+                        'eighteen_thousand_interest' => htmlentities($this->input->post('eighteen_thousand_interest')),
+                        'nineteen_thousand_maturity' => htmlentities($this->input->post('nineteen_thousand_maturity')),
+                        'nineteen_thousand_interest' => htmlentities($this->input->post('nineteen_thousand_interest')),
+                        'twenty_thousand_maturity' => htmlentities($this->input->post('twenty_thousand_maturity')),
+                        'twenty_thousand_interest' => htmlentities($this->input->post('twenty_thousand_interest')),
+                        'twenty_one_thousand_maturity' => htmlentities($this->input->post('twenty_one_thousand_maturity')),
+                        'twenty_one_thousand_interest' => htmlentities($this->input->post('twenty_one_thousand_interest')),
+                        'twenty_two_thousand_maturity' => htmlentities($this->input->post('twenty_two_thousand_maturity')),
+                        'twenty_two_thousand_interest' => htmlentities($this->input->post('twenty_two_thousand_interest')),
+                        'twenty_three_thousand_maturity' => htmlentities($this->input->post('twenty_three_thousand_maturity')),
+                        'twenty_three_thousand_interest' => htmlentities($this->input->post('twenty_three_thousand_interest')),
+                        'twenty_four_thousand_maturity' => htmlentities($this->input->post('twenty_four_thousand_maturity')),
+                        'twenty_four_thousand_interest' => htmlentities($this->input->post('twenty_four_thousand_interest')),
+                        'twenty_five_thousand_maturity' => htmlentities($this->input->post('twenty_five_thousand_maturity')),
+                        'twenty_five_thousand_interest' => htmlentities($this->input->post('twenty_five_thousand_interest')),
+                        'twenty_six_thousand_maturity' => htmlentities($this->input->post('twenty_six_thousand_maturity')),
+                        'twenty_six_thousand_interest' => htmlentities($this->input->post('twenty_six_thousand_interest')),
+                        'twenty_seven_thousand_maturity' => htmlentities($this->input->post('twenty_seven_thousand_maturity')),
+                        'twenty_seven_thousand_interest' => htmlentities($this->input->post('twenty_seven_thousand_interest')),
+                        'twenty_eight_thousand_maturity' => htmlentities($this->input->post('twenty_eight_thousand_maturity')),
+                        'twenty_eight_thousand_interest' => htmlentities($this->input->post('twenty_eight_thousand_interest')),
+                        'twenty_nine_thousand_maturity' => htmlentities($this->input->post('twenty_nine_thousand_maturity')),
+                        'twenty_nine_thousand_interest' => htmlentities($this->input->post('twenty_nine_thousand_interest')),
+                        'thirty_thousand_maturity' => htmlentities($this->input->post('thirty_thousand_maturity')),
+                        'thirty_thousand_interest' => htmlentities($this->input->post('thirty_thousand_interest')),
+                        'one_lac_maturity' => htmlentities($this->input->post('one_lac_maturity')),
+                        'one_lac_interest' => htmlentities($this->input->post('one_lac_interest')),
+                        'created' => $date ,
+                        'created_by'=>$this->session->userdata('admin_user_id')
+                    );
+                    $this->Common_model->table_name = 'dps_maturity_amount';
+                    $result = $this->Common_model->insert();
+                    if ($result) {
+                        redirect(base_url().'dps/add_info/success');
+                    } else {
+                        redirect(base_url().'dps/add_info/error');
+                    }
+                }else {
+                    redirect(base_url().'dps/add_info/error');
+                }
+
+            }
+        }else {
+            redirect(base_url().'backdoor');
+        }
+    }
 
 }
