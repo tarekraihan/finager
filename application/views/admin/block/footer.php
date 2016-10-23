@@ -91,14 +91,14 @@ you can add as many as you like
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     if (!window.jQuery) {
-        document.write('<script src="<?php echo base_url();?>resource/admin/js/libs/jquery-2.1.1.min.js"><\/script>');
+        document.write('<script src="<?php echo base_url();?>resource/admin/js/libs/jquery-2.1.1.min.js"></script>');
     }
 </script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script>
     if (!window.jQuery.ui) {
-        document.write('<script src="<?php echo base_url();?>resource/admin/js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+        document.write('<script src="<?php echo base_url();?>resource/admin/js/libs/jquery-ui-1.10.3.min.js"></script>');
     }
 </script>
 
@@ -119,6 +119,7 @@ you can add as many as you like
 
 <!-- BOOTSTRAP JS -->
 <script src="<?php echo base_url();?>resource/admin/js/bootstrap/bootstrap.min.js"></script>
+
 
 <!-- CUSTOM NOTIFICATION -->
 <script src="<?php echo base_url();?>resource/admin/js/notification/SmartNotification.min.js"></script>
@@ -179,6 +180,7 @@ you can add as many as you like
 
 <script src="<?php echo base_url();?>resource/admin/js/plugin/summernote/summernote.min.js"></script>
 
+<script src="<?php echo base_url(); ?>resource/admin/js/fileinput.min.js"></script>
 <script type="text/javascript">
 
     // DO NOT REMOVE : GLOBAL FUNCTIONS!

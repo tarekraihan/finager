@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>resource/admin/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>resource/admin/css/font-awesome.min.css">
 
+    <link href="<?php echo base_url(); ?>resource/admin/css/fileinput.min.css" rel="stylesheet"/>
     <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>resource/admin/css/smartadmin-production-plugins.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>resource/admin/css/smartadmin-production.min.css">

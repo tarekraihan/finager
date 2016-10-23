@@ -13,27 +13,22 @@ class Map extends CI_Controller {
             }
 //            print_r($this->input->post()); die;
             $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
-            $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
-            $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
-//            $this->form_validation->set_rules('txtIWant', 'I Want', 'trim|required');
-            $this->form_validation->set_rules('txtTenure', 'Tenure', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|required');
-            $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
-            $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
-            $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
-            $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
+            $this->form_validation->set_rules('txtDistrict', 'District', 'trim|required');
+            $this->form_validation->set_rules('txtThana', 'Thana', 'trim|required');
+            $this->form_validation->set_rules('txtTypeId', 'Type', 'trim|required');
+            $this->form_validation->set_rules('txtContactNo', 'Contact No', 'trim|required');
+            $this->form_validation->set_rules('txtAddress', 'Address', 'trim|required');
+            $this->form_validation->set_rules('txtLatitude', 'Latitude', 'trim');
+            $this->form_validation->set_rules('txtLongitude', 'Longitude', 'trim');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
-                $data['title'] = "Finager - FDR Info";
+                $data['title'] = "Finager - Map Info";
                 $this->load->view('admin/block/header', $data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/map/add');
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $min_limit = $this->input->post('is_minimum_amount_no_limit');
-                $max_limit = $this->input->post('is_maximum_amount_no_limit');
-
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
                     'deposit_type_id' => $this->input->post('txtDepositType'),
