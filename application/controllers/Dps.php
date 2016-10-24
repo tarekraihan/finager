@@ -322,7 +322,7 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
             $this->form_validation->set_rules('txtTenure', 'Tenure', 'trim|required');
-            $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|required');
+            $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim');
             $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
@@ -465,7 +465,7 @@ class Dps extends CI_Controller
                         'one_thousand_maturity' => htmlentities($this->input->post('one_thousand_maturity')),
                         'one_thousand_interest' => ($this->input->post('one_thousand_maturity') != '') ? ($this->input->post('one_thousand_maturity') - ($this->input->post('one_thousand_interest') * $installment )) : '',
                         'one_thousand_five_hundred_maturity' => htmlentities($this->input->post('one_thousand_five_hundred_maturity')),
-                        'one_thousand_five_hundred_interest' => ($this->input->post('two_thousand_maturity') != '') ? ($this->input->post('one_thousand_five_hundred_maturity') - ($this->input->post('one_thousand_five_hundred_interest') * $installment )) : '',
+                        'one_thousand_five_hundred_interest' => ($this->input->post('one_thousand_five_hundred_maturity') != '') ? ($this->input->post('one_thousand_five_hundred_maturity') - ($this->input->post('one_thousand_five_hundred_interest') * $installment )) : '',
                         'two_thousand_maturity' => htmlentities($this->input->post('two_thousand_maturity')),
                         'two_thousand_interest' => ($this->input->post('two_thousand_maturity') != '') ? ($this->input->post('two_thousand_maturity') - ($this->input->post('two_thousand_interest') * $installment )) : '',
                         'two_thousand_five_hundred_maturity' => htmlentities($this->input->post('two_thousand_five_hundred_maturity')),
@@ -557,6 +557,14 @@ class Dps extends CI_Controller
         }else {
             redirect(base_url().'backdoor');
         }
+    }
+
+    public function deposit_list(){
+        $data['title'] = "Draft Information";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/dps/deposit_list');
+        $this->load->view('admin/block/footer');
     }
 
 

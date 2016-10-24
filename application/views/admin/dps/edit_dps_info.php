@@ -1,3 +1,70 @@
+<?php
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $table='dps_info';
+    $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+//    print_r($row);die;
+}else{
+    $row['id']='';
+    $row['bank_id']='';
+    $row['is_non_bank']='';
+    $row['non_bank_id']='';
+    $row["i_am_id"] ='';
+    $row['interest_rate']='';
+    $row['tenure_id']='';
+    $row['loan_facility']='';
+    $row['available_benefit']='';
+    $row['available_feature']='';
+    $row['eligibility']='';
+    $row['required_document']='';
+    $row['terms_and_conditions']='';
+    $row['review']='';
+    $row['two_hundred_maturity']='';
+    $row['three_hundred_maturity']='';
+    $row['four_hundred_maturity']='';
+    $row['five_hundred_maturity']='';
+    $row['one_thousand_maturity']='';
+    $row['one_thousand_five_hundred_maturity']='';
+    $row['two_thousand_maturity']='';
+    $row['two_thousand_five_hundred_maturity']='';
+    $row['three_thousand_maturity']='';
+    $row['three_thousand_five_hundred_maturity']='';
+    $row['four_thousand_maturity']='';
+    $row['four_thousand_five_hundred_maturity']='';
+    $row['five_thousand_maturity']='';
+    $row['five_thousand_five_hundred_maturity']='';
+    $row['six_thousand_maturity']='';
+    $row['six_thousand_five_hundred_maturity']='';
+    $row['seven_thousand_maturity']='';
+    $row['seven_thousand_five_hundred_maturity']='';
+    $row['eight_thousand_maturity']='';
+    $row['nine_thousand_maturity']='';
+    $row['ten_thousand_maturity']='';
+    $row['eleven_thousand_maturity']='';
+    $row['twelve_thousand_maturity']='';
+    $row['thirteen_thousadn_maturity']='';
+    $row['fourteen_thousand_maturity']='';
+    $row['fifteen_thousand_maturity']='';
+    $row['sixteen_thousand_maturity']='';
+    $row['seventeen_thousand_maturity']='';
+    $row['eighteen_thousand_maturity']='';
+    $row['nineteen_thousand_maturity']='';
+    $row['twenty_thousand_maturity']='';
+    $row['twenty_one_thousand_maturity']='';
+    $row['twenty_two_thousand_maturity']='';
+    $row['twenty_three_thousand_maturity']='';
+    $row['twenty_four_thousand_maturity']='';
+    $row['twenty_five_thousand_maturity']='';
+    $row['twenty_six_thousand_maturity']='';
+    $row['twenty_seven_thousand_maturity']='';
+    $row['twenty_eight_thousand_maturity']='';
+    $row['twenty_nine_thousand_maturity']='';
+    $row['thirty_thousand_maturity']='';
+    $row['one_lac_maturity']='';
+
+}
+?>
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
@@ -35,7 +102,7 @@
 
     <!-- breadcrumb -->
     <ol class="breadcrumb">
-        <li>Deposit</li><li>DPS</li><li> Add DPS Information</li>
+        <li>Deposit</li><li>DPS</li><li> Update DPS Information</li>
     </ol>
 </div>
 <!-- END RIBBON -->
@@ -49,7 +116,7 @@
             <i class="fa fa-table fa-fw "></i>
             DPS
                 <span>>
-                    Add DPS Information
+                    Update DPS Information
                 </span>
         </h1>
     </div>
@@ -69,7 +136,7 @@
     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
         <header>
             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-            <h2>Add DPS Information</h2>
+            <h2>Update DPS Information</h2>
 
         </header>
 
@@ -98,17 +165,12 @@
                             <div class="row">
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?><?php echo ($row['is_non_bank'] == '1') ? 'checked' : ''; ?> > Is Non Bank Institution ?
+                                        <input type="hidden" name="txtInfoId" value="<?php echo $row['id'];?>">
                                     </label>
                                 </section>
                                 <section class="col col-6" id="institution">
-                                    <label class="label">Bank Name</label>
-                                    <label class="select">
-                                        <select name="txtBankName" id="txtBankName">
-                                            <?php echo $this->Select_model->select_bank();?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtBankName');?></label>
+
                                 </section>
                             </div>
                             <div class="row">
@@ -116,7 +178,14 @@
                                     <label class="label">I Am</label>
                                     <label class="select">
                                         <select name="txtIAm" id="txtIAm">
-                                            <?php echo $this->Select_model->select_fdr_i_am();?>
+                                            <?php
+                                            $result=$this->Select_model->select_all('fdr_i_am');
+                                            foreach($result->result() as $row1){
+                                                ?>
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_am_id"]) && $row["i_am_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtIAm",$row1->id)?>><?php echo $row1->i_am ; ?></option>';
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtIAm');?></label>
@@ -124,7 +193,7 @@
                                 <section class="col col-6">
                                     <label class="label">Loan Facility (%)</label>
                                     <label class="input">
-                                        <input type="text" maxlength="10" name="txtLoanFacility" value="<?php echo set_value('txtLoanFacility'); ?>" placeholder="Write Loan Facility without percentage sign">
+                                        <input type="text" maxlength="5" name="txtLoanFacility" value="<?php echo $row['loan_facility']; ?>" placeholder="Write Loan Facility without percentage sign">
                                     </label>
 
                                     <label class="red"><?php echo form_error('txtLoanFacility');?></label>
@@ -134,7 +203,7 @@
                                 <section class="col col-6">
                                     <label class="label">Interest Rate</label>
                                     <label class="input">
-                                        <input type="text" maxlength="50" name="txtInterestRate" value="<?php echo set_value('txtInterestRate'); ?>" placeholder="Write Interest Rate without percentage sign">
+                                        <input type="text" maxlength="50" name="txtInterestRate" value="<?php echo $row['interest_rate']; ?>" placeholder="Write Interest Rate without percentage sign">
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestRate');?></label>
                                 </section>
@@ -142,7 +211,14 @@
                                     <label class="label">Tenure</label>
                                     <label class="select">
                                         <select name="txtTenure" id="txtTenure">
-                                            <?php echo $this->Select_model->select_dps_tenure();?>
+                                            <?php
+                                            $result=$this->Select_model->select_all('fdr_tenure');
+                                            foreach($result->result() as $row1){
+                                                ?>
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["tenure_id"]) && $row["tenure_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtTenure",$row1->id)?>><?php echo $row1->tenure ; ?></option>';
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtTenure');?></label>
@@ -153,7 +229,7 @@
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.200 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="two_hundred_maturity" value="<?php echo set_value('two_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.200">
+                                        <input type="text" maxlength="25" name="two_hundred_maturity" value="<?php echo $row['two_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.200">
                                     </label>
                                     <label class="red"><?php echo form_error('two_hundred_maturity');?></label>
                                 </section>
@@ -852,7 +928,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php echo set_value('txtAvailableFeatures'); ?></textarea>
+                        <textarea type="text" id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php echo $row['available_feature']; ?></textarea>
                     </label>
                 </section>
 
@@ -866,7 +942,12 @@
     <!-- end widget -->
 
 </article>
-<!-- WIDGET END -->
+<!-- WIDGET END -->;
+    ='';
+    $row['eligibility']='';
+    ='';
+    ='';
+    $row['review']='';
 <!-- NEW WIDGET START -->
 <article class="col-sm-6 col-md-6 col-lg-6">
 
@@ -893,7 +974,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo set_value('txtEligibility'); ?></textarea>
+                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo $row['eligibility']; ?></textarea>
                     </label>
                 </section>
 
@@ -935,7 +1016,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
+                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo $row['required_document']; ?></textarea>
                     </label>
                 </section>
 
@@ -977,7 +1058,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo set_value('txtTermsAndConditions'); ?></textarea>
+                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo $row['terms_and_conditions']; ?></textarea>
                     </label>
                 </section>
 
@@ -1018,7 +1099,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtAvailableBenefit" class="ckeditor" name="txtAvailableBenefit"><?php echo set_value('txtAvailableBenefit'); ?></textarea>
+                        <textarea type="text" id="txtAvailableBenefit" class="ckeditor" name="txtAvailableBenefit"><?php echo $row['available_benefit']; ?></textarea>
                     </label>
                 </section>
 
@@ -1059,7 +1140,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php echo set_value('txtReview'); ?></textarea>
+                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php echo $row['review']; ?></textarea>
                     </label>
                 </section>
 
@@ -1190,6 +1271,28 @@
 //                    console.log(data.available_feature);
                 });
 
+        }
+
+        $("input[name ='is_non_bank']").click(function() {
+            var v_value = $(this).val();
+            if ($(this).is(":checked")) {
+                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+
+            }else {
+                $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+            }
+        });
+
+        if($("input[name ='is_non_bank']").is(':checked')){
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName">' +
+            '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
+            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["non_bank_id"]) && $row["non_bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option>;<?php } ?>'+
+            '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+        }else{
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName">' +
+            '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
+            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
+            '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
         }
     }
 </script>

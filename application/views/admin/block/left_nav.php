@@ -227,7 +227,7 @@
                     <a href="<?php echo base_url();?>dps/add_info/"><i class="fa fa-stack-overflow"></i> Add Information</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>personal_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                    <a href="<?php echo base_url();?>dps/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit List</a>
                 </li>
             </ul>
         </li>
