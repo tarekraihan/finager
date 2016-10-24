@@ -216,6 +216,14 @@
                     <a href="<?php echo base_url();?>dps/monthly_installment/"><i class="fa fa-stack-overflow"></i> Add Monthly Installment</a>
                 </li>
                 <li>
+                    <a href="<?php echo base_url();?>dps/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft Info</a>
+                </li>
+
+
+                <li>
+                    <a href="<?php echo base_url();?>dps/draft_list/"><i class="fa fa-stack-overflow"></i> Draft List</a>
+                </li>
+                <li>
                     <a href="<?php echo base_url();?>dps/add_info/"><i class="fa fa-stack-overflow"></i> Add Information</a>
                 </li>
                 <li>

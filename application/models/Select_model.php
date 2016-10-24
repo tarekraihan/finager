@@ -631,7 +631,7 @@ class Select_Model extends CI_Model
 
     public function select_fdr_draft_info()//To show FDR Common Info list
     {
-        $sql="SELECT fdr_info_draft.id,fdr_info_draft.available_feature,fdr_info_draft.is_non_bank,deposit_type.deposit_name,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info_draft` LEFT JOIN card_bank ON card_bank.id=fdr_info_draft.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=fdr_info_draft.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info_draft.created_by INNER JOIN deposit_type ON deposit_type.id= fdr_info_draft.deposit_type_id ORDER BY fdr_info_draft.id ASC";
+        $sql="SELECT fdr_info_draft.id,fdr_info_draft.eligibility,fdr_info_draft.is_non_bank,deposit_type.deposit_name,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info_draft` LEFT JOIN card_bank ON card_bank.id=fdr_info_draft.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=fdr_info_draft.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info_draft.created_by INNER JOIN deposit_type ON deposit_type.id= fdr_info_draft.deposit_type_id ORDER BY fdr_info_draft.id ASC";
         $query=$this->db->query($sql);
 
         $result="";
@@ -658,11 +658,53 @@ class Select_Model extends CI_Model
 					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					 <td class="center">'.$bank.'</td>
 					<td class="center">'.$row->deposit_name.'</td>
-					 <td class="center"> '.$row->available_feature.'</td>
+					 <td class="center"> '.$row->eligibility.'</td>
 					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
 
                 $result.='</td>
                     <td><a href="'.base_url().'fdr/edit_draft_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+
+    public function select_dps_draft_info()//To show FDR Common Info list
+    {
+        $sql="SELECT dps_info_draft.id,dps_info_draft.eligibility,dps_info_draft.is_non_bank,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `dps_info_draft` LEFT JOIN card_bank ON card_bank.id=dps_info_draft.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=dps_info_draft.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=dps_info_draft.created_by ORDER BY dps_info_draft.id ASC";
+        $query=$this->db->query($sql);
+
+        $result="";
+
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $bank = "";
+                if($row->is_non_bank != 0){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank != 0){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
+					 <td class="center">'.$bank.'</td>
+					 <td class="center"> '.$row->eligibility.'</td>
+					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
+
+                $result.='</td>
+                    <td><a href="'.base_url().'dps/edit_draft_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;
@@ -730,6 +772,17 @@ class Select_Model extends CI_Model
             $where = 'bank_id='.$bank_id.' AND deposit_type_id='.$deposit_type.' AND i_am_id = '.$i_am;
         }
         $sql = "SELECT `id`, `bank_id`,non_bank_id, `deposit_type_id`, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `fdr_info_draft` WHERE $where";
+        $query=$this->db->query($sql);
+        return $query->row();
+    }
+    public function get_all_dps_draft_info($bank_id,$i_am,$is_non_bank){
+        $where ='';
+        if($is_non_bank == 1){
+            $where = 'non_bank_id='.$bank_id.' AND i_am_id = '.$i_am;
+        }else{
+            $where = 'bank_id='.$bank_id.' AND i_am_id = '.$i_am;
+        }
+        $sql = "SELECT `id`, `bank_id`,non_bank_id, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`,`available_benefit`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `dps_info_draft` WHERE $where";
         $query=$this->db->query($sql);
         return $query->row();
     }
