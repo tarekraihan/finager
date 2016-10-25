@@ -1,10 +1,12 @@
 <?php
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $table='dps_info';
-    $id_field='id';
-    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
-//    print_r($row);die;
+    $row=$this->Select_model->Select_dps_info_by_id($id);
+   /* echo '<pre>';
+    print_r($row);
+    echo "</pre>"; die;
+
+    echo $row['id'];die;*/
 }else{
     $row['id']='';
     $row['bank_id']='';
@@ -20,6 +22,7 @@ if(isset($_GET['id'])){
     $row['required_document']='';
     $row['terms_and_conditions']='';
     $row['review']='';
+
     $row['two_hundred_maturity']='';
     $row['three_hundred_maturity']='';
     $row['four_hundred_maturity']='';
@@ -224,6 +227,15 @@ if(isset($_GET['id'])){
                                     <label class="red"><?php echo form_error('txtTenure');?></label>
                                 </section>
                             </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">DPS Name</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="250" name="txtDpsName" value="<?php echo $row['']; ?>" placeholder="Write Interest Rate without percentage sign">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtInterestRate');?></label>
+                                </section>
+                            </div>
 
                             <div class="row">
                                 <section class="col col-3">
@@ -243,7 +255,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.300 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="three_hundred_maturity" value="<?php echo set_value('three_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.300">
+                                        <input type="text" maxlength="25" name="three_hundred_maturity" value="<?php echo $row['three_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.300">
                                     </label>
                                     <label class="red"><?php echo form_error('three_hundred_maturity');?></label>
                                 </section>
@@ -261,7 +273,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.400 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="four_hundred_maturity" value="<?php echo set_value('four_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.400">
+                                        <input type="text" maxlength="25" name="four_hundred_maturity" value="<?php echo $row['four_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.400">
                                     </label>
                                     <label class="red"><?php echo form_error('four_hundred_maturity');?></label>
                                 </section>
@@ -275,7 +287,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="five_hundred_maturity" value="<?php echo set_value('five_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.500">
+                                        <input type="text" maxlength="25" name="five_hundred_maturity" value="<?php echo $row['five_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.500">
                                     </label>
                                     <label class="red"><?php echo form_error('five_hundred_maturity');?></label>
                                 </section>
@@ -292,7 +304,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.1000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="one_thousand_maturity" value="<?php echo set_value('one_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.1000">
+                                        <input type="text" maxlength="25" name="one_thousand_maturity" value="<?php echo $row['one_thousand_maturity'] ?>" placeholder="Write Maturity Amount for Tk.1000">
                                     </label>
                                     <label class="red"><?php echo form_error('one_thousand_maturity');?></label>
                                 </section>
@@ -306,7 +318,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.1500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="one_thousand_five_hundred_maturity" value="<?php echo set_value('one_thousand_five_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.1500">
+                                        <input type="text" maxlength="25" name="one_thousand_five_hundred_maturity" value="<?php echo $row['one_thousand_five_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.1500">
                                     </label>
                                     <label class="red"><?php echo form_error('one_thousand_five_hundred_maturity');?></label>
                                 </section>
@@ -324,7 +336,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.2000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="two_thousand_maturity" value="<?php echo set_value('two_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.2000">
+                                        <input type="text" maxlength="25" name="two_thousand_maturity" value="<?php echo $row['two_thousand_maturity'] ?>" placeholder="Write Maturity Amount for Tk.2000">
                                     </label>
                                     <label class="red"><?php echo form_error('two_thousand_maturity');?></label>
                                 </section>
@@ -882,6 +894,22 @@ if(isset($_GET['id'])){
                                     <label class="red"><?php echo form_error('thirty_thousand_interest');?></label>
                                 </section>
                                 <section class="col col-3">
+                                    <label class="label">Maturity Amount for Tk.50000 </label>
+                                    <label class="input">
+                                        <input type="text" maxlength="25" name="fifty_thousand_maturity" value="<?php echo set_value('fifty_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.50000">
+                                    </label>
+                                    <label class="red"><?php echo form_error('fifty_thousand_maturity');?></label>
+                                </section>
+                                <section class="col col-3">
+                                    <label class="label">Monthly Installment</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="25" name="fifty_thousand_interest" value="50000" readonly  placeholder="Write Total Accrued Interest for Tk.50000">
+                                    </label>
+                                    <label class="red"><?php echo form_error('fifty_thousand_interest');?></label>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.100000 </label>
                                     <label class="input">
                                         <input type="text" maxlength="25" name="one_lac_maturity" value="<?php echo set_value('one_lac_maturity'); ?>" placeholder="Write Maturity Amount for Tk.100000">
@@ -1227,10 +1255,17 @@ if(isset($_GET['id'])){
         });
 
         if($("input[name ='is_non_bank']").is(':checked')){
-            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName">' +
+            '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
+            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["non_bank_id"]) && $row["non_bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option>;<?php } ?>'+
+            '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
         }else{
-            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName">' +
+            '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
+            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
+            '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
         }
+
     });
 
     function call_draft_info(){
@@ -1273,26 +1308,5 @@ if(isset($_GET['id'])){
 
         }
 
-        $("input[name ='is_non_bank']").click(function() {
-            var v_value = $(this).val();
-            if ($(this).is(":checked")) {
-                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
-
-            }else {
-                $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
-            }
-        });
-
-        if($("input[name ='is_non_bank']").is(':checked')){
-            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName">' +
-            '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
-            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["non_bank_id"]) && $row["non_bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option>;<?php } ?>'+
-            '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
-        }else{
-            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName">' +
-            '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
-            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
-            '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
-        }
     }
 </script>

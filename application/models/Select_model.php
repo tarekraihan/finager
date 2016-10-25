@@ -886,5 +886,14 @@ class Select_Model extends CI_Model
         return $result;
     }
 
+    function Select_dps_info_by_id($id){
+        if(!empty($id)){
+            $sql="SELECT *  FROM `dps_info`INNER JOIN dps_maturity_amount ON  dps_maturity_amount.dps_info_id = dps_info.id WHERE dps_info.id = $id";
+            $query=$this->db->query($sql);
+            return $query->row_array();
+        }
+
+    }
+
 
 }

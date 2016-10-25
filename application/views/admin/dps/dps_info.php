@@ -149,6 +149,19 @@
                                 </section>
                             </div>
 
+
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">DPS Name</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="250" name="txtDpsName" value="<?php echo set_value('txtDpsName'); ?>" placeholder="Write DPS Name">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtDpsName');?></label>
+                                </section>
+                            </div>
+
+
+
                             <div class="row">
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.200 </label>
@@ -661,7 +674,6 @@
                             </div>
 
 
-
                             <div class="row">
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.22000 </label>
@@ -788,7 +800,7 @@
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_nine_thousand_interest');?></label>
                                 </section>
-                            </div>
+                            </div>f
 
                             <div class="row">
                                 <section class="col col-3">
