@@ -800,7 +800,7 @@
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_nine_thousand_interest');?></label>
                                 </section>
-                            </div>f
+                            </div>
 
                             <div class="row">
                                 <section class="col col-3">
@@ -818,6 +818,24 @@
                                     <label class="red"><?php echo form_error('thirty_thousand_interest');?></label>
                                 </section>
                                 <section class="col col-3">
+                                    <label class="label">Maturity Amount for Tk.50000 </label>
+                                    <label class="input">
+                                        <input type="text" maxlength="25" name="fifty_thousand_maturity" value="<?php echo set_value('fifty_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.50000">
+                                    </label>
+                                    <label class="red"><?php echo form_error('fifty_thousand_maturity');?></label>
+                                </section>
+                                <section class="col col-3">
+                                    <label class="label">Monthly Installment</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="25" name="fifty_thousand_interest" value="50000" readonly  placeholder="Write Total Accrued Interest for Tk.50000">
+                                    </label>
+                                    <label class="red"><?php echo form_error('fifty_thousand_interest');?></label>
+                                </section>
+
+                            </div>
+                            <div class="row">
+
+                                <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.100000 </label>
                                     <label class="input">
                                         <input type="text" maxlength="25" name="one_lac_maturity" value="<?php echo set_value('one_lac_maturity'); ?>" placeholder="Write Maturity Amount for Tk.100000">
@@ -832,6 +850,7 @@
                                     <label class="red"><?php echo form_error('one_lac_interest');?></label>
                                 </section>
                             </div>
+
 
 
 
