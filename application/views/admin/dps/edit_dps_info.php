@@ -21,6 +21,7 @@ if(isset($_GET['id'])){
     $row['eligibility']='';
     $row['required_document']='';
     $row['terms_and_conditions']='';
+    $row['dps_name']='';
     $row['review']='';
 
     $row['two_hundred_maturity']='';
@@ -156,7 +157,7 @@ if(isset($_GET['id'])){
             <!-- widget content -->
             <div class="widget-body no-padding">
 
-                <form id="age_limit" method="post" action="<?php echo base_url();?>dps/add_info" class="smart-form" novalidate="novalidate">
+                <form id="age_limit" method="post" action="<?php echo base_url();?>dps/edit_dps_info" class="smart-form" novalidate="novalidate">
                     <?php
                     //-----Display Success or Error message---
                     if(isset($feedback)){
@@ -231,7 +232,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-6">
                                     <label class="label">DPS Name</label>
                                     <label class="input">
-                                        <input type="text" maxlength="250" name="txtDpsName" value="<?php echo $row['']; ?>" placeholder="Write Interest Rate without percentage sign">
+                                        <input type="text" maxlength="250" name="txtDpsName" value="<?php echo $row['dps_name']; ?>" placeholder="Write Interest Rate without percentage sign">
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestRate');?></label>
                                 </section>
@@ -241,7 +242,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.200 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="two_hundred_maturity" value="<?php echo $row['two_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.200">
+                                        <input type="text" maxlength="25" name="two_hundred_maturity" value="<?php echo $row['two_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.200">
                                     </label>
                                     <label class="red"><?php echo form_error('two_hundred_maturity');?></label>
                                 </section>
@@ -255,7 +256,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.300 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="three_hundred_maturity" value="<?php echo $row['three_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.300">
+                                        <input type="text" maxlength="25" name="three_hundred_maturity" value="<?php echo $row['three_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.300">
                                     </label>
                                     <label class="red"><?php echo form_error('three_hundred_maturity');?></label>
                                 </section>
@@ -273,7 +274,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.400 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="four_hundred_maturity" value="<?php echo $row['four_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.400">
+                                        <input type="text" maxlength="25" name="four_hundred_maturity" value="<?php echo $row['four_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.400">
                                     </label>
                                     <label class="red"><?php echo form_error('four_hundred_maturity');?></label>
                                 </section>
@@ -287,7 +288,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="five_hundred_maturity" value="<?php echo $row['five_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.500">
+                                        <input type="text" maxlength="25" name="five_hundred_maturity" value="<?php echo $row['five_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.500">
                                     </label>
                                     <label class="red"><?php echo form_error('five_hundred_maturity');?></label>
                                 </section>
@@ -304,7 +305,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.1000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="one_thousand_maturity" value="<?php echo $row['one_thousand_maturity'] ?>" placeholder="Write Maturity Amount for Tk.1000">
+                                        <input type="text" maxlength="25" name="one_thousand_maturity" value="<?php echo $row['one_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.1000">
                                     </label>
                                     <label class="red"><?php echo form_error('one_thousand_maturity');?></label>
                                 </section>
@@ -318,7 +319,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.1500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="one_thousand_five_hundred_maturity" value="<?php echo $row['one_thousand_five_hundred_maturity'] ?>" placeholder="Write Maturity Amount for Tk.1500">
+                                        <input type="text" maxlength="25" name="one_thousand_five_hundred_maturity" value="<?php echo $row['one_thousand_five_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.1500">
                                     </label>
                                     <label class="red"><?php echo form_error('one_thousand_five_hundred_maturity');?></label>
                                 </section>
@@ -336,7 +337,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.2000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="two_thousand_maturity" value="<?php echo $row['two_thousand_maturity'] ?>" placeholder="Write Maturity Amount for Tk.2000">
+                                        <input type="text" maxlength="25" name="two_thousand_maturity" value="<?php echo $row['two_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.2000">
                                     </label>
                                     <label class="red"><?php echo form_error('two_thousand_maturity');?></label>
                                 </section>
@@ -350,7 +351,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.2500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="two_thousand_five_hundred_maturity" value="<?php echo set_value('two_thousand_five_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.2500">
+                                        <input type="text" maxlength="25" name="two_thousand_five_hundred_maturity" value="<?php echo $row['two_thousand_five_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.2500">
                                     </label>
                                     <label class="red"><?php echo form_error('two_thousand_five_hundred_maturity');?></label>
                                 </section>
@@ -369,7 +370,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.3000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="three_thousand_maturity" value="<?php echo set_value('three_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.3000">
+                                        <input type="text" maxlength="25" name="three_thousand_maturity" value="<?php echo $row['three_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.3000">
                                     </label>
                                     <label class="red"><?php echo form_error('three_thousand_maturity');?></label>
                                 </section>
@@ -383,7 +384,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.3500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="three_thousand_five_hundred_maturity" value="<?php echo set_value('three_thousand_five_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.3500">
+                                        <input type="text" maxlength="25" name="three_thousand_five_hundred_maturity" value="<?php echo $row['three_thousand_five_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.3500">
                                     </label>
                                     <label class="red"><?php echo form_error('three_thousand_five_hundred_maturity');?></label>
                                 </section>
@@ -401,7 +402,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.4000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="four_thousand_maturity" value="<?php echo set_value('four_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.4000">
+                                        <input type="text" maxlength="25" name="four_thousand_maturity" value="<?php echo $row['four_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.4000">
                                     </label>
                                     <label class="red"><?php echo form_error('four_thousand_maturity');?></label>
                                 </section>
@@ -415,7 +416,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.4500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="four_thousand_five_hundred_maturity" value="<?php echo set_value('four_thousand_five_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.4500">
+                                        <input type="text" maxlength="25" name="four_thousand_five_hundred_maturity" value="<?php echo $row['four_thousand_five_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.4500">
                                     </label>
                                     <label class="red"><?php echo form_error('four_thousand_five_hundred_maturity');?></label>
                                 </section>
@@ -434,7 +435,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.5000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="five_thousand_maturity" value="<?php echo set_value('five_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.5000">
+                                        <input type="text" maxlength="25" name="five_thousand_maturity" value="<?php echo $row['five_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.5000">
                                     </label>
                                     <label class="red"><?php echo form_error('five_thousand_maturity');?></label>
                                 </section>
@@ -448,7 +449,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.5500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="five_thousand_five_hundred_maturity" value="<?php echo set_value('five_thousand_five_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.5500">
+                                        <input type="text" maxlength="25" name="five_thousand_five_hundred_maturity" value="<?php echo $row['five_thousand_five_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.5500">
                                     </label>
                                     <label class="red"><?php echo form_error('five_thousand_five_hundred_maturity');?></label>
                                 </section>
@@ -465,7 +466,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.6000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="six_thousand_maturity" value="<?php echo set_value('six_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.6000">
+                                        <input type="text" maxlength="25" name="six_thousand_maturity" value="<?php echo $row['six_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.6000">
                                     </label>
                                     <label class="red"><?php echo form_error('six_thousand_maturity');?></label>
                                 </section>
@@ -479,7 +480,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.6500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="six_thousand_five_hundred_maturity" value="<?php echo set_value('six_thousand_five_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.6500">
+                                        <input type="text" maxlength="25" name="six_thousand_five_hundred_maturity" value="<?php echo $row['six_thousand_five_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.6500">
                                     </label>
                                     <label class="red"><?php echo form_error('six_thousand_five_hundred_maturity');?></label>
                                 </section>
@@ -496,7 +497,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.7000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="seven_thousand_maturity" value="<?php echo set_value('seven_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.7000">
+                                        <input type="text" maxlength="25" name="seven_thousand_maturity" value="<?php echo $row['seven_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.7000">
                                     </label>
                                     <label class="red"><?php echo form_error('seven_thousand_maturity');?></label>
                                 </section>
@@ -510,7 +511,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.7500 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="seven_thousand_five_hundred_maturity" value="<?php echo set_value('seven_thousand_five_hundred_maturity'); ?>" placeholder="Write Maturity Amount for Tk.7500">
+                                        <input type="text" maxlength="25" name="seven_thousand_five_hundred_maturity" value="<?php echo $row['seven_thousand_five_hundred_maturity']; ?>" placeholder="Write Maturity Amount for Tk.7500">
                                     </label>
                                     <label class="red"><?php echo form_error('seven_thousand_five_hundred_maturity');?></label>
                                 </section>
@@ -529,7 +530,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.8000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="eight_thousand_maturity" value="<?php echo set_value('eight_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.8000">
+                                        <input type="text" maxlength="25" name="eight_thousand_maturity" value="<?php echo $row['eight_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.8000">
                                     </label>
                                     <label class="red"><?php echo form_error('eight_thousand_maturity');?></label>
                                 </section>
@@ -543,7 +544,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.9000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="nine_thousand_maturity" value="<?php echo set_value('nine_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.9000">
+                                        <input type="text" maxlength="25" name="nine_thousand_maturity" value="<?php echo $row['nine_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.9000">
                                     </label>
                                     <label class="red"><?php echo form_error('nine_thousand_maturity');?></label>
                                 </section>
@@ -561,7 +562,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.10000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="ten_thousand_maturity" value="<?php echo set_value('ten_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.10000">
+                                        <input type="text" maxlength="25" name="ten_thousand_maturity" value="<?php echo $row['ten_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.10000">
                                     </label>
                                     <label class="red"><?php echo form_error('ten_thousand_maturity');?></label>
                                 </section>
@@ -575,7 +576,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.11000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="eleven_thousand_maturity" value="<?php echo set_value('eleven_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.11000">
+                                        <input type="text" maxlength="25" name="eleven_thousand_maturity" value="<?php echo $row['eleven_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.11000">
                                     </label>
                                     <label class="red"><?php echo form_error('eleven_thousand_maturity');?></label>
                                 </section>
@@ -593,7 +594,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.12000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twelve_thousand_maturity" value="<?php echo set_value('twelve_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.12000">
+                                        <input type="text" maxlength="25" name="twelve_thousand_maturity" value="<?php echo $row['twelve_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.12000">
                                     </label>
                                     <label class="red"><?php echo form_error('twelve_thousand_maturity');?></label>
                                 </section>
@@ -607,7 +608,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.13000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="thirteen_thousadn_maturity" value="<?php echo set_value('thirteen_thousadn_maturity'); ?>" placeholder="Write Maturity Amount for Tk.13000">
+                                        <input type="text" maxlength="25" name="thirteen_thousadn_maturity" value="<?php echo $row['thirteen_thousadn_maturity']; ?>" placeholder="Write Maturity Amount for Tk.13000">
                                     </label>
                                     <label class="red"><?php echo form_error('thirteen_thousadn_maturity');?></label>
                                 </section>
@@ -626,7 +627,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.14000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="fourteen_thousand_maturity" value="<?php echo set_value('fourteen_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.14000">
+                                        <input type="text" maxlength="25" name="fourteen_thousand_maturity" value="<?php echo $row['fourteen_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.14000">
                                     </label>
                                     <label class="red"><?php echo form_error('fourteen_thousand_maturity');?></label>
                                 </section>
@@ -640,7 +641,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.15000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="fifteen_thousand_maturity" value="<?php echo set_value('fifteen_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.15000">
+                                        <input type="text" maxlength="25" name="fifteen_thousand_maturity" value="<?php echo $row['fifteen_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.15000">
                                     </label>
                                     <label class="red"><?php echo form_error('fifteen_thousand_maturity');?></label>
                                 </section>
@@ -657,7 +658,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.16000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="sixteen_thousand_maturity" value="<?php echo set_value('sixteen_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.16000">
+                                        <input type="text" maxlength="25" name="sixteen_thousand_maturity" value="<?php echo $row['sixteen_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.16000">
                                     </label>
                                     <label class="red"><?php echo form_error('sixteen_thousand_maturity');?></label>
                                 </section>
@@ -671,7 +672,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.17000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="seventeen_thousand_maturity" value="<?php echo set_value('seventeen_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.17000">
+                                        <input type="text" maxlength="25" name="seventeen_thousand_maturity" value="<?php echo $row['seventeen_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.17000">
                                     </label>
                                     <label class="red"><?php echo form_error('seventeen_thousand_maturity');?></label>
                                 </section>
@@ -688,7 +689,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.18000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="eighteen_thousand_maturity" value="<?php echo set_value('eighteen_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.18000">
+                                        <input type="text" maxlength="25" name="eighteen_thousand_maturity" value="<?php echo $row['eighteen_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.18000">
                                     </label>
                                     <label class="red"><?php echo form_error('eighteen_thousand_maturity');?></label>
                                 </section>
@@ -702,7 +703,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.19000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="nineteen_thousand_maturity" value="<?php echo set_value('nineteen_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.19000">
+                                        <input type="text" maxlength="25" name="nineteen_thousand_maturity" value="<?php echo $row['nineteen_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.19000">
                                     </label>
                                     <label class="red"><?php echo form_error('nineteen_thousand_maturity');?></label>
                                 </section>
@@ -721,7 +722,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.20000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_thousand_maturity" value="<?php echo set_value('twenty_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.20000">
+                                        <input type="text" maxlength="25" name="twenty_thousand_maturity" value="<?php echo $row['twenty_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.20000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_thousand_maturity');?></label>
                                 </section>
@@ -735,7 +736,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.21000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_one_thousand_maturity" value="<?php echo set_value('twenty_one_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.21000">
+                                        <input type="text" maxlength="25" name="twenty_one_thousand_maturity" value="<?php echo $row['twenty_one_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.21000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_one_thousand_maturity');?></label>
                                 </section>
@@ -754,7 +755,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.22000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_two_thousand_maturity" value="<?php echo set_value('twenty_two_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.22000">
+                                        <input type="text" maxlength="25" name="twenty_two_thousand_maturity" value="<?php echo $row['twenty_two_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.22000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_two_thousand_maturity');?></label>
                                 </section>
@@ -768,7 +769,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.23000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_three_thousand_maturity" value="<?php echo set_value('twenty_three_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.23000">
+                                        <input type="text" maxlength="25" name="twenty_three_thousand_maturity" value="<?php echo $row['twenty_three_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.23000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_three_thousand_maturity');?></label>
                                 </section>
@@ -787,7 +788,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.24000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_four_thousand_maturity" value="<?php echo set_value('twenty_four_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.24000">
+                                        <input type="text" maxlength="25" name="twenty_four_thousand_maturity" value="<?php echo $row['twenty_four_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.24000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_four_thousand_maturity');?></label>
                                 </section>
@@ -801,7 +802,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.25000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_five_thousand_maturity" value="<?php echo set_value('twenty_five_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.25000">
+                                        <input type="text" maxlength="25" name="twenty_five_thousand_maturity" value="<?php echo $row['twenty_five_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.25000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_five_thousand_maturity');?></label>
                                 </section>
@@ -819,7 +820,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.26000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_six_thousand_maturity" value="<?php echo set_value('twenty_six_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.26000">
+                                        <input type="text" maxlength="25" name="twenty_six_thousand_maturity" value="<?php echo $row['twenty_six_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.26000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_six_thousand_maturity');?></label>
                                 </section>
@@ -833,7 +834,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.27000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_seven_thousand_maturity" value="<?php echo set_value('twenty_seven_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.27000">
+                                        <input type="text" maxlength="25" name="twenty_seven_thousand_maturity" value="<?php echo $row['twenty_seven_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.27000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_seven_thousand_maturity');?></label>
                                 </section>
@@ -851,7 +852,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.28000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_eight_thousand_maturity" value="<?php echo set_value('twenty_eight_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.28000">
+                                        <input type="text" maxlength="25" name="twenty_eight_thousand_maturity" value="<?php echo $row['twenty_eight_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.28000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_eight_thousand_maturity');?></label>
                                 </section>
@@ -865,7 +866,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.29000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="twenty_nine_thousand_maturity" value="<?php echo set_value('twenty_nine_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.29000">
+                                        <input type="text" maxlength="25" name="twenty_nine_thousand_maturity" value="<?php echo $row['twenty_nine_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.29000">
                                     </label>
                                     <label class="red"><?php echo form_error('twenty_nine_thousand_maturity');?></label>
                                 </section>
@@ -882,7 +883,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.30000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="thirty_thousand_maturity" value="<?php echo set_value('thirty_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.30000">
+                                        <input type="text" maxlength="25" name="thirty_thousand_maturity" value="<?php echo $row['thirty_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.30000">
                                     </label>
                                     <label class="red"><?php echo form_error('thirty_thousand_maturity');?></label>
                                 </section>
@@ -896,7 +897,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.50000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="fifty_thousand_maturity" value="<?php echo set_value('fifty_thousand_maturity'); ?>" placeholder="Write Maturity Amount for Tk.50000">
+                                        <input type="text" maxlength="25" name="fifty_thousand_maturity" value="<?php echo $row['fifty_thousand_maturity']; ?>" placeholder="Write Maturity Amount for Tk.50000">
                                     </label>
                                     <label class="red"><?php echo form_error('fifty_thousand_maturity');?></label>
                                 </section>
@@ -912,7 +913,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-3">
                                     <label class="label">Maturity Amount for Tk.100000 </label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="one_lac_maturity" value="<?php echo set_value('one_lac_maturity'); ?>" placeholder="Write Maturity Amount for Tk.100000">
+                                        <input type="text" maxlength="25" name="one_lac_maturity" value="<?php echo $row['one_lac_maturity']; ?>" placeholder="Write Maturity Amount for Tk.100000">
                                     </label>
                                     <label class="red"><?php echo form_error('one_lac_maturity');?></label>
                                 </section>

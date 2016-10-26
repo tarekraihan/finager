@@ -707,7 +707,8 @@ class Dps extends CI_Controller
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
                 $this->Common_model->table_name = 'dps_info';
-                $res = $this->Common_model->insert();
+                $this->Common_model->where = array('id' => $this->input->post('txtInfoId'));
+                $res = $this->Common_model->update();
                 if($res){
                     $installment = ($this->input->post('txtTenure') * 12);
 
@@ -803,9 +804,10 @@ class Dps extends CI_Controller
                         'created' => $date ,
                         'created_by'=>$this->session->userdata('admin_user_id')
                     );
-//                    print_r($this->Common_model->data);die;
+
                     $this->Common_model->table_name = 'dps_maturity_amount';
-                    $result = $this->Common_model->insert();
+                    $this->Common_model->where = array('dps_info_id' => $this->input->post('txtInfoId'));
+                    $result = $this->Common_model->update();
                     if ($result) {
                         redirect(base_url().'dps/edit_dps_info/success');
                     } else {
