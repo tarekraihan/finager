@@ -177,6 +177,7 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
+            $this->form_validation->set_rules('txtFeesAndCharges', 'fees and charges', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Draft Info";
@@ -201,6 +202,7 @@ class Dps extends CI_Controller
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
+                    'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'review' => $this->input->post('txtReview'),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
@@ -244,6 +246,7 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
+            $this->form_validation->set_rules('txtFeesAndCharges', 'fees and charges', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Draft Info";
@@ -268,6 +271,7 @@ class Dps extends CI_Controller
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
+                    'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'review' => $this->input->post('txtReview'),
                     'modified_by'=>$this->session->userdata('admin_user_id')
                 );

@@ -782,7 +782,7 @@ class Select_Model extends CI_Model
         }else{
             $where = 'bank_id='.$bank_id.' AND i_am_id = '.$i_am;
         }
-        $sql = "SELECT `id`, `bank_id`,non_bank_id, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`,`available_benefit`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `dps_info_draft` WHERE $where";
+        $sql = "SELECT `id`, `bank_id`,non_bank_id, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`,`available_benefit`, `fees_and_charges`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `dps_info_draft` WHERE $where";
         $query=$this->db->query($sql);
         return $query->row();
     }
