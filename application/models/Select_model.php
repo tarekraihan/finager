@@ -321,6 +321,18 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function select_millionaire_maturity_amount()
+    {
+        $sql="SELECT * FROM `millionaire_maturity_amount`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtMaturityAmount",$row->id).'> Tk. '.$row->maturity_amount.'</option>';
+        }
+        return $option;
+    }
+
 
     function card_card_user()
     {
@@ -854,6 +866,18 @@ class Select_Model extends CI_Model
         return $query->row();
     }
 
+    public function get_all_millionaire_draft_info($bank_id,$i_am,$is_non_bank){
+        $where ='';
+        if($is_non_bank == 1){
+            $where = 'non_bank_id='.$bank_id.' AND i_am_id = '.$i_am;
+        }else{
+            $where = 'bank_id='.$bank_id.' AND i_am_id = '.$i_am;
+        }
+        $sql = "SELECT `id`, `bank_id`,non_bank_id, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`,`available_benefit`, `fees_and_charges`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `millionaire_info_draft` WHERE $where";
+        $query=$this->db->query($sql);
+        return $query->row();
+    }
+
     public function get_fdr_info(){
         $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_i_am.i_am,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, fdr_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id LEFT JOIN card_bank ON card_bank.id = fdr_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id ORDER BY fdr_info.id ASC";
         $query=$this->db->query($sql);
@@ -953,9 +977,61 @@ class Select_Model extends CI_Model
         return $result;
     }
 
+    public function get_millionaire_info(){
+        $sql = "SELECT millionaire_info.id,millionaire_info.`loan_facility`,millionaire_info.`eligibility`,millionaire_i_am.i_am,millionaire_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, millionaire_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `millionaire_info` INNER JOIN millionaire_i_am ON millionaire_i_am.id = millionaire_info.i_am_id INNER JOIN millionaire_tenure ON millionaire_tenure.id = millionaire_info.tenure_id LEFT JOIN card_bank ON card_bank.id = millionaire_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=millionaire_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id ORDER BY millionaire_info.id ASC";
+        $query=$this->db->query($sql);
+        $result="";
+
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $bank = "";
+                if($row->is_non_bank == 1){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank == 1){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
+
+                $year =( $row->tenure ==1) ?'Year' : 'Years';
+
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
+					 <td class="text-center">'.$bank.'</td>
+					 <td class="text-center"> '.$row->tenure.' '.$year.'</td>
+					 <td class="text-center"> '.$row->loan_facility.'%</td>
+					 <td> '.$row->eligibility.'</td>
+					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
+
+                $result.='</td>
+                    <td><a href="'.base_url().'millionaire/edit_millionaire_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
     function Select_dps_info_by_id($id){
         if(!empty($id)){
             $sql="SELECT *  FROM `dps_info`INNER JOIN dps_maturity_amount ON  dps_maturity_amount.dps_info_id = dps_info.id WHERE dps_info.id = $id";
+            $query=$this->db->query($sql);
+            return $query->row_array();
+        }
+
+    }
+    function Select_millionaire_tenure_by_id($id){
+        if(!empty($id)){
+            $sql="SELECT `maturity_amount` FROM `millionaire_maturity_amount` WHERE id = $id";
             $query=$this->db->query($sql);
             return $query->row_array();
         }

@@ -363,17 +363,17 @@ class Millionaire extends CI_Controller
         }
     }
 
-    public function ajax_get_draft_dps_info(){
+    public function ajax_get_draft_millionaire_info(){
         if ($this->session->userdata('email_address')) {
             $bank_id =$this->input->post('bank_id');
             $non_bank_id =$this->input->post('non_bank_id');
             $is_non_bank =$this->input->post('is_non_bank');
             $i_am =$this->input->post('i_am');
             if($is_non_bank == 1){
-                $result =  $this->Select_model->get_all_dps_draft_info($non_bank_id,$i_am,$is_non_bank);
+                $result =  $this->Select_model->get_all_millionaire_draft_info($non_bank_id,$i_am,$is_non_bank);
             }else{
 
-                $result =  $this->Select_model->get_all_dps_draft_info($bank_id,$i_am,$is_non_bank);
+                $result =  $this->Select_model->get_all_millionaire_draft_info($bank_id,$i_am,$is_non_bank);
             }
             $result = (array)$result;
             if($result){
@@ -396,15 +396,19 @@ class Millionaire extends CI_Controller
             }
 
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
-            $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|numeric');
             $this->form_validation->set_rules('txtTenure', 'Tenure', 'trim|required');
+            $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|numeric');
+            $this->form_validation->set_rules('txtMaturityAmount', 'Maturity Amount', 'trim|numeric|required');
             $this->form_validation->set_rules('txtInitialDeposit', 'Initial Deposit', 'trim|numeric');
             $this->form_validation->set_rules('txtMonthlyDeposit', 'Monthly Deposit', 'trim|numeric|required');
+            $this->form_validation->set_rules('txtDepositName', 'Deposit Name', 'trim');
+            $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|numeric');
             $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
+            $this->form_validation->set_rules('txtFeesAndCharges', 'Fees And Charges', 'trim|required');
 
 
             if ($this->form_validation->run() == FALSE) {
@@ -420,28 +424,40 @@ class Millionaire extends CI_Controller
                 if($is_non_bank == 1){
                     $non_bank =1;
                 }
-                $tenure = $this->input->post('txtTenure');
-                $monthly_deposit = $this->input->post('txtMonthlyDeposit');
 
+                $maturity = $this->Select_model->Select_millionaire_tenure_by_id($this->input->post('txtMaturityAmount'));
+
+                $tenure = ($this->input->post('txtTenure')) ? $this->input->post('txtTenure') : 0;
+                $monthly_deposit = ($this->input->post('txtMonthlyDeposit')) ? $this->input->post('txtMonthlyDeposit') : 0;
+                $initial_deposit =($this->input->post('txtInitialDeposit')) ? $this->input->post('txtInitialDeposit') : 0;
+
+                $total_principal_amount = ($monthly_deposit * $tenure * 12) + $initial_deposit;
+                $accured_interest = $maturity['maturity_amount'] - $total_principal_amount;
 
                 $this->Common_model->data = array(
-                    'bank_id' => $this->input->post('txtBankName'),
                     'i_am_id' => $this->input->post('txtIAm'),
+                    'tenure_id' => $this->input->post('txtTenure'),
+                    'bank_id' => $this->input->post('txtBankName'),
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
-                    'tenure_id' => $this->input->post('txtTenure'),
                     'millionaire_info_name' => htmlentities($this->input->post('txtDepositName')),
+                    'initial_deposit' => $initial_deposit,
+                    'monthly_deposit' => htmlentities($this->input->post('txtMonthlyDeposit')),
+                    'total_principal_amount' => $total_principal_amount,
+                    'accured_interest' => $accured_interest,
+                    'maturity_amount_id' => $this->input->post('txtMaturityAmount'),
                     'loan_facility' => htmlentities($this->input->post('txtLoanFacility')),
                     'available_feature' => $this->input->post('txtAvailableFeatures'),
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
+                    'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'review' => $this->input->post('txtReview'),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
-                $this->Common_model->table_name = 'dps_info';
+                $this->Common_model->table_name = 'millionaire_info';
                 $result = $this->Common_model->insert();
                 if ($result) {
                     redirect(base_url().'millionaire/add_info/success');
@@ -459,7 +475,7 @@ class Millionaire extends CI_Controller
         $data['title'] = "Draft Information";
         $this->load->view('admin/block/header',$data);
         $this->load->view('admin/block/left_nav');
-        $this->load->view('admin/dps/deposit_list');
+        $this->load->view('admin/millionaire/deposit_list');
         $this->load->view('admin/block/footer');
     }
 
