@@ -232,6 +232,35 @@
             </ul>
         </li>
 
+        <li class="top-menu-invisible">
+            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Millionaire</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>millionaire/tenure"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>millionaire/i_am"><i class="fa fa-stack-overflow"></i> Add I am</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>millionaire/maturity_amount/"><i class="fa fa-stack-overflow"></i> Add Maturity Amount</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>millionaire/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft Info</a>
+                </li>
+
+
+                <li>
+                    <a href="<?php echo base_url();?>millionaire/draft_list/"><i class="fa fa-stack-overflow"></i> Draft List</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>millionaire/add_info/"><i class="fa fa-stack-overflow"></i> Add Information</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>millionaire/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit List</a>
+                </li>
+            </ul>
+        </li>
+
         <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
             <ul>

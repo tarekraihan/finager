@@ -187,7 +187,7 @@ class Dps extends CI_Controller
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $is_non_bank =$this->input->post('txtNonBankName');
+                $is_non_bank =$this->input->post('is_non_bank');
                 $non_bank = 0;
                 if($is_non_bank == 1){
                     $non_bank =1;
@@ -256,7 +256,7 @@ class Dps extends CI_Controller
                 $this->load->view('admin/block/footer');
             }else{
 
-                $is_non_bank =$this->input->post('txtNonBankName');
+                $is_non_bank =$this->input->post('is_non_bank');
                 $non_bank = 0;
                 if($is_non_bank == 1){
                     $non_bank =1;

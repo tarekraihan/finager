@@ -339,7 +339,7 @@ class Fdr extends CI_Controller {
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $is_non_bank =$this->input->post('txtNonBankName');
+                $is_non_bank =$this->input->post('is_non_bank');
                 $non_bank = 0;
                 if($is_non_bank == 1){
                     $non_bank =1;
@@ -381,7 +381,7 @@ class Fdr extends CI_Controller {
             } else if ($msg == 'error') {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
-            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
+//            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
             $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
@@ -396,8 +396,16 @@ class Fdr extends CI_Controller {
                 $this->load->view('admin/fdr/edit_draft_info');
                 $this->load->view('admin/block/footer');
             }else{
+
+                $is_non_bank =$this->input->post('is_non_bank');
+                $non_bank = 0;
+                if($is_non_bank == 1){
+                    $non_bank =1;
+                }
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
+                    'is_non_bank' => $non_bank,
+                    'non_bank_id' => $this->input->post('txtNonBankName'),
                     'deposit_type_id' => $this->input->post('txtDepositType'),
                     'i_am_id' => $this->input->post('txtIAm'),
                     'available_feature' => $this->input->post('txtAvailableFeatures'),
