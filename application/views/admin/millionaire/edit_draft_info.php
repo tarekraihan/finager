@@ -16,6 +16,7 @@ if(isset($_GET['id'])){
     $row['is_non_bank']='';
     $row['non_bank_id']='';
     $row["i_am_id"] ='';
+    $row["maturity_amount_id"] ='';
     $row['available_feature']='';
     $row['eligibility']='';
     $row['required_document']='';
@@ -130,12 +131,30 @@ if(isset($_GET['id'])){
                                                         <input type="hidden" name="txtDraftId" value="<?php echo $row['id'];?>">
                                                     </label>
                                                 </section>
+                                                <section class="col col-6" id="institution">
+
+                                                </section>
                                             </div>
 
                                         <div class="row">
-                                            <section class="col col-6" id="institution">
 
+                                            <section class="col col-6">
+                                                <label class="label">Maturity Amount</label>
+                                                <label class="select">
+                                                    <select name="txtMaturityAmount" id="txtMaturityAmount">
+                                                        <?php
+                                                        $result=$this->Select_model->select_all('millionaire_maturity_amount');
+                                                        foreach($result->result() as $row1){
+                                                            ?>
+                                                            <option value="<?php echo $row1->id;?>" <?php if(isset($row["maturity_amount_id"]) && $row["maturity_amount_id"]==$row1->id){echo "selected='select'";}?>Tk.<?php echo set_select("txtMaturityAmount",$row1->id)?>><?php echo $row1->maturity_amount ; ?></option>';
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </label>
+                                                <label class="red"><?php echo form_error('txtMaturityAmount');?></label>
                                             </section>
+
                                             <section class="col col-6">
                                                 <label class="label">I Am</label>
                                                 <label class="select">

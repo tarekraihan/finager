@@ -101,8 +101,6 @@
                                                         <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
                                                     </label>
                                                 </section>
-                                            </div>
-                                            <div class="row">
                                                 <section class="col col-6" id="institution">
                                                     <label class="label">Bank Name</label>
                                                     <label class="select">
@@ -112,6 +110,9 @@
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBankName');?></label>
                                                 </section>
+                                            </div>
+                                            <div class="row">
+
                                                 <section class="col col-6">
                                                     <label class="label">I Am</label>
                                                     <label class="select">
@@ -120,6 +121,16 @@
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtIAm');?></label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label class="label">Maturity Amount</label>
+                                                    <label class="select">
+                                                        <select name="txtMaturityAmount" id="txtMaturityAmount">
+                                                            <?php echo $this->Select_model->select_millionaire_maturity_amount();?>
+                                                        </select>
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtMaturityAmount');?></label>
+
                                                 </section>
                                             </div>
 

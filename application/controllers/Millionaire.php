@@ -243,8 +243,8 @@ class Millionaire extends CI_Controller
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 //            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
-//            $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
+            $this->form_validation->set_rules('txtMaturityAmount', 'Maturity Amount', 'trim|required');
             $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
@@ -270,6 +270,7 @@ class Millionaire extends CI_Controller
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
                     'i_am_id' => $this->input->post('txtIAm'),
+                    'maturity_amount_id' => $this->input->post('txtMaturityAmount'),
                     'available_feature' => $this->input->post('txtAvailableFeatures'),
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),
@@ -312,7 +313,7 @@ class Millionaire extends CI_Controller
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 //            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
-//            $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
+            $this->form_validation->set_rules('txtMaturityAmount', 'Maturity Amount', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
@@ -336,9 +337,10 @@ class Millionaire extends CI_Controller
                 }
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
-                    'i_am_id' => $this->input->post('txtIAm'),
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
+                    'i_am_id' => $this->input->post('txtIAm'),
+                    'maturity_amount_id' => $this->input->post('txtMaturityAmount'),
                     'available_feature' => $this->input->post('txtAvailableFeatures'),
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),
@@ -369,11 +371,14 @@ class Millionaire extends CI_Controller
             $non_bank_id =$this->input->post('non_bank_id');
             $is_non_bank =$this->input->post('is_non_bank');
             $i_am =$this->input->post('i_am');
+            $maturity_amount_id = $this->input->post('maturity_amount_id');
+            echo $maturity_amount_id;
+//            echo $is_non_bank;
             if($is_non_bank == 1){
-                $result =  $this->Select_model->get_all_millionaire_draft_info($non_bank_id,$i_am,$is_non_bank);
+                $result =  $this->Select_model->get_all_millionaire_draft_info($non_bank_id,$i_am,$is_non_bank,$maturity_amount_id);
             }else{
 
-                $result =  $this->Select_model->get_all_millionaire_draft_info($bank_id,$i_am,$is_non_bank);
+                $result =  $this->Select_model->get_all_millionaire_draft_info($bank_id,$i_am,$is_non_bank,$maturity_amount_id);
             }
             $result = (array)$result;
             if($result){
