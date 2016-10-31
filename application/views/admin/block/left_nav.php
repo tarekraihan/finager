@@ -126,7 +126,7 @@
         </li>
 
         <li class="top-menu-invisible">
-            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Auto Loan</span></a>
+            <a href="#"><i class="fa fa-lg fa-fw fa fa-automobile txt-color-red"></i> <span class="menu-item-parent">Auto Loan</span></a>
             <ul>
 
                 <!--<li>
@@ -256,11 +256,23 @@
                     <a href="<?php echo base_url();?>millionaire/add_info/"><i class="fa fa-stack-overflow"></i> Add Information</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>millionaire/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit List</a>
+                    <a href="<?php echo base_url();?>millionaire/deposit_list/"><i class="fa fa-stack-overflow"></i>Millionaire Info List</a>
                 </li>
             </ul>
         </li>
 
+        <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-graduation-cap"></i> <span class="menu-item-parent"> Education Loan</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>map/add">Add Map Info</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>backdoor/edit_admin">Edit User </a>
+                </li>
+
+            </ul>
+        </li>
         <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
             <ul>
