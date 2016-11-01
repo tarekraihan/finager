@@ -265,10 +265,14 @@
             <a href="#"><i class="fa fa-lg fa-fw fa-graduation-cap"></i> <span class="menu-item-parent"> Education Loan</span></a>
             <ul>
                 <li>
-                    <a href="<?php echo base_url();?>map/add">Add Map Info</a>
+                    <a href="<?php echo base_url();?>education_loan/tenure">Add Tenure</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>backdoor/edit_admin">Edit User </a>
+                    <a href="<?php echo base_url();?>education_loan/expenses_considered">Add Expenses</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>education_loan/purpose">Add Purpose</a>
                 </li>
 
             </ul>
