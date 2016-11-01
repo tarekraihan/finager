@@ -600,6 +600,9 @@ if(isset($_GET['id'])){
         $("#txtIAm").on('change', function(){
             call_draft_info();
         });
+        $("#txtMaturityAmount").on('change', function(){
+            call_draft_info();
+        });
 
 
 
@@ -630,12 +633,14 @@ if(isset($_GET['id'])){
         var i_am = $('#txtIAm').val();
         var bank_id = $('#txtBankName').val();
         var non_bank_id = $('#txtNonBankName').val();
+        var maturity_amount_id = $('#txtMaturityAmount').val();
+//        alert(maturity_amount_id);
         if($("input[name ='is_non_bank']").is(':checked')){
-            var param = 'non_bank_id='+non_bank_id+'&i_am='+i_am+'&is_non_bank=1';
+            var param = 'non_bank_id='+non_bank_id+'&i_am='+i_am+'&maturity_amount_id='+maturity_amount_id+'&is_non_bank=1';
         }else{
-            var param = 'bank_id='+bank_id+'&i_am='+i_am+'&is_non_bank=0';
+            var param = 'bank_id='+bank_id+'&i_am='+i_am+'&maturity_amount_id='+maturity_amount_id+'&is_non_bank=0';
         }
-        if(bank_id != '' && i_am != ''){
+        if(bank_id != '' && i_am != '' && maturity_amount_id != ''){
             $.ajax({
                 url: "<?php echo base_url(); ?>millionaire/ajax_get_draft_millionaire_info",
                 type : "POST",

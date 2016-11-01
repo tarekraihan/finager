@@ -874,7 +874,7 @@ class Select_Model extends CI_Model
             $where = 'bank_id='.$bank_id.' AND i_am_id = '.$i_am .' AND maturity_amount_id='.$maturity_amount_id;
         }
         $sql = "SELECT `id`, `bank_id`,non_bank_id,`maturity_amount_id`, `available_feature`, `eligibility`, `required_document`, `terms_and_conditions`,`available_benefit`, `fees_and_charges`, `review`, `created_by`, `modified_by`, `created`, `modified` FROM `millionaire_info_draft` WHERE $where";
-        echo $maturity_amount_id;
+//        echo $maturity_amount_id;
         $query=$this->db->query($sql);
         return $query->row();
     }

@@ -372,7 +372,7 @@ class Millionaire extends CI_Controller
             $is_non_bank =$this->input->post('is_non_bank');
             $i_am =$this->input->post('i_am');
             $maturity_amount_id = $this->input->post('maturity_amount_id');
-            echo $maturity_amount_id;
+//            echo $maturity_amount_id;
 //            echo $is_non_bank;
             if($is_non_bank == 1){
                 $result =  $this->Select_model->get_all_millionaire_draft_info($non_bank_id,$i_am,$is_non_bank,$maturity_amount_id);
