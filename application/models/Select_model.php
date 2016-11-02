@@ -360,6 +360,58 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function select_education_loan_purpose()
+    {
+        $sql="SELECT * FROM `education_loan_purpose`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtLoanPurpose[]",$row->id).'>'.$row->loan_purpose.'</option>';
+
+        }
+        return $option;
+    }
+
+    function select_min_education_loan_tenure()
+    {
+        $sql="SELECT * FROM `education_loan_tenure`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtMinEducationLoanTenure",$row->id).'>'.$row->tenure.' Year</option>';
+
+        }
+        return $option;
+    }
+
+    function select_max_education_loan_tenure()
+    {
+        $sql="SELECT * FROM `education_loan_tenure`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtMaxEducationLoanTenure",$row->id).'>'.$row->tenure.' Year</option>';
+
+        }
+        return $option;
+    }
+
+    function education_loan_expenses_considered()
+    {
+        $sql="SELECT * FROM `education_expenses_considered`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtExpensesConsidered[]",$row->id).'>'.$row->expenses_considered.'</option>';
+
+        }
+        return $option;
+    }
+
 
     function personal_loan_looking_for()
     {

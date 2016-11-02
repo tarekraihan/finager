@@ -275,6 +275,10 @@
                     <a href="<?php echo base_url();?>education_loan/purpose">Add Purpose</a>
                 </li>
 
+                <li>
+                    <a href="<?php echo base_url();?>education_loan/loan_info">Add Loan Info</a>
+                </li>
+
             </ul>
         </li>
         <li>
