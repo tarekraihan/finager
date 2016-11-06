@@ -1,3 +1,5 @@
+<section id="auto_header">
+</section>
 <section id="card">
     <div class="container">
         <div class="row">
@@ -233,7 +235,7 @@
                         $home .='<div class="full-card">
                        <div class="row home_loan_right_bar no-margin-lr2">
                            <div class="col-sm-3 col-xs-3">
-                               <a href="home_loan_details.php"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+                               <a href="'.base_url().'en/car_loan_details"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
                                <small class="home_loan_bank_name"><a  href="">'.$row->bank_name.'</a></small>
                                <small class="home_loan_bank_name">'.$row->i_want.'</small>
                            </div>

@@ -1,4 +1,6 @@
+<section id="creditCard_header">
 
+</section>
 
 <section id="card">
     <div class="container">

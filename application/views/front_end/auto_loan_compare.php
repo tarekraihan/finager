@@ -34,7 +34,7 @@
 																	<div class="selectCalcWrapper" style="display:none;">
 																		<div class="radiobox">
 																		  <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-																		  <label for="savingCalculator">Home Loan Calculator</label>
+																		  <label for="savingCalculator">Car Loan Calculator</label>
 																		</div>
 																		<div class="radiobox">
 																		  <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
@@ -48,7 +48,7 @@
 																		  <!--Amount Already Saved START-->
 																			<div class="slideWrapper" id="alreadySaved">
 																				<div class="questWrap">
-																				  <p class="quest">Enter your home loan amount required</p>
+																				  <p class="quest">Enter your Car loan amount required</p>
 																				</div>
 																			  
 																				<div class="inputWrapper"> <span class="rupee"></span>
@@ -87,7 +87,7 @@
 																			  <!--Amount Already Saved END-->
 																			  
 																			<div class="slideWrapper" id="avgSave">
-																				<p class="quest">Enter tenure for home loan</p>
+																				<p class="quest">Enter tenure for Car loan</p>
 																				<div class="inputWrapper">
 																				  <div class="inputField">
 																					<div class="inpLft"></div>
@@ -146,7 +146,7 @@
 
 
 																			<div class="slideWrapper hide" id="interest">
-																				<p class="quest">Interest rate on home loan</p>
+																				<p class="quest">Interest rate on Car loan</p>
 																				<div class="inputWrapper">
 																				  <div class="inputField">
 																					<div class="inpLft"></div>
@@ -251,7 +251,7 @@
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Home Loan <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Car Loan <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">

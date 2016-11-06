@@ -1,56 +1,6 @@
-
-<style type="text/css">
-	.savingsContainer .leftCont {
-		padding: 0 0 0 0;
-	}
-	.calcSection .dragBox .drag {
-	    width: 200px;
-	}
-	.calcSection .dragBox .next {
-		right: 103px;
-	}
-	.calcSection .dragBox .drag2 {
-		width: 201px;
-	}
-	.monthWrap .calcSection .dragBox {
-		width: 215px;
-	}
-	.calcSection .dragBox .slideImg {
-		width: 210px;
-	}
-	.monthWrap .calcSection .dragBox .slideImg {
-		width: 207px;
-	}
-	.calcSection .dragBox .drag span {
-		background: none;
-	}
-	.card_details_pronsCons {
-		margin-top:0px;
-		border-bottom:0px;
-	}
-	.tPaybleAmount{
-		font-size:9px;
-	}
-	.btnPmore {
-		background-color: #f3f3f3;
-		border: 1px solid #EAEAEC;
-		padding: 1px 8px;
-		margin-bottom: 5px;
-		border-radius: 6px;
-		font-size: 12px;
-		font-weight: bold;
-	}
-	.btnPmore:hover {
-		background-color: #2B99BB;
-		color: #fff;
-		border: 1px solid #2B99BB;
-	}
-</style>
-
-
-	<section id="personal_header_part">
-		
+	<section id="education_header">
 	</section>
+	
 	<section id="card">
 		<div class="container">
 			<div class="row">
@@ -61,75 +11,31 @@
 						<div class="card_query">
 							<p>I Want </p>
 							<div class="query_radio">
-								<div>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="generalConsumer" class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Any Purpose Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Loan for Professional
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Consumer Durable Loan
-									</label><br/>
-								</div>
-								<div>
-									<!--a id="displayText" href="javascript:toggle();">More Filter <i class="fa fa-sort-desc fa-lg"></i></a-->
-									<button class="btnPmore" data-toggle="collapse" data-target="#demo">More</button>
-								</div>
-								<!--div id="toggleText" style="display: none"-->
-								<div id="demo" class="collapse">
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Marriage Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Women Entrepreneurship Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Festival Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Travel Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Medical Treatment Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Overseas Job Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Hajj Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Senior Support Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										CNG Conversion Loan
-									</label><br/>
-								</div>
+								<label class="material_radio_group">
+									<input type="radio" name="iAm" value="generalConsumer" class="material_radiobox"/>
+									<span class="material_check_radio"></span>
+									Purchase Apartment/Flat
+								</label><br/>
+								<label class="material_radio_group">
+									<input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
+									<span class="material_check_radio"></span>
+									Home Construction
+								</label><br/>
+								<label class="material_radio_group">
+									<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
+									<span class="material_check_radio"></span>
+									Housing Plot
+								</label><br/>
+								<label class="material_radio_group">
+									<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
+									<span class="material_check_radio"></span>
+									Renovation/ Extension/ Finishing Work
+								</label><br/>
+								<label class="material_radio_group">
+									<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
+									<span class="material_check_radio"></span>
+									Home Loan Takeover
+								</label><br/>
 							</div>
 						</div>
 						
@@ -347,47 +253,42 @@
 				
 				<!-- Right bar content start -->
 				<div class="col-sm-9 col-xs-9">
+					
 					<div class="full-card">
 						<div class="row home_loan_right_bar no-margin-lr2">
 							<div class="col-sm-3 col-xs-3">
-								<a href="<?php echo base_url(); ?>en/personal_loan_details"><img title="click here to details" class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></a>
+								<a href="<?php echo base_url(); ?>en/education_loan_details"><img title="click here to details" class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></a>
 							</div>
 							<div class="col-sm-9 col-xs-9">
 								<div class="row">
-									<div class="col-sm-2 col-xs-2 w20">
+									<div class="col-sm-2 col-xs-2 no-padding w20">
 										<div class="card_text2">
-											<h5>Amount </h5>
-											<p>28%,<br> Monthly 2.33%</p>
+											<h5>Selected Amount </h5>
+											<p>1,000,000</p>
 										</div>
 									</div>
-									<div class="col-sm-2 col-xs-2 w20">
+									<div class="col-sm-2 col-xs-2 no-padding w20">
 										<div class="card_text2">
-											<h5>Interest (Mid Rate)</h5>
+											<h5>Interest Rate</h5>
 											<p>min 8%,<br> max 9%</p>
 										</div>
 									</div>
-									<div class="col-sm-1 col-xs-1 w20">
+									<div class="col-sm-1 col-xs-1 no-padding w20">
 										<div class="card_text2">
 											<h5>EMI</h5>
 											<p>28%,<br> Monthly 2.33%</p>
 										</div>
 									</div>
-									<div class="col-sm-2 col-xs-2 w20">
+									<div class="col-sm-5 col-xs-2 w20 no-padding">
 										<div class="card_text2">
 											<h5>Total Payable Amount</h5>
 											<p>50%,<br/><span class="tPaybleAmount">based on 100000</span></p>
 										</div>
 									</div>
-									<div class="col-sm-3 col-xs-1 w20">
-										<div class="card_text2">
-											<h5>Down Payment (Min)</h5>
-											<p>BDT 1300 + VAT</p>
-										</div>
-									</div>
 								</div>
 							</div>
 							<div class="col-sm-12 col-xs-12 home_loan_button">
-								<img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/card_btn_apllication.png" />
+								<img class="btnCardApply img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/card_btn_apllication.png" />
 								<span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton" href="#"><i class="fa fa-info-circle"></i> More info</a></span>
 								<span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
 								<span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton2" href="#"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
@@ -399,6 +300,7 @@
 										<ul class="nav nav-tabs" role="tablist">
 											<li role="presentation" class="active"><a href="#Features" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
 											<li role="presentation"><a href="#FeesCharges" aria-controls="profile" role="tab" data-toggle="tab">Fees & Charges</a></li>
+											<li role="presentation"><a href="#ExpensesConsidered" aria-controls="profile" role="tab" data-toggle="tab">Expenses Considered</a></li>
 											<li role="presentation"><a href="#Eligibility" aria-controls="messages" role="tab" data-toggle="tab">Eligibility</a></li>
 											<li role="presentation"><a href="#Requirement" aria-controls="settings" role="tab" data-toggle="tab">Requirement</a></li>
 											<li role="presentation"><a href="#TermsConditions" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
@@ -411,26 +313,42 @@
 											<div role="tabpanel" class="tab-pane active" id="Features">
 												<section id="card_details_FeesCharges">
 													<div class="card_details_pronsCons">
-														<h4>Fees & Charges</h4>
+														<h4>Features</h4>
 														<div class="prosConsHr"></div><br/>
 														<div class="prosCons_body2 trbodywidth">
 															<table class="table table-striped table-bordered">
 																<tbody>
 																  <tr>
-																	<td>Processing Fee</td>
-																	<td>2%</td>
+																	<td>Minimum Loan Amount</td>
+																	<td>200,000</td>
 																  </tr>
 																  <tr>
-																	<td>Early Settlement Fee</td>
-																	<td>1%</td>
+																	<td>Maximum Loan Amount</td>
+																	<td>1,000,000</td>
 																  </tr>
 																  <tr>
-																	<td>Partial Payment Fee</td>
-																	<td>2% on Overdue Amount</td>
+																	<td>Minimum Term</td>
+																	<td>1 Year</td>
 																  </tr>
 																  <tr>
-																	<td>Quotation Change Fee</td>
-																	<td>BDT 500 Per Quotation</td>
+																	<td>Maximum Term</td>
+																	<td>5 Year</td>
+																  </tr>
+																  <tr>
+																	<td>Loan Purpose</td>
+																	<td>Undergraduate Program, Post Graduate Program, Professional Courses</td>
+																  </tr>
+																  <tr>
+																	<td>Grace Period</td>
+																	<td>Not Available</td>
+																  </tr>
+																  <tr>
+																	<td>Loan Against FDR</td>
+																	<td>Available</td>
+																  </tr>
+																  <tr>
+																	<td>Down Payment </td>
+																	<td>30%</td>
 																  </tr>
 																</tbody>
 															</table>
@@ -441,7 +359,7 @@
 											<div role="tabpanel" class="tab-pane" id="FeesCharges">
 												<section id="card_details_FeesCharges">
 													<div class="card_details_pronsCons">
-														<h4>Features</h4>
+														<h4>Fees & Charges</h4>
 														<div class="prosConsHr"></div><br/>
 														<div class="prosCons_body2 trbodywidth">
 															<table class="table table-striped table-bordered">
@@ -497,6 +415,36 @@
 																  <tr>
 																	<td>Joint Applicant Allowed</td>
 																	<td>None</td>
+																  </tr>
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</section>
+											</div>
+											<div role="tabpanel" class="tab-pane active" id="ExpensesConsidered">
+												<section id="card_details_FeesCharges">
+													<div class="card_details_pronsCons">
+														<h4>Expenses Considered</h4>
+														<div class="prosConsHr"></div><br/>
+														<div class="prosCons_body2 trbodywidth">
+															<table class="table table-striped table-bordered">
+																<tbody>
+																  <tr>
+																	<td>Processing Fee</td>
+																	<td>2%</td>
+																  </tr>
+																  <tr>
+																	<td>Early Settlement Fee</td>
+																	<td>1%</td>
+																  </tr>
+																  <tr>
+																	<td>Partial Payment Fee</td>
+																	<td>2% on Overdue Amount</td>
+																  </tr>
+																  <tr>
+																	<td>Quotation Change Fee</td>
+																	<td>BDT 500 Per Quotation</td>
 																  </tr>
 																</tbody>
 															</table>
@@ -581,43 +529,7 @@
 														</ul>
 													</div>
 												</div>
-												<!--div class="card_details_pronsCons">
-													<h4>Required Documents</h4>
-													<div class="prosConsHr"></div><br/>
-													<div class="prosCons_body2">
-														<ul>
-															<li>Recent passport size color photographs of applicant (s) and guarantor (s).</li>
-															<li>Photocopy of NID/passport/ driving license of applicant (s) and guarantor (s).</li>
-															<li>Copy of latest utility bill (gas/water/electricity/municipal tax).</li>
-															<li>Business card/ office ID copy of applicant (s) and guarantor (s) if any.</li>
-															<li>Latest tax certificate/E-TIN.</li>
-															<li>Personal net worth statements of applicant (s) and guarantor (s).</li>
-															<li>Bank statement of last 12 months for businessmen and 6 months for other categories.</li>
-															<li>Rent or lease agreement of house/property (if applicable).</li>
-														</ul>
-														<h4>Additional documents required for Salaried Person/ Self Employed</h4>
-														<ul>
-															<li>Salary Certificate/ Letter of Introduction.</li>
-															<li>Offer letter/Release letter from previous employer to prove service experience.</li>
-															<li>Professional certificate issued by concerned institution.</li>
-														</ul>
-														<h4>Additional documents required for Businessmen</h4>
-														<ul>
-															<li>Copy of trade license.</li>
-															<li>Memorandum of Association and Articles of Association of the company.</li>
-															<li>Certificate of Incorporation.</li>
-															<li>Latest form xii.</li>
-															<li>Partnership deed.</li>
-														</ul>
-														<h4>Additional documents required for Landlord/Landlady</h4>
-														<ul>
-															<li>Title deed of premises / property.</li>
-															<li>Valid rental deed with tenants.</li>
-															<li>Utility bill copy.</li>
-															<li>Ground rent payment and municipal tax payment receipt.</li>
-														</ul>
-													</div>
-												</div-->
+
 											</div>
 											<div role="tabpanel" class="tab-pane" id="TermsConditions">...</div>
 											<div role="tabpanel" class="tab-pane" id="Review">...</div>
@@ -629,7 +541,7 @@
 							
 							<div id="hideDetailsDiv2" class="row hideMe">
 								 <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe--> 
-								 <iframe src="<?php echo base_url(); ?>en/personal_loan_chart"  frameborder="0"  width="100%" height="1700" scrolling="no" ></iframe>
+								 <iframe src="<?php echo base_url()?>en/education_loan_chart"  frameborder="0"  width="100%" height="1700" scrolling="no" ></iframe>
 							</div>
 						</div>
 					</div>
@@ -638,7 +550,6 @@
 			</div>
 		</div>
 	</section>
-
 <script>
 $(document).ready(function() {
 	
@@ -651,19 +562,6 @@ $(document).ready(function() {
 
 <script type="text/javascript"> 
 
-//for more info search
-function toggle() {
-	var ele = document.getElementById("toggleText");
-	var text = document.getElementById("displayText");
-	if(ele.style.display == "block") {
-    		ele.style.display = "none";
-		text.innerHTML = "<i class='fa fa-info-circle'></i> More info";
-  	}
-	else {
-		ele.style.display = "block";
-		text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
-	}
-} 
 
 //for show hide (more info & Repayment Schedule)
 
