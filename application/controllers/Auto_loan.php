@@ -460,7 +460,7 @@ class Auto_loan extends CI_Controller
                 if($is_fixed == 'fixed'){
                     $fixed =1;
                 }
-                $is_non_bank =$this->input->post('txtNonBankName');
+                $is_non_bank = $this->input->post('is_non_bank');
                 $non_bank = 0;
                 if($is_non_bank == '1'){
                     $non_bank =1;
@@ -470,7 +470,7 @@ class Auto_loan extends CI_Controller
                     'bank_id' => $this->input->post('txtBankName'),
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
-                    'deposit_type_id' => $this->input->post('txtDepositType'),
+//                    'deposit_type_id' => $this->input->post('txtDepositType'),
                     'loan_type_id' => $this->input->post('txtLoanType'),
                     'auto_loan_name' => htmlentities($this->input->post('txtLoanName')),
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
@@ -508,7 +508,9 @@ class Auto_loan extends CI_Controller
                         'i_am_id'=> $user
                     );
                     $this->Common_model->table_name = 'auto_loan_info_vs_i_am';
-                    $result = $this->Common_model->insert();
+                    $this->Common_model->where = array('auto_loan_info_id' => $this->input->post('txtAutoLoanId'));
+                    $this->Common_model->update();
+                    $result = $this->input->post('txtAutoLoanId');
                 }
 
                 if ($result) {

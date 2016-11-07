@@ -33,9 +33,9 @@
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Loans<span class="caret"></span></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="<?php echo base_url(); ?>en/personal_loan">Personal Loan</a></li>
-                                                <li><a href="<?php echo base_url(); ?>en/car_loan">Car Loan</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/home_loan">Home Loan</a></li>
+                                                <li><a href="<?php echo base_url(); ?>en/car_loan">Car Loan</a></li>
+                                                <li><a href="<?php echo base_url(); ?>en/personal_loan">Personal Loan</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/education_loan">Education Loan</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/millionaire">Millionaire Loan</a></li>
                                             </ul>

@@ -325,7 +325,7 @@
 					<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
 							<div class="col-sm-2 col-xs-2">
-								<a href=""><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="<?php echo base_url(); ?>resource/front_end/images/brac-bank-logo.png" /></a>
+								<a href="<?php echo base_url(); ?>en/fdr_details"><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="<?php echo base_url(); ?>resource/front_end/images/brac-bank-logo.png" /></a>
 								<p class="text-center">Brac Bank</p>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
