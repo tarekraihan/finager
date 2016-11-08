@@ -1082,12 +1082,17 @@ class Select_Model extends CI_Model
         }
 
     }
+
     function Select_millionaire_tenure_by_id($id){
         if(!empty($id)){
             $sql="SELECT `maturity_amount` FROM `millionaire_maturity_amount` WHERE id = $id";
             $query=$this->db->query($sql);
             return $query->row_array();
         }
+
+    }
+
+    function Select_range($table_name, $filed_name,$start,$limit){
 
     }
 

@@ -62,21 +62,20 @@
 							<p>I Want </p>
 							<div class="query_radio">
 								<div>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="generalConsumer" class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Any Purpose Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Loan for Professional
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Consumer Durable Loan
-									</label><br/>
+									<?php
+									$this->Common_model->table_name = 'personal_loan_looking_for';
+									$this->Common_model->offset = 0;
+									$this->Common_model->limit = 3;
+									$result = $this->Common_model->select_all();
+									//										print_r($result->result_array());die;
+									foreach($result->result() as $row){
+										?>
+										<label class="material_radio_group">
+											<input type="radio" name="i_want" value="<?php echo $row->id;?>" class="material_radiobox"/>
+											<span class="material_check_radio"></span>
+											<?php echo $row->personal_loan_looking_for;?>
+										</label><br/>
+									<?php } ?>
 								</div>
 								<div>
 									<!--a id="displayText" href="javascript:toggle();">More Filter <i class="fa fa-sort-desc fa-lg"></i></a-->
@@ -84,51 +83,19 @@
 								</div>
 								<!--div id="toggleText" style="display: none"-->
 								<div id="demo" class="collapse">
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Marriage Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Women Entrepreneurship Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Festival Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Travel Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Medical Treatment Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Overseas Job Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Hajj Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										Senior Support Loan
-									</label><br/>
-									<label class="material_radio_group">
-										<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-										<span class="material_check_radio"></span>
-										CNG Conversion Loan
-									</label><br/>
+									<?php
+									$this->Common_model->table_name = 'personal_loan_looking_for';
+									$this->Common_model->offset = 3;
+									$this->Common_model->limit = 20;
+									$result = $this->Common_model->select_all();
+									foreach($result->result() as $row){
+										?>
+										<label class="material_radio_group">
+											<input type="radio" name="i_want" value="<?php echo $row->id;?>" class="material_radiobox"/>
+											<span class="material_check_radio"></span>
+											<?php echo $row->personal_loan_looking_for;?>
+										</label><br/>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -313,31 +280,20 @@
 						<div class="card_query">
 							<p>I Am</p>
 							<div class="query_radio">
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Excellent" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Salaried Person
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Good" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Businessman
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Fair" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Professional
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Bad" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Landlord
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="NoCreditLimitHistory" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									NRB
-								</label>
+								<?php
+								$this->Common_model->table_name = 'personal_loan_i_am';
+								$this->Common_model->offset = 0;
+								$this->Common_model->limit = 20;
+								$result = $this->Common_model->select_all();
+								foreach($result->result() as $row){
+								?>
+									<label class="material_radio_group">
+										<input type="radio" name="i_am" value="<?php echo $row->id ;?>" class="material_radiobox"/>
+										<span class="material_check_radio"></span>
+										<?php echo $row->i_am; ?>
+									</label><br/>
+								<?php } ?>
+
 							</div>
 						</div>
 
@@ -348,22 +304,63 @@
 				<!-- Right bar content start -->
 				<div class="col-sm-9 col-xs-9">
 					<div class="full-card">
-						<div class="row home_loan_right_bar no-margin-lr2">
+						<?php
+						$personal_loan = $this->Front_end_select_model->select_personal_loan_info();
+
+//						print_r($personal_loan->result());die;
+						$personal = '';
+						foreach($personal_loan->result() as $row){
+
+							$bank = "";
+							if($row->is_non_bank == 1){
+								$bank = $row->non_bank_name;
+							}else{
+								$bank = $row->bank_name;
+							}
+							$bank_logo = "";
+							if($row->is_non_bank == 1){
+								$bank_logo = $row->non_bank_logo;
+							}else{
+								$bank_logo = $row->bank_logo;
+							}
+							$is_fixed =$row->is_fixed;
+							$show_interest ='';
+							if($is_fixed == 1){
+								$show_interest .='<h5>Interest (Fixed Rate)</h5>
+											<p>Fixed '.$row->interest_rate_fixed.'%</p>';
+							}else{
+								$show_interest .='<h5>Interest (Avg Rate)</h5>
+												<p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
+							}
+
+							$query_amount = 1000000;
+
+							$interest_rate = 0;
+							if($is_fixed == 1){
+								$interest_rate = $row->interest_rate_fixed;
+							}else{
+								$interest_rate = $row->interest_rate_average;
+							}
+
+
+
+
+							$personal .='<div class="row home_loan_right_bar no-margin-lr2">
 							<div class="col-sm-3 col-xs-3">
-								<a href="<?php echo base_url(); ?>en/personal_loan_details"><img title="click here to details" class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></a>
+								<a href="'.base_url().'en/personal_loan_details"><img title="click here to details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<small class="home_loan_bank_name"><a  href="">'.$bank.'</a></small>
 							</div>
 							<div class="col-sm-9 col-xs-9">
 								<div class="row">
 									<div class="col-sm-2 col-xs-2 w20">
 										<div class="card_text2">
 											<h5>Amount </h5>
-											<p>28%,<br> Monthly 2.33%</p>
+											<p>Tk.'.$query_amount.'.00</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2 w20">
 										<div class="card_text2">
-											<h5>Interest (Mid Rate)</h5>
-											<p>min 8%,<br> max 9%</p>
+											'.$show_interest.'
 										</div>
 									</div>
 									<div class="col-sm-1 col-xs-1 w20">
@@ -387,7 +384,7 @@
 								</div>
 							</div>
 							<div class="col-sm-12 col-xs-12 home_loan_button">
-								<img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/card_btn_apllication.png" />
+								<img class="btnCardApply img-responsive button pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
 								<span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton" href="#"><i class="fa fa-info-circle"></i> More info</a></span>
 								<span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
 								<span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton2" href="#"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
@@ -531,7 +528,7 @@
 														</ul>
 													</div>
 												</div>
-											</div>	
+											</div>
 											<div role="tabpanel" class="tab-pane" id="Requirement">
 												<div class="col-sm-6">
 													<div class="tab_body">
@@ -581,43 +578,7 @@
 														</ul>
 													</div>
 												</div>
-												<!--div class="card_details_pronsCons">
-													<h4>Required Documents</h4>
-													<div class="prosConsHr"></div><br/>
-													<div class="prosCons_body2">
-														<ul>
-															<li>Recent passport size color photographs of applicant (s) and guarantor (s).</li>
-															<li>Photocopy of NID/passport/ driving license of applicant (s) and guarantor (s).</li>
-															<li>Copy of latest utility bill (gas/water/electricity/municipal tax).</li>
-															<li>Business card/ office ID copy of applicant (s) and guarantor (s) if any.</li>
-															<li>Latest tax certificate/E-TIN.</li>
-															<li>Personal net worth statements of applicant (s) and guarantor (s).</li>
-															<li>Bank statement of last 12 months for businessmen and 6 months for other categories.</li>
-															<li>Rent or lease agreement of house/property (if applicable).</li>
-														</ul>
-														<h4>Additional documents required for Salaried Person/ Self Employed</h4>
-														<ul>
-															<li>Salary Certificate/ Letter of Introduction.</li>
-															<li>Offer letter/Release letter from previous employer to prove service experience.</li>
-															<li>Professional certificate issued by concerned institution.</li>
-														</ul>
-														<h4>Additional documents required for Businessmen</h4>
-														<ul>
-															<li>Copy of trade license.</li>
-															<li>Memorandum of Association and Articles of Association of the company.</li>
-															<li>Certificate of Incorporation.</li>
-															<li>Latest form xii.</li>
-															<li>Partnership deed.</li>
-														</ul>
-														<h4>Additional documents required for Landlord/Landlady</h4>
-														<ul>
-															<li>Title deed of premises / property.</li>
-															<li>Valid rental deed with tenants.</li>
-															<li>Utility bill copy.</li>
-															<li>Ground rent payment and municipal tax payment receipt.</li>
-														</ul>
-													</div>
-												</div-->
+
 											</div>
 											<div role="tabpanel" class="tab-pane" id="TermsConditions">...</div>
 											<div role="tabpanel" class="tab-pane" id="Review">...</div>
@@ -626,12 +587,16 @@
 									</section>
 								</div>
 							</div>
-							
+
 							<div id="hideDetailsDiv2" class="row hideMe">
-								 <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe--> 
-								 <iframe src="<?php echo base_url(); ?>en/personal_loan_chart"  frameborder="0"  width="100%" height="1700" scrolling="no" ></iframe>
+								 <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
+								 <iframe src="'.base_url().'en/personal_loan_chart"  frameborder="0"  width="100%" height="1700" scrolling="no" ></iframe>
 							</div>
-						</div>
+						</div>';
+
+						 }
+							echo $personal;
+						?>
 					</div>
 				</div>
 				<!-- Right bar content end -->

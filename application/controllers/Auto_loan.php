@@ -462,9 +462,10 @@ class Auto_loan extends CI_Controller
                 }
                 $is_non_bank = $this->input->post('is_non_bank');
                 $non_bank = 0;
-                if($is_non_bank == '1'){
+                if($is_non_bank == 1){
                     $non_bank =1;
                 }
+//                print_r($this->input->post());die;
                 $date = date('Y-m-d h:i:s');
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
@@ -502,15 +503,14 @@ class Auto_loan extends CI_Controller
 
                 $result='';
                 $this->Delete_model->Delete_All_Row($id=$this->input->post("txtAutoLoanId"),$table='auto_loan_info_vs_i_am',$id_field='auto_loan_info_id');
+                $result='';
                 foreach($this->input->post('txtAutoLoanUser[]') as $user){
                     $this->Common_model->data = array(
                         'auto_loan_info_id'=>$this->input->post('txtAutoLoanId'),
                         'i_am_id'=> $user
                     );
                     $this->Common_model->table_name = 'auto_loan_info_vs_i_am';
-                    $this->Common_model->where = array('auto_loan_info_id' => $this->input->post('txtAutoLoanId'));
-                    $this->Common_model->update();
-                    $result = $this->input->post('txtAutoLoanId');
+                    $result = $this->Common_model->insert();
                 }
 
                 if ($result) {
