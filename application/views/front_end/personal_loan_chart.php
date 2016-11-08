@@ -169,7 +169,7 @@
     <div class="col-sm-12">
         <div class="panel panel-default overflow-hidden">
             <div class="panel-heading">
-                <h3 class="panel-title text-center">Demo Bank Home Loan Repayment Schedule</h3>
+                <h3 class="panel-title text-center">Personal Loan Repayment Schedule</h3>
             </div>
 
             <div class="emi_cal">
@@ -198,7 +198,7 @@
                                                 <div class="selectCalcWrapper" style="display:none;">
                                                     <div class="radiobox">
                                                         <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-                                                        <label for="savingCalculator">Home Loan Calculator</label>
+                                                        <label for="savingCalculator">Personal Loan Calculator</label>
                                                     </div>
                                                     <div class="radiobox">
                                                         <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
@@ -212,7 +212,7 @@
                                                         <!--Amount Already Saved START-->
                                                         <div class="slideWrapper" id="alreadySaved">
                                                             <div class="questWrap">
-                                                                <p class="quest">Enter your home loan amount required</p>
+                                                                <p class="quest">Enter your personal loan amount required</p>
                                                             </div>
 
                                                             <div class="inputWrapper"> <span class="rupee"></span>
@@ -251,7 +251,7 @@
                                                         <!--Amount Already Saved END-->
 
                                                         <div class="slideWrapper" id="avgSave">
-                                                            <p class="quest" style="margin-left: 45px;">Enter tenure for home loan</p>
+                                                            <p class="quest" style="margin-left: 45px;">Enter tenure for Personal loan</p>
                                                             <div class="inputWrapper">
                                                                 <div class="inputField">
                                                                     <div class="inpLft"></div>
@@ -310,7 +310,7 @@
 
 
                                                         <div class="slideWrapper" id="interest" style="margin-top: -25px;">
-                                                            <p class="quest" style="margin-left: 45px;">Interest rate on home loan</p>
+                                                            <p class="quest" style="margin-left: 45px;">Interest rate on personal loan</p>
                                                             <div class="inputWrapper">
                                                                 <div class="inputField">
                                                                     <div class="inpLft"></div>
@@ -393,7 +393,7 @@
 
             <div class="panel-body">
                 <div class="pie-section">
-                    <h3 class="text-center" style="font-size: 20px;">Your Monthly Home Loan EMI : 4566511</h3>
+                    <h3 class="text-center" style="font-size: 20px;">Your Monthly Personal Loan EMI : 4566511</h3>
                     <div class="row">
                         <div class="col-sm-12 col-md-5  col-xs-12">
                             <h4 class="text-center" style="margin-top: 0; font-size: 16px;">Break-up of all total amount</h4>

@@ -303,7 +303,7 @@
 				
 				<!-- Right bar content start -->
 				<div class="col-sm-9 col-xs-9">
-					<div class="full-card">
+					<div id="searchPersonalLoan">
 						<?php
 						$personal_loan = $this->Front_end_select_model->select_personal_loan_info();
 
@@ -333,14 +333,22 @@
 												<p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
 							}
 
-							$query_amount = 1000000;
+                            $query_amount = 1000000;
+
+
+                            $tenure = 3 * 12;
 
 							$interest_rate = 0;
-							if($is_fixed == 1){
-								$interest_rate = $row->interest_rate_fixed;
-							}else{
-								$interest_rate = $row->interest_rate_average;
-							}
+                            if($is_fixed == 1){
+                                $interest_rate = $row->interest_rate_fixed;
+                            }else{
+                                $interest_rate = $row->interest_rate_average;
+                            }
+                            $cal_interest = round(($interest_rate / 100) / $tenure,4);
+
+                            $emi = $query_amount * $cal_interest * pow(( 1+ $cal_interest),$tenure) /pow((1 + $cal_interest),($tenure-1));
+                            $total_payable = $emi * $tenure;
+
 
 
 
@@ -366,13 +374,13 @@
 									<div class="col-sm-1 col-xs-1 w20">
 										<div class="card_text2">
 											<h5>EMI</h5>
-											<p>28%,<br> Monthly 2.33%</p>
+											<p>'.$emi.'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2 w20">
 										<div class="card_text2">
 											<h5>Total Payable Amount</h5>
-											<p>50%,<br/><span class="tPaybleAmount">based on 100000</span></p>
+											<p>'.$total_payable.'<br/><span class="tPaybleAmount">based on '.$query_amount.'</span></p>
 										</div>
 									</div>
 									<div class="col-sm-3 col-xs-1 w20">
@@ -385,212 +393,92 @@
 							</div>
 							<div class="col-sm-12 col-xs-12 home_loan_button">
 								<img class="btnCardApply img-responsive button pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
-								<span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton" href="#"><i class="fa fa-info-circle"></i> More info</a></span>
+								<span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
 								<span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
-								<span class="more_info_icon Hloan_more_icon"><a id="hideDetailsButton2" href="#"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
+								<span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
 							</div>
-							<div id="hideDetailsDiv" class="row hideMe">
+							<div class="collapse" id="moreInfo'.$row->id.'">
 								<div class="col-md-12">
 									<section id="tab">
 										<!-- Nav tabs -->
 										<ul class="nav nav-tabs" role="tablist">
-											<li role="presentation" class="active"><a href="#Features" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
-											<li role="presentation"><a href="#FeesCharges" aria-controls="profile" role="tab" data-toggle="tab">Fees & Charges</a></li>
-											<li role="presentation"><a href="#Eligibility" aria-controls="messages" role="tab" data-toggle="tab">Eligibility</a></li>
-											<li role="presentation"><a href="#Requirement" aria-controls="settings" role="tab" data-toggle="tab">Requirement</a></li>
-											<li role="presentation"><a href="#TermsConditions" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
-											<li role="presentation"><a href="#Review" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
-											<li role="presentation"><a href="#UserReviews" aria-controls="settings" role="tab" data-toggle="tab">User reviews</a></li>
+											<li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
+											<li role="presentation"><a href="#FeesCharges'.$row->id.'" aria-controls="FeesCharges" role="tab" data-toggle="tab">Fees & Charges</a></li>
+											<li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="Eligibility" role="tab" data-toggle="tab">Eligibility</a></li>
+											<li role="presentation"><a href="#Requirement'.$row->id.'" aria-controls="Requirement" role="tab" data-toggle="tab">Requirement</a></li>
+											<li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="TermsConditions" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+											<li role="presentation"><a href="#Review'.$row->id.'" aria-controls="Review" role="tab" data-toggle="tab">Review</a></li>
+											<li role="presentation"><a href="#UserReviews'.$row->id.'" aria-controls="UserReviews" role="tab" data-toggle="tab">User reviews</a></li>
 										</ul>
 
 										<!-- Tab panes -->
 										<div class="tab-content">
-											<div role="tabpanel" class="tab-pane active" id="Features">
+											<div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
 												<section id="card_details_FeesCharges">
 													<div class="card_details_pronsCons">
 														<h4>Fees & Charges</h4>
 														<div class="prosConsHr"></div><br/>
 														<div class="prosCons_body2 trbodywidth">
-															<table class="table table-striped table-bordered">
-																<tbody>
-																  <tr>
-																	<td>Processing Fee</td>
-																	<td>2%</td>
-																  </tr>
-																  <tr>
-																	<td>Early Settlement Fee</td>
-																	<td>1%</td>
-																  </tr>
-																  <tr>
-																	<td>Partial Payment Fee</td>
-																	<td>2% on Overdue Amount</td>
-																  </tr>
-																  <tr>
-																	<td>Quotation Change Fee</td>
-																	<td>BDT 500 Per Quotation</td>
-																  </tr>
-																</tbody>
-															</table>
+															'.$row->fees_and_charges.'
 														</div>
 													</div>
 												</section>
 											</div>
-											<div role="tabpanel" class="tab-pane" id="FeesCharges">
+											<div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
 												<section id="card_details_FeesCharges">
 													<div class="card_details_pronsCons">
 														<h4>Features</h4>
 														<div class="prosConsHr"></div><br/>
 														<div class="prosCons_body2 trbodywidth">
-															<table class="table table-striped table-bordered">
-																<tbody>
-																  <tr>
-																	<td>Minimum Loan Amount</td>
-																	<td>10 Lac</td>
-																  </tr>
-																  <tr>
-																	<td>Maximum Loan Amount</td>
-																	<td>120 Lac</td>
-																  </tr>
-																  <tr>
-																	<td>Minimum Term</td>
-																	<td>5 Year</td>
-																  </tr>
-																  <tr>
-																	<td>Maximum Term</td>
-																	<td>20 Year</td>
-																  </tr>
-																  <tr>
-																	<td>Down payment (%)</td>
-																	<td>30</td>
-																  </tr>
-																  <tr>
-																	<td>Grace Period</td>
-																	<td>1 Year</td>
-																  </tr>
-																  <tr>
-																	<td>Try Party Agreement Allowed up to</td>
-																	<td>3-24 Month</td>
-																  </tr>
-																  <tr>
-																	<td>Lower Interest Rate</td>
-																	<td>None</td>
-																  </tr>
-																  <tr>
-																	<td>Availability of Grace Period</td>
-																	<td>None</td>
-																  </tr>
-																  <tr>
-																	<td>Lower Processing Fee</td>
-																	<td>None</td>
-																  </tr>
-																  <tr>
-																	<td>Life Insurance Coverage </td>
-																	<td>None</td>
-																  </tr>
-																  <tr>
-																	<td>Flexible Payment Schedule</td>
-																	<td>None</td>
-																  </tr>
-																  <tr>
-																	<td>Joint Applicant Allowed</td>
-																	<td>None</td>
-																  </tr>
-																</tbody>
-															</table>
+															'.$row->features.'
 														</div>
 													</div>
 												</section>
 											</div>
-											<div role="tabpanel" class="tab-pane" id="Eligibility">
+											<div role="tabpanel" class="tab-pane" id="Eligibility'.$row->id.'">
 												<div class="card_details_pronsCons">
 													<h4>Eligibility for Applying</h4>
 													<div class="prosConsHr"></div><br/>
 													<div class="prosCons_body2">
-														<h4>Minimum Income:</h4>
-														<ul>
-															<li>BDT. 40,000.00 (Taka Forty Thousand) for salaried person of MNCs, LLC, Foreign NGOs and UN bodies.</li>
-															<li>BDT. 45,000.00 (Taka Forty Five Thousand)) for salaried person other than MNCs, LLC, Foreign NGOs and UN bodies.</li>
-															<li>BDT. 30,000.00 (Taka Thirty Thousand) for Govt. employees.</li>
-															<li>BDT. 50,000.00 (Taka Fifty Thousand) for Landlord/ Landlady.</li>
-															<li>BDT. 55,000.00 (Taka Fifty Five Thousand) for Businessmen.</li>
-														</ul>
-														<h4>Minimum Experience:</h4>
-														<ul>
-															<li>For permanent and confirmed salaried person, minimum one (1) year experience with 6 months employment in present organization.</li>
-															<li>For Businessmen one (1) year experience in the same line of business.</li>
-															<li>For Landlord/Landlady having 6 months rental income continuation.</li>
-														</ul>
-														<h4>Age Requirement:</h4>
-														<ul>
-															<li>Minimum: 22 Years (at the time of application).</li>
-															<li>Maximum: 65 years (at the end of loan tenor).</li>
-															<li>(Age limit can be relaxed in case of joint applicant provided).</li>
-														</ul>
+														'.$row->eligibility_for_applying.'
 													</div>
 												</div>
 											</div>
-											<div role="tabpanel" class="tab-pane" id="Requirement">
-												<div class="col-sm-6">
-													<div class="tab_body">
-														<h4>Security Required</h4>
-														<hr/>
-														<ul>
-															<li>Recent passport size color photographs of applicant (s) and guarantor (s).</li>
-															<li>Photocopy of NID/passport/ driving license of applicant (s) and guarantor (s).</li>
-															<li>Copy of latest utility bill (gas/water/electricity/municipal tax).</li>
-															<li>Business card/ office ID copy of applicant (s) and guarantor (s) if any.</li>
-															<li>Latest tax certificate/E-TIN.</li>
-															<li>Personal net worth statements of applicant (s) and guarantor (s).</li>
-															<li>Bank statement of last 12 months for businessmen and 6 months for other categories.</li>
-															<li>Rent or lease agreement of house/property (if applicable).</li>
-														</ul>
-														<p><b>Additional documents required for Salaried Person/ Self Employed</b></p>
-														<ul>
-															<li>Salary Certificate/ Letter of Introduction.</li>
-															<li>Offer letter/Release letter from previous employer to prove service experience.</li>
-															<li>Professional certificate issued by concerned institution.</li>
-														</ul>
-														<p><b>Additional documents required for Businessmen</b></p>
-														<ul>
-															<li>Copy of trade license.</li>
-															<li>Memorandum of Association and Articles of Association of the company.</li>
-															<li>Certificate of Incorporation.</li>
-															<li>Latest form xii.</li>
-															<li>Partnership deed.</li>
-														</ul>
-														<p><b>Additional documents required for Landlord/Landlady</b></p>
-														<ul>
-															<li>Title deed of premises / property.</li>
-															<li>Valid rental deed with tenants.</li>
-															<li>Utility bill copy.</li>
-															<li>Ground rent payment and municipal tax payment receipt.</li>
-														</ul>
+											<div role="tabpanel" class="tab-pane" id="Requirement'.$row->id.'">
+
+											    <div class="card_details_pronsCons">
+													<h4>Security Required</h4>
+													<div class="prosConsHr"></div><br/>
+													<div class="prosCons_body2">
+														'.$row->security_required.'
 													</div>
 												</div>
-												<div class="col-sm-6">
-													<div class="tab_body">
+												<div class="card_details_pronsCons">
 													<h4>Required Documents</h4>
-													<hr/>
-														<ul>
-															<li>Monthly fee 10 taka+vat for sms service & transaction alert.</li><br/>
-															<li>0.35 paisa for every 100/= taka will be deducted for insurance program.</li><br/>
-															<li>Out of 18    transactions, there must be 10 POS transaction to get waiver on annual fee.</li><br/>
-														</ul>
+													<div class="prosConsHr"></div><br/>
+													<div class="prosCons_body2">
+														'.$row->required_document.'
 													</div>
 												</div>
 
 											</div>
-											<div role="tabpanel" class="tab-pane" id="TermsConditions">...</div>
-											<div role="tabpanel" class="tab-pane" id="Review">...</div>
-											<div role="tabpanel" class="tab-pane" id="UserReviews">...</div>
+											<div role="tabpanel" class="tab-pane" id="TermsConditions'.$row->id.'">
+											<div class="card_details_pronsCons">
+													<h4>Terms and Condition</h4>
+													<div class="prosConsHr"></div><br/>
+													<div class="prosCons_body2">
+														'.$row->terms_and_conditions.'
+													</div>
+												</div>
+											</div>
+											<div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">...</div>
+											<div role="tabpanel" class="tab-pane" id="UserReviews'.$row->id.'">...</div>
 										</div>
 									</section>
 								</div>
 							</div>
+                            <div class="collapse" id="rePaymentSchedule'.$row->id.'">
 
-							<div id="hideDetailsDiv2" class="row hideMe">
-								 <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
-								 <iframe src="'.base_url().'en/personal_loan_chart"  frameborder="0"  width="100%" height="1700" scrolling="no" ></iframe>
 							</div>
 						</div>';
 
@@ -605,50 +493,34 @@
 	</section>
 
 <script>
-$(document).ready(function() {
-	
-	$('[data-toggle="toggle"]').change(function(){
-		$(this).parents().next('.hide').toggle();
-	});
-});
-</script>
+    $(document).ready(function(){
+
+        $('#searchPersonalLoan').on('click', '.more_info', function (){
+
+            var  formData = $(this).data();
+            var loan_id = formData.loan_id;
+
+            console.log(loan_id);
+
+            $("#moreInfo"+loan_id).toggleClass("in");
+            $('#rePaymentSchedule'+loan_id).removeClass("in");
 
 
-<script type="text/javascript"> 
+        });
 
-//for more info search
-function toggle() {
-	var ele = document.getElementById("toggleText");
-	var text = document.getElementById("displayText");
-	if(ele.style.display == "block") {
-    		ele.style.display = "none";
-		text.innerHTML = "<i class='fa fa-info-circle'></i> More info";
-  	}
-	else {
-		ele.style.display = "block";
-		text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
-	}
-} 
+        $('#searchPersonalLoan').on('click', '.rePaymentSchedule', function (){
 
-//for show hide (more info & Repayment Schedule)
+            var  formData = $(this).data();
+            var repayment = formData.repayment;
+            console.log(repayment);
 
-$(document).ready(function() {
-		$('#hideDetailsDiv').hide();
-		$('a#hideDetailsButton').click(function() {
-			if (!$('#hideDetailsDiv').is(':visible')) {
-				$('.hideMe').hide(400);
-			}
-			$('#hideDetailsDiv').toggle(800);
-		});
-	});
+            $('#rePaymentSchedule'+repayment).html('<iframe  src="<?php echo base_url(); ?>en/personal_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
+            $('#rePaymentSchedule'+repayment).toggleClass("in");
+            $('#moreInfo'+repayment).removeClass("in");
 
-	$(document).ready(function() {
-		$('#hideDetailsDiv2').hide();
-		$('a#hideDetailsButton2').click(function() {
-			if (!$('#hideDetailsDiv2').is(':visible')) {
-				$('.hideMe').hide(400);
-			}
-			$('#hideDetailsDiv2').toggle(400);
-		});
-	});
+        });
+
+
+    });
+
 </script>

@@ -297,7 +297,7 @@
 								<label class="material_radio_group">
 									<input type="radio" name="WantCreditLimit" value="Excellent" class="material_radiobox"/>
 									<span class="material_check_radio"></span>
-									On Maturity 
+									On Maturity
 								</label><br/>
 								<label class="material_radio_group">
 									<input type="radio" name="WantCreditLimit" value="Good" class="material_radiobox"/>

@@ -229,8 +229,46 @@
                     $home_loan = $this->Front_end_select_model->select_auto_loan_info();
                     $home = '';
                     foreach($home_loan->result() as $row){
-                        $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
-                        $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
+
+                        $bank = "";
+                        if($row->is_non_bank == 1){
+                            $bank = $row->non_bank_name;
+                        }else{
+                            $bank = $row->bank_name;
+                        }
+                        $bank_logo = "";
+                        if($row->is_non_bank == 1){
+                            $bank_logo = $row->non_bank_logo;
+                        }else{
+                            $bank_logo = $row->bank_logo;
+                        }
+                        $is_fixed =$row->is_fixed;
+                        $show_interest ='';
+                        if($is_fixed == 1){
+                            $show_interest .='<h5>Interest (Fixed Rate)</h5>
+											<p>Fixed '.$row->interest_rate_fixed.'%</p>';
+                        }else{
+                            $show_interest .='<h5>Interest (Avg Rate)</h5>
+												<p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
+                        }
+
+                        $query_amount = 1000000;
+
+
+                        $tenure = 3 * 12;
+
+                        $interest_rate = 0;
+                        if($is_fixed == 1){
+                            $interest_rate = $row->interest_rate_fixed;
+                        }else{
+                            $interest_rate = $row->interest_rate_average;
+                        }
+                        $cal_interest = round(($interest_rate / 100) / $tenure,4);
+
+                        $emi = $query_amount * $cal_interest * pow(( 1+ $cal_interest),$tenure) /pow((1 + $cal_interest),($tenure-1));
+                        $total_payable = $emi * $tenure;
+                        $downpayment = round(($row->downpayment/ 100) * $query_amount);
+
 
                         $home .='<div class="full-card">
                        <div class="row home_loan_right_bar no-margin-lr2">
@@ -244,32 +282,30 @@
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Amount</h5>
-                                           <p>100000</p>
+                                           <p>Tk.'.$query_amount.'.00</p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
-                                           <h5>Interest Rate</h5>
-                                           <p>'.$interest.'<br/>
-                                           '.$interest_min_max.'
+                                        '.$show_interest.'
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>EMI</h5>
-                                           <p>3500</p>
+                                           <p>Tk.'.$emi.'</p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Payable Amount</h5>
-                                           <p>50%,<br/><span class="tPaybleAmount">based on 100000</span></p>
+                                           <p>Tk.'.$total_payable.'<br/><span class="tPaybleAmount">based on tk'.$query_amount.'</span></p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Down Payment</h5>
-                                           <p>20000</p>
+                                           <p>Tk.'.$downpayment.'</p>
                                        </div>
                                    </div>
                                </div>

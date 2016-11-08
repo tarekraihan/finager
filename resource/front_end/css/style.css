@@ -2684,3 +2684,6 @@ hr {
     height:32px;
     margin-bottom:10px;
 }
+.nav>li>a {
+    font-size: 13px !important;
+}

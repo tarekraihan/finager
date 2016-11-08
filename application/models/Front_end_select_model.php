@@ -60,7 +60,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     function select_home_loan_info(){
-        $sql = "SELECT home_loan_info.*,card_bank.bank_name,card_bank.bank_logo,home_loan_looking_for.home_loan_looking_for FROM `home_loan_info` inner join card_bank on card_bank.id=home_loan_info.bank_id INNER JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id";
+        $sql = "SELECT home_loan_info.*,card_bank.bank_name,card_bank.bank_logo,home_loan_looking_for.home_loan_looking_for, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `home_loan_info` LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id INNER JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id  LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id";
         $query = $this->db->query($sql);
 
         return $query;
@@ -75,6 +75,21 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     function select_personal_loan_info(){
         $sql = "SELECT personal_loan_info.*,card_bank.bank_name,card_bank.bank_logo,personal_loan_looking_for.personal_loan_looking_for,loan_type.loan_type,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `personal_loan_info` LEFT JOIN card_bank on card_bank.id=personal_loan_info.bank_id INNER JOIN personal_loan_looking_for ON personal_loan_looking_for.id = personal_loan_info.personal_loan_looking_for_id INNER JOIN loan_type ON loan_type.id = personal_loan_info.loan_type_id LEFT JOIN general_non_bank ON general_non_bank.id = personal_loan_info.non_bank_id";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
+    function select_education_loan_info(){
+        $sql = "SELECT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,loan_type.loan_type,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id INNER JOIN loan_type ON loan_type.id = education_loan_info.loan_type_id LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
+
+    function select_dps_loan_info(){
+        $sql = "SELECT dps_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `dps_info` LEFT JOIN card_bank on card_bank.id=dps_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = dps_info.i_am_id";
         $query = $this->db->query($sql);
 
         return $query;
