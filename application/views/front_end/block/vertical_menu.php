@@ -37,7 +37,7 @@
                                                 <li><a href="<?php echo base_url(); ?>en/car_loan">Car Loan</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/personal_loan">Personal Loan</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/education_loan">Education Loan</a></li>
-                                                <li><a href="<?php echo base_url(); ?>en/millionaire">Millionaire Loan</a></li>
+
                                             </ul>
                                         </li>
                                         <li class="dropdown">
@@ -54,6 +54,7 @@
                                             <ul class="dropdown-menu">
                                                 <li><a href="<?php echo base_url(); ?>en/fdr">FDR</a></li>
                                                 <li><a href="<?php echo base_url(); ?>en/dps">DPS</a></li>
+                                                <li><a href="<?php echo base_url(); ?>en/millionaire">Millionaire </a></li>
                                                 <li><a href="#">Other schemes</a></li>
                                             </ul>
                                         </li>
