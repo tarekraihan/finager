@@ -1,3 +1,11 @@
+<!--
+/*********************************
+*  Design : S. M. Rubiyet        *
+*  UI : Sifuddin Lokman          *
+*  Programmer : Tarek Raihan     *
+*  Date : 09-11-2016			 *
+**********************************/
+-->
 <section id="home_header">
 </section>
 <section id="card">

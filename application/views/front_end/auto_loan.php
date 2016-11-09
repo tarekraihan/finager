@@ -274,7 +274,7 @@
                        <div class="row home_loan_right_bar no-margin-lr2">
                            <div class="col-sm-3 col-xs-3">
                                <a href="'.base_url().'en/car_loan_details"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
-                               <small class="home_loan_bank_name"><a  href="">'.$row->bank_name.'</a></small>
+                               <small class="home_loan_bank_name"><a  href="javascript:void(0)">'.$row->bank_name.'</a></small>
                                <small class="home_loan_bank_name">'.$row->i_want.'</small>
                            </div>
                            <div class="col-sm-9 col-xs-9">
@@ -312,8 +312,8 @@
                            </div>
                            <div class="col-sm-12 col-xs-12 home_loan_button">
 
-                               <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
-                               <span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
+                               <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
+                               <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                                <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
                                <img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
                            </div>
