@@ -161,11 +161,11 @@
                                                 </section>
                                             </div>
                                             <div class="row">
-                                                <section class="col col-6">
+                                               <!-- <section class="col col-6">
                                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                                        <input type="checkbox" name="is_images" id="is_images" value="1" <?php set_checkbox('is_images', '1')?> > Is Images ?
+                                                        <input type="checkbox" name="is_images" id="is_images" value="1" <?php /*set_checkbox('is_images', '1')*/?> > Is Images ?
                                                     </label>
-                                                </section>
+                                                </section>-->
 
                                             </div>
                                             <div class="row">
