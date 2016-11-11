@@ -288,7 +288,7 @@
                     <a href="<?php echo base_url();?>map/add">Add Map Info</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>backdoor/edit_admin">Edit User </a>
+                    <a href="<?php echo base_url();?>map/map_info_list">Info List</a>
                 </li>
 
             </ul>

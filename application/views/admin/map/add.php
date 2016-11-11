@@ -11,7 +11,7 @@
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Loan</li><li>Personal Loan</li><li> Loan Information</li>
+            <li>Finager</li><li>Map</li><li> add Information</li>
         </ol>
     </div>
     <!-- END RIBBON -->
@@ -23,9 +23,9 @@
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
-                    Personal Loan
+                    Map
 							<span>> 
-								Loan Information
+								add Information
                             </span>
                 </h1>
             </div>
@@ -45,7 +45,7 @@
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Add Loan Information</h2>
+                            <h2>Add  Information</h2>
 
                         </header>
 
@@ -62,7 +62,7 @@
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>map/add" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>map/add" class="smart-form" novalidate="novalidate"  enctype="multipart/form-data">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -76,6 +76,7 @@
                                                     <label class="label">District</label>
                                                     <label class="select">
                                                         <select name="txtDistrict" id="txtDistrict">
+                                                            <option value="">--Select One--</option>
                                                             <?php echo $this->Select_model->select_district();?>
                                                         </select>
                                                     </label>
@@ -95,14 +96,16 @@
                                             </div>
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Bank Name</label>
-                                                    <label class="select">
-                                                        <select name="txtBankName" id="txtBankName">
-                                                            <?php echo $this->Select_model->select_bank();?>
-                                                        </select>
+                                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtBankName');?></label>
                                                 </section>
+                                                <section class="col col-6" id="institution">
+
+                                                </section>
+                                            </div>
+                                            <div class="row">
+
                                                 <section class="col col-6">
                                                     <label class="label">Type</label>
                                                     <label class="select">
@@ -114,9 +117,6 @@
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtTypeId');?></label>
                                                 </section>
-
-                                            </div>
-                                            <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Address</label>
                                                     <label class="input">
@@ -124,6 +124,9 @@
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtAddress');?></label>
                                                 </section>
+                                            </div>
+                                            <div class="row">
+
                                                 <section class="col col-6">
                                                     <label class="label">Contact No</label>
                                                     <label class="input">
@@ -131,17 +134,17 @@
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtContactNo');?></label>
                                                 </section>
-
-                                            </div>
-
-                                            <div class="row">
                                                 <section class="col col-6">
                                                     <label class="label">Latitude</label>
                                                     <label class="input">
-                                                    <input type="text" maxlength="35" name="txtLatitude" value="<?php echo set_value('txtLatitude'); ?>" placeholder="Write Latitude">
+                                                        <input type="text" maxlength="35" name="txtLatitude" value="<?php echo set_value('txtLatitude'); ?>" placeholder="Write Latitude">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLatitude');?></label>
                                                 </section>
+                                            </div>
+
+                                            <div class="row">
+
                                                 <section class="col col-6">
                                                     <label class="label">Longitude</label>
                                                     <label class="input">
@@ -149,9 +152,6 @@
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLongitude');?></label>
                                                 </section>
-                                            </div>
-                                            <div class="row">
-
                                                 <section class="col col-6">
                                                     <label class="label">Review</label>
                                                     <label class="input">
@@ -159,22 +159,25 @@
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtReview');?></label>
                                                 </section>
-                                                <section class="col col-6"  >
-                                                    <label class="radio-inline" style="margin-left: 25px ">
-                                                        <input type="checkbox" name="is_image" value="is_image" > Is Images ?
-                                                    </label>
-
-                                                </section>
                                             </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                                        <input type="checkbox" name="is_images" id="is_images" value="1" <?php set_checkbox('is_images', '1')?> > Is Images ?
+                                                    </label>
+                                                </section>
 
-                                            <div id="images">
-                                                <div class="form-group">
-                                                    <label class="control-label">Select Images</label>
-                                                    <input id="images" name="images[]" type="file" multiple class="file-loading"  data-allowed-file-extensions='["jpg", "JPG", "png","PNG","jpeg","JPEG"]'>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="red"><?php echo form_error('file');?></label>
-                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Select Images</label>
+                                                        <input id="images" name="images[]" type="file" multiple class="file-loading"  data-allowed-file-extensions='["jpg", "JPG", "png","PNG","jpeg","JPEG"]'>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="red"><?php echo form_error('file');?></label>
+                                                    </div>
+                                                </section>
                                             </div>
 
                 </article>
@@ -228,30 +231,9 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        $("input[name ='is_image']").click(function() {
-            var v_value = $(this).val();
-            if(v_value == 'is_image'){
-                $.ajax({
-                    url: "<?php echo base_url(); ?>home_loan/ajax_home_loan_interest_variable",
-                    type : "POST",
-                    dataType : "html"
-                })
-                    .done(function( data ) {
-                        $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php echo set_value('txtInterestRateFixed'); ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
-                    });
-
-            }
-
-            if(v_value == 'variable'){
-                $.ajax({
-                    url: "<?php echo base_url(); ?>home_loan/ajax_home_loan_interest_variable",
-                    type : "POST",
-                    dataType : "html"
-                })
-                    .done(function( data ) {
-                        $('#interest_rate').html(data);
-                    });
-            }
+        $("#images").fileinput({
+            showUpload: false,
+            maxFileCount: 10
         });
 
         $("#txtDistrict").change(function () {
@@ -271,5 +253,33 @@
                 }
             });
         });
+
+        $("input[name ='is_non_bank']").click(function() {
+            var v_value = $(this).val();
+            if ($(this).is(":checked")) {
+                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+
+            }else {
+                $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+            }
+        });
+
+        if($("input[name ='is_non_bank']").is(':checked')){
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+        }else{
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+        }
+//
+//
+//        $("input[name ='is_images']").click(function() {
+//            var v_value = $(this).val();
+//            if ($(this).is(":checked")) {
+//                $('#images').html(' <div class="form-group"><label class="control-label">Select Images</label><input id="images" name="images[]" type="file" multiple class="file-loading"  data-allowed-file-extensions=\'["jpg", "JPG", "png","PNG","jpeg","JPEG"]\'></div><div class="form-group"><label class="red"><?php //echo form_error("file");?>//</label></div>');
+//
+//            }else {
+//                $('#images').html(' ');
+//            }
+//        });
+
     });
 </script>

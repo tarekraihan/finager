@@ -1097,4 +1097,58 @@ class Select_Model extends CI_Model
     }
 
 
+    function Select_map_info(){
+        $sql ="SELECT map_informations.*,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name  FROM `map_informations` INNER JOIN card_bank ON card_bank.id = map_informations.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=map_informations.created_by LEFT JOIN general_non_bank ON general_non_bank.id = map_informations.non_bank_id ORDER BY map_informations.id ASC";
+        $query=$this->db->query($sql);
+        $result="";
+
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $bank = "";
+                if($row->is_non_bank == 1){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank == 1){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
+
+
+                $type ='';
+                if($row->type_id == 1){
+                    $type = "ATM";
+                }else if ($row->type_id == 2){
+                    $type = "Branch Office";
+                }else{
+                    $type = "Head Office";
+                }
+
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
+					 <td class="text-center">'.$bank.'</td>
+					 <td class="text-center"> '.$type.'</td>
+					 <td class="text-center"> '.$row->latitude.'</td>
+					 <td> '.$row->longitude.'</td>
+					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
+
+                $result.='</td>
+                    <td><a href="'.base_url().'map/edit?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?info_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+
+    }
+
+
 }
