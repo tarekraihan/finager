@@ -2687,3 +2687,188 @@ hr {
 .nav>li>a {
     font-size: 13px !important;
 }
+
+
+
+/*For Mashmenu*/
+.no-padding{
+    padding: 0;
+}
+.margin_bottom_10{
+    margin-bottom: 10px;
+}
+
+#page-content-wrapper {
+    z-index: 99999;
+    position: absolute;
+}
+.logobar{
+    position: absolute;
+    left: 15px;
+    z-index: 99999;
+    max-height: 63px;
+    width: 150px;
+}
+
+.logobar a .logo{
+    max-height: 63px;
+    width: 150px;
+}
+
+/*For Footer menu*/
+.footer-logo{
+    width: 107px;
+    height: 47px;
+}
+.footer{
+    background: #e2e5e6;
+    padding: 30px 15px 15px 15px;
+}
+ul.footer-socio {
+    float: right;
+}
+.footer-socio li {
+    display: inline;
+}
+.footer-socio li img {
+    height: 60px;
+    max-width: 51px;
+}
+.footer-menu-title{
+    color: #129bbe;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.footer-menus{
+
+}
+.footer-menus li{
+    list-style: none;
+}
+.footer-hr{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-top: 2px solid #b9b8b8;
+}
+.subscribe-footer{
+    border: 2px solid #757779 !important;
+    border-radius: 14px !important;
+    background-color: #e2e5e6 !important;
+}
+.subscribe-footer-btn {
+    background-color: #1a9cbe;
+    font-weight: 600 !important;
+    color: #fff;
+    font-size: 15px !important;
+    padding: 3px 6px !important;
+    border-radius: 10px !important;
+}
+.footer-menus>li>a {
+    color: #6d6d6d;
+    font-weight: 600;
+    font-size: 13px;
+}
+.footer-ass-text{
+    color: #6d6d6d !important;
+    font-weight: 600;
+    font-size: 12px;
+}
+.footer-ass-text a{
+    color: #1a9cbe;
+}
+/* for bootstrap horizontal menu  */
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+    margin:0px auto;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #000;
+    text-transform:uppercase;
+    font-size:14px;
+    margin-left:-8px;
+    font-weight:bold;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color:#67B5D4;
+}
+.navbar-default .navbar-nav>li>a:focus{
+    color:#000;
+}
+.top-menu{
+    display:none;
+}
+.vMenu {
+    text-align: center;
+    margin: 0px auto;
+    height: auto;
+    width: 531px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: none;
+    border-bottom: 1px solid #000;
+    border-bottom-color: transparent;
+}
+.nav-tabs > li > a {
+    margin-right: 0px;
+}
+.nav-tabs {
+    border-bottom: none;
+}
+.no-margin-lr{
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+.dropdown-menu {
+    margin: 2px -8px 0;
+}
+#home-page{
+    width:100%;
+    height:600px;
+}
+#top-page{
+    min-height:48px;
+}
+.header{
+    margin-top:10px;
+}
+.logo{
+    width:150px;
+}
+.logo-lg{
+    height: 130px;
+    width: auto;
+}
+.login{
+    font-family:"Eras Demi ITC";
+    font-weight:bold;
+    font-size:18px;
+    margin-right:80px;
+}
+.header-right{
+    margin-top:8px;
+}
+.hr-bar{
+    width:100%;
+    height:3px;
+}
+.footer-text p{
+    margin-top:7px;
+}
+.find-bar{
+    margin-top:160px;
+    text-align:center;
+}
+
+.device-bg{
+    width:100%;
+    height:350px;
+    background-color:#9e9e9e;
+    background-attachment:fixed;
+}
+.device-img{
+    height:auto;
+    width:100%;
+    margin-top:53px;
+}
