@@ -11,7 +11,7 @@
 
                         <div class="logobar">
                             <a href="<?php echo base_url(); ?>">
-                                <img class="logo" src="<?php echo base_url(); ?>resource/front_end/images/logo.png" alt="Logo" />
+                                <img class="logo" src="<?php echo base_url(); ?>resource/front_end/images/finager_logo.png" alt="Logo" />
                             </a>
                         </div>
 

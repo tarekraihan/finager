@@ -233,157 +233,6 @@
             <!-- Right bar content start -->
             <div class="col-sm-9 col-xs-9">
                 <div id="searchHomeLoan">
-                    <?php
-                    $home_loan = $this->Front_end_select_model->select_home_loan_info();
-                    $home = '';
-                    foreach($home_loan->result() as $row){
-                        $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
-                        $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
-
-                        $home .='<div class="full-card">
-                       <div class="row home_loan_right_bar no-margin-lr2">
-                           <div class="col-sm-3 col-xs-3">
-                               <a href="'.base_url().'en/home_loan_details/'.$row->id.'"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
-                               <small class="home_loan_bank_name"><a  href="">'.$row->bank_name.'</a></small>
-                               <small class="home_loan_bank_name">'.$row->home_loan_looking_for.'</small>
-                           </div>
-                           <div class="col-sm-9 col-xs-9">
-                               <div class="row">
-                                   <div class="col-sm-2 col-xs-2 w20">
-                                       <div class="card_text2">
-                                           <h5>Amount</h5>
-                                           <p>100000</p>
-                                       </div>
-                                   </div>
-                                   <div class="col-sm-2 col-xs-2 w20">
-                                       <div class="card_text2">
-                                           <h5>Interest Rate</h5>
-                                           <p>'.$interest.'<br/>
-                                           '.$interest_min_max.'
-                                       </div>
-                                   </div>
-                                   <div class="col-sm-2 col-xs-2 w20">
-                                       <div class="card_text2">
-                                           <h5>EMI</h5>
-                                           <p>3500</p>
-                                       </div>
-                                   </div>
-                                   <div class="col-sm-2 col-xs-2 w20">
-                                       <div class="card_text2">
-                                           <h5>Payable Amount</h5>
-                                           <p>50%,<br/><span class="tPaybleAmount">based on 100000</span></p>
-                                       </div>
-                                   </div>
-                                   <div class="col-sm-2 col-xs-2 w20">
-                                       <div class="card_text2">
-                                           <h5>Down Payment</h5>
-                                           <p>20000</p>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="col-sm-12 col-xs-12 home_loan_button">
-
-                               <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
-                               <span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
-                               <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
-                               <img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
-                           </div>
-                           <div class="collapse" id="moreInfo'.$row->id.'">
-                             <div class="col-md-12">
-                                   <section id="tab">
-                                       <!-- Nav tabs -->
-                                       <ul class="nav nav-tabs" role="tablist">
-                                           <li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Features</a></li>
-                                           <li role="presentation" ><a href="#FeesCharges'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Fees & Charges</a></li>
-                                           <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Eligibility</a></li>
-                                           <li role="presentation"><a href="#Security'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Security</a></li>
-                                           <li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Required Doc</a></li>
-                                           <li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
-                                           <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
-                                           <li role="presentation"><a href="#UserReviews'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User reviews</a></li>
-                                       </ul>
-
-                                       <!-- Tab panes -->
-                                       <div class="tab-content">
-                                           <div role="tabpanel" class="tab-pane  active" id="Features'.$row->id.'">
-                                                   <section id="card_details_FeesCharges">
-                                                       <div class="card_details_pronsCons">
-                                                           <h4>Features</h4>
-                                                           <div class="prosConsHr"></div><br/>
-                                                           <div class="prosCons_body2 trbodywidth">
-                                                           '.$row->features.'
-                                                       </div>
-                                                   </div>
-                                               </section>
-                                           </div>
-                                           <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
-                                               <section id="card_details_FeesCharges">
-                                                   <div class="card_details_pronsCons">
-                                                       <h4>Fees & Charges</h4>
-                                                       <div class="prosConsHr"></div><br/>
-                                                       <div class="prosCons_body2 trbodywidth">
-                                                           '.$row->fees_and_charges.'
-                                                       </div>
-                                                   </div>
-                                               </section>
-                                           </div>
-
-                                           <div role="tabpanel" class="tab-pane" id="Security'.$row->id.'">
-                                               <section id="card_details_FeesCharges">
-                                                   <div class="card_details_pronsCons">
-                                                       <h4>Security Required</h4>
-                                                       <div class="prosConsHr"></div><br/>
-                                                       <div class="prosCons_body2 trbodywidth">
-                                                       '.$row->security_required.'</div>
-                                                    </div>
-                                               </section>
-                                           </div>
-
-                                           <div role="tabpanel" class="tab-pane" id="Eligibility'.$row->id.'">
-                                               <div class="card_details_pronsCons">
-                                                   <h4>Eligibility</h4>
-                                                   <div class="prosConsHr"></div><br/>
-                                                   <div class="prosCons_body2">
-                                                       <h4>Minimum Income:</h4>
-                                                       '.$row->eligibility_for_applying.'
-                                                   </div>
-                                               </div>
-                                           </div>
-                                           <div role="tabpanel" class="tab-pane" id="RequiredDocuments'.$row->id.'">
-                                              <section id="card_details_FeesCharges">
-                                                   <div class="card_details_pronsCons">
-                                                       <h4>Required Documents</h4>
-                                                       <div class="prosConsHr"></div><br/>
-                                                       <div class="prosCons_body2 trbodywidth">
-                                                       '.$row->required_document.'</div>
-                                                    </div>
-                                              </section>
-                                           </div>
-                                           <div role="tabpanel" class="tab-pane" id="TermsConditions'.$row->id.'">
-                                                    <h4>Terms and Conditions</h4>
-                                                    <div class="prosConsHr"></div><br/>
-                                                    <div class="prosCons_body2">
-                                                       '.$row->terms_and_conditions.'
-                                                    </div>
-                                           </div>
-                                           <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">'.$row->review.'</div>
-                                           <div role="tabpanel" class="tab-pane" id="UserReviews'.$row->id.'">...</div>
-                                       </div>
-                                   </section>
-                               </div>
-                            </div>
-                           <div class="collapse" id="rePaymentSchedule'.$row->id.'">
-                               <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
-
-                           </div>
-                       </div>
-                   </div>';
-
-                    }
-
-                    echo $home;
-                    ?>
 
                 </div>
             </div>
@@ -395,6 +244,64 @@
 
 <script>
     $(document).ready(function(){
+
+
+        function loading_show(){
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30' />").fadeIn('fast');
+        }
+        function loading_hide(){
+            $('#loading').html("");
+        }
+
+
+        function loadData(){
+            loading_show();
+
+//            var mainarray = new Array();
+
+            var home_i_want = new Array();
+            $('input[name="iWant"]:checked').each(function(){
+                home_i_want.push($(this).val());
+            });
+            var home_i_want_list = "&home_i_want="+home_i_want;
+
+
+            var home_user = new Array();
+            $('input[name="iAm"]:checked').each(function(){
+                home_user.push($(this).val());
+            });
+            var home_user_list = "&home_user="+home_user;
+
+
+            var main_string = home_i_want_list+home_user_list;
+            main_string = main_string.substring(1, main_string.length);
+//            console.log(main_string);
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>home_loan/ajax_get_home_loan",
+                data: main_string,
+                cache: false,
+                success: function(msg)
+                {
+
+                    loading_hide();
+                    // console.log(msg);
+
+                    $("#searchHomeLoan").html(msg);
+
+                }
+            });
+        }
+
+        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
+
+        loadData();
+
+
+
+
+
 
         $('#searchHomeLoan').on('click', '.more_info', function (){
 

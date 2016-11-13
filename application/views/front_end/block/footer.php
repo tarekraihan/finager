@@ -1,51 +1,11 @@
-<!--<div class="col-sm-12">
-    <div class="footer">
-        <div class="text-center">
-            <img class="hr-bar" src="<?php /*echo base_url();*/?>resource/front_end/images/hr-bar.png" alt="Horizontal Line" />
-        </div>
-        <div class="col-sm-4 footer-text">
-            <p>&copy; 2016 finager.com</p>
-        </div>
-        <div class="col-sm-4 text-center footer-text">
-            <p>Terms & Conditions</p>
-        </div>
-        <div class="col-sm-4">
-            <div class="pull-right">
-                <img src="<?php /*echo base_url();*/?>resource/front_end/images/fb.png" alt="Facebook" />
-                <img src="<?php /*echo base_url();*/?>resource/front_end/images/tw.png" alt="Twitter" />
-                <img src="<?php /*echo base_url();*/?>resource/front_end/images/in.png" alt="Linkedin" />
-            </div>
-        </div>
-    </div>
-</div>
--->
-</div><!-- main body-->
-
 <div class="footer container-fluid">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
 
-                <!-- <div class="text-center">
-                    <img class="hr-bar" src="images/hr-bar.png" alt="Horizontal Line" />
-                </div>
-                <div class="col-sm-4 footer-text">
-                    <p>&copy; 2016 finager.com</p>
-                </div>
-                <div class="col-sm-4 text-center footer-text">
-                    <p>Terms & Conditions</p>
-                </div>
-                <div class="col-sm-4">
-                    <div class="pull-right">
-                        <img src="images/fb.png" alt="Facebook" />
-                        <img src="images/tw.png" alt="Twitter" />
-                        <img src="images/in.png" alt="Linkedin" />
-                    </div>
-                </div> -->
-
                 <div class="row margin_bottom_15">
                     <div class="col-sm-6">
-                        <img class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/frontCard/logo.png">
+                        <img class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/frontCard/finager_logo.png">
                     </div>
 
                     <div class="col-sm-6">

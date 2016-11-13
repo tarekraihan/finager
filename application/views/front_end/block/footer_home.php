@@ -1,81 +1,41 @@
-<!--<div class="col-sm-12">
-    <div class="footer">
-        <div class="text-center">
-            <img class="hr-bar" src="<?php /*echo base_url();*/?>resource/front_end/images/hr-bar.png" alt="Horizontal Line" />
-        </div>
-        <div class="col-sm-4 footer-text">
-            <p>&copy; 2016 finager.com</p>
-        </div>
-        <div class="col-sm-4 text-center footer-text">
-            <p>Terms & Conditions</p>
-        </div>
-        <div class="col-sm-4">
-            <div class="pull-right">
-                <img src="<?php /*echo base_url();*/?>resource/front_end/images/fb.png" alt="Facebook" />
-                <img src="<?php /*echo base_url();*/?>resource/front_end/images/tw.png" alt="Twitter" />
-                <img src="<?php /*echo base_url();*/?>resource/front_end/images/in.png" alt="Linkedin" />
-            </div>
-        </div>
-    </div>
-</div>-->
-
-
 <div class="footer container-fluid">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-
-                <!-- <div class="text-center">
-                    <img class="hr-bar" src="images/hr-bar.png" alt="Horizontal Line" />
-                </div>
-                <div class="col-sm-4 footer-text">
-                    <p>&copy; 2016 finager.com</p>
-                </div>
-                <div class="col-sm-4 text-center footer-text">
-                    <p>Terms & Conditions</p>
-                </div>
-                <div class="col-sm-4">
-                    <div class="pull-right">
-                        <img src="images/fb.png" alt="Facebook" />
-                        <img src="images/tw.png" alt="Twitter" />
-                        <img src="images/in.png" alt="Linkedin" />
-                    </div>
-                </div> -->
-
                 <div class="row margin_bottom_15">
                     <div class="col-sm-6">
-                        <img class="pull-left" src="images/frontCard/logo.png">
+                        <img class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/finager_logo.png">
                     </div>
 
                     <div class="col-sm-6">
                         <ul class="footer-socio">
                             <li>
                                 <a href="">
-                                    <img src="images/social/Facebook-1.png">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/Facebook-1.png">
                                 </a>
                             </li>
 
                             <li>
                                 <a href="">
-                                    <img src="images/social/G+-1.png">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/G+-1.png">
                                 </a>
                             </li>
 
                             <li>
                                 <a href="">
-                                    <img src="images/social/IN-1.png">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/IN-1.png">
                                 </a>
                             </li>
 
                             <li>
                                 <a href="">
-                                    <img src="images/social/RSS-1.png">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/RSS-1.png">
                                 </a>
                             </li>
 
                             <li>
                                 <a href="">
-                                    <img src="images/social/Twitter-1.png">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/Twitter-1.png">
                                 </a>
                             </li>
                         </ul>
