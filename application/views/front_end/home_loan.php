@@ -241,18 +241,50 @@
     </div>
 </section>
 
+<section id="hiden_div">
+    <div class="container no-padding">
+        <div class="row">
+            <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
+                <div class="card-holder">
+                    <div class="card-bg">
+                        <img src="<?php echo base_url();?>resource/front_end/images/hidendivshead.png" alt="" />
+                        <div class="hidden_div relative">
+                            <div class="hidden_div_container">
+                                <ul class="no-padding pull-left no-list-style">
+                                    <li>
+
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <a class="cart_anchor">
+
+                                </a>
+                                <a class="cart_anchor01">
+
+                                </a>
+                                <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
+                                    Compare
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
 <script>
     $(document).ready(function(){
 
-
         function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30' />").fadeIn('fast');
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30'  style='margin-top:150px'/>").fadeIn('fast');
         }
         function loading_hide(){
             $('#loading').html("");
         }
-
 
         function loadData(){
             loading_show();
@@ -298,22 +330,14 @@
 
         loadData();
 
-
-
-
-
-
         $('#searchHomeLoan').on('click', '.more_info', function (){
 
             var  formData = $(this).data();
             var loan_id = formData.loan_id;
-            //});
-
             console.log(loan_id);
 
             $("#moreInfo"+loan_id).toggleClass("in");
             $('#rePaymentSchedule'+loan_id).removeClass("in");
-//            alert('#moreInfo'+loan_id);
 
         });
 
@@ -322,17 +346,139 @@
             var  formData = $(this).data();
             var repayment = formData.repayment;
             console.log(repayment);
-            //$("#repbtn").click(function(){
             $('#rePaymentSchedule'+repayment).html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#rePaymentSchedule'+repayment).toggleClass("in");
             $('#moreInfo'+repayment).removeClass("in");
-//            alert('#moreInfo'+repayment);
 
         });
-        // });
-
 
     });
 
 </script>
+
+<script>
+
+    $(document).on('click','.add-to-compare',function(){
+
+        $("#hiden_div").animate({bottom:'0px'});
+
+        $('html, body').animate({
+
+        });
+
+        if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
+            alert("Sorry");
+        }else{
+            if($(".cart_anchor").hasClass("img_active")){
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                flyToElement($(itemImg), $('.cart_anchor01'));
+                $(".cart_anchor01").addClass("img_active");
+                $(this).addClass("hidden");
+
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var  formData = $(this).data();
+                var home_id= "home_id="+formData.home_id;
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
+                        data: card_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor01").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+            else{
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                flyToElement($(itemImg), $('.cart_anchor'));
+
+                $(".cart_anchor").addClass("img_active");
+                $(this).addClass("hidden");
+
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var  formData = $(this).data();
+                var card_id = "card_id="+formData.card_id;
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                        data: card_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+        }
+
+    });
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var collected_card = $(this).prev().attr("data-card_id");
+
+        $(".full-card").each(function(){
+            var obj=$(this).children().find('.add-to-compare');
+            var index=$(this).children().find('.add-to-compare').attr('data-card_id');
+            if(parseInt(collected_card)==parseInt(index)){
+                obj.removeClass("hidden");
+            }
+
+        });
+
+        $(this).parent(".cart_anchor").removeClass("img_active");
+        $(this).parent(".cart_anchor").html('');
+        $(this).addClass("hidden");
+
+    });
+
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        $(this).parent(".cart_anchor01").removeClass("img_active");
+        $(this).parent(".cart_anchor01").html('');
+    });
+
+    $('#go_compare').click(function(){
+        //alert(1);
+        var  formData = $('.cart_anchor').children('img').data();
+        var card_id1 = "card_id1="+formData.card_id;
+
+        var  formData = $('.cart_anchor01').children('img').data();
+        var card_id2 = "&card_id2="+formData.card_id;
+
+        var card_ids = card_id1+card_id2;
+        if(card_id1 != '' && card_id2 != ''){
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>card/ajax_go_card_compare_page",
+                data: card_ids,
+                success: function(msg)
+                {
+                    if(msg != 'error'){
+
+                        window.location.href = "<?php echo base_url();?>en/card_compare";
+                    }
+                }
+            });
+        }else{
+            alert("Please add 2 card for compare ! ")
+        }
+
+    });
+
+</script>
+
 

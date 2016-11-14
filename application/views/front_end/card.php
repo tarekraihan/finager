@@ -402,9 +402,9 @@
         $("#hiden_div").animate({bottom:'0px'});
         //$("#hiden_div").addClass("hiddenHalfDown");
 
-    $('html, body').animate({
-    //'scrollTop' : $(".cart_anchor").position().top+1500
-    });
+            $('html, body').animate({
+
+            });
 
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
             alert("Sorry");
@@ -428,8 +428,6 @@
                         data: card_id,
                         success: function(msg)
                         {
-                            //loading_hide();
-                            //console.log(msg);
                             $(".cart_anchor01").html(msg);
                         }
                     });
@@ -456,8 +454,6 @@
                         data: card_id,
                         success: function(msg)
                         {
-                            //loading_hide();
-                            //console.log(msg);
                             $(".cart_anchor").html(msg);
                         }
                     });
@@ -467,27 +463,14 @@
         }
 
     });
-/*
-    $(document).on('click','.compare-cross-btn',function(){
 
-        $(this).parent(".cart_anchor").removeClass("img_active");
-        $(this).parent(".cart_anchor").html('');
-        $(this).addClass("hidden");
-    });
-*/
     $(document).on('click','.compare-cross-btn',function(){
 
         var collected_card = $(this).prev().attr("data-card_id");
-        //var card_id = collected_card.card_id;
-
-        //var card_id = "data-card_id="+collected_card.card_id;
-        //alert(collected_card);
 
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
             var index=$(this).children().find('.add-to-compare').attr('data-card_id');
-            //alert(index);
-            //if()
             if(parseInt(collected_card)==parseInt(index)){
                 obj.removeClass("hidden");
             }
@@ -499,14 +482,7 @@
         $(this).addClass("hidden");
 
     });
-/*
 
-    $(document).on('click','.compare-cross-btn',function(){
-        $(this).parent(".cart_anchor").removeClass("img_active");
-        $(this).parent(".cart_anchor").html('');
-        $(this).addClass("hidden");
-    });
-*/
 
     $(document).on('click','.compare-cross-btn',function(){
 
@@ -540,8 +516,6 @@
         }else{
             alert("Please add 2 card for compare ! ")
         }
-
-        //alert(card_ids);
 
     });
 

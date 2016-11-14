@@ -571,7 +571,7 @@ class Home_Loan extends CI_Controller {
                 $this->Common_model->where = array('id' => $this->input->post('txtHomeLoanId'));
                 $this->Common_model->update();
 
-
+/*
                 $this->Delete_model->Delete_All_Row($id=$this->input->post("txtHomeLoanId"),$table='home_loan_applicant_type_home_loan_info',$id_field='home_loan_info_id');
 
                 foreach($this->input->post('txtApplicantType[]') as $applicant){
@@ -581,7 +581,7 @@ class Home_Loan extends CI_Controller {
                     );
                     $this->Common_model->table_name = 'home_loan_applicant_type_home_loan_info';
                     $this->Common_model->insert();
-                }
+                }*/
 
                 $this->Delete_model->Delete_All_Row($id=$this->input->post("txtHomeLoanId"),$table='home_loan_user_home_loan_info',$id_field='home_loan_info_id');
                 $result='';
@@ -628,29 +628,13 @@ class Home_Loan extends CI_Controller {
 
         $WHERE = array(); $query = '';
         if(!empty($home_user)) {
-            if(strstr($home_user,',')) {
-                $data1 = explode(',',$home_user);
-                $home_user_array = array();
-                foreach($data1 as $h_user) {
-                    $home_user_array[] = "home_loan_user_home_loan_info.home_loan_user_id = $h_user";
-                }
-                $WHERE[] = '('.implode(' OR ',$home_user_array).')';
-            } else {
-                $WHERE[] = 'home_loan_user_home_loan_info.home_loan_user_id = '.$home_user;
-            }
+            $WHERE[] = 'home_loan_user_home_loan_info.home_loan_user_id = '.$home_user;
         }
 
         if(!empty($home_i_want)) {
-            if(strstr($home_i_want,',')) {
-                $data2 = explode(',',$home_i_want);
-                $home_i_want_array = array();
-                foreach($data2 as $h_i_want) {
-                    $home_user_array[] = "home_loan_user_home_loan_info.home_loan_user_id = $h_i_want";
-                }
-                $WHERE[] = '('.implode(' OR ',$home_i_want_array).')';
-            } else {
-                $WHERE[] = 'home_loan_looking_for_home_loan_info.home_loan_looking_for_id = '.$home_i_want;
-            }
+
+            $WHERE[] = 'home_loan_info.home_loan_looking_for_id = '.$home_i_want;
+
         }
 
         $query = implode(' AND ',$WHERE);
@@ -708,7 +692,7 @@ class Home_Loan extends CI_Controller {
                            <div class="col-sm-12 col-xs-12 home_loan_button">
 
                                <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
-                               <span class="more_info_icon Hloan_more_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
+                               <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-home_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                                <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
                                <img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
                            </div>
@@ -805,6 +789,25 @@ class Home_Loan extends CI_Controller {
         }
 
         echo $home;
+    }
+
+    public function ajax_compare_home_loan_image(){
+        $id = $this->input->post('home_id');
+        $result = $this->Front_end_select_model->select_home_loan_image($id);
+        $row= $result->row();
+        $bank_logo = "";
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/card/credit_card/'.$row->card_image_name.'" data-card_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
     }
 
 

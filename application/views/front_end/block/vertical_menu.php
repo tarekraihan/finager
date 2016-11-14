@@ -998,7 +998,7 @@
                                                                                             <span class="focus-text">Personal Loan</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link" href="<??>en/dps">Find All DPS Here</a>
+                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
                                                                                     </div>
                                                                                 </div>
 
