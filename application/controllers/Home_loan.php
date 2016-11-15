@@ -795,6 +795,7 @@ class Home_Loan extends CI_Controller {
         $id = $this->input->post('home_id');
         $result = $this->Front_end_select_model->select_home_loan_image($id);
         $row= $result->row();
+        print_r($row);
         $bank_logo = "";
         if($row->is_non_bank == 1){
             $bank_logo = $row->non_bank_logo;
@@ -803,7 +804,7 @@ class Home_Loan extends CI_Controller {
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/card/credit_card/'.$row->card_image_name.'" data-card_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-home_id='.$row->id.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;

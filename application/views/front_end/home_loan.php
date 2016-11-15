@@ -360,6 +360,7 @@
 
     $(document).on('click','.add-to-compare',function(){
 
+
         $("#hiden_div").animate({bottom:'0px'});
 
         $('html, body').animate({
@@ -371,21 +372,21 @@
         }else{
             if($(".cart_anchor").hasClass("img_active")){
                 //Select item image and pass to the function
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var itemImg = $(this).parents().siblings().find('.home_loan_logo').eq(0);
                 flyToElement($(itemImg), $('.cart_anchor01'));
                 $(".cart_anchor01").addClass("img_active");
                 $(this).addClass("hidden");
 
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var itemImg = $(this).parents().siblings().find('.home_loan_logo').eq(0);
                 var  formData = $(this).data();
                 var home_id= "home_id="+formData.home_id;
-
+                alert(1);
                 setTimeout(function(){
                     $.ajax
                     ({
                         type: "POST",
                         url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
-                        data: card_id,
+                        data: home_id,
                         success: function(msg)
                         {
                             $(".cart_anchor01").html(msg);
@@ -396,22 +397,23 @@
             }
             else{
                 //Select item image and pass to the function
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var itemImg = $(this).parents().siblings().find('.home_loan_logo').eq(0);
                 flyToElement($(itemImg), $('.cart_anchor'));
 
                 $(".cart_anchor").addClass("img_active");
                 $(this).addClass("hidden");
 
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var itemImg = $(this).parents().siblings().find('.home_loan_logo').eq(0);
                 var  formData = $(this).data();
-                var card_id = "card_id="+formData.card_id;
+                var home_id = "home_id="+formData.home_id;
+                alert(2);
 
                 setTimeout(function(){
                     $.ajax
                     ({
                         type: "POST",
-                        url: "<?php echo base_url();?>card/ajax_compare_card_image",
-                        data: card_id,
+                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
+                        data: home_id,
                         success: function(msg)
                         {
                             $(".cart_anchor").html(msg);
@@ -426,12 +428,12 @@
 
     $(document).on('click','.compare-cross-btn',function(){
 
-        var collected_card = $(this).prev().attr("data-card_id");
+        var collected_home_loan = $(this).prev().attr("data-home_id");
 
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
-            var index=$(this).children().find('.add-to-compare').attr('data-card_id');
-            if(parseInt(collected_card)==parseInt(index)){
+            var index=$(this).children().find('.add-to-compare').attr('data-home_id');
+            if(parseInt(collected_home_loan)==parseInt(index)){
                 obj.removeClass("hidden");
             }
 
