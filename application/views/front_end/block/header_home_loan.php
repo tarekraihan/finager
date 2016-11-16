@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/jquery-ui.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/responsive.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/style.css" />
+
+
+    <script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
     <style type="text/css">
         .savingsContainer .leftCont {
             padding: 0 0 0 0;

@@ -257,7 +257,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/personl_loan_landing');
+            $this->load->view('front_end/personal_loan_landing');
             $this->load->view('front_end/block/footer_home');
         }else{
             redirect(base_url().'en/login/');

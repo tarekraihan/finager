@@ -395,6 +395,7 @@
         }
     }
 </script>
+
 <script>
 
     $(document).on('click','.add-to-compare',function(){
