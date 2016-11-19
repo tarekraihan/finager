@@ -5,7 +5,7 @@
 
                 <div class="row margin_bottom_15">
                     <div class="col-sm-6">
-                        <img class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/frontCard/finager_logo.png">
+                        <img class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/finager_logo.png">
                     </div>
 
                     <div class="col-sm-6">

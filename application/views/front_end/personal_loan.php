@@ -325,15 +325,17 @@
         function loadData(){
             loading_show();
 
+
             var personal_i_want = new Array();
-            $('input[name="iWant"]:checked').each(function(){
+            $('input[name="i_want"]:checked').each(function(){
                 personal_i_want.push($(this).val());
             });
+
             var personal_i_want_list = "&personal_i_want="+personal_i_want;
 
 
             var personal_user = new Array();
-            $('input[name="iAm"]:checked').each(function(){
+            $('input[name="i_am"]:checked').each(function(){
                 personal_user.push($(this).val());
             });
             var personal_user_list = "&personal_user="+personal_user;

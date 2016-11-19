@@ -225,7 +225,7 @@
             <!-- Right bar content start -->
             <div class="col-sm-9 col-xs-9">
                 <div id="searchHomeLoan">
-                    <?php
+                    <?php/*
                     $home_loan = $this->Front_end_select_model->select_auto_loan_info();
                     $home = '';
                     foreach($home_loan->result() as $row){
@@ -410,7 +410,7 @@
 
                     }
 
-                    echo $home;
+                    echo $home;*/
                     ?>
 
                 </div>
@@ -423,6 +423,56 @@
 
 <script>
     $(document).ready(function(){
+
+
+        function loading_show(){
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30'  style='margin-top:150px'/>").fadeIn('fast');
+        }
+        function loading_hide(){
+            $('#loading').html("");
+        }
+
+        function loadData(){
+            loading_show();
+
+
+            var personal_i_want = new Array();
+            $('input[name="i_want"]:checked').each(function(){
+                personal_i_want.push($(this).val());
+            });
+
+            var personal_i_want_list = "&personal_i_want="+personal_i_want;
+
+
+            var personal_user = new Array();
+            $('input[name="i_am"]:checked').each(function(){
+                personal_user.push($(this).val());
+            });
+            var personal_user_list = "&personal_user="+personal_user;
+
+
+            var main_string = personal_i_want_list+personal_user_list;
+            main_string = main_string.substring(1, main_string.length);
+            console.log(main_string);
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>personal_loan/ajax_get_personal_loan",
+                data: main_string,
+                cache: false,
+                success: function(msg)
+                {
+
+                    loading_hide();
+                    // console.log(msg);
+
+                    $("#searchPersonalLoan").html(msg);
+
+                }
+            });
+        }
+
+
 
         $('#searchHomeLoan').on('click', '.more_info', function (){
 

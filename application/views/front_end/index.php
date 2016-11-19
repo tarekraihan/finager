@@ -1,232 +1,234 @@
+<style type="text/css">
+    #home-page{
+        /*background-image: url(images/fana.gif);
+        height: 100%;
+        width: 100%;
+        background-size: cover;*/
+    }
+    .bg-gif{
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 218px;
+    }
+    .find-bar {
+        margin-top: 160px;
+
+        text-align: center;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+    .feature-bg {
+        margin: 175px 0 !important;
+    }
+
+    #CategoryIcon{
+        margin-top: 360px;
+        background: rgba(233, 238, 245, 0.33);
+    }
+</style>
+
 <section id="home_search">
     <div class="header container-fluid">
+        <!--
         <div class="find-bar">
-            <img class="logo-lg" src="<?php echo base_url();?>resource/front_end/images/logo-lg.png" alt="Large Logo" /><br/><br/>
-            <a href=""><img src="<?php echo base_url();?>resource/front_end/images/serch-bar.png" alt="Serch box" class="img-responsive center-block" /></a>
+            <img class="logo-lg" src="<?php /*echo base_url();*/?>resource/front_end/images/logo-lg.png" alt="Large Logo" /><br/><br/>
+            <a href=""><img src="<?php /*echo base_url();*/?>resource/front_end/images/serch-bar.png" alt="Serch box" class="img-responsive center-block" /></a>
+        </div>-->
+
+        <div class="feature-bg">
+            <div class="find-bar">
+                <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/logo-lg.png" alt="Large Logo" /><br/><br/>
+                <img src="<?php echo base_url(); ?>resource/front_end/images/serch-bar.png" alt="Serch box" />
+            </div>
+            <img class="bg-gif" src="<?php echo base_url(); ?>resource/front_end/images/fana.gif" width="620" height="215" alt="">
         </div>
     </div>
 </section>
 <section id="CategoryIcon">
     <div class="container">
-        <div class="row">
-            <div class="catagory-icon">
-                <!--h1>Top Categories</h1-->
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/head-phone-hover.png" alt=""/>
-                            <p>Sales & Marketing</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/taka-icon-hover.png" alt=""/>
-                            <p>Loans</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/calculator-hover.png" alt=""/>
-                            <p>Accounting</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/hiring-hover.png" alt=""/>
-                            <p>Hiring & Managing</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/legal-hover.png" alt=""/>
-                            <p>Legal Services</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/sbusiness-hover.png" alt=""/>
-                            <p>Business</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/head-phone-hover.png" alt=""/>
-                            <p>Sales & Marketing</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/taka-icon-hover.png" alt=""/>
-                            <p>Loans</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/calculator-hover.png" alt=""/>
-                            <p>Accounting</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/hiring-hover.png" alt=""/>
-                            <p>Hiring & Managing</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/sbusiness-hover.png" alt=""/>
-                            <p>Business</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
-                    <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url();?>resource/front_end/images/category icon/more-hover.png" alt=""/>
-                            <p>More Guides</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        <div class="catagory-icon">
 
-<section id="forth-page">
-    <div class="container">
-        <div class="row">
-            <div class="card-deposit">
-                <div class="col-xs-12 col-sm-8">
-                    <h1>Credit Card....</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        <span class="pull-right see-more">See More <i class="fa fa-arrow-circle-o-right"></i></span>
-                    </p>
+            <h1>Top Categories</h1>
 
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            <img class="btn-aplly" src="<?php echo base_url();?>resource/front_end/images/apply.png" width="90" height="25" alt="Apply"/>
-                        </ol>
-
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="<?php echo base_url();?>resource/front_end/images/Cradit-card-&-Deposit.png" class="slider_img" alt="Deposit"/>
-                                <!--<div class="carousel-caption">
-                                  ...
-                                </div>-->
-                            </div>
-                            <div class="item">
-                                <img src="<?php echo base_url();?>resource/front_end/images/Cradit-card-&-Deposit.png" class="slider_img" alt="Credit Card"/>
-                                <!--<div class="carousel-caption">
-                                  ...
-                                </div>-->
-                            </div>
-                            <div class="item">
-                                <img src="<?php echo base_url();?>resource/front_end/images/Cradit-card-&-Deposit.png" class="slider_img" alt="Credit card"/>
-                                <!--<div class="carousel-caption">
-                                  ...
-                                </div>-->
-                            </div>
+            <div class="row">
+                <div class="catagory-icon">
+                    <!--h1>Top Categories</h1-->
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/head-phone-hover.png" alt=""/>
+                                <p>Sales & Marketing</p>
+                            </a>
                         </div>
-
-                        <!-- Controls -->
-
                     </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div><br/><br/><br/><br/><br/>
-
-    <div class="container">
-        <div class="row">
-            <div class="card-deposit">
-                <div class="col-xs-12 col-sm-8">
-                    <h1>Deposit....</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        <span class="pull-right see-more">See More <i class="fa fa-arrow-circle-o-right"></i></span>
-                    </p>
-
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic1" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic1" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic1" data-slide-to="2"></li>
-                            <img class="btn-aplly" src="<?php echo base_url();?>resource/front_end/images/apply.png" width="90" height="25" alt="Apply Images"/>
-                        </ol>
-
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="<?php echo base_url();?>resource/front_end/images/taka.png" class="slider_img" alt="Taka image"/>
-                                <!--<div class="carousel-caption">
-                                  ...
-                                </div>-->
-                            </div>
-                            <div class="item">
-                                <img src="<?php echo base_url();?>resource/front_end/images/taka.png" class="slider_img" alt="Taka"/>
-                                <!--<div class="carousel-caption">
-                                  ...
-                                </div>-->
-                            </div>
-                            <div class="item">
-                                <img src="<?php echo base_url();?>resource/front_end/images/taka.png" class="slider_img" alt="Taka"/>
-                                <!--<div class="carousel-caption">
-                                  ...
-                                </div>-->
-                            </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/taka-icon-hover.png" alt=""/>
+                                <p>Loans</p>
+                            </a>
                         </div>
-
-                        <!-- Controls -->
-
                     </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/calculator-hover.png" alt=""/>
+                                <p>Accounting</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/hiring-hover.png" alt=""/>
+                                <p>Hiring & Managing</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/legal-hover.png" alt=""/>
+                                <p>Legal Services</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/sbusiness-hover.png" alt=""/>
+                                <p>Business</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/head-phone-hover.png" alt=""/>
+                                <p>Sales & Marketing</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/taka-icon-hover.png" alt=""/>
+                                <p>Loans</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/calculator-hover.png" alt=""/>
+                                <p>Accounting</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/hiring-hover.png" alt=""/>
+                                <p>Hiring & Managing</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/sbusiness-hover.png" alt=""/>
+                                <p>Business</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 margin_botton_30">
+                        <div class="Cicon">
+                            <a href="#">
+                                <img src="<?php echo base_url();?>resource/front_end/images/category icon/more-hover.png" alt=""/>
+                                <p>More Guides</p>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="header">
+    <div class="container Aboutcredit_card">
+        <div class="col-md-2 col-sm-2">
+            <img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/finager_logo.png">
+        </div>
+        <div class="col-md-7 col-sm-7">
+            <div class="header_paragrph">
+                <h3>About Finager.com</h3>
+                <p>At CreditCards.com we've partnered with leading banks and issuers in order to bring you
+                    credit card offers online. Offers are displayed side by side so you can easily compare key
+                    factors such as interest rates, annual fees as well as other key features.<br/><br/>
+                    Once you have found the card from one of our partners that is best for you, you can fill
+                    out an online application and in some cases even get a credit decision within 60 seconds.<br/><br/>
+                    At CreditCards.com our goal is to provide consumers a resource to search, compare and
+                    apply for a selection of credit card offers online.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="req_card">
+                <span class="req_para">We’re Here to Help You</span>
+                <a href="cardMatch2.php">
+                    <div class="req_card1">
+                        <div class="card_div">
+                            <!--img class="img-responsive" src="images/card.png" alt="" />
+                            <span class="req_head">My Finager.com</span-->
+                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card.png" alt="" />
+                            <span>My Finager.com</span>
+                        </div>
+                        <i class="fa fa-arrow-right pull-right" style="font-size:18px;" aria-hidden="true"></i>
+                        <div class="req_paragrph">Free Credit Score and Monitoring</div> Get an updated credit score for free
+                        each month.
+                    </div>
+                </a>
+                <a href="chooseCardabout.php">
+                    <div class="req_card2">
+                        <div class="card_div">
+                            <!--img class="img-responsive" src="images/card_2.png">
+                            <span class="match_crd">CardMatch</span><br/><span class="req_head1">by <b>finager.com</b></span-->
+                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card_2.png" alt="" />
+                            <span>CardMatch</span><br/><span class="req_head1">by <b>finager.com</b><span>
+								<i class="fa fa-arrow-right pull-right" style="font-size:18px;" aria-hidden="true"></i>
+
+                        </div>
+                        <div class="req_paragrph">Better Offers via CardMatch</div> See offers matched with your credit
+                        profile.
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="req_card3">
+                        <div class="card_div">
+                            <!--img class="img-responsive" src="images/card_3.png">
+                            <span class="match_crd">WalletUp </span><br/><span class="req_head1">by <b>finager.com</b></span-->
+                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card_3.png" alt="" />
+                            <span>WalletUp</span><br/><span class="req_head1">by <b>finager.com</b></span>
+                            <i class="fa fa-arrow-right pull-right" style="font-size:18px;" aria-hidden="true"></i>
+
+                        </div>
+                        <div class="req_paragrph">Max Rewards with WallerUp</div> Maximize your rewards, cash back and
+                        points earnings.
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<section id="fith-page">
-    <div class="col-sm-12">
-        <h1 class="text-center remittance">Remittance</h1>
-        <img class="w100" src="<?php echo base_url();?>resource/front_end/images/Remittance.png" alt=""/>
-        <p class="rem-readmore"><a href="#">Read More............</a></p>
-    </div>
-</section>
+
 <div style="clear:both"></div>
 <!-- <hr/>
 <section id="sixth-page">
