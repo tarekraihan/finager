@@ -432,7 +432,7 @@ class Personal_Loan extends CI_Controller {
 
                     $personal .='<div class="row home_loan_right_bar no-margin-lr2">
                     <div class="col-sm-3 col-xs-3">
-                        <a href="'.base_url().'en/personal_loan_details"><img title="click here to details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                        <a href="'.base_url().'en/personal_loan_details/'.$row->id.'"><img title="click here to details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                         <small class="home_loan_bank_name"><a  href="">'.$bank.'</a></small>
                     </div>
                     <div class="col-sm-9 col-xs-9">

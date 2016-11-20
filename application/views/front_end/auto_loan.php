@@ -225,6 +225,8 @@
             <!-- Right bar content start -->
             <div class="col-sm-9 col-xs-9">
                 <div id="searchHomeLoan">
+
+                    <div id="loading" class="text-center"></div>
                     <?php/*
                     $home_loan = $this->Front_end_select_model->select_auto_loan_info();
                     $home = '';
@@ -426,7 +428,7 @@
 
 
         function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30'  style='margin-top:150px'/>").fadeIn('fast');
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
         }
         function loading_hide(){
             $('#loading').html("");

@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/material_theme.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/responsive.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/frontCard.css" />
 
 
 

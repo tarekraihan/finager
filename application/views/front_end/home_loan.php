@@ -233,7 +233,7 @@
             <!-- Right bar content start -->
             <div class="col-sm-9 col-xs-9">
                 <div id="searchHomeLoan">
-
+                    <div id="loading" class="text-center" style="margin-top: 150px"></div>
                 </div>
             </div>
             <!-- Right bar content end -->
@@ -280,7 +280,7 @@
     $(document).ready(function(){
 
         function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='30'  style='margin-top:150px'/>").fadeIn('fast');
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
         }
         function loading_hide(){
             $('#loading').html("");
@@ -514,7 +514,7 @@
                     $.ajax
                     ({
                         type: "POST",
-                        url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
                         data: card_id,
                         success: function(msg)
                         {
@@ -540,7 +540,7 @@
                     $.ajax
                     ({
                         type: "POST",
-                        url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
                         data: card_id,
                         success: function(msg)
                         {
