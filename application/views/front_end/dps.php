@@ -78,18 +78,18 @@
 					<div class="home_loan_left_bar">
 						<div class="card_query">
 							<p>I Am</p>
-							<div class="query_radio">
-								<?php
-								$loan_user = $this->Select_model->select_all('fdr_i_am','ASC');
-								foreach($loan_user->result() as $row){
-								?>
-								<label class="material_radio_group">
-									<input type="radio" name="iAm" value="<?php echo $row->id; ?>" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									<?php echo $row->i_am; ?>
-								</label><br/>
-								<?php } ?>
-							</div>
+                            <div class="query_radio">
+                                <?php
+                                $loan_user = $this->Select_model->select_all('fdr_i_am','ASC');
+                                foreach($loan_user->result() as $row){
+                                    ?>
+                                    <label class="material_radio_group">
+                                        <input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        <?php echo $row->i_am; ?>
+                                    </label><br/>
+                                <?php } ?>
+                            </div>
 						</div>
 						<div class="card_query">
 							<p>Select Deposit Amount</p>

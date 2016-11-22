@@ -808,8 +808,6 @@ class Home_Loan extends CI_Controller {
         $id = $this->input->post('home_id');
         $result = $this->Front_end_select_model->select_home_loan_image($id);
         $row= $result->row();
-        print_r($row);
-        $bank_logo = "";
         if($row->is_non_bank == 1){
             $bank_logo = $row->non_bank_logo;
         }else{

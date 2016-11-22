@@ -613,4 +613,161 @@ class Fdr extends CI_Controller {
         }
     }
 
+
+//    Front End query--------------------------------
+
+    public function ajax_get_fdr(){
+
+
+        $fdr_user = $this->input->post('fdr_user');
+        $fdr_tenure = $this->input->post('fdr_tenure');
+
+        $WHERE = array(); $query = '';
+        if(!empty($fdr_user)) {
+            $WHERE[] = 'fdr_info.i_am_id = '.$fdr_user;
+        }
+
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $fdr_deposit = $this->Front_end_select_model->select_fdr_loan_info($query);
+
+
+        $fdr = '';
+        foreach($fdr_deposit->result() as $row) {
+
+            $bank = "";
+            if ($row->is_non_bank == 1) {
+                $bank = $row->non_bank_name;
+            } else {
+                $bank = $row->bank_name;
+            }
+            $bank_logo = "";
+            if ($row->is_non_bank == 1) {
+                $bank_logo = $row->non_bank_logo;
+            } else {
+                $bank_logo = $row->bank_logo;
+            }
+
+            $query_amount = 1000000;
+            $tenure = 3 * 12;
+
+            $interest_rate = $row->interest_rate;
+
+            $cal_interest = round(($interest_rate / 100) / $tenure, 4);
+
+            $emi = $query_amount * $cal_interest * pow((1 + $cal_interest), $tenure) / pow((1 + $cal_interest), ($tenure - 1));
+            $total_payable = $emi * $tenure;
+
+            $fdr .= '<div class="full-card">
+						<div class="row fdr_right_bar no-margin-lr">
+							<div class="col-sm-2 col-xs-2">
+								<a href="'. base_url() .'en/fdr_details"><img title="'.$bank.'" class="img-responsive fdr_bank_logo" src="'. base_url() .'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<p class="text-center">'.$bank.'</p>
+								<p class="text-center">
+									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+								</p>
+								<p class="rating text-center">Rated By 5 Person</p>
+							</div>
+
+							<div class="col-sm-10 col-xs-10">
+								<div class="row">
+									<div class="col-sm-3 col-xs-3">
+										<div class="card_text3">
+											<h5>Deposited Amount</h5>
+											<p>&#2547; 10000</p>
+										</div>
+									</div>
+									<div class="col-sm-2 col-xs-2">
+										<div class="card_text3">
+											<h5>Tenure</h5>
+											<p>1 Year</p>
+										</div>
+									</div>
+									<div class="col-sm-2 col-xs-2">
+										<div class="card_text3">
+											<h5>Interest Rate</h5>
+											<p>'.$interest_rate.'%</p>
+										</div>
+									</div>
+									<div class="col-sm-3 col-xs-3">
+										<div class="card_text3">
+											<h5>Maturity Amount</h5>
+											<p>&#2547; 1300</p>
+										</div>
+									</div>
+									<div class="col-sm-2 col-xs-2">
+										<div class="card_text3">
+											<h5>Loan Facility</h5>
+											<p>'.$row->loan_facility.'%</p>
+										</div>
+									</div>
+								</div>
+								<div class="row more_availabe">
+									<div class="col-md-2"><a id="hideDetailsButton"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-fdr_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true" ></i> More Info</a></div>
+									<div class="col-md-4"><a id="hideDetailsButton2" class="availableOffer" href="javascript:void(0)" data-toggle="collapse" data-available_offer="'.$row->id.'"><i class="fa fa-info-circle " aria-hidden="true" role="button" ></i> Available Offer</a></div>
+									<div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
+									<div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- More Info Tab content start -->
+						<div class="col-sm-12 card_more_info">
+							<div id="moreInfo'.$row->id.'" class="collapse">
+								<section id="tab">
+									<!-- Nav tabs -->
+									<ul class="nav nav-tabs" role="tablist">
+										<li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
+										<li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="Eligibility" role="tab" data-toggle="tab">Eligibility</a></li>
+										<li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="RequiredDocuments" role="tab" data-toggle="tab">Required Documents</a></li>
+										<li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="TermsConditions" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+										<li role="presentation"><a href="#Review'.$row->id.'" aria-controls="Review" role="tab" data-toggle="tab">Review</a></li>
+										<li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="UserReview" role="tab" data-toggle="tab">User Review</a></li>
+									</ul>
+
+									<!-- Tab panes -->
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
+											<h4>Features</h4>
+											'.$row->available_feature.'
+										</div>
+										<div role="tabpanel" class="tab-pane" id="Eligibility'.$row->id.'">
+											<h4>Eligibility</h4>
+											'.$row->eligibility.'
+										</div>
+										<div role="tabpanel" class="tab-pane" id="RequiredDocuments'.$row->id.'">
+											<h4>Required Documents</h4>
+											'.$row->required_document.'
+										</div>
+										<div role="tabpanel" class="tab-pane fdr_terms" id="TermsConditions'.$row->id.'">
+											<h4>Terms & Conditions</h4>
+											'.$row->terms_and_conditions.'
+										</div>
+										<div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
+											<h4>Review</h4>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="UserReview'.$row->id.'">
+											<h4>User Review</h4>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<!-- More Info Tab content end -->
+
+						<div id="availableOffer'.$row->id.'" class="collapse">
+						    <h4>Available Offer</h4>
+
+
+						</div>
+                    </div>';
+        }
+        echo $fdr;
+    }
+
+
 }

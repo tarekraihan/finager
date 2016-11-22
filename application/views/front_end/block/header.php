@@ -22,7 +22,9 @@
     </script>
     <!-- add card compare ends-->
 
-    
+    <style>
+        #loading{z-index: 100}
+    </style>
 
 
 </head>

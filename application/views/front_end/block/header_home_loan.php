@@ -74,6 +74,7 @@
             text-decoration: none;
             color: #000000;
         }
+        #loading{z-index: 100}
 
     </style>
 </head>
