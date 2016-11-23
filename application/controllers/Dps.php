@@ -829,4 +829,169 @@ class Dps extends CI_Controller
 
 
 
+//    Front End query--------------------------------
+
+    public function ajax_get_dps(){
+
+        $dps_user = $this->input->post('dps_user');
+        $dps_tenure = $this->input->post('dps_tenure');
+
+        $WHERE = array(); $query = '';
+        if(!empty($dps_user)) {
+            $WHERE[] = 'dps_info.i_am_id = '.dps_user;
+        }
+/*
+        if(!empty(dps_tenure)) {
+            $WHERE[] = 'fdr_info.tenure_id = '.$fdr_tenure;
+        }*/
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $dps_deposit = $this->Front_end_select_model->select_dps_loan_info($query);
+
+//                        print_r($dps_deposit->result()); die;
+
+        $dps = '';
+        foreach($dps_deposit->result() as $row) {
+
+            $bank = "";
+            if ($row->is_non_bank == 1) {
+                $bank = $row->non_bank_name;
+            } else {
+                $bank = $row->bank_name;
+            }
+            $bank_logo = "";
+            if ($row->is_non_bank == 1) {
+                $bank_logo = $row->non_bank_logo;
+            } else {
+                $bank_logo = $row->bank_logo;
+            }
+
+            $query_amount = 1000;
+            $tenure = 3 * 12;
+
+            $interest_rate = $row->interest_rate;
+
+            $cal_interest = round(($interest_rate / 100) / $tenure, 4);
+
+            $emi = $query_amount * $cal_interest * pow((1 + $cal_interest), $tenure) / pow((1 + $cal_interest), ($tenure - 1));
+            $total_payable = $emi * $tenure;
+
+            $dps .= '<div class="row fdr_right_bar no-margin-lr">
+                        <div class="col-sm-2 col-xs-2">
+                            <a href="'. base_url().'en/dps_details/'.$row->id.'"><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <p class="text-center">'.$bank.'</p>
+                            <p class="text-center">
+                                <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                            </p>
+                            <p class="rating text-center">Rated By 5 Person</p>
+                        </div>
+
+                        <div class="col-sm-10 col-xs-10">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-3">
+                                    <div class="card_text3">
+                                        <h5>Installment Amount</h5>
+                                        <p>&#2547; '.$query_amount.'</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-xs-2">
+                                    <div class="card_text3">
+                                        <h5>Number of Installment</h5>
+                                        <p> '.$tenure.'</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-xs-2">
+                                    <div class="card_text3">
+                                        <h5>Maturity Amount</h5>
+                                        <p>&#2547; '.$total_payable.'</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-3">
+                                    <div class="card_text3">
+                                        <h5>Accrued Interest</h5>
+                                        <p>&#2547; 5799</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-xs-2">
+                                    <div class="card_text3">
+                                        <h5>Loan Facility</h5>
+                                        <p>'.$row->loan_facility.'</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row more_availabe">
+                                <div class="col-md-2"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-dps_id="'.$row->id.'"></i> More Info</a></div>
+                                <div class="col-md-4"><a class="availableOffer"  href="javascript:void(0)"  data-available_offer="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true" ></i> Available Offer</a></div>
+                                <div class="col-md-4"><a id="hideDetailsButton2"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/btnDpsApply.png" alt="DPS Application" /></a></div>
+                                <div class="col-md-2"><a id="hideDetailsButton2" href="javascript:void(0)"><img class="pull-right" src="'.base_url().'resource/front_end/images/btnDpsCom.png" alt="DPS Application" /></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More Info Tab content start -->
+                     <div class="collapse" id="moreInfo'.$row->id.'">
+                         <div class="col-md-12">
+                               <section id="tab">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation"><a href="#Features'.$row->id.'" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
+                                    <li role="presentation"><a href="#FeesCharges'.$row->id.'" aria-controls="FeesCharges" role="tab" data-toggle="tab">Fees & Charges</a></li>
+                                    <li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="TermsConditions" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+                                    <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="Eligibility" role="tab" data-toggle="tab">Eligibility</a></li>
+                                    <li role="presentation"><a href="#RequiredDoc'.$row->id.'" aria-controls="RequiredDoc" role="tab" data-toggle="tab">Required Doc</a></li>
+                                    <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="Review" role="tab" data-toggle="tab">Review</a></li>
+                                    <li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="UserReview" role="tab" data-toggle="tab">User Review</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
+                                        <h4>Features:</h4>
+                                        '.$row->available_feature.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
+                                        <h4>Fees & Charges:</h4>
+                                        '.$row->fees_and_charges.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="TermsConditions'.$row->id.'">
+                                        <h4>Terms & Conditions:</h4>
+                                        '.$row->terms_and_conditions.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fdr_terms" id="Eligibility'.$row->id.'">
+                                        <h4>Eligibility:</h4>
+                                        '.$row->eligibility.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="RequiredDoc'.$row->id.'">
+                                        <h4>Required Documents</h4>
+                                        '.$row->required_document.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
+                                        <h4>Review</h4>
+                                        '.$row->review.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="UserReview'.$row->id.'">
+                                        <h4>User Review</h4>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- More Info Tab content end -->
+                    <div class="collapse" id="availableOffer'.$row->id.'">
+                        <div class="col-md-12">
+                            <p><b>Available Deposits (BDT):</b> 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 8000, 10000.</p>
+                            <p><b>Available Terms:</b> 2, 3, 4, 5, 6, 7, 8, 10.</p>
+                            <p><b>Interest Rate:8%</b></p>
+                        </div>
+                        '.$row->available_benefit.'
+                    </div>';
+            }
+            echo $dps;
+        }
+
+
+
+
 }

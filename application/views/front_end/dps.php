@@ -78,18 +78,18 @@
 					<div class="home_loan_left_bar">
 						<div class="card_query">
 							<p>I Am</p>
-                            <div class="query_radio">
-                                <?php
-                                $loan_user = $this->Select_model->select_all('fdr_i_am','ASC');
-                                foreach($loan_user->result() as $row){
-                                    ?>
-                                    <label class="material_radio_group">
-                                        <input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"/>
-                                        <span class="material_check_radio"></span>
-                                        <?php echo $row->i_am; ?>
-                                    </label><br/>
-                                <?php } ?>
-                            </div>
+							<div class="query_radio">
+								<?php
+								$loan_user = $this->Select_model->select_all('fdr_i_am','ASC');
+								foreach($loan_user->result() as $row){
+								?>
+								<label class="material_radio_group">
+									<input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"/>
+									<span class="material_check_radio"></span>
+									<?php echo $row->i_am; ?>
+								</label><br/>
+								<?php } ?>
+							</div>
 						</div>
 						<div class="card_query">
 							<p>Select Deposit Amount</p>
@@ -273,91 +273,105 @@
 							<div class="fdrTenurepadding">
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="1" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
-										2 Year 
+										1 Year
+									</label>
+								</div>
+								<div class="dps_tenure pull-left">
+									<label class="material_radio_group fdr_radio">
+										<input type="radio" name="dps_tenure" value="2" class="material_radiobox"/>
+										<span class="material_check_radio"></span>
+										2 Year
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="3" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										3 Year 
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="4" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										4 Year 
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="5" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										5 Year
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="6" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										6 Year
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="7" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										7 Years 
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="8" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										8 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="9" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										9 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="10" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										10 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="15" class="material_radiobox"/>
+										<span class="material_check_radio"></span>
+										11 Years
+									</label>
+								</div>
+								<div class="dps_tenure pull-left">
+									<label class="material_radio_group fdr_radio">
+										<input type="radio" name="dps_tenure" value="11" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										12 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="12" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										14 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="13" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										15 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="month" value="first_month" class="material_radiobox"/>
+										<input type="radio" name="dps_tenure" value="14" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										20 Years
 									</label>
@@ -528,6 +542,57 @@
 
 <script>
 	$(document).ready(function(){
+
+        function loading_show(){
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
+        }
+        function loading_hide(){
+            $('#loading').html("");
+        }
+
+        function loadData(){
+            loading_show();
+
+
+            var dps_tenure = new Array();
+            $('input[name="dps_tenure"]:checked').each(function(){
+                dps_tenure.push($(this).val());
+            });
+
+            var dps_tenure_list = "&dps_tenure="+dps_tenure;
+
+
+            var dps_user = new Array();
+            $('input[name="i_am"]:checked').each(function(){
+                dps_user.push($(this).val());
+            });
+            var dps_user_list = "&dps_user="+dps_user;
+
+
+            var main_string = dps_tenure_list+dps_user_list;
+            main_string = main_string.substring(1, main_string.length);
+            console.log(main_string);
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>dps/ajax_get_dps",
+                data: main_string,
+                cache: false,
+                success: function(msg)
+                {
+
+                    loading_hide();
+                    // console.log(msg);
+
+                    $("#searchDPS").html(msg);
+
+                }
+            });
+        }
+
+        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
+
+        loadData();
 
 		$('#searchDPS').on('click', '.more_info', function (){
 			var  formData = $(this).data();

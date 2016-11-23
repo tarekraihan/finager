@@ -627,14 +627,20 @@ class Fdr extends CI_Controller {
             $WHERE[] = 'fdr_info.i_am_id = '.$fdr_user;
         }
 
+        if(!empty($fdr_tenure)) {
+            $WHERE[] = 'fdr_info.tenure_id = '.$fdr_tenure;
+        }
+
 
         $query = implode(' AND ',$WHERE);
 
         if(!empty($query)) {$query = 'WHERE '.$query;}
 
+
+
         $fdr_deposit = $this->Front_end_select_model->select_fdr_loan_info($query);
 
-
+//        $no_row = $fdr_deposit->num_rows();
         $fdr = '';
         foreach($fdr_deposit->result() as $row) {
 
@@ -664,7 +670,7 @@ class Fdr extends CI_Controller {
             $fdr .= '<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
 							<div class="col-sm-2 col-xs-2">
-								<a href="'. base_url() .'en/fdr_details"><img title="'.$bank.'" class="img-responsive fdr_bank_logo" src="'. base_url() .'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<a href="'. base_url() .'en/fdr_details/'.$row->id.'"><img title="'.$bank.'" class="img-responsive fdr_bank_logo" src="'. base_url() .'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>

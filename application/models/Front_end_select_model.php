@@ -96,15 +96,15 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
 
-    function select_dps_loan_info(){
-        $sql = "SELECT dps_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `dps_info` LEFT JOIN card_bank on card_bank.id=dps_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = dps_info.i_am_id";
+    function select_dps_loan_info($query){
+        $sql = "SELECT DISTINCT dps_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `dps_info` LEFT JOIN card_bank on card_bank.id=dps_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id INNER JOIN fdr_i_am ON fdr_i_am.id = dps_info.i_am_id $query";
         $query = $this->db->query($sql);
 
         return $query;
     }
 
-    function select_fdr_loan_info(){
-        $sql = "SELECT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id";
+    function select_fdr_loan_info($query){
+        $sql = "SELECT DISTINCT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id $query ORDER BY fdr_info.id DESC";
         $query = $this->db->query($sql);
 
         return $query;
