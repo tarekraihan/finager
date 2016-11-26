@@ -838,12 +838,12 @@ class Dps extends CI_Controller
 
         $WHERE = array(); $query = '';
         if(!empty($dps_user)) {
-            $WHERE[] = 'dps_info.i_am_id = '.dps_user;
+            $WHERE[] = 'dps_info.i_am_id = '.$dps_user;
         }
-/*
-        if(!empty(dps_tenure)) {
-            $WHERE[] = 'fdr_info.tenure_id = '.$fdr_tenure;
-        }*/
+
+        if(!empty($dps_tenure)) {
+            $WHERE[] = 'dps_info.tenure_id = '.$dps_tenure;
+        }
 
         $query = implode(' AND ',$WHERE);
 
@@ -851,8 +851,8 @@ class Dps extends CI_Controller
 
         $dps_deposit = $this->Front_end_select_model->select_dps_loan_info($query);
 
-//                        print_r($dps_deposit->result()); die;
-
+//     print_r($dps_deposit->result()); die;
+//        $no_row = $dps_deposit->num_rows();
         $dps = '';
         foreach($dps_deposit->result() as $row) {
 
