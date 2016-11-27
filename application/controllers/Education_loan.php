@@ -360,7 +360,7 @@ class Education_Loan extends CI_Controller {
         $data['title'] = "Loan Information";
         $this->load->view('admin/block/header',$data);
         $this->load->view('admin/block/left_nav');
-        $this->load->view('admin/home_loan/loan_list');
+        $this->load->view('admin/education/loan_list');
         $this->load->view('admin/block/footer');
     }
 
@@ -374,28 +374,30 @@ class Education_Loan extends CI_Controller {
 //            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
-            $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
-            $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
-            $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
-//            $this->form_validation->set_rules('txtApplicantType[]', ' Looking For ', 'trim|required');
-//            $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
-            $this->form_validation->set_rules('txtPersonalLoanUser[]', ' I Am', 'trim|required');
-            $this->form_validation->set_rules('txtSecurityRequired', 'Security Required ', 'trim|required');
-            $this->form_validation->set_rules('txtLoanShortDescription', 'Short Description', 'trim|required');
-            $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
-            $this->form_validation->set_rules('txtFeatures', 'Features ', 'trim|required');
+            $this->form_validation->set_rules('txtExpensesConsidered[]', ' Expenses Considered', 'trim|required');
+            $this->form_validation->set_rules('txtLoanPurpose[]', 'Loan Purpose ', 'trim|required');
+            $this->form_validation->set_rules('txtGracePeriod', 'Grace Period ', 'trim|required');
+            $this->form_validation->set_rules('txtMinEducationLoanTenure', 'Min Education Loan Tenure ', 'trim|required');
+            $this->form_validation->set_rules('txtMaxEducationLoanTenure', 'Max Education Loan Tenure ', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumLoanAmount', ' Minimum Loan Amount', 'trim|required|numeric');
+            $this->form_validation->set_rules('txtMaximumLonAmount', 'Maximum Lon Amount', 'trim|required|numeric');
+            $this->form_validation->set_rules('txtDownPayment', 'Down Payment ', 'trim|required|numeric');
+            $this->form_validation->set_rules('txtLoanShortDescription', 'Loan Short Description ', 'trim|required');
+            $this->form_validation->set_rules('txtLoanAgainstFDR', 'Loan Against FDR ', 'trim|required');
+            $this->form_validation->set_rules('txtProcessingFee', 'Processing Fee ', 'trim|required');
+            $this->form_validation->set_rules('txtEarlySettlementFee', 'Early Settlement Fee ', 'trim|required');
+            $this->form_validation->set_rules('txtPartialPaymentFee', 'Partial Payment Fee ', 'trim|required');
+            $this->form_validation->set_rules('txtPenaltyCharge', 'Penalty Charge ', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility ', 'trim|required');
-            $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
-//            $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
-            $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
+            $this->form_validation->set_rules('txtRequiredDocument', 'Requirements', 'trim|required');
 
-//            echo validation_errors('<div class="error">', '</div>');// die;
+            $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
 
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
                 $this->load->view('admin/block/header', $data);
                 $this->load->view('admin/block/left_nav');
-                $this->load->view('admin/personal_loan/edit_loan_information');
+                $this->load->view('admin/education/edit_loan_information');
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
@@ -405,6 +407,7 @@ class Education_Loan extends CI_Controller {
                     $fixed =1;
                 }
                 $is_non_bank =$this->input->post('is_non_bank');
+//                echo $is_non_bank; die;
                 $non_bank = 0;
                 if($is_non_bank == '1'){
                     $non_bank =1;
@@ -414,52 +417,70 @@ class Education_Loan extends CI_Controller {
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
                     'loan_type_id' => $this->input->post('txtLoanType'),
-                    'personal_loan_looking_for_id' => $this->input->post('txtLookingFor'),
-                    'personal_loan_name' => htmlentities($this->input->post('txtLoanName')),
+                    'loan_name' => htmlentities($this->input->post('txtLoanName')),
+                    'grace_period' => htmlentities($this->input->post('txtGracePeriod')),
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
                     'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
-                    'loan_short_description' => $this->input->post('txtLoanShortDescription'),
-                    'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
-                    'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
-                    'interest_rate_average' => htmlentities($this->input->post('txtInterestRateAverage')),
-                    'interest_rate_fixed' => htmlentities($this->input->post('txtInterestRateFixed')),
-                    'security_required' => $this->input->post('txtSecurityRequired'),
-                    'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
-                    'features' => $this->input->post('txtFeatures'),
-                    'eligibility_for_applying' => $this->input->post('txtEligibility'),
-                    'review' => $this->input->post('txtReview'),
-                    'is_fixed' => $fixed,
-                    'required_document' => $this->input->post('txtRequiredDocument'),
-//                    'downpayment' => $this->input->post('txtDownPayment'),
-                    'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
-                    'modified' => $date ,
-                    'modified_by'=>$this->session->userdata('admin_user_id')
-                );
-                /*$this->Common_model->table_name = 'personal_loan_info';
-                $last_insert_id = $this->Common_model->insert();*/
+                    'short_description' => htmlentities($this->input->post('txtLoanShortDescription')),
 
-                $this->Common_model->table_name = 'personal_loan_info';
-                $this->Common_model->where = array('id' => $this->input->post('txtPersonalLoanId'));
+
+                    'min_term' => $this->input->post('txtMinEducationLoanTenure'),
+                    'max_term' => $this->input->post('txtMaxEducationLoanTenure'),
+                    'loan_against_fdr' => htmlentities($this->input->post('txtLoanAgainstFDR')),
+                    'down_payment' => $this->input->post('txtDownPayment'),
+                    'processing_fee' => htmlentities($this->input->post('txtProcessingFee')),
+                    'early_settlement_fee' => htmlentities($this->input->post('txtEarlySettlementFee')),
+                    'partial_payment_fee' => htmlentities($this->input->post('txtPartialPaymentFee')),
+                    'penalty_charge' => htmlentities($this->input->post('txtPenaltyCharge')),
+                    'is_fixed' => $fixed,
+                    'fixed_interest' => htmlentities($this->input->post('txtInterestRateFixed')),
+                    'min_interest' => htmlentities($this->input->post('txtInterestRateMin')),
+                    'max_interest' => htmlentities($this->input->post('txtInterestRateMax')),
+                    'avg_interest' => htmlentities($this->input->post('txtInterestRateAverage')),
+                    'eligibility' => $this->input->post('txtEligibility'),
+                    'requirement' => $this->input->post('txtRequiredDocument'),
+                    'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
+                    'review' => $this->input->post('txtReview'),
+                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+
+
+                $this->Common_model->table_name = 'education_loan_info';
+                $this->Common_model->where = array('id' => $this->input->post('txtEducationLoanId'));
                 $this->Common_model->update();
 
-
-                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtPersonalLoanId"),$table='personal_loan_info_vs_i_am',$id_field='personal_loan_info_id');
-
-
-                $result='';
-                foreach($this->input->post('txtPersonalLoanUser[]') as $user){
+                $result=false;
+                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtEducationLoanId"),$table='education_loan_info_vs_expenses_considered',$id_field='loan_info_id');
+                foreach($this->input->post('txtExpensesConsidered[]') as $expenses_considered){
                     $this->Common_model->data = array(
-                        'personal_loan_info_id'=>$this->input->post("txtPersonalLoanId"),
-                        'personal_loan_i_am_id'=> $user
+                        'loan_info_id'=>$this->input->post("txtEducationLoanId"),
+                        'expenses_considered_id'=> $expenses_considered
                     );
-                    $this->Common_model->table_name = 'personal_loan_info_vs_i_am';
-                    $result = $this->Common_model->insert();
+                    $this->Common_model->table_name = 'education_loan_info_vs_expenses_considered';
+                    if($this->Common_model->insert()){
+                        $result = true;
+                    }
+//                    $result = $this->Common_model->insert();
+                }
+
+                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtEducationLoanId"),$table='education_loan_info_vs_loan_purpose',$id_field='loan_info_id');
+
+                foreach($this->input->post('txtLoanPurpose[]') as $purpose){
+                    $this->Common_model->data = array(
+                        'loan_info_id'=>$this->input->post("txtEducationLoanId"),
+                        'loan_purpose_id'=> $purpose
+                    );
+                    $this->Common_model->table_name = 'education_loan_info_vs_loan_purpose';
+                    if($this->Common_model->insert()){
+                        $result = true;
+                    }
                 }
 
                 if ($result) {
-                    redirect(base_url().'personal_loan/edit_loan_info/success');
+                    redirect(base_url().'education_loan/edit_loan_info/success');
                 } else {
-                    redirect(base_url().'personal_loan/edit_loan_info/error');
+                    redirect(base_url().'education_loan /edit_loan_info/error');
                 }
             }
         }else {

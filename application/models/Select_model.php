@@ -1153,8 +1153,9 @@ class Select_Model extends CI_Model
 
     public function select_education_loan_information()//To show Home loan list
     {
-        $sql="SELECT education_loan_info.id,education_loan_info.is_non_bank, education_loan_info.loan_name,education_loan_info.min_loan_amount,education_loan_info.max_loan_amount,education_loan_info.interest_rate_average,education_loan_info.is_fixed,education_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name,home_loan_looking_for.home_loan_looking_for FROM `home_loan_info` LEFT JOIN card_bank ON card_bank.id=home_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=education_loan_info.created_by LEFT JOIN education_loan_info_vs_loan_purpose ON education_loan_info_vs_loan_purpose.loan_info_id=education_loan_info.id  LEFT JOIN education_loan_info_vs_loan_purpose ON education_loan_info_vs_loan_purpose.loan_info_id=education_loan_info.id ORDER BY education_loan_info.id ASC";
+        $sql="SELECT education_loan_info.id,education_loan_info.is_non_bank, education_loan_info.loan_name,education_loan_info.min_loan_amount,education_loan_info.max_loan_amount,education_loan_info.`avg_interest`,education_loan_info.is_fixed,education_loan_info.`fixed_interest`,card_bank.bank_name,card_bank.bank_logo , general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name FROM education_loan_info LEFT JOIN card_bank ON card_bank.id=education_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=education_loan_info.created_by ORDER BY education_loan_info.id ASC";
         $query=$this->db->query($sql);
+//        print_r($query); die;
         $result="";
 
         if($query->num_rows() > 0)
@@ -1176,19 +1177,18 @@ class Select_Model extends CI_Model
                     $bank_logo = $row->bank_logo;
                 }
 
-                $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg)' : $row->interest_rate_fixed.' % (Fixed)';
+                $interest =($row->is_fixed =='0')? $row->avg_interest.' % (Avg)' : $row->fixed_interest.' % (Fixed)';
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
 					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
-					<td class="center">'.$row->home_loan_name.'</td>
+					<td class="center">'.$row->loan_name.'</td>
 					 <td class="center">'.$bank.'</td>
-					 <td class="center">'.$row->home_loan_looking_for.'</td>
 					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
 					 <td class="center"> '.$interest.'</td>
 					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
 
                 $result.='</td>
-                    <td><a href="'.base_url().'home_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'education_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

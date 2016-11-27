@@ -278,7 +278,9 @@
                 <li>
                     <a href="<?php echo base_url();?>education_loan/loan_info">Add Loan Info</a>
                 </li>
-
+                <li>
+                    <a href="<?php echo base_url();?>education_loan/loan_list/"><i class="fa fa-stack-overflow"></i>Loan Info List</a>
+                </li>
             </ul>
         </li>
         <li>
