@@ -66,4 +66,51 @@ class General extends CI_Controller {
             return $this->upload->data();
         }
     }
+
+    public function dbbackup($msg)
+    {
+
+        // --- Generate database backup--
+        $this->load->dbutil();
+
+        $prefs = array(
+            'format'      => 'zip',
+            'filename'    => 'finager_db_backup.sql'
+        );
+
+        $backup =& $this->dbutil->backup($prefs);
+
+        $db_name = 'finager_db_backup-on-'. date("Y-m-d-H-i-s") .'.zip';
+        $save = 'db_backup/'.$db_name;
+
+        $this->load->helper('file');
+
+        if(write_file($save, $backup)){
+            redirect(base_url().'general/db_backup/success');
+        }
+
+//        To download write file
+//        $this->load->helper('download');
+//        force_download($db_name, $backup);
+
+
+
+    }
+
+    function db_backup($msg='')
+    {
+        if ($msg == 'success') {
+            $data['feedback'] = '<div id="message"  class="text-center alert alert-success">Database backed up Successfully !!</div>';
+        } else if ($msg == 'error') {
+            $data['feedback'] = '<div id="message"  class=" text-center alert alert-danger">Problem to Insert !!</div>';
+        }
+
+        $data['title'] = "Finager:DB Backup";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/general/db_backup');
+        $this->load->view('admin/block/footer');
+
+    }
+
 }

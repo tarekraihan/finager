@@ -39,6 +39,9 @@
                     <li>
                         <a href="<?php echo base_url();?>general/non_bank">Add Non Bank Institution</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url();?>general/db_backup">Take Database Backup</a>
+                    </li>
 
                 </ul>
             </li>
