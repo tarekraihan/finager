@@ -259,6 +259,17 @@ class Select_Model extends CI_Model
         }
         return $option;
     }
+    function select_money_maximizer_your_benefit()
+    {
+        $sql="SELECT * FROM `money_maxi_choose_your_benefit`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtYourBenefit",$row->id).'>'.$row->your_benefit.' Times</option>';
+        }
+        return $option;
+    }
 
     function select_millionaire_i_am()
     {
@@ -709,6 +720,50 @@ class Select_Model extends CI_Model
 
                 $result.='</td>
                     <td><a href="'.base_url().'personal_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+
+    public function select_maximizer_deposit_information()//To show Home loan list
+    {
+        $sql="SELECT money_maxi_info.id,money_maxi_info.is_non_bank,money_maxi_info.deposit_name,money_maxi_info.credit_facility,money_maxi_choose_your_benefit.your_benefit,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `money_maxi_info`  LEFT JOIN card_bank ON card_bank.id=money_maxi_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=money_maxi_info.created_by INNER JOIN money_maxi_choose_your_benefit ON money_maxi_choose_your_benefit.id =money_maxi_info.choose_your_benefit_id ORDER BY money_maxi_info.id ASC";
+        $query=$this->db->query($sql);
+        $result="";
+
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $bank = "";
+                if($row->is_non_bank != 0){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank != 0){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
+
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
+					<td class="center">'.$row->deposit_name.'</td>
+					 <td class="center">'.$bank.'</td>
+					 <td class="center"> '.$row->your_benefit.' Times</td>
+					 <td class="center"> '.$row->credit_facility.' %</td>
+					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
+
+                $result.='</td>
+                    <td><a href="'.base_url().'money_maximizer/edit_deposit_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?deposit_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

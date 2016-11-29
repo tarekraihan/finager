@@ -287,6 +287,21 @@
             </ul>
         </li>
         <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-graduation-cap"></i> <span class="menu-item-parent"> Money Maximizer</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>money_maximizer/your_benefits">Add Your benefit</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>money_maximizer/add_deposit_info">Add Deposit Info</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>money_maximizer/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit Info List</a>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
             <ul>
                 <li>
