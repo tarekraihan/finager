@@ -35,7 +35,7 @@
 
     <!-- breadcrumb -->
     <ol class="breadcrumb">
-        <li>Deposit</li><li>Money Maximizer</li><li> Add Deposit Information</li>
+        <li>Deposit</li><li>Money Maximizer</li><li> Edit Deposit Information</li>
     </ol>
 </div>
 <!-- END RIBBON -->
@@ -49,7 +49,7 @@
             <i class="fa fa-table fa-fw "></i>
             Money Maximizer
                 <span>>
-                    Add Deposit Information
+                    Edit Deposit Information
                 </span>
         </h1>
     </div>
@@ -69,7 +69,7 @@
     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
         <header>
             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-            <h2>Add Deposit Information</h2>
+            <h2>Edit Deposit Information</h2>
 
         </header>
 
@@ -98,17 +98,12 @@
                             <div class="row">
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?><?php echo ($row['is_non_bank'] == '1') ? 'checked' : ''; ?> > Is Non Bank Institution ?
+                                        <input type="hidden" name="txtInfoId" value="<?php echo $row['id'];?>">
                                     </label>
                                 </section>
                                 <section class="col col-6" id="institution">
-                                    <label class="label">Bank Name</label>
-                                    <label class="select">
-                                        <select name="txtBankName" id="txtBankName">
-                                            <?php echo $this->Select_model->select_bank();?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtBankName');?></label>
+
                                 </section>
                             </div>
                             <div class="row">
