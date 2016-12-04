@@ -309,10 +309,13 @@
                 </li>
 
                 <li>
-                    <a href="<?php echo base_url();?>money_maximizer/add_deposit_info">Add Deposit Info</a>
+                    <a href="<?php echo base_url();?>debit_card/card_issuer">Add Card Issur</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>money_maximizer/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit Info List</a>
+                    <a href="<?php echo base_url();?>debit_card/i_want/">Add I want</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>debit_card/looking_for/">Add looking for</a>
                 </li>
             </ul>
         </li>
