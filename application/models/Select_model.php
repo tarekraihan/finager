@@ -525,6 +525,55 @@ class Select_Model extends CI_Model
         }
         return $option;
     }
+    function debit_card_choose_account()
+    {
+        $sql="SELECT * FROM `debit_card_choose_account`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtChooseAccount",$row->id).'>'.$row->account_name.'</option>';
+        }
+        return $option;
+    }
+
+
+    function debit_card_looking_for()
+    {
+        $sql="SELECT * FROM `debit_card_looking_for`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtLookingFor",$row->id).'>'.$row->looking_for.'</option>';
+        }
+        return $option;
+    }
+
+
+    function debit_card_i_want()
+    {
+        $sql="SELECT * FROM `debit_card_i_want`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtIWant",$row->id).'>'.$row->i_want.'</option>';
+        }
+        return $option;
+    }
+
+    function debit_card_issuer()
+    {
+        $sql="SELECT * FROM `debit_card_issuer`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtCardIssuer",$row->id).'>'.$row->card_issuer_name.'</option>';
+        }
+        return $option;
+    }
 
     public function Select_Sub_Project()
     {
@@ -558,6 +607,37 @@ class Select_Model extends CI_Model
 
                 $result.='</td>
                     <td><a href="'. base_url().'card/edit_card_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?fees_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+    public function select_debit_card_info_list()//To show Card Info list
+    {
+        $sql="SELECT debit_card_info.id,debit_card_info.bank_id,debit_card_info.annual_fee,debit_card_info.card_name,card_bank.bank_name,card_bank.bank_logo,debit_card_choose_account.account_name,debit_card_issuer.card_issuer_name,debit_card_i_want.i_want,debit_card_looking_for.`looking_for`,tbl_admin_user.first_name,tbl_admin_user.last_name FROM `debit_card_info`Inner Join card_bank ON card_bank.id=debit_card_info.bank_id INNER JOIN debit_card_choose_account ON debit_card_choose_account.id = debit_card_info.choose_account_id INNER JOIN debit_card_issuer ON debit_card_issuer.id = debit_card_info.card_issuer_id INNER JOIN debit_card_i_want ON debit_card_i_want.id = debit_card_info.i_want_id INNER JOIN debit_card_looking_for ON debit_card_looking_for.id = debit_card_info.looking_for_id INNER JOIN tbl_admin_user ON tbl_admin_user.id= debit_card_info.created_by";
+        $query=$this->db->query($sql);
+        $result="";
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="text-center"><a href="'. base_url().'debit_card/edit_card_info?id='.$row->id.'" class="edit">'.$row->id.'</a></td>
+					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" style="height:auto; width:80px;"/></td>
+					<td class="center">'.$row->card_name.'</td>
+					 <td class="center">'.$row->bank_name.'</td>
+					 <td class="center">'.$row->account_name.'</td>
+					 <td class="center">'.$row->card_issuer_name.'</td>
+					 <td class="center">'.$row->i_want.'</td>
+					 <td class="center">'.$row->looking_for.'</td>
+					 <td class="center">'.$row->annual_fee.'</td>
+					 <td class="center">'.$row->first_name.' '.$row->last_name. '</td>';
+
+                $result.='</td>
+                    <td><a href="'. base_url().'debit_card/edit_card_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?card_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 					</tr>';
                 $sl++;
             }

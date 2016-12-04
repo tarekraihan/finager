@@ -317,6 +317,12 @@
                 <li>
                     <a href="<?php echo base_url();?>debit_card/looking_for/">Add looking for</a>
                 </li>
+                <li>
+                    <a href="<?php echo base_url();?>debit_card/add_card_info/">Add Card Info</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>debit_card/card_info_list/">Card List</a>
+                </li>
             </ul>
         </li>
         <li>
