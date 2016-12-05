@@ -138,9 +138,9 @@ class Money_maximizer extends CI_Controller {
                 $result= $this->Common_model->insert();
 
                 if ($result) {
-                    redirect(base_url().'home_loan/loan_info/success');
+                    redirect(base_url().'money_maximizer/add_deposit_info/success');
                 } else {
-                    redirect(base_url().'home_loan/loan_info/error');
+                    redirect(base_url().'money_maximizer/add_deposit_info/error');
                 }
             }
         }else {
