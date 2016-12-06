@@ -1265,6 +1265,35 @@ class Select_Model extends CI_Model
 
     }
 
+
+    function Select_monthly_benefit_info_by_id($id){
+        if(!empty($id)){
+            $sql="SELECT * FROM monthly_benefit_info WHERE monthly_benefit_info.id = $id";
+            $query=$this->db->query($sql);
+            return $query->row_array();
+        }
+
+    }
+
+
+    function Select_money_maximizer_info_by_id($id){
+        if(!empty($id)){
+            $sql="SELECT *  FROM money_maxi_info WHERE money_maxi_info.id = $id";
+            $query=$this->db->query($sql);
+            return $query->row_array();
+        }
+
+    }
+
+    function Select_debit_card_info_by_id($id){
+        if(!empty($id)){
+            $sql="SELECT *  FROM debit_card_info WHERE debit_card_info.id = $id";
+            $query=$this->db->query($sql);
+            return $query->row_array();
+        }
+
+    }
+
     function Select_millionaire_tenure_by_id($id){
         if(!empty($id)){
             $sql="SELECT `maturity_amount` FROM `millionaire_maturity_amount` WHERE id = $id";

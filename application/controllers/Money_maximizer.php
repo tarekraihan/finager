@@ -156,48 +156,30 @@ class Money_maximizer extends CI_Controller {
         $this->load->view('admin/block/footer');
     }
 
-    public function edit_loan_info($msg=''){
+    public function edit_deposit_info($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
-                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Update !!</div>';
             } else if ($msg == 'error') {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 //            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
-            $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
-            $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
-            $this->form_validation->set_rules('txtExpensesConsidered[]', ' Expenses Considered', 'trim|required');
-            $this->form_validation->set_rules('txtLoanPurpose[]', 'Loan Purpose ', 'trim|required');
-            $this->form_validation->set_rules('txtGracePeriod', 'Grace Period ', 'trim|required');
-            $this->form_validation->set_rules('txtMinEducationLoanTenure', 'Min Education Loan Tenure ', 'trim|required');
-            $this->form_validation->set_rules('txtMaxEducationLoanTenure', 'Max Education Loan Tenure ', 'trim|required');
-            $this->form_validation->set_rules('txtMinimumLoanAmount', ' Minimum Loan Amount', 'trim|required|numeric');
-            $this->form_validation->set_rules('txtMaximumLonAmount', 'Maximum Lon Amount', 'trim|required|numeric');
-            $this->form_validation->set_rules('txtDownPayment', 'Down Payment ', 'trim|required|numeric');
-            $this->form_validation->set_rules('txtLoanShortDescription', 'Loan Short Description ', 'trim|required');
-            $this->form_validation->set_rules('txtLoanAgainstFDR', 'Loan Against FDR ', 'trim|required');
-            $this->form_validation->set_rules('txtProcessingFee', 'Processing Fee ', 'trim|required');
-            $this->form_validation->set_rules('txtEarlySettlementFee', 'Early Settlement Fee ', 'trim|required');
-            $this->form_validation->set_rules('txtPartialPaymentFee', 'Partial Payment Fee ', 'trim|required');
-            $this->form_validation->set_rules('txtPenaltyCharge', 'Penalty Charge ', 'trim|required');
-            $this->form_validation->set_rules('txtEligibility', 'Eligibility ', 'trim|required');
-            $this->form_validation->set_rules('txtRequiredDocument', 'Requirements', 'trim|required');
-
-            $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
+            $this->form_validation->set_rules('txtYourBenefit', 'Your Benefit', 'trim|required');
+            $this->form_validation->set_rules('txtLoanFacility', 'Credit Facility', 'trim|required');
+            $this->form_validation->set_rules('txtDurationOfBenefit', 'Duration Of Benefit ', 'trim|required');
+            $this->form_validation->set_rules('txtAvailableFeatures', 'Available Features', 'trim|required');
+            $this->form_validation->set_rules('txtRequiredDocument', 'Requirement', 'trim|required');
+            $this->form_validation->set_rules('txtTermsAndConditions', 'Terms And Conditions', 'trim|required');
 
             if ($this->form_validation->run() == FALSE) {
-                $data['title'] = "Finager - Loan Information";
+                $data['title'] = "Finager -Edit Information";
                 $this->load->view('admin/block/header', $data);
                 $this->load->view('admin/block/left_nav');
-                $this->load->view('admin/education/edit_loan_information');
+                $this->load->view('admin/money_maximizer/edit_deposit_info');
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $is_fixed =$this->input->post('is_fixed');
-                $fixed = 0;
-                if($is_fixed == 'fixed'){
-                    $fixed =1;
-                }
+
                 $is_non_bank =$this->input->post('is_non_bank');
 //                echo $is_non_bank; die;
                 $non_bank = 0;
@@ -208,71 +190,28 @@ class Money_maximizer extends CI_Controller {
                     'bank_id' => $this->input->post('txtBankName'),
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
-                    'loan_type_id' => $this->input->post('txtLoanType'),
-                    'loan_name' => htmlentities($this->input->post('txtLoanName')),
-                    'grace_period' => htmlentities($this->input->post('txtGracePeriod')),
-                    'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
-                    'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
-                    'short_description' => htmlentities($this->input->post('txtLoanShortDescription')),
-
-
-                    'min_term' => $this->input->post('txtMinEducationLoanTenure'),
-                    'max_term' => $this->input->post('txtMaxEducationLoanTenure'),
-                    'loan_against_fdr' => htmlentities($this->input->post('txtLoanAgainstFDR')),
-                    'down_payment' => $this->input->post('txtDownPayment'),
-                    'processing_fee' => htmlentities($this->input->post('txtProcessingFee')),
-                    'early_settlement_fee' => htmlentities($this->input->post('txtEarlySettlementFee')),
-                    'partial_payment_fee' => htmlentities($this->input->post('txtPartialPaymentFee')),
-                    'penalty_charge' => htmlentities($this->input->post('txtPenaltyCharge')),
-                    'is_fixed' => $fixed,
-                    'fixed_interest' => htmlentities($this->input->post('txtInterestRateFixed')),
-                    'min_interest' => htmlentities($this->input->post('txtInterestRateMin')),
-                    'max_interest' => htmlentities($this->input->post('txtInterestRateMax')),
-                    'avg_interest' => htmlentities($this->input->post('txtInterestRateAverage')),
-                    'eligibility' => $this->input->post('txtEligibility'),
+                    'deposit_name' => htmlentities($this->input->post('txtDepositName')),
+                    'choose_your_benefit_id' => $this->input->post('txtYourBenefit'),
+                    'credit_facility' => $this->input->post('txtLoanFacility'),
+                    'duration_of_benefit' => $this->input->post('txtDurationOfBenefit'),
                     'requirement' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
+                    'features' => $this->input->post('txtAvailableFeatures'),
                     'review' => $this->input->post('txtReview'),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
 
 
-                $this->Common_model->table_name = 'education_loan_info';
-                $this->Common_model->where = array('id' => $this->input->post('txtEducationLoanId'));
-                $this->Common_model->update();
+                $this->Common_model->table_name = 'money_maxi_info';
+                $this->Common_model->where = array('id' => $this->input->post('txtDepositId'));
+                $result =$this->Common_model->update();
 
-                $result=false;
-                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtEducationLoanId"),$table='education_loan_info_vs_expenses_considered',$id_field='loan_info_id');
-                foreach($this->input->post('txtExpensesConsidered[]') as $expenses_considered){
-                    $this->Common_model->data = array(
-                        'loan_info_id'=>$this->input->post("txtEducationLoanId"),
-                        'expenses_considered_id'=> $expenses_considered
-                    );
-                    $this->Common_model->table_name = 'education_loan_info_vs_expenses_considered';
-                    if($this->Common_model->insert()){
-                        $result = true;
-                    }
-//                    $result = $this->Common_model->insert();
-                }
-
-                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtEducationLoanId"),$table='education_loan_info_vs_loan_purpose',$id_field='loan_info_id');
-
-                foreach($this->input->post('txtLoanPurpose[]') as $purpose){
-                    $this->Common_model->data = array(
-                        'loan_info_id'=>$this->input->post("txtEducationLoanId"),
-                        'loan_purpose_id'=> $purpose
-                    );
-                    $this->Common_model->table_name = 'education_loan_info_vs_loan_purpose';
-                    if($this->Common_model->insert()){
-                        $result = true;
-                    }
-                }
 
                 if ($result) {
-                    redirect(base_url().'education_loan/edit_loan_info/success');
+                    redirect(base_url().'money_maximizer/edit_deposit_info/success');
                 } else {
-                    redirect(base_url().'education_loan /edit_loan_info/error');
+                    redirect(base_url().'money_maximizer /edit_deposit_info/error');
                 }
             }
         }else {

@@ -161,4 +161,73 @@ class Monthly_benefit extends CI_Controller {
         $this->load->view('admin/block/footer');
     }
 
+
+
+    public function edit_deposit_info($msg=''){
+        if ($this->session->userdata('email_address')) {
+            if ($msg == 'success') {
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
+            }
+
+            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
+            $this->form_validation->set_rules('txtTenure', 'Tenure', 'trim|required');
+            $this->form_validation->set_rules('txtDepositName', 'Deposit Name', 'trim|required');
+            $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
+            $this->form_validation->set_rules('txtDepositAmount', 'Deposit Amount ', 'trim|required');
+            $this->form_validation->set_rules('txtBenefitAmount', 'Benefit Amount', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumAmount', 'Minimum Amount', 'trim');
+            $this->form_validation->set_rules('txtMaximumAmount', 'Maximum Amount', 'trim');
+            $this->form_validation->set_rules('txtAvailableFeatures', 'Features', 'trim|required');
+            $this->form_validation->set_rules('txtRequiredDocument', 'Requirement', 'trim|required');
+            $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
+            $this->form_validation->set_rules('txtTermsAndConditions', 'Terms And Conditions', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $data['title'] = "Finager - Deposit Information";
+                $this->load->view('admin/block/header', $data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/monthly_benefit/edit_deposit_info');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $benefit_rate = ($this->input->post('txtBenefitAmount') / $this->input->post('txtDepositAmount') );
+
+                $this->Common_model->data = array(
+                    'bank_id' => $this->input->post('txtBankName'),
+                    'tenure_id' => $this->input->post('txtTenure'),
+                    'deposit_amount' => htmlentities($this->input->post('txtDepositAmount')),
+                    'benefit_amount' => htmlentities($this->input->post('txtBenefitAmount')),
+                    'benefit_rate' => $benefit_rate,
+                    'loan_facility' => htmlentities($this->input->post('txtLoanFacility')),
+                    'deposit_name' => htmlentities($this->input->post('txtDepositName')),
+                    'min_amount' => htmlentities($this->input->post('txtMinimumAmount')),
+                    'max_amount' => htmlentities($this->input->post('txtMaximumAmount')),
+                    'features' => $this->input->post('txtAvailableFeatures'),
+                    'eligibility' => $this->input->post('txtEligibility'),
+                    'requirement' => $this->input->post('txtRequiredDocument'),
+                    'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
+                    'review' => $this->input->post('txtReview'),
+                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+
+                $this->Common_model->table_name = 'monthly_benefit_info';
+                $this->Common_model->where = array('id' => $this->input->post('txtDepositId'));
+                $result = $this->Common_model->update();
+
+
+                if ($result) {
+                    redirect(base_url().'monthly_benefit/edit_deposit_info/success');
+                } else {
+                    redirect(base_url().'monthly_benefit/edit_deposit_info/error');
+                }
+            }
+        }else {
+            redirect(base_url().'backdoor');
+        }
+    }
+
+
 }
