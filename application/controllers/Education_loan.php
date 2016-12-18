@@ -262,6 +262,7 @@ class Education_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtPartialPaymentFee', 'Partial Payment Fee ', 'trim|required');
             $this->form_validation->set_rules('txtPenaltyCharge', 'Penalty Charge ', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility ', 'trim|required');
+            $this->form_validation->set_rules('txtFeature', 'Feature ', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Requirements', 'trim|required');
 
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
@@ -295,8 +296,6 @@ class Education_Loan extends CI_Controller {
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
                     'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
                     'short_description' => htmlentities($this->input->post('txtLoanShortDescription')),
-
-
                     'min_term' => $this->input->post('txtMinEducationLoanTenure'),
                     'max_term' => $this->input->post('txtMaxEducationLoanTenure'),
                     'loan_against_fdr' => htmlentities($this->input->post('txtLoanAgainstFDR')),
@@ -311,6 +310,7 @@ class Education_Loan extends CI_Controller {
                     'max_interest' => htmlentities($this->input->post('txtInterestRateMax')),
                     'avg_interest' => htmlentities($this->input->post('txtInterestRateAverage')),
                     'eligibility' => $this->input->post('txtEligibility'),
+                    'feature' => $this->input->post('txtFeature'),
                     'requirement' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'review' => $this->input->post('txtReview'),
@@ -389,6 +389,7 @@ class Education_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtPartialPaymentFee', 'Partial Payment Fee ', 'trim|required');
             $this->form_validation->set_rules('txtPenaltyCharge', 'Penalty Charge ', 'trim|required');
             $this->form_validation->set_rules('txtEligibility', 'Eligibility ', 'trim|required');
+            $this->form_validation->set_rules('txtFeature', 'Feature ', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Requirements', 'trim|required');
 
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
@@ -422,8 +423,6 @@ class Education_Loan extends CI_Controller {
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
                     'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
                     'short_description' => htmlentities($this->input->post('txtLoanShortDescription')),
-
-
                     'min_term' => $this->input->post('txtMinEducationLoanTenure'),
                     'max_term' => $this->input->post('txtMaxEducationLoanTenure'),
                     'loan_against_fdr' => htmlentities($this->input->post('txtLoanAgainstFDR')),
@@ -438,6 +437,7 @@ class Education_Loan extends CI_Controller {
                     'max_interest' => htmlentities($this->input->post('txtInterestRateMax')),
                     'avg_interest' => htmlentities($this->input->post('txtInterestRateAverage')),
                     'eligibility' => $this->input->post('txtEligibility'),
+                    'feature' => $this->input->post('txtFeature'),
                     'requirement' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'review' => $this->input->post('txtReview'),

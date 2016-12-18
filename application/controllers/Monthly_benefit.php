@@ -191,7 +191,7 @@ class Monthly_benefit extends CI_Controller {
                 $this->load->view('admin/monthly_benefit/edit_deposit_info');
                 $this->load->view('admin/block/footer');
             }else{
-                $date = date('Y-m-d h:i:s');
+                 $date = date('Y-m-d h:i:s');
                 $benefit_rate = ($this->input->post('txtBenefitAmount') / $this->input->post('txtDepositAmount') );
 
                 $this->Common_model->data = array(
