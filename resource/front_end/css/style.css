@@ -687,7 +687,9 @@ body {
 
 /*for home loan */
 .home_loan_img{
-    float:right;
+    float: right;
+    max-width: 175px;
+    border: 1px solid #E1E1E1;
 }
 .full-wrapper{
     border:1px solid gray;

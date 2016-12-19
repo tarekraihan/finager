@@ -405,7 +405,7 @@
                 var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
                 var  formData = $(this).data();
                 var home_id = "home_id="+formData.home_id;
-                alert(home_id);
+                //alert(home_id);
 
                 setTimeout(function(){
                     $.ajax
