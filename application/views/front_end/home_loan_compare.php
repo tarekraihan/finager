@@ -1,3 +1,31 @@
+<pre>
+    <?php
+//		print_r($this->session->userdata());
+	$id = $this->session->userdata('first_home_loan') ;
+	$result = $this->Front_end_select_model->select_home_loan_details($id);
+	$first_home_loan = $result->row();
+
+	$id1 = $this->session->userdata('second_home_loan') ;
+	$result1 = $this->Front_end_select_model->select_home_loan_details($id1);
+	$second_home_loan = $result1->row();
+
+	print_r($first_home_loan);
+
+//	echo $first_home_loan->loan_short_description;
+
+	$first_bank_name = "";
+	$first_bank_logo = "";
+	if($first_home_loan->is_non_bank == 0){
+		$first_bank_name = $first_home_loan->non_bank_name;
+		$first_bank_logo = $first_home_loan->non_bank_logo;
+	}else{
+		$first_bank_name = $first_home_loan->bank_name;
+		$first_bank_logo = $first_home_loan->bank_logo;
+	}
+
+	?>
+</pre>
+
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
@@ -257,7 +285,7 @@
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
 							<td class="abc"><b> Bank Name </b></td>
-							<td> Brac Bank Ltd </td>
+							<td> <?php echo $first_bank_name; ?> </td>
 						</tr>
 						
 						<tr>

@@ -355,136 +355,6 @@
     });
 
 </script>
-
-<!--
-<script>
-
-    $(document).on('click','.add-to-compare',function(){
-
-
-        $("#hiden_div").animate({bottom:'0px'});
-
-        $('html, body').animate({
-
-        });
-
-        if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
-            alert("Sorry");
-        }else{
-            if($(".cart_anchor").hasClass("img_active")){
-                //Select item image and pass to the function
-                var itemImg = $(this).parents().siblings().find('.home_loan_logo').eq(0);
-                flyToElement($(itemImg), $('.cart_anchor01'));
-                $(".cart_anchor01").addClass("img_active");
-                $(this).addClass("hidden");
-
-                var itemImg = $(this).parents().siblings().find('.home_loan_logo').eq(0);
-                var  formData = $(this).data();
-                var home_id= "home_id="+formData.home_id;
-                alert(1);
-                setTimeout(function(){
-                    $.ajax
-                    ({
-                        type: "POST",
-                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
-                        data: home_id,
-                        success: function(msg)
-                        {
-                            $(".cart_anchor01").html(msg);
-                        }
-                    });
-                },850);
-
-            }
-            else{
-                //Select item image and pass to the function
-                var itemImg = $(this).parents().siblings().find('.home_loan_logo').eq(0);
-                flyToElement($(itemImg), $('.cart_anchor'));
-
-                $(".cart_anchor").addClass("img_active");
-                $(this).addClass("hidden");
-
-                var itemImg = $(this).parents().siblings().find('.home_loan_logo').eq(0);
-                var  formData = $(this).data();
-                var home_id = "home_id="+formData.home_id;
-                alert(2);
-
-                setTimeout(function(){
-                    $.ajax
-                    ({
-                        type: "POST",
-                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
-                        data: home_id,
-                        success: function(msg)
-                        {
-                            $(".cart_anchor").html(msg);
-                        }
-                    });
-                },850);
-
-            }
-        }
-
-    });
-
-    $(document).on('click','.compare-cross-btn',function(){
-
-        var collected_home_loan = $(this).prev().attr("data-home_id");
-
-        $(".full-card").each(function(){
-            var obj=$(this).children().find('.add-to-compare');
-            var index=$(this).children().find('.add-to-compare').attr('data-home_id');
-            if(parseInt(collected_home_loan)==parseInt(index)){
-                obj.removeClass("hidden");
-            }
-
-        });
-
-        $(this).parent(".cart_anchor").removeClass("img_active");
-        $(this).parent(".cart_anchor").html('');
-        $(this).addClass("hidden");
-
-    });
-
-
-    $(document).on('click','.compare-cross-btn',function(){
-
-        $(this).parent(".cart_anchor01").removeClass("img_active");
-        $(this).parent(".cart_anchor01").html('');
-    });
-
-    $('#go_compare').click(function(){
-        //alert(1);
-        var  formData = $('.cart_anchor').children('img').data();
-        var card_id1 = "card_id1="+formData.card_id;
-
-        var  formData = $('.cart_anchor01').children('img').data();
-        var card_id2 = "&card_id2="+formData.card_id;
-
-        var card_ids = card_id1+card_id2;
-        if(card_id1 != '' && card_id2 != ''){
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>card/ajax_go_card_compare_page",
-                data: card_ids,
-                success: function(msg)
-                {
-                    if(msg != 'error'){
-
-                        window.location.href = "<?php echo base_url();?>en/card_compare";
-                    }
-                }
-            });
-        }else{
-            alert("Please add 2 card for compare ! ")
-        }
-
-    });
-
-</script>
--->
-
 <script>
 
     $(document).on('click','.add-to-compare',function(){
@@ -508,14 +378,14 @@
 
                // var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
                 var  formData = $(this).data();
-                var card_id = "card_id="+formData.card_id;
+                var home_id = "home_id="+formData.home_id;
 
                 setTimeout(function(){
                     $.ajax
                     ({
                         type: "POST",
                         url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
-                        data: card_id,
+                        data: home_id,
                         success: function(msg)
                         {
                             $(".cart_anchor01").html(msg);
@@ -534,14 +404,15 @@
 
                 var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
                 var  formData = $(this).data();
-                var card_id = "card_id="+formData.card_id;
+                var home_id = "home_id="+formData.home_id;
+                alert(home_id);
 
                 setTimeout(function(){
                     $.ajax
                     ({
                         type: "POST",
                         url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
-                        data: card_id,
+                        data: home_id,
                         success: function(msg)
                         {
                             $(".cart_anchor").html(msg);
@@ -556,11 +427,11 @@
 
     $(document).on('click','.compare-cross-btn',function(){
 
-        var collected_card = $(this).prev().attr("data-card_id");
+        var collected_card = $(this).prev().attr("data-home_id");
 
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
-            var index=$(this).children().find('.add-to-compare').attr('data-card_id');
+            var index=$(this).children().find('.add-to-compare').attr('data-home_id');
             if(parseInt(collected_card)==parseInt(index)){
                 obj.removeClass("hidden");
             }
@@ -583,23 +454,23 @@
     $('#go_compare').click(function(){
         //alert(1);
         var  formData = $('.cart_anchor').children('img').data();
-        var card_id1 = "card_id1="+formData.card_id;
+        var home_id1 = "home_id1="+formData.home_id;
 
         var  formData = $('.cart_anchor01').children('img').data();
-        var card_id2 = "&card_id2="+formData.card_id;
+        var home_id2 = "&home_id2="+formData.home_id;
 
-        var card_ids = card_id1+card_id2;
-        if(card_id1 != '' && card_id2 != ''){
+        var home_ids = home_id1+home_id2;
+        if(home_id1 != '' && home_id2 != ''){
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>card/ajax_go_card_compare_page",
-                data: card_ids,
+                url: "<?php echo base_url();?>home_loan/ajax_go_compare_page",
+                data: home_ids,
                 success: function(msg)
                 {
                     if(msg != 'error'){
 
-                        window.location.href = "<?php echo base_url();?>en/card_compare";
+                        window.location.href = "<?php echo base_url();?>en/home_loan_compare";
                     }
                 }
             });
@@ -607,7 +478,7 @@
             alert("Please add 2 card for compare ! ")
         }
 
-    });
 
+    });
 </script>
 
