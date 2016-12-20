@@ -254,7 +254,7 @@ class Education_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtMaxEducationLoanTenure', 'Max Education Loan Tenure ', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', ' Minimum Loan Amount', 'trim|required|numeric');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Maximum Lon Amount', 'trim|required|numeric');
-            $this->form_validation->set_rules('txtDownPayment', 'Down Payment ', 'trim|required|numeric');
+            $this->form_validation->set_rules('txtDownPayment', 'Down Payment ', 'trim|required');
             $this->form_validation->set_rules('txtLoanShortDescription', 'Loan Short Description ', 'trim|required');
             $this->form_validation->set_rules('txtLoanAgainstFDR', 'Loan Against FDR ', 'trim|required');
             $this->form_validation->set_rules('txtProcessingFee', 'Processing Fee ', 'trim|required');
@@ -381,7 +381,7 @@ class Education_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtMaxEducationLoanTenure', 'Max Education Loan Tenure ', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', ' Minimum Loan Amount', 'trim|required|numeric');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Maximum Lon Amount', 'trim|required|numeric');
-            $this->form_validation->set_rules('txtDownPayment', 'Down Payment ', 'trim|required|numeric');
+            $this->form_validation->set_rules('txtDownPayment', 'Down Payment ', 'trim|required');
             $this->form_validation->set_rules('txtLoanShortDescription', 'Loan Short Description ', 'trim|required');
             $this->form_validation->set_rules('txtLoanAgainstFDR', 'Loan Against FDR ', 'trim|required');
             $this->form_validation->set_rules('txtProcessingFee', 'Processing Fee ', 'trim|required');
