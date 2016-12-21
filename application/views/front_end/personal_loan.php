@@ -391,4 +391,130 @@
 
     });
 
+    $(document).on('click','.add-to-compare',function(){
+
+        $("#hiden_div").animate({bottom:'0px'});
+        //$("#hiden_div").addClass("hiddenHalfDown");
+
+        $('html, body').animate({
+
+        });
+
+        if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
+            alert("Sorry");
+        }else{
+            if($(".cart_anchor").hasClass("img_active")){
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('.full-card').find('.selected_card').eq(0);
+                flyToElement($(itemImg), $('.cart_anchor01'));
+                $(".cart_anchor01").addClass("img_active");
+                $(this).addClass("hidden");
+
+                // var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var  formData = $(this).data();
+                var loan_id = "loan_id="+formData.loan_id;
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
+                        data: loan_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor01").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+            else{
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                flyToElement($(itemImg), $('.cart_anchor'));
+
+                $(".cart_anchor").addClass("img_active");
+                $(this).addClass("hidden");
+
+                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var  formData = $(this).data();
+                var loan_id = "loan_id="+formData.loan_id;
+                alert(home_id);
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
+                        data: loan_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+        }
+
+    });
+
+
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var collected_card = $(this).prev().attr("data-loan_id");
+
+        $(".full-card").each(function(){
+            var obj=$(this).children().find('.add-to-compare');
+            var index=$(this).children().find('.add-to-compare').attr('data-loan_id');
+            if(parseInt(collected_card)==parseInt(index)){
+                obj.removeClass("hidden");
+            }
+
+        });
+
+        $(this).parent(".cart_anchor").removeClass("img_active");
+        $(this).parent(".cart_anchor").html('');
+        $(this).addClass("hidden");
+
+    });
+
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        $(this).parent(".cart_anchor01").removeClass("img_active");
+        $(this).parent(".cart_anchor01").html('');
+    });
+
+    $('#go_compare').click(function(){
+        //alert(1);
+        var  formData = $('.cart_anchor').children('img').data();
+        var loan_id1 = "home_id1="+formData.loan_id;
+
+        var  formData = $('.cart_anchor01').children('img').data();
+        var loan_id2 = "&home_id2="+formData.loan_id;
+
+        var loan_ids = loan_id1+loan_id2;
+        if(loan_id1 != '' && loan_id2 != ''){
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>home_loan/ajax_go_compare_page",
+                data: loan_ids,
+                success: function(msg)
+                {
+                    if(msg != 'error'){
+
+                        window.location.href = "<?php echo base_url();?>en/home_loan_compare";
+                    }
+                }
+            });
+        }else{
+            alert("Please add 2 card for compare ! ")
+        }
+
+
+    });
+
 </script>
