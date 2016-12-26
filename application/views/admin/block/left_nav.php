@@ -341,6 +341,21 @@
             </ul>
         </li>
         <li>
+            <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Current Account</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>current_account/i_am">Add I Am</a>
+                </li>
+
+                <li>
+                    <a href="<?php echo base_url();?>monthly_benefit/add_deposit_info">Add Deposit Info</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>monthly_benefit/deposit_list/">Deposit List</a>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
             <ul>
                 <li>
