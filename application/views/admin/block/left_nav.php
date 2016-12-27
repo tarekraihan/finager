@@ -348,10 +348,10 @@
                 </li>
 
                 <li>
-                    <a href="<?php echo base_url();?>monthly_benefit/add_deposit_info">Add Deposit Info</a>
+                    <a href="<?php echo base_url();?>current_account/account_info">Add Account Info</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>monthly_benefit/deposit_list/">Deposit List</a>
+                    <a href="<?php echo base_url();?>current_account/account_list/">Account List</a>
                 </li>
             </ul>
         </li>

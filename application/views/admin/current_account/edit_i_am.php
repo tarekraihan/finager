@@ -36,7 +36,7 @@ if(isset($_GET['id'])){
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Deposit</li><li>FDR</li><li>Update I Am</li>
+            <li>Accounts</li><li>Current Account</li><li>Update I Am</li>
         </ol>
         <!-- end breadcrumb -->
     </div>
@@ -49,14 +49,14 @@ if(isset($_GET['id'])){
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
-                  FDR
+                  Current Account
 							<span>> 
 								Update I Am
 							</span>
                 </h1>
             </div>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
-                <a href="<?php echo base_url();?>fdr/i_am/" class="btn btn-primary pull-right">Add +</a>
+                <a href="<?php echo base_url();?>current_account/i_am/" class="btn btn-primary pull-right">Add +</a>
             </div>
 
         </div>
@@ -91,7 +91,7 @@ if(isset($_GET['id'])){
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>fdr/edit_i_am" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>current_account/edit_i_am" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -178,7 +178,7 @@ if(isset($_GET['id'])){
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
                                             <td ><?php echo $row->i_am;?></td>
-                                            <td><a href="<?php echo base_url(); ?>fdr/edit_i_am?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?i_am_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td><a href="<?php echo base_url(); ?>current_account/edit_i_am?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?i_am_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;

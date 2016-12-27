@@ -22,7 +22,7 @@ if(isset($_GET['i_am_id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li></li><li>Current Account</li><li> I Am</li>
+            <li>Account</li><li>Current Account</li><li> I Am</li>
         </ol>
         <!-- end breadcrumb -->
     </div>
@@ -35,7 +35,7 @@ if(isset($_GET['i_am_id']))
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
-                            FDR
+                    Current Account
 							<span>> 
 								I Am
 							</span>
@@ -74,7 +74,7 @@ if(isset($_GET['i_am_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form  method="post" action="<?php echo base_url();?>fdr/i_am" class="smart-form" novalidate="novalidate">
+                                <form  method="post" action="<?php echo base_url();?>current_account/i_am" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
                                     if(isset($feedback)){
@@ -143,7 +143,7 @@ if(isset($_GET['i_am_id']))
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">No.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> FDR I Am</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Current Account I Am</th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -152,7 +152,7 @@ if(isset($_GET['i_am_id']))
 
                                     <?php
                                     $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'fdr_i_am';
+                                    $this->Common_model->table_name = 'current_account_i_am';
                                     $query=$this->Common_model->select_all();
                                     $sl=1;
                                     foreach ($query->result() as $row)
@@ -161,7 +161,7 @@ if(isset($_GET['i_am_id']))
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
                                             <td ><?php echo $row->i_am;?></td>
-                                            <td><a href="<?php echo base_url(); ?>fdr/edit_i_am?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?i_am_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td><a href="<?php echo base_url(); ?>current_account/edit_i_am?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?i_am_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;

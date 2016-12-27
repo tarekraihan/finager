@@ -295,6 +295,18 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function select_current_account_i_am()
+    {
+        $sql="SELECT * FROM `current_account_i_am`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtIAm",$row->id).'>'.$row->i_am.'</option>';
+        }
+        return $option;
+    }
+
     function select_fdr_tenure()
     {
         $sql="SELECT * FROM `fdr_tenure`";
@@ -1248,6 +1260,51 @@ class Select_Model extends CI_Model
 
                 $result.='</td>
                     <td><a href="'.base_url().'millionaire/edit_millionaire_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?info_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+    public function get_current_account_info(){
+        $sql = "SELECT current_account_info.id,current_account_info.`opening_balance`,current_account_info.`total_branch`,current_account_info.`overdraft_facility`,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, current_account_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `current_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id = current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id = current_account_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=current_account_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = current_account_info.non_bank_id ORDER BY current_account_info.id ASC";
+        $query=$this->db->query($sql);
+        $result="";
+
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $bank = "";
+                if($row->is_non_bank == 1){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank == 1){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
+
+                //$year =( $row->tenure ==1) ?'Year' : 'Years';
+
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
+					 <td class="text-center">'.$bank.'</td>
+					 <td class="text-center"> '.$row->opening_balance.'</td>
+					 <td class="text-center"> '.$row->total_branch.'%</td>
+					 <td> '.$row->overdraft_facility.'</td>
+					 <td> '.$row->i_am.'</td>
+					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
+
+                $result.='</td>
+                    <td><a href="'.base_url().'current_account/edit_account_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?account_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

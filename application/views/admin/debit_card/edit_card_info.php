@@ -265,14 +265,14 @@ if(isset($_GET['id'])){
                                 <section class="col col-6">
                                     <label class="label">ATM Charge( Own )</label>
                                     <label class="input">
-                                        <input type="text" maxlength="10" name="txtOwnAtmCharge" id="txtOwnAtmCharge" value="<?php echo $row["atm_charge_own"]; ?>" placeholder="Write own ATM Charge">
+                                        <input type="text" maxlength="100" name="txtOwnAtmCharge" id="txtOwnAtmCharge" value="<?php echo $row["atm_charge_own"]; ?>" placeholder="Write own ATM Charge">
                                     </label>
                                     <label class="red"><?php echo form_error('txtNoOfWithdrawal');?></label>
                                 </section>
                                 <section class="col col-6">
                                     <label class="label">ATM Charge( Other )</label>
                                     <label class="input">
-                                        <input type="text" maxlength="15" name="txtOtherAtmCharge" id="txtOtherAtmCharge" value="<?php echo $row["atm_charge_other"]; ?>" placeholder="Write Other ATM Charge">
+                                        <input type="text" maxlength="255" name="txtOtherAtmCharge" id="txtOtherAtmCharge" value="<?php echo $row["atm_charge_other"]; ?>" placeholder="Write Other ATM Charge">
                                     </label>
                                     <label class="red"><?php echo form_error('txtOtherAtmCharge');?></label>
                                 </section>

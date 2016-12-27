@@ -35,7 +35,7 @@
 
     <!-- breadcrumb -->
     <ol class="breadcrumb">
-        <li>Card</li><li>Debit Card</li><li> Add Card Information</li>
+        <li>Account</li><li>Current Account</li><li> Add Account Information</li>
     </ol>
 </div>
 <!-- END RIBBON -->
@@ -47,9 +47,9 @@
     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
         <h1 class="page-title txt-color-blueDark">
             <i class="fa fa-table fa-fw "></i>
-            Debit Card
+            Current Account
                 <span>>
-                    Add Card Information
+                    Add Account Information
                 </span>
         </h1>
     </div>
@@ -69,7 +69,7 @@
     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
         <header>
             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-            <h2>Add Card Information</h2>
+            <h2>Add Account Information</h2>
 
         </header>
 
@@ -86,7 +86,7 @@
             <!-- widget content -->
             <div class="widget-body no-padding">
 
-                <form id="age_limit" method="post" action="<?php echo base_url();?>debit_card/add_card_info" class="smart-form" novalidate="novalidate">
+                <form id="age_limit" method="post" action="<?php echo base_url();?>current_account/account_info" class="smart-form" novalidate="novalidate">
                     <?php
                     //-----Display Success or Error message---
                     if(isset($feedback)){
@@ -96,8 +96,12 @@
                     <fieldset>
                         <section>
                             <div class="row">
-
                                 <section class="col col-6">
+                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                    </label>
+                                </section>
+                                <section class="col col-6" id="institution">
                                     <label class="label">Bank Name</label>
                                     <label class="select">
                                         <select name="txtBankName" id="txtBankName">
@@ -106,111 +110,61 @@
                                     </label>
                                     <label class="red"><?php echo form_error('txtBankName');?></label>
                                 </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Current Account Name</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="255" name="txtCurrentAccountName" value="<?php echo set_value('txtCurrentAccountName'); ?>" placeholder="Write Current Account Name">
+                                    </label>
+
+                                    <label class="red"><?php echo form_error('txtCurrentAccountName');?></label>
+                                </section>
 
                                 <section class="col col-6">
-                                    <label class="label">Choose Account</label>
+                                    <label class="label">I Am</label>
                                     <label class="select">
-                                        <select name="txtChooseAccount" id="txtChooseAccount">
-                                            <?php echo $this->Select_model->debit_card_choose_account();?>
+                                        <select name="txtIAm" id="txtIAm">
+                                            <?php echo $this->Select_model->select_current_account_i_am();?>
                                         </select>
                                     </label>
-                                    <label class="red"><?php echo form_error('txtChooseAccount');?></label>
+                                    <label class="red"><?php echo form_error('txtIAm');?></label>
                                 </section>
                             </div>
                             <div class="row">
 
                                 <section class="col col-6">
-                                    <label class="label">Looking For</label>
-                                    <label class="select">
-                                        <select name="txtLookingFor" id="txtLookingFor">
-                                            <?php echo $this->Select_model->debit_card_looking_for();?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtLookingFor');?></label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="label">I Want</label>
-                                    <label class="select">
-                                        <select name="txtIWant" id="txtIWant">
-                                            <?php echo $this->Select_model->debit_card_i_want();?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtIWant');?></label>
-                                </section>
-                            </div>
-                            <div class="row">
-
-
-
-                                <section class="col col-6">
-                                    <label class="label">Card Issuer</label>
-                                    <label class="select">
-                                        <select name="txtCardIssuer" id="txtCardIssuer">
-                                            <?php echo $this->Select_model->debit_card_issuer();?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtCardIssuer');?></label>
-                                </section>
-
-                                <section class="col col-6">
-                                    <label class="label">Card Name</label>
+                                    <label class="label">Opening Balance</label>
                                     <label class="input">
-                                        <input type="text" maxlength="150" name="txtCardName" value="<?php echo set_value('txtCardName'); ?>" placeholder="Write Bank Card Name">
+                                        <input type="text" maxlength="15" name="txtOpeningBalance" value="<?php echo set_value('txtOpeningBalance'); ?>" placeholder="Write Opening Balance">
                                     </label>
-                                    <label class="red"><?php echo form_error('txtCardName');?></label>
+
+                                    <label class="red"><?php echo form_error('txtOpeningBalance');?></label>
+                                </section>
+                                <section class="col col-6">
+                                    <label class="label">Total Branch</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="25" name="txtTotalBranch" value="<?php echo set_value('txtTotalBranch'); ?>" placeholder="Write Total Branch">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtTotalBranch');?></label>
                                 </section>
                             </div>
 
                             <div class="row">
 
                                 <section class="col col-6">
-                                    <label class="label">Annual Fee</label>
+                                    <label class="label">Fund Transfer</label>
                                     <label class="input">
-                                        <input type="text" maxlength="150" name="txtAnnualFee" value="<?php echo set_value('txtAnnualFee'); ?>" placeholder="Write Annual Fee">
+                                        <input type="text" maxlength="250" name="txtFundTransfer" id="txtFundTransfer" value="<?php echo set_value('txtFundTransfer'); ?>" placeholder="Write Fund Transfer">
                                     </label>
-                                    <label class="red"><?php echo form_error('txtAnnualFee');?></label>
+                                    <label class="red"><?php echo form_error('txtFundTransfer');?></label>
                                 </section>
                                 <section class="col col-6">
-                                    <label class="label">Daily Withdrawal Limit</label>
+                                    <label class="label">Overdraft Facility</label>
                                     <label class="input">
-                                        <input type="text" maxlength="15" name="txtDailyWithdrawalLimit" value="<?php echo set_value('txtDailyWithdrawalLimit'); ?>" placeholder="Write Daily Withdrawal limit">
+                                        <input type="text" maxlength="50" name="txtOverdraftFacility" id="txtOverdraftFacility" value="<?php echo set_value('txtOverdraftFacility'); ?>" placeholder="Write  Overdraft Facility">
                                     </label>
-                                    <label class="red"><?php echo form_error('txtDailyWithdrawalLimit');?></label>
-                                </section>
-                            </div>
-                            <div class="row">
-
-                                <section class="col col-6">
-                                    <label class="label">No of Withdrawal (Times)</label>
-                                    <label class="input">
-                                        <input type="text" maxlength="2" name="txtNoOfWithdrawal" id="txtNoOfWithdrawal" value="<?php echo set_value('txtNoOfWithdrawal'); ?>" placeholder="Write no of withdrawal">
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtNoOfWithdrawal');?></label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="label">Per Transaction Limit</label>
-                                    <label class="input">
-                                        <input type="text" maxlength="15" name="txtPerTransactionLimit" id="txtPerTransactionLimit" value="<?php echo set_value('txtPerTransactionLimit'); ?>" placeholder="Write Per Transaction Limit">
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtPerTransactionLimit');?></label>
-                                </section>
-                            </div>
-
-                            <div class="row">
-
-                                <section class="col col-6">
-                                    <label class="label">ATM Charge( Own )</label>
-                                    <label class="input">
-                                        <input type="text" maxlength="100" name="txtOwnAtmCharge" id="txtOwnAtmCharge" value="<?php echo set_value('txtOwnAtmCharge'); ?>" placeholder="Write own ATM Charge">
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtNoOfWithdrawal');?></label>
-                                </section>
-                                <section class="col col-6">
-                                    <label class="label">ATM Charge( Other )</label>
-                                    <label class="input">
-                                        <input type="text" maxlength="255" name="txtOtherAtmCharge" id="txtOtherAtmCharge" value="<?php echo set_value('txtOtherAtmCharge'); ?>" placeholder="Write Other ATM Charge">
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtOtherAtmCharge');?></label>
+                                    <label class="red"><?php echo form_error('txtOverdraftFacility');?></label>
                                 </section>
                             </div>
 
@@ -267,7 +221,7 @@
     <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
         <header>
             <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-            <h2>Requirements</h2>
+            <h2>Privileges</h2>
 
         </header>
 
@@ -286,13 +240,13 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtRequirements" class="ckeditor" name="txtRequirements"><?php echo set_value('txtRequirements'); ?></textarea>
+                        <textarea type="text" id="txtPrivileges" class="ckeditor" name="txtPrivileges"><?php echo set_value('txtPrivileges'); ?></textarea>
                     </label>
                 </section>
 
             </div>
             <!-- end widget content -->
-            <label class="red"><?php echo form_error('txtRequirements');?></label>
+            <label class="red"><?php echo form_error('txtPrivileges');?></label>
         </div>
         <!-- end widget div -->
 
@@ -301,6 +255,91 @@
 
 </article>
 <!-- WIDGET END -->
+
+<!-- NEW WIDGET START -->
+<article class="col-sm-6 col-md-6 col-lg-6">
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+        <header>
+            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+            <h2>Requirement</h2>
+
+        </header>
+
+        <!-- widget div-->
+        <div>
+
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+                <!-- This area used as dropdown edit box -->
+
+            </div>
+            <!-- end widget edit box -->
+
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+                <section class="col col-12">
+
+                    <label class="input">
+                        <textarea type="text" id="txtRequirement" class="ckeditor" name="txtRequirement"><?php echo set_value('txtRequirement'); ?></textarea>
+                    </label>
+                </section>
+
+            </div>
+            <!-- end widget content -->
+            <label class="red"><?php echo form_error('txtRequirement');?></label>
+        </div>
+        <!-- end widget div -->
+
+    </div>
+    <!-- end widget -->
+
+</article>
+<!-- WIDGET END -->
+
+<!-- NEW WIDGET START -->
+<article class="col-sm-6 col-md-6 col-lg-6">
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+        <header>
+            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+            <h2>Fees and Charges</h2>
+
+        </header>
+
+        <!-- widget div-->
+        <div>
+
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+                <!-- This area used as dropdown edit box -->
+
+            </div>
+            <!-- end widget edit box -->
+
+            <!-- widget content -->
+            <div class="widget-body no-padding">
+                <section class="col col-12">
+
+                    <label class="input">
+                        <textarea type="text" id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo set_value('txtFeesAndCharges'); ?></textarea>
+                    </label>
+                </section>
+
+            </div>
+            <!-- end widget content -->
+            <label class="red"><?php echo form_error('txtFeesAndCharges');?></label>
+        </div>
+        <!-- end widget div -->
+
+    </div>
+    <!-- end widget -->
+
+</article>
+<!-- WIDGET END -->
+
 
 <!-- NEW WIDGET START -->
 <article class="col-sm-6 col-md-6 col-lg-6">
@@ -335,47 +374,6 @@
             </div>
             <!-- end widget content -->
             <label class="red"><?php echo form_error('txtTermsAndConditions');?></label>
-        </div>
-        <!-- end widget div -->
-
-    </div>
-    <!-- end widget -->
-
-</article>
-<!-- WIDGET END -->
-<!-- NEW WIDGET START -->
-<article class="col-sm-6 col-md-6 col-lg-6">
-
-    <!-- Widget ID (each widget will need unique ID)-->
-    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
-        <header>
-            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
-            <h2>Fees and Charges</h2>
-
-        </header>
-
-        <!-- widget div-->
-        <div>
-
-            <!-- widget edit box -->
-            <div class="jarviswidget-editbox">
-                <!-- This area used as dropdown edit box -->
-
-            </div>
-            <!-- end widget edit box -->
-
-            <!-- widget content -->
-            <div class="widget-body no-padding">
-                <section class="col col-12">
-
-                    <label class="input">
-                        <textarea type="text" id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo set_value('txtFeesAndCharges'); ?></textarea>
-                    </label>
-                </section>
-
-            </div>
-            <!-- end widget content -->
-            <label class="red"><?php echo form_error('txtFeesAndCharges');?></label>
         </div>
         <!-- end widget div -->
 
