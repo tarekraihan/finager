@@ -295,6 +295,11 @@
 							<td class="abc"><b> Bank Name </b></td>
 							<td> <?php echo $first_bank_name; ?> </td>
 						</tr>
+
+                                                <tr>
+							<td class="abc"><b> Purpose </b></td>
+							<td> Home Construction </td>
+						</tr>
 						
 						<tr>
 							<td><b> Interest Rate</b></td>
@@ -331,6 +336,11 @@
 								<td class="abc"><b> Bank Name </b></td>
 								<td> <?php echo $second_bank_name; ?>  </td>
 							</tr>
+
+                                                        <tr>
+							        <td class="abc"><b> Purpose </b></td>
+							        <td> Home Construction </td>
+						        </tr>
 							
 							<tr>
 								<td><b> Interest Rate</b></td>

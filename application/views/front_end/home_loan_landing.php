@@ -1,13 +1,78 @@
-	<!-- header part start -->
+<style>
+.All_card {
+	border: 1px solid #DADADA;
+	padding: 23px;
+	background-color: #fff;
+}
+.All_card img {
+	height: 81px;
+}
+</style>	
+<!-- header part start -->
 	<section id="home_header_part">
-		<div class="home_header_text">
+                <div class="home_header_text">
 			<h3>Select your home loan</h3>
 			<p>Home loan comparison made easy</p>
-			<p><a class="btn btn-primary btn-lg" href="<?php echo base_url();?>en/all_home_loan" role="button">Start Comparing</a></p>
+			<p><a class="btn btn-primary btn-lg" href="<?php echo base_url(); ?>en/all_home_loan" role="button">Start Comparing</a></p>
 		</div>
-		<!-- <a href="#"><img src="images/feedback.png" alt="not found"/></a> -->
+		<div class="container">
+			<div class="home_loan_icon">
+				<div class="All_cradit_card">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Purchase-Apartment.png" alt="reaward"/>
+							<p>Purchase Apartment/Flat </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Home-Construction.png" alt="cash_back"/>
+							<p> Home Construction </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Housing-Plot.png" alt="card"/>
+							<p> Housing Plot </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Renovation.png" alt="travel"/>
+							<p> Renovation</p>
+						</div></a>
+					</div>	
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Home-Loan-Takeover.png" alt="zero"/>
+							<p>Home Loan Takeover</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Salaried-Person.png" alt="student"/>
+							<p> Salaried Person </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Business-Man.png" alt="business"/>
+							<p>	Businessman </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#">
+							<div class="All_card">
+								<img src="<?php echo base_url();?>resource/front_end/images/Professional.png" alt="low_interest"/>
+								<p>Professional</p>
+							</div>
+						</a>
+					</div>	
+				</div>
+			</div>
+		</div>
 	</section>
-	<!-- header part end -->
+        <div class="clearfix"></div>
 	<section id="Sponsored">
 		<div class="container">
 			<div class="home_Sponsored_heading">
@@ -17,37 +82,37 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
-						<div class="spnrs1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/></div>
+						<div class="spnrs1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/></div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg">Go to slide</button>
+						<button class="btn btn-primary btn-lg btnLanding">Go to slide</button>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
-						<div class="spnrs1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/></div>
+						<div class="spnrs1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/></div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg">Go to slide</button>
+						<button class="btn btn-primary btn-lg btnLanding">Go to slide</button>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
-						<div class="spnrs1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/></div>
+						<div class="spnrs1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/></div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg">Go to slide</button>
+						<button class="btn btn-primary btn-lg btnLanding">Go to slide</button>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
 						<div class="spnrs"><img class="img-responsive"src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
-						<div class="spnrs1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/></div>
+						<div class="spnrs1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/></div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg">Go to slide</button>
+						<button class="btn btn-primary btn-lg btnLanding">Go to slide</button>
 					</div>
 				</div>
 			</div>
@@ -103,7 +168,7 @@
 							sured you’re making the right choice. While our range of products is always growing, we
 							don’t compare all products in the market.
 						</p>
-						<button class="btn btn-primary btn-lg">View Our Partners</button>
+						<button class="btnLanding btn btn-primary btn-lg">View Our Partners</button>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
@@ -112,7 +177,7 @@
 						<p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an<span class="clr_black"> applica-
 							tion tracker</span> that can help you keep on top of your home loan.<br/>
 						</p>
-						<button class="btn btn-primary btn-lg">View Our Partners</button>
+						<button class="btn btn-primary btn-lg btnLanding">View Our Partners</button>
 					</div>
 				</div>
 			</div>
@@ -143,7 +208,7 @@
 					you’re looking for.
 				</p>
 			</div>
-			<button class="btn btn-primary btn-lg">Get Started</button>
+			<button class="btn btn-primary btn-lg btnLanding">Get Started</button>
 		</div>
 	</div>
 	</section>
@@ -234,6 +299,25 @@
 						</p>
 						<div class="home_read"><a href="#">Read More</a></div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+        <section id="home_loan_footer">
+		<div class="container">
+			<div class="home_loan_footer_pr">
+				<div class="col-md-4 col-sm-4">
+					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/woman.png">
+				</div>
+				<div class="col-md-8 col-sm-8">
+					<h3>"I was having a look at the best interest<br/>
+						rates around on the Internet and received a<br/>
+						phone call from one of the friendly Select<br/>
+						consultants who went through everything<br/>
+						with me and we found the perfect home<br/>
+						loan that suited our needs."<br>
+					</h3>
+					<div class="home_loan_footer_text">Jason, Victoria</div>
 				</div>
 			</div>
 		</div>

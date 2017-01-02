@@ -336,7 +336,7 @@ background-position:center center;
 }
 /* header part end */
 /* second_div is start */
-#second_div {
+#front_card_second {
 	background-image: url(../images/frontCard/background-img.jpg);
 	height: 634px;
 	width: 100%;
@@ -377,7 +377,7 @@ background-position:center center;
 	padding: 3px 30px;
 	margin-top: 15px;
 }
-.card_box {
+.front_card_box {
 	width: auto;
 	min-height: 298px;
 	background-color: #fff;
@@ -389,10 +389,10 @@ background-position:center center;
 	border: 1px solid black;
 	height:150px;
 }
-.card_box h3 {
+.front_card_box h3 {
 	text-align: center;
 }
-.card_box p {
+.front_card_box p {
 	margin: 12px;
 }
   

@@ -183,6 +183,10 @@ body {
 }
 
 /*for card page*/
+.card_left_bar {
+    border: 1px solid #EAEAEA;
+    padding: 6px;
+}
 .card_right_bar {
     background-color: #F9F9F9;
     padding: 15px 15px;
@@ -948,6 +952,7 @@ body {
     background-repeat:no-repeat;
     width:100%;
     height:300px;
+    margin-bottom:6px;
 }
 /* for personal loan */
 #personal_header{
@@ -957,6 +962,7 @@ body {
     background-repeat:no-repeat;
     width:100%;
     height:300px;
+    margin-bottom: 6px;
 }
 /* for auto loan */
 #auto_header{
@@ -1066,7 +1072,7 @@ body {
 #auto_header_part{
     background-image:url('../images/AutoLoan_background.jpg');
     width:100%;
-    height:380px;
+    height:450px;
     background-position:center center;
     background-repeat:no-repeat;
     background-size:cover;
@@ -1087,9 +1093,7 @@ body {
     position: absolute;
     margin-left: 238px;
 }
-#auto_header_part img {
-    float: right;
-}
+
 .auto_button a{
     color:#d1a05e;
     border:1px solid #d1a05e;
@@ -1100,7 +1104,7 @@ body {
 }
 /* header part end*/
 /* Sponsored part strat */
-.btn-primary {
+.btnLanding{
     color: #000;
     background-color: #fff;
     border-color: #2e6da4;
@@ -1289,7 +1293,7 @@ a:hover {
     background-repeat:no-repeat;
     background-size:cover;
     width:100%;
-    height:380px;
+    height:450px;
     position:relative;
 }
 .home_header_text h3 {
@@ -1309,22 +1313,16 @@ a:hover {
     float: right;
     margin-right: 250px;
 }
-#home_header_part img {
-    float: right;
-}
+
 
 
 
 /* header part end*/
-/* Sponsored part strat */
-.btn-primary {
-    color: #000;
-    background-color: #fff;
-    border-color: #2e6da4;
-}
-.home_Sponsored_heading{
-    color:#59add2;
-    margin:37px 16px;
+/* Sponsored part start */
+
+.home_Sponsored_heading {
+    color: #59add2;
+    margin: 100px 0px 28px 16px;
 }
 .Sponsored_box1 {
     border: 1px solid gray;
@@ -1451,7 +1449,7 @@ a:hover {
     color: gray;
     text-decoration: none;
 }
-#footer{
+#home_loan_footer{
     background-image:url('../images/home_background2.png');
     background-position:center center;
     background-repeat:no-repeat;
@@ -1459,14 +1457,14 @@ a:hover {
     height:427px;
     width:100%;
 }
-.footer_pr h3 {
+.home_loan_footer_pr h3 {
     color: #fff;
     margin-top: 65px;
 }
-.footer_pr img {
+.home_loan_footer_pr img {
     margin-top: 36px;
 }
-.footer_text {
+.home_loan_footer_text {
     color: #fff;
     margin-top: 31px;
     font-size:16px;
@@ -1534,22 +1532,17 @@ a:hover {
     position: absolute;
     margin-left: 238px;
 }
-#personal_header_part img {
+/*#personal_header_part img {
     float: right;
 }
-/* header part end*/
+ header part end*/
 /* Sponsored part strat */
-.btn-primary {
-    color: #000;
-    background-color: #fff;
-    border-color: #2e6da4;
-}
 .Sponsored_heading{
     color:#59add2;
 }
 .Sponsored_box1 {
     border: 1px solid gray;
-    height: 430px;
+    height: 448px;
     width: 100%;
 }
 .spnrs img {
@@ -1676,7 +1669,7 @@ a:hover {
     text-decoration: none;
 }
 #personal_footer{
-    background-image:url(../images/personal_footer.jpg);
+    background-image:url('../images/Personal_footer.png');
     background-position:center center;
     background-repeat:no-repeat;
     background-size:cover;
@@ -1730,6 +1723,7 @@ a:hover {
     background-repeat:no-repeat;
     width:100%;
     height:300px;
+    margin-bottom:6px;
 }
 /* personal loan end */
 /* Education loan start */
@@ -1739,7 +1733,7 @@ a:hover {
     background-size:cover;
     background-position:center center;
     width:100%;
-    height:429px;
+    height:450px;
     position:relative;
 }
 #edu_biggest_brand {
@@ -2230,10 +2224,10 @@ a:hover {
     margin-top: 37px;
 }
 .All_card2 img {
-    margin-top: 12px;
+    margin-top: 9px;
 }
 .All_card2 p {
-    margin-top: 47px;
+    margin-top: 25px;
 }
 .All_card {
     border: 1px solid #DADADA;
@@ -2279,6 +2273,23 @@ a:hover {
     padding: 19px;
     margin: -1px 0px 0px -1px;
 }
+.home_loan_icon {
+	position: relative;
+	margin-top: 400px;
+}
+
+.home_card5 {
+	border: 1px solid #DADADA;
+	padding: 38px;
+	margin: -1px -1px 0px -1px;
+}
+
+.home_card6 {
+	border-top: 1px solid #DADADA;
+	border-bottom: 1px solid #DADADA;
+	padding: 38px;
+	margin: -1px 1px;
+}
 
 .nopadding {
     padding: 0 !important;
@@ -2304,7 +2315,7 @@ a:hover {
     background-color:#f2f2f3;
 }
 .All_cradit_card :hover {
-    background-color: #f2f2f3;
+    background-color: #effbff;
 }
 /* third_div end */
 /* card_box star */
@@ -2377,11 +2388,11 @@ a:hover {
     margin:0 10px 40px 0;
 }
 #Basic{
-    background-image:url(../images/back.jpg);
+    background-image:url('../images/Back.jpg');
     background-position:center center;
     background-size:cover;
     background-repeat:no-repeat;
-    height:450px;
+    height:490px;
     width:100%;
 }
 .card_basic p {
@@ -2393,7 +2404,7 @@ a:hover {
     margin-top: 31px;
 }
 .All_card5 p {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 .All_card6 p {
     margin-top: 31px;
@@ -2408,7 +2419,7 @@ a:hover {
     margin-top: 20px;
 }
 .All_card6 img {
-    margin-top: 20px;
+    margin-top: 19px;
 }
 .All_card7 img {
     margin-top: 20px;
@@ -2558,6 +2569,9 @@ hr {
 .All_card7 img {
     margin-top: 20px;
 }
+.All_debit_card a{
+   text-decoration: none;
+}
 .All_debit_card p {
     color: #9a8d5c;
     font-weight: bold;
@@ -2587,7 +2601,7 @@ hr {
     background-position:center center;
     background-size:cover;
     background-repeat:no-repeat;
-    height:450px;
+    height:490px;
     width:100%;
 }
 
@@ -2602,6 +2616,7 @@ hr {
     width:100%;
     height:320px;
     position:relative;
+    margin-bottom:6px;
 }
 .fdr_tenure{
     background-image:url(../images/radiobg.png);
@@ -2629,7 +2644,7 @@ hr {
     width: 97px;
 }
 .more_availabe{
-    margin-top:68px;
+    margin-top:48px;
 }
 .more_availabe i{
     color:#2c8aca;
@@ -2713,7 +2728,7 @@ hr {
 }
 
 .logobar a .logo{
-    max-height: 63px;
+    max-height: 62px;
     width: 150px;
 }
 
@@ -2874,3 +2889,40 @@ ul.footer-socio {
     width:100%;
     margin-top:53px;
 }
+/* for millionier */
+#millionier_header_part {
+   background-image: url('../images/Milonaire.jpg');
+   width: 100%;
+   height: 450px;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.millionier_header_text {
+   text-align: right;
+   top: 130px;
+   position: relative;
+   float: right;
+   margin-right: 250px;
+}
+.millionier_header_text p {
+  color: #000;
+  font-size: 18px;
+  font-style: italic;
+}
+.millionier_header_text h3 {
+  color: #000;
+  font-size: 35px;
+  font-style: italic;
+  font-weight: bold;
+}
+#maximizer_header{
+  background-image: url('../images/Millionaire-main.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  position: relative;
+	}

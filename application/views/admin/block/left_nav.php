@@ -367,6 +367,17 @@
             </ul>
         </li>
         <li>
+            <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> SND Account</span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>snd_account/account_info">Add Account Info</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>saving_account/account_list/">Account List</a>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
             <ul>
                 <li>

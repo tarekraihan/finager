@@ -1,3 +1,96 @@
+/*nirob start*/
+@media screen and (min-width:981px) and (max-width:1400px){
+	#auto_footer {
+		height: 340px !important;
+	}
+	.auto_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	#home_loan_footer {
+		height: 340px !important;
+	}
+	.home_loan_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	.heading_text {
+		height: 617px !important;
+	}
+	#personal_footer {
+		height: 340px !important;
+	}
+	.personal_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	#personal_header_part {
+		height: 385px !important;
+	}
+        .personal_bigest_text1 button {
+	   margin-top: 67px !important;
+        }
+	/* edu star */
+	#edu_footer {
+		height: 340px !important;
+	}
+	.edu_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+        .edu_footer_pr h3{
+            margin-top:70px !important;
+        }
+	#education_header_part {
+		height: 344px !important;
+	}
+	.education_header_text {
+		top: 231px !important;
+                margin-left:404px !important;
+	}
+	/* dps start */
+	#dps_footer {
+		height: 340px !important;
+	}
+	.dps_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	#dps_header_part {
+		height: 385px !important;
+	}
+        .dps_heading_text{
+                min-height:608px !important;
+        }
+	/* dps end */
+	/* FDR star */
+	#fdr_footer {
+		height: 340px !important;
+	}
+	.fdr_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	#fdr_header_part {
+		height: 344px !important;
+	}
+	.fdr_header_text {
+		top: 224px !important;
+		right: 50px;
+	}
+        .fdr_heading_text {
+	   min-height: 622px !important;
+        }
+       #millionier_header_part {
+	  height: 366px !important;
+       }
+      .millionier_header_text {
+	  margin-right: 89px !important;
+       }
+	
+	
+}
+/*nirob end*/
 @media screen and (max-width:1024px){
 	.card_text1 {
 		margin-left: 10px;
