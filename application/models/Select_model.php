@@ -1089,6 +1089,26 @@ class Select_Model extends CI_Model
 
     }
 
+    public function get_education_loan_info_vs_expenses_considered($id){
+        if(!empty($id)){
+
+            $sql="SELECT expenses_considered_id FROM `education_loan_info_vs_expenses_considered` WHERE loan_info_id = $id";
+            $query=$this->db->query($sql);
+            return $query->result_array();
+        }
+
+    }
+
+    public function get_education_loan_info_vs_loan_purpose($id){
+        if(!empty($id)){
+
+            $sql="SELECT loan_purpose_id FROM `education_loan_info_vs_loan_purpose` WHERE loan_info_id = $id";
+            $query=$this->db->query($sql);
+            return $query->result_array();
+        }
+
+    }
+
     public function get_all_fdr_draft_info($bank_id,$deposit_type,$i_am,$is_non_bank){
         $where ='';
         if($is_non_bank == 1){

@@ -132,7 +132,7 @@ if(isset($_GET['id'])){
                                     }
                                     ?>
                                     <fieldset>
-                                        <input type="hidden" value="<?php echo $row['id'];?>" name="txtHomeLoanId">
+                                        <input type="hidden" value="<?php echo $row['id'];?>" name="txtEducationLoanId">
                                         <section>
                                             <div class="row">
                                                 <section class="col col-6">
@@ -152,7 +152,7 @@ if(isset($_GET['id'])){
                                                         <select name="txtLoanType" id="txtLoanType">
                                                             <?php
                                                             $result=$this->Select_model->select_all('loan_type');
-                                                            //                                                            print_r($result);die;
+                                                            //   print_r($result);die;
                                                             foreach($result->result() as $row1){
                                                                 ?>
                                                                 <option value="<?php echo $row1->id;?>" <?php if(isset($row["loan_type_id"]) && $row["loan_type_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLoanType",$row1->id)?>><?php echo $row1->loan_type ; ?></option>';
@@ -169,7 +169,7 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Loan Name </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php echo set_value('txtLoanName'); ?>" placeholder="Write Loan Name">
+                                                        <input type="text" maxlength="220" name="txtLoanName" value="<?php echo $row['loan_name']; ?>" placeholder="Write Loan Name">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanName');?></label>
                                                 </section>
@@ -177,7 +177,26 @@ if(isset($_GET['id'])){
                                                     <label class="label">Expenses Considered</label>
                                                     <label class="select">
                                                         <select multiple style="width:100%" class="select2" name="txtExpensesConsidered[]" required>
-                                                            <?php echo $this->Select_model->education_loan_expenses_considered();?>
+                                                            <?php
+                                                            $result1=$this->Select_model->select_all('education_expenses_considered');
+
+                                                            $expenses_considered_id =$this->Select_model->get_education_loan_info_vs_expenses_considered($row['id']);
+
+                                                            $expenses_considered = array();
+
+                                                            foreach($expenses_considered_id as $k){
+                                                                foreach($k as $v){
+                                                                    array_push($expenses_considered,$v);
+                                                                }
+                                                            }
+                                                            $i=0;
+                                                            foreach($result1->result() as $row1){
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($expenses_considered[$i]) ? true : false) { echo "selected='select'"; }else{ echo set_select("txtExpensesConsidered[]", $row1->id);} ?>><?php echo $row1->expenses_considered; ?></option>';
+                                                                <?php
+                                                                $i++;
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtExpensesConsidered[]');?></label>
@@ -189,7 +208,26 @@ if(isset($_GET['id'])){
                                                     <label class="label">Loan Purpose</label>
                                                     <label class="select">
                                                         <select  multiple style="width:100%" class="select2"  name="txtLoanPurpose[]" id="txtLoanPurpose" required>
-                                                            <?php echo $this->Select_model->select_education_loan_purpose();?>
+                                                            <?php
+                                                            $result1=$this->Select_model->select_all('education_loan_purpose');
+
+                                                            $loan_purpose_id =$this->Select_model->get_education_loan_info_vs_loan_purpose($row['id']);
+
+                                                            $loan_purpose = array();
+
+                                                            foreach($loan_purpose_id as $k){
+                                                                foreach($k as $v){
+                                                                    array_push($loan_purpose,$v);
+                                                                }
+                                                            }
+                                                            $i=0;
+                                                            foreach($result1->result() as $row1){
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($loan_purpose[$i]) ? true : false) { echo "selected='select'"; }else{ echo set_select("txtLoanPurpose[]", $row1->id);} ?>><?php echo $row1->loan_purpose; ?></option>';
+                                                                <?php
+                                                                $i++;
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanPurpose[]');?></label>
@@ -199,7 +237,7 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Grace Period</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="220" name="txtGracePeriod" value="<?php echo set_value('txtGracePeriod'); ?>" placeholder="Write Grace Period">
+                                                        <input type="text" maxlength="220" name="txtGracePeriod" value="<?php echo $row['grace_period']; ?>" placeholder="Write Grace Period">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtGracePeriod');?></label>
                                                 </section>
@@ -210,7 +248,15 @@ if(isset($_GET['id'])){
                                                     <label class="label">Minimum Term</label>
                                                     <label class="select">
                                                         <select name="txtMinEducationLoanTenure" id="txtMinEducationLoanTenure">
-                                                            <?php echo $this->Select_model->select_min_education_loan_tenure();?>
+                                                            <?php
+                                                            $result=$this->Select_model->select_all('education_loan_tenure');
+
+                                                            foreach($result->result() as $row1){
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["min_term"]) && $row["min_term"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtMinEducationLoanTenure",$row1->id)?>><?php echo $row1->tenure ; ?> Years</option>';
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinEducationLoanTenure');?></label>
@@ -219,7 +265,15 @@ if(isset($_GET['id'])){
                                                     <label class="label">Maximum Term</label>
                                                     <label class="select">
                                                         <select name="txtMaxEducationLoanTenure" id="txtMaxEducationLoanTenure">
-                                                            <?php echo $this->Select_model->select_max_education_loan_tenure();?>
+                                                            <?php
+                                                            $result=$this->Select_model->select_all('education_loan_tenure');
+
+                                                            foreach($result->result() as $row1){
+                                                                ?>
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["max_term"]) && $row["max_term"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtMaxEducationLoanTenure",$row1->id)?>><?php echo $row1->tenure ; ?> Years</option>';
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaxEducationLoanTenure');?></label>
@@ -231,14 +285,14 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Loan Amount</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="15" name="txtMinimumLoanAmount" value="<?php echo set_value('txtMinimumLoanAmount'); ?>" placeholder="Write min loan amount">
+                                                        <input type="text" maxlength="15" name="txtMinimumLoanAmount" value="<?php echo $row['min_loan_amount'];  ?>" placeholder="Write min loan amount">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMinimumLoanAmount');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Maximum Loan Amount</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="15" name="txtMaximumLonAmount" value="<?php echo set_value('txtMaximumLonAmount'); ?>" placeholder="Write Max loan amount">
+                                                        <input type="text" maxlength="15" name="txtMaximumLonAmount" value="<?php echo $row['max_loan_amount'];  ?>" placeholder="Write Max loan amount">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtMaximumLonAmount');?></label>
                                                 </section>
@@ -248,14 +302,14 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Down Payment (%)</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="10" name="txtDownPayment" value="<?php echo set_value('txtDownPayment'); ?>" placeholder="Write Down payment without percentage sign">
+                                                        <input type="text" maxlength="10" name="txtDownPayment" value="<?php echo $row['down_payment']; ?>" placeholder="Write Down payment without percentage sign">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtDownPayment');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Loan Short Description</label>
                                                     <label class="input">
-                                                        <input type="text"  name="txtLoanShortDescription" value="<?php echo set_value('txtLoanShortDescription'); ?>" placeholder="Write short description">
+                                                        <input type="text"  name="txtLoanShortDescription" value="<?php echo $row['short_description']; ?>" placeholder="Write short description">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanShortDescription');?></label>
                                                 </section>
@@ -265,14 +319,14 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Loan Against FDR</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="25" name="txtLoanAgainstFDR" value="<?php echo set_value('txtLoanAgainstFDR'); ?>" placeholder="Write Loan Against FDR ">
+                                                        <input type="text" maxlength="25" name="txtLoanAgainstFDR" value="<?php echo $row['loan_against_fdr']; ?>" placeholder="Write Loan Against FDR ">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtLoanAgainstFDR');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Processing Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="100" name="txtProcessingFee" value="<?php echo set_value('txtProcessingFee'); ?>" placeholder="Write Processing Fee ">
+                                                        <input type="text" maxlength="100" name="txtProcessingFee" value="<?php echo $row['processing_fee']; ?>" placeholder="Write Processing Fee ">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtProcessingFee');?></label>
                                                 </section>
@@ -282,14 +336,14 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Early Settlement Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="100" name="txtEarlySettlementFee" value="<?php echo set_value('txtEarlySettlementFee'); ?>" placeholder="Write Early Settlement Fee ">
+                                                        <input type="text" maxlength="100" name="txtEarlySettlementFee" value="<?php echo $row['early_settlement_fee']; ?>" placeholder="Write Early Settlement Fee ">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtEarlySettlementFee');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Partial Payment Fee</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="100" name="txtPartialPaymentFee" value="<?php echo set_value('txtPartialPaymentFee'); ?>" placeholder="Write Partial Payment fee ">
+                                                        <input type="text" maxlength="100" name="txtPartialPaymentFee" value="<?php echo $row['partial_payment_fee']; ?>" placeholder="Write Partial Payment fee ">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPartialPaymentFee');?></label>
                                                 </section>
@@ -299,16 +353,16 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Penalty Charge</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="100" name="txtPenaltyCharge" value="<?php echo set_value('txtPenaltyCharge'); ?>" placeholder="Write Penalty Charge ">
+                                                        <input type="text" maxlength="100" name="txtPenaltyCharge" value="<?php echo $row['penalty_charge']; ?>" placeholder="Write Penalty Charge ">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPenaltyCharge');?></label>
                                                 </section>
                                                 <section class="col col-6"  >
                                                     <label class="radio-inline" style="margin-left: 25px ">
-                                                        <input type="radio" name="is_fixed" value="variable" > Variable Interest
+                                                        <input type="radio" name="is_fixed" value="variable" id="is_variable" <?php if($row['is_fixed'] == '0'){echo 'checked'; }?>> Variable Interest
                                                     </label>
                                                     <label class="radio-inline" style=" margin-left:35px">
-                                                        <input type="radio" name="is_fixed" id="is_fixed" value="fixed" checked > Fixed Interest
+                                                        <input type="radio" name="is_fixed" id="is_fixed" value="fixed" <?php if($row['is_fixed'] == '1'){echo 'checked'; }?> > Fixed Interest
                                                     </label>
 
                                                 </section>
@@ -332,7 +386,8 @@ if(isset($_GET['id'])){
 
                         </article>
                         <!-- WIDGET END -->
-
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-6 col-md-6 col-lg-6">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
                     <header>
@@ -356,7 +411,7 @@ if(isset($_GET['id'])){
                             <section class="col col-12">
 
                                 <label class="input">
-                                    <textarea type="text" id="txtEligibility" class="ckeditor" name="txtFeature"><?php echo set_value('txtFeature'); ?></textarea>
+                                    <textarea type="text" id="txtFeature" class="ckeditor" name="txtFeature"><?php echo $row['feature']; ?></textarea>
                                 </label>
                             </section>
 
@@ -400,7 +455,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo set_value('txtEligibility'); ?></textarea>
+                                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo $row['eligibility']; ?></textarea>
                                     </label>
                                 </section>
 
@@ -442,7 +497,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
+                                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo $row['requirement']; ?></textarea>
                                     </label>
                                 </section>
 
@@ -484,7 +539,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo set_value('txtTermsAndConditions'); ?></textarea>
+                                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo $row['terms_and_conditions']; ?></textarea>
                                     </label>
                                 </section>
 
@@ -525,7 +580,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php echo set_value('txtReview'); ?></textarea>
+                                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php echo $row['review']; ?></textarea>
                                     </label>
                                 </section>
 
@@ -593,8 +648,7 @@ if(isset($_GET['id'])){
         $("input[name ='is_fixed']").click(function() {
             var v_value = $(this).val();
             if(v_value == 'fixed'){
-                $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php if(isset($row["interest_rate_fixed"]) && $row["interest_rate_fixed"] != ""){echo $row["interest_rate_fixed"];}else{echo set_value('txtInterestRateFixed');} ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
-
+                $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php if(isset($row["fixed_interest"]) && $row["fixed_interest"] != ""){echo $row["fixed_interest"];}else{echo set_value('txtInterestRateFixed');} ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
             }
 
             if(v_value == 'variable'){
@@ -602,14 +656,14 @@ if(isset($_GET['id'])){
                 '<section class="col col-6">'+
                 '<label class="label">Interest Rate Max(%)</label>'+
                 '<label class="input">'+
-                '<input type="text" maxlength="50" name="txtInterestRateMax" value="<?php if(!empty($row["interest_rate_max"])){echo $row["interest_rate_max"];}else{echo set_value('txtInterestRateMax');} ?>" placeholder="Write Interest Rate without percentage sign">'+
+                '<input type="text" maxlength="50" name="txtInterestRateMax" value="<?php if(!empty($row["max_interest"])){echo $row["max_interest"];}else{echo set_value('txtInterestRateMax');} ?>" placeholder="Write Interest Rate without percentage sign">'+
                 '</label>'+
                 '<label class="red"><?php echo form_error('txtInterestRateMax');?></label>'+
                 '</section>'+
                 '<section class="col col-6">'+
                 '<label class="label">Interest Rate Average(%)</label>'+
                 '<label class="input">'+
-                '<input type="text" maxlength="50" name="txtInterestRateAverage" value="<?php if(!empty($row["interest_rate_average"])){echo $row["interest_rate_average"];}else{echo set_value('txtInterestRateAverage');} ?>" placeholder="Write Interest Rate without percentage sign">'+
+                '<input type="text" maxlength="50" name="txtInterestRateAverage" value="<?php if(!empty($row["avg_interest"])){echo $row["avg_interest"];}else{echo set_value('txtInterestRateAverage');} ?>" placeholder="Write Interest Rate without percentage sign">'+
                 '</label>'+
                 '<label class="red"><?php echo form_error("txtInterestRateAverage");?></label>'+
                 '</section>'+
@@ -618,7 +672,7 @@ if(isset($_GET['id'])){
                 '<section class="col col-6">'+
                 '<label class="label">Interest Rate Min(%)</label>'+
                 '<label class="input">'+
-                '<input type="text" maxlength="50" name="txtInterestRateMin" value="<?php if(!empty($row["interest_rate_min"])){echo $row["interest_rate_min"];}else{echo set_value('txtInterestRateMin');} ?>" placeholder="Write Interest Rate without percentage sign">'+
+                '<input type="text" maxlength="50" name="txtInterestRateMin" value="<?php if(!empty($row["min_interest"])){echo $row["min_interest"];}else{echo set_value('txtInterestRateMin');} ?>" placeholder="Write Interest Rate without percentage sign">'+
                 '</label>'+
                 '<label class="red"><?php echo form_error('txtInterestRateMin');?></label>'+
                 '</section>'+
@@ -628,23 +682,21 @@ if(isset($_GET['id'])){
         });
 
         if($("input[id='is_fixed']").is(':checked')){
-
-
-            $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php if(isset($row["interest_rate_fixed"]) && $row["interest_rate_fixed"] != ""){echo $row["interest_rate_fixed"];}else{echo set_value('txtInterestRateFixed');} ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
+            $('#interest_rate').html('<div class="row"><section class="col col-6"><label class="label">Interest Rate Fixed (%)</label><label class="input"><input type="text" maxlength="50" name="txtInterestRateFixed" value="<?php if(isset($row["fixed_interest"]) && $row["fixed_interest"] != ""){echo $row["fixed_interest"];}else{echo set_value('txtInterestRateFixed');} ?>" placeholder="Write Interest Rate without percentage sign"></label><label class="red"><?php echo form_error('txtInterestRateFixed');?></label></section></div>');
 
         }else{
             $('#interest_rate').html('<div class="row">'+
             '<section class="col col-6">'+
             '<label class="label">Interest Rate Max(%)</label>'+
             '<label class="input">'+
-            '<input type="text" maxlength="50" name="txtInterestRateMax" value="<?php if(!empty($row["interest_rate_max"])){echo $row["interest_rate_max"];}else{echo set_value('txtInterestRateMax');} ?>" placeholder="Write Interest Rate without percentage sign">'+
+            '<input type="text" maxlength="50" name="txtInterestRateMax" value="<?php if(!empty($row["max_interest"])){echo $row["max_interest"];}else{echo set_value('txtInterestRateMax');} ?>" placeholder="Write Interest Rate without percentage sign">'+
             '</label>'+
             '<label class="red"><?php echo form_error('txtInterestRateMax');?></label>'+
             '</section>'+
             '<section class="col col-6">'+
             '<label class="label">Interest Rate Average(%)</label>'+
             '<label class="input">'+
-            '<input type="text" maxlength="50" name="txtInterestRateAverage" value="<?php if(!empty($row["interest_rate_average"])){echo $row["interest_rate_average"];}else{echo set_value('txtInterestRateAverage');} ?>" placeholder="Write Interest Rate without percentage sign">'+
+            '<input type="text" maxlength="50" name="txtInterestRateAverage" value="<?php if(!empty($row["avg_interest"])){echo $row["avg_interest"];}else{echo set_value('txtInterestRateAverage');} ?>" placeholder="Write Interest Rate without percentage sign">'+
             '</label>'+
             '<label class="red"><?php echo form_error("txtInterestRateAverage");?></label>'+
             '</section>'+
@@ -653,14 +705,13 @@ if(isset($_GET['id'])){
             '<section class="col col-6">'+
             '<label class="label">Interest Rate Min(%)</label>'+
             '<label class="input">'+
-            '<input type="text" maxlength="50" name="txtInterestRateMin" value="<?php if(!empty($row["interest_rate_min"])){echo $row["interest_rate_min"];}else{echo set_value('txtInterestRateMin');} ?>" placeholder="Write Interest Rate without percentage sign">'+
+            '<input type="text" maxlength="50" name="txtInterestRateMin" value="<?php if(!empty($row["min_interest"])){echo $row["min_interest"];}else{echo set_value('txtInterestRateMin');} ?>" placeholder="Write Interest Rate without percentage sign">'+
             '</label>'+
             '<label class="red"><?php echo form_error('txtInterestRateMin');?></label>'+
             '</section>'+
 
             '</div>');
         }
-
 
         $("input[name ='is_non_bank']").click(function() {
             var v_value = $(this).val();
