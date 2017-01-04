@@ -1379,6 +1379,52 @@ class Select_Model extends CI_Model
     }
 
 
+    public function get_snd_account_info(){
+        $sql = "SELECT snd_info.id,snd_info.`opening_balance`,snd_info.`interest_rate`,snd_info.`notice_day`,snd_info.`interest_paid`,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, snd_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `snd_info` INNER JOIN current_account_i_am ON current_account_i_am.id = snd_info.i_am_id LEFT JOIN card_bank ON card_bank.id = snd_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=snd_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id ORDER BY snd_info.id ASC";
+        $query=$this->db->query($sql);
+        $result="";
+
+        if($query->num_rows() > 0)
+        {
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $bank = "";
+                if($row->is_non_bank == 1){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
+                $bank_logo = "";
+                if($row->is_non_bank == 1){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
+
+                //$year =( $row->tenure ==1) ?'Year' : 'Years';
+
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
+					 <td class="text-center">'.$bank.'</td>
+					 <td class="text-center"> '.$row->opening_balance.'</td>
+					 <td class="text-center"> '.$row->interest_rate.'</td>
+					 <td> '.$row->notice_day.'</td>
+					 <td> '.$row->i_am.'</td>
+					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
+
+                $result.='</td>
+                    <td><a href="'.base_url().'snd_account/edit_account_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?account_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+
     function Select_dps_info_by_id($id){
         if(!empty($id)){
             $sql="SELECT *  FROM `dps_info`INNER JOIN dps_maturity_amount ON  dps_maturity_amount.dps_info_id = dps_info.id WHERE dps_info.id = $id";

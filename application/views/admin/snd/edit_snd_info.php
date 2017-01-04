@@ -1,3 +1,30 @@
+<?php
+
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $table='snd_info';
+    $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+}else{
+    $row['id']='';
+    $row['bank_id']='';
+    $row['is_non_bank']='';
+    $row['non_bank_id']='';
+    $row['snd_name']='';
+    $row['i_am_id']='';
+    $row['opening_balance']='';
+    $row['interest_rate']='';
+    $row['notice_day']='';
+    $row['interest_paid']='';
+    $row['available_offer']='';
+    $row['features']='';
+    $row['fees_and_charges']='';
+    $row['requirements']='';
+    $row['terms_and_conditions']='';
+    $row['review']='';
+
+}
+?>
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
@@ -35,7 +62,7 @@
 
     <!-- breadcrumb -->
     <ol class="breadcrumb">
-        <li>Account</li><li>SND Account</li><li> Add Account Information</li>
+        <li>Account</li><li>SND Account</li><li> Edit Account Information</li>
     </ol>
 </div>
 <!-- END RIBBON -->
@@ -49,7 +76,7 @@
             <i class="fa fa-table fa-fw "></i>
             SND Account
                 <span>>
-                    Add Account Information
+                    Edit Account Information
                 </span>
         </h1>
     </div>
@@ -69,7 +96,7 @@
     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
         <header>
             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-            <h2>Add Account Information</h2>
+            <h2>Edit Account Information</h2>
 
         </header>
 
@@ -86,7 +113,7 @@
             <!-- widget content -->
             <div class="widget-body no-padding">
 
-                <form id="age_limit" method="post" action="<?php echo base_url();?>snd_account/account_info" class="smart-form" novalidate="novalidate">
+                <form id="age_limit" method="post" action="<?php echo base_url();?>snd_account/edit_account_info" class="smart-form" novalidate="novalidate">
                     <?php
                     //-----Display Success or Error message---
                     if(isset($feedback)){
@@ -98,24 +125,19 @@
                             <div class="row">
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> <?php echo ($row['is_non_bank'] ==1) ? 'checked' : '' ;?>> Is Non Bank Institution ?
+                                        <input type="hidden" name="txtSNDAccountId" value="<?php echo $row['id'];?>">
                                     </label>
                                 </section>
                                 <section class="col col-6" id="institution">
-                                    <label class="label">Bank Name</label>
-                                    <label class="select">
-                                        <select name="txtBankName" id="txtBankName">
-                                            <?php echo $this->Select_model->select_bank();?>
-                                        </select>
-                                    </label>
-                                    <label class="red"><?php echo form_error('txtBankName');?></label>
+
                                 </section>
                             </div>
                             <div class="row">
                                 <section class="col col-6">
                                     <label class="label">SND Account Name</label>
                                     <label class="input">
-                                        <input type="text" maxlength="255" name="txtSndAccountName" value="<?php echo set_value('txtSndAccountName'); ?>" placeholder="Write Snd Account Name">
+                                        <input type="text" maxlength="255" name="txtSndAccountName" value="<?php echo $row['snd_name']; ?>" placeholder="Write Snd Account Name">
                                     </label>
 
                                     <label class="red"><?php echo form_error('txtSndAccountName');?></label>
@@ -125,7 +147,14 @@
                                     <label class="label">I Am</label>
                                     <label class="select">
                                         <select name="txtIAm" id="txtIAm">
-                                            <?php echo $this->Select_model->select_current_account_i_am();?>
+                                            <?php
+                                            $result=$this->Select_model->select_all('current_account_i_am');
+                                            foreach($result->result() as $row1){
+                                                ?>
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_am_id"]) && $row["i_am_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtIAm",$row1->id)?>><?php echo $row1->i_am ; ?></option>';
+                                            <?php
+                                            }
+                                            ?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtIAm');?></label>
@@ -136,7 +165,7 @@
                                 <section class="col col-6">
                                     <label class="label">Opening Balance</label>
                                     <label class="input">
-                                        <input type="text" maxlength="15" name="txtOpeningBalance" value="<?php echo set_value('txtOpeningBalance'); ?>" placeholder="Write Opening Balance">
+                                        <input type="text" maxlength="15" name="txtOpeningBalance" value="<?php echo $row['opening_balance']; ?>" placeholder="Write Opening Balance">
                                     </label>
 
                                     <label class="red"><?php echo form_error('txtOpeningBalance');?></label>
@@ -144,7 +173,7 @@
                                 <section class="col col-6">
                                     <label class="label">Interest Rate</label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="txtInterestRate" value="<?php echo set_value('txtInterestRate'); ?>" placeholder="Write Interest Rate">
+                                        <input type="text" maxlength="25" name="txtInterestRate" value="<?php echo $row['interest_rate']; ?>" placeholder="Write Interest Rate">
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestRate');?></label>
                                 </section>
@@ -155,14 +184,14 @@
                                 <section class="col col-6">
                                     <label class="label">Notice Day</label>
                                     <label class="input">
-                                        <input type="text" maxlength="100" name="txtNoticeDay" id="txtNoticeDay" value="<?php echo set_value('txtNoticeDay'); ?>" placeholder="Write  Notice Day">
+                                        <input type="text" maxlength="100" name="txtNoticeDay" id="txtNoticeDay" value="<?php echo $row['notice_day']; ?>" placeholder="Write  Notice Day">
                                     </label>
                                     <label class="red"><?php echo form_error('txtNoticeDay');?></label>
                                 </section>
                                 <section class="col col-6">
                                     <label class="label">Interest Paid (Ex: Monthly)</label>
                                     <label class="input">
-                                        <input type="text" maxlength="100" name="txtInterestPaid" id="txtInterestPaid" value="<?php echo set_value('txtInterestPaid'); ?>" placeholder="Write  Interest Paid">
+                                        <input type="text" maxlength="100" name="txtInterestPaid" id="txtInterestPaid" value="<?php echo $row['interest_paid']; ?>" placeholder="Write  Interest Paid">
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestPaid');?></label>
                                 </section>
@@ -199,7 +228,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtAvailableOffer" class="ckeditor" name="txtAvailableOffer"><?php echo set_value('txtAvailableOffer'); ?></textarea>
+                        <textarea type="text" id="txtAvailableOffer" class="ckeditor" name="txtAvailableOffer"><?php echo $row['available_offer']; ?></textarea>
                     </label>
                 </section>
 
@@ -243,7 +272,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php echo set_value('txtAvailableFeatures'); ?></textarea>
+                        <textarea type="text" id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php echo $row['features']; ?></textarea>
                     </label>
                 </section>
 
@@ -286,7 +315,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtRequirement" class="ckeditor" name="txtRequirement"><?php echo set_value('txtRequirement'); ?></textarea>
+                        <textarea type="text" id="txtRequirement" class="ckeditor" name="txtRequirement"><?php echo $row['requirements']; ?></textarea>
                     </label>
                 </section>
 
@@ -328,7 +357,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo set_value('txtFeesAndCharges'); ?></textarea>
+                        <textarea type="text" id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo $row['fees_and_charges']; ?></textarea>
                     </label>
                 </section>
 
@@ -371,7 +400,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo set_value('txtTermsAndConditions'); ?></textarea>
+                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo $row['terms_and_conditions']; ?></textarea>
                     </label>
                 </section>
 
@@ -412,7 +441,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php echo set_value('txtReview'); ?></textarea>
+                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php echo $row['review']; ?></textarea>
                     </label>
                 </section>
 
@@ -436,7 +465,7 @@
         </section>
         <section class="col-md-6">
             <label class="input">
-                <button class="btn btn-primary" type="submit" >Save</button>
+                <button class="btn btn-primary" type="submit" >Update</button>
             </label>
         </section>
 
@@ -510,11 +539,10 @@
                 $("#txtMaximumDepositAmount").focus();
             }
         });
-
         $("input[name ='is_non_bank']").click(function() {
             var v_value = $(this).val();
             if ($(this).is(":checked")) {
-                $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+                $('#institution').html('<label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
 
             }else {
                 $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
@@ -522,9 +550,15 @@
         });
 
         if($("input[name ='is_non_bank']").is(':checked')){
-            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName">' +
+            '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
+            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["non_bank_id"]) && $row["non_bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option>;<?php } ?>'+
+            '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
         }else{
-            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName">' +
+            '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
+            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
+            '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
         }
     });
 

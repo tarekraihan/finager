@@ -21,11 +21,11 @@ class Snd_account extends CI_Controller
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
-            $this->form_validation->set_rules('txtSavingAccountName', 'Saving Account Name', 'trim');
+            $this->form_validation->set_rules('txtSndAccountName', 'SND Account Name', 'trim');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtOpeningBalance', 'Opening Balance', 'trim|required');
             $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|required');
-            $this->form_validation->set_rules('txtMinAmountInterest', 'Min Amount for Interest', 'trim|required');
+            $this->form_validation->set_rules('txtNoticeDay', 'Min Amount for Interest', 'trim|required');
             $this->form_validation->set_rules('txtInterestPaid', 'Interest Paid', 'trim|required');
             $this->form_validation->set_rules('txtAvailableFeatures', ' Features', 'trim|required');
             $this->form_validation->set_rules('txtRequirement', 'Requirement', 'trim|required');
@@ -52,11 +52,12 @@ class Snd_account extends CI_Controller
                     'i_am_id' => $this->input->post('txtIAm'),
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
-                    'saving_account_name' => $this->input->post('txtSavingAccountName'),
+                    'snd_name' => $this->input->post('txtSndAccountName'),
                     'opening_balance' => $this->input->post('txtOpeningBalance'),
                     'interest_rate' => $this->input->post('txtInterestRate'),
-                    'min_balance_for_interest' => $this->input->post('txtMinAmountInterest'),
+                    'notice_day' => $this->input->post('txtNoticeDay'),
                     'interest_paid' => $this->input->post('txtInterestPaid'),
+                    'available_offer' => $this->input->post('txtAvailableOffer'),
                     'features' => $this->input->post('txtAvailableFeatures'),
                     'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'requirements' => $this->input->post('txtRequirement'),
@@ -65,12 +66,12 @@ class Snd_account extends CI_Controller
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
-                $this->Common_model->table_name = 'saving_account_info';
+                $this->Common_model->table_name = 'snd_info';
                 $result = $this->Common_model->insert();
                 if ($result) {
-                    redirect(base_url().'saving_account/account_info/success');
+                    redirect(base_url().'snd_account/account_info/success');
                 } else {
-                    redirect(base_url().'saving_account/account_info/error');
+                    redirect(base_url().'snd_account/account_info/error');
                 }
             }
         }else {
@@ -82,7 +83,7 @@ class Snd_account extends CI_Controller
         $data['title'] = "Account Information list";
         $this->load->view('admin/block/header',$data);
         $this->load->view('admin/block/left_nav');
-        $this->load->view('admin/saving_account/saving_account_list');
+        $this->load->view('admin/snd/snd_account_list');
         $this->load->view('admin/block/footer');
     }
 
@@ -95,22 +96,24 @@ class Snd_account extends CI_Controller
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
-            $this->form_validation->set_rules('txtSavingAccountName', 'Saving Account Name', 'trim');
+
+            $this->form_validation->set_rules('txtSndAccountName', 'SND Account Name', 'trim');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtOpeningBalance', 'Opening Balance', 'trim|required');
             $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|required');
-            $this->form_validation->set_rules('txtMinAmountInterest', 'Min Amount for Interest', 'trim|required');
+            $this->form_validation->set_rules('txtNoticeDay', 'Min Amount for Interest', 'trim|required');
             $this->form_validation->set_rules('txtInterestPaid', 'Interest Paid', 'trim|required');
             $this->form_validation->set_rules('txtAvailableFeatures', ' Features', 'trim|required');
             $this->form_validation->set_rules('txtRequirement', 'Requirement', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
+
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Account Info";
                 $this->load->view('admin/block/header', $data);
                 $this->load->view('admin/block/left_nav');
-                $this->load->view('admin/saving_account/edit_account_info');
+                $this->load->view('admin/snd/edit_snd_info');
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
@@ -120,17 +123,17 @@ class Snd_account extends CI_Controller
                 if($is_non_bank == 1){
                     $non_bank =1;
                 }
-
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
                     'i_am_id' => $this->input->post('txtIAm'),
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
-                    'saving_account_name' => $this->input->post('txtSavingAccountName'),
+                    'snd_name' => $this->input->post('txtSndAccountName'),
                     'opening_balance' => $this->input->post('txtOpeningBalance'),
                     'interest_rate' => $this->input->post('txtInterestRate'),
-                    'min_balance_for_interest' => $this->input->post('txtMinAmountInterest'),
+                    'notice_day' => $this->input->post('txtNoticeDay'),
                     'interest_paid' => $this->input->post('txtInterestPaid'),
+                    'available_offer' => $this->input->post('txtAvailableOffer'),
                     'features' => $this->input->post('txtAvailableFeatures'),
                     'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'requirements' => $this->input->post('txtRequirement'),
@@ -139,14 +142,15 @@ class Snd_account extends CI_Controller
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
-                $this->Common_model->table_name = 'saving_account_info';
+
+                $this->Common_model->table_name = 'snd_info';
                 $result = $this->Common_model->update();
 
-                $this->Common_model->where = array('dps_info_id' => $this->input->post('txtInfoId'));
+                $this->Common_model->where = array('id' => $this->input->post('txtSNDAccountId'));
                 if ($result) {
-                    redirect(base_url().'saving_account/edit_account_info/success');
+                    redirect(base_url().'snd_account/edit_account_info/success');
                 } else {
-                    redirect(base_url().'saving_account/edit_account_info/error');
+                    redirect(base_url().'snd_account/edit_account_info/error');
                 }
             }
         }else {

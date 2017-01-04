@@ -373,7 +373,7 @@
                     <a href="<?php echo base_url();?>snd_account/account_info">Add Account Info</a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>saving_account/account_list/">Account List</a>
+                    <a href="<?php echo base_url();?>snd_account/account_list/">Account List</a>
                 </li>
             </ul>
         </li>
