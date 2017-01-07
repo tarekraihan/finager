@@ -1,4 +1,11 @@
-
+<style>
+    .card_btn_apllication {
+        margin: 7px 24px;
+    }
+    .card_text2 p{
+        position:relative;
+    }
+</style>
 <section id="debitCard_header">
 
 </section>
@@ -41,18 +48,33 @@
 				<div class="col-sm-3 col-xs-3">
 					<div class="card_left_bar">
 						<div class="card_query">
-							<p>I Am</p>
+							<p>Choose Account</p>
 							<div class="query_radio">
 								<label class="material_radio_group">
 									<input type="radio" name="iAm" value="generalConsumer" class="material_radiobox"/>
 									<span class="material_check_radio"></span>
-									General Consumer
+									Current Account
 								</label><br/>
 								<label class="material_radio_group">
 									<input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
 									<span class="material_check_radio"></span>
-									Student
-								</label>
+									Savings Account
+								</label><br/>
+                                <label class="material_radio_group">
+                                    <input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
+                                    <span class="material_check_radio"></span>
+                                    SND Account
+                                </label><br/>
+                                <label class="material_radio_group">
+                                    <input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
+                                    <span class="material_check_radio"></span>
+                                    STD Account
+                                </label><br/>
+                                <label class="material_radio_group">
+                                    <input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
+                                    <span class="material_check_radio"></span>
+                                    RFCD Account
+                                </label>
 							</div>
 						</div>
 						<div class="card_query">
@@ -71,35 +93,40 @@
 							</div>
 						</div>
 						<div class="card_query">
-							<p>Card Type</p>
+							<p>I Want</p>
 							<div class="query_radio">
 								<label class="material_radio_group">
 									<input type="radio" name="WantCreditLimit" value="Excellent" class="material_radiobox"/>
 									<span class="material_check_radio"></span>
-									Classic Card
+									General Card
 								</label><br/>
 								<label class="material_radio_group">
 									<input type="radio" name="WantCreditLimit" value="Good" class="material_radiobox"/>
 									<span class="material_check_radio"></span>
-									Platinum Card
+									Student Card
 								</label><br/>
 								<label class="material_radio_group">
 									<input type="radio" name="WantCreditLimit" value="Fair" class="material_radiobox"/>
 									<span class="material_check_radio"></span>
-									Silver Card
+									Business Card
 								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="Bad" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									White Debit Card
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="NoCreditLimitHistory" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Signature Card
-								</label>
 							</div>
 						</div>
+                        <div class="card_query">
+                            <p>Card Issuer</p>
+                            <div class="query_radio">
+                                <label class="material_radio_group">
+                                    <input type="radio" name="MyIncomeRange" value="Excellent" class="material_radiobox"/>
+                                    <span class="material_check_radio"></span>
+                                    Visa
+                                </label><br/>
+                                <label class="material_radio_group">
+                                    <input type="radio" name="MyIncomeRange" value="Good" class="material_radiobox"/>
+                                    <span class="material_check_radio"></span>
+                                    Master Card
+                                </label>
+                            </div>
+                        </div>
 					</div>
 				</div>
 				<!-- Left bar query content end -->
@@ -111,6 +138,7 @@
 							<div class="col-sm-3 col-xs-3">
 								<a href=""><img title="Free Web tutorials" class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></a>
 								<img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/BtnCard_apply.png" />
+
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 								</p>
@@ -131,6 +159,14 @@
 										<div class="card_text1 card_btn_apllication">
 											<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/card_btn_apllication.png" />
 										</div>
+                                        <div>
+
+                                            <div class="card_text2">
+                                                <h5>Annual Fee</h5>
+                                                <p>600 + 15% VAT</p>
+                                            </div>
+
+                                        </div>
 									</div>
 								</div>
 								

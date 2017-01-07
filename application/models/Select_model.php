@@ -307,6 +307,30 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function select_snd_account_i_am()
+    {
+        $sql="SELECT * FROM `snd_account_i_am`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtIAm",$row->id).'>'.$row->i_am.'</option>';
+        }
+        return $option;
+    }
+
+    function select_snd_deposit_amount()
+    {
+        $sql="SELECT * FROM `snd_deposit_amount_range`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtDepositAmount",$row->id).'>'.$row->deposit_amount_range.'</option>';
+        }
+        return $option;
+    }
+
     function select_fdr_tenure()
     {
         $sql="SELECT * FROM `fdr_tenure`";

@@ -196,6 +196,24 @@ if(isset($_GET['id'])){
                                     <label class="red"><?php echo form_error('txtInterestPaid');?></label>
                                 </section>
                             </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Deposit Amount</label>
+                                    <label class="select">
+                                        <select name="txtDepositAmount" id="txtDepositAmount">
+                                            <?php
+                                            $result=$this->Select_model->select_all('snd_deposit_amount_range');
+                                            foreach($result->result() as $row1){
+                                                ?>
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["deposit_amount_id"]) && $row["deposit_amount_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtDepositAmount",$row1->id)?>><?php echo $row1->deposit_amount_range ; ?></option>';
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtDepositAmount');?></label>
+                                </section>
+                            </div>
 
 </article>
 <!-- WIDGET END -->

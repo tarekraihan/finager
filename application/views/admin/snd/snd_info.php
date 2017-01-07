@@ -125,7 +125,7 @@
                                     <label class="label">I Am</label>
                                     <label class="select">
                                         <select name="txtIAm" id="txtIAm">
-                                            <?php echo $this->Select_model->select_current_account_i_am();?>
+                                            <?php echo $this->Select_model->select_snd_account_i_am();?>
                                         </select>
                                     </label>
                                     <label class="red"><?php echo form_error('txtIAm');?></label>
@@ -165,6 +165,17 @@
                                         <input type="text" maxlength="100" name="txtInterestPaid" id="txtInterestPaid" value="<?php echo set_value('txtInterestPaid'); ?>" placeholder="Write  Interest Paid">
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestPaid');?></label>
+                                </section>
+                            </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Deposit Amount</label>
+                                    <label class="select">
+                                        <select name="txtDepositAmount" id="txtDepositAmount">
+                                            <?php echo $this->Select_model->select_snd_deposit_amount();?>
+                                        </select>
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtDepositAmount');?></label>
                                 </section>
                             </div>
 
