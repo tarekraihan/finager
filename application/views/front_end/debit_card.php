@@ -50,81 +50,70 @@
 						<div class="card_query">
 							<p>Choose Account</p>
 							<div class="query_radio">
-								<label class="material_radio_group">
-									<input type="radio" name="iAm" value="generalConsumer" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Current Account
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Savings Account
-								</label><br/>
-                                <label class="material_radio_group">
-                                    <input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    SND Account
-                                </label><br/>
-                                <label class="material_radio_group">
-                                    <input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    STD Account
-                                </label><br/>
-                                <label class="material_radio_group">
-                                    <input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    RFCD Account
-                                </label>
+                                <?php
+                                $choose_account = $this->Select_model->select_all('debit_card_choose_account');
+                                foreach($choose_account->result() as $row){
+                                    ?>
+                                    <label class="material_radio_group">
+                                        <input type="radio" name="choose_account_<?php echo $row->id; ?>" id="choose_account_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        <?php echo $row->account_name;?>
+                                    </label><br/>
+                                <?php
+                                }
+                                ?>
 							</div>
 						</div>
 						<div class="card_query">
 							<p>Looking for</p>
 							<div class="query_radio">
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Excellent" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Local Debit Card
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Good" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									International Debit Card
-								</label>
+                                <?php
+                                $looking_for = $this->Select_model->select_all('debit_card_looking_for');
+                                foreach($looking_for->result() as $row){
+                                    ?>
+                                    <label class="material_radio_group">
+                                        <input type="radio" name="looking_for_<?php echo $row->id; ?>" id="looking_for_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        <?php echo $row->looking_for;?>
+                                    </label><br/>
+                                <?php
+                                }
+                                ?>
 							</div>
 						</div>
 						<div class="card_query">
 							<p>I Want</p>
 							<div class="query_radio">
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="Excellent" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									General Card
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="Good" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Student Card
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="Fair" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Business Card
-								</label><br/>
+
+                                <?php
+                                $i_want = $this->Select_model->select_all('debit_card_i_want');
+                                foreach($i_want->result() as $row){
+                                    ?>
+                                    <label class="material_radio_group">
+                                        <input type="radio" name="i_want_<?php echo $row->id; ?>" id="i_want_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        <?php echo $row->i_want;?>
+                                    </label><br/>
+                                <?php
+                                }
+                                ?>
 							</div>
 						</div>
                         <div class="card_query">
                             <p>Card Issuer</p>
                             <div class="query_radio">
-                                <label class="material_radio_group">
-                                    <input type="radio" name="MyIncomeRange" value="Excellent" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    Visa
-                                </label><br/>
-                                <label class="material_radio_group">
-                                    <input type="radio" name="MyIncomeRange" value="Good" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    Master Card
-                                </label>
+                                <?php
+                                $i_want = $this->Select_model->select_all('debit_card_issuer');
+                                foreach($i_want->result() as $row){
+                                    ?>
+                                    <label class="material_radio_group">
+                                        <input type="radio" name="card_issuer_<?php echo $row->id; ?>" id="card_issuer_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        <?php echo $row->card_issuer_name;?>
+                                    </label><br/>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
 					</div>
@@ -132,8 +121,14 @@
 				<!-- Left bar query content end -->
 				
 				<!-- Right bar content start -->
+                <div class="col-sm-9 col-xs-9" id="SearchCard">
+                    <div id="loading" class="text-center" style="margin-top: 150px"></div>
+
+
+                </div>
 				<div class="col-sm-9 col-xs-9">
 					<div class="full-card">
+
 						<div class="row card_right_bar no-margin-lr">
 							<div class="col-sm-3 col-xs-3">
 								<a href=""><img title="Free Web tutorials" class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></a>
@@ -615,8 +610,100 @@
     </section>
 
 
+<script type="text/javascript">
+    $(document).ready(function(){
 
-    <script type="text/javascript">
+        function loading_show(){
+            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
+        }
+        function loading_hide(){
+            $('#loading').html("");
+        }
+
+        function loadData(){
+            loading_show();
+
+
+            var card_user = new Array();
+            $('input[name="iAm"]:checked').each(function(){
+                card_user.push($(this).val());
+            });
+            var card_user_list = "&card_user="+card_user;
+
+            var income_range = new Array();
+            $('input[name="myIncomeRange"]:checked').each(function(){
+                income_range.push($(this).val());
+            });
+            var income_range_list = "&income_range="+income_range;
+
+            var credit_limit = new Array();
+            $('input[name="wantCreditLimit"]:checked').each(function(){
+                credit_limit.push($(this).val());
+            });
+            var credit_limit_list = "&credit_limit="+credit_limit;
+
+            var credit_card_type = new Array();
+            $('input[name="creditCardType"]:checked').each(function(){
+                credit_card_type.push($(this).val());
+            });
+            var credit_card_type_list = "&credit_card_type="+credit_card_type;
+
+            var feature_benefits = new Array();
+            $('input[name="featuresBenefits"]:checked').each(function(){
+                feature_benefits.push($(this).val());
+            });
+            var feature_benefits_list = "&feature_benefits="+feature_benefits;
+
+            var max_interest_free_period = new Array();
+            $('input[name="maximumInterestFreePeriod"]:checked').each(function(){
+                max_interest_free_period.push($(this).val());
+            });
+            var max_interest_free_period_list = "&max_interest_free_period="+max_interest_free_period;
+
+
+            var card_type = new Array();
+            $('input[name="cardType"]:checked').each(function(){
+                card_type.push($(this).val());
+            });
+            var card_type_list = "&card_type="+card_type;
+
+
+            var card_issuer = new Array();
+            $('input[name="cardIssuer"]:checked').each(function(){
+                card_issuer.push($(this).val());
+            });
+            var card_issuer_list = "&card_issuer="+card_issuer;
+
+            var main_string = card_user_list+income_range_list+credit_limit_list+credit_card_type_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list;
+            main_string = main_string.substring(1, main_string.length);
+//            console.log(main_string);
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>card/ajax_get_credit_card",
+                data: main_string,
+                cache: false,
+                success: function(msg)
+                {
+
+                    loading_hide();
+// console.log(msg);
+
+                    $("#SearchCard").html(msg);
+
+                }
+            });
+        }
+
+        loadData();
+        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
+
+    });
+
+</script>
+
+
+<script type="text/javascript">
 //for more info search
 function toggle() {
 	var ele = document.getElementById("toggleText");
@@ -735,14 +822,7 @@ function toggle2() {
             }
 
         });
-        /*
-         $(document).on('click','.compare-cross-btn',function(){
 
-         $(this).parent(".cart_anchor").removeClass("img_active");
-         $(this).parent(".cart_anchor").html('');
-         $(this).addClass("hidden");
-         });
-         */
         $(document).on('click','.compare-cross-btn',function(){
 
             var collected_card = $(this).prev().attr("data-card_id");
@@ -767,14 +847,6 @@ function toggle2() {
             $(this).addClass("hidden");
 
         });
-        /*
-
-         $(document).on('click','.compare-cross-btn',function(){
-         $(this).parent(".cart_anchor").removeClass("img_active");
-         $(this).parent(".cart_anchor").html('');
-         $(this).addClass("hidden");
-         });
-         */
 
         $(document).on('click','.compare-cross-btn',function(){
 
