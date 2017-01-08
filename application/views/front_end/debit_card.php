@@ -121,11 +121,7 @@
 				<!-- Left bar query content end -->
 				
 				<!-- Right bar content start -->
-                <div class="col-sm-9 col-xs-9" id="SearchCard">
-                    <div id="loading" class="text-center" style="margin-top: 150px"></div>
 
-
-                </div>
 				<div class="col-sm-9 col-xs-9">
 					<div class="full-card">
 
@@ -141,7 +137,7 @@
 								<span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
 								<span class="more_info_icon"><a id="displayText" href="javascript:toggle();"><i class="fa fa-info-circle"></i> More info</a></span>
 							</div>
-							
+
 							<div class="col-sm-9 col-xs-9">
 								<div class="row">
 									<div class="col-sm-9 col-xs-9">
@@ -164,7 +160,7 @@
                                         </div>
 									</div>
 								</div>
-								
+
 								<div class="row">
 									<div class="col-sm-2 col-xs-2 w20 no-padding">
 										<div class="card_text2">
@@ -199,11 +195,11 @@
 								</div>
 							</div>
 						</div>
-					
-					
+
+
 						<!-- More Info Tab content start -->
 						<div class="col-sm-12 card_more_info">
-							<div id="toggleText" style="display: none"> 
+							<div id="toggleText" style="display: none">
 								<section id="tab">
 									<!-- Nav tabs -->
 									<ul class="nav nav-tabs" role="tablist">
@@ -404,8 +400,8 @@
 						</div>
 						<!-- More Info Tab content end -->
 					</div>
-				
-				
+
+
 					<div class="full-card">
 						<div class="row card_right_bar no-margin-lr">
 							<div class="col-sm-3 col-xs-3">
@@ -418,7 +414,7 @@
 								<span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
 								<span class="more_info_icon"><a id="displayText1" href="javascript:toggle1();"><i class="fa fa-info-circle"></i> More info</a></span>
 							</div>
-							
+
 							<div class="col-sm-9 col-xs-9">
 								<div class="row">
 									<div class="col-sm-9 col-xs-9">
@@ -433,7 +429,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="row">
 									<div class="col-sm-2 col-xs-2 w20">
 										<div class="card_text2">
@@ -469,11 +465,11 @@
 
 							</div>
 						</div>
-					
-					
+
+
 						<!-- More Info Tab content start -->
 						<div class="col-sm-12 card_more_info">
-							<div id="toggleText1" style="display: none"> 
+							<div id="toggleText1" style="display: none">
 								<section id="tab">
 									<!-- Nav tabs -->
 									<ul class="nav nav-tabs" role="tablist">
@@ -527,26 +523,26 @@
 													<h4>Review</h4>
 													<hr/>
 													<p>
-														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 													</p>
 													<h4>Lorem Ipsum is simply dummy text</h4>
 													<p>
-														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 
+														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
 													</p>
 													<h4>Lorem Ipsum is simply dummy text</h4>
 													<p>
-														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 
+														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
 													</p>
 													<p>
-														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-													</p>
-													<h4>Lorem Ipsum is simply dummy text</h4>
-													<p>
-														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 													</p>
 													<h4>Lorem Ipsum is simply dummy text</h4>
 													<p>
-														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 
+														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+													</p>
+													<h4>Lorem Ipsum is simply dummy text</h4>
+													<p>
+														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
 													</p>
 												</div>
 											</div>
@@ -566,7 +562,7 @@
 						</div>
 						<!-- More Info Tab content end -->
 					</div>
-				
+
 				</div>
 				<!-- Right bar content end -->
 			</div>
