@@ -52,6 +52,7 @@
 							<div class="query_radio">
                                 <?php
                                 $choose_account = $this->Select_model->select_all('debit_card_choose_account');
+
                                 foreach($choose_account->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
@@ -123,18 +124,25 @@
 				<!-- Right bar content start -->
 
 				<div class="col-sm-9 col-xs-9">
-					<div class="full-card">
+
+                         <?php
+                            $result = $this->Front_end_select_model->select_debit_card_info();
+//                         print_r($result->result());
+                         $debit_card ='';
+                         foreach($result->result() as $row) {
+                             $debit_card .= '<div class="full-card">
 
 						<div class="row card_right_bar no-margin-lr">
 							<div class="col-sm-3 col-xs-3">
-								<a href=""><img title="Free Web tutorials" class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></a>
-								<img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/BtnCard_apply.png" />
+								<a href=""><img title="Free Web tutorials" class="img-responsive" src="' . base_url() . 'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+								<img class="btnCardApply img-responsive" src="' . base_url() . 'resource/front_end/images/BtnCard_apply.png" />
 
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 								</p>
 								<p class="rating text-center">Rated By 5 Person</p>
-								<span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
+
+								<span class="more_info_icon"><a id="" href="javascript:void(0);" class="add-to-compare" data-card_id="'.$row->id.'" ><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
 								<span class="more_info_icon"><a id="displayText" href="javascript:toggle();"><i class="fa fa-info-circle"></i> More info</a></span>
 							</div>
 
@@ -142,19 +150,19 @@
 								<div class="row">
 									<div class="col-sm-9 col-xs-9">
 										<div class="card_text1">
-											<b>Visa Classic Dual Card</b>
+											<b>'.$row->card_name.'</b>
 											<p class="card_description">Dual Currency Visa Classic Card of Brac Bank Ltd. is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.</p>
 										</div>
 									</div>
 									<div class="col-sm-3 col-xs-3">
 										<div class="card_text1 card_btn_apllication">
-											<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/card_btn_apllication.png" />
+											<img class="img-responsive" src="' . base_url() . 'resource/front_end/images/card_btn_apllication.png" />
 										</div>
                                         <div>
 
                                             <div class="card_text2">
                                                 <h5>Annual Fee</h5>
-                                                <p>600 + 15% VAT</p>
+                                                <p>'.$row->annual_fee.'</p>
                                             </div>
 
                                         </div>
@@ -165,31 +173,31 @@
 									<div class="col-sm-2 col-xs-2 w20 no-padding">
 										<div class="card_text2">
 											<h5>Daily Withdrawal Limit</h5>
-											<p>100,000</p>
+											<p> '.$row->daily_withdrawal_limit.'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2 w20 no-padding">
 										<div class="card_text2">
 											<h5>Number of Withdrawal</h5>
-											<p>5</p>
+											<p>'.$row->no_of_withdrawal.'</p>
 										</div>
 									</div>
 									<div class="col-sm-3 col-xs-3 w20 no-padding">
 										<div class="card_text2">
 											<h5>ATM Charge</h5>
-											<p>Own ATM: Free<br> Others ATM:<br> BDT 15 Per 1000</p>
+											<p>Own ATM: '.$row->atm_charge_own.'<br> Others ATM:<br> '.$row->atm_charge_other.'</p>
 										</div>
 									</div>
 									<div class="col-sm-1 col-xs-2 w20 no-padding">
 										<div class="card_text2">
-											<h5>Annual Fee</h5>
-											<p>600 + 15% VAT</p>
+											<h5>Per Transaction Limit</h5>
+											<p>'.$row->per_transaction_limit.'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-1 w20 no-padding">
 										<div class="card_text2">
 											<h5>Account Required</h5>
-											<p>Current Account/Savings Account</p>
+											<p>'.$row->account_name.'</p>
 										</div>
 									</div>
 								</div>
@@ -220,58 +228,7 @@
 													<h4>Features</h4>
 													<div class="prosConsHr"></div><br/>
 													<div class="prosCons_body2 trbodywidth">
-														<table class="table table-striped table-bordered">
-															<tbody>
-															  <tr>
-																<td>Daily ATM Withdrawal Limit</td>
-																<td>BDT 100,000</td>
-															  </tr>
-															  <tr>
-																<td>Daily Retail Purchase Limit</td>
-																<td>BDT 80,000</td>
-															  </tr>
-															  <tr>
-																<td>Daily Retail Withdrawal Limit</td>
-																<td>BDT 100,000</td>
-															  </tr>
-															  <tr>
-																<td>Internet Transaction </td>
-																<td>Available</td>
-															  </tr>
-															  <tr>
-																<td>Total ATM</td>
-																<td>Click to Check the Map</td>
-															  </tr>
-															  <tr>
-																<td>Total Merchant </td>
-																<td>Click to Check the Map</td>
-															  </tr>
-															  <tr>
-																<td>Name of the Network</td>
-																<td>Visa</td>
-															  </tr>
-															  <tr>
-																<td>Mobile Phone recharge</td>
-																<td>Available</td>
-															  </tr>
-															  <tr>
-																<td>Internet Transaction </td>
-																<td>Available</td>
-															  </tr>
-															  <tr>
-																<td>Online Tax Payment Facility</td>
-																<td>Available</td>
-															  </tr>
-															  <tr>
-																<td>Facilities</td>
-																<td>Shopping, Discount, E-Commerce, SMS Alert, Mobile Phone Recharge</td>
-															  </tr>
-															  <tr>
-																<td>Hotline Number</td>
-																<td>01713176459</td>
-															  </tr>
-															</tbody>
-														</table>
+														'.$row->features.'
 													</div>
 												</div>
 											</div>
@@ -282,30 +239,7 @@
 													<h4>Fees & Charges</h4>
 													<div class="prosConsHr"></div><br/>
 													<div class="prosCons_body2 trbodywidth">
-														<table class="table table-striped table-bordered">
-															<tbody>
-															  <tr>
-																<td>Issue Fee</td>
-																<td>Free</td>
-															  </tr>
-															  <tr>
-																<td>Annual Fee</td>
-																<td>600 + 15% VAT</td>
-															  </tr>
-															  <tr>
-																<td>Card Replacement Fee</td>
-																<td>BDT 500</td>
-															  </tr>
-															  <tr>
-																<td>Account Maintenance Annual Fee </td>
-																<td>BDT 1000</td>
-															  </tr>
-															  <tr>
-																<td>Pin Reissue Fee </td>
-																<td>BDT 400</td>
-															  </tr>
-															</tbody>
-														</table>
+														'.$row->fees_and_charges.'
 													</div>
 												</div>
 											</div>
@@ -342,14 +276,13 @@
 												<div class="prosConsHr"></div><br/>
 												<div class="prosCons_body2 trbodywidth">
 													<ol>
-														<li>The facility shall be made available for the customer from the date of Bank's approval of this application until such time is stipulated in any letter and this facility shall be continuing on until the adjustment of the dues of the Bank with interest and other charges.</li>
+														<li>The facility shall be made available for the customer from the date of Banks approval of this application until such time is stipulated in any letter and this facility shall be continuing on until the adjustment of the dues of the Bank with interest and other charges.</li>
 														<li>The Bank reserves the right to withdraw the credit facility and demand repayment if there has been any default in repayment of the loan. </li>
 														<li>The Bank shall not be obliged to make the credit facility available until it has received formal written acknowledgement from you accepting the credit facility on the basis of outline and subject to the terms and conditions specified in the banking arrangement letter.</li>
 														<li>The acceptance of the terms and conditions of the banking arrangement letter by the customer constitutes a legal and binding obligation and is enforceable in accordance with the terms of the Banking arrangement letter.</li>
-														<li>By use of the credit facility provided by the bank, the customer accepts the conditions enumerated in the banking arrangement letter and authorizes the bank to appoint agents to collect funds payable to the bank, as the Bank may consider necessary. In the due discharge of their duty, information regarding borrower's credit facility will be supplied to the agent. All charges payable to such agents, to collect amounts owed to the bank, are liable to be at borrower's cost and risk, in addition to all other costs, charges and expenses incurred by the bank to recover outstanding dues/money.</li>
+														<li>By use of the credit facility provided by the bank, the customer accepts the conditions enumerated in the banking arrangement letter and authorizes the bank to appoint agents to collect funds payable to the bank, as the Bank may consider necessary. In the due discharge of their duty, information regarding borrowers credit facility will be supplied to the agent. All charges payable to such agents, to collect amounts owed to the bank, are liable to be at borrowers cost and risk, in addition to all other costs, charges and expenses incurred by the bank to recover outstanding dues/money.</li>
 														<li>The bank is authorized to open and maintain account(s) for the purpose of administering and recording payments by the customer in respect of the facility.</li>
 														<li>The loan shall be utilized for the specified purpose for which it has been sanctioned. Payment shall be made directly by the bank to the vendor or to the customer, as determined by the   Bank, depending upon the purpose of the loan.</li>
-														<li>All payments in respect of the facility shall be made by the customer on or before the due dates and the customer hereby irrevocably authorizes the Bank to debit any of the customer's account(s) with the Bank with all amounts. Owing in respect of the facility including interest and charges and expenses (together the indebtedness) at such time as the same shall become or be due and, payable and transfer such sum to the loan account for adjustment but in any case, the customer shall always remain liable and agree(s) to make payment in full of all such sums to the Bank.</li>
 														<li>The customer unconditionally undertakes to repay the loan as per terms and conditions of the Banking Arrangement Letter.</li>
 														<li>The customer undertakes to deposit his/her salary/wages/honorarium payable by his/her employer to the designated account maintained with the Bank.</li>
 													</ol>
@@ -399,174 +332,13 @@
 							</div>
 						</div>
 						<!-- More Info Tab content end -->
-					</div>
+					</div>';
+
+                         }
+                         echo $debit_card;
+                         ?>
 
 
-					<div class="full-card">
-						<div class="row card_right_bar no-margin-lr">
-							<div class="col-sm-3 col-xs-3">
-								<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" />
-								<img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/BtnCard_apply.png" />
-								<p class="text-center">
-									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
-								</p>
-								<p class="rating text-center">Rated By 5 Person</p>
-								<span class="more_info_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
-								<span class="more_info_icon"><a id="displayText1" href="javascript:toggle1();"><i class="fa fa-info-circle"></i> More info</a></span>
-							</div>
-
-							<div class="col-sm-9 col-xs-9">
-								<div class="row">
-									<div class="col-sm-9 col-xs-9">
-										<div class="card_text1">
-											<b>Visa Classic Dual Card</b>
-											<p class="card_description">Dual Currency Visa Classic Card of Brac Bank Ltd. is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.</p>
-										</div>
-									</div>
-									<div class="col-sm-3 col-xs-3">
-										<div class="card_text1 card_btn_apllication">
-											<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/card_btn_apllication.png" />
-										</div>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-sm-2 col-xs-2 w20">
-										<div class="card_text2">
-											<h5>Purchase Interest Rate</h5>
-											<p>28%,<br> Monthly 2.33%</p>
-										</div>
-									</div>
-									<div class="col-sm-2 col-xs-2 w20">
-										<div class="card_text2">
-											<h5>Balance Transfer Interest Rate</h5>
-											<p>28%,<br> Monthly 2.33%</p>
-										</div>
-									</div>
-									<div class="col-sm-2 col-xs-2 w20">
-										<div class="card_text2">
-											<h5>Cash Advance Interest Rate</h5>
-											<p>28%,<br> Monthly 2.33%</p>
-										</div>
-									</div>
-									<div class="col-sm-2 col-xs-2 w20">
-										<div class="card_text2">
-											<h5>Cash Advance Limit</h5>
-											<p>50%</p>
-										</div>
-									</div>
-									<div class="col-sm-2 col-xs-1 w20">
-										<div class="card_text2">
-											<h5>Annual Fee</h5>
-											<p>BDT 1300 + VAT</p>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-
-						<!-- More Info Tab content start -->
-						<div class="col-sm-12 card_more_info">
-							<div id="toggleText1" style="display: none">
-								<section id="tab">
-									<!-- Nav tabs -->
-									<ul class="nav nav-tabs" role="tablist">
-										<li role="presentation" class="active"><a href="#ProsCons" aria-controls="home" role="tab" data-toggle="tab">Pros & cons</a></li>
-										<li role="presentation"><a href="#Review" aria-controls="profile" role="tab" data-toggle="tab">Review</a></li>
-										<li role="presentation"><a href="#UserReviews" aria-controls="messages" role="tab" data-toggle="tab">User reviews</a></li>
-										<li role="presentation"><a href="#Basics" aria-controls="settings" role="tab" data-toggle="tab">Basics</a></li>
-										<li role="presentation"><a href="#BalanceTransfer" aria-controls="settings" role="tab" data-toggle="tab">Balance transfer</a></li>
-										<li role="presentation"><a href="#Rates" aria-controls="settings" role="tab" data-toggle="tab">Rates</a></li>
-										<li role="presentation"><a href="#Benefits" aria-controls="settings" role="tab" data-toggle="tab">Benefits</a></li>
-										<li role="presentation"><a href="#Eligibility" aria-controls="settings" role="tab" data-toggle="tab">Eligibility</a></li>
-									</ul>
-
-									<!-- Tab panes -->
-									<div class="tab-content">
-										<div role="tabpanel" class="tab-pane active" id="ProsCons">
-											<h3>Pros & cons</h3>
-											<div class="col-sm-6">
-												<div class="tab_body">
-												<h4>What's good?</h4>
-												<hr/>
-													<ul>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card 2.png" /> Triple benefits insurance plan for the cardholders (See review for details).</li><br/>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card 2.png" /> Use of 100% limit through card cheque (See review for details)</li><br/>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card 2.png" /> Convenient payment option (See review for details).</li><br/>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card 2.png" /> You can set your own limit.</li><br/>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card 2.png" /> Installment program is available.</li><br/>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card 2.png" /> Cash withdraw 50% of the limit.</li><br/>
-													</ul>
-												</div>
-											</div>
-											<div class="col-sm-6">
-												<div class="tab_body">
-												<h4>What's not so good?</h4>
-												<hr/>
-													<ul>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card.png" />	Monthly fee 10 taka+vat for sms service & transaction alert.</li><br/>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card.png" />	0.35 paisa for every 100/= taka will be deducted for insurance program.</li><br/>
-														<li><img class="tab_body_icon" src="<?php echo base_url();?>resource/front_end/images/Icon-For-Credit-Card.png" />	Out of 18    transactions, there must be 10 POS transaction to get waiver on annual fee.</li><br/>
-													</ul>
-												</div>
-											</div>
-											<div class="pull-right">
-												<img src="<?php echo base_url();?>resource/front_end/images/card_btn_apllication.png" />
-											</div>
-										</div>
-										<div role="tabpanel" class="tab-pane" id="Review">
-											<h3>Our review of the NAB Low Rate Card</h3>
-											<div class="col-sm-12">
-												<div class="tab_body">
-													<h4>Review</h4>
-													<hr/>
-													<p>
-														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-													</p>
-													<h4>Lorem Ipsum is simply dummy text</h4>
-													<p>
-														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-													</p>
-													<h4>Lorem Ipsum is simply dummy text</h4>
-													<p>
-														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-													</p>
-													<p>
-														Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-													</p>
-													<h4>Lorem Ipsum is simply dummy text</h4>
-													<p>
-														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-													</p>
-													<h4>Lorem Ipsum is simply dummy text</h4>
-													<p>
-														It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-													</p>
-												</div>
-											</div>
-										</div>
-										<div role="tabpanel" class="tab-pane" id="UserReviews">
-											1914 translation by H. Rackham<br/>
-											"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
-										</div>
-										<div role="tabpanel" class="tab-pane" id="Basics">...</div>
-										<div role="tabpanel" class="tab-pane" id="BalanceTransfer">...</div>
-										<div role="tabpanel" class="tab-pane" id="Rates">...</div>
-										<div role="tabpanel" class="tab-pane" id="Benefits">...</div>
-										<div role="tabpanel" class="tab-pane" id="Eligibility">...</div>
-									</div>
-								</section>
-							</div>
-						</div>
-						<!-- More Info Tab content end -->
-					</div>
-
-				</div>
-				<!-- Right bar content end -->
-			</div>
-		</div>
 	</section>
 
     <!-- card compare section starts-->
@@ -712,7 +484,7 @@ function toggle() {
 		ele.style.display = "block";
 		text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
 	}
-} 
+}
 
 //for more info search
 function toggle1() {
@@ -726,7 +498,7 @@ function toggle1() {
 		ele.style.display = "block";
 		text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
 	}
-} 
+}
 
 //for more more filter
 function toggle2() {
