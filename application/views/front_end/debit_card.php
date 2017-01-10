@@ -143,7 +143,7 @@
 								<p class="rating text-center">Rated By 5 Person</p>
 
 								<span class="more_info_icon"><a id="" href="javascript:void(0);" class="add-to-compare" data-card_id="'.$row->id.'" ><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
-								<span class="more_info_icon"><a id="displayText" href="javascript:toggle();"><i class="fa fa-info-circle"></i> More info</a></span>
+								<span class="more_info_icon"><a class="displayText" style="cursor:pointer"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
 							</div>
 
 							<div class="col-sm-9 col-xs-9">
@@ -207,17 +207,16 @@
 
 						<!-- More Info Tab content start -->
 						<div class="col-sm-12 card_more_info">
-							<div id="toggleText" style="display: none">
+							<div id="toggleText'.$row->id.'" style="display: none">
 								<section id="tab">
 									<!-- Nav tabs -->
 									<ul class="nav nav-tabs" role="tablist">
-										<li role="presentation" class="active"><a href="#Features" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
-										<li role="presentation"><a href="#FeesCharges" aria-controls="profile" role="tab" data-toggle="tab">Fees & Charges</a></li>
-										<li role="presentation"><a href="#Eligibility" aria-controls="messages" role="tab" data-toggle="tab">Eligibility</a></li>
-										<li role="presentation"><a href="#RequiredDocuments" aria-controls="settings" role="tab" data-toggle="tab">Required Documents</a></li>
-										<li role="presentation"><a href="#TermsConditions" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
-										<li role="presentation"><a href="#Review" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
-										<li role="presentation"><a href="#UserReview" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
+										<li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
+										<li role="presentation"><a href="#FeesCharges'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Fees & Charges</a></li>
+										<li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Required Documents</a></li>
+										<li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+										<li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
+										<li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
 									</ul>
 
 									<!-- Tab panes -->
@@ -244,85 +243,33 @@
 												</div>
 											</div>
 										</div>
-										<div role="tabpanel" class="tab-pane" id="Eligibility">
-											<div class="debit_card_tab">
-												<h4>Eligibility</h4>
-												<div class="prosConsHr"></div><br/>
-												<div class="prosCons_body2 trbodywidth">
-													<ul>
-														<li>Must Be Bangladesh Nationals</li>
-														<li>Minimum Age: 18</li>
-														<li>Minimum Amount to open account: BDT 1000</li>
-													</ul>
-												</div>
-											</div>
-										</div>
+
 										<div role="tabpanel" class="tab-pane" id="RequiredDocuments">
 											<div class="debit_card_tab">
-												<h4>Required Documents</h4>
+												<h4>Requirement</h4>
 												<div class="prosConsHr"></div><br/>
 												<div class="prosCons_body2 trbodywidth">
-													<ul>
-														<li>Application form duly completed and signed</li>
-														<li>Copy of valid passport copy/driving license/voter ID/other identification </li>
-														<li>Photographs of the account holder and nominee</li>
-													</ul>
+													'.$row->requirement.'
 												</div>
 											</div>
 										</div>
-										<div role="tabpanel" class="tab-pane" id="BalanceTransfer">
+
+										<div role="tabpanel" class="tab-pane" id="TermsConditions">
 											<div class="debit_card_tab">
-												<h4>Required Documents</h4>
+												<h4>Terms and Condition</h4>
 												<div class="prosConsHr"></div><br/>
 												<div class="prosCons_body2 trbodywidth">
-													<ol>
-														<li>The facility shall be made available for the customer from the date of Banks approval of this application until such time is stipulated in any letter and this facility shall be continuing on until the adjustment of the dues of the Bank with interest and other charges.</li>
-														<li>The Bank reserves the right to withdraw the credit facility and demand repayment if there has been any default in repayment of the loan. </li>
-														<li>The Bank shall not be obliged to make the credit facility available until it has received formal written acknowledgement from you accepting the credit facility on the basis of outline and subject to the terms and conditions specified in the banking arrangement letter.</li>
-														<li>The acceptance of the terms and conditions of the banking arrangement letter by the customer constitutes a legal and binding obligation and is enforceable in accordance with the terms of the Banking arrangement letter.</li>
-														<li>By use of the credit facility provided by the bank, the customer accepts the conditions enumerated in the banking arrangement letter and authorizes the bank to appoint agents to collect funds payable to the bank, as the Bank may consider necessary. In the due discharge of their duty, information regarding borrowers credit facility will be supplied to the agent. All charges payable to such agents, to collect amounts owed to the bank, are liable to be at borrowers cost and risk, in addition to all other costs, charges and expenses incurred by the bank to recover outstanding dues/money.</li>
-														<li>The bank is authorized to open and maintain account(s) for the purpose of administering and recording payments by the customer in respect of the facility.</li>
-														<li>The loan shall be utilized for the specified purpose for which it has been sanctioned. Payment shall be made directly by the bank to the vendor or to the customer, as determined by the   Bank, depending upon the purpose of the loan.</li>
-														<li>The customer unconditionally undertakes to repay the loan as per terms and conditions of the Banking Arrangement Letter.</li>
-														<li>The customer undertakes to deposit his/her salary/wages/honorarium payable by his/her employer to the designated account maintained with the Bank.</li>
-													</ol>
+													'.$row->terms_and_conditions.'
 												</div>
 											</div>
 										</div>
+
 										<div role="tabpanel" class="tab-pane" id="Review">
 											<div class="debit_card_tab">
-												<h4>Required Documents</h4>
+												<h4>Review</h4>
 												<div class="prosConsHr"></div><br/>
 												<div class="prosCons_body2 trbodywidth">
-													<h4>The EBL VISA Debit Card makes your life simpler</h4>
-													<p>EBL Debit card is an electronic card which allows the clients access to their account to withdraw cash or pay for goods and services. This removes the need for the clients to go to the bank to remove cash from their account as they can now just go to an ATM or pay electronically at merchant locations.</p>
-													<h4>No need to carry cash</h4>
-													<p>EBL Visa Debit Card is a payment card that lets you make virtually any kind of purchase with funds directly from your account. So there is no need to carry cash. You can use your local EBL Visa Debit Card at over 10,000 merchant and ATM locations countrywide. So – let it be for shopping, dining or simply for taking the cash out – you have 24x7 access to your own money.</p>
-													<h4>It’s fast and convenient</h4>
-													<p>To use the card for purchases, you simply swipe your card, sign the receipt and go. The purchase amount will be automatically deducted from your account. To use the card for cash out from ATMs, you simply insert your card at the ATM displaying Visa logo and then enter your PIN. The amount withdrawn will be automatically deducted from your account. No matter how you choose to use your card, the purchase amount will be automatically deducted from your account.</p>
-													<h4>It’s widely accepted</h4>
-													<p>
-														Use the EBL Visa Debit card virtually anywhere. For the things you plan, and for all of life’s little surprises, you’re covered when you carry an EBL Visa Debit card. It’s accepted at thousands of places around the country where Visa debit cards are accepted. And can be used for all kinds of purchases at places like:
-														<ul>
-															<li>Restaurants</li>
-															<li>Drug stores/pharmacies</li>
-															<li>Dry cleaners</li>
-															<li>Service stations</li>
-															<li>Supermarkets</li>
-														</ul>
-													</p>
-													<h4>Movie theaters</h4>
-													<p>It makes it easier to manage your money Unlike cash, the EBL Visa Debit card makes it easy for you to track spending. You can access your up-to-date balance on the bank’s website or by phone, because transactions are typically posted within 24 hours of purchase. Depending on the type of your account, you may also receive a detailed monthly statement, including merchant name, date and amount. So it’s easy to manage your money. You can also subscribe to EBL transaction alert service for a nominal fee where you’ll get an SMS alert after each POS/ATM transactions.</p>
-													<h4>It’s secure</h4>
-													<p>Your card is safer than cash. If cash is lost or stolen, it’s gone forever. A missing card can be quickly deactivated and then replaced.</p>
-													<h4>Transaction Alert</h4>
-													<p>Whenever you use EBL Debit Card- a system generated SMS will reach you in your mobile phone stating your usage, date and time. This gives you complete control over your usage. Peace of mind- as you can be assured of knowing any transaction that happens in your card.</p>
-													<h4>Great Discounts</h4>
-													<p>We have collaborated with hundreds of vendors for giving the EBL Debit Card users a hefty discount on their products and services. The great discounts in turn allows you either to save money or shop more with the same amount you are spending now. Less or more – choice is yours. Spending was never being so great.</p>
-													<h4>24-hour Contact Center</h4>
-													<p>The EBL 24-hour Cards Center is equipped with a state-of-the-art system that ensures your queries being handled efficiently and promptly. For any card-related query or information, all you need to do is dial +88 02 833232 from any phone, anywhere or if your in Bangladesh dial 16230.</p>
-													<h4>Limited Lost Card Liability</h4>
-													<p>In case the Card is lost or stolen, call the EBL 24-hour Cards Center and report the loss of your Card. A new Card will be sent to you within 72 hours of reporting this loss. You are protected from any financial liability arising out of transactions done on your missing Card, from the time you report the loss to us.</p>
+													'.$row->review.'
 												</div>
 											</div>
 										</div>
@@ -334,9 +281,9 @@
 						<!-- More Info Tab content end -->
 					</div>';
 
-                         }
-                         echo $debit_card;
-                         ?>
+                 }
+                 echo $debit_card;
+                 ?>
 
 
 	</section>
@@ -380,6 +327,24 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+
+        $('.full-card').on('click', '.displayText', function () {
+            var  formData = $(this).data();
+            var card_id = formData.card_id;
+            var ele = document.getElementById("toggleText"+card_id);
+            var text = document.getElementById("displayText");
+
+            console.log(ele);
+            if(ele.style.display == "block") {
+                ele.style.display = "none";
+                text.html("<i class='fa fa-info-circle'></i> more info");
+            }
+            else {
+                ele.style.display = "block";
+                text.html("<i class='fa fa-info-circle'></i> Less info");
+            }
+
+        });
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
@@ -473,6 +438,7 @@
 
 <script type="text/javascript">
 //for more info search
+
 function toggle() {
 	var ele = document.getElementById("toggleText");
 	var text = document.getElementById("displayText");
