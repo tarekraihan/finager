@@ -123,168 +123,9 @@
 				
 				<!-- Right bar content start -->
 
-				<div class="col-sm-9 col-xs-9">
-
-                         <?php
-                            $result = $this->Front_end_select_model->select_debit_card_info();
-//                         print_r($result->result());
-                         $debit_card ='';
-                         foreach($result->result() as $row) {
-                             $debit_card .= '<div class="full-card">
-
-						<div class="row card_right_bar no-margin-lr">
-							<div class="col-sm-3 col-xs-3">
-								<a href=""><img title="Free Web tutorials" class="img-responsive" src="' . base_url() . 'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
-								<img class="btnCardApply img-responsive" src="' . base_url() . 'resource/front_end/images/BtnCard_apply.png" />
-
-								<p class="text-center">
-									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
-								</p>
-								<p class="rating text-center">Rated By 5 Person</p>
-
-								<span class="more_info_icon"><a id="" href="javascript:void(0);" class="add-to-compare" data-card_id="'.$row->id.'" ><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
-								<span class="more_info_icon"><a class="displayText" style="cursor:pointer"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
-							</div>
-
-							<div class="col-sm-9 col-xs-9">
-								<div class="row">
-									<div class="col-sm-9 col-xs-9">
-										<div class="card_text1">
-											<b>'.$row->card_name.'</b>
-											<p class="card_description">Dual Currency Visa Classic Card of Brac Bank Ltd. is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.</p>
-										</div>
-									</div>
-									<div class="col-sm-3 col-xs-3">
-										<div class="card_text1 card_btn_apllication">
-											<img class="img-responsive" src="' . base_url() . 'resource/front_end/images/card_btn_apllication.png" />
-										</div>
-                                        <div>
-
-                                            <div class="card_text2">
-                                                <h5>Annual Fee</h5>
-                                                <p>'.$row->annual_fee.'</p>
-                                            </div>
-
-                                        </div>
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-sm-2 col-xs-2 w20 no-padding">
-										<div class="card_text2">
-											<h5>Daily Withdrawal Limit</h5>
-											<p> '.$row->daily_withdrawal_limit.'</p>
-										</div>
-									</div>
-									<div class="col-sm-2 col-xs-2 w20 no-padding">
-										<div class="card_text2">
-											<h5>Number of Withdrawal</h5>
-											<p>'.$row->no_of_withdrawal.'</p>
-										</div>
-									</div>
-									<div class="col-sm-3 col-xs-3 w20 no-padding">
-										<div class="card_text2">
-											<h5>ATM Charge</h5>
-											<p>Own ATM: '.$row->atm_charge_own.'<br> Others ATM:<br> '.$row->atm_charge_other.'</p>
-										</div>
-									</div>
-									<div class="col-sm-1 col-xs-2 w20 no-padding">
-										<div class="card_text2">
-											<h5>Per Transaction Limit</h5>
-											<p>'.$row->per_transaction_limit.'</p>
-										</div>
-									</div>
-									<div class="col-sm-2 col-xs-1 w20 no-padding">
-										<div class="card_text2">
-											<h5>Account Required</h5>
-											<p>'.$row->account_name.'</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- More Info Tab content start -->
-						<div class="col-sm-12 card_more_info">
-							<div id="toggleText'.$row->id.'" style="display: none">
-								<section id="tab">
-									<!-- Nav tabs -->
-									<ul class="nav nav-tabs" role="tablist">
-										<li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
-										<li role="presentation"><a href="#FeesCharges'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Fees & Charges</a></li>
-										<li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Required Documents</a></li>
-										<li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
-										<li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
-										<li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
-									</ul>
-
-									<!-- Tab panes -->
-									<div class="tab-content">
-										<div role="tabpanel" class="tab-pane active" id="Features">
-											<div class="col-sm-12">
-												<div class="debit_card_tab">
-													<h4>Features</h4>
-													<div class="prosConsHr"></div><br/>
-													<div class="prosCons_body2 trbodywidth">
-														'.$row->features.'
-													</div>
-												</div>
-											</div>
-										</div>
-										<div role="tabpanel" class="tab-pane" id="FeesCharges">
-											<div class="col-sm-12">
-												<div class="debit_card_tab">
-													<h4>Fees & Charges</h4>
-													<div class="prosConsHr"></div><br/>
-													<div class="prosCons_body2 trbodywidth">
-														'.$row->fees_and_charges.'
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div role="tabpanel" class="tab-pane" id="RequiredDocuments">
-											<div class="debit_card_tab">
-												<h4>Requirement</h4>
-												<div class="prosConsHr"></div><br/>
-												<div class="prosCons_body2 trbodywidth">
-													'.$row->requirement.'
-												</div>
-											</div>
-										</div>
-
-										<div role="tabpanel" class="tab-pane" id="TermsConditions">
-											<div class="debit_card_tab">
-												<h4>Terms and Condition</h4>
-												<div class="prosConsHr"></div><br/>
-												<div class="prosCons_body2 trbodywidth">
-													'.$row->terms_and_conditions.'
-												</div>
-											</div>
-										</div>
-
-										<div role="tabpanel" class="tab-pane" id="Review">
-											<div class="debit_card_tab">
-												<h4>Review</h4>
-												<div class="prosConsHr"></div><br/>
-												<div class="prosCons_body2 trbodywidth">
-													'.$row->review.'
-												</div>
-											</div>
-										</div>
-										<div role="tabpanel" class="tab-pane" id="UserReview">...</div>
-									</div>
-								</section>
-							</div>
-						</div>
-						<!-- More Info Tab content end -->
-					</div>';
-
-                 }
-                 echo $debit_card;
-                 ?>
-
+				<div class="col-sm-9 col-xs-9" id="SearchDebitCard">
+                    <div id="loading" class="text-center" style="margin-top: 150px"></div>
+                </div>
 
 	</section>
 
@@ -328,23 +169,23 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        $('.full-card').on('click', '.displayText', function () {
-            var  formData = $(this).data();
-            var card_id = formData.card_id;
-            var ele = document.getElementById("toggleText"+card_id);
-            var text = document.getElementById("displayText");
 
-            console.log(ele);
-            if(ele.style.display == "block") {
-                ele.style.display = "none";
-                text.html("<i class='fa fa-info-circle'></i> more info");
-            }
-            else {
-                ele.style.display = "block";
-                text.html("<i class='fa fa-info-circle'></i> Less info");
+        $('#SearchDebitCard').on('click', '.more_info', function (){
+            var  formData = $(this).data();
+            var loan_id = formData.loan_id;
+
+            //console.log(loan_id);
+
+            $("#moreInfo"+loan_id).toggleClass("in");
+            if($("#moreInfo"+loan_id).hasClass('in')){
+                $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> Less info");
+            }else{
+                $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> more info");
             }
 
         });
+
+
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
@@ -413,16 +254,14 @@
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>card/ajax_get_credit_card",
+                url: "<?php echo base_url();?>debit_card/ajax_debit_card_info",
                 data: main_string,
                 cache: false,
                 success: function(msg)
                 {
-
                     loading_hide();
-// console.log(msg);
 
-                    $("#SearchCard").html(msg);
+                    $("#SearchDebitCard").html(msg);
 
                 }
             });
@@ -434,57 +273,8 @@
     });
 
 </script>
-
-
 <script type="text/javascript">
 //for more info search
-
-function toggle() {
-	var ele = document.getElementById("toggleText");
-	var text = document.getElementById("displayText");
-	if(ele.style.display == "block") {
-    		ele.style.display = "none";
-		text.innerHTML = "<i class='fa fa-info-circle'></i> More info";
-  	}
-	else {
-		ele.style.display = "block";
-		text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
-	}
-}
-
-//for more info search
-function toggle1() {
-	var ele = document.getElementById("toggleText1");
-	var text = document.getElementById("displayText1");
-	if(ele.style.display == "block") {
-    		ele.style.display = "none";
-		text.innerHTML = "<i class='fa fa-info-circle'></i> More info";
-  	}
-	else {
-		ele.style.display = "block";
-		text.innerHTML = "<i class='fa fa-info-circle'></i> Less info";
-	}
-}
-
-//for more more filter
-function toggle2() {
-	var ele = document.getElementById("toggleText2");
-	var text = document.getElementById("displayText2");
-	if(ele.style.display == "block") {
-    		ele.style.display = "none";
-		text.innerHTML = "More Filters <i class='fa fa-sort-desc fa-lg'></li>";
-  	}
-	else {
-		ele.style.display = "block";
-		text.innerHTML = "Fewer Filters <i class='fa fa-sort-asc fa-lg'></i>";
-	}
-}
-
-
-
-    </script>
-
-    <script>
 
         $(document).on('click','.add-to-compare',function(){
 
@@ -508,17 +298,17 @@ function toggle2() {
                     var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
                     var  formData = $(this).data();
                     var card_id = "card_id="+formData.card_id;
-
+                    //alert(card_id);
                     setTimeout(function(){
                         $.ajax
                         ({
                             type: "POST",
-                            url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                            url: "<?php echo base_url();?>debit_card/ajax_compare_card_image",
                             data: card_id,
                             success: function(msg)
                             {
                                 //loading_hide();
-                                //console.log(msg);
+                                console.log(msg);
                                 $(".cart_anchor01").html(msg);
                             }
                         });
@@ -541,12 +331,11 @@ function toggle2() {
                         $.ajax
                         ({
                             type: "POST",
-                            url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                            url: "<?php echo base_url();?>debit_card/ajax_compare_card_image",
                             data: card_id,
                             success: function(msg)
                             {
-                                //loading_hide();
-                                //console.log(msg);
+                                console.log(msg);
                                 $(".cart_anchor").html(msg);
                             }
                         });
@@ -601,13 +390,13 @@ function toggle2() {
                 $.ajax
                 ({
                     type: "POST",
-                    url: "<?php echo base_url();?>card/ajax_go_card_compare_page",
+                    url: "<?php echo base_url();?>debit_card/ajax_go_card_compare_page",
                     data: card_ids,
                     success: function(msg)
                     {
                         if(msg != 'error'){
 
-                            window.location.href = "<?php echo base_url();?>en/card_compare";
+                            window.location.href = "<?php echo base_url();?>en/debit_card_compare";
                         }
                     }
                 });
@@ -619,4 +408,4 @@ function toggle2() {
 
         });
 
-    </script>
+</script>

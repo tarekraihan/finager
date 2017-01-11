@@ -24,7 +24,7 @@
         <div class="row">
             <table class="table">
                 <tr>
-                    <td><p><img class="home_loan_img" src="images/visa_card.png" /></p></td>
+                    <td><p><img class="home_loan_img" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></p></td>
                     <td><b><p class="text-center com_title">Comparison </p></b>
                         <p>
                         <div class="emi_cal">
@@ -249,7 +249,7 @@
 
                         </p>
                     </td>
-                    <td><img src="images/visa_card.png" /></td>
+                    <td><img src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></td>
                 </tr>
             </table>
         </div>
@@ -260,7 +260,7 @@
     <div class="container">
 
         <div class="row">
-            <h3 class="text-center">  <img class="Card-Compare-hr" src="images/Card-Compare-hr.png" /> User Reviews <img class="Card-Compare-hr" src="images/Card-Compare-hr.png" /> </h3>
+            <h3 class="text-center">  <img class="Card-Compare-hr" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> User Reviews <img class="Card-Compare-hr" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 
             <table class="table text-center">
                 <tr>
@@ -272,7 +272,7 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="home-loan-Compare-hr1" src="images/Card-Compare-hr.png"/> Home Loan <img class="Card-Compare-hr1" src="images/Card-Compare-hr.png" /> </h3>
+            <h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png"/> Home Loan <img class="Card-Compare-hr1" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
             <div class="col-md-6 col-sm-6">
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover text-center table-align  compare_table">
@@ -348,7 +348,7 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="Card-Compare-hr2" src="images/Card-Compare-hr.png" />  Fees & Charges <img class="Card-Compare-hr2" src="images/Card-Compare-hr.png" /> </h3>
+            <h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="Card-Compare-hr2" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 
             <div class="col-md-6 col-sm-6">
                 <div class="table-responsive">
@@ -433,7 +433,7 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="home-loan-Compare-hr3" src="images/Card-Compare-hr.png" /> Features <img class="home-loan-Compare-hr3" src="images/Card-Compare-hr.png" /> </h3>
+            <h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Features <img class="home-loan-Compare-hr3" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
             <div class="col-md-6 col-sm-6">
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover text-center compare_table">
@@ -545,7 +545,7 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center">  <img class="home-loan-Compare-hr4" src="images/Card-Compare-hr.png" /> Eligibility for Applying <img class="home-loan-Compare-hr4" src="images/Card-Compare-hr.png" /> </h3>
+            <h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="home-loan-Compare-hr4" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 
             <div class="col-md-6 col-sm-6">
                 <div class="table-responsive">

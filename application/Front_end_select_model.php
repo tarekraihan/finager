@@ -56,6 +56,10 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
         return $query;
     }
-//
 
+    function select_compare_image_info(){
+        $sql = "SELECT debit_card_info.id,card_bank.bank_name,card_bank.bank_logo FROM debit_card_info inner join card_bank on card_bank.id=debit_card_info.bank_id WHERE debit_card_info.id=2";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 }
