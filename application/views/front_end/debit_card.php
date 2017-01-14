@@ -56,7 +56,7 @@
                                 foreach($choose_account->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="choose_account_<?php echo $row->id; ?>" id="choose_account_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <input type="radio" name="choose_account" id="choose_account_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->account_name;?>
                                     </label><br/>
@@ -73,7 +73,7 @@
                                 foreach($looking_for->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="looking_for_<?php echo $row->id; ?>" id="looking_for_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <input type="radio" name="looking_for" id="looking_for_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->looking_for;?>
                                     </label><br/>
@@ -91,7 +91,7 @@
                                 foreach($i_want->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="i_want_<?php echo $row->id; ?>" id="i_want_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <input type="radio" name="i_want" id="i_want_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->i_want;?>
                                     </label><br/>
@@ -108,7 +108,7 @@
                                 foreach($i_want->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="card_issuer_<?php echo $row->id; ?>" id="card_issuer_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <input type="radio" name="card_issuer" id="card_issuer_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->card_issuer_name;?>
                                     </label><br/>
@@ -198,59 +198,33 @@
             loading_show();
 
 
-            var card_user = new Array();
-            $('input[name="iAm"]:checked').each(function(){
-                card_user.push($(this).val());
+            var choose_account = new Array();
+            $('input[name="choose_account"]:checked').each(function(){
+                choose_account.push($(this).val());
             });
-            var card_user_list = "&card_user="+card_user;
+            var choose_account_list = "&choose_account="+choose_account;
 
-            var income_range = new Array();
-            $('input[name="myIncomeRange"]:checked').each(function(){
-                income_range.push($(this).val());
+            var looking_for = new Array();
+            $('input[name="looking_for"]:checked').each(function(){
+                looking_for.push($(this).val());
             });
-            var income_range_list = "&income_range="+income_range;
-
-            var credit_limit = new Array();
-            $('input[name="wantCreditLimit"]:checked').each(function(){
-                credit_limit.push($(this).val());
-            });
-            var credit_limit_list = "&credit_limit="+credit_limit;
-
-            var credit_card_type = new Array();
-            $('input[name="creditCardType"]:checked').each(function(){
-                credit_card_type.push($(this).val());
-            });
-            var credit_card_type_list = "&credit_card_type="+credit_card_type;
-
-            var feature_benefits = new Array();
-            $('input[name="featuresBenefits"]:checked').each(function(){
-                feature_benefits.push($(this).val());
-            });
-            var feature_benefits_list = "&feature_benefits="+feature_benefits;
-
-            var max_interest_free_period = new Array();
-            $('input[name="maximumInterestFreePeriod"]:checked').each(function(){
-                max_interest_free_period.push($(this).val());
-            });
-            var max_interest_free_period_list = "&max_interest_free_period="+max_interest_free_period;
-
-
-            var card_type = new Array();
-            $('input[name="cardType"]:checked').each(function(){
-                card_type.push($(this).val());
-            });
-            var card_type_list = "&card_type="+card_type;
-
+            var looking_for_list = "&looking_for="+looking_for;
 
             var card_issuer = new Array();
-            $('input[name="cardIssuer"]:checked').each(function(){
+            $('input[name="card_issuer"]:checked').each(function(){
                 card_issuer.push($(this).val());
             });
             var card_issuer_list = "&card_issuer="+card_issuer;
 
-            var main_string = card_user_list+income_range_list+credit_limit_list+credit_card_type_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list;
+            var i_want = new Array();
+            $('input[name="i_want"]:checked').each(function(){
+                i_want.push($(this).val());
+            });
+            var i_want_list = "&i_want="+i_want;
+
+            var main_string = choose_account_list+looking_for_list+card_issuer_list+i_want_list;
             main_string = main_string.substring(1, main_string.length);
-//            console.log(main_string);
+            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
@@ -260,7 +234,6 @@
                 success: function(msg)
                 {
                     loading_hide();
-
                     $("#SearchDebitCard").html(msg);
 
                 }

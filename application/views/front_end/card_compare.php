@@ -1,4 +1,3 @@
-<pre>
     <?php
         $id = $this->session->userdata('first_card') ;
         $result = $this->Front_end_select_model->select_card_details($id);
@@ -23,7 +22,6 @@
     //print_r($result);
 
     ?>
-</pre>
 <section id="card_compare_default">
     <div class="container">
         <div class="row">
