@@ -723,7 +723,6 @@ class Auto_loan extends CI_Controller
             $total_payable = $emi * $tenure;
             $downpayment = round(($row->downpayment/ 100) * $query_amount);
 
-
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
                <div class="col-sm-3 col-xs-3">
