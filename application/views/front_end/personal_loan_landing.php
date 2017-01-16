@@ -1,16 +1,83 @@
-	<!-- header part start -->
+<style>
+.All_card {
+	border: 1px solid #DADADA;
+	padding: 23px;
+	background-color: #fff;
+}
+.All_card img {
+	height: 81px;
+}
+</style>	
+
+<!-- header part start -->
 	<section id="personal_header_part">
 		<div class="personal_header_text">
 			<h3>Select your personal loan</h3>
 			<p>Personal loan comparison made easy</p>
 			<p class="personal_button"><a class="btn btn-primary btn-lg" href="<?php echo base_url(); ?>en/all_personal_loan" role="button">Start Comparing</a></p>
 		</div>
-<!-- 		<a href="#"><img src="images/feedback.png" alt="not found"/></a>
- -->	</section>
+               <div class="container">
+			<div class="home_loan_icon">
+				<div class="All_cradit_card">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Medical-Treatment-Loan.png" alt="reaward"/>
+							<p> Medical Treatment Loan </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Travel-Loan.png" alt="cash_back"/>
+							<p> Travel Loan </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Personal-CNG-Conversion-Loan.png" alt="card"/>
+							<p> CNG Conversion Loan </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Hajj-Loan.png" alt="travel"/>
+							<p>  Hajj Loan </p>
+						</div></a>
+					</div>	
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Landlord.png" alt="zero"/>
+							<p> Landlord </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Salaried-Person.png" alt="student"/>
+							<p> Salaried Person </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Business-Man.png" alt="business"/>
+							<p>	Businessman </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#">
+							<div class="All_card">
+								<img src="<?php echo base_url();?>resource/front_end/images/Personal-Professional.png" alt="low_interest"/>
+								<p>Professional</p>
+							</div>
+						</a>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</section>
+        <div class="clearfix"></div>
 	<!-- header part end -->
 	<section id="Sponsored">
 		<div class="container">
-			<div class="Sponsored_heading">
+			<div class="home_Sponsored_heading">
 				<h2 class="personal_link">Sponsored Links</h2>
 			</div>
 			<div class="Sponsored_box">
@@ -142,14 +209,14 @@
 				</p>
 			</div>
 			<div class="col-md-4 col-sm-4">
-				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/personal_box2.png" alt="box"/>
+				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Personal_box2.png" alt="box"/>
 				<h4>Step 1. Get acquainted</h4>
 				<p>Tell us a bit about yourself and what<br/>
 					you’re looking for.
 				</p>
 			</div>
 			<div class="col-md-4 col-sm-4">
-				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/personal_box3.png" alt="box"/>
+				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Personal_box3.png" alt="box"/>
 				<h4>Step 1. Get acquainted</h4>
 				<p>Tell us a bit about yourself and what<br/>
 					you’re looking for.
