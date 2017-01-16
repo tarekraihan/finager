@@ -33,11 +33,11 @@
         <div class="row">
             <table class="table">
                 <tr>
-                    <td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_card->bank_logo; ?>" /></p></td>
+                    <td><p> <a href="<?php echo base_url(); ?>en/debit_card_details/<?php echo $first_card->id; ?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_card->bank_logo; ?>" /></a></p></td>
                     <td><b><p class="text-center com_title">Comparison </p></b>
                        
                     </td>
-                    <td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_card->bank_logo; ?>" /></td>
+                    <td> <a href="<?php echo base_url(); ?>en/debit_card_details/<?php echo $second_card->id; ?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_card->bank_logo; ?>" /></a></td>
                 </tr>
             </table>
         </div>
@@ -47,7 +47,7 @@
     <div class="container">
 
         <div class="row">
-            <h3 class="text-center">  <img class="Card-Compare-hr" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> User Reviews <img class="Card-Compare-hr" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+            <h3 class="text-center"><img class="Card-Compare-hr" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> User Reviews <img class="Card-Compare-hr" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 
             <table class="table text-center">
                 <tr>
@@ -192,8 +192,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="row">
             <h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>

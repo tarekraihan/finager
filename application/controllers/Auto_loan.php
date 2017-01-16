@@ -683,6 +683,7 @@ class Auto_loan extends CI_Controller
         $auto = '';
         foreach($auto_loan->result() as $row){
 
+
             $bank = "";
             if($row->is_non_bank == 1){
                 $bank = $row->non_bank_name;
@@ -695,6 +696,8 @@ class Auto_loan extends CI_Controller
             }else{
                 $bank_logo = $row->bank_logo;
             }
+
+
             $is_fixed =$row->is_fixed;
             $show_interest ='';
             if($is_fixed == 1){
@@ -724,8 +727,8 @@ class Auto_loan extends CI_Controller
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
                <div class="col-sm-3 col-xs-3">
-                   <a href="'.base_url().'en/car_loan_details"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
-                   <small class="home_loan_bank_name"><a  href="javascript:void(0)">'.$row->bank_name.'</a></small>
+                   <a href="'.base_url().'en/car_loan_details"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                   <small class="home_loan_bank_name"><a  href="javascript:void(0)">'.$bank.'</a></small>
                    <small class="home_loan_bank_name">'.$row->i_want.'</small>
                </div>
                <div class="col-sm-9 col-xs-9">
