@@ -718,7 +718,6 @@ class Auto_loan extends CI_Controller
                 $interest_rate = $row->interest_rate_average;
             }
             $cal_interest = round(($interest_rate / 100) / $tenure,4);
-
             $emi = $query_amount * $cal_interest * pow(( 1+ $cal_interest),$tenure) /pow((1 + $cal_interest),($tenure-1));
             $total_payable = $emi * $tenure;
             $downpayment = round(($row->downpayment/ 100) * $query_amount);
