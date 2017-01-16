@@ -9,7 +9,8 @@ if(isset($_GET['id'])){
 }else{
     $row['id']='';
     $row['bank_id']='';
-//    $row['loan_type_id']='';
+    $row['is_non_bank']='';
+    $row['non_bank_id']='';
     $row['personal_loan_looking_for_id']='';
     $row['personal_loan_name']='';
     $row['loan_short_description']='';
@@ -581,7 +582,7 @@ if(isset($_GET['id'])){
                         </section>
                         <section class="col-md-6">
                             <label class="input">
-                                <button class="btn btn-primary" type="submit" >Save</button>
+                                <button class="btn btn-primary" type="submit" >Update</button>
                             </label>
                         </section>
 
