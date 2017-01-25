@@ -71,6 +71,15 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     }
 
+    public function select_personal_loan_details($id){
+        $sql="SELECT personal_loan_info.*,card_bank.bank_name,card_bank.bank_logo,personal_loan_looking_for.personal_loan_looking_for,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `personal_loan_info` inner join card_bank on card_bank.id=personal_loan_info.bank_id INNER JOIN personal_loan_looking_for ON personal_loan_looking_for.id=personal_loan_info.personal_loan_looking_for_id  LEFT JOIN general_non_bank ON general_non_bank.id = personal_loan_info.non_bank_id  WHERE personal_loan_info.id=$id";
+
+        $query = $this->db->query($sql);
+
+        return $query;
+
+    }
+
 
     public function select_card_image($id){
         $sql="SELECT id,card_image_name FROM `card_card_informations`  WHERE id=$id";
@@ -81,6 +90,19 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_home_loan_image($id){
         $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `home_loan_info`  LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id  WHERE home_loan_info.id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+    public function select_personal_loan_image($id){
+        $sql="SELECT personal_loan_info.id,personal_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `personal_loan_info`  LEFT JOIN card_bank on card_bank.id=personal_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = personal_loan_info.non_bank_id  WHERE personal_loan_info.id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function select_auto_loan_image($id){
+        $sql="SELECT auto_loan_info.id,auto_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `auto_loan_info`  LEFT JOIN card_bank on card_bank.id=auto_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id  WHERE auto_loan_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }

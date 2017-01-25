@@ -1,9 +1,45 @@
+<?php
+//print_r($this->session->userdata());
+
+$id = $this->session->userdata('first_personal_loan') ;
+$result = $this->Front_end_select_model->select_personal_loan_details($id);
+$first_personal_loan = $result->row();
+
+$id1 = $this->session->userdata('second_personal_loan') ;
+$result1 = $this->Front_end_select_model->select_personal_loan_details($id1);
+$second_personal_loan = $result1->row();
+
+//	print_r($first_personal_loan);die;
+//	echo $first_home_loan->loan_short_description;
+$first_interest =($first_personal_loan->is_fixed =='0')? $first_personal_loan->interest_rate_average.' % (Avg)' : $first_personal_loan->interest_rate_fixed.' % (Fixed)';
+$first_bank_name = "";
+$first_bank_logo = "";
+if($first_personal_loan->is_non_bank == 1){
+    $first_bank_name = $first_personal_loan->non_bank_name;
+    $first_bank_logo = $first_personal_loan->non_bank_logo;
+}else{
+    $first_bank_name = $first_personal_loan->bank_name;
+    $first_bank_logo = $first_personal_loan->bank_logo;
+}
+
+$second_interest =($second_personal_loan->is_fixed =='0')? $second_personal_loan->interest_rate_average.' % (Avg)' : $second_personal_loan->interest_rate_fixed.' % (Fixed)';
+$second_bank_name = "";
+$second_bank_logo = "";
+if($second_personal_loan->is_non_bank == 1){
+    $second_bank_name = $second_personal_loan->non_bank_name;
+    $second_bank_logo = $second_personal_loan->non_bank_logo;
+}else{
+    $second_bank_name = $second_personal_loan->bank_name;
+    $second_bank_logo = $second_personal_loan->bank_logo;
+}
+
+?>
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></p></td>
+						<td><p><a href="<?php echo base_url();?>en/personal_loan_details/<?php echo $first_personal_loan->id;?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							<p>
 								<div class="emi_cal">
@@ -228,7 +264,7 @@
 						
 							</p>
 						</td>
-						<td><img src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></td>
+						<td><a href="<?php echo base_url();?>en/personal_loan_details/<?php echo $second_personal_loan->id;?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
 					</tr>			
 				</table>
 			</div>
@@ -239,7 +275,7 @@
 		<div class="container">
 			
 			<div class="row">
-				<h3 class="text-center">  <img class="Card-Compare-hr" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> User Reviews <img class="Card-Compare-hr" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"><img class="Card-Compare-hr" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> User Reviews <img class="Card-Compare-hr" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				
 				<table class="table text-center">
 					<tr>
@@ -251,39 +287,36 @@
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Home Loan <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Personal Loan <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
 							<td class="abc"><b> Bank Name </b></td>
-							<td> Brac Bank Ltd </td>
+							<td> <?php echo $first_bank_name; ?></td>
 						</tr>
 						
 						<tr>
 							<td><b> Interest Rate</b></td>
-							<td> 12 </td>
+							<td> <?php echo $first_interest; ?> </td>
 						</tr>
 						
 						<tr>
 							<td><b> Equal Monthly Installment (EMI)</b></td>
-							<td> 35624 </td>
+							<td> <?php  ?> </td>
 						</tr>
 						
 						<tr>
 							<td><b> Total Payable Amount</b></td>
-							<td> 68,50,000 </td>
+							<td> <?php echo $first_bank_name; ?></td>
 						</tr>
 						
 						<tr>
 							<td><b> Security Required</b></td>
-							<td> Mortgage of the Property </td>
+							<td> <?php echo $first_personal_loan->security_required; ?> </td>
 						</tr>
 						
-						<tr>
-							<td><b> Minimum Down Payment Amount</b></td>
-							<td> 15,00,000 </td>
-						</tr>
+
 						
 					</table>
 				</div>
@@ -293,12 +326,12 @@
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
 								<td class="abc"><b> Bank Name </b></td>
-								<td> Brac Bank Ltd </td>
+								<td><?php echo $second_bank_name; ?></td>
 							</tr>
 							
 							<tr>
 								<td><b> Interest Rate</b></td>
-								<td> 12 </td>
+								<td> <?php echo $second_interest; ?> </td>
 							</tr>
 							
 							<tr>
@@ -313,14 +346,10 @@
 							
 							<tr>
 								<td><b> Security Required</b></td>
-								<td> Mortgage of the Property </td>
+								<td> <?php echo $second_personal_loan->security_required; ?> </td>
 							</tr>
 							
-							<tr>
-								<td><b> Minimum Down Payment Amount</b></td>
-								<td> 15,00,000 </td>
-							</tr>
-							
+
 						</table>
 					</div>
 				</div>
@@ -331,268 +360,76 @@
 				
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table">
-							<tr>
-								<td class="def"><b> Processing Fee</b></td>
-								<td> 1.5% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Processing Fee for Takeover Loan</b></td>
-								<td> .05% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Early Settlement Fee</b></td>
-								<td> Free </td>
-							</tr>
-							
-							<tr>
-								<td><b> Partial Payment Fee</b></td>
-								<td> 1% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Penalty Charge</b></td>
-								<td> 4000 or 5% of the installment </td>
-							</tr>
-							
-							<tr>
-								<td><b> Loan Rescheduling Charges</b></td>
-								<td> 5000 or 5% of the installment </td>
-							</tr>
-							
-							<tr>
-								<td><b> EMI Date Rescheduling Charges</b></td>
-								<td> 4000 or 5% of the installment </td>
-							</tr>
-						</table>
+						<?php echo $first_personal_loan->fees_and_charges;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table">
-							<tr>
-								<td class="def"><b> Processing Fee</b></td>
-								<td> 1.5% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Processing Fee for Takeover Loan</b></td>
-								<td> .05% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Early Settlement Fee</b></td>
-								<td> Free </td>
-							</tr>
-							
-							<tr>
-								<td><b> Partial Payment Fee</b></td>
-								<td> 1% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Penalty Charge</b></td>
-								<td> 4000 or 5% of the installment </td>
-							</tr>
-							
-							<tr>
-								<td><b> Loan Rescheduling Charges</b></td>
-								<td> 5000 or 5% of the installment </td>
-							</tr>
-							
-							<tr>
-								<td><b> EMI Date Rescheduling Charges</b></td>
-								<td> 4000 or 5% of the installment </td>
-							</tr>
-						</table>
+                        <?php echo $second_personal_loan->fees_and_charges;?>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Features <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying  <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table">
-							<tr>
-								<td class="third"><b> Minimum Loan Amount</b></td>
-								<td> 5,00,000 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maximum Loan Amount</b></td>
-								<td> 1,00,00,000 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Minimum Term</b></td>
-								<td> 4 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maximum Term</b></td>
-								<td> 25 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Down payment (%)</b></td>
-								<td> 30% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Grace Period</b></td>
-								<td> N/A </td>
-							</tr>
-							
-							<tr>
-								<td><b> Availability of Early Settlement</b></td>
-								<td> Available </td>
-							</tr>
-							
-							<tr>
-								<td><b> Availability of Partial Payment</b></td>
-								<td> Available </td>
-							</tr>
-							<tr>
-								<td><b> Availability of Take Over Loan</b></td>
-								<td> Available </td>
-							</tr>
-							
-							<tr>
-								<td><b> Try Party Agreement Allowed up to</b> </td>
-								<td> 3-24 Months </td>
-							</tr>
-						</table>
+                        <?php echo $first_personal_loan->eligibility_for_applying;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table">
-							<tr>
-								<td class="third"><b> Minimum Loan Amount</b></td>
-								<td> 5,00,000 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maximum Loan Amount</b></td>
-								<td> 1,00,00,000 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Minimum Term</b></td>
-								<td> 4 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maximum Term</b></td>
-								<td> 25 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Down payment (%)</b></td>
-								<td> 30% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Grace Period</b></td>
-								<td> N/A </td>
-							</tr>
-							
-							<tr>
-								<td><b> Availability of Early Settlement</b></td>
-								<td> Available </td>
-							</tr>
-							
-							<tr>
-								<td><b> Availability of Partial Payment</b></td>
-								<td> Available </td>
-							</tr>
-							<tr>
-								<td><b> Availability of Take Over Loan</b></td>
-								<td> Available </td>
-							</tr>
-							
-							<tr>
-								<td><b> Try Party Agreement Allowed up to</b> </td>
-								<td> 3-24 Months </td>
-							</tr>
-						</table>
+                        <?php echo $second_personal_loan->eligibility_for_applying;?>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />Required Document<img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 		
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table ">
-				
-							<tr>
-								<td class="fourth text-center"><b> Minimum Income </b></td>
-								<td class="text-left">
-									<ul> 
-										<li>Salaried: 30,000</li>
-										<li>Businessman: 40,000</li>
-										<li>Professional: 50,000 </li>
-										<li>Landlord: 40,000 </li>
-										<li>NRB: 60,000 </li>
-									</ul>
-								</td>
-							</tr>
-							
-							<tr>
-								<td class="text-center"><b> Minimum Experience </b></td>
-								<td class="text-left">
-									<ul> 
-										<li>Salaried: (1) year experience with 6   months employment in present organization</li>
-										<li>Businessman: (1) year experience in the same line of business.</li>
-										<li>Professional: 1) year experience in the same line of Profession. </li>
-										<li>Landlord:  6 months rental income continuation</li>
-										<li>NRB: (1) year experience with 6   months </li>
-									</ul>
-								</td>
-							</tr>			
-						</table>
+                        <?php echo $first_personal_loan->required_document;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table ">
-				
-							<tr>
-								<td class="fourth text-center"><b> Minimum Income </b></td>
-								<td class="text-left">
-									<ul> 
-										<li>Salaried: 30,000</li>
-										<li>Businessman: 40,000</li>
-										<li>Professional: 50,000 </li>
-										<li>Landlord: 40,000 </li>
-										<li>NRB: 60,000 </li>
-									</ul>
-								</td>
-							</tr>
-							
-							<tr>
-								<td class="text-center"><b> Minimum Experience </b></td>
-								<td class="text-left">
-									<ul> 
-										<li>Salaried: (1) year experience with 6   months employment in present organization</li>
-										<li>Businessman: (1) year experience in the same line of business.</li>
-										<li>Professional: 1) year experience in the same line of Profession. </li>
-										<li>Landlord:  6 months rental income continuation</li>
-										<li>NRB: (1) year experience with 6   months </li>
-									</ul>
-								</td>
-							</tr>			
-						</table>
+                        <?php echo $second_personal_loan->required_document;?>
 					</div>
 				</div>
 			</div>
-			
-			
+
+			<div class="row">
+				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />Terms and Conditions<img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $first_personal_loan->terms_and_conditions;?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $second_personal_loan->terms_and_conditions;?>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />Review<img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $first_personal_loan->review;?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $second_personal_loan->review;?>
+					</div>
+				</div>
+			</div>
+
+
 			
 			<div class="row">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	

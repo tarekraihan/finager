@@ -1,37 +1,37 @@
     <?php
 //		print_r($this->session->userdata());
 	$id = $this->session->userdata('first_home_loan') ;
-	$result = $this->Front_end_select_model->select_home_loan_details($id);
-	$first_home_loan = $result->row();
+    $result = $this->Front_end_select_model->select_home_loan_details($id);
+    $first_home_loan = $result->row();
 
-	$id1 = $this->session->userdata('second_home_loan') ;
-	$result1 = $this->Front_end_select_model->select_home_loan_details($id1);
-	$second_home_loan = $result1->row();
+    $id1 = $this->session->userdata('second_home_loan') ;
+    $result1 = $this->Front_end_select_model->select_home_loan_details($id1);
+    $second_home_loan = $result1->row();
 
-//	print_r($first_home_loan);
+    //	print_r($first_home_loan);
 
-//	echo $first_home_loan->loan_short_description;
+    //	echo $first_home_loan->loan_short_description;
     $first_interest =($first_home_loan->is_fixed =='0')? $first_home_loan->interest_rate_average.' % (Avg)' : $first_home_loan->interest_rate_fixed.' % (Fixed)';
-	$first_bank_name = "";
-	$first_bank_logo = "";
-	if($first_home_loan->is_non_bank == 1){
-		$first_bank_name = $first_home_loan->non_bank_name;
-		$first_bank_logo = $first_home_loan->non_bank_logo;
-	}else{
-		$first_bank_name = $first_home_loan->bank_name;
-		$first_bank_logo = $first_home_loan->bank_logo;
-	}
+    $first_bank_name = "";
+    $first_bank_logo = "";
+    if($first_home_loan->is_non_bank == 1){
+        $first_bank_name = $first_home_loan->non_bank_name;
+        $first_bank_logo = $first_home_loan->non_bank_logo;
+    }else{
+        $first_bank_name = $first_home_loan->bank_name;
+        $first_bank_logo = $first_home_loan->bank_logo;
+    }
 
     $second_interest =($second_home_loan->is_fixed =='0')? $second_home_loan->interest_rate_average.' % (Avg)' : $second_home_loan->interest_rate_fixed.' % (Fixed)';
-	$second_bank_name = "";
-	$second_bank_logo = "";
-	if($second_home_loan->is_non_bank == 1){
-		$second_bank_name = $second_home_loan->non_bank_name;
-		$second_bank_logo = $second_home_loan->non_bank_logo;
-	}else{
-		$second_bank_name = $second_home_loan->bank_name;
-		$second_bank_logo = $second_home_loan->bank_logo;
-	}
+    $second_bank_name = "";
+    $second_bank_logo = "";
+    if($second_home_loan->is_non_bank == 1){
+        $second_bank_name = $second_home_loan->non_bank_name;
+        $second_bank_logo = $second_home_loan->non_bank_logo;
+    }else{
+        $second_bank_name = $second_home_loan->bank_name;
+        $second_bank_logo = $second_home_loan->bank_logo;
+    }
 
 	?>
 	<section id="card_compare_default">

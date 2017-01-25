@@ -430,9 +430,10 @@ class Personal_Loan extends CI_Controller {
                     $total_payable = $emi * $tenure;
 
 
-                    $personal .='<div class="row home_loan_right_bar no-margin-lr2">
+                    $personal .='<div class="full-card">
+                    <div class="row home_loan_right_bar no-margin-lr2">
                     <div class="col-sm-3 col-xs-3">
-                        <a href="'.base_url().'en/personal_loan_details/'.$row->id.'"><img title="click here to details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                        <a href="'.base_url().'en/personal_loan_details/'.$row->id.'"><img title="click here to details" class="img-responsive personal_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                         <small class="home_loan_bank_name"><a  href="">'.$bank.'</a></small>
                     </div>
                     <div class="col-sm-9 col-xs-9">
@@ -557,11 +558,44 @@ class Personal_Loan extends CI_Controller {
                     <div class="collapse" id="rePaymentSchedule'.$row->id.'">
 
                     </div>
+                </div>
                 </div>';
 
                 }
            echo $personal;
 
     }
+
+    public function ajax_compare_personal_loan_image(){
+        $id = $this->input->post('loan_id');
+        $result = $this->Front_end_select_model->select_personal_loan_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-loan_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('loan_id1');
+        $id2 = $this->input->post('loan_id2');
+
+        $newdata = array(
+            'first_personal_loan'  => $id1,
+            'second_personal_loan'  => $id2
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
 
 }

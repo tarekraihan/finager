@@ -725,7 +725,7 @@ class Auto_loan extends CI_Controller
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
                <div class="col-sm-3 col-xs-3">
-                   <a href="'.base_url().'en/car_loan_details"><img title="Click Here To Show details" class="img-responsive home_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                   <a href="'.base_url().'en/car_loan_details"><img title="Click Here To Show details" class="img-responsive auto_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                    <small class="home_loan_bank_name"><a  href="javascript:void(0)">'.$bank.'</a></small>
                    <small class="home_loan_bank_name">'.$row->i_want.'</small>
                </div>
@@ -765,7 +765,7 @@ class Auto_loan extends CI_Controller
                <div class="col-sm-12 col-xs-12 home_loan_button">
 
                    <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
-                   <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
+                   <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-loan_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                    <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
                    <img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
                </div>
@@ -865,6 +865,38 @@ class Auto_loan extends CI_Controller
      echo $auto;
 
 
+    }
+
+
+    public function ajax_compare_auto_loan_image(){
+        $id = $this->input->post('loan_id');
+        $result = $this->Front_end_select_model->select_auto_loan_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-loan_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('loan_id1');
+        $id2 = $this->input->post('loan_id2');
+
+        $newdata = array(
+            'first_auto_loan'  => $id1,
+            'second_auto_loan'  => $id2
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
     }
 
 
