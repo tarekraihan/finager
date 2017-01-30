@@ -144,7 +144,7 @@
                                 <section class="col col-6">
                                     <label class="label">Interest Rate</label>
                                     <label class="input">
-                                        <input type="text" maxlength="25" name="txtInterestRate" value="<?php echo set_value('txtInterestRate'); ?>" placeholder="Write Interest Rate">
+                                        <input type="text"  name="txtInterestRate" value="<?php echo set_value('txtInterestRate'); ?>" placeholder="Write Interest Rate">
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestRate');?></label>
                                 </section>

@@ -140,9 +140,9 @@ class Saving_account extends CI_Controller
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
                 $this->Common_model->table_name = 'saving_account_info';
+                $this->Common_model->where = array('id' => $this->input->post('txtSavingAccountInfoId'));
                 $result = $this->Common_model->update();
 
-                $this->Common_model->where = array('dps_info_id' => $this->input->post('txtInfoId'));
                 if ($result) {
                     redirect(base_url().'saving_account/edit_account_info/success');
                 } else {
