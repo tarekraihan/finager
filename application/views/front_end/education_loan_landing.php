@@ -1,7 +1,7 @@
 	<!-- header part start -->
 	<section id="education_header_part">
 		<div class="education_header_text">
-			<h3>Personal loan comparison made easy</h3>
+			<h3>Education loan comparison made easy</h3>
 			<p><a class="btn btn-primary btn-lg education_btn" href="<?php echo base_url();?>en/all_education_loan" role="button">Start Comparing</a></p>
 		</div>
 		<!-- <a href="#"><img src="images/feedback.png" alt="not found"/></a> -->

@@ -8,37 +8,6 @@
 				<div class="col-sm-3 col-xs-3">
 					<div class="home_loan_left_bar">
 						<!-- slider range sidebar start-->
-						<div class="card_query">
-							<p>I Want </p>
-							<div class="query_radio">
-								<label class="material_radio_group">
-									<input type="radio" name="iAm" value="generalConsumer" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Purchase Apartment/Flat
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="iAm" value="businessOwner" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Home Construction
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Housing Plot
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Renovation/ Extension/ Finishing Work
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="iAm" value="collegeStudent"  class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Home Loan Takeover
-								</label><br/>
-							</div>
-						</div>
-						
 						
 						<div class="row">
 							<div class="span8">
@@ -164,7 +133,7 @@
 													        </div>
 
 
-													        <div class="slideWrapper" id="interest">
+													        <div style="display:none;" class="slideWrapper" id="interest">
 													           
 													            <div class="inputWrapper">
 													              <div class="inputField">
@@ -216,36 +185,7 @@
 						</div>
 						<!-- slider range sidebar start-->
 						
-						<div class="card_query">
-							<p>I Am</p>
-							<div class="query_radio">
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Excellent" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Salaried Person
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Good" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Businessman
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Fair" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Professional
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="Bad" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Landlord
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="MyIncomeRange" value="NoCreditLimitHistory" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									NRB
-								</label>
-							</div>
-						</div>
+						
 
 					</div>
 				</div>
@@ -422,7 +362,7 @@
 													</div>
 												</section>
 											</div>
-											<div role="tabpanel" class="tab-pane active" id="ExpensesConsidered">
+											<div role="tabpanel" class="tab-pane" id="ExpensesConsidered">
 												<section id="card_details_FeesCharges">
 													<div class="card_details_pronsCons">
 														<h4>Expenses Considered</h4>
