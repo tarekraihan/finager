@@ -126,8 +126,8 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
 
-    function select_education_loan_info($query){
-        $sql = "SELECT DISTINCT home_loan_info.*,card_bank.bank_name,card_bank.bank_logo,home_loan_looking_for.home_loan_looking_for, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `home_loan_info` LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id LEFT JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id INNER JOIN home_loan_user_home_loan_info ON home_loan_user_home_loan_info.home_loan_info_id = home_loan_info.id $query";
+    function select_education_loan_info(){
+        $sql = "SELECT DISTINCT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,education_loan_tenure.tenure, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id LEFT JOIN education_loan_tenure ON education_loan_tenure.id=education_loan_info.min_term LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id";
 
         $query = $this->db->query($sql);
         return $query;
@@ -147,12 +147,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
-    /*function select_education_loan_info(){
-        $sql = "SELECT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,loan_type.loan_type,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id INNER JOIN loan_type ON loan_type.id = education_loan_info.loan_type_id LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id";
-        $query = $this->db->query($sql);
 
-        return $query;
-    }*/
 
 
     function select_dps_loan_info($query){
@@ -164,6 +159,12 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     function select_fdr_loan_info($query){
         $sql = "SELECT DISTINCT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id $query ORDER BY fdr_info.id DESC";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+    function select_education_loan_expenses_considered($loan_id){
+        $sql = "SELECT education_expenses_considered.id,education_expenses_considered.expenses_considered FROM `education_loan_info_vs_expenses_considered` INNER JOIN education_expenses_considered ON education_expenses_considered.id=education_loan_info_vs_expenses_considered.expenses_considered_id INNER JOIN education_loan_info ON education_loan_info.id= education_loan_info_vs_expenses_considered.loan_info_id WHERE education_loan_info.id = $loan_id ORDER BY education_expenses_considered.id DESC";
         $query = $this->db->query($sql);
 
         return $query;
