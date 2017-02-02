@@ -1,16 +1,87 @@
+<style>
+.All_card {
+	border: 1px solid #DADADA;
+	padding: 23px;
+	background-color: #fff;
+}
+.All_card img {
+	height: 81px;
+}
+.All_cradit_card p {
+	color: #D19F59;
+}
+</style>	
 
-	<!-- header part start -->
+<!-- header part start -->
 	<section id="auto_header_part">
 		<div class="auto_header_text">
 			<h3>Select your auto loan</h3>
 			<p>Auto loan comparison made easy</p>
 			<p class="auto_button"><a class="btn btn-primary btn-lg" href="<?php echo base_url()?>en/all_car_loan" role="button">Start Comparing</a></p>
 		</div>
+
+                <div class="container">
+			<div class="home_loan_icon">
+				<div class="All_cradit_card">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-New-Car.png" alt="reaward"/>
+							<p>New Car</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-Reconditioned-Car.png" alt="cash_back"/>
+							<p> Reconditioned Car </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-NRB.png" alt="card"/>
+							<p> NRB </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-Low-Interest-Rate.png" alt="travel"/>
+							<p> Low Interest Rate</p>
+						</div></a>
+					</div>	
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-Landlord.png" alt="zero"/>
+							<p>Landlord</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-Salaried-Person.png" alt="student"/>
+							<p> Salaried Person </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-Professional.png" alt="business"/>
+							<p>	Professional </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#">
+							<div class="All_card">
+								<img src="<?php echo base_url()?>resource/front_end/images/auto-Business-Man.png" alt="low_interest"/>
+								<p>Business Man</p>
+							</div>
+						</a>
+					</div>	
+				</div>
+			</div>
+		</div>
 	</section>
+        <div class="clearfix"></div>
 	<!-- header part end -->
 	<section id="Sponsored">
 		<div class="container">
-			<div class="Sponsored_heading">
+			<div class="home_Sponsored_heading">
 				<h2 class="auto_link">Sponsored Links</h2>
 			</div>
 			<div class="Sponsored_box">

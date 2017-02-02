@@ -1,4 +1,3 @@
-
 	<!-- header part end -->
 	<section id="second_div">
 		<div class="container">
@@ -19,56 +18,106 @@
 		<div class="container">
 			<div class="card_bank">
 				<div class="All_cradit_card">
-					<div class="col-md-3 col-sm-3 nopadding">
+					<!--div class="col-md-3 col-sm-3 nopadding">
 						<a href="#"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/reaward.png" alt="reaward"/>
 							<p>Rewards</p>
 						</div></a>
+					</div-->
+                                        <div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/reaward.png" alt="reaward"/>
+							<p>Rewards Program</p>
+						</div></a>
 					</div>
-					<div class="col-md-3 col-sm-3 nopadding">
+					<!--div class="col-md-3 col-sm-3 nopadding">
 						<a href="#"><div class="All_card1">
 							<img src="<?php echo base_url();?>resource/front_end/images/cash_back.png" alt="cash_back"/>
 							<p>Cash Back</p>
 						</div></a>
+					</div-->
+                                        <div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card1">
+							<img src="<?php echo base_url();?>resource/front_end/images/cash_back.png" alt="cash_back"/>
+							<p>Waiver on Annual Fee</p>
+						</div></a>
 					</div>
-					<div class="col-md-3 col-sm-3 nopadding">	
+					<!--div class="col-md-3 col-sm-3 nopadding">	
 						<a href="#"><div class="All_card2">
 							<img src="<?php echo base_url();?>resource/front_end/images/card.png" alt="card"/>
 							<p>Balance Transfer</p>
 						</div></a>
+					</div-->
+                                        <div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card2">
+							<img src="<?php echo base_url();?>resource/front_end/images/Installment-Payment-For-Purchase.png" alt="card"/>
+							<p>Installment Payment for Purchase</p>
+						</div></a>
 					</div>
-					<div class="col-md-3 col-sm-3 nopadding">
+					<!--div class="col-md-3 col-sm-3 nopadding">
 						<a href="#"><div class="All_card3">
 							<img src="<?php echo base_url();?>resource/front_end/images/travel.png" alt="travel"/>
 							<p>Travel</p>
 						</div></a>
+					</div-->
+                                        <div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card3">
+							<img src="<?php echo base_url();?>resource/front_end/images/travel.png" alt="travel"/>
+							<p>Airport Facility </p>
+						</div></a>
 					</div>	
-					<div class="col-md-3 col-sm-3 nopadding">
+					<!--div class="col-md-3 col-sm-3 nopadding">
 						<a href="#"><div class="All_card4">
 							<img src="<?php echo base_url();?>resource/front_end/images/zero.png" alt="zero"/>
 							<p>Zero Percent</p>
 						</div></a>
+					</div-->
+                                        <div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card4">
+							<img src="<?php echo base_url();?>resource/front_end/images/zero.png" alt="zero"/>
+							<p>Interest Free Days</p>
+						</div></a>
 					</div>
-					<div class="col-md-3 col-sm-3 nopadding">
+					<!--div class="col-md-3 col-sm-3 nopadding">
 						<a href="#"><div class="All_card5">
 							<img src="<?php echo base_url();?>resource/front_end/images/student.png" alt="student"/>
 							<p>Student</p>
 						</div></a>
+					</div-->
+                                        <div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card5">
+							<img src="<?php echo base_url();?>resource/front_end/images/MX-Card.png" alt="student"/>
+							<p>MaxX Card</p>
+						</div></a>
 					</div>
-					<div class="col-md-3 col-sm-3 nopadding">	
+					<!--div class="col-md-3 col-sm-3 nopadding">	
 						<a href="#"><div class="All_card6">
 							<img src="<?php echo base_url();?>resource/front_end/images/business.png" alt="business"/>
 							<p>Business</p>
 						</div></a>
+					</div-->
+                                        <div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card6">
+							<img src="<?php echo base_url();?>resource/front_end/images/Signature-Card.png" alt="business"/>
+							<p>Signature Card</p>
+						</div></a>
 					</div>
-					<div class="col-md-3 col-sm-3 nopadding">
+					<!--div class="col-md-3 col-sm-3 nopadding">
 						<a href="#">
 							<div class="All_card7">
 								<img src="<?php echo base_url();?>resource/front_end/images/low_interest.png" alt="low_interest"/>
 								<p>Low Interest</p>
 							</div>
 						</a>
-					</div>	
+					</div-->	
+                                        <div class="col-md-3 col-sm-3 nopadding">
+						<a href="#">
+							<div class="All_card7">
+								<img src="<?php echo base_url();?>resource/front_end/images/low_interest.png" alt="low_interest"/>
+								<p>Low Interest Rate</p>
+							</div>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,13 +1,68 @@
-
 	<!-- header part start -->
 	<section id="fdr_header_part">
 		<div class="fdr_header_text">
 			<p>FDR comaparison made easy</p>
 			<p class="fdr_button"><a class="btn btn-primary btn-lg" href="<?php echo base_url(); ?>en/all_fdr" role="button">Start Comparing</a></p>
 		</div>
-<!-- 		<a href="#"><img src="images/feedback.png" alt="not found"/></a>
- -->	</section>
+          		<div class="container">
+			<div class="fdr_loan_icon">
+				<div class="All_cradit_card">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-1-year.png" alt="reaward"/>
+							<p>Deposit for 1 Year</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-2-Years.png" alt="cash_back"/>
+							<p> Deposit for 2 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-3-months.png" alt="card"/>
+							<p> Deposit for 3 Months </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-3-Years.png" alt="travel"/>
+							<p> Deposit for 3 Years</p>
+						</div></a>
+					</div>	
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-4-Years.png" alt="zero"/>
+							<p>Deposit for 4 Years</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-5-Years.png" alt="student"/>
+							<p> Deposit for 5 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a href="#"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-Corporate-Bodies.png" alt="business"/>
+							<p>	Corporate Bodies </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a href="#">
+							<div class="All_card">
+								<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-Individual.png" alt="low_interest"/>
+								<p>Individual</p>
+							</div>
+						</a>
+					</div>	
+				</div>
+			</div>
+		</div>
+       </section>
 	<!-- header part end -->
+        <div class="clearfix"></div>
 	<section id="Sponsored">
 		<div class="container">
 			<div class="Sponsored_heading">
