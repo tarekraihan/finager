@@ -201,6 +201,40 @@
 			</div>
 		</div>
 	</section>
+
+    <section id="hiden_div">
+        <div class="container no-padding">
+            <div class="row">
+                <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
+                    <div class="card-holder">
+                        <div class="card-bg">
+                            <img src="<?php echo base_url();?>resource/front_end/images/hidendivshead.png" alt="" />
+                            <div class="hidden_div relative">
+                                <div class="hidden_div_container">
+                                    <ul class="no-padding pull-left no-list-style">
+                                        <li>
+
+                                        </li>
+                                        <li></li>
+                                    </ul>
+                                    <a class="cart_anchor">
+
+                                    </a>
+                                    <a class="cart_anchor01">
+
+                                    </a>
+                                    <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
+                                        Compare
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 <script>
 $(document).ready(function() {
 
@@ -259,6 +293,134 @@ $(document).ready(function() {
 
 
     loadData();
+
+    $(document).on('click','.add-to-compare',function(){
+
+        $("#hiden_div").animate({bottom:'0px'});
+        //$("#hiden_div").addClass("hiddenHalfDown");
+
+        $('html, body').animate({
+
+        });
+
+        if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
+            alert("Sorry");
+        }else{
+            if($(".cart_anchor").hasClass("img_active")){
+//                alert(1);
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('.full-card').find('.education_loan_logo').eq(0);
+                //flyToElement($(itemImg), $('.cart_anchor01'));
+                $(".cart_anchor01").addClass("img_active");
+                $(this).addClass("hidden");
+
+                // var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var  formData = $(this).data();
+                var loan_id = "loan_id="+formData.loan_id;
+//                alert(loan_id);
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>education_loan/ajax_compare_education_loan_image",
+                        data: loan_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor01").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+            else{
+
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.education_loan_logo').eq(0);
+                //flyToElement($(itemImg), $('.cart_anchor'));
+
+                $(".cart_anchor").addClass("img_active");
+                $(this).addClass("hidden");
+
+                var itemImg = $(this).parents('div:eq(0)').find('.education_loan_logo').eq(0);
+                var  formData = $(this).data();
+                var loan_id = "loan_id="+formData.loan_id;
+                //alert(loan_id);
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>education_loan/ajax_compare_education_loan_image",
+                        data: loan_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+        }
+
+    });
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var collected_card = $(this).prev().attr("data-loan_id");
+
+        $(".full-card").each(function(){
+            var obj=$(this).children().find('.add-to-compare');
+            var index=$(this).children().find('.add-to-compare').attr('data-loan_id');
+            if(parseInt(collected_card)==parseInt(index)){
+                obj.removeClass("hidden");
+            }
+
+        });
+
+        $(this).parent(".cart_anchor").removeClass("img_active");
+        $(this).parent(".cart_anchor").html('');
+        $(this).addClass("hidden");
+
+    });
+
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        $(this).parent(".cart_anchor01").removeClass("img_active");
+        $(this).parent(".cart_anchor01").html('');
+    });
+
+    $('#go_compare').click(function(){
+        //alert(1);
+        var  formData = $('.cart_anchor').children('img').data();
+        var loan_id1 = "loan_id1="+formData.loan_id;
+
+        var  formData = $('.cart_anchor01').children('img').data();
+        var loan_id2 = "&loan_id2="+formData.loan_id;
+
+        var loan_ids = loan_id1+loan_id2;
+        if(loan_id1 != '' && loan_id2 != ''){
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>education_loan/ajax_go_compare_page",
+                data: loan_ids,
+                success: function(msg)
+                {
+                    if(msg != 'error'){
+
+                        window.location.href = "<?php echo base_url();?>en/education_loan_compare";
+                    }
+                }
+            });
+        }else{
+            alert("Please add 2 card for compare ! ")
+        }
+
+
+    });
+
 
 
 });

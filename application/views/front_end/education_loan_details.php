@@ -1,10 +1,40 @@
+<?php
 
+$id=$this->uri->segment(3, 0);
+if(!empty($id) && is_numeric($id) ){
+    $query=$this->Front_end_select_model->select_education_loan_details($id);
+    $row=$query->row();
+
+    $interest =($row->is_fixed =='0')? $row->avg_interest.' % (Avg)' : $row->fixed_interest.' % (Fixed)';
+    $bank_name = "";
+    $bank_logo = "";
+    if($row->is_non_bank == 1){
+        $bank_name = $row->non_bank_name;
+        $bank_logo = $row->non_bank_logo;
+    }else{
+        $bank_name = $row->bank_name;
+        $bank_logo = $row->bank_logo;
+    }
+    /*
+       echo "<pre>";
+             print_r($row);die;
+
+         echo "</pre>";*/
+    $result1 = $this->Front_end_select_model->select_education_loan_expenses_considered($id);
+    $expense_consider ='';
+    foreach($result1->result() as $row1){
+        $expense_consider .= "<li>".$row1->expenses_considered."</li>";
+    }
+}else{
+    redirect(base_url().'My404');
+}
+?>
 	<section id="card_details_top">
 		<div class="container">
 			<div class="row">
 				<div class="card_details_body">
 					<div class="col-sm-2 col-xs-4">
-						<div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></div>
+						<div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo;?>" /></div>
 						<p class="text-center">
 							<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 						</p>
@@ -12,7 +42,7 @@
 					</div>
 					<div class="col-sm-2 col-xs-8">
 						<div>
-							<p class="card_details_head2">Prime Bank Personal Loan</p>
+							<p class="card_details_head2"><?php echo $bank_name;?></p>
 							<p class="card_details_features">
 								Purchase Apartment/Flat
 							</p>
@@ -33,7 +63,7 @@
 								<div>
 									<p class="card_details_head2">Interest Rate</p>
 									<p class="card_details_features">
-										min 8%,<br> max 9%
+										min <?php echo $row->min_interest;?>%,<br> max <?php echo $row->max_interest;?>%
 									</p>
 								</div>
 							</div>
@@ -41,7 +71,7 @@
 								<div>
 									<p class="card_details_head2">EMI</p>
 									<p class="card_details_features">
-										28%,<br> Monthly 2.33%
+										Tk.50000
 									</p>
 								</div>
 							</div>
@@ -80,42 +110,7 @@
 				<h4>Features</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<table class="table table-striped table-bordered">
-						<tbody>
-						  <tr>
-							<td>Minimum Loan Amount</td>
-							<td>200,000</td>
-						  </tr>
-						  <tr>
-							<td>Maximum Loan Amount</td>
-							<td>1,000,000</td>
-						  </tr>
-						  <tr>
-							<td>Minimum Term</td>
-							<td>1 Year</td>
-						  </tr>
-						  <tr>
-							<td>Maximum Term</td>
-							<td>5 Year</td>
-						  </tr>
-						  <tr>
-							<td>Loan Purpose</td>
-							<td>Undergraduate Program, Post Graduate Program, Professional Courses</td>
-						  </tr>
-						  <tr>
-							<td>Grace Period</td>
-							<td>Not Available</td>
-						  </tr>
-						  <tr>
-							<td>Loan Against FDR</td>
-							<td>Available</td>
-						  </tr>
-						  <tr>
-							<td>Down Payment </td>
-							<td>30%</td>
-						  </tr>
-						</tbody>
-					</table>
+                    <?php echo $row->feature;?>
 				</div>
 			</div>
 		</div>
@@ -131,56 +126,20 @@
 					<table class="table table-striped table-bordered">
 						<tbody>
 						  <tr>
-							<td>Minimum Loan Amount</td>
-							<td>10 Lac</td>
+							<td>Processing Fee</td>
+							<td><?php echo $row->processing_fee;?></td>
 						  </tr>
 						  <tr>
-							<td>Maximum Loan Amount</td>
-							<td>120 Lac</td>
+							<td>Early Settlement Fee</td>
+							<td><?php echo $row->early_settlement_fee;?></td>
 						  </tr>
 						  <tr>
-							<td>Minimum Term</td>
-							<td>5 Year</td>
+							<td> Partial Payment Fee</td>
+							<td><?php echo $row->partial_payment_fee;?></td>
 						  </tr>
 						  <tr>
-							<td>Maximum Term</td>
-							<td>20 Year</td>
-						  </tr>
-						  <tr>
-							<td>Down payment (%)</td>
-							<td>30</td>
-						  </tr>
-						  <tr>
-							<td>Grace Period</td>
-							<td>1 Year</td>
-						  </tr>
-						  <tr>
-							<td>Try Party Agreement Allowed up to</td>
-							<td>3-24 Month</td>
-						  </tr>
-						  <tr>
-							<td>Lower Interest Rate</td>
-							<td>None</td>
-						  </tr>
-						  <tr>
-							<td>Availability of Grace Period</td>
-							<td>None</td>
-						  </tr>
-						  <tr>
-							<td>Lower Processing Fee</td>
-							<td>None</td>
-						  </tr>
-						  <tr>
-							<td>Life Insurance Coverage </td>
-							<td>None</td>
-						  </tr>
-						  <tr>
-							<td>Flexible Payment Schedule</td>
-							<td>None</td>
-						  </tr>
-						  <tr>
-							<td>Joint Applicant Allowed</td>
-							<td>None</td>
+							<td> Penalty Charge</td>
+							<td><?php echo $row->penalty_charge;?></td>
 						  </tr>
 						</tbody>
 					</table>
@@ -195,26 +154,7 @@
 				<h4>Expenses Considered</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<table class="table table-striped table-bordered">
-						<tbody>
-						  <tr>
-							<td>Processing Fee</td>
-							<td>2%</td>
-						  </tr>
-						  <tr>
-							<td>Early Settlement Fee</td>
-							<td>1%</td>
-						  </tr>
-						  <tr>
-							<td>Partial Payment Fee</td>
-							<td>2% on Overdue Amount</td>
-						  </tr>
-						  <tr>
-							<td>Quotation Change Fee</td>
-							<td>BDT 500 Per Quotation</td>
-						  </tr>
-						</tbody>
-					</table>
+					<?php echo $expense_consider;?>
 				</div>
 			</div>
 		</div>
@@ -227,26 +167,7 @@
 				<h4>Eligibility for Applying</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2">
-					<h4>Minimum Income:</h4>
-					<ul>
-						<li>BDT. 40,000.00 (Taka Forty Thousand) for salaried person of MNCs, LLC, Foreign NGOs and UN bodies.</li>
-						<li>BDT. 45,000.00 (Taka Forty Five Thousand)) for salaried person other than MNCs, LLC, Foreign NGOs and UN bodies.</li>
-						<li>BDT. 30,000.00 (Taka Thirty Thousand) for Govt. employees.</li>
-						<li>BDT. 50,000.00 (Taka Fifty Thousand) for Landlord/ Landlady.</li>
-						<li>BDT. 55,000.00 (Taka Fifty Five Thousand) for Businessmen.</li>
-					</ul>
-					<h4>Minimum Experience:</h4>
-					<ul>
-						<li>For permanent and confirmed salaried person, minimum one (1) year experience with 6 months employment in present organization.</li>
-						<li>For Businessmen one (1) year experience in the same line of business.</li>
-						<li>For Landlord/Landlady having 6 months rental income continuation.</li>
-					</ul>
-					<h4>Age Requirement:</h4>
-					<ul>
-						<li>Minimum: 22 Years (at the time of application).</li>
-						<li>Maximum: 65 years (at the end of loan tenor).</li>
-						<li>(Age limit can be relaxed in case of joint applicant provided).</li>
-					</ul>
+					<?php echo $row->eligibility; ?>
 				</div>
 			</div>
 		</div>
@@ -255,39 +176,8 @@
 	<section id="card_details_Benefits">
 		<div class="container">
 			<div class="card_details_pronsCons">
-				<h4>Security Required</h4>
-				<div class="prosConsHr"></div><br/>
-				<ul>
-					<li>Recent passport size color photographs of applicant (s) and guarantor (s).</li>
-					<li>Photocopy of NID/passport/ driving license of applicant (s) and guarantor (s).</li>
-					<li>Copy of latest utility bill (gas/water/electricity/municipal tax).</li>
-					<li>Business card/ office ID copy of applicant (s) and guarantor (s) if any.</li>
-					<li>Latest tax certificate/E-TIN.</li>
-					<li>Personal net worth statements of applicant (s) and guarantor (s).</li>
-					<li>Bank statement of last 12 months for businessmen and 6 months for other categories.</li>
-					<li>Rent or lease agreement of house/property (if applicable).</li>
-				</ul>
-				<p><b>Additional documents required for Salaried Person/ Self Employed</b></p>
-				<ul>
-					<li>Salary Certificate/ Letter of Introduction.</li>
-					<li>Offer letter/Release letter from previous employer to prove service experience.</li>
-					<li>Professional certificate issued by concerned institution.</li>
-				</ul>
-				<p><b>Additional documents required for Businessmen</b></p>
-				<ul>
-					<li>Copy of trade license.</li>
-					<li>Memorandum of Association and Articles of Association of the company.</li>
-					<li>Certificate of Incorporation.</li>
-					<li>Latest form xii.</li>
-					<li>Partnership deed.</li>
-				</ul>
-				<p><b>Additional documents required for Landlord/Landlady</b></p>
-				<ul>
-					<li>Title deed of premises / property.</li>
-					<li>Valid rental deed with tenants.</li>
-					<li>Utility bill copy.</li>
-					<li>Ground rent payment and municipal tax payment receipt.</li>
-				</ul>
+				<h4>Requirement</h4>
+				<?php echo $row->requirement;?>
 			</div>
 		</div>
 	</section>
@@ -295,13 +185,9 @@
 	<section id="card_details_Benefits">
 		<div class="container">
 			<div class="card_details_pronsCons">
-				<h4>Required Documents</h4>
+				<h4>Terms and Conditions</h4>
 				<div class="prosConsHr"></div><br/>
-				<ul>
-					<li>Monthly fee 10 taka+vat for sms service & transaction alert.</li><br/>
-					<li>0.35 paisa for every 100/= taka will be deducted for insurance program.</li><br/>
-					<li>Out of 18    transactions, there must be 10 POS transaction to get waiver on annual fee.</li><br/>
-				</ul>
+				<?php echo $row->terms_and_conditions;?>
 			</div>	
 		</div>
 	</section>
@@ -314,15 +200,7 @@
 				<h4>Review</h4>
 				<div class="prosConsHr"></div>
 				<div class="prosCons_body2">
-					<p>
-						<b>Waiver on Annual Fee</b><br/>
-						Now payment of Annual fee for your Credit Card is totally your choice. BRAC Bank allows you to pay no Annual fee as long as you transact at least 18 times (including 10 POS transactions) in a physical year. 
-					</p>
-					
-					<p>
-						<b>Cheque Facility</b><br/>
-						With BRAC Bank Credit Card now you can enjoy cheque facility against your credit card limit. You can make payment (account payee only) to any person or organization where Credit Card facility is not available. You can use your 100% limit through Card cheque with a minimum processing fee. You will get your first cheque book absolutely for free. 
-					</p>
+					<?php echo $row->review;?>
 				</div>
 			</div>
 		</div>
@@ -371,50 +249,6 @@
 			</div>
 		</div>
 	</section>
-	
-	
-	<section id="card_details_userReview">
-		<div class="container">
-			<div class="card_details_pronsCons">
-				<h4 class="card_details_pronsCons_head">Terms and Conditions</h4>
-				<div class="prosConsHr"></div>
-				<div class="row">
-					<div class="col-sm-12 col-xs-12">
-						<div class="prosCons_body2 home_loan_terms">
-							<ol>
-								<li>The facility shall be made available for the customer from the date of Bank's approval of this application until such time is stipulated in any letter and this facility shall be continuing on until the adjustment of the dues of the Bank with interest and other charges.</li>
-								<li>The Bank reserves the right to withdraw the credit facility and demand repayment if there has been any default in repayment of the loan.</li>
-								<li>The Bank shall not be obliged to make the credit facility available until it has received formal written acknowledgement from you accepting the credit facility on the basis of outline and subject to the terms and conditions specified in the banking arrangement letter.</li>
-								<li>The acceptance of the terms and conditions of the banking arrangement letter by the customer constitutes a legal and binding obligation and is enforceable in accordance with the terms of the Banking arrangement letter.</li>
-								<li>By use of the credit facility provided by the bank, the customer accepts the conditions enumerated in the banking arrangement letter and authorizes the bank to appoint agents to collect funds payable to the bank, as the Bank may consider necessary. In the due discharge of their duty, information regarding borrower's credit facility will be supplied to the agent. All charges payable to such agents, to collect amounts owed to the bank, are liable to be at borrower's cost and risk, in addition to all other costs, charges and expenses incurred by the bank to recover outstanding dues/money.</li>
-								<li>The bank is authorized to open and maintain account(s) for the purpose of administering and recording payments by the customer in respect of the facility.</li>
-								<li>The loan shall be utilized for the specified purpose for which it has been sanctioned. Payment shall be made directly by the bank to the vendor or to the customer, as determined by the Bank, depending upon the purpose of the loan.</li>
-								<li>All payments in respect of the facility shall be made by the customer on or before the due dates and the customer hereby irrevocably authorizes the Bank to debit any of the customer's account(s) with the Bank with all amounts. Owing in respect of the facility including interest and charges and expenses (together the indebtedness) at such time as the same shall become or be due and, payable and transfer such sum to the loan account for adjustment but in any case, the customer shall always remain liable and agree(s) to make payment in full of all such sums to the Bank.</li>
-								<li>The customer unconditionally undertakes to repay the loan as per terms and conditions of the Banking Arrangement Letter.</li>
-								<li>The customer undertakes to deposit his/her salary/wages/honorarium payable by his/her employer to the designated account maintained with the Bank.</li>
-								<li>The Bank is authorized to enforce all or any of the securities executed as well as kept by the customer in favor of the Bank and recover the loan amount with interest and other charges accrued in the loan account.</li>
-								<li>The customer irrevocably authorizes the Bank to enforce the securities art's absolute discretion in the event the loan account becomes irregular and shall apply any proceeds recovered towards adjustment of outstanding loan liabilities along with all legal fees.</li>
-								<li>Where the facility is made available for purchase of consumer item(s) including Home loan customer unconditionally and irrevocably undertakes to deliver possession of the consumer items including the Home loan purchased b1 the loan amount without any question whatever to the bank as and when demanded by the bank. The customer further authorizes the bank irrevocably, to sell the mortgage items and apply the proceeds towards adjustment of the dues. For any unadjusted sum, the customer undertakes to repay the same with interest and other charges.</li>
-								<li>In the event of normal death of the customer, Bank shall be entitled to the End of Service Benefits from the Employer and adjust the dues first bet'is made to the heirs/nominees.</li>
-								<li>The Bank holds the right to refuse or approve a loan proposal without assigning/disclosing any reasons to the applicant domicile</li>
-								<li>After settlement of the facility, the borrower will collect all loan documentations from the domicile branch.</li>
-								<li>After refusal of loan proposal, it will be the responsibility of the applicant to collect proposed loan documentation from the concerned dealing person who processed the loan application within 7 (seven) days from the date of loan refused.</li>
-								<li>A premium will be charged if the applicant wants to avail the facility under "Loan Protection Policy". The amount of premium as decided by the bank will be added to the loan installment. The Bank reserves the right to change the rate of premium as and when necessary. In the event of death of the borrower, the amount so realized by the Bank from insurance company will be utilized for adjustment of balance amount of loan. In case of any deficit the outstanding loan amount will be adjusted as decided by the Bank.</li>
-								<li>The Bank's statements and records shall be binding on the customer and constitute conclusive evidence of debt for all purposes.</li>
-								<li>If at any time, any provision hereof becomes illegal, invalid or unenforceable in any respect. neither the legality, validity or enforceability of the remaining provisions shall be affected or impaired thereby.</li>
-								<li>The Bank reserves the right to alter these terms and conditions at any time on notification to the customer.</li>
-								<li>Any notice made by the Bank in respect of the facility shall be in writing and made to the address given by the Customer to the Bank and shall be deemed to have been received by customer within 3 (three) business days from the date of posting.</li>
-								<li> If the declaration below is signed by more than one person as customer, the liability of each such person there under and these terms and conditions shall be joint and similar.</li>
-								<li>These terms and conditions shall be constructed with the laws of Bangladesh and the customer and the Bank hereby irrevocably submit to the nonexclusive of the courts of Bangladesh.</li>
-							</ol>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	
 	
 	<section id="chart_section">
 		<div class="container">

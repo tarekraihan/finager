@@ -492,13 +492,7 @@ class Education_Loan extends CI_Controller {
         $education_loan = $this->Front_end_select_model->select_education_loan_info();
         $education = '';
         foreach($education_loan->result() as $row){
-           /* $bank = "";
-            if($row->is_non_bank == 1){
-                $bank = $row->non_bank_name;
-            }else{
-                $bank = $row->bank_name;
-            }
-            $bank_logo = "";*/
+
             if($row->is_non_bank == 1){
                 $bank_logo = $row->non_bank_logo;
             }else{
@@ -525,7 +519,7 @@ class Education_Loan extends CI_Controller {
             $education .= '<div class="full-card">
 						<div class="row home_loan_right_bar no-margin-lr2">
 							<div class="col-sm-3 col-xs-3">
-								<a href="'.base_url().'en/education_loan_details"><img title="click here to details" class="img-responsive" src="'.base_url().'resource//common_images/bank_logo/'.$bank_logo.'" /></a>
+								<a href="'.base_url().'en/education_loan_details/'.$row->id.'"><img title="click here to details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 							</div>
 							<div class="col-sm-9 col-xs-9">
 								<div class="row">
@@ -691,6 +685,38 @@ class Education_Loan extends CI_Controller {
         }
 
         echo $education;
+    }
+
+
+    public function ajax_compare_education_loan_image(){
+        $id = $this->input->post('loan_id');
+        $result = $this->Front_end_select_model->select_education_loan_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-loan_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('loan_id1');
+        $id2 = $this->input->post('loan_id2');
+
+        $newdata = array(
+            'first_education_loan'  => $id1,
+            'second_education_loan'  => $id2
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
     }
 
 
