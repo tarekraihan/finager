@@ -1,18 +1,9 @@
 
-<style>
-	#millionier_header_part {
-		background-image: url(http://placehold.it/1583X450);
-		width: 100%;
-		height: 450px;
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-</style>
 
 	<!-- header part start -->
 	<section id="millionier_header_part">
-		<div class="fdr_header_text">
+		<div class="millionier_header_text">
+                        <h3>Lakhpoti & Millionaire Scheme</h3>
 			<p>Millionier comaparison made easy</p>
 			<p class="fdr_button"><a class="btn btn-primary btn-lg" href="<?php echo base_url()?>en/all_millionaire" role="button">Start Comparing</a></p>
 		</div>
@@ -22,55 +13,55 @@
 	<section id="Sponsored">
 		<div class="container">
 			<div class="Sponsored_heading">
-				<h2 class="fdr_link">Sponsored Links</h2>
+				<h2 class="dps_link">Others Investment</h2>
 			</div>
 			<div class="Sponsored_box">
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
-						<div class="fdr_spnrs1">
-							<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
-							<p>Topic Heading</p>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr1.jpg" alt="img_logo_blue"/></div>
+						<div class="dps_spnrs1">
+							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
+							<p>FDR</p>
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg fdr_btn">Go to slide</button>
+						<a href="<?php echo base_url(); ?>en/fdr"><button class="btn btn-primary btn-lg dps_btn">Go to slide</button></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
-						<div class="fdr_spnrs1">
-							<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
-							<p>Topic Heading</p>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/DepositPensionScheme.jpg" alt="img_logo_blue"/></div>
+						<div class="dps_spnrs1">
+							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
+							<p>DPS</p>
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg fdr_btn">Go to slide</button>
+						<a href="<?php echo base_url(); ?>en/dps"><button class="btn btn-primary btn-lg dps_btn">Go to slide</button></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
-						<div class="fdr_spnrs1">
-							<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
-							<p>Topic Heading</p>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/Money Maximizer1.png" alt="img_logo_blue"/></div>
+						<div class="dps_spnrs1">
+							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
+							<p>Money Maximizer</p>
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg fdr_btn">Go to slide</button>
+						<button class="btn btn-primary btn-lg dps_btn">Go to slide</button>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
-						<div class="fdr_spnrs1">
-							<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
-							<p>Topic Heading</p>
+						<div class="spnrs"><img class="img-responsive"src="<?php echo base_url(); ?>resource/front_end/images/MonthlyBenefitScheme.jpg" alt="img_logo_blue"/></div>
+						<div class="dps_spnrs1">
+							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
+							<p>Monthly Benefit Scheme</p>
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg fdr_btn">Go to slide</button>
+						<button class="btn btn-primary btn-lg dps_btn">Go to slide</button>
 					</div>
 				</div>
 			</div>
@@ -175,109 +166,63 @@
 			<div class="heading_pr">
 				<div class="col-md-3 col-sm-6">
 					<div class="fdr_heading_text">
-						<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="fdr_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
+						<img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati5.jpg" alt="img_logo_blue"/>
+						<p class="fdr_loan">Lakhpoti & Millionaire Scheme</p>
+						<h4>Apply Fixed Deposit | Compare FD Calculator</h4>
+						<p>
+							Central Bank of India is a public sector commercial bank. Headquartered in Mumbai, it has a large branch network of about 4,600 branches in about 27 states.
+							It is among the oldest/largest commercial banks in India.
 						</p>
-						<div class="fdr_read"><a href="#">Read More</a></div>
+						<p>
+							The Central Bank of India offers short and long term fixed deposits. Short- term fixed deposits are those term deposits where the term-to-maturity and interest rate 
+							are fixed for a short period of time i.e. less than one year. Long-term fixed deposits are those term deposits where the
+						</p>
+						<div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpati1">Read More</a></div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="fdr_heading_text">
-						<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="fdr_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
+						<img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati1.png" alt="img_logo_blue"/>
+						<p class="fdr_loan">Lakhpoti & Millionaire Scheme</p>
+						<h4>Best Bank Account Interest Rates</h4>
+						<p>
+							I’m seeing more signs that 2017 won’t be a repeat of 2016 in terms of the Fed. After the December rate hike of 2015, the Fed suggested in its dot plot that there would
+							be four rate hikes in 2016. The only 2016 rate hike came two weeks ago at the last FOMC meeting of the year. At that meeting the Fed’s new dot plot suggests there’ll 
+							be three rate hikes in 2017. Why should 2017 be any different? There are reasons to be optimistic even if you don’t factor in the potential positive changes from the 
+							Trump administration. Economist Tim Duy describes why he thinks three rate hikes in 2017 is more likely than one in this 
 						</p>
-						<div class="fdr_read"><a href="#">Read More</a></div>
+						<div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpati2">Read More</a></div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="fdr_heading_text">
-						<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="fdr_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
+						<img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati3.jpg" alt="img_logo_blue"/>
+						<p class="fdr_loan">Lakhpoti & Millionaire Scheme</p>
+						<h4>How to Deposit Cash at an Online-Only Bank</h4>
+						<p>
+							Online-only banks can let you deposit checks from your phone, but the same can’t be said for cash. In fact, it’s a transaction they haven’t completely figured out.
 						</p>
-						<div class="fdr_read"><a href="#">Read More</a></div>
+						<p>
+							“Digitizing cash is the last frontier to conquer for widespread online-only bank adoptions,” says Michael Moeser, director of payments at Javelin Strategy & Research 
+							in Pleasanton, California. Approximately 1% of consumers use an Internet-only bank as their primary financial institution, according to Javelin.
+						</p>
+						<div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpati3">Read More</a></div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="fdr_heading_text">
-						<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="fdr_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
+						<img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati2.jpg" alt="img_logo_blue"/>
+						<p class="fdr_loan">Lakhpoti & Millionaire Scheme</p>
+						<h4>What is Deposit Accounts?</h4>
+						<p>
+							We're a different kind of bank account comparison site, and we appreciate your taking the time to get to know us. We believe that our unparalleled coverage and our
+							"not-for-hire" approach to collecting and presenting information make us the best resource on the Web for you, the user. We encourage you to compare us against any
+							other bank account comparison site on the Web in the below areas, and we humbly think that you'll find your way back to Deposit Accounts as your go-to resource when 
+							researching and choosing a new bank account.
 						</p>
-						<div class="fdr_read"><a href="#">Read More</a></div>
+						<div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpati4">Read More</a></div>
 					</div>
 				</div>
-				<!-- <div class="col-md-2 col-sm-2">
-					<div class="heading_text">
-						<img class="img-responsive" src="images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
-						</p>
-						<a href="#">Read More</a>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</section>

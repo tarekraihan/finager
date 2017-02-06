@@ -43,9 +43,7 @@ if(!empty($id) && is_numeric($id) ){
 					<div class="col-sm-2 col-xs-8">
 						<div>
 							<p class="card_details_head2"><?php echo $bank_name;?></p>
-							<p class="card_details_features">
-								Purchase Apartment/Flat
-							</p>
+
 						</div>
 					</div>
 					
@@ -256,7 +254,7 @@ if(!empty($id) && is_numeric($id) ){
 								<div class="col-sm-12">
 									<div class="panel panel-default">
 									  	<div class="panel-heading">
-									    	<h3 class="panel-title text-center">Demo Bank Home Loan Repayment Schedule</h3>
+									    	<h3 class="panel-title text-center">Demo Bank Education Loan Repayment Schedule</h3>
 									  	</div>
 										
 										<div class="emi_cal">
@@ -287,7 +285,7 @@ if(!empty($id) && is_numeric($id) ){
 																			<div class="selectCalcWrapper" style="display:none;">
 																				<div class="radiobox">
 																				  <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-																				  <label for="savingCalculator">Home Loan Calculator</label>
+																				  <label for="savingCalculator">Education Loan Calculator</label>
 																				</div>
 																				<div class="radiobox">
 																				  <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
@@ -302,7 +300,7 @@ if(!empty($id) && is_numeric($id) ){
 																				  <!--Amount Already Saved START-->
 																					<div class="slideWrapper" id="alreadySaved">
 																						<div class="questWrap">
-																						  <p class="quest">Enter your home loan amount required</p>
+																						  <p class="quest">Enter your education loan amount required</p>
 																						</div>
 																					  
 																						<div class="inputWrapper"> <span class="rupee"></span>
@@ -341,7 +339,7 @@ if(!empty($id) && is_numeric($id) ){
 																					  <!--Amount Already Saved END-->
 																					  
 																					<div class="slideWrapper" id="avgSave">
-																						<p class="quest">Enter tenure for home loan</p>
+																						<p class="quest">Enter tenure for Education loan</p>
 																						<div class="inputWrapper">
 																						  <div class="inputField">
 																							<div class="inpLft"></div>
@@ -400,7 +398,7 @@ if(!empty($id) && is_numeric($id) ){
 
 
 																					<div class="slideWrapper" id="interest">
-																						<p class="quest">Interest rate on home loan</p>
+																						<p class="quest">Interest rate on education loan</p>
 																						<div class="inputWrapper">
 																						  <div class="inputField">
 																							<div class="inpLft"></div>
@@ -484,7 +482,7 @@ if(!empty($id) && is_numeric($id) ){
 									</div>
 										
 									  	<div class="panel-body">
-									    	<h3 class="text-center">Your Monthly Home Loan EMI : 4566511</h3>
+									    	<h3 class="text-center">Your Monthly Education Loan EMI : 4566511</h3>
 								    		<div class="row">
 									    		<div class="col-sm-5 col-xs-12">
 									    			<h4 class="text-center">Break-up of all total amount</h4>

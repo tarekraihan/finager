@@ -67,6 +67,13 @@ class Select_Model extends CI_Model
         return $query;
 
     }
+    function select_maturity_tenure()
+    {
+        $sql="SELECT * FROM millionaire_tenure ORDER BY CAST(tenure as SIGNED INTEGER) ASC";
+        $query=$this->db->query($sql);
+        return $query;
+
+    }
     function select_bank()
     {
         $sql="SELECT * FROM `card_bank`";
