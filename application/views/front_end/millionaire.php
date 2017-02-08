@@ -90,6 +90,9 @@
 	  opacity: 1;
 	  border: 2px solid #333;
 	}
+    label.checkDisable {
+        background: #a5a5a5;
+    }
 </style>
 
 <section id="maximizer_header"></section>
@@ -115,182 +118,7 @@
                                 <?php } ?>
                             </div>
                         </div>
-						<div class="card_query">
-							<p>Select Deposit Amount</p>
-							<div class="row">
-								<div class="span8">
-									<div class="singleColumn page common">
-										<div class="htmltextarea section">
-											<div class="innerMdlWrapper"> 
-												 <!-- Middle Inner START--> 
-												<div class="innerMdlInner">
-													<div class="calcWrapper">
-														<div class="clear"></div>
-														<!--Calculator Banner END-->
-														<div class="selectCalcWrapper" style="display:none;">
-															<div class="radiobox">
-															  <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-															  <label for="savingCalculator">Home Loan Calculator</label>
-															</div>
-															<div class="radiobox">
-															  <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
-															  <label for="depositCalculator">Personal Loan Calculator</label>
-															</div>
-														</div>
 
-														<div class="savingsContainer emiContainer">
-													
-															<div class="leftCont"> 
-																  
-															  <!--Amount Already Saved START-->
-
-																<div class="slideWrapper" id="alreadySaved">
-																  
-																	<div class="inputWrapper"> <span class="rupee"></span>
-																	  <div class="inputField">
-																		<div class="inpLft"></div>
-																		<div class="inpMdl">
-																		  <input type="text" name="" value="0" id="finalAssest" class="input_LoanAmt"/>
-																		</div>
-																		<div class="inpRt"></div>
-																	  </div>
-																	</div>
-																	<div class="clear"></div>
-																	
-																	<!--Calculator Section START-->
-																	<div class="calcContainer">
-																	  <div class="calcSection calborder">
-																		<div class="dragBox">
-																		  <div class="drag"> <span></span>
-																			<div class="sliderHover"></div>
-																			<div class="draggable ui-widget-content drag3"> </div>
-																		  </div>
-																		  <div class="clear"></div>
-																		  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																		  <div class="slideImg" id="finacialAssest">
-																			<ul>
-																			</ul>
-																		  </div>
-																		  <div class="prev"></div>
-																		  <div class="next active"></div>
-																		</div>
-																		<div class="hideVal">25000</div>
-																	  </div>
-																	</div>
-																	<!--Calculator Section END--> 
-																	
-																</div>
-																  <!--Amount Already Saved END-->
-																  
-																<div style="display:none;" class="slideWrapper" id="avgSave">
-																   
-																	<div class="inputWrapper">
-																	  <div class="inputField">
-																		<div class="inpLft"></div>
-																		<div class="inpMdl">
-																		  <input type="text" name="" value="1" id="finalCustAge" maxlength="3" class="input_LoanPeriod"/>
-																		</div>
-																		<div class="inpRt"></div>
-																	  </div>
-																	  <div class="inpRadio">
-																		<div id="tenureType">
-																		  <label>Year</label>
-																		</div>
-																	  </div>
-																	</div>
-																	<div class="clear"></div>
-																	<!--Calculator Section START-->
-																	<div class="calcContainer yearWrap" style="display:none">
-																	  <div class="calcSection calborder">
-																		<div class="dragBox">
-																		  <div class="drag"> <span></span>
-																			<div class="draggable ui-widget-content drag3"></div>
-																		  </div>
-																		  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																		  <div class="slideImg" id="custAge">
-																			<ul>
-																			</ul>
-																		  </div>
-																		  <div class="prev"></div>
-																		  <div class="next active"></div>
-																		</div>
-																		<div class="hideVal">5</div>
-																	  </div>
-																	</div>
-																	<!--Calculator Section END--> 
-																	
-																	<!--Calculator Section START-->
-																	<div class="calcContainer monthWrap">
-																	  <div class="calcSection calborder">
-																		<div class="dragBox">
-																		  <div class="drag2"> <span></span>
-																			<div class="draggable draggable2 ui-widget-content drag3"></div>
-																		  </div>
-																		  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																		  <div class="slideImg" id="monthExp">
-																			<ul>
-																			</ul>
-																		  </div>
-																		  <!--<div class="prev"></div>
-																							  <div class="next active"></div>--> 
-																		</div>
-																		<div class="hideVal">5</div>
-																	  </div>
-																	</div>
-																	<!--Calculator Section END--> 
-																</div>
-
-
-																<div style="display:none;" class="slideWrapper" id="interest">
-																   
-																	<div class="inputWrapper">
-																	  <div class="inputField">
-																		<div class="inpLft"></div>
-																		<div class="inpMdl">
-																		  <input type="text" name="" value="8" id="finalLiability" class="input_AIR"/>
-																		</div>
-																		<div class="inpRt"></div>
-																	  </div>
-																	  <span class="perc">%</span> 
-																	</div>
-																	<div class="clear"></div>
-																	<!--Calculator Section START-->
-																	<div class="calcContainer">
-																	  <div class="calcSection">
-																		<div class="dragBox">
-																		  <div class="drag"> <span></span>
-																			<div class="draggable ui-widget-content drag3"></div>
-																		  </div>
-																		  <div class="clear"></div>
-																		  <div class="slideImg" id="liability">
-																			<ul>
-																			</ul>
-																		  </div>
-																		  <div class="prev"></div>
-																		  <div class="next active"></div>
-																		</div>
-																		<div class="hideVal">0.5</div>
-																	  </div>
-																	</div>
-																	<!--Calculator Section END--> 
-																</div>
-																  
-																  <!--<a href="javascript:;" class="submit">Submit</a>-->
-																  <input type="hidden" id="input_Payment" />
-															</div>
-
-														   
-														</div>
-
-													</div>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 
 						<div class="clearfix"></div>
 
@@ -299,19 +127,90 @@
 
 							<p class="mill_def_text">Select Amount</p>
                             <div class="fdrTenurepadding">
-                            <?php
-                                $maturity_tenure = $this->Select_model->select_maturity_tenure();
-                                foreach($maturity_tenure->result() as $row){
-
-                            ?>
-                            <div class="fdr_tenure pull-left">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="millionaire_tenure" value="<?php echo $row->tenure;?>" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    <?php echo $row->tenure;?> Years
-                                </label>
-                            </div>
-                                <?php } ?>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="1" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        100 K
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="2" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        200 K
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="3" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        300 K
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="4" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        400 K
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="5" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        500 K
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="6" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        1 Million
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="7" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        2.5 Million
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="8" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        5 Million
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="9" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        10 Million
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="10" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        20 Million
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="11" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        30 Million
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="maturity_amount" value="12" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        40 Million
+                                    </label>
+                                </div>
 							</div>
 						</div>
 
@@ -327,7 +226,7 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      <input type="checkbox" value="0" id="check01" name="check" />
+									      <input type="checkbox" value="1" id="check01" name="check" />
 									      <label for="check01">1</label>
 									    </div>
 									    <!-- end .squaredOne -->
@@ -337,8 +236,8 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="1" id="check02" name="check" />
-									      	<label for="check02">2</label>
+									      	<input type="checkbox" value="2" id="check02" name="check" disabled/>
+									      	<label for="check02" class="checkDisable">2</label>
 									    </div>
 									    <!-- end .squaredOne -->
 									</section>
@@ -347,7 +246,7 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="2" id="check03" name="check" />
+									      	<input type="checkbox" value="3" id="check03" name="check" />
 									      	<label for="check03">3</label>
 									    </div>
 									    <!-- end .squaredOne -->
@@ -357,7 +256,7 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="3" id="check04" name="check" />
+									      	<input type="checkbox" value="4" id="check04" name="check" />
 									      	<label for="check04">4</label>
 									    </div>
 									    <!-- end .squaredOne -->
@@ -367,7 +266,7 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="4" id="check05" name="check" />
+									      	<input type="checkbox" value="5" id="check05" name="check" />
 									      	<label for="check05">5</label>
 									    </div>
 									    <!-- end .squaredOne -->
@@ -377,7 +276,7 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="5" id="check06" name="check" />
+									      	<input type="checkbox" value="6" id="check06" name="check" />
 									      	<label for="check06">6</label>
 									    </div>
 									    <!-- end .squaredOne -->
@@ -387,7 +286,7 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="6" id="check07" name="check" />
+									      	<input type="checkbox" value="7" id="check07" name="check" />
 									      	<label for="check07">7</label>
 									    </div>
 									    <!-- end .squaredOne -->
@@ -397,7 +296,7 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="7" id="check08" name="check" />
+									      	<input type="checkbox" value="8" id="check08" name="check" />
 									      	<label for="check08">8</label>
 									    </div>
 									    <!-- end .squaredOne -->
@@ -407,7 +306,7 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="8" id="check09" name="check" />
+									      	<input type="checkbox" value="9" id="check09" name="check" />
 									      	<label for="check09">9</label>
 									    </div>
 									    <!-- end .squaredOne -->
@@ -417,43 +316,120 @@
 									<section title="">
 									    <!-- .squaredOne -->
 									    <div class="squaredOne">
-									      	<input type="checkbox" value="9" id="check10" name="check" />
+									      	<input type="checkbox" value="10" id="check10" name="check" />
 									      	<label for="check10">10</label>
 									    </div>
 									    <!-- end .squaredOne -->
 									</section>
 								</li>
 
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="11" id="check11" name="check" />
+                                            <label for="check11">11</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="12" id="check12" name="check" />
+                                            <label for="check12">12</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="13" id="check13" name="check" />
+                                            <label for="check13">13</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="14" id="check14" name="check" />
+                                            <label for="check14">14</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="15" id="check15" name="check" />
+                                            <label for="check15">15</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="16" id="check16" name="check" />
+                                            <label for="check15">16</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="17" id="check17" name="check" />
+                                            <label for="check17">17</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="18" id="check18" name="check" />
+                                            <label for="check18">18</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="19" id="check19" name="check" />
+                                            <label for="check19">19</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
+                                <li>
+                                    <section title="">
+                                        <!-- .squaredOne -->
+                                        <div class="squaredOne">
+                                            <input type="checkbox" value="20" id="check20" name="check" />
+                                            <label for="check20">20</label>
+                                        </div>
+                                        <!-- end .squaredOne -->
+                                    </section>
+                                </li>
 							</ul>
 						</div>
 
 						<div class="clearfix"></div>
 
-						<div class="card_query">
-							<p>I want Interest </p>
-							<div class="query_radio">
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="Excellent" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									On Maturity 
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="Good" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Monthly
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="Fair" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Quarterly
-								</label><br/>
-								<label class="material_radio_group">
-									<input type="radio" name="WantCreditLimit" value="Bad" class="material_radiobox"/>
-									<span class="material_check_radio"></span>
-									Advance Interest after Deposit
-								</label><br/>
-							</div>
-						</div>
+
 					</div>
 				</div>
 				<!-- Left bar query content end -->
