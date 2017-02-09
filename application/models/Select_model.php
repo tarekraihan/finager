@@ -1609,5 +1609,11 @@ class Select_Model extends CI_Model
     }
 
 
+    public function select_millionaire_tenure_by_amount($id){
+        $sql="SELECT DISTINCT tenure_id FROM `millionaire_info` where `maturity_amount_id`= $id";
+        $query=$this->db->query($sql);
+        return $query;
+    }
+
 
 }

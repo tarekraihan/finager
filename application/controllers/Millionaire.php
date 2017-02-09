@@ -570,6 +570,39 @@ class Millionaire extends CI_Controller
         }
     }
 
+    public function ajax_get_tenure(){
+        $selected_amount = $this->input->post('selected_amount');
+        $response = $this->Select_model->select_millionaire_tenure_by_amount($selected_amount);
+        $tenure ='';
+//        $active =$response->result_array();
+
+        print_r($response->result_array());die;
+
+        $active_class ='checkDisable';
+        for($sl = 1; $sl > 20;$sl++){
+           /* $active_class ='checkDisable';
+            foreach($active as $p){
+                if($p == $sl){
+                    $active_class ='';
+                    break;
+                }
+            }*/
+
+            $tenure.='<li>
+                        <section title="">
+                            <!-- .squaredOne -->
+                            <div class="squaredOne">
+                                <input type="checkbox" value="'.$sl.'" id="check'.$sl.'" name="check" />
+                                <label for="check'.$sl.'" class="'.$active_class.'">'.$sl.'</label>
+                            </div>
+                            <!-- end .squaredOne -->
+                        </section>
+                    </li>';
+        }
+
+        echo $tenure;
+    }
+
 
 
 }

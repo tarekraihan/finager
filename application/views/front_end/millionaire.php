@@ -221,7 +221,7 @@
 
 							<p class="mill_def_text">Tenure Based on 100K</p>
 
-							<ul class="no-pading mill_tenure_list">
+							<ul class="no-pading mill_tenure_list" id="millionaire_tenure">
 								<li>
 									<section title="">
 									    <!-- .squaredOne -->
@@ -595,7 +595,35 @@
 		        alert("not checked");
 		    }
 		});
-	});
+
+        $('input[type="radio"]').on('click',function() {
+            var thisVal= 'selected_amount='+$(this).val();
+//            alert(thisVal);
+
+
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>millionaire/ajax_get_tenure",
+                data: thisVal,
+                cache: false,
+                success: function(msg)
+                {
+
+//                    loading_hide();
+                    console.log(msg);
+
+                    $("#millionaire_tenure").html(msg);
+
+
+
+                }
+            });
+
+
+
+        });
+        });
 </script>
 
 
