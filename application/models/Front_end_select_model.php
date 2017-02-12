@@ -77,6 +77,12 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         $query = $this->db->query($sql);
         return $query;
     }
+    public function select_millionaire_info(){
+        $sql="SELECT millionaire_info.*,card_bank.bank_name,card_bank.bank_logo,millionaire_i_am.i_am,millionaire_maturity_amount.maturity_amount,millionaire_tenure.tenure,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM millionaire_info  LEFT JOIN card_bank ON card_bank.id=millionaire_info.bank_id INNER JOIN millionaire_i_am ON millionaire_i_am.id=millionaire_info.i_am_id INNER JOIN millionaire_maturity_amount ON millionaire_maturity_amount.id=millionaire_info.maturity_amount_id INNER JOIN millionaire_tenure ON millionaire_tenure.id=millionaire_info.tenure_id LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id ";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
     public function select_auto_loan_details($id){
         $sql="SELECT auto_loan_info.*,card_bank.bank_name,card_bank.bank_logo,personal_loan_looking_for.personal_loan_looking_for AS auto_loan_looking_for,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `auto_loan_info` LEFT JOIN card_bank on card_bank.id=auto_loan_info.bank_id INNER JOIN personal_loan_looking_for ON personal_loan_looking_for.id=auto_loan_info.auto_loan_looking_for_id  LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id  WHERE auto_loan_info.id=$id";

@@ -1,19 +1,4 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Finager Blog</title>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/ws-calendar.default.min.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/style.css">
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/responsive.css">
-
-<link rel="stylesheet" href="<?php echo base_url();?>resource/blog/css/jquery-ui.css">
-</head>
-
-<body>
 	<section id="menu">
 		<div class="container">
 			<nav class="navbar navbar-default">
@@ -26,7 +11,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					  </button>
-					  <a class="navbar-brand" href="#">
+					  <a class="navbar-brand" href="<?php echo base_url();?>">
 						<div class="logo">
 							<img src="<?php echo base_url();?>resource/blog/images/FinagerWhiteLogo.svg" />
 						</div>
@@ -629,53 +614,3 @@
 	</div>
 	</div>
 </section>
-<script src="<?php echo base_url();?>resource/blog/js/jquery-1.11.3.js"></script>
-<script src="<?php echo base_url();?>resource/blog/js/bootstrap.min.js"></script>
-
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="<?php echo base_url();?>resource/blog/js/isotope.pkgd.min.js"></script>
-<script src="<?php echo base_url();?>resource/blog/js/isotope.function.js"></script>
-
-<script type="text/javascript" src="<?php echo base_url();?>resource/blog/js/ws-calendar-min.js"></script>
-
-<script>
-	
-	function toggle2() {
-		var ele = document.getElementById("toggleText2");
-		var text = document.getElementById("displayText2");
-		if(ele.style.display == "block") {
-				ele.style.display = "none";
-			text.innerHTML = '<button type="button" class="btn btn-primary bloger_button red_btn">More</button>';
-		}
-		else {
-			ele.style.display = "block";
-			text.innerHTML = '<button type="button" class="btn btn-primary bloger_button red_btn">Less</button>';
-		}
-	} 
-	function toggle() {
-		var ele = document.getElementById("toggleText");
-		var text = document.getElementById("displayText");
-		if(ele.style.display == "block") {
-				ele.style.display = "none";
-			text.innerHTML = '<button type="button" class="btn btn-primary bloger_button red_btn">More</button>';
-		}
-		else {
-			ele.style.display = "block";
-			text.innerHTML = '<button type="button" class="btn btn-primary bloger_button red_btn">Less</button>';
-		}
-	} 
-</script>
-
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker({
-      changeMonth: true,
-      changeYear: true,
-	  dateFormat: "dd-mm-yy"
-    });
-  } );
-  </script>
-
-</body>
-</html>

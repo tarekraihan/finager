@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>Finager Blog</title>
-<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../css/style.css">
-<link rel="stylesheet" type="text/css" href="../css/responsive.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/style.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/blog/css/responsive.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
 					  </button>
 					  <a class="navbar-brand" href="../index.html">
 						<div class="logo">
-							<img src="../images/FinagerWhiteLogo.svg" />
+							<img src="<?php echo base_url();?>resource/blog/images/FinagerWhiteLogo.svg" />
 						</div>
 					  </a>
 					</div>
@@ -62,7 +62,7 @@
 				</div><!-- /.container-fluid -->
 			</nav>
 			<div class="details_heading_img">
-				<img src="../images/Akter.jpg" alt="not-found"/>
+				<img src="<?php echo base_url();?>resource/blog/images/Akter.jpg" alt="not-found"/>
 				<h4>Akter ul alam</h4>
 				<h5>Head of R&D</h5>
 				<p>Index Group</p>
@@ -137,7 +137,7 @@
 					You can even set up direct deposit using your card’s direct deposit account and routing numbers.
 				</p><br/>
 				<h4><b>What Features Are Available with Prepaid Debit Cards?</b></h4>
-				<img src="../images/blogdebit.jpg" alt="Blog Image">
+				<img src="<?php echo base_url();?>resource/blog/images/blogdebit.jpg" alt="Blog Image">
 				<p><i>Shop with confidence when you have a prepaid debit card in your wallet.</i></p><br/>
 				<p>
 					You’ll enjoy several attractive features if you get a prepaid debit card. These cards have become far more flexible and feature-rich in recent years,
@@ -222,9 +222,9 @@
 				
 				<div class="col-sm-6 col-xs-12">
 					<div class="icon">
-						<a href="#"><img src="../images/facebook_counter.png" alt="facebook_counter"/></a>
-						<a href="#"><img src="../images/twitter_counter.png" alt="twitter_counter"/></a>
-						<a href="#"><img src="../images/pinterest_counter.png" alt="pinterest_counter"/></a>
+						<a href="#"><img src="<?php echo base_url();?>resource/blog/images/facebook_counter.png" alt="facebook_counter"/></a>
+						<a href="#"><img src="<?php echo base_url();?>resource/blog/images/twitter_counter.png" alt="twitter_counter"/></a>
+						<a href="#"><img src="<?php echo base_url();?>resource/blog/images/pinterest_counter.png" alt="pinterest_counter"/></a>
 					</div>
 				</div>
 			</div>
@@ -238,25 +238,25 @@
 			<div class="related_post">
 				<h3 class="related_pst">Related Post</h3>
 				<div class="col-md-4 col-sm-6"> 
-					<img class="img-responsive" src="../images/new car.png" alt="not found"/>
+					<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/new car.png" alt="not found"/>
 					<h4>Buying a New Car</h4>
 					<h5><i>Writen by Sujat, 03-Oct-2016</i></h5>
 					<p>Technology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago.
 					   These changes can be rather scary. Online search bars and their results can spill mass................
 					</p>
-					<a href="../loan/car_loan1.html"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
+					<a href="<?php echo base_url();?>blog/car_loan1"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
 				</div>
 				<div class="col-md-4 col-sm-65"> 
-					<img class="img-responsive" src="../images/personal_loan.jpg" alt="home_moto_blog"/>
+					<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan.jpg" alt="home_moto_blog"/>
 					<h4>Six Reasons to Get a Personal Loan</h4>
 					<h5><i>Writen by Asef Jamil, 10-10-2016</i></h5>
 					<p>While it would be great if we all had enough money to fund all of life’s expenses without worry, 
 						we know that’s not the case. Sometimes we have to borrow a little to keep............
 					</p>
-					<a href="../loan/personal_loan1.html"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
+					<a href="<?php echo base_url();?>blog/personal_loan1"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
 				</div>
 				<div class="col-md-4 col-sm-6"> 
-					<img class="img-responsive" src="../images/home_moto_blog.jpg" alt="home_moto_blog"/>
+					<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/home_moto_blog.jpg" alt="home_moto_blog"/>
 					<h4>What is Lorem Ipsum</h4>
 					<h5><i>Writen by Sujat, 03-Oct-2016</i></h5>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.

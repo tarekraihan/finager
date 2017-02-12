@@ -30,7 +30,7 @@
 					  </button>
 					  <a class="navbar-brand" href="../index.html">
 						<div class="logo">
-							<img src="../images/FinagerWhiteLogo.svg" />
+							<img src="<?php echo base_url();?>resource/blog/images/FinagerWhiteLogo.svg" />
 						</div>
 					  </a>
 					</div>
@@ -192,7 +192,7 @@
 					<p>Technology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago.
 					   These changes can be rather scary. Online search bars and their results can spill mass................
 					</p>
-					<a href="<?php echo base_url();?>resource/blog/loan/car_loan1.html"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
+					<a href="<?php echo base_url();?>blog/car_loan1"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
 				</div>
 				<div class="col-md-4 col-sm-65"> 
 					<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan.jpg" alt="home_moto_blog"/>
@@ -201,7 +201,7 @@
 					<p>While it would be great if we all had enough money to fund all of life’s expenses without worry, 
 						we know that’s not the case. Sometimes we have to borrow a little to keep............
 					</p>
-					<a href="<?php echo base_url();?>resource/blog/loan/personal_loan1.html"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
+					<a href="<?php echo base_url();?>blog/personal_loan1"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
 				</div>
 				<div class="col-md-4 col-sm-6"> 
 					<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/home_moto_blog.jpg" alt="home_moto_blog"/>

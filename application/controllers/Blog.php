@@ -14,7 +14,10 @@ class Blog extends CI_Controller
 {
 
     public function index(){
-        $this->load->view('blog/index');
+        $this->load->view('blog/block/header');
+		$this->load->view('front_end/block/vertical_menu');
+		$this->load->view('blog/index');
+		$this->load->view('blog/block/footer');
     }
 
     public function credit_card1(){
@@ -130,6 +133,22 @@ class Blog extends CI_Controller
     }
     public function student_loan4(){
         $this->load->view('blog/loan/student_loan4');
+    }
+	
+	
+	public function debit_card1(){
+        $this->load->view('blog/card/debit_card1');
+    }
+
+    public function debit_card2(){
+        $this->load->view('blog/card/debit_card2');
+    }
+
+    public function debit_card3(){
+        $this->load->view('blog/card/debit_card3');
+    }
+    public function debit_card4(){
+        $this->load->view('blog/card/debit_card4');
     }
 
 

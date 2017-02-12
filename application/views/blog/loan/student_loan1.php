@@ -203,7 +203,7 @@
 					<p>At time when the focus many in Nation’s Capital is on youth gangs and violence, 
 						historic Metropolitan AME Church in down town will spot light youth who are achieving academically and will display.
 					</p>
-					<a href="<?php echo base_url();?>resource/blog/"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
+					<a href="<?php echo base_url();?>resource/blog/creditCard1"><button type="button" class="btn btn-primary details_btn">Read More</button></a>
 				</div>
 				<div class="col-md-4 col-sm-6"> 
 					<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/home_moto_blog.jpg" alt="home_moto_blog"/>

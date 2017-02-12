@@ -574,26 +574,26 @@ class Millionaire extends CI_Controller
         $selected_amount = $this->input->post('selected_amount');
         $response = $this->Select_model->select_millionaire_tenure_by_amount($selected_amount);
         $tenure ='';
-//        $active =$response->result_array();
 
-        print_r($response->result_array());die;
+        $active = array();
+        foreach($response->result_array() as $row){
+            array_push($active,$row['tenure_id']) ;
+        }
 
-        $active_class ='checkDisable';
-        for($sl = 1; $sl > 20;$sl++){
-           /* $active_class ='checkDisable';
-            foreach($active as $p){
-                if($p == $sl){
-                    $active_class ='';
-                    break;
-                }
-            }*/
+        for ($x = 1; $x <= 20; $x++) {
+            $active_class ='checkDisable';
+            $input_disable ='disabled';
+            if (in_array($x, $active)){
+                $active_class ='';
+                $input_disable ='';
 
-            $tenure.='<li>
+            }
+            $tenure.= '<li>
                         <section title="">
                             <!-- .squaredOne -->
                             <div class="squaredOne">
-                                <input type="checkbox" value="'.$sl.'" id="check'.$sl.'" name="check" />
-                                <label for="check'.$sl.'" class="'.$active_class.'">'.$sl.'</label>
+                                <input type="checkbox" value="'.$x.'" id="check'.$x.'" name="check" '.$input_disable.'/>
+                                <label for="check'.$x.'" class="'.$active_class.'">'.$x.'</label>
                             </div>
                             <!-- end .squaredOne -->
                         </section>
@@ -603,6 +603,174 @@ class Millionaire extends CI_Controller
         echo $tenure;
     }
 
+
+
+    public function ajax_get_millionaire(){
+        $millionaire = $this->Front_end_select_model->select_millionaire_info();
+        $million = '';
+        foreach($millionaire->result() as $row){
+
+
+            $bank = "";
+            if($row->is_non_bank == 1){
+                $bank = $row->non_bank_name;
+            }else{
+                $bank = $row->bank_name;
+            }
+
+            if($row->is_non_bank == 1){
+                $bank_logo = $row->non_bank_logo;
+            }else{
+                $bank_logo = $row->bank_logo;
+            }
+
+
+            $query_amount = 1000000;
+
+            $million .= '
+					<div class="full-card">
+						<div class="row fdr_right_bar no-margin-lr">
+							<div class="col-sm-2 col-xs-2">
+								<a href="'.base_url().'en/education_loan_details/'.$row->id.'"><img title="click here to details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<p class="text-center">'.$bank.'</p>
+								<p class="text-center">
+									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+								</p>
+								<p class="rating text-center">Rated By 5 Person</p>
+							</div>
+
+							<div class="col-sm-10 col-xs-10">
+								<div class="row">
+									<div class="col-sm-3 col-xs-3">
+										<div class="card_text3">
+											<h5>Deposited Amount</h5>
+											<p>&#2547; 10000</p>
+										</div>
+									</div>
+									<div class="col-sm-2 col-xs-2">
+										<div class="card_text3">
+											<h5>Tenure</h5>
+											<p>1 Year</p>
+										</div>
+									</div>
+									<div class="col-sm-2 col-xs-2">
+										<div class="card_text3">
+											<h5>Interest Rate</h5>
+											<p>6%</p>
+										</div>
+									</div>
+									<div class="col-sm-3 col-xs-3">
+										<div class="card_text3">
+											<h5>Maturity Amount</h5>
+											<p>&#2547; 1300</p>
+										</div>
+									</div>
+									<div class="col-sm-2 col-xs-2">
+										<div class="card_text3">
+											<h5>Loan Facility</h5>
+											<p>90%</p>
+										</div>
+									</div>
+								</div>
+								<div class="row more_availabe">
+									<div class="col-md-2"><a id="hideDetailsButton" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
+									<div class="col-md-4"><a id="hideDetailsButton2" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> Available Offer</a></div>
+									<div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
+									<div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- More Info Tab content start -->
+						<div class="col-sm-12 card_more_info">
+							<div id="hideDetailsDiv" class="hideMe">
+								<section id="tab">
+									<!-- Nav tabs -->
+									<ul class="nav nav-tabs" role="tablist">
+										<li role="presentation" class="active"><a href="#Features" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
+										<li role="presentation"><a href="#Eligibility" aria-controls="profile" role="tab" data-toggle="tab">Eligibility</a></li>
+										<li role="presentation"><a href="#RequiredDocuments" aria-controls="messages" role="tab" data-toggle="tab">Required Documents</a></li>
+										<li role="presentation"><a href="#TermsConditions" aria-controls="messages" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+										<li role="presentation"><a href="#Review" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
+										<li role="presentation"><a href="#UserReview" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
+									</ul>
+
+									<!-- Tab panes -->
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="Features">
+											<h4>Features</h4>
+											<ul>
+												<li>Pre-mature full Encashment Facility</li>
+												<li>Auto Renewal Option with Interest</li>
+												<li>Loan Against Fixed Deposit Facility</li>
+											</ul>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="Eligibility">
+											<h4>Eligibility</h4>
+											<ul>
+												<li>FDS Account can be opened both for Individual and Corporate bodies</li>
+												<li>Only Resident Bangladeshi National is allowed to open Personal FDS Account.</li>
+												<li>Joint account can be opened.</li>
+												<li>Minor account can be opened under the supervision of his / her / their guardian.</li>
+											</ul>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="RequiredDocuments">
+											<h4>Required Documents</h4>
+											<ul>
+												<li>Salary Certificate/Letter of Introduction.</li>
+												<li>Application form (payment structure & schedule must be reflected).</li>
+												<li>CV/Biodata.</li>
+												<li>Latest one-year personal bank statement.</li>
+												<li>Latest tax clearance certificate.</li>
+												<li>Photocopy of passport/driving license/national id of applicant(s) and guarantor(s) .</li>
+												<li>2 copy recent passport size photographs of applicant(s) and guarantor(s).</li>
+												<li>NOC from spouse if co-applicant is anybody other than spouse.</li>
+												<li>Letter of introduction.</li>
+												<li>Copy of latest utility bill.</li>
+												<li>Personal net worth statements of applicant(s) and guarantor(s).</li>
+												<li>Personal guarantee of spouse/parents/any person accepted to bank.</li>
+												<li>Evidence of another income source.</li>
+											</ul>
+										</div>
+										<div role="tabpanel" class="tab-pane fdr_terms" id="TermsConditions">
+											<h4>Terms & Conditions</h4>
+											<ol type="1">
+												<li>The facility shall be made available for the customer from the date of Banks approval of this application until such time is stipulated in any letter and this facility shall be continuing on until the adjustment of the dues of the Bank with interest and other charges.</li>
+												<li>The Bank reserves the right to withdraw the credit facility and demand repayment if there has been any default in repayment of the loan.</li>
+												<li>The Bank shall not be obliged to make the credit facility available until it has received formal written acknowledgement from you accepting the credit facility on the basis of outline and subject to the terms and conditions specified in the banking arrangement letter.</li>
+												<li>The acceptance of the terms and conditions of the banking arrangement letter by the customer constitutes a legal and binding obligation and is enforceable in accordance with the terms of the Banking arrangement letter.</li>
+												<li>By use of the credit facility provided by the bank, the customer accepts the conditions enumerated in the banking arrangement letter and authorizes the bank to appoint agents to collect funds payable to the bank, as the Bank may consider necessary. In the due discharge of their duty, information regarding borrowers credit facility will be supplied to the agent. All charges payable to such agents, to collect amounts owed to the bank, are liable to be at borrowers cost and risk, in addition to all other costs, charges and expenses incurred by the bank to recover outstanding dues/money.</li>
+												<li>The bank is authorized to open and maintain account(s) for the purpose of administering and recording payments by the customer in respect of the facility.</li>
+												<li>The loan shall be utilized for the specified purpose for which it has been sanctioned. Payment shall be made directly by the bank to the vendor or to the customer, as determined by the Bank, depending upon the purpose of the loan.</li>
+												<li>All payments in respect of the facility shall be made by the customer on or before the due dates and the customer hereby irrevocably authorizes the Bank to debit any of the customers account(s) with the Bank with all amounts. Owing in respect of the facility including interest and charges and expenses (together the indebtedness) at such time as the same shall become or be due and, payable and transfer such sum to the loan account for adjustment but in any case, the customer shall always remain liable and agree(s) to make payment in full of all such sums to the Bank.</li>
+												<li>The customer unconditionally undertakes to repay the loan as per terms and conditions of the Banking Arrangement Letter.</li>
+												<li>The customer undertakes to deposit his/her salary/wages/honorarium payable by his/her employer to the designated account maintained with the Bank.</li>
+												<li>The Bank is authorized to enforce all or any of the securities executed as well as kept by the customer in favor of the Bank and recover the loan amount with interest and other charges accrued in the loan account.</li>
+
+											</ol>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="Review">
+											<h4>Review</h4>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="UserReview">
+											<h4>User Review</h4>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<!-- More Info Tab content end -->
+
+						<div id="hideDetailsDiv2" class="row hideMe">
+							 <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
+
+						</div>
+					</div>';
+        }
+
+        echo $million;
+    }
 
 
 }
