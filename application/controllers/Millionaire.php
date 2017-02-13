@@ -609,8 +609,7 @@ class Millionaire extends CI_Controller
         $millionaire = $this->Front_end_select_model->select_millionaire_info();
         $million = '';
         foreach($millionaire->result() as $row){
-
-
+            //print_r($row);die;
             $bank = "";
             if($row->is_non_bank == 1){
                 $bank = $row->non_bank_name;
@@ -641,39 +640,45 @@ class Millionaire extends CI_Controller
 
 							<div class="col-sm-10 col-xs-10">
 								<div class="row">
-									<div class="col-sm-3 col-xs-3">
+									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
-											<h5>Deposited Amount</h5>
-											<p>&#2547; 10000</p>
+											<h5>Initial Deposit</h5>
+											<p>&#2547; '.$row->initial_deposit.'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
-											<h5>Tenure</h5>
-											<p>1 Year</p>
+											<h5>Monthly Installment</h5>
+											<p>'.$row->monthly_deposit.'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
-											<h5>Interest Rate</h5>
-											<p>6%</p>
+											<h5>No fo Installment</h5>
+											<p>'.$row->no_of_installment.'</p>
 										</div>
 									</div>
-									<div class="col-sm-3 col-xs-3">
+									<div class="col-sm-2 col-xs-2">
+										<div class="card_text3">
+											<h5>Total Principal Amount</h5>
+											<p>&#2547; '.$row->total_principal_amount.'</p>
+										</div>
+									</div>
+									<div class="col-sm-2 col-xs-2">
+										<div class="card_text3">
+											<h5>Accrued Interest</h5>
+											<p>'.$row->total_principal_amount.'</p>
+										</div>
+									</div>
+									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Maturity Amount</h5>
-											<p>&#2547; 1300</p>
-										</div>
-									</div>
-									<div class="col-sm-2 col-xs-2">
-										<div class="card_text3">
-											<h5>Loan Facility</h5>
-											<p>90%</p>
+											<p>'.$row->maturity_amount.'</p>
 										</div>
 									</div>
 								</div>
 								<div class="row more_availabe">
-									<div class="col-md-2"><a id="hideDetailsButton" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
+									<div class="col-md-2"><a href="javascript:void(0)" id="hideDetailsButton"  data-millionaire_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
 									<div class="col-md-4"><a id="hideDetailsButton2" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> Available Offer</a></div>
 									<div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
 									<div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
