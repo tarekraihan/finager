@@ -439,10 +439,7 @@
 				<!-- Right bar content start -->
                 <div class="col-sm-9 col-xs-9">
                     <div id="searchMillionaire">
-
                         <div id="loading" class="text-center"></div>
-
-
                     </div>
                 </div>
 				<!-- Right bar content end -->
@@ -452,19 +449,30 @@
 
 <script type="text/javascript">
 	jQuery(document).ready(function($){
-		$('.squaredOne input[type="checkbox"]').click(function() { 
-		    if ($(this).is(':checked')) {
-		        //$(this).prop('checked',false);
-		        var thisVal=$(this).val();
-		        alert("is checked");
-		        alert(thisVal);
-		    } else {
-		         //$(this).prop('checked',true);
-		        alert("not checked");
-		    }
-		});
 
-        $('input[type="radio"]').on('click',function() {
+        $('#searchMillionaire').on('click', '.more_info', function (){
+
+            var  formData = $(this).data();
+            var millionaire_id = formData.millionaire_id;
+            console.log(millionaire_id);
+
+            $("#moreInfo"+millionaire_id).toggleClass("in");
+            $('#rePaymentSchedule'+millionaire_id).removeClass("in");
+
+        });
+/*
+        $('#searchMillionaire').on('click', '.rePaymentSchedule', function (){
+
+            var  formData = $(this).data();
+            var repayment = formData.repayment;
+            console.log(repayment);
+            $('#rePaymentSchedule'+repayment).html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
+            $('#rePaymentSchedule'+repayment).toggleClass("in");
+            $('#moreInfo'+repayment).removeClass("in");
+
+        });*/
+
+        $('input[name="maturity_amount"]').on('click',function() {
             var thisVal= 'selected_amount='+$(this).val();
 //            alert(thisVal);
 
@@ -479,7 +487,7 @@
                 {
 
 //                    loading_hide();
-                    console.log(msg);
+//                    console.log(msg);
 
                     $("#millionaire_tenure").html(msg);
 
@@ -500,25 +508,6 @@
 //for show hide (more info & Available Offer)
 
 $(document).ready(function() {
-		$('#hideDetailsDiv').hide();
-		$('a#hideDetailsButton').click(function() {
-			if (!$('#hideDetailsDiv').is(':visible')) {
-				$('.hideMe').hide(400);
-			}
-			$('#hideDetailsDiv').toggle(800);
-		});
-	});
-
-	$(document).ready(function() {
-		$('#hideDetailsDiv2').hide();
-		$('a#hideDetailsButton2').click(function() {
-			if (!$('#hideDetailsDiv2').is(':visible')) {
-				$('.hideMe').hide(400);
-			}
-			$('#hideDetailsDiv2').toggle(400);
-		});
-
-
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
@@ -530,30 +519,36 @@ $(document).ready(function() {
         function loadData(){
             loading_show();
 
-/*
-            var auto_i_want = new Array();
-            $('input[name="i_want"]:checked').each(function(){
-                auto_i_want.push($(this).val());
+
+            var millionaire_tenure = new Array();
+            $('input[name="millionaire_tenure"]:checked').each(function(){
+                millionaire_tenure.push($(this).val());
             });
 
-            var auto_i_want_list = "&auto_i_want="+auto_i_want;
+            var millionaire_tenure_list = "&millionaire_tenure="+millionaire_tenure;
 
 
-            var auto_user = new Array();
+            var millionaire_user = new Array();
             $('input[name="i_am"]:checked').each(function(){
-                auto_user.push($(this).val());
+                millionaire_user.push($(this).val());
             });
-            var auto_user_list = "&auto_user="+auto_user;
+            var millionaire_user_list = "&millionaire_user="+millionaire_user;
+
+            var maturity_amount = new Array();
+            $('input[name="maturity_amount"]:checked').each(function(){
+                maturity_amount.push($(this).val());
+            });
+            var maturity_amount_list = "&maturity_amount="+maturity_amount;
 
 
-            var main_string = auto_i_want_list+auto_user_list;
+            var main_string = millionaire_tenure_list+millionaire_user_list+maturity_amount_list;
             main_string = main_string.substring(1, main_string.length);
-            console.log(main_string);*/
+            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
                 url: "<?php echo base_url();?>millionaire/ajax_get_millionaire",
-                //data: main_string,
+                data: main_string,
                 cache: false,
                 success: function(msg)
                 {
@@ -568,8 +563,11 @@ $(document).ready(function() {
         }
 
         $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
+    $(document).on('click','.squaredOne input[type="checkbox"]',function() {
+        loadData();
+    });
 
         loadData();
-	});
+});
 
 </script>
