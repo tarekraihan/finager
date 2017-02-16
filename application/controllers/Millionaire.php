@@ -708,9 +708,9 @@ class Millionaire extends CI_Controller
 								</div>
 								<div class="row more_availabe">
 									<div class="col-md-2"><a href="javascript:void(0)" id="hideDetailsButton"  class="more_info" data-millionaire_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
-									<div class="col-md-4"><a id="hideDetailsButton2" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> Available Offer</a></div>
+									<div class="col-md-4"><a id="hideDetailsButton2" class="availableOffer" role="button" data-toggle="collapse" data-offer="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> Available Offer</a></div>
 									<div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
-									<div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
+									<div class="col-md-2"><a href="javascript:void(0)" class="add-to-compare" data-millionaire_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
 								</div>
 							</div>
 						</div>
@@ -725,10 +725,11 @@ class Millionaire extends CI_Controller
 										<li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
 										<li role="presentation"><a href="#FeesAndCharges'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Fees and charges</a></li>
 										<li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Eligibility</a></li>
-										<li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Required Documents</a></li>
+										<li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="RequiredDocuments" role="tab" data-toggle="tab">Required Documents</a></li>
 										<li role="presentation"><a href="#AvailableBenefit'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Available Benefit</a></li>
 										<li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Terms & Conditions</a></li>
 										<li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
+										<li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
 									</ul>
 
 									<!-- Tab panes -->
@@ -758,6 +759,10 @@ class Millionaire extends CI_Controller
 											'.$row->terms_and_conditions.'
 										</div>
 										<div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
+											<h4>User Review</h4>
+
+										</div>
+										<div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
 											<h4>Review</h4>
 											'.$row->review.'
 										</div>
@@ -767,15 +772,49 @@ class Millionaire extends CI_Controller
 						</div>
 						<!-- More Info Tab content end -->
 
-						<div id="hideDetailsDiv2" class="row hideMe">
-							 <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
+						<div class="collapse" id="availableOfferSchedule'.$row->id.'">
+                               <!--iframe src="http://finager.com/finager/home_loan_chart.php" class="loan-iframe" ></iframe-->
 
-						</div>
+                           </div>
 					</div>';
         }
 
         echo $million;
     }
+
+
+
+    public function ajax_compare_millionaire_image(){
+        $id = $this->input->post('millionaire_id');
+        $result = $this->Front_end_select_model->select_millionaire_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-millionaire_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('millionaire_id1');
+        $id2 = $this->input->post('millionaire_id2');
+
+        $newdata = array(
+            'first_millionaire_id'  => $id1,
+            'second_millionaire_id'  => $id2
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
 
 
 }

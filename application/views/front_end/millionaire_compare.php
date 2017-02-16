@@ -1,3 +1,40 @@
+<?php
+//		print_r($this->session->userdata());
+$id = $this->session->userdata('first_millionaire_id') ;
+$result = $this->Front_end_select_model->select_millionaire_info_details($id);
+$first_millionaire = $result->row();
+
+$id1 = $this->session->userdata('second_millionaire_id') ;
+$result1 = $this->Front_end_select_model->select_millionaire_info_details($id1);
+$second_millionaire = $result1->row();
+
+//	print_r($second_millionaire);die;
+
+//	echo $first_home_loan->loan_short_description;
+//$first_interest =($first_home_loan->is_fixed =='0')? $first_home_loan->interest_rate_average.' % (Avg)' : $first_home_loan->interest_rate_fixed.' % (Fixed)';
+$first_bank_name = "";
+$first_bank_logo = "";
+if($first_millionaire->is_non_bank == 1){
+    $first_bank_name = $first_millionaire->non_bank_name;
+    $first_bank_logo = $first_millionaire->non_bank_logo;
+}else{
+    $first_bank_name = $first_millionaire->bank_name;
+    $first_bank_logo = $first_millionaire->bank_logo;
+}
+
+//$second_interest =($second_home_loan->is_fixed =='0')? $second_home_loan->interest_rate_average.' % (Avg)' : $second_home_loan->interest_rate_fixed.' % (Fixed)';
+$second_bank_name = "";
+$second_bank_logo = "";
+if($second_millionaire->is_non_bank == 1){
+    $second_bank_name = $second_millionaire->non_bank_name;
+    $second_bank_logo = $second_millionaire->non_bank_logo;
+}else{
+    $second_bank_name = $second_millionaire->bank_name;
+    $second_bank_logo = $second_millionaire->bank_logo;
+}
+
+?>
+
 <style>
 	.innerMdlWrapper .innerMdlInner {
 		width: 418px;
@@ -23,11 +60,11 @@
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></p></td>
+						<td><p><a href=""><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							
 						</td>
-						<td><img src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></td>
+						<td><a href=""><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
 					</tr>			
 				</table>
 			</div>
@@ -56,47 +93,47 @@
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
 							<td class="abc"><b> Bank Name </b></td>
-							<td> Bank Asia </td>
+							<td> <?php echo $first_bank_name;?> </td>
 						</tr>
 						
 						<tr>
 							<td><b> Product Name</b></td>
-							<td> Bank Asia E Sanchay Koti Poti </td>
+							<td><?php echo $first_millionaire->millionaire_info_name;?></td>
 						</tr>
 						
 						<tr>
 							<td><b> Initial Deposit</b></td>
-							<td> 0 </td>
+							<td> <?php echo $first_millionaire->initial_deposit;?> </td>
 						</tr>
 						
 						<tr>
 							<td><b> Monthly Installment Size</b></td>
-							<td> 14,020 </td>
+							<td> <?php echo $first_millionaire->monthly_deposit;?> </td>
 						</tr>
 						
 						<tr>
 							<td><b> Term</b></td>
-							<td> 5 Year </td>
+							<td><?php echo $first_millionaire->tenure_id;?> Years </td>
 						</tr>
 						
 						<tr>
 							<td><b> Number of Installment</b></td>
-							<td> 60 </td>
+							<td> <?php echo $first_millionaire->no_of_installment;?> </td>
 						</tr>
 						
 						<tr>
 							<td><b>Total Principal Amount</b></td>
-							<td> 842,200 </td>
+							<td> <?php echo $first_millionaire->total_principal_amount;?> </td>
 						</tr>
 						
 						<tr>
 							<td><b>Total Accrued Interest</b></td>
-							<td> 158,800 </td>
+							<td> <?php echo $first_millionaire->accured_interest;?> </td>
 						</tr>
 						
 						<tr>
 							<td><b> Maturity Amount</b></td>
-							<td> 1,000,000 </td>
+							<td> <?php echo $first_millionaire->maturity_amount;?> </td>
 						</tr>
 						
 					</table>
@@ -105,50 +142,51 @@
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
-							<tr>
-							<td class="abc"><b> Bank Name </b></td>
-							<td>Dhaka Bank </td>
-						</tr>
-						
-						<tr>
-							<td><b> Product Name</b></td>
-							<td> Dhaka Bank Millionaire Scheme </td>
-						</tr>
-						
-						<tr>
-							<td><b> Initial Deposit</b></td>
-							<td> 0 </td>
-						</tr>
-						
-						<tr>
-							<td><b> Monthly Installment Size</b></td>
-							<td> 13,621 </td>
-						</tr>
-						
-						<tr>
-							<td><b> Term</b></td>
-							<td> 5 Year </td>
-						</tr>
-						
-						<tr>
-							<td><b> Number of Installment</b></td>
-							<td> 60 </td>
-						</tr>
-						
-						<tr>
-							<td><b>Total Principal Amount</b></td>
-							<td> 817,260 </td>
-						</tr>
-						
-						<tr>
-							<td><b>Total Accrued Interest</b></td>
-							<td>182,740 </td>
-						</tr>
-						
-						<tr>
-							<td><b> Maturity Amount</b></td>
-							<td> 1,000,000 </td>
-						</tr>
+
+                            <tr>
+                                <td class="abc"><b> Bank Name </b></td>
+                                <td> <?php echo $second_bank_name;?> </td>
+                            </tr>
+
+                            <tr>
+                                <td><b> Product Name</b></td>
+                                <td><?php echo $second_millionaire->millionaire_info_name;?></td>
+                            </tr>
+
+                            <tr>
+                                <td><b> Initial Deposit</b></td>
+                                <td> <?php echo $second_millionaire->initial_deposit;?> </td>
+                            </tr>
+
+                            <tr>
+                                <td><b> Monthly Installment Size</b></td>
+                                <td> <?php echo $second_millionaire->monthly_deposit;?> </td>
+                            </tr>
+
+                            <tr>
+                                <td><b> Term</b></td>
+                                <td><?php echo $second_millionaire->tenure_id;?> Years </td>
+                            </tr>
+
+                            <tr>
+                                <td><b> Number of Installment</b></td>
+                                <td> <?php echo $second_millionaire->no_of_installment;?> </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Total Principal Amount</b></td>
+                                <td> <?php echo $second_millionaire->total_principal_amount;?> </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Total Accrued Interest</b></td>
+                                <td> <?php echo $second_millionaire->accured_interest;?> </td>
+                            </tr>
+
+                            <tr>
+                                <td><b> Maturity Amount</b></td>
+                                <td> <?php echo $second_millionaire->maturity_amount;?> </td>
+                            </tr>
 							
 						</table>
 					</div>
@@ -159,82 +197,12 @@
 				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Available Installment with Tenure <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 					<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center table-align  compare_table">
-							<tr>
-								<td class="abc"><b> 1 Year</b></td>
-								<td> 128,860.58 </td>
-							</tr>
-							
-							<tr>
-								<td><b> 2 Years</b></td>
-								<td>128,860.58</td>
-							</tr>
-							
-							<tr>
-								<td><b> 3 Years</b></td>
-								<td>128,860.58 </td>
-							</tr>
-							
-							<tr>
-								<td><b> 4 Years</b></td>
-								<td> 128,860.58 </td>
-							</tr>
-							
-							<tr>
-								<td><b> 5 Years</b></td>
-								<td> 128,860.58</td>
-							</tr>
-							
-							<tr>
-								<td><b> 6 Years</b></td>
-								<td>128,860.58 </td>
-							</tr>
-							<tr>
-								<td><b> 7 Years</b></td>
-								<td> 128,860.58</td>
-							</tr>
-							
-						</table>
+						<?php echo $first_millionaire->available_benefit;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center table-align  compare_table">
-							<tr>
-								<td class="abc"><b> &nbsp;</b></td>
-								<td> &nbsp;</td>
-							</tr>
-							
-							<tr>
-								<td><b> 2 Years</b></td>
-								<td>128,860.58</td>
-							</tr>
-							
-							<tr>
-								<td><b> 3 Years</b></td>
-								<td>128,860.58 </td>
-							</tr>
-							
-							<tr>
-								<td><b> 4 Years</b></td>
-								<td> 128,860.58 </td>
-							</tr>
-							
-							<tr>
-								<td><b> 5 Years</b></td>
-								<td> 128,860.58</td>
-							</tr>
-							
-							<tr>
-								<td><b> 6 Years</b></td>
-								<td>128,860.58 </td>
-							</tr>
-							<tr>
-								<td><b>&nbsp;</b></td>
-								<td> &nbsp;</td>
-							</tr>
-							
-						</table>
+                        <?php echo $second_millionaire->available_benefit;?>
 					</div>
 				</div>
 			</div>
@@ -243,74 +211,12 @@
 				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>Features<img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 					<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center table-align  compare_table">
-							<tr>
-								<td class="abc"><b> Loan Facility</b></td>
-								<td> 80% on Deposited Amount </td>
-							</tr>
-							
-							<tr>
-								<td><b>Auto Transfer Facility</b></td>
-								<td>Available</td>
-							</tr>
-							
-							<tr>
-								<td><b>Joint Application Facility </b></td>
-								<td>Not Available</td>
-							</tr>
-							
-							<tr>
-								<td><b>Insurance Facility</b></td>
-								<td>Not Available</td>
-							</tr>
-							
-							<tr>
-								<td><b>Premature Partial Encashment</b></td>
-								<td> &nbsp;</td>
-							</tr>
-							
-							<tr>
-								<td><b>Joint Name</b></td>
-								<td>Allowed</td>
-							</tr>
-							
-						</table>
+						<?php echo $first_millionaire->available_feature;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center table-align  compare_table">
-							<tr>
-								<td class="abc"><b> Loan Facility</b></td>
-								<td> 80% on Deposited Amount </td>
-							</tr>
-							
-							<tr>
-								<td><b>Auto Transfer Facility</b></td>
-								<td>Available</td>
-							</tr>
-							
-							<tr>
-								<td><b>Joint Application Facility </b></td>
-								<td>Available</td>
-							</tr>
-							
-							<tr>
-								<td><b>Insurance Facility</b></td>
-								<td>Not Available</td>
-							</tr>
-							
-							<tr>
-								<td><b>Premature Partial Encashment</b></td>
-								<td> &nbsp;</td>
-							</tr>
-							
-							<tr>
-								<td><b>Joint Name</b></td>
-								<td>Allowed</td>
-							</tr>
-							
-						</table>
+                        <?php echo $second_millionaire->available_feature;?>
 					</div>
 				</div>
 			</div>
@@ -320,36 +226,12 @@
 				
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-left compare_table">
-							<tr>
-								<td class="text-left">Penal Charges: 3% on installment amount if the depositor fails to pay the installment in time.  </td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">If the depositor fails to deposit 3 consecutive installments, the account will be closed.</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">15% Govt. tax will be deducted in case of e-TIN is not submitted, 10% Govt. tax will be deducted if e-TIN is submitted</td>
-							</tr>
-						</table>
+                        <?php echo $first_millionaire->fees_and_charges;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-left compare_table">
-							<tr>
-								<td class="text-left">Penal Charges: 3% on installment amount if the depositor fails to pay the installment in time. </td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">If the depositor fails to deposit 3 consecutive installments, the account will be closed.</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">15% Govt. tax will be deducted in case of e-TIN is not submitted, 10% Govt. tax will be deducted if e-TIN is submitted</td>
-							</tr>
-						</table>
+                        <?php echo $second_millionaire->fees_and_charges;?>
 					</div>
 				</div>
 			</div>
@@ -359,28 +241,12 @@
 				
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-left compare_table">
-							<tr>
-								<td>Age 18 years and above.</td>
-							</tr>
-							
-							<tr>
-								<td>Bangladeshi nationals.</td>
-							</tr>
-						</table>
+                        <?php echo $first_millionaire->eligibility;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-left compare_table">
-							<tr>
-								<td>Age 18 years and above.</td>
-							</tr>
-							
-							<tr>
-								<td>Bangladeshi nationals.</td>
-							</tr>
-						</table>
+                        <?php echo $second_millionaire->eligibility;?>
 					</div>
 				</div>
 			</div>
@@ -390,106 +256,27 @@
 				
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-left compare_table">
-							<tr>
-								<td class="text-left">Savings account must be open on that branch where customer want to open City General DPS. </td>
-							</tr>
-						</table>
+                        <?php echo $first_millionaire->required_document;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-left compare_table">
-							<tr>
-								<td class="text-left">Savings account must be open on that branch where customer want to open City General DPS. </td>
-							</tr>
-						</table>
+                        <?php echo $second_millionaire->required_document;?>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Documents <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
+				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-left compare_table">
-
-							<tr>
-								<td class="text-left">Prescribed application form</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Photograph of the nominee(s) is/are required</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Specimen Signature required</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Photocopy of Citizenship Certificate / Passport / National I.D. Card / Driving License.</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Two copies of recent passport size photograph duly attested by the introducer.</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Photograph of Nominee. In case of minor nominee, a copy of the birth certificate and photograph required;</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Personal Information Form;</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">KYC Form</td>
-							</tr>
-							<tr>
-								<td class="text-left">TIN Certificate.</td>
-							</tr>
-						</table>
+                        <?php echo $first_millionaire->terms_and_conditions;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-left compare_table">
-							<tr>
-								<td class="text-left">Prescribed application form</td>
-							</tr>
-							
-							<tr>
-								<td  class="text-left">Photograph of the nominee(s) is/are required</td>
-							</tr>
-							
-							<tr>
-								<td  class="text-left">Specimen Signature required</td>
-							</tr>
-							
-							<tr>
-								<td  class="text-left">Photocopy of Citizenship Certificate / Passport / National I.D. Card / Driving License.</td>
-							</tr>
-							
-							<tr>
-								<td  class="text-left">Two copies of recent passport size photograph duly attested by the introducer.</td>
-							</tr>
-							
-							<tr>
-								<td  class="text-left">Photograph of Nominee. In case of minor nominee, a copy of the birth certificate and photograph required;</td>
-							</tr>
-							
-							<tr>
-								<td  class="text-left">Personal Information Form;</td>
-							</tr>
-							
-							<tr>
-								<td  class="text-left">KYC Form</td>
-							</tr>
-							<tr>
-								<td  class="text-left">TIN Certificate.</td>
-							</tr>
-						</table>
+                        <?php echo $second_millionaire->terms_and_conditions;?>
 					</div>
 				</div>
 			</div>

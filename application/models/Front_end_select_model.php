@@ -80,6 +80,15 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     public function select_millionaire_info($query){
         $sql="SELECT millionaire_info.*,card_bank.bank_name,card_bank.bank_logo,millionaire_i_am.i_am,millionaire_maturity_amount.maturity_amount,millionaire_tenure.tenure,millionaire_tenure.no_of_installment,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM millionaire_info  LEFT JOIN card_bank ON card_bank.id=millionaire_info.bank_id INNER JOIN millionaire_i_am ON millionaire_i_am.id=millionaire_info.i_am_id INNER JOIN millionaire_maturity_amount ON millionaire_maturity_amount.id=millionaire_info.maturity_amount_id INNER JOIN millionaire_tenure ON millionaire_tenure.id=millionaire_info.tenure_id LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id $query";
 
+//        print_r($sql) ;die;
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function select_millionaire_info_details($id){
+        $sql="SELECT millionaire_info.*,card_bank.bank_name,card_bank.bank_logo,millionaire_i_am.i_am,millionaire_maturity_amount.maturity_amount,millionaire_tenure.tenure,millionaire_tenure.no_of_installment,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM millionaire_info  LEFT JOIN card_bank ON card_bank.id=millionaire_info.bank_id INNER JOIN millionaire_i_am ON millionaire_i_am.id=millionaire_info.i_am_id INNER JOIN millionaire_maturity_amount ON millionaire_maturity_amount.id=millionaire_info.maturity_amount_id INNER JOIN millionaire_tenure ON millionaire_tenure.id=millionaire_info.tenure_id LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id WHERE millionaire_info.id=$id";
+
+//        print_r($sql) ;die;
         $query = $this->db->query($sql);
         return $query;
     }
@@ -108,6 +117,14 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_home_loan_image($id){
         $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `home_loan_info`  LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id  WHERE home_loan_info.id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+
+    public function select_millionaire_image($id){
+        $sql="SELECT millionaire_info.id,millionaire_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `millionaire_info`  LEFT JOIN card_bank on card_bank.id=millionaire_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id  WHERE millionaire_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
