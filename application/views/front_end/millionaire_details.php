@@ -1,9 +1,38 @@
+<?php
+
+$id=$this->uri->segment(3, 0);
+if(!empty($id) && is_numeric($id) ){
+    $query=$this->Front_end_select_model->select_millionaire_info_details($id);
+    $row=$query->row();
+
+    $bank_name = "";
+    $bank_logo = "";
+    if($row->is_non_bank == 1){
+        $bank_name = $row->non_bank_name;
+        $bank_logo = $row->non_bank_logo;
+    }else{
+        $bank_name = $row->bank_name;
+        $bank_logo = $row->bank_logo;
+    }
+
+   /*echo "<pre>";
+         print_r($row);die;
+
+     echo "</pre>";*/
+
+}else{
+    redirect(base_url().'My404');
+}
+?>
 	<section id="card_details_top">
 		<div class="container">
 			<div class="row">
 				<div class="card_details_body">
 					<div class="col-sm-2 col-xs-4">
-						<div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></div>
+						<div>
+                            <img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo ?>" />
+                            <p class="card_details_head2"><?php echo $bank_name;?></p>
+                        </div>
 						<p class="text-center">
 							<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 						</p>
@@ -11,9 +40,9 @@
 					</div>
 					<div class="col-sm-2 col-xs-8">
 						<div>
-							<p class="card_details_head2">Prime Bank Home Loan</p>
+							<p class="card_details_head2">Initial Deposit</p>
 							<p class="card_details_features">
-								Purchase Apartment/Flat
+                                <?php echo $row->initial_deposit;?>
 							</p>
 						</div>
 					</div>
@@ -22,41 +51,41 @@
 						<div class="row">
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">Security Required </p>
+									<p class="card_details_head2">Monthly Instalment</p>
 									<p class="card_details_features">
-										Mortgage on Property
+										<?php echo $row->monthly_deposit;?>
 									</p>
 								</div>
 							</div>
 							<div class="col-sm-2 col-xs-6">
 								<div>
-									<p class="card_details_head2">Interest Rate</p>
+									<p class="card_details_head2">No of Installment</p>
 									<p class="card_details_features">
-										11%
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-1 col-xs-6">
-								<div>
-									<p class="card_details_head2">EMI</p>
-									<p class="card_details_features">
-										35000
+                                        <?php echo $row->no_of_installment;?>
 									</p>
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">Total Payable Amount</p>
+									<p class="card_details_head2">Total Principal Amount</p>
 									<p class="card_details_features">
-										5680000
+                                        <?php echo $row->total_principal_amount;?>
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-3 col-xs-6">
+							<div class="col-sm-2 col-xs-6">
 								<div>
-									<p class="card_details_head2">Down Payment (Min)</p>
+									<p class="card_details_head2">Accrued Interest</p>
 									<p class="card_details_features">
-										1600000
+                                        <?php echo $row->accured_interest;?>
+									</p>
+								</div>
+							</div>
+							<div class="col-sm-2 col-xs-6">
+								<div>
+									<p class="card_details_head2">Maturity Amount</p>
+									<p class="card_details_features">
+                                        <?php echo $row->maturity_amount;?>
 									</p>
 								</div>
 							</div>
@@ -76,53 +105,56 @@
 	<section id="">
 		<div class="container">
 			<div class="card_details_pronsCons">
-				<h4>Deposit Pension Scheme:</h4>
+				<h4>Lakhpoti & MIllionaire Scheme :</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<table class="table table-striped table-bordered">
-						<tbody>
+                    <table class="table table-bordered table-hover text-center table-align  compare_table">
+                        <tr>
+                            <td class="abc"><b> Bank Name </b></td>
+                            <td> <?php echo $bank_name;?> </td>
+                        </tr>
 
-							<tr>
-								<td><b> Product Name</b></td>
-								<td> Bank Asia E Sanchay Koti Poti </td>
-							</tr>
-							
-							<tr>
-								<td><b> Initial Deposit</b></td>
-								<td> 0 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Monthly Installment Size</b></td>
-								<td> 14,020 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Term</b></td>
-								<td> 5 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Number of Installment</b></td>
-								<td> 60 </td>
-							</tr>
-							
-							<tr>
-								<td><b>Total Principal Amount</b></td>
-								<td> 842,200 </td>
-							</tr>
-							
-							<tr>
-								<td><b>Total Accrued Interest</b></td>
-								<td> 158,800 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maturity Amount</b></td>
-								<td> 1,000,000 </td>
-							</tr>
-						</tbody>
-					</table>
+                        <tr>
+                            <td><b> Product Name</b></td>
+                            <td><?php echo $row->millionaire_info_name;?></td>
+                        </tr>
+
+                        <tr>
+                            <td><b> Initial Deposit</b></td>
+                            <td> <?php echo $row->initial_deposit;?> </td>
+                        </tr>
+
+                        <tr>
+                            <td><b> Monthly Installment Size</b></td>
+                            <td> <?php echo $row->monthly_deposit;?> </td>
+                        </tr>
+
+                        <tr>
+                            <td><b> Term</b></td>
+                            <td><?php echo $row->tenure_id;?> Years </td>
+                        </tr>
+
+                        <tr>
+                            <td><b> Number of Installment</b></td>
+                            <td> <?php echo $row->no_of_installment;?> </td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Total Principal Amount</b></td>
+                            <td> <?php echo $row->total_principal_amount;?> </td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Total Accrued Interest</b></td>
+                            <td> <?php echo $row->accured_interest;?> </td>
+                        </tr>
+
+                        <tr>
+                            <td><b> Maturity Amount</b></td>
+                            <td> <?php echo $row->maturity_amount;?> </td>
+                        </tr>
+
+                    </table>
 				</div>
 			</div>
 		</div>
@@ -134,43 +166,7 @@
 				<h4>Available Installment with Tenure :</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<table class="table table-striped table-bordered">
-						<tbody>
-							<tr>
-								<td class="abc"><b> 1 Year</b></td>
-								<td> 128,860.58 </td>
-							</tr>
-							
-							<tr>
-								<td><b> 2 Years</b></td>
-								<td>128,860.58</td>
-							</tr>
-							
-							<tr>
-								<td><b> 3 Years</b></td>
-								<td>128,860.58 </td>
-							</tr>
-							
-							<tr>
-								<td><b> 4 Years</b></td>
-								<td> 128,860.58 </td>
-							</tr>
-							
-							<tr>
-								<td><b> 5 Years</b></td>
-								<td> 128,860.58</td>
-							</tr>
-							
-							<tr>
-								<td><b> 6 Years</b></td>
-								<td>128,860.58 </td>
-							</tr>
-							<tr>
-								<td><b> 7 Years</b></td>
-								<td> 128,860.58</td>
-							</tr>
-						</tbody>
-					</table>
+                    <?php echo $row->available_benefit;?>
 				</div>
 			</div>
 		</div>
@@ -184,37 +180,7 @@
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
 					<table class="table table-striped table-bordered">
-						<tbody>
-						  <tr>
-								<td class="abc">Loan Facility</td>
-								<td> 80% on Deposited Amount </td>
-							</tr>
-							
-							<tr>
-								<td>Auto Transfer Facility</td>
-								<td>Available</td>
-							</tr>
-							
-							<tr>
-								<td>Joint Application Facility </td>
-								<td>Not Available</td>
-							</tr>
-							
-							<tr>
-								<td>Insurance Facility</td>
-								<td>Not Available</td>
-							</tr>
-							
-							<tr>
-								<td>Premature Partial Encashment</td>
-								<td> &nbsp;</td>
-							</tr>
-							
-							<tr>
-								<td>Joint Name</td>
-								<td>Allowed</td>
-							</tr>
-						</tbody>
+                        <?php echo $row->available_feature;?>
 					</table>
 				</div>
 			</div>
@@ -227,21 +193,7 @@
 				<h4>Fees & Charges:</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<table class="table table-striped table-bordered">
-						<tbody>
-						  <tr>
-								<td class="text-left">Penal Charges: 3% on installment amount if the depositor fails to pay the installment in time.  </td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">If the depositor fails to deposit 3 consecutive installments, the account will be closed.</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">15% Govt. tax will be deducted in case of e-TIN is not submitted, 10% Govt. tax will be deducted if e-TIN is submitted</td>
-							</tr>
-						</tbody>
-					</table>
+                    <?php echo $row->fees_and_charges;?>
 				</div>
 			</div>
 		</div>
@@ -253,17 +205,7 @@
 				<h4>Eligibility for Applying:</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<table class="table table-striped table-bordered">
-						<tbody>
-							<tr>
-								<td class="text-left">Age 18 years and above.</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Bangladeshi nationals.</td>
-							</tr>
-						</tbody>
-					</table>
+                    <?php echo $row->eligibility;?>
 				</div>
 			</div>
 		</div>
@@ -275,13 +217,7 @@
 				<h4>Requirement:</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<table class="table table-striped table-bordered">
-						<tbody>
-							<tr>
-								<td class="text-left">Savings account must be open on that branch where customer want to open City General DPS. </td>
-							</tr>
-						</tbody>
-					</table>
+                    <?php echo $row->required_document;?>
 				</div>
 			</div>
 		</div>
@@ -290,47 +226,10 @@
 	<section id="">
 		<div class="container">
 			<div class="card_details_pronsCons">
-				<h4>Documents:</h4>
+				<h4>Terms and Conditions:</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<table class="table table-striped table-bordered">
-						<tbody>
-							<tr>
-								<td class="text-left">Prescribed application form</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Photograph of the nominee(s) is/are required</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Specimen Signature required</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Photocopy of Citizenship Certificate / Passport / National I.D. Card / Driving License.</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Two copies of recent passport size photograph duly attested by the introducer.</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Photograph of Nominee. In case of minor nominee, a copy of the birth certificate and photograph required;</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">Personal Information Form;</td>
-							</tr>
-							
-							<tr>
-								<td class="text-left">KYC Form</td>
-							</tr>
-							<tr>
-								<td class="text-left">TIN Certificate.</td>
-							</tr>
-						</tbody>
-					</table>
+                    <?php echo $row->terms_and_conditions;?>
 				</div>
 			</div>
 		</div>

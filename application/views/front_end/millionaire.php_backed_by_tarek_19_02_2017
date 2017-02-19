@@ -124,10 +124,10 @@
 
 						<div class="clearfix"></div>
 
-						<div class="card_query_fdr" style="border-bottom:0">
+						<div class="card_query_fdr">
 							<p>Select Maturity Amount</p>
 
-							<!--p class="mill_def_text">Select Amount</p-->
+							<p class="mill_def_text">Select Amount</p>
                             <div class="fdrTenurepadding">
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
@@ -613,137 +613,12 @@ $(document).ready(function() {
     $(document).on('click','.add-to-compare',function(){
 
         $("#hiden_div").animate({bottom:'0px'});
+        //$("#hiden_div").addClass("hiddenHalfDown");
 
-		// For card fly START
-		if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
-            alert("Sorry");
-        }
-		
-            if($(".cart_anchor").hasClass("img_active")){
+        $('html, body').animate({
 
-				var cart01 = $('.cart_anchor01');
-				var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
-				if (imgtodrag01) {
-					var imgclone01 = imgtodrag01.clone()
-						.offset({
-						top: imgtodrag01.offset().top,
-						left: imgtodrag01.offset().left
-					})
-						.css({
-						'opacity': '0.7',
-							'position': 'absolute',
-							'height': '150px',
-							'width': '150px',
-							'z-index': '100'
-					})
-						.appendTo($('body'))
-						.animate({
-						'top': cart01.offset().top,
-							'left': cart01.offset().left + 10,
-							'width': 75,
-							'height': 75
-					}, 1000, 'easeInOutExpo');
-					
-					setTimeout(function () {
-						cart01.effect("shake", {
-							times: 2
-						}, 200);
-					}, 1000);
+        });
 
-					imgclone01.animate({
-						'width': 0,
-						'height': 0
-					}, function () {
-						$(this).detach()
-					});
-				}
-				
-				$(".cart_anchor01").addClass("img_active");
-                $(this).addClass("hidden");
-				
-				var  formData = $(this).data();
-                var millionaire_id = "millionaire_id="+formData.millionaire_id;
-
-                setTimeout(function(){
-                    $.ajax
-                    ({
-                        type: "POST",
-                        url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                        data: millionaire_id,
-                        success: function(msg)
-                        {
-                            $(".cart_anchor01").html(msg);
-                        }
-                    });
-                });
-				
-
-            }
-			
-            else{
-				var cart = $('.cart_anchor');
-				var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
-				if (imgtodrag) {
-					var imgclone = imgtodrag.clone()
-						.offset({
-						top: imgtodrag.offset().top,
-						left: imgtodrag.offset().left
-					})
-						.css({
-						'opacity': '0.7',
-							'position': 'absolute',
-							'height': '150px',
-							'width': '150px',
-							'z-index': '100'
-					})
-						.appendTo($('body'))
-						.animate({
-						'top': cart.offset().top + 10,
-							'left': cart.offset().left + 10,
-							'width': 75,
-							'height': 75
-					}, 1000, 'easeInOutExpo');
-					
-					setTimeout(function () {
-						cart.effect("shake", {
-							times: 2
-						}, 200);
-					}, 1000);
-
-					imgclone.animate({
-						'width': 0,
-							'height': 0
-					}, function () {
-						$(this).detach()
-					});
-				}
-				
-				var  formData = $(this).data();
-                var millionaire_id = "millionaire_id="+formData.millionaire_id;
-                //alert(home_id);
-
-                setTimeout(function(){
-                    $.ajax
-                    ({
-                        type: "POST",
-                        url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                        data: millionaire_id,
-                        success: function(msg)
-                        {
-                            $(".cart_anchor").html(msg);
-                        }
-                    });
-                });
-				
-				$(".cart_anchor").addClass("img_active");
-				$(this).addClass("hidden");
-			
-            }
-        
-
-    });
-	
-		/*
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
             alert("Sorry");
         }else{
@@ -799,9 +674,9 @@ $(document).ready(function() {
                 },850);
 
             }
-        
-		*/
+        }
 
+    });
 
     $(document).on('click','.compare-cross-btn',function(){
 
