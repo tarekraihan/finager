@@ -228,7 +228,7 @@
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>debit_card/ajax_debit_card_info",
+                url: "<?php echo base_url();?>debit_card/ajax_debit_card_info/<?php echo(!empty($this->uri->segment(3))) ? $this->uri->segment(3) : '' ?>",
                 data: main_string,
                 cache: false,
                 success: function(msg)
