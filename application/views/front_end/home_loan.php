@@ -278,6 +278,13 @@
 
 <script>
     $(document).ready(function(){
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+            loadData(cur_page);
+            console.log(cur_page);
+        });
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
@@ -286,7 +293,7 @@
             $('#loading').html("");
         }
 
-        function loadData(){
+        function loadData( page = null ){
             loading_show();
 
 //            var mainarray = new Array();
@@ -307,11 +314,16 @@
 
             var main_string = home_i_want_list+home_user_list;
             main_string = main_string.substring(1, main_string.length);
+            var page_count ='';
+            if( page != null ){
+                page_count = page ;
+            }
+            var url_str = "<?php echo base_url();?>home_loan/ajax_get_home_loan/" + page_count;
 //            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>home_loan/ajax_get_home_loan",
+                url: url_str,
                 data: main_string,
                 cache: false,
                 success: function(msg)
@@ -326,9 +338,10 @@
             });
         }
 
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
-
-        loadData();
+        loadData(page = null);
+        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            loadData(page = null);
+        } );
 
         $('#searchHomeLoan').on('click', '.more_info', function (){
 
@@ -360,7 +373,7 @@
     $(document).on('click','.add-to-compare',function(){
 
         $("#hiden_div").animate({bottom:'0px'});
-        //$("#hiden_div").addClass("hiddenHalfDown");
+        
 
         $('html, body').animate({
 
@@ -370,6 +383,8 @@
             alert("Sorry");
         }else{
             if($(".cart_anchor").hasClass("img_active")){
+				// prev fly to element
+				/*
                 //Select item image and pass to the function
                 var itemImg = $(this).parents('.full-card').find('.selected_card').eq(0);
                 flyToElement($(itemImg), $('.cart_anchor01'));
@@ -391,18 +406,77 @@
                             $(".cart_anchor01").html(msg);
                         }
                     });
-                },850);
+                });
+				*/
+				var cart01 = $('.cart_anchor01');
+				var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
+				if (imgtodrag01) {
+					var imgclone01 = imgtodrag01.clone()
+						.offset({
+						top: imgtodrag01.offset().top,
+						left: imgtodrag01.offset().left
+					})
+						.css({
+						'opacity': '0.7',
+							'position': 'absolute',
+							'height': '150px',
+							'width': '150px',
+							'z-index': '100'
+					})
+						.appendTo($('body'))
+						.animate({
+						'top': cart01.offset().top,
+							'left': cart01.offset().left + 10,
+							'width': 75,
+							'height': 75
+					}, 1000, 'easeInOutExpo');
+					
+					setTimeout(function () {
+						cart01.effect("shake", {
+							times: 2
+						}, 200);
+					}, 1000);
+
+					imgclone01.animate({
+						'width': 0,
+						'height': 0
+					}, function () {
+						$(this).detach()
+					});
+				}
+				
+				$(".cart_anchor01").addClass("img_active");
+                $(this).addClass("hidden");
+				
+				var  formData = $(this).data();
+                var home_id = "home_id="+formData.home_id;
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
+                        data: home_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor01").html(msg);
+                        }
+                    });
+                });
+				
 
             }
+			
             else{
+				/*
                 //Select item image and pass to the function
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var itemImg = $(this).parents('.full-card').find('.selected_card').eq(0);
                 flyToElement($(itemImg), $('.cart_anchor'));
 
                 $(".cart_anchor").addClass("img_active");
                 $(this).addClass("hidden");
 
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                var itemImg = $(this).parents('.full-card').find('.selected_card').eq(0);
                 var  formData = $(this).data();
                 var home_id = "home_id="+formData.home_id;
                 //alert(home_id);
@@ -418,8 +492,65 @@
                             $(".cart_anchor").html(msg);
                         }
                     });
-                },850);
+                });
+				*/
 
+				var cart = $('.cart_anchor');
+				var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
+				if (imgtodrag) {
+					var imgclone = imgtodrag.clone()
+						.offset({
+						top: imgtodrag.offset().top,
+						left: imgtodrag.offset().left
+					})
+						.css({
+						'opacity': '0.7',
+							'position': 'absolute',
+							'height': '150px',
+							'width': '150px',
+							'z-index': '100'
+					})
+						.appendTo($('body'))
+						.animate({
+						'top': cart.offset().top + 10,
+							'left': cart.offset().left + 10,
+							'width': 75,
+							'height': 75
+					}, 1000, 'easeInOutExpo');
+					
+					setTimeout(function () {
+						cart.effect("shake", {
+							times: 2
+						}, 200);
+					}, 1000);
+
+					imgclone.animate({
+						'width': 0,
+							'height': 0
+					}, function () {
+						$(this).detach()
+					});
+				}
+				
+				var  formData = $(this).data();
+                var home_id = "home_id="+formData.home_id;
+				
+				setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
+                        data: home_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor").html(msg);
+                        }
+                    });
+                });
+				
+				$(".cart_anchor").addClass("img_active");
+				$(this).addClass("hidden");
+			
             }
         }
 

@@ -54,7 +54,7 @@
                         }
                     ?>
                 </div>
-                <hr/>
+               
             </div>
             <div class="card_query">
                 <p>My Income Range</p>
@@ -86,7 +86,7 @@
                         BDT 500000+
                     </label>
                 </div>
-                <hr/>
+                
             </div>
             <div class="card_query">
                 <p>Want Credit Limit</p>
@@ -117,7 +117,7 @@
                         BDT 500000+
                     </label>
                 </div>
-                <hr/>
+                
             </div>
             <div class="card_query">
                 <p>Looking For</p>
@@ -156,7 +156,7 @@
                     ?>
                     </div>
                 </div>
-                <hr/>
+              
                 <div class="card_query">
                     <p>Maximum Interest Free Period</p>
                     <div class="query_radio">
@@ -178,7 +178,7 @@
                     </div>
 
                 </div>
-                <hr/>
+               
                 <div class="card_query">
                     <p>Card Type</p>
                     <div class="query_radio">
@@ -196,7 +196,7 @@
                         ?>
                     </div>
                 </div>
-                <hr/>
+                
                 <div class="card_query">
                     <p>Card Issuer</p>
                     <div class="query_radio">
@@ -273,6 +273,13 @@
 <!-- card compare section ends-->
 <script type="text/javascript">
     $(document).ready(function(){
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+            loadData(cur_page);
+            console.log(cur_page);
+        });
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
@@ -281,7 +288,7 @@
             $('#loading').html("");
         }
 
-        function loadData(){
+        function loadData( page = null ){
             loading_show();
 
 //            var mainarray = new Array();
@@ -338,11 +345,21 @@
 
             var main_string = card_user_list+income_range_list+credit_limit_list+credit_card_type_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list;
             main_string = main_string.substring(1, main_string.length);
+
+            var page_count ='';
+            if( page != null ){
+                page_count = page ;
+            }
+            var url_str = "<?php echo base_url();?>card/ajax_get_credit_card/" + page_count;
+
+//            console.log(main_string);
+//            console.log('page no=='+page_count);
+//            console.log('url : '+url_str);
 //            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>card/ajax_get_credit_card",
+                url: url_str,
                 data: main_string,
                 cache: false,
                 success: function(msg)
@@ -357,9 +374,10 @@
             });
         }
 
-        loadData();
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
-
+        loadData(page = null);
+        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            loadData(page = null);
+        } );
     });
 
 
@@ -403,17 +421,19 @@
         $("#hiden_div").animate({bottom:'0px'});
         //$("#hiden_div").addClass("hiddenHalfDown");
 
-            $('html, body').animate({
+		$('html, body').animate({
 
-            });
-
+		});
+		
+		
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
             alert("Sorry");
         }else{
+			/* Old card fly js START
             if($(".cart_anchor").hasClass("img_active")){
                 //Select item image and pass to the function
                 var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-                flyToElement($(itemImg), $('.cart_anchor01'));
+                flyToElement($(itemImg), $('.cart_anchor01'),1500);
                 $(".cart_anchor01").addClass("img_active");
                 $(this).addClass("hidden");
 
@@ -432,7 +452,7 @@
                             $(".cart_anchor01").html(msg);
                         }
                     });
-                },850);
+                });
 
             }
             else{
@@ -458,8 +478,130 @@
                             $(".cart_anchor").html(msg);
                         }
                     });
-                },850);
+                });
 
+            }
+			 Old card fly js END */
+			 
+			if($(".cart_anchor").hasClass("img_active")){
+
+				var cart01 = $('.cart_anchor01');
+				var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
+				if (imgtodrag01) {
+					var imgclone01 = imgtodrag01.clone()
+						.offset({
+						top: imgtodrag01.offset().top,
+						left: imgtodrag01.offset().left
+					})
+						.css({
+						'opacity': '0.7',
+							'position': 'absolute',
+							'height': '150px',
+							'width': '150px',
+							'z-index': '100'
+					})
+						.appendTo($('body'))
+						.animate({
+						'top': cart01.offset().top,
+							'left': cart01.offset().left + 10,
+							'width': 75,
+							'height': 75
+					}, 1000, 'easeInOutExpo');
+					
+					setTimeout(function () {
+						cart01.effect("shake", {
+							times: 2
+						}, 200);
+					}, 1000);
+
+					imgclone01.animate({
+						'width': 0,
+						'height': 0
+					}, function () {
+						$(this).detach()
+					});
+				}
+				
+				$(".cart_anchor01").addClass("img_active");
+                $(this).addClass("hidden");
+				
+				var  formData = $(this).data();
+                var card_id = "card_id="+formData.card_id;
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                        data: card_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor01").html(msg);
+                        }
+                    });
+                });
+				
+
+            }
+			
+            else{
+				//alert("test");
+				var cart = $('.cart_anchor');
+				var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
+				if (imgtodrag) {
+					var imgclone = imgtodrag.clone()
+						.offset({
+						top: imgtodrag.offset().top,
+						left: imgtodrag.offset().left
+					})
+					.css({
+						'opacity': '0.7',
+						'position': 'absolute',
+						'height': '150px',
+						'width': '150px',
+						'z-index': '100'
+					})
+					.appendTo($('body'))
+					.animate({
+						'top': cart.offset().top + 10,
+						'left': cart.offset().left + 10,
+						'width': 75,
+						'height': 75
+					}, 1000, 'easeInOutExpo');
+					
+					setTimeout(function () {
+						cart.effect("shake", {
+							times: 2
+						}, 200);
+					}, 1000);
+
+					imgclone.animate({
+						'width': 0,
+							'height': 0
+					}, function () {
+						$(this).detach()
+					});
+				}
+				
+				var  formData = $(this).data();
+                var card_id = "card_id="+formData.card_id;
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>card/ajax_compare_card_image",
+                        data: card_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor").html(msg);
+                        }
+                    });
+                });
+				
+				$(".cart_anchor").addClass("img_active");
+				$(this).addClass("hidden");
+			
             }
         }
 

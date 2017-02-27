@@ -23,7 +23,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_credit_card_info_pagination($query,$limit=null,$offset=null){
 
-            $link = 'ORDER BY debit_card_info.id ASC LIMIT '.$offset.', '.$limit;
+            $link = 'ORDER BY card_card_informations.id ASC LIMIT '.$offset.', '.$limit;
 
         $sql="SELECT DISTINCT card_card_informations.*,card_bank.bank_name,card_card_type.card_type_name,card_credit_card_type.cc_card_type,card_card_issuer.card_issuer_name, card_fees_charges.`card_id`, card_fees_charges.`basic_card_annual_fee`, card_fees_charges.`supplementary_card_annual_fee`, card_fees_charges.`purchase_fee`, card_fees_charges.`balance_transfer_fee`, card_fees_charges.`cash_advance_fee_own_atm`, card_fees_charges.`cash_advance_fee_other_atm`, card_fees_charges.`cash_advance_fee_international`, card_fees_charges.`late_payment_fee`, card_fees_charges.`card_replacement_fee`, card_fees_charges.`pin_replacement_fee`, card_fees_charges.`over_limit_charge`, card_fees_charges.`transaction_alert_service`, card_fees_charges.`credit_assurance_program_fee`, card_fees_charges.`monthly_e_statement_fee`, card_fees_charges.`check_book_fee`, card_fees_charges.`minimum_payment`, card_fees_charges.`cheque_return_fee`, card_fees_charges.`duplicate_statement`, card_fees_charges.`card_cheque_processing_fee`, card_fees_charges.`card_cheque_issuing_fee`
 FROM card_card_informations INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_card_type ON card_card_type.id=card_card_informations.card_type_id INNER JOIN
@@ -191,6 +191,19 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
 
+
+    function select_home_loan_info_pagination($query,$limit=null,$offset=null){
+        $link = 'ORDER BY home_loan_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+
+        $sql = "SELECT DISTINCT home_loan_info.*,card_bank.bank_name,card_bank.bank_logo,home_loan_looking_for.home_loan_looking_for, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `home_loan_info` LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id LEFT JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id INNER JOIN home_loan_user_home_loan_info ON home_loan_user_home_loan_info.home_loan_info_id = home_loan_info.id $query $link";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+
+
     function select_education_loan_info(){
         $sql = "SELECT DISTINCT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,education_loan_tenure.tenure, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id LEFT JOIN education_loan_tenure ON education_loan_tenure.id=education_loan_info.min_term LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id";
 
@@ -207,6 +220,14 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     function select_personal_loan_info($query){
         $sql = "SELECT DISTINCT personal_loan_info.*,card_bank.bank_name,card_bank.bank_logo,personal_loan_looking_for.personal_loan_looking_for,loan_type.loan_type,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `personal_loan_info` LEFT JOIN card_bank on card_bank.id=personal_loan_info.bank_id INNER JOIN personal_loan_looking_for ON personal_loan_looking_for.id = personal_loan_info.personal_loan_looking_for_id INNER JOIN loan_type ON loan_type.id = personal_loan_info.loan_type_id LEFT JOIN general_non_bank ON general_non_bank.id = personal_loan_info.non_bank_id INNER JOIN personal_loan_info_vs_i_am ON personal_loan_info_vs_i_am.personal_loan_info_id = personal_loan_info.id $query";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
+    function select_personal_loan_info_pagination($query,$limit=null,$offset=null){
+        $link = 'ORDER BY personal_loan_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT DISTINCT personal_loan_info.*,card_bank.bank_name,card_bank.bank_logo,personal_loan_looking_for.personal_loan_looking_for,loan_type.loan_type,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `personal_loan_info` LEFT JOIN card_bank on card_bank.id=personal_loan_info.bank_id INNER JOIN personal_loan_looking_for ON personal_loan_looking_for.id = personal_loan_info.personal_loan_looking_for_id INNER JOIN loan_type ON loan_type.id = personal_loan_info.loan_type_id LEFT JOIN general_non_bank ON general_non_bank.id = personal_loan_info.non_bank_id INNER JOIN personal_loan_info_vs_i_am ON personal_loan_info_vs_i_am.personal_loan_info_id = personal_loan_info.id $query $link";
         $query = $this->db->query($sql);
 
         return $query;

@@ -2926,3 +2926,22 @@ ul.footer-socio {
   margin-bottom: 20px;
   position: relative;
 	}
+
+#searchHomeLoan #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchHomeLoan #pagination>li{
+    float: none;
+}
+#searchPersonalLoan #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchPersonalLoan #pagination>li{
+    float: none;
+}
