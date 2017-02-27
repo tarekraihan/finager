@@ -169,6 +169,13 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+            loadData(cur_page);
+            console.log(cur_page);
+        });
 
         $('#SearchDebitCard').on('click', '.more_info', function (){
             var  formData = $(this).data();
@@ -187,6 +194,7 @@
 
 
 
+
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
         }
@@ -194,9 +202,9 @@
             $('#loading').html("");
         }
 
-        function loadData(){
-            loading_show();
+        function loadData( page = null ){
 
+            loading_show();
 
             var choose_account = new Array();
             $('input[name="choose_account"]:checked').each(function(){
@@ -208,6 +216,7 @@
             $('input[name="looking_for"]:checked').each(function(){
                 looking_for.push($(this).val());
             });
+
             var looking_for_list = "&looking_for="+looking_for;
 
             var card_issuer = new Array();
@@ -219,16 +228,28 @@
             var i_want = new Array();
             $('input[name="i_want"]:checked').each(function(){
                 i_want.push($(this).val());
-            });
-            var i_want_list = "&i_want="+i_want;
 
-            var main_string = choose_account_list+looking_for_list+card_issuer_list+i_want_list;
+            });
+            var i_want_list = "&i_want=" + i_want;
+
+            var page_count ='';
+            if( page != null ){
+                page_count = page ;
+            }
+
+
+            var main_string = choose_account_list + looking_for_list + card_issuer_list + i_want_list;
             main_string = main_string.substring(1, main_string.length);
-            console.log(main_string);
+            var url_str = "<?php echo base_url();?>debit_card/ajax_debit_card_info/" + page_count;
+
+//            console.log(main_string);
+//            console.log('page no=='+page_count);
+//            console.log('url : '+url_str);
+
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>debit_card/ajax_debit_card_info/<?php echo(!empty($this->uri->segment(3))) ? $this->uri->segment(3) : '' ?>",
+                url: url_str,
                 data: main_string,
                 cache: false,
                 success: function(msg)
@@ -240,8 +261,10 @@
             });
         }
 
-        loadData();
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
+        loadData(page = null);
+        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            loadData(page = null);
+        } );
 
     });
 
