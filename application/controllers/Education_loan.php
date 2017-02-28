@@ -12,6 +12,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Education_Loan extends CI_Controller {
 
+    public function __construct() {
+        parent:: __construct();
+        $this->load->library("pagination");
+    }
+
     public function tenure($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -489,7 +494,44 @@ class Education_Loan extends CI_Controller {
     }
 
     public function ajax_get_education_loan(){
-        $education_loan = $this->Front_end_select_model->select_education_loan_info();
+        $res = $this->Front_end_select_model->select_education_loan_info();
+//        print_r($res);die;
+        //-----------Pagination start-----------------
+
+        $config['base_url'] = base_url() . "en/all_education_loan/";
+        $config['total_rows'] = $res->num_rows();
+        $config['per_page'] = "10";
+        $config["uri_segment"] = 3;
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        $config['use_page_numbers'] = TRUE;
+
+        //Link customization
+        $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = 'Prev';
+        $config['prev_tag_open'] = '<li class="previous">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = 'Next';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $this->pagination->initialize($config);
+        $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
+
+        $education_loan =  $this->Front_end_select_model->select_education_loan_info_pagination($config["per_page"],$page);
+        $data['pagination'] = $this->pagination->create_links();
+        //        print_r($result->result()); die;
+        //-------------Pagination End-------------------
         $education = '';
         foreach($education_loan->result() as $row){
 
@@ -684,6 +726,7 @@ class Education_Loan extends CI_Controller {
 					</div>';
         }
 
+        $education .= '<div class="col-md-12">'.$data['pagination'].'</div>';
         echo $education;
     }
 

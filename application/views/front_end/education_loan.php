@@ -263,6 +263,16 @@ $(document).ready(function() {
     });
 
 
+    $(document).on('click','#pagination a',function(e){
+        e.preventDefault();
+        var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+        loadData(cur_page);
+        console.log(cur_page);
+    });
+
+
+
     function loading_show(){
         $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
     }
@@ -270,13 +280,17 @@ $(document).ready(function() {
         $('#loading').html("");
     }
 
-    function loadData(){
+    function loadData( page = null ){
         loading_show();
-
+        var page_count ='';
+        if( page != null ){
+            page_count = page ;
+        }
+        var url_str = "<?php echo base_url();?>education_loan/ajax_get_education_loan/" + page_count;
         $.ajax
         ({
             type: "POST",
-            url: "<?php echo base_url();?>education_loan/ajax_get_education_loan",
+            url: url_str,
             //data: main_string,
             cache: false,
             success: function(msg)
@@ -292,7 +306,7 @@ $(document).ready(function() {
     }
 
 
-    loadData();
+    loadData(page = null);
 
     $(document).on('click','.add-to-compare',function(){
 

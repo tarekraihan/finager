@@ -274,6 +274,14 @@
 <script>
     $(document).ready(function(){
 
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+            loadData(cur_page);
+            console.log(cur_page);
+        });
+
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
@@ -282,7 +290,7 @@
             $('#loading').html("");
         }
 
-        function loadData(){
+        function loadData( page = null ){
             loading_show();
 
 
@@ -303,11 +311,16 @@
 
             var main_string = auto_i_want_list+auto_user_list;
             main_string = main_string.substring(1, main_string.length);
+            var page_count ='';
+            if( page != null ){
+                page_count = page ;
+            }
+            var url_str = "<?php echo base_url();?>auto_loan/ajax_get_auto_loan/" + page_count;
             console.log(main_string);
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>auto_loan/ajax_get_auto_loan",
+                url: url_str,
                 data: main_string,
                 cache: false,
                 success: function(msg)
@@ -322,9 +335,10 @@
             });
         }
 
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
-
-        loadData();
+        loadData( page = null );
+        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            loadData( page = null );
+        } );
 
         $('#searchAutoLoan').on('click', '.more_info', function (){
 

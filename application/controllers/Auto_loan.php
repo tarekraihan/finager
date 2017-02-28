@@ -12,6 +12,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auto_loan extends CI_Controller
 {
+
+    public function __construct() {
+        parent:: __construct();
+        $this->load->library("pagination");
+    }
+
     public function applicant_type($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -665,7 +671,7 @@ class Auto_loan extends CI_Controller
 
         $WHERE = array(); $query = '';
         if(!empty($auto_user)) {
-            $WHERE[] = 'auto_loan_info_vs_i_am.auto_loan_info_id = '.$auto_user;
+            $WHERE[] = 'auto_loan_info_vs_i_am.i_am_id = '.$auto_user;
         }
 
         if(!empty($auto_i_want)) {
@@ -678,7 +684,45 @@ class Auto_loan extends CI_Controller
 
         if(!empty($query)) {$query = 'WHERE '.$query;}
 
-        $auto_loan = $this->Front_end_select_model->select_auto_loan_info($query);
+        $res = $this->Front_end_select_model->select_auto_loan_info($query);
+
+
+        //-----------Pagination start-----------------
+
+        $config['base_url'] = base_url() . "en/all_car_loan/";
+        $config['total_rows'] = $res->num_rows();
+        $config['per_page'] = "10";
+        $config["uri_segment"] = 3;
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
+        $config['use_page_numbers'] = TRUE;
+
+        //Link customization
+        $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = 'Prev';
+        $config['prev_tag_open'] = '<li class="previous">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = 'Next';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $this->pagination->initialize($config);
+        $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
+
+        $auto_loan =  $this->Front_end_select_model->select_auto_loan_info_pagination($query,$config["per_page"],$page);
+        $data['pagination'] = $this->pagination->create_links();
+        //        print_r($result->result()); die;
+        //-------------Pagination End-------------------
 
         $auto = '';
         foreach($auto_loan->result() as $row){
@@ -861,7 +905,7 @@ class Auto_loan extends CI_Controller
        </div>';
 
         }
-
+        $auto .= '<div class="col-md-12">'.$data['pagination'].'</div>';
      echo $auto;
 
 

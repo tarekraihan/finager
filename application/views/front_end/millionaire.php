@@ -443,7 +443,6 @@
                     </div>
                 </div>
 				<!-- Right bar content end -->
-
 			</div>
 		</div>
 	</section>
@@ -546,14 +545,22 @@
 
 $(document).ready(function() {
 
-        function loading_show(){
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+    //            alert(cur_page);
+            loadData(cur_page);
+            console.log(cur_page);
+        });
+
+    function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
         }
         function loading_hide(){
             $('#loading').html("");
         }
 
-        function loadData(){
+    function loadData( page = null ){
             loading_show();
 
 
@@ -580,11 +587,16 @@ $(document).ready(function() {
 
             var main_string = millionaire_tenure_list+millionaire_user_list+maturity_amount_list;
             main_string = main_string.substring(1, main_string.length);
+        var page_count ='';
+        if( page != null ){
+            page_count = page ;
+        }
+        var url_str = "<?php echo base_url();?>millionaire/ajax_get_millionaire/" + page_count;
             console.log(main_string);
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>millionaire/ajax_get_millionaire",
+                url: url_str,
                 data: main_string,
                 cache: false,
                 success: function(msg)
@@ -601,10 +613,10 @@ $(document).ready(function() {
 
         $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
     $(document).on('click','.squaredOne input[type="checkbox"]',function() {
-        loadData();
+        loadData( page = null )
     });
 
-        loadData();
+    loadData( page = null )
 });
 
 </script>
@@ -744,65 +756,6 @@ $(document).ready(function() {
 
     });
 	
-		/*
-        if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
-            alert("Sorry");
-        }else{
-            if($(".cart_anchor").hasClass("img_active")){
-                //Select item image and pass to the function
-                var itemImg = $(this).parents('.full-card').find('.selected_card').eq(0);
-                flyToElement($(itemImg), $('.cart_anchor01'));
-                $(".cart_anchor01").addClass("img_active");
-                $(this).addClass("hidden");
-
-                // var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-                var  formData = $(this).data();
-                var millionaire_id = "millionaire_id="+formData.millionaire_id;
-
-                setTimeout(function(){
-                    $.ajax
-                    ({
-                        type: "POST",
-                        url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                        data: millionaire_id,
-                        success: function(msg)
-                        {
-                            $(".cart_anchor01").html(msg);
-                        }
-                    });
-                },850);
-
-            }
-            else{
-                //Select item image and pass to the function
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-                flyToElement($(itemImg), $('.cart_anchor'));
-
-                $(".cart_anchor").addClass("img_active");
-                $(this).addClass("hidden");
-
-                var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-                var  formData = $(this).data();
-                var millionaire_id = "millionaire_id="+formData.millionaire_id;
-                //alert(home_id);
-
-                setTimeout(function(){
-                    $.ajax
-                    ({
-                        type: "POST",
-                        url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                        data: millionaire_id,
-                        success: function(msg)
-                        {
-                            $(".cart_anchor").html(msg);
-                        }
-                    });
-                },850);
-
-            }
-        
-		*/
-
 
     $(document).on('click','.compare-cross-btn',function(){
 

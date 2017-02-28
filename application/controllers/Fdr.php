@@ -11,6 +11,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  **********************************************/
 
 class Fdr extends CI_Controller {
+    public function __construct() {
+        parent:: __construct();
+        $this->load->library("pagination");
+    }
+
+
     public function i_want($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -638,7 +644,48 @@ class Fdr extends CI_Controller {
 
 
 
-        $fdr_deposit = $this->Front_end_select_model->select_fdr_loan_info($query);
+        $res = $this->Front_end_select_model->select_fdr_loan_info($query);
+
+//        echo  $res->num_rows(); die;
+
+        //-----------Pagination start-----------------
+
+        $config['base_url'] = base_url() . "en/all_fdr/";
+        $config['total_rows'] = $res->num_rows();
+        $config['per_page'] = "10";
+        $config["uri_segment"] = 3;
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = 4;
+        $config['use_page_numbers'] = TRUE;
+
+        //Link customization
+        $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = 'Prev';
+        $config['prev_tag_open'] = '<li class="previous">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = 'Next';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $this->pagination->initialize($config);
+        $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
+
+        $fdr_deposit =  $this->Front_end_select_model->select_fdr_loan_info_pagination($query,$config["per_page"],$page);
+        $data['pagination'] = $this->pagination->create_links();
+
+//        echo  $fdr_deposit->num_rows(); die;
+        //        print_r($result->result()); die;
+        //-------------Pagination End-------------------
 
 //        $no_row = $fdr_deposit->num_rows();
         $fdr = '';
@@ -772,6 +819,7 @@ class Fdr extends CI_Controller {
 						</div>
                     </div>';
         }
+        $fdr .= '<div class="col-md-12">'.$data['pagination'].'</div>';
         echo $fdr;
     }
 

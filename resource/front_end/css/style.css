@@ -2889,7 +2889,7 @@ ul.footer-socio {
     width:100%;
     margin-top:53px;
 }
-/* for millionier */
+/* ----------- for millionier --------------- */
 #millionier_header_part {
    background-image: url('../images/Milonaire.jpg');
    width: 100%;
@@ -2936,6 +2936,7 @@ ul.footer-socio {
 #searchHomeLoan #pagination>li{
     float: none;
 }
+
 #searchPersonalLoan #pagination {
     position: relative !important;
     top: 0 !important;
@@ -2943,5 +2944,43 @@ ul.footer-socio {
 }
 
 #searchPersonalLoan #pagination>li{
+    float: none;
+}
+
+#searchEducationLoan #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchEducationLoan #pagination>li{
+    float: none;
+}
+#searchFDR #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchFDR #pagination>li{
+    float: none;
+}
+
+#searchDPS #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchDPS #pagination>li{
+    float: none;
+}
+#searchMillionaire #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchMillionaire #pagination>li{
     float: none;
 }

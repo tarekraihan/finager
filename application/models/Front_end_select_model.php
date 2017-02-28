@@ -114,6 +114,14 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    public function select_millionaire_info_pagination($query,$limit=null,$offset=null ){
+        $link = 'ORDER BY millionaire_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql="SELECT millionaire_info.*,card_bank.bank_name,card_bank.bank_logo,millionaire_i_am.i_am,millionaire_maturity_amount.maturity_amount,millionaire_tenure.tenure,millionaire_tenure.no_of_installment,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM millionaire_info  LEFT JOIN card_bank ON card_bank.id=millionaire_info.bank_id INNER JOIN millionaire_i_am ON millionaire_i_am.id=millionaire_info.i_am_id INNER JOIN millionaire_maturity_amount ON millionaire_maturity_amount.id=millionaire_info.maturity_amount_id INNER JOIN millionaire_tenure ON millionaire_tenure.id=millionaire_info.tenure_id LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id $query $link";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
     public function select_millionaire_info_details($id){
         $sql="SELECT millionaire_info.*,card_bank.bank_name,card_bank.bank_logo,millionaire_i_am.i_am,millionaire_maturity_amount.maturity_amount,millionaire_tenure.tenure,millionaire_tenure.no_of_installment,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM millionaire_info  LEFT JOIN card_bank ON card_bank.id=millionaire_info.bank_id INNER JOIN millionaire_i_am ON millionaire_i_am.id=millionaire_info.i_am_id INNER JOIN millionaire_maturity_amount ON millionaire_maturity_amount.id=millionaire_info.maturity_amount_id INNER JOIN millionaire_tenure ON millionaire_tenure.id=millionaire_info.tenure_id LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id WHERE millionaire_info.id=$id";
 
@@ -205,14 +213,30 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     function select_education_loan_info(){
-        $sql = "SELECT DISTINCT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,education_loan_tenure.tenure, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id LEFT JOIN education_loan_tenure ON education_loan_tenure.id=education_loan_info.min_term LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id";
+        $sql = "SELECT DISTINCT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,education_loan_tenure.tenure, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id LEFT JOIN education_loan_tenure ON education_loan_tenure.id=education_loan_info.min_term LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id ";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    function select_education_loan_info_pagination( $limit=null,$offset=null ){
+        $link = 'ORDER BY education_loan_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT DISTINCT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,education_loan_tenure.tenure, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id LEFT JOIN education_loan_tenure ON education_loan_tenure.id=education_loan_info.min_term LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id $link";
 
         $query = $this->db->query($sql);
         return $query;
     }
 
     function select_auto_loan_info($query){
-        $sql = "SELECT DISTINCT auto_loan_info.*,card_bank.bank_name,card_bank.bank_logo,auto_i_want.i_want,loan_type.loan_type,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM auto_loan_info LEFT join card_bank on card_bank.id=auto_loan_info.bank_id INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id INNER JOIN loan_type ON loan_type.id = auto_loan_info.loan_type_id INNER JOIN auto_loan_info_vs_i_am ON auto_loan_info_vs_i_am.auto_loan_info_id =auto_loan_info.id LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id $query ORDER BY `auto_loan_info`.`id` DESC ";
+        $sql = "SELECT DISTINCT auto_loan_info.*,card_bank.bank_name,card_bank.bank_logo,auto_i_want.i_want,loan_type.loan_type,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM auto_loan_info LEFT join card_bank on card_bank.id=auto_loan_info.bank_id INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id INNER JOIN loan_type ON loan_type.id = auto_loan_info.loan_type_id INNER JOIN auto_loan_info_vs_i_am ON auto_loan_info_vs_i_am.auto_loan_info_id =auto_loan_info.id LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id $query ORDER BY `auto_loan_info`.`id` ASC ";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
+    function select_auto_loan_info_pagination( $query ,$limit=null,$offset=null){
+        $link = 'ORDER BY auto_loan_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT DISTINCT auto_loan_info.*,card_bank.bank_name,card_bank.bank_logo,auto_i_want.i_want,loan_type.loan_type,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM auto_loan_info LEFT join card_bank on card_bank.id=auto_loan_info.bank_id INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id INNER JOIN loan_type ON loan_type.id = auto_loan_info.loan_type_id INNER JOIN auto_loan_info_vs_i_am ON auto_loan_info_vs_i_am.auto_loan_info_id =auto_loan_info.id LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id $query $link ";
         $query = $this->db->query($sql);
 
         return $query;
@@ -243,8 +267,26 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+
+
+    function select_dps_loan_info_pagination($query,$limit=null,$offset=null){
+        $link = 'ORDER BY dps_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT DISTINCT dps_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `dps_info` LEFT JOIN card_bank on card_bank.id=dps_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id INNER JOIN fdr_i_am ON fdr_i_am.id = dps_info.i_am_id $query $link";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
     function select_fdr_loan_info($query){
-        $sql = "SELECT DISTINCT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id $query ORDER BY fdr_info.id DESC";
+        $sql = "SELECT DISTINCT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id $query ORDER BY fdr_info.id ASC";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+    function select_fdr_loan_info_pagination($query,$limit=null,$offset=null){
+
+        $link = 'ORDER BY fdr_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT DISTINCT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id $query $link";
         $query = $this->db->query($sql);
 
         return $query;

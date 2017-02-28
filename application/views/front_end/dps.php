@@ -34,9 +34,7 @@
 	.calborder {
 		border-bottom:0px solid #DADADA;
 	}
-	.card_query_fdr {
-		height: 285px;
-	}
+
 	.material_check_radio {
 		border: 2px solid #d7ad75;
 	}
@@ -61,7 +59,7 @@
 	}
 	.card_query_fdr {
 		border-bottom: 0px;
-		height: 341px;
+		height: 368px;
 	}
 	.fdr_right_bar {
 		border: 1px solid #D09E59;
@@ -278,7 +276,7 @@
 										1 Year
 									</label>
 								</div>
-								<div class="dps_tenure pull-left">
+								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="2" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
@@ -334,7 +332,7 @@
 										9 Years
 									</label>
 								</div>
-								<div class="dps_tenure pull-right">
+								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="10" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
@@ -348,7 +346,7 @@
 										11 Years
 									</label>
 								</div>
-								<div class="dps_tenure pull-left">
+								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="11" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
@@ -398,6 +396,15 @@
 <script>
 	$(document).ready(function(){
 
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+            loadData(cur_page);
+            console.log(cur_page);
+        });
+
+
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
         }
@@ -405,7 +412,7 @@
             $('#loading').html("");
         }
 
-        function loadData(){
+        function loadData( page = null ){
             loading_show();
 
 
@@ -426,11 +433,16 @@
 
             var main_string = dps_tenure_list+dps_user_list;
             main_string = main_string.substring(1, main_string.length);
+            var page_count ='';
+            if( page != null ){
+                page_count = page ;
+            }
+            var url_str = "<?php echo base_url();?>dps/ajax_get_dps/" + page_count;
             console.log(main_string);
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>dps/ajax_get_dps",
+                url: url_str,
                 data: main_string,
                 cache: false,
                 success: function(msg)
@@ -445,11 +457,13 @@
             });
         }
 
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
+        loadData( page = null );
+        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            loadData( page = null );
+        } );
 
-        loadData();
 
-		$('#searchDPS').on('click', '.more_info', function (){
+        $('#searchDPS').on('click', '.more_info', function (){
 			var  formData = $(this).data();
 			var dps_id = formData.dps_id;
 			console.log(dps_id);

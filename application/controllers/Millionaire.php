@@ -12,6 +12,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Millionaire extends CI_Controller
 {
+    public function __construct() {
+        parent:: __construct();
+        $this->load->library("pagination");
+    }
+
     public function tenure($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -635,36 +640,47 @@ class Millionaire extends CI_Controller
 
 
 
-        $millionaire = $this->Front_end_select_model->select_millionaire_info($query);
-        $million = '';
-/*
+        $res = $this->Front_end_select_model->select_millionaire_info($query);
 
-//        $this->config->load('bootstrap_pagination');
-//        $this->load->library('pagination');
-        //--------------------------
-        $config['pagination']['full_tag_open'] = '<ul>';
-        $config['pagination']['full_tag_close'] = '</ul>';
-        $config['pagination']['first_tag_open'] = '<li>';
-        $config['pagination']['first_tag_close'] = '</li>';
-        $config['pagination']['last_tag_open'] = '<li>';
-        $config['pagination']['last_tag_close'] = '</li>';
-        $config['pagination']['next_tag_open'] = '<li>';
-        $config['pagination']['next_tag_close'] = '</li>';
-        $config['pagination']['prev_tag_open'] = '<li>';
-        $config['pagination']['prev_tag_close'] = '</li>';
-        $config['pagination']['cur_tag_open'] = '<li class="disabled"><span>';
-        $config['pagination']['cur_tag_close'] = '</span></li>';
-        $config['pagination']['num_tag_open'] = '<li>';
-        $config['pagination']['num_tag_close'] = '</li>';
-        //-----------------------
 
-        $config = $this->config->item('pagination');
-        $config['base_url'] = base_url('my_uri');
-        $config['total_rows'] = 200;
-        $config['per_page'] = 20;
+//-----------Pagination start-----------------
 
+        $config['base_url'] = base_url() . "en/all_millionaire/";
+        $config['total_rows'] = $res->num_rows();
+        $config['per_page'] = "10";
+        $config["uri_segment"] = 3;
+//        $choice = $config["total_rows"] / $config["per_page"];
+//        $config["num_links"] = floor($choice);
+        $config["num_links"] = 5;
+        $config['use_page_numbers'] = TRUE;
+
+        //Link customization
+        $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = 'Prev';
+        $config['prev_tag_open'] = '<li class="previous">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = 'Next';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
-        $pagination = $this->pagination->create_links();*/
+        $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
+
+        $millionaire =  $this->Front_end_select_model->select_millionaire_info_pagination($query,$config["per_page"],$page);
+        $data['pagination'] = $this->pagination->create_links();
+
+
+        $million = '';
 
         foreach($millionaire->result() as $row){
             //print_r($row);die;
@@ -807,7 +823,7 @@ class Millionaire extends CI_Controller
                            </div>
 					</div>';
         }
-//        $million .= '<div class="pagination">'.$pagination.'</div>';
+        $million .= '<div class="col-md-12">'.$data['pagination'].'</div>';
 
         echo $million;
     }
