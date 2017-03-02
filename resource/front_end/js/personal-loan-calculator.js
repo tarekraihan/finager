@@ -555,8 +555,15 @@ $(function(event) {
 		clickEventFlag = true;
 		
 	})
+
 	$( ".draggable" ).mouseout(function(){
-		//$(this).mouseup();
+
+        //var amount = $('#finalAssest').val();
+        //var interest = $('#finalLiability').val();
+        //var month = $('#finalCustAge').val();
+        //alert(interest)
+       // Console.log('Amount = '+amount+' Interest = '+interest+' month = '+month);
+
 	});
 	
 		/*  
@@ -568,6 +575,8 @@ $(function(event) {
 	*/
 	$( ".draggable" ).mouseup(function(){
 		//alert(123);
+
+
 		
 		$('body .dragLiAdjust').removeClass('dragLiAdjust');
 		$(this).addClass('dragLiAdjust');

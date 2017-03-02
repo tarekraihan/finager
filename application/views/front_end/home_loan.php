@@ -278,6 +278,7 @@
 
 <script>
     $(document).ready(function(){
+
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();
             var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
@@ -297,6 +298,14 @@
             loading_show();
 
 //            var mainarray = new Array();
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
+
+            var interest = $('#finalLiability').val();
+            var interest_rate = "&interest_rate="+interest;
+
+            var month = $('#finalCustAge').val();
+            var month_limit = "&month_limit="+month;
 
             var home_i_want = new Array();
             $('input[name="iWant"]:checked').each(function(){
@@ -312,7 +321,7 @@
             var home_user_list = "&home_user="+home_user;
 
 
-            var main_string = home_i_want_list+home_user_list;
+            var main_string = home_i_want_list+home_user_list+principal_amount+interest_rate+month_limit;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
@@ -342,6 +351,11 @@
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             loadData(page = null);
         } );
+
+        $( ".draggable" ).mouseout(function(){
+            loadData( page = null );
+        });
+
 
         $('#searchHomeLoan').on('click', '.more_info', function (){
 
@@ -611,5 +625,7 @@
 
 
     });
+
+
 </script>
 
