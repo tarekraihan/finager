@@ -633,12 +633,14 @@ class Home_Loan extends CI_Controller {
         $home_user = $this->input->post('home_user');
 
         $principal_amount = floatval ( $this->input->post('principal_amount') );
-        $interest_rate = $this->input->post('interest_rate');
-        $month_limit = $this->input->post('month_limit');
 
         $WHERE = array(); $query = '';
         if(!empty($principal_amount)) {
-            $WHERE[] = 'CAST ( home_loan_user_home_loan_info.max_loan_amount AS float ) > '.$principal_amount;
+            $WHERE[] = 'CAST( home_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$principal_amount;
+        }
+
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( home_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$principal_amount;
         }
 
         if(!empty($home_user)) {
