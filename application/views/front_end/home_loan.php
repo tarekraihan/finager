@@ -6,6 +6,13 @@
 *  Date : 09-11-2016			 *
 **********************************/
 -->
+
+<style>
+    #interest {
+        display: none;
+
+    }
+</style>
 <section id="home_header">
 </section>
 <section id="card">
@@ -89,7 +96,7 @@
                                                                         <div class="prev"></div>
                                                                         <div class="next active"></div>
                                                                     </div>
-                                                                    <div class="hideVal">25000</div>
+                                                                    <div class="hideVal">500000</div>
                                                                 </div>
                                                             </div>
                                                             <!--Calculator Section END-->
@@ -335,6 +342,9 @@
                 url: url_str,
                 data: main_string,
                 cache: false,
+                beforeSend: function() {
+                    loading_show();
+                },
                 success: function(msg)
                 {
 
