@@ -375,7 +375,19 @@ class Personal_Loan extends CI_Controller {
         $personal_i_want = $this->input->post('personal_i_want');
         $personal_user = $this->input->post('personal_user');
 
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
+        $month_limit = floatval ( $this->input->post('month_limit') );
+
+
         $WHERE = array(); $query = '';
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( personal_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$principal_amount;
+        }
+
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( personal_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$principal_amount;
+        }
+
         if(!empty($personal_user)) {
             $WHERE[] = 'personal_loan_info_vs_i_am.personal_loan_i_am_id = '.$personal_user;
         }
@@ -457,21 +469,16 @@ class Personal_Loan extends CI_Controller {
                                         <p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
                     }
 
-                    $query_amount = 1000000;
 
+                    $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+                    $monthly_interest = ($yearly_interest / $month_limit );
+//                    $downpayment_percentage = $row->downpayment;
+//                    $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
-                    $tenure = 3 * 12;
+                    $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
 
-                    $interest_rate = 0;
-                    if($is_fixed == 1){
-                        $interest_rate = $row->interest_rate_fixed;
-                    }else{
-                        $interest_rate = $row->interest_rate_average;
-                    }
-                    $cal_interest = round(($interest_rate / 100) / $tenure,4);
+                    $total_payable = round( $emi * $month_limit );
 
-                    $emi = $query_amount * $cal_interest * pow(( 1+ $cal_interest),$tenure) /pow((1 + $cal_interest),($tenure-1));
-                    $total_payable = $emi * $tenure;
 
 
                     $personal .='<div class="full-card">
@@ -485,7 +492,7 @@ class Personal_Loan extends CI_Controller {
                             <div class="col-sm-2 col-xs-2 w20">
                                 <div class="card_text2">
                                     <h5>Amount </h5>
-                                    <p>Tk.'.$query_amount.'.00</p>
+                                    <p>BDT '. number_format( $principal_amount ).'</p>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-2 w20">
@@ -496,13 +503,13 @@ class Personal_Loan extends CI_Controller {
                             <div class="col-sm-1 col-xs-1 w20">
                                 <div class="card_text2">
                                     <h5>EMI</h5>
-                                    <p>'.$emi.'</p>
+                                    <p> BDT '.number_format( $emi ).'</p>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-2 w20">
                                 <div class="card_text2">
                                     <h5>Total Payable Amount</h5>
-                                    <p>'.$total_payable.'<br/><span class="tPaybleAmount">based on '.$query_amount.'</span></p>
+                                    <p>BDT '.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on BDT  '.number_format( $principal_amount ).'</span></p>
                                 </div>
                             </div>
                             <div class="col-sm-3 col-xs-1 w20">

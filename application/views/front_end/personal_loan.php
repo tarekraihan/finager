@@ -375,6 +375,12 @@
 
             var personal_i_want_list = "&personal_i_want="+personal_i_want;
 
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
+
+            var month = $('#finalCustAge').val();
+            var month_limit = "&month_limit="+month;
+
 
             var personal_user = new Array();
             $('input[name="i_am"]:checked').each(function(){
@@ -383,7 +389,7 @@
             var personal_user_list = "&personal_user="+personal_user;
 
 
-            var main_string = personal_i_want_list+personal_user_list;
+            var main_string = personal_i_want_list+personal_user_list+principal_amount+month_limit;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
@@ -413,6 +419,12 @@
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             loadData(page = null);
         } );
+
+
+        $( ".draggable" ).mouseout(function(){
+            loadData( page = null );
+        });
+
 
         $('#searchPersonalLoan').on('click', '.more_info', function (){
             var  formData = $(this).data();

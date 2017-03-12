@@ -742,7 +742,7 @@ $('.selectCalcWrapper .radiobox').click(function(){
 		$('.yearWrap').hide();
 		$('.monthWrap').show();
 		$('#tenureType').find('label').text('Month');
-		$('#finalAssest').val(50000)
+		$('#finalAssest').val(500000)
 		$('#finalLiability').val(13);
 		$('#finalCustAge').val(6);
 	}

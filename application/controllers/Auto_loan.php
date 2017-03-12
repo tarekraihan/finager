@@ -669,6 +669,11 @@ class Auto_loan extends CI_Controller
         $auto_i_want = $this->input->post('auto_i_want');
         $auto_user = $this->input->post('auto_user');
 
+
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
+        $month_limit = floatval ( $this->input->post('month_limit') );
+
+
         $WHERE = array(); $query = '';
         if(!empty($auto_user)) {
             $WHERE[] = 'auto_loan_info_vs_i_am.i_am_id = '.$auto_user;
@@ -750,21 +755,15 @@ class Auto_loan extends CI_Controller
                 $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
             }
 
-            $query_amount = 1000000;
+            $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+            $monthly_interest = ($yearly_interest / $month_limit );
+            $downpayment_percentage = $row->downpayment;
+            $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
+            $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
 
-            $tenure = 3 * 12;
+            $total_payable = round( $emi * $month_limit );
 
-            $interest_rate = 0;
-            if($is_fixed == 1){
-                $interest_rate = $row->interest_rate_fixed;
-            }else{
-                $interest_rate = $row->interest_rate_average;
-            }
-            $cal_interest = round(($interest_rate / 100) / $tenure,4);
-            $emi = $query_amount * $cal_interest * pow(( 1+ $cal_interest),$tenure) /pow((1 + $cal_interest),($tenure-1));
-            $total_payable = $emi * $tenure;
-            $downpayment = round(($row->downpayment/ 100) * $query_amount);
 
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
@@ -778,7 +777,7 @@ class Auto_loan extends CI_Controller
                        <div class="col-sm-2 col-xs-2 w20">
                            <div class="card_text2">
                                <h5>Amount</h5>
-                               <p>Tk.'.$query_amount.'.00</p>
+                               <p>BDT '.number_format( $principal_amount ).'</p>
                            </div>
                        </div>
                        <div class="col-sm-2 col-xs-2 w20">
@@ -789,19 +788,19 @@ class Auto_loan extends CI_Controller
                        <div class="col-sm-2 col-xs-2 w20">
                            <div class="card_text2">
                                <h5>EMI</h5>
-                               <p>Tk.'.$emi.'</p>
+                               <p>BDT '.number_format( $emi ).'</p>
                            </div>
                        </div>
                        <div class="col-sm-2 col-xs-2 w20">
                            <div class="card_text2">
                                <h5>Payable Amount</h5>
-                               <p>Tk.'.$total_payable.'<br/><span class="tPaybleAmount">based on tk'.$query_amount.'</span></p>
+                               <p>BDT '.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on BDT '.number_format( $principal_amount ).'</span></p>
                            </div>
                        </div>
                        <div class="col-sm-2 col-xs-2 w20">
                            <div class="card_text2">
                                <h5>Down Payment</h5>
-                               <p>Tk.'.$downpayment.'</p>
+                               <p>BDT '. number_format( $downpayment_amount ).'</p>
                            </div>
                        </div>
                    </div>

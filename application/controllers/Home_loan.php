@@ -632,7 +632,8 @@ class Home_Loan extends CI_Controller {
         $home_i_want = $this->input->post('home_i_want');
         $home_user = $this->input->post('home_user');
 
-        $principal_amount = floatval ( $this->input->post('principal_amount') );
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
+        $month_limit = floatval ( $this->input->post('month_limit') );
 
         $WHERE = array(); $query = '';
         if(!empty($principal_amount)) {
@@ -711,6 +712,17 @@ class Home_Loan extends CI_Controller {
                 $bank_logo = $row->bank_logo;
             }
 
+
+             $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+             $monthly_interest = ($yearly_interest / $month_limit );
+             $downpayment_percentage = $row->downpayment;
+             $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
+
+             $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
+
+             $total_payable = round( $emi * $month_limit );
+
+
             $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
             $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
 
@@ -726,7 +738,7 @@ class Home_Loan extends CI_Controller {
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Amount</h5>
-                                           <p>100000</p>
+                                           <p>BDT '.number_format( $principal_amount ).'</p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
@@ -739,19 +751,19 @@ class Home_Loan extends CI_Controller {
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>EMI</h5>
-                                           <p>3500</p>
+                                           <p>BDT '. number_format( $emi ) . '</p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Payable Amount</h5>
-                                           <p>50%,<br/><span class="tPaybleAmount">based on 100000</span></p>
+                                           <p> BDT '.number_format( $total_payable) .'<br/><span class="tPaybleAmount">based on BDT '.number_format( $principal_amount ).'</span></p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Down Payment</h5>
-                                           <p>20000</p>
+                                           <p>BDT '. number_format( $downpayment_amount ).'</p>
                                        </div>
                                    </div>
                                </div>
