@@ -302,9 +302,12 @@
             var auto_i_want_list = "&auto_i_want="+auto_i_want;
 
             var amount = $('#finalAssest').val();
+
+            localStorage.setItem("auto_loan_principal_amount", amount);
             var principal_amount = "&principal_amount="+amount;
 
             var month = $('#finalCustAge').val();
+            localStorage.setItem("auto_loan_tenure", month);
             var month_limit = "&month_limit="+month;
 
 
@@ -350,6 +353,7 @@
 
         $( ".draggable" ).mouseout(function(){
             loadData( page = null );
+
         });
 
 

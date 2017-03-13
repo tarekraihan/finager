@@ -1,73 +1,79 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-	font-size: 14px !important;
+    font-size: 14px !important;
 }
 *{
-	margin:0;
-	padding:0;
+    margin:0;
+    padding:0;
 }
 
 .no-list-style{
-	list-style:none;
+    list-style:none;
+}
+.bottom{
+    bottom:0;
 }
 /* for bootstrap horizontal menu  */
 .margin_botton_30{
-	margin-bottom: 30px;
+    margin-bottom: 30px;
+}
+.margin-bottom-n70{
+    margin-bottom: -70px !important;
 }
 .w100{
-	width: 100%;
+    width: 100%;
 }
 .navbar-default {
-    background-color: transparent;
+    bacground-color: transparent;
     border-color: transparent;
     margin:0px auto;
 }
 .navbar-default .navbar-nav>li>a {
     color: #000;
-	text-transform:uppercase;
-	font-size:14px;
-	margin-left:-8px;
-	font-weight:bold;
+    text-transform:uppercase;
+    font-size:14px;
+    margin-left:-8px;
+    font-weight:bold;
 }
 .navbar-default .navbar-nav>li>a:hover{
-	color:#67B5D4;
+    color:#67B5D4;
 }
 .navbar-default .navbar-nav>li>a:focus{
-	color:#000;
+    color:#000;
 }
 .top-menu{
-	display:none;
+    display:none;
 }
 .slider_img{
-	width:auto;
-	height:135px;
+    width:auto;
+    height:135px;
 }
 #top-page {
     width: 100%;
     height: 77px;
 }
 .header{
-	margin-top:10px;
+    padding-top: 7px !important;
 }
 .logo{
-	width:120px;
+    width:120px;
 }
 .login{
-	font-family:"Eras Demi ITC";
-	font-weight:bold;
-	font-size:18px;
-	margin-right:80px;
+    font-family:"Eras Demi ITC";
+    font-weight:bold;
+    font-size:18px;
+    margin-right:80px;
 }
 .header-right{
-	margin-top:8px;
+    margin-top:8px;
 }
 .hr-bar{
-	width:100%;
-	height:3px;
+    width:100%;
+    height:3px;
 }
 .footer-text p{
-	margin-top:7px;
+    margin-top:7px;
 }
 .find-bar {
     margin-top: 15%;
@@ -75,25 +81,25 @@ body {
 }
 
 .device-bg{
-	width:100%;
-	height:350px;
-	background-color:#9e9e9e;
-	background-attachment:fixed;
+    width:100%;
+    height:350px;
+    background-color:#9e9e9e;
+    background-attachment:fixed;
 }
 .device-img{
-	height:auto;
-	width:100%;
-	margin-top:53px;
+    height:auto;
+    width:100%;
+    margin-top:53px;
 }
 
 /* Category Icon */
 #CategoryIcon{
-	height:500px;
-	width:auto;
-	margin-top:10%;
+    height:500px;
+    width:auto;
+
 }
 .catagory-icon{
-	margin-top:20px;
+    margin-top:20px;
 }
 .catagory-icon h1 {
     text-align: center;
@@ -101,54 +107,56 @@ body {
     margin: 20px;
 }
 .catagory-icon p{
-	font-size:15px;
-	font-weight:bold;
-	margin-top:10px;
-	color:gray;
+    font-size:15px;
+    font-weight:bold;
+    margin-top:10px;
+    color:gray;
 }
 .Cicon{
-	text-align:center;
-	margin:20px 10px;
+    text-align:center;
+    margin:20px 10px;
 }
+
 .Cicon a{
-	text-decoration:none;
+    text-decoration:none;
 }
 .Cicon img{
-	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    width:100px;
+    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
     filter: grayscale(100%);
 }
 .Cicon img:hover{
-	-webkit-filter: grayscale(0%);
-	filter:grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    filter:grayscale(0%);
 }
 
 /*for forth page*/
 #forth-page{
-	clear:both;
-	margin-bottom:25px;
+    clear:both;
+    margin-bottom:25px;
 }
 .card-deposit h1{
-	font-size:50px;
-	color:#3390b6;
-	font-family:SaintAndrewsQueen;
+    font-size:50px;
+    color:#3390b6;
+    font-family:SaintAndrewsQueen;
 }
 .card-deposit p{
-	color:#000;
-	text-align:justify;
-	font-family:Kalpurush Regular;
+    color:#000;
+    text-align:justify;
+    font-family:Kalpurush Regular;
 }
 .see-more{
-	font-family:SaintAndrewsQueen;
-	color:#3390b6;
-	font-weight:bolder;
+    font-family:SaintAndrewsQueen;
+    color:#3390b6;
+    font-weight:bolder;
 }
 .btn-aplly{
-	float:right;
-	margin-bottom:10px;
+    float:right;
+    margin-bottom:10px;
 }
 @font-face {
     font-family: SaintAndrewsQueen;
-	src:url(../fonts/SaintAndrewsQueen.ttf);
+    src:url(../fonts/SaintAndrewsQueen.ttf);
 }
 /*for slider*/
 .carousel-indicators .active {
@@ -161,25 +169,25 @@ body {
     bottom: -60px;
 }
 .carousel-indicators li{
-	background-color:#cdcece;
-	width:15px;
-	height: 15px;
-	border-radius:25px;
+    background-color:#cdcece;
+    width:15px;
+    height: 15px;
+    border-radius:25px;
 }
 .carousel-inner>.item img{
-	margin-left:auto; 
-	margin-right: auto;
-	float: none;
+    margin-left:auto;
+    margin-right: auto;
+    float: none;
 }
 .remittance{
-	font-size:30px;
+    font-size:30px;
 }
 .rem-readmore{
-	float:right;
-	margin-right:180px;
+    float:right;
+    margin-right:180px;
 }
 .rem-readmore a{
-	text-decoration:none;
+    text-decoration:none;
 }
 
 /*for card page*/
@@ -201,7 +209,7 @@ body {
     box-shadow: 0px 0px 9px 3px #f2f2f2;
 }
 .w20{
-	width:20% !important;
+    width:20% !important;
 }
 
 .card_text2 p {
@@ -209,47 +217,48 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-	margin: 0;
+    margin: 0;
 }
 
 .card_description{
-	font-size:12px;
+    font-size:12px;
 }
 
 .cc_menu{
-	background-image:url(../images/cc_menu_bg.png);
+    background-image:url(../images/cc_menu_bg.png);
 }
 .query_radio{
-	margin-left:14px;
+    margin-left:14px;
+    margin-bottom:10px;
 }
 .btnCardApply{
-	margin-left:9px;
-	margin-top:8px;
+    margin-left:9px;
+    margin-top:8px;
 }
 .card_text1{
-	margin-top:6px;
+    margin-top:6px;
 }
 .card_text2 {
     margin-top: 6px;
     position: relative;
-    min-height: 80px;
+    min-height: 100px;
 }
 .card_text2 h5{
-	font-weight:bold;
-	font-size: 12px;
+    font-weight:bold;
+    font-size: 12px;
 }
 .more_info_icon{
-	margin-top:20px;
-	font-size:14px;
+    margin-top:20px;
+    font-size:14px;
 }
 .more_info_icon a{
-	text-decoration:none;
+    text-decoration:none;
 }
 .more_info_icon i{
-	color:#2c8aca;
+    color:#2c8aca;
 }
 #tab{
-	margin-bottom:20px;
+    margin-bottom:20px;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
     border-bottom:1px solid #5AAFD1;
@@ -268,16 +277,16 @@ body {
     box-shadow: 0px 0px 2px 2px #f2f2f2;
 }
 .tab-content{
-	margin-top:10px;
+    margin-top:10px;
 }
 .tab_body{
-	margin-left:20px;
+    margin-left:20px;
 }
 .tab-pane h3{
-	margin-left:30px;
+    margin-left:30px;
 }
 .tab_td_text{
-	margin: 10px 0 0 5px;
+    margin: 10px 0 0 5px;
 }
 .tab_body_icon li{
     list-style:circle url("../images/Icon-For-Credit-Card 2.2.png");
@@ -287,20 +296,20 @@ body {
     list-style-position:initial;
 }
 .more_filter{
-	border:1px solid #ececec;
-	text-align:center;
+    border:1px solid #ececec;
+    text-align:center;
 }
 .more_filter a{
-	text-decoration:none;
+    text-decoration:none;
 }
 .more_filter p{
-	margin-top:10px;
+    margin-top:10px;
 }
 .card_btn_apllication{
-	margin:56px 24px;
+    margin:56px 24px;
 }
 .rating{
-	font-size:12px;
+    font-size:12px;
 }
 
 /* for custome radio & checkbox */
@@ -310,7 +319,7 @@ body {
     background-color: #fff;
 }
 .material_check_radio:after {
-   width: 5px;
+    width: 5px;
     height: 5px;
     left: 3px;
     top: 3px;
@@ -322,42 +331,42 @@ body {
 .material_label_checkbox:before {
     width: 22px;
     height: 22px;
-	font-size:12px;
+    font-size:12px;
 }
 .material_label_checkbox{
-	font-size:12px;
-	font-weight: 100;
-	line-height: 14px;
+    font-size:12px;
+    font-weight: 100;
+    line-height: 14px;
 }
 /* for Card Compare Page */
 .card_compare_head{
-	font-family:SaintAndrewsQueen;
-	font-size:60px;
+    font-family:SaintAndrewsQueen;
+    font-size:60px;
 }
 .compare_btnApplication{
-	margin-left:39px;
+    margin-left:39px;
 }
 .compare_btnApplication1{
-	margin-left: 35px;
+    margin-left: 35px;
     margin-top: 121px;
 
 }
 .Card-Compare-hr{
-	height:2px;
-	width: 43%;
+    height:2px;
+    width: 43%;
 }
 .Card-Compare-hr1{
-	width: 44.7%;
+    width: 44.7%;
 }
 .Card-Compare-hr2{
-	width: 42%;
+    width: 42%;
 }
 
 .Card-Compare-hr3{
-	width: 45%;
+    width: 45%;
 }
 .Card-Compare-hr4{
-	width: 42.8%;
+    width: 42.8%;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
@@ -365,107 +374,107 @@ body {
 }
 
 .comparison_email{
-	width: 33.33333333%;
-	height:auto;
-	margin: 0px auto;
+    width: 33.33333333%;
+    height:auto;
+    margin: 0px auto;
 }
 
 /* for Card Details Page */
- .card_details_head{
-	 height:auto;
-	 width:100%;
-	 background-color:#DEDDDD;
-	 color:#000;
-	 text-align:center;
-	 border-bottom:2px solid #9D9A9A;
-	 margin-bottom:10px;
-	 font-size:11px;
-	 padding-top:3px;
-	 font-weight:bold;
- }
- .card_details_ImgCard{
-	 width:165px;
-	 height:auto;
- }
- .card_details_features{
-	 font-size:11px;
-	 text-align:justify;
- }
- .card_details_Btransfer{
-	 text-align:center;
- }
- .card_details_head2{
-	 font-size:12px;
-	 font-weight:bold;
- }
- .add_comp_icon{
-	margin-top:20px;
-	font-size:15px;
+.card_details_head{
+    height:auto;
+    width:100%;
+    background-color:#DEDDDD;
+    color:#000;
+    text-align:center;
+    border-bottom:2px solid #9D9A9A;
+    margin-bottom:10px;
+    font-size:11px;
+    padding-top:3px;
+    font-weight:bold;
+}
+.card_details_ImgCard{
+    width:165px;
+    height:auto;
+}
+.card_details_features{
+    font-size:11px;
+    text-align:justify;
+}
+.card_details_Btransfer{
+    text-align:center;
+}
+.card_details_head2{
+    font-size:12px;
+    font-weight:bold;
+}
+.add_comp_icon{
+    margin-top:20px;
+    font-size:15px;
 }
 .add_comp_icon a{
-	text-decoration:none;
+    text-decoration:none;
 }
 .add_comp_icon i{
-	color:#2c8aca;
+    color:#2c8aca;
 }
 #card_details_2nd{
-	margin-top:40px;
+    margin-top:40px;
 }
 .card_details_pronsCons{
-	background-color:#F2F2F3;
-	padding:10px;
-	margin-top:50px;
-	border-bottom:2px solid #C1C1C0;
+    background-color:#F2F2F3;
+    padding:10px;
+    margin-top:10px;
+    border-bottom:2px solid #C1C1C0;
 }
 .card_details_pronsCons_head{
-	margin-left:18px;
+    margin-left:18px;
 }
 .prosCons_body{
-	margin-left:20px;
+    margin-left:20px;
 }
 .prosCons_body b{
-	font-size:15px;
+    font-size:15px;
 }
 .prosCons_body2{
-	margin-left:20px;
+    margin-left:20px;
 }
 .prosCons_body2 ul li{
-	font-size:12px;
-	margin-bottom:10px;
+    font-size:12px;
+    margin-bottom:10px;
 }
 .prosConsHr{
-	height:2px;
-	width:auto;
-	background-color:#C1C1C0;
-	margin:5px 0;
+    height:2px;
+    width:auto;
+    background-color:#C1C1C0;
+    margin:5px 0;
 }
 .userReview_body{
-	text-align:center;
+    text-align:center;
 }
 .userReviewLeft1{
-	font-size:46px;
+    font-size:46px;
 }
 .userReviewLeft2{
-	font-size:22px;
-	color:#999999;
+    font-size:22px;
+    color:#999999;
 }
 .userReviewLeft3{
-	font-size:12px;
-	color:#999999;
-	text-decoration:underline;
+    font-size:12px;
+    color:#999999;
+    text-decoration:underline;
 }
 .userreviw_note{
-	font-size:12px;
-	color:#999999;
+    font-size:12px;
+    color:#999999;
 }
 .prosCons_body ul li {
     list-style-type: none;
 }
 .prosCons_body ol, ul {
-   padding-left:30px;
+    padding-left:30px;
 }
 .w20{
-	width:20% !important;
+    width:20% !important;
 }
 
 .card_text2 p {
@@ -473,76 +482,72 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-	margin: 0;
+    margin: 0;
 }
 
 .card_description{
-	font-size:12px;
+    font-size:12px;
 }
 
 .cc_menu{
-	background-image:url(../images/cc_menu_bg.png);
+    background-image:url(../images/cc_menu_bg.png);
 }
 .query_radio{
-	margin-left:14px;
+    margin-left:14px;
 }
 .btnCardApply{
-	margin-left:9px;
-	margin-top:8px;
+    margin-left:9px;
+    margin-top:8px;
 }
 .card_text1{
-	margin-top:6px;
+    margin-top:6px;
 }
-.card_text2 {
-    margin-top: 6px;
-    position: relative;
-    min-height: 80px;
-}
+
 .card_text2 h5{
-	font-weight:bold;
-	font-size: 12px;
+    font-weight:bold;
+    font-size: 12px;
 }
 .more_info_icon{
-	margin-top:20px;
-	font-size:14px;
+    margin-top:20px;
+    font-size:14px;
 }
 .more_info_icon a{
-	text-decoration:none;
+    text-decoration:none;
 }
 .more_info_icon i{
-	color:#2c8aca;
+    color:#2c8aca;
 }
 #tab{
-	margin-bottom:20px;
+    margin-bottom:20px;
 }
 
 .tab-content{
-	margin-top:10px;
+    margin-top:10px;
 }
 .tab_body{
-	margin-left:20px;
+    margin-left:20px;
 }
 .tab-pane h3{
-	margin-left:30px;
+    margin-left:30px;
 }
 .tab_td_text{
-	margin: 10px 0 0 5px;
+    margin: 10px 0 0 5px;
 }
 .more_filter{
-	border:1px solid #ececec;
-	text-align:center;
+    border:1px solid #ececec;
+    text-align:center;
 }
 .more_filter a{
-	text-decoration:none;
+    text-decoration:none;
 }
 .more_filter p{
-	margin-top:10px;
+    margin-top:10px;
 }
 .card_btn_apllication{
-	margin:56px 24px;
+    margin:56px 24px;
 }
 .rating{
-	font-size:12px;
+    font-size:12px;
 }
 
 .prosCons_body2 table {
@@ -582,7 +587,7 @@ body {
     border-radius: 0px;
     height: 130px;
     width: 100%;
-	border-radius: 17px;
+    border-radius: 17px;
 }
 .common-btn.v-middle-btn {
     background-color: #F9F9F9;
@@ -621,16 +626,16 @@ body {
     cursor:pointer;
 }
 #hiden_div {
-	position: fixed;
-	z-index: 999;
-	right: 0;
-	width: 100%;
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    width: 100%;
 }
 .hiddenDown{
     bottom: -158px;
 }
 .hiddenHalfDown{
-    bottom:-68px ;
+    bottom:-68px !important;
 }
 /*Compare section end*/
 /*hidden div*/
@@ -638,42 +643,42 @@ body {
 
 /* for Card Compare Page====Saddam Start===== */
 .card_compare_head{
-	font-family:SaintAndrewsQueen;
-	font-size:60px;
+    font-family:SaintAndrewsQueen;
+    font-size:60px;
 }
 .compare_btnApplication{
-	margin-left:39px;
+    margin-left:39px;
 }
 .compare_btnApplication1{
-	margin-left: 35px;
-	margin-top: 121px;
+    margin-left: 35px;
+    margin-top: 121px;
 
 }
 .Card-Compare-hr{
-	height:2px;
-	width: 43%;
+    height:2px;
+    width: 43%;
 }
 .Card-Compare-hr1{
-	width: 44.7%;
+    width: 44.7%;
 }
 .Card-Compare-hr2{
-	width: 42%;
+    width: 42%;
 }
 
 .Card-Compare-hr3{
-	width: 45.7%;
+    width: 45.7%;
 }
 .Card-Compare-hr4{
-	width: 42.8%;
+    width: 42.8%;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-	border-top: none !important;
+    border-top: none !important;
 }
 .comparison_email{
-	width: 33.33333333%;
-	height:auto;
-	margin: 0px auto;
+    width: 33.33333333%;
+    height:auto;
+    margin: 0px auto;
 }
 
 .compare_image{
@@ -686,12 +691,12 @@ body {
 /*New edited for hidden div*/
 
 .full-card:last-child {
-	margin-bottom: 140px;
+    margin-bottom: 140px;
 }
 
 /*for home loan */
 .home_loan_img{
-    float: right;
+    float:right;
     max-width: 175px;
     border: 1px solid #E1E1E1;
 }
@@ -752,6 +757,17 @@ body {
     width:10px;
     border-radius:50%;
     border:1px solid gray;
+}
+
+#searchHomeLoan #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+
+#searchHomeLoan #pagination>li{
+    float: none;
 }
 /* for home loan slider */
 .wrapper{
@@ -964,9 +980,19 @@ body {
     height:300px;
     margin-bottom: 6px;
 }
+
+#searchPersonalLoan #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchPersonalLoan #pagination>li{
+    float: none;
+}
 /* for auto loan */
 #auto_header{
-    background-image:url(../images/CarLoanBackground.jpg);
+    background-image:url(../images/Car-Loan-main-page.jpg);
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
@@ -976,13 +1002,23 @@ body {
 }
 /* Education loan start */
 #education_header_part{
-    background-image:url(../images/Education_background.jpg);
+    background-image:url(../images/Education-Loan-landing-Page-banner-Final.jpg);
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center center;
     width:100%;
     height:429px;
     position:relative;
+}
+
+#searchEducationLoan #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchEducationLoan #pagination>li{
+    float: none;
 }
 /* for FDR Loan */
 #fdr_header{
@@ -1003,6 +1039,17 @@ body {
     height:300px;
     margin-bottom:10px;
 }
+
+#searchFDR #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchFDR #pagination>li{
+    float: none;
+}
+
 /* for home loan compare page */
 .compare_table td {
     width: 33%;
@@ -1021,9 +1068,7 @@ body {
     height:auto;
     overflow:hidden;
 }
-.card_query{
-    border-bottom: 2px solid #DADADA;
-}
+
 .calborder {
     width: 246px;
     border-bottom: 2px solid #DADADA;
@@ -1053,7 +1098,24 @@ body {
 .calcSection {
     padding: 8px 0 0px 20px;
 }
+.fdr_loan_icon {
+    position: relative;
+    margin-top: 315px;
+}
+.millionaire_loan_icon {
+    position: relative;
+    margin-top: 400px;
+}
 
+#searchMillionaire #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchMillionaire #pagination>li{
+    float: none;
+}
 /* nirob */
 @font-face {
     font-family: Myriad Pro Regular;
@@ -1070,7 +1132,7 @@ body {
 
 /* auto loan start */
 #auto_header_part{
-    background-image:url('../images/AutoLoan_background.jpg');
+    background-image:url('../images/Auto-loan-banner.jpg');
     width:100%;
     height:450px;
     background-position:center center;
@@ -1079,14 +1141,16 @@ body {
     position: relative;
 }
 .auto_header_text h3 {
-    color: #000;
+    color: #fff;
     font-size: 30px;
     font-weight: bold;
     font-style: italic;
+    text-shadow: 4px 3px #000;
 }
 .auto_header_text p {
-    color: #555454;
-    font-size: 16px;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom:20px;
 }
 .auto_header_text {
     top: 120px;
@@ -1094,14 +1158,29 @@ body {
     margin-left: 238px;
 }
 
-.auto_button a{
-    color:#d1a05e;
-    border:1px solid #d1a05e;
+.auto_button {
+    background-color: #fff;
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
 }
 .auto_link{
     margin: 37px 16px;
     color:#d1a05e;
 }
+
+
+#searchAutoLoan #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchAutoLoan #pagination>li{
+    float: none;
+}
+
 /* header part end*/
 /* Sponsored part strat */
 .btnLanding{
@@ -1175,6 +1254,7 @@ body {
 }
 .pr {
     color: #fff;
+    margin-bottom: 88px;
 }
 .clr_black {
     color: #000;
@@ -1233,7 +1313,7 @@ body {
 /* footer start */
 a {
     color: #000;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 a:hover {
     color: gray;
@@ -1271,6 +1351,7 @@ a:hover {
 .heading_text img {
     width: 100%;
     border: 1px solid #DADADA;
+    height:170px;
 }
 .H_loan {
     color: #59add2;
@@ -1289,7 +1370,7 @@ a:hover {
 }
 /* home loan start*/
 #home_header_part{
-    background-image:url('../images/home_loan_land_bg.png');
+    background-image:url('../images/Home loan landing page banner 2.jpg');
     background-repeat:no-repeat;
     background-size:cover;
     width:100%;
@@ -1305,13 +1386,14 @@ a:hover {
     color: #ccc;
     font-size: 18px;
     font-style: italic;
+    margin-bottom:24px;
 }
 .home_header_text {
     text-align: right;
     top: 120px;
     position: relative;
     float: right;
-    margin-right: 250px;
+    margin-right: 222px;
 }
 
 
@@ -1378,9 +1460,7 @@ a:hover {
     background-position:center center;
     margin-top:30px;
 }
-.pr {
-    color: #fff;
-}
+
 .clr_black {
     color: #000;
 }
@@ -1478,10 +1558,6 @@ a:hover {
 .heading_text p {
     text-align: justify;
 }
-.heading_text img {
-    width: 100%;
-    border: 1px solid #DADADA;
-}
 .H_loan {
     color: #59add2;
     margin: 25px 0px 15px;
@@ -1524,8 +1600,10 @@ a:hover {
     font-style: italic;
 }
 .personal_header_text p {
-    color: #5e5c5c;
-    font-size: 16px;
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 2px 1px #000;
+    margin-bottom: 24px;
 }
 .personal_header_text {
     top: 165px;
@@ -1601,9 +1679,7 @@ a:hover {
     background-position:center center;
     margin-top: 50px;
 }
-.pr {
-    color: #fff;
-}
+
 .clr_black {
     color: #000;
 }
@@ -1697,10 +1773,7 @@ a:hover {
 .heading_text p {
     text-align: justify;
 }
-.heading_text img {
-    width: 100%;
-    border: 1px solid #DADADA;
-}
+
 .H_loan {
     color: #59add2;
     margin: 25px 0px 15px;
@@ -1717,7 +1790,7 @@ a:hover {
     color: #4C9ED9;
 }
 #education_header{
-    background-image:url(../images/Education-Loan-Main-Page-Banner.jpg);
+    background-image:url(../images/Education-Loan-main-page-Final.jpg);
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
@@ -1728,7 +1801,7 @@ a:hover {
 /* personal loan end */
 /* Education loan start */
 #education_header_part{
-    background-image:url('../images/Education_background.jpg');
+    background-image:url('../images/Education-Loan-landing-Page-banner-Final.jpg');
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center center;
@@ -1743,6 +1816,7 @@ a:hover {
     color: #5e5c5c;
     font-size: 25px;
     font-style: italic;
+    margin-bottom: 26px;
 }
 .education_header_text p {
     color: #5e5c5c;
@@ -1751,12 +1825,13 @@ a:hover {
 }
 .education_header_text {
     text-align: center;
-    top: 304px;
+    top: 250px;
     margin-left:517px;
     position: absolute;
 }
-#education_header_part img {
-    float: right;
+.education_loan_icon {
+    position: relative;
+    margin-top: 371px;
 }
 .education_btn{
     color:#636565;
@@ -1867,7 +1942,7 @@ a:hover {
 /* Education loan end */
 /* FDR start */
 #fdr_header_part {
-    background-image: url(../images/FDR_Landing_Page_Edited_banner.jpg);
+    background-image: url(../images/FDR-Landing-Page-banner-final.jpg);
     width: 100%;
     height: 450px;
     background-position: center center;
@@ -1878,10 +1953,11 @@ a:hover {
 .fdr_header_text {
     top: 275px;
     position: relative;
-    margin-left: 238px;
+    margin-left: 223px;
 }
 .fdr_header_text p{
     font-size:18px;
+    margin-bottom: 25px;
 }
 .fdr_link {
     margin: 37px 16px;
@@ -1939,6 +2015,7 @@ a:hover {
 .fdr_text p{
     font-size:15px;
     color:#1F5883;
+    margin-bottom:55px;
 }
 .fdr_text img {
     margin: 0px auto;
@@ -1973,6 +2050,7 @@ a:hover {
 .fdr_heading_text img {
     width: 100%;
     border: 1px solid #DADADA;
+    height:170px;
 }
 .fdr_read a {
     float: right;
@@ -2029,10 +2107,12 @@ a:hover {
 .dps_header_text {
     top: 275px;
     position: relative;
-    margin-left: 238px;
+    margin-left: 224px;
 }
 .dps_header_text p{
     font-size:18px;
+    margin-bottom: 22px;
+
 }
 .dps_link {
     margin: 37px 16px;
@@ -2093,6 +2173,7 @@ a:hover {
 .dps_text p{
     font-size:15px;
     color:#a9a270;
+    margin-bottom:50px;
 }
 .dps_text img {
     margin: 0px auto;
@@ -2173,6 +2254,15 @@ a:hover {
     margin-left: 58px;
     font-size: 17px;
     margin-top: 50px;
+}
+#searchDPS #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+#searchDPS #pagination>li{
+    float: none;
 }
 /* DPS End */
 /* card landing page */
@@ -2274,21 +2364,21 @@ a:hover {
     margin: -1px 0px 0px -1px;
 }
 .home_loan_icon {
-	position: relative;
-	margin-top: 400px;
+    position: relative;
+    margin-top: 400px;
 }
 
 .home_card5 {
-	border: 1px solid #DADADA;
-	padding: 38px;
-	margin: -1px -1px 0px -1px;
+    border: 1px solid #DADADA;
+    padding: 38px;
+    margin: -1px -1px 0px -1px;
 }
 
 .home_card6 {
-	border-top: 1px solid #DADADA;
-	border-bottom: 1px solid #DADADA;
-	padding: 38px;
-	margin: -1px 1px;
+    border-top: 1px solid #DADADA;
+    border-bottom: 1px solid #DADADA;
+    padding: 38px;
+    margin: -1px 1px;
 }
 
 .nopadding {
@@ -2357,6 +2447,9 @@ a:hover {
 }
 /* card_box end */
 /* popular_artical start */
+#artical{
+    margin-top:200px;
+}
 .popular_artical img{
     width:45px;
     height:45px;
@@ -2570,7 +2663,7 @@ hr {
     margin-top: 20px;
 }
 .All_debit_card a{
-   text-decoration: none;
+    text-decoration: none;
 }
 .All_debit_card p {
     color: #9a8d5c;
@@ -2609,7 +2702,7 @@ hr {
 
 /* for FDR Loan */
 #fdr_header{
-    background-image:url(../images/FDR-Main-Page-Banner.jpg);
+    background-image:url(../images/FDR-Main-Page-Banner-Final.jpg);
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center center;
@@ -2750,6 +2843,7 @@ ul.footer-socio {
 .footer-socio li img {
     height: 60px;
     max-width: 51px;
+    transition: 1s;
 }
 .footer-menu-title{
     color: #129bbe;
@@ -2757,8 +2851,23 @@ ul.footer-socio {
     font-size: 15px;
     margin-bottom: 15px;
 }
-.footer-menus{
-
+.footer-socio li img:hover {
+    max-width: 60px;
+    transform: scale(1.3);
+}
+.footer-socio li a:hover {
+    text-decoration: none;
+}
+.hello {
+    font-weight: bold;
+    color: #EE5726;
+    text-shadow: 1px 1px #5A5858;
+}
+.footer-menus li a{
+    text-decoration:none;
+}
+.footer-menus li a:hover {
+    color: #000;
 }
 .footer-menus li{
     list-style: none;
@@ -2847,9 +2956,6 @@ ul.footer-socio {
 #top-page{
     min-height:48px;
 }
-.header{
-    margin-top:10px;
-}
 .logo{
     width:150px;
 }
@@ -2889,98 +2995,510 @@ ul.footer-socio {
     width:100%;
     margin-top:53px;
 }
-/* ----------- for millionier --------------- */
+/* for millionier */
 #millionier_header_part {
-   background-image: url('../images/Milonaire.jpg');
-   width: 100%;
-   height: 450px;
-   background-position: center center;
-   background-repeat: no-repeat;
-   background-size: cover;
+    background-image: url('../images/Lakhpoti-&-Millionaire.jpg');
+    width: 100%;
+    height: 450px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .millionier_header_text {
-   text-align: right;
-   top: 130px;
-   position: relative;
-   float: right;
-   margin-right: 250px;
+    text-align: right;
+    top: 130px;
+    position: relative;
+    float: right;
+    margin-right: 221px;
 }
 .millionier_header_text p {
-  color: #000;
-  font-size: 18px;
-  font-style: italic;
+    color: #000;
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom:25px;
 }
 .millionier_header_text h3 {
-  color: #000;
-  font-size: 35px;
-  font-style: italic;
-  font-weight: bold;
+    color: #000;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
 }
 #maximizer_header{
-  background-image: url('../images/Millionaire-main.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 300px;
-  margin-bottom: 20px;
-  position: relative;
-	}
-
-#searchHomeLoan #pagination {
-    position: relative !important;
-    top: 0 !important;
-    margin-bottom: 50px;
+    background-image: url('../images/Millionaire-main.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    position: relative;
+}
+#debit_blog{
+    margin:30px 0;
+}
+#debit_blog a{
+    text-decoration:none;
+}
+.debit_head{
+    margin-left:15px;
+    padding: 10px 0;
+}
+.debit_blog_box{
+    position:relative;
+}
+.debit_blog_box img{
+    width:100%;
+    height:180px;
+    border:1px solid #DEDEDE;
+    position:absolute;
+    padding: 6px;
+}
+.debit_blog_box p {
+    position: absolute;
+    background-color: #F5FBFE;
+    text-align: center;
+    width: 100%;
+    margin: 98px 0 0 0;
+    padding: 12px;
+    font-size: 16px;
 }
 
-#searchHomeLoan #pagination>li{
-    float: none;
+/* search page */
+#search_page{
+    background-color:#FFF9EA;
+    width:100%;
+    height:100%;
+}
+#search_page_content .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #555;
+    cursor: default;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #A4D2D8;
+    outline:0;
+}
+#search_page_content .nav-tabs {
+    border-bottom: none;
+    margin-left: 566px;
+    margin-bottom: 40px;
+}
+#search_page .form-control {
+    border: 0;
+    border-bottom: 2px solid #A4D2D8;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    font-size: 26px;
+}
+#search_page_content{
+    height:650px;
+    overflow:auto;
+}
+.no_filter_tab_content h4{
+    text-align:center;
+    color:#96938F;
+    font-size:26px;
+}
+.no_filte_div{
+    background-color:#403B2C;
+    cursor: pointer;
+}
+.no_filte_div {
+    background-color: #403B2C;
+    padding: 20px;
+    color: #fff;
+    margin-bottom:35px;
+}
+.no_filte_div i {
+    font-size: 30px;
+}
+.no_filte_div span {
+    font-size: 18px;
+    margin-left: 10px;
+}
+.modal-open .modal {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    z-index:99999999999 !important;
+}
+.close {
+    font-size: 40px;
+}
+.search-image{
+    cursor:pointer;
+}
+.esc{
+    font-size:16px !important;
+    display:block;
+}
+.search_icon {
+    font-size: 24px;
+    cursor:pointer;
+    position: fixed;
+    margin-left: 146px;
+}
+/* common button effect */
+.flash-button{
+    border:none;
+    border-radius:5px;
+    animation-name: flash;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+//Firefox 1+
+-webkit-animation-name: flash;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+//Safari 3-4
+-moz-animation-name: flash;
+    -moz-animation-duration: 2s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
 }
 
-#searchPersonalLoan #pagination {
-    position: relative !important;
-    top: 0 !important;
-    margin-bottom: 50px;
+@keyframes flash {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
 }
 
-#searchPersonalLoan #pagination>li{
-    float: none;
+//Firefox 1+
+@-webkit-keyframes flash {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
 }
 
-#searchEducationLoan #pagination {
-    position: relative !important;
-    top: 0 !important;
-    margin-bottom: 50px;
+//Safari 3-4
+@-moz-keyframes flash {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
 }
-
-#searchEducationLoan #pagination>li{
-    float: none;
+.auto_button.flash-button a {
+    color: #000;
+    font-weight: bold;
+    text-decoration:none;
 }
-#searchFDR #pagination {
-    position: relative !important;
-    top: 0 !important;
-    margin-bottom: 50px;
+/*Auto loan button*/
+.btn_landing_auto {
+    border: 1px solid #D19F59;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
 }
-
-#searchFDR #pagination>li{
-    float: none;
+.btn_landing_auto:hover{
+    background-color:#D19F59;
+    color:#ffffff;
 }
-
-#searchDPS #pagination {
-    position: relative !important;
-    top: 0 !important;
-    margin-bottom: 50px;
+.bigest_text1 p {
+    margin-bottom: 64px;
 }
-
-#searchDPS #pagination>li{
-    float: none;
+.btn_landing_view_auto {
+    border: 1px solid #D19F58;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
 }
-#searchMillionaire #pagination {
-    position: relative !important;
-    top: 0 !important;
-    margin-bottom: 50px;
+.btn_landing_view_auto:hover{
+    background-color:#D19F58;
+    color:#fff;
 }
-
-#searchMillionaire #pagination>li{
-    float: none;
+.btn_landing_view2_auto{
+    border: 1px solid #fff;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#fff;
+}
+.btn_landing_view2_auto:hover{
+    background-color:#fff;
+    color:#000;
+}
+.btn_landing_auto_start{
+    border: 1px solid #D19F59;
+    padding: 6px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_auto_start:hover{
+    background-color:#D19F59;
+    color:#ffffff;
+}
+/*Home loan button*/
+.btn_landing_home{
+    border: 1px solid #57ADD3;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_home:hover{
+    background-color:#57ADD3;
+    color:#ffffff;
+}
+.btn_landing_view_home{
+    border: 1px solid #57ACD1;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
+}
+.btn_landing_view_home:hover{
+    background-color:#57ACD1;
+    color:#fff;
+}
+.btn_landing_view2_home{
+    border: 1px solid #fff;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#fff;
+}
+.btn_landing_view2_home:hover{
+    background-color:#fff;
+    color:#57ACD1;
+}
+.btn_landing_home_start{
+    border: 1px solid #57ACD1;
+    padding: 6px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_home_start:hover{
+    background-color:#57ACD1;
+    color:#ffffff;
+}
+/*Personal loan button*/
+.btn_landing_personal{
+    border: 1px solid #256E92;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_personal:hover{
+    background-color:#256E92;
+    color:#ffffff;
+}
+.btn_landing_view_personal{
+    border: 1px solid #256D93;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
+}
+.btn_landing_view_personal:hover{
+    background-color:#256D93;
+    color:#fff;
+}
+.btn_landing_view2_personal{
+    border: 1px solid #fff;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#fff;
+}
+.btn_landing_view2_personal:hover{
+    background-color:#fff;
+    color:#256D93;
+}
+.personal_bigest_text1 p {
+    margin-bottom: 64px;
+}
+.btn_landing_personal_start{
+    border: 1px solid #256D93;
+    padding: 6px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_personal_start:hover{
+    background-color:#256D93;
+    color:#ffffff;
+}
+/*education loan button*/
+.btn_landing_education{
+    border: 1px solid #636565;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_education:hover{
+    background-color:#636565;
+    color:#ffffff;
+}
+.btn_landing_view_education{
+    border: 1px solid #636565;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
+}
+.btn_landing_view_education:hover{
+    background-color:#636565;
+    color:#fff;
+}
+.btn_landing_view2_education{
+    border: 1px solid #fff;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#fff;
+}
+.btn_landing_view2_education:hover{
+    background-color:#fff;
+    color:#636565;
+}
+.btn_landing_education_start{
+    border: 1px solid #636565;
+    padding: 6px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_education_start:hover{
+    background-color:#636565;
+    color:#ffffff;
+}
+/*FDR button*/
+.btn_landing_fdr{
+    border: 1px solid #1F5883;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_fdr:hover{
+    background-color:#1F5883;
+    color:#ffffff;
+}
+.btn_landing_view_fdr{
+    border: 1px solid #1F5883;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
+}
+.btn_landing_view_fdr:hover{
+    background-color:#1F5883;
+    color:#fff;
+}
+.btn_landing_view2_fdr{
+    border: 1px solid #fff;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#fff;
+}
+.btn_landing_view2_fdr:hover{
+    background-color:#fff;
+    color:#1F5883;
+}
+.btn_landing_fdr_start{
+    border: 1px solid #1F5883;
+    padding: 6px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_fdr_start:hover{
+    background-color:#1F5883;
+    color:#ffffff;
+}
+/*DPS button*/
+.btn_landing_dps{
+    border: 1px solid #A9A270;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_dps:hover{
+    background-color:#A9A270;
+    color:#ffffff;
+}
+.btn_landing_view_dps{
+    border: 1px solid #A9A270;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
+}
+.btn_landing_view_dps:hover{
+    background-color:#A9A270;
+    color:#fff;
+}
+.btn_landing_view2_dps{
+    border: 1px solid #fff;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#fff;
+}
+.btn_landing_view2_dps:hover{
+    background-color:#fff;
+    color:#A9A270;
+}
+.btn_landing_dps_start{
+    border: 1px solid #A9A270;
+    padding: 6px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_dps_start:hover{
+    background-color:#A9A270;
+    color:#ffffff;
+}
+/*millionaire button*/
+.btn_landing_millionaire{
+    border: 1px solid #1F5883;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_millionaire:hover{
+    background-color:#1F5883;
+    color:#ffffff;
+}
+.btn_landing_view_millionaire{
+    border: 1px solid #1F5883;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
+}
+.btn_landing_view_millionaire:hover{
+    background-color:#1F5883;
+    color:#fff;
+}
+.btn_landing_view2_millionaire{
+    border: 1px solid #fff;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#fff;
+}
+.btn_landing_view2_millionaire:hover{
+    background-color:#fff;
+    color:#1F5883;
+}
+.btn_landing_millionaire_start{
+    border: 1px solid #1F5883;
+    padding: 6px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_millionaire_start:hover{
+    background-color:#1F5883;
+    color:#ffffff;
 }

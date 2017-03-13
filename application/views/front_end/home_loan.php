@@ -306,12 +306,14 @@
 
 //            var mainarray = new Array();
             var amount = $('#finalAssest').val();
+            localStorage.setItem("home_loan_principal_amount", amount);
             var principal_amount = "&principal_amount="+amount;
 
             var interest = $('#finalLiability').val();
             var interest_rate = "&interest_rate="+interest;
 
             var month = $('#finalCustAge').val();
+            localStorage.setItem("home_loan_tenure", month);
             var month_limit = "&month_limit="+month;
 
             var home_i_want = new Array();
