@@ -7,7 +7,11 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
                     <div class="">
-
+                        <div class="col-xs-2 col-sm-2 header-right pull-right">
+			     <div data-toggle="modal" data-target="#myModal" class="pull-right search_icon">
+				<i class="fa fa-search" aria-hidden="true"></i>
+			     </div>
+		        </div>
 
                         <div class="logobar">
                             <a href="<?php echo base_url(); ?>">
@@ -39,7 +43,7 @@
                                                 <!-- bootstrap start -->
                                                 <div class="container-fluid space-0">   <!-- bootstrap fluid container -->
                                                     <!-- bootstrap columns -->
-                                                    <div class="col-sm-3 col-md-2 clearfix space-0">
+                                                    <div class="col-sm-3 col-md-2 clearfix space-0" style="min-height: 400px; background: #dcdccb;">
                                                         <h4 class="nav-title">Cards</h4>
                                                         <!-- vertical tab -->
                                                         <div class="vertical-tabs">
@@ -52,7 +56,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-sm-9 col-md-10 space-0">
+                                                    <div class="col-sm-9 col-md-10 space-0" style="background: rgb(251, 247, 223);">
                                                         <!-- vertical tabs content container -->
                                                         <div class="vertical-tabs-content-container">
                                                             <!-- this is vertical tabs content 1 -->
@@ -161,7 +165,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/DebitCardIcon.svg" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">Debit Card</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -356,7 +360,7 @@
                                                 <!-- bootstrap start -->
                                                 <div class="container-fluid space-0">   <!-- bootstrap fluid container -->
                                                     <!-- bootstrap columns -->
-                                                    <div class="col-sm-3 col-md-2 clearfix space-0">
+                                                    <div class="col-sm-3 col-md-2 clearfix space-0" style="background: #7eb0c5; min-height: 400px;">
                                                         <h4 class="nav-title">Loans</h4>
                                                         <!-- vertical tab -->
                                                         <div class="vertical-tabs">
@@ -373,7 +377,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-sm-9 col-md-10 space-0">
+                                                    <div class="col-sm-9 col-md-10 space-0" style="background: rgb(227, 244, 253);">
                                                         <!-- vertical tabs content container -->
                                                         <div class="vertical-tabs-content-container">
                                                             <!-- this is vertical tabs content 1 -->
@@ -388,7 +392,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/menu_home_loan.png" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">Home Loan</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -482,7 +486,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/PersonalLoanmanuIcon.svg" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">Personal Loan</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -577,7 +581,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/menu-Auto-Loan.png" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">Auto Loan</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -672,7 +676,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Education-Loan-Manu-Image.png" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">Education Loan</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -767,7 +771,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/menu_sme.png" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">SME Loan</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -866,7 +870,7 @@
                                                 <!-- bootstrap start -->
                                                 <div class="container-fluid space-0">   <!-- bootstrap fluid container -->
                                                     <!-- bootstrap columns -->
-                                                    <div class="col-sm-3 col-md-2 clearfix space-0">
+                                                    <div class="col-sm-3 col-md-2 clearfix space-0" style="background: #9bb176; min-height:400px;">
                                                         <h4 class="nav-title">Investment</h4>
                                                         <!-- vertical tab -->
                                                         <div class="vertical-tabs">
@@ -877,13 +881,13 @@
 
                                                             <a href="#Millionaire">Lakhpoti & Millionaire Scheme<i class="fa fa-angle-right hidden-xs"></i> <i class="fa fa-angle-down hidden-sm hidden-md hidden-lg"></i> </a>
 
-                                                            <a href="#MultiBenefit">Multi Benefit Scheme<i class="fa fa-angle-right hidden-xs"></i> <i class="fa fa-angle-down hidden-sm hidden-md hidden-lg"></i> </a>
+                                                            <a href="#MultiBenefit">Money Maximizer<i class="fa fa-angle-right hidden-xs"></i> <i class="fa fa-angle-down hidden-sm hidden-md hidden-lg"></i> </a>
 
-                                                            <a href="#PeriodicBenefit">Periodic Benefit Scheme<i class="fa fa-angle-right hidden-xs"></i> <i class="fa fa-angle-down hidden-sm hidden-md hidden-lg"></i> </a>
+                                                            <a href="#PeriodicBenefit">Monthly Benefit Scheme<i class="fa fa-angle-right hidden-xs"></i> <i class="fa fa-angle-down hidden-sm hidden-md hidden-lg"></i> </a>
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-sm-9 col-md-10 space-0">
+                                                    <div class="col-sm-9 col-md-10 space-0" style="background: #e7f2d7;">
                                                         <!-- vertical tabs content container -->
                                                         <div class="vertical-tabs-content-container">
                                                             <!-- this is vertical tabs content 1 -->
@@ -898,7 +902,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/FDR-Menu-Icon.png" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">FDR</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -992,7 +996,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/DPSMenuIcon.svg" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">Personal Loan</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -1087,7 +1091,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/LakhpotiManuIcon.svg" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
                                                                                             <span class="focus-text">Lakhpoti & Millionaire Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -1188,7 +1192,7 @@
                                                                                             <span class="focus-text">Multi Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>">Find All Multi Benefit Scheme Here</a>
+                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/money_maximizer">Find All Money Maximizer Scheme Here</a>
                                                                                     </div>
                                                                                 </div>
 

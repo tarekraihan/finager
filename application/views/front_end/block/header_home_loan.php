@@ -19,6 +19,14 @@
 
     <script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
     <style type="text/css">
+        .affix {
+            top: 0;
+            width: 100%;
+        }
+
+        .affix + .container-fluid {
+            padding-top: 70px;
+        }
         .savingsContainer .leftCont {
             padding: 0 0 0 0;
         }

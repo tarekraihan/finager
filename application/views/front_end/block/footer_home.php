@@ -132,7 +132,8 @@
 
 
 </div><!-- main body-->
-<script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
+
+
 <!-- megamenu -->
 <script src="<?php echo base_url();?>resource/front_end/js/material.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -147,8 +148,6 @@
 <script src="<?php echo base_url();?>resource/front_end/js/modernizr.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/jquery-ui.min.js"></script>
 
-
-
 <!-- plus a jQuery UI theme, here I use "flick" -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
 
@@ -158,5 +157,6 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/clientlib.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jquery.ui.touch-punch.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
+
 </body>
 </html>

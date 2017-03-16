@@ -670,8 +670,9 @@ class Auto_loan extends CI_Controller
         $auto_user = $this->input->post('auto_user');
 
 
-        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
-        $month_limit = floatval ( $this->input->post('month_limit') );
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
+        $month_limit = floatval ( ( $this->input->post('month_limit') > 5 ) ?  $this->input->post('month_limit') : 6 );
+
 
 
         $WHERE = array(); $query = '';
@@ -755,14 +756,27 @@ class Auto_loan extends CI_Controller
                 $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
             }
 
+
             $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
             $monthly_interest = ($yearly_interest / $month_limit );
-            $downpayment_percentage = $row->downpayment;
+            $downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
             $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
             $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
 
             $total_payable = round( $emi * $month_limit );
+
+/*
+            echo '<pre>';
+
+            echo '<br/> Interest monthly = '.$monthly_interest;
+            echo '<br/> Interest Yearly = '.$yearly_interest;
+            echo '<br/> Tenure = '.$month_limit;
+            echo '<br/> EMI = '.$emi;
+            echo '<br/> Total Payable ='. $total_payable;
+            echo '<br/> Loan Id  ='. $row->id;
+
+            echo '</pre>';*/
 
 
             $auto .='<div class="full-card">

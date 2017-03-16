@@ -20,7 +20,7 @@
         <div class="row">
             <!-- Left bar query content start -->
             <div class="col-sm-3 col-xs-3">
-                <div class="home_loan_left_bar">
+                <div class="home_loan_left_bar" id="sidebar">
                     <!-- slider range sidebar start-->
                     <div class="card_query">
                         <p>I Want </p>
@@ -285,6 +285,7 @@
 
 <script>
     $(document).ready(function(){
+        $('#sidebar').stick_in_parent();
 
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();
@@ -306,14 +307,12 @@
 
 //            var mainarray = new Array();
             var amount = $('#finalAssest').val();
-            localStorage.setItem("home_loan_principal_amount", amount);
             var principal_amount = "&principal_amount="+amount;
 
             var interest = $('#finalLiability').val();
             var interest_rate = "&interest_rate="+interest;
 
             var month = $('#finalCustAge').val();
-            localStorage.setItem("home_loan_tenure", month);
             var month_limit = "&month_limit="+month;
 
             var home_i_want = new Array();
@@ -382,9 +381,36 @@
 
         $('#searchHomeLoan').on('click', '.rePaymentSchedule', function (){
 
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
+
+
+            var month = $('#finalCustAge').val();
+            var month_limit = "&month_limit="+month;
+
             var  formData = $(this).data();
             var repayment = formData.repayment;
-            console.log(repayment);
+            console.log(repayment);/*
+            $.ajax
+            ({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                beforeSend: function() {
+                    loading_show();
+                },
+                success: function(msg)
+                {
+
+                    loading_hide();
+                    // console.log(msg);
+
+                    $("#searchHomeLoan").html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
+
+                }
+            });*/
+
             $('#rePaymentSchedule'+repayment).html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#rePaymentSchedule'+repayment).toggleClass("in");
             $('#moreInfo'+repayment).removeClass("in");
