@@ -3502,3 +3502,140 @@ ul.footer-socio {
     background-color:#1F5883;
     color:#ffffff;
 }
+
+
+/*Bank Details Page*/
+.bank_info_logo img {
+    width: 100%;
+    border: 1px solid #c1c1c1;
+    height:192px;
+}
+.bank_address {
+    border: 1px solid #c1c1c1;
+    margin-top: 15px;
+    padding: 7px 0 0 4px;
+    text-align: center;
+    font-size: 12px;
+}
+.bank_info_box {
+    border: 1px solid #c1c1c1;
+    text-align: center;
+    margin:0 0 17px 17px;
+    padding: 5px 0;
+}
+.bank_info_box:hover {
+    background-color:#dbeef2;
+}
+.bank_info_tabBody{
+    width:100%;
+    height:auto;
+    background-color:#F7F7F7;
+    padding: 20px;
+}
+#bank_tab_wrapper{
+    margin-left:-17px !important;
+}
+.bank_info_details h3 {
+    padding: 10px;
+    background-color: #e7e5e7;
+    margin: 0;
+    border-bottom: 2px solid #59afd2;
+    font-weight: bold;
+}
+.bank_info_details p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+.bank_info_map img {
+    width: 100%;
+    margin: 10px 0;
+}
+.bank_loan_details{
+    background-color:#e2e3e4;
+    width:100%;
+    height:180px;
+    padding:15px;
+    margin-top: 20px;
+}
+.bank_loan_details img {
+    width: 100%;
+    height: auto;
+    margin-top: 41px;
+}
+.bank_loan_details h4 {
+    margin: 0;
+    text-align: center;
+}
+.bank_loan_details table {
+    background-color: #f9fafb;
+    width: 425px;
+    margin-left: 11px;
+}
+.bank_loan_details table tr td{
+    text-align:left;
+}
+
+/* for tab menu */
+
+#breadcrumbs-two{
+    overflow: hidden;
+    width: 100%;
+}
+
+#breadcrumbs-two li{
+    float: left;
+    margin: 0 .5em 0 1em;
+}
+
+#breadcrumbs-two a{
+    background: #ddd;
+    padding: .7em 1em;
+    float: left;
+    text-decoration: none;
+    color: #444;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    position: relative;
+}
+
+#breadcrumbs-two a:hover{
+    background: #99db76;
+}
+
+#breadcrumbs-two a::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5em;
+    border-width: 1.5em 0 1.5em 1em;
+    border-style: solid;
+    border-color: #ddd #ddd #ddd transparent;
+    left: -1em;
+}
+
+#breadcrumbs-two a:hover::before{
+    border-color: #99db76 #99db76 #99db76 transparent;
+}
+
+#breadcrumbs-two a::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5em;
+    border-top: 1.5em solid transparent;
+    border-bottom: 1.5em solid transparent;
+    border-left: 1em solid #ddd;
+    right: -1em;
+}
+#breadcrumbs-two a:hover::after{
+    border-left-color: #99db76;
+}
+#breadcrumbs-two .current,
+#breadcrumbs-two .current:hover{
+    font-weight: bold;
+    background: none;
+}
+#breadcrumbs-two .current::after,
+#breadcrumbs-two .current::before{
+    content: normal;
+}
+/* tab menu end */

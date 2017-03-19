@@ -285,7 +285,6 @@
 
 <script>
     $(document).ready(function(){
-        $('#sidebar').stick_in_parent();
 
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();

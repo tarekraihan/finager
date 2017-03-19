@@ -537,6 +537,18 @@ class En extends CI_Controller {
         }
     }
 
+    public function bank_details(){
+        if ($this->session->userdata('lovemebaby')) {
+            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/bank_details');
+            $this->load->view('front_end/block/footer_home');
+        }else{
+            redirect(base_url().'en/login/');
+        }
+    }
+
 
 
 
