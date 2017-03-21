@@ -487,7 +487,7 @@
 
         $('#searchMillionaire').on('click', '.more_info', function (){
 
-            var  formData = $(this).data();
+            var formData = $(this).data();
             var millionaire_id = formData.millionaire_id;
             console.log(millionaire_id);
 

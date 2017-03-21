@@ -223,41 +223,20 @@
                     <div class="card_query_fdr">
                         <p>Tenure</p>
                         <div class="fdrTenurepadding">
-                            <div class="fdr_tenure pull-left">
+
+                            <?php
+                            $tenure = $this->Select_model->select_all('money_maxi_choose_your_benefit','DESC');
+                            foreach($tenure->result() as $row){
+                                ?>
+                                <div class="fdr_tenure pull-left">
                                 <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
+                                    <input type="radio" name="tenure" value="<?php echo $row->id; ?>" class="material_radiobox"/>
                                     <span class="material_check_radio"></span>
-                                    1.5 Times
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-right">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    2 Times
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-left">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    2.5 Times
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-right">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    3 Times
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-left">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    4 Times
-                                </label>
-                            </div>
+                                    <?php echo $row->your_benefit; ?> Times
+                                </label><br/>
+                                </div>
+                            <?php } ?>
+
                         </div>
                     </div>
 
@@ -270,7 +249,7 @@
                 <div class="full-card">
                     <div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href=""><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="images/brac-bank-logo.png" /></a>
+                            <a href=""><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="<?php echo base_url();?>resource/front_end/images/brac-bank-logo.png" /></a>
                             <p class="text-center">Brac Bank</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -307,8 +286,8 @@
                             </div>
                             <div class="row more_availabe">
                                 <div class="col-md-2"><a id="hideDetailsButton" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
-                                <div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src="images/application.png" alt="FDR Application" /></a></div>
-                                <div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="images/comparison.png" alt="FDR Application" /></a></div>
+                                <div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src="<?php echo base_url();?>resource/front_end/images/application.png" alt="FDR Application" /></a></div>
+                                <div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="<?php echo base_url();?>resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
                             </div>
                         </div>
                     </div>
@@ -404,9 +383,67 @@
 
 <script type="text/javascript">
 
+    $(document).on('click','#pagination a',function(e){
+        e.preventDefault();
+        var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+        loadData(cur_page);
+        console.log(cur_page);
+    });
+
+
+    function loading_show(){
+        $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
+    }
+    function loading_hide(){
+        $('#loading').html("");
+    }
+
+    function loadData( page = null ){
+        loading_show();
+
+
+        var maximizer_tenure = new Array();
+        $('input[name="maximizer_tenure"]:checked').each(function(){
+            maximizer_tenure.push($(this).val());
+        });
+
+        var maximizer_tenure_list = "&maximizer_tenure="+maximizer_tenure;
+
+
+        var main_string = dps_tenure_list+dps_user_list;
+        main_string = main_string.substring(1, main_string.length);
+        var page_count ='';
+        if( page != null ){
+            page_count = page ;
+        }
+        var url_str = "<?php echo base_url();?>money_maximizer/ajax_get_money_maximizer/" + page_count;
+        console.log(main_string);
+        $.ajax
+        ({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(msg)
+            {
+
+                loading_hide();
+                // console.log(msg);
+
+                $("#searchDPS").html(msg);
+
+            }
+        });
+    }
+
+    loadData( page = null );
+    $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+        loadData( page = null );
+    } );
 
     //for show hide (more info & Available Offer)
-
+/*
     $(document).ready(function() {
         $('#hideDetailsDiv').hide();
         $('a#hideDetailsButton').click(function() {
@@ -425,5 +462,5 @@
             }
             $('#hideDetailsDiv2').toggle(400);
         });
-    });
+    });*/
 </script>

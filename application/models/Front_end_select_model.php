@@ -292,8 +292,29 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
         return $query;
     }
+
+
     function select_education_loan_expenses_considered($loan_id){
         $sql = "SELECT education_expenses_considered.id,education_expenses_considered.expenses_considered FROM `education_loan_info_vs_expenses_considered` INNER JOIN education_expenses_considered ON education_expenses_considered.id=education_loan_info_vs_expenses_considered.expenses_considered_id INNER JOIN education_loan_info ON education_loan_info.id= education_loan_info_vs_expenses_considered.loan_info_id WHERE education_loan_info.id = $loan_id ORDER BY education_expenses_considered.id DESC";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
+
+
+
+    function select_money_maximizer_info($query){
+        $sql = "SELECT money_maxi_info.*, money_maxi_choose_your_benefit.your_benefit,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name , general_non_bank.bank_logo AS non_bank_logo FROM money_maxi_info INNER JOIN money_maxi_choose_your_benefit ON money_maxi_choose_your_benefit.id = money_maxi_info.choose_your_benefit_id LEFT JOIN card_bank on card_bank.id=money_maxi_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id $query";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
+    function select_maximizer_info_pagination($query,$limit=null,$offset=null){
+
+        $link = 'ORDER BY money_maxi_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT money_maxi_info.*, money_maxi_choose_your_benefit.your_benefit,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name , general_non_bank.bank_logo AS non_bank_logo FROM money_maxi_info INNER JOIN money_maxi_choose_your_benefit ON money_maxi_choose_your_benefit.id = money_maxi_info.choose_your_benefit_id LEFT JOIN card_bank on card_bank.id=money_maxi_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id $query $link";
         $query = $this->db->query($sql);
 
         return $query;
