@@ -12,6 +12,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Money_maximizer extends CI_Controller {
 
+    public function __construct() {
+        parent:: __construct();
+        $this->load->library("pagination");
+    }
+
     public function your_benefits($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -222,8 +227,8 @@ class Money_maximizer extends CI_Controller {
 
     public function ajax_get_money_maximizer(){
 
-        $maximizer_tenure = $this->input->post('millionaire_tenure');
-        $maximizer_amount = (floatval($this->input->post('amount') > 50000 ) ? $this->input->post('amount') : 500000 );
+        $maximizer_tenure = $this->input->post('maximizer_tenure');
+        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
 
         $WHERE = array(); $query = '';
 
@@ -246,7 +251,7 @@ class Money_maximizer extends CI_Controller {
 
 //-----------Pagination start-----------------
 
-        $config['base_url'] = base_url() . "en/all_millionaire/";
+        $config['base_url'] = base_url() . "en/all_money_maximizer/";
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
         $config["uri_segment"] = 3;
@@ -283,25 +288,26 @@ class Money_maximizer extends CI_Controller {
 
         $maximizer = '';
 
-        foreach($money_maximizer->result() as $row){
-            //print_r($row);die;
-            $bank = "";
-            if($row->is_non_bank == 1){
-                $bank = $row->non_bank_name;
-            }else{
-                $bank = $row->bank_name;
-            }
+        if($money_maximizer->num_rows() > 0){
+            foreach($money_maximizer->result() as $row){
+                //print_r($row);die;
+                $bank = "";
+                if($row->is_non_bank == 1){
+                    $bank = $row->non_bank_name;
+                }else{
+                    $bank = $row->bank_name;
+                }
 
-            if($row->is_non_bank == 1){
-                $bank_logo = $row->non_bank_logo;
-            }else{
-                $bank_logo = $row->bank_logo;
-            }
+                if($row->is_non_bank == 1){
+                    $bank_logo = $row->non_bank_logo;
+                }else{
+                    $bank_logo = $row->bank_logo;
+                }
 
 
-            $benefit_amount  = $maximizer_amount * $row->your_benefit;
+                $benefit_amount  = $maximizer_amount * $row->your_benefit;
 
-            $maximizer .= '
+                $maximizer .= '
 					<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
 							<div class="col-sm-2 col-xs-2">
@@ -318,7 +324,7 @@ class Money_maximizer extends CI_Controller {
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
                                             <h5>Deposited Amount</h5>
-                                            <p>&#2547; '.$maximizer_amount.'</p>
+                                            <p>&#2547; '.number_format( $maximizer_amount ).'</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3">
@@ -330,7 +336,7 @@ class Money_maximizer extends CI_Controller {
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
                                             <h5>Benefit Amount</h5>
-                                            <p>&#2547; '.$benefit_amount.'</p>
+                                            <p>&#2547; '.number_format( $benefit_amount ).'</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3">
@@ -341,9 +347,9 @@ class Money_maximizer extends CI_Controller {
                                     </div>
                                 </div>
                                 <div class="row more_availabe">
-                                    <div class="col-md-2"><a href="javascript:void(0)" id="hideDetailsButton"  class="more_info" data-millionaire_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
-                                    <div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src='.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
-                                    <div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
+                                    <div class="col-md-2"><a href="javascript:void(0)"   class="more_info" data-maximizer_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
+                                    <div class="col-md-4"><a  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Money Maximizer Application" /></a></div>
+                                    <div class="col-md-2"><a href="javascript:void(0)"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Money Maximizer Comparison" /></a></div>
                                 </div>
                             </div>
 						</div>
@@ -393,8 +399,13 @@ class Money_maximizer extends CI_Controller {
 						<!-- More Info Tab content end -->
 
 					</div>';
+            }
+            $maximizer .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+        }else{
+            $maximizer .= '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';
         }
-        $maximizer .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+
+
 
         echo $maximizer;
     }

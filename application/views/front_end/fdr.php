@@ -234,6 +234,8 @@
 									</div>
 								</div>
 							</div>
+							
+							<input class="w100" type="text" >
 						</div>
 						<div class="card_query_fdr">
 							<p>Tenure</p>
@@ -313,6 +315,54 @@
 		</div>
 	</section>
 
+
+<section id="hiden_div">
+    <div class="container no-padding">
+        <div class="row">
+            <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
+                <div class="card-holder">
+                    <div class="card-bg">
+                        <img src="<?php echo base_url();?>resource/front_end/images/hidendivshead.png" alt="" />
+                        <div class="hidden_div relative">
+                            <div class="hidden_div_container">
+                                <ul class="no-padding pull-left no-list-style">
+                                    <li>
+
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <a class="cart_anchor">
+
+                                </a>
+                                <a class="cart_anchor01">
+
+                                </a>
+                                <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
+                                    Compare
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<script type="text/javascript"> 
+
+$(window).on('scroll', function (){
+	if ($(window).scrollTop() > 350){
+	  $('.home_loan_left_bar').addClass('fixedElement');
+	}if($(window).scrollTop()<350){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}if($(window).scrollTop() > 2200){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}
+});
+</script>
 
 <script type="text/javascript"> 
 
@@ -405,6 +455,136 @@
             $('#availableOffer'+available_offer).toggleClass("in");
             $('#moreInfo'+available_offer).removeClass("in");
         });
-	});
+
+
+
+        $(document).on('click','.add-to-compare',function(){
+
+            $("#hiden_div").animate({bottom:'0px'});
+            //$("#hiden_div").addClass("hiddenHalfDown");
+
+            $('html, body').animate({
+
+            });
+
+            if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
+                alert("Sorry");
+            }else{
+                if($(".cart_anchor").hasClass("img_active")){
+//                alert(1);
+                    //Select item image and pass to the function
+                    var itemImg = $(this).parents('.full-card').find('.auto_loan_logo').eq(0);
+                    //flyToElement($(itemImg), $('.cart_anchor01'));
+                    $(".cart_anchor01").addClass("img_active");
+                    $(this).addClass("hidden");
+
+                    // var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+                    var  formData = $(this).data();
+                    var fdr_id = "fdr_id="+formData.fdr_id;
+//                alert(loan_id);
+
+                    setTimeout(function(){
+                        $.ajax
+                        ({
+                            type: "POST",
+                            url: "<?php echo base_url();?>fdr/ajax_compare_fdr_image",
+                            data: fdr_id,
+                            success: function(msg)
+                            {
+                                $(".cart_anchor01").html(msg);
+                            }
+                        });
+                    },850);
+
+                }
+                else{
+
+                    //Select item image and pass to the function
+                    var itemImg = $(this).parents('div:eq(0)').find('.auto_loan_logo').eq(0);
+                    //flyToElement($(itemImg), $('.cart_anchor'));
+
+                    $(".cart_anchor").addClass("img_active");
+                    $(this).addClass("hidden");
+
+                    var itemImg = $(this).parents('div:eq(0)').find('.auto_loan_logo').eq(0);
+                    var  formData = $(this).data();
+                    var fdr_id = "fdr_id="+formData.fdr_id;
+                    //alert(loan_id);
+
+                    setTimeout(function(){
+                        $.ajax
+                        ({
+                            type: "POST",
+                            url: "<?php echo base_url();?>fdr/ajax_compare_fdr_image",
+                            data: fdr_id,
+                            success: function(msg)
+                            {
+                                $(".cart_anchor").html(msg);
+                            }
+                        });
+                    },850);
+
+                }
+            }
+
+        });
+
+        $(document).on('click','.compare-cross-btn',function(){
+
+            var collected_card = $(this).prev().attr("data-fdr_id");
+
+            $(".full-card").each(function(){
+                var obj=$(this).children().find('.add-to-compare');
+                var index=$(this).children().find('.add-to-compare').attr('data-fdr_id');
+                if(parseInt(collected_card)==parseInt(index)){
+                    obj.removeClass("hidden");
+                }
+
+            });
+
+            $(this).parent(".cart_anchor").removeClass("img_active");
+            $(this).parent(".cart_anchor").html('');
+            $(this).addClass("hidden");
+
+        });
+
+
+        $(document).on('click','.compare-cross-btn',function(){
+
+            $(this).parent(".cart_anchor01").removeClass("img_active");
+            $(this).parent(".cart_anchor01").html('');
+        });
+
+        $('#go_compare').click(function(){
+            //alert(1);
+            var  formData = $('.cart_anchor').children('img').data();
+            var fdr_id1 = "fdr_id1="+formData.fdr_id;
+
+            var  formData = $('.cart_anchor01').children('img').data();
+            var fdr_id2 = "&fdr_id2="+formData.fdr_id;
+
+            var fdr_ids = fdr_id1+fdr_id2;
+            if(fdr_id1 != '' && fdr_id2 != ''){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "<?php echo base_url();?>fdr/ajax_go_compare_page",
+                    data: fdr_ids,
+                    success: function(msg)
+                    {
+                        if(msg != 'error'){
+
+                            window.location.href = "<?php echo base_url();?>en/fdr_compare";
+                        }
+                    }
+                });
+            }else{
+                alert("Please add 2 Deposit for compare ! ")
+            }
+
+
+        });
+
+    });
 
 </script>

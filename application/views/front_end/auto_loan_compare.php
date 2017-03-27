@@ -34,14 +34,22 @@ if($second_auto_loan->is_non_bank == 1){
 }
 
 ?>
+
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
 				<table class="table">
 					<tr>
 						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></p></td>
-						<td><b><p class="text-center com_title">Comparison </p></b>
-							<p>
+						<td><b><p class="text-center com_title">Comparison </p></b></td>
+						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></td>
+					</tr>			
+				</table>
+			</div>
+		</div>
+	</section>
+        <div class="home_loan_com_cal container text-center">
+             <p>
 								<div class="emi_cal">
 									<div id="">
 										<a href="#skip" class="offscreen">Skip to Content</a>
@@ -261,13 +269,7 @@ if($second_auto_loan->is_non_bank == 1){
 								</div>
 						
 							</p>
-						</td>
-						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></td>
-					</tr>			
-				</table>
-			</div>
-		</div>
-	</section>
+        </div>
 	
 	<section id="basic_info">
 		<div class="container">
@@ -285,7 +287,7 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Car Loan <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="auto-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Car Loan <img class="auto-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
@@ -390,36 +392,36 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="auto-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="auto-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $first_auto_loan->eligibility_for_applying;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $second_auto_loan->eligibility_for_applying;?>
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 		
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $first_auto_loan->terms_and_conditions;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $second_auto_loan->terms_and_conditions;?>
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"><img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center">  <img class="auto-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="auto-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
@@ -657,4 +659,13 @@ $(document).ready(function() {
 			$('#hideDetailsDiv2').toggle(400);
 		});
 	});
+</script>
+<script>
+$(window).on('scroll', function (){
+	if ($(window).scrollTop() > 150){
+	  $('#card_compare_default').addClass('compare-bg');
+	} else {
+	  $('#card_compare_default').removeClass('compare-bg');
+	}
+});
 </script>

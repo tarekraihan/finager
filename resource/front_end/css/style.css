@@ -11,6 +11,10 @@ body {
 .no-list-style{
     list-style:none;
 }
+.com_title {
+    font-family: SaintAndrewsQueen;
+    font-size: 58px;
+}
 .bottom{
     bottom:0;
 }
@@ -351,15 +355,9 @@ body {
     margin-top: 121px;
 
 }
-.Card-Compare-hr{
-    height:2px;
-    width: 43%;
-}
-.Card-Compare-hr1{
-    width: 44.7%;
-}
+
 .Card-Compare-hr2{
-    width: 42%;
+    width: 40.7%;
 }
 
 .Card-Compare-hr3{
@@ -656,13 +654,10 @@ body {
 }
 .Card-Compare-hr{
     height:2px;
-    width: 43%;
+    width: 41.5%;
 }
 .Card-Compare-hr1{
     width: 44.7%;
-}
-.Card-Compare-hr2{
-    width: 42%;
 }
 
 .Card-Compare-hr3{
@@ -695,8 +690,11 @@ body {
 }
 
 /*for home loan */
+.home_loan_com_cal {
+    margin-left: 288px !important;
+    margin-top: -55px !important;
+}
 .home_loan_img{
-    float:right;
     max-width: 175px;
     border: 1px solid #E1E1E1;
 }
@@ -889,17 +887,18 @@ body {
     width:100%;
 }
 /* for home loan compare page */
+.home_compare_div{
+    border:1px solid #ddd;
+    padding: 5px;
+}
 .compare_table td {
     width: 33%;
 }
-.home-loan-Compare-hr1{
-    width:43.5%;
-}
-.home-loan-Compare-hr3{
-    width:45.3%;
-}
 .home-loan-Compare-hr4{
-    width: 39.5%;
+    width: 38.5%;
+}
+.home-loan-Compare-hr5{
+    width: 46%;
 }
 .loan-iframe{
     width:100%;
@@ -960,6 +959,20 @@ body {
     width:100%;
     height:300px;
 }
+/* for debit card compare */
+.Debit-Card-Compare-hr{
+    height: 2px;
+    width: 41.7%;
+}
+.Debit-Card-Compare-hr1 {
+    width: 43.5%;
+}
+.Debit-Card-Compare-hr2{
+    width: 40.7%;
+}
+.Debit-Card-Compare-hr4{
+    width: 42%;
+}
 /*for home loan */
 #home_header{
     background-image:url(../images/HomeLoanMainPageBackground1680x320.jpg);
@@ -970,9 +983,26 @@ body {
     height:300px;
     margin-bottom:6px;
 }
+/* for personal loan compare */
+.Personal-Compare-hr1{
+    width:41.5%;
+}
+.Personal-Compare-hr3{
+    width:38.5%;
+}
+.Personal-Compare-hr4{
+    width: 39.5%;
+}
+.Personal-Compare-hr5{
+    width: 38.7%;
+}
+.Personal-Compare-hr6{
+    width: 45.2%;
+}
+
 /* for personal loan */
 #personal_header{
-    background-image:url(../images/PersonalLoanMainpagebackground.jpg);
+    background-image:url(../images/Personal-Loan-Main-page-final.jpg);
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
@@ -1000,6 +1030,16 @@ body {
     height:300px;
     margin-bottom:10px;
 }
+/* for auto loan compare */
+.auto-loan-Compare-hr1{
+    width: 44%;
+}
+.auto-loan-Compare-hr3{
+    width: 38.3%;
+}
+.auto-loan-Compare-hr5{
+    width: 44.8%;
+}
 /* Education loan start */
 #education_header_part{
     background-image:url(../images/Education-Loan-landing-Page-banner-Final.jpg);
@@ -1020,6 +1060,47 @@ body {
 #searchEducationLoan #pagination>li{
     float: none;
 }
+/* for education loan compary */
+.education-loan-Compare-hr1{
+    width: 41%;
+}
+/* for maony max */
+#mony_max_header_part{
+	background-image:url(../images/moneyMaxLangding.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+	width:100%;
+	height:450px;
+	position:relative;
+}
+.mony_max_header_text {
+	text-align: right;
+	top: 120px;
+	position: relative;
+	float: right;
+	margin-right: 250px;
+}
+.mony_max_header_text p {
+	color: #6D4848;
+	font-size: 18px;
+	font-style: italic;
+}
+.mony_max_header_text h3 {
+	color: #585858;
+	font-size: 35px;
+	font-style: italic;
+}
+#mony_max_header{
+	background-image:url(../images/monymax_main_page.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	width:100%;
+	height:320px;
+	position:relative;
+}
+
+
 /* for FDR Loan */
 #fdr_header{
     background-image:url(../images/FDR-Main-Page-Banner.jpg);
@@ -1055,26 +1136,15 @@ body {
     width: 33%;
 }
 .home-loan-Compare-hr1{
-    width:43.5%;
+    width:41%;
 }
 .home-loan-Compare-hr3{
-    width:45.3%;
-}
-.home-loan-Compare-hr4{
-    width: 39.5%;
+    width:44%;
 }
 .loan-iframe{
     width:100%;
     height:auto;
     overflow:hidden;
-}
-
-.calborder {
-    width: 246px;
-    border-bottom: 2px solid #DADADA;
-}
-.monthWrap .calborder {
-    width: 244px;
 }
 .quest {
     font-size: 14px;
@@ -1580,7 +1650,7 @@ a:hover {
     color:#256e92;
 }
 #personal_header_part{
-    background-image:url(../images/personal_background.jpg);
+    background-image:url(../images/Personal-Loan-Landingpage-final.jpg);
     width:100%;
     height:450px;
     background-position:center center;
@@ -1594,21 +1664,20 @@ a:hover {
     position:relative;
 }
 .personal_header_text h3 {
-    color: #fff;
+    color: #000;
     font-size: 36px;
     font-weight: bold;
     font-style: italic;
 }
 .personal_header_text p {
-    color: #fff;
+    color: #000;
     font-size: 18px;
-    text-shadow: 2px 1px #000;
     margin-bottom: 24px;
 }
 .personal_header_text {
     top: 165px;
     position: absolute;
-    margin-left: 238px;
+    margin-left: 228px;
 }
 /*#personal_header_part img {
     float: right;
@@ -2387,7 +2456,38 @@ a:hover {
 }
 .card_bank {
     position: relative;
-    margin-top: 64px;
+    margin-top: 30px;
+}
+
+.credit_card_button {
+	background: #5AB1D2; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #fff, #5AB1D2 ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #fff, #5AB1D2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #5AB1D2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff, #5AB1D2); /* Standard syntax (must be last) */
+	width: 180px;
+	padding: 9px 20px;
+	text-align: center;
+	font-size: 16px;
+}
+.credit_card_button.flash-button a{
+    color: #000;
+    font-weight: bold;
+}
+.debit_card_button {
+	background: #9F9164; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #fff, #9F9164 ); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #fff, #9F9164); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #9F9164); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff, #9F9164); /* Standard syntax (must be last) */
+	width: 180px;
+	padding: 9px 20px;
+	text-align: center;
+	font-size: 16px;
+}
+.debit_card_button.flash-button a{
+    color: #000;
+    font-weight: bold;
 }
 /* second_div end */
 /* third_div star */
@@ -2716,7 +2816,6 @@ hr {
     width:119px;
     height:31px;
     margin-bottom:10px;
-    margin-right: 5px;
 }
 .fdr_radio{
     margin:6px 0 0 8px;
@@ -3503,6 +3602,9 @@ ul.footer-socio {
     background-color:#1F5883;
     color:#ffffff;
 }
+#card_details_top {
+    margin-top: 15px;
+}
 
 
 /*Bank Details Page*/
@@ -3640,3 +3742,18 @@ ul.footer-socio {
     content: normal;
 }
 /* tab menu end */
+/*for left bar fixed*/
+        .fixedElement {
+           position: fixed;
+           width: 16.5%;
+           height: auto;
+           padding: 0px;
+           top: 0;
+       }
+
+
+#all_logo{
+    height:auto;
+    width:100%;
+    background-image:url('../images/categoybg.jpg');
+}

@@ -137,6 +137,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+
     public function select_education_loan_details($id){
         $sql="SELECT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id  WHERE education_loan_info.id=$id";
 
@@ -175,6 +176,12 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_auto_loan_image($id){
         $sql="SELECT auto_loan_info.id,auto_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `auto_loan_info`  LEFT JOIN card_bank on card_bank.id=auto_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id  WHERE auto_loan_info.id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function select_fdr_image($id){
+        $sql="SELECT fdr_info.id,fdr_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `fdr_info`  LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id  WHERE fdr_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -293,6 +300,13 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+
+    public function select_fdr_details($id){
+        $sql="SELECT DISTINCT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo,fdr_tenure.tenure,fdr_tenure.installment FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id WHERE fdr_info.id=$id";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
     function select_education_loan_expenses_considered($loan_id){
         $sql = "SELECT education_expenses_considered.id,education_expenses_considered.expenses_considered FROM `education_loan_info_vs_expenses_considered` INNER JOIN education_expenses_considered ON education_expenses_considered.id=education_loan_info_vs_expenses_considered.expenses_considered_id INNER JOIN education_loan_info ON education_loan_info.id= education_loan_info_vs_expenses_considered.loan_info_id WHERE education_loan_info.id = $loan_id ORDER BY education_expenses_considered.id DESC";

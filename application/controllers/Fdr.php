@@ -762,7 +762,7 @@ class Fdr extends CI_Controller {
 									<div class="col-md-2"><a id="hideDetailsButton"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-fdr_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true" ></i> More Info</a></div>
 									<div class="col-md-4"><a id="hideDetailsButton2" class="availableOffer" href="javascript:void(0)" data-toggle="collapse" data-available_offer="'.$row->id.'"><i class="fa fa-info-circle " aria-hidden="true" role="button" ></i> Available Offer</a></div>
 									<div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
-									<div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
+									<div class="col-md-2"><a id="" href="javascript:void(0)" class="add-to-compare" data-fdr_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
 								</div>
 							</div>
 						</div>
@@ -822,6 +822,39 @@ class Fdr extends CI_Controller {
         $fdr .= '<div class="col-md-12">'.$data['pagination'].'</div>';
         echo $fdr;
     }
+
+
+    public function ajax_compare_fdr_image(){
+        $id = $this->input->post('fdr_id');
+        $result = $this->Front_end_select_model->select_fdr_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-fdr_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('fdr_id1');
+        $id2 = $this->input->post('fdr_id2');
+
+        $newdata = array(
+            'first_fdr'  => $id1,
+            'second_fdr'  => $id2
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
 
 
 }
