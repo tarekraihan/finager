@@ -8,13 +8,6 @@ $id1 = $this->session->userdata('second_fdr') ;
 $result1 = $this->Front_end_select_model->select_fdr_details($id1);
 $second_fdr = $result1->row();
 
-//	print_r($second_fdr);die;
-
-/*
-$loan_facility = $first_fdr->loan_facility;
-
-$xplode(" ",$str))*/
-
 $first_bank_name = "";
 $first_bank_logo = "";
 if($first_fdr->is_non_bank == 1){
