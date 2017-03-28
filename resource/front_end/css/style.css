@@ -691,7 +691,7 @@ body {
 
 /*for home loan */
 .home_loan_com_cal {
-    margin-left: 288px !important;
+    /*margin-left: 288px !important;*/
     margin-top: -55px !important;
 }
 .home_loan_img{
@@ -1064,6 +1064,12 @@ body {
 .education-loan-Compare-hr1{
     width: 41%;
 }
+.education-loan-Compare-hr4{
+    width: 41.7%;
+}
+.education-loan-Compare-hr5{
+    width: 45%;
+}
 /* for maony max */
 #mony_max_header_part{
 	background-image:url(../images/moneyMaxLangding.png);
@@ -1078,12 +1084,13 @@ body {
 	top: 120px;
 	position: relative;
 	float: right;
-	margin-right: 250px;
+	margin-right: 220px;
 }
 .mony_max_header_text p {
 	color: #6D4848;
 	font-size: 18px;
 	font-style: italic;
+        margin-bottom:26px;
 }
 .mony_max_header_text h3 {
 	color: #585858;
@@ -1099,7 +1106,49 @@ body {
 	height:320px;
 	position:relative;
 }
-
+.btn_mony_max{
+    border:1px solid #D19F59;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_mony_max:hover{
+    background-color:#D19F59;
+    color:#fff;
+}
+.btn_landing_view_mony_max{
+    border: 1px solid #D19F59;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
+}
+.btn_landing_view_mony_max:hover{
+    background-color:#D19F59;
+    color:#fff;
+}
+.btn_landing_view2_mony_max{
+    border: 1px solid #D19F59;
+    padding: 6px 23px;
+    border-radius: 5px;
+    color:#000;
+}
+.btn_landing_view2_mony_max:hover{
+    background-color:#D19F59;
+    color:#fff;
+}
+.btn_landing_mony_max_start{
+    border: 1px solid #D19F59;
+    padding: 6px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_landing_mony_max_start:hover{
+    background-color:#D19F59;
+    color:#ffffff;
+}
 
 /* for FDR Loan */
 #fdr_header{
@@ -1136,7 +1185,7 @@ body {
     width: 33%;
 }
 .home-loan-Compare-hr1{
-    width:41%;
+    width:42.8%;
 }
 .home-loan-Compare-hr3{
     width:44%;
@@ -1580,6 +1629,7 @@ a:hover {
 }
 .ready_text p {
     margin-top: 45px;
+    margin-bottom:50px;
 }
 .ready_text button {
     text-align: center;
@@ -3133,6 +3183,25 @@ ul.footer-socio {
     margin-bottom: 20px;
     position: relative;
 }
+/* for millionaire compare */
+.millionaire-Compare-hr1{
+    width: 34.3%;
+}
+.millionaire-Compare-hr2{
+    width: 33.2%;
+}
+.millionaire-Compare-hr3{
+    width: 44.7%;
+}
+.millionaire-Compare-hr4{
+    width: 38.5%;
+}
+.millionaire-Compare-hr5{
+    width: 42.3%;
+}
+.millionaire-Compare-hr6{
+    width: 38.2%;
+}
 #debit_blog{
     margin:30px 0;
 }
@@ -3750,8 +3819,21 @@ ul.footer-socio {
            padding: 0px;
            top: 0;
        }
+/*for compare page header fixed*/
+.compare-bg{
+    position: fixed;
+    width: 100%;
+    height: 108px !important;
+    padding: 0px;
+    background-color: #f1f1f1;
+    top: 0;
+    z-index:9999;
+}
+.compare-bg img {
+	width: 140px;
+}
 
-
+/*---------------All Logo Page-----------*/
 #all_logo{
     height:auto;
     width:100%;

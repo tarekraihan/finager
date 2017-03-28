@@ -8,10 +8,17 @@
     $result1 = $this->Front_end_select_model->select_home_loan_details($id1);
     $second_home_loan = $result1->row();
 
-    //	print_r($first_home_loan);
+//    	print_r($first_home_loan);
 
     //	echo $first_home_loan->loan_short_description;
     $first_interest =($first_home_loan->is_fixed =='0')? $first_home_loan->interest_rate_average.' % (Avg)' : $first_home_loan->interest_rate_fixed.' % (Fixed)';
+
+    $first_yearly_interest = floatval( ( $first_home_loan->is_fixed =='0' ) ? $first_home_loan->interest_rate_average : $first_home_loan->interest_rate_fixed ) ;
+    $second_yearly_interest = floatval( ( $second_home_loan->is_fixed =='0' ) ? $second_home_loan->interest_rate_average : $second_home_loan->interest_rate_fixed ) ;
+
+    $first_downpayment =  floatval( $first_home_loan->downpayment );
+    $second_downpayment =  floatval( $second_home_loan->downpayment );
+
     $first_bank_name = "";
     $first_bank_logo = "";
     if($first_home_loan->is_non_bank == 1){
@@ -34,14 +41,26 @@
     }
 
 	?>
+
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></td>
-						<td><b><p class="text-center com_title">Comparison </p></b>
-							<p>
+						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /><br/><br/><?php echo $first_home_loan->home_loan_looking_for;?></td>
+						<td><b><p class="text-center com_title">Comparison </p></b></td>
+						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /><br/><br/><?php echo $second_home_loan->home_loan_looking_for;?></td>
+					</tr>	
+                                </table>
+              </div>
+       </section>
+    <input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
+    <input type="hidden" id="first_downpayment" name="first_downpayment" value="<?php echo $first_downpayment; ?>">
+    <input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
+    <input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
+
+                                  <div class="home_loan_com_cal container text-center">
+                                      <p>
 								<div class="emi_cal">
 									<div id="">
 										<a href="#skip" class="offscreen">Skip to Content</a>
@@ -263,13 +282,11 @@
 								</div>
 						
 							</p>
-						</td>
-						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></td>
-					</tr>			
-				</table>
+                                  </div>
+				
 			</div>
-		</div>
-	</section>
+		
+	
 	
 	<section id="basic_info">
 		<div class="container">
@@ -287,7 +304,7 @@
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Home Loan <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Home Loan <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
@@ -298,7 +315,7 @@
 
                                                 <tr>
 							<td class="abc"><b> Purpose </b></td>
-							<td> Home Construction </td>
+							<td><?php echo $first_home_loan->home_loan_looking_for;?> </td>
 						</tr>
 						
 						<tr>
@@ -308,12 +325,12 @@
 						
 						<tr>
 							<td><b> Equal Monthly Installment (EMI)</b></td>
-							<td> 35624 </td>
+							<td id="firstEmiAmount"> 35624 </td>
 						</tr>
 						
 						<tr>
 							<td><b> Total Payable Amount</b></td>
-							<td> 68,50,000 </td>
+							<td id="firstPayableAmount"> 68,50,000 </td>
 						</tr>
 						
 						<tr>
@@ -323,7 +340,7 @@
 						
 						<tr>
 							<td><b> Minimum Down Payment Amount</b></td>
-							<td> 15,00,000 </td>
+							<td id="firstDownpaymentAmount"> 15,00,000 </td>
 						</tr>
 						
 					</table>
@@ -339,7 +356,7 @@
 
                                                         <tr>
 							        <td class="abc"><b> Purpose </b></td>
-							        <td> Home Construction </td>
+							        <td> <?php echo $second_home_loan->home_loan_looking_for;?></td>
 						        </tr>
 							
 							<tr>
@@ -349,22 +366,22 @@
 							
 							<tr>
 								<td><b> Equal Monthly Installment (EMI)</b></td>
-								<td> 35624 </td>
+								<td id="secondEmiAmount"> 35624 </td>
 							</tr>
 							
 							<tr>
 								<td><b> Total Payable Amount</b></td>
-								<td> 68,50,000 </td>
+								<td id="secondPayableAmount"> 68,50,000 </td>
 							</tr>
 							
 							<tr>
 								<td><b> Security Required</b></td>
-								<td> Mortgage of the Property </td>
+								<td> <?php echo $second_home_loan->security_required;?> </td>
 							</tr>
 							
 							<tr>
 								<td><b> Minimum Down Payment Amount</b></td>
-								<td> 15,00,000 </td>
+								<td id="secondDownpaymentAmount"> 15,00,000 </td>
 							</tr>
 							
 						</table>
@@ -405,12 +422,12 @@
 				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 		
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $first_home_loan->eligibility_for_applying;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $second_home_loan->eligibility_for_applying;?>
 					</div>
 				</div>
@@ -434,27 +451,20 @@
 		</div>
 	</section>
 
-<script>
-$(document).ready(function() {
-	
-	$('[data-toggle="toggle"]').change(function(){
-		$(this).parents().next('.hide').toggle();
-	});
-});
-</script>
+
 <script>
 	<!-- for chart-->
-	$(document).ready(function(){
+	/*$(document).ready(function(){
 	    var plot2 = $.jqplot('pie2', [[['a',7],['b',88],['c',5]]], {
 	        seriesDefaults:{ renderer:$.jqplot.PieRenderer, trendline:{ show: true } },
 	        legend:{ show: false },
 	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
 	    });
-	});
+	});*/
 	
 
 	<!-- for main chart-->	
-	$(document).ready(function () {
+	/*$(document).ready(function () {
 	    var s1 = [[2002, 112000], [2003, 122000], [2004, 104000], [2005, 99000], [2006, 121000]];
 	    var s2 = [[2002, 10200], [2003, 10800], [2004, 11200], [2005, 11800], [2006, 12400]];
 	 
@@ -544,15 +554,39 @@ $(document).ready(function() {
 	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
 	    });
 	   
-	});
+	});*/
 
 </script>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
+
+    function number_format(number, decimals, decPoint, thousandsSep){
+        decimals = decimals || 0;
+        number = parseFloat(number);
+
+        if(!decPoint || !thousandsSep){
+            decPoint = '.';
+            thousandsSep = ',';
+        }
+
+        var roundedNumber = Math.round( Math.abs( number ) * ('1e' + decimals) ) + '';
+        var numbersString = decimals ? roundedNumber.slice(0, decimals * -1) : roundedNumber;
+        var decimalsString = decimals ? roundedNumber.slice(decimals * -1) : '';
+        var formattedNumber = "";
+
+        while(numbersString.length > 3){
+            formattedNumber += thousandsSep + numbersString.slice(-3)
+            numbersString = numbersString.slice(0,-3);
+        }
+
+        return (number < 0 ? '-' : '') + numbersString + formattedNumber + (decimalsString ? (decPoint + decimalsString) : '');
+    }
 
 //for left bar query
 $(document).ready(function () {
-	
+
+
+
 	$('[data-toggle="toggle"]').change(function(){
 		$(this).parents().next('.hide').toggle();
 	});
@@ -575,10 +609,6 @@ $(document).ready(function () {
 	$('#txtMinAge').val(sliderElement.slider('values', 0));
 	
 
-});
-
-$(document).ready(function () {
-
 	var outputSpan = $('#spanOutPut');
 	var sliderElement = $('#slider1');
 
@@ -595,11 +625,9 @@ $(document).ready(function () {
 	});
 	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
 	$('#txtMinAge1').val(sliderElement.slider('values', 0));
-	
 
-});
 
-$(document).ready(function () {
+
 
 	var outputSpan = $('#spanOutPut');
 	var sliderElement = $('#slider2');
@@ -617,13 +645,43 @@ $(document).ready(function () {
 	});
 	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
 	$('#txtMinAge2').val(sliderElement.slider('values', 0));
-	
 
-});
 
-//for show hide (more info & Repayment Schedule)
 
-$(document).ready(function() {
+    $( ".draggable" ).mouseout(function(){
+        calculation();
+    });
+
+    function calculation(){
+
+//        var x = number_format( 5400000, 0, '.', ',' );
+//        alert(x);
+//        parseFloat();
+
+        var amount = parseFloat($('#finalAssest').val());
+        var month = parseFloat($('#finalCustAge').val());
+
+
+        var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
+        var first_monthly_interest = parseFloat(( (first_yearly_interest / 100) / 12));
+        var first_downpayment = parseFloat($('#first_downpayment').val());
+        var second_yearly_interest = parseFloat($('#second_yearly_interest').val());
+        var second_monthly_interest  = ( second_yearly_interest / 12 );
+        var second_downpayment = parseFloat($('#second_downpayment').val());
+        var first_downpayment_amount =  Math.round( ( amount * first_downpayment ) / 100 );
+        var second_downpayment_amount =  Math.round( ( amount * second_downpayment ) / 100 );
+
+
+        var first_emi = Math.round( ( ( amount * first_monthly_interest ) * Math.pow( (1 + first_monthly_interest ), month )) / ( Math.pow( ( 1 + first_monthly_interest) , month) - 1 ));
+
+        $('#firstEmiAmount').html("BDT. " + first_emi);
+//        alert( first_emi );
+//        alert (' amount:'+amount+ ' month: '+ month+ ' first_yearly_interest: '+ first_yearly_interest+ ' first_downpayment : '+ first_downpayment + ' second_yearly_interest : ' + second_yearly_interest + ' second_downpayment: '+second_downpayment)
+
+
+    }
+
+
 		$('#hideDetailsDiv').hide();
 		$('a#hideDetailsButton').click(function() {
 			if (!$('#hideDetailsDiv').is(':visible')) {
@@ -631,9 +689,7 @@ $(document).ready(function() {
 			}
 			$('#hideDetailsDiv').toggle(800);
 		});
-	});
 
-	$(document).ready(function() {
 		$('#hideDetailsDiv2').hide();
 		$('a#hideDetailsButton2').click(function() {
 			if (!$('#hideDetailsDiv2').is(':visible')) {
@@ -641,5 +697,18 @@ $(document).ready(function() {
 			}
 			$('#hideDetailsDiv2').toggle(400);
 		});
-	});
+});
+</script>
+<script>
+$(window).on('scroll', function (){
+	if ($(window).scrollTop() > 150){
+	  $('#card_compare_default').addClass('compare-bg');
+	} else {
+	  $('#card_compare_default').removeClass('compare-bg');
+	}
+
+
+
+
+});
 </script>
