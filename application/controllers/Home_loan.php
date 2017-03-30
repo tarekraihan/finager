@@ -633,7 +633,7 @@ class Home_Loan extends CI_Controller {
         $home_user = $this->input->post('home_user');
 
         $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
-        $month_limit = floatval ( $this->input->post('month_limit') );
+        $month_limit = floatval ( ($this->input->post('month_limit') > 5) ? $this->input->post('month_limit') : 6 );
 
         $WHERE = array(); $query = '';
         if(!empty($principal_amount)) {
@@ -712,16 +712,28 @@ class Home_Loan extends CI_Controller {
                 $bank_logo = $row->bank_logo;
             }
 
-
-             $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-             $monthly_interest = ($yearly_interest / $month_limit );
+             $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+             if($yearly_interest =='' || $yearly_interest < 1){
+                 $yearly_interest = floatval( '12');
+             }
+             $monthly_interest = ($yearly_interest / 12 /100);
              $downpayment_percentage = $row->downpayment;
              $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
-             $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
+             $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
 
              $total_payable = round( $emi * $month_limit );
 
+            /* echo '<pre>';
+
+             echo '<br/> Interest monthly = '.$monthly_interest;
+             echo '<br/> Interest Yearly = '.$yearly_interest;
+             echo '<br/> Tenure = '.$month_limit;
+             echo '<br/> EMI = '.$emi;
+             echo '<br/> Total Payable ='. $total_payable;
+             echo '<br/> Loan Id  ='. $row->id;
+
+             echo '</pre>';*/
 
             $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
             $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';

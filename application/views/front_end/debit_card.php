@@ -5,6 +5,7 @@
     .card_text2 p{
         position:relative;
     }
+
 </style>
 <section id="debitCard_header">
 
@@ -165,6 +166,19 @@
         </div>
     </section>
 
+<script type="text/javascript"> 
+
+$(window).on('scroll', function (){    
+        alert();   
+	if ($(window).scrollTop() > 350){
+	  $('.card_left_bar').addClass('fixedElement');
+	}if($(window).scrollTop()<350){
+	  $('.card_left_bar').removeClass('fixedElement');
+	}if($(window).scrollTop() > 2260){
+	  $('.card_left_bar').removeClass('fixedElement');
+	}
+});
+</script>
 
 <script type="text/javascript">
     $(document).ready(function(){

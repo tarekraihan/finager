@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Welcome to finager</title>
     <script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
+    <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/jquerysctipttop.css" />
@@ -19,14 +20,6 @@
 
     <script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
     <style type="text/css">
-        .affix {
-            top: 0;
-            width: 100%;
-        }
-
-        .affix + .container-fluid {
-            padding-top: 70px;
-        }
         .savingsContainer .leftCont {
             padding: 0 0 0 0;
         }

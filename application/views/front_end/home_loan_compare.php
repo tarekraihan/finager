@@ -325,7 +325,7 @@
 						
 						<tr>
 							<td><b> Equal Monthly Installment (EMI)</b></td>
-							<td id="firstEmiAmount"> 35624 </td>
+							<td id="firstEmiAmount"> </td>
 						</tr>
 						
 						<tr>
@@ -560,27 +560,6 @@
 
 <script type="text/javascript">
 
-    function number_format(number, decimals, decPoint, thousandsSep){
-        decimals = decimals || 0;
-        number = parseFloat(number);
-
-        if(!decPoint || !thousandsSep){
-            decPoint = '.';
-            thousandsSep = ',';
-        }
-
-        var roundedNumber = Math.round( Math.abs( number ) * ('1e' + decimals) ) + '';
-        var numbersString = decimals ? roundedNumber.slice(0, decimals * -1) : roundedNumber;
-        var decimalsString = decimals ? roundedNumber.slice(decimals * -1) : '';
-        var formattedNumber = "";
-
-        while(numbersString.length > 3){
-            formattedNumber += thousandsSep + numbersString.slice(-3)
-            numbersString = numbersString.slice(0,-3);
-        }
-
-        return (number < 0 ? '-' : '') + numbersString + formattedNumber + (decimalsString ? (decPoint + decimalsString) : '');
-    }
 
 //for left bar query
 $(document).ready(function () {
@@ -652,32 +631,46 @@ $(document).ready(function () {
         calculation();
     });
 
+    calculation();
     function calculation(){
 
 //        var x = number_format( 5400000, 0, '.', ',' );
 //        alert(x);
 //        parseFloat();
 
-        var amount = parseFloat($('#finalAssest').val());
-        var month = parseFloat($('#finalCustAge').val());
+        var principle_amount = parseFloat($('#finalAssest').val());
+        var amount = (principle_amount <= 50000) ? 50000 : principle_amount;
+        var tenure = parseInt($('#finalCustAge').val());
+        var month = (tenure <= 6 ) ? 6 : tenure;
 
 
         var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
-        var first_monthly_interest = parseFloat(( (first_yearly_interest / 100) / 12));
+        var first_interest_rate = first_yearly_interest / 100 / 12;
         var first_downpayment = parseFloat($('#first_downpayment').val());
         var second_yearly_interest = parseFloat($('#second_yearly_interest').val());
-        var second_monthly_interest  = ( second_yearly_interest / 12 );
+        var second_monthly_interest  =  second_yearly_interest / 12 /100 ;
         var second_downpayment = parseFloat($('#second_downpayment').val());
         var first_downpayment_amount =  Math.round( ( amount * first_downpayment ) / 100 );
         var second_downpayment_amount =  Math.round( ( amount * second_downpayment ) / 100 );
 
+        var rate =Math.pow( ( 1 + first_interest_rate ),month);
 
-        var first_emi = Math.round( ( ( amount * first_monthly_interest ) * Math.pow( (1 + first_monthly_interest ), month )) / ( Math.pow( ( 1 + first_monthly_interest) , month) - 1 ));
 
-        $('#firstEmiAmount').html("BDT. " + first_emi);
-//        alert( first_emi );
-//        alert (' amount:'+amount+ ' month: '+ month+ ' first_yearly_interest: '+ first_yearly_interest+ ' first_downpayment : '+ first_downpayment + ' second_yearly_interest : ' + second_yearly_interest + ' second_downpayment: '+second_downpayment)
+        var first_emi = Math.round(amount * first_interest_rate * (( Math.pow( (1+first_interest_rate),month)) / ( Math.pow( ( 1 + first_interest_rate ) , month ) -1 )));
+        var first_payable_amount = first_emi * month;
 
+        var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
+        var second_payable_amount = second_emi * month;
+
+//        alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
+
+        $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
+        $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
+        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
+
+        $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
+        $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
+        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
 
     }
 
