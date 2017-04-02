@@ -131,7 +131,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     public function select_auto_loan_details($id){
-        $sql="SELECT auto_loan_info.*,card_bank.bank_name,card_bank.bank_logo,personal_loan_looking_for.personal_loan_looking_for AS auto_loan_looking_for,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `auto_loan_info` LEFT JOIN card_bank on card_bank.id=auto_loan_info.bank_id INNER JOIN personal_loan_looking_for ON personal_loan_looking_for.id=auto_loan_info.auto_loan_looking_for_id  LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id  WHERE auto_loan_info.id=$id";
+        $sql="SELECT auto_loan_info.*,card_bank.bank_name,card_bank.bank_logo,auto_i_want.i_want AS auto_loan_looking_for,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `auto_loan_info` LEFT JOIN card_bank on card_bank.id=auto_loan_info.bank_id INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id  LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id  WHERE auto_loan_info.id=$id";
 
         $query = $this->db->query($sql);
         return $query;

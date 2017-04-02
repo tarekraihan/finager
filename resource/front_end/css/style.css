@@ -210,7 +210,7 @@ body {
     box-shadow: 0px 0px 2px 2px #f2f2f2;
 }
 .card_right_bar:hover {
-    box-shadow: 0px 0px 9px 3px #f2f2f2;
+    box-shadow: 0px 0px 9px 3px #808080;
 }
 .w20{
     width:20% !important;
@@ -718,6 +718,9 @@ body {
     clear: both;
     border: 2px solid #DADADA;
 }
+.home_loan_right_bar:hover{
+    box-shadow: 0px 0px 9px 3px #808080;
+}
 .loan_query{
     padding:6px;
     margin-bottom: 14px;
@@ -1020,6 +1023,22 @@ body {
 #searchPersonalLoan #pagination>li{
     float: none;
 }
+
+.personal_loan_landing_button{
+    background: #8D6E35; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #fff, #8D6E35); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #fff, #8D6E35); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #8D6E35); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff, #8D6E35); /* Standard syntax (must be last) */
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+.personal_loan_landing_button a {
+    color: #000 !important;
+    font-weight: bold;
+}
 /* for auto loan */
 #auto_header{
     background-image:url(../images/Car-Loan-main-page.jpg);
@@ -1060,6 +1079,22 @@ body {
 #searchEducationLoan #pagination>li{
     float: none;
 }
+.education_landing_button {
+    background: #D3D3D3; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #fff, #D3D3D3); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #fff, #D3D3D3); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #D3D3D3); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff, #D3D3D3); /* Standard syntax (must be last) */
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+.education_landing_button a {
+    color: #000;
+    font-weight: bold;
+}
+
 /* for education loan compary */
 .education-loan-Compare-hr1{
     width: 41%;
@@ -1072,7 +1107,7 @@ body {
 }
 /* for maony max */
 #mony_max_header_part{
-	background-image:url(../images/moneyMaxLangding.png);
+	background-image:url(../images/Money-Maximizer-Landing-Page-Banner-F.jpg);
 	background-repeat:no-repeat;
 	background-size:cover;
 	width:100%;
@@ -1107,7 +1142,7 @@ body {
 	position:relative;
 }
 .btn_mony_max{
-    border:1px solid #D19F59;
+	border:1px solid #CECAAA;
     padding: 5px 26px;
     border-radius: 6px;
     margin-left: 58px;
@@ -1115,42 +1150,82 @@ body {
     color:#000;
 }
 .btn_mony_max:hover{
-    background-color:#D19F59;
-    color:#fff;
+	background-color:#CECAAA;
 }
 .btn_landing_view_mony_max{
-    border: 1px solid #D19F59;
+    border: 1px solid #CECAAA;
     padding: 6px 23px;
     border-radius: 5px;
     color:#000;
 }
 .btn_landing_view_mony_max:hover{
-    background-color:#D19F59;
+    background-color:#CECAAA;
     color:#fff;
 }
 .btn_landing_view2_mony_max{
-    border: 1px solid #D19F59;
+    border: 1px solid #fff;
     padding: 6px 23px;
     border-radius: 5px;
-    color:#000;
-}
-.btn_landing_view2_mony_max:hover{
-    background-color:#D19F59;
     color:#fff;
 }
+.btn_landing_view2_mony_max:hover{
+    background-color:#fff;
+    color:#000;
+}
 .btn_landing_mony_max_start{
-    border: 1px solid #D19F59;
+    border: 1px solid #CECAAA;
     padding: 6px 35px;
     border-radius: 6px;
     font-size: 16px;
     color:#000;
 }
 .btn_landing_mony_max_start:hover{
-    background-color:#D19F59;
+    background-color:#CECAAA;
     color:#ffffff;
 }
+#money_max_biggest_brand {
+	background-image:url(../images/Money-Maximizer-middle.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:385px;
+	width:100%;
+	background-position:center center;
+	margin-top:30px;
+}
+#footer_money_max{
+	background-image:url(../images/Money-Maximizer-footerbg.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:427px;
+	width:100%;
+}
+.money_max_woman {
+	margin-top: 36px;
+}
+.money_max_footer_text{
+       margin-top:36px;
+}
+.money_max_footer_text {
+	margin-top: 100px;
+}
+.maximizer_landing_button {
+    background: #d2ceb1; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #d2ceb1, #fff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #d2ceb1, #fff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #d2ceb1, #fff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #d2ceb1, #fff); /* Standard syntax (must be last) */
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+.maximizer_landing_button a {
+    color: #000;
+    font-weight: bold;
+}
 
-/* for FDR Loan */
+/* for FDR */
 #fdr_header{
     background-image:url(../images/FDR-Main-Page-Banner.jpg);
     background-repeat:no-repeat;
@@ -1178,6 +1253,21 @@ body {
 
 #searchFDR #pagination>li{
     float: none;
+}
+.fdr_landing_button {
+    background: #25688C; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #fff, #25688C); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #fff, #25688C); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #25688C); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff, #25688C); /* Standard syntax (must be last) */
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+.fdr_landing_button a {
+    color: #000;
+    font-weight: bold;
 }
 
 /* for home loan compare page */
@@ -1278,7 +1368,11 @@ body {
 }
 
 .auto_button {
-    background-color: #fff;
+    background: #C95254; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #fff, #C95254); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #fff, #C95254); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #C95254); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff, #C95254); /* Standard syntax (must be last) */
     width: 180px;
     padding: 9px 20px;
     text-align: center;
@@ -1514,8 +1608,21 @@ a:hover {
     float: right;
     margin-right: 222px;
 }
-
-
+.home_loan_landing_button{
+    background: #205F34; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #fff, #205F34); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #fff, #205F34); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #205F34); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff, #205F34); /* Standard syntax (must be last) */
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+.home_loan_landing_button a {
+    color: #002d0c !important;
+    font-weight: bold;
+}
 
 
 /* header part end*/
@@ -2383,6 +2490,22 @@ a:hover {
 #searchDPS #pagination>li{
     float: none;
 }
+.dps_landing_button {
+    background: #C7F0F9; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #fff, #C7F0F9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #fff, #C7F0F9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #fff, #C7F0F9); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #fff, #C7F0F9); /* Standard syntax (must be last) */
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+.dps_landing_button a {
+    color: #000;
+    font-weight: bold;
+}
+
 /* DPS End */
 /* card landing page */
 
@@ -2474,8 +2597,9 @@ a:hover {
 .All_card6 {
     border-top: 1px solid #DADADA;
     border-bottom: 1px solid #DADADA;
+    border-left: 1px solid #DADADA;
     padding: 22px;
-    margin: -1px 1px;
+    margin: -1px 0px;
 }
 .All_card7 {
     border: 1px solid #DADADA;
@@ -2510,15 +2634,15 @@ a:hover {
 }
 
 .credit_card_button {
-	background: #5AB1D2; /* For browsers that do not support gradients */    
+    background: #5AB1D2; /* For browsers that do not support gradients */    
     background: -webkit-linear-gradient(left, #fff, #5AB1D2 ); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right, #fff, #5AB1D2); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right, #fff, #5AB1D2); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right, #fff, #5AB1D2); /* Standard syntax (must be last) */
-	width: 180px;
-	padding: 9px 20px;
-	text-align: center;
-	font-size: 16px;
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
 }
 .credit_card_button.flash-button a{
     color: #000;
@@ -2780,8 +2904,9 @@ hr {
 .debit_All_card6 {
     border-top: 1px solid #DADADA;
     border-bottom: 1px solid #DADADA;
+    border-left: 1px solid #DADADA;
     padding: 23px;
-    margin: -1px 1px;
+    margin: -1px 0px;
 }
 .debit_All_card7 {
     border: 1px solid #DADADA;
@@ -3173,6 +3298,22 @@ ul.footer-socio {
     font-style: italic;
     font-weight: bold;
 }
+.millionier_landing_button {
+    background: #a7a8aa; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #a7a8aa, #fff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #a7a8aa, #fff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #a7a8aa, #fff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #a7a8aa, #fff); /* Standard syntax (must be last) */
+    width: 180px;
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 16px;
+}
+.millionier_landing_button a {
+    color: #000;
+    font-weight: bold;
+}
+
 #maximizer_header{
     background-image: url('../images/Millionaire-main.jpg');
     background-repeat: no-repeat;
@@ -3183,6 +3324,8 @@ ul.footer-socio {
     margin-bottom: 20px;
     position: relative;
 }
+
+
 /* for millionaire compare */
 .millionaire-Compare-hr1{
     width: 34.3%;
@@ -3316,19 +3459,19 @@ ul.footer-socio {
     border:none;
     border-radius:5px;
     animation-name: flash;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
 //Firefox 1+
 -webkit-animation-name: flash;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
 
 //Safari 3-4
 -moz-animation-name: flash;
-    -moz-animation-duration: 2s;
+    -moz-animation-duration: 1s;
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
 }
@@ -3353,7 +3496,7 @@ ul.footer-socio {
     100% { opacity: 1.0; }
 }
 .auto_button.flash-button a {
-    color: #000;
+    color: #1a181b;
     font-weight: bold;
     text-decoration:none;
 }

@@ -1,4 +1,4 @@
-<style>
+  <style>
     .card_btn_apllication {
         margin: 7px 24px;
     }

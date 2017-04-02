@@ -9,9 +9,12 @@ $id1 = $this->session->userdata('second_personal_loan') ;
 $result1 = $this->Front_end_select_model->select_personal_loan_details($id1);
 $second_personal_loan = $result1->row();
 
-//	print_r($first_personal_loan);die;
-//	echo $first_home_loan->loan_short_description;
 $first_interest =($first_personal_loan->is_fixed =='0')? $first_personal_loan->interest_rate_average.' % (Avg)' : $first_personal_loan->interest_rate_fixed.' % (Fixed)';
+$first_yearly_interest = floatval( ( $first_personal_loan->is_fixed =='0' ) ? $first_personal_loan->interest_rate_average : $first_personal_loan->interest_rate_fixed ) ;
+
+$second_yearly_interest = floatval( ( $second_personal_loan->is_fixed =='0' ) ? $second_personal_loan->interest_rate_average : $second_personal_loan->interest_rate_fixed ) ;
+$second_interest =($second_personal_loan->is_fixed =='0')? $second_personal_loan->interest_rate_average.' % (Avg)' : $second_personal_loan->interest_rate_fixed.' % (Fixed)';
+
 $first_bank_name = "";
 $first_bank_logo = "";
 if($first_personal_loan->is_non_bank == 1){
@@ -22,7 +25,6 @@ if($first_personal_loan->is_non_bank == 1){
     $first_bank_logo = $first_personal_loan->bank_logo;
 }
 
-$second_interest =($second_personal_loan->is_fixed =='0')? $second_personal_loan->interest_rate_average.' % (Avg)' : $second_personal_loan->interest_rate_fixed.' % (Fixed)';
 $second_bank_name = "";
 $second_bank_logo = "";
 if($second_personal_loan->is_non_bank == 1){
@@ -270,7 +272,10 @@ if($second_personal_loan->is_non_bank == 1){
 			</div>
 		</div>
 	</section>
-	
+
+<input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
+<input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
+
 	<section id="basic_info">
 		<div class="container">
 			
@@ -303,12 +308,12 @@ if($second_personal_loan->is_non_bank == 1){
 						
 						<tr>
 							<td><b> Equal Monthly Installment (EMI)</b></td>
-							<td> <?php  ?> </td>
+                            <td id="firstEmiAmount"> </td>
 						</tr>
 						
 						<tr>
 							<td><b> Total Payable Amount</b></td>
-							<td> <?php echo $first_bank_name; ?></td>
+                            <td id="firstPayableAmount"> 68,50,000 </td>
 						</tr>
 						
 						<tr>
@@ -336,12 +341,12 @@ if($second_personal_loan->is_non_bank == 1){
 							
 							<tr>
 								<td><b> Equal Monthly Installment (EMI)</b></td>
-								<td> 35624 </td>
+                                <td id="secondEmiAmount"> 35624 </td>
 							</tr>
 							
 							<tr>
 								<td><b> Total Payable Amount</b></td>
-								<td> 68,50,000 </td>
+                                <td id="secondPayableAmount"> 68,50,000 </td>
 							</tr>
 							
 							<tr>
@@ -447,125 +452,10 @@ if($second_personal_loan->is_non_bank == 1){
 		</div>
 	</section>
 
-<script>
-$(document).ready(function() {
-	
-	$('[data-toggle="toggle"]').change(function(){
-		$(this).parents().next('.hide').toggle();
-	});
-});
-</script>
-<script>
-	<!-- for chart-->
-	$(document).ready(function(){
-	    var plot2 = $.jqplot('pie2', [[['a',7],['b',88],['c',5]]], {
-	        seriesDefaults:{ renderer:$.jqplot.PieRenderer, trendline:{ show: true } },
-	        legend:{ show: false },
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
-	    });
-	});
-	
-
-	<!-- for main chart-->	
-	$(document).ready(function () {
-	    var s1 = [[2002, 112000], [2003, 122000], [2004, 104000], [2005, 99000], [2006, 121000]];
-	    var s2 = [[2002, 10200], [2003, 10800], [2004, 11200], [2005, 11800], [2006, 12400]];
-	 
-	    plot1 = $.jqplot("chart1", [s2, s1], {
-	        // Turns on animatino for all series in this plot.
-	        animate: true,
-	        // Will animate plot on calls to plot1.replot({resetAxes:true})
-	        animateReplot: true,
-	        cursor: {
-	            show: true,
-	            zoom: true,
-	            looseZoom: true,
-	            showTooltip: false
-	        },
-	        series:[
-	            {
-	                pointLabels: {
-	                    show: true
-	                },
-	                renderer: $.jqplot.BarRenderer,
-	                showHighlight: false,
-	                yaxis: 'y2axis',
-	                rendererOptions: {
-	                    // Speed up the animation a little bit.
-	                    // This is a number of milliseconds.  
-	                    // Default for bar series is 3000.  
-	                    animation: {
-	                        speed: 2500
-	                    },
-	                    barWidth: 15,
-	                    barPadding: -15,
-	                    barMargin: 0,
-	                    highlightMouseOver: false
-	                }
-	            }, 
-	            {
-	                rendererOptions: {
-	                    // speed up the animation a little bit.
-	                    // This is a number of milliseconds.
-	                    // Default for a line series is 2500.
-	                    animation: {
-	                        speed: 2000
-	                    }
-	                }
-	            }
-	        ],
-	        axesDefaults: {
-	            pad: 0
-	        },
-	        axes: {
-	            // These options will set up the x axis like a category axis.
-	            xaxis: {
-	                tickInterval: 1,
-	                drawMajorGridlines: false,
-	                drawMinorGridlines: true,
-	                drawMajorTickMarks: false,
-	                rendererOptions: {
-	                tickInset: 0.5,
-	                minorTicks: 1
-	            }
-	            },
-	            yaxis: {
-	                tickOptions: {
-	                    formatString: "$%'d"
-	                },
-	                rendererOptions: {
-	                    forceTickAt0: true
-	                }
-	            },
-	            y2axis: {
-	                tickOptions: {
-	                    formatString: "$%'d"
-	                },
-	                rendererOptions: {
-	                    // align the ticks on the y2 axis with the y axis.
-	                    alignTicks: true,
-	                    forceTickAt0: true
-	                }
-	            }
-	        },
-	        highlighter: {
-	            show: true, 
-	            showLabel: true, 
-	            tooltipAxes: 'y',
-	            sizeAdjust: 7.5 , tooltipLocation : 'ne'
-	        },
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
-	    });
-	   
-	});
-
-</script>
-
-<script type="text/javascript"> 
-
+<script type="text/javascript">
 //for left bar query
 $(document).ready(function () {
-	
+
 	$('[data-toggle="toggle"]').change(function(){
 		$(this).parents().next('.hide').toggle();
 	});
@@ -588,9 +478,6 @@ $(document).ready(function () {
 	$('#txtMinAge').val(sliderElement.slider('values', 0));
 	
 
-});
-
-$(document).ready(function () {
 
 	var outputSpan = $('#spanOutPut');
 	var sliderElement = $('#slider1');
@@ -610,9 +497,6 @@ $(document).ready(function () {
 	$('#txtMinAge1').val(sliderElement.slider('values', 0));
 	
 
-});
-
-$(document).ready(function () {
 
 	var outputSpan = $('#spanOutPut');
 	var sliderElement = $('#slider2');
@@ -632,27 +516,72 @@ $(document).ready(function () {
 	$('#txtMinAge2').val(sliderElement.slider('values', 0));
 	
 
-});
 
 //for show hide (more info & Repayment Schedule)
 
-$(document).ready(function() {
-		$('#hideDetailsDiv').hide();
-		$('a#hideDetailsButton').click(function() {
-			if (!$('#hideDetailsDiv').is(':visible')) {
-				$('.hideMe').hide(400);
-			}
-			$('#hideDetailsDiv').toggle(800);
-		});
-	});
 
-	$(document).ready(function() {
-		$('#hideDetailsDiv2').hide();
-		$('a#hideDetailsButton2').click(function() {
-			if (!$('#hideDetailsDiv2').is(':visible')) {
-				$('.hideMe').hide(400);
-			}
-			$('#hideDetailsDiv2').toggle(400);
-		});
-	});
+    $('#hideDetailsDiv').hide();
+    $('a#hideDetailsButton').click(function() {
+        if (!$('#hideDetailsDiv').is(':visible')) {
+            $('.hideMe').hide(400);
+        }
+        $('#hideDetailsDiv').toggle(800);
+    });
+
+    $('#hideDetailsDiv2').hide();
+    $('a#hideDetailsButton2').click(function() {
+        if (!$('#hideDetailsDiv2').is(':visible')) {
+            $('.hideMe').hide(400);
+        }
+        $('#hideDetailsDiv2').toggle(400);
+    });
+
+    /*--------Calculation----------------*/
+
+
+    $( ".draggable" ).mouseout(function(){
+        calculation();
+    });
+
+    calculation();
+    function calculation(){
+
+//        var x = number_format( 5400000, 0, '.', ',' );
+//        alert(x);
+//        parseFloat();
+
+        var principle_amount = parseFloat($('#finalAssest').val());
+        var amount = (principle_amount <= 50000) ? 50000 : principle_amount;
+        var tenure = parseInt($('#finalCustAge').val());
+        var month = (tenure <= 6 ) ? 6 : tenure;
+
+
+        var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
+        var first_interest_rate = first_yearly_interest / 100 / 12;
+        var second_yearly_interest = parseFloat($('#second_yearly_interest').val());
+        var second_monthly_interest  =  second_yearly_interest / 12 /100 ;
+//        var first_downpayment_amount =  Math.round( ( amount * first_downpayment ) / 100 );
+//        var second_downpayment_amount =  Math.round( ( amount * second_downpayment ) / 100 );
+
+        var rate =Math.pow( ( 1 + first_interest_rate ),month);
+
+
+        var first_emi = Math.round(amount * first_interest_rate * (( Math.pow( (1+first_interest_rate),month)) / ( Math.pow( ( 1 + first_interest_rate ) , month ) -1 )));
+        var first_payable_amount = first_emi * month;
+
+        var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
+        var second_payable_amount = second_emi * month;
+
+//        alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
+
+        $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
+        $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
+//        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
+
+        $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
+        $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
+//        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
+
+    }
+});
 </script>

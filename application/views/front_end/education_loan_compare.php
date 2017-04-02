@@ -1,66 +1,60 @@
 <?php
 //		print_r($this->session->userdata());
-$id = $this->session->userdata('first_auto_loan') ;
-$result = $this->Front_end_select_model->select_auto_loan_details($id);
-$first_auto_loan = $result->row();
+$id = $this->session->userdata('first_education_loan') ;
+$result = $this->Front_end_select_model->select_education_loan_details($id);
+$first_education_loan = $result->row();
 
-$id1 = $this->session->userdata('second_auto_loan') ;
-$result1 = $this->Front_end_select_model->select_auto_loan_details($id1);
-$second_auto_loan = $result1->row();
+$id1 = $this->session->userdata('second_education_loan') ;
+$result1 = $this->Front_end_select_model->select_education_loan_details($id1);
+$second_education_loan = $result1->row();
 
-//print_r($second_auto_loan);
+	print_r($second_education_loan);die;
 
-$first_interest =($first_auto_loan->is_fixed =='0')? $first_auto_loan->interest_rate_average.' % (Avg)' : $first_auto_loan->interest_rate_fixed.' % (Fixed)';
-$first_yearly_interest = floatval( ( $first_auto_loan->is_fixed =='0' ) ? $first_auto_loan->interest_rate_average : $first_auto_loan->interest_rate_fixed ) ;
+//	echo $first_home_loan->loan_short_description;
 
-$second_yearly_interest = floatval( ( $second_auto_loan->is_fixed =='0' ) ? $second_auto_loan->interest_rate_average : $second_auto_loan->interest_rate_fixed ) ;
-$second_interest =($second_auto_loan->is_fixed =='0')? $second_auto_loan->interest_rate_average.' % (Avg)' : $second_auto_loan->interest_rate_fixed.' % (Fixed)';
+$first_interest =($first_education_loan->is_fixed =='0')? $first_education_loan->avg_interest.' % (Avg)' : $first_education_loan->fixed_interest.' % (Fixed)';
+$first_yearly_interest = floatval( ( $first_education_loan->is_fixed =='0' ) ? $first_education_loan->avg_interest : $first_education_loan->fixed_interest ) ;
 
-$first_downpayment =  floatval( $first_auto_loan->downpayment );
-$second_downpayment =  floatval( $second_auto_loan->downpayment );
+$second_yearly_interest = floatval( ( $second_education_loan->is_fixed =='0' ) ? $second_education_loan->avg_interest : $second_education_loan->fixed_interest ) ;
+$second_interest =($second_education_loan->is_fixed =='0')? $second_education_loan->avg_interest.' % (Avg)' : $second_education_loan->fixed_interest.' % (Fixed)';
+
 
 $first_bank_name = "";
 $first_bank_logo = "";
-if($first_auto_loan->is_non_bank == 1){
-    $first_bank_name = $first_auto_loan->non_bank_name;
-    $first_bank_logo = $first_auto_loan->non_bank_logo;
+if($first_education_loan->is_non_bank == 1){
+    $first_bank_name = $first_education_loan->non_bank_name;
+    $first_bank_logo = $first_education_loan->non_bank_logo;
 }else{
-    $first_bank_name = $first_auto_loan->bank_name;
-    $first_bank_logo = $first_auto_loan->bank_logo;
+    $first_bank_name = $first_education_loan->bank_name;
+    $first_bank_logo = $first_education_loan->bank_logo;
 }
 
 $second_bank_name = "";
 $second_bank_logo = "";
-if($second_auto_loan->is_non_bank == 1){
-    $second_bank_name = $second_auto_loan->non_bank_name;
-    $second_bank_logo = $second_auto_loan->non_bank_logo;
+if($second_education_loan->is_non_bank == 1){
+    $second_bank_name = $second_education_loan->non_bank_name;
+    $second_bank_logo = $second_education_loan->non_bank_logo;
 }else{
-    $second_bank_name = $second_auto_loan->bank_name;
-    $second_bank_logo = $second_auto_loan->bank_logo;
+    $second_bank_name = $second_education_loan->bank_name;
+    $second_bank_logo = $second_education_loan->bank_logo;
 }
 
 ?>
+
 
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></p> <p><?php echo $first_auto_loan->auto_loan_looking_for;?></p></td>
+						<td><p><a href="<?php echo base_url();?>en/education_loan_details/<?php echo $first_education_loan->id;?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></p><p><?php echo $second_auto_loan->auto_loan_looking_for;?></p></td>
+						<td><a href="<?php echo base_url();?>en/education_loan_details/<?php echo $second_education_loan->id;?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
 					</tr>			
 				</table>
 			</div>
 		</div>
 	</section>
-
-
-<input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
-<input type="hidden" id="first_downpayment" name="first_downpayment" value="<?php echo $first_downpayment; ?>">
-<input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
-<input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
-
         <div class="home_loan_com_cal container text-center">
              <p>
 								<div class="emi_cal">
@@ -82,6 +76,8 @@ if($second_auto_loan->is_non_bank == 1){
 															<div class="innerMdlInner">
 																<div class="calcWrapper">
 
+
+
 																	<div class="clear"></div>
 																	<!--Calculator Banner END-->
 																	<!--h1 class="blackColor">Personal Loan EMI Calculator</h1-->
@@ -89,11 +85,11 @@ if($second_auto_loan->is_non_bank == 1){
 																	<div class="selectCalcWrapper" style="display:none;">
 																		<div class="radiobox">
 																		  <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-																		  <label for="savingCalculator">Car Loan Calculator</label>
+																		  <label for="savingCalculator">Education Loan Calculator</label>
 																		</div>
 																		<div class="radiobox">
 																		  <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
-																		  <label for="depositCalculator">Personal Loan Calculator</label>
+																		  <label for="depositCalculator">Education Loan Calculator</label>
 																		</div>
 																	</div>
 
@@ -103,7 +99,7 @@ if($second_auto_loan->is_non_bank == 1){
 																		  <!--Amount Already Saved START-->
 																			<div class="slideWrapper" id="alreadySaved">
 																				<div class="questWrap">
-																				  <p class="quest">Enter your Car loan amount required</p>
+																				  <p class="quest">Enter your education loan amount required</p>
 																				</div>
 																			  
 																				<div class="inputWrapper"> <span class="rupee"></span>
@@ -142,7 +138,7 @@ if($second_auto_loan->is_non_bank == 1){
 																			  <!--Amount Already Saved END-->
 																			  
 																			<div class="slideWrapper" id="avgSave">
-																				<p class="quest">Enter tenure for Car loan</p>
+																				<p class="quest">Enter tenure for education loan</p>
 																				<div class="inputWrapper">
 																				  <div class="inputField">
 																					<div class="inpLft"></div>
@@ -201,7 +197,7 @@ if($second_auto_loan->is_non_bank == 1){
 
 
 																			<div class="slideWrapper hide" id="interest">
-																				<p class="quest">Interest rate on Car loan</p>
+																				<p class="quest">Interest rate on home loan</p>
 																				<div class="inputWrapper">
 																				  <div class="inputField">
 																					<div class="inpLft"></div>
@@ -241,7 +237,7 @@ if($second_auto_loan->is_non_bank == 1){
 																		<div class="rightCont"> 
 																		  <!--Result Wrapper START-->
 																		  <div class="resultWrapper hide">
-																			<h2>Personal Loan EMI Result</h2>
+																			<h2>Education Loan EMI Result</h2>
 																			<div class="resultContainer">
 																			  <!--div class="rsltField">
 																				<p>Total Amount Payable</p>
@@ -283,7 +279,11 @@ if($second_auto_loan->is_non_bank == 1){
 						
 							</p>
         </div>
-	
+
+
+<input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
+<input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
+
 	<section id="basic_info">
 		<div class="container">
 			
@@ -300,18 +300,18 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="auto-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Car Loan <img class="auto-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="education-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Education Loan <img class="education-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
 							<td class="abc"><b> Bank Name </b></td>
-							<td><?php echo $first_bank_name; ?></td>
+							<td> <?php echo $first_bank_name;?> </td>
 						</tr>
 						
 						<tr>
 							<td><b> Interest Rate</b></td>
-							<td> <?php echo $first_interest;?></td>
+							<td> <?php echo $first_interest; ?> </td>
 						</tr>
 						
 						<tr>
@@ -326,13 +326,9 @@ if($second_auto_loan->is_non_bank == 1){
 						
 						<tr>
 							<td><b> Security Required</b></td>
-							<td> <?php echo $first_auto_loan->security_required; ?> </td>
+							<td> Mortgage of the Property </td>
 						</tr>
-						
-						<tr>
-							<td><b> Minimum Down Payment Amount</b></td>
-                            <td id="firstDownpaymentAmount"> 15,00,000 </td>
-						</tr>
+
 						
 					</table>
 				</div>
@@ -342,12 +338,12 @@ if($second_auto_loan->is_non_bank == 1){
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
 								<td class="abc"><b> Bank Name </b></td>
-								<td> <?php echo $second_bank_name; ?> </td>
+								<td> <?php echo $second_bank_name;?>  </td>
 							</tr>
 							
 							<tr>
 								<td><b> Interest Rate</b></td>
-								<td> <?php echo $second_interest; ?> </td>
+								<td> <?php echo $second_interest;?>  </td>
 							</tr>
 							
 							<tr>
@@ -357,19 +353,14 @@ if($second_auto_loan->is_non_bank == 1){
 							
 							<tr>
 								<td><b> Total Payable Amount</b></td>
-                                <td id="secondPayableAmount"> 68,50,000 </td>
+                                <td> <?php echo $second_personal_loan->security_required; ?> </td>
 							</tr>
 							
 							<tr>
 								<td><b> Security Required</b></td>
-								<td> <?php echo $second_auto_loan->security_required; ?> </td>
+								<td> Mortgage of the Property </td>
 							</tr>
-							
-							<tr>
-								<td><b> Minimum Down Payment Amount</b></td>
-                                <td id="secondDownpaymentAmount"> 15,00,000 </td>
-							</tr>
-							
+
 						</table>
 					</div>
 				</div>
@@ -378,75 +369,117 @@ if($second_auto_loan->is_non_bank == 1){
 			<div class="row">
 				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				
+				<div class="col-md-12 col-sm-12">
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover text-center compare_table">
+							<tr>
+								<td><?php echo $first_education_loan->processing_fee;?></td>
+                                <td><b> Processing Fee</b></td>
+                                <td> <?php echo $second_education_loan->processing_fee;?></td>
+                            </tr>
+							
+							<tr>
+								<td><?php echo $first_education_loan->early_settlement_fee;?></td>
+								<td><b> Early Settlement Fee</b></td>
+                                <td><?php echo $second_education_loan->early_settlement_fee;?></td>
+							</tr>
+							
+							<tr>
+								<td><?php echo $first_education_loan->partial_payment_fee;?></td>
+								<td> Partial Payment Fee </td>
+                                <td><?php echo $second_education_loan->partial_payment_fee;?></td>
+							</tr>
+							
+							<tr>
+								<td><?php echo $first_education_loan->penalty_charge;?></td>
+                                <td><b> Penalty Charge</b></td>
+                                <td><?php echo $second_education_loan->penalty_charge;?></td>
+                            </tr>
+						</table>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="row">
+				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Features <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<?php echo $first_auto_loan->fees_and_charges;?>
+						<?php echo $first_education_loan->feature;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-                        <?php echo $second_auto_loan->fees_and_charges;?>
+						<?php echo $second_education_loan->feature;?>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Features<img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
-                        <?php echo $first_auto_loan->features;?>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
-                        <?php echo $second_auto_loan->features;?>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<h3 class="text-center"> <img class="auto-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="auto-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive home_compare_div">
-                        <?php echo $first_auto_loan->eligibility_for_applying;?>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive home_compare_div">
-                        <?php echo $second_auto_loan->eligibility_for_applying;?>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 		
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive home_compare_div">
-                        <?php echo $first_auto_loan->terms_and_conditions;?>
+						<?php echo $first_education_loan->eligibility;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive home_compare_div">
-                        <?php echo $second_auto_loan->terms_and_conditions;?>
+                        <?php echo $second_education_loan->eligibility;?>
+					</div>
+				</div>
+			</div>
+			
+
+
+			<div class="row">
+				<h3 class="text-center">  <img class="education-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Requirements <img class="education-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive home_compare_div">
+						<?php echo $first_education_loan->requirement;?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive home_compare_div">
+                        <?php echo $second_education_loan->requirement;?>
 					</div>
 				</div>
 			</div>
 
+
 			<div class="row">
-				<h3 class="text-center">  <img class="auto-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="auto-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-                        <?php echo $first_auto_loan->review;?>
+						<?php echo $first_education_loan->terms_and_conditions;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive" >
-                        <?php echo $second_auto_loan->review;?>
+					<div class="table-responsive">
+                        <?php echo $second_education_loan->terms_and_conditions;?>
 					</div>
 				</div>
 			</div>
+
+
+			<div class="row">
+				<h3 class="text-center">  <img class="education-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="education-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+						<?php echo $first_education_loan->review;?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $second_education_loan->review;?>
+					</div>
+				</div>
+			</div>
+
+
 			
 			<div class="row">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
@@ -474,7 +507,7 @@ $(document).ready(function() {
 </script>
 
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 
 //for left bar query
 $(document).ready(function () {
@@ -539,7 +572,6 @@ $(document).ready(function () {
 	$('#txtMinAge2').val(sliderElement.slider('values', 0));
 
 
-
     $( ".draggable" ).mouseout(function(){
         calculation();
     });
@@ -552,19 +584,17 @@ $(document).ready(function () {
 //        parseFloat();
 
         var principle_amount = parseFloat($('#finalAssest').val());
-        var amount = (principle_amount <= 200000) ? 200000 : principle_amount;
+        var amount = (principle_amount <= 50000) ? 50000 : principle_amount;
         var tenure = parseInt($('#finalCustAge').val());
         var month = (tenure <= 6 ) ? 6 : tenure;
 
 
         var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
         var first_interest_rate = first_yearly_interest / 100 / 12;
-        var first_downpayment = parseFloat($('#first_downpayment').val());
         var second_yearly_interest = parseFloat($('#second_yearly_interest').val());
         var second_monthly_interest  =  second_yearly_interest / 12 /100 ;
-        var second_downpayment = parseFloat($('#second_downpayment').val());
-        var first_downpayment_amount =  Math.round( ( amount * first_downpayment ) / 100 );
-        var second_downpayment_amount =  Math.round( ( amount * second_downpayment ) / 100 );
+//        var first_downpayment_amount =  Math.round( ( amount * first_downpayment ) / 100 );
+//        var second_downpayment_amount =  Math.round( ( amount * second_downpayment ) / 100 );
 
         var rate =Math.pow( ( 1 + first_interest_rate ),month);
 
@@ -579,26 +609,25 @@ $(document).ready(function () {
 
         $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
         $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
-        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
+//        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
 
         $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
         $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
-        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
+//        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
 
     }
-
 
 
 //for show hide (more info & Repayment Schedule)
 
 
-    $('#hideDetailsDiv').hide();
-    $('a#hideDetailsButton').click(function() {
-        if (!$('#hideDetailsDiv').is(':visible')) {
-            $('.hideMe').hide(400);
-        }
-        $('#hideDetailsDiv').toggle(800);
-    });
+		$('#hideDetailsDiv').hide();
+		$('a#hideDetailsButton').click(function() {
+			if (!$('#hideDetailsDiv').is(':visible')) {
+				$('.hideMe').hide(400);
+			}
+			$('#hideDetailsDiv').toggle(800);
+		});
 
     $('#hideDetailsDiv2').hide();
     $('a#hideDetailsButton2').click(function() {
@@ -607,10 +636,8 @@ $(document).ready(function () {
         }
         $('#hideDetailsDiv2').toggle(400);
     });
-});
-</script>
-<script>
-$(window).on('scroll', function (){
+
+
 	if ($(window).scrollTop() > 150){
 	  $('#card_compare_default').addClass('compare-bg');
 	} else {
