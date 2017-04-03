@@ -1,6 +1,7 @@
 <?php
 //		print_r($this->session->userdata());
 $id = $this->session->userdata('first_education_loan') ;
+//echo $id;die;
 $result = $this->Front_end_select_model->select_education_loan_details($id);
 $first_education_loan = $result->row();
 
@@ -8,7 +9,7 @@ $id1 = $this->session->userdata('second_education_loan') ;
 $result1 = $this->Front_end_select_model->select_education_loan_details($id1);
 $second_education_loan = $result1->row();
 
-	print_r($second_education_loan);die;
+//	print_r($second_education_loan);die;
 
 //	echo $first_home_loan->loan_short_description;
 
@@ -353,7 +354,7 @@ if($second_education_loan->is_non_bank == 1){
 							
 							<tr>
 								<td><b> Total Payable Amount</b></td>
-                                <td> <?php echo $second_personal_loan->security_required; ?> </td>
+                                <td id="secondtPayableAmount"> 68,50,000 </td>
 							</tr>
 							
 							<tr>
