@@ -294,7 +294,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     function select_fdr_loan_info_pagination($query,$limit=null,$offset=null){
 
         $link = 'ORDER BY fdr_info.id ASC LIMIT ' . $offset . ', ' . $limit;
-        $sql = "SELECT DISTINCT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id $query $link";
+        $sql = "SELECT DISTINCT fdr_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo , fdr_tenure.tenure, fdr_tenure.installment FROM `fdr_info` LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id Left join fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN  fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id $query $link";
         $query = $this->db->query($sql);
 
         return $query;

@@ -395,6 +395,9 @@ $(window).on('scroll', function (){
                 fdr_tenure.push($(this).val());
             });
 
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
+
             var fdr_tenure_list = "&fdr_tenure="+fdr_tenure;
 
 
@@ -405,7 +408,7 @@ $(window).on('scroll', function (){
             var fdr_user_list = "&fdr_user="+fdr_user;
 
 
-            var main_string = fdr_tenure_list+fdr_user_list;
+            var main_string = fdr_tenure_list+fdr_user_list+principal_amount;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
@@ -435,6 +438,13 @@ $(window).on('scroll', function (){
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             loadData( page = null );
         } );
+
+
+        $( ".draggable" ).mouseout(function(){
+            loadData( page = null );
+
+        });
+
 
 
         $('#searchFDR').on('click', '.more_info', function (){

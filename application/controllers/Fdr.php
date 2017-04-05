@@ -627,6 +627,7 @@ class Fdr extends CI_Controller {
 
         $fdr_user = $this->input->post('fdr_user');
         $fdr_tenure = $this->input->post('fdr_tenure');
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
 
         $WHERE = array(); $query = '';
         if(!empty($fdr_user)) {
@@ -637,12 +638,9 @@ class Fdr extends CI_Controller {
             $WHERE[] = 'fdr_info.tenure_id = '.$fdr_tenure;
         }
 
-
         $query = implode(' AND ',$WHERE);
 
         if(!empty($query)) {$query = 'WHERE '.$query;}
-
-
 
         $res = $this->Front_end_select_model->select_fdr_loan_info($query);
 
@@ -688,8 +686,12 @@ class Fdr extends CI_Controller {
         //-------------Pagination End-------------------
 
 //        $no_row = $fdr_deposit->num_rows();
+
+
         $fdr = '';
         foreach($fdr_deposit->result() as $row) {
+
+//            print_r($row);
 
             $bank = "";
             if ($row->is_non_bank == 1) {
@@ -704,15 +706,20 @@ class Fdr extends CI_Controller {
                 $bank_logo = $row->bank_logo;
             }
 
-            $query_amount = 1000000;
-            $tenure = 3 * 12;
 
-            $interest_rate = $row->interest_rate;
+            $yearly_interest = floatval( $row->interest_rate ) ;
+            $interest = ($yearly_interest / 100);
+            $tenure = floatval($row->installment);
+            $no_of_times = 12;
+            $payment = ($principal_amount * pow(1 + $interest /$no_of_times,($no_of_times*($tenure/12))));
+            $loan_facility = (!empty($row->loan_facility)) ? $row->loan_facility.'%' : 'N/A';
 
-            $cal_interest = round(($interest_rate / 100) / $tenure, 4);
 
-            $emi = $query_amount * $cal_interest * pow((1 + $cal_interest), $tenure) / pow((1 + $cal_interest), ($tenure - 1));
-            $total_payable = $emi * $tenure;
+//            $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
+
+//            $total_payable = round( $emi * $month_limit );
+
+
 
             $fdr .= '<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
@@ -730,31 +737,31 @@ class Fdr extends CI_Controller {
 									<div class="col-sm-3 col-xs-3">
 										<div class="card_text3">
 											<h5>Deposited Amount</h5>
-											<p>&#2547; 10000</p>
+											<p>&#2547; '.number_format( $principal_amount ).'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Tenure</h5>
-											<p>1 Year</p>
+											<p>'. $row->tenure .'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Interest Rate</h5>
-											<p>'.$interest_rate.'%</p>
+											<p>'.$yearly_interest.'%</p>
 										</div>
 									</div>
 									<div class="col-sm-3 col-xs-3">
 										<div class="card_text3">
 											<h5>Maturity Amount</h5>
-											<p>&#2547; 1300</p>
+											<p>&#2547; '. number_format( $payment ) .'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Loan Facility</h5>
-											<p>'.$row->loan_facility.'%</p>
+											<p>'.$loan_facility.'</p>
 										</div>
 									</div>
 								</div>
