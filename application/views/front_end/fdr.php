@@ -305,6 +305,7 @@
 				
 				<!-- Right bar content start -->
 				<div class="col-sm-9 col-xs-9">
+                    <input type="hidden" id="principle_amount" name="principle_amount" value="500000">
                     <div id="searchFDR">
                        <div id="loading" class="text-center"></div>
 
@@ -569,11 +570,12 @@ $(window).on('scroll', function (){
             //alert(1);
             var  formData = $('.cart_anchor').children('img').data();
             var fdr_id1 = "fdr_id1="+formData.fdr_id;
+            var principal_amount = "&amount=" + $('#principle_amount').val();
 
             var  formData = $('.cart_anchor01').children('img').data();
             var fdr_id2 = "&fdr_id2="+formData.fdr_id;
 
-            var fdr_ids = fdr_id1+fdr_id2;
+            var fdr_ids = fdr_id1+fdr_id2+principal_amount;
             if(fdr_id1 != '' && fdr_id2 != ''){
                 $.ajax
                 ({

@@ -1,12 +1,20 @@
 <?php
 //		print_r($this->session->userdata());
 $id = $this->session->userdata('first_fdr') ;
+$amount = $this->session->userdata('amount') ;
 $result = $this->Front_end_select_model->select_fdr_details($id);
 $first_fdr = $result->row();
 
 $id1 = $this->session->userdata('second_fdr') ;
 $result1 = $this->Front_end_select_model->select_fdr_details($id1);
 $second_fdr = $result1->row();
+
+//	print_r($second_fdr);die;
+
+/*
+$loan_facility = $first_fdr->loan_facility;
+
+$xplode(" ",$str))*/
 
 $first_bank_name = "";
 $first_bank_logo = "";
@@ -27,6 +35,23 @@ if($second_fdr->is_non_bank == 1){
     $second_bank_name = $second_fdr->bank_name;
     $second_bank_logo = $second_fdr->bank_logo;
 }
+
+
+
+$first_yearly_interest = floatval( $first_fdr->interest_rate ) ;
+$first_interest = ($first_yearly_interest / 100);
+$first_tenure = floatval($first_fdr->installment);
+
+$second_yearly_interest = floatval( $second_fdr->interest_rate ) ;
+$second_interest = ($second_yearly_interest / 100);
+$second_tenure = floatval($second_fdr->installment);
+
+$no_of_times = 12;
+$first_payment = ($amount * pow(1 + $first_interest /$no_of_times,($no_of_times*($first_tenure/12))));
+$first_loan_facility = (!empty($first_fdr->loan_facility)) ? $first_fdr->loan_facility.'%' : 'N/A';
+
+$second_payment = ($amount * pow(1 + $second_interest /$no_of_times,($no_of_times*($second_tenure/12))));
+$second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan_facility.'%' : 'N/A';
 
 ?>
 
@@ -71,12 +96,12 @@ if($second_fdr->is_non_bank == 1){
 						
 						<tr>
 							<td><b> Interest Rate</b></td>
-							<td> <?php echo $first_fdr->interest_rate;?></td>
+							<td> <?php echo $first_fdr->interest_rate;?> %</td>
 						</tr>
 						
 						<tr>
 							<td><b> Deposit Amount</b></td>
-							<td> <?php echo $first_fdr->min_amount;?> </td>
+							<td> <?php echo $amount;?> </td>
 						</tr>
 
 						<tr>
@@ -85,8 +110,13 @@ if($second_fdr->is_non_bank == 1){
 						</tr>
 
 						<tr>
+							<td><b> Maturity Amount</b></td>
+							<td> <?php echo $first_payment;?> </td>
+						</tr>
+
+						<tr>
 							<td><b> Loan Facility</b></td>
-							<td> <?php echo $first_fdr->loan_facility;?> % </td>
+							<td> <?php echo $first_loan_facility;?> </td>
 						</tr>
 
 						
@@ -103,12 +133,12 @@ if($second_fdr->is_non_bank == 1){
 
                             <tr>
                                 <td><b> Interest Rate</b></td>
-                                <td> <?php echo $second_fdr->interest_rate;?></td>
+                                <td> <?php echo $second_fdr->interest_rate;?> %</td>
                             </tr>
 
                             <tr>
                                 <td><b> Deposit Amount</b></td>
-                                <td> <?php echo $second_fdr->min_amount;?> </td>
+                                <td> <?php echo $amount;?> </td>
                             </tr>
 
                             <tr>
@@ -116,9 +146,16 @@ if($second_fdr->is_non_bank == 1){
                                 <td> <?php echo $second_fdr->tenure;?> </td>
                             </tr>
 
+
+                            <tr>
+                                <td><b> Maturity Amount</b></td>
+                                <td> <?php echo $second_payment;?> </td>
+                            </tr>
+
+
                             <tr>
                                 <td><b> Loan Facility</b></td>
-                                <td> <?php echo $second_fdr->loan_facility;?> % </td>
+                                <td> <?php echo $second_loan_facility;?>  </td>
                             </tr>
 
 
