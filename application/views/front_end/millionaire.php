@@ -498,7 +498,7 @@
 
         $('#searchMillionaire').on('click', '.availableOffer', function (){
 
-            var  formData = $(this).data();
+            var formData = $(this).data();
             var offer = formData.offer;
             console.log(offer);
             $('#availableOfferSchedule'+offer).html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
@@ -510,9 +510,7 @@
 
         $('input[name="maturity_amount"]').on('click',function() {
             var thisVal= 'selected_amount='+$(this).val();
-//            alert(thisVal);
-
-
+            alert(thisVal);
             $.ajax
             ({
                 type: "POST",
@@ -531,11 +529,8 @@
 
                 }
             });
-
-
-
         });
-        });
+    });
 </script>
 
 
@@ -611,7 +606,7 @@ $(document).ready(function() {
             });
         }
 
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
+        $("input[type='checkbox'], input[type='radio']").on( "click", loadData( page = null ) );
     $(document).on('click','.squaredOne input[type="checkbox"]',function() {
         loadData( page = null )
     });

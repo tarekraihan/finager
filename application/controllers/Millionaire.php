@@ -582,7 +582,7 @@ class Millionaire extends CI_Controller
 
         $active = array();
         foreach($response->result_array() as $row){
-            array_push($active,$row['tenure_id']) ;
+            array_push($active,$row['tenure']) ;
         }
 
         for ($x = 1; $x <= 20; $x++) {
