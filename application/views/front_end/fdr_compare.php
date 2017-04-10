@@ -9,13 +9,6 @@ $id1 = $this->session->userdata('second_fdr') ;
 $result1 = $this->Front_end_select_model->select_fdr_details($id1);
 $second_fdr = $result1->row();
 
-//	print_r($second_fdr);die;
-
-/*
-$loan_facility = $first_fdr->loan_facility;
-
-$xplode(" ",$str))*/
-
 $first_bank_name = "";
 $first_bank_logo = "";
 if($first_fdr->is_non_bank == 1){
@@ -47,10 +40,10 @@ $second_interest = ($second_yearly_interest / 100);
 $second_tenure = floatval($second_fdr->installment);
 
 $no_of_times = 12;
-$first_payment = ($amount * pow(1 + $first_interest /$no_of_times,($no_of_times*($first_tenure/12))));
+$first_payment = round($amount * pow(1 + $first_interest /$no_of_times,($no_of_times*($first_tenure/12))));
 $first_loan_facility = (!empty($first_fdr->loan_facility)) ? $first_fdr->loan_facility.'%' : 'N/A';
 
-$second_payment = ($amount * pow(1 + $second_interest /$no_of_times,($no_of_times*($second_tenure/12))));
+$second_payment = round($amount * pow(1 + $second_interest /$no_of_times,($no_of_times*($second_tenure/12))));
 $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan_facility.'%' : 'N/A';
 
 ?>
@@ -60,9 +53,9 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></p></td>
+						<td><p><a href="<?php echo base_url();?>en/fdr_details/<?php echo $first_fdr->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></td>
+						<td><a href="<?php echo base_url();?>en/fdr_details/<?php echo $second_fdr->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
 					</tr>			
 				</table>
 			</div>
@@ -101,7 +94,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 						
 						<tr>
 							<td><b> Deposit Amount</b></td>
-							<td> <?php echo $amount;?> </td>
+							<td> <?php echo number_format( $amount );?> </td>
 						</tr>
 
 						<tr>
@@ -111,7 +104,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
 						<tr>
 							<td><b> Maturity Amount</b></td>
-							<td> <?php echo $first_payment;?> </td>
+							<td> <?php echo number_format( $first_payment );?> </td>
 						</tr>
 
 						<tr>
@@ -138,7 +131,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
                             <tr>
                                 <td><b> Deposit Amount</b></td>
-                                <td> <?php echo $amount;?> </td>
+                                <td> <?php echo number_format( $amount );?> </td>
                             </tr>
 
                             <tr>
@@ -149,7 +142,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
                             <tr>
                                 <td><b> Maturity Amount</b></td>
-                                <td> <?php echo $second_payment;?> </td>
+                                <td> <?php echo number_format( $second_payment );?> </td>
                             </tr>
 
 
@@ -270,13 +263,13 @@ $(document).ready(function() {
 	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
 	    });
 	});
-	
 
-	<!-- for main chart-->	
+
+	<!-- for main chart-->
 	$(document).ready(function () {
 	    var s1 = [[2002, 112000], [2003, 122000], [2004, 104000], [2005, 99000], [2006, 121000]];
 	    var s2 = [[2002, 10200], [2003, 10800], [2004, 11200], [2005, 11800], [2006, 12400]];
-	 
+
 	    plot1 = $.jqplot("chart1", [s2, s1], {
 	        // Turns on animatino for all series in this plot.
 	        animate: true,
@@ -298,8 +291,8 @@ $(document).ready(function() {
 	                yaxis: 'y2axis',
 	                rendererOptions: {
 	                    // Speed up the animation a little bit.
-	                    // This is a number of milliseconds.  
-	                    // Default for bar series is 3000.  
+	                    // This is a number of milliseconds.
+	                    // Default for bar series is 3000.
 	                    animation: {
 	                        speed: 2500
 	                    },
@@ -308,7 +301,7 @@ $(document).ready(function() {
 	                    barMargin: 0,
 	                    highlightMouseOver: false
 	                }
-	            }, 
+	            },
 	            {
 	                rendererOptions: {
 	                    // speed up the animation a little bit.
@@ -355,14 +348,14 @@ $(document).ready(function() {
 	            }
 	        },
 	        highlighter: {
-	            show: true, 
-	            showLabel: true, 
+	            show: true,
+	            showLabel: true,
 	            tooltipAxes: 'y',
 	            sizeAdjust: 7.5 , tooltipLocation : 'ne'
 	        },
 	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
 	    });
-	   
+
 	});
 
 </script>
@@ -371,7 +364,7 @@ $(document).ready(function() {
 
 //for left bar query
 $(document).ready(function () {
-	
+
 	$('[data-toggle="toggle"]').change(function(){
 		$(this).parents().next('.hide').toggle();
 	});
@@ -392,7 +385,7 @@ $(document).ready(function () {
 	});
 	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
 	$('#txtMinAge').val(sliderElement.slider('values', 0));
-	
+
 
 });
 
@@ -414,7 +407,7 @@ $(document).ready(function () {
 	});
 	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
 	$('#txtMinAge1').val(sliderElement.slider('values', 0));
-	
+
 
 });
 
@@ -436,7 +429,7 @@ $(document).ready(function () {
 	});
 	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
 	$('#txtMinAge2').val(sliderElement.slider('values', 0));
-	
+
 
 });
 

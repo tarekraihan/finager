@@ -719,7 +719,7 @@ body {
     border: 2px solid #DADADA;
 }
 .home_loan_right_bar:hover{
-    box-shadow: 0px 0px 9px 3px #808080;
+    box-shadow: 0px 0px 8px -2px #808080;
 }
 .loan_query{
     padding:6px;
@@ -1132,8 +1132,14 @@ body {
 	font-size: 35px;
 	font-style: italic;
 }
+#fdr_loan {
+    margin-top: 10px;
+}
+.form-group_fdr{
+    padding:0 6px;
+}
 #mony_max_header{
-	background-image:url(../images/monymax_main_page.jpg);
+	background-image:url(../images/Money-Maximizer-Main-Page.jpg);
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:center center;
@@ -1268,6 +1274,11 @@ body {
 .fdr_landing_button a {
     color: #000;
     font-weight: bold;
+}
+#availableOffer1 {
+	border: 1px solid #d09f5c;
+	padding: 16px;
+	margin-bottom: 15px;
 }
 
 /* for home loan compare page */
@@ -3095,9 +3106,9 @@ hr {
     width: 150px;
 }
 
-.logobar a .logo{
-    max-height: 62px;
-    width: 150px;
+.logobar a .logo {
+    max-height: 70px;
+    width: 185px;
 }
 
 /*For Footer menu*/
@@ -3452,7 +3463,8 @@ ul.footer-socio {
     font-size: 24px;
     cursor:pointer;
     position: fixed;
-    margin-left: 146px;
+    margin-left: 120px;
+    z-index:9999;
 }
 /* common button effect */
 .flash-button{
@@ -3957,7 +3969,7 @@ ul.footer-socio {
 /*for left bar fixed*/
         .fixedElement {
            position: fixed;
-           width: 16.5%;
+           width: 262px;
            height: auto;
            padding: 0px;
            top: 0;
@@ -3966,7 +3978,7 @@ ul.footer-socio {
 .compare-bg{
     position: fixed;
     width: 100%;
-    height: 108px !important;
+    height: 148px !important;
     padding: 0px;
     background-color: #f1f1f1;
     top: 0;

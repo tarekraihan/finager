@@ -1,3 +1,38 @@
+<?php
+
+$id=$this->uri->segment(3, 0);
+if(!empty($id) && is_numeric($id) ){
+
+    $query=$this->Front_end_select_model->select_fdr_details($id);
+    $row=$query->row();
+//        print_r($row);die;
+
+    if($row->is_non_bank == 1){
+        $bank_name = $row->non_bank_name;
+        $bank_logo = $row->non_bank_logo;
+    }else{
+        $bank_name = $row->bank_name;
+        $bank_logo = $row->bank_logo;
+    }
+    $amount = 100000;
+    $yearly_interest = floatval( $row->interest_rate ) ;
+    $interest = ($yearly_interest / 100);
+    $tenure = floatval($row->installment);
+
+    $no_of_times = 12;
+    $payment = round($amount * pow(1 + $interest /$no_of_times,($no_of_times*($tenure/12))));
+    $loan_facility = (!empty($row->loan_facility)) ? $row->loan_facility.'%' : 'N/A';
+
+
+
+}else{
+    redirect(base_url().'My404');
+}
+
+
+
+
+?>
 <style>
     .panel-default {
         border-color: #EAEAEC;
@@ -19,7 +54,7 @@
 			<div class="row">
 				<div class="card_details_body">
 					<div class="col-sm-2 col-xs-4">
-						<div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></div>
+						<div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo; ?>" /></div>
 						<p class="text-center">
 							<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 						</p>
@@ -27,9 +62,9 @@
 					</div>
 					<div class="col-sm-2 col-xs-8">
 						<div>
-							<p class="card_details_head2">Prime Bank Home Loan</p>
+							<p class="card_details_head2"><?php echo $bank_name?> </p>
 							<p class="card_details_features">
-								Purchase Apartment/Flat
+                                FDR
 							</p>
 						</div>
 					</div>
@@ -40,7 +75,7 @@
 								<div>
 									<p class="card_details_head2">Deposited Amount </p>
 									<p class="card_details_features">
-										&#2547; 10000
+										<?php echo number_format($amount); ?>
 									</p>
 								</div>
 							</div>
@@ -48,7 +83,7 @@
 								<div>
 									<p class="card_details_head2">Tenure</p>
 									<p class="card_details_features">
-										1 Year
+                                        <?php echo $row->tenure; ?>
 									</p>
 								</div>
 							</div>
@@ -56,7 +91,7 @@
 								<div>
 									<p class="card_details_head2">Interest Rate</p>
 									<p class="card_details_features">
-										6%
+                                        <?php echo $yearly_interest; ?>%
 									</p>
 								</div>
 							</div>
@@ -64,7 +99,7 @@
 								<div>
 									<p class="card_details_head2">Maturity Amount</p>
 									<p class="card_details_features">
-										&#2547; 1300
+										&#2547; <?php echo number_format($payment);?>
 									</p>
 								</div>
 							</div>
@@ -72,7 +107,7 @@
 								<div>
 									<p class="card_details_head2">Loan Facility</p>
 									<p class="card_details_features">
-										90%
+										<?php echo $loan_facility;?>
 									</p>
 								</div>
 							</div>
@@ -371,11 +406,7 @@
 				<h4>Features</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<ul>
-						<li>Pre-mature full Encashment Facility</li>
-						<li>Auto Renewal Option with Interest</li>
-						<li>Loan Against Fixed Deposit Facility</li>
-					</ul>
+					<?php echo $row->available_feature;?>
 				</div>
 			</div>
 		</div>
@@ -388,12 +419,7 @@
 				<h4>Eligibility</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<ul>
-						<li>FDS Account can be opened both for Individual and Corporate bodies</li>
-						<li>Only Resident Bangladeshi National is allowed to open Personal FDS Account.</li>
-						<li>Joint account can be opened.</li>
-						<li>Minor account can be opened under the supervision of his / her / their guardian.</li>
-					</ul>
+                    <?php echo $row->eligibility;?>
 				</div>
 			</div>
 		</div>
@@ -405,21 +431,7 @@
 				<h4>Required Documents</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2 trbodywidth">
-					<ul>
-						<li>Salary Certificate/Letter of Introduction.</li>
-						<li>Application form (payment structure & schedule must be reflected).</li>
-						<li>CV/Biodata.</li>
-						<li>Latest one-year personal bank statement.</li>
-						<li>Latest tax clearance certificate.</li>
-						<li>Photocopy of passport/driving license/national id of applicant(s) and guarantor(s) .</li>
-						<li>2 copy recent passport size photographs of applicant(s) and guarantor(s).</li>
-						<li>NOC from spouse if co-applicant is anybody other than spouse.</li>
-						<li>Letter of introduction.</li>
-						<li>Copy of latest utility bill.</li>
-						<li>Personal net worth statements of applicant(s) and guarantor(s).</li>
-						<li>Personal guarantee of spouse/parents/any person accepted to bank.</li>
-						<li>Evidence of another income source.</li>
-					</ul>
+                    <?php echo $row->required_document;?>
 				</div>
 			</div>
 		</div>
@@ -432,21 +444,7 @@
 				<h4>Terms & Conditions</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2">
-					<ol type="1">
-						<li>The facility shall be made available for the customer from the date of Bank's approval of this application until such time is stipulated in any letter and this facility shall be continuing on until the adjustment of the dues of the Bank with interest and other charges.</li>
-						<li>The Bank reserves the right to withdraw the credit facility and demand repayment if there has been any default in repayment of the loan.</li>
-						<li>The Bank shall not be obliged to make the credit facility available until it has received formal written acknowledgement from you accepting the credit facility on the basis of outline and subject to the terms and conditions specified in the banking arrangement letter.</li>
-						<li>The acceptance of the terms and conditions of the banking arrangement letter by the customer constitutes a legal and binding obligation and is enforceable in accordance with the terms of the Banking arrangement letter.</li>
-						<li>By use of the credit facility provided by the bank, the customer accepts the conditions enumerated in the banking arrangement letter and authorizes the bank to appoint agents to collect funds payable to the bank, as the Bank may consider necessary. In the due discharge of their duty, information regarding borrower's credit facility will be supplied to the agent. All charges payable to such agents, to collect amounts owed to the bank, are liable to be at borrower's cost and risk, in addition to all other costs, charges and expenses incurred by the bank to recover outstanding dues/money.</li>
-						<li>The bank is authorized to open and maintain account(s) for the purpose of administering and recording payments by the customer in respect of the facility.</li>
-						<li>The loan shall be utilized for the specified purpose for which it has been sanctioned. Payment shall be made directly by the bank to the vendor or to the customer, as determined by the Bank, depending upon the purpose of the loan.</li>
-						<li>All payments in respect of the facility shall be made by the customer on or before the due dates and the customer hereby irrevocably authorizes the Bank to debit any of the customer's account(s) with the Bank with all amounts. Owing in respect of the facility including interest and charges and expenses (together the indebtedness) at such time as the same shall become or be due and, payable and transfer such sum to the loan account for adjustment but in any case, the customer shall always remain liable and agree(s) to make payment in full of all such sums to the Bank.</li>
-						<li>The customer unconditionally undertakes to repay the loan as per terms and conditions of the Banking Arrangement Letter.</li>
-						<li>The customer undertakes to deposit his/her salary/wages/honorarium payable by his/her employer to the designated account maintained with the Bank.</li>
-						<li>The Bank is authorized to enforce all or any of the securities executed as well as kept by the customer in favor of the Bank and recover the loan amount with interest and other charges accrued in the loan account.</li>
-						<li>The customer irrevocably authorizes the Bank to enforce the securities art's absolute discretion in the event the loan account becomes irregular and shall apply any proceeds recovered towards adjustment of outstanding loan liabilities along with all legal fees.</li>
-						<li>Where the facility is made available for purchase of consumer item(s) including Home loan customer unconditionally and irrevocably undertakes to deliver possession of the consumer items including the Home loan purchased b1 the loan amount without any question whatever to the bank as and when demanded by the bank. The customer further authorizes the bank irrevocably, to sell the mortgage items and apply the proceeds towards adjustment of the dues. For any unadjusted sum, the customer undertakes to repay the same with interest and other charges.</li>
-					</ol>
+                    <?php echo $row->terms_and_conditions;?>
 				</div>
 			</div>
 		</div>
@@ -458,20 +456,7 @@
 				<h4>Review</h4>
 				<div class="prosConsHr"></div><br/>
 				<div class="prosCons_body2">
-					<ul>
-						<li>Application form (payment structure & schedule must be reflected)</li>
-						<li>CV/Biodata</li>
-						<li>Insurance coverage.</li>
-						<li>Latest one-year personal bank statement</li>
-						<li>Latest tax clearance certificate</li>
-						<li>2 copy recent passport size photographs of applicant(s) and guarantor(s)</li>
-						<li>NOC from spouse if co-applicant is anybody other than spouse</li>
-						<li>Letter of introduction</li>
-						<li>Copy of latest utility bill</li>
-						<li>Personal net worth statements of applicant(s) and guarantor(s)</li>
-						<li>Personal guarantee of spouse/parents/any person accepted to bank</li>
-						<li>Evidence of another income source</li>
-					</ul>
+                    <?php echo $row->review;?>
 				</div>
 			</div>
 		</div>

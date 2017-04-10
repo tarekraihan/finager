@@ -58,185 +58,114 @@
                                 <?php } ?>
 							</div>
 						</div>
-						<div class="card_query">
-							<p>Select Deposit Amount</p>
-							<div class="row">
-								<div class="span8">
-									<div class="singleColumn page common">
-										<div class="htmltextarea section">
-											<div class="innerMdlWrapper"> 
-												 <!-- Middle Inner START--> 
-												<div class="innerMdlInner">
-													<div class="calcWrapper">
-														<div class="clear"></div>
-														<!--Calculator Banner END-->
-														<div class="selectCalcWrapper" style="display:none;">
-															<div class="radiobox">
-															  <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-															  <label for="savingCalculator">Home Loan Calculator</label>
-															</div>
-															<div class="radiobox">
-															  <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
-															  <label for="depositCalculator">Personal Loan Calculator</label>
-															</div>
-														</div>
+                        <div class="card_query_fdr2">
+                            <p>Select Deposit Amount</p>
+                            <div class="form-group_fdr">
+                                <input type="text" name="deposited_amount" class="form-control" id="deposited_amount" value="50000"/>
+                            </div>
+                            <div class="fdrTenurepadding">
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="5000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        5K
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-right">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="50000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        50K
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="100000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        1 LAC
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-right">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="1000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        10 LAC
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="2500000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        25 LAC
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-right">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="5000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        50 LAC
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="10000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        1 CORE
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-right">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="50000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        5 CORE
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-right">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="100000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        10 CORE
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="250000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        25 CORE
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-right">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="500000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        50 CORE
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="1000000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        100 CORE
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-right">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="2000000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        200 CORE
+                                    </label>
+                                </div>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="deposit_amount" value="5000000000" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        500 CORE
+                                    </label>
+                                </div>
+                            </div>
 
-														<div class="savingsContainer emiContainer">
-													
-															<div class="leftCont"> 
-																  
-															  <!--Amount Already Saved START-->
-
-																<div class="slideWrapper" id="alreadySaved">
-																  
-																	<div class="inputWrapper"> <span class="rupee"></span>
-																	  <div class="inputField">
-																		<div class="inpLft"></div>
-																		<div class="inpMdl">
-																		  <input type="text" name="" value="0" id="finalAssest" class="input_LoanAmt"/>
-																		</div>
-																		<div class="inpRt"></div>
-																	  </div>
-																	</div>
-																	<div class="clear"></div>
-																	
-																	<!--Calculator Section START-->
-																	<div class="calcContainer">
-																	  <div class="calcSection calborder">
-																		<div class="dragBox">
-																		  <div class="drag"> <span></span>
-																			<div class="sliderHover"></div>
-																			<div class="draggable ui-widget-content drag3"> </div>
-																		  </div>
-																		  <div class="clear"></div>
-																		  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																		  <div class="slideImg" id="finacialAssest">
-																			<ul>
-																			</ul>
-																		  </div>
-																		  <div class="prev"></div>
-																		  <div class="next active"></div>
-																		</div>
-																		<div class="hideVal">25000</div>
-																	  </div>
-																	</div>
-																	<!--Calculator Section END--> 
-																	
-																</div>
-																  <!--Amount Already Saved END-->
-																  
-																<div style="display:none;" class="slideWrapper" id="avgSave">
-																   
-																	<div class="inputWrapper">
-																	  <div class="inputField">
-																		<div class="inpLft"></div>
-																		<div class="inpMdl">
-																		  <input type="text" name="" value="1" id="finalCustAge" maxlength="3" class="input_LoanPeriod"/>
-																		</div>
-																		<div class="inpRt"></div>
-																	  </div>
-																	  <div class="inpRadio">
-																		<div id="tenureType">
-																		  <label>Year</label>
-																		</div>
-																	  </div>
-																	</div>
-																	<div class="clear"></div>
-																	<!--Calculator Section START-->
-																	<div class="calcContainer yearWrap" style="display:none">
-																	  <div class="calcSection calborder">
-																		<div class="dragBox">
-																		  <div class="drag"> <span></span>
-																			<div class="draggable ui-widget-content drag3"></div>
-																		  </div>
-																		  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																		  <div class="slideImg" id="custAge">
-																			<ul>
-																			</ul>
-																		  </div>
-																		  <div class="prev"></div>
-																		  <div class="next active"></div>
-																		</div>
-																		<div class="hideVal">5</div>
-																	  </div>
-																	</div>
-																	<!--Calculator Section END--> 
-																	
-																	<!--Calculator Section START-->
-																	<div class="calcContainer monthWrap">
-																	  <div class="calcSection calborder">
-																		<div class="dragBox">
-																		  <div class="drag2"> <span></span>
-																			<div class="draggable draggable2 ui-widget-content drag3"></div>
-																		  </div>
-																		  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																		  <div class="slideImg" id="monthExp">
-																			<ul>
-																			</ul>
-																		  </div>
-																		  <!--<div class="prev"></div>
-																							  <div class="next active"></div>--> 
-																		</div>
-																		<div class="hideVal">5</div>
-																	  </div>
-																	</div>
-																	<!--Calculator Section END--> 
-																</div>
-
-
-																<div style="display:none;" class="slideWrapper" id="interest">
-																   
-																	<div class="inputWrapper">
-																	  <div class="inputField">
-																		<div class="inpLft"></div>
-																		<div class="inpMdl">
-																		  <input type="text" name="" value="8" id="finalLiability" class="input_AIR"/>
-																		</div>
-																		<div class="inpRt"></div>
-																	  </div>
-																	  <span class="perc">%</span> 
-																	</div>
-																	<div class="clear"></div>
-																	<!--Calculator Section START-->
-																	<div class="calcContainer">
-																	  <div class="calcSection">
-																		<div class="dragBox">
-																		  <div class="drag"> <span></span>
-																			<div class="draggable ui-widget-content drag3"></div>
-																		  </div>
-																		  <div class="clear"></div>
-																		  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																		  <div class="slideImg" id="liability">
-																			<ul>
-																			</ul>
-																		  </div>
-																		  <div class="prev"></div>
-																		  <div class="next active"></div>
-																		</div>
-																		<div class="hideVal">0.5</div>
-																	  </div>
-																	</div>
-																	<!--Calculator Section END--> 
-																</div>
-																  
-																  <!--<a href="javascript:;" class="submit">Submit</a>-->
-																  <input type="hidden" id="input_Payment" />
-															</div>
-
-														   
-														</div>
-
-													</div>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<input class="w100" type="text" >
-						</div>
+                        </div>
+                        <div class="clearfix"></div>
 						<div class="card_query_fdr">
 							<p>Tenure</p>
 							<div class="fdrTenurepadding">
@@ -371,6 +300,15 @@ $(window).on('scroll', function (){
 //for show hide (more info & Available Offer)
 
     $(document).ready(function() {
+        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            $('input[name="deposit_amount"]:checked').each(function(){
+                $('#deposited_amount').val($(this).val());
+//                alert($('#deposited_amount').val());
+
+            });
+
+        } );
+
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();
             var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
@@ -396,7 +334,7 @@ $(window).on('scroll', function (){
                 fdr_tenure.push($(this).val());
             });
 
-            var amount = $('#finalAssest').val();
+            var amount = $('#deposited_amount').val();
             var principal_amount = "&principal_amount="+amount;
 
             var fdr_tenure_list = "&fdr_tenure="+fdr_tenure;
@@ -442,8 +380,11 @@ $(window).on('scroll', function (){
 
 
         $( ".draggable" ).mouseout(function(){
-            loadData( page = null );
 
+
+        });
+        $('#deposited_amount').on('keyup',function(){
+            loadData( page = null );
         });
 
 
@@ -596,6 +537,11 @@ $(window).on('scroll', function (){
 
 
         });
+
+
+
+
+
 
     });
 

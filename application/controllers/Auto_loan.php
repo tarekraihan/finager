@@ -756,28 +756,17 @@ class Auto_loan extends CI_Controller
                 $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
             }
 
-
-            $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-            $monthly_interest = ($yearly_interest / $month_limit );
+            $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+            if($yearly_interest =='' || $yearly_interest < 1){
+                $yearly_interest = floatval( '12');
+            }
+            $monthly_interest = ($yearly_interest / 12 /100);
             $downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
             $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
-            $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
+            $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
 
             $total_payable = round( $emi * $month_limit );
-
-/*
-            echo '<pre>';
-
-            echo '<br/> Interest monthly = '.$monthly_interest;
-            echo '<br/> Interest Yearly = '.$yearly_interest;
-            echo '<br/> Tenure = '.$month_limit;
-            echo '<br/> EMI = '.$emi;
-            echo '<br/> Total Payable ='. $total_payable;
-            echo '<br/> Loan Id  ='. $row->id;
-
-            echo '</pre>';*/
-
 
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
