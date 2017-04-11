@@ -159,7 +159,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/common.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/clientlib.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jquery.ui.touch-punch.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
+<!--script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script-->
 
 <!-- Search Modal -->
 <div class="modal fade" id="serchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

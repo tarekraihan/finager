@@ -119,7 +119,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/debit_card_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -132,7 +132,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/debit_card_compare');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -144,7 +144,7 @@ class En extends CI_Controller {
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/home_loan_landing');
-        $this->load->view('front_end/block/footer_home');
+        $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -156,7 +156,7 @@ class En extends CI_Controller {
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/home_loan');
-        $this->load->view('front_end/block/footer_home');
+        $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -168,7 +168,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/home_loan_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -179,7 +179,7 @@ class En extends CI_Controller {
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/home_loan_compare');
-        $this->load->view('front_end/block/footer_home');
+        $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -204,7 +204,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/auto_loan_landing');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -216,7 +216,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/auto_loan');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -228,7 +228,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/auto_loan_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -241,7 +241,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/auto_loan_compare');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -258,7 +258,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/personal_loan_landing');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -271,7 +271,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/personal_loan');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -284,7 +284,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/personal_loan_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -296,7 +296,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/personal_loan_compare');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -314,7 +314,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/education_loan_landing');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -327,7 +327,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/education_loan');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -339,7 +339,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/education_loan_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -352,7 +352,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/education_loan_compare');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -373,7 +373,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/fdr_landing');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -387,7 +387,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/fdr');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -400,7 +400,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/fdr_compare');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -414,7 +414,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/fdr_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -428,7 +428,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/dps_landing');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -441,7 +441,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/dps');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -453,7 +453,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/dps_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -465,7 +465,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/dps_compare');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -478,7 +478,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/millionaire_landing');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -492,7 +492,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/millionaire');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -505,7 +505,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/millionaire_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -517,7 +517,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/millionaire_compare');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -531,7 +531,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/money_maximizer_landing');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -544,7 +544,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/money_maximizer');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -556,7 +556,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/bank_details');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }
@@ -568,7 +568,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/all_logo');
-            $this->load->view('front_end/block/footer_home');
+            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login/');
         }

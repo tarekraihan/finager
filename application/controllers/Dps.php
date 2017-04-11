@@ -841,6 +841,7 @@ class Dps extends CI_Controller
 
         $dps_user = $this->input->post('dps_user');
         $dps_tenure = $this->input->post('dps_tenure');
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
 
         $WHERE = array(); $query = '';
         if(!empty($dps_user)) {
@@ -894,6 +895,7 @@ class Dps extends CI_Controller
         $dps = '';
         foreach($dps_deposit->result() as $row) {
 
+
             $bank = "";
             if ($row->is_non_bank == 1) {
                 $bank = $row->non_bank_name;
@@ -906,6 +908,17 @@ class Dps extends CI_Controller
             } else {
                 $bank_logo = $row->bank_logo;
             }
+
+
+            $yearly_interest = floatval( $row->interest_rate ) ;
+            $interest = ($yearly_interest / 100);
+
+            $dps_tenure = (empty($dps_tenure) ? 1 : $dps_tenure);
+
+            $no_of_times = 12;//compounding 12 times in a year
+            $payment = ($principal_amount * pow(1 + $interest /$no_of_times,($no_of_times*($dps_tenure/12))));
+            $loan_facility = (!empty($row->loan_facility)) ? $row->loan_facility.'%' : 'N/A';
+
 
             $query_amount = 1000;
             $tenure = 3 * 12;

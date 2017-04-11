@@ -7,12 +7,6 @@
 **********************************/
 -->
 
-<style>
-    #interest {
-        display: none;
-    }
-    
-</style>
 <section id="home_header">
 </section>
 <section id="card">
@@ -104,7 +98,7 @@
                                                         </div>
                                                         <!--Amount Already Saved END-->
 
-                                                        <div class="slideWrapper" id="avgSave">
+                                                        <div class="slideWrapper hidden" id="avgSave">
 
                                                             <div class="inputWrapper">
                                                                 <div class="inputField">
@@ -173,7 +167,7 @@
                                                                     </div>
                                                                     <div class="inpRt"></div>
                                                                 </div>
-                                                                <span class="perc">%</span>
+                                                                <span class="perc">Year</span>
                                                             </div>
                                                             <div class="clear"></div>
                                                             <!--Calculator Section START-->
@@ -192,7 +186,7 @@
                                                                         <div class="prev"></div>
                                                                         <div class="next active"></div>
                                                                     </div>
-                                                                    <div class="hideVal">0.5</div>
+                                                                    <div class="hideVal">1</div>
                                                                 </div>
                                                             </div>
                                                             <!--Calculator Section END-->
@@ -281,6 +275,8 @@
 
     </div>
 </section>
+
+<script src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
 
 <script type="text/javascript"> 
 

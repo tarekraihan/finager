@@ -4,9 +4,7 @@
 //custAge = On a average how long I can save
 //finacialAssest = I have already saved
 //finacialAssest1 = Amount I would save in my account each month
-function getFacebook(){
-	window.open("https://www.facebook.com/sharer/sharer.php?u="+window.location.href);
-}
+
 
 var lft, q= 30, i;
 var newWid, wid, len, dragFlag = true, clickEventFlag = false, dragEventFlag = false;
@@ -20,19 +18,6 @@ var incrmentalVal = -1 ;
 var increCounter = 1 ;
 $(function(event) {
 	
-
-		
-		/***** tooltip ****/
-		$('.titleField span img').mouseover(function() {
-			$(this).css('opacity',1)
-			$(this).parents('.titleField').find('.tolTipDetail').show();
-		});
-		
-		$('.titleField span img').mouseout(function() {
-			$(this).css('opacity',0.6)
-			$('.tolTipDetail').hide();
-		});
-		/***** tooltip ****/
 		/****** input box calculation ****/
 		$('input').keyup(function (e) {
 			if (e.keyCode == 13) {
@@ -66,60 +51,7 @@ $(function(event) {
 			var futureGoal = $(this).parents('.slideWrapper').find('#finalFeatureGoal').val();	
 			var interest = $(this).parents('.slideWrapper').find('#finalLiability').val();	
 			var savedMonth = $(this).parents('.slideWrapper').find('#finalCustAge').val();	
-			
-			if(monEx >=0 && monEx <=2000000)
-			{
-				
-				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
-				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
-				var marLft_input =  (valInput/diff) *35;
-				
-				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-marLft_input});
-				finalCalculation();
-			}
-			else if(monEx <0 || monEx >=2000000 )
-			{
-				
-				alert("Minimum Monthly Expense should be 0 & Maximum Monthly Expense should be 2000000");
-				$(this).val(0);
-				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:0});
-				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(0);
-				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
-				finalCalculation();
-			}
-			
-			/*if(savedMonth >=0 && savedMonth <=30)
-			{
-				//$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
-				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
-				var marLft_input =  (valInput/diff) *35;
-				//alert(marLft_input)
-				
-				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-marLft_input});
-				finalCalculation();
-			}*/
-			/*else if(monEx <0 || monEx >=30 )
-			{
-				//alert("Please select year between 0 to 30");
-				$(this).val(0);
-				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:0});
-				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(0);
-				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
-				finalCalculation();
-			}*/
-			
-			
-			
-			if(interest >=0 && interest <=12)
-			{
-				
-				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
-				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
-				var marLft_input =  (valInput/diff) *35;
-				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-marLft_input});
-				finalCalculation();
-			}
-			
+
 			
 			if(lifCvr >=0 && lifCvr <=100000000)
 			{
@@ -152,7 +84,7 @@ $(function(event) {
 			
 			/******** Financial Assests, Liabilty, life cover Calculation ***********/
 			
-/* Changes Done on 03-06-2014 START */
+			/******************* Main Calculation for slider range and effect *****************/
 			var amtDetail;
 			amtDetail = 10000000
 			
@@ -162,11 +94,16 @@ $(function(event) {
 			}
 			else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 			{
-				amtDetail = 2000000
+				amtDetail = 40000000
 			}
 			
-			if((finAsst >=0 && finAsst <=amtDetail) || (finAsst1 >=0 && finAsst1 <=amtDetail) )
+			if(finAsst < 200000 && finAsst < amtDetail){
+				alert("Minimum amount should be 2000000");
+				$("#finalAssest").val("200000");
+			}
+			else if(finAsst >=200000 && finAsst <=amtDetail)
 			{
+				console.log("more than 200000");
 				//alert(amtDetail)
 				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
@@ -178,9 +115,9 @@ $(function(event) {
 					{
 						var marLft_input =  (valInput/diff) *35;
 					}
-					else if(amtDetail==2000000)
+					else if(amtDetail>=2000000)
 					{
-						var marLft_input = ((valInput/diff)-2) *35;
+						var marLft_input = ((valInput/diff)-4) *35;
 					}
 					
 					//console.log("marLft_input" + marLft_input +'Difference'+ diff);
@@ -197,11 +134,11 @@ $(function(event) {
 			else if(finAsst <0 || finAsst >=amtDetail )
 			{
 				
-				alert("Minimum amount should be 0 & Maximum amount should be" + amtDetail);
-				$(this).val(amtDetail);
+				alert("Minimum amount should be 0 & Maximum amount should be" + amtDetail+'TEST');
+				/*$(this).val(amtDetail);
 				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:'-2345px'});
 				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(0);
-				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',385);
+				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',385);*/
 				finalCalculation();
 			}
 /* Changes Done on 03-06-2014 END */
@@ -242,101 +179,64 @@ $(function(event) {
 			var valInput =parseFloat( $(this).val());
 			var _this=$(this);
 			//alert(valInput)
-			if(valInput < 13){
-				//alert("Minimum Age should be 1 & Maximum Age should be 30")
-				_this.val(13);
+			if(valInput < 1){
+				alert("Minimum Year should be 1 & Maximum Year should be 25");
+				_this.val(1);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:0});
 				_this.parents('#interest').find('.draggable').css('left',0);
 				finalCalculation();
 			}
-			else if(valInput >= 23){
+			/*else if(valInput >= 23){
 				//alert("Max Age should be 1 & Maximum Age should be 30")
 				_this.val(23);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-1025px'});
 				_this.parents('#interest').find('.draggable').css('left','384px');
 				finalCalculation();
 				//alert(_this.parents('.slideWrapper').find('.calcContainer ul').css('margin-left'));
+			}*/
+			
+			/*********************************
+			*******************Year*******************
+			*******************************************/
+			else if(valInput > 25){
+				alert("Minimum Year should be 1 & Maximum Year should be 25");
+				_this.val(25);
+				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-665px'});
+				_this.parents('#interest').find('.draggable').css('left','175px');
+				finalCalculation();
+			}
+			else if(valInput == 25){
+				_this.val(25);
+				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-665px'});
+				_this.parents('#interest').find('.draggable').css('left','175px');
+				finalCalculation();
 			}
 			else{
 				var diff = parseFloat($(this).parents('#interest').find('.hideVal').text());
 				//alert(diff)
 				_this.parents('.calcSection').find('.highLight').css('visibility','visible').find('input').val(valInput);
 				_this.parents('#interest').find('.draggable').css('left',0);
-				if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Home Loan Calculator')
+				/*if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Home Loan Calculator')
 				{
 					var marLft_input =  ((valInput-8)/0.25)*35;
 				}
-				else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
+				else*/ 
+				if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 				{
-					var marLft_input =  ((valInput-13)/0.25)*35;
+					var marLft_input =  ((valInput)-1)*35;
+					//alert(marLft_input);
 				}
+
 				//alert(marLft_input)
 				_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft:-marLft_input});
+			
 				finalCalculation();
 			}
+
+
 		});
 		
-		$('#avgSave .inputWrapper input').blur(function(){
-			var valInput =parseInt( $(this).val());
-			var _this=$(this);
-			var inpSelected = $('.selectCalcWrapper .checked').find('label').text();
-			if(valInput <= 6){
-				//alert("Minimum Age should be 1 & Maximum Age should be 30")
-				_this.val(6);
-				//_this.parents('.slideWrapper').find('.yearWrap ul').animate({marginLeft:0});
-				_this.parents('.slideWrapper').find('.monthWrap ul').animate({marginLeft:0});
-				_this.parents('#avgSave').find('.draggable2').css('left',0);
-				finalCalculation();
-			}
-			/*if(valInput >= 19 && valInput < 30){
-				//alert("Minimum Age should be 1 & Maximum Age should be 30")
-				//_this.val(30);
-				//_this.parents('.slideWrapper').find('.yearWrap ul').animate({marginLeft:'-630px'});
-				_this.parents('#avgSave').find('.draggable').css('left','385px');
-				finalCalculation();
-			}*/
-			if(inpSelected=='Home Loan Calculator')
-			{
-				if(valInput >= 30){
-					_this.parents('.slideWrapper').find('.yearWrap ul').animate({marginLeft:'-630px'});
-					_this.val(30);
-					_this.parents('#avgSave').find('.draggable').css('left','385px');
-					finalCalculation();
-				}
-			}
-			else if(inpSelected=='Personal Loan Calculator')
-			{
-				if(valInput >= 60){
-					_this.val(60);
-					_this.parents('#avgSave').find('.draggable').css('left','312px');
-					finalCalculation();
-				}
-			}
-			
-			if(inpSelected=='Home Loan Calculator')
-			{
-				if(valInput > 1 && valInput < 30){
-					var diff = parseInt($(this).parents('.calcSection').find('.hideVal').text());
-					//alert(diff)
-					$(this).parents('.calcSection').find('.highLight').css('visibility','visible').find('input').val(valInput);
-					var marLft_input =  (valInput-1) *35;
-					$(this).parents('.slideWrapper').find('.yearWrap ul').animate({marginLeft:-marLft_input});
-					_this.parents('#avgSave').find('.draggable').css('left',0);
-					finalCalculation();
-				}
-			}
-			else if(inpSelected=='Personal Loan Calculator')
-			{
-				if(valInput > 6 && valInput < 60){
-				var diff = parseInt($(this).parents('.calcSection').find('.hideVal').text());
-				//alert(diff)
-				$(this).parents('.calcSection').find('.highLight').css('visibility','visible').find('input').val(valInput);
-					var marLft_input =  ((valInput/6)-1) *35;
-					$(this).parents('.slideWrapper').find('.draggable2').animate({left:marLft_input});
-				finalCalculation();
-				}
-			}
-		});
+		
 		
 		/****** input box calculation ****/		
 	finalCalculation();
@@ -348,8 +248,8 @@ $(function(event) {
 			custAgeLi += "<li>"+ k +"</li>";
 		}
 
-		if(k>=1 && k<=10){
-			monthExpLi += "<li>"+ k*6 +"</li>";			
+		if(k>=1 && k<=25){
+			monthExpLi += "<li>"+ k*1 +"</li>";			
 		}
 		
 		if(k>=32 && k<=60){
@@ -383,7 +283,7 @@ $(function(event) {
 		intRate=''
 		if($(this).find('label').text()=='Home Loan Calculator')
 		{
-			for(var k=0; k<201; k++){
+			/*for(var k=0; k<201; k++){
 				if(k>=1 && k<=30){
 					custAgeLi += "<li>"+ k +"</li>";
 				}
@@ -391,17 +291,21 @@ $(function(event) {
 					intVal = k*0.25
 					intRate += "<li>"+ intVal +"</li>";			
 				}
-			}
+			}*/
 		}
 		else if($(this).find('label').text()=='Personal Loan Calculator')
 		{
 			for(var k=0; k<201; k++){
-				if(k>=1 && k<=30){
+				/*if(k>=1 && k<=30){
 					custAgeLi += "<li>"+ k +"</li>";
-				}
-				if(k>=52 && k<=92){
-					intVal = k*0.25
-					intRate += "<li>"+ intVal +"</li>";			
+				}*/
+
+				/****************
+				****Year Range***
+				***************/
+				if(k>=1 && k<=31){
+					intVal = k*1
+					intRate += "<li>"+ intVal +"</li>";		
 				}
 			}
 		}
@@ -456,7 +360,7 @@ $(function(event) {
 		if($(this).find('label').text()=="Home Loan Calculator")
 		{
 			var valLife='', cr_1_life='';
-			for(var i=0; i<400; i++)
+			for(var i=5; i<400; i++)
 			{
 				var valueK = i*25;
 				if(valueK<100){
@@ -486,11 +390,11 @@ $(function(event) {
 		else if($(this).find('label').text()=="Personal Loan Calculator")
 		{
 			var valLife='', cr_1_life='';
-			valLife = "<li>50K</li>"
-			for(var i=3; i<81; i++)
+			valLife = "<li>2L</li>"
+			for(var i=5; i<801; i++)
 			{
 				
-				var valueK = i*25;
+				var valueK = i*50;
 				if(valueK<100){
 					valLife +=  "<li>"+ valueK +"K</li>";
 				}
@@ -543,6 +447,7 @@ $(function(event) {
 				//var leftPosCal = parseInt($(this).css('left'))/35;
 				//var leftPos = Math.ceil(leftPosCal)*35;
 				//$(".sliderHover").animate({'width':leftPos+5+'px'});
+				//alert("Drag stop");
 		},
 		containment: ".drag",
 		scroll: false 	
@@ -558,26 +463,10 @@ $(function(event) {
 
 	$( ".draggable" ).mouseout(function(){
 
-        //var amount = $('#finalAssest').val();
-        //var interest = $('#finalLiability').val();
-        //var month = $('#finalCustAge').val();
-        //alert(interest)
-       // Console.log('Amount = '+amount+' Interest = '+interest+' month = '+month);
+	});
 
-	});
-	
-		/*  
-	$( "body" ).mouseup(function(){
-		$(".draggable").eq(0).mouseup();
-		$(".draggable").eq(1).mouseup();
-		$(".draggable").eq(2).mouseup();
-	});
-	*/
 	$( ".draggable" ).mouseup(function(){
-		//alert(123);
 
-
-		
 		$('body .dragLiAdjust').removeClass('dragLiAdjust');
 		$(this).addClass('dragLiAdjust');
 		dragLiAdjustFunction();
@@ -597,10 +486,7 @@ $(function(event) {
 		var thMar = Math.abs(parseInt($(this).css('left')));
 		var ulMar = thMar + 45 + Math.abs(parseInt($(this).parents('.dragBox').find('.slideImg ul').css('margin-left')));
 		var ulWid = Math.abs(parseInt($(this).parents('.dragBox').find('.slideImg ul').css('width')));
-		
-		//console.log('thMar: '+thMar + '  | ulMar: '+ulMar+ '  | ulWid: '+ulWid);
-		
-		/*  */
+
 	
 		if( ulMar >= ulWid ){
 			if($(this).parents('.calcSection').find('.draggable2').length)
@@ -615,33 +501,14 @@ $(function(event) {
 		else if(leftPos < 350){
 		
 			$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',leftPos);
-		}else{
-			
-		/* 
-			alert('--------- 1');
-			
-			var ths = $('.dragLiAdjust');
-			var a = b = c = 0, v = 35, m = Math.abs(parseInt(ths.css('margin-left')));
-			for(var i=0; i<ths.find('li').length; i++){
-				a=v*i, c=a+35, b=a+17;
-				if(m>=a && m<=b){ m = a; break; }
-				else if(m>b && m<=c){ m = c; break; }
-			}
-			ths.css({'margin-left': '-'+m+'px'});
-			
-			alert('--------- 222');
-			
-			//$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',350);
-		 */
+		}
+		else{
 			
 		}
 		/*  */
 		var slidePosCal = parseInt($(this).parents('.calcSection').find('.slideImg ul').css('marginLeft'))/35;
 		var slidePos = Math.ceil(slidePosCal)*35;
 		
-		//console.log("Margin Left" + parseInt($(this).parents('.calcSection').find('.slideImg ul').css('marginLeft')))
-		//console.log("slidePos" + slidePos);
-		//$(this).parents('.calcSection').find('.slideImg ul').css('marginLeft',slidePos);
 		setTimeout(function(){
 			dragLiAdjustFunction();
 			calculationSlider();
@@ -742,9 +609,9 @@ $('.selectCalcWrapper .radiobox').click(function(){
 		$('.yearWrap').hide();
 		$('.monthWrap').show();
 		$('#tenureType').find('label').text('Month');
-		$('#finalAssest').val(500000)
-		$('#finalLiability').val(13);
-		$('#finalCustAge').val(6);
+		$('#finalAssest').val(200000)
+		$('#finalLiability').val(1);
+		$('#finalCustAge').val(1);
 	}
 	pmtCalc();
 	/*Reset All the values*/
@@ -787,7 +654,7 @@ function detectDragPosition(_this)
 		return false;
 	}
 	lftPostion = parseInt(_this.css('left'));
-	lftPosArray =[0,50,125,275,350,400];
+	lftPosArray =[0,50,125,150,170,400];
 	prevActionArray =['prevFast','prevSlow','middleSection','nextSlow','nextFast'];
 	for(var i = 0; i < lftPosArray.length ; i++)
 	{
@@ -820,10 +687,11 @@ function calculationSlider()
 		finalAge =  selectValue + 1;
 	}
 	else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
-	{
-		if(selectValue <= 9)
+	{	
+
+		if(selectValue <= 25)
 		{
-			finalAge =  ((selectValue+1)*6);
+			finalAge =  ((selectValue+1)*1);
 			//alert(finalAge);
 		}
 	}
@@ -832,18 +700,7 @@ function calculationSlider()
 	
 	
 	//console.log("finalAge" + finalAge)
-	finalExp = (selectValue * 10000 );
-	final_FeatureGoal = (selectValue * 100000 );
-	if(selectValue <= 400)
-	{
-		final_ExstngLifeCover = (selectValue * 25000 );
-	}
-	else if(selectValue > 400)
-	{
-		counterIncr= String(selectValue/100);
-		counterIncr=parseInt(counterIncr.split('.')[1]);
-		final_ExstngLifeCover = (counterIncr+4) *2500000;
-	}
+	
 	
 	if(selectValue <= 12)
 	{
@@ -851,7 +708,7 @@ function calculationSlider()
 	}
 	
 	if(selectValue <= 2000)
-	{	//alert(selectValue);
+	{
 		
 		if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Home Loan Calculator')
 		{
@@ -860,8 +717,9 @@ function calculationSlider()
 		}
 		else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 		{
-			finalFincialAssest =((selectValue+2) * 25000 );
-			finalLiabilities = ((selectValue+52) * 0.25 );
+			console.log(selectValue);
+			finalFincialAssest =((selectValue+4) * 50000 );
+			finalLiabilities = ((selectValue+1) * 1 );
 		}
 		finalFincialAssest1 =(selectValue * 5000 );
 		
@@ -873,6 +731,7 @@ function calculationSlider()
 		counterIncr=parseInt(counterIncr.split('.')[1]);
 		//finalLiabilities = (counterIncr+4) *2500000;
 		finalFincialAssest = (counterIncr+4) *5000;
+		
 		
 /*		if(isNaN(counterIncr))
 		{
@@ -906,16 +765,17 @@ function finalCalculation(){
 	var featureGoalVal = parseInt($('#finalFeatureGoal').val());
 	var lifeCoverVal = parseInt($('#finalExistingLifeCover').val());
 	
-	var ageLmt =0;
-	if(ageVal <= 50)
+	var ageLmt =25;
+	ageVal=25;
+	/*if(ageVal <= 50)
 	{
 		ageVal=20;
 	}
 	else
 	{
 		ageVal=12;
-	}
-	var result1 = (expenseVal * 12 * ageVal);
+	}*/
+	var result1 = (expenseVal * 1 * ageVal);
 	var result2 = liabilityVal - assestVal - lifeCoverVal + featureGoalVal;
 	var finalResult = parseInt( result1 + result2);
 	var lacsRes = finalResult/100000;
@@ -933,47 +793,7 @@ function finalCalculation(){
 	
 // Generate Hichart START
 var intRateVal = ((Math.ceil(pmt*($('.input_LoanPeriod').val()*12))-$('.input_LoanAmt').val())*100)/Math.ceil(pmt*($('.input_LoanPeriod').val()*12))
-/*console.log("Hidden Val----" +  Math.ceil(pmt*($('.input_LoanPeriod').val()*12))-$('.input_LoanAmt').val()  + "Loan Period-----" + $('.input_LoanPeriod').val()*12 + "Total Amt----" + Math.ceil(pmt*($('.input_LoanPeriod').val()*12)))*/
-//alert(intRateVal)
 
-	/*$('#container').highcharts({
-	chart: {
-		plotBackgroundColor: null,
-		plotBorderWidth: null,
-		plotShadow: false,
-		width: 350,
-		backgroundColor: 'none'
-		
-	},
-	plotOptions: {
-		pie: {
-			allowPointSelect: false,
-			cursor: 'pointer',
-			dataLabels: {
-				enabled: false,
-				color: '#000000',
-				connectorColor: '#000000',
-				format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-			}
-		}
-	},
-	
-	series: [{
-		type: 'pie',
-		name: 'sdf',
-		data: [
-			['Principle Amount', 100-intRateVal],
-			['Interest Rate', intRateVal]
-		],
-		colors: [
-		'#bc3f3d',
-		'#222222'
-		]
-	}]
-// Generate Hichart END
-	
-	
-});*/
 }
 function animaredSlides(prev1Action)
 {
@@ -1141,12 +961,6 @@ function dragLiAdjustFunction(){
 }
 
 
-function getTwitter(){
-	window.open("http://twitter.com/home?status="+document.title+"+"+document.location.href);
-}
-
-function getGoogleplus(){
-	window.open("https://plus.google.com/share?url="+window.location.href);
-}
 // Calculator Functionality END
+
 

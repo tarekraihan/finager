@@ -392,6 +392,19 @@
 			</div>
 		</div>
 	</section>
+	<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/dps-calculator.js"></script>
+<script type="text/javascript">
+
+$(window).on('scroll', function (){
+	if ($(window).scrollTop() > 350){
+	  $('.home_loan_left_bar').addClass('fixedElement');
+	}if($(window).scrollTop()<350){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}if($(window).scrollTop() > 2050){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}
+});
+</script>
 
 <script>
 	$(document).ready(function(){
@@ -423,6 +436,8 @@
 
             var dps_tenure_list = "&dps_tenure="+dps_tenure;
 
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
 
             var dps_user = new Array();
             $('input[name="i_am"]:checked').each(function(){
@@ -431,7 +446,7 @@
             var dps_user_list = "&dps_user="+dps_user;
 
 
-            var main_string = dps_tenure_list+dps_user_list;
+            var main_string = dps_tenure_list+dps_user_list+principal_amount;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
@@ -462,6 +477,9 @@
             loadData( page = null );
         } );
 
+        $( ".draggable" ).mouseout(function(){
+            loadData( page = null );
+        });
 
         $('#searchDPS').on('click', '.more_info', function (){
 			var  formData = $(this).data();

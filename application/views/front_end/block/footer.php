@@ -131,6 +131,11 @@
     </div>
 </div>
 
+
+
+</div><!-- main body-->
+
+
 <!-- Search Modal -->
 <div class="modal fade" id="serchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <section id="search_page">
@@ -604,10 +609,16 @@
 </div>
 
 
+<!-- for chart -->
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/common.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/clientlib.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jquery.ui.touch-punch.js"></script>
+<!--script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script-->
+
 <script src="<?php echo base_url();?>resource/front_end/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/main.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/modernizr.js"></script>
-
+<script src="<?php echo base_url();?>resource/front_end/js/booNavigation.js"></script>
 
 <!-- megamenu -->
 <script src="<?php echo base_url();?>resource/front_end/js/material.js"></script>
@@ -619,73 +630,15 @@
 <!-- plus a jQuery UI theme, here I use "flick" -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
 
-
-</script>
-<!-for scale hide show ->
 <script>
     $("#buttons button").click(function() {
         var id = $(this).attr("id");
         $("#pages div").css("display", "none");
         $("#pages div#" + id + "").css("display", "block");
     });
-</script>
-<!- for Simple interest calculation ->
-<script>
-   /* $(document).ready(function(){
-        //alert (1);
-        // initial load fro calc
-        simpleCalc();
-
-        $(".simple-calc").on('keyup keypress blur change click', function(){
-            simpleCalc();
-        });
-
-
-        function simpleCalc(){
-            var princ = parseInt($("#principal").val());
-            var intRate = ($("#rate").val() / 100);
-            var months = $("#time").val();
-            var inte = Math.floor(princ*intRate*months);
-            var payment = (princ + inte);
-            payment = Math.round(payment);
-
-            if(!isNaN(payment)){
-                $("#total").val(payment);
-            }else{
-                $("#total").html('NaN');
-            }
-
-        }
-
-        //----------------for dit cal
-
-        ditCalc();
-
-        $(".dit-calc").on('keyup keypress blur change click', function(){
-            ditCalc();
-        });
-
-
-        function ditCalc(){
-            var debt_payment = parseInt($("#monthly_debt_payment").val());
-            var monthly_income = parseInt($("#gross_monthly_income").val());
-
-            var payment = ((debt_payment / monthly_income)*100);
-            payment = Math.round(payment);
-
-            console.log(payment);
-            if(!isNaN(payment)){
-                $("#dit_calc_total").val(payment+" %");
-            }else{
-                $("#dit_calc_total").html('NaN');
-            }
-
-        }
-    });*/
-</script>
 
 <!--Esc key press to hide search modal-->
-<script type="text/javascript">
+
 jQuery(document).keypress(function(e) {
   if (e.keyCode == 27) {
    jQuery("#myModal").modal('hide');
