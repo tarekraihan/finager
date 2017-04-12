@@ -936,10 +936,14 @@ class Auto_loan extends CI_Controller
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('loan_id1');
         $id2 = $this->input->post('loan_id2');
+        $principal_amount = $this->input->post('principal_amount');
+        $year_limit = $this->input->post('year_limit');
 
         $newdata = array(
             'first_auto_loan'  => $id1,
-            'second_auto_loan'  => $id2
+            'second_auto_loan'  => $id2,
+            'principal_amount' => $principal_amount,
+            'year_limit' => $year_limit
         );
         $this->session->set_userdata($newdata);
         echo 'success';

@@ -455,6 +455,7 @@ if($second_personal_loan->is_non_bank == 1){
 <script type="text/javascript">
 //for left bar query
 $(document).ready(function () {
+/*
 
 	$('[data-toggle="toggle"]').change(function(){
 		$(this).parents().next('.hide').toggle();
@@ -515,6 +516,7 @@ $(document).ready(function () {
 	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
 	$('#txtMinAge2').val(sliderElement.slider('values', 0));
 	
+*/
 
 
 //for show hide (more info & Repayment Schedule)

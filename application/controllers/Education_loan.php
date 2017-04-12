@@ -494,8 +494,25 @@ class Education_Loan extends CI_Controller {
     }
 
     public function ajax_get_education_loan(){
-        $res = $this->Front_end_select_model->select_education_loan_info();
-//        print_r($res);die;
+
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
+        $year_limit = floatval ( ( $this->input->post('year_limit') > 1 ) ?  $this->input->post('year_limit') : 1 );
+
+        $WHERE = array(); $query = '';
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( education_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$principal_amount;
+        }
+
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( education_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$principal_amount;
+        }
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_education_loan_info( $query );
+
         //-----------Pagination start-----------------
 
         $config['base_url'] = base_url() . "en/all_education_loan/";
@@ -528,18 +545,27 @@ class Education_Loan extends CI_Controller {
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
 
-        $education_loan =  $this->Front_end_select_model->select_education_loan_info_pagination($config["per_page"],$page);
+        $education_loan =  $this->Front_end_select_model->select_education_loan_info_pagination($query,$config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
         //        print_r($result->result()); die;
         //-------------Pagination End-------------------
         $education = '';
         foreach($education_loan->result() as $row){
 
+
+            $bank = "";
+            if($row->is_non_bank == 1){
+                $bank = $row->non_bank_name;
+            }else{
+                $bank = $row->bank_name;
+            }
+            $bank_logo = "";
             if($row->is_non_bank == 1){
                 $bank_logo = $row->non_bank_logo;
             }else{
                 $bank_logo = $row->bank_logo;
             }
+
 
 
             $is_fixed =$row->is_fixed;
@@ -550,13 +576,21 @@ class Education_Loan extends CI_Controller {
                 $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->avg_interest.'% <br/>min '.$row->min_interest.'%,<br> max '.$row->max_interest.'%</p>';
             }
 
+            $yearly_interest = floatval( ($row->is_fixed =='0')? $row->avg_interest : $row->fixed_interest ) ;
+            if($yearly_interest =='' || $yearly_interest < 1){
+                $yearly_interest = floatval( '12');
+            }
+            $monthly_interest = ($yearly_interest / 12 /100);
+
+            $emi = round($principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($year_limit * 12) )) / (pow( ( 1 + $monthly_interest ) , ($year_limit *12) ) -1 )));
+
+            $total_payable = round( $emi * $year_limit *12 );
+
             $result1 = $this->Front_end_select_model->select_education_loan_expenses_considered($row->id);
             $expense_consider ='';
             foreach($result1->result() as $row1){
                 $expense_consider .= "<li>".$row1->expenses_considered."</li>";
             }
-
-            $query_amount = 1000000;
 
             $education .= '<div class="full-card">
 						<div class="row home_loan_right_bar no-margin-lr2">
@@ -568,7 +602,7 @@ class Education_Loan extends CI_Controller {
 									<div class="col-sm-2 col-xs-2 no-padding w20">
 										<div class="card_text2">
 											<h5>Selected Amount </h5>
-											<p>'.$query_amount.'</p>
+											<p> Tk. '.number_format($principal_amount).'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2 no-padding w20">
@@ -580,13 +614,13 @@ class Education_Loan extends CI_Controller {
 									<div class="col-sm-1 col-xs-1 no-padding w20">
 										<div class="card_text2">
 											<h5>EMI</h5>
-											<p>50000</p>
+											<p>Tk. '.number_format( $emi ).'</p>
 										</div>
 									</div>
 									<div class="col-sm-5 col-xs-2 w20 no-padding">
 										<div class="card_text2">
 											<h5>Total Payable Amount</h5>
-											<p>50%,<br/><span class="tPaybleAmount">based on 100000</span></p>
+											<p>Tk.'.number_format($total_payable).'<br/><span class="tPaybleAmount">based on Tk. '.number_format($principal_amount).'</span></p>
 										</div>
 									</div>
 								</div>
@@ -753,10 +787,14 @@ class Education_Loan extends CI_Controller {
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('loan_id1');
         $id2 = $this->input->post('loan_id2');
+        $principal_amount = $this->input->post('principal_amount');
+        $year_limit = $this->input->post('year_limit');
 
         $newdata = array(
             'first_education_loan'  => $id1,
-            'second_education_loan'  => $id2
+            'second_education_loan'  => $id2,
+            'principal_amount' => $principal_amount,
+            'year_limit' => $year_limit
         );
         $this->session->set_userdata($newdata);
         echo 'success';

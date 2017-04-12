@@ -81,7 +81,7 @@
                                                                         <div class="prev"></div>
                                                                         <div class="next active"></div>
                                                                     </div>
-                                                                    <div class="hideVal">25000</div>
+                                                                    <div class="hideVal">100000</div>
                                                                 </div>
                                                             </div>
                                                             <!--Calculator Section END-->
@@ -89,7 +89,7 @@
                                                         </div>
                                                         <!--Amount Already Saved END-->
 
-                                                        <div class="slideWrapper" id="avgSave">
+                                                        <div class="slideWrapper hidden" id="avgSave">
 
                                                             <div class="inputWrapper">
                                                                 <div class="inputField">
@@ -158,7 +158,7 @@
                                                                     </div>
                                                                     <div class="inpRt"></div>
                                                                 </div>
-                                                                <span class="perc">%</span>
+                                                                <span class="perc">Month</span>
                                                             </div>
                                                             <div class="clear"></div>
                                                             <!--Calculator Section START-->
@@ -177,7 +177,7 @@
                                                                         <div class="prev"></div>
                                                                         <div class="next active"></div>
                                                                     </div>
-                                                                    <div class="hideVal">0.5</div>
+                                                                    <div class="hideVal">1</div>
                                                                 </div>
                                                             </div>
                                                             <!--Calculator Section END-->
@@ -269,7 +269,19 @@
 
     </div>
 </section>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/auto-loan-calculator.js"></script>
+<script type="text/javascript"> 
 
+$(window).on('scroll', function (){
+	if ($(window).scrollTop() > 350){
+	  $('.home_loan_left_bar').addClass('fixedElement');
+	}if($(window).scrollTop()<350){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}if($(window).scrollTop() > 2200){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}
+});
+</script>
 
 <script>
     $(document).ready(function(){
@@ -492,7 +504,13 @@
             var  formData = $('.cart_anchor01').children('img').data();
             var loan_id2 = "&loan_id2="+formData.loan_id;
 
-            var loan_ids = loan_id1+loan_id2;
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
+
+            var year = $('#finalLiability').val();
+            var year_limit = "&year_limit="+year;
+
+            var loan_ids = loan_id1+loan_id2+principal_amount+year_limit;
             if(loan_id1 != '' && loan_id2 != ''){
                 $.ajax
                 ({

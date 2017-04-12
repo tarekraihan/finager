@@ -440,7 +440,7 @@ if(isset($_GET['id'])){
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtAvailableBenefit" class="ckeditor" name="txtAvailableBenefit"><?php echo set_value('txtAvailableBenefit'); ?></textarea>
+                        <textarea type="text" id="txtAvailableBenefit" class="ckeditor" name="txtAvailableBenefit"><?php if(isset($row["available_benefit"]) && $row["available_benefit"] != ""){echo $row["available_benefit"];}else{echo set_value('txtAvailableBenefit');} ?></textarea>
                     </label>
                 </section>
 
@@ -526,7 +526,7 @@ if(isset($_GET['id'])){
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><<?php if(isset($row["review"]) && $row["review"] != ""){echo $row["review"];}else{echo set_value('txtReview');} ?></textarea>
+                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php if(isset($row["review"]) && $row["review"] != ""){echo $row["review"];}else{echo set_value('txtReview');} ?></textarea>
                     </label>
                 </section>
 

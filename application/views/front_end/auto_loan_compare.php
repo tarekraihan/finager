@@ -1,5 +1,5 @@
 <?php
-//		print_r($this->session->userdata());
+		//print_r($this->session->userdata());
 $id = $this->session->userdata('first_auto_loan') ;
 $result = $this->Front_end_select_model->select_auto_loan_details($id);
 $first_auto_loan = $result->row();
@@ -7,6 +7,11 @@ $first_auto_loan = $result->row();
 $id1 = $this->session->userdata('second_auto_loan') ;
 $result1 = $this->Front_end_select_model->select_auto_loan_details($id1);
 $second_auto_loan = $result1->row();
+
+
+$principal_amount = intval ($this->session->userdata('principal_amount'));
+$month_limit = intval( $this->session->userdata('year_limit'));
+
 
 //print_r($second_auto_loan);
 
@@ -61,229 +66,9 @@ if($second_auto_loan->is_non_bank == 1){
 <input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
 <input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
 
-        <div class="home_loan_com_cal container text-center">
-             <p>
-								<div class="emi_cal">
-									<div id="">
-										<a href="#skip" class="offscreen">Skip to Content</a>
+<input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $principal_amount; ?>">
+<input type="hidden" id="month_limit" name="month_limit" value="<?php echo $month_limit; ?>">
 
-										<div class="clear"></div>
-										<div class="overlay"></div>
-										<div class="row">
-											<div class="span8">
-												<div class="singleColumn page common">
-													<div class="htmltextarea section">
-
-
-
-														<div class="innerMdlWrapper"> 
-															 <!-- Middle Inner START--> 
-														  
-															<div class="innerMdlInner">
-																<div class="calcWrapper">
-
-																	<div class="clear"></div>
-																	<!--Calculator Banner END-->
-																	<!--h1 class="blackColor">Personal Loan EMI Calculator</h1-->
-																	  
-																	<div class="selectCalcWrapper" style="display:none;">
-																		<div class="radiobox">
-																		  <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-																		  <label for="savingCalculator">Car Loan Calculator</label>
-																		</div>
-																		<div class="radiobox">
-																		  <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
-																		  <label for="depositCalculator">Personal Loan Calculator</label>
-																		</div>
-																	</div>
-
-																	<div class="savingsContainer emiContainer">
-																
-																		<div class="leftCont" style="margin:0 auto; float: none;"> 
-																		  <!--Amount Already Saved START-->
-																			<div class="slideWrapper" id="alreadySaved">
-																				<div class="questWrap">
-																				  <p class="quest">Enter your Car loan amount required</p>
-																				</div>
-																			  
-																				<div class="inputWrapper"> <span class="rupee"></span>
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="0" id="finalAssest" class="input_LoanAmt"/>
-																					</div>
-																					<!--div class="inpRt"></div-->
-																				  </div>
-																				</div>
-																				<div class="clear"></div>
-																				
-																				<!--Calculator Section START-->
-																				<div class="calcContainer">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="sliderHover"></div>
-																						<div class="draggable ui-widget-content drag3"> </div>
-																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																					  <div class="slideImg" id="finacialAssest">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">25000</div>
-																				  </div>
-																				</div>
-																				<!--Calculator Section END--> 
-																				
-																			</div>
-																			  <!--Amount Already Saved END-->
-																			  
-																			<div class="slideWrapper" id="avgSave">
-																				<p class="quest">Enter tenure for Car loan</p>
-																				<div class="inputWrapper">
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="1" id="finalCustAge" maxlength="3" class="input_LoanPeriod"/>
-																					</div>
-																					<div class="inpRt"></div>
-																				  </div>
-																				  <div class="inpRadio">
-																					<div id="tenureType">
-																					  <label>Year</label>
-																					</div>
-																				  </div>
-																				</div>
-																				<div class="clear"></div>
-																				<!--Calculator Section START-->
-																				<div class="calcContainer yearWrap" style="display:none">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="draggable ui-widget-content drag3"></div>
-																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																					  <div class="slideImg" id="custAge">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">5</div>
-																				  </div>
-																				</div>
-																				<!--Calculator Section END--> 
-																				
-																				<!--Calculator Section START-->
-																				<div class="calcContainer monthWrap">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag2"> <span></span>
-																						<div class="draggable draggable2 ui-widget-content drag3"></div>
-																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																					  <div class="slideImg" id="monthExp">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <!--<div class="prev"></div>
-																										  <div class="next active"></div>--> 
-																					</div>
-																					<div class="hideVal">5</div>
-																				  </div>
-																				</div>
-																				<!--Calculator Section END--> 
-																			</div>
-
-
-																			<div class="slideWrapper hide" id="interest">
-																				<p class="quest">Interest rate on Car loan</p>
-																				<div class="inputWrapper">
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="8" id="finalLiability" class="input_AIR"/>
-																					</div>
-																					<div class="inpRt"></div>
-																				  </div>
-																				  <span class="perc">%</span> 
-																				</div>
-																				<div class="clear"></div>
-																				<!--Calculator Section START-->
-																				<div class="calcContainer">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="draggable ui-widget-content drag3"></div>
-																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																					  <div class="slideImg" id="liability">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">0.5</div>
-																				  </div>
-																				</div>
-																				<!--Calculator Section END--> 
-																			</div>
-																			  
-																			  <!--<a href="javascript:;" class="submit">Submit</a>-->
-																			  <input type="hidden" id="input_Payment" />
-																		</div>
-
-																		<div class="rightCont"> 
-																		  <!--Result Wrapper START-->
-																		  <div class="resultWrapper hide">
-																			<h2>Personal Loan EMI Result</h2>
-																			<div class="resultContainer">
-																			  <!--div class="rsltField">
-																				<p>Total Amount Payable</p>
-																				<span class="rupee"></span>
-																				<div id="totalAmtPay" class="result">5,00,000</div>
-																			  </div-->
-																			  <div class="rsltField">
-																				<p>Principal Amount</p>
-																				<span class="rupee"></span>
-																				<div id="princpAmt" class="result">2025</div>
-																			  </div>
-																			  <div class="rsltField">
-																				<p>Interest Payable</p>
-																				<span class="rupee"></span>
-																				<div id="totalInterest" class="result">2025</div>
-																			  </div>
-																			  <div class="rsltField">
-																				<p>Total Monthly Payment</p>
-																				<span class="rupee"></span>
-																				<div id="monthPayment" class="result">2025</div>
-																			  </div>
-																			  
-																			</div>
-																		  </div>
-																		</div>
-																		<div class="clear"></div>
-																	</div>
-
-																</div>
-															</div>
-														</div>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-						
-							</p>
-        </div>
-	
 	<section id="basic_info">
 		<div class="container">
 			
@@ -308,7 +93,10 @@ if($second_auto_loan->is_non_bank == 1){
 							<td class="abc"><b> Bank Name </b></td>
 							<td><?php echo $first_bank_name; ?></td>
 						</tr>
-						
+						<tr>
+							<td class="abc"><b> Selected Amount </b></td>
+							<td><?php echo number_format($principal_amount); ?></td>
+						</tr>
 						<tr>
 							<td><b> Interest Rate</b></td>
 							<td> <?php echo $first_interest;?></td>
@@ -344,7 +132,10 @@ if($second_auto_loan->is_non_bank == 1){
 								<td class="abc"><b> Bank Name </b></td>
 								<td> <?php echo $second_bank_name; ?> </td>
 							</tr>
-							
+							<tr>
+                                <td class="abc"><b> Selected Amount </b></td>
+                                <td><?php echo number_format($principal_amount); ?></td>
+							</tr>
 							<tr>
 								<td><b> Interest Rate</b></td>
 								<td> <?php echo $second_interest; ?> </td>
@@ -470,75 +261,6 @@ $(document).ready(function() {
 	$('[data-toggle="toggle"]').change(function(){
 		$(this).parents().next('.hide').toggle();
 	});
-});
-</script>
-
-
-<script type="text/javascript"> 
-
-//for left bar query
-$(document).ready(function () {
-	
-	$('[data-toggle="toggle"]').change(function(){
-		$(this).parents().next('.hide').toggle();
-	});
-
-	var outputSpan = $('#spanOutPut');
-	var sliderElement = $('#slider');
-
-
-	sliderElement.slider({
-		range: false,
-		min: 2,
-		max: 120,
-		values: [10],
-		slide:function(event, ui) {
-			outputSpan.html(ui.values[0] + ' Years');
-			$('#txtMinAge').val(ui.values[0]);
-		}
-	});
-	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
-	$('#txtMinAge').val(sliderElement.slider('values', 0));
-	
-
-
-	var outputSpan = $('#spanOutPut');
-	var sliderElement = $('#slider1');
-
-
-	sliderElement.slider({
-		range: false,
-		min: 2,
-		max: 120,
-		values: [10],
-		slide:function(event, ui) {
-			outputSpan.html(ui.values[0] + ' Years');
-			$('#txtMinAge1').val(ui.values[0]);
-		}
-	});
-	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
-	$('#txtMinAge1').val(sliderElement.slider('values', 0));
-	
-
-
-	var outputSpan = $('#spanOutPut');
-	var sliderElement = $('#slider2');
-
-
-	sliderElement.slider({
-		range: false,
-		min: 2,
-		max: 120,
-		values: [10],
-		slide:function(event, ui) {
-			outputSpan.html(ui.values[0] + ' Years');
-			$('#txtMinAge2').val(ui.values[0]);
-		}
-	});
-	outputSpan.html(sliderElement.slider('values', 0) +  ' Years');
-	$('#txtMinAge2').val(sliderElement.slider('values', 0));
-
-
 
     $( ".draggable" ).mouseout(function(){
         calculation();
@@ -547,14 +269,13 @@ $(document).ready(function () {
     calculation();
     function calculation(){
 
-//        var x = number_format( 5400000, 0, '.', ',' );
-//        alert(x);
-//        parseFloat();
 
-        var principle_amount = parseFloat($('#finalAssest').val());
-        var amount = (principle_amount <= 200000) ? 200000 : principle_amount;
-        var tenure = parseInt($('#finalCustAge').val());
-        var month = (tenure <= 6 ) ? 6 : tenure;
+        var principle_amount = parseInt($('#principal_amount').val());
+        var amount = (principle_amount <= 100000) ? 100000 : principle_amount;
+        var tenure = parseInt($('#month_limit').val());
+        //alert(tenure);
+        var month = parseInt(tenure > 12 ) ? 12 : tenure;
+
 
 
         var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
@@ -575,7 +296,7 @@ $(document).ready(function () {
         var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
         var second_payable_amount = second_emi * month;
 
-//        alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
+        //alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
 
         $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
         $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );

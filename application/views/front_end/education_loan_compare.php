@@ -9,6 +9,10 @@ $id1 = $this->session->userdata('second_education_loan') ;
 $result1 = $this->Front_end_select_model->select_education_loan_details($id1);
 $second_education_loan = $result1->row();
 
+$principal_amount = intval ($this->session->userdata('principal_amount'));
+$year_limit = intval( $this->session->userdata('year_limit'));
+
+
 //	print_r($second_education_loan);die;
 
 //	echo $first_home_loan->loan_short_description;
@@ -56,6 +60,7 @@ if($second_education_loan->is_non_bank == 1){
 			</div>
 		</div>
 	</section>
+<!--
         <div class="home_loan_com_cal container text-center">
              <p>
 								<div class="emi_cal">
@@ -71,17 +76,11 @@ if($second_education_loan->is_non_bank == 1){
 
 
 
-														<div class="innerMdlWrapper"> 
-															 <!-- Middle Inner START--> 
+														<div class="innerMdlWrapper">
 														  
 															<div class="innerMdlInner">
 																<div class="calcWrapper">
-
-
-
 																	<div class="clear"></div>
-																	<!--Calculator Banner END-->
-																	<!--h1 class="blackColor">Personal Loan EMI Calculator</h1-->
 																	  
 																	<div class="selectCalcWrapper" style="display:none;">
 																		<div class="radiobox">
@@ -96,8 +95,7 @@ if($second_education_loan->is_non_bank == 1){
 
 																	<div class="savingsContainer emiContainer">
 																
-																		<div class="leftCont" style="margin:0 auto; float: none;"> 
-																		  <!--Amount Already Saved START-->
+																		<div class="leftCont" style="margin:0 auto; float: none;">
 																			<div class="slideWrapper" id="alreadySaved">
 																				<div class="questWrap">
 																				  <p class="quest">Enter your education loan amount required</p>
@@ -109,12 +107,10 @@ if($second_education_loan->is_non_bank == 1){
 																					<div class="inpMdl">
 																					  <input type="text" name="" value="0" id="finalAssest" class="input_LoanAmt"/>
 																					</div>
-																					<!--div class="inpRt"></div-->
 																				  </div>
 																				</div>
 																				<div class="clear"></div>
-																				
-																				<!--Calculator Section START-->
+
 																				<div class="calcContainer">
 																				  <div class="calcSection">
 																					<div class="dragBox">
@@ -122,7 +118,6 @@ if($second_education_loan->is_non_bank == 1){
 																						<div class="sliderHover"></div>
 																						<div class="draggable ui-widget-content drag3"> </div>
 																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
 																					  <div class="slideImg" id="finacialAssest">
 																						<ul>
 																						</ul>
@@ -133,10 +128,8 @@ if($second_education_loan->is_non_bank == 1){
 																					<div class="hideVal">25000</div>
 																				  </div>
 																				</div>
-																				<!--Calculator Section END--> 
 																				
 																			</div>
-																			  <!--Amount Already Saved END-->
 																			  
 																			<div class="slideWrapper" id="avgSave">
 																				<p class="quest">Enter tenure for education loan</p>
@@ -155,14 +148,12 @@ if($second_education_loan->is_non_bank == 1){
 																				  </div>
 																				</div>
 																				<div class="clear"></div>
-																				<!--Calculator Section START-->
 																				<div class="calcContainer yearWrap" style="display:none">
 																				  <div class="calcSection">
 																					<div class="dragBox">
 																					  <div class="drag"> <span></span>
 																						<div class="draggable ui-widget-content drag3"></div>
 																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
 																					  <div class="slideImg" id="custAge">
 																						<ul>
 																						</ul>
@@ -173,27 +164,21 @@ if($second_education_loan->is_non_bank == 1){
 																					<div class="hideVal">5</div>
 																				  </div>
 																				</div>
-																				<!--Calculator Section END--> 
-																				
-																				<!--Calculator Section START-->
 																				<div class="calcContainer monthWrap">
 																				  <div class="calcSection">
 																					<div class="dragBox">
 																					  <div class="drag2"> <span></span>
 																						<div class="draggable draggable2 ui-widget-content drag3"></div>
 																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
 																					  <div class="slideImg" id="monthExp">
 																						<ul>
 																						</ul>
 																					  </div>
-																					  <!--<div class="prev"></div>
-																										  <div class="next active"></div>--> 
 																					</div>
 																					<div class="hideVal">5</div>
 																				  </div>
 																				</div>
-																				<!--Calculator Section END--> 
+
 																			</div>
 
 
@@ -210,14 +195,12 @@ if($second_education_loan->is_non_bank == 1){
 																				  <span class="perc">%</span> 
 																				</div>
 																				<div class="clear"></div>
-																				<!--Calculator Section START-->
 																				<div class="calcContainer">
 																				  <div class="calcSection">
 																					<div class="dragBox">
 																					  <div class="drag"> <span></span>
 																						<div class="draggable ui-widget-content drag3"></div>
 																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
 																					  <div class="slideImg" id="liability">
 																						<ul>
 																						</ul>
@@ -228,23 +211,18 @@ if($second_education_loan->is_non_bank == 1){
 																					<div class="hideVal">0.5</div>
 																				  </div>
 																				</div>
-																				<!--Calculator Section END--> 
+
 																			</div>
-																			  
-																			  <!--<a href="javascript:;" class="submit">Submit</a>-->
+
 																			  <input type="hidden" id="input_Payment" />
 																		</div>
 
 																		<div class="rightCont"> 
-																		  <!--Result Wrapper START-->
+
 																		  <div class="resultWrapper hide">
 																			<h2>Education Loan EMI Result</h2>
 																			<div class="resultContainer">
-																			  <!--div class="rsltField">
-																				<p>Total Amount Payable</p>
-																				<span class="rupee"></span>
-																				<div id="totalAmtPay" class="result">5,00,000</div>
-																			  </div-->
+
 																			  <div class="rsltField">
 																				<p>Principal Amount</p>
 																				<span class="rupee"></span>
@@ -281,9 +259,11 @@ if($second_education_loan->is_non_bank == 1){
 							</p>
         </div>
 
-
+-->
 <input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
 <input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
+<input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $principal_amount; ?>">
+<input type="hidden" id="year_limit" name="year_limit" value="<?php echo $year_limit; ?>">
 
 	<section id="basic_info">
 		<div class="container">
@@ -309,7 +289,10 @@ if($second_education_loan->is_non_bank == 1){
 							<td class="abc"><b> Bank Name </b></td>
 							<td> <?php echo $first_bank_name;?> </td>
 						</tr>
-						
+						<tr>
+							<td class="abc"><b>Selected Amount </b></td>
+							<td>BDT. <?php echo number_format($principal_amount);?> </td>
+						</tr>
 						<tr>
 							<td><b> Interest Rate</b></td>
 							<td> <?php echo $first_interest; ?> </td>
@@ -341,6 +324,10 @@ if($second_education_loan->is_non_bank == 1){
 								<td class="abc"><b> Bank Name </b></td>
 								<td> <?php echo $second_bank_name;?>  </td>
 							</tr>
+                            <tr>
+                                <td class="abc"><b>Selected Amount </b></td>
+                                <td>BDT. <?php echo number_format($principal_amount);?> </td>
+							</tr>
 							
 							<tr>
 								<td><b> Interest Rate</b></td>
@@ -354,7 +341,7 @@ if($second_education_loan->is_non_bank == 1){
 							
 							<tr>
 								<td><b> Total Payable Amount</b></td>
-                                <td id="secondtPayableAmount"> 68,50,000 </td>
+                                <td id="secondPayableAmount"> 68,50,000 </td>
 							</tr>
 							
 							<tr>
@@ -584,10 +571,12 @@ $(document).ready(function () {
 //        alert(x);
 //        parseFloat();
 
-        var principle_amount = parseFloat($('#finalAssest').val());
+        var principle_amount = parseFloat($('#principal_amount').val());
         var amount = (principle_amount <= 50000) ? 50000 : principle_amount;
-        var tenure = parseInt($('#finalCustAge').val());
-        var month = (tenure <= 6 ) ? 6 : tenure;
+        var tenure = parseInt($('#year_limit').val());
+        //alert(tenure);
+        var tenure_year = (tenure > 1 ) ? 1 : tenure;
+        var month = parseInt(tenure_year * 12 );
 
 
         var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
@@ -606,7 +595,7 @@ $(document).ready(function () {
         var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
         var second_payable_amount = second_emi * month;
 
-//        alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
+        //alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
 
         $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
         $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
