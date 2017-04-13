@@ -841,7 +841,7 @@ class Dps extends CI_Controller
 
         $dps_user = $this->input->post('dps_user');
         $dps_tenure = $this->input->post('dps_tenure');
-        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
+        $deposited_amount = intval($this->input->post('deposited_amount'));
 
         $WHERE = array(); $query = '';
         if(!empty($dps_user)) {
@@ -895,7 +895,6 @@ class Dps extends CI_Controller
         $dps = '';
         foreach($dps_deposit->result() as $row) {
 
-
             $bank = "";
             if ($row->is_non_bank == 1) {
                 $bank = $row->non_bank_name;
@@ -909,26 +908,23 @@ class Dps extends CI_Controller
                 $bank_logo = $row->bank_logo;
             }
 
+            $deposited_amount = ($deposited_amount > 100 || empty($deposited_amount)) ? 100 : $deposited_amount;
+            $tenure = (empty($dps_tenure) || $dps_tenure < 1) ? 1 : $dps_tenure;
+            $compounding = 12;
+            if(strlen($row->interest_rate) > 3){
 
-            $yearly_interest = floatval( $row->interest_rate ) ;
-            $interest = ($yearly_interest / 100);
+                $yearly_inter = explode("-",$row->interest_rate);
+                $yearly_interest = floatval($yearly_inter[0] / 100 );
 
-            $dps_tenure = (empty($dps_tenure) ? 1 : $dps_tenure);
-
-            $no_of_times = 12;//compounding 12 times in a year
-            $payment = ($principal_amount * pow(1 + $interest /$no_of_times,($no_of_times*($dps_tenure/12))));
-            $loan_facility = (!empty($row->loan_facility)) ? $row->loan_facility.'%' : 'N/A';
+            }else{
+                $yearly_interest = floatval( $row->interest_rate / 100 );
+            }
 
 
-            $query_amount = 1000;
-            $tenure = 3 * 12;
-
-            $interest_rate = $row->interest_rate;
-
-            $cal_interest = round(($interest_rate / 100) / $tenure, 4);
-
-            $emi = $query_amount * $cal_interest * pow((1 + $cal_interest), $tenure) / pow((1 + $cal_interest), ($tenure - 1));
-            $total_payable = $emi * $tenure;
+            $pv = $deposited_amount * pow((1+ ($yearly_interest/12)),(12 * $tenure));
+            $total_pv = round($pv * 12 * $tenure);
+            $total_deposit = round($deposited_amount * 12 * $tenure);
+            $accrued_interest = $total_pv - $total_deposit ;
 
             $dps .= '<div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
@@ -945,25 +941,25 @@ class Dps extends CI_Controller
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Installment Amount</h5>
-                                        <p>&#2547; '.$query_amount.'</p>
+                                        <p>&#2547; '.number_format($deposited_amount ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Number of Installment</h5>
-                                        <p> '.$tenure.'</p>
+                                        <p> '.( $tenure *12 ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Maturity Amount</h5>
-                                        <p>&#2547; '.$total_payable.'</p>
+                                        <p>&#2547; '.number_format( $total_pv ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Accrued Interest</h5>
-                                        <p>&#2547; 5799</p>
+                                        <p>&#2547; '.number_format( $accrued_interest ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
