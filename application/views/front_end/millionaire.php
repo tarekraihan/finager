@@ -95,6 +95,7 @@
     }
 
     #millionaire_tenure{width: 233px;}
+
 </style>
 
 <section id="maximizer_header"></section>
@@ -481,13 +482,24 @@
     </div>
 </section>
 
+<script type="text/javascript"> 
 
+$(window).on('scroll', function (){
+	if ($(window).scrollTop() > 350){
+	  $('.home_loan_left_bar').addClass('fixedElement');
+	}if($(window).scrollTop()<350){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}if($(window).scrollTop() > 2100){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}
+});
+</script>
 <script type="text/javascript">
 	jQuery(document).ready(function($){
 
         $('#searchMillionaire').on('click', '.more_info', function (){
 
-            var formData = $(this).data();
+            var  formData = $(this).data();
             var millionaire_id = formData.millionaire_id;
             console.log(millionaire_id);
 
@@ -498,7 +510,7 @@
 
         $('#searchMillionaire').on('click', '.availableOffer', function (){
 
-            var formData = $(this).data();
+            var  formData = $(this).data();
             var offer = formData.offer;
             console.log(offer);
             $('#availableOfferSchedule'+offer).html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
@@ -510,7 +522,9 @@
 
         $('input[name="maturity_amount"]').on('click',function() {
             var thisVal= 'selected_amount='+$(this).val();
-            alert(thisVal);
+//            alert(thisVal);
+
+
             $.ajax
             ({
                 type: "POST",
@@ -529,8 +543,11 @@
 
                 }
             });
+
+
+
         });
-    });
+        });
 </script>
 
 
@@ -554,6 +571,10 @@ $(document).ready(function() {
         function loading_hide(){
             $('#loading').html("");
         }
+
+    $('input[name="maturity_amount"]').on('click',function() {
+        loadData( page = null )
+    });
 
     function loadData( page = null ){
             loading_show();
@@ -606,7 +627,7 @@ $(document).ready(function() {
             });
         }
 
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData( page = null ) );
+        $("input[type='checkbox'], input[type='radio']").on( "click", loadData(page=null) );
     $(document).on('click','.squaredOne input[type="checkbox"]',function() {
         loadData( page = null )
     });

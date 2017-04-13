@@ -393,7 +393,7 @@
 		</div>
 	</section>
 	<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/dps-calculator.js"></script>
-<script type="text/javascript">
+<script type="text/javascript"> 
 
 $(window).on('scroll', function (){
 	if ($(window).scrollTop() > 350){
@@ -409,15 +409,6 @@ $(window).on('scroll', function (){
 <script>
 	$(document).ready(function(){
 
-        $(document).on('click','#pagination a',function(e){
-            e.preventDefault();
-            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
-//            alert(cur_page);
-            loadData(cur_page);
-            console.log(cur_page);
-        });
-
-
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
         }
@@ -425,19 +416,21 @@ $(window).on('scroll', function (){
             $('#loading').html("");
         }
 
-        function loadData( page = null ){
+        function loadData(){
             loading_show();
 
 
-            var dps_tenure = new Array();
+			var amount = $('#finalAssest').val();
+			var deposited_amount = "&deposited_amount="+amount;
+
+
+			var dps_tenure = new Array();
             $('input[name="dps_tenure"]:checked').each(function(){
                 dps_tenure.push($(this).val());
             });
 
             var dps_tenure_list = "&dps_tenure="+dps_tenure;
 
-            var amount = $('#finalAssest').val();
-            var principal_amount = "&principal_amount="+amount;
 
             var dps_user = new Array();
             $('input[name="i_am"]:checked').each(function(){
@@ -446,18 +439,13 @@ $(window).on('scroll', function (){
             var dps_user_list = "&dps_user="+dps_user;
 
 
-            var main_string = dps_tenure_list+dps_user_list+principal_amount;
+            var main_string = dps_tenure_list+dps_user_list+deposited_amount;
             main_string = main_string.substring(1, main_string.length);
-            var page_count ='';
-            if( page != null ){
-                page_count = page ;
-            }
-            var url_str = "<?php echo base_url();?>dps/ajax_get_dps/" + page_count;
             console.log(main_string);
             $.ajax
             ({
                 type: "POST",
-                url: url_str,
+                url: "<?php echo base_url();?>dps/ajax_get_dps",
                 data: main_string,
                 cache: false,
                 success: function(msg)
@@ -472,16 +460,11 @@ $(window).on('scroll', function (){
             });
         }
 
-        loadData( page = null );
-        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
-            loadData( page = null );
-        } );
+        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
 
-        $( ".draggable" ).mouseout(function(){
-            loadData( page = null );
-        });
+        loadData();
 
-        $('#searchDPS').on('click', '.more_info', function (){
+		$('#searchDPS').on('click', '.more_info', function (){
 			var  formData = $(this).data();
 			var dps_id = formData.dps_id;
 			console.log(dps_id);
