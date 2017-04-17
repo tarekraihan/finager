@@ -8,6 +8,32 @@ if(!empty($id) && is_numeric($id) ){
     $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
     $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
 
+    $bank_name = "";
+    $bank_logo = "";
+    if($row->is_non_bank == 1){
+        $bank_name = $row->non_bank_name;
+        $bank_logo = $row->non_bank_logo;
+    }else{
+        $bank_name = $row->bank_name;
+        $bank_logo = $row->bank_logo;
+    }
+
+    $principal_amount = 500000;
+    $month_limit = 12;
+
+
+    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+    if($yearly_interest =='' || $yearly_interest < 1){
+        $yearly_interest = floatval( '12');
+    }
+    $monthly_interest = ($yearly_interest / 12 /100);
+    $downpayment_percentage = $row->downpayment;
+    $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
+
+    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
+
+    $total_payable = round( $emi * $month_limit );
+
    /* echo "<pre>";
         print_r($row);die;
 
@@ -22,7 +48,7 @@ if(!empty($id) && is_numeric($id) ){
         <div class="row">
             <div class="card_details_body">
                 <div class="col-sm-2 col-xs-4">
-                    <div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url();?>resource/front_end/images/visa_card.png" /></div>
+                    <div><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo; ?>" /></div>
                     <p class="text-center">
                         <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                     </p>
@@ -43,32 +69,30 @@ if(!empty($id) && is_numeric($id) ){
                             <div>
                                 <p class="card_details_head2">Interest Rate</p>
                                 <p class="card_details_features">
-                                   <?php echo $interest.'<br/>
+                                   <?php echo  $interest.'<br/>
                                     '.$interest_min_max;?>
                                 </p>
                             </div>
                         </div>
-                        <div class="col-sm-1 col-xs-6">
+                        <div class="col-sm-2 col-xs-6">
                             <div>
                                 <p class="card_details_head2">EMI</p>
-                                <p class="card_details_features">
-                                    35000
-                                </p>
+                                <p class="card_details_features">Tk.<?php echo number_format($emi); ?></p>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-xs-6">
+                        <div class="col-sm-4 col-xs-6">
                             <div>
                                 <p class="card_details_head2">Total Payable Amount</p>
                                 <p class="card_details_features">
-                                    5680000
+                                    Tk. <?php echo number_format($total_payable); ?> based on Tk.<?php echo $principal_amount;?>
                                 </p>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-xs-6">
+                        <div class="col-sm-4 col-xs-6">
                             <div>
                                 <p class="card_details_head2">Down Payment (Min)</p>
                                 <p class="card_details_features">
-                                    1600000
+                                    Tk.<?php echo number_format($downpayment_amount); ?>
                                 </p>
                             </div>
                         </div>
@@ -92,7 +116,6 @@ if(!empty($id) && is_numeric($id) ){
             <div class="prosConsHr"></div><br/>
             <div class="prosCons_body2 trbodywidth">
                 <?php echo $row->features;?>
-
             </div>
         </div>
     </div>
@@ -105,9 +128,7 @@ if(!empty($id) && is_numeric($id) ){
             <h4>Fees & Charges:</h4>
             <div class="prosConsHr"></div><br/>
             <div class="prosCons_body2 trbodywidth">
-
                 <?php echo $row->fees_and_charges;?>
-
             </div>
         </div>
     </div>
@@ -119,7 +140,6 @@ if(!empty($id) && is_numeric($id) ){
             <h4>Eligibility for Applying: </h4>
             <div class="prosConsHr"></div><br/>
             <?php echo $row->eligibility_for_applying;?>
-
         </div>
     </div>
 </section>
@@ -132,7 +152,6 @@ if(!empty($id) && is_numeric($id) ){
             <div class="prosConsHr"></div><br/>
             <div class="prosCons_body2">
                 <?php echo $row->security_required;?>
-
             </div>
         </div>
     </div>
@@ -156,9 +175,7 @@ if(!empty($id) && is_numeric($id) ){
         <div class="card_details_pronsCons">
             <h4>Review</h4>
             <div class="prosConsHr"></div>
-
             <?php echo $row->review;?>
-
         </div>
     </div>
 </section>
@@ -216,9 +233,7 @@ if(!empty($id) && is_numeric($id) ){
             <div class="row">
                 <div class="col-sm-12 col-xs-12">
                     <div class="prosCons_body2 home_loan_terms">
-
                         <?php echo $row->terms_and_conditions;?>
-
                     </div>
                 </div>
             </div>
@@ -420,6 +435,11 @@ if(!empty($id) && is_numeric($id) ){
                                                                 <div class="resultWrapper">
                                                                     <h2>Personal Loan EMI Result</h2>
                                                                     <div class="resultContainer">
+                                                                        <!--div class="rsltField">
+                                                                          <p>Total Amount Payable</p>
+                                                                          <span class="rupee"></span>
+                                                                          <div id="totalAmtPay" class="result">5,00,000</div>
+                                                                        </div-->
                                                                         <div class="rsltField">
                                                                             <p>Principal Amount</p>
                                                                             <span class="rupee"></span>
@@ -585,6 +605,9 @@ if(!empty($id) && is_numeric($id) ){
                         <td>$5,834.00</td>
                         <td>$10,583.00</td>
                     </tr>
+                    </tbody>
+
+
                     </tbody>
                 </table>
             </div>

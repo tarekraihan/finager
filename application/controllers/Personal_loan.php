@@ -376,7 +376,7 @@ class Personal_Loan extends CI_Controller {
         $personal_user = $this->input->post('personal_user');
 
         $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
-        $month_limit = floatval ( $this->input->post('month_limit') );
+        $month_limit = floatval ( ($this->input->post('month_limit') > 5) ? $this->input->post('month_limit') : 6 );
 
 
         $WHERE = array(); $query = '';
@@ -471,11 +471,9 @@ class Personal_Loan extends CI_Controller {
 
 
                     $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-                    $monthly_interest = ($yearly_interest / $month_limit );
-//                    $downpayment_percentage = $row->downpayment;
-//                    $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
+                    $monthly_interest = ($yearly_interest / 12 / 100 );
 
-                    $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
+                    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
 
                     $total_payable = round( $emi * $month_limit );
 
@@ -492,7 +490,7 @@ class Personal_Loan extends CI_Controller {
                             <div class="col-sm-2 col-xs-2 w20">
                                 <div class="card_text2">
                                     <h5>Amount </h5>
-                                    <p>BDT '. number_format( $principal_amount ).'</p>
+                                    <p>Tk.'. number_format( $principal_amount ).'</p>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-2 w20">
@@ -503,13 +501,13 @@ class Personal_Loan extends CI_Controller {
                             <div class="col-sm-1 col-xs-1 w20">
                                 <div class="card_text2">
                                     <h5>EMI</h5>
-                                    <p> BDT '.number_format( $emi ).'</p>
+                                    <p>'.number_format( $emi ).'</p>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-2 w20">
                                 <div class="card_text2">
                                     <h5>Total Payable Amount</h5>
-                                    <p>BDT '.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on BDT  '.number_format( $principal_amount ).'</span></p>
+                                    <p>'.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on '.number_format( $principal_amount ).'</span></p>
                                 </div>
                             </div>
                             <div class="col-sm-3 col-xs-1 w20">
@@ -640,10 +638,14 @@ class Personal_Loan extends CI_Controller {
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('loan_id1');
         $id2 = $this->input->post('loan_id2');
+        $principal_amount = $this->input->post('principal_amount');
+        $month_limit = $this->input->post('month_limit');
 
         $newdata = array(
             'first_personal_loan'  => $id1,
-            'second_personal_loan'  => $id2
+            'second_personal_loan'  => $id2,
+            'principal_amount'  => $principal_amount,
+            'month_limit'  => $month_limit
         );
         $this->session->set_userdata($newdata);
         echo 'success';

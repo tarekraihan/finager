@@ -310,27 +310,14 @@ $(window).on('scroll', function (){
 
         function loadData( page = null ){
             loading_show();
-
-//            var mainarray = new Array();
-            //var amount = $('#finalAssest').val();
-            //var principal_amount = "&principal_amount="+amount;
-
-            //var interest = $('#finalLiability').val();
-            //var interest_rate = "&interest_rate="+interest;
-
-            //var month = $('#finalCustAge').val();
-            //var month_limit = "&month_limit="+month;
 			
 			 var amount = $('#finalAssest').val();
-            localStorage.setItem("home_loan_principal_amount", amount);
-			console.log(localStorage.getItem("home_loan_principal_amount"));
             var principal_amount = "&principal_amount="+amount;
 
             var interest = $('#finalLiability').val();
             var interest_rate = "&interest_rate="+interest;
 
             var month = $('#finalCustAge').val();
-            localStorage.setItem("home_loan_tenure", month);
             var month_limit = "&month_limit="+month;
 			
 			
@@ -383,9 +370,15 @@ $(window).on('scroll', function (){
             loadData(page = null);
         } );
 
+		$( ".draggable" ).draggable({ axis: "x",
+            stop: function(){
+                loadData( page = null );
+            }
+        });
+		/*
         $( ".draggable" ).mouseout(function(){
             loadData( page = null );
-        });
+        });*/
 
 
         $('#searchHomeLoan').on('click', '.more_info', function (){
@@ -640,7 +633,13 @@ $(window).on('scroll', function (){
         var  formData = $('.cart_anchor01').children('img').data();
         var home_id2 = "&home_id2="+formData.home_id;
 
-        var home_ids = home_id1+home_id2;
+        var amount = $('#finalAssest').val();
+        var principal_amount = "&principal_amount="+amount;
+
+        var month = $('#finalCustAge').val();
+        var month_limit = "&month_limit="+month;
+
+        var home_ids = home_id1+home_id2+principal_amount+month_limit;
         if(home_id1 != '' && home_id2 != ''){
             $.ajax
             ({

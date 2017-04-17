@@ -45,8 +45,7 @@
 		border: 1px solid #2B99BB;
 	}
 </style>
-
-
+	<script type="text/javascript" src="http://localhost/git/finager/resource/front_end/js/Ppersonal-loan-calculator.js"></script>
 	<section id="personal_header">
 		
 	</section>
@@ -165,7 +164,7 @@
 													        </div>
 													          <!--Amount Already Saved END-->
 													          
-													        <div class="slideWrapper" id="avgSave">
+													        <div class="slideWrapper hidden" id="avgSave">
 													           
 													            <div class="inputWrapper">
 													              <div class="inputField">
@@ -224,7 +223,7 @@
 													        </div>
 
 
-													        <div style="display:none;" class="slideWrapper" id="interest">
+													        <div class="slideWrapper" id="interest">
 													           
 													            <div class="inputWrapper">
 													              <div class="inputField">
@@ -234,7 +233,7 @@
 													                </div>
 													                <div class="inpRt"></div>
 													              </div>
-													              <span class="perc">%</span> 
+													              <span class="perc">Month</span> 
 													            </div>
 													            <div class="clear"></div>
 													            <!--Calculator Section START-->
@@ -253,7 +252,7 @@
 													                  <div class="prev"></div>
 													                  <div class="next active"></div>
 													                </div>
-													                <div class="hideVal">0.5</div>
+													                <div class="hideVal">6</div>
 													              </div>
 													            </div>
 													            <!--Calculator Section END--> 
@@ -345,16 +344,18 @@
         </div>
     </section>
 
+<script src="<?php echo base_url();?>resource/front_end/js/Ppersonal-loan-calculator.js"></script>
 
 <script>
     $(document).ready(function(){
 
+        var page = 0;
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();
-            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+            page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
 //            alert(cur_page);
-            loadData(cur_page);
-            console.log(cur_page);
+            loadData(page);
+//            console.log(cur_page);
         });
 
         function loading_show(){
@@ -364,8 +365,15 @@
             $('#loading').html("");
         }
 
-        function loadData( page = null ){
+        function loadData( page ){
             loading_show();
+
+
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
+
+            var month = $('#finalLiability').val();
+            var month_limit = "&month_limit="+month;
 
 
             var personal_i_want = new Array();
@@ -374,12 +382,6 @@
             });
 
             var personal_i_want_list = "&personal_i_want="+personal_i_want;
-
-            var amount = $('#finalAssest').val();
-            var principal_amount = "&principal_amount="+amount;
-
-            var month = $('#finalCustAge').val();
-            var month_limit = "&month_limit="+month;
 
 
             var personal_user = new Array();
@@ -391,11 +393,11 @@
 
             var main_string = personal_i_want_list+personal_user_list+principal_amount+month_limit;
             main_string = main_string.substring(1, main_string.length);
-            var page_count ='';
+           /* var page_count ='';
             if( page != null ){
                 page_count = page ;
-            }
-            var url_str = "<?php echo base_url();?>personal_loan/ajax_get_personal_loan/" + page_count;
+            }*/
+            var url_str = "<?php echo base_url();?>personal_loan/ajax_get_personal_loan/" + page;
             console.log(main_string);
             $.ajax
             ({
@@ -415,16 +417,16 @@
             });
         }
 
-        loadData(page = null);
+        loadData(page);
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
-            loadData(page = null);
+            loadData(page);
         } );
 
-
-        $( ".draggable" ).mouseout(function(){
-            loadData( page = null );
+        $( ".draggable" ).draggable({ axis: "x",
+            stop: function(){
+                loadData( page );
+            }
         });
-
 
         $('#searchPersonalLoan').on('click', '.more_info', function (){
             var  formData = $(this).data();
@@ -551,14 +553,23 @@
 
     $('#go_compare').click(function(){
         //alert(1);
+
+
+        var amount = $('#finalAssest').val();
+        var principal_amount = "&principal_amount="+amount;
+
+        var month = $('#finalLiability').val();
+        var month_limit = "&month_limit="+month;
+
         var  formData = $('.cart_anchor').children('img').data();
         var loan_id1 = "loan_id1="+formData.loan_id;
 
         var  formData = $('.cart_anchor01').children('img').data();
         var loan_id2 = "&loan_id2="+formData.loan_id;
 
-        var loan_ids = loan_id1+loan_id2;
+        var loan_ids = loan_id1+loan_id2+principal_amount+month_limit;
         if(loan_id1 != '' && loan_id2 != ''){
+            console.log(loan_ids);
             $.ajax
             ({
                 type: "POST",
