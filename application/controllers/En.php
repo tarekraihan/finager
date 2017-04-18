@@ -22,7 +22,8 @@ class En extends CI_Controller {
             redirect(base_url().'en/index/');
         }else{
 
-            $this->load->view('front_end/login');
+//            $this->load->view('front_end/login');
+            $this->load->view('front_end/blabla');
         }
     }
 

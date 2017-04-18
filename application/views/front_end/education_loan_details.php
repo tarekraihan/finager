@@ -5,7 +5,6 @@ if(!empty($id) && is_numeric($id) ){
     $query=$this->Front_end_select_model->select_education_loan_details($id);
     $row=$query->row();
 
-    $interest =($row->is_fixed =='0')? $row->avg_interest.' % (Avg)' : $row->fixed_interest.' % (Fixed)';
     $bank_name = "";
     $bank_logo = "";
     if($row->is_non_bank == 1){
@@ -15,11 +14,28 @@ if(!empty($id) && is_numeric($id) ){
         $bank_name = $row->bank_name;
         $bank_logo = $row->bank_logo;
     }
-    /*
-       echo "<pre>";
-             print_r($row);die;
 
-         echo "</pre>";*/
+    $principal_amount = 200000;
+    $year_limit = 1;
+
+    $is_fixed =$row->is_fixed;
+    $show_interest ='';
+    if($is_fixed == 1){
+        $show_interest .='<h5>Interest (Fixed Rate)</h5><p>Fixed '.$row->fixed_interest.'%</p>';
+    }else{
+        $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->avg_interest.'% <br/>min '.$row->min_interest.'%,<br> max '.$row->max_interest.'%</p>';
+    }
+
+    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->avg_interest : $row->fixed_interest ) ;
+    if($yearly_interest =='' || $yearly_interest < 1){
+        $yearly_interest = floatval( '12');
+    }
+    $monthly_interest = ($yearly_interest / 12 /100);
+
+    $emi = round($principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($year_limit * 12) )) / (pow( ( 1 + $monthly_interest ) , ($year_limit *12) ) -1 )));
+
+    $total_payable = round( $emi * $year_limit *12 );
+
     $result1 = $this->Front_end_select_model->select_education_loan_expenses_considered($id);
     $expense_consider ='';
     foreach($result1->result() as $row1){
@@ -34,7 +50,7 @@ if(!empty($id) && is_numeric($id) ){
 			<div class="row">
 				<div class="card_details_body">
 					<div class="col-sm-2 col-xs-4">
-						<div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo;?>" /></div>
+						<div><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo; ?>" /></div>
 						<p class="text-center">
 							<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 						</p>
@@ -49,11 +65,11 @@ if(!empty($id) && is_numeric($id) ){
 					
 					<div class="col-sm-8 col-xs-12">
 						<div class="row">
-							<div class="col-sm-2 col-xs-6">
+							<div class="col-sm-3 col-xs-6">
 								<div>
 									<p class="card_details_head2">Selected Amount</p>
 									<p class="card_details_features">
-										1,000,000
+										BDT. <?php echo number_format($principal_amount);?>
 									</p>
 								</div>
 							</div>
@@ -61,15 +77,15 @@ if(!empty($id) && is_numeric($id) ){
 								<div>
 									<p class="card_details_head2">Interest Rate</p>
 									<p class="card_details_features">
-										min <?php echo $row->min_interest;?>%,<br> max <?php echo $row->max_interest;?>%
+                                        <?php echo $show_interest;?>
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-2 col-xs-6">
+							<div class="col-sm-3 col-xs-6">
 								<div>
 									<p class="card_details_head2">EMI</p>
 									<p class="card_details_features">
-										Tk.50000
+                                        BDT. <?php echo number_format($emi);?>
 									</p>
 								</div>
 							</div>
@@ -77,19 +93,11 @@ if(!empty($id) && is_numeric($id) ){
 								<div>
 									<p class="card_details_head2">Total Payable Amount</p>
 									<p class="card_details_features">
-										50%,<br/><span class="tPaybleAmount">based on 100000</span>
+										BDT. <?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on BDT.<?php echo number_format($principal_amount);?></span>
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-2 col-xs-6">
-								<div>
-									<p class="card_details_head2">Down Payment (Min)</p>
-									<p class="card_details_features">
-										BDT 1300 + VAT
-									</p>
-								</div>
-							</div>
-						</div>	
+						</div>
 					</div>	
 					<div class="col-sm-8 col-xs-12">
 						<div class="btnHomeLoan">

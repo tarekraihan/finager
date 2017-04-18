@@ -780,7 +780,7 @@ class Auto_loan extends CI_Controller
                        <div class="col-sm-2 col-xs-2 w20">
                            <div class="card_text2">
                                <h5>Amount</h5>
-                               <p>BDT '.number_format( $principal_amount ).'</p>
+                               <p>BDT. '.number_format( $principal_amount ).'</p>
                            </div>
                        </div>
                        <div class="col-sm-2 col-xs-2 w20">
@@ -791,19 +791,19 @@ class Auto_loan extends CI_Controller
                        <div class="col-sm-2 col-xs-2 w20">
                            <div class="card_text2">
                                <h5>EMI</h5>
-                               <p>BDT '.number_format( $emi ).'</p>
+                               <p>BDT. '.number_format( $emi ).'</p>
                            </div>
                        </div>
                        <div class="col-sm-2 col-xs-2 w20">
                            <div class="card_text2">
                                <h5>Payable Amount</h5>
-                               <p>BDT '.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on BDT '.number_format( $principal_amount ).'</span></p>
+                               <p>BDT. '.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on BDT. '.number_format( $principal_amount ).'</span></p>
                            </div>
                        </div>
                        <div class="col-sm-2 col-xs-2 w20">
                            <div class="card_text2">
                                <h5>Down Payment</h5>
-                               <p>BDT '. number_format( $downpayment_amount ).'</p>
+                               <p>BDT. '. number_format( $downpayment_amount ).'</p>
                            </div>
                        </div>
                    </div>
@@ -813,7 +813,7 @@ class Auto_loan extends CI_Controller
                    <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
                    <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-loan_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                    <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
-                   <img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
+                   <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" /></a>
                </div>
                <div class="collapse" id="moreInfo'.$row->id.'">
                  <div class="col-md-12">

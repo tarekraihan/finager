@@ -5,22 +5,41 @@ if(!empty($id) && is_numeric($id) ){
     $query=$this->Front_end_select_model->select_auto_loan_details($id);
     $row=$query->row();
 
-    $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg)' : $row->interest_rate_fixed.' % (Fixed)';
-    $bank_name = "";
+    $bank = "";
+    if($row->is_non_bank == 1){
+        $bank = $row->non_bank_name;
+    }else{
+        $bank = $row->bank_name;
+    }
     $bank_logo = "";
     if($row->is_non_bank == 1){
-        $bank_name = $row->non_bank_name;
         $bank_logo = $row->non_bank_logo;
     }else{
-        $bank_name = $row->bank_name;
         $bank_logo = $row->bank_logo;
     }
-/*
-   echo "<pre>";
-         print_r($row);die;
 
-     echo "</pre>";*/
+    $principal_amount = 200000;
+    $month_limit = 12;
 
+    $is_fixed =$row->is_fixed;
+    $show_interest ='';
+    if($is_fixed == 1){
+        $show_interest .='<h5>Interest (Fixed Rate)</h5><p>Fixed '.$row->interest_rate_fixed.'%</p>';
+    }else{
+        $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
+    }
+
+    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+    if($yearly_interest =='' || $yearly_interest < 1){
+        $yearly_interest = floatval( '12');
+    }
+    $monthly_interest = ($yearly_interest / 12 /100);
+    $downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
+    $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
+
+    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
+
+    $total_payable = round( $emi * $month_limit );
 }else{
     redirect(base_url().'My404');
 }
@@ -38,7 +57,7 @@ if(!empty($id) && is_numeric($id) ){
 					</div>
 					<div class="col-sm-2 col-xs-8">
 						<div>
-							<p class="card_details_head2"><?php echo $bank_name;?></p>
+							<p class="card_details_head2"><?php echo $bank;?></p>
 							<p class="card_details_features">
 								<?php echo $row->auto_loan_looking_for;?>
 							</p>
@@ -47,43 +66,35 @@ if(!empty($id) && is_numeric($id) ){
 					
 					<div class="col-sm-8 col-xs-12">
 						<div class="row">
-							<div class="col-sm-2 col-xs-6">
+							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">Security Required</p>
+									<p class="card_details_head2">Interest</p>
 									<p class="card_details_features">
-										28%,<br> Monthly 2.33%
+										<?php echo $show_interest;?>
 									</p>
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">Interest (Mid Rate)</p>
-									<p class="card_details_features">
-										min 8%,<br> max 9%
-									</p>
-								</div>
-							</div>
-							<div class="col-sm-2 col-xs-6">
-								<div>
 									<p class="card_details_head2">EMI</p>
 									<p class="card_details_features">
-										28%,<br> Monthly 2.33%
-									</p>
+                                        BDT.<?php echo number_format($emi);?>
+                                    </p>
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div>
 									<p class="card_details_head2">Total Payable Amount</p>
 									<p class="card_details_features">
-										50%,<br/><span class="tPaybleAmount">based on 100000</span>
+                                        BDT. <?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on  BDT. <?php echo number_format($principal_amount);?></span>
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-2 col-xs-6">
+							<div class="col-sm-3 col-xs-6">
 								<div>
 									<p class="card_details_head2">Down Payment (Min)</p>
-									<p class="card_details_features">
-										BDT 1300 + VAT
+									<p class="card_details_features">BDT.
+                                        <?php echo number_format($downpayment_amount);?>
 									</p>
 								</div>
 							</div>
@@ -112,6 +123,18 @@ if(!empty($id) && is_numeric($id) ){
     </div>
 </section>
 
+
+<section id="card_details_FeesCharges">
+    <div class="container">
+        <div class="card_details_pronsCons">
+            <h4>Security Required</h4>
+            <div class="prosConsHr"></div><br/>
+            <div class="prosCons_body2 trbodywidth">
+                <?php echo $row->security_required;?>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section id="card_details_basic">
     <div class="container">
