@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Developer : Tarek Raihan                   *
  * Developer Email : tarekraihan@yahoo.com    *
  * Project : FINAGER.COM                      *
- * Module : Personal Loan                     *
+ * Module : Eduction Loan                     *
  * Script : back end  controller              *
  * Start Date : 30-08-2016                    *
- * Last Update : 01-08-2016                   *
+ * Last Update : 18-04-2017                   *
  **********************************************/
 
 class Education_Loan extends CI_Controller {
@@ -242,14 +242,8 @@ class Education_Loan extends CI_Controller {
 
 
 
-    public function loan_info($msg=''){
+    public function loan_info(){// updated-18-04-2017-by-tarek
         if ($this->session->userdata('email_address')) {
-            if ($msg == 'success') {
-                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
-            } else if ($msg == 'error') {
-                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
-            }
-//            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
             $this->form_validation->set_rules('txtExpensesConsidered[]', ' Expenses Considered', 'trim|required');
@@ -349,11 +343,14 @@ class Education_Loan extends CI_Controller {
 
                 }
 
-
-                if ($result) {
-                    redirect(base_url().'home_loan/loan_info/success');
-                } else {
-                    redirect(base_url().'home_loan/loan_info/error');
+                if($result){
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Save !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'education_loan/loan_list/');
+                }else{
+                    $data['error_message'] = '<div id="message" class=" text-center alert alert-danger">Problem to Save !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'education_loan/loan_list/');
                 }
             }
         }else {
@@ -361,7 +358,7 @@ class Education_Loan extends CI_Controller {
         }
     }
 
-    public function loan_list(){
+    public function loan_list(){// updated-18-04-2017-by-tarek
         $data['title'] = "Loan Information";
         $this->load->view('admin/block/header',$data);
         $this->load->view('admin/block/left_nav');
@@ -369,13 +366,8 @@ class Education_Loan extends CI_Controller {
         $this->load->view('admin/block/footer');
     }
 
-    public function edit_loan_info($msg=''){
+    public function edit_loan_info(){// updated-18-04-2017-by-tarek
         if ($this->session->userdata('email_address')) {
-            if ($msg == 'success') {
-                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
-            } else if ($msg == 'error') {
-                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
-            }
 //            $this->form_validation->set_rules('txtBankName', ' Bank Name ', 'trim|required');
             $this->form_validation->set_rules('txtLoanType', ' Loan Type ', 'trim|required');
             $this->form_validation->set_rules('txtLoanName', ' Loan Name ', 'trim|required');
@@ -449,8 +441,7 @@ class Education_Loan extends CI_Controller {
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
-
-
+                print_r($this->Common_model->data);
                 $this->Common_model->table_name = 'education_loan_info';
                 $this->Common_model->where = array('id' => $this->input->post('txtEducationLoanId'));
                 $this->Common_model->update();
@@ -465,8 +456,9 @@ class Education_Loan extends CI_Controller {
                     $this->Common_model->table_name = 'education_loan_info_vs_expenses_considered';
                     if($this->Common_model->insert()){
                         $result = true;
+                    }else{
+                        $result = false;
                     }
-//                    $result = $this->Common_model->insert();
                 }
 
                 $this->Delete_model->Delete_All_Row($id=$this->input->post("txtEducationLoanId"),$table='education_loan_info_vs_loan_purpose',$id_field='loan_info_id');
@@ -479,14 +471,21 @@ class Education_Loan extends CI_Controller {
                     $this->Common_model->table_name = 'education_loan_info_vs_loan_purpose';
                     if($this->Common_model->insert()){
                         $result = true;
+                    }else{
+                        $result = false;
                     }
                 }
 
-                if ($result) {
-                    redirect(base_url().'education_loan/edit_loan_info/success');
-                } else {
-                    redirect(base_url().'education_loan /edit_loan_info/error');
+                if($result){
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Updated !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'education_loan/loan_list/');
+                }else{
+                    $data['error_message'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'education_loan/loan_list/');
                 }
+
             }
         }else {
             redirect(base_url().'backdoor');
@@ -626,7 +625,7 @@ class Education_Loan extends CI_Controller {
 								</div>
 							</div>
 							<div class="col-sm-12 col-xs-12 home_loan_button">
-								<img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
+								<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" /></a>
 								<span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
                                 <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-loan_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                                 <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>

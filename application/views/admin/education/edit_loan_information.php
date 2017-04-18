@@ -1,4 +1,13 @@
 <?php
+/**********************************************
+ * Developer : Tarek Raihan                   *
+ * Developer Email : tarekraihan@yahoo.com    *
+ * Project : FINAGER.COM                      *
+ * Module : Education Loan                    *
+ * Script : back end  controller              *
+ * Start Date : 30-08-2016                    *
+ * Last Update : 18-04-2017                   *
+ **********************************************/
 if(isset($_GET['id'])){
     $id=$_GET['id'];
     $table='education_loan_info';
@@ -30,6 +39,7 @@ if(isset($_GET['id'])){
     $row['max_interest']='';
     $row['avg_interest']='';
     $row['eligibility']='';
+    $row['feature']='';
     $row['requirement']='';
     $row['terms_and_conditions']='';
     $row['review']='';
@@ -604,7 +614,7 @@ if(isset($_GET['id'])){
                                             </section>
                                             <section class="col-md-6">
                                                 <label class="input">
-                                                    <button class="btn btn-primary" type="submit" >Save</button>
+                                                    <button class="btn btn-primary" type="submit" >Update</button>
                                                 </label>
                                             </section>
 

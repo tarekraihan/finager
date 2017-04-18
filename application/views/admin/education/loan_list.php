@@ -1,4 +1,13 @@
 <?php
+/**********************************************
+ * Developer : Tarek Raihan                   *
+ * Developer Email : tarekraihan@yahoo.com    *
+ * Project : FINAGER.COM                      *
+ * Module : Eduction Loan                     *
+ * Script : back end  controller              *
+ * Start Date : 30-08-2016                    *
+ * Last Update : 18-04-2017                   *
+ **********************************************/
 if(isset($_GET['loan_id']))
 {
     $id=$_GET['loan_id'];
@@ -52,15 +61,21 @@ if(isset($_GET['loan_id']))
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
                             <h2>Education Loan Information List </h2>
-
                         </header>
 
+                        <div >
+                            <?php echo ($this->session->userdata('success_message')) ?  $this->session->userdata('success_message') : ''; $this->session->unset_userdata('success_message');?>
+
+                            <?php echo ($this->session->userdata('error_message')) ?  $this->session->userdata('error_message') : ''; $this->session->unset_userdata('error_message');?>
+
+                        </div>
                         <!-- widget div-->
                         <div>
 
                             <!-- widget edit box -->
                             <div class="jarviswidget-editbox">
-                                <!-- This area used as dropdown edit box -->
+
+
 
                             </div>
                             <!-- end widget edit box -->
