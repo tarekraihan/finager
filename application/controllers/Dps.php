@@ -909,7 +909,7 @@ class Dps extends CI_Controller
             }
 
             $deposited_amount = ($deposited_amount > 100 || empty($deposited_amount)) ? 100 : $deposited_amount;
-            $tenure = (empty($dps_tenure) || $dps_tenure < 1) ? 1 : $dps_tenure;
+            $tenure = (empty( $row->no_of_installment ) || $row->no_of_installment < 1) ? 1 : $row->no_of_installment;
             $compounding = 12;
             if(strlen($row->interest_rate) > 3){
 

@@ -5,7 +5,7 @@
 
                 <div class="row margin_bottom_15">
                     <div class="col-sm-6">
-                        <img class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/finager_logo.png">
+                        <img class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinAlfa.svg">
                     </div>
 
                     <div class="col-sm-6">
@@ -49,15 +49,15 @@
                         <p class="footer-menu-title">Loan</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="">Home Loan</a></li>
-                            <li><a href="">Personal Loan</a></li>
-                            <li><a href="">Auto Loan</a></li>
-                            <li><a href="">Education Loan</a></li>
+                            <li><a href="<?php echo base_url();?>en/home_loan">Home Loan</a></li>
+                            <li><a href="<?php echo base_url();?>en/personal_loan">Personal Loan</a></li>
+                            <li><a href="<?php echo base_url();?>en/car_loan">Auto Loan</a></li>
+                            <li><a href="<?php echo base_url();?>en/education_loan">Education Loan</a></li>
 						</ul>
 						<p class="footer-menu-title">Card</p>
 						<ul class="no-padding footer-menus">
-                            <li><a href="">Credit Card</a></li>
-                            <li><a href="">Debit Card</a></li>
+                            <li><a href="<?php echo base_url();?>en/credit_card">Credit Card</a></li>
+                            <li><a href="<?php echo base_url();?>en/debit_card">Debit Card</a></li>
                         </ul>
                     </div>
 
@@ -65,10 +65,10 @@
                         <p class="footer-menu-title">Investment</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="">FDR</a></li>
-                            <li><a href="">DPS</a></li>
-                            <li><a href="">Lakhpoti & Millionaire</a></li>
-                            <li><a href="">Money Maximizer</a></li>
+                            <li><a href="<?php echo base_url();?>en/fdr">FDR</a></li>
+                            <li><a href="<?php echo base_url();?>en/dps">DPS</a></li>
+                            <li><a href="<?php echo base_url();?>en/millionaire">Lakhpoti & Millionaire</a></li>
+                            <li><a href="<?php echo base_url();?>en/money_maximizer">Money Maximizer</a></li>
                             <li><a href="">Monthly Benefit Scheme</a></li>
                             <li><a href="">Forex</a></li>
                             <li><a href="">Thrusts Sector</a></li>
@@ -94,7 +94,7 @@
                         <p class="footer-menu-title">Others</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="">Blog</a></li>
+                            <li><a href="<?php echo base_url();?>en/">Blog</a></li>
                             <li><a href="">Events</a></li>
                             <li><a href="">Forum</a></li>
                             <li><a href="">Maps</a></li>
@@ -108,7 +108,7 @@
                     <div class="col-sm-3">
                         <p class="footer-menu-title uppercase">Talk With Us</p>
 
-                        <p class="no-margin"><span class="hello">Hello Finager :</span> +8801521631641</p>
+                        <p class="no-margin"><span class="hello">Hello Finager :</span> +8801998-123123</p>
                         <p class="no-margin">info: info@finager.com</p>
                         <p class="no-margin">support: support@finager.com</p>
 
@@ -142,7 +142,7 @@
         <div class="container-fluid">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span><span class="esc">(Esc)<span></button>
             <div class="form-group search_input">
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Search" autofocus />
+                <input type="text" class="form-control" id="mainSearch" placeholder="Search" autofocus />
             </div>
             <section id="search_page_content">
                 <!-- Nav tabs -->
@@ -608,6 +608,23 @@
     </section>
 </div>
 
+<!-- for beta popup modal --!>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog beta_modal" role="document">
+    <div class="modal-content">
+        <div class="beta_pop_bg">
+			<div class="form-group has-success">
+                               <h4 class="beta_pop_text">For <span>Finager Newsletter...</span></h4>
+				<div class="input-group">
+					<input type="text" class="form-control beta_pop_form" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+					<span class="input-group-addon beta_pop_form">Send</span>
+			    </div>
+			</div>
+	    </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- for chart -->
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/common.js"></script>
@@ -626,7 +643,7 @@
 <script src="<?php echo base_url();?>resource/front_end/js/mashable-menu.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/demo.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/jquery-ui.min.js"></script>
-
+<script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
 <!-- plus a jQuery UI theme, here I use "flick" -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
 
@@ -644,6 +661,8 @@ jQuery(document).keypress(function(e) {
    jQuery("#myModal").modal('hide');
   }
  });
+
+
 </script>
 
 

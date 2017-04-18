@@ -904,10 +904,14 @@ class Home_Loan extends CI_Controller {
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('home_id1');
         $id2 = $this->input->post('home_id2');
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
+        $month_limit = floatval ( ($this->input->post('month_limit') > 5) ? $this->input->post('month_limit') : 6 );
 
         $newdata = array(
             'first_home_loan'  => $id1,
-            'second_home_loan'  => $id2
+            'second_home_loan'  => $id2,
+            'principal_amount'  => $principal_amount,
+            'month_limit'  => $month_limit
         );
         $this->session->set_userdata($newdata);
         echo 'success';
