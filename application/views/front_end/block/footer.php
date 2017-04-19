@@ -142,7 +142,7 @@
         <div class="container-fluid">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span><span class="esc">(Esc)<span></button>
             <div class="form-group search_input">
-                <input type="text" class="form-control" id="mainSearch" placeholder="Search" autofocus />
+                <input type="text" class="form-control" id="search_word" placeholder="Search" autofocus />
             </div>
             <section id="search_page_content">
                 <!-- Nav tabs -->
@@ -648,6 +648,68 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
 
 <script>
+
+//stcikey sidebar START
+$(document).ready(function(){
+	function sticky_relocate() {
+		var topOffset = 0;
+		var window_top = $(window).scrollTop();
+		var footer_top = $(".footer").offset().top;
+        var target_div = $('#sticky-anchor').offset();
+		var div_top = target_div.top;
+		var div_height = $("#sidebar").height();
+		var win_height = $(window).height();
+
+        var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
+        if (isNaN(top)) {
+            console.log("something is wrong, no top");
+        } else {
+            console.log(top);
+        }
+		
+		if (window_top + div_height > footer_top){
+			$('#sidebar').removeClass('stick');    
+		}
+		else if (window_top > div_top) {
+			$('#sidebar').addClass('stick');
+		}
+		else {
+			$('#sidebar').removeClass('stick');
+		}
+	}
+
+	$(function () {
+		$(window).scroll(sticky_relocate);
+		sticky_relocate();
+	});
+
+
+    $('#search_word').on('keyup',function(){
+//        alert($(this).val());
+        var search_word = 'search_word='+$(this).val();
+//        var dataString = 'search_word=' + encodeURIComponent(search_word);
+//        window.history.pushState(dataString);
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>search/ajax_get_search/",
+            data: search_word,
+            success: function(msg)
+            {
+
+                loading_hide();
+                console.log(msg);
+//                alert(msg);
+
+            }
+        });
+
+    })
+
+});
+
+//stcikey sidebar END
+
     $("#buttons button").click(function() {
         var id = $(this).attr("id");
         $("#pages div").css("display", "none");
@@ -661,8 +723,6 @@ jQuery(document).keypress(function(e) {
    jQuery("#myModal").modal('hide');
   }
  });
-
-
 </script>
 
 

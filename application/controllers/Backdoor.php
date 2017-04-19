@@ -68,6 +68,48 @@ class Backdoor extends CI_Controller {
         }
     }
 
+    public function search_index(){
+        if ($this->session->userdata('email_address')) {
+
+            $this->form_validation->set_rules('txtTitle', 'Title', 'trim|required');
+            $this->form_validation->set_rules('txtTagWords', 'Title', 'trim|required');
+            $this->form_validation->set_rules('txtUrl', 'Title', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "User - Admin Role";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/search/search_index');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array(
+                    'search_title' => $this->input->post('txtTitle'),
+                    'tag_words' => $this->input->post('txtTagWords'),
+                    'url' => $this->input->post('txtUrl'),
+                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'search_index';
+                $result = $this->Common_model->insert();
+
+                if($result){
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Save !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'backdoor/search_index/');
+                }else{
+                    $data['error_message'] = '<div id="message" class=" text-center alert alert-danger">Problem to Save !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'backdoor/search_index/');
+                }
+            }
+
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
     public function edit_admin_role($msg='')
     {
         if ($this->session->userdata('email_address')) {

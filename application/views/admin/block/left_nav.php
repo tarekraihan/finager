@@ -46,6 +46,14 @@
                 </ul>
             </li>
             <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Search</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>backdoor/search_index">Search Index</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">User Manage</span></a>
                 <ul>
                     <li>
