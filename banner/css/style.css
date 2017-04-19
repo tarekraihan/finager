@@ -1,0 +1,138 @@
+.no-margin{margin:0 !important;}
+
+.no-padding{padding:0 !important;}
+
+.clear{clear: both;}
+
+@font-face {
+    font-family: myriad-pro;
+    src: url("../fonts/MYRIADPRO-BOLD.OTF") format("opentype");
+}
+
+body{
+	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat;
+	/*background-position: center center;*/
+	background-size: contain;
+	-webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain; 
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.logo{
+    max-width: 400px;
+    height: auto;
+    margin: 17% auto 30px auto;
+}
+.coming-text>p {
+    font-size: 49px;
+    font-style: italic;
+    margin: 0;
+    color: #000;
+    text-align: center;
+}
+img.greeting-img.img-responsive {
+    max-width: 290px;
+    height: auto;
+    margin: 70px auto;
+}
+.write-padd {
+    position: relative;
+}
+.greeting.text {
+    position: absolute;
+    top: 3%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+.write-padd>.write-padd-img {
+    height: 95vh;
+    max-width: 100%;
+    margin: 15px auto;
+    display: block;
+    float: none;
+}
+.fin-logo {
+    max-width: 160px;
+    height: auto;
+    margin: 70px auto 10px auto;
+}
+.gText {
+    max-width: 360px;
+    margin: 0 auto;
+    max-height: 360px;
+    overflow: auto;
+    text-align: justify;
+}
+
+/*************** SCROLLBAR BASE CSS ***************/
+ 
+.scroll-wrapper {
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative;
+}
+ 
+.scroll-wrapper > .scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+}
+ 
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+img.sorry-img {
+    width: 80%;
+    margin: 25% auto 30px auto;
+    display: block;
+}
+
+p.sorry-text {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 17px;
+}
+p.sorry-text span {
+    font-weight: 600;
+    font-size: 17px;
+	color: #2a2ed9;
+}
+.sorry-text .team{
+	font-weight: normal !important;
+	color: #333 !important;
+}
+span.info {
+    float: right;
+    font-weight: 600;
+    font-size: 15px !important;
+}
+@media only screen and (max-width:480px){
+	.gText {
+	    max-width: 180px;
+	}
+	.logo {
+	    max-width: 100%
+	}
+}
+
+@media only screen and (min-width:660px) and (max-width:800px){
+	.write-padd > .write-padd-img {
+	    height: 65vh !important;
+	}
+}
