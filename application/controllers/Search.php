@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Search extends CI_Controller
 {
     function ajax_get_search(){
-        $search_word = $this->input->get('search_word');
+        $search_word = htmlentities($this->input->get('search_word'));
         echo $search_word;
     }
 

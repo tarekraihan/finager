@@ -53,9 +53,9 @@
                             <li><a href="<?php echo base_url();?>en/personal_loan">Personal Loan</a></li>
                             <li><a href="<?php echo base_url();?>en/car_loan">Auto Loan</a></li>
                             <li><a href="<?php echo base_url();?>en/education_loan">Education Loan</a></li>
-						</ul>
-						<p class="footer-menu-title">Card</p>
-						<ul class="no-padding footer-menus">
+                        </ul>
+                        <p class="footer-menu-title">Card</p>
+                        <ul class="no-padding footer-menus">
                             <li><a href="<?php echo base_url();?>en/credit_card">Credit Card</a></li>
                             <li><a href="<?php echo base_url();?>en/debit_card">Debit Card</a></li>
                         </ul>
@@ -147,461 +147,88 @@
             <section id="search_page_content">
                 <!-- Nav tabs -->
                 <div class="container-fluid">
-                    <ul class="nav nav-tabs" role="tablist">
+                   <!-- <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#nofilter" aria-controls="home" role="tab" data-toggle="tab">NO FILTER</a></li>
                         <li role="presentation"><a href="#Loan" aria-controls="profile" role="tab" data-toggle="tab">LOAN</a></li>
                         <li role="presentation"><a href="#DPS" aria-controls="messages" role="tab" data-toggle="tab">CARD</a></li>
                         <li role="presentation"><a href="#Cards" aria-controls="settings" role="tab" data-toggle="tab">DEPOSIT</a></li>
                         <li role="presentation"><a href="#Accounts" aria-controls="settings" role="tab" data-toggle="tab">BLOG</a></li>
-                    </ul>
+                    </ul>-->
 
                     <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="nofilter">
-                            <div class="no_filter_tab">
-                                <div class="col-md-4">
-                                    <div class="no_filter_tab_content">
-                                        <h4>LOAN</h4>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-print" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-pie-chart" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-unlock" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-unlock" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filter_tab_content">
-                                        <h4>CARD</h4>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-flag" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-flag" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-flag" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filter_tab_content">
-                                        <h4>DEPOSIT</h4>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-file" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-users" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-users" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="Loan">
-                            <div class="no_filter_tab">
-                                <div class="col-md-3">
-                                    <div class="no_filter_tab_content">
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-print" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-pie-chart" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-unlock" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-unlock" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="no_filter_tab_content">
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-flag" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-flag" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-flag" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="no_filter_tab_content">
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-file" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-users" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-users" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="no_filter_tab_content">
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-file" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-users" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-users" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                        <div class="no_filte_div">
-                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                                            <span>Sample Text</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="DPS">
-                            <div class="col-md-6">
-                                <div class="bank_loan_details">
-                                    <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                                    </div>
-                                    <div class="col-md-10 nopadding">
-                                        <h4>AB Bank Deposit Pension Scheme</h4><br/>
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                            <tr>
-                                                <td>Installment Amount:</td>
-                                                <td>Accrued Interest:</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Number of Installment:</td>
-                                                <td>Loan Facility:</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Maturity Amount:</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bank_loan_details">
-                                    <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                                    </div>
-                                    <div class="col-md-10 nopadding">
-                                        <h4>AB Bank Deposit Pension Scheme</h4><br/>
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                            <tr>
-                                                <td>Installment Amount:</td>
-                                                <td>Accrued Interest:</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Number of Installment:</td>
-                                                <td>Loan Facility:</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Maturity Amount:</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bank_loan_details">
-                                    <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                                    </div>
-                                    <div class="col-md-10 nopadding">
-                                        <h4>AB Bank Deposit Pension Scheme</h4><br/>
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                            <tr>
-                                                <td>Installment Amount:</td>
-                                                <td>Accrued Interest:</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Number of Installment:</td>
-                                                <td>Loan Facility:</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Maturity Amount:</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bank_loan_details">
-                                    <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                                    </div>
-                                    <div class="col-md-10 nopadding">
-                                        <h4>AB Bank Deposit Pension Scheme</h4><br/>
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                            <tr>
-                                                <td>Installment Amount:</td>
-                                                <td>Accrued Interest:</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Number of Installment:</td>
-                                                <td>Loan Facility:</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Maturity Amount:</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="Cards">
-                            <div class="col-md-6">
-                                <div class="bank_loan_details">
-                                    <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/bank_info_card.jpg" alt="AB Bank Logo" />
-                                    </div>
-                                    <div class="col-md-10 nopadding">
-                                        <h4>AB Bank Credit Card</h4><br/>
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                            <tr>
-                                                <td>Purchase Interest Rate:</td>
-                                                <td>Cash Advance Limit:</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cash Advance Interest Rate:</td>
-                                                <td>Annual Fee:</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Bakance Transfer Interest Rate:</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bank_loan_details">
-                                    <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/bank_info_card.jpg" alt="AB Bank Logo" />
-                                    </div>
-                                    <div class="col-md-10 nopadding">
-                                        <h4>AB Bank Credit Card</h4><br/>
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                            <tr>
-                                                <td>Purchase Interest Rate:</td>
-                                                <td>Cash Advance Limit:</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cash Advance Interest Rate:</td>
-                                                <td>Annual Fee:</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Bakance Transfer Interest Rate:</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bank_loan_details">
-                                    <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/bank_info_card.jpg" alt="AB Bank Logo" />
-                                    </div>
-                                    <div class="col-md-10 nopadding">
-                                        <h4>AB Bank Credit Card</h4><br/>
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                            <tr>
-                                                <td>Purchase Interest Rate:</td>
-                                                <td>Cash Advance Limit:</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cash Advance Interest Rate:</td>
-                                                <td>Annual Fee:</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Bakance Transfer Interest Rate:</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="bank_loan_details">
-                                    <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/bank_info_card.jpg" alt="AB Bank Logo" />
-                                    </div>
-                                    <div class="col-md-10 nopadding">
-                                        <h4>AB Bank Credit Card</h4><br/>
-                                        <table class="table table-bordered">
-                                            <tbody>
-                                            <tr>
-                                                <td>Purchase Interest Rate:</td>
-                                                <td>Cash Advance Limit:</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cash Advance Interest Rate:</td>
-                                                <td>Annual Fee:</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Bakance Transfer Interest Rate:</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="Accounts">
-                            <div class="col-md-12 text-center">
-                                <img src="<?php echo base_url();?>resource/front_end/images/no-data-found.jpg" alt="Not Found" />
-                            </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="no_filte_div">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <span>Sample Text</span>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </div>
@@ -649,66 +276,59 @@
 
 <script>
 
-//stcikey sidebar START
-$(document).ready(function(){
-	function sticky_relocate() {
-		var topOffset = 0;
-		var window_top = $(window).scrollTop();
-		var footer_top = $(".footer").offset().top;
-        var target_div = $('#sticky-anchor').offset();
-		var div_top = target_div.top;
-		var div_height = $("#sidebar").height();
-		var win_height = $(window).height();
+    //stcikey sidebar START
+    $(document).ready(function(){
+        /*function sticky_relocate() {
+            var topOffset = 0;
+            var window_top = $(window).scrollTop();
+            var footer_top = $(".footer").offset().top;
+            var target_div = $('#sticky-anchor').offset();
+            var div_top = target_div.top;
+            var div_height = $("#sidebar").height();
+            var win_height = $(window).height();
 
-        var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
-        if (isNaN(top)) {
-            console.log("something is wrong, no top");
-        } else {
-            console.log(top);
-        }
-		
-		if (window_top + div_height > footer_top){
-			$('#sidebar').removeClass('stick');    
-		}
-		else if (window_top > div_top) {
-			$('#sidebar').addClass('stick');
-		}
-		else {
-			$('#sidebar').removeClass('stick');
-		}
-	}
-
-	$(function () {
-		$(window).scroll(sticky_relocate);
-		sticky_relocate();
-	});
-
-
-    $('#search_word').on('keyup',function(){
-//        alert($(this).val());
-        var search_word = 'search_word='+$(this).val();
-//        var dataString = 'search_word=' + encodeURIComponent(search_word);
-//        window.history.pushState(dataString);
-        $.ajax
-        ({
-            type: "POST",
-            url: "<?php echo base_url();?>search/ajax_get_search/",
-            data: search_word,
-            success: function(msg)
-            {
-
-                loading_hide();
-                console.log(msg);
-//                alert(msg);
-
+            var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
+            if (isNaN(top)) {
+                console.log("something is wrong, no top");
+            } else {
+                console.log(top);
             }
-        });
 
-    })
+            if (window_top + div_height > footer_top){
+                $('#sidebar').removeClass('stick');
+            }
+            else if (window_top > div_top) {
+                $('#sidebar').addClass('stick');
+            }
+            else {
+                $('#sidebar').removeClass('stick');
+            }
+        }*/
 
-});
+        /*$(function () {
+            $(window).scroll(sticky_relocate);
+            sticky_relocate();
+        });*/
 
-//stcikey sidebar END
+
+        $('#search_word').on('keyup',function(){
+            var search_word = 'search_word='+$(this).val();
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>search/ajax_get_search/",
+                data: search_word,
+                success: function(msg)
+                {
+                    console.log(msg);
+                }
+            });
+
+        })
+
+    });
+
+    //stcikey sidebar END
 
     $("#buttons button").click(function() {
         var id = $(this).attr("id");
@@ -716,13 +336,13 @@ $(document).ready(function(){
         $("#pages div#" + id + "").css("display", "block");
     });
 
-<!--Esc key press to hide search modal-->
+    <!--Esc key press to hide search modal-->
 
-jQuery(document).keypress(function(e) {
-  if (e.keyCode == 27) {
-   jQuery("#myModal").modal('hide');
-  }
- });
+    jQuery(document).keypress(function(e) {
+        if (e.keyCode == 27) {
+            jQuery("#myModal").modal('hide');
+        }
+    });
 </script>
 
 

@@ -402,7 +402,7 @@ $(window).on('scroll', function (){
             var  formData = $(this).data();
             var repayment = formData.repayment;
             console.log(repayment);
-            $('#rePaymentSchedule'+repayment).html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
+            $('#rePaymentSchedule'+repayment).html('<iframe  src="<?php echo base_url();?>en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#rePaymentSchedule'+repayment).toggleClass("in");
             $('#moreInfo'+repayment).removeClass("in");
 
