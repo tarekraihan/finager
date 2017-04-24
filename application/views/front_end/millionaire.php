@@ -222,7 +222,7 @@
 						<div class="card_query_fdr">
 							<p>Tenure</p>
 
-							<p class="mill_def_text">Tenure Based on 100K</p>
+							<p class="mill_def_text" id="tenure_label">Tenure Based on 100K</p>
 
 							<ul class="no-pading mill_tenure_list" id="millionaire_tenure">
 								<li>
@@ -463,10 +463,10 @@
                                     </li>
                                     <li></li>
                                 </ul>
-                                <a class="cart_anchor">
+                                <a class="cart_anchor compare-card">
 
                                 </a>
-                                <a class="cart_anchor01">
+                                <a class="cart_anchor01 comapre-card">
 
                                 </a>
                                 <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
@@ -513,7 +513,7 @@ $(window).on('scroll', function (){
             var  formData = $(this).data();
             var offer = formData.offer;
             console.log(offer);
-            $('#availableOfferSchedule'+offer).html('<iframe  src="http://test.finager.com/en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
+            $('#availableOfferSchedule'+offer).html('<iframe  src="<?php echo base_url(); ?>en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#availableOfferSchedule'+offer).toggleClass("in");
             $('#moreInfo'+offer).removeClass("in");
 
@@ -521,10 +521,11 @@ $(window).on('scroll', function (){
 
 
         $('input[name="maturity_amount"]').on('click',function() {
+            var amount = $(this).val();
             var thisVal= 'selected_amount='+$(this).val();
 //            alert(thisVal);
 
-
+            var amount_list = {1:'100K', 2:'200K', 3:'300K',4:'400K',5:'500K',6:'1 Million',7:'2.5 Million', 8:'5 Million',9:'10 Million',10:'20 Million',11:'30 Million',12:'40 Million'};
             $.ajax
             ({
                 type: "POST",
@@ -537,7 +538,9 @@ $(window).on('scroll', function (){
 //                    loading_hide();
 //                    console.log(msg);
 
+
                     $("#millionaire_tenure").html(msg);
+                    $('#tenure_label').html('Tenure Based on '+ amount_list[amount]);
 
 
 
@@ -797,6 +800,16 @@ $(document).ready(function() {
 
         $(this).parent(".cart_anchor01").removeClass("img_active");
         $(this).parent(".cart_anchor01").html('');
+    });
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var empty = $(this).parents(".hidden_div_container").find("a");
+        $(".compare-card").each(function(){
+            if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+                $("#hiden_div").fadeOut(1500);
+            }
+        });
     });
 
     $('#go_compare').click(function(){

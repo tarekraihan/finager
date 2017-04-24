@@ -633,7 +633,7 @@ class Home_Loan extends CI_Controller {
         $home_user = $this->input->post('home_user');
 
         $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
-        $month_limit = floatval ( ($this->input->post('month_limit') > 5) ? $this->input->post('month_limit') : 6 );
+        $month_limit = floatval ( ($this->input->post('month_limit') > 1) ? $this->input->post('month_limit') : 1 );
 
         $WHERE = array(); $query = '';
         if(!empty($principal_amount)) {
@@ -720,9 +720,9 @@ class Home_Loan extends CI_Controller {
              $downpayment_percentage = $row->downpayment;
              $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
-             $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
+             $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($month_limit * 12 ) )) / (pow( ( 1 + $monthly_interest ) , ($month_limit * 12 ) ) -1 ));
 
-             $total_payable = round( $emi * $month_limit );
+             $total_payable = round( $emi * $month_limit * 12 );
 
             /* echo '<pre>';
 
@@ -737,7 +737,7 @@ class Home_Loan extends CI_Controller {
 
             $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
             $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
-
+			
             $home .='<div class="full-card">
                        <div class="row home_loan_right_bar no-margin-lr2">
                            <div class="col-sm-3 col-xs-3">
@@ -785,7 +785,7 @@ class Home_Loan extends CI_Controller {
                                <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
                                <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-home_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                                <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
-                               <img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
+                               <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" /></a>
                            </div>
                            <div class="collapse" id="moreInfo'.$row->id.'">
                              <div class="col-md-12">

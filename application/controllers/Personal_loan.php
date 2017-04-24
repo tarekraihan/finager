@@ -404,7 +404,7 @@ class Personal_Loan extends CI_Controller {
 
             $res = $this->Front_end_select_model->select_personal_loan_info($query);
 
-//						print_r($personal_loan->result());die;
+//						print_r($res->result());die;
 
                 //-----------Pagination start-----------------
 
@@ -469,11 +469,13 @@ class Personal_Loan extends CI_Controller {
                                         <p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
                     }
 
+                    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+                    if($yearly_interest =='' || $yearly_interest < 6){
+                        $yearly_interest = floatval( '6');
+                    }
+                    $monthly_interest = ($yearly_interest /100);
 
-                    $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-                    $monthly_interest = ($yearly_interest / 12 / 100 );
-
-                    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
+                    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($month_limit  ) )) / (pow( ( 1 + $monthly_interest ) , ($month_limit ) ) -1 ));
 
                     $total_payable = round( $emi * $month_limit );
 
@@ -483,7 +485,8 @@ class Personal_Loan extends CI_Controller {
                     <div class="row home_loan_right_bar no-margin-lr2">
                     <div class="col-sm-3 col-xs-3">
                         <a href="'.base_url().'en/personal_loan_details/'.$row->id.'"><img title="click here to details" class="img-responsive personal_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
-                        <small class="home_loan_bank_name"><a  href="">'.$bank.'</a></small>
+
+                        <small class="home_loan_bank_name"><a  href="">'.$row->personal_loan_name.'</a></small>
                     </div>
                     <div class="col-sm-9 col-xs-9">
                         <div class="row">

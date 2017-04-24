@@ -1,3 +1,5 @@
+
+
 <section id="auto_header">
 </section>
 <section id="card">
@@ -5,7 +7,8 @@
         <div class="row">
             <!-- Left bar query content start -->
             <div class="col-sm-3 col-xs-3">
-                <div class="home_loan_left_bar">
+				<div id="sticky-anchor"></div>
+                <div class="home_loan_left_bar" id="sidebar">
                     <!-- slider range sidebar start-->
                     <div class="card_query">
                         <p>I Want </p>
@@ -251,10 +254,10 @@
                                     </li>
                                     <li></li>
                                 </ul>
-                                <a class="cart_anchor">
+                                <a class="cart_anchor compare-card">
 
                                 </a>
-                                <a class="cart_anchor01">
+                                <a class="cart_anchor01 compare-card">
 
                                 </a>
                                 <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
@@ -271,7 +274,7 @@
 </section>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/auto-loan-calculator.js"></script>
 <script type="text/javascript"> 
-
+/*
 $(window).on('scroll', function (){
 	if ($(window).scrollTop() > 350){
 	  $('.home_loan_left_bar').addClass('fixedElement');
@@ -281,6 +284,8 @@ $(window).on('scroll', function (){
 	  $('.home_loan_left_bar').removeClass('fixedElement');
 	}
 });
+*/
+
 </script>
 
 <script>
@@ -383,13 +388,13 @@ $(window).on('scroll', function (){
 
         });
 
-        $('#searchPersonalLoan').on('click', '.rePaymentSchedule', function (){
+        $('#searchAutoLoan').on('click', '.rePaymentSchedule', function (){
 
             var  formData = $(this).data();
             var repayment = formData.repayment;
             console.log(repayment);
             //$("#repbtn").click(function(){
-            $('#rePaymentSchedule'+repayment).html('<iframe  src="http://test.finager.com/en/auto_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
+            $('#rePaymentSchedule'+repayment).html('<iframe  src="<?php echo base_url();?>en/auto_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#rePaymentSchedule'+repayment).toggleClass("in");
             $('#moreInfo'+repayment).removeClass("in");
 //            alert('#moreInfo'+repayment);
@@ -494,6 +499,15 @@ $(window).on('scroll', function (){
 
             $(this).parent(".cart_anchor01").removeClass("img_active");
             $(this).parent(".cart_anchor01").html('');
+        });
+
+        $(document).on('click','.compare-cross-btn',function(){
+            var empty = $(this).parents(".hidden_div_container").find("a");
+            $(".compare-card").each(function(){
+                if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+                    $("#hiden_div").fadeOut(1500);
+                }
+            });
         });
 
         $('#go_compare').click(function(){

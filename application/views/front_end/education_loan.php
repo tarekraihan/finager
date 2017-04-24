@@ -7,7 +7,7 @@
 			<div class="row">
 		<!-- Left bar query content start -->
 				<div class="col-sm-3 col-xs-3">
-					<div class="home_loan_left_bar">
+					<div class="home_loan_left_bar" id="sidebar">
 						<!-- slider range sidebar start-->
 						
 						<div class="row">
@@ -203,7 +203,7 @@
 		</div>
 	</section>
 
-    <section id="hiden_div" class="hidden">
+    <section id="hiden_div">
         <div class="container no-padding">
             <div class="row">
                 <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
@@ -218,10 +218,10 @@
                                         </li>
                                         <li></li>
                                     </ul>
-                                    <a class="cart_anchor">
+                                    <a class="cart_anchor comapre-card">
 
                                     </a>
-                                    <a class="cart_anchor01">
+                                    <a class="cart_anchor01 compare-card">
 
                                     </a>
                                     <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
@@ -240,16 +240,18 @@
 	<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/education-loan-calculator.js"></script>
 	
 <script type="text/javascript"> 
+/*$(document).ready(function(){
+	$(window).on('scroll', function (){
+		if ($(window).scrollTop() > 350){
+		  $('.home_loan_left_bar').addClass('fixedElement');
+		}if($(window).scrollTop()<350){
+		  $('.home_loan_left_bar').removeClass('fixedElement');
+		}if($(window).scrollTop() > 2200){
+		  $('.home_loan_left_bar').removeClass('fixedElement');
+		}
+	});
+});*/
 
-$(window).on('scroll', function (){
-	if ($(window).scrollTop() > 350){
-	  $('.home_loan_left_bar').addClass('fixedElement');
-	}if($(window).scrollTop()<350){
-	  $('.home_loan_left_bar').removeClass('fixedElement');
-	}if($(window).scrollTop() > 2200){
-	  $('.home_loan_left_bar').removeClass('fixedElement');
-	}
-});
 </script>
 <script>
 $(document).ready(function() {
@@ -272,7 +274,7 @@ $(document).ready(function() {
         var formData = $(this).data();
         var repayment = formData.repayment;
         //console.log(repayment);
-        $('#rePaymentSchedule' + repayment).html('<iframe  src="http://test.finager.com/en/auto_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
+        $('#rePaymentSchedule' + repayment).html('<iframe  src="<?php echo base_url();?>en/auto_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
         $('#rePaymentSchedule' + repayment).toggleClass("in");
         $('#moreInfo' + repayment).removeClass("in");
 
@@ -578,6 +580,16 @@ $(document).ready(function() {
         $(this).parent(".cart_anchor01").removeClass("img_active");
         $(this).parent(".cart_anchor01").html('');
     });
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var empty = $(this).parents(".hidden_div_container").find("a");
+        $(".compare-card").each(function(){
+            if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+                $("#hiden_div").fadeOut(1500);
+            }
+        });
+    });    
 
     $('#go_compare').click(function(){
         //alert(1);
