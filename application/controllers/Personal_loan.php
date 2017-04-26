@@ -375,7 +375,7 @@ class Personal_Loan extends CI_Controller {
         $personal_i_want = $this->input->post('personal_i_want');
         $personal_user = $this->input->post('personal_user');
 
-        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
+        $principal_amount = floatval ( ($this->input->post('principal_amount') > 25000) ? $this->input->post('principal_amount') : '25000' );
         $month_limit = floatval ( ($this->input->post('month_limit') > 5) ? $this->input->post('month_limit') : 6 );
 
 
@@ -473,9 +473,9 @@ class Personal_Loan extends CI_Controller {
                     if($yearly_interest =='' || $yearly_interest < 6){
                         $yearly_interest = floatval( '6');
                     }
-                    $monthly_interest = ($yearly_interest /100);
+                    $monthly_interest = ($yearly_interest /100/12);
 
-                    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($month_limit  ) )) / (pow( ( 1 + $monthly_interest ) , ($month_limit ) ) -1 ));
+                    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ( $month_limit ) )) / (pow( ( 1 + $monthly_interest ) , ( $month_limit ) ) -1 ));
 
                     $total_payable = round( $emi * $month_limit );
 
@@ -493,7 +493,7 @@ class Personal_Loan extends CI_Controller {
                             <div class="col-sm-2 col-xs-2 w20">
                                 <div class="card_text2">
                                     <h5>Amount </h5>
-                                    <p>Tk.'. number_format( $principal_amount ).'</p>
+                                    <p>BDT.'. number_format( $principal_amount ).'</p>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-2 w20">
@@ -504,13 +504,13 @@ class Personal_Loan extends CI_Controller {
                             <div class="col-sm-1 col-xs-1 w20">
                                 <div class="card_text2">
                                     <h5>EMI</h5>
-                                    <p>'.number_format( $emi ).'</p>
+                                    <p>BDT.'.number_format( $emi ).'</p>
                                 </div>
                             </div>
                             <div class="col-sm-2 col-xs-2 w20">
                                 <div class="card_text2">
                                     <h5>Total Payable Amount</h5>
-                                    <p>'.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on '.number_format( $principal_amount ).'</span></p>
+                                    <p>BDT.'.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on BDT.'.number_format( $principal_amount ).'</span></p>
                                 </div>
                             </div>
                             <div class="col-sm-3 col-xs-1 w20">

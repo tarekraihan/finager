@@ -30,27 +30,15 @@ if(!empty($id) && is_numeric($id) ){
     $principal_amount = 500000;
     $month_limit = 12;
 
+	$yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+	if($yearly_interest =='' || $yearly_interest < 6){
+		$yearly_interest = floatval( '6');
+	}
+	$monthly_interest = ($yearly_interest /100/12);
 
-    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-    if($yearly_interest =='' || $yearly_interest < 1){
-        $yearly_interest = floatval( '12');
-    }
-    $monthly_interest = ($yearly_interest / 12 /100);
+	$emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ( $month_limit ) )) / (pow( ( 1 + $monthly_interest ) , ( $month_limit ) ) -1 ));
 
-    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
-
-    $total_payable = round( $emi * $month_limit );
-
-/*
-    $principal_amount = 500000;
-    $month_limit = 12;
-
-
-    $yearly_interest = floatval( ( $row->is_fixed =='0' ) ? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-    $monthly_interest = ($yearly_interest / $month_limit );
-    $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
-
-    $total_payable = round( $emi * $month_limit );*/
+	$total_payable = round( $emi * $month_limit );
 
 }else{
     redirect(base_url().'My404');
@@ -78,15 +66,15 @@ if(!empty($id) && is_numeric($id) ){
 					
 					<div class="col-sm-8 col-xs-12">
 						<div class="row">
-							<div class="col-sm-3 col-xs-6">
+							<div class="col-sm-2 col-xs-6">
 								<div>
 									<p class="card_details_head2">Amount</p>
 									<p class="card_details_features">
-										Tk.<?php echo number_format($principal_amount);?>
+										BDT.<?php echo number_format($principal_amount);?>
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-3 col-xs-6">
+							<div class="col-sm-2 col-xs-6">
 								<div>
 									<p class="card_details_head2">Interest </p>
 									<p class="card_details_features">
@@ -94,11 +82,19 @@ if(!empty($id) && is_numeric($id) ){
 									</p>
 								</div>
 							</div>
+							<div class="col-sm-2 col-xs-6">
+								<div>
+									<p class="card_details_head2">Tenure </p>
+									<p class="card_details_features">
+										<?php echo $month_limit.' Month';?>
+									</p>
+								</div>
+							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">EMI</p>
+									<p class="card_details_head2">Equal Monthly Installment( EMI )</p>
 									<p class="card_details_features">
-                                        Tk.<?php echo number_format($emi);?>
+                                        BDT.<?php echo number_format($emi);?>
 									</p>
 								</div>
 							</div>
@@ -106,7 +102,7 @@ if(!empty($id) && is_numeric($id) ){
 								<div>
 									<p class="card_details_head2">Total Payable Amount</p>
 									<p class="card_details_features">
-                                        Tk.<?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on Tk.<?php echo number_format($principal_amount);?></span>
+                                        BDT.<?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on BDT.<?php echo number_format($principal_amount);?></span>
 									</p>
 								</div>
 							</div>

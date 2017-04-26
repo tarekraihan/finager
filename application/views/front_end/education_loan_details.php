@@ -15,26 +15,25 @@ if(!empty($id) && is_numeric($id) ){
         $bank_logo = $row->bank_logo;
     }
 
-    $principal_amount = 200000;
+    $principal_amount = 100000;
     $year_limit = 1;
 
     $is_fixed =$row->is_fixed;
     $show_interest ='';
     if($is_fixed == 1){
-        $show_interest .='<h5>Interest (Fixed Rate)</h5><p>Fixed '.$row->fixed_interest.'%</p>';
+        $show_interest .='<p class="card_details_head2">Interest (Fixed Rate)</p><p>Fixed '.$row->fixed_interest.'%</p>';
     }else{
-        $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->avg_interest.'% <br/>min '.$row->min_interest.'%,<br> max '.$row->max_interest.'%</p>';
+        $show_interest .='<p class="card_details_head2">Interest (Avg Rate)</p><p>Avg '.$row->avg_interest.'% <br/>min '.$row->min_interest.'%,<br> max '.$row->max_interest.'%</p>';
     }
 
-    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->avg_interest : $row->fixed_interest ) ;
-    if($yearly_interest =='' || $yearly_interest < 1){
-        $yearly_interest = floatval( '12');
-    }
-    $monthly_interest = ($yearly_interest / 12 /100);
+	$yearly_interest = floatval( ($row->is_fixed =='0')? $row->avg_interest : $row->fixed_interest ) ;
+	if($yearly_interest =='' || $yearly_interest < 1){
+		$yearly_interest = floatval( '10');
+	}
+	$monthly_interest = ($yearly_interest / 12 /100);
 
-    $emi = round($principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($year_limit * 12) )) / (pow( ( 1 + $monthly_interest ) , ($year_limit *12) ) -1 )));
-
-    $total_payable = round( $emi * $year_limit *12 );
+	$emi = round($principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($year_limit * 12) )) / (pow( ( 1 + $monthly_interest ) , ($year_limit * 12) ) -1 )));
+	$total_payable = round( $emi * $year_limit * 12 );
 
     $result1 = $this->Front_end_select_model->select_education_loan_expenses_considered($id);
     $expense_consider ='';
@@ -59,7 +58,6 @@ if(!empty($id) && is_numeric($id) ){
 					<div class="col-sm-2 col-xs-8">
 						<div>
 							<p class="card_details_head2"><?php echo $bank_name;?></p>
-
 						</div>
 					</div>
 					
@@ -68,23 +66,21 @@ if(!empty($id) && is_numeric($id) ){
 							<div class="col-sm-3 col-xs-6">
 								<div>
 									<p class="card_details_head2">Selected Amount</p>
-									<p class="card_details_features">
+									<p>
 										BDT. <?php echo number_format($principal_amount);?>
 									</p>
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">Interest Rate</p>
-									<p class="card_details_features">
-                                        <?php echo $show_interest;?>
-									</p>
+                                   <?php echo $show_interest;?>
+
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">EMI</p>
-									<p class="card_details_features">
+									<p class="card_details_head2">Equal Monthly Installment(EMI)</p>
+									<p>
                                         BDT. <?php echo number_format($emi);?>
 									</p>
 								</div>
@@ -92,7 +88,7 @@ if(!empty($id) && is_numeric($id) ){
 							<div class="col-sm-3 col-xs-6">
 								<div>
 									<p class="card_details_head2">Total Payable Amount</p>
-									<p class="card_details_features">
+									<p>
 										BDT. <?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on BDT.<?php echo number_format($principal_amount);?></span>
 									</p>
 								</div>

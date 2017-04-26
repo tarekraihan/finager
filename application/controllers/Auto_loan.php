@@ -669,10 +669,8 @@ class Auto_loan extends CI_Controller
         $auto_i_want = $this->input->post('auto_i_want');
         $auto_user = $this->input->post('auto_user');
 
-
-        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
-        $month_limit = floatval ( ( $this->input->post('month_limit') > 5 ) ?  $this->input->post('month_limit') : 6 );
-
+        $principal_amount = floatval ( ($this->input->post('principal_amount') > 100000) ? $this->input->post('principal_amount') : '100000' );
+        $month_limit = floatval ( ($this->input->post('month_limit') > 12) ? $this->input->post('month_limit') : 12 );
 
 
         $WHERE = array(); $query = '';
@@ -757,17 +755,31 @@ class Auto_loan extends CI_Controller
             }
 
             $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-            if($yearly_interest =='' || $yearly_interest < 1){
-                $yearly_interest = floatval( '12');
+            if($yearly_interest =='' || $yearly_interest < 6){
+                $yearly_interest = floatval( '6');
             }
-            $monthly_interest = ($yearly_interest / 12 /100);
+            $monthly_interest = ($yearly_interest /100/12);
+            $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ( $month_limit ) )) / (pow( ( 1 + $monthly_interest ) , ( $month_limit ) ) -1 ));
+            $total_payable = round( $emi * $month_limit );
+
             $downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
             $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
-            $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
 
-            $total_payable = round( $emi * $month_limit );
 
+            /*
+
+                        $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+                        if($yearly_interest =='' || $yearly_interest < 1){
+                            $yearly_interest = floatval( '12');
+                        }
+                        $monthly_interest = ($yearly_interest / 12 /100);
+                        $downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
+                        $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
+
+                        $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
+
+                        $total_payable = round( $emi * $month_limit );*/
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
                <div class="col-sm-3 col-xs-3">
@@ -812,8 +824,7 @@ class Auto_loan extends CI_Controller
 
                    <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
                    <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-loan_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
-
-                        <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
+                   <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
                    <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" /></a>
                </div>
                <div class="collapse" id="moreInfo'.$row->id.'">

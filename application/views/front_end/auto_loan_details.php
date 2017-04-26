@@ -18,7 +18,7 @@ if(!empty($id) && is_numeric($id) ){
         $bank_logo = $row->bank_logo;
     }
 
-    $principal_amount = 200000;
+    $principal_amount = 100000;
     $month_limit = 12;
 
     $is_fixed =$row->is_fixed;
@@ -29,17 +29,17 @@ if(!empty($id) && is_numeric($id) ){
         $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
     }
 
-    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-    if($yearly_interest =='' || $yearly_interest < 1){
-        $yearly_interest = floatval( '12');
-    }
-    $monthly_interest = ($yearly_interest / 12 /100);
-    $downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
-    $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
+	$yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+	if($yearly_interest =='' || $yearly_interest < 6){
+		$yearly_interest = floatval( '6');
+	}
+	$monthly_interest = ($yearly_interest /100/12);
+	$emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ( $month_limit ) )) / (pow( ( 1 + $monthly_interest ) , ( $month_limit ) ) -1 ));
+	$total_payable = round( $emi * $month_limit );
 
-    $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
+	$downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
+	$downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
-    $total_payable = round( $emi * $month_limit );
 }else{
     redirect(base_url().'My404');
 }
@@ -68,7 +68,6 @@ if(!empty($id) && is_numeric($id) ){
 						<div class="row">
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">Interest</p>
 									<p class="card_details_features">
 										<?php echo $show_interest;?>
 									</p>
@@ -76,7 +75,7 @@ if(!empty($id) && is_numeric($id) ){
 							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">EMI</p>
+									<p class="card_details_head2">Equal Monthly Installment(EMI)</p>
 									<p class="card_details_features">
                                         BDT.<?php echo number_format($emi);?>
                                     </p>

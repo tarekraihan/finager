@@ -85,7 +85,12 @@ if($second_personal_loan->is_non_bank == 1){
 							<td><b> Interest Rate</b></td>
 							<td> <?php echo $first_interest; ?> </td>
 						</tr>
-						
+
+						<tr>
+							<td><b> Tenure</b></td>
+							<td id="firstTenure"> 6 Month </td>
+						</tr>
+
 						<tr>
 							<td><b> Equal Monthly Installment (EMI)</b></td>
                             <td id="firstEmiAmount"> </td>
@@ -118,7 +123,11 @@ if($second_personal_loan->is_non_bank == 1){
 								<td><b> Interest Rate</b></td>
 								<td> <?php echo $second_interest; ?> </td>
 							</tr>
-							
+
+							<tr>
+								<td><b> Tenure</b></td>
+								<td id="secondTenure"> 6 Month </td>
+							</tr>
 							<tr>
 								<td><b> Equal Monthly Installment (EMI)</b></td>
                                 <td id="secondEmiAmount"> 35624 </td>
@@ -325,13 +334,8 @@ $(document).ready(function () {
 
     calculation();
     function calculation(){
-
-//        var x = number_format( 5400000, 0, '.', ',' );
-//        alert(x);
-//        parseFloat();
-
         var principle_amount = parseFloat($('#principal_amount').val());
-        var amount = (principle_amount <= 50000) ? 50000 : principle_amount;
+        var amount = (principle_amount <= 25000) ? 25000 : principle_amount;
         var tenure = parseInt($('#month_limit').val());
         var month = (tenure <= 6 ) ? 6 : tenure;
 
@@ -343,23 +347,20 @@ $(document).ready(function () {
 //        var first_downpayment_amount =  Math.round( ( amount * first_downpayment ) / 100 );
 //        var second_downpayment_amount =  Math.round( ( amount * second_downpayment ) / 100 );
 
-        var rate =Math.pow( ( 1 + first_interest_rate ),month);
-
-
         var first_emi = Math.round(amount * first_interest_rate * (( Math.pow( (1+first_interest_rate),month)) / ( Math.pow( ( 1 + first_interest_rate ) , month ) -1 )));
         var first_payable_amount = first_emi * month;
 
         var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
         var second_payable_amount = second_emi * month;
 
-//        alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
-
         $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
         $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
+        $('#firstTenure').text(tenure +' Month' );
 //        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
 
         $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
         $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
+		$('#secondTenure').text(tenure +' Month' );
 //        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
 
     }

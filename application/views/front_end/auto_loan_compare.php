@@ -51,9 +51,9 @@ if($second_auto_loan->is_non_bank == 1){
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></p> <p><?php echo $first_auto_loan->auto_loan_looking_for;?></p></td>
+						<td><a href="<?php echo base_url();?>en/car_loan_details/<?php echo $first_auto_loan->id;?>" ><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></p> <p><?php echo $first_auto_loan->auto_loan_looking_for;?></p></a></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></p><p><?php echo $second_auto_loan->auto_loan_looking_for;?></p></td>
+						<td><a href="<?php echo base_url();?>en/car_loan_details/<?php echo $second_auto_loan->id;?>" ><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></p></a><p><?php echo $second_auto_loan->auto_loan_looking_for;?></p></td>
 					</tr>			
 				</table>
 			</div>
@@ -95,13 +95,18 @@ if($second_auto_loan->is_non_bank == 1){
 						</tr>
 						<tr>
 							<td class="abc"><b> Selected Amount </b></td>
-							<td><?php echo number_format($principal_amount); ?></td>
+							<td>BDT.<?php echo number_format($principal_amount); ?></td>
 						</tr>
 						<tr>
 							<td><b> Interest Rate</b></td>
 							<td> <?php echo $first_interest;?></td>
 						</tr>
-						
+
+						<tr>
+							<td><b> Tenure </b></td>
+							<td id="firstTenure"> </td>
+						</tr>
+
 						<tr>
 							<td><b> Equal Monthly Installment (EMI)</b></td>
                             <td id="firstEmiAmount"> </td>
@@ -134,13 +139,18 @@ if($second_auto_loan->is_non_bank == 1){
 							</tr>
 							<tr>
                                 <td class="abc"><b> Selected Amount </b></td>
-                                <td><?php echo number_format($principal_amount); ?></td>
+                                <td>BDT. <?php echo number_format($principal_amount); ?></td>
 							</tr>
 							<tr>
 								<td><b> Interest Rate</b></td>
 								<td> <?php echo $second_interest; ?> </td>
 							</tr>
-							
+
+							<tr>
+								<td><b> Tenure </b></td>
+								<td id="secondTenure"> </td>
+							</tr>
+
 							<tr>
 								<td><b> Equal Monthly Installment (EMI)</b></td>
                                 <td id="secondEmiAmount"> 35624 </td>
@@ -301,11 +311,12 @@ $(document).ready(function() {
         $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
         $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
         $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
+        $('#firstTenure').text(month +' Month');
 
         $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
         $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
         $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
-
+		$('#secondTenure').text(month +' Month');
     }
 
 
