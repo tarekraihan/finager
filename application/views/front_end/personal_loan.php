@@ -44,6 +44,7 @@
 		color: #fff;
 		border: 1px solid #2B99BB;
 	}
+
 </style>
 	<script type="text/javascript" src="http://localhost/git/finager/resource/front_end/js/Ppersonal-loan-calculator.js"></script>
 	<section id="personal_header">
@@ -301,6 +302,7 @@
 				
 				<!-- Right bar content start -->
 				<div class="col-sm-9 col-xs-9">
+                    <div class="loading_overlay"></div>
 					<div id="searchPersonalLoan">
                         <div id="loading" class="text-center" style="margin-top: 150px"></div>
 					</div>
@@ -367,7 +369,7 @@
 
         function loadData( page ){
             loading_show();
-
+            $('.loading_overlay').removeClass('hide');
 
             var amount = $('#finalAssest').val();
             var principal_amount = "&principal_amount="+amount;
@@ -410,7 +412,7 @@
 
                     loading_hide();
                     // console.log(msg);
-
+                    $('.loading_overlay').addClass('hide');
                     $("#searchPersonalLoan").html(msg);
 
                 }

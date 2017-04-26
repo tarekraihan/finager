@@ -70,7 +70,7 @@ if(!empty($id) && is_numeric($id) ){
 								<div>
 									<p class="card_details_head2">Amount</p>
 									<p class="card_details_features">
-										BDT.<?php echo number_format($principal_amount);?>
+										&#2547;<?php echo number_format($principal_amount);?>
 									</p>
 								</div>
 							</div>
@@ -94,7 +94,7 @@ if(!empty($id) && is_numeric($id) ){
 								<div>
 									<p class="card_details_head2">Equal Monthly Installment( EMI )</p>
 									<p class="card_details_features">
-                                        BDT.<?php echo number_format($emi);?>
+                                        &#2547;<?php echo number_format($emi);?>
 									</p>
 								</div>
 							</div>
@@ -102,7 +102,7 @@ if(!empty($id) && is_numeric($id) ){
 								<div>
 									<p class="card_details_head2">Total Payable Amount</p>
 									<p class="card_details_features">
-                                        BDT.<?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on BDT.<?php echo number_format($principal_amount);?></span>
+                                        &#2547;<?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on &#2547;<?php echo number_format($principal_amount);?></span>
 									</p>
 								</div>
 							</div>

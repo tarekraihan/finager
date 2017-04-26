@@ -336,4 +336,10 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    function get_search_index($search_word=null){
+        $sql = "SELECT * FROM `search_index` WHERE `tag_words` LIKE '%".$search_word."%'";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 }

@@ -53,9 +53,9 @@
                             <li><a href="<?php echo base_url();?>en/personal_loan">Personal Loan</a></li>
                             <li><a href="<?php echo base_url();?>en/car_loan">Auto Loan</a></li>
                             <li><a href="<?php echo base_url();?>en/education_loan">Education Loan</a></li>
-                        </ul>
-                        <p class="footer-menu-title">Card</p>
-                        <ul class="no-padding footer-menus">
+						</ul>
+						<p class="footer-menu-title">Card</p>
+						<ul class="no-padding footer-menus">
                             <li><a href="<?php echo base_url();?>en/credit_card">Credit Card</a></li>
                             <li><a href="<?php echo base_url();?>en/debit_card">Debit Card</a></li>
                         </ul>
@@ -123,8 +123,8 @@
                 <hr class="footer-hr">
 
                 <p class="text-center footer-ass-text no-margin">
-                    @0000-0000 finager.com All right reserved. Use of this site constitutes of our
-                    <a href="">Terms of use</a> and <a href="">Privacy Policy</a>
+                    finager.com&copy;2017 All right reserved. Use of this site constitutes of our
+                    <a href="<?php echo base_url();?>en/terms_condition">Terms of use</a> and <a href="<?php echo base_url();?>en/PrivacyPolicy">Privacy Policy</a>
                 </p>
             </div>
         </div>
@@ -147,88 +147,83 @@
             <section id="search_page_content">
                 <!-- Nav tabs -->
                 <div class="container-fluid">
-                   <!-- <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#nofilter" aria-controls="home" role="tab" data-toggle="tab">NO FILTER</a></li>
-                        <li role="presentation"><a href="#Loan" aria-controls="profile" role="tab" data-toggle="tab">LOAN</a></li>
-                        <li role="presentation"><a href="#DPS" aria-controls="messages" role="tab" data-toggle="tab">CARD</a></li>
-                        <li role="presentation"><a href="#Cards" aria-controls="settings" role="tab" data-toggle="tab">DEPOSIT</a></li>
-                        <li role="presentation"><a href="#Accounts" aria-controls="settings" role="tab" data-toggle="tab">BLOG</a></li>
-                    </ul>-->
 
-                    <!-- Tab panes -->
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="no_filte_div">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                            <span>Sample Text</span>
-                        </div>
-                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="nofilter">
+                            <div class="no_filter_tab" id="search_result">
 
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="no_filte_div">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <span>Sample Text</span>
+                                    </div>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </section>
         </div>
@@ -276,59 +271,43 @@
 
 <script>
 
-    //stcikey sidebar START
-    $(document).ready(function(){
-        /*function sticky_relocate() {
-            var topOffset = 0;
-            var window_top = $(window).scrollTop();
-            var footer_top = $(".footer").offset().top;
-            var target_div = $('#sticky-anchor').offset();
-            var div_top = target_div.top;
-            var div_height = $("#sidebar").height();
-            var win_height = $(window).height();
+//stcikey sidebar START
+/*
+$(document).ready(function(){
+	function sticky_relocate() {
+		var topOffset = 0;
+		var window_top = $(window).scrollTop();
+		var footer_top = $(".footer").offset().top;
+        var target_div = $('#sticky-anchor').offset();
+		var div_top = target_div.top;
+		var div_height = $("#sidebar").height();
+		var win_height = $(window).height();
 
-            var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
-            if (isNaN(top)) {
-                console.log("something is wrong, no top");
-            } else {
-                console.log(top);
-            }
+        var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
+        if (isNaN(top)) {
+            console.log("something is wrong, no top");
+        } else {
+            console.log(top);
+        }
+		
+		if (window_top + div_height > footer_top){
+			$('#sidebar').removeClass('stick');    
+		}
+		else if (window_top > div_top) {
+			$('#sidebar').addClass('stick');
+		}
+		else {
+			$('#sidebar').removeClass('stick');
+		}
+	}
 
-            if (window_top + div_height > footer_top){
-                $('#sidebar').removeClass('stick');
-            }
-            else if (window_top > div_top) {
-                $('#sidebar').addClass('stick');
-            }
-            else {
-                $('#sidebar').removeClass('stick');
-            }
-        }*/
-
-        /*$(function () {
-            $(window).scroll(sticky_relocate);
-            sticky_relocate();
-        });*/
-
-
-        $('#search_word').on('keyup',function(){
-            var search_word = 'search_word='+$(this).val();
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>search/ajax_get_search/",
-                data: search_word,
-                success: function(msg)
-                {
-                    console.log(msg);
-                }
-            });
-
-        })
-
-    });
-
-    //stcikey sidebar END
+	$(function () {
+		$(window).scroll(sticky_relocate);
+		sticky_relocate();
+	});
+});
+*/
+//stcikey sidebar END
 
     $("#buttons button").click(function() {
         var id = $(this).attr("id");
@@ -336,13 +315,30 @@
         $("#pages div#" + id + "").css("display", "block");
     });
 
-    <!--Esc key press to hide search modal-->
+<!--Esc key press to hide search modal-->
 
-    jQuery(document).keypress(function(e) {
-        if (e.keyCode == 27) {
-            jQuery("#myModal").modal('hide');
-        }
-    });
+jQuery(document).keypress(function(e) {
+  if (e.keyCode == 27) {
+   jQuery("#myModal").modal('hide');
+  }
+ });
+
+    $('#search_word').on('keyup',function(){
+        var search_word = 'search_word='+$(this).val();
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>search/ajax_get_search/",
+            data: search_word,
+            success: function(response)
+            {
+                console.log(response);
+
+                $('#search_result').html(response);
+            }
+        });
+
+    })
 </script>
 
 

@@ -353,13 +353,13 @@ $(document).ready(function () {
         var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
         var second_payable_amount = second_emi * month;
 
-        $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
-        $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
+        $('#firstEmiAmount').html("&#2547; " + number_format( first_emi, 0, '.', ',' ));
+        $('#firstPayableAmount').html("&#2547; " + number_format( first_payable_amount, 0, '.', ',' ) );
         $('#firstTenure').text(tenure +' Month' );
 //        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
 
-        $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
-        $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
+        $('#secondEmiAmount').html("&#2547; " + number_format( second_emi, 0, '.', ',' ));
+        $('#secondPayableAmount').html("&#2547; " + number_format( second_payable_amount, 0, '.', ',' ) );
 		$('#secondTenure').text(tenure +' Month' );
 //        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
 

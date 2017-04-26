@@ -490,33 +490,27 @@ class Personal_Loan extends CI_Controller {
                     </div>
                     <div class="col-sm-9 col-xs-9">
                         <div class="row">
-                            <div class="col-sm-2 col-xs-2 w20">
+                            <div class="col-sm-3 col-xs-3">
                                 <div class="card_text2">
                                     <h5>Amount </h5>
-                                    <p>BDT.'. number_format( $principal_amount ).'</p>
+                                    <p> &#2547; '. number_format( $principal_amount ).'</p>
                                 </div>
                             </div>
-                            <div class="col-sm-2 col-xs-2 w20">
+                            <div class="col-sm-3 col-xs-3">
                                 <div class="card_text2">
                                     '.$show_interest.'
                                 </div>
                             </div>
-                            <div class="col-sm-1 col-xs-1 w20">
+                            <div class="col-sm-2 col-xs-2">
                                 <div class="card_text2">
                                     <h5>EMI</h5>
-                                    <p>BDT.'.number_format( $emi ).'</p>
+                                    <p> &#2547; '.number_format( $emi ).'</p>
                                 </div>
                             </div>
-                            <div class="col-sm-2 col-xs-2 w20">
+                            <div class="col-sm-4 col-xs-4">
                                 <div class="card_text2">
                                     <h5>Total Payable Amount</h5>
-                                    <p>BDT.'.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on BDT.'.number_format( $principal_amount ).'</span></p>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-xs-1 w20">
-                                <div class="card_text2">
-                                    <h5>Down Payment (Min)</h5>
-                                    <p>BDT 1300 + VAT</p>
+                                    <p> &#2547; '.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on #2547;'.number_format( $principal_amount ).'</span></p>
                                 </div>
                             </div>
                         </div>

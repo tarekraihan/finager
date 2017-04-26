@@ -227,7 +227,6 @@ body {
 .card_description{
     font-size:12px;
 }
-
 .cc_menu{
     background-image:url(../images/cc_menu_bg.png);
 }
@@ -235,9 +234,10 @@ body {
     margin-left:14px;
     margin-bottom:10px;
 }
+
 .btnCardApply{
     margin-left:9px;
-    margin-top:8px;
+    margin-top:0px;
 }
 .card_text1{
     margin-top:6px;
@@ -493,10 +493,7 @@ body {
 .query_radio{
     margin-left:14px;
 }
-.btnCardApply{
-    margin-left:9px;
-    margin-top:8px;
-}
+
 .card_text1{
     margin-top:6px;
 }
@@ -623,11 +620,21 @@ body {
     top: -5px;
     cursor:pointer;
 }
+/*
 #hiden_div {
     position: fixed;
     z-index: 999;
     right: 0;
     width: 100%;
+}
+*/
+#hiden_div {
+	position: fixed;
+	z-index: 999;
+	right: 0;
+	width: 100%;
+    bottom:0;
+    display: none;
 }
 .hiddenDown{
     bottom: -158px;
@@ -945,6 +952,9 @@ body {
 }
 
 /* for credit card page */
+#card {
+    margin-top: 10px;
+}
 #creditCard_header{
     background-image:url(../images/CreaditCardmainpage.jpg);
     background-size:cover;
@@ -1035,7 +1045,7 @@ body {
     text-align: center;
     font-size: 16px;
 }
-.personal_loan_landing_button a {
+a .personal_loan_landing_button.flash-button {
     color: #000 !important;
     font-weight: bold;
 }
@@ -1090,7 +1100,7 @@ body {
     text-align: center;
     font-size: 16px;
 }
-.education_landing_button a {
+a .education_landing_button{
     color: #000;
     font-weight: bold;
 }
@@ -1226,8 +1236,8 @@ body {
     text-align: center;
     font-size: 16px;
 }
-.maximizer_landing_button a {
-    color: #000;
+a .maximizer_landing_button{
+    color: #000 !important;
     font-weight: bold;
 }
 
@@ -1271,7 +1281,7 @@ body {
     text-align: center;
     font-size: 16px;
 }
-.fdr_landing_button a {
+a .fdr_landing_button{
     color: #000;
     font-weight: bold;
 }
@@ -1630,7 +1640,7 @@ a:hover {
     text-align: center;
     font-size: 16px;
 }
-.home_loan_landing_button a {
+a .home_loan_landing_button{
     color: #002d0c !important;
     font-weight: bold;
 }
@@ -2512,7 +2522,7 @@ a:hover {
     text-align: center;
     font-size: 16px;
 }
-.dps_landing_button a {
+a .dps_landing_button{
     color: #000;
     font-weight: bold;
 }
@@ -2655,7 +2665,7 @@ a:hover {
     text-align: center;
     font-size: 16px;
 }
-.credit_card_button.flash-button a{
+a .credit_card_button.flash-button{
     color: #000;
     font-weight: bold;
 }
@@ -2670,7 +2680,7 @@ a:hover {
 	text-align: center;
 	font-size: 16px;
 }
-.debit_card_button.flash-button a{
+a .debit_card_button.flash-button{
     color: #000;
     font-weight: bold;
 }
@@ -3320,7 +3330,7 @@ ul.footer-socio {
     text-align: center;
     font-size: 16px;
 }
-.millionier_landing_button a {
+a .millionier_landing_button{
     color: #000;
     font-weight: bold;
 }
@@ -3507,7 +3517,7 @@ ul.footer-socio {
     50% { opacity: 0.5; }
     100% { opacity: 1.0; }
 }
-.auto_button.flash-button a {
+a .auto_button.flash-button{
     color: #1a181b;
     font-weight: bold;
     text-decoration:none;
@@ -3993,4 +4003,96 @@ ul.footer-socio {
     height:auto;
     width:100%;
     background-image:url('../images/categoybg.jpg');
+}
+
+
+/*For hover compare box*/
+
+.hovering.hiddenHalfDown{
+    bottom: 0px !important;
+}
+.hiddenHalfDown {
+    bottom: -68px !important;
+}
+
+/* for beta modal */
+.beta_modal .modal-content {
+    -webkit-box-shadow: none;
+    box-shadow: none !important;
+	background-color:transparent;
+	border: none;
+	border-radius: 0px;
+}
+.land_modal{
+	cursor: pointer;
+}
+.beta_pop_bg{
+	background-image:url(../images/Fin-Pop-Up-Beta-bg.jpg);
+	width:600px;
+	height:500px;
+	background-repeat:no-repeat;
+	background-position:cover;
+}
+.input-group {
+	position: absolute !important;
+	margin-top: 296px;
+	padding: 65px;
+}
+.beta_pop_text {
+	text-align: center;
+	margin-top: 333px;
+	position: absolute;
+	margin-left: 66px;
+}
+.beta_pop_text span{
+	color:#e2b958;
+}
+
+/*Sticky Sidebar START*/
+#sidebar.stick {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	transition: all 1s ease;
+	width: 249px; 
+}
+/*Sticky Sidebar END*/
+
+#privacy_header{
+	background-image:url(../images/Privacy-Policy.jpg);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:198px;
+	margin-bottom:25px;
+}
+.privacy_margin{
+	margin-left:15px;
+}
+#terms_header{
+	background-image:url(../images/terms-condition.jpg);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:198px;
+	margin-bottom:25px;
+}
+
+
+.loading_overlay{
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    display: block;
+    background: rgba(0,0,0,0.5);
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+
+}
+.hide{
+    display: none;
 }
