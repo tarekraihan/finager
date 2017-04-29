@@ -972,7 +972,7 @@ class Dps extends CI_Controller
                             <div class="row more_availabe">
                                 <div class="col-md-2"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-dps_id="'.$row->id.'"></i> More Info</a></div>
                                 <div class="col-md-4"><a class="availableOffer"  href="javascript:void(0)"  data-available_offer="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true" ></i> Available Offer</a></div>
-                                <div class="col-md-4"><a id="hideDetailsButton2"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/btnDpsApply.png" alt="DPS Application" /></a></div>
+                                <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg" id="hideDetailsButton2"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/btnDpsApply.png" alt="DPS Application" /></a></div>
                                 <div class="col-md-2"><a id="hideDetailsButton2" href="javascript:void(0)"><img class="pull-right" src="'.base_url().'resource/front_end/images/btnDpsCom.png" alt="DPS Application" /></a></div>
                             </div>
                         </div>

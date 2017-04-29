@@ -351,4 +351,412 @@
 
                                                     <div class="rightCont">
                                                         <!--Result Wrapper START-->
-                          
+                                                        <div class="resultWrapper">
+                                                            <h2>Home Loan EMI Result</h2>
+                                                            <div class="resultContainer">
+                                                                <div class="rsltField">
+                                                                    <p>Total Amount Payable</p>
+                                                                    <span class="rupee"></span>
+                                                                    <div id="totalAmtPay" class="result">5,00,000</div>
+                                                                </div>
+                                                                <div class="rsltField">
+                                                                    <p>Principal Amount</p>
+                                                                    <span class="rupee"></span>
+                                                                    <div id="princpAmt" class="result">2025</div>
+                                                                </div>
+                                                                <div class="rsltField">
+                                                                    <p>Interest Payable</p>
+                                                                    <span class="rupee"></span>
+                                                                    <div id="totalInterest" class="result">2025</div>
+                                                                </div>
+                                                                <div class="rsltField">
+                                                                    <p>Total Monthly Payment</p>
+                                                                    <span class="rupee"></span>
+                                                                    <div id="monthPayment" class="result">2025</div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel-body">
+                <div class="pie-section">
+                    <h3 class="text-center" style="font-size: 20px;">Your Monthly Home Loan EMI : 4566511</h3>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5  col-xs-12">
+                            <h4 class="text-center" style="margin-top: 0; font-size: 16px;">Break-up of all total amount</h4>
+
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <div id="pie2"></div>
+                                    <div class="pie-chart-details">
+                                        <div class="detail-table-piechart" id="break-down-section">
+                                            <div class="rows-left">
+                                                <div class="colmn1"> <span class="arange-squre"></span>Total Amount Payable</div>
+                                                <div class="colmn2">
+                                                    <span id="pieLoanAmount">79,00,000</span>
+                                                    <!--span>
+                                                        <img src="/images/landing/rupee-icon-black.png" alt="Sprite" title="Sprite">
+                                                    </span-->
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                            <div class="rows-left">
+                                                <div class="colmn1"> <span class="arange-squre"></span>Loan Amount</div>
+                                                <div class="colmn2">
+                                                    <span id="pieLoanAmount">70,00,000</span>
+                                                    <!--span>
+                                                        <img src="/images/landing/rupee-icon-black.png" alt="Sprite" title="Sprite">
+                                                    </span-->
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="rows-left">
+                                                <div class="colmn1"> <span class="green-squre"></span>Tenure</div>
+                                                <div class="colmn2">
+                                                    <span id="pieInterestPay">7 Months</span>
+                                                    <!--span>
+                                                        <img src="/images/landing/rupee-icon-black.png" alt="Sprite" title="Sprite">
+                                                    </span-->
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="rows-left">
+                                                <div class="colmn1"> <span class="red-squre"></span>Interest Rate</div>
+                                                <div class="colmn2">
+                                                    <span id="pieProcessFee">14%</span>
+                                                    <!--span><img src="/images/landing/rupee-icon-black.png" alt="Sprite" title="Sprite"-->
+                                                    </span>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                    <div class="pietable hide">
+                                        <table class="table text-center pie-chart-table">
+                                            <tr>
+                                                <td>Loan Amount</td>
+                                                <td>&#2547; 25000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Interest Due</td>
+                                                <td>&#2547; 25000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Processing Fee</td>
+                                                <td>&#2547; 25000</td>
+                                            </tr>
+                                            <tr class="pietd">
+                                                <td>Total Amount Payable</td>
+                                                <td>&#2547; 25000</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div class="chartright">
+                                        <h4 class="chartright-title">Your loan details as specified by you</h4>
+                                        <table class="table chartright-table">
+                                            <tr>
+                                                <td>Total Amount Payable</td>
+                                                <td class="chart-right-val">&#2547; 250000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loan Amount</td>
+                                                <td class="chart-right-val">&#2547; 20000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tenure</td>
+                                                <td class="chart-right-val">6 Months</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Interest Rate</td>
+                                                <td class="chart-right-val">10.25%</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-12 col-md-7 col-xs-12">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="tablechart-section">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div id="chart1" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="tablechart-section">
+
+                    <table class="pric_table">
+                        <thead>
+                        <tr>
+                            <th>Regian</th>
+                            <th>Q1 2010</th>
+                            <th>Q2 2010</th>
+                            <th>Q3 2010</th>
+                            <th>Q4 2010</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tbody class="labels">
+                        <tr>
+                            <td>
+                                <label for="accounting">Accounting</label>
+                                <input type="checkbox" name="accounting" id="accounting" data-toggle="toggle">
+                            </td>
+                            <td>$7,685.00</td>
+                            <td>$3,544.00</td>
+                            <td>$5,834.00</td>
+                            <td>$10,583.00</td>
+                        </tr>
+                        </tbody>
+                        <tbody style="display:none;" class="hide">
+                        <tr>
+                            <td>Australia</td>
+                            <td>$7,685.00</td>
+                            <td>$3,544.00</td>
+                            <td>$5,834.00</td>
+                            <td>$10,583.00</td>
+                        </tr>
+                        <tr>
+                            <td>Central America</td>
+                            <td>$7,685.00</td>
+                            <td>$3,544.00</td>
+                            <td>$5,834.00</td>
+                            <td>$10,583.00</td>
+                        </tr>
+                        </tbody>
+
+                        <tbody class="labels">
+                        <tr>
+                            <td>
+                                <label for="management">management</label>
+                                <input type="checkbox" name="accounting" id="management" data-toggle="toggle">
+                            </td>
+                            <td>$7,685.00</td>
+                            <td>$3,544.00</td>
+                            <td>$5,834.00</td>
+                            <td>$10,583.00</td>
+                        </tr>
+                        </tbody>
+                        <tbody style="display:none;" class="hide">
+                        <tr>
+                            <td>Australia</td>
+                            <td>$7,685.00</td>
+                            <td>$3,544.00</td>
+                            <td>$5,834.00</td>
+                            <td>$10,583.00</td>
+                        </tr>
+                        <tr>
+                            <td>Central America</td>
+                            <td>$7,685.00</td>
+                            <td>$3,544.00</td>
+                            <td>$5,834.00</td>
+                            <td>$10,583.00</td>
+                        </tr>
+                        </tbody>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
+<script src="<?php echo base_url();?>resource/front_end/js/booNavigation.js"></script>
+
+<script src="<?php echo base_url();?>resource/front_end/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>resource/front_end/js/main.js"></script>
+<script src="<?php echo base_url();?>resource/front_end/js/modernizr.js"></script>
+<script src="<?php echo base_url();?>resource/front_end/js/jquery-ui.min.js"></script>
+
+<!-- for chart -->
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jquery.jqplot.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jqplot.pieRenderer.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jqplot.barRenderer.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jqplot.highlighter.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jqplot.cursor.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jqplot.pointLabels.js"></script>
+
+<script src="<?php echo base_url();?>resource/front_end/js/canvasjs.min.js"></script>
+
+<script>
+	<!-- for chart-->
+	$(document).ready(function(){
+		
+		//alert(localStorage.getItem("home_loan_principal_amount"));
+		//location.reload();
+		$('#finalAssest').val(localStorage.getItem("home_loan_principal_amount"));
+		
+		
+	    var plot2 = $.jqplot('pie2', [[['Total Amount',7],['Loan Amount	',88],['Tenure',5],['Interest Rate',5]]], {
+	    	animate: true,
+	        seriesDefaults:{ renderer:$.jqplot.PieRenderer, trendline:{ show: true } },
+
+	        /*
+	        legend:{
+	            show:true, 
+	            placement: 'outside', 
+	            rendererOptions: {
+	                numberRows: 4
+	            }, 
+	            location:'s',
+	            marginTop: '15px'
+	        },
+			*/ 
+		seriesColors: [ "#868686","#dcdcdc","#e7af7d", "#ffffff"],
+			
+	        grid: {borderColor: 'white', shadow: false, drawBorder: true, background: '#ffffff'},
+	        highlighter: {
+		      show: true,
+		      useAxesFormatters: false,
+			  sizeAdjust: 10,
+			  lineWidthAdjust:10,
+		      tooltipFormatString: '%s'
+		    }
+
+	    });
+	});
+</script>
+
+
+<!-- coloum chart -->
+<script type="text/javascript">
+    window.onload = function () {
+        CanvasJS.addColorSet("greenShades",
+            [//colorSet Array
+                '#bcbcbc',
+                //'#e56a6c',
+                //'#faa66e',
+                '#868686'
+            ]);
+
+        var chart1 = new CanvasJS.Chart("chart1",
+            {
+                colorSet: "greenShades",
+                title:{
+                    text: "Your Amortization Details (Yearly/Monthly)" ,
+                    fontSize: 20,
+                },
+                axisY:{
+                    title:"Balanced Amount"
+                },
+                axisY2: {
+                    title: "EMI Payment/Year"
+                },
+                animationEnabled: true,
+                data: [
+                    {
+                        type: "stackedColumn",
+                        toolTipContent: "{label}<br/><span style='\"'color: {color};'\"'><strong>{name}</strong></span>: {y}mn tonnes",
+                        name: "Anthracite and Bituminous",
+                        showInLegend: "true",
+                        dataPoints: [
+                            {  y: 111338 , label: "2007"},
+                            {  y: 49088, label: "2008" },
+                            {  y: 62200, label: "2009" },
+                            {  y: 90085, label: "2010" },
+                            {  y: 38600, label: "20011"},
+                            {  y: 48750, label: "20012"}
+
+                        ]
+                    },  {
+                        type: "column",
+                        name: "Oil Production (million/day)",
+                        legendText: "Oil Production",
+                        axisYType: "secondary",
+                        showInLegend: true,
+                        dataPoints:[
+                            {label: "2007", y: 11.15},
+                            {label: "2008", y: 2.5},
+                            {label: "2009", y: 3.6},
+                            {label: "2010", y: 4.2},
+                            {label: "2011", y: 2.6},
+                            {label: "2012", y: 2.7},
+                            {label: "2013", y: 3.1}
+
+
+                        ]
+                    }
+                ]
+                ,
+                legend:{
+                    fontSize: 14,
+                    cursor:"pointer",
+
+                    itemclick: function(e) {
+                        if (typeof (e.dataSeries.visible) ===  "undefined" || e.dataSeries.visible) {
+                            e.dataSeries.visible = false;
+                        }
+                        else
+                        {
+                            e.dataSeries.visible = true;
+                        }
+                        chart1.render();
+                    }
+                }
+            });
+
+        chart1.render();
+    }
+</script>
+
+<!-- plus a jQuery UI theme, here I use "flick" -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+
+<!--script src="js/jquery-ui-slider-pips.js"></script>
+<!-- for chart -->
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/common.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/clientlib.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('[data-toggle="toggle"]').change(function(){
+            $(this).parents().next('.hide').toggle();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

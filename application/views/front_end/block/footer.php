@@ -153,40 +153,52 @@
                             <div class="no_filter_tab" id="search_result">
 
                                 <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
+                                    <a href="<?php echo base_url();?>en/debit_card">
+                                       <div class="no_filte_div">
+                                          <i class="fa fa-credit-card" aria-hidden="true"></i>                                        
+                                          <span>Debit Card</span>
+                                       </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
+                                    <a href="<?php echo base_url();?>en/home_loan">
+                                       <div class="no_filte_div">
+                                          <i class="fa fa-home" aria-hidden="true"></i>                                       
+                                          <span>Home Loan</span>
+                                       </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
+                                    <a href="<?php echo base_url();?>en/personal_loan">
+                                       <div class="no_filte_div">
+                                          <i class="fa fa-male" aria-hidden="true"></i>                                       
+                                          <span>Personal Loan</span>
+                                       </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
+                                    <a href="<?php echo base_url();?>en/car_loan">
+                                       <div class="no_filte_div">
+                                          <i class="fa fa-car" aria-hidden="true"></i>                                       
+                                          <span>Auto Loan</span>
+                                       </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
+                                    <a href="<?php echo base_url();?>en/education_loan">
+                                       <div class="no_filte_div">
+                                          <i class="fa fa-graduation-cap" aria-hidden="true"></i>                                       
+                                          <span>Education Loan</span>
+                                       </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
+                                    <a href="<?php echo base_url();?>en/fdr">
+                                       <div class="no_filte_div">
+                                          <i class="fa fa-archive" aria-hidden="true"></i>                                       
+                                          <span>FDR</span>
+                                       </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="no_filte_div">

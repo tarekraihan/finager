@@ -54,6 +54,7 @@ if($second_millionaire->is_non_bank == 1){
 	#basic_info {
 		margin-top: -45px;
 	}
+
 </style>
 	<section id="card_compare_default">
 		<div class="container">
@@ -87,7 +88,7 @@ if($second_millionaire->is_non_bank == 1){
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Lakhpoti & MIllionaire Scheme <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="millionaire-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Lakhpoti & MIllionaire Scheme <img class="millionaire-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
@@ -194,7 +195,7 @@ if($second_millionaire->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Available Installment with Tenure <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="millionaire-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Available Installment with Tenure <img class="millionaire-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 					<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
 						<?php echo $first_millionaire->available_benefit;?>
@@ -208,7 +209,7 @@ if($second_millionaire->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>Features<img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="millionaire-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>Features<img class="millionaire-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 					<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
 						<?php echo $first_millionaire->available_feature;?>
@@ -237,45 +238,45 @@ if($second_millionaire->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Eligibility for Applying <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="millionaire-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Eligibility for Applying <img class="millionaire-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $first_millionaire->eligibility;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $second_millionaire->eligibility;?>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Requirement <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="millionaire-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Requirement <img class="millionaire-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $first_millionaire->required_document;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $second_millionaire->required_document;?>
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="millionaire-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="millionaire-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $first_millionaire->terms_and_conditions;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<div class="table-responsive">
+					<div class="table-responsive home_compare_div">
                         <?php echo $second_millionaire->terms_and_conditions;?>
 					</div>
 				</div>
@@ -505,4 +506,13 @@ $(document).ready(function() {
 			$('#hideDetailsDiv2').toggle(400);
 		});
 	});
+</script>
+<script>
+$(window).on('scroll', function (){
+	if ($(window).scrollTop() > 150){
+	  $('#card_compare_default').addClass('compare-bg');
+	} else {
+	  $('#card_compare_default').removeClass('compare-bg');
+	}
+});
 </script>

@@ -2,63 +2,119 @@
 	<section id="dps_header_part">
 		<div class="dps_header_text">
 			<p>DPS comaparison made easy</p>
-			<p class="dps_button"><a class="btn btn-primary btn-lg" href="<?php echo base_url();?>en/all_dps" role="button">Start Comparing</a></p>
+                        <a href="<?php echo base_url(); ?>en/all_dps"><span class="dps_landing_button flash-button">Start Comparing</span></a>
 		</div>
-<!-- 		<a href="#"><img src="images/feedback.png" alt="not found"/></a>
- -->	</section>
+		<div class="container">
+			<div class="fdr_loan_icon">
+				<div class="All_cradit_card">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/dps-1-year.png" alt="reaward"/>
+							<p>Deposit for 1 Year</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/dps-3-years.png" alt="cash_back"/>
+							<p> Deposit for 3 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/dps-5-years.png" alt="card"/>
+							<p> Deposit for 5 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/dps-15-years.png" alt="travel"/>
+							<p> Deposit for 15 Years</p>
+						</div></a>
+					</div>	
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/dps-10-years.png" alt="zero"/>
+							<p>Deposit for 10 Years</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/dps-20-years.png" alt="student"/>
+							<p> Deposit for 20 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/dps-corporate-bodies.png" alt="business"/>
+							<p>	Corporate Bodies </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+							<div class="All_card">
+								<img src="<?php echo base_url();?>resource/front_end/images/dps-individual.png" alt="low_interest"/>
+								<p>Individual</p>
+							</div>
+						</a>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- header part end -->
-	<section id="Sponsored">
+	<div class="clearfix"></div>
+<section id="Sponsored">
 		<div class="container">
 			<div class="Sponsored_heading">
-				<h2 class="dps_link">Sponsored Links</h2>
+				<h2 class="dps_link">Others Investment</h2>
 			</div>
 			<div class="Sponsored_box">
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/fdr1.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_text_bg.png" alt="text-bg"/>
-							<p>Topic Heading</p>
+							<p>FDR</p>
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg dps_btn">Go to slide</button>
+                                                <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/lakhpati2.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_text_bg.png" alt="text-bg"/>
-							<p>Topic Heading</p>
+							<p>Lakhpoti & Millionaire Scheme</p>
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg dps_btn">Go to slide</button>
+                                                <a href="<?php echo base_url();?>en/millionaire"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Money Maximizer1.png" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_text_bg.png" alt="text-bg"/>
-							<p>Topic Heading</p>
+							<p>Money Maximizer</p>
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg dps_btn">Go to slide</button>
+						<a href="<?php echo base_url();?>en/#"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/></div>
+						<div class="spnrs"><img class="img-responsive"src="<?php echo base_url();?>resource/front_end/images/MonthlyBenefitScheme.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_text_bg.png" alt="text-bg"/>
-							<p>Topic Heading</p>
+							<p>Monthly Benefit Scheme</p>
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg dps_btn">Go to slide</button>
+						<a href="<?php echo base_url();?>en/#"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -114,7 +170,7 @@
 							sured you’re making the right choice. While our range of products is always growing, we
 							don’t compare all products in the market.
 						</p>
-						<button class="btn btn-primary btn-lg">View Our Partners</button>
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view_dps">View Our Partners</span>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
@@ -123,7 +179,7 @@
 						<p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an<span class="clr_black"> applica-
 							tion tracker</span> that can help you keep on top of your home loan.<br/>
 						</p>
-						<button class="btn btn-primary btn-lg">View Our Partners</button>
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view2_dps">View Our Partners</span>
 					</div>
 				</div>
 			</div>
@@ -154,7 +210,7 @@
 					you’re looking for.
 				</p>
 			</div>
-			<button class="btn btn-primary btn-lg">Get Started</button>
+			<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_dps_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>
@@ -163,86 +219,73 @@
 			<div class="heading_pr">
 				<div class="col-md-3 col-sm-6">
 					<div class="dps_heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="dps_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
+						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme1.jpg" alt="img_logo_blue"/>
+						<p class="dps_loan">DPS</p>
+						<h4>DEPOSIT DISPUTES REACH RECORD HIGH</h4>
+						<p>
+							According to the Deposit Protection Scheme (DPS) quarterly statistics, the national average of a tenancy deposit in Q2 when renting a home in England and Wales
+							was £970.48 – an increase of 4.47% on Q1 2016.
+						</p><br/>
+						<p>
+							The costs of moving into a rental property are increasingly on the rise despite campaigns from charity organisations such as Shelter in a bid to cut agent fees to 
+							tenants – some charging over £1000 in administrations fees.
 						</p>
-						<div class="dps_read"><a href="#">Read More</a></div>
+						<div class="dps_read"><a href="<?php echo base_url();?>blog/dps1">Read More</a></div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="dps_heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="dps_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
+						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme2.jpg" alt="img_logo_blue"/>
+						<p class="dps_loan">DPS</p>
+						<h4>What is different about the tenancy deposit schemes?</h4>
+						<p>
+							There are several answers to this question.
 						</p>
-						<div class="dps_read"><a href="#">Read More</a></div>
+						<p>
+							The first is that there are going, from 1 April 2016, to be two new custodial tenancy deposit schemes. One from TDS and one from My Deposits.
+						</p>
+						<p>
+							Another is, from 1 April 2016, very little.
+						</p><br/>
+						<h4><b>In the beginning</b></h4>
+						<p>
+							When the tenancy deposit schemes first launched in 2007 it was fairly easy.
+						</p>
+
+						<div class="dps_read"><a href="<?php echo base_url();?>blog/dps2">Read More</a></div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="dps_heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="dps_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
+						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme3.jpg" alt="img_logo_blue"/>
+						<p class="dps_loan">DPS</p>
+						<h4>The DPS Insured Scheme</h4>
+						<p>
+							From 1st April 2013, The DPS will be your one-stop shop for tenancy deposit protection, offering a choice of custodial or insurance-based protection. 
+							Whether you’re a landlord or an agent, you’ll have peace of mind that your tenant’s deposit will be protected by the largest supplier of deposit protection in the UK.
 						</p>
-						<div class="dps_read"><a href="#">Read More</a></div>
+						<p>
+							Computershare are pleased to announce that they have received approval from the Department of Communities and Local Government (DCLG) to operate an ‘insured’ Tenancy
+							Deposit Protection (TDP) scheme and that, subject to the 
+						</p>
+						<div class="dps_read"><a href="<?php echo base_url();?>blog/dps3">Read More</a></div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="dps_heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="dps_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
+						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme4.jpg" alt="img_logo_blue"/>
+						<p class="dps_loan">DPS</p>
+						<h4>Where do we stand currently with tenancy deposits?</h4>
+						<p>
+							Deposit protection was introduced eight years ago, but some confusion still remains about a landlord’s obligations. In this month’s column, Alex Byard brings us up to date…
 						</p>
-						<div class="dps_read"><a href="#">Read More</a></div>
+						<p>
+							As we have discussed many times before, it has been mandatory for residential landlords to protect deposits taken against a new assured shorthold tenancy since April 2007.
+						</p>
+						<p>
+							It is important to note that the law does not apply to any other types of tenancy, but you cannot contract out of the obligation. 
+						</p>
+						<div class="dps_read"><a href="<?php echo base_url();?>blog/dps4">Read More</a></div>
 					</div>
 				</div>
 			</div>

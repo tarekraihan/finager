@@ -23,9 +23,3 @@ function number_format(number, decimals, decPoint, thousandsSep){
 
     return (number < 0 ? '-' : '') + numbersString + formattedNumber + (decimalsString ? (decPoint + decimalsString) : '');
 }
-
-$(document).ready(function(){
-    $('#mainSearch').on('keyup',function(){
-        alert($(this).val());
-    })
-})

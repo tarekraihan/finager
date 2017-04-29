@@ -1,14 +1,69 @@
-
-
 	<!-- header part start -->
 	<section id="millionier_header_part">
 		<div class="millionier_header_text">
                         <h3>Lakhpoti & Millionaire Scheme</h3>
 			<p>Millionier comaparison made easy</p>
-			<p class="fdr_button"><a class="btn btn-primary btn-lg" href="<?php echo base_url()?>en/all_millionaire" role="button">Start Comparing</a></p>
+                        <a href="<?php echo base_url(); ?>en/all_millionaire"><span class="millionier_landing_button flash-button">Start Comparing</span></a>
 		</div>
-<!-- 		<a href="#"><img src="images/feedback.png" alt="not found"/></a>
- -->	</section>
+
+       <div class="container">
+			<div class="millionaire_loan_icon">
+				<div class="All_cradit_card">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-500-K.png" alt="reaward"/>
+							<p>Deposit for 1 Year</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-100-K.png" alt="cash_back"/>
+							<p> Deposit for 2 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-1-Million.png" alt="card"/>
+							<p> Deposit for 3 Months </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-2.5-Million.png" alt="travel"/>
+							<p> Deposit for 3 Years</p>
+						</div></a>
+					</div>	
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-5-Million.png" alt="zero"/>
+							<p>Deposit for 4 Years</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-10-Million.png" alt="student"/>
+							<p> Deposit for 5 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-Corporate-Bodies.png" alt="business"/>
+							<p>	Corporate Bodies </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+							<div class="All_card">
+								<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-Individual.png" alt="low_interest"/>
+								<p>Individual</p>
+							</div>
+						</a>
+					</div>	
+				</div>
+			</div>
+		</div>
+</section>
+<div class="clearfix"></div>
 	<!-- header part end -->
 	<section id="Sponsored">
 		<div class="container">
@@ -25,7 +80,7 @@
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<a href="<?php echo base_url(); ?>en/fdr"><button class="btn btn-primary btn-lg dps_btn">Go to slide</button></a>
+                                                <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -37,7 +92,7 @@
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<a href="<?php echo base_url(); ?>en/dps"><button class="btn btn-primary btn-lg dps_btn">Go to slide</button></a>
+                                                <a href="<?php echo base_url();?>en/dps"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -49,7 +104,7 @@
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg dps_btn">Go to slide</button>
+						<a href="<?php echo base_url();?>en/#"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -61,7 +116,7 @@
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<button class="btn btn-primary btn-lg dps_btn">Go to slide</button>
+						<a href="<?php echo base_url();?>en/#"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -117,7 +172,7 @@
 							sured you’re making the right choice. While our range of products is always growing, we
 							don’t compare all products in the market.
 						</p>
-						<button class="btn btn-primary btn-lg">View Our Partners</button>
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view_millionaire">View Our Partners</span>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
@@ -126,7 +181,7 @@
 						<p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an<span class="clr_black"> applica-
 							tion tracker</span> that can help you keep on top of your home loan.<br/>
 						</p>
-						<button class="btn btn-primary btn-lg">View Our Partners</button>
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view2_millionaire">View Our Partners</span>
 					</div>
 				</div>
 			</div>
@@ -157,7 +212,7 @@
 					you’re looking for.
 				</p>
 			</div>
-			<button class="btn btn-primary btn-lg">Get Started</button>
+			<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_millionaire_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>

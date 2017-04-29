@@ -1,11 +1,67 @@
 <!-- header part start -->
 <section id="education_header_part">
     <div class="education_header_text">
-        <h3>Personal loan comparison made easy</h3>
-        <p><a class="btn btn-primary btn-lg education_btn" href="<?php echo base_url();?>en/all_education_loan" role="button">Start Comparing</a></p>
+        <h3>Education loan comparison made easy</h3>
+        <a href="<?php echo base_url();?>en/all_education_loan"><span class="education_landing_button flash-button">Start Comparing</span></a>
     </div>
-    <!-- <a href="#"><img src="images/feedback.png" alt="not found"/></a> -->
+   <div class="container">
+			<div class="education_loan_icon">
+				<div class="All_cradit_card">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-1-Lakh.png" alt="reaward"/>
+							<p>1 Lakh</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-3-Lakh.png" alt="cash_back"/>
+							<p> 3 Lakh </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-10-Lakh.png" alt="card"/>
+							<p>10 Lakh </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-20-Lakh.png" alt="travel"/>
+							<p> 20 Lakh</p>
+						</div></a>
+					</div>	
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-40-Lakh.png" alt="zero"/>
+							<p>40 Lakh</p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-3-Years.png" alt="student"/>
+							<p> 3 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">	
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-4-Years.png" alt="business"/>
+							<p>	4 Years </p>
+						</div></a>
+					</div>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+							<div class="All_card">
+								<img src="<?php echo base_url();?>resource/front_end/images/edu-5-Years.png" alt="low_interest"/>
+								<p>5 Years</p>
+							</div>
+						</a>
+					</div>	
+				</div>
+			</div>
+		</div>
 </section>
+<div class="clearfix"></div>
 <!-- header part end -->
 <section id="Sponsored">
     <div class="container">
@@ -22,7 +78,7 @@
                         echnology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago.
                         These changes can be rather scary. Online search bars and their results can spill mass amounts of information
                     </p>
-                    <a href="<?php echo base_url();?>en/car_loan"><button class="btn btn-primary btn-lg edu_btn">Go to slide</button></a>
+                    <a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -32,7 +88,7 @@
                     <p class="edu_spnrs">Home Loan</p>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </p>
-                    <a href="<?php echo base_url();?>en/home_loan"><button class="btn btn-primary btn-lg edu_btn">Go to slide</button></a>
+                    <a href="<?php echo base_url();?>en/home_loan"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -44,7 +100,7 @@
                         Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s
                         certainly easier to let the dealership handle the financing for you, but by doing so you may be conceding
                     </p>
-                    <a href="#"><button class="btn btn-primary btn-lg edu_btn">Go to slide</button></a>
+                    <a href="<?php echo base_url();?>en/#"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -56,7 +112,7 @@
                         While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes
                         we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution.
                     </p>
-                    <a href="<?php echo base_url();?>en/personal_loan"><button class="btn btn-primary btn-lg edu_btn">Go to slide</button></a>
+                    <a href="<?php echo base_url();?>en/personal_loan"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
             </div>
         </div>
@@ -112,7 +168,7 @@
                         sured you’re making the right choice. While our range of products is always growing, we
                         don’t compare all products in the market.
                     </p>
-                    <button class="btn btn-primary btn-lg">View Our Partners</button>
+                    <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view_education">View Our Partners</span>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
@@ -121,7 +177,7 @@
                     <p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an<span class="clr_black"> applica-
 							tion tracker</span> that can help you keep on top of your home loan.<br/>
                     </p>
-                    <button class="btn btn-primary btn-lg">View Our Partners</button>
+                    <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view2_education">View Our Partners</span>
                 </div>
             </div>
         </div>
@@ -151,8 +207,8 @@
                 <p>Tell us a bit about yourself and what<br/>
                     you’re looking for.
                 </p>
-            </div>
-            <button class="btn btn-primary btn-lg">Get Started</button>
+            </div><br/><br/><br/><br/>
+            <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_education_start">Get Started</span></a>
         </div>
     </div>
 </section>

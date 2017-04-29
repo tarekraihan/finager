@@ -228,7 +228,7 @@ class Money_maximizer extends CI_Controller {
     public function ajax_get_money_maximizer(){
 
         $maximizer_tenure = $this->input->post('maximizer_tenure');
-        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 100000 );
 
         $WHERE = array(); $query = '';
 
@@ -348,7 +348,7 @@ class Money_maximizer extends CI_Controller {
                                 </div>
                                 <div class="row more_availabe">
                                     <div class="col-md-2"><a href="javascript:void(0)"   class="more_info" data-maximizer_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
-                                    <div class="col-md-4"><a  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Money Maximizer Application" /></a></div>
+                                    <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Money Maximizer Application" /></a></div>
                                     <div class="col-md-2"><a href="javascript:void(0)"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Money Maximizer Comparison" /></a></div>
                                 </div>
                             </div>

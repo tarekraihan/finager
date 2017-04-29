@@ -669,8 +669,10 @@ class Auto_loan extends CI_Controller
         $auto_i_want = $this->input->post('auto_i_want');
         $auto_user = $this->input->post('auto_user');
 
-        $principal_amount = floatval ( ($this->input->post('principal_amount') > 100000) ? $this->input->post('principal_amount') : '100000' );
-        $month_limit = floatval ( ($this->input->post('month_limit') > 12) ? $this->input->post('month_limit') : 12 );
+
+        $principal_amount = floatval ( ($this->input->post('principal_amount') > 100000 ) ? $this->input->post('principal_amount') : '100000' );
+        $month_limit = floatval ( ( $this->input->post('month_limit') > 5 ) ?  $this->input->post('month_limit') : 6 );
+
 
 
         $WHERE = array(); $query = '';
@@ -759,12 +761,13 @@ class Auto_loan extends CI_Controller
                 $yearly_interest = floatval( '6');
             }
             $monthly_interest = ($yearly_interest /100/12);
+
             $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ( $month_limit ) )) / (pow( ( 1 + $monthly_interest ) , ( $month_limit ) ) -1 ));
-            $total_payable = round( $emi * $month_limit );
 
             $downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
             $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
+            $total_payable = round( $emi * $month_limit );
 
 
             /*

@@ -120,42 +120,42 @@
                                         5 CORE
                                     </label>
                                 </div>
-                                <div class="fdr_tenure pull-right">
+                                <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
                                         <input type="radio" name="deposit_amount" value="100000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         10 CORE
                                     </label>
                                 </div>
-                                <div class="fdr_tenure pull-left">
+                                <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
                                         <input type="radio" name="deposit_amount" value="250000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         25 CORE
                                     </label>
                                 </div>
-                                <div class="fdr_tenure pull-right">
+                                <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
                                         <input type="radio" name="deposit_amount" value="500000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         50 CORE
                                     </label>
                                 </div>
-                                <div class="fdr_tenure pull-left">
+                                <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
                                         <input type="radio" name="deposit_amount" value="1000000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         100 CORE
                                     </label>
                                 </div>
-                                <div class="fdr_tenure pull-right">
+                                <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
                                         <input type="radio" name="deposit_amount" value="2000000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         200 CORE
                                     </label>
                                 </div>
-                                <div class="fdr_tenure pull-left">
+                                <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
                                         <input type="radio" name="deposit_amount" value="5000000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
@@ -261,10 +261,10 @@
                                     </li>
                                     <li></li>
                                 </ul>
-                                <a class="cart_anchor">
+                                <a class="cart_anchor compare-card">
 
                                 </a>
-                                <a class="cart_anchor01">
+                                <a class="cart_anchor01 compare-card">
 
                                 </a>
                                 <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
@@ -505,6 +505,16 @@ $(window).on('scroll', function (){
 
             $(this).parent(".cart_anchor01").removeClass("img_active");
             $(this).parent(".cart_anchor01").html('');
+        });
+
+        $(document).on('click','.compare-cross-btn',function(){
+
+            var empty = $(this).parents(".hidden_div_container").find("a");
+            $(".compare-card").each(function(){
+                if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+                    $("#hiden_div").fadeOut(1500);
+                }
+            });
         });
 
         $('#go_compare').click(function(){

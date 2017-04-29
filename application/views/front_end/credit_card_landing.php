@@ -10,108 +10,59 @@
 					apply, we've gathered everything you need in one easy<br/>
 					place.</i>
 				</h4>
-			</div>
-			<div class="best_card_image">
-				<a href="<?php echo base_url(); ?>en/all_credit_card"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/bottun.png" alt="button"></a>
+			
+
+				
+                           <a href="<?php echo base_url(); ?>en/all_credit_card"><span class="credit_card_button flash-button pull-right">Start Comparing</span></a>
 			</div>	
 		</div>
 		<div class="container">
 			<div class="card_bank">
 				<div class="All_cradit_card">
-					<!--div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/reaward.png" alt="reaward"/>
-							<p>Rewards</p>
-						</div></a>
-					</div-->
                                         <div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/reaward.png" alt="reaward"/>
 							<p>Rewards Program</p>
 						</div></a>
 					</div>
-					<!--div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card1">
-							<img src="<?php echo base_url();?>resource/front_end/images/cash_back.png" alt="cash_back"/>
-							<p>Cash Back</p>
-						</div></a>
-					</div-->
                                         <div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card1">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card1">
 							<img src="<?php echo base_url();?>resource/front_end/images/cash_back.png" alt="cash_back"/>
 							<p>Waiver on Annual Fee</p>
 						</div></a>
 					</div>
-					<!--div class="col-md-3 col-sm-3 nopadding">	
-						<a href="#"><div class="All_card2">
-							<img src="<?php echo base_url();?>resource/front_end/images/card.png" alt="card"/>
-							<p>Balance Transfer</p>
-						</div></a>
-					</div-->
                                         <div class="col-md-3 col-sm-3 nopadding">	
-						<a href="#"><div class="All_card2">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card2">
 							<img src="<?php echo base_url();?>resource/front_end/images/Installment-Payment-For-Purchase.png" alt="card"/>
 							<p>Installment Payment for Purchase</p>
 						</div></a>
 					</div>
-					<!--div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card3">
-							<img src="<?php echo base_url();?>resource/front_end/images/travel.png" alt="travel"/>
-							<p>Travel</p>
-						</div></a>
-					</div-->
                                         <div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card3">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card3">
 							<img src="<?php echo base_url();?>resource/front_end/images/travel.png" alt="travel"/>
 							<p>Airport Facility </p>
 						</div></a>
 					</div>	
-					<!--div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card4">
-							<img src="<?php echo base_url();?>resource/front_end/images/zero.png" alt="zero"/>
-							<p>Zero Percent</p>
-						</div></a>
-					</div-->
                                         <div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card4">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card4">
 							<img src="<?php echo base_url();?>resource/front_end/images/zero.png" alt="zero"/>
 							<p>Interest Free Days</p>
 						</div></a>
 					</div>
-					<!--div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card5">
-							<img src="<?php echo base_url();?>resource/front_end/images/student.png" alt="student"/>
-							<p>Student</p>
-						</div></a>
-					</div-->
                                         <div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="All_card5">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card5">
 							<img src="<?php echo base_url();?>resource/front_end/images/MX-Card.png" alt="student"/>
 							<p>MaxX Card</p>
 						</div></a>
 					</div>
-					<!--div class="col-md-3 col-sm-3 nopadding">	
-						<a href="#"><div class="All_card6">
-							<img src="<?php echo base_url();?>resource/front_end/images/business.png" alt="business"/>
-							<p>Business</p>
-						</div></a>
-					</div-->
                                         <div class="col-md-3 col-sm-3 nopadding">	
-						<a href="#"><div class="All_card6">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card6">
 							<img src="<?php echo base_url();?>resource/front_end/images/Signature-Card.png" alt="business"/>
 							<p>Signature Card</p>
 						</div></a>
 					</div>
-					<!--div class="col-md-3 col-sm-3 nopadding">
-						<a href="#">
-							<div class="All_card7">
-								<img src="<?php echo base_url();?>resource/front_end/images/low_interest.png" alt="low_interest"/>
-								<p>Low Interest</p>
-							</div>
-						</a>
-					</div-->	
                                         <div class="col-md-3 col-sm-3 nopadding">
-						<a href="#">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
 							<div class="All_card7">
 								<img src="<?php echo base_url();?>resource/front_end/images/low_interest.png" alt="low_interest"/>
 								<p>Low Interest Rate</p>
@@ -208,79 +159,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="our_partners">
-		<div class="container">
-			<h3><i>Cards from our partners</i></h3><hr/>
-			<!-- <div class="row"> -->
-				<div class="par_card">
-					<div class="col-md-4 col-sm-4">
-						<div class="partenrs_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/card_2.png" alt="" />
-							<span><b>Travel Rewards</b><br>
-								  Chase Sapphire <br>
-								  Preferred® Card
-							</span>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="partenrs_card1">
-							<div class="partenrs_card">
-								<img src="<?php echo base_url();?>resource/front_end/images/card_3.png" alt="" />
-								<span><b>Travel Rewards</b><br>
-									  Chase Sapphire <br>
-									  Preferred® Card
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="partenrs_card2">
-						<div class="partenrs_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/card_4.png" alt="" />
-							<span><b>Travel Rewards</b><br>
-								  Chase Sapphire <br>
-								  Preferred® Card
-							</span>
-						</div>
-						</div>
-					</div>
-				</div>
-			<!-- </div>
-			<div class="row"> -->
-				<div class="col-md-4 col-sm-4">
-					<div class="partenrs_card">
-						<img src="<?php echo base_url();?>resource/front_end/images/card_5.png" alt="" />
-						<span><b>Travel Rewards</b><br>
-							  Chase Sapphire <br>
-							  Preferred® Card
-						</span>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="partenrs_card1">
-						<div class="partenrs_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/card_6.png" alt="" />
-							<span><b>Travel Rewards</b><br>
-								  Chase Sapphire<br> 
-								  Preferred® Card
-							</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="partenrs_card2">
-						<div class="partenrs_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/card_7.png" alt="" />
-							<span><b>Travel Rewards</b><br>
-								  Chase Sapphire <br>
-								  Preferred® Card
-							</span>
-						</div>
-					</div>
-				</div>
-			<!-- </div> -->
-		</div>
-	</section>
+	
 	<section id="Basic">
 		<div class="container">
 		<h3><i>The Basics</i></h3><hr/>

@@ -103,7 +103,7 @@ $(function(event) {
 			}
 			else if(finAsst >=200000 && finAsst <=amtDetail)
 			{
-				console.log("more than 200000");
+				//console.log("more than 200000");
 				//alert(amtDetail)
 				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
@@ -654,7 +654,7 @@ function detectDragPosition(_this)
 		return false;
 	}
 	lftPostion = parseInt(_this.css('left'));
-	lftPosArray =[0,50,125,150,170,400];
+	lftPosArray =[0,2,3,3,175,400];
 	prevActionArray =['prevFast','prevSlow','middleSection','nextSlow','nextFast'];
 	for(var i = 0; i < lftPosArray.length ; i++)
 	{
@@ -717,7 +717,7 @@ function calculationSlider()
 		}
 		else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 		{
-			console.log(selectValue);
+			//console.log(selectValue);
 			finalFincialAssest =((selectValue+4) * 50000 );
 			finalLiabilities = ((selectValue+1) * 1 );
 		}
@@ -812,6 +812,7 @@ function animaredSlides(prev1Action)
 		{
 			// $('ul').animate({marginLeft : '+=30px'}, duration, function(){dragFlag=true;});
 			 _this.parents('.calcSection').find('ul').animate({marginLeft : '+=1px'}, duration, function(){dragFlag=true;});
+
 		}
 	}
 	else if(prev1Action == 'prevFast')
@@ -841,19 +842,21 @@ function animaredSlides(prev1Action)
 	}
 	else if(prev1Action == 'nextSlow')
 	{
+
 		if(Math.abs(marLft) > newULWidth)
 		{
 			dragFlag=true;
-				return false;				
+				return false;		
 		}
 		else
 		{
-			 _this.parents('.calcSection').find('ul').animate({marginLeft : '-=1px'}, duration, function(){dragFlag=true;});
+			 _this.parents('.calcSection').find('ul').animate(duration, function(){dragFlag=true;});
 		}
 	}
 	else
 	{
 		dragFlag=true;
+
 	}
 }
 

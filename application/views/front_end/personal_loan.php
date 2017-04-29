@@ -302,7 +302,7 @@
 				
 				<!-- Right bar content start -->
 				<div class="col-sm-9 col-xs-9">
-                    <div class="loading_overlay"></div>
+                    <div class="overlay"></div>
 					<div id="searchPersonalLoan">
                         <div id="loading" class="text-center" style="margin-top: 150px"></div>
 					</div>
@@ -369,7 +369,7 @@
 
         function loadData( page ){
             loading_show();
-            $('.loading_overlay').removeClass('hide');
+            $('.overlay').removeClass('hide');
 
             var amount = $('#finalAssest').val();
             var principal_amount = "&principal_amount="+amount;
@@ -412,7 +412,7 @@
 
                     loading_hide();
                     // console.log(msg);
-                    $('.loading_overlay').addClass('hide');
+                    $('.overlay').addClass('hide');
                     $("#searchPersonalLoan").html(msg);
 
                 }
@@ -424,11 +424,17 @@
             loadData(page);
         } );
 
-        $( ".draggable" ).draggable({ axis: "x",
+        /*$( ".draggable" ).draggable({ axis: "x",
             stop: function(){
                 loadData( page );
             }
-        });
+        });*/
+
+        // Stop dragging calculator and fire event for search 
+		$(".draggable").on("dragstop",function(ev,ui){
+			loadData( page );
+		});
+
 
         $('#searchPersonalLoan').on('click', '.more_info', function (){
             var  formData = $(this).data();

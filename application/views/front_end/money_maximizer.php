@@ -30,6 +30,8 @@
         border-bottom: 2px solid #DADADA;
         height: 165px;
     }
+	
+	.pagination-centered{position:relative; top:0; right:0;}
 
 </style>
 
@@ -255,7 +257,21 @@
     </div>
 </section>
 
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/moneymaxi-calculator.js"></script>
 
+<script type="text/javascript"> 
+
+$(window).on('scroll', function (){    
+           
+	if ($(window).scrollTop() > 350){
+	  $('.home_loan_left_bar').addClass('fixedElement');
+	}if($(window).scrollTop()<350){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}if($(window).scrollTop() > 2260){
+	  $('.home_loan_left_bar').removeClass('fixedElement');
+	}
+});
+</script>
 <script type="text/javascript">
 
     $(document).on('click','#pagination a',function(e){

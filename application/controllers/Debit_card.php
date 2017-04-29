@@ -593,7 +593,7 @@ class Debit_card extends CI_Controller
 									</div>
 									<div class="col-sm-3 col-xs-3">
 										<div class="card_text1 card_btn_apllication">
-											<img class="img-responsive" src="' . base_url() . 'resource/front_end/images/card_btn_apllication.png" />
+											<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="img-responsive" src="' . base_url() . 'resource/front_end/images/card_btn_apllication.png" /></a>
 										</div>
                                         <div>
 

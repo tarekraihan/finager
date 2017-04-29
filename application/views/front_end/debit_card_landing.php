@@ -1,4 +1,3 @@
-
 	<section id="debit_second_div">
 		<div class="container">
 			<div class="best_card">
@@ -10,59 +9,58 @@
 					apply, we've gathered everything you need in one easy<br/>
 					place.</i>
 				</h4>
-			</div>
-			<div class="debit_best_card_image">
-				<a href="<?php echo base_url();?>en/all_debit_card"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/debit_bottun.png" alt="button"></a>
+			
+                                <a href="<?php echo base_url();?>en/all_debit_card"><span class="debit_card_button flash-button pull-right">Start Comparing</span></a>
 			</div>	
 		</div>
 		<div class="container">
 			<div class="card_bank">
 				<div class="All_debit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="debit_All_card">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/debit_reaward.png" alt="reaward"/>
 							<p>Rewards</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="debit_All_card1">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card1">
 							<img src="<?php echo base_url();?>resource/front_end/images/debit_cash_back.png" alt="cash_back"/>
 							<p>Cash Back</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a href="#"><div class="debit_All_card2">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card2">
 							<img src="<?php echo base_url();?>resource/front_end/images/debit_card.png" alt="card"/>
 							<p>Balance Transfer</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="debit_All_card3">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card3">
 							<img src="<?php echo base_url();?>resource/front_end/images/debit_travel.png" alt="travel"/>
 							<p>Travel</p>
 						</div></a>
 					</div>
 					<div style="clear:both"></div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="debit_All_card4">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card4">
 							<img src="<?php echo base_url();?>resource/front_end/images/debit_zero.png" alt="zero"/>
 							<p>Zero Percent</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a href="#"><div class="debit_All_card5">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card5">
 							<img src="<?php echo base_url();?>resource/front_end/images/debit_student.png" alt="student"/>
 							<p>Student</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a href="#"><div class="debit_All_card6">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card6">
 							<img src="<?php echo base_url();?>resource/front_end/images/debit_business.png" alt="business"/>
 							<p>Business</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a href="#">
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
 							<div class="debit_All_card7">
 								<img src="<?php echo base_url();?>resource/front_end/images/debit_low_interest.png" alt="low_interest"/>
 								<p>Low Interest</p>
@@ -75,71 +73,51 @@
 	</section>
 	<div style="clear:both"></div>
 	<!-- Header part end -->
-	<section id="third_div">
+	<!--section id="third_div">
 		<div class="container">
 			<div class="debit_box"></div>
 		</div>
-	</section>
-	<section id="five_div">
+	</section-->
+	<section id="debit_blog">
 		<div class="container">
-			<div class="category">
-				<h3 class="text-left">Our top picks by category</h3>
-				<div class="col-md-4 col-sm-4">
-					<div class="debit_card_box">
-						<p><i>Best Balance Transfer<br/> 
-						and 0% Interest<br/> 
-						Credit Cards of 2016<br/></i>
-					</p>
-					</div>
+			<div class="row">
+				<h3 class="debit_head">Debit Card Top Blog</h3>
+				<div class="col-md-3 col-sm-3">
+					<a href="<?php echo base_url();?>blog/debit_card1">
+						<div class="debit_blog_box">
+							<img src="<?php echo base_url();?>resource/blog/images/debit_card7.png" alt="Image Not Found" />
+							<p><i>The Basics of Your Debit Card</i></p>
+						</div>
+					</a>
 				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="debit_card_box">
-						<p><i>Best Travel Credit<br/> 
-							Cards of 2016</i>
-						</p>
-					</div>
+				<div class="col-md-3 col-sm-3">
+					<a href="<?php echo base_url();?>blog/debit_card2">
+						<div class="debit_blog_box">
+							<img src="<?php echo base_url();?>resource/blog/images/debit_card6.jpg" alt="Image Not Found" />
+							<p><i>What Is a Debit Card and How Is It Used?</i></p>
+						</div>
+					</a>
 				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="debit_card_box">
-						<p><i>Best Cash Back<br/> 
-							Credit Cards of 2016</i>
-						</p>
-					</div>
+				<div class="col-md-3 col-sm-3">
+					<a href="<?php echo base_url();?>blog/debit_card3">
+						<div class="debit_blog_box">
+							<img src="<?php echo base_url();?>resource/blog/images/debit_card5.jpg" alt="Image Not Found" />
+							<p><i>Chip Debit Cards: What You Need to Know</i></p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-3">
+					<a href="<?php echo base_url();?>blog/debit_card4">
+						<div class="debit_blog_box">
+							<img src="<?php echo base_url();?>resource/blog/images/debit_card4.png" alt="Image Not Found" />
+							<p><i>The Ultimate Guide to Prepaid Debit Cards</i></p>
+						</div>
+					</a>
 				</div>
 			</div>
-			 <div class="category1">
-				<div class="col-md-4 col-sm-4">
-					<div class="debit_card_box1">
-						<p><i>Best Balance Transfer<br/> 
-							and 0% Interest<br/> 
-							Credit Cards of 2016<br/></i>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="debit_card_box1">
-						<p><i>Best Travel Credit<br/> 
-							Cards of 2016</i>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="debit_card_box1">
-						<p><i>Best Cash Back<br/> 
-							Credit Cards of 2016</i>
-						</p>
-					</div>
-				</div>
-			</div> 
 		</div>
 	</section>
-	<div style="clear:both"></div>
-	<section id="logos">
-		<div class="container">
-			<button type="button" class="btn btn-info" data-toggle="collapse" data-target=".category1"><img class="img-responsive"src="<?php echo base_url();?>resource/front_end/images/debit_btn.png"></button>
-		</div><
-	</section>
-	</button>
+	<div class="clearfix"></div>
 	<section id="artical">
 		<div class="container">
 				<h3><i>Recent Popular Article</i></h3><hr/>
@@ -159,79 +137,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="our_partners">
-		<div class="container">
-			<h3><i>Cards from our partners</i></h3><hr/>
-			<!-- <div class="row"> -->
-				<div class="par_card">
-					<div class="col-md-4 col-sm-4">
-						<div class="partenrs_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/card_2.png" alt="" />
-							<span><b>Travel Rewards</b><br>
-								  Chase Sapphire <br>
-								  Preferred® Card
-							</span>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="partenrs_card1">
-							<div class="partenrs_card">
-								<img src="<?php echo base_url();?>resource/front_end/images/card_3.png" alt="" />
-								<span><b>Travel Rewards</b><br>
-									  Chase Sapphire <br>
-									  Preferred® Card
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="partenrs_card2">
-						<div class="partenrs_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/card_4.png" alt="" />
-							<span><b>Travel Rewards</b><br>
-								  Chase Sapphire <br>
-								  Preferred® Card
-							</span>
-						</div>
-						</div>
-					</div>
-				</div>
-			<!-- </div>
-			<div class="row"> -->
-				<div class="col-md-4 col-sm-4">
-					<div class="partenrs_card">
-						<img src="<?php echo base_url();?>resource/front_end/images/card_5.png" alt="" />
-						<span><b>Travel Rewards</b><br>
-							  Chase Sapphire <br>
-							  Preferred® Card
-						</span>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="partenrs_card1">
-						<div class="partenrs_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/card_6.png" alt="" />
-							<span><b>Travel Rewards</b><br>
-								  Chase Sapphire<br> 
-								  Preferred® Card
-							</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="partenrs_card2">
-						<div class="partenrs_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/card_7.png" alt="" />
-							<span><b>Travel Rewards</b><br>
-								  Chase Sapphire <br>
-								  Preferred® Card
-							</span>
-						</div>
-					</div>
-				</div>
-			<!-- </div> -->
-		</div>
-	</section>
+	
 	<section id="debit_Basic">
 		<div class="container">
 		<h3><i>The Basics</i></h3><hr/>

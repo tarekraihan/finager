@@ -27,7 +27,7 @@ jQuery(document).ready(function ($) {
         // options change
         Demo_options.prototype.options_change = function () {
             // menu options initialize
-            $('.mash-menu').mashableMenu({
+           $('.mash-menu').mashableMenu({
                 separator                      : this.separator, //true,
                 ripple_effect                  : this.ripple_effect, // true,
                 search_bar_hide                : this.search_bar_hide, // false,
@@ -35,17 +35,20 @@ jQuery(document).ready(function ($) {
                 full_width                     : this.full_width, // false,
                 right_to_left                  : this.right_to_left, // false,
                 trigger                        : this.trigger, // 'click',
+                /*Tab Click Effect*/
+                vertical_tabs_effect_speed     : 800, 
                 /* DROP DOWN */
-                drop_down_effect_in_speed      : this.drop_down_effect_in_speed, // 200,
-                drop_down_effect_out_speed     : this.drop_down_effect_out_speed, // 200,
-                drop_down_effect_in_delay      : this.drop_down_effect_in_delay, // 200,
-                drop_down_effect_out_delay     : this.drop_down_effect_out_delay, // 200,
+                drop_down_effect_in_speed      : 500, 
+                drop_down_effect_out_speed     : 500, 
+                drop_down_effect_in_delay      : 500, 
+                drop_down_effect_out_delay     : 500, 
                 /* STICKY HEADER */
                 sticky_header                  : this.sticky_header, // false,
                 /* INTERNAL LINKS */
                 internal_links_enable          : true,
                 internal_links_toggle_drop_down: true
             });
+            
         };
 
         // color change

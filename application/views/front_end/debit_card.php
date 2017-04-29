@@ -14,37 +14,6 @@
 <section id="card">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<div class="cc_menu">
-                        <nav class="navbar navbar-default">
-                            <div class="container-fluid">
-                                <!-- Brand and toggle get grouped for better mobile display -->
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-
-                                <!-- Collect the nav links, forms, and other content for toggling -->
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav">
-                                        <li><a href="#">Home Refinance</a></li>
-                                        <li><a href="#">Buying a Home</a></li>
-                                        <li><a href="#">Mortgage</a></li>
-                                        <li><a href="#">Personal Loans</a></li>
-                                        <li><a href="#">Auto</a></li>
-                                        <li><a href="#">Credit Cards</a></li>
-                                        <li><a href="#">Debt Solutions</a></li>
-                                    </ul>
-                                </div><!-- /.navbar-collapse -->
-                            </div><!-- /.container-fluid -->
-                        </nav>
-					</div>
-				</div>
-		
 		<!-- Left bar query content start -->
 				<div class="col-sm-3 col-xs-3">
 					<div class="card_left_bar">
@@ -147,10 +116,10 @@
                                         </li>
                                         <li></li>
                                     </ul>
-                                    <a class="cart_anchor">
+                                    <a class="cart_anchor compare-card">
 
                                     </a>
-                                    <a class="cart_anchor01">
+                                    <a class="cart_anchor01 compare-card">
 
                                     </a>
                                     <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
@@ -385,6 +354,16 @@ $(window).on('scroll', function (){
 
             $(this).parent(".cart_anchor01").removeClass("img_active");
             $(this).parent(".cart_anchor01").html('');
+        });
+
+        $(document).on('click','.compare-cross-btn',function(){
+
+            var empty = $(this).parents(".hidden_div_container").find("a");
+            $(".compare-card").each(function(){
+                if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+                    $("#hiden_div").fadeOut(1500);
+                }
+            });
         });
 
         $('#go_compare').click(function(){

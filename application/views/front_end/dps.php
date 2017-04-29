@@ -283,56 +283,56 @@
 										2 Year
 									</label>
 								</div>
-								<div class="dps_tenure pull-right">
+								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="3" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										3 Year 
 									</label>
 								</div>
-								<div class="dps_tenure pull-left">
+								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="4" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										4 Year 
 									</label>
 								</div>
-								<div class="dps_tenure pull-right">
+								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="5" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										5 Year
 									</label>
 								</div>
-								<div class="dps_tenure pull-left">
+								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="6" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										6 Year
 									</label>
 								</div>
-								<div class="dps_tenure pull-right">
+								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="7" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										7 Years 
 									</label>
 								</div>
-								<div class="dps_tenure pull-left">
+								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="8" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										8 Years
 									</label>
 								</div>
-								<div class="dps_tenure pull-right">
+								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="9" class="material_radiobox"/>
 										<span class="material_check_radio"></span>
 										9 Years
 									</label>
 								</div>
-								<div class="dps_tenure pull-left">
+								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
 										<input type="radio" name="dps_tenure" value="10" class="material_radiobox"/>
 										<span class="material_check_radio"></span>

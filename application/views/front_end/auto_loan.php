@@ -273,23 +273,20 @@
     </div>
 </section>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/auto-loan-calculator.js"></script>
-<script type="text/javascript"> 
-/*
-$(window).on('scroll', function (){
-	if ($(window).scrollTop() > 350){
-	  $('.home_loan_left_bar').addClass('fixedElement');
-	}if($(window).scrollTop()<350){
-	  $('.home_loan_left_bar').removeClass('fixedElement');
-	}if($(window).scrollTop() > 2200){
-	  $('.home_loan_left_bar').removeClass('fixedElement');
-	}
-});
-*/
-
-</script>
 
 <script>
     $(document).ready(function(){
+
+        $(window).on('scroll', function (){
+            if ($(window).scrollTop() > 350){
+                console.log("over 350");
+              $('.home_loan_left_bar').addClass('fixedElement');
+            }if($(window).scrollTop()<350){
+              $('.home_loan_left_bar').removeClass('fixedElement');
+            }if($(window).scrollTop() > 2200){
+              $('.home_loan_left_bar').removeClass('fixedElement');
+            }
+        });
 
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();
@@ -365,10 +362,16 @@ $(window).on('scroll', function (){
 
 
 
-        $( ".draggable" ).mouseout(function(){
+        /*$( ".draggable" ).mouseout(function(){
             loadData( page = null );
 
+        });*/
+
+        // Stop dragging calculator and fire event for search 
+        $(".draggable").on("dragstop",function(ev,ui){
+            loadData( page = null );
         });
+
 
 
         $('#searchAutoLoan').on('click', '.more_info', function (){
@@ -377,7 +380,7 @@ $(window).on('scroll', function (){
             var loan_id = formData.loan_id;
             //});
 
-            console.log(loan_id);
+            //console.log(loan_id);
 
             $("#moreInfo"+loan_id).toggleClass("in");
             $('#rePaymentSchedule'+loan_id).removeClass("in");

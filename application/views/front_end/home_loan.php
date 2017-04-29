@@ -14,7 +14,7 @@
         <div class="row">
             <!-- Left bar query content start -->
             <div class="col-sm-3 col-xs-3">
-                <div class="home_loan_left_bar">
+                <div class="home_loan_left_bar" id="sidebar">
                     <!-- slider range sidebar start-->
                     <div class="card_query">
                         <p>I Want </p>
@@ -257,10 +257,10 @@
                                     </li>
                                     <li></li>
                                 </ul>
-                                <a class="cart_anchor">
+                                <a class="cart_anchor compare-card">
 
                                 </a>
-                                <a class="cart_anchor01">
+                                <a class="cart_anchor01 compare-card">
 
                                 </a>
                                 <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
@@ -298,7 +298,6 @@ $(window).on('scroll', function (){
             var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
 //            alert(cur_page);
             loadData(cur_page);
-            console.log(cur_page);
         });
 
         function loading_show(){
@@ -314,10 +313,10 @@ $(window).on('scroll', function (){
 			 var amount = $('#finalAssest').val();
             var principal_amount = "&principal_amount="+amount;
 
-            var interest = $('#finalLiability').val();
-            var interest_rate = "&interest_rate="+interest;
+           // var interest = $('#finalLiability').val();
+           // var interest_rate = "&interest_rate="+interest;
 
-            var month = $('#finalCustAge').val();
+            var month = $('#finalLiability').val();
             var month_limit = "&month_limit="+month;
 			
 			
@@ -336,14 +335,13 @@ $(window).on('scroll', function (){
             var home_user_list = "&home_user="+home_user;
 
 
-            var main_string = home_i_want_list+home_user_list+principal_amount+interest_rate+month_limit;
+            var main_string = home_i_want_list+home_user_list+principal_amount+month_limit;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
                 page_count = page ;
             }
             var url_str = "<?php echo base_url();?>home_loan/ajax_get_home_loan/" + page_count;
-//            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
@@ -357,7 +355,6 @@ $(window).on('scroll', function (){
                 {
 
                     loading_hide();
-                    // console.log(msg);
 
                     $("#searchHomeLoan").html(msg);
 
@@ -369,23 +366,17 @@ $(window).on('scroll', function (){
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             loadData(page = null);
         } );
-
-		$( ".draggable" ).draggable({ axis: "x",
-            stop: function(){
-                loadData( page = null );
-            }
-        });
-		/*
-        $( ".draggable" ).mouseout(function(){
-            loadData( page = null );
-        });*/
+		
+		// Stop dragging calculator and fire event for search 
+		$(".draggable").on("dragstop",function(ev,ui){
+			loadData( page = null );
+		});
 
 
         $('#searchHomeLoan').on('click', '.more_info', function (){
 
             var  formData = $(this).data();
             var loan_id = formData.loan_id;
-            console.log(loan_id);
 
             $("#moreInfo"+loan_id).toggleClass("in");
             $('#rePaymentSchedule'+loan_id).removeClass("in");
@@ -401,7 +392,7 @@ $(window).on('scroll', function (){
             var repayment = formData.repayment;
             var  formData = $(this).data();
             var repayment = formData.repayment;
-            console.log(repayment);
+
             $('#rePaymentSchedule'+repayment).html('<iframe  src="<?php echo base_url();?>en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#rePaymentSchedule'+repayment).toggleClass("in");
             $('#moreInfo'+repayment).removeClass("in");
@@ -623,6 +614,16 @@ $(window).on('scroll', function (){
 
         $(this).parent(".cart_anchor01").removeClass("img_active");
         $(this).parent(".cart_anchor01").html('');
+    });
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var empty = $(this).parents(".hidden_div_container").find("a");
+        $(".compare-card").each(function(){
+            if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+                $("#hiden_div").fadeOut(1500);
+            }
+        });
     });
 
     $('#go_compare').click(function(){
