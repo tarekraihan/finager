@@ -1198,157 +1198,158 @@
                                         </div>
                                     </li>
 
-                                    <li><a href="#">Fundings <i class="fa fa-caret-down fa-indicator"></i> </a>
-                                        <!-- drop down full width -->
+                                    <!--li><a href="#">Fundings <i class="fa fa-caret-down fa-indicator"></i> </a>
+                                        -
                                         <div class="drop-down-large">
-                                            <!-- bootstrap start -->
+                                            -
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <h3 class="text-center">Coming Soon</h3>
                                                 </div>
                                             </div>
-                                            <!-- bootstrap end -->
-                                        </div>
-                                    </li>
-
-                                    <!--li><a href="#">How To <i class="fa fa-caret-down fa-indicator"></i> </a>
-
-                                        <div class="drop-down-large">
-
-                                            <div class="container-fluid">
-                                                <div class="row">
-                                                    <div class="col-sm-12 col-md-6">
-                                                      
-                                                        <p>
-                                                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="col-sm-12 col-md-6">
-                                                        <p>
-                                                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                           -
                                         </div>
                                     </li-->
+
 									
 									<!-- How to menu details -->
-									
 									<li><a href="#">How To<i class="fa fa-caret-down fa-indicator"></i> </a>
                                         <!-- full size drop down -->
                                         <!-- For cards drop down -->
                                         <div class="drop-down-large" style="display: none;">
                                             <!-- vertical tabs container -->
-                                            <div class="vertical-tabs-container nav-golden" id="credit-card">
+                                            <div class="vertical-tabs-container nav-gray" id="credit-card">
                                                 <!-- bootstrap start -->
                                                 <div class="container-fluid space-0">   <!-- bootstrap fluid container -->
                                                     <!-- bootstrap columns -->
-                                                    <div class="col-sm-12 col-md-12 clearfix space-0" style="min-height: 400px; background: #dcdccb;">
-                                                        <div class="row">
-															<div class="col-sm-9">
-
-																<hr class="menu-border-top">
-
-																<div class="row">
-																	<div class="col-sm-4 col-xs-12">
-																		<div class="features">
-																			<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/DebitCardIcon.svg" alt="img" class="thumbnail">
-																			<div class="clearfix"></div>
-																			<p class="text-right">
-																				<span class="focus-text">Lorem Ipsum</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
-																			</p>
-
-																			<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/debit_card">Find All Debit Cards Here</a>
-																		</div>
-																	</div>
-
-																	<div class="col-sm-8 col-xs-12">
-																		<div class="row">
-																			<div class="col-sm-4 col-xs-12">
-																				<div class="menu-item">
-																					<img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card1.png" alt="img">
-																					<p class="item-title">The Basics of Your Debit Card</p>
-																					<p>
-																						Lorem Ipsum are being used at an all-time high today and are used more often than credit cards. Last year debit card use exceeded a trillion dollars. That's a lot of...
-																					</p>
-
-																					<a href="<?php echo base_url(); ?>blog/debit_card1">Read More</a>
-																				</div>
-																			</div>
-
-																			<div class="col-sm-4 col-xs-12">
-																				<div class="menu-item">
-																					<img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card2.png" alt="img">
-																					<p class="item-title">What Is a Debit Card and How Is It Used?</p>
-																					<p>
-																						Lorem Ipsum are one of the most basic bank cards, and using them the right way can help you avoid unnecessary costs. Here’s what to know. A debit card, also known as...
-																					</p>
-
-																					<a href="<?php echo base_url(); ?>blog/debit_card2">Read More</a>
-																				</div>
-																			</div>
-
-																			<div class="col-sm-4 col-xs-12">
-																				<div class="menu-item">
-																					<img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card3.png" alt="img">
-																					<p class="item-title">Chip Lorem Ipsum: What You Need to Know</p>
-																					<p>
-																					   That little 3" x 2" piece of plastic in your wallet is getting an upgrade. That’s right, your debit card is getting a facelift. Talk about plastic surgery!...
-																					</p>
-
-																					<a href="<?php echo base_url(); ?>blog/debit_card3">Read More</a>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-
-																<hr class="menu-border-bottom">
-															</div>
-
-															<div class="col-sm-3">
-
-																<div class="help-text">
-																	<a href="#">
-																		<p>
-																			<span class="help-normal">Get Help From</span><br>
-																			<!--span class="help-topic">Fin</span><br-->
-																			<span class="help-focus">Fin Guru</span>
-																		</p>
-																	</a>
-
-																</div>
-
-																<img class="support-bg" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/B4.png" alt="img">
-															</div>
-															<img class="support-image" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/guru-bg.png" alt="img">
-														</div>
+                                                    <div class="col-sm-3 col-md-2 clearfix space-0">
+                                                        <h4 class="nav-title">How To</h4>
+                                                        <!-- vertical tab -->
+                                                        <div class="vertical-tabs">
+                                                            <!-- active --> <!-- hidden-xs,sm,md-lg id bootstrap classes -->
+                                                            <a class="" href="#Export">Export &amp; Import<i class="fa fa-angle-right hidden-xs"></i> <i class="fa fa-angle-down hidden-sm hidden-md hidden-lg"></i> </a>
+                                                        </div>
                                                     </div>
 
-                                                      
+                                                    <div class="col-sm-9 col-md-10 space-0">
+                                                        <!-- vertical tabs content container -->
+                                                        <div class="vertical-tabs-content-container">
+                                                            <!-- this is vertical tabs content 1 -->
+                                                            <div id="Export" class="vertical-tabs-content">
+                                                                <!-- bootstrap start -->
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-9">
+                                                                            <p class="MegaMenu_title">Export &amp; Import</p>
+                                                                            <hr class="menu-border-top">
+
+                                                                            <div class="row">
+                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                    <div class="features">
+                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+                                                                                        <div class="clearfix"></div>
+                                                                                        <p class="text-right">
+                                                                                            <span class="focus-text">Export &amp; Import</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+                                                                                        </p>
+
+                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/debit_card">Find All Export &amp; Import Here</a>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                            <div class="menu-item">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card2.png" alt="img">
+                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+
+                                                                                                <p class="item-title">Heading</p>
+                                                                                                <p>
+                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
+                                                                                                </p>
+
+                                                                                                <a href="#">Read More</a>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                            <div class="menu-item">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
+                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+
+                                                                                                <p class="item-title">Heading</p>
+                                                                                                <p>
+                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
+                                                                                                </p>
+
+                                                                                                <a href="#">Read More</a>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                            <div class="menu-item">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
+                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+
+                                                                                                <p class="item-title">Heading</p>
+                                                                                                <p>
+                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
+                                                                                                </p>
+
+                                                                                                <a href="#">Read More</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <hr class="menu-border-bottom">
+                                                                        </div>
+
+                                                                        <div class="col-sm-3">
+
+                                                                            <div class="help-text">
+                                                                                <a href="#">
+                                                                                    <p>
+                                                                                        <span class="help-normal">Get Help From</span><br>
+                                                                                        <span class="help-topic">Export &amp; Import</span><br>
+                                                                                        <span class="help-focus">Guru</span>
+                                                                                    </p>
+                                                                                </a>
+
+                                                                            </div>
+
+                                                                            <img class="support-bg" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/B4.png" alt="img">
+                                                                        </div>
+                                                                        <img class="support-image" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/guru-bg.png" alt="img">
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <!-- bootstrap end -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <!-- bootstrap end -->
-											</div>
+                                            </div>
                                         </div>
                                     </li>
-
-                                    <li><a href="#">Contact <i class="fa fa-caret-down fa-indicator"></i> </a>
-                                        <!-- drop down full width -->
+									
+                                    <!--li><a href="#">Contact <i class="fa fa-caret-down fa-indicator"></i> </a>
+                                       
                                         <div class="drop-down-large">
-                                            <!-- bootstrap start -->
+                                            
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-sm-12 col-md-4">
-                                                        <!-- contact form -->
+                                                        
                                                         <form class="form-horizontal" method="post" action="mail/nav-form.php">
-                                                            <!-- heading -->
+                                                            <
                                                             <h3>Contact Us</h3>
-                                                            <!-- text -->
+                                                            
                                                             <p>Please fill in the following form to contact us <br> <br></p>
-                                                            <!-- name field -->
+                                                            
                                                             <div class="col-md-3">
                                                                 <label for="name">Name</label>
                                                             </div>
@@ -1357,7 +1358,7 @@
                                                                     <input id="name" name="nav_form_subject" required="required" placeholder="Name" type="text">
                                                                 </label>
                                                             </div>
-                                                            <!-- email field -->
+                                                            
                                                             <div class="col-md-3">
                                                                 <label for="email">Email</label>
                                                             </div>
@@ -1366,7 +1367,7 @@
                                                                     <input id="email" name="nav_form_mail" required="required" placeholder="E-mail Address" type="email">
                                                                 </label>
                                                             </div>
-                                                            <!-- message -->
+                                                            
                                                             <div class="col-md-3">
                                                                 <label for="message">Message</label>
                                                             </div>
@@ -1375,7 +1376,7 @@
                                                                     <textarea id="message" name="nav_form_message" required="required" placeholder="Message"></textarea>
                                                                 </label>
                                                             </div>
-                                                            <!-- submit -->
+                                                            
                                                             <div class="col-sm-2">
                                                                 <br>
                                                                 <button class="btn btn-custom space-0" type="submit">
@@ -1383,32 +1384,32 @@
                                                                     <i class="fa fa-circle-o-notch fa-spin"></i>
                                                                 </button>
                                                             </div>
-                                                            <!-- clearfix -->
+                                                            
                                                             <div class="clearfix"></div>
-                                                            <!-- form success or error message show -->
+                                                            
                                                             <div class="form-notifier"></div>
                                                         </form>
                                                     </div>
 
                                                     <div class="col-sm-12 col-md-4">
-                                                        <!-- register form -->
+                                                        
                                                         <form class="form-horizontal" method="post" action="#">
-                                                            <!-- heading -->
+                                                            
                                                             <h3>Register Now</h3>
-                                                            <!-- name -->
+                                                            
                                                             <div class="col-md-12">
                                                                 <br>
                                                                 <label>
                                                                     <input name="register_name" placeholder="Your name" required="" type="text">
                                                                 </label>
                                                             </div>
-                                                            <!-- email -->
+                                                            
                                                             <div class="col-md-12">
                                                                 <label>
                                                                     <input name="register_email" placeholder="Email address" required="" type="email">
                                                                 </label>
                                                             </div>
-                                                            <!-- phone -->
+                                                           
                                                             <div class="col-md-12">
                                                                 <label>
                                                                     <input name="register_phone" placeholder="Phone" required="" type="text">
@@ -1416,11 +1417,11 @@
                                                             </div>
                                                             <div class="col-md-12">
                                                                 <br>
-                                                                <!-- check box -->
+                                                                
                                                                 <input class="menu-checkbox" id="register-checkbox" type="checkbox">
                                                                 <label class="menu-checkbox" for="register-checkbox">Accept all conditions</label>
                                                             </div>
-                                                            <!-- register button -->
+                                                            
                                                             <div class="col-md-12">
                                                                 <br>
                                                                 <button class="btn btn-custom space-0" type="submit">Register me !</button>
@@ -1433,9 +1434,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- bootstrap end -->
+                                            
                                         </div>
-                                    </li>
+                                    </li-->
                                 </ul>
 
 

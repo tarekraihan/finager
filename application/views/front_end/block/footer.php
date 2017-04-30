@@ -113,9 +113,9 @@
                         <p class="no-margin">support: support@finager.com</p>
 
                         <h5 class="footer-menu-title uppercase margin_top_10">Subscribe us</h5>
-                        <form>
-                            <input type="" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="">
-                            <a href="" class="btn footer-submit-btn subscribe-footer-btn">Submit</a>
+                        <form action="" method="post" id="subscribe_form">
+                            <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail">
+                            <button type="submit" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -242,20 +242,26 @@
     </section>
 </div>
 
-<!-- for beta popup modal --!>
+
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog beta_modal" role="document">
     <div class="modal-content">
         <div class="beta_pop_bg">
 			<div class="form-group has-success">
-                               <h4 class="beta_pop_text">For <span>Finager Newsletter...</span></h4>
+                 <h4 class="beta_pop_text">For <span>Finager Newsletter...</span></h4>
 				<div class="input-group">
-					<input type="text" class="form-control beta_pop_form" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
-					<span class="input-group-addon beta_pop_form">Send</span>
+					<input type="email" class="form-control beta_pop_form" id="betaSubscribeEmail" aria-describedby="inputGroupSuccess1Status" required>
+					<a href="javascript:void(0);" id="betaSubscribButton" class="input-group-addon beta_pop_form">Send</a>
+
 			    </div>
 			</div>
+            <div class="modal-footer" id="subscribe_message">
+
+            </div>
 	    </div>
+
     </div>
+
   </div>
 </div>
 
@@ -351,8 +357,39 @@ jQuery(document).keypress(function(e) {
         });
 
     })
+
+
+    $('#betaSubscribButton').on('click',function(){
+        var email = $('#betaSubscribeEmail').val();
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if ( email == '') {
+            var msg = '<div class="alert alert-danger">email address is required field</div>';
+            $('#subscribe_message').html( msg );
+            $('#betaSubscribeEmail').val('');
+            return false;
+        }else if (!filter.test( email )) {
+            var msg = '<div class="alert alert-danger">Please provide a valid email address</div>';
+            $('#subscribe_message').html( msg );
+            $('#betaSubscribeEmail').val('');
+            return false;
+        }
+
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>en/ajax_get_subscribe/",
+            data: 'email='+email,
+            success: function(response)
+            {
+                console.log(response);
+
+                $('#subscribe_message').html(response);
+                $('#betaSubscribeEmail').val('');
+            }
+        });
+
+    })
+
 </script>
-
-
 </body>
 </html>
