@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Welcome to finager</title>
+    <link rel="icon" href="<?php echo base_url();?>resource/front_end/images/FinFavIcon.svg" type="image/svg+xml">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/material_theme.css" />

@@ -113,4 +113,13 @@ class General extends CI_Controller {
 
     }
 
+    function visitor_info(){
+        $data['title'] = "Finager:Visitor Info";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/general/website_visitor_info');
+        $this->load->view('admin/block/footer');
+
+    }
+
 }

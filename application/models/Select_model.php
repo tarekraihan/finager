@@ -1616,4 +1616,39 @@ class Select_Model extends CI_Model
     }
 
 
+    public function select_visitor_information()//To show Home loan list
+    {
+        $sql="SELECT * FROM `visitor_counter` ORDER BY id DESC";
+        $query=$this->db->query($sql);
+        $result="";
+
+        if($query->num_rows() > 0)
+        {
+
+            $sl=1;
+            foreach($query->result() as $row)
+            {
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center"> '.$row->page_name.'</td>
+					<td class="center"> '.$row->event_name.'</td>
+					<td class="center"> '.$row->ip_address.'</td>
+					<td class="center"> '.$row->country.'</td>
+					<td class="center"> '.$row->region.'</td>
+					<td class="center"> '.$row->city.'</td>
+					<td class="center"> '.$row->latitude.'</td>
+					<td class="center"> '.$row->longitude.'</td>
+					<td class="center"> '.$row->currency_code.'</td>
+					<td class="center"> '.$row->currency_symbol.'</td>
+					<td class="center"> '.date('Y-m-d',strtotime($row->created)).'</td>
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+
+
+
 }

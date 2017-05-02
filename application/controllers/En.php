@@ -10,7 +10,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  **********************************************/
 
 class En extends CI_Controller {
-
+    public function __construct() {
+        parent:: __construct();
+        date_default_timezone_set('Asia/Dhaka');
+    }
     public function login(){
 
         $email = htmlentities($this->input->post('txtEmail'));
@@ -37,12 +40,44 @@ class En extends CI_Controller {
     }
 
     public function index(){
-        $this->load->view('front_end/block/header');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/index');
-        $this->load->view('front_end/block/footer');
-    }
+        /*Get user ip address*/
+        $ip_address=$_SERVER['REMOTE_ADDR'];
+        /*Get user ip address details with geoplugin.net*/
+        $geopluginURL='http://www.geoplugin.net/php.gp?ip='.$ip_address;
+        $response = unserialize(@file_get_contents($geopluginURL));
+
+        $city = $response['geoplugin_city'];
+        $country = $response['geoplugin_countryName'];
+
+        if(!$city){
+            $city='Not Define';
+        }if(!$country){
+            $country='Not Define';
+        }
+        $this->Common_model->data = array(
+            'page_name' => 'Home Page',
+            'event_name' => '',
+            'url' => current_url(),
+            'ip_address' => $ip_address,
+            'country' => $country,
+            'country_code' => $response['geoplugin_countryCode'],
+            'city' => $city,
+            'region' => $response['geoplugin_region'],
+            'latitude' => $response['geoplugin_latitude'],
+            'longitude' => $response['geoplugin_longitude'],
+            'currency_code' => $response['geoplugin_currencyCode'],
+            'currency_symbol' => $response['geoplugin_currencySymbol']
+        );
+        $this->Common_model->table_name = 'visitor_counter';
+        $result = $this->Common_model->insert();
+        if($result){
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/index');
+            $this->load->view('front_end/block/footer');
+        }
+}
 
     public function credit_card(){
         $this->load->view('front_end/block/header');
