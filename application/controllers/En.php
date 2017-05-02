@@ -27,169 +27,6 @@ class En extends CI_Controller {
         }
     }
 
-    public function index(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/index');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-    public function credit_card(){
-        if ($this->session->userdata('lovemebaby')) {
-        $this->load->view('front_end/block/header');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/credit_card_landing');
-        $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-    public function all_credit_card(){
-        if ($this->session->userdata('lovemebaby')) {
-        $this->load->view('front_end/block/header');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/card');
-        $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-    public function card_details(){
-        if ($this->session->userdata('lovemebaby')) {
-        $this->load->view('front_end/block/header');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/card_details');
-        $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-
-    public function card_compare(){
-        if ($this->session->userdata('lovemebaby')) {
-        $this->load->view('front_end/block/header');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/card_compare');
-        $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-
-    public function debit_card(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card_landing');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-    public function all_debit_card(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-
-    public function debit_card_details(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-
-    public function debit_card_compare(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-    public function home_loan(){
-        if ($this->session->userdata('lovemebaby')) {
-        $this->load->view('front_end/block/header_home_loan');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/home_loan_landing');
-        $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-    public function all_home_loan(){
-        if ($this->session->userdata('lovemebaby')) {
-        $this->load->view('front_end/block/header_home_loan');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/home_loan');
-        $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-    public function home_loan_details(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/home_loan_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-    public function home_loan_compare(){
-        if ($this->session->userdata('lovemebaby')) {
-        $this->load->view('front_end/block/header_home_loan');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/home_loan_compare');
-        $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
-
-
-    public function home_loan_chart(){
-        $this->load->view('front_end/home_loan_chart');
-    }
     public function logout(){
         $this->session->unset_userdata('lovemebaby');
 
@@ -199,53 +36,160 @@ class En extends CI_Controller {
         redirect(base_url().'en', 'refresh');
     }
 
-    public function car_loan(){
-        if ($this->session->userdata('lovemebaby')) {
+    public function index(){
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/index');
+        $this->load->view('front_end/block/footer');
+    }
+
+    public function credit_card(){
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/credit_card_landing');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+    public function all_credit_card(){
+
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/card');
+        $this->load->view('front_end/block/footer');
+    }
+
+    public function card_details(){
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/card_details');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+
+    public function card_compare(){
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/card_compare');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+
+    public function debit_card(){
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/debit_card_landing');
+        $this->load->view('front_end/block/footer');
+    }
+
+    public function all_debit_card(){
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/debit_card');
+        $this->load->view('front_end/block/footer');
+    }
+
+
+    public function debit_card_details(){
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/auto_loan_landing');
+            $this->load->view('front_end/debit_card_details');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+    }
+
+
+    public function debit_card_compare(){
+            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/debit_card_compare');
+            $this->load->view('front_end/block/footer');
+    }
+
+    public function home_loan(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/home_loan_landing');
+        $this->load->view('front_end/block/footer');
+    }
+
+    public function all_home_loan(){
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/home_loan');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+    public function home_loan_details(){
+            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/home_loan_details');
+            $this->load->view('front_end/block/footer');
+    }
+    public function home_loan_compare(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/home_loan_compare');
+        $this->load->view('front_end/block/footer');
+    }
+
+
+    public function home_loan_chart(){
+        $this->load->view('front_end/home_loan_chart');
+    }
+
+
+
+    public function car_loan(){
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/auto_loan_landing');
+        $this->load->view('front_end/block/footer');
+
     }
 
     public function all_car_loan(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/auto_loan');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/auto_loan');
+        $this->load->view('front_end/block/footer');
     }
 
     public function car_loan_details(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/auto_loan_details');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
     }
 
 
     public function car_loan_compare(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/auto_loan_compare');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
 
@@ -254,53 +198,37 @@ class En extends CI_Controller {
     }
 
     public function personal_loan(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/personal_loan_landing');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/personal_loan_landing');
+        $this->load->view('front_end/block/footer');
     }
 
 
     public function all_personal_loan(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/personal_loan');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/personal_loan');
+        $this->load->view('front_end/block/footer');
     }
 
 
     public function personal_loan_details(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/personal_loan_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
-    }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/personal_loan_details');
+        $this->load->view('front_end/block/footer');
+}
 
     public function personal_loan_compare(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/personal_loan_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/personal_loan_compare');
+        $this->load->view('front_end/block/footer');
     }
 
 
@@ -310,53 +238,37 @@ class En extends CI_Controller {
 
 
     public function education_loan(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/education_loan_landing');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/education_loan_landing');
+        $this->load->view('front_end/block/footer');
     }
 
 
     public function all_education_loan(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/education_loan');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/education_loan');
+        $this->load->view('front_end/block/footer');
     }
 
     public function education_loan_details(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/education_loan_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/education_loan_details');
+        $this->load->view('front_end/block/footer');
     }
 
 
     public function education_loan_compare(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/education_loan_compare');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
     }
 
     public function education_loan_chart(){
@@ -369,239 +281,195 @@ class En extends CI_Controller {
 
 
     public function fdr(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/fdr_landing');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/fdr_landing');
+        $this->load->view('front_end/block/footer');
     }
 
 
 
     public function all_fdr(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/fdr');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/fdr');
+        $this->load->view('front_end/block/footer');
     }
 
 
     public function fdr_compare(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/fdr_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/fdr_compare');
+        $this->load->view('front_end/block/footer');
     }
 
 
 
     public function fdr_details(){
-        if ($this->session->userdata('lovemebaby')) {
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/fdr_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/fdr_details');
+        $this->load->view('front_end/block/footer');
     }
 
 
 
     public function dps(){
-        if ($this->session->userdata('lovemebaby')) {
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/dps_landing');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
     }
 
 
     public function all_dps(){
-        if ($this->session->userdata('lovemebaby')) {
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/dps');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
     public function dps_details(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/dps_details');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
     public function dps_compare(){
-        if ($this->session->userdata('lovemebaby')) {
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/dps_compare');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
 
     public function millionaire(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/millionaire_landing');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
     }
 
 
 
     public function all_millionaire(){
-        if ($this->session->userdata('lovemebaby')) {
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/millionaire');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
 
     public function millionaire_details(){
-        if ($this->session->userdata('lovemebaby')) {
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/millionaire_details');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
     public function millionaire_compare(){
-        if ($this->session->userdata('lovemebaby')) {
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/millionaire_compare');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
 
 
     public function money_maximizer(){
-        if ($this->session->userdata('lovemebaby')) {
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/money_maximizer_landing');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
 
     public function all_money_maximizer(){
-        if ($this->session->userdata('lovemebaby')) {
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/money_maximizer');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
     public function bank_details(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/bank_details');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
+    }
+
+    public function export_import(){
+            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/export_import');
+            $this->load->view('front_end/block/footer');
+
     }
 
     public function more_logo(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/all_logo');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
     public function PrivacyPolicy(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/PrivacyPolicy');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 	
 	public function terms_condition(){
-        if ($this->session->userdata('lovemebaby')) {
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/terms_condition');
             $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login/');
-        }
+
     }
 
 
-    public function ajax_get_subscribe()
-    {
+    public function ajax_get_subscribe(){
         $email = $this->input->post('email');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[subscriptions.email_address]');
 
