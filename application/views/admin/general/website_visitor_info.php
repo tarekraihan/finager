@@ -1,15 +1,3 @@
-<?php
-if(isset($_GET['loan_id']))
-{
-    $id=$_GET['loan_id'];
-    $table='home_loan_info';
-    $id_field='id';
-    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
-    $this->Delete_model->Delete_All_Row($id=$id,$table='home_loan_user_home_loan_info',$id_field='home_loan_info_id');
-    $this->Delete_model->Delete_All_Row($id=$id,$table='home_loan_applicant_type_home_loan_info',$id_field='home_loan_info_id');
-}
-?>
-
 <!-- MAIN PANEL -->
 <div id="main" role="main">
 
@@ -75,6 +63,7 @@ if(isset($_GET['loan_id']))
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Page Name</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Event Name</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> IP Address</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Browser</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Country</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Region</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>City</th>

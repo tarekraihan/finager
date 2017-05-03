@@ -42,6 +42,7 @@
                     <li>
                         <a href="<?php echo base_url();?>general/db_backup">Take Database Backup</a>
                         <a href="<?php echo base_url();?>general/visitor_info">Visitor Information</a>
+                        <a href="<?php echo base_url();?>general/visitor_map">Visitor Map</a>
                     </li>
 
                 </ul>

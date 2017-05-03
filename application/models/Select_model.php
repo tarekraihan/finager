@@ -1618,7 +1618,7 @@ class Select_Model extends CI_Model
 
     public function select_visitor_information()//To show Home loan list
     {
-        $sql="SELECT * FROM `visitor_counter` ORDER BY id DESC";
+        $sql="SELECT * FROM `visitor_counter` GROUP BY ip_address ORDER BY id DESC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -1633,14 +1633,15 @@ class Select_Model extends CI_Model
 					<td class="center"> '.$row->page_name.'</td>
 					<td class="center"> '.$row->event_name.'</td>
 					<td class="center"> '.$row->ip_address.'</td>
-					<td class="center"> '.$row->country.'</td>
+					<td class="center"> '.$row->browser_name.'</td>
+					<td class="center"> <img src="'. base_url().'resource/admin/img/blank.gif" class="flag flag-'.strtolower ($row->country_code).'" alt="'.$row->country.'"> '.$row->country.'</td>
 					<td class="center"> '.$row->region.'</td>
 					<td class="center"> '.$row->city.'</td>
 					<td class="center"> '.$row->latitude.'</td>
 					<td class="center"> '.$row->longitude.'</td>
 					<td class="center"> '.$row->currency_code.'</td>
 					<td class="center"> '.$row->currency_symbol.'</td>
-					<td class="center"> '.date('Y-m-d',strtotime($row->created)).'</td>
+					<td class="center"> '.date('Y-m-d H:i:s',strtotime($row->created)).'</td>
 					</tr>';
                 $sl++;
             }
@@ -1649,6 +1650,11 @@ class Select_Model extends CI_Model
     }
 
 
-
+    public function select_visitor_info()//To show Home loan list
+    {
+        $sql = "SELECT * FROM `visitor_counter` GROUP BY ip_address ORDER BY id DESC";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
 }

@@ -121,5 +121,38 @@ class General extends CI_Controller {
         $this->load->view('admin/block/footer');
 
     }
+    function visitor_map(){
+
+        $result = $this->Select_model->select_visitor_info();
+
+        $this->load->library('googlemaps');
+
+        $config['center'] = "52.355518, -1.174320";
+//        echo $config['center'];die;
+        //$config['zoom'] = 'auto';
+        $config['map_height'] = '600px';
+        $config['zoom'] = '2';
+        $this->googlemaps->initialize($config);
+
+        $marker = array();
+        foreach($result->result() as $row){
+            $marker['position'] = "$row->latitude, $row->longitude";
+            $marker['infowindow_content'] = $row->country.'( '.$row->ip_address.' )';
+            //$marker['animation'] = 'DROP';
+            $marker['icon'] = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=F|D1131A|000000';
+            $this->googlemaps->add_marker($marker);
+        }
+
+
+        $data['map'] = $this->googlemaps->create_map();
+
+
+        $data['title'] = "Finager:Visitor Info";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/general/website_visitor_map');
+        $this->load->view('admin/block/footer');
+
+    }
 
 }

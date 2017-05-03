@@ -113,10 +113,8 @@
                         <p class="no-margin">support: support@finager.com</p>
 
                         <h5 class="footer-menu-title uppercase margin_top_10">Subscribe us</h5>
-                        <form action="" method="post" id="subscribe_form">
-                            <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail">
-                            <button type="submit" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
-                        </form>
+                            <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" id="txtSubscriptionEmail" name="txtSubscriptionEmail">
+                            <a href="javascript:void(0);" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</a>
                     </div>
                 </div>
 
@@ -265,6 +263,19 @@
   </div>
 </div>
 
+<!--Show message Modal-->
+<div class="modal fade" id="message_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p id="message"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <!-- for chart -->
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/common.js"></script>
@@ -363,7 +374,7 @@ jQuery(document).keypress(function(e) {
         var email = $('#betaSubscribeEmail').val();
         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if ( email == '') {
-            var msg = '<div class="alert alert-danger">email address is required field</div>';
+            var msg = '<div class="alert alert-danger">Subscription Email is required field !! </div>';
             $('#subscribe_message').html( msg );
             $('#betaSubscribeEmail').val('');
             return false;
@@ -385,6 +396,41 @@ jQuery(document).keypress(function(e) {
 
                 $('#subscribe_message').html(response);
                 $('#betaSubscribeEmail').val('');
+            }
+        });
+
+    })
+
+    $('#btnSubscribeSubmit').on('click',function(){
+        var email = $('#txtSubscriptionEmail').val();
+        alert(email);
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if ( email == '') {
+            var msg = '<div class="alert alert-danger">Subscription Email is required field !! </div>';
+            $('#message').html(msg);
+            $('#message_modal').modal('show');
+            $('#txtSubscriptionEmail').val('');
+
+            return false;
+        }else if (!filter.test( email )) {
+            var msg = '<div class="alert alert-danger">Please provide a valid email address</div>';
+            $('#message').html(msg);
+            $('#message_modal').modal('show');
+            $('#txtSubscriptionEmail').val('');
+            return false;
+        }
+
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>en/ajax_get_subscribe/",
+            data: 'email='+email,
+            success: function(response)
+            {
+                console.log(response);
+                $('#message').html( response );
+                $('#message_modal').modal('show');
+                $('#txtSubscriptionEmail').val('');
             }
         });
 
