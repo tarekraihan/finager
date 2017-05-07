@@ -66,12 +66,12 @@
 
                         <ul class="no-padding footer-menus">
                             <li><a href="<?php echo base_url();?>en/fdr">FDR</a></li>
-                            <li><a href="<?php echo base_url();?>en/dps">DPS</a></li>
-                            <li><a href="<?php echo base_url();?>en/millionaire">Lakhpoti & Millionaire</a></li>
-                            <li><a href="<?php echo base_url();?>en/money_maximizer">Money Maximizer</a></li>
-                            <li><a href="">Monthly Benefit Scheme</a></li>
-                            <li><a href="">Forex</a></li>
-                            <li><a href="">Thrusts Sector</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">DPS</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Lakhpoti & Millionaire</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Money Maximizer</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Monthly Benefit Scheme</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Thrusts Sector</a></li>
                         </ul>
                     </div>
 
@@ -79,14 +79,14 @@
                         <p class="footer-menu-title">SME</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="">SME Loan</a></li>
-                            <li><a href="">Guideline for SME Business</a></li>
-                            <li><a href="">SME Funding</a></li>
-                            <li><a href="">Potential SME Sector</a></li>
-                            <li><a href="">SME Traning Calender</a></li>
-                            <li><a href="">Bank Wise SME Service Centre</a></li>
-                            <li><a href="">SME Service Centre</a></li>
-                            <li><a href="">SME Blog</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Loan</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Guideline for SME Business</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Funding</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Potential SME Sector</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Traning Calender</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Bank Wise SME Service Centre</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Service Centre</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Blog</a></li>
                         </ul>
                     </div>
 
@@ -95,13 +95,13 @@
 
                         <ul class="no-padding footer-menus">
                             <li><a href="<?php echo base_url();?>en/">Blog</a></li>
-                            <li><a href="">Events</a></li>
-                            <li><a href="">Forum</a></li>
-                            <li><a href="">Maps</a></li>
-                            <li><a href="">Tax Guide</a></li>
-                            <li><a href="">Calculator</a></li>
-                            <li><a href="">Insurance</a></li>
-                            <li><a href="">Money Rate</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Forum</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Tax Guide</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Calculator</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
                         </ul>
                     </div>
 
@@ -113,8 +113,10 @@
                         <p class="no-margin">support: support@finager.com</p>
 
                         <h5 class="footer-menu-title uppercase margin_top_10">Subscribe us</h5>
-                            <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" id="txtSubscriptionEmail" name="txtSubscriptionEmail">
-                            <a href="javascript:void(0);" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</a>
+                        <form action="" method="post" id="subscribe_form">
+                            <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail">
+                            <button type="submit" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
+                        </form>
                     </div>
                 </div>
 
@@ -263,19 +265,46 @@
   </div>
 </div>
 
-<!--Show message Modal-->
-<div class="modal fade" id="message_modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <p id="message"></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" id="maintains-modal">
+  <div class="modal-dialog beta_modal" role="document">
+    <div class="modal-content">
+        <div class="maintains_pop_bg">
+			<!--div class="form-group has-success">
+                 <h4 class="beta_pop_text">For <span>Finager Newsletter...</span></h4>
+				<div class="input-group">
+					<input type="email" class="form-control beta_pop_form" id="betaSubscribeEmail" aria-describedby="inputGroupSuccess1Status" required>
+					<a href="javascript:void(0);" id="betaSubscribButton" class="input-group-addon beta_pop_form">Send</a>
+
+			    </div>
+			</div>
+            <div class="modal-footer" id="subscribe_message">
+
+            </div-->
+	    </div>
+
+    </div>
+
+  </div>
+</div>
+<?php
+$result = $this->Front_end_select_model->website_under_maintenance();
+if($result){
+    $result_row = $result->row();
+    $date_time = date('Y-m-d H:i:s');
+    $start_time = date('Y-m-d H:i:s',strtotime($result_row->start_time));
+    $end_time = date('Y-m-d H:i:s',strtotime($result_row->end_time));
+
+    if ($date_time < $end_time ){
+        echo "<script>$(window).on('load',function(){
+        $('#maintains-modal').modal({
+			show: true,
+			backdrop: 'static'
+		});
+    });</script>";
+    }
+}
+
+?>
 
 <!-- for chart -->
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/common.js"></script>
@@ -374,7 +403,7 @@ jQuery(document).keypress(function(e) {
         var email = $('#betaSubscribeEmail').val();
         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if ( email == '') {
-            var msg = '<div class="alert alert-danger">Subscription Email is required field !! </div>';
+            var msg = '<div class="alert alert-danger">email address is required field</div>';
             $('#subscribe_message').html( msg );
             $('#betaSubscribeEmail').val('');
             return false;
@@ -400,42 +429,18 @@ jQuery(document).keypress(function(e) {
         });
 
     })
-
-    $('#btnSubscribeSubmit').on('click',function(){
-        var email = $('#txtSubscriptionEmail').val();
-        alert(email);
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        if ( email == '') {
-            var msg = '<div class="alert alert-danger">Subscription Email is required field !! </div>';
-            $('#message').html(msg);
-            $('#message_modal').modal('show');
-            $('#txtSubscriptionEmail').val('');
-
-            return false;
-        }else if (!filter.test( email )) {
-            var msg = '<div class="alert alert-danger">Please provide a valid email address</div>';
-            $('#message').html(msg);
-            $('#message_modal').modal('show');
-            $('#txtSubscriptionEmail').val('');
-            return false;
-        }
-
-        $.ajax
-        ({
-            type: "POST",
-            url: "<?php echo base_url();?>en/ajax_get_subscribe/",
-            data: 'email='+email,
-            success: function(response)
-            {
-                console.log(response);
-                $('#message').html( response );
-                $('#message_modal').modal('show');
-                $('#txtSubscriptionEmail').val('');
-            }
-        });
-
-    })
-
+	
+/*
+    $(window).on('load',function(){
+        $('#maintains-modal').modal({
+			show: true,
+			backdrop: 'static'
+		});
+    });*/
+	
+	$("#maintains-modal").on('shown.bs.modal', function() {
+	  $('.modal-backdrop').css('opacity', '0.8');
+	});
 </script>
 </body>
 </html>

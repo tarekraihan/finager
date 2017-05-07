@@ -342,4 +342,10 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    function website_under_maintenance(){
+        $sql = "SELECT * FROM `active_website` WHERE id = 1";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 }
