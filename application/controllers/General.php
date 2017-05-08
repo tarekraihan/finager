@@ -155,4 +155,38 @@ class General extends CI_Controller {
 
     }
 
+    function go_maintenance(){
+        if ($this->session->userdata('email_address')) {
+            $this->form_validation->set_rules('txtNonBank', 'Non Bank Name ', 'trim|required|is_unique[general_non_bank.non_bank_name]');
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Go Maintenance";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/general/go_maintenance');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array(
+                    'non_bank_name' => $this->input->post('txtNonBank'),
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'general_non_bank';
+                $result = $this->Common_model->insert();
+                if ($result) {
+                    $data['success_message'] = '<div id="message" class="text-center alert alert-success">Maintenance Break Activated !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'general/go_maintenance');
+                } else {
+                    $data['error_message'] = '<div id="message" class=" text-center alert alert-danger">Problem to go Maintenance Break !! Please Contact : 01911222952 </div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'general/go_maintenance');
+                }
+            }
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
+
 }

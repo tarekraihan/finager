@@ -41,8 +41,19 @@
                     </li>
                     <li>
                         <a href="<?php echo base_url();?>general/db_backup">Take Database Backup</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url();?>general/visitor_info">Visitor Information</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url();?>general/visitor_map">Visitor Map</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>general/go_maintenance">Go Maintenance Break</a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo base_url();?>general/go_live">Go Live</a>
                     </li>
 
                 </ul>

@@ -26,6 +26,8 @@
 
     <!-- SmartAdmin RTL Support -->
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>resource/admin/css/smartadmin-rtl.min.css">
+    <!--    Bootstrap DateTimePicker-->
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>resource/admin/css/bootstrap-datetimepicker.min.css">
 
 
     <!-- We recommend you use "your_style.css" to override SmartAdmin

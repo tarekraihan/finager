@@ -151,6 +151,8 @@ you can add as many as you like
 <!-- FastClick: For mobile devices -->
 <script src="<?php echo base_url();?>resource/admin/js/plugin/fastclick/fastclick.min.js"></script>
 
+
+
 <!--[if IE 8]>
 
 <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
@@ -181,6 +183,15 @@ you can add as many as you like
 <script src="<?php echo base_url();?>resource/admin/js/plugin/summernote/summernote.min.js"></script>
 
 <script src="<?php echo base_url(); ?>resource/admin/js/fileinput.min.js"></script>
+
+
+<!-- Moment JS -->
+<script src="<?php echo base_url();?>resource/admin/js/moment.min.js"></script>
+<script src="<?php echo base_url();?>resource/admin/js/moment-with-locales.min.js"></script>
+
+<!--Boodstrap DateTimePicker JS-->
+<script src="<?php echo base_url();?>resource/admin/js/bootstrap-datetimepicker.min.js"></script>
+
 <script type="text/javascript">
 
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
@@ -390,6 +401,17 @@ you can add as many as you like
             savable:true
         })
 */
+
+//        Call Bootstrap DateTimePIcker For admin/general/go_maintenance
+        $('#go_maintenance').datetimepicker({
+            format: 'DD-MM-YYYY hh:00 A',
+            sideBySide: false,
+            useCurrent: false,
+            showClose: true,
+            toolbarPlacement: 'bottom'
+
+        });
+
 
     })
 
