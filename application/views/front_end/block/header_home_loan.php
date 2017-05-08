@@ -3,6 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Welcome to finager</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Finager.com help them to take financial decisions intheir every day life.">
+    <meta name="keywords" content="Loan,homeLoan,PersonalLoan,Bank,Investment,CreditCard,DebitCard,FDR,DPS,AutoLoan,EducationLoan,Bangladesh">
+    <meta name="author" content="Finager">
+    <link rel="icon" href="<?php echo base_url();?>resource/front_end/images/favicon.ico">
     <script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
     <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/font-awesome.min.css" />

@@ -510,7 +510,7 @@ class Personal_Loan extends CI_Controller {
                             <div class="col-sm-4 col-xs-4">
                                 <div class="card_text2">
                                     <h5>Total Payable Amount</h5>
-                                    <p> &#2547; '.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on #2547;'.number_format( $principal_amount ).'</span></p>
+                                    <p> &#2547; '.number_format( $total_payable ).'<br/><span class="tPaybleAmount">based on &#2547;'.number_format( $principal_amount ).'</span></p>
                                 </div>
                             </div>
                         </div>

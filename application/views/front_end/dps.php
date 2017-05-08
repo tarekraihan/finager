@@ -148,7 +148,7 @@
 																		  <div class="prev"></div>
 																		  <div class="next active"></div>
 																		</div>
-																		<div class="hideVal">25000</div>
+																		<div class="hideVal">500</div>
 																	  </div>
 																	</div>
 																	<!--Calculator Section END--> 

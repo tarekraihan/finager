@@ -2,8 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Finager.com help them to take financial decisions intheir every day life.">
+    <meta name="keywords" content="Loan,homeLoan,PersonalLoan,Bank,Investment,CreditCard,DebitCard,FDR,DPS,AutoLoan,EducationLoan,,Bangladesh">
+    <meta name="author" content="Finager">
     <title>Welcome to finager</title>
-    <link rel="icon" href="<?php echo base_url();?>resource/front_end/images/FinFavIcon.svg" type="image/svg+xml">
+    <link rel="icon" href="<?php echo base_url();?>resource/front_end/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/material_theme.css" />
@@ -16,9 +19,7 @@
 
     <script type="text/javascript">
        
-
-
-
+            
     </script>
     <!-- add card compare ends-->
 

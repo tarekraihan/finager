@@ -385,7 +385,7 @@ $(function(event) {
 				{
 					wid = $('.calcSection').eq(j).find('ul li').width();
 					len = $('.calcSection').eq(j).find('ul li').length;
-					newWid = len *wid;
+					newWid = '3730px';
 					$('.calcSection').eq(j).find('ul').css('width', newWid);	
 				}
 		}
@@ -424,7 +424,7 @@ $(function(event) {
 				{
 					wid = $('.calcSection').eq(j).find('ul li').width();
 					len = $('.calcSection').eq(j).find('ul li').length;
-					newWid = len *wid;
+					newWid = '3730px';
 					$('.calcSection').eq(j).find('ul').css('width', newWid);	
 				}
 		}

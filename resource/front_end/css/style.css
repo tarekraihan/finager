@@ -18,6 +18,16 @@ body {
 .bottom{
     bottom:0;
 }
+
+/*vertical menu START*/
+.sidebar-nav li a{
+	color: #fff !important;
+}
+.nav>li>a:focus, .nav>li>a:hover{
+	background:#337ab7 !important;
+}
+/*Vertical menu END*/
+
 /* for bootstrap horizontal menu  */
 .margin_botton_30{
     margin-bottom: 30px;
@@ -95,7 +105,20 @@ body {
     width:100%;
     margin-top:53px;
 }
-
+@media only screen and (min-width: 1281px){
+	.hamburger.is-open{
+		right: 200px !important;
+	}
+}
+@media only screen and (max-width: 1280px){
+	.hamburger.is-open{
+		right: 195px !important;
+	}
+}
+.hamburger {
+    top: 16px !important;
+    width: 26px !important;
+}
 /* Category Icon */
 #CategoryIcon{
     height:500px;
@@ -4016,6 +4039,17 @@ a .auto_button.flash-button{
     bottom: -68px !important;
 }
 
+/* for maintains modal */
+.maintains_pop_bg {
+    background-image: url(../images/Fin-Maintenance.jpg);
+    width: 600px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: 27%;
+}
+
 /* for beta modal */
 .beta_modal .modal-content {
     -webkit-box-shadow: none;
@@ -4096,4 +4130,33 @@ a .auto_button.flash-button{
 }
 .hide{
     display: none;
+}
+
+/* for ExportImport */
+#ExportImport_header{
+	background-image:url(../images/exportImport.png);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:300px;
+}
+#ExportImport_body {
+    margin: 20px 0;
+}
+.panel-default > .panel-heading {
+    background-color: #d2dad9;
+}
+
+.ExportImportAccordion .panel-heading a{
+	color:#000;
+	outline:0;
+	text-decoration:none;
+}
+.exportImport_ol{
+	margin-left:20px;
+}
+.export_table {
+	border: 1px solid #ddd;
+	padding: 10px;
 }

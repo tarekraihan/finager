@@ -171,10 +171,10 @@
 	</section>
 <section id="header2">
     <div class="container Aboutcredit_card">
-        <div class="col-md-2 col-sm-2">
-            <img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <img class="img-responsive about-logo" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg">
         </div>
-        <div class="col-md-7 col-sm-7">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             <div class="header_paragrph">
                 <h3>About Finager.com</h3>
                 <p>
@@ -185,7 +185,7 @@
                 </p>
             </div>
         </div>
-        <div class="col-md-3 col-sm-3">
+        <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
             <div class="req_card">
                 <span class="req_para">We’re Here to Help You</span>
                 <div class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">

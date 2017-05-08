@@ -78,7 +78,7 @@
 								</div>
 								<div>
 									<!--a id="displayText" href="javascript:toggle();">More Filter <i class="fa fa-sort-desc fa-lg"></i></a-->
-									<button class="btnPmore" data-toggle="collapse" data-target="#demo">More</button>
+									<button class="btnPmore btn-open" data-toggle="collapse" data-target="#demo">More</button>
 								</div>
 								<!--div id="toggleText" style="display: none"-->
 								<div id="demo" class="collapse">
@@ -350,7 +350,35 @@
 
 <script>
     $(document).ready(function(){
+    	//sidebar fixed
+    	/*function checkOffset() {
+		    if($('.home_loan_left_bar').offset().top + $('.home_loan_left_bar').height() 
+		                                           >= $('.footer').offset().top - 10)
+		        $('.home_loan_left_bar').css('position', 'relative');
+		    if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top || $(window).scrollTop>400)
+		        $('.home_loan_left_bar').css('position', 'fixed'); // restore when you scroll up
+		    if($(window).scrollTop<10)
+		    	$('.home_loan_left_bar').css('position', 'relative');
+		    //$('.home_loan_left_bar').text($(document).scrollTop() + window.innerHeight);
+		}
+		$(document).scroll(function() {
+		    checkOffset();
+		});*/
 
+
+    	//more button click event
+    	$(".btnPmore").click(function(){
+    		if($(this).hasClass("btn-open")){
+	    		$(this).text("Less");
+	    		$(this).removeClass("btn-open");
+	    	}
+	    	else{
+	    		$(this).text("More");
+	    		$(this).addClass("btn-open");	
+	    	}
+    	});
+
+    	//pagination START
         var page = 0;
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();

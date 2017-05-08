@@ -76,7 +76,7 @@
                                                                                              A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/credit_card">Find All Credit Cards Here</a>
+                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Credit Cards Here</a>
                                                                                     </div>
                                                                                 </div>
 
@@ -684,7 +684,7 @@
                                                                                            The term <span class="focus-text">Fixed Deposit Account</span>  refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/fdr">Find All FDR Here</a>
+                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All FDR Here</a>
                                                                                     </div>
                                                                                 </div>
 
@@ -950,7 +950,7 @@
                                                                                             <span class="focus-text">Money Maximizer</span> account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/money_maximizer">Find All Money Maximizer Scheme Here</a>
+                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Money Maximizer Scheme Here</a>
                                                                                     </div>
                                                                                 </div>
 
@@ -1039,7 +1039,7 @@
                                                                                             <span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link" href="#">Find All Periodic Benefit Scheme Here</a>
+                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Monthly Benefit Scheme</a>
                                                                                     </div>
                                                                                 </div>
 
@@ -1135,7 +1135,7 @@
                                                                                             <span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link" href="#">Find All Saving Accounts Here</a>
+                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Saving Accounts Here</a>
                                                                                     </div>
                                                                                 </div>
 
@@ -1249,10 +1249,10 @@
                                                                                         <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
                                                                                         <div class="clearfix"></div>
                                                                                         <p class="text-right">
-                                                                                            <span class="focus-text">Export &amp; Import</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+                                                                                            <span class="focus-text">Export &amp; Import</span> An import is a good or service brought into one country from another. On the other hand, an export is a function of international trade whereby goods produced in one country are shipped to another country for future sale or trade.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/debit_card">Find All Export &amp; Import Here</a>
+                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/export_import">Find All Export &amp; Import Here</a>
                                                                                     </div>
                                                                                 </div>
 
@@ -1260,12 +1260,11 @@
                                                                                     <div class="row">
                                                                                         <div class="col-sm-4 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card2.png" alt="img">
-                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export1.png" alt="img">                                                                                                
 
-                                                                                                <p class="item-title">Heading</p>
+                                                                                                <p class="item-title">INTERNATIONAL TRADE LEAD AND BUSINESS SERVICE</p>
                                                                                                 <p>
-                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
+                                                                                                    Trade leads, or business leads, by national or international business services facilitate different functions,Praesent dapibus...
                                                                                                 </p>
 
                                                                                                 <a href="#">Read More</a>
@@ -1274,12 +1273,11 @@
 
                                                                                         <div class="col-sm-4 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
-                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export2.png" alt="img">                                                                                                
 
-                                                                                                <p class="item-title">Heading</p>
+                                                                                                <p class="item-title">IMPORT FROM CHINA</p>
                                                                                                 <p>
-                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
+                                                                                                    If you have an established source of sales that you are already selling into the market, and have a large volume, you might...
                                                                                                 </p>
 
                                                                                                 <a href="#">Read More</a>
@@ -1288,12 +1286,11 @@
 
                                                                                         <div class="col-sm-4 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
-                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export3.png" alt="img">                                                                                                
 
-                                                                                                <p class="item-title">Heading</p>
+                                                                                                <p class="item-title">START YOUR OWN EXPORT IMPORT BUSINESS</p>
                                                                                                 <p>
-                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
+                                                                                                    Register your business and ensure that all licenses and other legal requirements have been complied with...
                                                                                                 </p>
 
                                                                                                 <a href="#">Read More</a>

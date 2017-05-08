@@ -61,7 +61,7 @@
 		width: 110px;
 	}
 	.mash-menu section.mash-menu-inner-container {
-		max-width: 460px !important;
+		max-width: 400px !important;
 	}
 	.mash-menu .mash-list-items > li > a {
 		padding: 20px 12px !important;
@@ -96,7 +96,7 @@
 }
 .mash-menu section.mash-menu-inner-container {
     background: #fff !important;
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto !important;
     display: block;
     float: none !important;
@@ -230,6 +230,47 @@ a.megamenu_feature_link {
     font-weight: 600;
     width: 80%;
     background: #f2f0bc;
+    padding: 8px;
+    text-align: center;
+}
+
+/*For gray nav*/
+.nav-gray .vertical-tabs-content:before {
+    background-color: rgba(230, 230, 230, 0.85) !important;
+    background-repeat: repeat;
+    height: 100% !important;
+}
+.nav-gray .vertical-tabs-content {
+    background: transparent !important;
+}
+.nav-gray .support-bg {
+    bottom: -10px;
+    position: absolute;
+    width: 320px;
+    right:0;
+}
+.nav-gray .features {
+    padding: 30px 30px;
+    background-image: url(../images/mashmenu/export/B3.png);
+    background-size: cover;
+}
+.nav-gray .vertical-tabs{
+    background: transparent !important;
+}
+.nav-gray .vertical-tabs:before{
+    background: rgba(218, 218, 218, 0.85) !important;
+    z-index: -1;
+}
+.nav-gray .vertical-tabs a.active, .nav-gray .vertical-tabs a:hover{
+    background: #fdfdfd !important;
+    color: #333 !important; 
+}
+.nav-gray h4.nav-title{
+    float: left;
+    color: #333;
+    font-weight: 600;
+    width: 80%;
+    background: #bbbbbb;
     padding: 8px;
     text-align: center;
 }
