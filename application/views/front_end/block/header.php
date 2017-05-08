@@ -16,7 +16,9 @@
 
     <script type="text/javascript">
        
-            
+
+
+
     </script>
     <!-- add card compare ends-->
 
