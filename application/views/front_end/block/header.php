@@ -17,7 +17,6 @@
     <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
 	<script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>	<script src="<?php echo base_url();?>resource/front_end/js/booNavigation.js"></script>
     <style>
-
         #loading{z-index: 100}
     </style>
 
