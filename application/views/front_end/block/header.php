@@ -16,13 +16,6 @@
 	<script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
     <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
 	<script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>	<script src="<?php echo base_url();?>resource/front_end/js/booNavigation.js"></script>
-
-    <script type="text/javascript">
-       
-            
-    </script>
-    <!-- add card compare ends-->
-
     <style>
         #loading{z-index: 100}
     </style>

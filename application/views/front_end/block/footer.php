@@ -291,9 +291,7 @@ $result = $this->Front_end_select_model->website_under_maintenance();
 if($result){
     $result_row = $result->row();
     $date_time = date('Y-m-d H:i:s');
-    $start_time = date('Y-m-d H:i:s',strtotime($result_row->start_time));
     $end_time = date('Y-m-d H:i:s',strtotime($result_row->end_time));
-
     if ($date_time < $end_time ){
         echo "<script>$(window).on('load',function(){
         $('#maintains-modal').modal({
