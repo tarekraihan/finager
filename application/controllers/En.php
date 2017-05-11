@@ -12,10 +12,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class En extends CI_Controller {
     public function __construct() {
         parent:: __construct();
-        date_default_timezone_set('Asia/Dhaka');
+
     }
 
-    function getBrowserName(){
+    /*function getBrowserName(){
         $agent = null;
 
         if ( empty($agent) ) {
@@ -41,7 +41,7 @@ class En extends CI_Controller {
         }
 
         return $agent;
-    }
+    }*/
 
     public function login(){
 
@@ -75,7 +75,7 @@ class En extends CI_Controller {
         $geopluginURL='http://www.geoplugin.net/php.gp?ip='.$ip_address;
         $response = unserialize(@file_get_contents($geopluginURL));
 
-        $browser_name = $this->getBrowserName();
+        $browser_name = getBrowserName();
         $this->Common_model->data = array(
             'page_name' => 'Home Page',
             'event_name' => '',

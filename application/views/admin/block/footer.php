@@ -88,28 +88,18 @@ you can add as many as you like
 <script data-pace-options='{ "restartOnRequestAfter": true }' src="<?php echo base_url();?>resource/admin/js/plugin/pace/pace.min.js"></script>
 
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-    if (!window.jQuery) {
-        document.write('<script src="<?php echo base_url();?>resource/admin/js/libs/jquery-2.1.1.min.js"></script>');
-    }
-</script>
+<script src="<?php echo base_url();?>resource/admin/js/jquery.min.js"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script>
-    if (!window.jQuery.ui) {
-        document.write('<script src="<?php echo base_url();?>resource/admin/js/libs/jquery-ui-1.10.3.min.js"></script>');
-    }
-</script>
 
-<script type="text/javascript" language="JavaScript">
-    $(document).ready(function(){
-        $("#message").show();
-        setTimeout(function(){
-            $('#message').fadeOut(5000);
-        });
-    });
-</script>
+<script src="<?php echo base_url();?>resource/admin/js/jquery-ui.min.js"></script>
+<!-- BOOTSTRAP JS -->
+<script src="<?php echo base_url();?>resource/admin/js/bootstrap/bootstrap.min.js"></script>
+
+<!-- Moment JS -->
+<script src="<?php echo base_url();?>resource/admin/js/moment-with-locales.min.js"></script>
+
+<!--Boodstrap DateTimePicker JS-->
+<script src="<?php echo base_url();?>resource/admin/js/bootstrap-datetimepicker.min.js"></script>
 
 <!-- IMPORTANT: APP CONFIG -->
 <script src="<?php echo base_url();?>resource/admin/js/app.config.js"></script>
@@ -117,8 +107,7 @@ you can add as many as you like
 <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
 <script src="<?php echo base_url();?>resource/admin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
 
-<!-- BOOTSTRAP JS -->
-<script src="<?php echo base_url();?>resource/admin/js/bootstrap/bootstrap.min.js"></script>
+
 
 
 <!-- CUSTOM NOTIFICATION -->
@@ -185,12 +174,6 @@ you can add as many as you like
 <script src="<?php echo base_url(); ?>resource/admin/js/fileinput.min.js"></script>
 
 
-<!-- Moment JS -->
-<script src="<?php echo base_url();?>resource/admin/js/moment.min.js"></script>
-<script src="<?php echo base_url();?>resource/admin/js/moment-with-locales.min.js"></script>
-
-<!--Boodstrap DateTimePicker JS-->
-<script src="<?php echo base_url();?>resource/admin/js/bootstrap-datetimepicker.min.js"></script>
 
 <script type="text/javascript">
 
@@ -376,6 +359,12 @@ you can add as many as you like
 
 <script type="text/javascript">
 
+    //message hide
+    $("#message").show();
+    setTimeout(function(){
+        $('#message').fadeOut(5000);
+    });
+
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
     $(document).ready(function() {
@@ -403,7 +392,17 @@ you can add as many as you like
 */
 
 //        Call Bootstrap DateTimePIcker For admin/general/go_maintenance
+
         $('#go_maintenance').datetimepicker({
+            format: 'DD-MM-YYYY hh:00 A',
+            sideBySide: false,
+            useCurrent: false,
+            showClose: true,
+            toolbarPlacement: 'bottom'
+
+        });
+
+        $('#go_live').datetimepicker({
             format: 'DD-MM-YYYY hh:00 A',
             sideBySide: false,
             useCurrent: false,

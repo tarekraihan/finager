@@ -67,6 +67,14 @@ class Select_Model extends CI_Model
         return $query;
 
     }
+    function get_offline_count()
+    {
+        $sql="SELECT * FROM active_website ORDER BY id DESC LIMIT 1";
+        $query=$this->db->query($sql);
+
+        return $query->row();
+
+    }
     function select_maturity_tenure()
     {
         $sql="SELECT * FROM millionaire_tenure ORDER BY CAST(tenure as SIGNED INTEGER) ASC";

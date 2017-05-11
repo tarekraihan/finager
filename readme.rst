@@ -6,7 +6,12 @@ Finager.com is one of the biggest online platforms as well as first complete Fin
 
 If you ever need best financial advices, just log in to www.finager.com or have a coffee time with the Finager Team.
 
-## CHANGE LOGS##
+
+
+#############
+ CHANGE LOGS
+#############
+
 
 1.01 [tarek][29-02-2016] : Start Finager Admin panel work
 

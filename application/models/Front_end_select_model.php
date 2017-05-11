@@ -343,7 +343,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     function website_under_maintenance(){
-        $sql = "SELECT * FROM `active_website` WHERE id = 1";
+        $sql = "SELECT * FROM active_website ORDER BY id DESC LIMIT 1";
         $query = $this->db->query($sql);
         return $query;
     }
