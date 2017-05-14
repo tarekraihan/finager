@@ -772,12 +772,12 @@ class Home_Loan extends CI_Controller {
                                            <p> BDT '.number_format( $total_payable) .'<br/><span class="tPaybleAmount">based on BDT '.number_format( $principal_amount ).'</span></p>
                                        </div>
                                    </div>
-                                   <div class="col-sm-2 col-xs-2 w20">
+                                   <!--div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Down Payment</h5>
                                            <p>BDT '. number_format( $downpayment_amount ).'</p>
                                        </div>
-                                   </div>
+                                   </div-->
                                </div>
                            </div>
                            <div class="col-sm-12 col-xs-12 home_loan_button">

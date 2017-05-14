@@ -48,7 +48,9 @@
 </style>
 	<script type="text/javascript" src="http://localhost/git/finager/resource/front_end/js/Ppersonal-loan-calculator.js"></script>
 	<section id="personal_header">
-		
+<!--		--><?php
+//            pr($this->session->userdata());
+//        ?>
 	</section>
 	<section id="card">
 		<div class="container">
@@ -70,7 +72,7 @@
 									foreach($result->result() as $row){
 										?>
 										<label class="material_radio_group">
-											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php //echo ($this->session->userdata('personal_loan_i_want_id')) ? 'checked' : '' ?> class="material_radiobox"/>
 											<span class="material_check_radio"></span>
 											<?php echo $row->personal_loan_looking_for;?>
 										</label><br/>
@@ -81,7 +83,7 @@
 									<button class="btnPmore btn-open" data-toggle="collapse" data-target="#demo">More</button>
 								</div>
 								<!--div id="toggleText" style="display: none"-->
-								<div id="demo" class="collapse">
+								<div id="demo" class="collapse <?php //echo ($this->session->userdata('personal_loan_i_want_id') > 3) ? 'in' : '' ?>">
 									<?php
 									$this->Common_model->table_name = 'personal_loan_looking_for';
 									$this->Common_model->offset = 3;
@@ -90,7 +92,7 @@
 									foreach($result->result() as $row){
 										?>
 										<label class="material_radio_group">
-											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php //echo ($this->session->userdata('personal_loan_i_want_id')) ? 'checked' : '' ?> class="material_radiobox"/>
 											<span class="material_check_radio"></span>
 											<?php echo $row->personal_loan_looking_for;?>
 										</label><br/>
@@ -350,21 +352,18 @@
 
 <script>
     $(document).ready(function(){
-    	//sidebar fixed
-    	/*function checkOffset() {
-		    if($('.home_loan_left_bar').offset().top + $('.home_loan_left_bar').height() 
-		                                           >= $('.footer').offset().top - 10)
-		        $('.home_loan_left_bar').css('position', 'relative');
-		    if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top || $(window).scrollTop>400)
-		        $('.home_loan_left_bar').css('position', 'fixed'); // restore when you scroll up
-		    if($(window).scrollTop<10)
-		    	$('.home_loan_left_bar').css('position', 'relative');
-		    //$('.home_loan_left_bar').text($(document).scrollTop() + window.innerHeight);
-		}
-		$(document).scroll(function() {
-		    checkOffset();
-		});*/
 
+        var current_page = '<?php echo base_url();?>en/all_personal_loan';
+
+        var page = '<?php echo($this->uri->segment(3)) ?>';
+
+            if( page ){
+               // alert(page);
+            }else{
+                page = 0;
+                //alert(page);
+            }
+//            alert(page);
 
     	//more button click event
     	$(".btnPmore").click(function(){
@@ -379,11 +378,11 @@
     	});
 
     	//pagination START
-        var page = 0;
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();
             page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
 //            alert(cur_page);
+            //history.pushState(null, null, current_page+'/'+page);
             loadData(page);
 //            console.log(cur_page);
         });
@@ -395,7 +394,7 @@
             $('#loading').html("");
         }
 
-        function loadData( page ){
+        function loadData( page = null  ){
             loading_show();
             $('.overlay').removeClass('hide');
 
@@ -423,11 +422,11 @@
 
             var main_string = personal_i_want_list+personal_user_list+principal_amount+month_limit;
             main_string = main_string.substring(1, main_string.length);
-           /* var page_count ='';
+            var page_count ='';
             if( page != null ){
                 page_count = page ;
-            }*/
-            var url_str = "<?php echo base_url();?>personal_loan/ajax_get_personal_loan/" + page;
+            }
+            var url_str = "<?php echo base_url();?>personal_loan/ajax_get_personal_loan/" + page_count;
             console.log(main_string);
             $.ajax
             ({
@@ -455,7 +454,7 @@
 		// Updated by Tarek Raihan-14_05_2017
 		$(".draggable").on("dragstop",function(ev,ui){
 			setTimeout(function(){
-				loadData(page = null);
+				loadData(page);
 			}, 1000);
 		});
 

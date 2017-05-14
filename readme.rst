@@ -23,3 +23,5 @@ If you ever need best financial advices, just log in to www.finager.com or have 
 
 1.05 [tarek][14-05-2017] :  Update drag functionality for home, auto, personal and education loan.
 
+1.05 [tarek][14-05-2017] :  Update personal loan page and controller.
+
