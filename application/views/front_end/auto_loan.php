@@ -1,5 +1,3 @@
-
-
 <section id="auto_header">
 </section>
 <section id="card">
@@ -361,17 +359,12 @@
         } );
 
 
-
-        /*$( ".draggable" ).mouseout(function(){
-            loadData( page = null );
-
-        });*/
-
-        // Stop dragging calculator and fire event for search 
+// Stop dragging calculator and fire event for search
         $(".draggable").on("dragstop",function(ev,ui){
-            loadData( page = null );
+            setTimeout(function(){ //Updated by Tarek on 14-05-2017
+                loadData(page = null);
+            }, 1000);
         });
-
 
 
         $('#searchAutoLoan').on('click', '.more_info', function (){

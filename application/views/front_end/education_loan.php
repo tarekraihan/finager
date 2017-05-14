@@ -336,11 +336,12 @@ $(document).ready(function() {
 
     loadData(page = null);
 
-    $( ".draggable" ).mouseout(function(){
-        loadData( page = null );
-
-    });
-
+// Stop dragging calculator and fire event for search
+	$(".draggable").on("dragstop",function(ev,ui){
+		setTimeout(function(){
+			loadData(page = null);
+		}, 1000);
+	});
 
     /*
     $(document).on('click','.add-to-compare',function(){

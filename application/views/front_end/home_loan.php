@@ -369,7 +369,9 @@ $(window).on('scroll', function (){
 		
 		// Stop dragging calculator and fire event for search 
 		$(".draggable").on("dragstop",function(ev,ui){
-			loadData( page = null );
+            setTimeout(function(){
+                loadData(page = null);
+            }, 1000);
 		});
 
 

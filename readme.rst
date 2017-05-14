@@ -17,7 +17,9 @@ If you ever need best financial advices, just log in to www.finager.com or have 
 
 1.02 [tarek][01-03-2016] : add login page
 
-1.02 [tarek][08-03-2016] :  Complete card Supporting table
+1.03 [tarek][08-03-2016] :  Complete card Supporting table
 
-1.02 [tarek][09-05-2017] :  Start working on git as a team.
+1.04 [tarek][09-05-2017] :  Start working on git as a team.
+
+1.05 [tarek][14-05-2017] :  Update drag functionality for home, auto, personal and education loan.
 

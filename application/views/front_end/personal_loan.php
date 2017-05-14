@@ -452,19 +452,15 @@
             loadData(page);
         } );
 
-        /*$( ".draggable" ).draggable({ axis: "x",
-            stop: function(){
-                loadData( page );
-            }
-        });*/
-
-        // Stop dragging calculator and fire event for search 
+		// Updated by Tarek Raihan-14_05_2017
 		$(".draggable").on("dragstop",function(ev,ui){
-			loadData( page );
+			setTimeout(function(){
+				loadData(page = null);
+			}, 1000);
 		});
 
 
-        $('#searchPersonalLoan').on('click', '.more_info', function (){
+		$('#searchPersonalLoan').on('click', '.more_info', function (){
             var  formData = $(this).data();
             var loan_id = formData.loan_id;
 
