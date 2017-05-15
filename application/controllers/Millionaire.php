@@ -698,7 +698,7 @@ class Millionaire extends CI_Controller
             }
 
 
-            $query_amount = 1000000;
+            $initial_deposit  = ($row->initial_deposit) ? 'BDT.'.$row->initial_deposit : 'N/A';
 
             $million .= '
 					<div class="full-card">
@@ -717,37 +717,37 @@ class Millionaire extends CI_Controller
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Initial Deposit</h5>
-											<p>&#2547; '.$row->initial_deposit.'</p>
+											<p>'.$initial_deposit.'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Monthly Installment</h5>
-											<p>'.$row->monthly_deposit.'</p>
+											<p>BDT.'.number_format( $row->monthly_deposit ).'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>No fo Installment</h5>
-											<p>'.$row->no_of_installment.'</p>
+											<p>'.$row->no_of_installment .'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Total Principal Amount</h5>
-											<p>&#2547; '.$row->total_principal_amount.'</p>
+											<p>BDT.'.number_format( $row->total_principal_amount ).'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Accrued Interest</h5>
-											<p>'.$row->total_principal_amount.'</p>
+											<p>BDT.'.number_format( $row->accured_interest ).'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
 										<div class="card_text3">
 											<h5>Maturity Amount</h5>
-											<p>'.$row->maturity_amount.'</p>
+											<p>BDT.'.number_format( $row->maturity_amount ).'</p>
 										</div>
 									</div>
 								</div>

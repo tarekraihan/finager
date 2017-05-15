@@ -629,8 +629,10 @@ $(document).ready(function() {
                 }
             });
         }
+    $("input[type='radio']").on( "click", function() {
+        loadData( page = null );
+    } );
 
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData(page=null) );
     $(document).on('click','.squaredOne input[type="checkbox"]',function() {
         loadData( page = null )
     });

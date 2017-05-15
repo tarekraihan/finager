@@ -30,8 +30,9 @@ if(!empty($id) && is_numeric($id) ){
 
     }
 
+    $initial_deposit  = ($row->initial_deposit) ? 'BDT.'.$row->initial_deposit : 'N/A';
 
-
+//    pr($row);die;
    /*echo "<pre>";
 
          print_r($row);die;
@@ -86,7 +87,7 @@ if(!empty($id) && is_numeric($id) ){
 
 							<p class="card_details_features">
 
-                                <?php echo $row->initial_deposit;?>
+                                <?php echo $initial_deposit;?>
 
 							</p>
 
@@ -108,7 +109,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_features">
 
-										<?php echo $row->monthly_deposit;?>
+										BDT. <?php echo number_format( $row->monthly_deposit );?>
 
 									</p>
 
@@ -140,7 +141,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_features">
 
-                                        <?php echo $row->total_principal_amount;?>
+                                        BDT. <?php echo number_format( $row->total_principal_amount );?>
 
 									</p>
 
@@ -156,7 +157,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_features">
 
-                                        <?php echo $row->accured_interest;?>
+                                        BDT. <?php echo number_format( $row->accured_interest );?>
 
 									</p>
 
@@ -172,7 +173,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_features">
 
-                                        <?php echo $row->maturity_amount;?>
+                                        BDT. <?php echo number_format( $row->maturity_amount );?>
 
 									</p>
 
@@ -244,7 +245,7 @@ if(!empty($id) && is_numeric($id) ){
 
                             <td><b> Initial Deposit</b></td>
 
-                            <td> <?php echo $row->initial_deposit;?> </td>
+                            <td> <?php echo $initial_deposit;?> </td>
 
                         </tr>
 
@@ -254,7 +255,7 @@ if(!empty($id) && is_numeric($id) ){
 
                             <td><b> Monthly Installment Size</b></td>
 
-                            <td> <?php echo $row->monthly_deposit;?> </td>
+                            <td> BDT. <?php echo number_format( $row->monthly_deposit );?> </td>
 
                         </tr>
 
@@ -284,7 +285,7 @@ if(!empty($id) && is_numeric($id) ){
 
                             <td><b>Total Principal Amount</b></td>
 
-                            <td> <?php echo $row->total_principal_amount;?> </td>
+                            <td> BDT. <?php echo number_format( $row->total_principal_amount );?> </td>
 
                         </tr>
 
@@ -294,7 +295,7 @@ if(!empty($id) && is_numeric($id) ){
 
                             <td><b>Total Accrued Interest</b></td>
 
-                            <td> <?php echo $row->accured_interest;?> </td>
+                            <td> BDT. <?php echo number_format( $row->accured_interest );?> </td>
 
                         </tr>
 
@@ -304,7 +305,7 @@ if(!empty($id) && is_numeric($id) ){
 
                             <td><b> Maturity Amount</b></td>
 
-                            <td> <?php echo $row->maturity_amount;?> </td>
+                            <td> BDT. <?php echo number_format( $row->maturity_amount );?> </td>
 
                         </tr>
 
