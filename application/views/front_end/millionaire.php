@@ -574,10 +574,12 @@ $(document).ready(function() {
         function loading_hide(){
             $('#loading').html("");
         }
+/*
 
     $('input[name="maturity_amount"]').on('click',function() {
         loadData( page = null )
     });
+*/
 
     function loadData( page = null ){
             loading_show();

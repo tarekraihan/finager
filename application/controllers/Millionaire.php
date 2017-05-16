@@ -681,8 +681,8 @@ class Millionaire extends CI_Controller
 
 
         $million = '';
-
-        foreach($millionaire->result() as $row){
+        if($millionaire->num_rows() > 0){
+            foreach($millionaire->result() as $row){
             //print_r($row);die;
             $bank = "";
             if($row->is_non_bank == 1){
@@ -823,7 +823,10 @@ class Millionaire extends CI_Controller
                            </div>
 					</div>';
         }
-        $million .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+            $million .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+        }else{
+            $million .=  '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';
+        }
 
         echo $million;
     }
