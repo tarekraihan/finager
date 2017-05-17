@@ -327,6 +327,13 @@ if($result){
 
 <script>
 
+    function overlay(s, l) {
+        $('.overlay').remove();
+        if( s )
+            $('body').append('<div class="overlay" style="width:100%;height:100%;position:fixed;display:block;background:#000;opacity:0.7;top:0;left:0;z-index:1000;"></div>');
+        if( l )
+            $('.overlay').html('<div style="position:absolute;top:'+(document.documentElement.clientHeight/2)+'px;left:'+(document.documentElement.clientWidth/2)+'px;"><img src="<?php echo base_url();?>resource/front_end/images/loader.gif" width="100"></div>');
+    }
 //stcikey sidebar START
 /*
 $(document).ready(function(){

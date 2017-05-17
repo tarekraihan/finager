@@ -632,8 +632,16 @@ class Home_Loan extends CI_Controller {
         $home_i_want = $this->input->post('home_i_want');
         $home_user = $this->input->post('home_user');
 
-        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '500000' );
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '200000' );
+        if($principal_amount > 40000000 || $principal_amount < 200000){
+            $principal_amount = 200000;
+        }
+
         $month_limit = floatval ( ($this->input->post('month_limit') > 1) ? $this->input->post('month_limit') : 1 );
+
+        if($month_limit > 25 || $month_limit < 1){
+            $month_limit = 1;
+        }
 
         $WHERE = array(); $query = '';
         if(!empty($principal_amount)) {
@@ -698,6 +706,7 @@ class Home_Loan extends CI_Controller {
         //-------------Pagination End-------------------
 
         $home = '';
+        if($home_loan->num_rows() > 0){
          foreach($home_loan->result() as $row){
             $bank = "";
             if($row->is_non_bank == 1){
@@ -723,17 +732,6 @@ class Home_Loan extends CI_Controller {
              $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($month_limit * 12 ) )) / (pow( ( 1 + $monthly_interest ) , ($month_limit * 12 ) ) -1 ));
 
              $total_payable = round( $emi * $month_limit * 12 );
-
-            /* echo '<pre>';
-
-             echo '<br/> Interest monthly = '.$monthly_interest;
-             echo '<br/> Interest Yearly = '.$yearly_interest;
-             echo '<br/> Tenure = '.$month_limit;
-             echo '<br/> EMI = '.$emi;
-             echo '<br/> Total Payable ='. $total_payable;
-             echo '<br/> Loan Id  ='. $row->id;
-
-             echo '</pre>';*/
 
             $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
             $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
@@ -877,8 +875,11 @@ class Home_Loan extends CI_Controller {
                            </div>
                        </div>
                    </div>';
+             }
+            $home .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+        }else{
+        $home .=  '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';
         }
-        $home .= '<div class="col-md-12">'.$data['pagination'].'</div>';
         echo $home;
     }
 

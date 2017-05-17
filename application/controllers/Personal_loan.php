@@ -376,16 +376,13 @@ class Personal_Loan extends CI_Controller {
         $personal_user = $this->input->post('personal_user');
 
         $principal_amount = floatval ( ($this->input->post('principal_amount') > 25000) ? $this->input->post('principal_amount') : '25000' );
+        if( $principal_amount > 2000000 || $principal_amount < 25000 ){
+            $principal_amount = 25000;
+        }
         $month_limit = floatval ( ($this->input->post('month_limit') > 5) ? $this->input->post('month_limit') : 6 );
-/*
-        $user_data = array(
-            'personal_loan_i_want_id' => $personal_i_want,
-            'personal_loan_user_id' => $personal_user,
-            'personal_loan_principal_amount' => $principal_amount,
-            'personal_loan_month_limit' => $month_limit
-        );
-
-        $this->session->set_userdata($user_data);*/
+        if($month_limit > 60 || $month_limit < 6 ){
+            $month_limit = 6;
+        }
 
         $WHERE = array(); $query = '';
         if(!empty($principal_amount)) {
