@@ -495,8 +495,16 @@ class Education_Loan extends CI_Controller {
     public function ajax_get_education_loan(){
 
         $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
+
+        if($principal_amount > 40000000 || $principal_amount < 50000){
+            $principal_amount = 50000;
+        }
+
         $year_limit = floatval ( ( $this->input->post('year_limit') > 1 ) ?  $this->input->post('year_limit') : 1 );
 
+        if($year_limit > 5 || $year_limit < 1){
+            $year_limit = 1;
+        }
         $WHERE = array(); $query = '';
         if(!empty($principal_amount)) {
             $WHERE[] = 'CAST( education_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$principal_amount;
@@ -570,9 +578,9 @@ class Education_Loan extends CI_Controller {
             $is_fixed =$row->is_fixed;
             $show_interest ='';
             if($is_fixed == 1){
-                $show_interest .='<h5>Interest (Fixed Rate)</h5><p>Fixed '.$row->fixed_interest.'%</p>';
+                $show_interest .='<p>Fixed '.$row->fixed_interest.'%</p>';
             }else{
-                $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->avg_interest.'% <br/>min '.$row->min_interest.'%,<br> max '.$row->max_interest.'%</p>';
+                $show_interest .='<p>Avg '.$row->avg_interest.'% <br/>min '.$row->min_interest.'%,<br> max '.$row->max_interest.'%</p>';
             }
 
             $yearly_interest = floatval( ($row->is_fixed =='0')? $row->avg_interest : $row->fixed_interest ) ;
@@ -626,7 +634,7 @@ class Education_Loan extends CI_Controller {
 							</div>
 							<div class="col-sm-12 col-xs-12 home_loan_button">
 								<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" /></a>
-								<span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
+								<span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" id="more_info'.$row->id.'" href="javascript:void(0)" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
                                 <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-loan_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                                 <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
 

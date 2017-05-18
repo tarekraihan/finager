@@ -819,22 +819,17 @@
 
 
 		$('#searchPersonalLoan').on('click', '.more_info', function (){
-
             var  formData = $(this).data();
-
             var loan_id = formData.loan_id;
-
-
-
             console.log(loan_id);
 
-
-
             $("#moreInfo"+loan_id).toggleClass("in");
-
             $('#rePaymentSchedule'+loan_id).removeClass("in");
-
-
+            if($("#moreInfo"+loan_id).hasClass('in')){
+                $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> Less info");
+            }else{
+                $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> more info");
+            }
 
         });
 

@@ -671,9 +671,16 @@ class Auto_loan extends CI_Controller
 
 
         $principal_amount = floatval ( ($this->input->post('principal_amount') > 100000 ) ? $this->input->post('principal_amount') : '100000' );
-        $month_limit = floatval ( ( $this->input->post('month_limit') > 5 ) ?  $this->input->post('month_limit') : 6 );
+        $month_limit = floatval ( ( $this->input->post('month_limit') > 12 ) ?  $this->input->post('month_limit') : 12 );
 
 
+        if($principal_amount > 4000000 || $principal_amount < 100000){
+            $principal_amount = 100000;
+        }
+
+        if($month_limit > 72 || $month_limit < 12){
+            $month_limit = 12;
+        }
 
         $WHERE = array(); $query = '';
         if(!empty($auto_user)) {
@@ -825,7 +832,7 @@ class Auto_loan extends CI_Controller
                </div>
                <div class="col-sm-12 col-xs-12 home_loan_button">
 
-                   <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
+                   <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" id="more_info'.$row->id.'" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
                    <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-loan_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                    <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
                    <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="btnCardApply img-responsive pull-right" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" /></a>

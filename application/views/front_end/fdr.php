@@ -403,7 +403,7 @@ $(window).on('scroll', function (){
             var  formData = $(this).data();
             var available_offer = formData.available_offer;
             console.log(available_offer);
-            $('#availableOffer'+available_offer).html('<iframe  src="http://test.finager.com/en/fdr_iframe"  frameborder="0"  width="100%" height="570" scrolling="no" ></iframe>');
+            $('#availableOffer'+available_offer).html('<iframe  src="<?php echo base_url();?>en/fdr_iframe"  frameborder="0"  width="100%" height="570" scrolling="no" ></iframe>');
             $('#availableOffer'+available_offer).toggleClass("in");
             $('#moreInfo'+available_offer).removeClass("in");
         });

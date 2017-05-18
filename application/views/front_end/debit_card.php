@@ -175,43 +175,27 @@ $(window).on('scroll', function (){
 
         });
 
-
-
-
-        function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
-        }
-        function loading_hide(){
-            $('#loading').html("");
-        }
-
         function loadData( page = null ){
-
-            loading_show();
 
             var choose_account = new Array();
             $('input[name="choose_account"]:checked').each(function(){
                 choose_account.push($(this).val());
             });
             var choose_account_list = "&choose_account="+choose_account;
-
             var looking_for = new Array();
             $('input[name="looking_for"]:checked').each(function(){
                 looking_for.push($(this).val());
             });
 
             var looking_for_list = "&looking_for="+looking_for;
-
             var card_issuer = new Array();
             $('input[name="card_issuer"]:checked').each(function(){
                 card_issuer.push($(this).val());
             });
             var card_issuer_list = "&card_issuer="+card_issuer;
-
             var i_want = new Array();
             $('input[name="i_want"]:checked').each(function(){
                 i_want.push($(this).val());
-
             });
             var i_want_list = "&i_want=" + i_want;
 
@@ -224,22 +208,17 @@ $(window).on('scroll', function (){
             var main_string = choose_account_list + looking_for_list + card_issuer_list + i_want_list;
             main_string = main_string.substring(1, main_string.length);
             var url_str = "<?php echo base_url();?>debit_card/ajax_debit_card_info/" + page_count;
-
-//            console.log(main_string);
-//            console.log('page no=='+page_count);
-//            console.log('url : '+url_str);
-
-            $.ajax
-            ({
+            $.ajax({
                 type: "POST",
                 url: url_str,
                 data: main_string,
                 cache: false,
-                success: function(msg)
-                {
-                    loading_hide();
+                beforeSend: function() {
+                    overlay(true,true);
+                },
+                success: function(msg){
                     $("#SearchDebitCard").html(msg);
-
+                    overlay( false );
                 }
             });
         }
