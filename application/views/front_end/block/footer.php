@@ -334,6 +334,21 @@ if($result){
         if( l )
             $('.overlay').html('<div style="position:absolute;top:'+(document.documentElement.clientHeight/2)+'px;left:'+(document.documentElement.clientWidth/2)+'px;"><img src="<?php echo base_url();?>resource/front_end/images/loader.gif" width="100"></div>');
     }
+
+
+    $('.more_info').on('click',function(){
+        var  formData = $(this).data();
+        var loan_id = formData.loan_id;
+
+        //console.log(loan_id);
+
+        $("#moreInfo"+loan_id).toggleClass("in");
+        if($("#moreInfo"+loan_id).hasClass('in')){
+            $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> Less info");
+        }else{
+            $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> more info");
+        }
+    })
 //stcikey sidebar START
 /*
 $(document).ready(function(){

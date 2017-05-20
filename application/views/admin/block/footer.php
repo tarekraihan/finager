@@ -394,7 +394,8 @@ you can add as many as you like
 //        Call Bootstrap DateTimePIcker For admin/general/go_maintenance
 
         $('#go_maintenance').datetimepicker({
-            format: 'DD-MM-YYYY hh:00 A',
+            format: 'DD-MM-YYYY hh:mm A',
+            minDate : moment().valueOf(),
             sideBySide: false,
             useCurrent: false,
             showClose: true,
@@ -403,7 +404,8 @@ you can add as many as you like
         });
 
         $('#go_live').datetimepicker({
-            format: 'DD-MM-YYYY hh:00 A',
+            format: 'DD-MM-YYYY hh:mm A',
+            minDate : moment().valueOf(),
             sideBySide: false,
             useCurrent: false,
             showClose: true,

@@ -97,19 +97,55 @@ $(function(event) {
 				amtDetail = 4000000
 			}
 			
-			if(finAsst < 100000 && finAsst < amtDetail){
+			if(finAsst < 100000 || finAsst > amtDetail){
 				alert("Minimum amount should be 100000 & Maximum amount 4000000");
 				$("#finalAssest").val("100000");
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
+				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:'0px'});
 			}
 			else if(finAsst >=100000 && finAsst <=amtDetail)
 			{
-				console.log("more than 100000");
+				//console.log("more than 100000");
 				//alert(amtDetail)
 				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
+
+				if(valInput == amtDetail)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1200});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3600000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1050});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3700000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1085});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3800000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1120});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3900000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1155});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
 				
-				if(valInput <= amtDetail)
+				else if(valInput <= amtDetail)
 				{
 					//alert(valInput+'---'+diff)
 					if(amtDetail>=100000 && amtDetail == 4000000)
@@ -122,7 +158,7 @@ $(function(event) {
 						var marLft_input = ((valInput/diff)-1) *35;
 					}
 					*/
-					//console.log("marLft_input" + marLft_input +'Difference'+ diff);
+					console.log("marLft_input" + marLft_input +'Difference'+ diff);
 					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-marLft_input});	
 				}
 				else if(valInput > amtDetail)
@@ -131,20 +167,27 @@ $(function(event) {
 					var marLft_input1 =  ((amtDetail/25000) *35)  + (((valInput-amtDetail)/2500000)*35);
 					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-marLft_input1});
 				}
+
+
 				finalCalculation();
 			}
+
+
+			/*else if(finAsst <=amtDetail){
+
+			}*/
 			
-			else if(finAsst <0 || finAsst >=amtDetail )
+			/*else if(finAsst <0 || finAsst >=amtDetail )
 			{
 				alert("Minimum amount should be 0 & Maximum amount" + amtDetail);
 				$("#finalAssest").val("100000");
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
-				/*$(this).val(amtDetail);
-				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:'-2345px'});
-				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(0);
-				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',385);*/
+				//alert();
+				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:'0px'});
+				//$(this).parents('.slideWrapper').find('ul').animate({marginLeft:'0'});
+				//('#finacialAssest').children('ul').css('margin-left','0');
 				finalCalculation();
-			}
+			}*/
 /* Changes Done on 03-06-2014 END */
 
 			/*else if(finLiablty <0 || finLiablty >=100000000 )
@@ -206,14 +249,14 @@ $(function(event) {
 			else{
 				var diff = parseFloat($(this).parents('#interest').find('.hideVal').text());
 				_this.parents('.calcSection').find('.highLight').css('visibility','visible').find('input').val(valInput);
-				_this.parents('#interest').find('.draggable').css('left',0);
+				//_this.parents('#interest').find('.draggable').css('left',0);
 
 				if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 				{
 					var marLft_input =  ((valInput/12)-1)*35;
 				}
-
-				_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft:-marLft_input});
+				_this.parents('#interest').find('.draggable').css('left',marLft_input);
+				//_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft:-marLft_input});
 				finalCalculation();
 			}
 
@@ -400,6 +443,7 @@ $(function(event) {
 					wid = $('.calcSection').eq(j).find('ul li').width();
 					len = $('.calcSection').eq(j).find('ul li').length;
 					newWid = len *wid;
+					$('.calcSection').find('#finacialAssest').children('ul').css('width', '1610px');
 					$('.calcSection').eq(j).find('ul').css('width', newWid);	
 				}
 		}
@@ -479,7 +523,7 @@ $(function(event) {
 			}
 			else
 			{
-				$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',385);
+				$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',175);
 			}
 		}
 		else if(leftPos < 350){
@@ -710,6 +754,7 @@ function calculationSlider()
 		
 		
 	}
+
 	else if(selectValue > 400)
 	{
 		counterIncr= String(selectValue/100);

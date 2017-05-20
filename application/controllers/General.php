@@ -186,6 +186,7 @@ class General extends CI_Controller {
                 $this->Common_model->data = array(
                     'go_offline_count' => intval( $offline_count->go_offline_count + 1 ),
                     'end_time' => date('Y-m-d h:i:s',strtotime($this->input->post('go_maintenance'))),
+                    'reason' => $this->input->post('reason'),
                     'active_offline_by' => $this->session->userdata('admin_user_id') ,
                     'go_offline_ip' => $ip_address ,
                     'go_offline_lat' => $response['geoplugin_latitude'] ,
@@ -198,7 +199,7 @@ class General extends CI_Controller {
                 $result = $this->Common_model->insert();
 
                 if ($result) {
-                    $data['success_message'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
+                    $data['success_message'] = '<div id="message" class="text-center alert alert-success">Successfully Save !! <a href="'.base_url().'" target="_blank"> Finager </a> </span> !!</div></div>';
                     $this->session->set_userdata($data);
                     redirect(current_url());
                 } else {

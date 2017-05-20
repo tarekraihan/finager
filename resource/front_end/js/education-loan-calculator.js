@@ -98,9 +98,10 @@ $(function(event) {
 			}
 			
 			if(finAsst < 50000 && finAsst < amtDetail){
-				alert("Minimum amount should be 25000 & maximum amount 2000000");
+				alert("Minimum amount should be 50000 & maximum amount 4000000");
 				$("#finalAssest").val("50000");
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
+				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:'0px'});
 			}
 			else if(finAsst >=25000 && finAsst <=amtDetail)
 			{
@@ -136,7 +137,7 @@ $(function(event) {
 			else if(finAsst <0 || finAsst >=amtDetail )
 			{
 				
-				alert("Minimum amount should be 0 & Maximum amount should be" + amtDetail);
+				alert("Minimum amount should be 50000 & Maximum amount should be 4000000");
 				$("#finalAssest").val("25000");
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
 				/*$(this).val(amtDetail);

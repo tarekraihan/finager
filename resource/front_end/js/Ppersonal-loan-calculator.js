@@ -16,6 +16,7 @@ var keyFlag = true;
 var keyFlag1 = false;
 var incrmentalVal = -1 ;
 var increCounter = 1 ;
+$("#liability").css('width') + 210;
 $(function(event) {
 	
 		/****** input box calculation ****/
@@ -92,31 +93,31 @@ $(function(event) {
 			{
 				amtDetail = 10000000
 			}
-			else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
+			/*else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 			{
 				amtDetail = 2000000
 			}
 			
-			if(finAsst < 25000 && finAsst < amtDetail){
+			if(finAsst < 25000 && finAsst > amtDetail){
 				alert("Minimum amount should be 25000 & maximum amount 2000000");
 				$("#finalAssest").val("25000");
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
 			}
-			else if(finAsst >=25000 && finAsst <=amtDetail)
+
+
+			else if(finAsst >=25000 && finAsst < amtDetail)
 			{
 				console.log("more than 25000");
+
 				//alert(amtDetail)
 				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
+
 				
-				if(valInput <= amtDetail)
+				if(valInput < amtDetail)
 				{
-					//alert(valInput+'---'+diff)
-					/*if(amtDetail==10000000)
-					{
-						var marLft_input =  (valInput/diff) *35;
-					}
-					else */if(amtDetail>=25000)
+
+					if(amtDetail>=25000 && valInput < amtDetail)
 					{
 						var marLft_input = ((valInput/diff)-1) *35;
 					}
@@ -133,18 +134,14 @@ $(function(event) {
 									}
 					finalCalculation();
 			}
-			else if(finAsst <0 || finAsst >=amtDetail )
+			else if(finAsst <0 || finAsst >amtDetail )
 			{
 				
-				alert("Minimum amount should be 0 & Maximum amount should be" + amtDetail);
+				alert("Minimum amount should be 25000 & Maximum amount should be" + amtDetail);
 				$("#finalAssest").val("25000");
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
-				/*$(this).val(amtDetail);
-				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:'-2345px'});
-				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(0);
-				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',385);*/
 				finalCalculation();
-			}
+			}*/
 /* Changes Done on 03-06-2014 END */
 
 			/*else if(finLiablty <0 || finLiablty >=100000000 )
@@ -157,6 +154,86 @@ $(function(event) {
 				finalCalculation();
 			}
 			*/
+
+			else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
+			{
+				amtDetail = 2000000
+			}
+			
+			if(finAsst < 25000 || finAsst > amtDetail){
+				alert("Minimum amount should be 25000 & Maximum amount 2000000");
+				$("#finalAssest").val("25000");
+				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
+				$(this).parents('.slideWrapper').find('ul').animate({marginLeft:'0px'});
+			}
+			else if(finAsst >=25000 && finAsst <=amtDetail)
+			{
+				console.log("more than 25000");
+				//alert(amtDetail)
+				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
+				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
+
+				/*if(valInput == 2000000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2590});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}*/
+
+				/*else if(valInput == 3600000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1050});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3700000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1085});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3800000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1120});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3900000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-1155});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}*/
+				
+				if(valInput <= amtDetail)
+				{
+					//alert(valInput+'---'+diff)
+					if(amtDetail>=25000 && amtDetail == 2000000)
+					{
+						var marLft_input =  ((valInput/diff)-1) *35;
+					}
+					/*
+					else if(amtDetail>=1000000)
+					{
+						var marLft_input = ((valInput/diff)-1) *35;
+					}
+					*/
+					console.log("marLft_input" + marLft_input +'Difference'+ diff);
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-marLft_input});	
+				}
+				else if(valInput > amtDetail)
+				{
+					console.log("Else" + valInput)
+					var marLft_input1 =  ((amtDetail/25000) *35)  + (((valInput-amtDetail)/2500000)*35);
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-marLft_input1});
+				}
+
+
+				finalCalculation();
+			}
 			
 			
 			/******** Future Goal Calculation ***********/
@@ -185,7 +262,7 @@ $(function(event) {
 			//alert(valInput)
 			if(valInput < 6){
 				alert("Minimum Month should be 6 & Maximum Year should be 60");
-				_this.val(6);
+				_this.val(12);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:0});
 				_this.parents('#interest').find('.draggable').css('left',0);
 				finalCalculation();
@@ -195,15 +272,15 @@ $(function(event) {
 			*******************Year*******************
 			*******************************************/
 			else if(valInput > 60){
-				alert("Minimum Month should be 6 & Maximum Year should be 60");
+				alert("Minimum Month should be 12 & Maximum Year should be 60");
 				_this.val(6);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'0'});
 				_this.parents('#interest').find('.draggable').css('left','0');
 				finalCalculation();
 			}
-			/*else if(valInput == 25){
-				_this.val(25);
-				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-665px'});
+			/*else if(valInput>30 && valInput<=36){
+				_this.val(valInput);
+				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'0'});
 				_this.parents('#interest').find('.draggable').css('left','175px');
 				finalCalculation();
 			}*/
@@ -221,10 +298,42 @@ $(function(event) {
 				{
 					var marLft_input =  ((valInput/6)-1)*35;
 					//alert(marLft_input);
+					/*if(valInput>=48 && valInput<61){
+						for (n=35; n<140; n++){
+							var marLft_input =  n+1;
+						}
+					}*/
+					if(valInput>=36 && valInput<42){
+						_this.parents('#interest').find('.draggable').css('left',175);
+						_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft: 0});
+					}
+					else if(valInput>=42 && valInput<48){
+						_this.parents('#interest').find('.draggable').css('left',175);
+						_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft: -35});
+					}
+
+					else if(valInput>=48 && valInput<54){
+						_this.parents('#interest').find('.draggable').css('left',175);
+						_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft: -70});
+					}
+					else if(valInput>=54 && valInput<60){
+						_this.parents('#interest').find('.draggable').css('left',175);
+						_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft: -105});
+					}
+					else if(valInput==60){
+						_this.parents('#interest').find('.draggable').css('left',175);
+						_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft: -135});
+					}
+					else{
+						_this.parents('#interest').find('.draggable').css('left',marLft_input);
+						//_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft:-marLft_input});
+					}
 				}
 
 				//alert(marLft_input)
-				_this.parents('.slideWrapper').find('#liability ul').animate({marginLeft:-marLft_input});
+				
+
+				
 			
 				finalCalculation();
 			}
@@ -291,7 +400,7 @@ $(function(event) {
 		}
 		else if($(this).find('label').text()=='Personal Loan Calculator')
 		{
-			for(var k=0; k<11; k++){
+			for(var k=0; k<17; k++){
 				/*if(k>=1 && k<=30){
 					custAgeLi += "<li>"+ k +"</li>";
 				}*/
@@ -299,7 +408,7 @@ $(function(event) {
 				/****************
 				****Year Range***
 				***************/
-				if(k>=1 && k<=11){
+				if(k>=1 && k<=60){
 					intVal = k*6;
 					intRate += "<li>"+ intVal +"</li>";		
 				}
@@ -412,7 +521,9 @@ $(function(event) {
 					wid = $('.calcSection').eq(j).find('ul li').width();
 					len = $('.calcSection').eq(j).find('ul li').length;
 					newWid = len *wid;
-					$('.calcSection').eq(j).find('ul').css('width', newWid);	
+					/*$('.calcSection').eq(j).find('ul').css('width', newWid);	*/
+					$('.calcSection').find('#finacialAssest').children('ul').css('width', '3000px');
+					$('.calcSection').eq(j).find('ul').css('width', newWid);
 				}
 		}
 	});
@@ -487,11 +598,11 @@ $(function(event) {
 		if( ulMar >= ulWid ){
 			if($(this).parents('.calcSection').find('.draggable2').length)
 			{
-				$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',277);
+				$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',150);
 			}
 			else
 			{
-				$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',385);
+				$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',150);
 			}
 		}
 		else if(leftPos < 350){
@@ -515,14 +626,16 @@ $(function(event) {
 	$('.next').click(function(){
 		var marLft = parseInt( $(this).parents('.calcSection').find('ul').css('margin-left'));
 		var newULWidth = (parseInt($(this).parents('.calcSection').find('ul').css('width')) - 435);
+
+		//var newULWidth2 = (parseInt($(this).parents('.calcSection').find('#liability').children('ul').css('width')) -200);
+
 		lftPostion = parseInt($(this).parents('.calcSection').find('.draggable').css('left'));
 		_this=$(this).parents('.calcSection').find('.draggable');
 		var $this = $(this);
 		
 		$(this).parents('.dragBox').find('.prev').addClass('active');
+		
 
-		
-		
 		
 		if (!$(this).parents('.calcSection').find('ul').is(':animated'))
 		{
@@ -541,6 +654,7 @@ $(function(event) {
 					});
 			}
 		}
+
 	});
 	
 	$('.prev').click(function(){

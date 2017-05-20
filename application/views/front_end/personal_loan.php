@@ -466,7 +466,7 @@
 
 													                <div class="inpMdl">
 
-													                  <input type="text" name="" value="8" id="finalLiability" class="input_AIR"/>
+													                  <input type="text" name="" value="6" id="finalLiability" class="input_AIR"/>
 
 													                </div>
 

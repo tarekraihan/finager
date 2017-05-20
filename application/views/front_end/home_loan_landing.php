@@ -142,38 +142,32 @@
 	<section id="compare">
 		<div class="container">
 			<div class="compare_text">
-				<h3>Select it</h3>
-				<p>Compare, research and apply</p>
+				<h3>Why Finager.com</h3>
+				<p>Select, Compare and Apply</p>
 			</div>
 			<div class="compare_box">
 				<div class="col-md-4 col-sm-4">
 					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home_round.png" alt="round"/>
 					<h4>We’re different</h4>
-					<p>We’ve worked hard with our partners<br/>
-						to bring you special home loan deals,<br/>
-						competitive mortgage rates and a<br/>
-						more seamless, efficient and<br/>
-						convenient experience.
+					<p>
+						We’ve worked hard with our partners to bring you special home loan deals, competitive mortgage rates and a more seamless, efficient and convenient experience.
 					</p>
 				</div>
 				<div class="col-md-4 col-sm-4">
 					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home_plenty.png" alt="plenty"/>
 					<h4>Plenty of choice</h4>
-					<p>We compare hundreds of home loan<br/>
-						products from more than 20 of<br/>
-						Australia’s most recognised lenders,<br/>
-						so you’ll find the loan that’s right for<br/>
+					<p>We compare hundreds of home loan
+						products from more than 20 of
+						Banglades's most recognised lenders,
+						so you’ll find the loan that’s right for
 						you.
 					</p>
 				</div>
 				<div class="col-md-4 col-sm-4">
 					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home_qualifiled.png" alt="qualifiled"/>
-					<h4>We’re qualified</h4>
-					<p>Our consultants are fully accredited<br/>
-						by the Mortgage and Finance<br/>
-						Association of Australia (MFAA) or<br/>
-						the Finance Broker Association of<br/>
-						Australia (FBAA).
+					<h4>We’re Certifieds</h4>
+					<p>
+						Our research team and consultants are working in different well-known organizations all over the world. They are also one of the best financial solution providers in our country.
 					</p>
 				</div>
 			</div>
@@ -184,21 +178,16 @@
 			<div class="biggest_pr">
 				<div class="col-md-6 col-sm-6">
 					<div class="bigest_text1">
-						<h3>We compare some of Australia’s biggest brands</h3>
-						<p>We compare plenty of partners and products across our range of services, so you can rest as-
-							sured you’re making the right choice. While our range of products is always growing, we
-							don’t compare all products in the market.
-						</p>
+						<h3>We Compare Bangladesh’s Biggest Banks and Financial Institutes</h3>
+						<p>We compare plenty of banks and financial institutes’ products across our range of services, assuring you make the right choice.</p>
 						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view_home">View Our Partners</span>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="bigest_text">
 						<h3>The tools to make the right choice</h3>
-						<p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an<span class="clr_black"> applica-
-							tion tracker</span> that can help you keep on top of your home loan.<br/>
-						</p>
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view2_home">View Our Partners</span>
+						<p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an application tracker that can help you keep on top of your home loan.</p>
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view2_home">View Our Calculators</span>
 					</div>
 				</div>
 			</div>
@@ -210,23 +199,19 @@
 		<h2>Finager Always get it right</h2>
 			<div class="col-md-4 col-sm-4">
 				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/box.png" alt="box"/>
-				<h4>Step 1. Get acquainted</h4>
-				<p>Tell us a bit about yourself and what<br/>
-					you’re looking for.
-				</p>
+				<h4>Step 1. Find your product</h4>
+				<p>Tell us a bit about yourself and you’re looking for.</p>
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/box1.png" alt="box"/>
-				<h4>Step 1. Get acquainted</h4>
-				<p>Tell us a bit about yourself and what<br/>
-					you’re looking for.
-				</p>
+				<h4>Step 2. Choose your product</h4>
+				<p>Choose your product suitable with your criteria.</p>
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/box2.png" alt="box"/>
-				<h4>Step 1. Get acquainted</h4>
-				<p>Tell us a bit about yourself and what<br/>
-					you’re looking for.
+				<h4>Step 3. Compare your product with other</h4>
+				<p>
+					Compare your product with similar product based on   your criteria.
 				</p>
 			</div>
 			<br/><br/><br/><br/>
