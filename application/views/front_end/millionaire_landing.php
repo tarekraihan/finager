@@ -141,7 +141,7 @@
 				</div>
 				<div class="col-md-4 col-sm-4">
 					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/fdr_qualifiled.png" alt="qualifiled"/>
-					<h4>We’re Certified</h4>
+					<h4>We’re Qualified</h4>
 					<p>Our research team and consultants are working in different well-known organizations all over the world. They are also one of the best financial solution providers in our country.</p>
 				</div>
 			</div>

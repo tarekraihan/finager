@@ -25,3 +25,5 @@ If you ever need best financial advices, just log in to www.finager.com or have 
 
 1.05 [tarek][14-05-2017] :  Update personal loan page and controller.
 
+1.05 [lokman][21-05-2017] :  some changes in auto loan, personal loan, education loan, auto loan, fdr, millionaire landing page.
+
