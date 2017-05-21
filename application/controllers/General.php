@@ -116,6 +116,16 @@ class General extends CI_Controller {
 
     }
 
+
+    function subscriptions(){
+        $data['title'] = "Finager:Subscriptions";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/general/subscriptions');
+        $this->load->view('admin/block/footer');
+
+    }
+
     function visitor_info(){
         $data['title'] = "Finager:Visitor Info";
         $this->load->view('admin/block/header',$data);

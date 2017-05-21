@@ -113,10 +113,10 @@
                         <p class="no-margin">support: support@finager.com</p>
 
                         <h5 class="footer-menu-title uppercase margin_top_10">Subscribe us</h5>
-                        <form action="" method="post" id="subscribe_form">
-                            <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail">
-                            <button type="submit" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
-                        </form>
+
+                            <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail" id="txtSubscribeEmail">
+                            <button type="button" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
+
                     </div>
                 </div>
 
@@ -264,6 +264,23 @@
 
   </div>
 </div>
+
+<!-- Modal -->
+<div id="subscription_message_footer" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-footer text-center" id="subscribe_message_footer">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" id="maintains-modal">
   <div class="modal-dialog beta_modal" role="document">
@@ -449,7 +466,27 @@ jQuery(document).keypress(function(e) {
         });
 
     })
-	
+
+    $('#btnSubscribeSubmit').on('click',function(){
+        var email =  $('#txtSubscribeEmail').val();
+        //alert(email);
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>en/ajax_get_subscribe/",
+            data: 'email='+email,
+            success: function(response)
+            {
+                console.log(response);
+                $('#subscribe_message_footer').html(response);
+
+                $('#txtSubscribeEmail').val('');
+                $('#subscription_message_footer').modal('show');
+            }
+        });
+
+    })
+
 /*
     $(window).on('load',function(){
         $('#maintains-modal').modal({

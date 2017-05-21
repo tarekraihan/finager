@@ -530,28 +530,29 @@ class En extends CI_Controller {
 
 
     public function ajax_get_subscribe(){
+        $ip_address=$_SERVER['REMOTE_ADDR'];
         $email = $this->input->post('email');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[subscriptions.email_address]');
 
         if ($this->form_validation->run() == FALSE) {
-            $html = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+            $html = '<div class="alert alert-danger">';
             $html .= validation_errors();
             $html .= '</div>';
             echo $html;
         } else {
             $this->Common_model->data = array(
                 'email_address' => htmlentities($email),
-                'ip_address' => $this->input->ip_address(),
+                'ip_address' => $ip_address,
                 'created' => date('Y-m-d h:i:s')
             );
             $this->Common_model->table_name = "subscriptions";
             $result = $this->Common_model->insert();
 
             if ($result) {
-                $html = '<div class="alert alert-success" role="alert"><strong> Thank You!</strong> You successfully Subscribe.</div>';
+                $html = '<div class="alert alert-success text-center" role="alert"><strong> Thank You!</strong> You successfully Subscribe.</div>';
                 echo $html;
             } else {
-                $html = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+                $html = '<div class="alert alert-danger text-center">';
                 $html .= 'Something going wrong. Please try again!';
                 $html .= '</div>';
                 echo $html;

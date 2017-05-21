@@ -1624,6 +1624,26 @@ class Select_Model extends CI_Model
     }
 
 
+    public function select_subscriptions_information(){
+
+        $sql="SELECT * FROM `subscriptions`";
+        $query=$this->db->query($sql);
+        $result="";
+        if($query->num_rows() > 0){
+            $sl=1;
+            foreach($query->result() as $row){
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center"> '.$row->email_address.'</td>
+					<td class="center"> '.$row->ip_address.'</td>
+					<td class="center"> '.date('Y-m-d H:i:s',strtotime($row->created)).'</td>
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
     public function select_visitor_information()//To show Home loan list
     {
         $sql="SELECT * FROM `visitor_counter` GROUP BY ip_address ORDER BY id DESC";

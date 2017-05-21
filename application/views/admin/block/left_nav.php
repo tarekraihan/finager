@@ -55,6 +55,9 @@
                     <li>
                         <a href="<?php echo base_url();?>general/go_live">Go Live</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url();?>general/subscriptions">Subscriptions</a>
+                    </li>
 
                 </ul>
             </li>
