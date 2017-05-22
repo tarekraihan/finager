@@ -82,6 +82,92 @@ you can add as many as you like
 </div>
 <!-- END SHORTCUT AREA -->
 
+
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" id="maintains-modal">
+    <div class="modal-dialog beta_modal" role="document">
+        <div class="modal-content">
+            <div class="maintains_pop_bg">
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<?php
+
+    if ($this->session->userdata('admin_first_login') == '1' ){
+        echo "<script>$(window).on('load',function(){
+            $('#update_information_modal').modal({
+                show: true,
+                backdrop: 'static'
+            });
+        });</script>";
+    }
+?>
+
+<!-- Modal -->
+<div id="update_information_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal-dialog">
+        <form id="update_admin_info" action="" method="post" enctype="multipart/form-data">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Please Fill Your Basic Information</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="txtFirstName">First Name</label>
+                    <input type="text" class="form-control" name="txtFirstName" id="txtFirstName" placeholder="First Name" value ="<?php echo set_value('txtFirstName');?>" />
+                </div>
+                <div class="form-group">
+                    <label class="red"><?php echo form_error('txtFirstName');?></label>
+                </div>
+                <div class="form-group">
+                    <label for="txtLastName">Last Name</label>
+                    <input type="text" class="form-control" name="txtLastName" id="txtLastName" placeholder="Last Name" value ="<?php echo set_value('txtLastName');?>" />
+                </div>
+                <div class="form-group">
+                    <label class="red"><?php echo form_error('txtLastName');?></label>
+                </div>
+                <div class="form-group">
+                    <label for="txtPhoneNo">Phone No</label>
+                    <input type="tel" class="form-control" name="txtPhoneNo"  id="txtPhoneNo" placeholder="Phone No" value ="<?php echo set_value('txtPhoneNo');?>" />
+                </div>
+                <div class="form-group">
+                    <label class="red"><?php echo form_error('txtPhoneNo');?></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtPassword">Password:</label>
+                    <input type="password" class="form-control" name="txtPassword" id="txtPassword" value ="<?php echo set_value('txtPassword');?>" >
+                </div>
+
+                <div class="form-group">
+                    <label class="red"><?php echo form_error('txtPhoneNo');?></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtConfirmPassword">Confirm Password:</label>
+                    <input type="password" class="form-control" name="txtConfirmPassword" id="txtConfirmPassword" value ="<?php echo set_value('txtConfirmPassword');?>" >
+                </div>
+
+                <div class="form-group">
+                    <label class="red"><?php echo form_error('txtConfirmPassword');?></label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default" >Update</button>
+                <a href="<?php echo base_url();?>backdoor/logout" class="btn btn-info" >Log Out</a>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+
 <!--================================================== -->
 
 <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->

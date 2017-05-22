@@ -82,6 +82,21 @@ class Select_Model extends CI_Model
         return $query;
 
     }
+
+
+    function select_admin_role()
+    {
+        $sql="SELECT * FROM `tbl_admin_user_role`";
+        $query=$this->db->query($sql);
+        $option="";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtAdminUserRole",$row->id).'>'.$row->admin_role.'</option>';
+        }
+        return $option;
+    }
+
+
     function select_bank()
     {
         $sql="SELECT * FROM `card_bank`";
@@ -1579,7 +1594,6 @@ class Select_Model extends CI_Model
 
         if($query->num_rows() > 0)
         {
-
             $sl=1;
             foreach($query->result() as $row)
             {

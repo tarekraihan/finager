@@ -76,7 +76,7 @@
                         <a href="<?php echo base_url();?>backdoor/admin_role">Add Admin Role</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url();?>backdoor/edit_admin">Edit User </a>
+                        <a href="<?php echo base_url();?>backdoor/create_admin_user">Add Admin User </a>
                     </li>
 
                 </ul>

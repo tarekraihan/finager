@@ -14,10 +14,10 @@ if(isset($_GET['a_user_id']))
     <!-- RIBBON -->
     <div id="ribbon">
 
-				<span class="ribbon-button-alignment"> 
+				<span class="ribbon-button-alignment">
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
 						<i class="fa fa-refresh"></i>
-					</span> 
+					</span>
 				</span>
 
         <!-- breadcrumb -->
@@ -48,7 +48,7 @@ if(isset($_GET['a_user_id']))
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
                     Management
-							<span>> 
+							<span>>
 								Admin User Role
 							</span>
                 </h1>

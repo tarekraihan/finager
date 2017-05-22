@@ -74,6 +74,40 @@ class Backdoor extends CI_Controller {
         }
     }
 
+    public function create_admin_user(){
+        if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'admin') {
+
+            $this->form_validation->set_rules('txtAdminRole', 'Admin Role', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "User - Admin User";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/add_admin_user');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array('admin_role' => $this->input->post('txtAdminRole'), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
+                $this->Common_model->table_name = 'tbl_admin_user_role';
+                $result = $this->Common_model->insert();
+
+                if ($result) {
+                    $data['success_message'] = '<div id="message" class="text-center alert alert-success">Successfully Created !! <a href="'.base_url().'" target="_blank"> Finager </a> </span> !!</div></div>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                } else {
+                    $data['error_message'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                }
+            }
+
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
     public function search_index(){
         if ($this->session->userdata('email_address')) {
 
@@ -171,6 +205,7 @@ class Backdoor extends CI_Controller {
                     foreach ($result->result() as $row)
                     {
                         $data['admin_role'] = $row->admin_role;
+                        $data['admin_first_login'] = $row->first_login;
                         $data['admin_user_id'] = $row->id;
                         $data['first_name'] = $row->first_name;
                         $data['last_name'] = $row->last_name;

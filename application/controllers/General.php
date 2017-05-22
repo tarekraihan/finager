@@ -169,11 +169,9 @@ class General extends CI_Controller {
     }
 
     function go_maintenance(){
-        if ($this->session->userdata('email_address')) {
+        if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'admin') {
 
             $this->form_validation->set_rules('go_maintenance', 'Go Maintenance', 'trim|required');
-
-//            $this->form_validation->set_rules('file', 'Bank Logo ', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
                 $data['title'] = "Go Maintenance";
