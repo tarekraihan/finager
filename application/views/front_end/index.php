@@ -31,20 +31,34 @@
         background: rgba(233, 238, 245, 0.33);
     }
     #home_search{
-      height:664px;
-      width:100%;
-      background-image:url(<?php echo base_url(); ?>resource/front_end/images/Finagersearchbackground.jpg);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
-      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
-      -moz-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
-   }
+        height:664px;
+        width:100%;
+        background-image:url(<?php echo base_url(); ?>resource/front_end/images/Finagersearchbackground.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
+        -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+        -moz-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
+    }
+    .home-search-section {
+        position: relative;
+    }
+    .home-search-section>p {
+        font-size: 25px;
+        font-style: italic;
+        color: rgb(84, 172, 208);
+        font-weight: 500;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 7px;
+        cursor: pointer;
+    }
 </style>
 
 <section id="home_search">
@@ -55,12 +69,23 @@
             <a href=""><img src="<?php /*echo base_url();*/?>resource/front_end/images/serch-bar.png" alt="Serch box" class="img-responsive center-block" /></a>
         </div>-->
 
+        <!--<div class="feature-bg">
+            <div class="find-bar">
+                <img class="logo-lg" src="<?php /*echo base_url(); */?>resource/front_end/images/FinAlfa.svg" alt="Large Logo" /><br/><br/>
+                <img class="search-image" data-toggle="modal" data-target="#serchModal" src="<?php /*echo base_url(); */?>resource/front_end/images/srcbutton.png" alt="Serch box" />
+            </div>
+            
+        </div>-->
         <div class="feature-bg">
             <div class="find-bar">
                 <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg" alt="Large Logo" /><br/><br/>
-                <img class="search-image" data-toggle="modal" data-target="#serchModal" src="<?php echo base_url(); ?>resource/front_end/images/srcbutton.png" alt="Serch box" />
+                <div class="home-search-section" data-toggle="modal" data-target="#serchModal" >
+                    <img class="search-image" src="<?php echo base_url(); ?>resource/front_end/images/srcbutton.png" alt="Serch box" />
+                    <p class="typewrite" data-period="2000" data-type='[ "I am looking for..."]'>
+                        <span class="wrap"></span>
+                </div>
             </div>
-            
+
         </div>
     </div>
 </section>

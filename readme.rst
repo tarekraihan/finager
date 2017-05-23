@@ -27,3 +27,5 @@ If you ever need best financial advices, just log in to www.finager.com or have 
 
 1.05 [lokman][21-05-2017] :  some changes in auto loan, personal loan, education loan, auto loan, fdr, millionaire landing page.
 
+1.05 [shahriaz][21-05-2017] :  homepage search option style.
+
