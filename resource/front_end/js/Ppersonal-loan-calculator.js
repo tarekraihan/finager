@@ -262,7 +262,7 @@ $(function(event) {
 			//alert(valInput)
 			if(valInput < 6){
 				alert("Minimum Month should be 6 & Maximum Year should be 60");
-				_this.val(12);
+				_this.val(6);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:0});
 				_this.parents('#interest').find('.draggable').css('left',0);
 				finalCalculation();
@@ -272,7 +272,7 @@ $(function(event) {
 			*******************Year*******************
 			*******************************************/
 			else if(valInput > 60){
-				alert("Minimum Month should be 12 & Maximum Year should be 60");
+				alert("Minimum Month should be 6 & Maximum Year should be 60");
 				_this.val(6);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'0'});
 				_this.parents('#interest').find('.draggable').css('left','0');

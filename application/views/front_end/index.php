@@ -59,6 +59,7 @@
         top: 7px;
         cursor: pointer;
     }
+
 </style>
 
 <section id="home_search">

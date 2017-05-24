@@ -105,12 +105,47 @@ $(function(event) {
 			}
 			else if(finAsst >=25000 && finAsst <=amtDetail)
 			{
-				console.log("more than 50000");
+				//console.log("more than 50000");
 				//alert(amtDetail)
 				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
+
+				if(valInput == amtDetail)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2590});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3950000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2555});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3900000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2520});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3850000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2485});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
+
+				else if(valInput == 3800000)
+				{
+					var marLft_input =  ((valInput/diff)-1) *35;
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2450});	
+					$('#alreadySaved').find('.draggable').animate({left:175});	
+				}
 				
-				if(valInput <= amtDetail)
+				else if(valInput <= amtDetail)
 				{
 					//alert(valInput+'---'+diff)
 					/*if(amtDetail==10000000)
@@ -185,7 +220,7 @@ $(function(event) {
 			var _this=$(this);
 			//alert(valInput)
 			if(valInput < 1){
-				alert("Minimum Month should be 1 & Maximum Year should be 5");
+				alert("Minimum Year should be 1 & Maximum Year should be 5");
 				_this.val(1);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:0});
 				_this.parents('#interest').find('.draggable').css('left',0);
@@ -196,7 +231,7 @@ $(function(event) {
 			*******************Year*******************
 			*******************************************/
 			else if(valInput > 5){
-				alert("Minimum Month should be 1 & Maximum Year should be 5");
+				alert("Minimum Year should be 1 & Maximum Year should be 5");
 				_this.val(1);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'0'});
 				_this.parents('#interest').find('.draggable').css('left','0');

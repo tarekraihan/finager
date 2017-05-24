@@ -19,48 +19,48 @@
 
     <script type="text/javascript">
         // searching text effect START
-        var TxtType = function(el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-        };
+        document.addEventListener('DOMContentLoaded',function(event){
+            // array with texts to type in typewriter
+            var dataText = [ "I am looking for..."];
 
-        TxtType.prototype.tick = function() {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
+            // type one text in the typwriter
+            // keeps calling itself until the text is finished
+            function typeWriter(text, i, fnCallback) {
+                // chekc if text isn't finished yet
+                if (i < (text.length)) {
+                    // add next character to h1
+                    document.querySelector(".typewrite").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
 
-            if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
+                    // wait for a while and call this function again for next character
+                    setTimeout(function() {
+                        typeWriter(text, i + 1, fnCallback)
+                    }, 200);
+                }
+                // text finished, call callback if there is a callback function
+                else if (typeof fnCallback == 'function') {
+                    // call callback after timeout
+                    setTimeout(fnCallback, 100);
+                }
             }
-
-            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-            var that = this;
-            var delta = 200 - Math.random() * 100;
-
-            if (this.isDeleting) { delta /= 2; }
-
-            else if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = false;
-                this.hide();
-                this.loopNum++;
-                delta = 500;
+            // start a typewriter animation for a text in the dataText array
+            function StartTextAnimation(i) {
+                if (typeof dataText[i] == 'undefined'){
+                    setTimeout(function() {
+                        StartTextAnimation(0);
+                    }, 1000);
+                }
+                // check if dataText[i] exists
+                if (i < dataText[i].length) {
+                    // text exists! start typewriter animation
+                    typeWriter(dataText[i], 0, function(){
+                        // after callback (and whole text has been animated), start next text
+                        StartTextAnimation(i + 1);
+                    });
+                }
             }
-            /*else if (this.isDeleting && this.txt === '') {
-             this.isDeleting = false;
-             }*/
-
-            setTimeout(function() {
-                that.tick();
-            }, delta);
-        };
+            // start the text animation
+            StartTextAnimation(0);
+        });
 
         window.onload = function() {
             var elements = document.getElementsByClassName('typewrite');

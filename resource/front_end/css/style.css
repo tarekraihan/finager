@@ -4160,3 +4160,21 @@ a .auto_button.flash-button{
 	border: 1px solid #ddd;
 	padding: 10px;
 }
+.main-search-modal-icon{
+    top: 46px !important;
+    left: 0;
+    position: absolute !important;
+    font-size: 22px !important;
+    transform: rotate(85deg);
+    color: #999999;
+}
+.relative{
+    position: relative;
+}
+#search_word{
+    padding-left: 34px !important;
+}
+#main-search-modal-close{
+    position: relative;
+    z-index: 99999;
+}
