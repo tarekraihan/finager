@@ -29,3 +29,5 @@ If you ever need best financial advices, just log in to www.finager.com or have 
 
 1.05 [shahriaz][21-05-2017] :  homepage search option style.
 
+1.05 [lokman][25-05-2017] :  hide Recent Popular Article section in debit card landing page
+

@@ -119,7 +119,7 @@
 	</section>
 	<div class="clearfix"></div>
 	<section id="artical">
-		<div class="container">
+		<!--div class="container">
 				<h3><i>Recent Popular Article</i></h3><hr/>
 			<div class="popular_artical">
 				<h5>What Dave Ramsey Doesn’t Acknowledge About Credit Cards</h5>
@@ -135,7 +135,7 @@
 				<img src="<?php echo base_url();?>resource/front_end/images/Tarek Raihan.jpg"/>
 				<span><a href="#">Tarek Raihan</a></span><hr/>
 			</div>
-		</div>
+		</div-->
 	</section>
 	
 	<section id="debit_Basic">
