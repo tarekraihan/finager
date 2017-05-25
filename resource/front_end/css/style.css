@@ -4168,7 +4168,7 @@ a .auto_button.flash-button{
     transform: rotate(85deg);
     color: #999999;
 }
-.relative{
+.pRelative{
     position: relative;
 }
 #search_word{
