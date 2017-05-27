@@ -66,12 +66,13 @@ if(isset($_GET['a_user_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>backdoor/admin_Role" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>backdoor/create_admin_user" class="smart-form" novalidate="novalidate">
                                     <?php
                                     //-----Display Success or Error message---
-                                    if(isset($feedback)){
-                                        echo $feedback;
-                                    }
+                                   if($this->session->userdata('error_message')){
+                                      echo $this->session->userdata('error_message');
+                                   }
+                                    unset_userdata('error_message');
                                     ?>
                                     <fieldset>
                                         <section>

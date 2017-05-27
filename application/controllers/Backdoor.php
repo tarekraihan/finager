@@ -77,7 +77,10 @@ class Backdoor extends CI_Controller {
     public function create_admin_user(){
         if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'admin') {
 
-            $this->form_validation->set_rules('txtAdminRole', 'Admin Role', 'trim|required');
+            $this->form_validation->set_rules('txtEmailAddress', 'Email Address', 'trim|required|is_unique[tbl_admin_user.email_address]');
+            $this->form_validation->set_rules('txtAdminUserRole', 'Admin Role', 'trim|required');
+            $this->form_validation->set_rules('txtPassword', 'Password', 'trim|required|min_length[6]');
+            $this->form_validation->set_rules('txtConfirmPassword', 'Confirm Password', 'matches[txtPassword]');
 
             if ($this->form_validation->run() == FALSE){
                 $data['title'] = "User - Admin User";
@@ -87,8 +90,15 @@ class Backdoor extends CI_Controller {
                 $this->load->view('admin/block/footer');
             }else{
                 $date = date('Y-m-d h:i:s');
-                $this->Common_model->data = array('admin_role' => $this->input->post('txtAdminRole'), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
-                $this->Common_model->table_name = 'tbl_admin_user_role';
+                $this->Common_model->data = array(
+                    'email_address' => $this->input->post('txtEmailAddress'),
+                    'admin_role_id' => $this->input->post('txtAdminUserRole'),
+                    'password' => md5($this->input->post('txtPassword')),
+                    'actual_password' => $this->input->post('txtPassword'),
+                    'created' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'tbl_admin_user';
                 $result = $this->Common_model->insert();
 
                 if ($result) {
