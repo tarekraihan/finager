@@ -354,13 +354,7 @@ $(window).on('scroll', function (){
 //            alert(cur_page);
             loadData(cur_page);
         });
-        function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
-        }
 
-        function loading_hide(){
-            $('#loading').html("");
-        }
         function loadData( page = null ){
 //            loading_show();
 			 var amount = $('#finalAssest').val();

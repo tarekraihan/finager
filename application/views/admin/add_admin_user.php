@@ -67,14 +67,11 @@ if(isset($_GET['a_user_id']))
                             <div class="widget-body no-padding">
 
                                 <form id="age_limit" method="post" action="<?php echo base_url();?>backdoor/create_admin_user" class="smart-form" novalidate="novalidate">
-                                    <?php
-                                    //-----Display Success or Error message---
-                                   if($this->session->userdata('error_message')){
-                                      echo $this->session->userdata('error_message');
-                                   }
-                                    unset_userdata('error_message');
-                                    ?>
+
                                     <fieldset>
+                                        <section>
+                                            <?php echo ($this->session->userdata('success_message')) ?  $this->session->userdata('success_message') : ''; $this->session->unset_userdata('success_message');?>
+                                        </section>
                                         <section>
                                             <label class="label">Email Address</label>
                                             <label class="input">
@@ -142,7 +139,7 @@ if(isset($_GET['a_user_id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Admin Role List </h2>
+                            <h2>Admin List </h2>
 
                         </header>
 
@@ -163,6 +160,8 @@ if(isset($_GET['a_user_id']))
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">No.</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Name  </th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Email Address </th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Admin Role </th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
@@ -171,17 +170,17 @@ if(isset($_GET['a_user_id']))
                                     <tbody>
 
                                     <?php
-                                    $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'tbl_admin_user_role';
-                                    $query=$this->Common_model->select_all();
+                                    $query = $this->Select_model->select_all_admin_user();
                                     $sl=1;
                                     foreach ($query->result() as $row)
                                     {
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->admin_role;?></td>
-                                            <td><a href="<?php echo base_url(); ?>backdoor/edit_admin_role?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?a_user_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                            <td ><?php echo $row->first_name.' '.$row->last_name;?></td>
+                                            <td ><?php echo $row->email_address;?></td>
+                                            <td ><?php echo ucfirst($row->admin_role);?></td>
+                                            <td><a href="?a_user_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php
                                         $sl++;

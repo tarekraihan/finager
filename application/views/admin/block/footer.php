@@ -1,4 +1,4 @@
-
+<style> .invalid{color:red;}</style>
 <!-- PAGE FOOTER -->
 <div class="page-footer">
     <div class="row">
@@ -113,10 +113,12 @@ you can add as many as you like
         <form id="update_admin_info" action="" method="post" enctype="multipart/form-data">
         <!-- Modal content-->
         <div class="modal-content">
+
             <div class="modal-header">
                 <h4 class="modal-title">Please Fill Your Basic Information</h4>
             </div>
             <div class="modal-body">
+                <div class="err_msg"></div>
                 <div class="form-group">
                     <label for="txtFirstName">First Name</label>
                     <input type="text" class="form-control" name="txtFirstName" id="txtFirstName" placeholder="First Name" value ="<?php echo set_value('txtFirstName');?>" />
@@ -145,7 +147,7 @@ you can add as many as you like
                 </div>
 
                 <div class="form-group">
-                    <label class="red"><?php echo form_error('txtPhoneNo');?></label>
+                    <label class="red"><?php echo form_error('txtPassword');?></label>
                 </div>
 
                 <div class="form-group">
@@ -158,8 +160,8 @@ you can add as many as you like
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-default" >Update</button>
-                <a href="<?php echo base_url();?>backdoor/logout" class="btn btn-info" >Log Out</a>
+                <a href="<?php echo base_url();?>backdoor/logout" class="btn btn-default" >Log Out</a>
+                <button type="submit" class="btn btn-info" >Update</button>
             </div>
         </div>
         </form>
@@ -454,6 +456,13 @@ you can add as many as you like
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
     $(document).ready(function() {
+        function overlay(s, l) {
+            $('.overlay').remove();
+            if( s )
+                $('body').append('<div class="overlay" style="width:100%;height:100%;position:fixed;display:block;background:#000;opacity:0.7;top:0;left:0;z-index:1000;"></div>');
+            if( l )
+                $('.overlay').html('<div style="position:absolute;top:'+(document.documentElement.clientHeight/2)+'px;left:'+(document.documentElement.clientWidth/2)+'px;"><img src="<?php echo base_url();?>resource/front_end/images/loader.gif" width="100"></div>');
+        }
 
         pageSetUp();
 
@@ -498,6 +507,48 @@ you can add as many as you like
             toolbarPlacement: 'bottom'
 
         });
+
+        $("#update_admin_info").validate({
+            rules: {
+                txtFirstName : "required",
+                txtLastName : "required",
+                txtPassword : {
+                    required: true,
+                    minlength : 6
+                },
+                txtConfirmPassword: {
+                    equalTo: "#txtPassword"
+                },
+                txtPhoneNo : {
+                    required : true,
+                    maxlength : 14,
+                    minlength : 10
+                }
+            },
+            submitHandler: function(form) {
+                var data = $('#update_admin_info').serialize();
+                $.ajax({
+                    type: "post",
+                    url: base_url + "backdoor/ajax_update_admin_user_info",
+                    data: data,
+                    beforeSend: function () {
+                        overlay(true,true);
+                    },
+                    success: function (response) {
+                        overlay(false);
+                        $(".err_msg").html(response);
+
+                        $("#txtFirstName").val('');
+                        $("#txtLastName").val('');
+                        $("#txtPhoneNo").val('');
+                        $("#txtPassword").val('');
+                        $("#txtConfirmPassword").val('');
+                    }
+                });
+
+            }
+        });
+
 
 
     })

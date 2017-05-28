@@ -40,9 +40,15 @@ class Select_Model extends CI_Model
     public function select_admin_user($email,$password)
     {
         $password = md5($password);
-        $sql ="SELECT * FROM tbl_admin_user LEFT JOIN tbl_admin_user_role ON tbl_admin_user.admin_role_id = tbl_admin_user_role.id WHERE tbl_admin_user.email_address ='$email' AND tbl_admin_user.password = '$password' AND tbl_admin_user.status=1";
+        $sql ="SELECT tbl_admin_user.*,tbl_admin_user_role.admin_role FROM tbl_admin_user LEFT JOIN tbl_admin_user_role ON tbl_admin_user.admin_role_id = tbl_admin_user_role.id WHERE tbl_admin_user.email_address ='$email' AND tbl_admin_user.password = '$password' AND tbl_admin_user.status=1";
         //echo $sql; die;
         $query=$this->db->query($sql);
+        return $query;
+    }
+
+    public function select_all_admin_user(){
+        $sql = "SELECT tbl_admin_user.*,tbl_admin_user_role.admin_role FROM tbl_admin_user LEFT JOIN tbl_admin_user_role ON tbl_admin_user.admin_role_id = tbl_admin_user_role.id";
+        $query = $this->db->query($sql);
         return $query;
     }
 

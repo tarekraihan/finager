@@ -113,7 +113,9 @@ Use search to find needed section.
 <!-- HEADER -->
 <header id="header">
     <div id="logo-group">
-
+        <script>
+            var base_url = '<?php echo base_url();?>';
+        </script>
         <!-- PLACE YOUR LOGO HERE -->
         <span id="logo"> <img src="<?php echo base_url();?>resource/admin/img/company_logo.png" alt="SmartAdmin" style="width:75px; height: auto;"> </span>
         <!-- END LOGO PLACEHOLDER -->
