@@ -86,6 +86,10 @@
                         <a href="<?php echo base_url();?>backdoor/add_module">Add Module</a>
                     </li>
 
+                    <li>
+                        <a href="<?php echo base_url();?>backdoor/access_control">Access Control</a>
+                    </li>
+
                 </ul>
             </li>
 

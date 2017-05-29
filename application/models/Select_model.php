@@ -110,7 +110,7 @@ class Select_Model extends CI_Model
         $option="";
         foreach($query->result() as $row)
         {
-            $option.='<option value="'.$row->id.'" '.set_select("txtAdminUser",$row->id).'>'.$row->first_name.' '. $row->last_name.'</option>';
+            $option.='<option value="'.$row->id.'" '.set_select("txtAdminUser",$row->id).'>'.$row->email_address.'</option>';
         }
         return $option;
     }
@@ -1144,6 +1144,15 @@ class Select_Model extends CI_Model
     public function get_home_loan_user_home_loan_info($id){
         if(!empty($id)) {
             $sql = "SELECT home_loan_user_id FROM `home_loan_user_home_loan_info` WHERE home_loan_info_id = $id";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
+
+    }
+
+    public function get_admin_user_modules($id){
+        if(!empty($id)) {
+            $sql = "SELECT module_id FROM `admin_user_vs_modules` WHERE user_id= $id";
             $query = $this->db->query($sql);
             return $query->result_array();
         }

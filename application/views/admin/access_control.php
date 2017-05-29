@@ -38,9 +38,7 @@
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
                     Management
-							<span>>
-								Finager Module Access
-							</span>
+							<span>>Finager Module Access </span>
                 </h1>
             </div>
 
@@ -48,36 +46,25 @@
 
         <!-- widget grid -->
         <section id="widget-grid" class="">
-
             <!-- row -->
             <div class="row">
-
-
                 <article class="col-sm-12 col-md-12 col-lg-6">
-
                     <!-- Widget ID (each widget will need unique ID)-->
                     <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
                             <h2> Module Access</h2>
-
                         </header>
-
                         <!-- widget div-->
                         <div>
-
                             <!-- widget edit box -->
                             <div class="jarviswidget-editbox">
                                 <!-- This area used as dropdown edit box -->
-
                             </div>
                             <!-- end widget edit box -->
-
                             <!-- widget content -->
                             <div class="widget-body no-padding">
-
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>backdoor/add_module" class="smart-form" novalidate="novalidate">
-
+                                <form id="add_module_form" method="post" action="<?php echo base_url();?>backdoor/access_control" class="smart-form" novalidate="novalidate">
                                     <fieldset>
                                         <section>
                                             <?php echo ($this->session->userdata('success_message')) ?  $this->session->userdata('success_message') : ''; $this->session->unset_userdata('success_message');?>
@@ -85,7 +72,8 @@
                                         <section>
                                             <label class="label">Module Name</label>
                                             <label class="select">
-                                                <select name="txtAdminUser">
+                                                <select name="txtAdminUser" id="txtAdminUser">
+                                                    <option value="">--Select One--</option>
                                                     <?php echo $this->Select_model->select_admin_users();?>
                                                 </select>
                                             </label>
@@ -94,14 +82,13 @@
                                         <section>
                                             <label class="label">Module</label>
                                             <label class="select">
-                                                <select multiple style="width:100%" class="select2" name="txtModule[]" required>
+                                                <select multiple style="width:100%" class="select2" name="txtModule[]" id="txtModule" required>
                                                     <?php
-                                                    $result1=$this->Select_model->select_finager_all_modules();
+                                                  /*  $result1=$this->Select_model->select_finager_all_modules();
 
                                                     $user_id =$this->Select_model->get_home_loan_user_home_loan_info($row['id']);
 
                                                     $user = array();
-                                                    //                                                            print_r($user_id);
                                                     foreach($user_id as $k){
                                                         foreach($k as $v){
                                                             array_push($user,$v);
@@ -110,11 +97,11 @@
                                                     $i=0;
                                                     foreach($result1->result() as $row1){
 
-                                                        ?>
-                                                        <option value="<?php echo $row1->id;?>" <?php if(isset($user[$i]) ? ($user[$i] == $row1->id) : false) { echo "selected='select'"; }else{ echo set_select("txtHomeLoanUser[]", $row1->id);}?>><?php echo $row1->home_loan_user; ?></option>';
-                                                        <?php
-                                                        $i++;
-                                                    }
+                                                        */?><!--
+                                                        <option value="<?php /*echo $row1->id;*/?>" <?php /*if(isset($user[$i]) ? ($user[$i] == $row1->id) : false) { echo "selected='select'"; }else{ echo set_select("txtHomeLoanUser[]", $row1->id);}*/?>><?php /*echo $row1->home_loan_user; */?></option>';
+                                                        --><?php
+/*                                                        $i++;
+                                                    }*/
                                                     ?>
                                                 </select>
                                             </label>

@@ -388,6 +388,79 @@ class Backdoor extends CI_Controller {
             redirect(base_url().'backdoor/dashboard');
         }
     }
+    public function access_control()
+    {
+        if ($this->session->userdata('email_address')) {
+
+            $this->form_validation->set_rules('txtAdminUser', 'Admin User', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Edit Admin Role";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/access_control');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Delete_model->Delete_All_Row($id=$this->input->post("txtAdminUser"),$table='admin_user_vs_modules',$id_field='user_id');
+                $result='';
+                foreach($this->input->post('txtModule[]') as $module){
+                    $this->Common_model->data = array(
+                        'user_id'=>$this->input->post('txtAdminUser'),
+                        'module_id'=> $module,
+                        'assigned_by'=> $this->session->userdata('admin_user_id'),
+                        'assigned_date'=> $date
+                    );
+                    $this->Common_model->table_name = 'admin_user_vs_modules';
+                    $result = $this->Common_model->insert();
+                }
+
+                if ( $result ) {
+                    $data['success_message'] = '<span id="message" class="text-center alert alert-success line-block">Successfully Updated !! !!</span>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                } else {
+                    $data['error_message'] = '<span id="message" class=" text-center alert alert-danger">Problem to Insert !!</span>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                }
+            }
+
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
+    public function ajax_get_all_modules(){
+        $user_id = $this->input->post('user_id');
+        $result1=$this->Select_model->select_finager_all_modules();
+        $module_id =$this->Select_model->get_admin_user_modules($user_id);
+        $module = array();
+        foreach($module_id as $k){
+            foreach($k as $v){
+                array_push($module,$v);
+            }
+        }
+        //pr($result1);die;
+        $i=0;
+        $options ='';
+        foreach($result1->result() as $row1){
+           // $select = ($module[$i] == $row1->id) ? 'selected' :'';
+            if($module[$i] == $row1->id){
+                $options .='<option value="'.$row1->id.'" selected="selected">'.$row1->module_name.'</option>';
+            }else{
+                $options .='<option value="'.$row1->id.'">'.$row1->module_name.'</option>';
+            }
+//            echo $select;
+
+
+            $i++;
+        }
+
+        echo $options;
+    }
+
 
     public function admin_login(){
         $email = htmlentities($this->input->post('txtEmail'));
