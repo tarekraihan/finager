@@ -103,6 +103,19 @@ class Select_Model extends CI_Model
     }
 
 
+    function select_admin_users()
+    {
+        $sql="SELECT * FROM `tbl_admin_user`";
+        $query=$this->db->query($sql);
+        $option="";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtAdminUser",$row->id).'>'.$row->first_name.' '. $row->last_name.'</option>';
+        }
+        return $option;
+    }
+
+
     function select_bank()
     {
         $sql="SELECT * FROM `card_bank`";
@@ -539,6 +552,13 @@ class Select_Model extends CI_Model
     function home_loan_user()
     {
         $sql="SELECT * FROM `home_loan_user`";
+        $query=$this->db->query($sql);
+        return $query;
+    }
+
+    function select_finager_all_modules()
+    {
+        $sql="SELECT * FROM `finager_modules`";
         $query=$this->db->query($sql);
         return $query;
     }
@@ -1657,6 +1677,29 @@ class Select_Model extends CI_Model
 					<td class="center"> '.$row->email_address.'</td>
 					<td class="center"> '.$row->ip_address.'</td>
 					<td class="center"> '.date('Y-m-d H:i:s',strtotime($row->created)).'</td>
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+    public function select_all_modules(){
+
+        $sql="SELECT finager_modules.*,tbl_admin_user.first_name,tbl_admin_user.last_name FROM `finager_modules` INNER JOIN tbl_admin_user ON tbl_admin_user.id=finager_modules.created_by";
+        $query=$this->db->query($sql);
+        $result="";
+        if($query->num_rows() > 0){
+            $sl=1;
+            foreach($query->result() as $row){
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center"> '.$row->module_name.'</td>
+					<td class="center"> '.$row->first_name.' '.$row->last_name.'</td>
+					<td class="center"> '.date('Y-m-d H:i:s',strtotime($row->created)).'</td>';
+                $result.='</td>
+                    <td><a href="'.base_url().'backdoor/edit_module?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?module_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
 					</tr>';
                 $sl++;
             }

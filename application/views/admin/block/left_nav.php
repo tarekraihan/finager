@@ -78,6 +78,13 @@
                     <li>
                         <a href="<?php echo base_url();?>backdoor/create_admin_user">Add Admin User </a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url();?>backdoor/admin_user_list">Admin User List</a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo base_url();?>backdoor/add_module">Add Module</a>
+                    </li>
 
                 </ul>
             </li>

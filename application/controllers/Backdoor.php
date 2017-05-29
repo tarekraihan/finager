@@ -74,6 +74,77 @@ class Backdoor extends CI_Controller {
         }
     }
 
+
+    public function add_module(){
+        if ($this->session->userdata('email_address')) {
+
+            $this->form_validation->set_rules('txtModuleName', 'Module Name', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Add Module";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/add_module');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array('module_name' => $this->input->post('txtModuleName'), 'created' => $date , 'created_by'=>$this->session->userdata('admin_user_id'));
+                $this->Common_model->table_name = 'finager_modules';
+                $result = $this->Common_model->insert();
+
+                if ( $result ) {
+                    $data['success_message'] = '<span id="message" class="text-center alert alert-success line-block">Successfully Created !! !!</span>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                } else {
+                    $data['error_message'] = '<span id="message" class=" text-center alert alert-danger">Problem to Insert !!</span>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                }
+            }
+
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
+    public function edit_module(){
+        if ($this->session->userdata('email_address')) {
+
+            $this->form_validation->set_rules('txtModuleName', 'Module Name', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Edit Module";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/edit_module');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array('module_name' => $this->input->post('txtModuleName'), 'modified' => $date , 'modified_by'=>$this->session->userdata('admin_user_id'));
+                $this->Common_model->table_name = 'finager_modules';
+                $this->Common_model->where = array('id'=>$this->input->post('txtModuleId'));
+                $result = $this->Common_model->update();
+
+                if ( $result ) {
+                    $data['success_message'] = '<span id="message" class="text-center alert alert-success line-block">Successfully Updated !! !!</span>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                } else {
+                    $data['error_message'] = '<span id="message" class=" text-center alert alert-danger">Problem to Update !!</span>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                }
+            }
+
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
+
     public function create_admin_user(){
         if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'admin') {
 
@@ -104,11 +175,58 @@ class Backdoor extends CI_Controller {
                 $result = $this->Common_model->insert();
 
                 if ( $result ) {
-                    $data['success_message'] = '<div id="message" class="text-center alert alert-success">Successfully Created !! <a href="'.base_url().'" target="_blank"> Finager </a> </span> !!</div></div>';
+                    $data['success_message'] = '<span id="message" class="text-center alert alert-success line-block">Successfully Created !! !!</span>';
                     $this->session->set_userdata($data);
                     redirect(current_url());
                 } else {
-                    $data['error_message'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
+                    $data['error_message'] = '<span id="message" class=" text-center alert alert-danger">Problem to Insert !!</span>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                }
+            }
+
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
+    public function edit_admin_user(){
+        if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'admin') {
+
+            $this->form_validation->set_rules('txtEmailAddress', 'Email Address', 'trim|required');
+            $this->form_validation->set_rules('txtAdminUserRole', 'Admin Role', 'trim|required');
+            $this->form_validation->set_rules('txtPassword', 'Password', 'trim|required|min_length[6]');
+            $this->form_validation->set_rules('txtConfirmPassword', 'Confirm Password', 'matches[txtPassword]');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Edit Admin User";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/edit_admin_user');
+                $this->load->view('admin/block/footer');
+            }else{
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array(
+                    'email_address' => $this->input->post('txtEmailAddress'),
+                    'admin_role_id' => $this->input->post('txtAdminUserRole'),
+                    'password' => md5($this->input->post('txtPassword')),
+                    'actual_password' => $this->input->post('txtPassword'),
+                    'status' => $this->input->post('txtStatus'),
+                    'admin_first_login' => 1,
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
+                );
+                $this->Common_model->table_name = 'tbl_admin_user';
+                $this->Common_model->where = array('id' => $this->input->post('txtUserId'));
+                $result = $this->Common_model->update();
+
+                if ( $result ) {
+                    $data['success_message'] = '<span id="message" class="text-center alert alert-success line-block">Successfully Updated !! !!</span>';
+                    $this->session->set_userdata($data);
+                    redirect(current_url());
+                } else {
+                    $data['error_message'] = '<span id="message" class=" text-center alert alert-danger">Problem to Insert !!</span>';
                     $this->session->set_userdata($data);
                     redirect(current_url());
                 }
@@ -177,6 +295,19 @@ class Backdoor extends CI_Controller {
 
         }
     }
+
+    public function admin_user_list(){
+        if ($this->session->userdata('email_address')) {
+            $data['title'] = "Finager - Admin List";
+            $this->load->view('admin/block/header',$data);
+            $this->load->view('admin/block/left_nav');
+            $this->load->view('admin/admin_user_list');
+            $this->load->view('admin/block/footer');
+        }else {
+            redirect('backdoor');
+        }
+    }
+
 
     public function search_index(){
         if ($this->session->userdata('email_address')) {

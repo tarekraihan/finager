@@ -115,7 +115,7 @@ you can add as many as you like
         <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title">Please Fill Your Basic Information</h4>
+                <h4 class="modal-title">Please Fill Your Basic Information<button type="button" id="close_button" class="btn btn-default pull-right hide" data-dismiss="modal">Close</button></h4>
             </div>
             <div class="modal-body">
                 <div class="err_msg"></div>
@@ -537,6 +537,7 @@ you can add as many as you like
                     success: function (response) {
                         overlay(false);
                         $(".err_msg").html(response);
+                        $("#close_button").removeClass('hide').addClass('show');
 
                         $("#txtFirstName").val('');
                         $("#txtLastName").val('');

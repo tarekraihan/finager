@@ -31,3 +31,5 @@ If you ever need best financial advices, just log in to www.finager.com or have 
 
 1.05 [lokman][25-05-2017] :  hide Recent Popular Article section in debit card landing page
 
+1.05 [tarek][28-05-2017] : Add Create admin user functionality in backdoor.
+
