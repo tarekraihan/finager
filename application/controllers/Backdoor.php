@@ -442,6 +442,7 @@ class Backdoor extends CI_Controller {
             redirect(base_url().'backdoor/dashboard');
         }
     }
+
  public function edit_access_control(){
         if ($this->session->userdata('email_address')) {
 
@@ -484,11 +485,11 @@ class Backdoor extends CI_Controller {
             redirect(base_url().'backdoor/dashboard');
         }
     }
-
+/*
     public function ajax_get_all_modules(){
         $user_id = $this->input->post('user_id');
         $result1=$this->Select_model->select_finager_all_modules();
-        $module_id =$this->Select_model->get_admin_user_modules($id);
+        $module_id =$this->Select_model->get_admin_user_modules($user_id);
         $modules = array();
         foreach($module_id as $k){
             foreach($k as $v){
@@ -507,7 +508,7 @@ class Backdoor extends CI_Controller {
             }
         }
         echo $options;
-    }
+    }*/
 
 
     public function admin_login(){

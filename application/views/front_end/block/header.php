@@ -50,7 +50,7 @@
                     }, 1000);
                 }
                 // check if dataText[i] exists
-                if (i < dataText[i].length) {
+                if (i < dataText.length) {
                     // text exists! start typewriter animation
                     typeWriter(dataText[i], 0, function(){
                         // after callback (and whole text has been animated), start next text
@@ -68,7 +68,7 @@
                 var toRotate = elements[i].getAttribute('data-type');
                 var period = elements[i].getAttribute('data-period');
                 if (toRotate) {
-                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                    //new TxtType(elements[i], JSON.parse(toRotate), period);
                 }
             }
             // INJECT CSS

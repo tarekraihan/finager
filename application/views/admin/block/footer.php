@@ -549,6 +549,7 @@ you can add as many as you like
 
             }
         });
+/*
 
         $('#txtAdminUser').on('change',function(){
             var user_id = $('#txtAdminUser').val();
@@ -557,22 +558,20 @@ you can add as many as you like
                 url: base_url + "backdoor/ajax_get_all_modules",
                 data: {user_id:user_id},
                 beforeSend: function () {
-                    $("#txtModule").html('');
+                    $("#txtModule").val('');
                 },
                 success: function (response) {
                     overlay(false);
-                    $("#txtModule").html(response);
+                    $("#txtModule").val(response);
                 }
             });
         })
+*/
 
 
     })
 
 </script>
-
-
-
 </body>
 
 </html>

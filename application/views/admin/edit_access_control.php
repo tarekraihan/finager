@@ -79,7 +79,7 @@ if(isset($_GET['id']))
                                         <section>
                                             <label class="label">Module Name</label>
                                             <label class="select">
-                                                <select name="txtAdminUser" id="txtAdminUser">
+                                                <select name="txtAdminUser" id="txtAdminUser" readonly="readonly">
                                                     <?php
                                                     $result=$this->Select_model->select_all('tbl_admin_user');
                                                     foreach($result->result() as $row1){
@@ -95,7 +95,7 @@ if(isset($_GET['id']))
                                         <section>
                                             <label class="label">Module</label>
                                             <label class="select">
-                                                <select multiple style="width:100%" class="select2" name="txtModule[]" id="txtModule" required>
+                                                <select multiple style="width:100%" class="select2" name="txtModule[]" id="txtModule" required >
                                                     <?php
                                                     $result1=$this->Select_model->select_finager_all_modules();
                                                     $module_id =$this->Select_model->get_admin_user_modules($id);
@@ -105,15 +105,20 @@ if(isset($_GET['id']))
                                                             array_push($modules,$v);
                                                         }
                                                     }
-                                                    $i=0;
+
                                                     foreach($result1->result() as $row1){
 
+                                                        $i = 0;
                                                         foreach($modules as $module){
+
                                                             if($module == $row1->id){
-                                                                echo '<option value="'.$row1->id.'" selected="select">'.$row1->module_name.'</option>';
-                                                            }else{
-                                                                echo '<option value="'.$row1->id.'">'.$row1->module_name.'</option>';
+                                                                $i = 1;
                                                             }
+                                                        }
+                                                        if($i > 0){
+                                                            echo '<option value="'.$row1->id.'" selected="select">'.$row1->module_name.'</option>';
+                                                        }else{
+                                                            echo '<option value="'.$row1->id.'">'.$row1->module_name.'</option>';
                                                         }
                                                     }
                                                     ?>
