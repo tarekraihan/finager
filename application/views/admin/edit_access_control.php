@@ -1,3 +1,10 @@
+<?php
+if(isset($_GET['id']))
+{
+    $id=$_GET['id'];
+
+}
+?>
 <!-- MAIN PANEL -->
 <div id="main" role="main">
 
@@ -53,7 +60,7 @@
                     <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2> Module Access</h2>
+                            <h2>Update Module Access</h2>
                         </header>
                         <!-- widget div-->
                         <div>
@@ -73,8 +80,14 @@
                                             <label class="label">Module Name</label>
                                             <label class="select">
                                                 <select name="txtAdminUser" id="txtAdminUser">
-                                                    <option value="">--Select One--</option>
-                                                    <?php echo $this->Select_model->select_admin_users();?>
+                                                    <?php
+                                                    $result=$this->Select_model->select_all('tbl_admin_user');
+                                                    foreach($result->result() as $row1){
+                                                        ?>
+                                                        <option value="<?php echo $row1->id;?>" <?php if(isset($id) && $id==$row1->id){echo "selected='select'";}?><?php echo set_select("txtAdminUser",$row1->id)?>><?php echo $row1->email_address ; ?></option>';
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </select>
                                             </label>
                                             <label class="red"><?php echo form_error('txtAdminUser');?></label>
@@ -83,7 +96,27 @@
                                             <label class="label">Module</label>
                                             <label class="select">
                                                 <select multiple style="width:100%" class="select2" name="txtModule[]" id="txtModule" required>
-                                                    <?php echo $this->Select_model->module_list();?>
+                                                    <?php
+                                                    $result1=$this->Select_model->select_finager_all_modules();
+                                                    $module_id =$this->Select_model->get_admin_user_modules($id);
+                                                    $modules = array();
+                                                    foreach($module_id as $k){
+                                                        foreach($k as $v){
+                                                            array_push($modules,$v);
+                                                        }
+                                                    }
+                                                    $i=0;
+                                                    foreach($result1->result() as $row1){
+
+                                                        foreach($modules as $module){
+                                                            if($module == $row1->id){
+                                                                echo '<option value="'.$row1->id.'" selected="select">'.$row1->module_name.'</option>';
+                                                            }else{
+                                                                echo '<option value="'.$row1->id.'">'.$row1->module_name.'</option>';
+                                                            }
+                                                        }
+                                                    }
+                                                    ?>
                                                 </select>
                                             </label>
                                             <label class="red"><?php echo form_error('txtModule[]');?></label>

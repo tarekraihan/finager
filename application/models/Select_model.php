@@ -52,6 +52,12 @@ class Select_Model extends CI_Model
         return $query;
     }
 
+    public function select_all_admin_user_access(){
+        $sql = "SELECT tbl_admin_user.id as user_id, tbl_admin_user.first_name as user_first_name,tbl_admin_user.last_name as user_last_name, tbl_admin_user.email_address, finager_modules.module_name FROM `tbl_admin_user` LEFT JOIN admin_user_vs_modules ON admin_user_vs_modules.user_id = tbl_admin_user.id LEFT JOIN finager_modules ON finager_modules.id = admin_user_vs_modules.module_id ORDER BY tbl_admin_user.id ASC";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
     public function  Select_Single_Row($id,$table,$id_field)
     {
         if(empty($id)){
@@ -530,6 +536,19 @@ class Select_Model extends CI_Model
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtHomeLoanUser[]",$row->id).'>'.$row->home_loan_user.'</option>';
+
+        }
+        return $option;
+    }
+
+    function module_list()
+    {
+        $sql="SELECT * FROM `finager_modules`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtModule[]",$row->id).'>'.$row->module_name.'</option>';
 
         }
         return $option;
@@ -1705,7 +1724,7 @@ class Select_Model extends CI_Model
 					<td lang="bn">'. $sl.'</td>
 					<td class="center"> '.$row->module_name.'</td>
 					<td class="center"> '.$row->first_name.' '.$row->last_name.'</td>
-					<td class="center"> '.date('Y-m-d H:i:s',strtotime($row->created)).'</td>';
+					<td class="center"> '.date('Y-m-d h:i:s a',strtotime($row->created)).'</td>';
                 $result.='</td>
                     <td><a href="'.base_url().'backdoor/edit_module?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?module_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 

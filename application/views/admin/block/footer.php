@@ -557,7 +557,7 @@ you can add as many as you like
                 url: base_url + "backdoor/ajax_get_all_modules",
                 data: {user_id:user_id},
                 beforeSend: function () {
-                    overlay(true,true);
+                    $("#txtModule").html('');
                 },
                 success: function (response) {
                     overlay(false);

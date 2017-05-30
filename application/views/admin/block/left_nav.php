@@ -90,6 +90,10 @@
                         <a href="<?php echo base_url();?>backdoor/access_control">Access Control</a>
                     </li>
 
+                    <li>
+                        <a href="<?php echo base_url();?>backdoor/user_access">User Access</a>
+                    </li>
+
                 </ul>
             </li>
 
