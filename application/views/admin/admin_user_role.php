@@ -172,7 +172,7 @@ if(isset($_GET['a_user_id']))
                                         ?>
                                         <tr>
                                             <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo $row->admin_role;?></td>
+                                            <td ><?php echo ucfirst( $row->admin_role );?></td>
                                             <td><a href="<?php echo base_url(); ?>backdoor/edit_admin_role?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?a_user_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                         </tr>
                                         <?php

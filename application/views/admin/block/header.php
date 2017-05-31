@@ -213,7 +213,7 @@ Use search to find needed section.
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+                        <a href="" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
                     </li>
                     <li class="divider"></li>
                     <li>

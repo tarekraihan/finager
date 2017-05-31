@@ -3,7 +3,7 @@
 <div class="page-footer">
     <div class="row">
         <div class="col-xs-12 col-sm-6">
-            <span class="txt-color-white">Finager <span class="hidden-xs"> - Tarek Raihan</span> © 20116-2017</span>
+            <span class="txt-color-white">Finager <span class="hidden-xs"> - Tarek Raihan</span> © 2016-<?php echo date('Y');?></span>
         </div>
 
         <div class="col-xs-6 col-sm-6 text-right hidden-xs">
@@ -121,21 +121,21 @@ you can add as many as you like
                 <div class="err_msg"></div>
                 <div class="form-group">
                     <label for="txtFirstName">First Name</label>
-                    <input type="text" class="form-control" name="txtFirstName" id="txtFirstName" placeholder="First Name" value ="<?php echo set_value('txtFirstName');?>" />
+                    <input type="text" class="form-control" name="txtFirstName" id="txtFirstName" placeholder="First Name" value ="<?php echo ($this->session->userdata('first_name') != '') ? $this->session->userdata('first_name') : set_value('txtFirstName');?>" />
                 </div>
                 <div class="form-group">
                     <label class="red"><?php echo form_error('txtFirstName');?></label>
                 </div>
                 <div class="form-group">
                     <label for="txtLastName">Last Name</label>
-                    <input type="text" class="form-control" name="txtLastName" id="txtLastName" placeholder="Last Name" value ="<?php echo set_value('txtLastName');?>" />
+                    <input type="text" class="form-control" name="txtLastName" id="txtLastName" placeholder="Last Name" value ="<?php echo ($this->session->userdata('last_name') != '') ? $this->session->userdata('last_name') :  set_value('txtLastName');?>" />
                 </div>
                 <div class="form-group">
                     <label class="red"><?php echo form_error('txtLastName');?></label>
                 </div>
                 <div class="form-group">
                     <label for="txtPhoneNo">Phone No</label>
-                    <input type="tel" class="form-control" name="txtPhoneNo"  id="txtPhoneNo" placeholder="Phone No" value ="<?php echo set_value('txtPhoneNo');?>" />
+                    <input type="tel" class="form-control" name="txtPhoneNo"  id="txtPhoneNo" placeholder="Phone No" value ="<?php echo ($this->session->userdata('phone_no') != '') ? $this->session->userdata('phone_no') :  set_value('txtPhoneNo');?>" />
                 </div>
                 <div class="form-group">
                     <label class="red"><?php echo form_error('txtPhoneNo');?></label>

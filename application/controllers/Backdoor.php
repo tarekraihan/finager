@@ -31,7 +31,7 @@ class Backdoor extends CI_Controller {
             $data['title'] = "Finager - Dashboard";
             $this->load->view('admin/block/header',$data);
             $this->load->view('admin/block/left_nav');
-            //$this->load->view('admin/test');
+            $this->load->view('admin/dashboard');
             $this->load->view('admin/block/footer');
         }else {
             redirect('backdoor');
@@ -533,6 +533,7 @@ class Backdoor extends CI_Controller {
                         $data['first_name'] = $row->first_name;
                         $data['last_name'] = $row->last_name;
                         $data['email_address'] = $row->email_address;
+                        $data['phone_no'] = $row->phone_no;
                         $data['password'] = $row->password;
                         $data['profile_picture'] = $row->profile_picture;
                         $data['admin_first_login'] = $row->admin_first_login;

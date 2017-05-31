@@ -1,5 +1,14 @@
-
-
+<?php
+$admin_role = $this->session->userdata('admin_role');
+echo $admin_role;
+$module_id =$this->Select_model->get_admin_user_modules($this->session->userdata('admin_user_id'));
+$modules = array();
+foreach($module_id as $k){
+    foreach($k as $v){
+        array_push($modules,$v);
+    }
+}
+?>
 <!-- Left panel : Navigation area -->
 <!-- Note: This width of the aside area can be adjusted through LESS variables -->
 <aside id="left-panel">
@@ -61,14 +70,7 @@
 
                 </ul>
             </li>
-            <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Search</span></a>
-                <ul>
-                    <li>
-                        <a href="<?php echo base_url();?>backdoor/search_index">Search Index</a>
-                    </li>
-                </ul>
-            </li>
+
             <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">User Manage</span></a>
                 <ul>
@@ -97,347 +99,550 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Credit Card</span></a>
-                <ul>
-                    <!--<li>
+            <?php
+                $i = 0;
+                foreach($modules as $module){
+
+                    if($module == 1 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                        $i = 1;
+                    }
+                }
+                if($i > 0){
+            ?>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-credit-card"></i> <span class="menu-item-parent">Credit Card</span></a>
+                    <ul>
+                        <!--<li>
                         <a href="<?php /*echo base_url();*/?>card/age_limit">Age Limit</a>
                     </li>-->
 
-                    <li>
-                        <a href="<?php echo base_url();?>card/card_issuer">Card Issuer </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url(); ?>card/card_type">Card Type</a>
-                    </li>
-                    <!--<li>
+                        <li>
+                            <a href="<?php echo base_url();?>card/card_issuer">Card Issuer </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>card/card_type">Card Type</a>
+                        </li>
+                        <!--<li>
                         <a href="<?php /*echo base_url();*/?>card/card_limit">Credit Limit</a>
                     </li>-->
-                    <li>
-                        <a href="<?php echo base_url();?>card/card_user">Card User</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>card/credit_card_type">Credit Card Type</a>
-                    </li>
-                    <!--<li>
+                        <li>
+                            <a href="<?php echo base_url();?>card/card_user">Card User</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url();?>card/credit_card_type">Credit Card Type</a>
+                        </li>
+                        <!--<li>
                         <a href="<?php /*echo base_url(); */?>card/card_income_range">Income Range</a>
                     </li>-->
-                   <!-- <li>
+                        <!-- <li>
                         <a href="<?php /*echo base_url(); */?>card/card_interest_free_period">Interest Free Period</a>
                     </li>-->
-                    <li>
-                        <a href="<?php echo base_url();?>card/card_reward">Card Reward</a>
-                    </li>
+                        <li>
+                            <a href="<?php echo base_url();?>card/card_reward">Card Reward</a>
+                        </li>
 
-                    <li>
-                        <a href="<?php echo base_url();?>card/card_info">Card Information</a>
-                    </li>
+                        <li>
+                            <a href="<?php echo base_url();?>card/card_info">Card Information</a>
+                        </li>
 
-                    <li>
-                        <a href="<?php echo base_url();?>card/card_info_list">Card Information List</a>
-                    <li>
-                    <a href="<?php echo base_url();?>card/card_fees_charges">Fees and Charges</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>card/card_fees_charges_list">Fees and Charges List</a>
-                    </li>
-            </li>
+                        <li>
+                            <a href="<?php echo base_url();?>card/card_info_list">Card Information List</a>
+                        <li>
+                            <a href="<?php echo base_url();?>card/card_fees_charges">Fees and Charges</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url();?>card/card_fees_charges_list">Fees and Charges List</a>
+                        </li>
+                        </li>
 
-        </ul>
-            </li>
+                    </ul>
+                </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
+
+                if($module == 2 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+                <li>
+                    <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Debit Card</span></a>
+                    <ul>
+                        <li>
+                            <a href="<?php echo base_url();?>debit_card/add_choose_account">Add Choose Account</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo base_url();?>debit_card/card_issuer">Add Card Issur</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url();?>debit_card/i_want/">Add I want</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url();?>debit_card/looking_for/">Add looking for</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url();?>debit_card/add_card_info/">Add Card Info</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url();?>debit_card/card_info_list/">Card List</a>
+                        </li>
+                    </ul>
+                </li>
+            <?php
+            }
+            ?>
+
+            <?php
+            $i = 0;
+            foreach($modules as $module){
+
+                if($module == 3 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
             <li class="top-menu-invisible">
-            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Home Loan</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>home_loan/loan_type/"><i class="fa fa-stack-overflow"></i>Add Loan Type</a>
-                </li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Home Loan</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>home_loan/loan_type/"><i class="fa fa-stack-overflow"></i>Add Loan Type</a>
+                    </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>home_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>home_loan/user/"><i class="fa fa-stack-overflow"></i> Add Loan User</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>home_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>home_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
-                </li>
-            </ul>
-        </li>
+                    <li>
+                        <a href="<?php echo base_url();?>home_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>home_loan/user/"><i class="fa fa-stack-overflow"></i> Add Loan User</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>home_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>home_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
 
-        <li class="top-menu-invisible">
-            <a href="#"><i class="fa fa-lg fa-fw fa fa-automobile txt-color-red"></i> <span class="menu-item-parent">Auto Loan</span></a>
-            <ul>
+                if($module == 4 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li class="top-menu-invisible">
+                <a href="#"><i class="fa fa-lg fa-fw fa fa-automobile txt-color-red"></i> <span class="menu-item-parent">Auto Loan</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>auto_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>auto_loan/user/"><i class="fa fa-stack-overflow"></i> Add Loan User</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>auto_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>auto_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
 
-                <!--<li>
-                    <a href="<?php /*echo base_url();*/?>auto_loan/applicant_type/"><i class="fa fa-stack-overflow"></i> Add Applicant Type</a>
-                </li>
-                <li>
-                    <a href="<?php /*echo base_url();*/?>auto_loan/feature/"><i class="fa fa-stack-overflow"></i> Add Feature</a>
-                </li>-->
-                <li>
-                    <a href="<?php echo base_url();?>auto_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>auto_loan/user/"><i class="fa fa-stack-overflow"></i> Add Loan User</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>auto_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>auto_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
-                </li>
-            </ul>
-        </li>
+                if($module == 5 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li class="top-menu-invisible">
+                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Personal Loan</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>personal_loan/i_am/"><i class="fa fa-stack-overflow"></i> Add I Am</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>personal_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>personal_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>personal_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
 
-        <li class="top-menu-invisible">
-            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Personal Loan</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>personal_loan/i_am/"><i class="fa fa-stack-overflow"></i> Add I Am</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>personal_loan/looking_for/"><i class="fa fa-stack-overflow"></i> Add Looking For</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>personal_loan/loan_info/"><i class="fa fa-stack-overflow"></i> Add Loan Information</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>personal_loan/loan_list/"><i class="fa fa-stack-overflow"></i>  Loan List</a>
-                </li>
-            </ul>
-        </li>
+                if($module == 6 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li class="top-menu-invisible">
+                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Fixed Deposit</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>fdr/deposit_type/"><i class="fa fa-stack-overflow"></i> Add Deposit Type</a>
+                    </li>
+    <!--
+                    <li>
+                        <a href="<?php /*echo base_url();*/?>fdr/i_want/"><i class="fa fa-stack-overflow"></i> Add I Want</a>
+                    </li>
+    -->
+                    <li>
+                        <a href="<?php echo base_url();?>fdr/tenure/"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
+                    </li>
 
+                    <li>
+                        <a href="<?php echo base_url();?>fdr/i_am/"><i class="fa fa-stack-overflow"></i> Add I Am</a>
+                    </li>
 
-        <li class="top-menu-invisible">
-            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Fixed Deposit</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>fdr/deposit_type/"><i class="fa fa-stack-overflow"></i> Add Deposit Type</a>
-                </li>
-<!--
-                <li>
-                    <a href="<?php /*echo base_url();*/?>fdr/i_want/"><i class="fa fa-stack-overflow"></i> Add I Want</a>
-                </li>
--->
-                <li>
-                    <a href="<?php echo base_url();?>fdr/tenure/"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
-                </li>
+                    <li>
+                        <a href="<?php echo base_url();?>fdr/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft/Common Info</a>
+                    </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>fdr/i_am/"><i class="fa fa-stack-overflow"></i> Add I Am</a>
-                </li>
+                    <li>
+                        <a href="<?php echo base_url();?>fdr/draft_list/"><i class="fa fa-stack-overflow"></i>  Draft List</a>
+                    </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>fdr/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft/Common Info</a>
-                </li>
+                    <li>
+                        <a href="<?php echo base_url();?>fdr/fdr_info/"><i class="fa fa-stack-overflow"></i> Add fdr Information</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>fdr/fdr_info_list/"><i class="fa fa-stack-overflow"></i>  FDR Info List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
 
-                <li>
-                    <a href="<?php echo base_url();?>fdr/draft_list/"><i class="fa fa-stack-overflow"></i>  Draft List</a>
-                </li>
-
-                <li>
-                    <a href="<?php echo base_url();?>fdr/fdr_info/"><i class="fa fa-stack-overflow"></i> Add fdr Information</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>fdr/fdr_info_list/"><i class="fa fa-stack-overflow"></i>  FDR Info List</a>
-                </li>
-            </ul>
-        </li>
-
-
-        <li class="top-menu-invisible">
-            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">DPS</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>dps/tenure"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>dps/monthly_installment/"><i class="fa fa-stack-overflow"></i> Add Monthly Installment</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>dps/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft Info</a>
-                </li>
-
-
-                <li>
-                    <a href="<?php echo base_url();?>dps/draft_list/"><i class="fa fa-stack-overflow"></i> Draft List</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>dps/add_info/"><i class="fa fa-stack-overflow"></i> Add Information</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>dps/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit List</a>
-                </li>
-            </ul>
-        </li>
-
-        <li class="top-menu-invisible">
-            <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Millionaire</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>millionaire/tenure"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>millionaire/i_am"><i class="fa fa-stack-overflow"></i> Add I am</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>millionaire/maturity_amount/"><i class="fa fa-stack-overflow"></i> Add Maturity Amount</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>millionaire/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft Info</a>
-                </li>
+                if($module == 7 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li class="top-menu-invisible">
+                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">DPS</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>dps/tenure"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>dps/monthly_installment/"><i class="fa fa-stack-overflow"></i> Add Monthly Installment</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>dps/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft Info</a>
+                    </li>
 
 
-                <li>
-                    <a href="<?php echo base_url();?>millionaire/draft_list/"><i class="fa fa-stack-overflow"></i> Draft List</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>millionaire/add_info/"><i class="fa fa-stack-overflow"></i> Add Information</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>millionaire/deposit_list/"><i class="fa fa-stack-overflow"></i>Millionaire Info List</a>
-                </li>
-            </ul>
-        </li>
+                    <li>
+                        <a href="<?php echo base_url();?>dps/draft_list/"><i class="fa fa-stack-overflow"></i> Draft List</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>dps/add_info/"><i class="fa fa-stack-overflow"></i> Add Information</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>dps/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
 
-        <li>
-            <a href="#"><i class="fa fa-lg fa-fw fa-graduation-cap"></i> <span class="menu-item-parent"> Education Loan</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>education_loan/tenure">Add Tenure</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>education_loan/expenses_considered">Add Expenses</a>
-                </li>
+                if($module == 8 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li class="top-menu-invisible">
+                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">Millionaire</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>millionaire/tenure"><i class="fa fa-stack-overflow"></i> Add Tenure</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>millionaire/i_am"><i class="fa fa-stack-overflow"></i> Add I am</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>millionaire/maturity_amount/"><i class="fa fa-stack-overflow"></i> Add Maturity Amount</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>millionaire/draft_info/"><i class="fa fa-stack-overflow"></i> Add Draft Info</a>
+                    </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>education_loan/purpose">Add Purpose</a>
-                </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>education_loan/loan_info">Add Loan Info</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>education_loan/loan_list/"><i class="fa fa-stack-overflow"></i>Loan Info List</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-lg fa-fw fa-graduation-cap"></i> <span class="menu-item-parent"> Money Maximizer</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>money_maximizer/your_benefits">Add Your benefit</a>
-                </li>
+                    <li>
+                        <a href="<?php echo base_url();?>millionaire/draft_list/"><i class="fa fa-stack-overflow"></i> Draft List</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>millionaire/add_info/"><i class="fa fa-stack-overflow"></i> Add Information</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>millionaire/deposit_list/"><i class="fa fa-stack-overflow"></i>Millionaire Info List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
 
-                <li>
-                    <a href="<?php echo base_url();?>money_maximizer/add_deposit_info">Add Deposit Info</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>money_maximizer/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit Info List</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Debit Card</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>debit_card/add_choose_account">Add Choose Account</a>
-                </li>
+                if($module == 9 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-graduation-cap"></i> <span class="menu-item-parent"> Education Loan</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>education_loan/tenure">Add Tenure</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>education_loan/expenses_considered">Add Expenses</a>
+                    </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>debit_card/card_issuer">Add Card Issur</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>debit_card/i_want/">Add I want</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>debit_card/looking_for/">Add looking for</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>debit_card/add_card_info/">Add Card Info</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>debit_card/card_info_list/">Card List</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Monthly Benefit</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>monthly_benefit/tenure">Add Tenure</a>
-                </li>
+                    <li>
+                        <a href="<?php echo base_url();?>education_loan/purpose">Add Purpose</a>
+                    </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>monthly_benefit/add_deposit_info">Add Deposit Info</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>monthly_benefit/deposit_list/">Deposit List</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Current Account</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>current_account/i_am">Add I Am</a>
-                </li>
+                    <li>
+                        <a href="<?php echo base_url();?>education_loan/loan_info">Add Loan Info</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>education_loan/loan_list/"><i class="fa fa-stack-overflow"></i>Loan Info List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
 
-                <li>
-                    <a href="<?php echo base_url();?>current_account/account_info">Add Account Info</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>current_account/account_list/">Account List</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Saving Account</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>saving_account/account_info">Add Account Info</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>saving_account/account_list/">Account List</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> SND Account</span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url();?>snd_account/i_am">Add I Am</a>
-                </li>
+                if($module == 10 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-graduation-cap"></i> <span class="menu-item-parent"> Money Maximizer</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>money_maximizer/your_benefits">Add Your benefit</a>
+                    </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>snd_account/deposit_amount">Add Deposit Amount</a>
-                </li>
+                    <li>
+                        <a href="<?php echo base_url();?>money_maximizer/add_deposit_info">Add Deposit Info</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>money_maximizer/deposit_list/"><i class="fa fa-stack-overflow"></i>Deposit Info List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
 
-                <li>
-                    <a href="<?php echo base_url();?>snd_account/account_info">Add Account Info</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>snd_account/account_list/">Account List</a>
-                </li>
-            </ul>
-        </li>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
 
-        <li>
-            <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
-            <ul>
+                if($module == 11 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Monthly Benefit</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>monthly_benefit/tenure">Add Tenure</a>
+                    </li>
 
-                <li>
-                    <a href="<?php echo base_url();?>map/add">Add Map Info</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url();?>map/map_info_list">Info List</a>
-                </li>
+                    <li>
+                        <a href="<?php echo base_url();?>monthly_benefit/add_deposit_info">Add Deposit Info</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>monthly_benefit/deposit_list/">Deposit List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
 
-            </ul>
-        </li>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
+
+                if($module == 12 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Current Account</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>current_account/i_am">Add I Am</a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo base_url();?>current_account/account_info">Add Account Info</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>current_account/account_list/">Account List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
+
+                if($module == 13 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> Saving Account</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>saving_account/account_info">Add Account Info</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>saving_account/account_list/">Account List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
+
+                if($module == 14 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-credit-card"></i> <span class="menu-item-parent"> SND Account</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>snd_account/i_am">Add I Am</a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo base_url();?>snd_account/deposit_amount">Add Deposit Amount</a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo base_url();?>snd_account/account_info">Add Account Info</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>snd_account/account_list/">Account List</a>
+                    </li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
+
+                if($module == 15 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Map Manage</span></a>
+                <ul>
+
+                    <li>
+                        <a href="<?php echo base_url();?>map/add">Add Map Info</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>map/map_info_list">Info List</a>
+                    </li>
+
+                </ul>
+            </li>
+            <?php
+            }
+            ?>
+            <?php
+            $i = 0;
+            foreach($modules as $module){
+
+                if($module == 16 || $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Search</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>backdoor/search_index">Search Index</a>
+                    </li>
+                </ul>
+            </li>
+                <?php
+            }
+            ?>
         </ul>
     </nav>
 			<span class="minifyme" data-action="minifyMenu"> 
