@@ -39,6 +39,8 @@ foreach($module_id as $k){
                 <a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
             </li>
             -->
+            <?php
+            if($admin_role == 'super admin' || $admin_role == 'admin'){?>
             <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">General Settings</span></a>
                 <ul>
@@ -57,49 +59,53 @@ foreach($module_id as $k){
                     <li>
                         <a href="<?php echo base_url();?>general/visitor_map">Visitor Map</a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url();?>general/go_maintenance">Go Maintenance Break</a>
-                    </li>
 
-                    <li>
-                        <a href="<?php echo base_url();?>general/go_live">Go Live</a>
-                    </li>
                     <li>
                         <a href="<?php echo base_url();?>general/subscriptions">Subscriptions</a>
                     </li>
 
                 </ul>
             </li>
+            <?php }
+            if($admin_role == 'super admin') {
+                ?>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span
+                            class="menu-item-parent">User Manage</span></a>
+                    <ul>
+                        <li>
+                            <a href="<?php echo base_url(); ?>backdoor/admin_role">Add Admin Role</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>backdoor/create_admin_user">Add Admin User </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>backdoor/admin_user_list">Admin User List</a>
+                        </li>
 
-            <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">User Manage</span></a>
-                <ul>
-                    <li>
-                        <a href="<?php echo base_url();?>backdoor/admin_role">Add Admin Role</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>backdoor/create_admin_user">Add Admin User </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url();?>backdoor/admin_user_list">Admin User List</a>
-                    </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>backdoor/add_module">Add Module</a>
+                        </li>
 
-                    <li>
-                        <a href="<?php echo base_url();?>backdoor/add_module">Add Module</a>
-                    </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>backdoor/access_control">Access Control</a>
+                        </li>
 
-                    <li>
-                        <a href="<?php echo base_url();?>backdoor/access_control">Access Control</a>
-                    </li>
+                        <li>
+                            <a href="<?php echo base_url(); ?>backdoor/user_access">User Access</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url();?>general/go_maintenance">Go Maintenance Break</a>
+                        </li>
 
-                    <li>
-                        <a href="<?php echo base_url();?>backdoor/user_access">User Access</a>
-                    </li>
+                        <li>
+                            <a href="<?php echo base_url();?>general/go_live">Go Live</a>
+                        </li>
+                    </ul>
+                </li>
 
-                </ul>
-            </li>
-
-            <?php
+                <?php
+            }
                 $i = 0;
                 foreach($modules as $module){
 

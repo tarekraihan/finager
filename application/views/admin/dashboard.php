@@ -1,5 +1,14 @@
-
-
+<?php
+$admin_role = $this->session->userdata('admin_role');
+echo $admin_role;
+$module_id =$this->Select_model->get_admin_user_modules($this->session->userdata('admin_user_id'));
+$modules = array();
+foreach($module_id as $k){
+    foreach($k as $v){
+        array_push($modules,$v);
+    }
+}
+?>
 <!-- MAIN PANEL -->
 <div id="main" role="main">
 
