@@ -5,6 +5,40 @@
 //finacialAssest = I have already saved
 //finacialAssest1 = Amount I would save in my account each month
 
+var $obj = $('#sidebar');
+        var eTop = $('.footer').offset() || { "top": NaN }.top; //get the offset top of the element
+        var top = $obj.offset().top - parseFloat($obj.css('marginTop', 0));
+        //alert("01");
+        $(window).scroll(function (event) {
+            // what the y position of the scroll is
+            //alert("asd");
+            var y = $(this).scrollTop();
+            var distance = parseInt(eTop - $(window).scrollTop());
+
+            // whether that's below the form
+            if (y >= top) {
+                console.log("02");
+              // if so, ad the fixed class
+              $obj.addClass('fixed');
+            } 
+            else if(y < top){
+                console.log("03");
+              // otherwise remove it
+              $obj.removeClass('fixed');
+            }
+
+            if(distance < 350){
+                console.log("04");
+                //console.log("should hide");
+                $obj.hide();
+            }
+            else if(distance>350){
+                console.log("05");
+                //console.log("should hide");
+                $obj.show();
+            }
+        });
+
 
 var lft, q= 30, i;
 var newWid, wid, len, dragFlag = true, clickEventFlag = false, dragEventFlag = false;

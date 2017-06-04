@@ -1,3 +1,5 @@
+
+
 jQuery(document).ready(function(){
 	if( $('.cd-stretchy-nav').length > 0 ) {
 		var stretchyNavs = $('.cd-stretchy-nav');
@@ -18,7 +20,7 @@ jQuery(document).ready(function(){
 	}
 });
 
-// searching text effect for homepage search START
+/*// searching text effect for homepage search START
 document.addEventListener('DOMContentLoaded',function(event){
     // array with texts to type in typewriter
     var dataText = [ "I am looking for..."];
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     }
     // start the text animation
     StartTextAnimation(0);
-});
+});*/
 
 window.onload = function() {
     var elements = document.getElementsByClassName('typewrite');

@@ -17,6 +17,8 @@ var keyFlag1 = false;
 var incrmentalVal = -1 ;
 var increCounter = 1 ;
 $("#liability").css('width') + 210;
+
+
 $(function(event) {
 	
 		/****** input box calculation ****/
@@ -572,6 +574,7 @@ $(function(event) {
 
 	});
 
+
 	$( ".draggable" ).mouseup(function(){
 
 		$('body .dragLiAdjust').removeClass('dragLiAdjust');
@@ -586,9 +589,75 @@ $(function(event) {
 		{
 			$(this).parents('.calcSection').find('.prev').removeClass('active');
 		}
+
+
+
+			var leftPosCal = parseInt($(this).css('left'))/35;
+			var leftPos;
+
+			$( ".draggable" ).draggable({
+			    drag: function( event, ui ) {
+			    	
+			        //$(this).text(ui.originalPosition.left > ui.position.left ?  'left' : 'right');
+			        if(ui.originalPosition.left > ui.position.left){
+			        	console.log(leftPosCal);
+			        	console.log("left");
+			        	//leftPosCal = parseInt($(this).css('left'))/35;
+						leftPos = Math.floor(leftPosCal)*35;
+						console.log(leftPos);
+						//return leftPos;
+			        }
+			        else{
+			        	console.log("right");
+			        	//leftPosCal = parseInt($(this).css('left'))/35;
+						leftPos = Math.ceil(leftPosCal)*35;
+						//return leftPos;
+			        }
+
+			    return leftPos;
+			    }
+			});
+
+			//var leftPos;
+			//return leftPos;
+			//console.log('return'+leftPos);
+
+
 		/*  */
-		var leftPosCal = parseInt($(this).css('left'))/35;
-		var leftPos = Math.ceil(leftPosCal)*35;
+
+		//var leftPosCal = parseInt($(this).css('left'))/35;
+		//var leftPos = Math.floor(leftPosCal)*35;
+
+		
+		
+		
+		/*var leftPosCal = parseInt($(this).css('left'))/35;
+		var leftPos;
+		var leave_number;
+		var prevX = -1;
+		$('.draggable').draggable({
+		    drag: function(e) {
+		        //console.log(e.pageX);
+		        
+		        // dragged left
+		        if(prevX > e.pageX) {
+					var leftPos = Math.floor(leftPosCal)*35;
+					return leftPos;
+		            console.log('dragged left');
+					console.log('left'+leftPos);
+					return leftPos;
+		        } 
+		        else if(prevX < e.pageX) { // dragged right
+					var leftPos = Math.ceil(leftPosCal)*35;
+		            console.log('dragged right');
+					console.log('right'+leftPos);
+					return leftPos;
+		        }
+		        //prevX = e.pageX;
+		console.log(leftPos);
+		    }
+		});*/
+
 		
 		var thMar = Math.abs(parseInt($(this).css('left')));
 		var ulMar = thMar + 45 + Math.abs(parseInt($(this).parents('.dragBox').find('.slideImg ul').css('margin-left')));
@@ -606,7 +675,7 @@ $(function(event) {
 			}
 		}
 		else if(leftPos < 350){
-		
+			
 			$(this).parents('.calcSection').find('.draggable, .highLight ').css('left',leftPos);
 		}
 		else{
@@ -622,7 +691,8 @@ $(function(event) {
 		},200);
 		clickEventFlag = false;
 		dragEventFlag = false;
-	})
+	});
+
 	$('.next').click(function(){
 		var marLft = parseInt( $(this).parents('.calcSection').find('ul').css('margin-left'));
 		var newULWidth = (parseInt($(this).parents('.calcSection').find('ul').css('width')) - 435);
@@ -1072,6 +1142,5 @@ function dragLiAdjustFunction(){
 	}
 	ths.css({'margin-left': '-'+m+'px'});
 }
-
 
 // Calculator Functionality END

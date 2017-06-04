@@ -1,3 +1,5 @@
+
+
 <section id="auto_header">
 
 </section>
@@ -419,8 +421,12 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/auto-loan-calculator.js"></script>
 <script>
 
+
     $(document).ready(function(){
-        $(window).on('scroll', function (){
+
+        
+       // $(".home_loan_left_bar").stick_in_parent();
+       /*$(window).on('scroll', function (){
             if ($(window).scrollTop() > 350){
                 console.log("over 350");
               $('.home_loan_left_bar').addClass('fixedElement');
@@ -430,8 +436,7 @@
               $('.home_loan_left_bar').removeClass('fixedElement');
             }
         });
-
-
+        */
 
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();
@@ -653,4 +658,8 @@
             }
         });
     });
+
+        
+   
+       
 </script>
