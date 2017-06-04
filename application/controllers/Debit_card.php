@@ -486,6 +486,7 @@ class Debit_card extends CI_Controller
         $debit_card_card_issuer = ($this->session->userdata("debit_card_card_issuer") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_card_issuer").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
         $debit_card_i_want = ($this->session->userdata("debit_card_i_want") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_i_want").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
 
+        $debit_card_clear_all ='';
         if($debit_card_choose_account !='' || $debit_card_looking_for != '' || $debit_card_card_issuer !='' || $debit_card_i_want != ''){
             $debit_card_clear_all = '<div id="clear_all" class="active-filter">Clear All </div>';
         }
