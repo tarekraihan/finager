@@ -468,6 +468,28 @@ class Debit_card extends CI_Controller
         $card_issuer = $this->input->post('card_issuer');
         $i_want = $this->input->post('i_want');
 
+        $data = array(
+            'choose_account' => $this->input->post('choose_account'),
+            'looking_for' => $this->input->post('looking_for'),
+            'card_issuer' => $this->input->post('card_issuer'),
+            'i_want' => $this->input->post('i_want'),
+            'debit_card_choose_account' => $this->input->post('debit_card_choose_account'),
+            'debit_card_looking_for' => $this->input->post('debit_card_looking_for'),
+            'debit_card_card_issuer' => $this->input->post('debit_card_card_issuer'),
+            'debit_card_i_want' => $this->input->post('debit_card_i_want')
+        );
+
+        $this->session->set_userdata($data);
+
+        $debit_card_choose_account = ($this->session->userdata("debit_card_choose_account") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_choose_account").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
+        $debit_card_looking_for = ($this->session->userdata("debit_card_looking_for") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_looking_for").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
+        $debit_card_card_issuer = ($this->session->userdata("debit_card_card_issuer") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_card_issuer").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
+        $debit_card_i_want = ($this->session->userdata("debit_card_i_want") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_i_want").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
+
+        if($debit_card_choose_account !='' || $debit_card_looking_for != '' || $debit_card_card_issuer !='' || $debit_card_i_want != ''){
+            $debit_card_clear_all = '<div id="clear_all" class="active-filter">Clear All </div>';
+        }
+
         $WHERE = array(); $query = '';
         if(!empty($choose_account)) {
             if(strstr($choose_account,',')) {
@@ -564,8 +586,15 @@ class Debit_card extends CI_Controller
 
         //-------------Pagination End-------------------
 
-
         $debit_card ='';
+        $debit_card .='<div class="col-md-12">
+                        <div class="active-filters-container">
+                         '.$debit_card_choose_account.'
+                         '.$debit_card_looking_for.'
+                         '.$debit_card_card_issuer.'
+                         '.$debit_card_i_want.'
+                         '.$debit_card_clear_all.'
+                        </div></div>';
         foreach($result->result() as $row) {
             $debit_card .= '<div class="full-card">
 
