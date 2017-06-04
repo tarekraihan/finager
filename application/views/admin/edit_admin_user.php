@@ -1,11 +1,17 @@
 <?php
-
-if(isset($_GET['a_user_id']))
+if(isset($_GET['id']))
 {
-    $id=$_GET['a_user_id'];
-    $table='tbl_admin_user_role';
+    $id=$_GET['id'];
+    $table='tbl_admin_user';
     $id_field='id';
-    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+//    pr($row);die;
+}else{
+    $row['id']='';
+    $row['email_address']='';
+    $row['admin_role_id']='';
+    $row['actual_password']='';
+    $row['status']='';
 }
 ?>
 <!-- MAIN PANEL -->
@@ -21,8 +27,9 @@ if(isset($_GET['a_user_id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Home</li><li>Admin</li><li> add User</li>
+            <li>Home</li><li>Admin</li><li> edit User</li>
         </ol>
+
     </div>
     <!-- END RIBBON -->
     <!-- MAIN CONTENT -->
@@ -33,10 +40,11 @@ if(isset($_GET['a_user_id']))
                     <i class="fa fa-table fa-fw "></i>
                     Management
                         <span>>
-                            Add Admin User
+                            edit Admin User
                         </span>
                     <a href="<?php echo base_url();?>backdoor/admin_user_list" class="btn btn-info pull-right"><< Admin User List</a>
                 </h1>
+
             </div>
 
         </div>
@@ -50,7 +58,7 @@ if(isset($_GET['a_user_id']))
                     <div class="jarviswidget jarviswidget-sortable jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Add Admin User </h2>
+                            <h2>Edit Admin User </h2>
 
                         </header>
 
@@ -68,7 +76,7 @@ if(isset($_GET['a_user_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>backdoor/create_admin_user" class="smart-form" novalidate="novalidate">
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>backdoor/edit_admin_user" class="smart-form" novalidate="novalidate">
 
                                     <fieldset>
                                         <section>
@@ -77,7 +85,8 @@ if(isset($_GET['a_user_id']))
                                         <section>
                                             <label class="label">Email Address</label>
                                             <label class="input">
-                                                <input type="email" name="txtEmailAddress" placeholder="Email Address" value ="<?php echo set_value('txtEmailAddress');?>" />
+                                                <input type="hidden" name="txtUserId"  value ="<?php echo $row['id'];?>" />
+                                                <input type="email" name="txtEmailAddress" placeholder="Email Address" value ="<?php echo $row['email_address'];?>" />
                                             </label>
                                             <div class="form-group">
                                                 <label class="red"><?php echo form_error('txtEmailAddress');?></label>
@@ -87,7 +96,15 @@ if(isset($_GET['a_user_id']))
                                             <label class="label">User Role</label>
                                             <label class="select">
                                                 <select name="txtAdminUserRole">
-                                                    <?php echo $this->Select_model->select_admin_role();?>
+                                                    <option value=''>-- Select One --</option>
+                                                    <?php
+                                                    $result=$this->Select_model->select_all('tbl_admin_user_role');
+                                                    foreach($result->result() as $row1){
+                                                        ?>
+                                                        <option value="<?php echo $row1->id;?>" <?php if(isset($row["admin_role_id"]) && $row["admin_role_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtAdminUserRole",$row1->id)?>><?php echo $row1->admin_role ; ?></option>';
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </select>
                                             </label>
                                             <div class="form-group">
@@ -97,7 +114,7 @@ if(isset($_GET['a_user_id']))
                                         <section>
                                             <label class="label">Password</label>
                                             <label class="input">
-                                                <input type="password" name="txtPassword" placeholder="Password" value ="<?php echo set_value('txtPassword');?>" />
+                                                <input type="password" name="txtPassword" placeholder="Password" value ="<?php if(isset($row["actual_password"]) && !empty($row["actual_password"])){ echo $row['actual_password'];}else{ echo set_select("txtPassword"); } ?>" />
                                             </label>
                                             <div class="form-group">
                                                 <label class="red"><?php echo form_error('txtPassword');?></label>
@@ -106,16 +123,25 @@ if(isset($_GET['a_user_id']))
                                         <section>
                                             <label class="label">Confirm Password</label>
                                             <label class="input">
-                                                <input type="password" name="txtConfirmPassword" placeholder="Confirm Password" value ="<?php echo set_value('txtConfirmPassword');?>" />
+                                                <input type="password" name="txtConfirmPassword" placeholder="Confirm Password" value ="<?php if(isset($row["actual_password"]) && !empty($row["actual_password"])){ echo $row['actual_password'];}else{ echo set_select("txtConfirmPassword"); } ?>" />
                                             </label>
                                             <div class="form-group">
                                                 <label class="red"><?php echo form_error('txtConfirmPassword');?></label>
                                             </div>
                                         </section>
+                                        <section>
+                                            <label class="label">Change Status</label>
+                                            <label class="select">
+                                                <select name="txtStatus">
+                                                    <option value=''>-- Select One --</option>
+                                                    <option value='1' <?php if($row["status"] ==1){echo "selected='select'";}else{ echo set_select("txtStatus",1); } ?>>Active</option>
+                                                    <option value='0' <?php if( $row["status"] == 0){echo "selected='select'";}else{ echo set_select("txtStatus",0);}?>>Inactive</option>
+                                                </select>
+                                            </label>
                                     </fieldset>
                                     <footer>
                                         <button type="submit" id="save" class="btn btn-primary"  >
-                                            Create Admin
+                                            Update Admin
                                         </button>
                                     </footer>
                                 </form>

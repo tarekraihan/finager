@@ -152,7 +152,6 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="nofilter">
                             <div class="no_filter_tab" id="search_result">
-
                                 <div class="col-md-4">
                                     <a href="<?php echo base_url();?>en/debit_card">
                                        <div class="no_filte_div">

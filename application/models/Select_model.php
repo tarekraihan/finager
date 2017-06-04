@@ -40,9 +40,21 @@ class Select_Model extends CI_Model
     public function select_admin_user($email,$password)
     {
         $password = md5($password);
-        $sql ="SELECT * FROM tbl_admin_user LEFT JOIN tbl_admin_user_role ON tbl_admin_user.admin_role_id = tbl_admin_user_role.id WHERE tbl_admin_user.email_address ='$email' AND tbl_admin_user.password = '$password' AND tbl_admin_user.status=1";
+        $sql ="SELECT tbl_admin_user.*,tbl_admin_user_role.admin_role FROM tbl_admin_user LEFT JOIN tbl_admin_user_role ON tbl_admin_user.admin_role_id = tbl_admin_user_role.id WHERE tbl_admin_user.email_address ='$email' AND tbl_admin_user.password = '$password' AND tbl_admin_user.status=1";
         //echo $sql; die;
         $query=$this->db->query($sql);
+        return $query;
+    }
+
+    public function select_all_admin_user(){
+        $sql = "SELECT tbl_admin_user.*,tbl_admin_user_role.admin_role FROM tbl_admin_user LEFT JOIN tbl_admin_user_role ON tbl_admin_user.admin_role_id = tbl_admin_user_role.id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function select_all_admin_user_access(){
+        $sql = "SELECT tbl_admin_user.id as user_id, tbl_admin_user.first_name as user_first_name,tbl_admin_user.last_name as user_last_name, tbl_admin_user.email_address, finager_modules.module_name FROM `tbl_admin_user` LEFT JOIN admin_user_vs_modules ON admin_user_vs_modules.user_id = tbl_admin_user.id LEFT JOIN finager_modules ON finager_modules.id = admin_user_vs_modules.module_id ORDER BY tbl_admin_user.id ASC";
+        $query = $this->db->query($sql);
         return $query;
     }
 
@@ -92,6 +104,19 @@ class Select_Model extends CI_Model
         foreach($query->result() as $row)
         {
             $option.='<option value="'.$row->id.'" '.set_select("txtAdminUserRole",$row->id).'>'.$row->admin_role.'</option>';
+        }
+        return $option;
+    }
+
+
+    function select_admin_users()
+    {
+        $sql="SELECT * FROM `tbl_admin_user`";
+        $query=$this->db->query($sql);
+        $option="";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtAdminUser",$row->id).'>'.$row->email_address.'</option>';
         }
         return $option;
     }
@@ -516,6 +541,19 @@ class Select_Model extends CI_Model
         return $option;
     }
 
+    function module_list()
+    {
+        $sql="SELECT * FROM `finager_modules`";
+        $query=$this->db->query($sql);
+        $option="<option value=''>-- Select One --</option>";
+        foreach($query->result() as $row)
+        {
+            $option.='<option value="'.$row->id.'" '.set_select("txtModule[]",$row->id).'>'.$row->module_name.'</option>';
+
+        }
+        return $option;
+    }
+
     function auto_loan_looking_for()
     {
         $sql="SELECT * FROM `auto_i_want`";
@@ -533,6 +571,13 @@ class Select_Model extends CI_Model
     function home_loan_user()
     {
         $sql="SELECT * FROM `home_loan_user`";
+        $query=$this->db->query($sql);
+        return $query;
+    }
+
+    function select_finager_all_modules()
+    {
+        $sql="SELECT * FROM `finager_modules`";
         $query=$this->db->query($sql);
         return $query;
     }
@@ -1124,6 +1169,15 @@ class Select_Model extends CI_Model
 
     }
 
+    public function get_admin_user_modules($id){
+        if(!empty($id)) {
+            $sql = "SELECT module_id FROM `admin_user_vs_modules` WHERE user_id= $id";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
+
+    }
+
     public function get_auto_loan_info_vs_i_am($id){
         if(!empty($id)){
 
@@ -1651,6 +1705,29 @@ class Select_Model extends CI_Model
 					<td class="center"> '.$row->email_address.'</td>
 					<td class="center"> '.$row->ip_address.'</td>
 					<td class="center"> '.date('Y-m-d H:i:s',strtotime($row->created)).'</td>
+					</tr>';
+                $sl++;
+            }
+        }
+        return $result;
+    }
+
+    public function select_all_modules(){
+
+        $sql="SELECT finager_modules.*,tbl_admin_user.first_name,tbl_admin_user.last_name FROM `finager_modules` INNER JOIN tbl_admin_user ON tbl_admin_user.id=finager_modules.created_by";
+        $query=$this->db->query($sql);
+        $result="";
+        if($query->num_rows() > 0){
+            $sl=1;
+            foreach($query->result() as $row){
+                $result.='<tr>
+					<td lang="bn">'. $sl.'</td>
+					<td class="center"> '.$row->module_name.'</td>
+					<td class="center"> '.$row->first_name.' '.$row->last_name.'</td>
+					<td class="center"> '.date('Y-m-d h:i:s a',strtotime($row->created)).'</td>';
+                $result.='</td>
+                    <td><a href="'.base_url().'backdoor/edit_module?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?module_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+
 					</tr>';
                 $sl++;
             }

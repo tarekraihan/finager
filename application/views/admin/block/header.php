@@ -113,7 +113,9 @@ Use search to find needed section.
 <!-- HEADER -->
 <header id="header">
     <div id="logo-group">
-
+        <script>
+            var base_url = '<?php echo base_url();?>';
+        </script>
         <!-- PLACE YOUR LOGO HERE -->
         <span id="logo"> <img src="<?php echo base_url();?>resource/admin/img/company_logo.png" alt="SmartAdmin" style="width:75px; height: auto;"> </span>
         <!-- END LOGO PLACEHOLDER -->
@@ -211,7 +213,7 @@ Use search to find needed section.
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+                        <a href="" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
                     </li>
                     <li class="divider"></li>
                     <li>

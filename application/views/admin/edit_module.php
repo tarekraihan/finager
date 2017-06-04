@@ -1,11 +1,23 @@
 <?php
 
-if(isset($_GET['a_user_id']))
+if(isset($_GET['module_id']))
 {
-    $id=$_GET['a_user_id'];
-    $table='tbl_admin_user_role';
+    $id=$_GET['module_id'];
+    $table='finager_modules';
     $id_field='id';
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+}
+
+if(isset($_GET['id']))
+{
+    $id=$_GET['id'];
+    $table='finager_modules';
+    $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+//    pr($row);die;
+}else{
+    $row['id']='';
+    $row['module_name']='';
 }
 ?>
 <!-- MAIN PANEL -->
@@ -22,7 +34,7 @@ if(isset($_GET['a_user_id']))
 
         <!-- breadcrumb -->
         <ol class="breadcrumb">
-            <li>Home</li><li>Admin</li><li> User Role</li>
+            <li>Home</li><li>Admin</li><li>Finager Module</li>
         </ol>
         <!-- end breadcrumb -->
 
@@ -49,7 +61,7 @@ if(isset($_GET['a_user_id']))
                     <i class="fa fa-table fa-fw "></i>
                     Management
 							<span>>
-								Admin User Role
+								Finager Module
 							</span>
                 </h1>
             </div>
@@ -69,7 +81,7 @@ if(isset($_GET['a_user_id']))
                     <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                            <h2>Add Admin User Role </h2>
+                            <h2>Edit Module </h2>
 
                         </header>
 
@@ -86,29 +98,28 @@ if(isset($_GET['a_user_id']))
                             <!-- widget content -->
                             <div class="widget-body no-padding">
 
-                                <form id="age_limit" method="post" action="<?php echo base_url();?>backdoor/admin_Role" class="smart-form" novalidate="novalidate">
-                                    <?php
-                                    //-----Display Success or Error message---
-                                    if(isset($feedback)){
-                                        echo $feedback;
-                                    }
-                                    ?>
+                                <form id="age_limit" method="post" action="<?php echo base_url();?>backdoor/edit_module" class="smart-form" novalidate="novalidate">
+
                                     <fieldset>
                                         <section>
-                                            <label class="label">Admin Role</label>
+                                            <?php echo ($this->session->userdata('success_message')) ?  $this->session->userdata('success_message') : ''; $this->session->unset_userdata('success_message');?>
+                                        </section>
+                                        <section>
+                                            <label class="label">Module Name</label>
                                             <label class="input">
-                                                <input type="text" name="txtAdminRole" placeholder="Admin Role" value ="<?php echo set_value('txtAdminRole');?>" />
+                                                <input type="hidden" name="txtModuleId"  value ="<?php echo $row['id'];?>" />
+                                                <input type="text" name="txtModuleName" placeholder="Module Name" value ="<?php echo $row['module_name'];?>" />
 
                                             </label>
                                             <div class="form-group">
-                                                <label class="red"><?php echo form_error('txtAdminRole');?></label>
+                                                <label class="red"><?php echo form_error('txtModuleName');?></label>
 
                                             </div>
                                         </section>
                                     </fieldset>
                                     <footer>
                                         <button type="submit" id="save" class="btn btn-primary"  >
-                                            Save
+                                            Update
                                         </button>
                                     </footer>
                                 </form>
@@ -134,7 +145,7 @@ if(isset($_GET['a_user_id']))
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
                             <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                            <h2>Admin Role List </h2>
+                            <h2>Finager Module List </h2>
 
                         </header>
 
@@ -155,7 +166,9 @@ if(isset($_GET['a_user_id']))
                                     <thead>
                                     <tr>
                                         <th data-hide="phone">No.</th>
-                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Admin Role </th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Module Name </th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created by </th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created Date </th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>
@@ -163,21 +176,7 @@ if(isset($_GET['a_user_id']))
                                     <tbody>
 
                                     <?php
-                                    $this->Common_model->order_column = 'id';
-                                    $this->Common_model->table_name = 'tbl_admin_user_role';
-                                    $query=$this->Common_model->select_all();
-                                    $sl=1;
-                                    foreach ($query->result() as $row)
-                                    {
-                                        ?>
-                                        <tr>
-                                            <td class="text-center"><?php echo $sl; ?></td>
-                                            <td ><?php echo ucfirst( $row->admin_role );?></td>
-                                            <td><a href="<?php echo base_url(); ?>backdoor/edit_admin_role?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?a_user_id=<?php echo $row->id;?>" onclick="return confirm('Are you really want to delete this item')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
-                                        </tr>
-                                        <?php
-                                        $sl++;
-                                    }
+                                    echo $this->Select_model->select_all_modules();
                                     ?>
                                     </tbody>
                                 </table>
