@@ -15,7 +15,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/frontCard.css" />
 	<script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
     <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
-	<script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>	<script src="<?php echo base_url();?>resource/front_end/js/booNavigation.js"></script>
+	<script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
+    <script src="<?php echo base_url();?>resource/front_end/js/booNavigation.js"></script>
 
     <script type="text/javascript">
         // searching text effect START
@@ -29,7 +30,7 @@
                 // chekc if text isn't finished yet
                 if (i < (text.length)) {
                     // add next character to h1
-                    document.querySelector(".typewrite").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+                    //document.querySelector(".typewrite").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
 
                     // wait for a while and call this function again for next character
                     setTimeout(function() {

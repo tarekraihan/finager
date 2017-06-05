@@ -151,7 +151,7 @@
 <script type="text/javascript"> 
 
 $(window).on('scroll', function (){    
-        alert();   
+//        alert();
 	if ($(window).scrollTop() > 350){
 	  $('.card_left_bar').addClass('fixedElement');
 	}if($(window).scrollTop()<350){
@@ -394,8 +394,22 @@ $(window).on('scroll', function (){
 
         });
 
-$('#clear_all').click(function() {
-    location.reload();
-});
+        $(document).on('click','#clear_all',function(){
+            var data = 'session='+'debit_card';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>debit_card/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+//                    alert(response);
+
+                        window.location.href=window.location.href;
+
+                }
+            });
+        })
+
 
 </script>

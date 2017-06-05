@@ -488,7 +488,7 @@ class Debit_card extends CI_Controller
 
         $debit_card_clear_all ='';
         if($debit_card_choose_account !='' || $debit_card_looking_for != '' || $debit_card_card_issuer !='' || $debit_card_i_want != ''){
-            $debit_card_clear_all = '<div id="clear_all" class="active-filter">Clear All </div>';
+            $debit_card_clear_all = '<div class="active-filter"><a href="javascript:void(0);" id="clear_all"> Clear All</a> </div>';
         }
 
         $WHERE = array(); $query = '';
@@ -787,6 +787,26 @@ class Debit_card extends CI_Controller
         );
         $this->session->set_userdata($newdata);
         echo 'success';
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='debit_card'){
+            $this->session->unset_userdata('debit_card_choose_account');
+            $this->session->unset_userdata('debit_card_looking_for');
+            $this->session->unset_userdata('debit_card_card_issuer');
+            $this->session->unset_userdata('debit_card_i_want');
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+
+        if(!$this->session->has_userdata('debit_card_choose_account')){
+            echo 'success';
+        }else{
+            echo 'error';
+        }
+
     }
 
 
