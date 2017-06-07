@@ -403,13 +403,18 @@ $(window).on('scroll', function (){
                 data:data,
                 success: function(response)
                 {
-//                    alert(response);
-
-                        window.location.href=window.location.href;
+                        window.location.href = window.location.href;
 
                 }
             });
-        })
+        });
+
+        $(document).on('click', '.debit_card_choose_account', function (){
+            var  formData = $(this).data();
+            var chose_account = formData.choose_account;
+            var str = chose_account.split();
+            alert(str);
+        });
 
 
 </script>
