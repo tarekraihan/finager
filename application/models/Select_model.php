@@ -1178,6 +1178,17 @@ class Select_Model extends CI_Model
 
     }
 
+
+
+    public function get_card_info_card_user($id){
+        if(!empty($id)) {
+            $sql = "SELECT card_user_id FROM `card_info_card_user` WHERE card_info_id= $id";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
+
+    }
+
     public function get_auto_loan_info_vs_i_am($id){
         if(!empty($id)){
 
