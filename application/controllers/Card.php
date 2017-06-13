@@ -946,15 +946,15 @@ class Card extends CI_Controller
                 //------ Convert array into a variable
 
                 $card_user ="";
-                foreach($this->input->post('txtIm[]') as $user){
+                /*foreach($this->input->post('txtIm[]') as $user){
                     $card_user .= $user.',';
                 }
-                $card_user =substr($card_user,0,-1);//remove last comma
+                $card_user =substr($card_user,0,-1);//remove last comma*/
                 $card_benifit ="";
-                foreach($this->input->post('txtCardBenefit[]') as $benifit){
+               /* foreach($this->input->post('txtCardBenefit[]') as $benifit){
                     $card_benifit .= $benifit.',';
                 }
-                $card_benifit =substr($card_benifit,0,-1);
+                $card_benifit =substr($card_benifit,0,-1);*/
 
                 if(htmlentities($upload_result['file_name']) != "&lt;"){
                     $this->Common_model->data = array(
@@ -1060,7 +1060,7 @@ class Card extends CI_Controller
                 $id=$this->input->post('txtCardId');
                 $table='card_info_card_user';
                 $id_field='card_info_id';
-                $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+                $this->Delete_model->Delete_All_Row($id,$table,$id_field);
 //                die;
                 foreach($this->input->post('txtIm[]') as $user){
                     $this->Common_model->data = array(
@@ -1075,7 +1075,7 @@ class Card extends CI_Controller
                 $id=$this->input->post('txtCardId');
                 $table='card_info_card_reward';
                 $id_field='card_info_id';
-                $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+                $this->Delete_model->Delete_All_Row($id,$table,$id_field);
                 $result='';
                 foreach($this->input->post('txtCardBenefit[]') as $benefit){
                     $this->Common_model->data = array(
@@ -1143,6 +1143,7 @@ class Card extends CI_Controller
                 $WHERE[] = "(card_card_informations.credit_limit_min_salaried >= $data3[0] AND card_card_informations.credit_limit_max_salaried <= $data3[1])";
             }
         }
+
         if(!empty($feature_benefits)) {
             if(strstr($feature_benefits,',')) {
                 $data4 = explode(',',$feature_benefits);
@@ -1155,6 +1156,7 @@ class Card extends CI_Controller
                 $WHERE[] = '(card_info_card_reward.card_reward_id = '.$feature_benefits.')';
             }
         }
+
         if(!empty($credit_card_type)) {
             $WHERE[] = '(card_card_informations.cc_type_id = '.$credit_card_type.')';
         }

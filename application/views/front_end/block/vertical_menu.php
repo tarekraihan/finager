@@ -76,7 +76,7 @@
                                                                                              A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Credit Cards Here</a>
+                                                                                        <a href="<?php echo base_url();?>en/all_credit_card">Find All Credit Cards Here</a>
                                                                                     </div>
                                                                                 </div>
 
