@@ -290,16 +290,30 @@ if(isset($_GET['id']))
                                                         <select multiple style="width:100%" class="select2" name="txtIm[]">
                                                             <?php
                                                             $result1=$this->Select_model->select_all('card_card_user');
-                                                            $card_user_id= explode(",", $row["card_user_id"]);
-                                                            $count = count($card_user_id);
-
-                                                            foreach($result1->result() as $row1){
-                                                                for($i=0;$i<$count;$i++) {
-                                                                    ?>
-                                                                    <option value="<?php echo $row1->id;?>" <?php if ($card_user_id[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtIm[]", $row1->id)?>><?php echo $row1->card_user; ?></option>';
-                                                                <?php
+                                                            $card_user_id= $this->Select_model->get_card_info_card_user($id);
+                                                            $users = array();
+                                                            foreach($card_user_id as $k){
+                                                                foreach($k as $v){
+                                                                    array_push($users,$v);
                                                                 }
                                                             }
+
+                                                            foreach($result1->result() as $row1){
+
+                                                                $i = 0;
+                                                                foreach($users as $user){
+
+                                                                    if($user == $row1->id){
+                                                                        $i = 1;
+                                                                    }
+                                                                }
+                                                                if($i > 0){
+                                                                    echo '<option value="'.$row1->id.'" selected="select">'.$row1->card_user.'</option>';
+                                                                }else{
+                                                                    echo '<option value="'.$row1->id.'">'.$row1->card_user.'</option>';
+                                                                }
+                                                            }
+
                                                             ?>
 
                                                         </select>

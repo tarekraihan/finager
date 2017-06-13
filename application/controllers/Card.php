@@ -871,185 +871,90 @@ class Card extends CI_Controller
 
     }
 
-    public function edit_card_info($msg='')
-
-    {
-
+    public function edit_card_info($msg=''){
         if ($this->session->userdata('email_address')) {
-
-
-
             if ($msg == 'success') {
-
                 $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
-
             } else if ($msg == 'error') {
-
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
-
             }
 
-
-
             $this->form_validation->set_rules('txtBankName', ' Bank Name', 'trim|required');
-
             $this->form_validation->set_rules('txtCardName', ' Card Name', 'trim|required');
-
             $this->form_validation->set_rules('txtCardType', ' Card Type', 'trim|required');
-
             $this->form_validation->set_rules('txtCreditCardType', ' Credit Card Type', 'trim|required');
-
             $this->form_validation->set_rules('txtCardIssuer', ' Card Issuer', 'trim|required');
-
             $this->form_validation->set_rules('txtIncomeRangeMinBusiness', '  Income Range MinBusiness', 'trim|required');
-
             $this->form_validation->set_rules('txtIncomeRangeMaxBusiness', 'Income Range Max Business', 'trim|required');
-
             $this->form_validation->set_rules('txtIncomeRangeMinSalaried', 'Income Range Min Salaried', 'trim|required');
-
             $this->form_validation->set_rules('txtIncomeRangeMaxSalaried', 'Income Range Max Salaried', 'trim|required');
-
             $this->form_validation->set_rules('txtIm[]', ' I am', 'trim|required');
-
             $this->form_validation->set_rules('txtUserAgeMin', ' User Age Min', 'trim|required');
-
             $this->form_validation->set_rules('txtUserAgeMax', 'User Age Max', 'trim|required');
-
             $this->form_validation->set_rules('txtUserAgeMax', 'User Age Max', 'trim|required');
-
             $this->form_validation->set_rules('txtCreditLimitMaxBusiness', 'Credit Limit Max Business', 'trim|required');
-
             $this->form_validation->set_rules('txtCreditLimitMinSalaried', 'Credit Limit Min Salaried', 'trim|required');
-
             $this->form_validation->set_rules('txtCreditLimitMaxSalaried', 'Credit Limit max Salaried', 'trim|required');
-
             $this->form_validation->set_rules('txtSupplementary', 'Supplementary Card', 'trim|required');
-
             $this->form_validation->set_rules('txtYearOfExperienceSalaried', 'Year Of Experience Salaried', 'trim|required');
-
             $this->form_validation->set_rules('txtYearOfExperienceBusiness', 'Year Of Experience Business', 'trim|required');
-
             $this->form_validation->set_rules('txtCardBenefit[]', 'Card Benefit ', 'trim|required');
-
             $this->form_validation->set_rules('txtInterestFreePeriodMin', 'Interest Free Period Min', 'trim|required');
-
             $this->form_validation->set_rules('txtInterestFreePeriodMax', 'Interest Free Period Max', 'trim|required');
-
             $this->form_validation->set_rules('txtCashAdvanceRateYearly', 'Cash Advance Interest Rate Yearly', 'trim|required');//Cash Withdraw same as cash advance rate yearly
-
             $this->form_validation->set_rules('txtAnnualFee', 'Annual Fee', 'trim|required');
-
             $this->form_validation->set_rules('txtAnnualFeeVat', 'Annual Fee Vat', 'trim|required');
-
             $this->form_validation->set_rules('txtPurchaseInterestRate', 'Purchase Interest Rate', 'trim|required');
-
             $this->form_validation->set_rules('txtPurchaseInterestRateMonthly', 'Purchase Interest Rate Monthly', 'trim|required');
-
             $this->form_validation->set_rules('txtBalanceTransferRate', 'Balance Transfer Rate', 'trim|required');
-
             $this->form_validation->set_rules('txtBalanceTransferLimit', 'Balance Transfer Limit', 'trim|required');
-
             $this->form_validation->set_rules('txtBalanceTransferRateMonthly', 'Balance Transfer Rate Monthly', 'trim|required');
-
             $this->form_validation->set_rules('txtCashAdvanceInterestRateMonthly', 'Cash Advance Interest Rate Monthly', 'trim|required');
-
             $this->form_validation->set_rules('txtCashAdvanceLimit', 'Cash Advance Limit', 'trim|required');
-
             $this->form_validation->set_rules('txtBillingCycleStart', 'Billing Cycle Start', 'trim|required');
-
             $this->form_validation->set_rules('txtBillingCycleEnd', 'Billing Cycle End', 'trim|required');
-
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
-
             $this->form_validation->set_rules('txtCardSummary', 'Card Summary', 'trim|required');
-
             $this->form_validation->set_rules('txtBenefit', 'Benefit', 'trim|required');
-
             $this->form_validation->set_rules('txtPros', 'Pros', 'trim|required');
-
             $this->form_validation->set_rules('txtCons', 'Cons', 'trim|required');
-
             $this->form_validation->set_rules('txtReview', 'Review', 'trim|required');
 
 
-
-
-
             if ($this->form_validation->run() == FALSE){
-
                 $data['title'] = "Card-Income Range";
-
                 $this->load->view('admin/block/header',$data);
-
                 $this->load->view('admin/block/left_nav');
-
                 $this->load->view('admin/credit_card/edit_card_info');
-
                 $this->load->view('admin/block/footer');
-
             }else{
 
-
-
-
-
                 $upload_result = $this->do_upload('./resource/card/credit_card', 'file');
-
-
-
                 $date = date('Y-m-d h:i:s');
-
-
-
                 if($this->input->post('isActive') == 'active'){
-
                     $status = 1;
-
                 }else{
-
                     $status =0;
-
                 }
-
-
 
                 if($this->input->post('txtFeaturedProduct') == 'featured'){
-
                     $featured = 1;
-
                 }else{
-
                     $featured =0;
-
                 }
-
-
 
                 //------ Convert array into a variable
 
                 $card_user ="";
-
                 foreach($this->input->post('txtIm[]') as $user){
-
                     $card_user .= $user.',';
-
                 }
-
                 $card_user =substr($card_user,0,-1);//remove last comma
-
                 $card_benifit ="";
-
                 foreach($this->input->post('txtCardBenefit[]') as $benifit){
-
                     $card_benifit .= $benifit.',';
-
                 }
-
                 $card_benifit =substr($card_benifit,0,-1);
-
-
-
-
 
                 if(htmlentities($upload_result['file_name']) != "&lt;"){
                     $this->Common_model->data = array(

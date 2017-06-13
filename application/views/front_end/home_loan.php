@@ -19,7 +19,28 @@
 <section id="home_header">
 
 </section>
-
+<div class="container">
+	<section id="filter-bar">
+		<div class="col-md-2">
+			<div class="bank-filter">
+				<p class="bank-small-filter">50 of 50 results filtered by:</p>
+				<div class="bank-big-filter">
+					Filter By: Bank <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<span class="filter-option">
+				<span>Filter Option 1</span>
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</span>
+			<span class="filter-option">
+				<span>Filter Option 1</span>
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</span>
+		</div>
+	</section>
+</div>
 <section id="card">
 
     <div class="container">

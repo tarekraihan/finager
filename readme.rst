@@ -33,3 +33,5 @@ If you ever need best financial advices, just log in to www.finager.com or have 
 
 1.05 [tarek][28-05-2017] : Add Create admin user functionality in backdoor.
 
+1.05 [lokman][28-05-2017] : Add filter bar in home loan main page.
+

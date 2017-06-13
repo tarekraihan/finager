@@ -5,6 +5,18 @@
     .card_text2 p{
         position:relative;
     }
+    .active-filters-container{
+        min-height: 100px;
+    }
+    .active-filters-container .active-filter {
+        background-color: #d2e3e5;
+        border-radius: 8px;
+        display: inline-block;
+        margin: 4px;
+        padding: 5px 10px;
+        padding-right: 5px;
+
+    }
 
 </style>
 <section id="debitCard_header">
@@ -14,6 +26,7 @@
 <section id="card">
 		<div class="container">
 			<div class="row">
+
 		<!-- Left bar query content start -->
 				<div class="col-sm-3 col-xs-3">
 					<div class="card_left_bar">
@@ -26,8 +39,8 @@
                                 foreach($choose_account->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="choose_account" id="choose_account_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
-                                        <span class="material_check_radio"></span>
+                                        <input type="radio" name="choose_account" id="choose_account_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox " data-choose_account="<?php echo $row->account_name;?>" <?php echo ($this->session->userdata("choose_account") ==$row->id) ? 'checked' :'' ?>/>
+                                        <span class="material_check_radio debit_card_choose_account"></span>
                                         <?php echo $row->account_name;?>
                                     </label><br/>
                                 <?php
@@ -43,7 +56,7 @@
                                 foreach($looking_for->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="looking_for" id="looking_for_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <input type="radio" name="looking_for" id="looking_for_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox" data-name="<?php echo $row->looking_for;?>" <?php echo ($this->session->userdata("looking_for") ==$row->id) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->looking_for;?>
                                     </label><br/>
@@ -61,7 +74,7 @@
                                 foreach($i_want->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="i_want" id="i_want_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <input type="radio" name="i_want" id="i_want_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox" data-name="<?php echo $row->i_want;?>" <?php echo ($this->session->userdata("i_want") ==$row->id) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->i_want;?>
                                     </label><br/>
@@ -78,7 +91,7 @@
                                 foreach($i_want->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="card_issuer" id="card_issuer_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                        <input type="radio" name="card_issuer" id="card_issuer_<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox" data-name="<?php echo $row->card_issuer_name;?>" <?php echo ($this->session->userdata("card_issuer") ==$row->id) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->card_issuer_name;?>
                                     </label><br/>
@@ -138,7 +151,7 @@
 <script type="text/javascript"> 
 
 $(window).on('scroll', function (){    
-        alert();   
+//        alert();
 	if ($(window).scrollTop() > 350){
 	  $('.card_left_bar').addClass('fixedElement');
 	}if($(window).scrollTop()<350){
@@ -204,8 +217,13 @@ $(window).on('scroll', function (){
                 page_count = page ;
             }
 
+            var debit_card_choose_account = '&debit_card_choose_account='+ $('input[name="choose_account"]:checked').parent().text().trim();
+            var debit_card_looking_for = '&debit_card_looking_for='+$('input[name="looking_for"]:checked').parent().text().trim();
+            var debit_card_card_issuer = '&debit_card_card_issuer='+$('input[name="card_issuer"]:checked').parent().text().trim();
+            var debit_card_i_want = '&debit_card_i_want='+$('input[name="i_want"]:checked').parent().text().trim();
+//            alert(debit_card_i_want);
 
-            var main_string = choose_account_list + looking_for_list + card_issuer_list + i_want_list;
+            var main_string = choose_account_list + looking_for_list + card_issuer_list + i_want_list + debit_card_choose_account + debit_card_looking_for + debit_card_card_issuer + debit_card_i_want;
             main_string = main_string.substring(1, main_string.length);
             var url_str = "<?php echo base_url();?>debit_card/ajax_debit_card_info/" + page_count;
             $.ajax({
@@ -375,5 +393,28 @@ $(window).on('scroll', function (){
             //alert(card_ids);
 
         });
+
+        $(document).on('click','#clear_all',function(){
+            var data = 'session='+'debit_card';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>debit_card/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                        window.location.href = window.location.href;
+
+                }
+            });
+        });
+
+        $(document).on('click', '.debit_card_choose_account', function (){
+            var  formData = $(this).data();
+            var chose_account = formData.choose_account;
+            var str = chose_account.split();
+            alert(str);
+        });
+
 
 </script>

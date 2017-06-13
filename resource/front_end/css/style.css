@@ -4189,4 +4189,29 @@ a .auto_button.flash-button{
 }
 #serchModal{
     padding-right: 0 !important;
+}}
+#filter-bar{
+	width:100%;
+	border-bottom:1px solid gray;
+	min-height:80px;
+	background-color:#f5f6f7;
+	padding-top:10px;
+}
+.bank-small-filter{
+	font-size:12px;
+}
+.bank-big-filter{
+	font-weight:bold;
+}
+.filter-option i {
+	cursor: pointer;
+}
+.filter-option{
+	border:1px solid gray;
+	padding:5px;
+	border-radius:20px;
+	margin-right:5px;
+}
+.bank-filter-body{
+	background-color:#f5f6f7;
 }

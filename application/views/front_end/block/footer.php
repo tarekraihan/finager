@@ -340,7 +340,7 @@ if($result){
 <script src="<?php echo base_url();?>resource/front_end/js/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
 <!-- plus a jQuery UI theme, here I use "flick" -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+<!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">-->
 
 <script>
     

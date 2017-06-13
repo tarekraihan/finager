@@ -1,5 +1,4 @@
-
-	<section id="privacy_header">
+ 	<section id="privacy_header">
 		<!--div>
 			<img style="width:1140px; margin-bottom:8px;" src="images/HomeLoanMainPageBackground.jpg" />
 		</div-->
