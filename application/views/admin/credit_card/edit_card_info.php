@@ -404,17 +404,29 @@ if(isset($_GET['id']))
                                                     <label class="select">
                                                         <select multiple style="width:100%" class="select2" name="txtCardBenefit[]">
                                                             <?php
-                                                            $result=$this->Select_model->select_all('card_reward');
-                                                            $benifit_id= explode(",", $row["card_benifit_id"]);
-                                                            $count = count($benifit_id);
-
-                                                            foreach($result->result() as $row1){
-                                                                for($i=0;$i<$count;$i++) {
-                                                                    ?>
-                                                                    <option value="<?php echo $row1->id;?>" <?php if ($benifit_id[$i] == $row1->id) { echo "selected='select'"; }?><?php echo set_select("txtCardBenefit[]", $row1->id)?>><?php echo $row1->reward_name; ?></option>';
-                                                                <?php
+                                                            $result2=$this->Select_model->select_all('card_reward');
+                                                            $card_reward_id= $this->Select_model->get_card_info_card_rewards($id);
+                                                            $rewards = array();
+                                                            foreach($card_reward_id as $k){
+                                                                foreach($k as $v){
+                                                                    array_push($rewards,$v);
                                                                 }
                                                             }
+
+                                                            foreach($result2->result() as $row2){
+                                                                $i = 0;
+                                                                foreach($rewards as $reward){
+                                                                    if($reward == $row2->id){
+                                                                        $i = 1;
+                                                                    }
+                                                                }
+                                                                if($i > 0){
+                                                                    echo '<option value="'.$row2->id.'" selected="select">'.$row2->reward_name.'</option>';
+                                                                }else{
+                                                                    echo '<option value="'.$row2->id.'">'.$row2->reward_name.'</option>';
+                                                                }
+                                                            }
+
                                                             ?>
                                                         </select>
                                                     </label>

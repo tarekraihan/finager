@@ -772,7 +772,7 @@
                                                                                             <span class="focus-text">DPS</span> is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link"  data-toggle="modal" data-target=".bs-example-modal-lg">Find All DPS Here</a>
+                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
                                                                                     </div>
                                                                                 </div>
 

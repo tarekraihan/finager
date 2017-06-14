@@ -151,7 +151,7 @@
 <script type="text/javascript"> 
 
 $(window).on('scroll', function (){    
-//        alert();
+        alert();   
 	if ($(window).scrollTop() > 350){
 	  $('.card_left_bar').addClass('fixedElement');
 	}if($(window).scrollTop()<350){
