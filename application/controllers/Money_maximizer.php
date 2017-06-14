@@ -229,28 +229,18 @@ class Money_maximizer extends CI_Controller {
 
         $maximizer_tenure = $this->input->post('maximizer_tenure');
         $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 100000 );
-
         $WHERE = array(); $query = '';
-
         if(!empty($maximizer_tenure)) {
             $WHERE[] = '( money_maxi_info.choose_your_benefit_id = '.$maximizer_tenure.')';
         }
-
         $query = implode(' AND ',$WHERE);
-
-
         if(!empty($query)) {
             $query = 'WHERE '.$query;
         }
 //        print_r($query);die;
 
-
-
         $res = $this->Front_end_select_model->select_money_maximizer_info($query);
-
-
 //-----------Pagination start-----------------
-
         $config['base_url'] = base_url() . "en/all_money_maximizer/";
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
@@ -285,7 +275,6 @@ class Money_maximizer extends CI_Controller {
         $money_maximizer =  $this->Front_end_select_model->select_maximizer_info_pagination($query,$config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
 
-
         $maximizer = '';
 
         if($money_maximizer->num_rows() > 0){
@@ -304,14 +293,13 @@ class Money_maximizer extends CI_Controller {
                     $bank_logo = $row->bank_logo;
                 }
 
-
                 $benefit_amount  = $maximizer_amount * $row->your_benefit;
 
                 $maximizer .= '
 					<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
 							<div class="col-sm-2 col-xs-2">
-								<a href="'.base_url().'en/maximizer_details/'.$row->id.'"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<a href="'.base_url().'en/money_maximizer_details/'.$row->id.'"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -349,7 +337,7 @@ class Money_maximizer extends CI_Controller {
                                 <div class="row more_availabe">
                                     <div class="col-md-2"><a href="javascript:void(0)"   class="more_info" data-maximizer_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
                                     <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Money Maximizer Application" /></a></div>
-                                    <div class="col-md-2"><a href="javascript:void(0)"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Money Maximizer Comparison" /></a></div>
+                                    <div class="col-md-2"><a href="javascript:void(0)" class="add-to-compare" data-millionaire_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Money Maximizer Comparison" /></a></div>
                                 </div>
                             </div>
 						</div>

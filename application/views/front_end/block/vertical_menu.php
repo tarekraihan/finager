@@ -76,7 +76,7 @@
                                                                                              A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
                                                                                         </p>
 
-                                                                                        <a href="<?php echo base_url();?>en/all_credit_card">Find All Credit Cards Here</a>
+                                                                                        <a href="<?php echo base_url();?>en/credit_card">Find All Credit Cards Here</a>
                                                                                     </div>
                                                                                 </div>
 
@@ -950,7 +950,7 @@
                                                                                             <span class="focus-text">Money Maximizer</span> account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Money Maximizer Scheme Here</a>
+                                                                                        <a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/money_maximizer">Find All Money Maximizer Scheme Here</a>
                                                                                     </div>
                                                                                 </div>
 

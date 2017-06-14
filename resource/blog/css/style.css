@@ -690,3 +690,82 @@ a:focus{
 .login_post_aria{
 	padding:0px 15px;
 }
+
+
+/* for monthly benefit */
+#monthly_benefit_biggest_brand {
+	background-image:url('../images/Monthly-Benefit-middlebg.png');
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:385px;
+	width:100%;
+	background-position:center center;
+	margin-top:30px;
+}
+#footer_monthly_benefit{
+	background-image:url('../images/Monthly-Benefit-footerbg.png');
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:427px;
+	width:100%;
+}
+#monthly_benefit_header_part{
+	background-image:url(http://placehold.it/1600x450);
+	background-repeat:no-repeat;
+	background-size:cover;
+	width:100%;
+	height:450px;
+	position:relative;
+}
+.btn_monthly_benefit{
+	border:1px solid #a58d32;
+	padding: 5px 26px;
+	border-radius: 6px;
+	margin-left: 58px;
+	font-size: 16px;
+	color:#000;
+}
+.btn_monthly_benefit:hover{
+	background-color:#a58d32;
+}
+.btn_landing_view_mony_max{
+	border: 1px solid #a58d32;
+	padding: 6px 23px;
+	border-radius: 5px;
+	color:#000;
+}
+.btn_landing_view_mony_max:hover{
+	background-color:#a58d32;
+	color:#fff;
+}
+.btn_landing_view2_mony_max{
+	border: 1px solid #fff;
+	padding: 6px 23px;
+	border-radius: 5px;
+	color:#fff;
+}
+.btn_landing_view2_mony_max:hover{
+	background-color:#fff;
+	color:#000;
+}
+.btn_landing_mony_max_start{
+	border: 1px solid #a58d32;
+	padding: 6px 35px;
+	border-radius: 6px;
+	font-size: 16px;
+	color:#000;
+}
+.btn_landing_mony_max_start:hover{
+	background-color:#a58d32;
+	color:#ffffff;
+}
+#monthly_benefit_header{
+	background-image:url( http://placehold.it/1600x320 );
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	width:100%;
+	height:320px;
+	position:relative;
+}
