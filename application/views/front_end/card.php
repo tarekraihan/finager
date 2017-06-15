@@ -1,9 +1,5 @@
 <section id="creditCard_header">
-
-
-
 </section>
-
 
 
 <section id="card">

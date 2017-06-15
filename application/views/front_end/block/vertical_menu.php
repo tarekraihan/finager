@@ -1039,7 +1039,7 @@
                                                                                             <span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
                                                                                         </p>
 
-                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Monthly Benefit Scheme</a>
+                                                                                        <a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/monthly_benefit">Find All Monthly Benefit Scheme</a>
                                                                                     </div>
                                                                                 </div>
 

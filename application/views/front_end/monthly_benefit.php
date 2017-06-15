@@ -97,7 +97,7 @@
                                                                             <div class="prev"></div>
                                                                             <div class="next active"></div>
                                                                         </div>
-                                                                        <div class="hideVal">25000</div>
+                                                                        <div class="hideVal">10000</div>
                                                                     </div>
                                                                 </div>
                                                                 <!--Calculator Section END-->
@@ -408,6 +408,8 @@
         </div>
     </div>
 </section>
+
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/monthly_benefit.js"></script>
 
 <script type="text/javascript">
 
