@@ -601,7 +601,7 @@ body {
 
 .card-holder {
     background-color: rgb(93, 93, 94);
-    padding: 0px;
+    padding: 0;
     border-radius: 0px;
     height: 130px;
     width: 100%;
@@ -623,7 +623,7 @@ body {
     height: 130px;
     width: 100%;
     border-radius: 0;
-    background-image: url('../images/card-holder.png');
+    background-image: url(../images/card-holder.png);
     background-repeat: no-repeat;
 }
 .hidden_div_container {
@@ -1263,7 +1263,10 @@ a .maximizer_landing_button{
     color: #000 !important;
     font-weight: bold;
 }
-
+.more_info_tab{
+    border: 1px solid #dde3e3;
+    overflow: auto;
+}
 /* for FDR */
 #fdr_header{
     background-image:url(../images/FDR-Main-Page-Banner.jpg);
@@ -1349,7 +1352,7 @@ a .fdr_landing_button{
     margin: -3px 0 0 10px;
 }
 .calcSection {
-    padding: 8px 0 0px 20px;
+    padding: 8px 0 0 20px;
 }
 .fdr_loan_icon {
     position: relative;
@@ -1372,7 +1375,7 @@ a .fdr_landing_button{
 /* nirob */
 @font-face {
     font-family: Myriad Pro Regular;
-    src: url('../fonts/Myriad Pro Regular.ttf');
+    src: url(../fonts/Myriad Pro Regular.ttf);
 }
 /* header part start*/
 .btn-group-lg > .btn, .btn-lg {
@@ -1385,7 +1388,7 @@ a .fdr_landing_button{
 
 /* auto loan start */
 #auto_header_part{
-    background-image:url('../images/Auto-loan-banner.jpg');
+    background-image:url(../images/Auto-loan-banner.jpg);
     width:100%;
     height:450px;
     background-position:center center;
@@ -3450,6 +3453,7 @@ a .millionier_landing_button{
     -o-transition: none;
     transition: none;
     font-size: 26px;
+    padding-top: 18px
 }
 #search_page_content{
     height:650px;
@@ -3509,13 +3513,13 @@ a .millionier_landing_button{
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
-//Firefox 1+
+/* Firefox 1+*/
 -webkit-animation-name: flash;
     -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
 
-//Safari 3-4
+    /*Safari 3-4*/
 -moz-animation-name: flash;
     -moz-animation-duration: 1s;
     -moz-animation-timing-function: linear;
@@ -3528,14 +3532,14 @@ a .millionier_landing_button{
     100% { opacity: 1.0; }
 }
 
-//Firefox 1+
+/*Firefox 1+*/
 @-webkit-keyframes flash {
     0% { opacity: 1.0; }
     50% { opacity: 0.5; }
     100% { opacity: 1.0; }
 }
 
-//Safari 3-4
+/*Safari 3-4*/
 @-moz-keyframes flash {
     0% { opacity: 1.0; }
     50% { opacity: 0.5; }
@@ -4161,45 +4165,31 @@ a .auto_button.flash-button{
 	padding: 10px;
 }
 .main-search-modal-icon{
-    top: 46px !important;
-    left: 0;
+    top: 15px !important;
+    left: 15px;
     position: absolute !important;
     font-size: 22px !important;
     transform: rotate(85deg);
     color: #999999;
 }
-.relative{
+.pRelative{
     position: relative;
 }
 #search_word{
     padding-left: 34px !important;
 }
-#main-search-modal-close{
-    position: relative;
+#main-search-modal-close {
+    position: absolute;
     z-index: 99999;
+    right: 15px;
+    top: 15px;
+    color: #333;
+    background: #a4d2d8;
+    opacity: 1;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
 }
-#filter-bar{
-	width:100%;
-	border-bottom:1px solid gray;
-	min-height:80px;
-	background-color:#f5f6f7;
-	padding-top:10px;
-}
-.bank-small-filter{
-	font-size:12px;
-}
-.bank-big-filter{
-	font-weight:bold;
-}
-.filter-option i {
-	cursor: pointer;
-}
-.filter-option{
-	border:1px solid gray;
-	padding:5px;
-	border-radius:20px;
-	margin-right:5px;
-}
-.bank-filter-body{
-	background-color:#f5f6f7;
+#serchModal{
+    padding-right: 0 !important;
 }

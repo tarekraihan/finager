@@ -35,7 +35,7 @@
 
 </style>
 
-
+<script src="<?php echo base_url();?>resource/front_end/js/money-max.js"></script>
 
 <section id="mony_max_header"></section>
 
@@ -290,7 +290,6 @@
 
     </div>
 </section>
-<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/moneymaxi-calculator.js"></script>
 
 <script type="text/javascript"> 
 
@@ -306,7 +305,13 @@ $(window).on('scroll', function (){
 });
 </script>
 <script type="text/javascript">
-
+    function overlay(s, l) {
+        $('.overlay').remove();
+        if( s )
+            $('body').append('<div class="overlay" style="width:100%;height:100%;position:fixed;display:block;background:#000;opacity:0.7;top:0;left:0;z-index:1000;"></div>');
+        if( l )
+            $('.overlay').html('<div style="position:absolute;top:'+(document.documentElement.clientHeight/2)+'px;left:'+(document.documentElement.clientWidth/2)+'px;"><img src="<?php echo base_url();?>resource/front_end/images/loader.gif" width="100"></div>');
+    }
     $(document).on('click','#pagination a',function(e){
         e.preventDefault();
         var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
@@ -315,18 +320,7 @@ $(window).on('scroll', function (){
         console.log(cur_page);
     });
 
-
-    function loading_show(){
-        $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
-    }
-    function loading_hide(){
-        $('#loading').html("");
-    }
-
     function loadData( page = null ){
-        loading_show();
-
-
         var maximizer_tenure = new Array();
         $('input[name="tenure"]:checked').each(function(){
             maximizer_tenure.push($(this).val());
@@ -354,14 +348,13 @@ $(window).on('scroll', function (){
             url: url_str,
             data: main_string,
             cache: false,
+            beforeSend: function() {
+                overlay(true,true);
+            },
             success: function(msg)
             {
-
-                loading_hide();
-                // console.log(msg);
-
                 $("#moneyMaximizerSearch").html(msg);
-
+                overlay( false );
             }
         });
     }
@@ -370,12 +363,17 @@ $(window).on('scroll', function (){
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
         loadData( page = null );
     } );
-
-
-    $( ".draggable" ).mouseout(function(){
-        loadData( page = null );
-
+    $(".draggable").on("dragstop",function(ev,ui){
+        setTimeout(function(){ //Updated by Tarek on 14-05-2017
+            //alert($("#finalAssest").val());
+            loadData(page = null);
+        }, 1000);
     });
+
+//    $( ".draggable" ).mouseout(function(){
+//        loadData( page = null );
+//
+//    });
 
     //for show hide (more info & Available Offer)
 
@@ -453,14 +451,14 @@ $(window).on('scroll', function (){
             $(this).addClass("hidden");
 
             var  formData = $(this).data();
-            var millionaire_id = "millionaire_id="+formData.millionaire_id;
+            var maximizer_id = "maximizer_id="+formData.maximizer_id;
 
             setTimeout(function(){
                 $.ajax
                 ({
                     type: "POST",
-                    url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                    data: millionaire_id,
+                    url: "<?php echo base_url();?>money_maximizer/ajax_compare_money_maximizer_image",
+                    data: maximizer_id,
                     success: function(msg)
                     {
                         $(".cart_anchor01").html(msg);
@@ -510,15 +508,15 @@ $(window).on('scroll', function (){
             }
 
             var  formData = $(this).data();
-            var millionaire_id = "millionaire_id="+formData.millionaire_id;
+            var maximizer_id = "maximizer_id="+formData.maximizer_id;
             //alert(home_id);
 
             setTimeout(function(){
                 $.ajax
                 ({
                     type: "POST",
-                    url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                    data: millionaire_id,
+                    url: "<?php echo base_url();?>money_maximizer/ajax_compare_money_maximizer_image",
+                    data: maximizer_id,
                     success: function(msg)
                     {
                         $(".cart_anchor").html(msg);
@@ -537,11 +535,11 @@ $(window).on('scroll', function (){
 
     $(document).on('click','.compare-cross-btn',function(){
 
-        var collected_card = $(this).prev().attr("data-millionaire_id");
+        var collected_card = $(this).prev().attr("data-maximizer_id");
 
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
-            var index=$(this).children().find('.add-to-compare').attr('data-millionaire_id');
+            var index=$(this).children().find('.add-to-compare').attr('data-maximizer_id');
             if(parseInt(collected_card)==parseInt(index)){
                 obj.removeClass("hidden");
             }
@@ -574,23 +572,29 @@ $(window).on('scroll', function (){
     $('#go_compare').click(function(){
         //alert(1);
         var  formData = $('.cart_anchor').children('img').data();
-        var millionaire_id1 = "millionaire_id1="+formData.millionaire_id;
+        var maximizer_id1 = "maximizer_id1="+formData.maximizer_id;
 
-        var  formData = $('.cart_anchor01').children('img').data();
-        var millionaire_id2 = "&millionaire_id2="+formData.millionaire_id;
+        var  formData2 = $('.cart_anchor01').children('img').data();
+        var maximizer_id2 = "&maximizer_id2="+formData2.maximizer_id;
 
-        var millionaire_ids = millionaire_id1+millionaire_id2;
-        if( millionaire_id1 != '' && millionaire_id2 != '' ){
+        var amount = $('#finalAssest').val();
+        var deposit_amount = "&deposit_amount="+amount;
+
+        var maximizer_ids = maximizer_id1+maximizer_id2+deposit_amount;
+        if( maximizer_id1 != '' && maximizer_id2 != '' ){
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>millionaire/ajax_go_compare_page",
-                data: millionaire_ids,
+                url: "<?php echo base_url();?>money_maximizer/ajax_go_compare_page",
+                data: maximizer_ids,
+                beforeSend: function() {
+                overlay(true,true);
+            },
                 success: function(msg)
                 {
                     if(msg != 'error'){
 
-                        window.location.href = "<?php echo base_url();?>en/millionaire_compare";
+                        window.location.href = "<?php echo base_url();?>en/money_maximizer_compare";
                     }
                 }
             });

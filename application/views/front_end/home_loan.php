@@ -1,20 +1,13 @@
 <!--
 
 /*********************************
-
 *  Design : S. M. Rubiyet        *
-
 *  UI : Sifuddin Lokman          *
-
 *  Programmer : Tarek Raihan     *
-
-*  Date : 09-11-2016		 *
-
+*  Date : 09-11-2016		     *
 **********************************/
 
 -->
-
-
 
 <section id="home_header">
 
@@ -704,8 +697,8 @@ $(window).on('scroll', function (){
     $('#go_compare').click(function(){
         var  formData = $('.cart_anchor').children('img').data();
         var home_id1 = "home_id1="+formData.home_id;
-        var  formData = $('.cart_anchor01').children('img').data();
-        var home_id2 = "&home_id2="+formData.home_id;
+        var  formData1 = $('.cart_anchor01').children('img').data();
+        var home_id2 = "&home_id2="+formData1.home_id;
         var amount = $('#finalAssest').val();
         var principal_amount = "&principal_amount="+amount;
         var month = $('#finalCustAge').val();
