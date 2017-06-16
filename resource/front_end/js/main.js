@@ -21,7 +21,7 @@ jQuery(document).ready(function(){
 // searching text effect for homepage search START
 document.addEventListener('DOMContentLoaded',function(event){
     // array with texts to type in typewriter
-    var dataText = [ "I am looking for..."];
+    var dataText = [ "Looking for..."];
 
     // type one text in the typwriter
     // keeps calling itself until the text is finished
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         // text finished, call callback if there is a callback function
         else if (typeof fnCallback == 'function') {
             // call callback after timeout
-            setTimeout(fnCallback, 100);
+            setTimeout(fnCallback, 800);
         }
     }
     // start a typewriter animation for a text in the dataText array
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         if (typeof dataText[i] == 'undefined'){
             setTimeout(function() {
                 StartTextAnimation(0);
-            }, 1000);
+            }, 1500);
         }
         // check if dataText[i] exists
         if (i < dataText.length) {

@@ -366,10 +366,6 @@
 	}
 }
 @media screen and (min-width: 768px) and (max-width: 1365px){
- .logobar a .logo {
-	max-height: 63px !important;
-	width: 145px !important;
- }
  .mash-menu section.mash-menu-inner-container ul li a {
 	font-size: 12px !important;
  }

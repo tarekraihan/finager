@@ -21,7 +21,12 @@ body {
 
 /*vertical menu START*/
 .sidebar-nav li a{
-	color: #fff !important;
+    color: #fff !important;
+    font-size: 12px;
+    padding: 5px 20px !important;
+}
+.sidebar-nav .dropdown-header {
+    display: none !important;
 }
 .nav>li>a:focus, .nav>li>a:hover{
 	background:#337ab7 !important;

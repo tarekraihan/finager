@@ -10,6 +10,7 @@
     <link rel="icon" href="<?php echo base_url();?>resource/front_end/images/favicon.ico">
     <script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
     <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/jquerysctipttop.css" />
