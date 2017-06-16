@@ -146,7 +146,7 @@ class Backdoor extends CI_Controller {
 
 
     public function create_admin_user(){
-        if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'admin') {
+        if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'super admin') {
 
             $this->form_validation->set_rules('txtEmailAddress', 'Email Address', 'trim|required|is_unique[tbl_admin_user.email_address]');
             $this->form_validation->set_rules('txtAdminUserRole', 'Admin Role', 'trim|required');
@@ -192,7 +192,7 @@ class Backdoor extends CI_Controller {
     }
 
     public function edit_admin_user(){
-        if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'admin') {
+        if ($this->session->userdata('email_address') && $this->session->userdata('admin_role') == 'super admin') {
 
             $this->form_validation->set_rules('txtEmailAddress', 'Email Address', 'trim|required');
             $this->form_validation->set_rules('txtAdminUserRole', 'Admin Role', 'trim|required');

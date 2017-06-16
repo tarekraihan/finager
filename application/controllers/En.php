@@ -499,7 +499,7 @@ class En extends CI_Controller {
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/millionaire_compare');
+        $this->load->view('front_end/money_maximizer_compare');
         $this->load->view('front_end/block/footer');
 
     }

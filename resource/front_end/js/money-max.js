@@ -120,15 +120,15 @@ $(function(event) {
 				else if(valInput == 10000)
 				{
 					var marLft_input =  ((valInput/diff)-1) *35;
-					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-0});	
-					$('#alreadySaved').find('.draggable').animate({left:0});	
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-0});
+					$('#alreadySaved').find('.draggable').animate({left:0});
 				}
 
 				else if (valInput <= 50000 )
 				{
 					var marLft_input =  ((valInput/diff)-1) *35;
-					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2});	
-					$('#alreadySaved').find('.draggable').animate({left:0});	
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2});
+					$('#alreadySaved').find('.draggable').animate({left:0});
 				}
 
 				else if(valInput == 9950000)
@@ -785,7 +785,7 @@ function calculationSlider()
 		else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 		{
 			console.log(selectValue+"fd");
-			
+
 			if(selectValue == 0){
 				finalFincialAssest =((selectValue+1) * 10000 );
 			}

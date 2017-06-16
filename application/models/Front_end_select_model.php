@@ -124,10 +124,16 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_millionaire_info_details($id){
         $sql="SELECT millionaire_info.*,card_bank.bank_name,card_bank.bank_logo,millionaire_i_am.i_am,millionaire_maturity_amount.maturity_amount,millionaire_tenure.tenure,millionaire_tenure.no_of_installment,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM millionaire_info  LEFT JOIN card_bank ON card_bank.id=millionaire_info.bank_id INNER JOIN millionaire_i_am ON millionaire_i_am.id=millionaire_info.i_am_id INNER JOIN millionaire_maturity_amount ON millionaire_maturity_amount.id=millionaire_info.maturity_amount_id INNER JOIN millionaire_tenure ON millionaire_tenure.id=millionaire_info.tenure_id LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id WHERE millionaire_info.id=$id";
-
-//        print_r($sql) ;die;
         $query = $this->db->query($sql);
         return $query;
+    }
+
+
+    public function select_money_maximizer_info_details($id){
+        $sql = "SELECT money_maxi_info.*, money_maxi_choose_your_benefit.your_benefit,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name , general_non_bank.bank_logo AS non_bank_logo FROM money_maxi_info INNER JOIN money_maxi_choose_your_benefit ON money_maxi_choose_your_benefit.id = money_maxi_info.choose_your_benefit_id LEFT JOIN card_bank on card_bank.id=money_maxi_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id WHERE money_maxi_info.id = '$id'";
+        $query = $this->db->query($sql);
+        return $query;
+
     }
 
     public function select_auto_loan_details($id){
@@ -163,6 +169,13 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_millionaire_image($id){
         $sql="SELECT millionaire_info.id,millionaire_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `millionaire_info`  LEFT JOIN card_bank on card_bank.id=millionaire_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id  WHERE millionaire_info.id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+    public function select_money_maximizer_image($id){
+        $sql="SELECT money_maxi_info.id,money_maxi_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `money_maxi_info`  LEFT JOIN card_bank on card_bank.id=money_maxi_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id  WHERE money_maxi_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -323,7 +336,6 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     function select_money_maximizer_info($query){
         $sql = "SELECT money_maxi_info.*, money_maxi_choose_your_benefit.your_benefit,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name , general_non_bank.bank_logo AS non_bank_logo FROM money_maxi_info INNER JOIN money_maxi_choose_your_benefit ON money_maxi_choose_your_benefit.id = money_maxi_info.choose_your_benefit_id LEFT JOIN card_bank on card_bank.id=money_maxi_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id $query";
         $query = $this->db->query($sql);
-
         return $query;
     }
 

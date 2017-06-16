@@ -1,7 +1,7 @@
 <?php
 $id=$this->uri->segment(3, 0);
 if(!empty($id) && is_numeric($id) ){
-	$query=$this->Front_end_select_model->select_millionaire_info_details($id);
+	$query=$this->Front_end_select_model->select_money_maximizer_info_details($id);
 	$row=$query->row();
 	$bank_name = "";
 	$bank_logo = "";
@@ -12,8 +12,17 @@ if(!empty($id) && is_numeric($id) ){
 		$bank_name = $row->bank_name;
 		$bank_logo = $row->bank_logo;
 	}
+    $maximizer_amount = ($this->session->userdata('maximizer_deposit_amount')) ? $this->session->userdata('maximizer_deposit_amount') :'' ;
 
-	$initial_deposit  = ($row->initial_deposit) ? 'BDT.'.$row->initial_deposit : 'N/A';
+    if($maximizer_amount !=''){
+        $maximizer_amount = floatval($maximizer_amount);
+    }else{
+        $maximizer_amount = 500000;
+    }
+
+    $credit_facility = ($row->credit_facility != 'N/A') ? $row->credit_facility.' %' :'N/A';
+    $benefit_amount  = $maximizer_amount * $row->your_benefit;
+
 
 }else{
 	redirect(base_url().'My404');
@@ -38,9 +47,9 @@ if(!empty($id) && is_numeric($id) ){
 
 				<div class="col-sm-2 col-xs-8">
 					<div>
-						<p class="card_details_head2">Initial Deposit</p>
+						<p class="card_details_head2">Deposit Amount</p>
 						<p class="card_details_features">
-							<?php echo $initial_deposit;?>
+							BDT. <?php echo number_format( $maximizer_amount );?>
 						</p>
 					</div>
 				</div>
@@ -48,45 +57,37 @@ if(!empty($id) && is_numeric($id) ){
 					<div class="row">
 						<div class="col-sm-3 col-xs-6">
 							<div>
-								<p class="card_details_head2">Monthly Instalment</p>
+								<p class="card_details_head2">Duration of Benefit</p>
 								<p class="card_details_features">
-									BDT. <?php echo number_format( $row->monthly_deposit );?>
+									<?php echo $row->duration_of_benefit;?>
 								</p>
 							</div>
 						</div>
 						<div class="col-sm-2 col-xs-6">
 							<div>
-								<p class="card_details_head2">No of Installment</p>
+								<p class="card_details_head2">Chosen Benefit</p>
 								<p class="card_details_features">
-									<?php echo $row->no_of_installment;?>
+									<?php echo $row->your_benefit;?> Times
 								</p>
 							</div>
 						</div>
 						<div class="col-sm-3 col-xs-6">
 							<div>
-								<p class="card_details_head2">Total Principal Amount</p>
+								<p class="card_details_head2">Benefit Amount</p>
 								<p class="card_details_features">
-									BDT. <?php echo number_format( $row->total_principal_amount );?>
+									BDT. <?php echo number_format( $benefit_amount );?>
 								</p>
 							</div>
 						</div>
 						<div class="col-sm-2 col-xs-6">
 							<div>
-								<p class="card_details_head2">Accrued Interest</p>
+								<p class="card_details_head2">Credit Facility</p>
 								<p class="card_details_features">
-									BDT. <?php echo number_format( $row->accured_interest );?>
+                                    <?php echo $credit_facility;?>
 								</p>
 							</div>
 						</div>
 
-						<div class="col-sm-2 col-xs-6">
-							<div>
-								<p class="card_details_head2">Maturity Amount</p>
-								<p class="card_details_features">
-									BDT. <?php echo number_format( $row->maturity_amount );?>
-								</p>
-							</div>
-						</div>
 					</div>
 				</div>
 				<div class="col-sm-8 col-xs-12">
@@ -102,7 +103,7 @@ if(!empty($id) && is_numeric($id) ){
 <section id="">
 	<div class="container">
 		<div class="card_details_pronsCons">
-			<h4>Lakhpoti & MIllionaire Scheme :</h4>
+			<h4>Money Maximizer Scheme :</h4>
 			<div class="prosConsHr"></div><br/>
 			<div class="prosCons_body2 trbodywidth">
 				<table class="table table-bordered table-hover text-center table-align  compare_table">
@@ -112,52 +113,35 @@ if(!empty($id) && is_numeric($id) ){
 					</tr>
 					<tr>
 						<td><b> Product Name</b></td>
-						<td><?php echo $row->millionaire_info_name;?></td>
+						<td><?php echo $row->deposit_name;?></td>
 					</tr>
 					<tr>
-						<td><b> Initial Deposit</b></td>
-						<td> <?php echo $initial_deposit;?> </td>
+                        <td><b>  Deposit Amount</b></td>
+                        <td> BDT. <?php echo number_format($maximizer_amount)?> </td>
 					</tr>
 					<tr>
-						<td><b> Monthly Installment Size</b></td>
-						<td> BDT. <?php echo number_format( $row->monthly_deposit );?> </td>
+                        <td><b> Duration of Benefit</b></td>
+                        <td> <?php echo $row->duration_of_benefit;?> </td>
 					</tr>
 					<tr>
-						<td><b> Term</b></td>
-						<td><?php echo $row->tenure_id;?> Years </td>
+                        <td><b> Chosen Benefit</b></td>
+                        <td> <?php echo $row->your_benefit;?> Times</td>
 					</tr>
+
 					<tr>
-						<td><b> Number of Installment</b></td>
-						<td> <?php echo $row->no_of_installment;?> </td>
+                        <td><b> Maturity Amount</b></td>
+                        <td>BDT. <?php echo number_format($benefit_amount)?> </td>
 					</tr>
-					<tr>
-						<td><b>Total Principal Amount</b></td>
-						<td> BDT. <?php echo number_format( $row->total_principal_amount );?> </td>
-					</tr>
-					<tr>
-						<td><b>Total Accrued Interest</b></td>
-						<td> BDT. <?php echo number_format( $row->accured_interest );?> </td>
-					</tr>
-					<tr>
-						<td><b> Maturity Amount</b></td>
-						<td> BDT. <?php echo number_format( $row->maturity_amount );?> </td>
-					</tr>
+                    <tr>
+                        <td><b> Credit Facility</b></td>
+                        <td> <?php echo $credit_facility;?> </td>
+                    </tr>
 				</table>
 			</div>
 		</div>
 	</div>
 </section>
-<section id="">
-	<div class="container">
-		<div class="card_details_pronsCons">
-			<h4>Available Installment with Tenure :</h4>
-			<div class="prosConsHr"></div><br/>
-			<div class="prosCons_body2 trbodywidth">
-				<?php echo $row->available_benefit;?>
-			</div>
-		</div>
-	</div>
-</section>
+
 <section id="">
 	<div class="container">
 		<div class="card_details_pronsCons">
@@ -165,7 +149,7 @@ if(!empty($id) && is_numeric($id) ){
 			<div class="prosConsHr"></div><br/>
 			<div class="prosCons_body2 trbodywidth">
 				<table class="table table-striped table-bordered">
-					<?php echo $row->available_feature;?>
+					<?php echo $row->features;?>
 				</table>
 			</div>
 		</div>
@@ -174,32 +158,10 @@ if(!empty($id) && is_numeric($id) ){
 <section id="">
 	<div class="container">
 		<div class="card_details_pronsCons">
-			<h4>Fees & Charges:</h4>
+			<h4>Requirements:</h4>
 			<div class="prosConsHr"></div><br/>
 			<div class="prosCons_body2 trbodywidth">
-				<?php echo $row->fees_and_charges;?>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="">
-	<div class="container">
-		<div class="card_details_pronsCons">
-			<h4>Eligibility for Applying:</h4>
-			<div class="prosConsHr"></div><br/>
-			<div class="prosCons_body2 trbodywidth">
-				<?php echo $row->eligibility;?>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="">
-	<div class="container">
-		<div class="card_details_pronsCons">
-			<h4>Requirement:</h4>
-			<div class="prosConsHr"></div><br/>
-			<div class="prosCons_body2 trbodywidth">
-				<?php echo $row->required_document;?>
+				<?php echo $row->requirement;?>
 			</div>
 		</div>
 	</div>
@@ -215,48 +177,19 @@ if(!empty($id) && is_numeric($id) ){
 		</div>
 	</div>
 </section>
-<div style="clear:both;"></div>
-<section id="card_details_userReview">
+<section id="">
 	<div class="container">
 		<div class="card_details_pronsCons">
-			<h4 class="card_details_pronsCons_head">User reviews</h4>
-			<h5 class="card_details_pronsCons_head"><b>How well does it rate with cardholders?</b></h5>
-			<div class="prosConsHr"></div>
-			<div class="row">
-				<div class="col-sm-4 col-xs-4">
-					<div class="userReview_body">
-						<span class="userReviewLeft1">4.4</span><br/>
-						<span class="userReviewLeft2">out of 5.0</span><br/>
-						<span class="userReviewLeft3">based on 2 reviews</span>
-					</div>
-				</div>
-				<div class="col-sm-4 col-xs-4">
-					<div class="prosCons_body2">
-						<p>Rates and fees</p>
-						<p>Rewards</p>
-						<p>Customer service</p>
-						<p>Convenience</p>
-						<p>Trust</p>
-					</div>
-				</div>
-				<div class="col-sm-4 col-xs-4">
-					<div class="prosCons_body2">
-						<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-						<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-						<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-						<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-						<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-					</div>
-				</div>
-				<div class="col-sm-12">
-					<div class="prosCons_body2">
-						<p class="userreviw_note">Disclaimer: The opinions expressed about credit cards are the reviewer's alone, and do not reflect the views of Credit Card Compare or the credit card issuer. Reviews have not been approved or otherwise endorsed by Credit Card Compare.</p>
-					</div>
-				</div>
+			<h4>User Review:</h4>
+			<div class="prosConsHr"></div><br/>
+			<div class="prosCons_body2 trbodywidth">
+				<?php echo $row->review;?>
 			</div>
 		</div>
 	</div>
 </section>
+<div style="clear:both;"></div>
+
 
 <script>
 
