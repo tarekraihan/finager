@@ -140,7 +140,7 @@
 <div class="modal fade" id="serchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <section id="search_page">
         <div class="container-fluid">
-            <button type="button" class="close" id="main-search-modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span><span class="esc">(Esc)<span></button>
+            <button type="button" class="close" id="main-search-modal-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <div class="form-group search_input relative">
                 <span class="glyphicon glyphicon-search main-search-modal-icon" aria-hidden="true"></span>
                 <input type="text" class="form-control" id="search_word" placeholder="Search here..." autofocus onclick="this.placeholder = ''" onblur="this.placeholder = 'Search here...'" />

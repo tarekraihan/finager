@@ -4198,3 +4198,6 @@ a .auto_button.flash-button{
 #serchModal{
     padding-right: 0 !important;
 }
+.esc{
+    dislpay: none !important;
+}
