@@ -207,7 +207,7 @@
                    Finager.com is one of the biggest online platforms as well as first complete Fintech* website of Bangladesh that aims to provide all types of financial solutions to its FinUsers* which will help them to take financial decisions intheir every day life. We are always concern to keep you up-to-date with any FinInfo* provided by bank, non-banking financial institution, insurance companies and stock market and assist you to choose the best possible option therein. We are also offering wide range of research articles, features, case studies and a unique forum for sharing information, reading news, posting blogs and e-networking with your friends. Because of our strong and reliable sources of information, we have become the leading fintech* solution provider in this industry.
                 </p>
                 <p>
-                    If you ever need best financial advices, just log in to <b>www.finager.com</b> or have a coffee time with the <b>Finager Team</b>.
+                    If you ever need bes0t financial advices, just log in to <b>www.finager.com</b> or have a coffee time with the <b>Finager Team</b>.
                 </p>
             </div>
         </div>
