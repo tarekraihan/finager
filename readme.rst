@@ -35,3 +35,5 @@ If you ever need best financial advices, just log in to www.finager.com or have 
 
 1.05 [lokman][28-05-2017] : Add filter bar in home loan main page.
 
+1.05 [lokman][18-06-2017] : some changes in vertical menu.
+

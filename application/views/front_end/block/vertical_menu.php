@@ -34,7 +34,7 @@
                                 <!-- list items -->
                                 <ul class="mash-list-items">
 
-                                    <li><a href="#">Card<i class="fa fa-caret-down fa-indicator"></i> </a>
+                                    <li><a href="#">Cards<i class="fa fa-caret-down fa-indicator"></i> </a>
                                         <!-- full size drop down -->
                                         <!-- For cards drop down -->
                                         <div class="drop-down-large" style="display: none;">
@@ -69,15 +69,16 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                             A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
-                                                                                        </p>
-
-                                                                                        <a href="<?php echo base_url();?>en/credit_card">Find All Credit Cards Here</a>
-                                                                                    </div>
+																					<a href="<?php echo base_url();?>en/credit_card">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								 A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
+																							</p>
+																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/credit_card">Find All Credit Cards Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -157,15 +158,16 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/DebitCardIcon.svg" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Debit Card</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
-                                                                                        </p>
-
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/debit_card">Find All Debit Cards Here</a>
-                                                                                    </div>
+																					<a href="<?php echo base_url(); ?>en/debit_card">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/DebitCardIcon.svg" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Debit Card</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
+																							</p>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/debit_card">Find All Debit Cards Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -283,15 +285,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/menu_home_loan.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url(); ?>en/home_loan">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/menu_home_loan.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/home_loan">Find All Home Loan Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/home_loan">Find All Home Loan Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -371,15 +375,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/PersonalLoanmanuIcon.svg" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            A <span class="focus-text">Personal loan</span> is a loan that is issued and supported only by the borrower's creditworthiness, rather than by any type of collateral. An unsecured loan is one that is obtained without the use of property as collateral for the loan, and it is also called a signature loan or a personal loan. 
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url();?>en/personal_loan">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/PersonalLoanmanuIcon.svg" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								A <span class="focus-text">Personal loan</span> is a loan that is issued and supported only by the borrower's creditworthiness, rather than by any type of collateral. An unsecured loan is one that is obtained without the use of property as collateral for the loan, and it is also called a signature loan or a personal loan. 
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/personal_loan">Find All Personal Loan Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/personal_loan">Find All Personal Loan Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -460,15 +466,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/menu-Auto-Loan.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                             A <span class="focus-text">Auto Loan</span> in which the borrower's car title is used as collateral. The borrower must be the lien holder (i.e. own the car outright). Before the loan is repaid, the lender will be the title holder of that car and after repaying, the title will be transferred back to the borrower.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url();?>en/car_loan">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/menu-Auto-Loan.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								 A <span class="focus-text">Auto Loan</span> in which the borrower's car title is used as collateral. The borrower must be the lien holder (i.e. own the car outright). Before the loan is repaid, the lender will be the title holder of that car and after repaying, the title will be transferred back to the borrower.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/car_loan">Find All Car Loan Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/car_loan">Find All Car Loan Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -549,15 +557,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Education-Loan-Manu-Image.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                           In <span class="focus-text">Education Loan,</span> money borrowed to finance education or school related expenses. Payments are often deferred while in school and repaid after graduation.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url();?>en/education_loan">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Education-Loan-Manu-Image.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																							   In <span class="focus-text">Education Loan,</span> money borrowed to finance education or school related expenses. Payments are often deferred while in school and repaid after graduation.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/education_loan">Find All Education Loan Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/education_loan">Find All Education Loan Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -635,7 +645,7 @@
                                         </div>
                                     </li>
 
-                                    <li><a href="#">Investment<i class="fa fa-caret-down fa-indicator"></i> </a>
+                                    <li><a href="#">Investments<i class="fa fa-caret-down fa-indicator"></i> </a>
                                         <!-- drop down full width -->
                                         <!-- For cards drop down -->
                                         <div class="drop-down-large" style="display: none;">
@@ -645,7 +655,7 @@
                                                 <div class="container-fluid space-0">   <!-- bootstrap fluid container -->
                                                     <!-- bootstrap columns -->
                                                     <div class="col-sm-3 col-md-2 clearfix space-0" style="background: #9bb176; min-height:400px;">
-                                                        <h4 class="nav-title">Investment</h4>
+                                                        <h4 class="nav-title">Investments</h4>
                                                         <!-- vertical tab -->
                                                         <div class="vertical-tabs">
                                                             <!-- active --> <!-- hidden-xs,sm,md-lg id bootstrap classes -->
@@ -677,15 +687,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/FDR-Menu-Icon.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                           The term <span class="focus-text">Fixed Deposit Account</span>  refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url();?>en/fdr">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/FDR-Menu-Icon.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																							   The term <span class="focus-text">Fixed Deposit Account</span>  refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/fdr">Find All FDR Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/fdr">Find All FDR Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -765,15 +777,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/DPSMenuIcon.svg" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">DPS</span> is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url();?>en/dps">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/DPSMenuIcon.svg" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">DPS</span> is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -854,15 +868,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/LakhpotiManuIcon.svg" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Lakhpoti & Millionaire Scheme</span> is a monthly Savings Scheme with flexible long term tenure that gives account holder maturity Value of minimum BDT 1 (one) million.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url();?>en/millionaire">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/LakhpotiManuIcon.svg" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Lakhpoti & Millionaire Scheme</span> is a monthly Savings Scheme with flexible long term tenure that gives account holder maturity Value of minimum BDT 1 (one) million.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url();?>en/millionaire">Find All Lakhpoti & Millionaire Scheme Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/millionaire">Find All Lakhpoti & Millionaire Scheme Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -943,15 +959,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Money-Maximizer-Menu-Icon.jpg" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Money Maximizer</span> account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url();?>en/money_maximizer">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Money-Maximizer-Menu-Icon.jpg" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Money Maximizer</span> account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/money_maximizer">Find All Money Maximizer Scheme Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/money_maximizer">Find All Money Maximizer Scheme Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -1032,15 +1050,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url();?>en/monthly_benefit">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/monthly_benefit">Find All Monthly Benefit Scheme</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/monthly_benefit">Find All Monthly Benefit Scheme</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
@@ -1128,39 +1148,45 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
-                                                                                        </p>
+                                                                                    <a href="">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Saving Accounts Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Saving Accounts Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
-                                                                                        </p>
+                                                                                    <a href="">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="#">Find All Current Accounts Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="#">Find All Current Accounts Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
-                                                                                        </p>
+                                                                                    <a href="">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="#">Find All SND Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="#">Find All SND Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
                                                                             </div>
 
@@ -1245,15 +1271,17 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <div class="features">
-                                                                                        <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
-                                                                                        <div class="clearfix"></div>
-                                                                                        <p class="text-right">
-                                                                                            <span class="focus-text">Export &amp; Import</span> An import is a good or service brought into one country from another. On the other hand, an export is a function of international trade whereby goods produced in one country are shipped to another country for future sale or trade.
-                                                                                        </p>
+                                                                                    <a href="<?php echo base_url(); ?>en/export_import">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+																							<div class="clearfix"></div>
+																							<p class="text-right">
+																								<span class="focus-text">Export &amp; Import</span> An import is a good or service brought into one country from another. On the other hand, an export is a function of international trade whereby goods produced in one country are shipped to another country for future sale or trade.
+																							</p>
 
-                                                                                        <a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/export_import">Find All Export &amp; Import Here</a>
-                                                                                    </div>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/export_import">Find All Export &amp; Import Here</a>
+																						</div>
+																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-8 col-xs-12">
