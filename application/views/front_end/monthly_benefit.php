@@ -218,54 +218,32 @@
                     <div class="card_query_fdr">
                         <p>Tenure</p>
                         <div class="fdrTenurepadding">
-                            <div class="fdr_tenure pull-left">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    6 Months
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-right">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    1 Year
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-left">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    2 Years
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-right">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    3 Years
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-left">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    4 Years
-                                </label>
-                            </div>
-                            <div class="fdr_tenure pull-right">
-                                <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="month" value="first_month" class="material_radiobox"/>
-                                    <span class="material_check_radio"></span>
-                                    5 Years
-                                </label>
-                            </div>
+                            <?php
+                            $tenure = $this->Select_model->select_all('monthly_benefit_tenure','DESC');
+                            foreach($tenure->result() as $row){
+                                ?>
+                                <div class="fdr_tenure pull-left">
+                                    <label class="material_radio_group fdr_radio">
+                                        <input type="radio" name="tenure" value="<?php echo $row->id; ?>" class="material_radiobox"/>
+                                        <span class="material_check_radio"></span>
+                                        <?php echo ($row->tenure == '0.5') ? '6 Months' : $row->tenure.' Years'; ?>
+                                    </label><br/>
+                                </div>
+                            <?php } ?>
+
                         </div>
                     </div>
 
                 </div>
             </div>
             <!-- Left bar query content end -->
+            <!-- Right bar content start -->
+            <div class="col-sm-9 col-xs-9">
+                <div id="monthlyBenefitSearch">
+                    <div id="loading" class="text-center"></div>
+                </div>
+            </div>
+            <!-- Right bar content end -->
 
             <!-- Right bar content start -->
             <div class="col-sm-9 col-xs-9">
@@ -435,4 +413,88 @@
             $('#hideDetailsDiv2').toggle(400);
         });
     });
+</script>
+
+<script type="text/javascript">
+
+    function overlay(s, l) {
+        $('.overlay').remove();
+        if( s )
+            $('body').append('<div class="overlay" style="width:100%;height:100%;position:fixed;display:block;background:#000;opacity:0.7;top:0;left:0;z-index:1000;"></div>');
+        if( l )
+            $('.overlay').html('<div style="position:absolute;top:'+(document.documentElement.clientHeight/2)+'px;left:'+(document.documentElement.clientWidth/2)+'px;"><img src="<?php echo base_url();?>resource/front_end/images/loader.gif" width="100"></div>');
+    }
+    $(document).on('click','#pagination a',function(e){
+        e.preventDefault();
+        var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+        loadData(cur_page);
+    });
+
+    $(document).on('click','#pagination a',function(e){
+        e.preventDefault();
+        var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+        loadData(cur_page);
+        console.log(cur_page);
+    });
+
+
+
+    function loadData( page = null ){
+        overlay(true,true);
+
+        var maximizer_tenure = new Array();
+        $('input[name="tenure"]:checked').each(function(){
+            maximizer_tenure.push($(this).val());
+        });
+
+        var maximizer_tenure_list = "&maximizer_tenure="+maximizer_tenure;
+        var amount = $('#finalAssest').val();
+        var deposit_amount = "&deposit_amount="+amount;
+
+        var main_string = maximizer_tenure_list+deposit_amount;
+        main_string = main_string.substring(1, main_string.length);
+        var page_count ='';
+        if( page != null ){
+            page_count = page ;
+        }
+        var url_str = "<?php echo base_url();?>monthly_benefit/ajax_get_monthly_benefit/" + page_count;
+        console.log(main_string);
+        $.ajax
+        ({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(msg)
+            {
+                overlay(false);
+                $("#moneyMaximizerSearch").html(msg);
+
+            }
+        });
+    }
+
+    loadData( page = null );
+    $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+        loadData( page = null );
+    } );
+
+
+    $( ".draggable" ).mouseout(function(){
+        loadData( page = null );
+
+    });
+
+    //for show hide (more info & Available Offer)
+
+    $('#moneyMaximizerSearch').on('click', '.more_info', function (){
+        var  formData = $(this).data();
+        var maximizer_id = formData.maximizer_id;
+        console.log(maximizer_id);
+        $("#moreInfo"+maximizer_id).toggleClass("in");
+    });
+
+
 </script>
