@@ -58,6 +58,17 @@
         right: 0;
         top: 7px;
         cursor: pointer;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    .fin-about-text{
+        font-family: 'Ubuntu', sans-serif;
+    }
+    h3.fin-about-heading>span {
+        font-size: 36px;
+    }
+    .fin-about-heading{
+        font-family: 'Courgette', cursive;
+        font-size: 22px;
     }
 
 </style>
@@ -82,7 +93,7 @@
                 <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg" alt="Large Logo" /><br/><br/>
                 <div class="home-search-section" data-toggle="modal" data-target="#serchModal" >
                     <img class="search-image" src="<?php echo base_url(); ?>resource/front_end/images/srcbutton.png" alt="Serch box" />
-                    <p class="typewrite" data-period="2000" data-type='[ "I am looking for..."]'>
+                    <p class="typewrite" data-period="3000" data-type='[ "Looking for..."]'>
                         <span class="wrap"></span>
                 </div>
             </div>
@@ -201,13 +212,20 @@
         </div>
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             <div class="header_paragrph">
-                <h3>About Finager.com</h3>
+                <h3 class="fin-about-heading"><span>A</span>bout <span>F</span>inager.com</h3>
+                <div class="fin-about-text">
                 <p>
-                   Finager.com is one of the biggest online platforms as well as first complete Fintech* website of Bangladesh that aims to provide all types of financial solutions to its FinUsers* which will help them to take financial decisions intheir every day life. We are always concern to keep you up-to-date with any FinInfo* provided by bank, non-banking financial institution, insurance companies and stock market and assist you to choose the best possible option therein. We are also offering wide range of research articles, features, case studies and a unique forum for sharing information, reading news, posting blogs and e-networking with your friends. Because of our strong and reliable sources of information, we have become the leading fintech* solution provider in this industry.
-                </p>
+                    "finager" is a fintech initiave of core-concept inc. This is the first 360 degree financial industry platfrom of
+                    bangladesh. It helps visitors taking perfect decisions on their financial affairs- providing updated, authentic and
+                    analysed data and tools.
                 <p>
-                    If you ever need best financial advices, just log in to <b>www.finager.com</b> or have a coffee time with the <b>Finager Team</b>.
+                    Today is the age of knowladge based economy.To succeed, people need to work with someone who knows and understands,
+                    somewhere that  shares knowledge, risk and result and defines realistic objectives and the ways to reach them.
                 </p>
+
+                <p>visit "finager" , a partner you can count on day after day, a partner who is committed to help you to lead you to success.</p>
+
+                </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">

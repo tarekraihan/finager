@@ -56,10 +56,6 @@
 	}
 }
 @media screen and (min-width: 768px) and (max-width: 1365px){
-	.logobar a .logo {
-		max-height: 63px;
-		width: 110px;
-	}
 	.mash-menu section.mash-menu-inner-container {
 		max-width: 400px !important;
 	}
@@ -140,7 +136,7 @@
     z-index: 99999;
 }
 .menu-item{
-    padding: 30px 0px;
+    padding: 0px 0px 30px 0px;
 }
 .mash-menu [class*=col-] {
     margin-bottom: 0px !important;

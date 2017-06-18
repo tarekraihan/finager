@@ -200,7 +200,7 @@
                                                                             <div class="prev"></div>
                                                                             <div class="next active"></div>
                                                                         </div>
-                                                                        <div class="hideVal">0.5</div>
+                                                                        <div class="hideVal">10000</div>
                                                                     </div>
                                                                 </div>
                                                                 <!--Calculator Section END-->
@@ -257,7 +257,40 @@
     </div>
 </section>
 
-<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/moneymaxi-calculator.js"></script>
+<section id="hiden_div">
+    <div class="container no-padding">
+        <div class="row">
+            <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
+                <div class="card-holder">
+                    <div class="card-bg">
+                        <img src="<?php echo base_url();?>resource/front_end/images/hidendivshead.png" alt="" />
+                        <div class="hidden_div relative">
+                            <div class="hidden_div_container">
+                                <ul class="no-padding pull-left no-list-style">
+                                    <li>
+
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <a class="cart_anchor compare-card">
+
+                                </a>
+                                <a class="cart_anchor01 comapre-card">
+
+                                </a>
+                                <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
+                                    Compare
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/money-max.js"></script>
 
 <script type="text/javascript"> 
 
@@ -363,4 +396,208 @@ $(window).on('scroll', function (){
         */
          //});
 
+</script>
+
+
+<script>
+
+    $(document).on('click','.add-to-compare',function(){
+
+        $("#hiden_div").animate({bottom:'0px'});
+
+        // For card fly START
+        if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
+            alert("Sorry");
+        }
+
+        if($(".cart_anchor").hasClass("img_active")){
+
+            var cart01 = $('.cart_anchor01');
+            var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
+            if (imgtodrag01) {
+                var imgclone01 = imgtodrag01.clone()
+                    .offset({
+                        top: imgtodrag01.offset().top,
+                        left: imgtodrag01.offset().left
+                    })
+                    .css({
+                        'opacity': '0.7',
+                        'position': 'absolute',
+                        'height': '150px',
+                        'width': '150px',
+                        'z-index': '100'
+                    })
+                    .appendTo($('body'))
+                    .animate({
+                        'top': cart01.offset().top,
+                        'left': cart01.offset().left + 10,
+                        'width': 75,
+                        'height': 75
+                    }, 1000, 'easeInOutExpo');
+
+                setTimeout(function () {
+                    cart01.effect("shake", {
+                        times: 2
+                    }, 200);
+                }, 1000);
+
+                imgclone01.animate({
+                    'width': 0,
+                    'height': 0
+                }, function () {
+                    $(this).detach()
+                });
+            }
+
+            $(".cart_anchor01").addClass("img_active");
+            $(this).addClass("hidden");
+
+            var  formData = $(this).data();
+            var millionaire_id = "millionaire_id="+formData.millionaire_id;
+
+            setTimeout(function(){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
+                    data: millionaire_id,
+                    success: function(msg)
+                    {
+                        $(".cart_anchor01").html(msg);
+                    }
+                });
+            });
+
+
+        }
+
+        else{
+            var cart = $('.cart_anchor');
+            var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
+            if (imgtodrag) {
+                var imgclone = imgtodrag.clone()
+                    .offset({
+                        top: imgtodrag.offset().top,
+                        left: imgtodrag.offset().left
+                    })
+                    .css({
+                        'opacity': '0.7',
+                        'position': 'absolute',
+                        'height': '150px',
+                        'width': '150px',
+                        'z-index': '100'
+                    })
+                    .appendTo($('body'))
+                    .animate({
+                        'top': cart.offset().top + 10,
+                        'left': cart.offset().left + 10,
+                        'width': 75,
+                        'height': 75
+                    }, 1000, 'easeInOutExpo');
+
+                setTimeout(function () {
+                    cart.effect("shake", {
+                        times: 2
+                    }, 200);
+                }, 1000);
+
+                imgclone.animate({
+                    'width': 0,
+                    'height': 0
+                }, function () {
+                    $(this).detach()
+                });
+            }
+
+            var  formData = $(this).data();
+            var millionaire_id = "millionaire_id="+formData.millionaire_id;
+            //alert(home_id);
+
+            setTimeout(function(){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
+                    data: millionaire_id,
+                    success: function(msg)
+                    {
+                        $(".cart_anchor").html(msg);
+                    }
+                });
+            });
+
+            $(".cart_anchor").addClass("img_active");
+            $(this).addClass("hidden");
+
+        }
+
+
+    });
+
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var collected_card = $(this).prev().attr("data-millionaire_id");
+
+        $(".full-card").each(function(){
+            var obj=$(this).children().find('.add-to-compare');
+            var index=$(this).children().find('.add-to-compare').attr('data-millionaire_id');
+            if(parseInt(collected_card)==parseInt(index)){
+                obj.removeClass("hidden");
+            }
+
+        });
+
+        $(this).parent(".cart_anchor").removeClass("img_active");
+        $(this).parent(".cart_anchor").html('');
+        $(this).addClass("hidden");
+
+    });
+
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        $(this).parent(".cart_anchor01").removeClass("img_active");
+        $(this).parent(".cart_anchor01").html('');
+    });
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var empty = $(this).parents(".hidden_div_container").find("a");
+        $(".compare-card").each(function(){
+            if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+                $("#hiden_div").fadeOut(1500);
+            }
+        });
+    });
+
+    $('#go_compare').click(function(){
+        //alert(1);
+        var  formData = $('.cart_anchor').children('img').data();
+        var millionaire_id1 = "millionaire_id1="+formData.millionaire_id;
+
+        var  formData = $('.cart_anchor01').children('img').data();
+        var millionaire_id2 = "&millionaire_id2="+formData.millionaire_id;
+
+        var millionaire_ids = millionaire_id1+millionaire_id2;
+        if( millionaire_id1 != '' && millionaire_id2 != '' ){
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>millionaire/ajax_go_compare_page",
+                data: millionaire_ids,
+                success: function(msg)
+                {
+                    if(msg != 'error'){
+
+                        window.location.href = "<?php echo base_url();?>en/millionaire_compare";
+                    }
+                }
+            });
+        }else{
+            alert("Please add 2 card for compare ! ")
+        }
+
+
+    });
 </script>

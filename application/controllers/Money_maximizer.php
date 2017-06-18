@@ -228,29 +228,19 @@ class Money_maximizer extends CI_Controller {
     public function ajax_get_money_maximizer(){
 
         $maximizer_tenure = $this->input->post('maximizer_tenure');
-        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 100000 );
-
+        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
         $WHERE = array(); $query = '';
-
         if(!empty($maximizer_tenure)) {
             $WHERE[] = '( money_maxi_info.choose_your_benefit_id = '.$maximizer_tenure.')';
         }
-
         $query = implode(' AND ',$WHERE);
-
-
         if(!empty($query)) {
             $query = 'WHERE '.$query;
         }
 //        print_r($query);die;
 
-
-
         $res = $this->Front_end_select_model->select_money_maximizer_info($query);
-
-
 //-----------Pagination start-----------------
-
         $config['base_url'] = base_url() . "en/all_money_maximizer/";
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
@@ -285,7 +275,6 @@ class Money_maximizer extends CI_Controller {
         $money_maximizer =  $this->Front_end_select_model->select_maximizer_info_pagination($query,$config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
 
-
         $maximizer = '';
 
         if($money_maximizer->num_rows() > 0){
@@ -304,14 +293,14 @@ class Money_maximizer extends CI_Controller {
                     $bank_logo = $row->bank_logo;
                 }
 
-
+                $credit_facility = ($row->credit_facility != 'N/A') ? $row->credit_facility.' %' :'N/A';
                 $benefit_amount  = $maximizer_amount * $row->your_benefit;
 
                 $maximizer .= '
 					<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
 							<div class="col-sm-2 col-xs-2">
-								<a href="'.base_url().'en/maximizer_details/'.$row->id.'"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<a href="'.base_url().'en/money_maximizer_details/'.$row->id.'"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -324,39 +313,39 @@ class Money_maximizer extends CI_Controller {
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
                                             <h5>Deposited Amount</h5>
-                                            <p>&#2547; '.number_format( $maximizer_amount ).'</p>
+                                            <p>BDT. '.number_format( $maximizer_amount ).'</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
                                             <h5>Duration of Benefit</h5>
-                                            <p>'.$row->your_benefit.' Times</p>
+                                            <p>'.$row->duration_of_benefit.'</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
                                             <h5>Benefit Amount</h5>
-                                            <p>&#2547; '.number_format( $benefit_amount ).'</p>
+                                            <p>BDT.'.number_format( $benefit_amount ).'</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
                                             <h5>Credit Facility</h5>
-                                            <p>'.$row->credit_facility.' %</p>
+                                            <p>'.$credit_facility.' </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row more_availabe">
                                     <div class="col-md-2"><a href="javascript:void(0)"   class="more_info" data-maximizer_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
                                     <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Money Maximizer Application" /></a></div>
-                                    <div class="col-md-2"><a href="javascript:void(0)"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Money Maximizer Comparison" /></a></div>
+                                    <div class="col-md-2"><a href="javascript:void(0)" class="add-to-compare" data-maximizer_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Money Maximizer Comparison" /></a></div>
                                 </div>
                             </div>
 						</div>
 
 
 						<!-- More Info Tab content start -->
-						<div class="collapse" id="moreInfo'.$row->id.'">
+						<div class="more_info_tab collapse" id="moreInfo'.$row->id.'">
                              <div class="col-md-12">
 								<section id="tab">
 									<!-- Nav tabs -->
@@ -411,5 +400,37 @@ class Money_maximizer extends CI_Controller {
     }
 
 
+    public function ajax_compare_money_maximizer_image(){
+        $id = $this->input->post('maximizer_id');
+        $result = $this->Front_end_select_model->select_money_maximizer_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-maximizer_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('maximizer_id1');
+        $id2 = $this->input->post('maximizer_id2');
+        $deposit_amount = $this->input->post('deposit_amount');
+
+        $newdata = array(
+            'first_maximizer_id'  => $id1,
+            'second_maximizer_id'  => $id2,
+            'maximizer_deposit_amount'  => $deposit_amount
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
 
 }

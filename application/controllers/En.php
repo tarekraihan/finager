@@ -483,6 +483,74 @@ class En extends CI_Controller {
 
     }
 
+
+    public function money_maximizer_details(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/money_maximizer_details');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+    public function money_maximizer_compare(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/money_maximizer_compare');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+
+
+
+    public function monthly_benefit(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/monthly_benefit_landing');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+
+    public function all_monthly_benefit(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/monthly_benefit');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+
+    public function monthly_benefit_details(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/millionaire_details');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+    public function monthly_benefit_compare(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/millionaire_compare');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+
+
     public function bank_details(){
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');

@@ -1,5 +1,3 @@
-
-
 jQuery(document).ready(function(){
 	if( $('.cd-stretchy-nav').length > 0 ) {
 		var stretchyNavs = $('.cd-stretchy-nav');
@@ -20,10 +18,10 @@ jQuery(document).ready(function(){
 	}
 });
 
-/*// searching text effect for homepage search START
+// searching text effect for homepage search START
 document.addEventListener('DOMContentLoaded',function(event){
     // array with texts to type in typewriter
-    var dataText = [ "I am looking for..."];
+    var dataText = [ "Looking for..."];
 
     // type one text in the typwriter
     // keeps calling itself until the text is finished
@@ -41,7 +39,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         // text finished, call callback if there is a callback function
         else if (typeof fnCallback == 'function') {
             // call callback after timeout
-            setTimeout(fnCallback, 100);
+            setTimeout(fnCallback, 800);
         }
     }
     // start a typewriter animation for a text in the dataText array
@@ -49,10 +47,10 @@ document.addEventListener('DOMContentLoaded',function(event){
         if (typeof dataText[i] == 'undefined'){
             setTimeout(function() {
                 StartTextAnimation(0);
-            }, 1000);
+            }, 1500);
         }
         // check if dataText[i] exists
-        if (i < dataText[i].length) {
+        if (i < dataText.length) {
             // text exists! start typewriter animation
             typeWriter(dataText[i], 0, function(){
                 // after callback (and whole text has been animated), start next text
@@ -62,7 +60,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     }
     // start the text animation
     StartTextAnimation(0);
-});*/
+});
 
 window.onload = function() {
     var elements = document.getElementsByClassName('typewrite');
@@ -70,7 +68,7 @@ window.onload = function() {
         var toRotate = elements[i].getAttribute('data-type');
         var period = elements[i].getAttribute('data-period');
         if (toRotate) {
-            new TxtType(elements[i], JSON.parse(toRotate), period);
+            //new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     }
     // INJECT CSS
@@ -80,3 +78,6 @@ window.onload = function() {
     document.body.appendChild(css);
 };
 // searching text effect for homepage search END
+
+
+
