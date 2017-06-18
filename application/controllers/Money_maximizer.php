@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Developer : Tarek Raihan                   *
  * Developer Email : tarekraihan@yahoo.com    *
  * Project : FINAGER.COM                      *
- * Module : Personal Loan                     *
+ * Module : Money Maximizer                   *
  * Script : back end  controller              *
- * Start Date : 30-08-2016                    *
- * Last Update : 01-08-2016                   *
+ * Start Date : 30-04-2017                    *
+ * Last Update : 02-05-2017                   *
  **********************************************/
 
 class Money_maximizer extends CI_Controller {

@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Developer : Tarek Raihan                   *
  * Developer Email : tarekraihan@yahoo.com    *
  * Project : FINAGER.COM                      *
- * Module : Personal Loan                     *
+ * Module : Monthly Benefit                   *
  * Script : back end  controller              *
- * Start Date : 30-08-2016                    *
- * Last Update : 01-08-2016                   *
+ * Start Date : 18-06-2017                    *
+ * Last Update : 19-06-2017                   *
  **********************************************/
 
 class Monthly_benefit extends CI_Controller {
@@ -238,16 +238,16 @@ class Monthly_benefit extends CI_Controller {
 
     public function ajax_get_monthly_benefit(){
 
-        $maximizer_tenure = $this->input->post('monthly_tenure');
-        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $monthly_tenure = $this->input->post('monthly_tenure');
+        $monthly_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
         $WHERE = array(); $query = '';
-        if(!empty($maximizer_tenure)) {
-            $WHERE[] = '( monthly_benefit_info.tenure_id = '.$maximizer_tenure.')';
+        if(!empty($monthly_tenure)) {
+            $WHERE[] = '( monthly_benefit_info.tenure_id = '.$monthly_tenure.')';
         }
-
-        if(!empty($maximizer_amount)) {
-            $WHERE[] = '( monthly_benefit_info.deposit_amount >= '.$maximizer_amount.')';
-        }
+//
+//        if(!empty($monthly_amount)) {
+//            $WHERE[] = '( monthly_benefit_info.deposit_amount >= '.$monthly_amount.')';
+//        }
         $query = implode(' AND ',$WHERE);
         if(!empty($query)) {
             $query = 'WHERE '.$query;
@@ -287,32 +287,26 @@ class Monthly_benefit extends CI_Controller {
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
 
-        $money_maximizer =  $this->Front_end_select_model->select_money_benefit_pagination($query,$config["per_page"],$page);
+        $result =  $this->Front_end_select_model->select_money_benefit_pagination($query,$config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
 
         $monthly_benefit = '';
 
         //pr($money_maximizer->result());die;
-        if($money_maximizer->num_rows() > 0){
-            foreach($money_maximizer->result() as $row){
-                //print_r($row);die;
-                $bank = "";
-                if($row->is_non_bank == 1){
-                    $bank = $row->non_bank_name;
-                }else{
-                    $bank = $row->bank_name;
-                }
+        if($result->num_rows() > 0){
+            foreach($result->result() as $row){
+//                print_r($row);die;
 
-
-                //$credit_facility = ($row->credit_facility != 'N/A') ? $row->credit_facility.' %' :'N/A';
+                $tenure = ($row->tenure == '0.5') ? '6 Months' : $row->tenure.' Years';
+                $loan_facility = (strtoupper($row->loan_facility) != 'N/A') ? $row->loan_facility.' %' :'N/A';
                 //$benefit_amount  = $maximizer_amount * $row->your_benefit;
 
                 $monthly_benefit .= '
 					 <div class="full-card">
                     <div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href=""><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/front_end/images/brac-bank-logo.png" /></a>
-                            <p class="text-center">Brac Bank</p>
+                            <a href="'.base_url().'en/monthly_benefit_details/'.$row->id.'"><img title="Bank Logo" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+                            <p class="text-center">'.$row->bank_name.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                             </p>
@@ -324,19 +318,19 @@ class Monthly_benefit extends CI_Controller {
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Deposited Amount</h5>
-                                        <p>&#2547; 100000</p>
+                                        <p>BDT. '.number_format($monthly_amount).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Tenure</h5>
-                                        <p>1 Year</p>
+                                        <p>'.$tenure.'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Benefit Amount</h5>
-                                        <p>&#2547; 650</p>
+                                        <p>BDT. '.number_format( $row->benefit_amount ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
@@ -348,93 +342,58 @@ class Monthly_benefit extends CI_Controller {
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Loan Facility</h5>
-                                        <p>80%</p>
+                                        <p>'.$loan_facility.'</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="row more_availabe">
-                                <div class="col-md-2"><a id="hideDetailsButton" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
-                                <div class="col-md-4"><a id="hideDetailsButton2" href="#"><img class="fdr_apply pull-right" src="'. base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
-                                <div class="col-md-2"><a id="hideDetailsButton2" href="#"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
+                                <div class="col-md-2"><a href="javascript:void(0)"   class="more_info" data-monthly_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
+                                <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Monthly Benefit Application" /></a></div>
+                                <div class="col-md-2"><a href="javascript:void(0)" class="add-to-compare" data-monthly_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Monthly Benefit Comparison" /></a></div>
                             </div>
                         </div>
                     </div>
 
 
                     <!-- More Info Tab content start -->
-                    <div class="col-sm-12 card_more_info">
-                        <div id="hideDetailsDiv" class="hideMe">
-                            <section id="tab">
+                    <div class="more_info_tab collapse" id="moreInfo'.$row->id.'">
+                         <div class="col-md-12">
+								<section id="tab">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#Features" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
-                                    <li role="presentation"><a href="#Eligibility" aria-controls="profile" role="tab" data-toggle="tab">Eligibility</a></li>
-                                    <li role="presentation"><a href="#RequiredDocuments" aria-controls="messages" role="tab" data-toggle="tab">Required Documents</a></li>
-                                    <li role="presentation"><a href="#TermsConditions" aria-controls="messages" role="tab" data-toggle="tab">Terms & Conditions</a></li>
-                                    <li role="presentation"><a href="#Review" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
-                                    <li role="presentation"><a href="#UserReview" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
+                                    <li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
+                                    <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Eligibility</a></li>
+                                    <li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Required Documents</a></li>
+                                    <li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+                                    <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
+                                    <li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
                                 </ul>
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="Features">
+                                    <div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
                                         <h4>Features</h4>
-                                        <ul>
-                                            <li>Pre-mature full Encashment Facility</li>
-                                            <li>Auto Renewal Option with Interest</li>
-                                            <li>Loan Against Fixed Deposit Facility</li>
-                                        </ul>
+                                        '.$row->features.'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="Eligibility">
+                                    <div role="tabpanel" class="tab-pane" id="Eligibility'.$row->id.'">
                                         <h4>Eligibility</h4>
-                                        <ul>
-                                            <li>FDS Account can be opened both for Individual and Corporate bodies</li>
-                                            <li>Only Resident Bangladeshi National is allowed to open Personal FDS Account.</li>
-                                            <li>Joint account can be opened.</li>
-                                            <li>Minor account can be opened under the supervision of his / her / their guardian.</li>
-                                        </ul>
+                                        '.$row->eligibility.'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="RequiredDocuments">
+                                    <div role="tabpanel" class="tab-pane" id="RequiredDocuments'.$row->id.'">
                                         <h4>Required Documents</h4>
-                                        <ul>
-                                            <li>Salary Certificate/Letter of Introduction.</li>
-                                            <li>Application form (payment structure & schedule must be reflected).</li>
-                                            <li>CV/Biodata.</li>
-                                            <li>Latest one-year personal bank statement.</li>
-                                            <li>Latest tax clearance certificate.</li>
-                                            <li>Photocopy of passport/driving license/national id of applicant(s) and guarantor(s) .</li>
-                                            <li>2 copy recent passport size photographs of applicant(s) and guarantor(s).</li>
-                                            <li>NOC from spouse if co-applicant is anybody other than spouse.</li>
-                                            <li>Letter of introduction.</li>
-                                            <li>Copy of latest utility bill.</li>
-                                            <li>Personal net worth statements of applicant(s) and guarantor(s).</li>
-                                            <li>Personal guarantee of spouse/parents/any person accepted to bank.</li>
-                                            <li>Evidence of another income source.</li>
-                                        </ul>
+                                        '.$row->requirement.'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane fdr_terms" id="TermsConditions">
+                                    <div role="tabpanel" class="tab-pane fdr_terms" id="TermsConditions'.$row->id.'">
                                         <h4>Terms & Conditions</h4>
-                                        <ol type="1">
-                                            <li>The facility shall be made available for the customer from the date of Bank\'s approval of this application until such time is stipulated in any letter and this facility shall be continuing on until the adjustment of the dues of the Bank with interest and other charges.</li>
-                                            <li>The Bank reserves the right to withdraw the credit facility and demand repayment if there has been any default in repayment of the loan.</li>
-                                            <li>The Bank shall not be obliged to make the credit facility available until it has received formal written acknowledgement from you accepting the credit facility on the basis of outline and subject to the terms and conditions specified in the banking arrangement letter.</li>
-                                            <li>The acceptance of the terms and conditions of the banking arrangement letter by the customer constitutes a legal and binding obligation and is enforceable in accordance with the terms of the Banking arrangement letter.</li>
-                                            <li>By use of the credit facility provided by the bank, the customer accepts the conditions enumerated in the banking arrangement letter and authorizes the bank to appoint agents to collect funds payable to the bank, as the Bank may consider necessary. In the due discharge of their duty, information regarding borrower\'s credit facility will be supplied to the agent. All charges payable to such agents, to collect amounts owed to the bank, are liable to be at borrower\'s cost and risk, in addition to all other costs, charges and expenses incurred by the bank to recover outstanding dues/money.</li>
-                                            <li>The bank is authorized to open and maintain account(s) for the purpose of administering and recording payments by the customer in respect of the facility.</li>
-                                            <li>The loan shall be utilized for the specified purpose for which it has been sanctioned. Payment shall be made directly by the bank to the vendor or to the customer, as determined by the Bank, depending upon the purpose of the loan.</li>
-                                            <li>All payments in respect of the facility shall be made by the customer on or before the due dates and the customer hereby irrevocably authorizes the Bank to debit any of the customer\'s account(s) with the Bank with all amounts. Owing in respect of the facility including interest and charges and expenses (together the indebtedness) at such time as the same shall become or be due and, payable and transfer such sum to the loan account for adjustment but in any case, the customer shall always remain liable and agree(s) to make payment in full of all such sums to the Bank.</li>
-                                            <li>The customer unconditionally undertakes to repay the loan as per terms and conditions of the Banking Arrangement Letter.</li>
-                                            <li>The customer undertakes to deposit his/her salary/wages/honorarium payable by his/her employer to the designated account maintained with the Bank.</li>
-                                            <li>The Bank is authorized to enforce all or any of the securities executed as well as kept by the customer in favor of the Bank and recover the loan amount with interest and other charges accrued in the loan account.</li>
-                                            <li>The customer irrevocably authorizes the Bank to enforce the securities art\'s absolute discretion in the event the loan account becomes irregular and shall apply any proceeds recovered towards adjustment of outstanding loan liabilities along with all legal fees.</li>
-                                            <li>Where the facility is made available for purchase of consumer item(s) including Home loan customer unconditionally and irrevocably undertakes to deliver possession of the consumer items including the Home loan purchased b1 the loan amount without any question whatever to the bank as and when demanded by the bank. The customer further authorizes the bank irrevocably, to sell the mortgage items and apply the proceeds towards adjustment of the dues. For any unadjusted sum, the customer undertakes to repay the same with interest and other charges.</li>
-                                        </ol>
+                                         '.$row->terms_and_conditions.'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="Review">
+                                    <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
                                         <h4>Review</h4>
+                                        '.$row->review.'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="UserReview">
+                                    <div role="tabpanel" class="tab-pane" id="UserReview'.$row->id.'">
                                         <h4>User Review</h4>
+                                        '.$row->review.'
                                     </div>
                                 </div>
                             </section>
@@ -451,6 +410,21 @@ class Monthly_benefit extends CI_Controller {
 
 
         echo $monthly_benefit;
+    }
+
+
+    public function ajax_compare_monthly_image(){
+        $id = $this->input->post('monthly_id');
+        $result = $this->Front_end_select_model->select_monthly_benefit_image($id);
+        $row= $result->row();
+
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-monthly_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
     }
 
 

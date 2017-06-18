@@ -453,14 +453,14 @@ $(window).on('scroll', function (){
             $(this).addClass("hidden");
 
             var  formData = $(this).data();
-            var millionaire_id = "millionaire_id="+formData.millionaire_id;
+            var maximizer_id = "maximizer_id="+formData.maximizer_id;
 
             setTimeout(function(){
                 $.ajax
                 ({
                     type: "POST",
                     url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                    data: millionaire_id,
+                    data: maximizer_id,
                     success: function(msg)
                     {
                         $(".cart_anchor01").html(msg);
@@ -510,7 +510,7 @@ $(window).on('scroll', function (){
             }
 
             var  formData = $(this).data();
-            var millionaire_id = "millionaire_id="+formData.millionaire_id;
+            var maximizer_id = "maximizer_id="+formData.maximizer_id;
             //alert(home_id);
 
             setTimeout(function(){
@@ -541,7 +541,7 @@ $(window).on('scroll', function (){
 
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
-            var index=$(this).children().find('.add-to-compare').attr('data-millionaire_id');
+            var index=$(this).children().find('.add-to-compare').attr('data-maximizer_id');
             if(parseInt(collected_card)==parseInt(index)){
                 obj.removeClass("hidden");
             }
@@ -574,13 +574,13 @@ $(window).on('scroll', function (){
     $('#go_compare').click(function(){
         //alert(1);
         var  formData = $('.cart_anchor').children('img').data();
-        var millionaire_id1 = "millionaire_id1="+formData.millionaire_id;
+        var maximizer_id1 = "maximizer_id1="+formData.maximizer_id;
 
         var  formData = $('.cart_anchor01').children('img').data();
-        var millionaire_id2 = "&millionaire_id2="+formData.millionaire_id;
+        var maximizer_id2 = "&maximizer_id2="+formData.maximizer_id;
 
-        var millionaire_ids = millionaire_id1+millionaire_id2;
-        if( millionaire_id1 != '' && millionaire_id2 != '' ){
+        var maximizer_ids = maximizer_id1+maximizer_id2;
+        if( maximizer_id1 != '' && maximizer_id2 != '' ){
             $.ajax
             ({
                 type: "POST",
