@@ -254,7 +254,7 @@ class Monthly_benefit extends CI_Controller {
         }
         //print_r($query);die;
 
-        $res = $this->Front_end_select_model->select_money_benefit($query);
+        $res = $this->Front_end_select_model->select_monthly_benefit($query);
 //-----------Pagination start-----------------
         $config['base_url'] = base_url() . "en/all_monthly_benefit/";
         $config['total_rows'] = $res->num_rows();
@@ -287,7 +287,7 @@ class Monthly_benefit extends CI_Controller {
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
 
-        $result =  $this->Front_end_select_model->select_money_benefit_pagination($query,$config["per_page"],$page);
+        $result =  $this->Front_end_select_model->select_monthly_benefit_pagination($query,$config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
 
         $monthly_benefit = '';
@@ -425,6 +425,20 @@ class Monthly_benefit extends CI_Controller {
         }
         echo $html;
 
+    }
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('monthly_id1');
+        $id2 = $this->input->post('monthly_id2');
+        $deposit_amount = $this->input->post('monthly_amount');
+
+        $newdata = array(
+            'first_monthly_id'  => $id1,
+            'second_monthly_id'  => $id2,
+            'monthly_deposit_amount'  => $deposit_amount
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
     }
 
 

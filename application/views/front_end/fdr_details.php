@@ -1,70 +1,29 @@
 <?php
-
-
-
 $id=$this->uri->segment(3, 0);
-
 if(!empty($id) && is_numeric($id) ){
 
-
-
     $query=$this->Front_end_select_model->select_fdr_details($id);
-
     $row=$query->row();
 
-//        print_r($row);die;
-
-
-
     if($row->is_non_bank == 1){
-
         $bank_name = $row->non_bank_name;
-
         $bank_logo = $row->non_bank_logo;
 
     }else{
-
         $bank_name = $row->bank_name;
-
         $bank_logo = $row->bank_logo;
-
     }
-
     $amount = 100000;
-
     $yearly_interest = floatval( $row->interest_rate ) ;
-
     $interest = ($yearly_interest / 100);
-
     $tenure = floatval($row->installment);
-
-
-
     $no_of_times = 12;
-
     $payment = round($amount * pow(1 + $interest /$no_of_times,($no_of_times*($tenure/12))));
-
     $loan_facility = (!empty($row->loan_facility)) ? $row->loan_facility.'%' : 'N/A';
 
-
-
-
-
-
-
 }else{
-
     redirect(base_url().'My404');
-
 }
-
-
-
-
-
-
-
-
 
 ?>
 

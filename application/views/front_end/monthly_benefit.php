@@ -371,152 +371,76 @@
         $("#moreInfo"+monthly_id).toggleClass("in");
     });
 
-
-</script>
-
-<script>
-
     $(document).on('click','.add-to-compare',function(){
 
         $("#hiden_div").animate({bottom:'0px'});
+        $('html, body').animate({
 
-        // For card fly START
+        });
+
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
             alert("Sorry");
-        }
+        }else{
+            if($(".cart_anchor").hasClass("img_active")){
 
-        if($(".cart_anchor").hasClass("img_active")){
+                var itemImg = $(this).parents('.full-card').find('.auto_loan_logo').eq(0);
+                $(".cart_anchor01").addClass("img_active");
+                $(this).addClass("hidden");
 
-            var cart01 = $('.cart_anchor01');
-            var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
-            if (imgtodrag01) {
-                var imgclone01 = imgtodrag01.clone()
-                    .offset({
-                        top: imgtodrag01.offset().top,
-                        left: imgtodrag01.offset().left
-                    })
-                    .css({
-                        'opacity': '0.7',
-                        'position': 'absolute',
-                        'height': '150px',
-                        'width': '150px',
-                        'z-index': '100'
-                    })
-                    .appendTo($('body'))
-                    .animate({
-                        'top': cart01.offset().top,
-                        'left': cart01.offset().left + 10,
-                        'width': 75,
-                        'height': 75
-                    }, 1000, 'easeInOutExpo');
+                var  formData = $(this).data();
+                var monthly_id = "monthly_id="+formData.monthly_id;
 
-                setTimeout(function () {
-                    cart01.effect("shake", {
-                        times: 2
-                    }, 200);
-                }, 1000);
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>monthly_benefit/ajax_compare_monthly_image",
+                        data: monthly_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor01").html(msg);
+                        }
+                    });
+                },850);
 
-                imgclone01.animate({
-                    'width': 0,
-                    'height': 0
-                }, function () {
-                    $(this).detach()
-                });
             }
+            else{
 
-            $(".cart_anchor01").addClass("img_active");
-            $(this).addClass("hidden");
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.auto_loan_logo').eq(0);
+                //flyToElement($(itemImg), $('.cart_anchor'));
 
-            var  formData = $(this).data();
-            var monthly_id = "monthly_id="+formData.monthly_id;
+                $(".cart_anchor").addClass("img_active");
+                $(this).addClass("hidden");
 
-            setTimeout(function(){
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "<?php echo base_url();?>monthly_benefit/ajax_compare_monthly_image",
-                    data: monthly_id,
-                    success: function(msg)
-                    {
-                        $(".cart_anchor01").html(msg);
-                    }
-                });
-            });
+                var itemImg = $(this).parents('div:eq(0)').find('.auto_loan_logo').eq(0);
+                var  formData = $(this).data();
+                var monthly_id = "monthly_id="+formData.monthly_id;
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>monthly_benefit/ajax_compare_monthly_image",
+                        data: monthly_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor").html(msg);
+                        }
+                    });
+                },850);
 
-
-        }
-
-        else{
-            var cart = $('.cart_anchor');
-            var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
-            if (imgtodrag) {
-                var imgclone = imgtodrag.clone()
-                    .offset({
-                        top: imgtodrag.offset().top,
-                        left: imgtodrag.offset().left
-                    })
-                    .css({
-                        'opacity': '0.7',
-                        'position': 'absolute',
-                        'height': '150px',
-                        'width': '150px',
-                        'z-index': '100'
-                    })
-                    .appendTo($('body'))
-                    .animate({
-                        'top': cart.offset().top + 10,
-                        'left': cart.offset().left + 10,
-                        'width': 75,
-                        'height': 75
-                    }, 1000, 'easeInOutExpo');
-
-                setTimeout(function () {
-                    cart.effect("shake", {
-                        times: 2
-                    }, 200);
-                }, 1000);
-
-                imgclone.animate({
-                    'width': 0,
-                    'height': 0
-                }, function () {
-                    $(this).detach()
-                });
             }
-
-            var  formData = $(this).data();
-            var monthly_id = "monthly_id="+formData.monthly_id;
-            //alert(home_id);
-
-            setTimeout(function(){
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "<?php echo base_url();?>monthly_benefit/ajax_compare_monthly_image",
-                    data: monthly_id,
-                    success: function(msg)
-                    {
-                        $(".cart_anchor").html(msg);
-                    }
-                });
-            });
-
-            $(".cart_anchor").addClass("img_active");
-            $(this).addClass("hidden");
-
         }
-
 
     });
 
-
     $(document).on('click','.compare-cross-btn',function(){
 
-        var collected_card = $(this).prev().attr("data-millionaire_id");
+        var collected_card = $(this).prev().attr("data-fdr_id");
 
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
-            var index=$(this).children().find('.add-to-compare').attr('data-millionaire_id');
+            var index=$(this).children().find('.add-to-compare').attr('data-fdr_id');
             if(parseInt(collected_card)==parseInt(index)){
                 obj.removeClass("hidden");
             }
@@ -549,30 +473,33 @@
     $('#go_compare').click(function(){
         //alert(1);
         var  formData = $('.cart_anchor').children('img').data();
-        var millionaire_id1 = "millionaire_id1="+formData.millionaire_id;
+        var monthly_id1 = "monthly_id1="+formData.monthly_id;
+        var principal_amount = "&monthly_amount=" + $('#finalAssest').val();
 
         var  formData = $('.cart_anchor01').children('img').data();
-        var millionaire_id2 = "&millionaire_id2="+formData.millionaire_id;
+        var monthly_id2 = "&monthly_id2="+formData.monthly_id;
 
-        var millionaire_ids = millionaire_id1+millionaire_id2;
-        if( millionaire_id1 != '' && millionaire_id2 != '' ){
+        var monthly_ids = monthly_id1+monthly_id2+principal_amount;
+        if(monthly_id1 != '' && monthly_id2 != ''){
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>millionaire/ajax_go_compare_page",
-                data: millionaire_ids,
+                url: "<?php echo base_url();?>monthly_benefit/ajax_go_compare_page",
+                data: monthly_ids,
                 success: function(msg)
                 {
                     if(msg != 'error'){
 
-                        window.location.href = "<?php echo base_url();?>en/millionaire_compare";
+                        window.location.href = "<?php echo base_url();?>en/monthly_benefit_compare";
                     }
                 }
             });
         }else{
-            alert("Please add 2 card for compare ! ")
+            alert("Please add 2 Deposit for compare ! ")
         }
 
 
     });
+
+
 </script>
