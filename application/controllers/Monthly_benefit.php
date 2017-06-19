@@ -4,13 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Developer : Tarek Raihan                   *
  * Developer Email : tarekraihan@yahoo.com    *
  * Project : FINAGER.COM                      *
- * Module : Personal Loan                     *
+ * Module : Monthly Benefit                   *
  * Script : back end  controller              *
- * Start Date : 30-08-2016                    *
- * Last Update : 01-08-2016                   *
+ * Start Date : 18-06-2017                    *
+ * Last Update : 19-06-2017                   *
  **********************************************/
 
 class Monthly_benefit extends CI_Controller {
+
+    public function __construct() {
+        parent:: __construct();
+        $this->load->library("pagination");
+    }
+
 
     public function tenure($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -228,6 +234,199 @@ class Monthly_benefit extends CI_Controller {
             redirect(base_url().'backdoor');
         }
     }
+
+
+    public function ajax_get_monthly_benefit(){
+
+        $monthly_tenure = $this->input->post('monthly_tenure');
+        $monthly_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $WHERE = array(); $query = '';
+        if(!empty($monthly_tenure)) {
+            $WHERE[] = '( monthly_benefit_info.tenure_id = '.$monthly_tenure.')';
+        }
+//
+//        if(!empty($monthly_amount)) {
+//            $WHERE[] = '( monthly_benefit_info.deposit_amount >= '.$monthly_amount.')';
+//        }
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+        //print_r($query);die;
+
+        $res = $this->Front_end_select_model->select_money_benefit($query);
+//-----------Pagination start-----------------
+        $config['base_url'] = base_url() . "en/all_monthly_benefit/";
+        $config['total_rows'] = $res->num_rows();
+        $config['per_page'] = "10";
+        $config["uri_segment"] = 3;
+//        $choice = $config["total_rows"] / $config["per_page"];
+//        $config["num_links"] = floor($choice);
+        $config["num_links"] = 5;
+        $config['use_page_numbers'] = TRUE;
+
+        //Link customization
+        $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = false;
+        $config['last_link'] = false;
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = 'Prev';
+        $config['prev_tag_open'] = '<li class="previous">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = 'Next';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $this->pagination->initialize($config);
+        $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
+
+        $result =  $this->Front_end_select_model->select_money_benefit_pagination($query,$config["per_page"],$page);
+        $data['pagination'] = $this->pagination->create_links();
+
+        $monthly_benefit = '';
+
+        //pr($money_maximizer->result());die;
+        if($result->num_rows() > 0){
+            foreach($result->result() as $row){
+//                print_r($row);die;
+
+                $tenure = ($row->tenure == '0.5') ? '6 Months' : $row->tenure.' Years';
+                $loan_facility = (strtoupper($row->loan_facility) != 'N/A') ? $row->loan_facility.' %' :'N/A';
+                //$benefit_amount  = $maximizer_amount * $row->your_benefit;
+
+                $monthly_benefit .= '
+					 <div class="full-card">
+                    <div class="row fdr_right_bar no-margin-lr">
+                        <div class="col-sm-2 col-xs-2">
+                            <a href="'.base_url().'en/monthly_benefit_details/'.$row->id.'"><img title="Bank Logo" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+                            <p class="text-center">'.$row->bank_name.'</p>
+                            <p class="text-center">
+                                <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
+                            </p>
+                            <p class="rating text-center">Rated By 5 Person</p>
+                        </div>
+
+                        <div class="col-sm-10 col-xs-10">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-3">
+                                    <div class="card_text3">
+                                        <h5>Deposited Amount</h5>
+                                        <p>BDT. '.number_format($monthly_amount).'</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-xs-2">
+                                    <div class="card_text3">
+                                        <h5>Tenure</h5>
+                                        <p>'.$tenure.'</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-3">
+                                    <div class="card_text3">
+                                        <h5>Benefit Amount</h5>
+                                        <p>BDT. '.number_format( $row->benefit_amount ).'</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-xs-2">
+                                    <div class="card_text3">
+                                        <h5>Preiod</h5>
+                                        <p>Monthly</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-xs-2">
+                                    <div class="card_text3">
+                                        <h5>Loan Facility</h5>
+                                        <p>'.$loan_facility.'</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row more_availabe">
+                                <div class="col-md-2"><a href="javascript:void(0)"   class="more_info" data-monthly_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
+                                <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Monthly Benefit Application" /></a></div>
+                                <div class="col-md-2"><a href="javascript:void(0)" class="add-to-compare" data-monthly_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Monthly Benefit Comparison" /></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- More Info Tab content start -->
+                    <div class="more_info_tab collapse" id="moreInfo'.$row->id.'">
+                         <div class="col-md-12">
+								<section id="tab">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#Features'.$row->id.'" aria-controls="home" role="tab" data-toggle="tab">Features</a></li>
+                                    <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Eligibility</a></li>
+                                    <li role="presentation"><a href="#RequiredDocuments'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Required Documents</a></li>
+                                    <li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="messages" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+                                    <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
+                                    <li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
+                                        <h4>Features</h4>
+                                        '.$row->features.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="Eligibility'.$row->id.'">
+                                        <h4>Eligibility</h4>
+                                        '.$row->eligibility.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="RequiredDocuments'.$row->id.'">
+                                        <h4>Required Documents</h4>
+                                        '.$row->requirement.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fdr_terms" id="TermsConditions'.$row->id.'">
+                                        <h4>Terms & Conditions</h4>
+                                         '.$row->terms_and_conditions.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
+                                        <h4>Review</h4>
+                                        '.$row->review.'
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="UserReview'.$row->id.'">
+                                        <h4>User Review</h4>
+                                        '.$row->review.'
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- More Info Tab content end -->
+                </div>';
+            }
+            $monthly_benefit .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+        }else{
+            $monthly_benefit .= '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';
+        }
+
+
+
+        echo $monthly_benefit;
+    }
+
+
+    public function ajax_compare_monthly_image(){
+        $id = $this->input->post('monthly_id');
+        $result = $this->Front_end_select_model->select_monthly_benefit_image($id);
+        $row= $result->row();
+
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-monthly_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
 
 
 }

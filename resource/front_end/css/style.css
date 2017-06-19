@@ -4201,3 +4201,78 @@ a .auto_button.flash-button{
 .esc{
     dislpay: none !important;
 }
+.bank-small-filter {
+    color: #8d8d8e;
+    font-weight: 600;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+.bank-big-filter {
+    color: #000;
+    font-weight: 600;
+    font-size: 12px;
+}
+span.filter-option {
+    border: 1px solid #9c9c9c;
+    border-radius: 7px;
+    padding: 3px 5px;
+    font-size: 12px;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 7px 6px -6px #777;
+    -moz-box-shadow: 0px 7px 6px -6px #777;
+    box-shadow: 0px 7px 6px -6px #777;
+    margin-right: 10px;
+}
+.no-padding{
+    padding: 0px !important;
+}
+.no-margin{
+    nargin: 0 !important;
+}
+.filter-option>a:hover {
+    color: #333 !important;
+}
+.btn-filter-clear {
+    float: right;
+    border: 1px solid #ccc !important;
+    padding: 3px 7px;
+    font-size: 12px;
+    border-radius: 12px;
+    color: #8d8d8e;
+}
+.filter-hr{
+    margin: 10px 0;
+}
+#filter-bar {
+    margin-top: 5px;
+}
+.dropdown.mega-dropdown{
+    list-style: none;
+}
+.dropdown.mega-dropdown>a{
+    color: #000;
+}
+.mega-dropdown-menu {
+    min-width: 750px !important;
+}
+.filter-list{
+    padding:0;
+    margin: 0;
+}
+.filter-list>li {
+    list-style-type: none;
+    float: left;
+    margin-bottom: 10px;
+}
+.filter-by{
+    padding 0;
+    margin: 0;
+}
+.filter-by {
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.no-padding-left{
+    padding-left: 0 !important;
+}

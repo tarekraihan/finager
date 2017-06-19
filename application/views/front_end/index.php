@@ -33,7 +33,7 @@
     #home_search{
         height:664px;
         width:100%;
-        background-image:url(<?php echo base_url(); ?>resource/front_end/images/Finagersearchbackground.jpg);
+        background-image:url(<?php echo base_url(); ?>resource/front_end/images/Fin-background.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: fixed;

@@ -174,6 +174,13 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
 
+    public function select_monthly_benefit_image($id){
+        $sql="SELECT monthly_benefit_info.id,card_bank.bank_logo FROM `monthly_benefit_info`  LEFT JOIN card_bank on card_bank.id=monthly_benefit_info.bank_id WHERE monthly_benefit_info.id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
     public function select_money_maximizer_image($id){
         $sql="SELECT money_maxi_info.id,money_maxi_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `money_maxi_info`  LEFT JOIN card_bank on card_bank.id=money_maxi_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id  WHERE money_maxi_info.id=$id";
         $query = $this->db->query($sql);
@@ -347,6 +354,24 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
         return $query;
     }
+
+
+    function select_money_benefit($query){
+        $sql = "SELECT monthly_benefit_info.*, monthly_benefit_tenure.no_of_month, monthly_benefit_tenure.tenure,card_bank.bank_name,card_bank.bank_logo FROM monthly_benefit_info INNER JOIN monthly_benefit_tenure ON monthly_benefit_tenure.id = monthly_benefit_info.tenure_id LEFT JOIN card_bank on card_bank.id=monthly_benefit_info.bank_id $query";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+    function select_money_benefit_pagination($query,$limit=null,$offset=null){
+
+        $link = 'ORDER BY monthly_benefit_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT monthly_benefit_info.*, monthly_benefit_tenure.no_of_month, monthly_benefit_tenure.tenure,card_bank.bank_name,card_bank.bank_logo FROM monthly_benefit_info INNER JOIN monthly_benefit_tenure ON monthly_benefit_tenure.id = monthly_benefit_info.tenure_id LEFT JOIN card_bank on card_bank.id=monthly_benefit_info.bank_id $query $link";
+        $query = $this->db->query($sql);
+
+        return $query;
+    }
+
 
     function get_search_index($search_word=null){
         $sql = "SELECT * FROM `search_index` WHERE `tag_words` LIKE '%".$search_word."%'";

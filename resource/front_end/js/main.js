@@ -79,5 +79,16 @@ window.onload = function() {
 };
 // searching text effect for homepage search END
 
+// main page filter var
+$('.dropdown.mega-dropdown a').on('click', function (event) {
+    $(this).parent().toggleClass("open");
+});
+
+$('body').on('click', function (e) {
+    if (!$('.dropdown.mega-dropdown').is(e.target) && $('li.dropdown.mega-dropdown').has(e.target).length === 0 && $('.open').has(e.target).length === 0) {
+        $('.dropdown.mega-dropdown').removeClass('open');
+    }
+});
+
 
 

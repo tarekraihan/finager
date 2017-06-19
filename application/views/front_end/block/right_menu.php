@@ -136,12 +136,12 @@
 }
 
 .sidebar-nav .dropdown-menu {
-    background-color: #222222;
+    background-color: #00597d;
     border-radius: 0;
     border: none;
     box-shadow: none;
     margin: 0;
-    padding: 0;
+    padding: 14px 0;
     position: relative;
     width: 100%;
 }
@@ -303,7 +303,6 @@
             <li> <a href="#"><i class="fa fa-fw fa-file-o"></i> Second page</a> </li>-->
             <div class="top-menu">
                 <ul>
-                    <li> <a href="#"><i></i></a> </li>
                     <li><a href="#">Loan</a></li>
                     <li><a href="#">Credit Card</a></li>
                     <li><a href="#">Any Purpose Loan</a></li>
@@ -318,7 +317,7 @@
                     <li><a href="#">Consumer Loans  </a></li>
                     <li><a href="#">Business Loans</a></li>
                     <li><a href="#">SME</a></li>
-                    <li><a href="#">how to apply</a></li>
+                    <li><a href="#">How to apply</a></li>
                 </ul>
             </li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Cards <span class="caret"></span></a>

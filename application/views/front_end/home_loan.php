@@ -13,27 +13,168 @@
 
 </section>
 <div class="container">
-	<section id="filter-bar">
-		<div class="col-md-2">
-			<div class="bank-filter">
-				<p class="bank-small-filter">50 of 50 results filtered by:</p>
-				<div class="bank-big-filter">
-					Filter By: Bank <i class="fa fa-chevron-down" aria-hidden="true"></i> 
-				</div>
-			</div>
-		</div>
-		<div class="col-md-8">
-			<span class="filter-option">
-				<span>Filter Option 1</span>
-				<i class="fa fa-times" aria-hidden="true"></i>
-			</span>
-			<span class="filter-option">
-				<span>Filter Option 1</span>
-				<i class="fa fa-times" aria-hidden="true"></i>
-			</span>
-		</div>
-	</section>
+    <div class="row">
+        <section id="filter-bar">
+            <div class="col-md-3">
+                <div class="bank-filter">
+                    <p class="bank-small-filter">50 of 50 results filtered by:</p>
+                    <div class="bank-big-filter">
+
+                        <!--<div class="dropdown mega-dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                        </div>-->
+                        <ul class="filter-by">
+                            <li class="dropdown mega-dropdown">
+                                <a href="javascript:;" class="dropdown-toggle">
+                                    Filter By: Bank
+                                    <span>
+                                       <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+
+                                <ul class="dropdown-menu mega-dropdown-menu">
+                                    <li>
+                                        <div id="carousel" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li class="" data-slide-to="0" data-target="#carousel"></li>
+                                                <li class="active" data-slide-to="1" data-target="#carousel"></li>
+                                            </ol>
+                                            <div class="carousel-inner">
+                                                <div class="item">
+                                                    <img alt="" class="img-rounded" src="//placehold.it/360x240/&text=Hello" />
+                                                </div>
+                                                <div class="item active">
+                                                    <img alt="" class="img-rounded" src="//placehold.it/360x240/&text=World" />
+                                                </div>
+                                            </div> <a data-slide="prev" role="button" href="#carousel" class="left carousel-control">
+                                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                            </a>
+                                            <a data-slide="next" role="button" href="#carousel" class="right carousel-control">
+                                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </a>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 no-padding">
+                <ul class="filter-list">
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="filter-option">
+                            <span>Filter Option 1</span>
+                            <a href="javascript:;">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-1 no-padding-left">
+                <a class="btn-filter-clear" href="javascript:;">
+                    <span>
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
+                    Clear All
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <div class="col-sm-12">
+                <div class="clearfix"></div>
+                <hr class="filter-hr">
+            </div>
+        </section>
+    </div>
 </div>
+
 <section id="card">
 
     <div class="container">
