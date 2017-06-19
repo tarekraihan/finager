@@ -9,6 +9,18 @@
 
 -->
 
+<style>
+    .fixed {
+        position: fixed;
+        top: 0;
+        width: 259px;
+        transition: all 1s ease;
+    }
+    .sidebar-absolute{
+        transition: all 1s ease;
+    }
+</style>
+
 <section id="home_header">
 
 </section>
@@ -495,7 +507,34 @@ $(window).on('scroll', function (){
 });
 </script>
 <script>
+
+    $(document).on("scroll",function () {
+        var offsetToTop = parseInt($(this).scrollTop());
+        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
+
+        if (offsetToTop > $(".footer").offset().top-600) {
+            console.log("as");
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute");
+            $("#sidebar").css("top",-offsetToTop);
+        }
+
+        else if (offsetToTop > 383) {
+            console.log("as2");
+            $('#sidebar').addClass("fixed");
+            $("#sidebar").removeClass("sidebar-absolute");
+            $("#sidebar").removeAttr("style");
+        }
+
+        else if (offsetToTop < 383) {
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute");
+            $("#sidebar").css("top",-offsetToTop);
+        }
+    });
+
     $(document).ready(function(){
+
         function overlay(s, l) {
             $('.overlay').remove();
             if( s )

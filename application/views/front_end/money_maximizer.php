@@ -372,9 +372,32 @@ $(window).on('scroll', function (){
     } );
 
 
-    $( ".draggable" ).mouseout(function(){
-        loadData( page = null );
+    $(".draggable").on("dragstop",function(ev,ui){
 
+        setTimeout(function(){ //Updated by Tarek on 14-05-2017
+            //alert($("#finalAssest").val());
+            loadData(page = null);
+        }, 1000);
+
+    });
+
+    $("#finalAssest,#finalLiability").change(function () {
+        //alert($("#finalAssest").val());
+        loadData(page = null);
+    });
+
+    $("#alreadySaved").find(".next").click(function(){
+        setTimeout(function(){ //Updated by Tarek on 14-05-2017
+            //alert($("#finalAssest").val());
+            loadData(page = null);
+        }, 1000);
+    });
+
+    $("#alreadySaved").find(".prev").click(function(){
+        setTimeout(function(){ //Updated by Tarek on 14-05-2017
+            //alert($("#finalAssest").val());
+            loadData(page = null);
+        }, 1000);
     });
 
     //for show hide (more info & Available Offer)
