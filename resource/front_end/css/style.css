@@ -4253,7 +4253,7 @@ span.filter-option {
     color: #000;
 }
 .mega-dropdown-menu {
-    min-width: 750px !important;
+    min-width: 850px !important;
 }
 .filter-list{
     padding:0;
@@ -4276,7 +4276,31 @@ span.filter-option {
 .no-padding-left{
     padding-left: 0 !important;
 }
+#filer-by-carousel .left{
 
+}
+#filer-by-carousel .right {
+}
+.filter-check-img {
+    width: 25px;
+    height: 22px;
+    float: left;
+    margin-right: 10px;
+}
+.filter-check-img>img {
+    max-width: 25px;
+    max-height: 22px;
+}
+#filter-carousel .material_label_checkbox{
+    padding-left: 30px;
+}
+.filter-check-name {
+    margin-top: 5px;
+    float: left;
+}
+div#filter-carousel {
+    padding: 10px 15px;
+}
 /*------Current Account-----------*/
 
 .current-account{
