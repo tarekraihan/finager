@@ -355,15 +355,21 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    function select_monthly_benefit_details($id){
+        $sql = "SELECT monthly_benefit_info.*, monthly_benefit_tenure.no_of_month, monthly_benefit_tenure.tenure,card_bank.bank_name,card_bank.bank_logo FROM monthly_benefit_info INNER JOIN monthly_benefit_tenure ON monthly_benefit_tenure.id = monthly_benefit_info.tenure_id LEFT JOIN card_bank on card_bank.id=monthly_benefit_info.bank_id WHERE monthly_benefit_info.id = '$id'";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
-    function select_money_benefit($query){
+
+    function select_monthly_benefit($query){
         $sql = "SELECT monthly_benefit_info.*, monthly_benefit_tenure.no_of_month, monthly_benefit_tenure.tenure,card_bank.bank_name,card_bank.bank_logo FROM monthly_benefit_info INNER JOIN monthly_benefit_tenure ON monthly_benefit_tenure.id = monthly_benefit_info.tenure_id LEFT JOIN card_bank on card_bank.id=monthly_benefit_info.bank_id $query";
         $query = $this->db->query($sql);
         return $query;
     }
 
 
-    function select_money_benefit_pagination($query,$limit=null,$offset=null){
+    function select_monthly_benefit_pagination($query,$limit=null,$offset=null){
 
         $link = 'ORDER BY monthly_benefit_info.id ASC LIMIT ' . $offset . ', ' . $limit;
         $sql = "SELECT monthly_benefit_info.*, monthly_benefit_tenure.no_of_month, monthly_benefit_tenure.tenure,card_bank.bank_name,card_bank.bank_logo FROM monthly_benefit_info INNER JOIN monthly_benefit_tenure ON monthly_benefit_tenure.id = monthly_benefit_info.tenure_id LEFT JOIN card_bank on card_bank.id=monthly_benefit_info.bank_id $query $link";

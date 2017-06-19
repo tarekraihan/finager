@@ -1170,7 +1170,7 @@
 																								<span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
 																							</p>
 
-																							<a class="megamenu_feature_link" href="#">Find All Current Accounts Here</a>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/current_account">Find All Current Accounts Here</a>
 																						</div>
 																					</a>
                                                                                 </div>

@@ -4276,3 +4276,35 @@ span.filter-option {
 .no-padding-left{
     padding-left: 0 !important;
 }
+
+/*------Current Account-----------*/
+
+.current-account{
+    margin-top:30px;
+}
+.caccount_text h5{
+    font-weight:bold;
+    font-size:13px;
+}
+.caccount_text p{
+    font-size:12px;
+}
+#currantAccount_header{
+    background-image:url(http://placehold.it/1600x320);
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:320px;
+    position:relative;
+    margin-bottom:10px;
+}
+.caccount_left_head{
+    border: 1px solid #dadada;
+    padding: 12px;
+}
+.caccount_left_head p {
+    background-color: gray;
+    color: #fff;
+    padding: 2px 15px;
+    font-weight: bold;
+}
