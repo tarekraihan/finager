@@ -510,7 +510,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 2</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -519,7 +519,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 3</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -528,7 +528,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 4</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -537,7 +537,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 5</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -546,7 +546,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 6</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -555,7 +555,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 7</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -564,7 +564,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 8</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -573,7 +573,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 9</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -582,7 +582,7 @@
 
                     <li>
                         <span class="filter-option">
-                            <span>Filter Option 1</span>
+                            <span>Filter Option 10</span>
                             <a href="javascript:;">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
@@ -928,7 +928,7 @@
 	}
 });*/
 $('#filter-carousel').carousel({
-    interval: false
+    interval: false;
 });
 </script>
 <script>

@@ -90,5 +90,9 @@ $('body').on('click', function (e) {
     }
 });
 
+$(document).on('click','.filter-option a',function(){
+    $(this).parents('li').remove();
+});
+
 
 
