@@ -12,7 +12,7 @@
 <section id="monthly_benefit_header_part">
     <div class="month_benefit_header_text">
         <p>Monthly Benefit Scheme comparison made easy</p>
-        <a href="<?php echo base_url(); ?>en/monthly_benefit"><span class="dps_landing_button flash-button">Start Comparing</span></a>
+        <a href="<?php echo base_url(); ?>en/all_monthly_benefit"><span class="dps_landing_button flash-button">Start Comparing</span></a>
     </div>
     <div class="container">
         <div class="home_loan_icon">

@@ -12,6 +12,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Saving_account extends CI_Controller
 {
+    public function __construct() {
+        parent:: __construct();
+        $this->load->library("pagination");
+    }
 
     public function account_info($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -157,8 +161,8 @@ class Saving_account extends CI_Controller
 
     public function ajax_get_savings_account(){
 
-
         $res = $this->Front_end_select_model->select_savings_account_info();
+
 //-----------Pagination start-----------------
         $config['base_url'] = base_url() . "en/savings_account/";
         $config['total_rows'] = $res->num_rows();
@@ -191,14 +195,14 @@ class Saving_account extends CI_Controller
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
 
-        $savings_account =  $this->Front_end_select_model->select_savings_account_info($config["per_page"],$page);
+        $savings_account =  $this->Front_end_select_model->select_savings_account_info_pagination($config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
 
         $account = '';
 
         if($savings_account->num_rows() > 0){
             foreach($savings_account->result() as $row){
-                print_r($row);die;
+//                print_r($row);die;
                 $bank = "";
                 if($row->is_non_bank == 1){
                     $bank = $row->non_bank_name;
@@ -233,26 +237,26 @@ class Saving_account extends CI_Controller
                         </div>
                         <div class="col-sm-10 col-xs-10">
                             <div class="row">
-                                <div class="col-sm-3 col-xs-3">
+                                <div class="col-sm-3">
                                     <div class="caccount_text">
                                         <h5>A/C Opening Balance</h5>
                                         <p>BDT. '.number_format($row->opening_balance).'</p>
 
                                     </div>
                                 </div>
-                                <div class="col-sm-2 col-xs-2">
-                                    <div class="caccount_text">
+                                <div class="col-sm-4 ">
+                                    <div class="caccount_text text-center">
                                         <h5>Interest Rate</h5>
                                         <p>'.$interest.'</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-4 col-xs-4">
+                                <div class="col-sm-3">
                                     <div class="caccount_text">
                                         <h5>Minimum Balance for Interest</h5>
                                         <p>BDT. '.number_format($min_balance).' Per Month</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-3 col-xs-3">
+                                <div class="col-sm-2">
                                     <div class="caccount_text">
                                         <h5>Interest Paid</h5>
                                         <p>'.$row->interest_paid.'</p>
@@ -264,7 +268,7 @@ class Saving_account extends CI_Controller
                                     <span class="more_info_icon"><a href="javascript:void(0)" class="add-to-compare" data-account_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
-                                    <span class="more_info_icon"><a href="javascript:void(0)"   class="more_info" data-monthly_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
+                                    <span class="more_info_icon"><a href="javascript:void(0)"   class="more_info" data-account_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text1">
@@ -283,7 +287,7 @@ class Saving_account extends CI_Controller
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation"><a href="#Features'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Features</a></li>
-                                    <li role="presentation"><a href="#FeesCharge'.$row->id.'s" aria-controls="profile" role="tab" data-toggle="tab">Fees & Charges</a></li>
+                                    <li role="presentation"><a href="#FeesCharges'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Fees & Charges</a></li>
                                     <li role="presentation"><a href="#Requirement'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Requirement</a></li>
                                     <li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
                                     <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
@@ -298,63 +302,7 @@ class Saving_account extends CI_Controller
                                                 <h4>Features</h4>
                                                 <div class="prosConsHr"></div><br/>
                                                 <div class="prosCons_body2 trbodywidth">
-                                                    <table class="table table-striped table-bordered">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>Product Name</td>
-                                                            <td>Bank Asia Savings Account</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Single/Joint Name</td>
-                                                            <td>Joint Name Applicable</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Minimum Balance for Interest</td>
-                                                            <td>BDT 20000 Per Month</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Total ATM</td>
-                                                            <td>276</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Total Branch</td>
-                                                            <td>78</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>ATM Withdrawal Limit</td>
-                                                            <td>BDT 50000 Per Day</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Interest Paid</td>
-                                                            <td>Monthly</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Withdrawal Limit Amount</td>
-                                                            <td>Maximum 200000 Per Week</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Withdrawal Limit Per Week</td>
-                                                            <td>Not More than 2 Times. If an Accountholder Withdraws more than 2 Times in a Week, then he/she will not Get Interest for the Month.</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Additional Features</td>
-                                                            <td>
-                                                                i)	Debit Card<br>
-                                                                ii)	Check Book Facility<br>
-                                                                iii)	Internet Banking Facilities<br>
-                                                                iv)	Free Insurance Benefit <br>
-                                                                v)	Safe deposit locker facility<br>
-                                                                vi)	Personal Loan Facility <br>
-                                                                vii) Educational Loan Facility<br>
-
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Hotline Number</td>
-                                                            <td>16221</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    '.$row->features.'
                                                 </div>
                                             </div>
                                         </div>
@@ -365,26 +313,7 @@ class Saving_account extends CI_Controller
                                                 <h4>Fees & Charges</h4>
                                                 <div class="prosConsHr"></div><br/>
                                                 <div class="prosCons_body2 trbodywidth">
-                                                    <table class="table table-striped table-bordered">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td>Account Maintenance Fee</td>
-                                                            <td>BDT 500 Yearly</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Closing of Account</td>
-                                                            <td>BDT 400</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Cheque Book Fee</td>
-                                                            <td>BDT 200</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Debit Card Annual Fee</td>
-                                                            <td>BDT 400 + VAT</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    '.$row->fees_and_charges.'
                                                 </div>
                                             </div>
                                         </div>
@@ -392,33 +321,23 @@ class Saving_account extends CI_Controller
 
                                     <div role="tabpanel" class="tab-pane" id="Requirement'.$row->id.'">
                                         <div class="debit_card_tab">
-                                            <h4>Eligibility</h4>
+                                            <h4>Requirements</h4>
                                             <div class="prosConsHr"></div><br/>
-                                            <div class="prosCons_body2 trbodywidth">
-                                                <ul>
-                                                    <li>Bangladeshi National</li>
-                                                    <li>Minimum 18 Years of Age</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="debit_card_tab">
-                                            <h4>Required Documents</h4>
-                                            <div class="prosConsHr"></div><br/>
-                                            <p>Coming Soon...</p>
+                                            <p>'.$row->requirements.'</p>
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
                                         <div class="debit_card_tab">
                                             <h4>Review</h4>
                                             <div class="prosConsHr"></div><br/>
-                                            <p>Coming Soon...</p>
+                                           <p>'.$row->review.'</p>
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="TermsConditions'.$row->id.'">
                                         <div class="debit_card_tab">
                                             <h4>Terms & Conditions</h4>
                                             <div class="prosConsHr"></div><br/>
-                                            <p>Coming Soon...</p>
+                                            <p>'.$row->terms_and_conditions.'</p>
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="UserReview'.$row->id.'">
@@ -439,12 +358,39 @@ class Saving_account extends CI_Controller
         }else{
             $account .= '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';
         }
-
-
-
         echo $account;
     }
 
+    public function ajax_compare_saving_account_image(){
+        $id = $this->input->post('account_id');
+        $result = $this->Front_end_select_model->select_saving_account_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-account_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('account_id1');
+        $id2 = $this->input->post('account_id2');
+
+        $newdata = array(
+            'first_account_id'  => $id1,
+            'second_account_id'  => $id2
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
 
 
 

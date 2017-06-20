@@ -180,6 +180,12 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    public function select_saving_account_image($id){
+        $sql="SELECT saving_account_info.id,saving_account_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo  FROM `saving_account_info`  LEFT JOIN card_bank on card_bank.id=saving_account_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id WHERE saving_account_info.id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 
     public function select_money_maximizer_image($id){
         $sql="SELECT money_maxi_info.id,money_maxi_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `money_maxi_info`  LEFT JOIN card_bank on card_bank.id=money_maxi_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id  WHERE money_maxi_info.id=$id";
@@ -332,23 +338,22 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_savings_account_info(){
-        $sql="SELECT saving_account_info.*,current_account_i_am.i_am FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id";
-
+        $sql="SELECT saving_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id  LEFT JOIN card_bank on card_bank.id=saving_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id";
         $query = $this->db->query($sql);
         return $query;
     }
 
     function select_savings_account_info_pagination($limit=null,$offset=null){
         $link = 'ORDER BY saving_account_info.id ASC LIMIT ' . $offset . ', ' . $limit;
-        $sql = "SELECT saving_account_info.*,current_account_i_am.i_am FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id $link";
-        echo $sql;die;
+        $sql = "SELECT saving_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id  LEFT JOIN card_bank on card_bank.id=saving_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id $link";
+//        echo $sql;die;
         $query = $this->db->query($sql);
         return $query;
     }
 
 
     public function select_savings_account_info_details($id){
-        $sql="SELECT saving_account_info.*,current_account_i_am.i_am FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id WHERE saving_account_info.id=$id";
+        $sql="SELECT saving_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id  LEFT JOIN card_bank on card_bank.id=saving_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id WHERE saving_account_info.id=$id";
 
         $query = $this->db->query($sql);
         return $query;
@@ -358,6 +363,25 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         $sql = "SELECT education_expenses_considered.id,education_expenses_considered.expenses_considered FROM `education_loan_info_vs_expenses_considered` INNER JOIN education_expenses_considered ON education_expenses_considered.id=education_loan_info_vs_expenses_considered.expenses_considered_id INNER JOIN education_loan_info ON education_loan_info.id= education_loan_info_vs_expenses_considered.loan_info_id WHERE education_loan_info.id = $loan_id ORDER BY education_expenses_considered.id DESC";
         $query = $this->db->query($sql);
 
+        return $query;
+    }
+
+    function select_current_account_info($where){
+        $sql = "SELECT current_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo as non_bank_logo FROM current_account_info INNER JOIN current_account_i_am ON current_account_i_am.id=current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id=current_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=current_account_info.non_bank_id $where";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    function select_current_account_info_pagination($where,$limit=null,$offset=null){
+        $link = 'ORDER BY current_account_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT current_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo as non_bank_logo FROM current_account_info INNER JOIN current_account_i_am ON current_account_i_am.id=current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id=current_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=current_account_info.non_bank_id $where $link";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+    function select_current_account_info_details($id){
+        $sql = "SELECT current_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo as non_bank_logo FROM current_account_info INNER JOIN current_account_i_am ON current_account_i_am.id=current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id=current_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=current_account_info.non_bank_id WHERE current_account_info.id = $id";
+        $query = $this->db->query($sql);
         return $query;
     }
 

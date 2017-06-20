@@ -563,137 +563,63 @@
 							<p>I Am</p>
 
 							<div class="query_radio">
-
 								<?php
-
 								$this->Common_model->table_name = 'personal_loan_i_am';
-
 								$this->Common_model->offset = 0;
-
 								$this->Common_model->limit = 20;
-
 								$result = $this->Common_model->select_all();
-
 								foreach($result->result() as $row){
-
 								?>
-
 									<label class="material_radio_group">
-
 										<input type="radio" name="i_am"  id="i_am<?php echo $row->id; ?>"  value="<?php echo $row->id ;?>" class="material_radiobox"/>
-
 										<span class="material_check_radio"></span>
-
 										<?php echo $row->i_am; ?>
-
 									</label><br/>
-
 								<?php } ?>
-
-
-
 							</div>
-
 						</div>
-
-
-
 					</div>
-
 				</div>
-
 				<!-- Left bar query content end -->
-
-				
-
 				<!-- Right bar content start -->
-
 				<div class="col-sm-9 col-xs-9">
-
                     <div class="overlay"></div>
-
 					<div id="searchPersonalLoan">
-
                         <div id="loading" class="text-center" style="margin-top: 150px"></div>
-
 					</div>
-
 				</div>
-
 				<!-- Right bar content end -->
-
 			</div>
-
 		</div>
-
 	</section>
 
-
-
     <section id="hiden_div">
-
         <div class="container no-padding">
-
             <div class="row">
-
                 <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
-
                     <div class="card-holder">
-
                         <div class="card-bg">
-
                             <img src="<?php echo base_url();?>resource/front_end/images/hidendivshead.png" alt="" />
-
                             <div class="hidden_div relative">
-
                                 <div class="hidden_div_container">
-
                                     <ul class="no-padding pull-left no-list-style">
-
-                                        <li>
-
-
-
-                                        </li>
-
                                         <li></li>
-
+                                        <li></li>
                                     </ul>
-
                                     <a class="cart_anchor">
-
-
-
                                     </a>
-
                                     <a class="cart_anchor01">
-
-
-
                                     </a>
-
                                     <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
-
                                         Compare
-
                                     </a>
-
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
-
-
         </div>
-
     </section>
 
 
@@ -777,9 +703,7 @@
         loadData(page);
 
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
-
             loadData(page);
-
         } );
 
 

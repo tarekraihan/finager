@@ -1,3 +1,12 @@
+<style>
+    .pagination {
+        position: relative;
+        right: 0px;
+        top: 0;
+        cursor: pointer;
+        z-index: 1;
+    }
+</style>
 <section id="card">
     <div class="container">
         <div class="row">
@@ -9,6 +18,40 @@
             </div>
             <!-- Right bar content end -->
         </div>
+    </div>
+</section>
+
+<section id="hiden_div">
+    <div class="container no-padding">
+        <div class="row">
+            <div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
+                <div class="card-holder">
+                    <div class="card-bg">
+                        <img src="<?php echo base_url();?>resource/front_end/images/hidendivshead.png" alt="" />
+                        <div class="hidden_div relative">
+                            <div class="hidden_div_container">
+                                <ul class="no-padding pull-left no-list-style">
+                                    <li>
+
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <a class="cart_anchor compare-card">
+
+                                </a>
+                                <a class="cart_anchor01 comapre-card">
+
+                                </a>
+                                <a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
+                                    Compare
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 <script type="text/javascript">
@@ -42,7 +85,7 @@
         if( page != null ){
             page_count = page ;
         }
-        var url_str = "<?php echo base_url();?>savings_account/ajax_get_savings_account/" + page_count;
+        var url_str = "<?php echo base_url();?>saving_account/ajax_get_savings_account/" + page_count;
         $.ajax
         ({
             type: "POST",
@@ -61,15 +104,17 @@
         });
     }
 
-    loadData( page = null );
+    $(document).ready(function(){
+        loadData( page = null );
+    });
 
     //for show hide (more info & Available Offer)
 
-    $('#monthlyBenefitSearch').on('click', '.more_info', function (){
+    $('#savingsAccountSearch').on('click', '.more_info', function (){
         var  formData = $(this).data();
-        var monthly_id = formData.monthly_id;
-        console.log(monthly_id);
-        $("#moreInfo"+monthly_id).toggleClass("in");
+        var account_id = formData.account_id;
+        console.log(account_id);
+        $("#moreInfo"+account_id).toggleClass("in");
     });
 
     $(document).on('click','.add-to-compare',function(){
@@ -89,14 +134,14 @@
                 $(this).addClass("hidden");
 
                 var  formData = $(this).data();
-                var monthly_id = "monthly_id="+formData.monthly_id;
+                var account_id = "account_id="+formData.account_id;
 
                 setTimeout(function(){
                     $.ajax
                     ({
                         type: "POST",
-                        url: "<?php echo base_url();?>monthly_benefit/ajax_compare_monthly_image",
-                        data: monthly_id,
+                        url: "<?php echo base_url();?>saving_account/ajax_compare_saving_account_image",
+                        data: account_id,
                         success: function(msg)
                         {
                             $(".cart_anchor01").html(msg);
@@ -116,13 +161,13 @@
 
                 var itemImg = $(this).parents('div:eq(0)').find('.auto_loan_logo').eq(0);
                 var  formData = $(this).data();
-                var monthly_id = "monthly_id="+formData.monthly_id;
+                var account_id = "account_id="+formData.account_id;
                 setTimeout(function(){
                     $.ajax
                     ({
                         type: "POST",
-                        url: "<?php echo base_url();?>monthly_benefit/ajax_compare_monthly_image",
-                        data: monthly_id,
+                        url: "<?php echo base_url();?>saving_account/ajax_compare_saving_account_image",
+                        data: account_id,
                         success: function(msg)
                         {
                             $(".cart_anchor").html(msg);
@@ -174,24 +219,23 @@
     $('#go_compare').click(function(){
         //alert(1);
         var  formData = $('.cart_anchor').children('img').data();
-        var monthly_id1 = "monthly_id1="+formData.monthly_id;
-        var principal_amount = "&monthly_amount=" + $('#finalAssest').val();
+        var account_id1 = "account_id1="+formData.account_id;
 
         var  formData = $('.cart_anchor01').children('img').data();
-        var monthly_id2 = "&monthly_id2="+formData.monthly_id;
+        var account_id2 = "&account_id2="+formData.account_id;
 
-        var monthly_ids = monthly_id1+monthly_id2+principal_amount;
-        if(monthly_id1 != '' && monthly_id2 != ''){
+        var account_ids = account_id1+account_id2;
+        if(account_id1 != '' && account_id2 != ''){
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>monthly_benefit/ajax_go_compare_page",
-                data: monthly_ids,
+                url: "<?php echo base_url();?>saving_account/ajax_go_compare_page",
+                data: account_ids,
                 success: function(msg)
                 {
                     if(msg != 'error'){
 
-                        window.location.href = "<?php echo base_url();?>en/monthly_benefit_compare";
+                        window.location.href = "<?php echo base_url();?>en/saving_account_compare";
                     }
                 }
             });

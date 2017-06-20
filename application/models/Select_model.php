@@ -1446,7 +1446,7 @@ class Select_Model extends CI_Model
 					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					 <td class="text-center">'.$bank.'</td>
 					 <td class="text-center"> '.$row->opening_balance.'</td>
-					 <td class="text-center"> '.$row->total_branch.'%</td>
+					 <td class="text-center"> '.$row->total_branch.'</td>
 					 <td> '.$row->overdraft_facility.'</td>
 					 <td> '.$row->i_am.'</td>
 					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
