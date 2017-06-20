@@ -1076,6 +1076,7 @@ body {
 a .personal_loan_landing_button.flash-button {
     color: #000 !important;
     font-weight: bold;
+    float: right;
 }
 /* for auto loan */
 #auto_header{
@@ -1411,12 +1412,14 @@ a .fdr_landing_button{
 .auto_header_text p {
     color: #fff;
     font-size: 18px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
+    text-align: right;
 }
 .auto_header_text {
     top: 120px;
-    position: absolute;
-    margin-left: 238px;
+    position: relative;
+    margin-right: 220px;
+    float: right;
 }
 
 .auto_button {
@@ -1882,11 +1885,13 @@ a:hover {
     color: #000;
     font-size: 18px;
     margin-bottom: 24px;
+    text-align: right;
 }
 .personal_header_text {
-    top: 165px;
-    position: absolute;
-    margin-left: 228px;
+    top: 125px;
+    position: relative;
+    margin-right: 222px;
+    float: right;
 }
 /*#personal_header_part img {
     float: right;
@@ -2102,10 +2107,11 @@ a:hover {
     font-style: italic;
 }
 .education_header_text {
-    text-align: center;
+    text-align: right;
     top: 250px;
-    margin-left:517px;
-    position: absolute;
+    margin-right: 220px;
+    position: relative;
+    float: right;
 }
 .education_loan_icon {
     position: relative;
@@ -3550,10 +3556,11 @@ a .millionier_landing_button{
     50% { opacity: 0.5; }
     100% { opacity: 1.0; }
 }
-a .auto_button.flash-button{
+a .auto_button.flash-button {
     color: #1a181b;
     font-weight: bold;
-    text-decoration:none;
+    text-decoration: none;
+    float: right;
 }
 /*Auto loan button*/
 .btn_landing_auto {
@@ -4314,7 +4321,7 @@ div#filter-carousel {
     font-size:12px;
 }
 #currantAccount_header{
-    background-image:url(http://placehold.it/1600x320);
+    background-image:url(../images/Current-Ac-Banner.jpg);
     background-repeat:no-repeat;
     background-size:cover;
     width:100%;
