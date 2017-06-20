@@ -330,6 +330,30 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+
+    public function select_savings_account_info(){
+        $sql="SELECT saving_account_info.*,current_account_i_am.i_am FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    function select_savings_account_info_pagination($limit=null,$offset=null){
+        $link = 'ORDER BY saving_account_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT saving_account_info.*,current_account_i_am.i_am FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id $link";
+        echo $sql;die;
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+    public function select_savings_account_info_details($id){
+        $sql="SELECT saving_account_info.*,current_account_i_am.i_am FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id WHERE saving_account_info.id=$id";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
     function select_education_loan_expenses_considered($loan_id){
         $sql = "SELECT education_expenses_considered.id,education_expenses_considered.expenses_considered FROM `education_loan_info_vs_expenses_considered` INNER JOIN education_expenses_considered ON education_expenses_considered.id=education_loan_info_vs_expenses_considered.expenses_considered_id INNER JOIN education_loan_info ON education_loan_info.id= education_loan_info_vs_expenses_considered.loan_info_id WHERE education_loan_info.id = $loan_id ORDER BY education_expenses_considered.id DESC";
         $query = $this->db->query($sql);

@@ -86,8 +86,8 @@
                 <img class="logo-lg" src="<?php /*echo base_url(); */?>resource/front_end/images/FinAlfa.svg" alt="Large Logo" /><br/><br/>
                 <img class="search-image" data-toggle="modal" data-target="#serchModal" src="<?php /*echo base_url(); */?>resource/front_end/images/srcbutton.png" alt="Serch box" />
             </div>
-            
         </div>-->
+
         <div class="feature-bg">
             <div class="find-bar">
                 <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg" alt="Large Logo" /><br/><br/>
@@ -97,7 +97,6 @@
                         <span class="wrap"></span>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

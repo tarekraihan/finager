@@ -1,3 +1,24 @@
+<style type="text/css">
+    .fixed {
+        position: fixed;
+        top: 0;
+        width: 259px;
+        transition: all 1s ease;
+    }
+    .sidebar-absolute{
+        transition: all 1s ease;
+    }
+    .fixed {
+        position: fixed;
+        top: 0;
+        width: 259px;
+        transition: all 1s ease;
+    }
+    .sidebar-absolute{
+        transition: all 1s ease;
+    }
+</style>
+
 <section id="auto_header">
 
 </section>
@@ -419,8 +440,49 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/auto-loan-calculator.js"></script>
 <script>
 
+    $(document).on("scroll",function () {
+        $(document).on("scroll",function () {
+            var offsetToTop = parseInt($(this).scrollTop());
+            var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
+
+            if (offsetToTop > $(".footer").offset().top-500) {
+                console.log("as");
+                $("#sidebar").removeClass("fixed");
+                $("#sidebar").addClass("sidebar-absolute");
+                $("#sidebar").css("top",-offsetToTop);
+            }
+
+            else if (offsetToTop > 383) {
+                console.log("as2");
+                $('#sidebar').addClass("fixed");
+                $("#sidebar").removeClass("sidebar-absolute");
+                $("#sidebar").removeAttr("style");
+            }
+
+            else if (offsetToTop < 383) {
+                $("#sidebar").removeClass("fixed");
+                $("#sidebar").addClass("sidebar-absolute");
+                $("#sidebar").css("top",-offsetToTop);
+            }
+        });
+    });
+
+
+    $(window).on('scroll', function (){
+         if ($(window).scrollTop() > 350){
+            console.log("over 350");
+         $('.home_loan_left_bar').addClass('fixedElement');
+         }if($(window).scrollTop()<350){
+            $('.home_loan_left_bar').removeClass('fixedElement');
+         }if($(window).scrollTop() > 2200){
+            $('.home_loan_left_bar').removeClass('fixedElement');
+         }
+    });
     $(document).ready(function(){
-        $(window).on('scroll', function (){
+
+        
+       // $(".home_loan_left_bar").stick_in_parent();
+       /*$(window).on('scroll', function (){
             if ($(window).scrollTop() > 350){
                 console.log("over 350");
               $('.home_loan_left_bar').addClass('fixedElement');
@@ -430,8 +492,7 @@
               $('.home_loan_left_bar').removeClass('fixedElement');
             }
         });
-
-
+        */
 
         $(document).on('click','#pagination a',function(e){
             e.preventDefault();
@@ -649,8 +710,12 @@
                     }
                 });
             }else{
-                alert("Please add 2 card for compare ! ")
+                alert("Please add 2 card for compare ! ");
             }
         });
     });
+
+        
+   
+       
 </script>

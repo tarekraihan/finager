@@ -538,6 +538,16 @@ class En extends CI_Controller {
 
     }
 
+    public function savings_account(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/savings_account');
+        $this->load->view('front_end/block/footer');
+
+    }
+
 
     public function monthly_benefit_details(){
 

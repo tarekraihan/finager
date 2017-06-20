@@ -2251,10 +2251,10 @@ function applyBorder()
 
 /*Homepage quickpaye banner overlay*/
 
-function getCookieQuickpayBanner(){
+/*function getCookieQuickpayBanner(){
 		if($.cookie("QuickpayBanner")==null)
 			{
-				/*set cookie and show banner & cookie expiry code also*/	
+				*//*set cookie and show banner & cookie expiry code also*//*
 				$.cookie("QuickpayBanner",'true',{expires : 1, path:'/'});
 				if(url=='http://www.indusind.com/content/home/personal-banking.html'){
 				$(".overlayQuickpay, .srLightboxQuickpay").fadeIn(1000);
@@ -2264,15 +2264,15 @@ function getCookieQuickpayBanner(){
 				}
 			}
 		else{
-			/* hide banner*/	
+			*//* hide banner*//*
 			$(".overlayQuickpay, .srLightboxQuickpay").hide()
 			}
-	}
+	}*/
 
 
 $(window).load(function(){
 	
-	getCookieQuickpayBanner();
+	//getCookieQuickpayBanner();
 	/*Homepage quickpaye banner overlay getCookieQuickpayBanner();
 if(url=='http://10.24.124.143:4502/content/home/personal-banking.html'){
 $(".overlayQuickpay, .srLightboxQuickpay").fadeIn(1000);

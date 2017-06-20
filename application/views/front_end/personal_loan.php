@@ -697,7 +697,7 @@
     </section>
 
 
-
+<script src="<?php echo base_url();?>resource/front_end/js/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/Ppersonal-loan-calculator.js"></script>
 
 
@@ -705,6 +705,7 @@
 <script>
 
     $(document).ready(function(){
+
         var current_page = '<?php echo base_url();?>en/all_personal_loan';
 
         var page = '<?php echo($this->uri->segment(3)) ?>';
