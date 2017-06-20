@@ -1153,7 +1153,7 @@
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
-																								<span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+																								<span class="focus-text">Saving Account</span>  is an interest-bearing deposit account held at a bank or another financial institution that provides a modest interest rate on deposits.
 																							</p>
 
 																							<a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Saving Accounts Here</a>
@@ -1167,7 +1167,7 @@
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
-																								<span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+                                                                                                <span class="focus-text">Current Account</span> is made with Bank or financial institution that permits the withdrawal of funds and allows checks to be written against the balance.
 																							</p>
 
 																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/current_account">Find All Current Accounts Here</a>
@@ -1181,7 +1181,7 @@
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
-																								<span class="focus-text">Periodic Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
+																								<span class="focus-text">SND Account</span> is an interest bearing deposit where advance notice of 7 to 30 days required for amount withdrawal.
 																							</p>
 
 																							<a class="megamenu_feature_link" href="#">Find All SND Here</a>
