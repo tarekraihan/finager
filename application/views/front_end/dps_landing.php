@@ -2,10 +2,10 @@
 	<section id="dps_header_part">
 		<div class="dps_header_text">
 			<p>DPS comaparison made easy</p>
-                        <a href="<?php echo base_url(); ?>en/all_dps"><span class="dps_landing_button flash-button">Start Comparing</span></a>
+            <a href="<?php echo base_url(); ?>en/all_dps"><span class="dps_landing_button flash-button">Start Comparing</span></a>
 		</div>
 		<div class="container">
-			<div class="fdr_loan_icon">
+			<div class="dps_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">

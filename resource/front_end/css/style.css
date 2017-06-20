@@ -1313,9 +1313,10 @@ a .maximizer_landing_button{
     text-align: center;
     font-size: 16px;
 }
-a .fdr_landing_button{
+a .fdr_landing_button {
     color: #000;
     font-weight: bold;
+    float: right;
 }
 #availableOffer1 {
 	border: 1px solid #d09f5c;
@@ -1362,7 +1363,7 @@ a .fdr_landing_button{
 }
 .fdr_loan_icon {
     position: relative;
-    margin-top: 315px;
+    margin-top: 382px;
 }
 .millionaire_loan_icon {
     position: relative;
@@ -2235,13 +2236,15 @@ a:hover {
 
 }
 .fdr_header_text {
-    top: 275px;
+    top: 270px;
     position: relative;
-    margin-left: 223px;
+    margin-right: 223px;
+    float: right;
 }
 .fdr_header_text p{
     font-size:18px;
     margin-bottom: 25px;
+    color: #d7d7d7;
 }
 .fdr_link {
     margin: 37px 16px;
@@ -2388,10 +2391,15 @@ a:hover {
     background-size: cover;
 
 }
-.dps_header_text {
-    top: 275px;
+.dps_loan_icon {
     position: relative;
-    margin-left: 224px;
+    margin-top: 388px;
+}
+.dps_header_text {
+    top: 220px;
+    position: relative;
+    margin-right: 224px;
+    float: right;
 }
 .dps_header_text p{
     font-size:18px;
@@ -2559,9 +2567,10 @@ a:hover {
     text-align: center;
     font-size: 16px;
 }
-a .dps_landing_button{
+a .dps_landing_button {
     color: #000;
     font-weight: bold;
+    float: right;
 }
 
 /* DPS End */
@@ -2776,6 +2785,30 @@ a .debit_card_button.flash-button{
     margin-top: 108px;
     padding-top: 14px;
 
+}
+/* for monthly benefit */
+#monthly_benefit_header_part{
+    background-image: url(../images/Monthly-Benefit-Scheme-Landing-page-Banner.jpg);
+    width: 100%;
+    height: 450px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.month_benefit_header_text {
+    text-align: right;
+    top: 278px;
+    position: relative;
+    float: right;
+    margin-right: 220px;
+}
+.month_benefit_header_text p {
+    color: #2697D5;
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 26px;
+    font-weight: bold;
+    text-shadow: 1px 1px #fff;
 }
 /* card_box end */
 /* popular_artical start */

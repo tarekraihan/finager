@@ -10,10 +10,9 @@
 </style>
 <!-- header part start -->
 <section id="monthly_benefit_header_part">
-    <div class="mony_max_header_text">
-        <h3>Select Monthly Benefit Scheme</h3>
+    <div class="month_benefit_header_text">
         <p>Monthly Benefit Scheme comparison made easy</p>
-        <p><a class="btn btn-primary btn-lg" href="<?php echo base_url();?>en/all_monthly_benefit" role="button">Start Comparing</a></p>
+        <a href="<?php echo base_url(); ?>en/monthly_benefit"><span class="dps_landing_button flash-button">Start Comparing</span></a>
     </div>
     <div class="container">
         <div class="home_loan_icon">
