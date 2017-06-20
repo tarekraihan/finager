@@ -1156,7 +1156,7 @@
 																								<span class="focus-text">Saving Account</span>  is an interest-bearing deposit account held at a bank or another financial institution that provides a modest interest rate on deposits.
 																							</p>
 
-																							<a class="megamenu_feature_link land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">Find All Saving Accounts Here</a>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/savings_account">Find All Saving Accounts Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
