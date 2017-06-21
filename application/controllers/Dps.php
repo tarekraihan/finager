@@ -856,6 +856,14 @@ class Dps extends CI_Controller
 
         if(!empty($query)) {$query = 'WHERE '.$query;}
 
+        $res1  = $this->Front_end_select_model->select_dps_loan_info_id($query);
+        $dps_id ='';
+        foreach($res1->result() as $row){
+            $dps_id .=$row->id.',';
+        }
+
+
+        echo $dps_id; die;
         $res = $this->Front_end_select_model->select_dps_loan_info($query);
 
 //-----------Pagination start-----------------
