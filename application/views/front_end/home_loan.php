@@ -121,6 +121,7 @@
                                                             </label>
                                                         </div>
                                                     </div>
+
                                                     <div class="col-sm-4 col-xs-12">
                                                         <div class="material_checkbox_group">
                                                             <input type="checkbox" id="filter-bank-06" name="featuresBenefits" value="" class="material_checkbox">
