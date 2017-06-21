@@ -856,14 +856,41 @@ class Dps extends CI_Controller
 
         if(!empty($query)) {$query = 'WHERE '.$query;}
 
-        $res1  = $this->Front_end_select_model->select_dps_loan_info_id($query);
-        $dps_id ='';
+        $array_map = array(
+            '500' => array('five_hundred_maturity','five_hundred_interest'),
+            '1000' => array('one_thousand_maturity','one_thousand_interest'),
+            '1500' => array('one_thousand_five_hundred_maturity','one_thousand_five_hundred_interest')
+        );
+        $arr = 500;
+
+        if (array_key_exists($arr, $array_map)) {
+            $s =  $array_map[$arr];
+        }
+//        $k ='1000';
+//        $f = array_keys($array_map);
+//        $e = array_values($array_map);
+//        $b = array_intersect_key($array_map, array_flip($f));
+//        print_r($s);die;
+//        print_r($b);die;
+
+        $res1  = $this->Front_end_select_model->select_dps_loan_info_id($s[0],$s[1],$query);
+        $dps_id = array();
         foreach($res1->result() as $row){
-            $dps_id .=$row->id.',';
+            array_push($dps_id,$row);
         }
 
 
-        echo $dps_id; die;
+        //$amount = explode(',',$dps_id);
+        //echo '$amount variable type = '. gettype($amount);
+        //$array = array_filter($amount);
+        echo "<pre>";
+//        print_r($a);
+        echo 'lsdfl=';
+        print_r($dps_id);
+        echo "Total = ";
+        //print_r($amount);
+        echo "</pre>";
+        die;
         $res = $this->Front_end_select_model->select_dps_loan_info($query);
 
 //-----------Pagination start-----------------
