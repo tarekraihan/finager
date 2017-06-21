@@ -581,10 +581,15 @@ class Millionaire extends CI_Controller
         $tenure ='';
 
         $active = array();
+        $data = array();
         foreach($response->result_array() as $row){
-            array_push($active,$row['tenure']) ;
+            $a = array(
+                $row['id'] => $row['tenure']
+            );
+            array_push($data,$a);
         }
-
+        array_push($active,$data) ;
+//        pr($active);die;
         for ($x = 1; $x <= 20; $x++) {
             $active_class ='checkDisable';
             $input_disable ='disabled';

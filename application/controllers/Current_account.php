@@ -308,7 +308,7 @@ class Current_account extends CI_Controller
 					<div class="full-card">
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'.base_url().'en/current_account_details/'.$row->id.'"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'.base_url().'en/current_account_details/'.$row->id.'"><img title="click here to details" class="img-responsive current_account_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
                             <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">
@@ -457,6 +457,33 @@ class Current_account extends CI_Controller
         echo $account;
     }
 
+    public function ajax_compare_current_account_image(){
+        $id = $this->input->post('account_id');
+        $model_name = "current_account_info";//table name
+        $result = $this->Front_end_select_model->select_compare_image($id,$model_name);
+
+        $row= $result->row();
+
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-account_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
+
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('account_id1');
+        $id2 = $this->input->post('account_id2');
+        $newdata = array(
+            'first_account_id'  => $id1,
+            'second_account_id'  => $id2
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
 
 
 

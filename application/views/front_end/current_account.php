@@ -12,6 +12,8 @@
                         <div class="query_radio">
                             <?php
                             $this->Common_model->table_name = 'current_account_i_am';
+                            $this->Common_model->offset = 0;
+                            $this->Common_model->limit = 2;
                             $result = $this->Common_model->select_all();
                             foreach($result->result() as $row){
                                 ?>
@@ -136,7 +138,7 @@
     });
 
 
-    //for show hide (more info & Available Offer)
+    //for show hide (more info)
 
     $('#currentAccountSearch').on('click', '.more_info', function (){
         var  formData = $(this).data();
@@ -144,5 +146,136 @@
         console.log(account_id);
         $("#moreInfo"+account_id).toggleClass("in");
     });
+
+    //Add Items for compare
+    $(document).on('click','.add-to-compare',function(){
+
+        $("#hiden_div").animate({bottom:'0px'});
+        $('html, body').animate({
+
+        });
+
+        if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
+            alert("Sorry");
+        }else{
+            if($(".cart_anchor").hasClass("img_active")){
+
+                var itemImg = $(this).parents('.full-card').find('.current_account_logo').eq(0);
+                $(".cart_anchor01").addClass("img_active");
+                $(this).addClass("hidden");
+
+                var  formData = $(this).data();
+                var account_id = "account_id="+formData.account_id;
+
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>current_account/ajax_compare_current_account_image",
+                        data: account_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor01").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+            else{
+
+                //Select item image and pass to the function
+                var itemImg = $(this).parents('div:eq(0)').find('.current_account_logo').eq(0);
+                //flyToElement($(itemImg), $('.cart_anchor'));
+
+                $(".cart_anchor").addClass("img_active");
+                $(this).addClass("hidden");
+
+                var itemImg = $(this).parents('div:eq(0)').find('.current_account_logo').eq(0);
+                var  formData = $(this).data();
+                var account_id = "account_id="+formData.account_id;
+                setTimeout(function(){
+                    $.ajax
+                    ({
+                        type: "POST",
+                        url: "<?php echo base_url();?>current_account/ajax_compare_current_account_image",
+                        data: account_id,
+                        success: function(msg)
+                        {
+                            $(".cart_anchor").html(msg);
+                        }
+                    });
+                },850);
+
+            }
+        }
+
+    });
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var collected_card = $(this).prev().attr("data-account_id");
+
+        $(".full-card").each(function(){
+            var obj=$(this).children().find('.add-to-compare');
+            var index=$(this).children().find('.add-to-compare').attr('data-account_id');
+            if(parseInt(collected_card)==parseInt(index)){
+                obj.removeClass("hidden");
+            }
+
+        });
+
+        $(this).parent(".cart_anchor").removeClass("img_active");
+        $(this).parent(".cart_anchor").html('');
+        $(this).addClass("hidden");
+
+    });
+
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        $(this).parent(".cart_anchor01").removeClass("img_active");
+        $(this).parent(".cart_anchor01").html('');
+    });
+
+    $(document).on('click','.compare-cross-btn',function(){
+
+        var empty = $(this).parents(".hidden_div_container").find("a");
+        $(".compare-card").each(function(){
+            if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+                $("#hiden_div").fadeOut(1500);
+            }
+        });
+    });
+
+    $('#go_compare').click(function(){
+        //alert(1);
+        var  formData = $('.cart_anchor').children('img').data();
+        var account_id1 = "account_id1="+formData.account_id;
+
+        var  formData = $('.cart_anchor01').children('img').data();
+        var account_id2 = "&account_id2="+formData.account_id;
+
+        var account_ids = account_id1+account_id2;
+        if(account_id1 != '' && account_id2 != ''){
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>current_account/ajax_go_compare_page",
+                data: account_ids,
+                success: function(msg)
+                {
+                    if(msg != 'error'){
+
+                        window.location.href = "<?php echo base_url();?>en/current_account_compare";
+                    }
+                }
+            });
+        }else{
+            alert("Please add 2 Deposit for compare ! ")
+        }
+
+
+    });
+
 
 </script>

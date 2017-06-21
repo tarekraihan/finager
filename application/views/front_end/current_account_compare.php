@@ -1,38 +1,35 @@
 <?php
-		print_r($this->session->userdata());
-$id = $this->session->userdata('first_maximizer_id') ;
-$result = $this->Front_end_select_model->select_money_maximizer_info_details($id);
-$first_maximizer = $result->row();
+//		print_r($this->session->userdata());die;
+$id = $this->session->userdata('first_account_id') ;
+$result = $this->Front_end_select_model->select_current_account_info_details($id);
+$first_current_account = $result->row();
 
-$id1 = $this->session->userdata('second_maximizer_id') ;
-$result1 = $this->Front_end_select_model->select_money_maximizer_info_details($id1);
-$second_maximizer = $result1->row();
-$maximizer_amount = floatval($this->session->userdata('maximizer_deposit_amount')) ;
+$id1 = $this->session->userdata('second_account_id') ;
+$result1 = $this->Front_end_select_model->select_current_account_info_details($id1);
+$second_current_account = $result1->row();
+	//pr($second_current_account);die;
 
-//	pr($second_maximizer);die;
-$first_benefit_amount  = $maximizer_amount * $first_maximizer->your_benefit;
-$first_credit_facility = ($first_maximizer->credit_facility != 'N/A') ? $first_maximizer->credit_facility.' %' :'N/A';
+
 $first_bank_name = "";
 $first_bank_logo = "";
-if($first_maximizer->is_non_bank == 1){
-    $first_bank_name = $first_maximizer->non_bank_name;
-    $first_bank_logo = $first_maximizer->non_bank_logo;
+if($first_current_account->is_non_bank == 1){
+    $first_bank_name = $first_current_account->non_bank_name;
+    $first_bank_logo = $first_current_account->non_bank_logo;
 }else{
-    $first_bank_name = $first_maximizer->bank_name;
-    $first_bank_logo = $first_maximizer->bank_logo;
+    $first_bank_name = $first_current_account->bank_name;
+    $first_bank_logo = $first_current_account->bank_logo;
 }
 
 
-$second_benefit_amount  = $maximizer_amount * $second_maximizer->your_benefit;
-$second_credit_facility = ($second_maximizer->credit_facility != 'N/A') ? $second_maximizer->credit_facility.' %' :'N/A';
+
 $second_bank_name = "";
 $second_bank_logo = "";
-if($second_maximizer->is_non_bank == 1){
-    $second_bank_name = $second_maximizer->non_bank_name;
-    $second_bank_logo = $second_maximizer->non_bank_logo;
+if($second_current_account->is_non_bank == 1){
+    $second_bank_name = $second_current_account->non_bank_name;
+    $second_bank_logo = $second_current_account->non_bank_logo;
 }else{
-    $second_bank_name = $second_maximizer->bank_name;
-    $second_bank_logo = $second_maximizer->bank_logo;
+    $second_bank_name = $second_current_account->bank_name;
+    $second_bank_logo = $second_current_account->bank_logo;
 }
 
 ?>
@@ -63,11 +60,11 @@ if($second_maximizer->is_non_bank == 1){
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/money_maximizer_details/<?php echo $first_maximizer->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
+						<td><p><a href="<?php echo base_url();?>en/current_account_details/<?php echo $first_current_account->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							
 						</td>
-						<td><a href="<?php echo base_url();?>en/money_maximizer_details/<?php echo $second_maximizer->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
+						<td><a href="<?php echo base_url();?>en/current_account_details/<?php echo $second_current_account->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
 					</tr>			
 				</table>
 			</div>
@@ -90,7 +87,7 @@ if($second_maximizer->is_non_bank == 1){
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Money maximizer Scheme <img class="maximizer-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="maximizer-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Current account <img class="maximizer-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
@@ -101,30 +98,25 @@ if($second_maximizer->is_non_bank == 1){
 						
 						<tr>
 							<td><b> Product Name</b></td>
-							<td><?php echo $first_maximizer->deposit_name;?></td>
+							<td><?php echo $first_current_account->current_account_name;?></td>
 						</tr>
 						
 						<tr>
-							<td><b>  Deposit Amount</b></td>
-							<td> BDT. <?php echo number_format($maximizer_amount)?> </td>
+							<td><b> A/C Opening Balance</b></td>
+							<td> BDT. <?php echo number_format($first_current_account->opening_balance)?> </td>
 						</tr>
 						
 						<tr>
-							<td><b> Duration of Benefit</b></td>
-							<td> <?php echo $first_maximizer->duration_of_benefit;?> </td>
+							<td><b> Total Branch</b></td>
+							<td> <?php echo $first_current_account->total_branch;?> </td>
 						</tr>
                         <tr>
-                            <td><b> Chosen Benefit</b></td>
-                            <td> <?php echo $first_maximizer->your_benefit;?> Times</td>
+                            <td><b>Fund Transfer</b></td>
+                            <td> <?php echo $first_current_account->fund_transfer;?></td>
                         </tr>
 						<tr>
-							<td><b> Maturity Amount</b></td>
-							<td>BDT. <?php echo number_format($first_benefit_amount)?> </td>
-						</tr>
-						
-						<tr>
-							<td><b> Credit Facility</b></td>
-							<td> <?php echo $first_credit_facility;?> </td>
+							<td><b>Overdraft Facility</b></td>
+							<td><?php echo $first_current_account->overdraft_facility;?> </td>
 						</tr>
 					</table>
 				</div>
@@ -138,36 +130,28 @@ if($second_maximizer->is_non_bank == 1){
                                 <td> <?php echo $second_bank_name;?> </td>
                             </tr>
 
-                            <tr>
-                                <td><b> Product Name</b></td>
-                                <td><?php echo $second_maximizer->deposit_name;?></td>
-                            </tr>
+							<tr>
+								<td><b> Product Name</b></td>
+								<td><?php echo $second_current_account->current_account_name;?></td>
+							</tr>
 
-                            <tr>
-                                <td><b> Deposit Amount</b></td>
-                                <td> BDT. <?php echo number_format($maximizer_amount)?> </td>
-                            </tr>
+							<tr>
+								<td><b> A/C Opening Balance</b></td>
+								<td> BDT. <?php echo number_format($second_current_account->opening_balance)?> </td>
+							</tr>
 
-                            <tr>
-                                <td><b> Duration Of Benefit</b></td>
-                                <td> <?php echo $second_maximizer->duration_of_benefit;?> </td>
-                            </tr>
-
-                            <tr>
-                                <td><b> Chosen Benefit</b></td>
-                                <td> <?php echo $second_maximizer->your_benefit;?> Times</td>
-                            </tr>
-
-                            <tr>
-                                <td><b> Maturity Amount</b></td>
-                                <td>BDT. <?php echo number_format($second_benefit_amount);?> </td>
-                            </tr>
-
-                            <tr>
-                                <td><b> Credit Facility</b></td>
-                                <td> <?php echo $second_credit_facility;?></td>
-                            </tr>
-
+							<tr>
+								<td><b> Total Branch</b></td>
+								<td> <?php echo $second_current_account->total_branch;?> </td>
+							</tr>
+							<tr>
+								<td><b>Fund Transfer</b></td>
+								<td> <?php echo $second_current_account->fund_transfer;?></td>
+							</tr>
+							<tr>
+								<td><b>Overdraft Facility</b></td>
+								<td><?php echo $second_current_account->overdraft_facility;?> </td>
+							</tr>
 						</table>
 					</div>
 				</div>
@@ -177,27 +161,56 @@ if($second_maximizer->is_non_bank == 1){
 				<h3 class="text-center"> <img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>Features<img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 					<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<?php echo $first_maximizer->features;?>
+						<?php echo $first_current_account->features;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-                        <?php echo $second_maximizer->features;?>
+                        <?php echo $second_current_account->features;?>
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Requirements <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
-				<div class="col-md-6 col-sm-6">
+				<h3 class="text-center"> <img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>Privilege<img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+					<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-                        <?php echo $first_maximizer->requirement;?>
+						<?php echo $first_current_account->privilege;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-                        <?php echo $second_maximizer->requirement;?>
+                        <?php echo $second_current_account->privilege;?>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees and Charges <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $first_current_account->fees_and_charges;?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $second_current_account->fees_and_charges;?>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Requirements <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $first_current_account->requirements;?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+                        <?php echo $second_current_account->requirements;?>
 					</div>
 				</div>
 			</div>
@@ -207,16 +220,31 @@ if($second_maximizer->is_non_bank == 1){
 
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive home_compare_div">
-                        <?php echo $first_maximizer->terms_and_conditions;?>
+                        <?php echo $first_current_account->terms_and_conditions;?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive home_compare_div">
-                        <?php echo $second_maximizer->terms_and_conditions;?>
+                        <?php echo $second_current_account->terms_and_conditions;?>
 					</div>
 				</div>
 			</div>
-			
+
+			<div class="row">
+				<h3 class="text-center"> <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive home_compare_div">
+                        <?php echo $first_current_account->review;?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive home_compare_div">
+                        <?php echo $second_current_account->review;?>
+					</div>
+				</div>
+			</div>
+
 			<div class="row">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">

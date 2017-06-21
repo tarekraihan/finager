@@ -131,15 +131,9 @@
 									<?php
 
 									$this->Common_model->table_name = 'personal_loan_looking_for';
-
 									$this->Common_model->offset = 0;
-
 									$this->Common_model->limit = 3;
-
 									$result = $this->Common_model->select_all();
-
-									//										print_r($result->result_array());die;
-
 									foreach($result->result() as $row){
 
 										?>

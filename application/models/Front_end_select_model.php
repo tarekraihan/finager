@@ -380,7 +380,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     function select_current_account_info_details($id){
-        $sql = "SELECT current_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo as non_bank_logo FROM current_account_info INNER JOIN current_account_i_am ON current_account_i_am.id=current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id=current_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=current_account_info.non_bank_id WHERE current_account_info.id = $id";
+        $sql = "SELECT current_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo as non_bank_logo FROM current_account_info INNER JOIN current_account_i_am ON current_account_i_am.id=current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id=current_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=current_account_info.non_bank_id WHERE current_account_info.id = '$id'";
         $query = $this->db->query($sql);
         return $query;
     }

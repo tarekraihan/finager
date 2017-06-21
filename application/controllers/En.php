@@ -538,6 +538,27 @@ class En extends CI_Controller {
 
     }
 
+    public function current_account_compare(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/current_account_compare');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+
+    public function current_account_details(){
+
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/current_account_details');
+        $this->load->view('front_end/block/footer');
+
+    }
+
     public function savings_account(){
 
         $this->load->view('front_end/block/header_home_loan');
@@ -569,6 +590,7 @@ class En extends CI_Controller {
         $this->load->view('front_end/block/footer');
 
     }
+
 
     public function monthly_benefit_details(){
 
