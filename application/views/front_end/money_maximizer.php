@@ -482,7 +482,7 @@ $(window).on('scroll', function (){
                 $.ajax
                 ({
                     type: "POST",
-                    url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
+                    url: "<?php echo base_url();?>money_maximizer/ajax_compare_money_maximizer_image",
                     data: maximizer_id,
                     success: function(msg)
                     {
@@ -540,8 +540,8 @@ $(window).on('scroll', function (){
                 $.ajax
                 ({
                     type: "POST",
-                    url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                    data: millionaire_id,
+                    url: "<?php echo base_url();?>money_maximizer/ajax_compare_money_maximizer_image",
+                    data: maximizer_id,
                     success: function(msg)
                     {
                         $(".cart_anchor").html(msg);
