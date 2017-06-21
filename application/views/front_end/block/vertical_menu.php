@@ -1052,7 +1052,7 @@
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/monthly_benefit">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Monthly-Benefit-Scheme-menu-Icon-.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
 																								<span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.

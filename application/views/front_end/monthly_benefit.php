@@ -436,11 +436,11 @@
 
     $(document).on('click','.compare-cross-btn',function(){
 
-        var collected_card = $(this).prev().attr("data-fdr_id");
+        var collected_card = $(this).prev().attr("data-monthly_id");
 
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
-            var index=$(this).children().find('.add-to-compare').attr('data-fdr_id');
+            var index=$(this).children().find('.add-to-compare').attr('data-monthly_id');
             if(parseInt(collected_card)==parseInt(index)){
                 obj.removeClass("hidden");
             }

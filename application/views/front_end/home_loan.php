@@ -61,7 +61,7 @@
                                                             <input type="checkbox" id="filter-bank-01" name="featuresBenefits" value="" class="material_checkbox">
                                                             <label class="material_label_checkbox" for="filter-bank-01">
                                                                 <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
+                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(1).png" alt=""/>
                                                                 </div>
                                                                 <div class="filter-check-name">
                                                                     Waiver on Annual Fee
@@ -74,7 +74,7 @@
                                                             <input type="checkbox" id="filter-bank-02" name="featuresBenefits" value="" class="material_checkbox">
                                                             <label class="material_label_checkbox" for="filter-bank-02">
                                                                 <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
+                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(2).png" alt=""/>
                                                                 </div>
                                                                 <div class="filter-check-name">
                                                                     Waiver on Annual Fee
@@ -87,7 +87,7 @@
                                                             <input type="checkbox" id="filter-bank-03" name="featuresBenefits" value="" class="material_checkbox">
                                                             <label class="material_label_checkbox" for="filter-bank-03">
                                                                 <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
+                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(3).png" alt=""/>
                                                                 </div>
                                                                 <div class="filter-check-name">
                                                                     Waiver on Annual Fee
@@ -100,7 +100,7 @@
                                                             <input type="checkbox" id="filter-bank-04" name="featuresBenefits" value="" class="material_checkbox">
                                                             <label class="material_label_checkbox" for="filter-bank-04">
                                                                 <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
+                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(4).png" alt=""/>
                                                                 </div>
                                                                 <div class="filter-check-name">
                                                                     Waiver on Annual Fee
@@ -113,7 +113,7 @@
                                                             <input type="checkbox" id="filter-bank-05" name="featuresBenefits" value="" class="material_checkbox">
                                                             <label class="material_label_checkbox" for="filter-bank-05">
                                                                 <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
+                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(4).png" alt=""/>
                                                                 </div>
                                                                 <div class="filter-check-name">
                                                                     Waiver on Annual Fee
@@ -126,7 +126,7 @@
                                                             <input type="checkbox" id="filter-bank-06" name="featuresBenefits" value="" class="material_checkbox">
                                                             <label class="material_label_checkbox" for="filter-bank-06">
                                                                 <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
+                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(5).png" alt=""/>
                                                                 </div>
                                                                 <div class="filter-check-name">
                                                                     Waiver on Annual Fee
@@ -139,7 +139,7 @@
                                                             <input type="checkbox" id="filter-bank-07" name="featuresBenefits" value="" class="material_checkbox">
                                                             <label class="material_label_checkbox" for="filter-bank-07">
                                                                 <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
+                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(6).png" alt=""/>
                                                                 </div>
                                                                 <div class="filter-check-name">
                                                                     Waiver on Annual Fee
@@ -918,7 +918,7 @@
 
 <script src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
 <script type="text/javascript">
-/*$(window).on('scroll', function (){
+$(window).on('scroll', function (){
 	if ($(window).scrollTop() > 350){
 	  $('.home_loan_left_bar').addClass('fixedElement');
 	}if($(window).scrollTop()<350){
@@ -926,14 +926,14 @@
 	}if($(window).scrollTop() > 2260){
 	  $('.home_loan_left_bar').removeClass('fixedElement');
 	}
-});*/
+});
 $('#filter-carousel').carousel({
     interval: false;
 });
 </script>
 <script>
 
-    $(document).on("scroll",function () {
+    /*$(document).on("scroll",function () {
         var offsetToTop = parseInt($(this).scrollTop());
         var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
 
@@ -956,7 +956,7 @@ $('#filter-carousel').carousel({
             $("#sidebar").addClass("sidebar-absolute");
             $("#sidebar").css("top",-offsetToTop);
         }
-    });
+    });*/
 
     $(document).ready(function(){
 

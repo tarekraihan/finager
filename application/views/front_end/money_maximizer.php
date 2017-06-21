@@ -559,9 +559,9 @@ $(window).on('scroll', function (){
 
 
     $(document).on('click','.compare-cross-btn',function(){
+        alert();
 
-        var collected_card = $(this).prev().attr("data-millionaire_id");
-
+        var collected_card = $(this).prev().attr("data-maximizer_id");
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
             var index=$(this).children().find('.add-to-compare').attr('data-maximizer_id');

@@ -2585,7 +2585,7 @@ a .dps_landing_button {
     background-image:url(../images/cardbg.jpg);
     height:450px;
     width:100%;
-    background-size:cover;
+    background-size:contain;
     background-repeat:no-repeat;
     position:relative;
     background-position:center center;
@@ -2942,7 +2942,6 @@ hr {
     width:100%;
     background-size:cover;
     background-repeat:no-repeat;
-    position:relative;
     background-position:center center;
 }
 .debit_best_card_image img {
