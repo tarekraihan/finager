@@ -2810,6 +2810,15 @@ a .debit_card_button.flash-button{
     font-weight: bold;
     text-shadow: 1px 1px #fff;
 }
+#monthly_benefit_header{
+    background-image:url('../images/Monthly-Benefit-Scheme-Main-page-Banner.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+    width:100%;
+    height:320px;
+    position:relative;
+}
 /* card_box end */
 /* popular_artical start */
 #artical{

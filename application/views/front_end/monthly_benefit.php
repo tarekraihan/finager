@@ -38,6 +38,7 @@
         z-index: 1;
     }
 </style>
+<section id="monthly_benefit_header"></section>
 <section id="fdr_loan">
     <div class="container">
         <div class="row">
@@ -357,8 +358,12 @@
     } );
 
 
-    $( ".draggable" ).mouseout(function(){
-        loadData( page = null );
+    $(".draggable").on("dragstop",function(ev,ui){
+
+        setTimeout(function(){ //Updated by Tarek on 14-05-2017
+            //alert($("#finalAssest").val());
+            loadData(page = null);
+        }, 1000);
 
     });
 
