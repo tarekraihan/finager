@@ -303,6 +303,11 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    function select_dps_by_id($id){
+        $sql = "SELECT * FROM dps_info WHERE id ='$id'";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
 
     function select_dps_loan_info_id($field1,$field2,$query){

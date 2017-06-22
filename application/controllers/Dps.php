@@ -857,9 +857,9 @@ class Dps extends CI_Controller
         if(!empty($query)) {$query = 'WHERE '.$query;}
 
         $array_map = array(
-            '500' => array('five_hundred_maturity','five_hundred_interest'),
-            '1000' => array('one_thousand_maturity','one_thousand_interest'),
-            '1500' => array('one_thousand_five_hundred_maturity','one_thousand_five_hundred_interest')
+            '500' => array('five_hundred_maturity','five_hundred_interest','dps_info_id'),
+            '1000' => array('one_thousand_maturity','one_thousand_interest','dps_info_id'),
+            '1500' => array('one_thousand_five_hundred_maturity','one_thousand_five_hundred_interest','dps_info_id')
         );
 
         $arr = 1500;
@@ -869,18 +869,41 @@ class Dps extends CI_Controller
         }
 
         $res1  = $this->Front_end_select_model->select_dps_loan_info_id($s[0],$s[1],$query);
-        $dps_id = array();
-        foreach($res1->result() as $row){
-            array_push($dps_id,$row);
+        $dps = array();
+        foreach($res1->result_array() as $row){
+            array_push($dps,$row);
         }
 
-        $array = array_filter($dps_id);
+        $result = array();
+        foreach($dps as $k=>$v){
+            $data = array();
+            foreach($v as $kk => $vv){
+               if(!empty( $vv)){
+                   $data[$kk] = $vv;
+
+               }
+            }
+            array_push($result,$data);
+        }
+
+        $dps_id =  array_filter($result);
+
+        $dps_search_id = array_keys($dps_id);
+
+        foreach($dps_search_id as $v){
+            $res  = $this->Front_end_select_model->select_dps_by_id($v);
+            $dps_result  = $res->row();
+            pr($dps_result);
+
+        }
+
+
         echo "<pre>";
 //        print_r($a);
         echo 'lsdfl=';
-        print_r($array);
+        print_r($dps_id);
         echo "Total = ";
-        print_r($amount);
+
         echo "</pre>";
         die;
         $res = $this->Front_end_select_model->select_dps_loan_info($query);
