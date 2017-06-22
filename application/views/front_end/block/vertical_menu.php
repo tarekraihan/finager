@@ -1150,7 +1150,7 @@
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <a href="">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Saving-Acc-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
 																								<span class="focus-text">Saving Account</span>  is an interest-bearing deposit account held at a bank or another financial institution that provides a modest interest rate on deposits.
@@ -1164,7 +1164,7 @@
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <a href="">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/CurrentAccMenuIcon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
                                                                                                 <span class="focus-text">Current Account</span> is made with Bank or financial institution that permits the withdrawal of funds and allows checks to be written against the balance.
@@ -1178,7 +1178,7 @@
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <a href="">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/card_feature.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/SND-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
 																								<span class="focus-text">SND Account</span> is an interest bearing deposit where advance notice of 7 to 30 days required for amount withdrawal.
