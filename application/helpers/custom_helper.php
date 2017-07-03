@@ -5,7 +5,7 @@ if ( ! function_exists('pr'))
     function pr($var)
     {
         echo '<pre>';
-        if(is_array($var) && is_object($var)) {
+        if(is_array($var) || is_object($var)) {
             print_r($var);
         } else {
             var_dump($var);

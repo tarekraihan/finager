@@ -891,16 +891,27 @@ class Dps extends CI_Controller
         $dps_search_id = array_keys($dps_id);
 
         foreach($dps_search_id as $v){
+
             $res  = $this->Front_end_select_model->select_dps_by_id($v);
             $dps_result  = $res->row();
-            pr($dps_result);
 
+            $array = (array) $dps_result;
+
+            foreach($dps_id as $key=>$val){
+//                pr($key);
+                if((int)$array['id'] == $key){
+                    echo $key;
+                    array_merge($array,$val);
+                }
+            }
+            pr($array);
+            die;
         }
 
 
 
 
-        echo "<pre>";
+        echo "<br/><br/><pre>";
 //        print_r($a);
         echo 'lsdfl=';
         print_r($dps_id);
