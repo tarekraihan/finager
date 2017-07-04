@@ -841,7 +841,8 @@ class Dps extends CI_Controller
 
         $dps_user = $this->input->post('dps_user');
         $dps_tenure = $this->input->post('dps_tenure');
-        $deposited_amount = intval($this->input->post('deposited_amount'));
+        $deposited_amount = $this->input->post('deposited_amount');
+
 
         $WHERE = array(); $query = '';
         if(!empty($dps_user)) {
@@ -857,20 +858,62 @@ class Dps extends CI_Controller
         if(!empty($query)) {$query = 'WHERE '.$query;}
 
         $array_map = array(
+            '200' => array('two_hundred_maturity','two_hundred_interest','dps_info_id'),
+            '300' => array('three_hundred_maturity','three_hundred_interest','dps_info_id'),
+            '400' => array('four_hundred_maturity','four_hundred_interest','dps_info_id'),
             '500' => array('five_hundred_maturity','five_hundred_interest','dps_info_id'),
             '1000' => array('one_thousand_maturity','one_thousand_interest','dps_info_id'),
-            '1500' => array('one_thousand_five_hundred_maturity','one_thousand_five_hundred_interest','dps_info_id')
+            '1500' => array('one_thousand_five_hundred_maturity','one_thousand_five_hundred_interest','dps_info_id'),
+            '2000' => array('two_thousand_maturity','two_thousand_interest','dps_info_id'),
+            '2500' => array('two_thousand_five_hundred_maturity','two_thousand_five_hundred_interest','dps_info_id'),
+            '3000' => array('three_thousand_maturity','three_thousand_interest','dps_info_id'),
+            '3500' => array('three_thousand_five_hundred_maturity','three_thousand_five_hundred_interest','dps_info_id'),
+            '4000' => array('four_thousand_maturity','four_thousand_interest','dps_info_id'),
+            '4500' => array('four_thousand_five_hundred_maturity','four_thousand_five_hunderd_interest','dps_info_id'),
+            '5000' => array('five_thousand_maturity','five_thousand_interest','dps_info_id'),
+            '5500' => array('five_thousand_five_hundred_maturity','five_thousand_five_hundred_interest','dps_info_id'),
+            '6000' => array('six_thousand_maturity','six_thousand_interest','dps_info_id'),
+            '6500' => array('six_thousand_five_hundred_maturity','six_thousand_five_hundred_interest','dps_info_id'),
+            '7000' => array('seven_thousand_maturity','seven_thousand_interest','dps_info_id'),
+            '7500' => array('seven_thousand_five_hundred_maturity','seven_thousand_five_hundred_interest','dps_info_id'),
+            '8000' => array('eight_thousand_maturity','eight_thousand_interest','dps_info_id'),
+            '9000' => array('nine_thousand_maturity','nine_thousand_interest','dps_info_id'),
+            '10000' => array('ten_thousand_maturity','ten_thousand_interest','dps_info_id'),
+            '11000' => array('eleven_thousand_maturity','eleven_thousand_interest','dps_info_id'),
+            '12000' => array('twelve_thousand_maturity','twelve_thousand_interest','dps_info_id'),
+            '13000' => array('thirteen_thousadn_maturity','thirteen_thousand_interest','dps_info_id'),
+            '14000' => array('fourteen_thousand_maturity','fourteen_thousand_interest','dps_info_id'),
+            '15000' => array('fifteen_thousand_maturity','fifteen_thousand_interest','dps_info_id'),
+            '16000' => array('sixteen_thousand_maturity','sixteen_thousand_interest','dps_info_id'),
+            '17000' => array('seventeen_thousand_maturity','seventeen_thousand_interest','dps_info_id'),
+            '18000' => array('eighteen_thousand_maturity','eighteen_thousand_interest','dps_info_id'),
+            '19000' => array('nineteen_thousand_maturity','nineteen_thousand_interest','dps_info_id'),
+            '20000' => array('twenty_thousand_maturity','twenty_thousand_interest','dps_info_id'),
+            '21000' => array('twenty_one_thousand_maturity','twenty_one_thousand_interest','dps_info_id'),
+            '22000' => array('twenty_two_thousand_maturity','twenty_two_thousand_interest','dps_info_id'),
+            '23000' => array('twenty_three_thousand_maturity','twenty_three_thousand_interest','dps_info_id'),
+            '24000' => array('twenty_four_thousand_maturity','twenty_four_thousand_interest','dps_info_id'),
+            '25000' => array('twenty_five_thousand_maturity','twenty_five_thousand_interest','dps_info_id'),
+            '26000' => array('twenty_six_thousand_maturity','twenty_six_thousand_interest','dps_info_id'),
+            '27000' => array('twenty_seven_thousand_maturity','twenty_seven_thousand_interest','dps_info_id'),
+            '28000' => array('twenty_eight_thousand_maturity','twenty_eight_thousand_interest','dps_info_id'),
+            '29000' => array('twenty_nine_thousand_maturity','twenty_nine_thousand_interest','dps_info_id'),
+            '30000' => array('thirty_thousand_maturity','thirty_thousand_interest','dps_info_id'),
+            '50000' => array('fifty_thousand_maturity','fifty_thousand_interest','dps_info_id'),
+            '100000' => array('one_lac_maturity','one_lac_interest','dps_info_id'),
         );
 
-        $arr = 1500;
 
-        if (array_key_exists($arr, $array_map)) {
-            $s =  $array_map[$arr];
+//        pr($query);
+
+        if (array_key_exists($deposited_amount, $array_map)) {
+            $s =  $array_map[$deposited_amount];
         }
 
-        $res1  = $this->Front_end_select_model->select_dps_loan_info_id($s[0],$s[1],$query);
+        $res1  = $this->Front_end_select_model->select_dps_loan_info_id( $s[0],$s[1],$query);
         $dps = array();
         foreach($res1->result_array() as $row){
+            pr($row);
             array_push($dps,$row);
         }
 
@@ -889,24 +932,27 @@ class Dps extends CI_Controller
         $dps_id =  array_filter($result);
 
         $dps_search_id = array_keys($dps_id);
-
+        pr($dps_search_id);
+        $deposit_result = array();
         foreach($dps_search_id as $v){
-
+            echo 'dps id = '.$v;
             $res  = $this->Front_end_select_model->select_dps_by_id($v);
             $dps_result  = $res->row();
 
+//            pr($dps_result);
             $array = (array) $dps_result;
 
             foreach($dps_id as $key=>$val){
-//                pr($key);
-                if((int)$array['id'] == $key){
-                    echo $key;
-                    array_merge($array,$val);
+                if((int)$array['id'] == (int) $key){
+                    $deposit_result[] = array_merge($array,$val);
+
                 }
             }
-            pr($array);
-            die;
+
+
         }
+        pr($deposit_result);
+        die;
 
 
 

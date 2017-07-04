@@ -304,14 +304,16 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     function select_dps_by_id($id){
-        $sql = "SELECT * FROM dps_info WHERE id ='$id'";
+        $sql = "SELECT * FROM dps_info WHERE id = $id";
+        echo $sql;
         $query = $this->db->query($sql);
         return $query;
     }
 
 
     function select_dps_loan_info_id($field1,$field2,$query){
-        $sql = "Select $field1,$field2 From dps_maturity_amount WHERE dps_info_id IN ( SELECT id FROM dps_info $query )";
+        $sql = "Select $field1, $field2 From dps_maturity_amount WHERE dps_info_id IN ( SELECT id FROM dps_info $query )";
+        echo $sql;
         $query = $this->db->query($sql);
         return $query;
     }
