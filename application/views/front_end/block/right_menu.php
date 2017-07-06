@@ -116,6 +116,20 @@
 
 .sidebar-nav li:nth-child(9):before { background-color: #337ab7; }
 
+.sidebar-nav li:nth-child(10):before { background-color: #337ab7; }
+
+.sidebar-nav li:nth-child(11):before { background-color: #337ab7; }
+
+.sidebar-nav li:nth-child(12):before { background-color: #337ab7; }
+
+.sidebar-nav li:nth-child(13):before { background-color: #337ab7; }
+
+.sidebar-nav li:nth-child(14):before { background-color: #337ab7; }
+
+.sidebar-nav li:nth-child(15):before { background-color: #337ab7; }
+
+.sidebar-nav li:nth-child(16):before { background-color: #337ab7; }
+
 .sidebar-nav li:hover:before {
     -webkit-transition: width 0.2s ease-in;
     transition: width 0.2s ease-in;
@@ -311,88 +325,43 @@
                 </ul>
             </div>
             <li> <a href="#"><i></i></a> </li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Loans <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header"></li>
-                    <li><a href="#">Consumer Loans  </a></li>
-                    <li><a href="#">Business Loans</a></li>
-                    <li><a href="#">SME</a></li>
-                    <li><a href="#">How to apply</a></li>
-                </ul>
-            </li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Cards <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header"></li>
-                    <li><a href="#">Credit Cards</a></li>
-                    <li><a href="#">Debit Cards</a></li>
-                    <li><a href="#">Prepaid Card</a></li>
-                    <li><a href="#">Virtual Card </a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                    <li><a href="#">Others</a></li>
-                    <li><a href="#">how to apply</a></li>
+                    <li><a href="<?php echo base_url();?>en/credit_card">Credit Card</a></li>
+                    <li><a href="<?php echo base_url(); ?>en/debit_card">Debit Card</a></li>
                 </ul>
             </li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i>	Deposit <span class="caret"></span></a>
+            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Loans <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header"></li>
-                    <li><a href="#">Account Deposit</a></li>
-                    <li><a href="#">FDR</a></li>
-                    <li><a href="#">DPS & Schemes </a></li>
-                    <li><a href="#">How to apply</a></li>
+                    <li><a href="<?php echo base_url(); ?>en/home_loan">Home Loan  </a></li>
+                    <li><a href="<?php echo base_url();?>en/personal_loan">Personal Loan</a></li>
+                    <li><a href="<?php echo base_url();?>en/car_loan">Auto Loan</a></li>
+                    <li><a href="<?php echo base_url();?>en/education_loan">Education Loan</a></li>
                 </ul>
             </li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Investments <span class="caret"></span></a>
+            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i>	Investment <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header"></li>
-                    <li><a href="#">Stock Market </a></li>
-                    <li><a href="#">Forex </a></li>
-                    <li><a href="#">Thrusts Sector</a></li>
+                    <li><a href="<?php echo base_url();?>en/fdr">FDR</a></li>
+                    <li><a href="<?php echo base_url();?>en/dps">DPS</a></li>
+                    <li><a href="<?php echo base_url();?>en/millionaire">Lakhpoti & Millionaire Scheme </a></li>
+                    <li><a href="<?php echo base_url();?>en/money_maximizer">Money Maximizer</a></li>
+                    <li><a href="<?php echo base_url();?>en/monthly_benefit">Monthly Benefit Scheme</a></li>
+                    <li><a href="<?php echo base_url(); ?>en/savings_account">Saving Account</a></li>
+                    <li><a href="<?php echo base_url(); ?>en/current_account">Current Account</a></li>
                 </ul>
             </li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Funding <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header"></li>
-                    <li><a href="#">NGO Funding</a></li>
-                    <li><a href="#">Start-up Funding</a></li>
-                    <li><a href="#">Venture Capital</a></li>
-                    <li><a href="#">Foreign Funding</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Money transfer <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header"></li>
-                    <li><a href="#">Remittance transfer</a></li>
-                    <li><a href="#">Mobile Money transfer</a></li>
-                    <li><a href="#">Account to account transfer</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> NRB <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header"></li>
-                    <li><a href="#">NRB Banking</a></li>
-                    <li><a href="#">Investment Facilities</a></li>
-                    <li><a href="#">How to</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> L/C Services <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header"></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Charges</a></li>
-                    <li><a href="#">Duty & Tax</a></li>
-                    <li><a href="#">Insurance </a></li>
-                    <li><a href="#">Online Management</a></li>
-                    <li><a href="#">How to open</a></li>
-                </ul>
-            </li>
-            <li> <a href="#"><i></i> calculator/apps</a> </li>
+            <li> <a href="<?php echo base_url(); ?>en/export_import"><i></i> Export Import</a> </li>
+            <li> <a href="#"><i></i> Calculator/Apps</a> </li>
             <li> <a href="#"><i></i> Bank Job & Guide </a> </li>
             <li> <a href="#"><i></i> Insurance</a> </li>
             <li> <a href="#"><i></i> Maps</a> </li>
             <li> <a href="#"><i></i> Gold Rate </a> </li>
             <li> <a href="#"><i></i> Money Rate</a> </li>
             <li> <a href="#"><i></i> Tax Guide</a> </li>
-            <li> <a href="#"><i></i> blog </a> </li>
+            <li> <a href="#"><i></i> Blog </a> </li>
             <li> <a href="#"><i></i> Events</a> </li>
             <li> <a href="#"><i></i> Forum</a> </li>
         </ul>

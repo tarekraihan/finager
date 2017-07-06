@@ -58,10 +58,10 @@
         right: 0;
         top: 7px;
         cursor: pointer;
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'ubuntu', sans-serif;
     }
     .fin-about-text{
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'ubuntu', sans-serif;
     }
     h3.fin-about-heading>span {
         font-size: 36px;
