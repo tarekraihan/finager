@@ -408,6 +408,13 @@ $(window).on('scroll', function (){
 
 <script>
 	$(document).ready(function(){
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+//            alert(cur_page);
+            loadData(cur_page);
+            console.log(cur_page);
+        });
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
@@ -460,11 +467,28 @@ $(window).on('scroll', function (){
             });
         }
 
-        $("input[type='checkbox'], input[type='radio']").on( "click", loadData );
+        loadData( page = null );
+        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            loadData( page = null );
+        } );
 
-        loadData();
 
-		$('#searchDPS').on('click', '.more_info', function (){
+        $(".draggable").on("dragstop",function(ev,ui){
+
+            setTimeout(function(){ //Updated by Tarek on 14-05-2017
+                //alert($("#finalAssest").val());
+                loadData(page = null);
+            }, 1000);
+
+        });
+
+        $('#finalAssest').on('keyup',function(){
+            loadData( page = null );
+        });
+
+
+
+        $('#searchDPS').on('click', '.more_info', function (){
 			var  formData = $(this).data();
 			var dps_id = formData.dps_id;
 			console.log(dps_id);

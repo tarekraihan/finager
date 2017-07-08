@@ -841,7 +841,8 @@ class Dps extends CI_Controller
 
         $dps_user = $this->input->post('dps_user');
         $dps_tenure = $this->input->post('dps_tenure');
-        $deposited_amount = $this->input->post('deposited_amount');
+        $deposited_amount = (int) $this->input->post('deposited_amount');
+//        $deposited_amount = 1000;
 
 
         $WHERE = array(); $query = '';
@@ -906,138 +907,153 @@ class Dps extends CI_Controller
 
 //        pr($query);
 
+//        echo $deposited_amount;die;
+        $s = array();
         if (array_key_exists($deposited_amount, $array_map)) {
             $s =  $array_map[$deposited_amount];
         }
 
-        $res1  = $this->Front_end_select_model->select_dps_loan_info_id( $s[0],$s[1],$query);
-        $dps = array();
-        foreach($res1->result_array() as $row){
-            pr($row);
-            array_push($dps,$row);
-        }
+        if(count($s) > 0){
 
-        $result = array();
-        foreach($dps as $k=>$v){
-            $data = array();
-            foreach($v as $kk => $vv){
-               if(!empty( $vv)){
-                   $data[$kk] = $vv;
+            $res1  = $this->Front_end_select_model->select_dps_loan_info_id( $s[0],$s[1],$s[2],$query);
 
-               }
+            $total_dps = array();
+            foreach($res1->result_array() as $row){
+                array_push($total_dps,$row);
             }
-            array_push($result,$data);
-        }
+            /*
+                    $result = array();
+                    foreach($total_dps as $k=>$v){
+                        $data = array();
+                        foreach($v as $kk => $vv){
+                           if(!empty( $vv)){
+                               $data[$v['dps_info_id']] = $v;
+                           }
+                        }
+                        array_push($result,$data);
+                    }
 
-        $dps_id =  array_filter($result);
+                    $dps_search_id = array();
+                    foreach($result as $k =>$v){
+                        foreach($v as $kk => $vv){
+                            $dps_search_id[] = $kk;
+                        }
+                    }
+                    $deposit_result = array();
+                    foreach($dps_search_id as $v){
+                        $res  = $this->Front_end_select_model->select_dps_by_id($v);
+                        $dps_result  = $res->row();
+                        $array = (array) $dps_result;
 
-        $dps_search_id = array_keys($dps_id);
-        pr($dps_search_id);
-        $deposit_result = array();
-        foreach($dps_search_id as $v){
-            echo 'dps id = '.$v;
-            $res  = $this->Front_end_select_model->select_dps_by_id($v);
-            $dps_result  = $res->row();
+                        foreach($result as $key=>$val){
+                           foreach($val as $k=>$v){
+                               if((int)$array['id'] == (int) $k){
+                                   $deposit_result[] = array_merge($array,$v);
 
-//            pr($dps_result);
-            $array = (array) $dps_result;
+                               }
+                           }
+                        }
+                    }*/
 
-            foreach($dps_id as $key=>$val){
-                if((int)$array['id'] == (int) $key){
-                    $deposit_result[] = array_merge($array,$val);
-
-                }
-            }
-
-
-        }
-        pr($deposit_result);
-        die;
-
-
-
-
-        echo "<br/><br/><pre>";
-//        print_r($a);
-        echo 'lsdfl=';
-        print_r($dps_id);
-        echo "Total = ";
-
-        echo "</pre>";
-        die;
-        $res = $this->Front_end_select_model->select_dps_loan_info($query);
 
 //-----------Pagination start-----------------
 
-        $config['base_url'] = base_url() . "en/all_dps/";
-        $config['total_rows'] = $res->num_rows();
-        $config['per_page'] = "10";
-        $config["uri_segment"] = 3;
-        $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"] = 5;
-        $config['use_page_numbers'] = TRUE;
+            $config['base_url'] = base_url() . "en/all_dps/";
+            $config['total_rows'] = count($total_dps);
+            $config['per_page'] = "10";
+            $config["uri_segment"] = 3;
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = 5;
+            $config['use_page_numbers'] = TRUE;
 
-        //Link customization
-        $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
-        $config['full_tag_close'] = '</ul>';
-        $config['first_link'] = false;
-        $config['last_link'] = false;
-        $config['first_tag_open'] = '<li>';
-        $config['first_tag_close'] = '</li>';
-        $config['prev_link'] = 'Prev';
-        $config['prev_tag_open'] = '<li class="previous">';
-        $config['prev_tag_close'] = '</li>';
-        $config['next_link'] = 'Next';
-        $config['next_tag_open'] = '<li>';
-        $config['next_tag_close'] = '</li>';
-        $config['last_tag_open'] = '<li>';
-        $config['last_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="active"><a href="#">';
-        $config['cur_tag_close'] = '</a></li>';
-        $config['num_tag_open'] = '<li>';
-        $config['num_tag_close'] = '</li>';
-        $this->pagination->initialize($config);
-        $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
+            //Link customization
+            $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
+            $config['full_tag_close'] = '</ul>';
+            $config['first_link'] = false;
+            $config['last_link'] = false;
+            $config['first_tag_open'] = '<li>';
+            $config['first_tag_close'] = '</li>';
+            $config['prev_link'] = 'Prev';
+            $config['prev_tag_open'] = '<li class="previous">';
+            $config['prev_tag_close'] = '</li>';
+            $config['next_link'] = 'Next';
+            $config['next_tag_open'] = '<li>';
+            $config['next_tag_close'] = '</li>';
+            $config['last_tag_open'] = '<li>';
+            $config['last_tag_close'] = '</li>';
+            $config['cur_tag_open'] = '<li class="active"><a href="#">';
+            $config['cur_tag_close'] = '</a></li>';
+            $config['num_tag_open'] = '<li>';
+            $config['num_tag_close'] = '</li>';
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
 
-        $dps_deposit =  $this->Front_end_select_model->select_dps_loan_info_pagination($query,$config["per_page"],$page);
-        $data['pagination'] = $this->pagination->create_links();
-        $dps = '';
-        foreach($dps_deposit->result() as $row) {
+            $res2 =  $this->Front_end_select_model->select_dps_loan_info_id_pagination($s[0],$s[1],$s[2],$query,$config["per_page"],$page);
+            $data['pagination'] = $this->pagination->create_links();
 
-            $bank = "";
-            if ($row->is_non_bank == 1) {
-                $bank = $row->non_bank_name;
-            } else {
-                $bank = $row->bank_name;
-            }
-            $bank_logo = "";
-            if ($row->is_non_bank == 1) {
-                $bank_logo = $row->non_bank_logo;
-            } else {
-                $bank_logo = $row->bank_logo;
-            }
-
-            $deposited_amount = ($deposited_amount > 100 || empty($deposited_amount)) ? 100 : $deposited_amount;
-            $tenure = (empty( $row->no_of_installment ) || $row->no_of_installment < 1) ? 1 : $row->no_of_installment;
-            $compounding = 12;
-            if(strlen($row->interest_rate) > 3){
-
-                $yearly_inter = explode("-",$row->interest_rate);
-                $yearly_interest = floatval($yearly_inter[0] / 100 );
-
-            }else{
-                $yearly_interest = floatval( $row->interest_rate / 100 );
+            $dps1 = array();
+            foreach($res2->result_array() as $row){
+                array_push($dps1,$row);
             }
 
 
-            $pv = $deposited_amount * pow((1+ ($yearly_interest/12)),(12 * $tenure));
-            $total_pv = round($pv * 12 * $tenure);
-            $total_deposit = round($deposited_amount * 12 * $tenure);
-            $accrued_interest = $total_pv - $total_deposit ;
+            $result = array();
+            foreach($dps1 as $k=>$v){
+                $data1 = array();
+                foreach($v as $kk => $vv){
+//                    echo ($v['maturity']);
+//                    pr ($kk['maturity']);
+                    if(!empty( $v['maturity'])){
+                        $data1[$v['dps_info_id']] = $v;
+                    }
+                }
+                array_push($result,$data1);
+            }
 
-            $dps .= '<div class="row fdr_right_bar no-margin-lr">
+
+            $dps_search_id = array();
+            foreach($result as $k =>$v){
+                foreach($v as $kk => $vv){
+                    $dps_search_id[] = $kk;
+                }
+            }
+
+//            pr($dps_search_id); die;
+            $deposit_result = array();
+            foreach($dps_search_id as $v){
+                $res  = $this->Front_end_select_model->select_dps_by_id($v);
+                $dps_result  = $res->row();
+                $array = (array) $dps_result;
+
+                foreach($result as $key=>$val){
+                    foreach($val as $k=>$v){
+                        if((int)$array['id'] == (int) $k){
+                            $deposit_result[] = array_merge($array,$v);
+                        }
+                    }
+                }
+            }
+
+//            pr($deposit_result);die;
+            $dps = '';
+            foreach($deposit_result as $row) {
+
+                $bank = "";
+                if ($row['is_non_bank'] == 1) {
+                    $bank = $row['non_bank_name'];
+                } else {
+                    $bank = $row['bank_name'];
+                }
+                $bank_logo = "";
+                if ($row['is_non_bank'] == 1) {
+                    $bank_logo = $row['non_bank_logo'];
+                } else {
+                    $bank_logo = $row['bank_logo'];
+                }
+
+                $dps .= '<div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'. base_url().'en/dps_details/'.$row->id.'"><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'. base_url().'en/dps_details/'.$row["id"].'"><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <p class="text-center">'.$bank.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -1050,84 +1066,84 @@ class Dps extends CI_Controller
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Installment Amount</h5>
-                                        <p>&#2547; '.number_format($deposited_amount ).'</p>
+                                        <p>BDT '.number_format($deposited_amount ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Number of Installment</h5>
-                                        <p> '.( $tenure *12 ).'</p>
+                                        <p> '.$row["no_of_installment"].'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Maturity Amount</h5>
-                                        <p>&#2547; '.number_format( $total_pv ).'</p>
+                                        <p>BDT '.number_format( (int) $row["maturity"]).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Accrued Interest</h5>
-                                        <p>&#2547; '.number_format( $accrued_interest ).'</p>
+                                        <p>BDT '.number_format( (int) $row["interest"] ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Loan Facility</h5>
-                                        <p>'.$row->loan_facility.'</p>
+                                        <p>'.$row["loan_facility"].'</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="row more_availabe">
-                                <div class="col-md-2"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-dps_id="'.$row->id.'"></i> More Info</a></div>
-                                <div class="col-md-4"><a class="availableOffer"  href="javascript:void(0)"  data-available_offer="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true" ></i> Available Offer</a></div>
+                                <div class="col-md-2"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-dps_id="'.$row["id"].'"></i> More Info</a></div>
+                                <div class="col-md-4"><a class="availableOffer"  href="javascript:void(0)"  data-available_offer="'.$row["id"].'"><i class="fa fa-info-circle" aria-hidden="true" ></i> Available Offer</a></div>
                                 <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg" id="hideDetailsButton2"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/btnDpsApply.png" alt="DPS Application" /></a></div>
                                 <div class="col-md-2"><a id="hideDetailsButton2" href="javascript:void(0)"><img class="pull-right" src="'.base_url().'resource/front_end/images/btnDpsCom.png" alt="DPS Application" /></a></div>
                             </div>
                         </div>
                     </div>
                     <!-- More Info Tab content start -->
-                     <div class="collapse" id="moreInfo'.$row->id.'">
+                     <div class="collapse" id="moreInfo'.$row["id"].'">
                          <div class="col-md-12">
                                <section id="tab">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation"><a href="#Features'.$row->id.'" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
-                                    <li role="presentation"><a href="#FeesCharges'.$row->id.'" aria-controls="FeesCharges" role="tab" data-toggle="tab">Fees & Charges</a></li>
-                                    <li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="TermsConditions" role="tab" data-toggle="tab">Terms & Conditions</a></li>
-                                    <li role="presentation"><a href="#Eligibility'.$row->id.'" aria-controls="Eligibility" role="tab" data-toggle="tab">Eligibility</a></li>
-                                    <li role="presentation"><a href="#RequiredDoc'.$row->id.'" aria-controls="RequiredDoc" role="tab" data-toggle="tab">Required Doc</a></li>
-                                    <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="Review" role="tab" data-toggle="tab">Review</a></li>
-                                    <li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="UserReview" role="tab" data-toggle="tab">User Review</a></li>
+                                    <li role="presentation"><a href="#Features'.$row["id"].'" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
+                                    <li role="presentation"><a href="#FeesCharges'.$row["id"].'" aria-controls="FeesCharges" role="tab" data-toggle="tab">Fees & Charges</a></li>
+                                    <li role="presentation"><a href="#TermsConditions'.$row["id"].'" aria-controls="TermsConditions" role="tab" data-toggle="tab">Terms & Conditions</a></li>
+                                    <li role="presentation"><a href="#Eligibility'.$row["id"].'" aria-controls="Eligibility" role="tab" data-toggle="tab">Eligibility</a></li>
+                                    <li role="presentation"><a href="#RequiredDoc'.$row["id"].'" aria-controls="RequiredDoc" role="tab" data-toggle="tab">Required Doc</a></li>
+                                    <li role="presentation"><a href="#Review'.$row["id"].'" aria-controls="Review" role="tab" data-toggle="tab">Review</a></li>
+                                    <li role="presentation"><a href="#UserReview'.$row["id"].'" aria-controls="UserReview" role="tab" data-toggle="tab">User Review</a></li>
                                 </ul>
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane active" id="Features'.$row["id"].'">
                                         <h4>Features:</h4>
-                                        '.$row->available_feature.'
+                                        '.$row["available_feature"].'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row["id"].'">
                                         <h4>Fees & Charges:</h4>
-                                        '.$row->fees_and_charges.'
+                                        '.$row["fees_and_charges"].'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="TermsConditions'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane" id="TermsConditions'.$row["id"].'">
                                         <h4>Terms & Conditions:</h4>
-                                        '.$row->terms_and_conditions.'
+                                        '.$row["terms_and_conditions"].'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane fdr_terms" id="Eligibility'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane fdr_terms" id="Eligibility'.$row["id"].'">
                                         <h4>Eligibility:</h4>
-                                        '.$row->eligibility.'
+                                        '.$row["eligibility"].'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="RequiredDoc'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane" id="RequiredDoc'.$row["id"].'">
                                         <h4>Required Documents</h4>
-                                        '.$row->required_document.'
+                                        '.$row["required_document"].'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane" id="Review'.$row["id"].'">
                                         <h4>Review</h4>
-                                        '.$row->review.'
+                                        '.$row["review"].'
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="UserReview'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane" id="UserReview'.$row["id"].'">
                                         <h4>User Review</h4>
                                     </div>
                                 </div>
@@ -1135,20 +1151,23 @@ class Dps extends CI_Controller
                         </div>
                     </div>
                     <!-- More Info Tab content end -->
-                    <div class="collapse" id="availableOffer'.$row->id.'">
+                    <div class="collapse" id="availableOffer'.$row["id"].'">
                         <div class="col-md-12">
                             <p><b>Available Deposits (BDT):</b> 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 8000, 10000.</p>
                             <p><b>Available Terms:</b> 2, 3, 4, 5, 6, 7, 8, 10.</p>
                             <p><b>Interest Rate:8%</b></p>
                         </div>
-                        '.$row->available_benefit.'
+                        '.$row["available_benefit"].'
                     </div>';
             }
-        $dps .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+            $dps .= '<div class="col-md-12">'.$data['pagination'].'</div>';
             echo $dps;
+
+    }else{
+            echo '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';exit;
         }
 
 
-
+    }
 
 }
