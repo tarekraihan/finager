@@ -408,13 +408,12 @@ $(window).on('scroll', function (){
 
 <script>
 	$(document).ready(function(){
-        $(document).on('click','#pagination a',function(e){
-            e.preventDefault();
-            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
-//            alert(cur_page);
-            loadData(cur_page);
-            console.log(cur_page);
-        });
+
+		$(document).on('click','#pagination a',function(e){
+			e.preventDefault();
+			page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+			loadData(page);
+		});
 
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
@@ -423,7 +422,7 @@ $(window).on('scroll', function (){
             $('#loading').html("");
         }
 
-        function loadData(){
+        function loadData(page = null ){
             loading_show();
 
 
@@ -449,10 +448,15 @@ $(window).on('scroll', function (){
             var main_string = dps_tenure_list+dps_user_list+deposited_amount;
             main_string = main_string.substring(1, main_string.length);
             console.log(main_string);
+			var page_count ='';
+			if( page != null ){
+				page_count = page ;
+			}
+			var url_str = "<?php echo base_url();?>dps/ajax_get_dps/" + page_count;
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>dps/ajax_get_dps",
+                url: url_str,
                 data: main_string,
                 cache: false,
                 success: function(msg)

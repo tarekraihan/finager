@@ -320,8 +320,9 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         }
 
         $id = implode(",",$id);
+//        pr($id);die;
 
-        $sql1 = "Select $field1, $field2,$field3 From dps_maturity_amount WHERE dps_info_id IN ( $id )";
+        $sql1 = "Select $field1 AS maturity, $field2 AS interest,$field3 From dps_maturity_amount WHERE dps_info_id IN ( $id )";
 //        echo $sql;
         $query = $this->db->query($sql1);
         return $query;
@@ -344,10 +345,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         }
 
         $id = implode(",",$id);
-//        pr($id);die;
-
         $sql1 = "Select $field1 AS maturity, $field2 AS interest,$field3 From dps_maturity_amount WHERE dps_info_id IN ( $id )";
-//        echo $sql;die;
         $query = $this->db->query($sql1);
         return $query;
     }

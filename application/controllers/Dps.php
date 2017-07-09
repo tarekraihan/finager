@@ -921,12 +921,13 @@ class Dps extends CI_Controller
             foreach($res1->result_array() as $row){
                 array_push($total_dps,$row);
             }
-            /*
+
                     $result = array();
                     foreach($total_dps as $k=>$v){
                         $data = array();
                         foreach($v as $kk => $vv){
-                           if(!empty( $vv)){
+                            //pr($v[]);
+                           if(!empty( $v['maturity'])){
                                $data[$v['dps_info_id']] = $v;
                            }
                         }
@@ -936,34 +937,43 @@ class Dps extends CI_Controller
                     $dps_search_id = array();
                     foreach($result as $k =>$v){
                         foreach($v as $kk => $vv){
-                            $dps_search_id[] = $kk;
+                            if(!empty($vv)){
+                                $dps_search_id[] = $kk;
+                            }
                         }
-                    }
-                    $deposit_result = array();
-                    foreach($dps_search_id as $v){
-                        $res  = $this->Front_end_select_model->select_dps_by_id($v);
-                        $dps_result  = $res->row();
-                        $array = (array) $dps_result;
+                    }/*
+            pr($dps_search_id);
+            echo "////*****--------------///";*/
+/*
+                   $deposit_result = array();
 
-                        foreach($result as $key=>$val){
-                           foreach($val as $k=>$v){
-                               if((int)$array['id'] == (int) $k){
-                                   $deposit_result[] = array_merge($array,$v);
+                   foreach($dps_search_id as $v){
+                       $res  = $this->Front_end_select_model->select_dps_by_id($v);
+                       $dps_result  = $res->row();
+                       $array = (array) $dps_result;
 
-                               }
-                           }
-                        }
-                    }*/
+                       foreach($result as $key=>$val){
+                          foreach($val as $k=>$v){
+                              if((int)$array['id'] == (int) $k){
+                                  $deposit_result[] = array_merge($array,$v);
+
+                              }
+                          }
+                       }
+                   }
+*/
 
 
+echo count($dps_search_id);
+            pr($dps_search_id);
 //-----------Pagination start-----------------
 
-            $config['base_url'] = base_url() . "en/all_dps/";
-            $config['total_rows'] = count($total_dps);
+            $config['base_url'] = base_url() . "en/all_home_loan/";
+            $config['total_rows'] = count($dps_search_id);
             $config['per_page'] = "10";
             $config["uri_segment"] = 3;
             $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = 5;
+            $config["num_links"] = floor($choice);
             $config['use_page_numbers'] = TRUE;
 
             //Link customization
@@ -1001,8 +1011,6 @@ class Dps extends CI_Controller
             foreach($dps1 as $k=>$v){
                 $data1 = array();
                 foreach($v as $kk => $vv){
-//                    echo ($v['maturity']);
-//                    pr ($kk['maturity']);
                     if(!empty( $v['maturity'])){
                         $data1[$v['dps_info_id']] = $v;
                     }
@@ -1011,14 +1019,16 @@ class Dps extends CI_Controller
             }
 
 
-            $dps_search_id = array();
+            $dps_search_id1 = array();
             foreach($result as $k =>$v){
                 foreach($v as $kk => $vv){
-                    $dps_search_id[] = $kk;
+                    if(!empty($vv)){
+                        $dps_search_id1[] = $kk;
+                    }
                 }
             }
 
-//            pr($dps_search_id); die;
+
             $deposit_result = array();
             foreach($dps_search_id as $v){
                 $res  = $this->Front_end_select_model->select_dps_by_id($v);
@@ -1034,7 +1044,8 @@ class Dps extends CI_Controller
                 }
             }
 
-//            pr($deposit_result);die;
+            echo count($dps_search_id1);
+            pr($dps_search_id1);die;
             $dps = '';
             foreach($deposit_result as $row) {
 
