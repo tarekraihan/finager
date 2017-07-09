@@ -4293,6 +4293,8 @@ span.filter-option {
 }
 #filter-bar {
     margin-top: 5px;
+    border: 1px solid #dedede;
+    padding: 15px 15px 10px 15px;
 }
 .dropdown.mega-dropdown{
     list-style: none;

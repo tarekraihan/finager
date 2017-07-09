@@ -724,7 +724,7 @@ $('.selectCalcWrapper .radiobox').click(function(){
 		$('.yearWrap').show();
 		$('.monthWrap').hide();
 		$('#tenureType').find('label').text('Year');
-		$('#finalAssest').val(0);
+		$('#finalAssest').val();
 		$('#finalLiability').val(8);
 		$('#finalCustAge').val(1);
 	}
@@ -733,8 +733,8 @@ $('.selectCalcWrapper .radiobox').click(function(){
 		$('.yearWrap').hide();
 		$('.monthWrap').show();
 		$('#tenureType').find('label').text('Month');
-		$('#finalAssest').val(500000)
-		$('#finalLiability').val(13);
+		$('#finalAssest').val(1000000)
+		$('#finalLiability').val(5);
 		$('#finalCustAge').val(6);
 	}
 	pmtCalc();
@@ -1131,13 +1131,5 @@ function dragLiAdjustFunction(){
 	ths.css({'margin-left': '-'+m+'px'});
 }
 
-
-function getTwitter(){
-	window.open("http://twitter.com/home?status="+document.title+"+"+document.location.href);
-}
-
-function getGoogleplus(){
-	window.open("https://plus.google.com/share?url="+window.location.href);
-}
 // Calculator Functionality END
 
