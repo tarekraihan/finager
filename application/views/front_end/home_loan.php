@@ -24,10 +24,10 @@
 <section id="home_header">
 
 </section>
-<div class="container">
 
+<div class="container">
     <section id="filter-bar">
-            <div class="row">
+        <div class="row">
                 <div class="col-md-3">
                     <div class="bank-filter">
                         <p class="bank-small-filter">50 of 50 results filtered by:</p>
@@ -602,7 +602,6 @@
                 </div>
             </div>
     </section>
-
 </div>
 
 <section id="card">
@@ -912,7 +911,46 @@
 
 <script src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
 <script type="text/javascript">
-$(window).on('scroll', function (){
+
+
+    $(document).on("scroll",function () {
+            var offsetToTop = parseInt($(this).scrollTop());
+            var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
+
+            if (offsetToTop > $(".footer").offset().top-500) {
+                //console.log("as");
+                $("#sidebar").removeClass("fixed");
+                $("#sidebar").addClass("sidebar-absolute");
+                $("#sidebar").css("top",-offsetToTop);
+            }
+
+            else if (offsetToTop > 383) {
+                //console.log("as2");
+                $('#sidebar').addClass("fixed");
+                $("#sidebar").removeClass("sidebar-absolute");
+                $("#sidebar").removeAttr("style");
+            }
+
+            else if (offsetToTop < 383) {
+                $("#sidebar").removeClass("fixed");
+                $("#sidebar").addClass("sidebar-absolute");
+                $("#sidebar").css("top",-offsetToTop);
+            }
+        });
+
+
+
+    $(window).on('scroll', function (){
+        if ($(window).scrollTop() > 350){
+            console.log("over 350");
+            $('.home_loan_left_bar').addClass('fixedElement');
+        }if($(window).scrollTop()<350){
+            $('.home_loan_left_bar').removeClass('fixedElement');
+        }if($(window).scrollTop() > 2200){
+            $('.home_loan_left_bar').removeClass('fixedElement');
+        }
+    });
+/*$(window).on('scroll', function (){
 	if ($(window).scrollTop() > 350){
 	  $('.home_loan_left_bar').addClass('fixedElement');
 	}if($(window).scrollTop()<350){
@@ -920,7 +958,7 @@ $(window).on('scroll', function (){
 	}if($(window).scrollTop() > 2260){
 	  $('.home_loan_left_bar').removeClass('fixedElement');
 	}
-});
+});*/
 $(document).ready(function(){
     $('#filter-carousel').carousel({
         interval: false

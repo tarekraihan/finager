@@ -317,6 +317,7 @@ $(window).on('scroll', function (){
 
 
     function loading_show(){
+        //alert();
         $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
     }
     function loading_hide(){
@@ -354,6 +355,9 @@ $(window).on('scroll', function (){
             url: url_str,
             data: main_string,
             cache: false,
+            beforeSend: function(){
+                loading_show()
+            },
             success: function(msg)
             {
 
@@ -559,7 +563,7 @@ $(window).on('scroll', function (){
 
 
     $(document).on('click','.compare-cross-btn',function(){
-        alert();
+        //alert();
 
         var collected_card = $(this).prev().attr("data-maximizer_id");
         $(".full-card").each(function(){
