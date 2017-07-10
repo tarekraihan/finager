@@ -216,10 +216,10 @@ if(isset($_GET['id'])){
                                     <label class="select">
                                         <select name="txtTenure" id="txtTenure">
                                             <?php
-                                            $result=$this->Select_model->select_all('fdr_tenure');
+                                            $result=$this->Select_model->select_all('dps_tenure');
                                             foreach($result->result() as $row1){
                                                 ?>
-                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["tenure_id"]) && $row["tenure_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtTenure",$row1->id)?>><?php echo $row1->tenure ; ?></option>';
+                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["tenure_id"]) && $row["tenure_id"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtTenure",$row1->id)?>><?php echo $row1->tenure ; ?> Years</option>';
                                             <?php
                                             }
                                             ?>
@@ -972,11 +972,6 @@ if(isset($_GET['id'])){
 
 </article>
 <!-- WIDGET END -->;
-    ='';
-    $row['eligibility']='';
-    ='';
-    ='';
-    $row['review']='';
 <!-- NEW WIDGET START -->
 <article class="col-sm-6 col-md-6 col-lg-6">
 

@@ -305,7 +305,6 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     function select_dps_by_id($id){
         $sql = "SELECT dps_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,fdr_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo,dps_tenure.tenure,dps_tenure.no_of_installment FROM dps_info  LEFT JOIN card_bank on card_bank.id=dps_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id INNER JOIN fdr_i_am ON fdr_i_am.id = dps_info.i_am_id INNER JOIN dps_tenure ON dps_tenure.id = dps_info.tenure_id WHERE dps_info.id = $id";
-//        echo $sql;
         $query = $this->db->query($sql);
         return $query;
     }
@@ -318,14 +317,15 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         foreach($ids->result() as $row){
             array_push($id,$row->id);
         }
+        if(count($id) > 0 ){
+            $id = implode(",",$id);
+            $sql1 = "Select $field1 AS maturity, $field2 AS interest,$field3 From dps_maturity_amount WHERE dps_info_id IN ( $id )";
+            $query = $this->db->query($sql1);
+            return $query;
+        }else{
+            return 'empty';
+        }
 
-        $id = implode(",",$id);
-//        pr($id);die;
-
-        $sql1 = "Select $field1 AS maturity, $field2 AS interest,$field3 From dps_maturity_amount WHERE dps_info_id IN ( $id )";
-//        echo $sql;
-        $query = $this->db->query($sql1);
-        return $query;
     }
 
     function select_dps_id($where,$limit=null, $offset = null){
@@ -346,6 +346,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
         $id = implode(",",$id);
         $sql1 = "Select $field1 AS maturity, $field2 AS interest,$field3 From dps_maturity_amount WHERE dps_info_id IN ( $id )";
+//        echo $sql1;
         $query = $this->db->query($sql1);
         return $query;
     }

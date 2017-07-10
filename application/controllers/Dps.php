@@ -914,157 +914,140 @@ class Dps extends CI_Controller
         }
 
         if(count($s) > 0){
-
             $res1  = $this->Front_end_select_model->select_dps_loan_info_id( $s[0],$s[1],$s[2],$query);
+            if(!is_object($res1)){
+                echo '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';exit;
+            }else{
 
-            $total_dps = array();
-            foreach($res1->result_array() as $row){
-                array_push($total_dps,$row);
-            }
+                $total_dps = array();
+                foreach($res1->result_array() as $row){
+                    array_push($total_dps,$row);
+                }
 
-                    $result = array();
-                    foreach($total_dps as $k=>$v){
-                        $data = array();
-                        foreach($v as $kk => $vv){
-                            //pr($v[]);
-                           if(!empty( $v['maturity'])){
-                               $data[$v['dps_info_id']] = $v;
-                           }
+                $result = array();
+                foreach($total_dps as $k=>$v){
+                    $data = array();
+                    foreach($v as $kk => $vv){
+                        //pr($v[]);
+                        if(!empty( $v['maturity'])){
+                            $data[$v['dps_info_id']] = $v;
                         }
-                        array_push($result,$data);
                     }
+                    array_push($result,$data);
+                }
 
-                    $dps_search_id = array();
-                    foreach($result as $k =>$v){
-                        foreach($v as $kk => $vv){
-                            if(!empty($vv)){
-                                $dps_search_id[] = $kk;
-                            }
+                $dps_search_id = array();
+                foreach($result as $k =>$v){
+                    foreach($v as $kk => $vv){
+                        if(!empty($vv)){
+                            $dps_search_id[] = $kk;
                         }
-                    }/*
-            pr($dps_search_id);
-            echo "////*****--------------///";*/
-/*
-                   $deposit_result = array();
-
-                   foreach($dps_search_id as $v){
-                       $res  = $this->Front_end_select_model->select_dps_by_id($v);
-                       $dps_result  = $res->row();
-                       $array = (array) $dps_result;
-
-                       foreach($result as $key=>$val){
-                          foreach($val as $k=>$v){
-                              if((int)$array['id'] == (int) $k){
-                                  $deposit_result[] = array_merge($array,$v);
-
-                              }
-                          }
-                       }
-                   }
-*/
-
-
-echo count($dps_search_id);
-            pr($dps_search_id);
+                    }
+                }
 //-----------Pagination start-----------------
 
-            $config['base_url'] = base_url() . "en/all_home_loan/";
-            $config['total_rows'] = count($dps_search_id);
-            $config['per_page'] = "10";
-            $config["uri_segment"] = 3;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = floor($choice);
-            $config['use_page_numbers'] = TRUE;
+                $config['base_url'] = base_url() . "en/all_home_loan/";
+                $config['total_rows'] = count($dps_search_id);
+                $config['per_page'] = "10";
+                $config["uri_segment"] = 3;
+                $choice = $config["total_rows"] / $config["per_page"];
+                $config["num_links"] = floor($choice);
+                $config['use_page_numbers'] = TRUE;
 
-            //Link customization
-            $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
-            $config['full_tag_close'] = '</ul>';
-            $config['first_link'] = false;
-            $config['last_link'] = false;
-            $config['first_tag_open'] = '<li>';
-            $config['first_tag_close'] = '</li>';
-            $config['prev_link'] = 'Prev';
-            $config['prev_tag_open'] = '<li class="previous">';
-            $config['prev_tag_close'] = '</li>';
-            $config['next_link'] = 'Next';
-            $config['next_tag_open'] = '<li>';
-            $config['next_tag_close'] = '</li>';
-            $config['last_tag_open'] = '<li>';
-            $config['last_tag_close'] = '</li>';
-            $config['cur_tag_open'] = '<li class="active"><a href="#">';
-            $config['cur_tag_close'] = '</a></li>';
-            $config['num_tag_open'] = '<li>';
-            $config['num_tag_close'] = '</li>';
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
+                //Link customization
+                $config['full_tag_open'] = '<ul id="pagination" class="pagination pagination-centered">';
+                $config['full_tag_close'] = '</ul>';
+                $config['first_link'] = false;
+                $config['last_link'] = false;
+                $config['first_tag_open'] = '<li>';
+                $config['first_tag_close'] = '</li>';
+                $config['prev_link'] = 'Prev';
+                $config['prev_tag_open'] = '<li class="previous">';
+                $config['prev_tag_close'] = '</li>';
+                $config['next_link'] = 'Next';
+                $config['next_tag_open'] = '<li>';
+                $config['next_tag_close'] = '</li>';
+                $config['last_tag_open'] = '<li>';
+                $config['last_tag_close'] = '</li>';
+                $config['cur_tag_open'] = '<li class="active"><a href="#">';
+                $config['cur_tag_close'] = '</a></li>';
+                $config['num_tag_open'] = '<li>';
+                $config['num_tag_close'] = '</li>';
+                $this->pagination->initialize($config);
+                $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
 
-            $res2 =  $this->Front_end_select_model->select_dps_loan_info_id_pagination($s[0],$s[1],$s[2],$query,$config["per_page"],$page);
-            $data['pagination'] = $this->pagination->create_links();
+                $res2 =  $this->Front_end_select_model->select_dps_loan_info_id( $s[0],$s[1],$s[2],$query);
+                $data['pagination'] = $this->pagination->create_links();
 
-            $dps1 = array();
-            foreach($res2->result_array() as $row){
-                array_push($dps1,$row);
-            }
-
-
-            $result = array();
-            foreach($dps1 as $k=>$v){
-                $data1 = array();
-                foreach($v as $kk => $vv){
-                    if(!empty( $v['maturity'])){
-                        $data1[$v['dps_info_id']] = $v;
-                    }
+                $dps1 = array();
+                foreach($res2->result_array() as $row){
+                    array_push($dps1,$row);
                 }
-                array_push($result,$data1);
-            }
 
 
-            $dps_search_id1 = array();
-            foreach($result as $k =>$v){
-                foreach($v as $kk => $vv){
-                    if(!empty($vv)){
-                        $dps_search_id1[] = $kk;
+                $result = array();
+                foreach($dps1 as $k=>$v){
+                    $data1 = array();
+                    foreach($v as $kk => $vv){
+                        if(!empty( $v['maturity'])){
+                            $data1[$v['dps_info_id']] = $v;
+                        }
                     }
+                    array_push($result,$data1);
                 }
-            }
 
 
-            $deposit_result = array();
-            foreach($dps_search_id as $v){
-                $res  = $this->Front_end_select_model->select_dps_by_id($v);
-                $dps_result  = $res->row();
-                $array = (array) $dps_result;
-
-                foreach($result as $key=>$val){
-                    foreach($val as $k=>$v){
-                        if((int)$array['id'] == (int) $k){
-                            $deposit_result[] = array_merge($array,$v);
+                $dps_search_id1 = array();
+                foreach($result as $k =>$v){
+                    foreach($v as $kk => $vv){
+                        if(!empty($vv)){
+                            $dps_search_id1[] = $kk;
                         }
                     }
                 }
-            }
 
-            echo count($dps_search_id1);
-            pr($dps_search_id1);die;
-            $dps = '';
-            foreach($deposit_result as $row) {
 
-                $bank = "";
-                if ($row['is_non_bank'] == 1) {
-                    $bank = $row['non_bank_name'];
-                } else {
-                    $bank = $row['bank_name'];
+//            $page = 10;
+                $deposit_result = array();
+                $start = $page; $end = $page + $config["per_page"]; $count = 0;
+
+                foreach($dps_search_id as $v){
+                    if($count >= $start && $count < $end){
+                        $res  = $this->Front_end_select_model->select_dps_by_id($v);
+                        $dps_result  = $res->row();
+                        $array = (array) $dps_result;
+
+                        foreach($result as $key=>$val){
+                            foreach($val as $k=>$v){
+                                if((int)$array['id'] == (int) $k){
+                                    $deposit_result[] = array_merge($array,$v);
+                                }
+                            }
+                        }
+
+                    }
+                    $count++;
                 }
-                $bank_logo = "";
-                if ($row['is_non_bank'] == 1) {
-                    $bank_logo = $row['non_bank_logo'];
-                } else {
-                    $bank_logo = $row['bank_logo'];
-                }
 
-                $dps .= '<div class="row fdr_right_bar no-margin-lr">
+                $dps = '';
+                foreach($deposit_result as $row) {
+
+                    $bank = "";
+                    if ($row['is_non_bank'] == 1) {
+                        $bank = $row['non_bank_name'];
+                    } else {
+                        $bank = $row['bank_name'];
+                    }
+                    $bank_logo = "";
+                    if ($row['is_non_bank'] == 1) {
+                        $bank_logo = $row['non_bank_logo'];
+                    } else {
+                        $bank_logo = $row['bank_logo'];
+                    }
+
+                    $dps .= '<div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'. base_url().'en/dps_details/'.$row["id"].'"><img title="Free Web tutorials" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'. base_url().'en/dps_details/'.$row["id"].'"><img title="Click For Details" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <p class="text-center">'.$bank.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -1170,11 +1153,12 @@ echo count($dps_search_id);
                         </div>
                         '.$row["available_benefit"].'
                     </div>';
+                }
+                $dps .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+                echo $dps;
             }
-            $dps .= '<div class="col-md-12">'.$data['pagination'].'</div>';
-            echo $dps;
 
-    }else{
+        }else{
             echo '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';exit;
         }
 
