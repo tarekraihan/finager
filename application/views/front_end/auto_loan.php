@@ -1125,7 +1125,6 @@
 
     // This function will be executed when the user scrolls the page.
     $(document).on("scroll",function () {
-        // Get the position of the location where the scroller starts.
         var scroller_anchor = $("#sidebar").offset().top;
         var sidebar_height = $("#sidebar").height();
         var window_height = $(window).height();
@@ -1138,7 +1137,6 @@
         var filter_height = $('#filter-bar').height();
         var total_top = parseInt(top_height+banner_height+filter_height+60);
 
-        console.log(total_top);
 
         // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
         if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
@@ -1152,70 +1150,17 @@
         }
 
         if (offsetToTop > $(".footer").offset().top-800) {
-            console.log("footer come");
             $("#sidebar").removeClass("fixed");
             $("#sidebar").addClass("sidebar-absolute");
-            //$("#sidebar").css("top",-offsetToTop);
         }
-
-        /*if (offsetToTop > $("#sidebar-bottom").offset().top-800) {
-            console.log("footer come");
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-            //$("#sidebar").css("top",-offsetToTop);
-        }*/
 
         if($("#sidebar").offset().top < total_top){
-            console.log('header come');
             $("#sidebar").removeClass("fixed");
             $("#sidebar").addClass("sidebar-absolute");
         }
 
-        /*if (offsetToTop < 383) {
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-           // $("#sidebar").css("top",-offsetToTop);
-        }*/
     });
 
-  /*  $(document).on("scroll",function () {
-        $(document).on("scroll",function () {
-            var offsetToTop = parseInt($(this).scrollTop());
-            var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-            if (offsetToTop > $(".footer").offset().top-500) {
-                console.log("as");
-                $("#sidebar").removeClass("fixed");
-                $("#sidebar").addClass("sidebar-absolute");
-                $("#sidebar").css("top",-offsetToTop);
-            }
-
-            else if (offsetToTop > 383) {
-                console.log("as2");
-                $('#sidebar').addClass("fixed");
-                $("#sidebar").removeClass("sidebar-absolute");
-                $("#sidebar").removeAttr("style");
-            }
-
-            else if (offsetToTop < 383) {
-                $("#sidebar").removeClass("fixed");
-                $("#sidebar").addClass("sidebar-absolute");
-                $("#sidebar").css("top",-offsetToTop);
-            }
-        });
-    });
-
-
-    $(window).on('scroll', function (){
-         if ($(window).scrollTop() > 350){
-            console.log("over 350");
-         $('.home_loan_left_bar').addClass('fixedElement');
-         }if($(window).scrollTop()<350){
-            $('.home_loan_left_bar').removeClass('fixedElement');
-         }if($(window).scrollTop() > 2200){
-            $('.home_loan_left_bar').removeClass('fixedElement');
-         }
-    });*/
 
     $(document).ready(function(){
 
