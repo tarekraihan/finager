@@ -145,198 +145,93 @@ if(!empty($id) && is_numeric($id) ){
 								</div>
 							</div>
 						</div>
-					</div>	
-
-					<div class="col-sm-8 col-xs-12">
-
-						<div class="btnHomeLoan">
-
-							<!-- <div class="col-sm-3 col-xs-12"><span class="add_comp_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span></div> -->
-
-							<div class="col-sm-3 col-xs-12"><span><a href="#"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/BtnCard_apply.png" /></a></span></div>
-
-						</div>
-
 					</div>
-
+					<div class="col-sm-8 col-xs-12">
+						<div class="btnHomeLoan">
+							<div class="col-sm-3 col-xs-12"><span><a href="#"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/BtnCard_apply.png" /></a></span></div>
+						</div>
+					</div>
 				</div>
-
 			</div>
-
 		</div>
-
 	</section>
-
-	
-
 	<section id="card_details_FeesCharges">
-
 		<div class="container">
-
 			<div class="card_details_pronsCons">
-
 				<p><b>Available Deposits (BDT):</b> 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 8000, 10000.</p>
-
 				<p><b>Available Terms:</b> 2, 3, 4, 5, 6, 7, 8, 10.</p>
-
 				<p><b>Interest Rate:<?php echo $row['interest_rate']; ?>%</b></p>
-
 				<div class="offer_table">
-
 				  <h4>Monthly Installment Size and Benefit After Maturity</h4>
-
 					<?php echo $row['available_benefit']; ?>
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</section>
-
 	<div style="clear:both;"></div>
-
 	<section id="card_details_FeesCharges">
-
 		<div class="container">
-
 			<div class="card_details_pronsCons">
-
 				<h4>Features</h4>
-
 				<div class="prosConsHr"></div><br/>
-
 				<?php echo $row['available_feature']; ?>
-
 			</div>
-
 		</div>
-
 	</section>
-
-	
-
-	
-
 	<section id="card_details_basic">
-
 		<div class="container">
-
 			<div class="card_details_pronsCons">
-
 				<h4>Fees & Charges:</h4>
-
 				<div class="prosConsHr"></div><br/>
-
 				<div class="prosCons_body2 trbodywidth">
-
 					<?php echo $row['fees_and_charges']; ?>
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</section>
-
-	
 
 	<section id="card_details_Eligibility">
-
 		<div class="container">
-
 			<div class="card_details_pronsCons">
-
 				<h4>Terms & Conditions:</h4>
-
 				<div class="prosConsHr"></div><br/>
-
 				<div class="prosCons_body2 trbodywidth">
-
 					<?php echo $row['terms_and_conditions']; ?>
 				</div>
-
 			</div>
-
 		</div>
-
 	</section>
 
-	
-
-	
-
 	<section id="card_details_Benefits">
-
 		<div class="container">
-
 			<div class="card_details_pronsCons">
-
 				<h4>Eligibility:</h4>
-
 				<div class="prosConsHr"></div><br/>
-
 				<div class="prosCons_body2">
-
 					<?php echo $row['eligibility']; ?>
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</section>
-
-	
-
 	<section id="card_details_Benefits">
-
 		<div class="container">
-
 			<div class="card_details_pronsCons">
-
 				<h4>Requirement</h4>
-
 				<div class="prosConsHr"></div><br/>
-
 				<div class="prosCons_body2">
 					<?php echo $row['required_document']; ?>
-
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</section>
 
-
-
 	<div style="clear:both;"></div>
-
-
-
-
-
 	<section id="card_details_userReview">
-
 		<div class="container">
-
 			<div class="card_details_pronsCons">
-
 				<h4 class="card_details_pronsCons_head">User reviews</h4>
-
 				<?php echo $row['review']; ?>
-
-
 			</div>
-
-			</div>
-
 		</div>
 
 	</section>
