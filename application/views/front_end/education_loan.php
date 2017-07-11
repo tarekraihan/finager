@@ -833,55 +833,44 @@
 
 
     $(document).on("scroll",function () {
+        var scroller_anchor = $("#sidebar").offset().top;
+        var sidebar_height = $("#sidebar").height();
+        var window_height = $(window).height();
+
         var offsetToTop = parseInt($(this).scrollTop());
         var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
 
-        if (offsetToTop > $(".footer").offset().top-500) {
-            console.log("as");
+        var top_height = $('#top-page').height();
+        var banner_height = $('#education_header').height();
+        var filter_height = $('#filter-bar').height();
+        var total_top = parseInt(top_height+banner_height+filter_height+60);
+
+
+        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
+        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
+        {
+            $('#sidebar').addClass('fixed');
+        }
+
+        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
+        {
+            $('#sidebar').removeClass('fixed');
+        }
+
+        if (offsetToTop > $(".footer").offset().top-800) {
             $("#sidebar").removeClass("fixed");
             $("#sidebar").addClass("sidebar-absolute");
-            $("#sidebar").css("top",-offsetToTop);
         }
 
-        else if (offsetToTop > 383) {
-            console.log("as2");
-            $('#sidebar').addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute");
-            $("#sidebar").removeAttr("style");
-        }
-
-        else if (offsetToTop < 383) {
+        if($("#sidebar").offset().top < total_top){
             $("#sidebar").removeClass("fixed");
             $("#sidebar").addClass("sidebar-absolute");
-            $("#sidebar").css("top",-offsetToTop);
         }
+
     });
-
-
-
-    $(window).on('scroll', function (){
-        if ($(window).scrollTop() > 350){
-            console.log("over 350");
-            $('.home_loan_left_bar').addClass('fixedElement');
-        }if($(window).scrollTop()<350){
-            $('.home_loan_left_bar').removeClass('fixedElement');
-        }if($(window).scrollTop() > 2200){
-            $('.home_loan_left_bar').removeClass('fixedElement');
-        }
-    });
-/*$(document).ready(function(){
-	$(window).on('scroll', function (){
-		if ($(window).scrollTop() > 350){
-		  $('.home_loan_left_bar').addClass('fixedElement');
-		}if($(window).scrollTop()<350){
-		  $('.home_loan_left_bar').removeClass('fixedElement');
-		}if($(window).scrollTop() > 2200){
-		  $('.home_loan_left_bar').removeClass('fixedElement');
-		}
-	});
-});*/
 
 </script>
+
 <script>
 $(document).ready(function() {
 
