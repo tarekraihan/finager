@@ -1031,7 +1031,6 @@ class Dps extends CI_Controller
 
                 $dps = '';
                 foreach($deposit_result as $row) {
-
                     $bank = "";
                     if ($row['is_non_bank'] == 1) {
                         $bank = $row['non_bank_name'];
@@ -1047,7 +1046,7 @@ class Dps extends CI_Controller
 
                     $dps .= '<div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'. base_url().'en/dps_details/'.$row["id"].'"><img title="Click For Details" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'. base_url().'en/dps_details/'.$row["id"].'/'.$deposited_amount.'"><img title="Click For Details" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <p class="text-center">'.$bank.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -1149,7 +1148,7 @@ class Dps extends CI_Controller
                         <div class="col-md-12">
                             <p><b>Available Deposits (BDT):</b> 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 8000, 10000.</p>
                             <p><b>Available Terms:</b> 2, 3, 4, 5, 6, 7, 8, 10.</p>
-                            <p><b>Interest Rate:8%</b></p>
+                            <p><b>Interest Rate:'.$row['interest_rate'].'%</b></p>
                         </div>
                         '.$row["available_benefit"].'
                     </div>';

@@ -169,7 +169,7 @@ class Current_account extends CI_Controller
     public function edit_account_info($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
-                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Updated !!</div>';
             } else if ($msg == 'error') {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
@@ -221,9 +221,10 @@ class Current_account extends CI_Controller
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
                 $this->Common_model->table_name = 'current_account_info';
+                $this->Common_model->where = array('id' => $this->input->post('txtCurrentAccountId'));
                 $result = $this->Common_model->update();
 
-                $this->Common_model->where = array('dps_info_id' => $this->input->post('txtInfoId'));
+
                 if ($result) {
                     redirect(base_url().'current_account/edit_account_info/success');
                 } else {

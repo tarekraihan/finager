@@ -1,3 +1,17 @@
+<?php
+$id=$this->uri->segment(3, 0);
+$deposited_amount=$this->uri->segment(4, 0);
+if(!empty($id) && is_numeric($id) ){
+
+	echo $id;
+	echo '<br/>';
+	echo 'deposit='.$deposited_amount;
+
+}else{
+	redirect(base_url().'My404');
+}
+
+?>
 <style type="text/css">
 	.btnHomeLoan {
 	    margin-top: 30px;
@@ -42,7 +56,7 @@
 
 					</div>
 
-					
+
 
 					<div class="col-sm-8 col-xs-12">
 

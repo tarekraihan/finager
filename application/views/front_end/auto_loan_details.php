@@ -1,91 +1,43 @@
 <?php
-
-
-
 $id=$this->uri->segment(3, 0);
-
 if(!empty($id) && is_numeric($id) ){
-
     $query=$this->Front_end_select_model->select_auto_loan_details($id);
-
     $row=$query->row();
-
-
-
     $bank = "";
-
     if($row->is_non_bank == 1){
-
         $bank = $row->non_bank_name;
-
     }else{
-
         $bank = $row->bank_name;
-
     }
-
     $bank_logo = "";
-
     if($row->is_non_bank == 1){
-
         $bank_logo = $row->non_bank_logo;
-
     }else{
-
         $bank_logo = $row->bank_logo;
-
     }
-
-
 
     $principal_amount = 100000;
-
     $month_limit = 12;
-
-
-
     $is_fixed =$row->is_fixed;
-
     $show_interest ='';
-
     if($is_fixed == 1){
-
         $show_interest .='<h5>Interest (Fixed Rate)</h5><p>Fixed '.$row->interest_rate_fixed.'%</p>';
-
     }else{
-
         $show_interest .='<h5>Interest (Avg Rate)</h5><p>Avg '.$row->interest_rate_average.'% <br/>min '.$row->interest_rate_min.'%,<br> max '.$row->interest_rate_max.'%</p>';
-
     }
 
-
-
 	$yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-
 	if($yearly_interest =='' || $yearly_interest < 6){
-
 		$yearly_interest = floatval( '6');
-
 	}
-
 	$monthly_interest = ($yearly_interest /100/12);
-
 	$emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ( $month_limit ) )) / (pow( ( 1 + $monthly_interest ) , ( $month_limit ) ) -1 ));
-
 	$total_payable = round( $emi * $month_limit );
-
-
-
 	$downpayment_percentage = ( $row->downpayment == 'N/A' ) ? 0 : $row->downpayment;
-
 	$downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
 
-
-
 }else{
-
     redirect(base_url().'My404');
-
 }
 
 ?>

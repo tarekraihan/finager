@@ -128,7 +128,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-6">
                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
                                         <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> <?php echo ($row['is_non_bank'] ==1) ? 'checked' : '' ;?>> Is Non Bank Institution ?
-                                        <input type="hidden" name="txtFdrInfoId" value="<?php echo $row['id'];?>">
+                                        <input type="hidden" name="txtCurrentAccountId" value="<?php echo $row['id'];?>">
                                     </label>
                                 </section>
                                 <section class="col col-6" id="institution">
