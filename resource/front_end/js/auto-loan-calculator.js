@@ -1030,7 +1030,7 @@ function dragLiAdjustFunction(){
 setTimeout(function(){
     $('#alreadySaved').find('.ui-draggable').css('left',140);
     $('#interest').find('.ui-draggable').css('left',35);
-    $('#alreadySaved').find('.prev').addClass('active');
+    //$('#alreadySaved').find('.prev').addClass('active');
 });
 
 // Calculator Functionality END

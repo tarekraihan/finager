@@ -2,7 +2,7 @@
         .fixed {
             position: fixed;
             top: 0;
-            width: 259px;
+            width: 262.5px;
             transition: all 1s ease;
         }
         .sidebar-absolute{
