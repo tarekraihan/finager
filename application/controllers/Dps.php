@@ -584,7 +584,7 @@ class Dps extends CI_Controller
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Update !!</div>';
             }
 
-            $this->form_validation->set_rules('txtDpsName', 'DPS Name', 'trim|required');
+            $this->form_validation->set_rules('txtDpsName', 'DPS Name', 'trim');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
             $this->form_validation->set_rules('txtTenure', 'Tenure', 'trim|required');
@@ -685,6 +685,7 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('one_lac_interest', 'one_lac_interest', 'trim|numeric');
 
             if ($this->form_validation->run() == FALSE) {
+//                echo validation_errors('<div class="error">', '</div>');die;
                 $data['title'] = "Finager - Add Info";
                 $this->load->view('admin/block/header', $data);
                 $this->load->view('admin/block/left_nav');

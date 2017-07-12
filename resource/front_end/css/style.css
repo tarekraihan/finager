@@ -4293,8 +4293,6 @@ span.filter-option {
 }
 #filter-bar {
     margin-top: 5px;
-    border: 1px solid #dedede;
-    padding: 15px 15px 10px 15px;
 }
 .dropdown.mega-dropdown{
     list-style: none;
@@ -4315,7 +4313,7 @@ span.filter-option {
     margin-bottom: 10px;
 }
 .filter-by{
-    padding 0;
+    padding: 0;
     margin: 0;
 }
 .filter-by {
@@ -4381,4 +4379,16 @@ div#filter-carousel {
     color: #fff;
     padding: 2px 15px;
     font-weight: bold;
+}
+
+
+#currentAccountSearch #pagination {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 50px;
+}
+
+
+#currentAccountSearch #pagination>li{
+    float: none;
 }

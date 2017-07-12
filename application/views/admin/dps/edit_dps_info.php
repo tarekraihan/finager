@@ -2,11 +2,11 @@
 if(isset($_GET['id'])){
     $id=$_GET['id'];
     $row=$this->Select_model->Select_dps_info_by_id($id);
-   /* echo '<pre>';
+    echo '<pre>';
     print_r($row);
     echo "</pre>"; die;
 
-    echo $row['id'];die;*/
+    echo $row['id'];die;
 }else{
     $row['id']='';
     $row['bank_id']='';
@@ -162,6 +162,7 @@ if(isset($_GET['id'])){
                     //-----Display Success or Error message---
                     if(isset($feedback)){
                         echo $feedback;
+
                     }
                     ?>
                     <fieldset>
@@ -232,7 +233,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-6">
                                     <label class="label">DPS Name</label>
                                     <label class="input">
-                                        <input type="text" maxlength="250" name="txtDpsName" value="<?php echo $row['dps_name']; ?>" placeholder="Write Interest Rate without percentage sign">
+                                        <input type="text" maxlength="250" name="txtDpsName" value="<?php echo $row['dps_name']; ?>" placeholder="Write Interest Rate without percentage sign" required>
                                     </label>
                                     <label class="red"><?php echo form_error('txtInterestRate');?></label>
                                 </section>
