@@ -392,6 +392,34 @@
 			</div>
 		</div>
 	</section>
+
+<section id="hiden_div">
+	<div class="container no-padding">
+		<div class="row">
+			<div class="col-lg-9 col-lg-offset-3 col-md-9 col-md-offset-3 col-sm-12">
+				<div class="card-holder">
+					<div class="card-bg">
+						<img src="<?php echo base_url();?>resource/front_end/images/hidendivshead.png" alt="" />
+						<div class="hidden_div relative">
+							<div class="hidden_div_container">
+								<ul class="no-padding pull-left no-list-style">
+									<li></li>
+									<li></li>
+								</ul>
+								<a class="cart_anchor compare-card"></a>
+
+								<a class="cart_anchor01 compare-card"></a>
+								<a href="javascript:void(0);" id="go_compare" class="btn common-btn v-middle-btn">
+									Compare
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 	<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/dps-calculator.js"></script>
 <script type="text/javascript"> 
 
@@ -509,5 +537,130 @@ $(window).on('scroll', function (){
 			$('#moreInfo'+available_offer).removeClass("in");
 
 		});
+
+		$(document).on('click','.add-to-compare',function(){
+			$("#hiden_div").animate({bottom:'0px'});
+			//$("#hiden_div").addClass("hiddenHalfDown");
+			$('html, body').animate({
+			});
+
+			if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
+				alert("Sorry");
+			}else{
+				if($(".cart_anchor").hasClass("img_active")){
+					//Select item image and pass to the function
+					var itemImg = $(this).parents('.full-card').find('.dps_bank_logo').eq(0);
+					//flyToElement($(itemImg), $('.cart_anchor01'));
+					$(".cart_anchor01").addClass("img_active");
+					$(this).addClass("hidden");
+					// var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
+					var  formData = $(this).data();
+					var dps_id = "dps_id="+formData.dps_id;
+
+
+					setTimeout(function(){
+						$.ajax({
+							type: "POST",
+							url: "<?php echo base_url();?>dps/ajax_compare_dps_image",
+							data: dps_id,
+							success: function(msg){
+								$(".cart_anchor01").html(msg);
+							}
+						});
+					},850);
+				}
+
+				else{
+					//Select item image and pass to the function
+					var itemImg = $(this).parents('div:eq(0)').find('.dps_bank_logo').eq(0);
+					$(".cart_anchor").addClass("img_active");
+					$(this).addClass("hidden");
+					var itemImg = $(this).parents('div:eq(0)').find('.dps_bank_logo').eq(0);
+					var  formData = $(this).data();
+					var dps_id = "dps_id="+formData.dps_id;
+					setTimeout(function(){
+						$.ajax({
+							type: "POST",
+							url: "<?php echo base_url();?>dps/ajax_compare_dps_image",
+							data: dps_id,
+							success: function(msg)
+							{
+								$(".cart_anchor").html(msg);
+							}
+						});
+					},850);
+
+				}
+			}
+		});
+
+
+
+		$(document).on('click','.compare-cross-btn',function(){
+
+			var collected_card = $(this).prev().attr("data-dps_id");
+
+			$(".full-card").each(function(){
+				var obj=$(this).children().find('.add-to-compare');
+				var index=$(this).children().find('.add-to-compare').attr('data-dps_id');
+				if(parseInt(collected_card)==parseInt(index)){
+					obj.removeClass("hidden");
+				}
+
+			});
+
+			$(this).parent(".cart_anchor").removeClass("img_active");
+			$(this).parent(".cart_anchor").html('');
+			$(this).addClass("hidden");
+
+		});
+
+
+		$(document).on('click','.compare-cross-btn',function(){
+
+			$(this).parent(".cart_anchor01").removeClass("img_active");
+			$(this).parent(".cart_anchor01").html('');
+		});
+
+		$(document).on('click','.compare-cross-btn',function(){
+
+			var empty = $(this).parents(".hidden_div_container").find("a");
+			$(".compare-card").each(function(){
+				if(!$(".cart_anchor").hasClass('img_active') && !$(".cart_anchor01").hasClass('img_active')){
+					$("#hiden_div").fadeOut(1500);
+				}
+			});
+		});
+
+
+
+		$('#go_compare').click(function(){
+
+			var  formData = $('.cart_anchor').children('img').data();
+			var loan_id1 = "loan_id1="+formData.loan_id;
+			var  formData = $('.cart_anchor01').children('img').data();
+			var loan_id2 = "&loan_id2="+formData.loan_id;
+			var amount = $('#finalAssest').val();
+			var principal_amount = "&principal_amount="+amount;
+			var year = $('#finalLiability').val();
+			var year_limit = "&year_limit="+year;
+			var loan_ids = loan_id1+loan_id2+principal_amount+year_limit;
+			if(loan_id1 != '' && loan_id2 != ''){
+				$.ajax({
+					type: "POST",
+					url: "<?php echo base_url();?>auto_loan/ajax_go_compare_page",
+					data: loan_ids,
+					success: function(msg){
+						if(msg != 'error'){
+							window.location.href = "<?php echo base_url();?>en/car_loan_compare";
+						}
+					}
+				});
+			}else{
+				alert("Please add 2 card for compare ! ");
+			}
+		});
+
+
 	});
 </script>

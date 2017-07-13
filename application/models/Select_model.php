@@ -1555,9 +1555,16 @@ class Select_Model extends CI_Model
 
     function Select_dps_info_by_id($id){
         if(!empty($id)){
-            $sql="SELECT *  FROM `dps_info`INNER JOIN dps_maturity_amount ON  dps_maturity_amount.dps_info_id = dps_info.id WHERE dps_info.id = $id";
+
+           $sql="SELECT `id` as dps_id, `dps_name`, `bank_id`, `is_non_bank`, `non_bank_id`, `is_islami_sharia`, `interest_rate`, `tenure_id` , `loan_facility`, `i_am_id`, `available_feature`, `terms_and_conditions`, `eligibility`, `required_document`, `available_benefit`, `fees_and_charges`, `review` FROM `dps_info` WHERE id = $id";
             $query=$this->db->query($sql);
-            return $query->row_array();
+            $dps = $query->row_array();
+            $tenure_id = $dps['tenure_id'];
+
+            $sql2="SELECT *  FROM dps_maturity_amount WHERE dps_info_id = $id AND dps_tenure_id = $tenure_id";
+            $query2=$this->db->query($sql2);
+            $dps_maturity =  $query2->row_array();
+            return array_merge($dps,$dps_maturity);
         }
 
     }

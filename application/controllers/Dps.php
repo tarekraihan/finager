@@ -817,7 +817,7 @@ class Dps extends CI_Controller
                     );
 
                     $this->Common_model->table_name = 'dps_maturity_amount';
-                    $this->Common_model->where = array('dps_info_id' => $this->input->post('txtInfoId'));
+                    $this->Common_model->where = array('dps_info_id' => $this->input->post('txtInfoId'),'dps_tenure_id' => $this->input->post('txtTenure'));
                     $result = $this->Common_model->update();
                     if ($result) {
                         redirect(base_url().'dps/edit_dps_info/success');
@@ -1045,9 +1045,10 @@ class Dps extends CI_Controller
                         $bank_logo = $row['bank_logo'];
                     }
 
-                    $dps .= '<div class="row fdr_right_bar no-margin-lr">
+                    $dps .= '<div class="full-card">
+<div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'. base_url().'en/dps_details/'.$row["id"].'/'.$deposited_amount.'"><img title="Click For Details" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'. base_url().'en/dps_details/'.$row["id"].'/'.$deposited_amount.'"><img title="Click For Details" class="img-responsive dps_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <p class="text-center">'.$bank.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -1092,7 +1093,7 @@ class Dps extends CI_Controller
                                 <div class="col-md-2"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-dps_id="'.$row["id"].'"></i> More Info</a></div>
                                 <div class="col-md-4"><a class="availableOffer"  href="javascript:void(0)"  data-available_offer="'.$row["id"].'"><i class="fa fa-info-circle" aria-hidden="true" ></i> Available Offer</a></div>
                                 <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg" id="hideDetailsButton2"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/btnDpsApply.png" alt="DPS Application" /></a></div>
-                                <div class="col-md-2"><a id="hideDetailsButton2" href="javascript:void(0)"><img class="pull-right" src="'.base_url().'resource/front_end/images/btnDpsCom.png" alt="DPS Application" /></a></div>
+                                <div class="col-md-2"><a id="hideDetailsButton2" href="javascript:void(0)" class="add-to-compare" data-dps_id="'.$row["id"].'"><img class="pull-right" src="'.base_url().'resource/front_end/images/btnDpsCom.png" alt="DPS Add to compare" /></a></div>
                             </div>
                         </div>
                     </div>
@@ -1152,7 +1153,7 @@ class Dps extends CI_Controller
                             <p><b>Interest Rate:'.$row['interest_rate'].'%</b></p>
                         </div>
                         '.$row["available_benefit"].'
-                    </div>';
+                    </div></div>';
                 }
                 $dps .= '<div class="col-md-12">'.$data['pagination'].'</div>';
                 echo $dps;
@@ -1162,6 +1163,25 @@ class Dps extends CI_Controller
             echo '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';exit;
         }
 
+
+    }
+
+    public function ajax_compare_dps_image(){
+        $id = $this->input->post('dps_id');
+        $result = $this->Front_end_select_model->select_dps_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-dps_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
 
     }
 
