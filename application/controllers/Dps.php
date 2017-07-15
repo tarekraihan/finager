@@ -941,10 +941,14 @@ class Dps extends CI_Controller
                 foreach($result as $k =>$v){
                     foreach($v as $kk => $vv){
                         if(!empty($vv)){
-                            $dps_search_id[] = $kk;
+                            if(! in_array($kk,$dps_search_id)){
+                                $dps_search_id[] = $kk;
+                            }
                         }
                     }
                 }
+
+
 //-----------Pagination start-----------------
 
                 $config['base_url'] = base_url() . "en/all_home_loan/";
@@ -1002,7 +1006,9 @@ class Dps extends CI_Controller
                 foreach($result as $k =>$v){
                     foreach($v as $kk => $vv){
                         if(!empty($vv)){
-                            $dps_search_id1[] = $kk;
+                            if(! in_array($kk,$dps_search_id1)){
+                                $dps_search_id[] = $kk;
+                            }
                         }
                     }
                 }
@@ -1030,6 +1036,8 @@ class Dps extends CI_Controller
                     $count++;
                 }
 
+//                pr($dps_search_id);
+//                pr($deposit_result); die;
                 $dps = '';
                 foreach($deposit_result as $row) {
                     $bank = "";
