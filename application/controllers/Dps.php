@@ -569,13 +569,17 @@ class Dps extends CI_Controller
         }
     }
 
-    public function deposit_list(){
+    public function deposit_list($msg=''){
+        if ($msg == 'success') {
+            $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Update !!</div>';
+        }
         $data['title'] = "Draft Information";
         $this->load->view('admin/block/header',$data);
         $this->load->view('admin/block/left_nav');
         $this->load->view('admin/dps/deposit_list');
         $this->load->view('admin/block/footer');
     }
+
     function edit_dps_info($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -684,9 +688,10 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('one_lac_maturity', 'one_lac_maturity', 'trim|numeric');
             $this->form_validation->set_rules('one_lac_interest', 'one_lac_interest', 'trim|numeric');
 
+
             if ($this->form_validation->run() == FALSE) {
 //                echo validation_errors('<div class="error">', '</div>');die;
-                $data['title'] = "Finager - Add Info";
+                $data['title'] = "Finager - Edit Info";
                 $this->load->view('admin/block/header', $data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/dps/edit_dps_info');
@@ -722,10 +727,10 @@ class Dps extends CI_Controller
                 $res = $this->Common_model->update();
                 if($res){
                     $installment = ($this->input->post('txtTenure') * 12);
-
+                    $this->Common_model->data = array();
                     $this->Common_model->data = array(
-                        'dps_info_id' => $res,
-                        'dps_tenure_id' => $this->input->post('txtTenure'),
+//                        'dps_info_id' => $this->input->post('txtInfoId'),
+//                        'dps_tenure_id' => $this->input->post('txtTenure'),
                         'two_hundred_maturity' => htmlentities($this->input->post('two_hundred_maturity')),
                         'two_hundred_interest' => ($this->input->post('two_hundred_maturity') != '') ? ($this->input->post('two_hundred_maturity') - ($this->input->post('two_hundred_interest') * $installment )) : '',
                         'three_hundred_maturity' => htmlentities($this->input->post('three_hundred_maturity')),
@@ -815,12 +820,13 @@ class Dps extends CI_Controller
                         'created' => $date ,
                         'created_by'=>$this->session->userdata('admin_user_id')
                     );
-
+//                    echo $this->input->post('txtMaturityId');
+//                    pr($this->Common_model->data);die;
                     $this->Common_model->table_name = 'dps_maturity_amount';
-                    $this->Common_model->where = array('dps_info_id' => $this->input->post('txtInfoId'),'dps_tenure_id' => $this->input->post('txtTenure'));
+                    $this->Common_model->where = array('id' => $this->input->post('txtMaturityId'));
                     $result = $this->Common_model->update();
                     if ($result) {
-                        redirect(base_url().'dps/edit_dps_info/success');
+                        redirect(base_url().'dps/deposit_list/success');
                     } else {
                         redirect(base_url().'dps/edit_dps_info/error');
                     }
