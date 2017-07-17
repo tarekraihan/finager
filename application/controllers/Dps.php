@@ -953,7 +953,7 @@ class Dps extends CI_Controller
                         }
                     }
                 }
-
+                $dps_search_id = array_unique($dps_search_id);
 
 //-----------Pagination start-----------------
 
@@ -1013,7 +1013,7 @@ class Dps extends CI_Controller
                     foreach($v as $kk => $vv){
                         if(!empty($vv)){
                             if(! in_array($kk,$dps_search_id1)){
-                                $dps_search_id[] = $kk;
+                                $dps_search_id1[] = $kk;
                             }
                         }
                     }
@@ -1024,7 +1024,8 @@ class Dps extends CI_Controller
                 $deposit_result = array();
                 $start = $page; $end = $page + $config["per_page"]; $count = 0;
 
-                foreach($dps_search_id as $v){
+                $dps_search_id1 = array_unique($dps_search_id1);
+                foreach($dps_search_id1 as $v){
                     if($count >= $start && $count < $end){
                         $res  = $this->Front_end_select_model->select_dps_by_id($v);
                         $dps_result  = $res->row();
@@ -1041,8 +1042,8 @@ class Dps extends CI_Controller
                     }
                     $count++;
                 }
-
-//                pr($dps_search_id);
+//
+//                pr(array_unique($dps_search_id));
 //                pr($deposit_result); die;
                 $dps = '';
                 foreach($deposit_result as $row) {
@@ -1199,4 +1200,19 @@ class Dps extends CI_Controller
 
     }
 
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('dps_id1');
+        $id2 = $this->input->post('dps_id2');
+        $dps_tenure = $this->input->post('dps_tenure');
+        $deposit_amount = $this->input->post('deposit_amount');
+
+        $newdata = array(
+            'first_auto_loan'  => $id1,
+            'second_auto_loan'  => $id2,
+            'dps_tenure' => $dps_tenure,
+            'deposit_amount' => $deposit_amount
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
 }

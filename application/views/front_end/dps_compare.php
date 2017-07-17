@@ -1,3 +1,7 @@
+
+
+
+
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">

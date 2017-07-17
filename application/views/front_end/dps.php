@@ -637,22 +637,33 @@ $(window).on('scroll', function (){
 		$('#go_compare').click(function(){
 
 			var  formData = $('.cart_anchor').children('img').data();
-			var loan_id1 = "loan_id1="+formData.loan_id;
+			var dps_id1 = "dps_id1="+formData.dps_id;
 			var  formData = $('.cart_anchor01').children('img').data();
-			var loan_id2 = "&loan_id2="+formData.loan_id;
+			var dps_id2 = "&dps_id2="+formData.dps_id;
 			var amount = $('#finalAssest').val();
-			var principal_amount = "&principal_amount="+amount;
-			var year = $('#finalLiability').val();
-			var year_limit = "&year_limit="+year;
-			var loan_ids = loan_id1+loan_id2+principal_amount+year_limit;
-			if(loan_id1 != '' && loan_id2 != ''){
+			var deposit_amount = "&deposit_amount="+amount;
+
+			var dps_tenure = '';
+			$('input[name="dps_tenure"]:checked').each(function(){
+				dps_tenure = $(this).val();
+			});
+
+			if(dps_tenure == ''){
+				dps_tenure = 500;
+			}
+
+			var dps_tenure_list = "&dps_tenure="+dps_tenure;
+
+			var dps_info = dps_id1+dps_id2+deposit_amount+dps_tenure_list;
+//			console.log(dps_info);
+			if(dps_id1 != '' && dps_id2 != ''){
 				$.ajax({
 					type: "POST",
-					url: "<?php echo base_url();?>auto_loan/ajax_go_compare_page",
-					data: loan_ids,
+					url: "<?php echo base_url();?>dps/ajax_go_compare_page",
+					data: dps_info,
 					success: function(msg){
 						if(msg != 'error'){
-							window.location.href = "<?php echo base_url();?>en/car_loan_compare";
+							window.location.href = "<?php echo base_url();?>en/dps_compare";
 						}
 					}
 				});
