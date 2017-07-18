@@ -1329,7 +1329,7 @@ class Select_Model extends CI_Model
     }
 
     public function get_dps_info(){
-        $sql = "SELECT dps_info.id,dps_info.`loan_facility`,dps_info.`eligibility`,fdr_i_am.i_am,dps_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, dps_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `dps_info` INNER JOIN fdr_i_am ON fdr_i_am.id = dps_info.i_am_id INNER JOIN dps_tenure ON dps_tenure.id = dps_info.tenure_id LEFT JOIN card_bank ON card_bank.id = dps_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=dps_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id ORDER BY dps_info.id ASC";
+        $sql = "SELECT dps_info.id,dps_info.`loan_facility`,dps_info.`eligibility`,fdr_i_am.i_am,dps_tenure.id as tenure_id,dps_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, dps_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `dps_info` INNER JOIN fdr_i_am ON fdr_i_am.id = dps_info.i_am_id INNER JOIN dps_tenure ON dps_tenure.id = dps_info.tenure_id LEFT JOIN card_bank ON card_bank.id = dps_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=dps_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id ORDER BY dps_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -1363,7 +1363,7 @@ class Select_Model extends CI_Model
 					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
 
                 $result.='</td>
-                    <td><a href="'.base_url().'dps/edit_dps_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'dps/edit_dps_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?info_id='. $row->id.'&tenure_id='.$row->tenure_id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

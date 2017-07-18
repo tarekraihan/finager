@@ -955,6 +955,9 @@ class Dps extends CI_Controller
                 }
                 $dps_search_id = array_unique($dps_search_id);
 
+//                pr($total_dps);
+//                pr($dps_search_id);die;
+
 //-----------Pagination start-----------------
 
                 $config['base_url'] = base_url() . "en/all_home_loan/";

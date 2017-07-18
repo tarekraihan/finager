@@ -140,7 +140,7 @@ if(!empty($id) && is_numeric($id) ){
 								<div>
 									<p class="card_details_head2">Loan Facility</p>
 									<p class="card_details_features">
-										<?php echo number_format($row['loan_facility']); ?> %
+										<?php echo $row['loan_facility']; ?> %
 									</p>
 								</div>
 							</div>

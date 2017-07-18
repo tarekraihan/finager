@@ -2,10 +2,11 @@
 if(isset($_GET['info_id']))
 {
     $id=$_GET['info_id'];
+    $tenure_id=$_GET['tenure_id'];
     $table='dps_info';
     $id_field='id';
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
-//    $this->Delete_model->Delete_All_Row($id=$id,$table='home_loan_user_home_loan_info',$id_field='home_loan_info_id');
+    $this->Delete_model->Delete_Maturity_Amount_Row($id,$tenure_id);
 //    $this->Delete_model->Delete_All_Row($id=$id,$table='home_loan_applicant_type_home_loan_info',$id_field='home_loan_info_id');
 }
 ?>
