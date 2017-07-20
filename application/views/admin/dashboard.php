@@ -80,10 +80,13 @@ foreach($module_id as $k){
                                 <div class="row">
                                     <?php
                                     $i = 0;
-                                    foreach($modules as $module){
-
-                                        if($module == 1 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                                            $i = 1;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 1){
+                                                $i = 1;
+                                            }
                                         }
                                     }
                                     if($i > 0){
@@ -120,10 +123,13 @@ foreach($module_id as $k){
                                     ?>
                                     <?php
                                     $i = 0;
-                                    foreach($modules as $module){
-
-                                        if($module == 2 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                                            $i = 1;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 2){
+                                                $i = 1;
+                                            }
                                         }
                                     }
                                     if($i > 0){
@@ -160,12 +166,16 @@ foreach($module_id as $k){
                                     ?>
                                     <?php
                                     $i = 0;
-                                    foreach($modules as $module){
-
-                                        if($module == 3 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                                            $i = 1;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 3){
+                                                $i = 1;
+                                            }
                                         }
                                     }
+
                                     if($i > 0){
                                         ?>
                                     <div class="col-lg-3 col-md-6">
@@ -200,10 +210,13 @@ foreach($module_id as $k){
                                     ?>
                                     <?php
                                     $i = 0;
-                                    foreach($modules as $module){
-
-                                        if($module == 4 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                                            $i = 1;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 4){
+                                                $i = 1;
+                                            }
                                         }
                                     }
                                     if($i > 0){
@@ -227,6 +240,222 @@ foreach($module_id as $k){
                                                 </div>
                                             </div>
                                             <a href="<?php echo base_url();?>auto_loan/loan_list">
+                                                <div class="panel-footer">
+                                                    <span class="pull-left">View Details</span>
+                                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+
+                                    <?php
+                                    $i = 0;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 5){
+                                                $i = 1;
+                                            }
+                                        }
+                                    }
+                                    if($i > 0){
+                                        ?>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="panel panel-skyblue">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-car fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge">
+                                                            <?php
+                                                            $this->Common_model->table_name = 'personal_loan_info';
+                                                            echo $this->Common_model->count_all();
+                                                            ?>
+                                                        </div>
+                                                        <div>Total Personal Loan</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="<?php echo base_url();?>personal_loan/loan_list/">
+                                                <div class="panel-footer">
+                                                    <span class="pull-left">View Details</span>
+                                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    $i = 0;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 6){
+                                                $i = 1;
+                                            }
+                                        }
+                                    }
+                                    if($i > 0){
+                                        ?>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="panel panel-firoza">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-car fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge">
+                                                            <?php
+                                                            $this->Common_model->table_name = 'fdr_info';
+                                                            echo $this->Common_model->count_all();
+                                                            ?>
+                                                        </div>
+                                                        <div>Total Fixed Deposit</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="<?php echo base_url();?>fdr/fdr_info_list/">
+                                                <div class="panel-footer">
+                                                    <span class="pull-left">View Details</span>
+                                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    $i = 0;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 7){
+                                                $i = 1;
+                                            }
+                                        }
+                                    }
+                                    if($i > 0){
+                                        ?>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="panel panel-aqua">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-car fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge">
+                                                            <?php
+                                                            $this->Common_model->table_name = 'dps_info';
+                                                            echo $this->Common_model->count_all();
+                                                            ?>
+                                                        </div>
+                                                        <div>Total DPS</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="<?php echo base_url();?>dps/deposit_list">
+                                                <div class="panel-footer">
+                                                    <span class="pull-left">View Details</span>
+                                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    $i = 0;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 8){
+                                                $i = 1;
+                                            }
+                                        }
+                                    }
+                                    if($i > 0){
+                                        ?>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="panel panel-olive">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-car fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge">
+                                                            <?php
+                                                            $this->Common_model->table_name = 'millionaire_info';
+                                                            echo $this->Common_model->count_all();
+                                                            ?>
+                                                        </div>
+                                                        <div>Total Millionaire Scheme</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="<?php echo base_url();?>millionaire/deposit_list/">
+                                                <div class="panel-footer">
+                                                    <span class="pull-left">View Details</span>
+                                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    $i = 0;
+                                    if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                                        $i = 1;
+                                    }else if(count($modules) > 0){
+                                        foreach($modules as $module){
+                                            if($module == 9){
+                                                $i = 1;
+                                            }
+                                        }
+                                    }
+                                    if($i > 0){
+                                        ?>
+                                    <div class="col-lg-3 col-md-6">
+                                        <div class="panel panel-deepgreen">
+                                            <div class="panel-heading">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <i class="fa fa-car fa-5x"></i>
+                                                    </div>
+                                                    <div class="col-xs-9 text-right">
+                                                        <div class="huge">
+                                                            <?php
+                                                            $this->Common_model->table_name = 'education_loan_info';
+                                                            echo $this->Common_model->count_all();
+                                                            ?>
+                                                        </div>
+                                                        <div>Total Education Loan</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="<?php echo base_url();?>education_loan/loan_list/">
                                                 <div class="panel-footer">
                                                     <span class="pull-left">View Details</span>
                                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

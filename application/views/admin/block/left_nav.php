@@ -19,7 +19,7 @@ foreach($module_id as $k){
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
                         <img src="<?php echo base_url();?>resource/admin/img/avatars/sunny.png" alt="me" class="online" />
 						<span>
-							<?php echo $this->session->userdata('first_name');?> <?php echo $this->session->userdata('last_name');?>
+							<?php echo ucfirst($this->session->userdata('first_name'));?> <?php echo ucfirst($this->session->userdata('last_name'));?>
 						</span>
                         <i class="fa fa-angle-down"></i>
                     </a>

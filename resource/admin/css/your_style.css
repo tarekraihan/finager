@@ -77,3 +77,90 @@
 .panel-red > a {
     color: #d9534f;
 }
+
+.panel-skyblue {
+    border-color: #7584a9;
+}
+.panel-skyblue > a:hover {
+    color: #7584a9;
+}
+
+.panel-skyblue > a {
+    color: #7584a9;
+}
+
+.panel-skyblue > .panel-heading {
+    border-color: #7584a9;
+    color: white;
+    background-color: #7584a9;
+}
+
+.panel-firoza {
+    border-color: #26a9a7;
+}
+.panel-firoza > a:hover {
+    color: #26a9a7;
+}
+
+.panel-firoza > a {
+    color: #26a9a7;
+}
+
+.panel-firoza > .panel-heading {
+    border-color: #26a9a7;
+    color: white;
+    background-color: #26a9a7;
+}
+
+.panel-aqua {
+    border-color: #17dcff;
+}
+.panel-aqua > a:hover {
+    color: #17dcff;
+}
+
+.panel-aqua > a {
+    color: #17dcff;
+}
+
+.panel-aqua > .panel-heading {
+    border-color: #17dcff;
+    color: white;
+    background-color: #17dcff;
+}
+
+.panel-olive {
+    border-color: #9f9f2d;
+}
+.panel-olive > a:hover {
+    color: #9f9f2d;
+}
+
+.panel-olive > a {
+    color: #9f9f2d;
+}
+
+.panel-olive > .panel-heading {
+    border-color: #9f9f2d;
+    color: white;
+    background-color: #9f9f2d;
+}
+
+
+
+.panel-deepgreen {
+    border-color: #666600;
+}
+.panel-deepgreen > a:hover {
+    color: #666600;
+}
+
+.panel-deepgreen > a {
+    color: #666600;
+}
+
+.panel-deepgreen > .panel-heading {
+    border-color: #666600;
+    color: white;
+    background-color: #666600;
+}
