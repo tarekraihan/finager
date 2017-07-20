@@ -215,7 +215,7 @@
                 <h3 class="fin-about-heading"><span>A</span>bout <span>F</span>inager.com</h3>
                 <div class="fin-about-text">
                 <p>
-                    "finager" is a fintech initiave of core-concept inc. This is the first 360 degree financial industry platfrom of
+                    "finager" is a fintech initiative of core-concept inc. This is the first 360 degree financial industry platfrom of
                     bangladesh. It helps visitors taking perfect decisions on their financial affairs- providing updated, authentic and
                     analysed data and tools.
                 <p>

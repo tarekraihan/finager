@@ -1,26 +1,29 @@
 <style type="text/css">
-    .fixed {
-        position: fixed;
-        top: 0;
-        width: 259px;
-        transition: all 1s ease;
-    }
+
     .sidebar-absolute{
-        transition: all 1s ease;
+        /*transition: all 1s ease;*/
+    }
+    .sidebar-absolute-bottom{
+        position: absolute;
+        width: 262px;
+        bottom: 35px;
+        left: 15px;
     }
     .fixed {
         position: fixed;
-        top: 0;
+        top: 0px;
         width: 262.5px;
-        transition: all 1s ease;
     }
-    .sidebar-absolute{
-        transition: all 1s ease;
+    .sidebar_parent{
+        position: relative;
     }
+    #sidebar{
+        margin-top: 0;
+    }
+
 </style>
 
 <section id="auto_header">
-
 </section>
 
 <div class="container">
@@ -610,7 +613,7 @@
 
             <!-- Left bar query content start -->
 
-            <div class="col-sm-3 col-xs-3">
+            <div class="col-sm-3 col-xs-3 sidebar_parent">
 
 				<div id="sticky-anchor"></div>
 
@@ -1083,7 +1086,7 @@
             </div>
             <!-- Left bar query content end -->
             <!-- Right bar content start -->
-            <div class="col-sm-9 col-xs-9">
+            <div class="col-sm-9 col-xs-9 main-content-area">
                 <div id="searchAutoLoan">
                     <div id="loading" class="text-center"></div>
                 </div>
@@ -1137,6 +1140,12 @@
         var filter_height = $('#filter-bar').height();
         var total_top = parseInt(top_height+banner_height+filter_height+60);
 
+        var main_height = $(".main-content-area").height();
+        //console.log(main_height);
+        $(".sidebar_parent").height(main_height-20);
+        //console.log($(".sidebar_parent").height());
+        console.log( $(".footer").offset().top);
+
 
         // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
         if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
@@ -1149,9 +1158,15 @@
             $('#sidebar').removeClass('fixed');
         }
 
-        if (offsetToTop > $(".footer").offset().top-800) {
+        if($('#sidebar').offset().top + $('#sidebar').height()
+            >= $('.footer').offset().top - 65){
             $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
+            $("#sidebar").addClass("sidebar-absolute-bottom");
+        }
+
+        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+            $("#sidebar").addClass("fixed");
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
         }
 
         if($("#sidebar").offset().top < total_top){

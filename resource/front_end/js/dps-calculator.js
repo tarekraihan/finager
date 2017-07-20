@@ -618,7 +618,7 @@ $('.selectCalcWrapper .radiobox').click(function(){
 		$('.yearWrap').hide();
 		$('.monthWrap').show();
 		$('#tenureType').find('label').text('Month');
-		$('#finalAssest').val(100)
+		$('#finalAssest').val(500)
 		$('#finalLiability').val(12);
 		$('#finalCustAge').val(1);
 	}
@@ -977,6 +977,11 @@ function dragLiAdjustFunction(){
 	}
 	ths.css({'margin-left': '-'+m+'px'});
 }
+
+setTimeout(function(){
+    $('#alreadySaved').find('.ui-draggable').css('left',35);
+});
+
 
 
 // Calculator Functionality END

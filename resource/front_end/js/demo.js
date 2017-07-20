@@ -36,12 +36,12 @@ jQuery(document).ready(function ($) {
                 right_to_left                  : this.right_to_left, // false,
                 trigger                        : this.trigger, // 'click',
                 /*Tab Click Effect*/
-                vertical_tabs_effect_speed     : 800, 
+                vertical_tabs_effect_speed     : 0,
                 /* DROP DOWN */
-                drop_down_effect_in_speed      : 500, 
-                drop_down_effect_out_speed     : 500, 
-                drop_down_effect_in_delay      : 500, 
-                drop_down_effect_out_delay     : 500, 
+                drop_down_effect_in_speed      : 0,
+                drop_down_effect_out_speed     : 0,
+                drop_down_effect_in_delay      : 0,
+                drop_down_effect_out_delay     : 0,
                 /* STICKY HEADER */
                 sticky_header                  : this.sticky_header, // false,
                 /* INTERNAL LINKS */
@@ -270,6 +270,10 @@ jQuery(document).ready(function ($) {
         $('#r4').text(get_value);
         $object.drop_down_effect_out_delay = parseInt(get_value);
         $object.options_change();
+    });
+
+    $('.vertical-tabs>a').hover(function(){
+        $(this).trigger("click");
     });
 
 
