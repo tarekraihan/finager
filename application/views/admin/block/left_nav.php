@@ -1,6 +1,5 @@
 <?php
 $admin_role = $this->session->userdata('admin_role');
-echo $admin_role;
 $module_id =$this->Select_model->get_admin_user_modules($this->session->userdata('admin_user_id'));
 $modules = array();
 foreach($module_id as $k){
@@ -107,12 +106,16 @@ foreach($module_id as $k){
                 <?php
             }
                 $i = 0;
-                foreach($modules as $module){
-
-                    if($module == 1 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                        $i = 1;
+                if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                    $i = 1;
+                }else if(count($modules) > 0){
+                    foreach($modules as $module){
+                        if($module == 1){
+                            $i = 1;
+                        }
                     }
                 }
+
                 if($i > 0){
             ?>
                 <li>
@@ -159,19 +162,19 @@ foreach($module_id as $k){
                         <li>
                             <a href="<?php echo base_url();?>card/card_fees_charges_list">Fees and Charges List</a>
                         </li>
-                        </li>
 
                     </ul>
                 </li>
             <?php
             }
-            ?>
-            <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 2 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 2){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -202,14 +205,15 @@ foreach($module_id as $k){
                 </li>
             <?php
             }
-            ?>
 
-            <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 3 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 3){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -240,10 +244,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 4 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 4){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -270,10 +277,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 5 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 5){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -300,10 +310,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 6 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 6){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -348,10 +361,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 7 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 7){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -386,10 +402,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 8 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 8){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -427,10 +446,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 9 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 9){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -462,10 +484,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 10 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 10){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -491,10 +516,13 @@ foreach($module_id as $k){
 
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 11 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if( $module == 11 ){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -520,10 +548,13 @@ foreach($module_id as $k){
 
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 12 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 12){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -548,10 +579,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 13 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 13){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -571,11 +605,13 @@ foreach($module_id as $k){
             }
             ?>
             <?php
-            $i = 0;
-            foreach($modules as $module){
-
-                if($module == 14 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            $i = 0;if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 14){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -604,10 +640,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 15 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 15){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){
@@ -630,10 +669,13 @@ foreach($module_id as $k){
             ?>
             <?php
             $i = 0;
-            foreach($modules as $module){
-
-                if($module == 16 || $admin_role == 'super admin' || $admin_role == 'admin'){
-                    $i = 1;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 16){
+                        $i = 1;
+                    }
                 }
             }
             if($i > 0){

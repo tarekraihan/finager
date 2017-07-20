@@ -154,7 +154,7 @@ Use search to find needed section.
             <!-- end notification content -->
 
             <!-- footer: refresh area -->
-					<span> Last updated on: 12/12/2013 9:43AM
+					<span> Last updated on: <?php echo date('d/m/Y h:m a');?>
 						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
                             <i class="fa fa-refresh"></i>
                         </button> </span>
