@@ -295,17 +295,12 @@
 		<div class="container">
 			<div class="personal_footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/woman.png">
+					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/MuhammadYunus.png">
 				</div>
 				<div class="col-md-8 col-sm-8">
-					<h3>"I was having a look at the best interest<br/>
-						rates around on the Internet and received a<br/>
-						phone call from one of the friendly Select<br/>
-						consultants who went through everything<br/>
-						with me and we found the perfect home<br/>
-						loan that suited our needs."<br>
-					</h3>
-					<div class="footer_text">Jason, Victoria</div>
+					<h3>“People were poor not because they were stupid or lazy. They worked all day long, doing complex physical tasks. They were poor because the financial institution in the country did not help them widen their economic base.”
+                    </h3>
+					<div class="footer_text">Muhammad Yunus,<br> Banker to the Poor: Micro-Lending and the Battle against World Poverty</div>
 				</div>
 			</div>
 		</div>

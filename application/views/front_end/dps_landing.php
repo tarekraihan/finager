@@ -295,17 +295,11 @@
 		<div class="container">
 			<div class="dps_footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/woman.png">
+					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/WarrenBuffett.png">
 				</div>
 				<div class="col-md-8 col-sm-8">
-					<h3>"I was having a look at the best interest<br/>
-						rates around on the Internet and received a<br/>
-						phone call from one of the friendly Select<br/>
-						consultants who went through everything<br/>
-						with me and we found the perfect home<br/>
-						loan that suited our needs."<br>
-					</h3>
-					<div class="dps_footer_text">Jason, Victoria</div>
+					<h3>“There’s class warfare, all right, but it’s my class, the rich class, that’s making war, and we’re winning.”</h3>
+					<div class="dps_footer_text">Warren Buffett</div>
 				</div>
 			</div>
 		</div>

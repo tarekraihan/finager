@@ -283,17 +283,13 @@
 		<div class="container">
 			<div class="auto_footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/woman.png">
+					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/JohnGreen.png">
 				</div>
 				<div class="col-md-8 col-sm-8">
-					<h3>"I was having a look at the best interest<br/>
-						rates around on the Internet and received a<br/>
-						phone call from one of the friendly Select<br/>
-						consultants who went through everything<br/>
-						with me and we found the perfect home<br/>
-						loan that suited our needs."<br>
-					</h3>
-					<div class="footer_text">Jason, Victoria</div>
+					<h3>“One of the Great Rules of Economics According to John Green
+                        If you are rich, you have to be an idiot not to stay rich. And if you are poor, you have to be really smart to get rich.”
+                    </h3>
+					<div class="footer_text">John Green</div>
 				</div>
 			</div>
 		</div>

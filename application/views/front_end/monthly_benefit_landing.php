@@ -296,3 +296,19 @@
         </div>
     </div>
 </section>
+
+<section id="footer_monthly_benefit">
+    <div class="container">
+        <div class="monthly_benefit_pr">
+            <div class="col-md-4 col-sm-4">
+                <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/ThomasSowell.png">
+            </div>
+            <div class="col-md-8 col-sm-8">
+                <h3>
+                    “The government is indeed an institution, but "the market" is nothing more than an option for each individual to choose among numerous existing institutions, or to fashion new arrangements suited to his own situation and taste.”
+                </h3>
+                <div class="footer_text">Thomas Sowell, Knowledge and Decisions</div>
+            </div>
+        </div>
+    </div>
+</section>

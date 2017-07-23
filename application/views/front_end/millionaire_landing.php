@@ -265,17 +265,19 @@
 		<div class="container">
 			<div class="auto_footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/woman.png">
+					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/JohnRuskin.png">
 				</div>
 				<div class="col-md-8 col-sm-8">
-					<h3>"I was having a look at the best interest<br/>
-						rates around on the Internet and received a<br/>
-						phone call from one of the friendly Select<br/>
-						consultants who went through everything<br/>
-						with me and we found the perfect home<br/>
-						loan that suited our needs."<br>
-					</h3>
-					<div class="fdr_footer_text">Jason, Victoria</div>
+					<h3>“It's unwise to pay too much, but it's worse to pay too little. When
+                        you pay too much, you lose a little money - that's all. When you pay
+                        too little, you sometimes lose everything, because the thing you
+                        bought was incapable of doing the thing it was bought to do. The
+                        common law of business balance prohibits paying a little and getting a
+                        lot - it can't be done. If you deal with the lowest bidder, it is well
+                        to add something for the risk you run, and if you do that you will
+                        have enough to pay for something better.”
+                    </h3>
+					<div class="fdr_footer_text">John Ruskin</div>
 				</div>
 			</div>
 		</div>

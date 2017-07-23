@@ -263,17 +263,11 @@
 		<div class="container">
 			<div class="auto_footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/woman.png">
+					<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/QUOTES/MiltonFriedman.png">
 				</div>
 				<div class="col-md-8 col-sm-8">
-					<h3>"I was having a look at the best interest<br/>
-						rates around on the Internet and received a<br/>
-						phone call from one of the friendly Select<br/>
-						consultants who went through everything<br/>
-						with me and we found the perfect home<br/>
-						loan that suited our needs."<br>
-					</h3>
-					<div class="fdr_footer_text">Jason, Victoria</div>
+					<h3>“There is one and only one social responsibility of business–to use it resources and engage in activities designed to increase its profits so long as it stays within the rules of the game, which is to say, engages in open and free competition without deception or fraud”</h3>
+					<div class="fdr_footer_text">Milton Friedman</div>
 				</div>
 			</div>
 		</div>

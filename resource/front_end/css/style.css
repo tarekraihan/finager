@@ -1248,11 +1248,11 @@ a .education_landing_button{
 .money_max_woman {
 	margin-top: 36px;
 }
-.money_max_footer_text{
-       margin-top:36px;
-}
 .money_max_footer_text {
-	margin-top: 100px;
+    margin-top: 85px;
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: justify;
 }
 .maximizer_landing_button {
     background: #d2ceb1; /* For browsers that do not support gradients */    
@@ -1822,7 +1822,7 @@ a:hover {
 }
 .home_loan_footer_pr h3 {
     color: #fff;
-    margin-top: 65px;
+    margin-top: 162px;
 }
 .home_loan_footer_pr img {
     margin-top: 36px;
@@ -2819,6 +2819,22 @@ a .debit_card_button.flash-button{
     height:320px;
     position:relative;
 }
+#footer_monthly_benefit{
+    background-image:url(../images/Monthly-Benefit-footerbg.png);
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:427px;
+    width:100%;
+}
+.monthly_benefit_pr h3 {
+    color: #fff;
+    margin-top: 85px;
+}
+.monthly_benefit_pr img {
+    margin-top: 36px;
+}
+
 /* card_box end */
 /* popular_artical start */
 #artical{
