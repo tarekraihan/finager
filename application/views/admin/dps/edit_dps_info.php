@@ -1121,7 +1121,7 @@ if(isset($_GET['id'])){
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtAvailableBenefit" class="ckeditor" name="txtAvailableBenefit"><?php echo $row['available_benefit']; ?></textarea>
+                        <textarea id="txtAvailableBenefit" class="ckeditor" name="txtAvailableBenefit"><?php echo $row['available_benefit']; ?></textarea>
                     </label>
                 </section>
 
@@ -1136,7 +1136,51 @@ if(isset($_GET['id'])){
 
 </article>
 <!-- WIDGET END -->
-<!-- NEW WIDGET START -->
+
+
+    <!-- NEW WIDGET START -->
+    <article class="col-sm-6 col-md-6 col-lg-6">
+
+        <!-- Widget ID (each widget will need unique ID)-->
+        <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+            <header>
+                <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                <h2>Fees and Charges</h2>
+
+            </header>
+
+            <!-- widget div-->
+            <div>
+
+                <!-- widget edit box -->
+                <div class="jarviswidget-editbox">
+                    <!-- This area used as dropdown edit box -->
+
+                </div>
+                <!-- end widget edit box -->
+
+                <!-- widget content -->
+                <div class="widget-body no-padding">
+                    <section class="col col-12">
+
+                        <label class="input">
+                            <textarea id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo set_value('txtFeesAndCharges'); ?></textarea>
+                        </label>
+                    </section>
+
+                </div>
+                <!-- end widget content -->
+                <label class="red"><?php echo form_error('txtFeesAndCharges');?></label>
+            </div>
+            <!-- end widget div -->
+
+        </div>
+        <!-- end widget -->
+
+    </article>
+    <!-- WIDGET END -->
+
+    <!-- NEW WIDGET START -->
 <article class="col-sm-6 col-md-6 col-lg-6">
 
     <!-- Widget ID (each widget will need unique ID)-->
@@ -1287,6 +1331,7 @@ if(isset($_GET['id'])){
                         CKEDITOR.instances['txtRequiredDocument'].setData(data.required_document);
                         CKEDITOR.instances['txtTermsAndConditions'].setData(data.terms_and_conditions);
                         CKEDITOR.instances['txtAvailableBenefit'].setData(data.available_benefit);
+                        CKEDITOR.instances['txtFeesAndCharges'].setData(data.fees_and_charges);
                         CKEDITOR.instances['txtReview'].setData(data.review);
                     }else{
                         CKEDITOR.instances['txtAvailableFeatures'].setData('');
@@ -1294,6 +1339,7 @@ if(isset($_GET['id'])){
                         CKEDITOR.instances['txtRequiredDocument'].setData('');
                         CKEDITOR.instances['txtTermsAndConditions'].setData('');
                         CKEDITOR.instances['txtAvailableBenefit'].setData('');
+                        CKEDITOR.instances['txtFeesAndCharges'].setData('');
                         CKEDITOR.instances['txtReview'].setData('');
                     }
 

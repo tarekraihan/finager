@@ -641,21 +641,12 @@ $(window).on('scroll', function (){
 			var  formData = $('.cart_anchor01').children('img').data();
 			var dps_id2 = "&dps_id2="+formData.dps_id;
 			var amount = $('#finalAssest').val();
+			if(amount == ''){
+				amount = 500;
+			}
 			var deposit_amount = "&deposit_amount="+amount;
 
-			var dps_tenure = '';
-			$('input[name="dps_tenure"]:checked').each(function(){
-				dps_tenure = $(this).val();
-			});
-
-			if(dps_tenure == ''){
-				dps_tenure = 500;
-			}
-
-			var dps_tenure_list = "&dps_tenure="+dps_tenure;
-
-			var dps_info = dps_id1+dps_id2+deposit_amount+dps_tenure_list;
-//			console.log(dps_info);
+			var dps_info = dps_id1+dps_id2+deposit_amount;
 			if(dps_id1 != '' && dps_id2 != ''){
 				$.ajax({
 					type: "POST",
@@ -668,10 +659,8 @@ $(window).on('scroll', function (){
 					}
 				});
 			}else{
-				alert("Please add 2 card for compare ! ");
+				alert("Please add 2 DPS for compare ! ");
 			}
 		});
-
-
 	});
 </script>

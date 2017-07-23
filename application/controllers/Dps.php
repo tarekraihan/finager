@@ -598,8 +598,7 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
-            $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
-
+            $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
 
             $this->form_validation->set_rules('two_hundred_maturity', 'two_hundred_maturity', 'trim|numeric');
             $this->form_validation->set_rules('two_hundred_interest', 'two_hundred_interest', 'trim|numeric');
@@ -717,6 +716,7 @@ class Dps extends CI_Controller
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
+                    'fees_and_charges' => $this->input->post('txtAvailableBenefit'),
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
                     'review' => $this->input->post('txtReview'),
                     'created' => $date ,
@@ -1204,18 +1204,18 @@ class Dps extends CI_Controller
     }
 
     public function ajax_go_compare_page(){
+        $this->session->unset_userdata('dps');
         $id1 = $this->input->post('dps_id1');
         $id2 = $this->input->post('dps_id2');
-        $dps_tenure = $this->input->post('dps_tenure');
+        //$dps_tenure = $this->input->post('dps_tenure');
         $deposit_amount = $this->input->post('deposit_amount');
 
-        $newdata = array(
-            'first_auto_loan'  => $id1,
-            'second_auto_loan'  => $id2,
-            'dps_tenure' => $dps_tenure,
+        $newdata['dps'] = array(
+            'first_dps_id'  => $id1,
+            'second_dps_id'  => $id2,
             'deposit_amount' => $deposit_amount
         );
-        $this->session->set_userdata($newdata);
+        $this->session->set_userdata($newdata['dps']);
         echo 'success';
     }
 }

@@ -883,7 +883,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php echo set_value('txtAvailableFeatures'); ?></textarea>
+                        <textarea  id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php echo set_value('txtAvailableFeatures'); ?></textarea>
                     </label>
                 </section>
 
@@ -924,7 +924,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo set_value('txtEligibility'); ?></textarea>
+                        <textarea id="txtEligibility" class="ckeditor" name="txtEligibility"><?php echo set_value('txtEligibility'); ?></textarea>
                     </label>
                 </section>
 
@@ -966,7 +966,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
+                        <textarea id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php echo set_value('txtRequiredDocument'); ?></textarea>
                     </label>
                 </section>
 
@@ -1008,7 +1008,7 @@
                 <section class="col col-12">
 
                     <label class="input">
-                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo set_value('txtTermsAndConditions'); ?></textarea>
+                        <textarea id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php echo set_value('txtTermsAndConditions'); ?></textarea>
                     </label>
                 </section>
 

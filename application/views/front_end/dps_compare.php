@@ -1,238 +1,122 @@
+<?php
+//pr($_SESSION);die;
+
+$dps_1 = $this->session->userdata('first_dps_id');
+$dps_2 = $this->session->userdata('second_dps_id');
+$deposited_amount = $this->session->userdata('deposit_amount');
+if(!empty($dps_1) && is_numeric($dps_1) && !empty($dps_2) && is_numeric($dps_2) ){
+
+	$array_map = array(
+		'200' => array('two_hundred_maturity','two_hundred_interest','dps_info_id'),
+		'300' => array('three_hundred_maturity','three_hundred_interest','dps_info_id'),
+		'400' => array('four_hundred_maturity','four_hundred_interest','dps_info_id'),
+		'500' => array('five_hundred_maturity','five_hundred_interest','dps_info_id'),
+		'1000' => array('one_thousand_maturity','one_thousand_interest','dps_info_id'),
+		'1500' => array('one_thousand_five_hundred_maturity','one_thousand_five_hundred_interest','dps_info_id'),
+		'2000' => array('two_thousand_maturity','two_thousand_interest','dps_info_id'),
+		'2500' => array('two_thousand_five_hundred_maturity','two_thousand_five_hundred_interest','dps_info_id'),
+		'3000' => array('three_thousand_maturity','three_thousand_interest','dps_info_id'),
+		'3500' => array('three_thousand_five_hundred_maturity','three_thousand_five_hundred_interest','dps_info_id'),
+		'4000' => array('four_thousand_maturity','four_thousand_interest','dps_info_id'),
+		'4500' => array('four_thousand_five_hundred_maturity','four_thousand_five_hunderd_interest','dps_info_id'),
+		'5000' => array('five_thousand_maturity','five_thousand_interest','dps_info_id'),
+		'5500' => array('five_thousand_five_hundred_maturity','five_thousand_five_hundred_interest','dps_info_id'),
+		'6000' => array('six_thousand_maturity','six_thousand_interest','dps_info_id'),
+		'6500' => array('six_thousand_five_hundred_maturity','six_thousand_five_hundred_interest','dps_info_id'),
+		'7000' => array('seven_thousand_maturity','seven_thousand_interest','dps_info_id'),
+		'7500' => array('seven_thousand_five_hundred_maturity','seven_thousand_five_hundred_interest','dps_info_id'),
+		'8000' => array('eight_thousand_maturity','eight_thousand_interest','dps_info_id'),
+		'9000' => array('nine_thousand_maturity','nine_thousand_interest','dps_info_id'),
+		'10000' => array('ten_thousand_maturity','ten_thousand_interest','dps_info_id'),
+		'11000' => array('eleven_thousand_maturity','eleven_thousand_interest','dps_info_id'),
+		'12000' => array('twelve_thousand_maturity','twelve_thousand_interest','dps_info_id'),
+		'13000' => array('thirteen_thousadn_maturity','thirteen_thousand_interest','dps_info_id'),
+		'14000' => array('fourteen_thousand_maturity','fourteen_thousand_interest','dps_info_id'),
+		'15000' => array('fifteen_thousand_maturity','fifteen_thousand_interest','dps_info_id'),
+		'16000' => array('sixteen_thousand_maturity','sixteen_thousand_interest','dps_info_id'),
+		'17000' => array('seventeen_thousand_maturity','seventeen_thousand_interest','dps_info_id'),
+		'18000' => array('eighteen_thousand_maturity','eighteen_thousand_interest','dps_info_id'),
+		'19000' => array('nineteen_thousand_maturity','nineteen_thousand_interest','dps_info_id'),
+		'20000' => array('twenty_thousand_maturity','twenty_thousand_interest','dps_info_id'),
+		'21000' => array('twenty_one_thousand_maturity','twenty_one_thousand_interest','dps_info_id'),
+		'22000' => array('twenty_two_thousand_maturity','twenty_two_thousand_interest','dps_info_id'),
+		'23000' => array('twenty_three_thousand_maturity','twenty_three_thousand_interest','dps_info_id'),
+		'24000' => array('twenty_four_thousand_maturity','twenty_four_thousand_interest','dps_info_id'),
+		'25000' => array('twenty_five_thousand_maturity','twenty_five_thousand_interest','dps_info_id'),
+		'26000' => array('twenty_six_thousand_maturity','twenty_six_thousand_interest','dps_info_id'),
+		'27000' => array('twenty_seven_thousand_maturity','twenty_seven_thousand_interest','dps_info_id'),
+		'28000' => array('twenty_eight_thousand_maturity','twenty_eight_thousand_interest','dps_info_id'),
+		'29000' => array('twenty_nine_thousand_maturity','twenty_nine_thousand_interest','dps_info_id'),
+		'30000' => array('thirty_thousand_maturity','thirty_thousand_interest','dps_info_id'),
+		'50000' => array('fifty_thousand_maturity','fifty_thousand_interest','dps_info_id'),
+		'100000' => array('one_lac_maturity','one_lac_interest','dps_info_id'),
+	);
+
+	$s = array();
+	if (array_key_exists($deposited_amount, $array_map)) {
+		$s =  $array_map[$deposited_amount];
+	}
+
+	$dps_1_res =  $this->Front_end_select_model->select_dps_loan_info_details( $s[0],$s[1],$s[2],$dps_1);
+	$dps_1_result = $dps_1_res->row_array();
+
+	$dps_1_res2  = $this->Front_end_select_model->select_dps_by_id($dps_1);
+	$dps_1_result2 = $dps_1_res2->row_array();
+
+	$dps_1_row = array_merge($dps_1_result2,$dps_1_result);
+
+//	pr($dps_1_row);die;
+	$dps_1_bank = "";
+	if ($dps_1_row['is_non_bank'] == 1) {
+		$dps_1_bank = $dps_1_row['non_bank_name'];
+	} else {
+		$dps_1_bank = $dps_1_row['bank_name'];
+	}
+	$dps_1_bank_logo = "";
+	if ($dps_1_row['is_non_bank'] == 1) {
+		$dps_1_bank_logo = $dps_1_row['non_bank_logo'];
+	} else {
+		$dps_1_bank_logo = $dps_1_row['bank_logo'];
+	}
 
 
 
+	$dps_2_res =  $this->Front_end_select_model->select_dps_loan_info_details( $s[0],$s[1],$s[2],$dps_2);
+	$dps_2_result = $dps_2_res->row_array();
 
+	$dps_2_res2  = $this->Front_end_select_model->select_dps_by_id($dps_2);
+	$dps_2_result2 = $dps_2_res2->row_array();
+
+	$dps_2_row = array_merge($dps_2_result2,$dps_2_result);
+
+//	pr($dps_1_row);die;
+	$dps_2_bank = "";
+	if ($dps_2_row['is_non_bank'] == 1) {
+		$dps_2_bank = $dps_2_row['non_bank_name'];
+	} else {
+		$dps_2_bank = $dps_2_row['bank_name'];
+	}
+	$dps_2_bank_logo = "";
+	if ($dps_2_row['is_non_bank'] == 1) {
+		$dps_2_bank_logo = $dps_2_row['non_bank_logo'];
+	} else {
+		$dps_2_bank_logo = $dps_2_row['bank_logo'];
+	}
+
+}else{
+	redirect(base_url().'My404');
+}
+
+?>
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></p></td>
-						<td><b><p class="text-center com_title">Comparison </p></b>
-							<p>
-								<div class="emi_cal">
-									<div id="">
-										<a href="#skip" class="offscreen">Skip to Content</a>
+						<td><p><a href="<?php echo base_url();?>en/fdr_details/<?php echo $dps_1_row['id'];?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $dps_1_bank_logo; ?>" /></a></p></td>
+						<td><b><p class="text-center com_title">Comparison </p></b></td>
+						<td><a href="<?php echo base_url();?>en/fdr_details/<?php echo $dps_2_row['id'];?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $dps_2_bank_logo; ?>" /></a></td>
 
-										<div class="clear"></div>
-										<div class="overlay"></div>
-										<div class="row">
-											<div class="span8">
-												<div class="singleColumn page common">
-													<div class="htmltextarea section">
-
-
-
-														<div class="innerMdlWrapper"> 
-															 <!-- Middle Inner START--> 
-														  
-															<div class="innerMdlInner">
-																<div class="calcWrapper">
-
-
-
-																	<div class="clear"></div>
-																	<!--Calculator Banner END-->
-																	<!--h1 class="blackColor">Personal Loan EMI Calculator</h1-->
-																	  
-																	<div class="selectCalcWrapper" style="display:none;">
-																		<div class="radiobox">
-																		  <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-																		  <label for="savingCalculator">Home Loan Calculator</label>
-																		</div>
-																		<div class="radiobox">
-																		  <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
-																		  <label for="depositCalculator">Personal Loan Calculator</label>
-																		</div>
-																	</div>
-
-																	<div class="savingsContainer emiContainer">
-																
-																		<div class="leftCont" style="margin:0 auto; float: none;"> 
-																		  <!--Amount Already Saved START-->
-																			<div class="slideWrapper" id="alreadySaved">
-																				<div class="questWrap">
-																				  <p class="quest">Enter your home loan amount required</p>
-																				</div>
-																			  
-																				<div class="inputWrapper"> <span class="rupee"></span>
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="0" id="finalAssest" class="input_LoanAmt"/>
-																					</div>
-																					<!--div class="inpRt"></div-->
-																				  </div>
-																				</div>
-																				<div class="clear"></div>
-																				
-																				<!--Calculator Section START-->
-																				<div class="calcContainer">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="sliderHover"></div>
-																						<div class="draggable ui-widget-content drag3"> </div>
-																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																					  <div class="slideImg" id="finacialAssest">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">25000</div>
-																				  </div>
-																				</div>
-																				<!--Calculator Section END--> 
-																				
-																			</div>
-																			  <!--Amount Already Saved END-->
-																			  
-																			<div class="slideWrapper" id="avgSave">
-																				<p class="quest">Enter tenure for home loan</p>
-																				<div class="inputWrapper">
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="1" id="finalCustAge" maxlength="3" class="input_LoanPeriod"/>
-																					</div>
-																					<div class="inpRt"></div>
-																				  </div>
-																				  <div class="inpRadio">
-																					<div id="tenureType">
-																					  <label>Year</label>
-																					</div>
-																				  </div>
-																				</div>
-																				<div class="clear"></div>
-																				<!--Calculator Section START-->
-																				<div class="calcContainer yearWrap" style="display:none">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="draggable ui-widget-content drag3"></div>
-																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																					  <div class="slideImg" id="custAge">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">5</div>
-																				  </div>
-																				</div>
-																				<!--Calculator Section END--> 
-																				
-																				<!--Calculator Section START-->
-																				<div class="calcContainer monthWrap">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag2"> <span></span>
-																						<div class="draggable draggable2 ui-widget-content drag3"></div>
-																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																					  <div class="slideImg" id="monthExp">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <!--<div class="prev"></div>
-																										  <div class="next active"></div>--> 
-																					</div>
-																					<div class="hideVal">5</div>
-																				  </div>
-																				</div>
-																				<!--Calculator Section END--> 
-																			</div>
-
-
-																			<div class="slideWrapper hide" id="interest">
-																				<p class="quest">Interest rate on home loan</p>
-																				<div class="inputWrapper">
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="8" id="finalLiability" class="input_AIR"/>
-																					</div>
-																					<div class="inpRt"></div>
-																				  </div>
-																				  <span class="perc">%</span> 
-																				</div>
-																				<div class="clear"></div>
-																				<!--Calculator Section START-->
-																				<div class="calcContainer">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="draggable ui-widget-content drag3"></div>
-																					  </div>
-																					  <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
-																					  <div class="slideImg" id="liability">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">0.5</div>
-																				  </div>
-																				</div>
-																				<!--Calculator Section END--> 
-																			</div>
-																			  
-																			  <!--<a href="javascript:;" class="submit">Submit</a>-->
-																			  <input type="hidden" id="input_Payment" />
-																		</div>
-
-																		<div class="rightCont"> 
-																		  <!--Result Wrapper START-->
-																		  <div class="resultWrapper hide">
-																			<h2>Personal Loan EMI Result</h2>
-																			<div class="resultContainer">
-																			  <!--div class="rsltField">
-																				<p>Total Amount Payable</p>
-																				<span class="rupee"></span>
-																				<div id="totalAmtPay" class="result">5,00,000</div>
-																			  </div-->
-																			  <div class="rsltField">
-																				<p>Principal Amount</p>
-																				<span class="rupee"></span>
-																				<div id="princpAmt" class="result">2025</div>
-																			  </div>
-																			  <div class="rsltField">
-																				<p>Interest Payable</p>
-																				<span class="rupee"></span>
-																				<div id="totalInterest" class="result">2025</div>
-																			  </div>
-																			  <div class="rsltField">
-																				<p>Total Monthly Payment</p>
-																				<span class="rupee"></span>
-																				<div id="monthPayment" class="result">2025</div>
-																			  </div>
-																			  
-																			</div>
-																		  </div>
-																		</div>
-																		<div class="clear"></div>
-																	</div>
-
-																</div>
-															</div>
-														</div>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-						
-							</p>
-						</td>
-						<td><img src="<?php echo base_url(); ?>resource/front_end/images/visa_card.png" /></td>
 					</tr>			
 				</table>
 			</div>
@@ -253,40 +137,53 @@
 					</tr>
 				</table>
 			</div>
-		
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Home Loan <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Available Benefit <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+						<?php echo $dps_1_row['available_benefit']; ?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+						<?php echo $dps_2_row['available_benefit']; ?>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> DPS <img class="Card-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
 							<td class="abc"><b> Bank Name </b></td>
-							<td> Brac Bank Ltd </td>
+							<td> <?php echo $dps_1_bank;?> </td>
 						</tr>
 						
 						<tr>
-							<td><b> Interest Rate</b></td>
-							<td> 12 </td>
+							<td><b> Interest Rate </b></td>
+							<td> <?php echo $dps_1_row['interest_rate']; ?> % </td>
 						</tr>
 						
 						<tr>
-							<td><b> Equal Monthly Installment (EMI)</b></td>
-							<td> 35624 </td>
+							<td><b> Deposited Amount </b></td>
+							<td>BDT <?php echo number_format( $deposited_amount ); ?> </td>
 						</tr>
 						
 						<tr>
-							<td><b> Total Payable Amount</b></td>
-							<td> 68,50,000 </td>
+							<td><b> Maturity Amount </b></td>
+							<td>BDT <?php echo number_format( $dps_1_row['maturity'] ); ?> </td>
 						</tr>
 						
 						<tr>
-							<td><b> Security Required</b></td>
-							<td> Mortgage of the Property </td>
+							<td><b> Accrued Interest </b></td>
+							<td>BDT <?php echo number_format( $dps_1_row['interest'] ); ?> </td>
 						</tr>
 						
 						<tr>
-							<td><b> Minimum Down Payment Amount</b></td>
-							<td> 15,00,000 </td>
+							<td><b> No of Installment </b></td>
+							<td> <?php echo $dps_1_row['no_of_installment']; ?> </td>
 						</tr>
 						
 					</table>
@@ -297,34 +194,33 @@
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
 								<td class="abc"><b> Bank Name </b></td>
-								<td> Brac Bank Ltd </td>
+								<td> <?php echo $dps_2_bank;?> </td>
 							</tr>
-							
+
 							<tr>
-								<td><b> Interest Rate</b></td>
-								<td> 12 </td>
+								<td><b> Interest Rate </b></td>
+								<td> <?php echo $dps_2_row['interest_rate']; ?> % </td>
 							</tr>
-							
+
 							<tr>
-								<td><b> Equal Monthly Installment (EMI)</b></td>
-								<td> 35624 </td>
+								<td><b> Deposited Amount </b></td>
+								<td>BDT <?php echo number_format( $deposited_amount ); ?> </td>
 							</tr>
-							
+
 							<tr>
-								<td><b> Total Payable Amount</b></td>
-								<td> 68,50,000 </td>
+								<td><b> Maturity Amount </b></td>
+								<td>BDT <?php echo number_format( $dps_2_row['maturity'] ); ?> </td>
 							</tr>
-							
+
 							<tr>
-								<td><b> Security Required</b></td>
-								<td> Mortgage of the Property </td>
+								<td><b> Accrued Interest </b></td>
+								<td>BDT <?php echo number_format( $dps_2_row['interest'] ); ?> </td>
 							</tr>
-							
+
 							<tr>
-								<td><b> Minimum Down Payment Amount</b></td>
-								<td> 15,00,000 </td>
+								<td><b> No of Installment </b></td>
+								<td> <?php echo $dps_2_row['no_of_installment']; ?> </td>
 							</tr>
-							
 						</table>
 					</div>
 				</div>
@@ -335,82 +231,12 @@
 				
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table">
-							<tr>
-								<td class="def"><b> Processing Fee</b></td>
-								<td> 1.5% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Processing Fee for Takeover Loan</b></td>
-								<td> .05% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Early Settlement Fee</b></td>
-								<td> Free </td>
-							</tr>
-							
-							<tr>
-								<td><b> Partial Payment Fee</b></td>
-								<td> 1% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Penalty Charge</b></td>
-								<td> 4000 or 5% of the installment </td>
-							</tr>
-							
-							<tr>
-								<td><b> Loan Rescheduling Charges</b></td>
-								<td> 5000 or 5% of the installment </td>
-							</tr>
-							
-							<tr>
-								<td><b> EMI Date Rescheduling Charges</b></td>
-								<td> 4000 or 5% of the installment </td>
-							</tr>
-						</table>
+						<?php echo $dps_1_row['fees_and_charges']; ?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table">
-							<tr>
-								<td class="def"><b> Processing Fee</b></td>
-								<td> 1.5% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Processing Fee for Takeover Loan</b></td>
-								<td> .05% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Early Settlement Fee</b></td>
-								<td> Free </td>
-							</tr>
-							
-							<tr>
-								<td><b> Partial Payment Fee</b></td>
-								<td> 1% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Penalty Charge</b></td>
-								<td> 4000 or 5% of the installment </td>
-							</tr>
-							
-							<tr>
-								<td><b> Loan Rescheduling Charges</b></td>
-								<td> 5000 or 5% of the installment </td>
-							</tr>
-							
-							<tr>
-								<td><b> EMI Date Rescheduling Charges</b></td>
-								<td> 4000 or 5% of the installment </td>
-							</tr>
-						</table>
+						<?php echo $dps_2_row['fees_and_charges']; ?>
 					</div>
 				</div>
 			</div>
@@ -419,110 +245,12 @@
 				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Features <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table">
-							<tr>
-								<td class="third"><b> Minimum Loan Amount</b></td>
-								<td> 5,00,000 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maximum Loan Amount</b></td>
-								<td> 1,00,00,000 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Minimum Term</b></td>
-								<td> 4 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maximum Term</b></td>
-								<td> 25 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Down payment (%)</b></td>
-								<td> 30% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Grace Period</b></td>
-								<td> N/A </td>
-							</tr>
-							
-							<tr>
-								<td><b> Availability of Early Settlement</b></td>
-								<td> Available </td>
-							</tr>
-							
-							<tr>
-								<td><b> Availability of Partial Payment</b></td>
-								<td> Available </td>
-							</tr>
-							<tr>
-								<td><b> Availability of Take Over Loan</b></td>
-								<td> Available </td>
-							</tr>
-							
-							<tr>
-								<td><b> Try Party Agreement Allowed up to</b> </td>
-								<td> 3-24 Months </td>
-							</tr>
-						</table>
+						<?php echo $dps_1_row['available_feature']; ?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table">
-							<tr>
-								<td class="third"><b> Minimum Loan Amount</b></td>
-								<td> 5,00,000 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maximum Loan Amount</b></td>
-								<td> 1,00,00,000 </td>
-							</tr>
-							
-							<tr>
-								<td><b> Minimum Term</b></td>
-								<td> 4 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Maximum Term</b></td>
-								<td> 25 Year </td>
-							</tr>
-							
-							<tr>
-								<td><b> Down payment (%)</b></td>
-								<td> 30% </td>
-							</tr>
-							
-							<tr>
-								<td><b> Grace Period</b></td>
-								<td> N/A </td>
-							</tr>
-							
-							<tr>
-								<td><b> Availability of Early Settlement</b></td>
-								<td> Available </td>
-							</tr>
-							
-							<tr>
-								<td><b> Availability of Partial Payment</b></td>
-								<td> Available </td>
-							</tr>
-							<tr>
-								<td><b> Availability of Take Over Loan</b></td>
-								<td> Available </td>
-							</tr>
-							
-							<tr>
-								<td><b> Try Party Agreement Allowed up to</b> </td>
-								<td> 3-24 Months </td>
-							</tr>
-						</table>
+						<?php echo $dps_2_row['available_feature']; ?>
 					</div>
 				</div>
 			</div>
@@ -532,72 +260,47 @@
 		
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table ">
-				
-							<tr>
-								<td class="fourth text-center"><b> Minimum Income </b></td>
-								<td class="text-left">
-									<ul> 
-										<li>Salaried: 30,000</li>
-										<li>Businessman: 40,000</li>
-										<li>Professional: 50,000 </li>
-										<li>Landlord: 40,000 </li>
-										<li>NRB: 60,000 </li>
-									</ul>
-								</td>
-							</tr>
-							
-							<tr>
-								<td class="text-center"><b> Minimum Experience </b></td>
-								<td class="text-left">
-									<ul> 
-										<li>Salaried: (1) year experience with 6   months employment in present organization</li>
-										<li>Businessman: (1) year experience in the same line of business.</li>
-										<li>Professional: 1) year experience in the same line of Profession. </li>
-										<li>Landlord:  6 months rental income continuation</li>
-										<li>NRB: (1) year experience with 6   months </li>
-									</ul>
-								</td>
-							</tr>			
-						</table>
+						<?php echo $dps_1_row['eligibility']; ?>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="table-responsive">
-						<table class="table table-bordered table-hover text-center compare_table ">
-				
-							<tr>
-								<td class="fourth text-center"><b> Minimum Income </b></td>
-								<td class="text-left">
-									<ul> 
-										<li>Salaried: 30,000</li>
-										<li>Businessman: 40,000</li>
-										<li>Professional: 50,000 </li>
-										<li>Landlord: 40,000 </li>
-										<li>NRB: 60,000 </li>
-									</ul>
-								</td>
-							</tr>
-							
-							<tr>
-								<td class="text-center"><b> Minimum Experience </b></td>
-								<td class="text-left">
-									<ul> 
-										<li>Salaried: (1) year experience with 6   months employment in present organization</li>
-										<li>Businessman: (1) year experience in the same line of business.</li>
-										<li>Professional: 1) year experience in the same line of Profession. </li>
-										<li>Landlord:  6 months rental income continuation</li>
-										<li>NRB: (1) year experience with 6   months </li>
-									</ul>
-								</td>
-							</tr>			
-						</table>
+						<?php echo $dps_2_row['eligibility']; ?>
 					</div>
 				</div>
 			</div>
-			
-			
-			
+
+
+			<div class="row">
+				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Requirement <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+						<?php echo $dps_1_row['required_document']; ?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+						<?php echo $dps_2_row['required_document']; ?>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Review <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+						<?php echo $dps_1_row['review']; ?>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="table-responsive">
+						<?php echo $dps_2_row['review']; ?>
+					</div>
+				</div>
+			</div>
+
 			<div class="row">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">

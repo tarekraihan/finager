@@ -188,7 +188,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php if(isset($row["available_feature"]) && $row["available_feature"] != ""){echo $row["available_feature"];}else{echo set_value('txtAvailableFeatures');} ?></textarea>
+                                        <textarea id="txtAvailableFeatures" class="ckeditor" name="txtAvailableFeatures"><?php if(isset($row["available_feature"]) && $row["available_feature"] != ""){echo $row["available_feature"];}else{echo set_value('txtAvailableFeatures');} ?></textarea>
                                     </label>
                                 </section>
 
@@ -229,7 +229,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtEligibility" class="ckeditor" name="txtEligibility"><?php if(isset($row["eligibility"]) && $row["eligibility"] != ""){echo $row["eligibility"];}else{echo set_value('txtEligibility');} ?></textarea>
+                                        <textarea id="txtEligibility" class="ckeditor" name="txtEligibility"><?php if(isset($row["eligibility"]) && $row["eligibility"] != ""){echo $row["eligibility"];}else{echo set_value('txtEligibility');} ?></textarea>
                                     </label>
                                 </section>
 
@@ -271,7 +271,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php if(isset($row["required_document"]) && $row["required_document"] != ""){echo $row["required_document"];}else{echo set_value('txtRequiredDocument');} ?></textarea>
+                                        <textarea id="txtRequiredDocument" class="ckeditor" name="txtRequiredDocument"><?php if(isset($row["required_document"]) && $row["required_document"] != ""){echo $row["required_document"];}else{echo set_value('txtRequiredDocument');} ?></textarea>
                                     </label>
                                 </section>
 
@@ -313,7 +313,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php if(isset($row["terms_and_conditions"]) && $row["terms_and_conditions"] != ""){echo $row["terms_and_conditions"];}else{echo set_value('txtTermsAndConditions');} ?></textarea>
+                                        <textarea id="txtTermsAndConditions" class="ckeditor" name="txtTermsAndConditions"><?php if(isset($row["terms_and_conditions"]) && $row["terms_and_conditions"] != ""){echo $row["terms_and_conditions"];}else{echo set_value('txtTermsAndConditions');} ?></textarea>
                                     </label>
                                 </section>
 
@@ -355,7 +355,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtAvailableBenefit" class="ckeditor" name="txtAvailableBenefit"><?php echo set_value('txtAvailableBenefit'); ?><?php if(isset($row["available_benefit"]) && $row["available_benefit"] != ""){echo $row["available_benefit"];}else{echo set_value('txtAvailableBenefit');} ?></textarea>
+                                        <textarea id="txtAvailableBenefit" class="ckeditor" name="txtAvailableBenefit"><?php echo set_value('txtAvailableBenefit'); ?><?php if(isset($row["available_benefit"]) && $row["available_benefit"] != ""){echo $row["available_benefit"];}else{echo set_value('txtAvailableBenefit');} ?></textarea>
                                     </label>
                                 </section>
 
@@ -397,7 +397,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php if(isset($row["fees_and_charges"]) && $row["fees_and_charges"] != ""){echo $row["fees_and_charges"];}else{echo set_value('txtFeesAndCharges');} ?></textarea>
+                                        <textarea id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php if(isset($row["fees_and_charges"]) && $row["fees_and_charges"] != ""){echo $row["fees_and_charges"];}else{echo set_value('txtFeesAndCharges');} ?></textarea>
                                     </label>
                                 </section>
 
@@ -440,7 +440,7 @@ if(isset($_GET['id'])){
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtReview" class="ckeditor" name="txtReview"><?php if(isset($row["review"]) && $row["review"] != ""){echo $row["review"];}else{echo set_value('txtReview');} ?></textarea>
+                                        <textarea id="txtReview" class="ckeditor" name="txtReview"><?php if(isset($row["review"]) && $row["review"] != ""){echo $row["review"];}else{echo set_value('txtReview');} ?></textarea>
                                     </label>
                                 </section>
 
@@ -457,20 +457,20 @@ if(isset($_GET['id'])){
                 <!-- WIDGET END -->
 
                 </fieldset>
-                                    <footer>
-                                        <div class="row">
-                                            <section class='col-md-6'>
+                            <footer>
+                                <div class="row">
+                                    <section class='col-md-6'>
 
-                                            </section>
-                                            <section class="col-md-6">
-                                                <label class="input">
-                                                    <button class="btn btn-primary" type="submit" >Update</button>
-                                                </label>
-                                            </section>
+                                    </section>
+                                    <section class="col-md-6">
+                                        <label class="input">
+                                            <button class="btn btn-primary" type="submit" >Update</button>
+                                        </label>
+                                    </section>
 
-                                        </div>
-                                    </footer>
-                                </form>
+                                </div>
+                            </footer>
+                        </form>
 
                             </div>
                             <!-- end widget content -->
