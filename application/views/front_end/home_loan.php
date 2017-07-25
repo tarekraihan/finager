@@ -63,8 +63,8 @@
                                                                 ?>
                                                                 <div class="col-sm-4 col-xs-12">
                                                                     <div class="material_checkbox_group">
-                                                                        <input type="checkbox" id="filter-bank-01" name="featuresBenefits" value="" class="material_checkbox">
-                                                                        <label class="material_label_checkbox" for="filter-bank-01">
+                                                                        <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox">
+                                                                        <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                             <div class="filter-check-img">
                                                                                 <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
                                                                             </div>
@@ -85,8 +85,8 @@
                                                             ?>
                                                             <div class="col-sm-4 col-xs-12">
                                                                 <div class="material_checkbox_group">
-                                                                    <input type="checkbox" id="filter-bank-01" name="featuresBenefits" value="" class="material_checkbox">
-                                                                    <label class="material_label_checkbox" for="filter-bank-01">
+                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox">
+                                                                    <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                         <div class="filter-check-img">
                                                                             <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
                                                                         </div>
@@ -107,8 +107,8 @@
                                                             ?>
                                                             <div class="col-sm-4 col-xs-12">
                                                                 <div class="material_checkbox_group">
-                                                                    <input type="checkbox" id="filter-bank-01" name="featuresBenefits" value="" class="material_checkbox">
-                                                                    <label class="material_label_checkbox" for="filter-bank-01">
+                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox">
+                                                                    <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                         <div class="filter-check-img">
                                                                             <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
                                                                         </div>
@@ -129,8 +129,8 @@
                                                             ?>
                                                             <div class="col-sm-4 col-xs-12">
                                                                 <div class="material_checkbox_group">
-                                                                    <input type="checkbox" id="filter-bank-01" name="featuresBenefits" value="" class="material_checkbox">
-                                                                    <label class="material_label_checkbox" for="filter-bank-01">
+                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox">
+                                                                    <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                         <div class="filter-check-img">
                                                                             <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
                                                                         </div>
@@ -689,7 +689,16 @@ $(document).ready(function(){
                 home_user.push($(this).val());
             });
             var home_user_list = "&home_user="+home_user;
-            var main_string = home_i_want_list+home_user_list+principal_amount+month_limit;
+
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&bank_ids="+bank_ids;
+
+
+            var main_string = home_i_want_list+home_user_list+principal_amount+month_limit+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){

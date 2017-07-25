@@ -496,7 +496,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     function select_bank_info($limit,$offset){
-        $sql ="SELECT DISTINCT `bank_name`, `bank_logo` FROM `card_bank` ORDER BY `bank_name` ASC LIMIT $offset,$limit";
+        $sql ="SELECT `id`,`bank_name`, `bank_logo` FROM `card_bank` ORDER BY `bank_name` ASC LIMIT $offset,$limit";
         $query = $this->db->query($sql);
         return $query;
     }

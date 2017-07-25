@@ -631,6 +631,7 @@ class Home_Loan extends CI_Controller {
 
         $home_i_want = $this->input->post('home_i_want');
         $home_user = $this->input->post('home_user');
+        $bank_ids = $this->input->post('bank_ids');
 
         $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '200000' );
         if($principal_amount > 40000000 || $principal_amount < 200000){
@@ -661,6 +662,19 @@ class Home_Loan extends CI_Controller {
             $WHERE[] = 'home_loan_info.home_loan_looking_for_id = '.$home_i_want;
 
         }
+        if(!empty($bank_ids)) {
+            if(strstr($bank_ids,',')) {
+                $data8 = explode(',',$bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "home_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(home_loan_info.bank_id = '.$bank_ids.')';
+            }
+        }
+
 
         $query = implode(' AND ',$WHERE);
 
