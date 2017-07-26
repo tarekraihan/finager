@@ -18,9 +18,27 @@
   animation-iteration-count: infinite;
   animation-fill-mode: none;
   animation-play-state: running;
-  font-weight: 600;
+  font-weight: 500;
 }
-
+.mash-menu .vertical-tabs a{
+    color: #fff !important;
+    font-size: 14px;
+}
+.features>a>img {
+    width: 145px;
+}
+.features{
+    position: relative;
+    min-height: 270px;
+}
+a.megamenu_feature_link {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+.bRight{
+    border-right: 1px solid #ddd;
+}
 @keyframes stretch {
   0% {
     color: #224098;
@@ -114,13 +132,19 @@
     border: 0;
     padding: 0;
     margin-bottom: 5px !important;
-
+    width: 195px;
+    height: auto;
+    padding: 0 !important;
 }
 .item-title {
-    font-size: 15px;
+    /*font-size: 15px;
     font-weight: 600 !important;
     font-style: italic;
-    margin: 13px 0;
+    margin: 13px 0;*/
+    margin: 0;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    text-align: left !important;
 }
 .item-subtitle {
     font-size: 12px !important;
@@ -136,7 +160,10 @@
     z-index: 99999;
 }
 .menu-item{
-    padding: 0px 0px 30px 0px;
+    padding-bottom: 10px;
+}
+.padding-top-13{
+    padding-top: 13px;
 }
 .mash-menu [class*=col-] {
     margin-bottom: 0px !important;
@@ -299,7 +326,7 @@ a.megamenu_feature_link {
     z-index: -1;
 }
 .nav-skyblue .vertical-tabs a.active, .nav-skyblue .vertical-tabs a:hover{
-    background: #88c6d9 !important;
+    background: #dff3fd !important;
     color: #333 !important; 
 }
 .nav-skyblue h4.nav-title{
@@ -352,4 +379,10 @@ a.megamenu_feature_link {
     background: #c6daa5;
     padding: 8px;
     text-align: center;
+}
+p.item-title {
+    max-height: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

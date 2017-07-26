@@ -1,6 +1,48 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>resource/front_end/css/mashmenu-style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>resource/front_end/css/mashable-menu.css">
 
+<style>
+    .button,
+    [class*="button-"] {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        padding: 0px 16px;
+        height: 2em;
+        font: 500 14px/2em 'Open Sans', sans-serif;
+        text-decoration: none;
+        color: #fff;
+        background: #fff;
+        -moz-transition: ease 0.35s all;
+        -o-transition: ease 0.35s all;
+        -webkit-transition: ease 0.35s all;
+        transition: ease 0.35s all;
+    }
+    .button:hover,
+    [class*="button-"]:hover {
+        background: #fff;
+    }
+
+    .button-hover:hover {
+        line-height: 9em;
+    }
+    .button-hover:before {
+        content: attr(data-text);
+        position: absolute;
+        top: -3.5em;
+        animation-name: stretch;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-out;
+        animation-delay: 0;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-fill-mode: none;
+        animation-play-state: running;
+        font-weight: 600;
+    }
+
+</style>
+
 <div class="main_body">
     <section id="top-page">
         <div class="header container-fluid">
@@ -68,54 +110,72 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
 																					<a href="<?php echo base_url();?>en/credit_card">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																								 A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
-																							</p>
-																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/credit_card">Find All Credit Cards Here</a>
+																							</p>-->
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Credit Cards Here" href="<?php echo base_url();?>en/credit_card">Find All Credit Cards Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/credit_card1">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card2.png" alt="img">
-                                                                                                <p class="item-title">6 Best Credit Card Bonuses Available Today</p>
-                                                                                                <p>
+                                                                                                <p title="6 Best Credit Card Bonuses Available Today" class="item-title">6 Best Credit Card Bonuses Available Today</p>
+                                                                                                <!--<p>
                                                                                                     Chase currently offers new Chase Sapphire Reserves cardholders a bonus of 100,000 points when they spend $4,000 within the...... 
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/credit_card1">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/credit_card2">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
                                                                                                 <p title="Authorization, Clearing and Settlement: How Master Card Works" class="item-title">Authorization, Clearing and Settlement.....</p>
-                                                                                                <p>
+                                                                                               <!-- <p>
                                                                                                     The credit card companies are proud with the reliability of their payment processing systems. The big ones are processing millions.....
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/credit_card2">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                    </div>
+
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/credit_card3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/credit_card_menu.png" alt="img">
                                                                                                 <p title="The Basics About MasterCard’s Excessive Chargeback Program That You Absolutely HAVE To Know" class="item-title">The Basics About MasterCard’s Excessive...</p>
-                                                                                                <p>
+                                                                                                <!--<p>
                                                                                                     MasterCard’s Excessive Chargeback Program (ECP) sets the rules that all acquiring banks (also called acquirers or processors)...
-                                                                                                </p>
+                                                                                                </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
 
-                                                                                                <a href="<?php echo base_url(); ?>blog/credit_card3">Read More</a>
+                                                                                        <div class="col-sm-6 col-xs-12 padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/credit_card3">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/credit_card_menu.png" alt="img">
+                                                                                                <p title="The Basics About MasterCard’s Excessive Chargeback Program That You Absolutely HAVE To Know" class="item-title">The Basics About MasterCard’s Excessive...</p>
+                                                                                                <!--<p>
+                                                                                                    MasterCard’s Excessive Chargeback Program (ECP) sets the rules that all acquiring banks (also called acquirers or processors)...
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -157,54 +217,71 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
 																					<a href="<?php echo base_url(); ?>en/debit_card">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/DebitCardIcon.svg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																								<span class="focus-text">Debit Card</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
-																							</p>
-																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/debit_card">Find All Debit Cards Here</a>
+																							</p>-->
+																							<a class="megamenu_feature_link button-hover" href="<?php echo base_url(); ?>en/debit_card">Find All Debit Cards Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/debit_card1">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card1.png" alt="img">
-                                                                                                <p class="item-title">The Basics of Your Debit Card</p>
-                                                                                                <p>
+                                                                                                <p title="The Basics of Your Debit Card" class="item-title">The Basics of Your Debit Card</p>
+                                                                                                <!--<p>
                                                                                                     Debit cards are being used at an all-time high today and are used more often than credit cards. Last year debit card use exceeded a trillion dollars. That's a lot of...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/debit_card1">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/debit_card2">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card2.png" alt="img">
-                                                                                                <p class="item-title">What Is a Debit Card and How Is It Used?</p>
-                                                                                                <p>
+                                                                                                <p title="What Is a Debit Card and How Is It Used?" class="item-title">What Is a Debit Card and How Is It Used?</p>
+                                                                                                <!--<p>
                                                                                                     Debit cards are one of the most basic bank cards, and using them the right way can help you avoid unnecessary costs. Here’s what to know. A debit card, also known as...
-                                                                                                </p>
+                                                                                                </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                                <a href="<?php echo base_url(); ?>blog/debit_card2">Read More</a>
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/debit_card3">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card3.png" alt="img">
+                                                                                                <p title="Chip Debit Cards: What You Need to Know" class="item-title">Chip Debit Cards: What You Need to Know</p>
+                                                                                                <!--<p>
+                                                                                                   That little 3" x 2" piece of plastic in your wallet is getting an upgrade. That’s right, your debit card is getting a facelift. Talk about plastic surgery!...
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 padding-top-13">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/debit_card3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card3.png" alt="img">
-                                                                                                <p class="item-title">Chip Debit Cards: What You Need to Know</p>
-                                                                                                <p>
-                                                                                                   That little 3" x 2" piece of plastic in your wallet is getting an upgrade. That’s right, your debit card is getting a facelift. Talk about plastic surgery!...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/debit_card3">Read More</a>
+                                                                                                <p title="Chip Debit Cards: What You Need to Know" class="item-title">Chip Debit Cards: What You Need to Know</p>
+                                                                                                <!--<p>
+                                                                                                    That little 3" x 2" piece of plastic in your wallet is getting an upgrade. That’s right, your debit card is getting a facelift. Talk about plastic surgery!...
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -284,55 +361,119 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>en/home_loan">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/menu_home_loan.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																								<span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
-																							</p>
+																							</p>-->
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/home_loan">Find All Home Loan Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Home Loan Here"  href="<?php echo base_url(); ?>en/home_loan">Find All Home Loan Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <!--<div class="col-sm-8 col-xs-12">
                                                                                     <div class="row">
                                                                                         <div class="col-sm-4 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/home_loan.png" alt="img">
+                                                                                                <img class="item-image thumbnail" src="<?php /*echo base_url(); */?>resource/front_end/images/mashmenu/loan/home_loan.png" alt="img">
                                                                                                 <p title="Nearly half of mortgage borrowers don’t shop around when they buy a home" class="item-title">Nearly half of mortgage borrowers don’t shop...</p>
                                                                                                 <p>
                                                                                                     Buying a home is a big purchase, but it’s just that: a purchase. When it comes to spending money on our daily expenses, we have lots of options to help us find...
                                                                                                 </p>
 
-                                                                                                <a href="<?php echo base_url(); ?>/blog/home_loan1">Read More</a>
+                                                                                                <a href="<?php /*echo base_url(); */?>/blog/home_loan1">Read More</a>
                                                                                             </div>
                                                                                         </div>
 
                                                                                         <div class="col-sm-4 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/home_loan2.png" alt="img">
+                                                                                                <img class="item-image thumbnail" src="<?php /*echo base_url(); */?>resource/front_end/images/mashmenu/loan/home_loan2.png" alt="img">
                                                                                                 <p title="Understanding the mortgage process: Your home loan toolkit" class="item-title">Understanding the mortgage process: Your home...</p>
                                                                                                 <p>
                                                                                                     The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the loan that’s...
                                                                                                 </p>
 
-                                                                                                <a href="<?php echo base_url(); ?>/blog/home_loan2">Read More</a>
+                                                                                                <a href="<?php /*echo base_url(); */?>/blog/home_loan2">Read More</a>
                                                                                             </div>
                                                                                         </div>
 
                                                                                         <div class="col-sm-4 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/home_loan3.png" alt="img">
+                                                                                                <img class="item-image thumbnail" src="<?php /*echo base_url(); */?>resource/front_end/images/mashmenu/loan/home_loan3.png" alt="img">
                                                                                                 <p class="item-title">Fannie Mae Homepath Program</p>
                                                                                                 <p>
                                                                                                     Fannie Mae Homepath Program is now The Home Ready™ Mortgage Buying a home is a scary experience, especially when you are on a budget and trying to...
                                                                                                 </p>
 
                                                                                                 <a href="#">Read More</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>-->
+
+                                                                                <div class="col-sm-5 col-xs-12">
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
+                                                                                            <div class="menu-item" style="padding-bottom: 10px;">
+                                                                                                <a href="<?php echo base_url();?>/blog/home_loan1">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/home_loan.png" alt="img">
+                                                                                                    <p title="Nearly half of mortgage borrowers don’t shop around when they buy a home" class="item-title" style="margin: 0; font-weight: 400 !important; font-style: normal !important; text-align: left !important;">Nearly half of mortgage...</p>
+                                                                                                    <!--<p>
+                                                                                                        Buying a home is a big purchase, but it’s just that: a purchase. When it comes to spending money on our daily expenses, we have lots of options to help us find...
+                                                                                                    </p>-->
+
+                                                                                                    <!--<a href="<?php /*echo base_url(); */?>/blog/home_loan1">Read More</a>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-sm-6 col-xs-12">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url();?>/blog/home_loan2">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/home_loan2.png" alt="img">
+                                                                                                    <p title="Understanding the mortgage process: Your home loan toolkit" class="item-title" style="margin: 0; font-weight: 400 !important; font-style: normal !important; text-align: left !important;">Understanding mortgage...</p>
+                                                                                                    <!--<p>
+                                                                                                        The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the loan that’s...
+                                                                                                    </p>-->
+
+                                                                                                    <!--<a href="<?php /*echo base_url(); */?>/blog/home_loan2">Read More</a>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url();?>/blog/home_loan2">
+                                                                                                    <img class="item-image thumbnail" style="width: 195px; height: auto; padding: 0;" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/home_loan2.png" alt="img">
+                                                                                                    <p title="Understanding the mortgage process: Your home loan toolkit" class="item-title" style="margin: 0; font-weight: 400 !important; font-style: normal !important; text-align: left !important;">Understanding mortgage...</p>
+                                                                                                    <!--<p>
+                                                                                                        The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the loan that’s...
+                                                                                                    </p>-->
+
+                                                                                                    <!--<a href="<?php /*echo base_url(); */?>/blog/home_loan2">Read More</a>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="col-sm-6 col-xs-12">
+                                                                                            <div class="menu-item bRight padding-top-13">
+                                                                                                <a href="<?php /*echo base_url(); */?>/blog/home_loan2">
+                                                                                                    <img class="item-image thumbnail" style="width: 195px; height: auto; padding: 0;" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/home_loan2.png" alt="img">
+                                                                                                    <p title="Understanding the mortgage process: Your home loan toolkit" class="item-title" style="margin: 0; font-weight: 400 !important; font-style: normal !important; text-align: left !important;">Understanding mortgage...</p>
+                                                                                                    <!--<p>
+                                                                                                        The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the loan that’s...
+                                                                                                    </p>-->
+
+                                                                                                    <!--<a href="<?php /*echo base_url(); */?>/blog/home_loan2">Read More</a>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -359,7 +500,6 @@
                                                                         </div>
                                                                         <img class="support-image" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/guru-bg.png" alt="img">
                                                                     </div>
-
                                                                 </div>
 
                                                                 <!-- bootstrap end -->
@@ -374,55 +514,71 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
-                                                                                    <a href="<?php echo base_url();?>en/personal_loan">
-																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/PersonalLoanmanuIcon.svg" alt="img" class="thumbnail">
-																							<div class="clearfix"></div>
-																							<p class="text-right">
-																								A <span class="focus-text">Personal loan</span> is a loan that is issued and supported only by the borrower's creditworthiness, rather than by any type of collateral. An unsecured loan is one that is obtained without the use of property as collateral for the loan, and it is also called a signature loan or a personal loan. 
-																							</p>
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/personal_loan">Find All Personal Loan Here</a>
-																						</div>
-																					</a>
+                                                                                <div class="col-sm-7 col-xs-12">
+                                                                                    <a href="<?php echo base_url(); ?>en/home_loan">
+                                                                                        <div class="features">
+                                                                                            <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/PersonalLoanmanuIcon.svg" alt="img" class="thumbnail">
+                                                                                            <div class="clearfix"></div>
+                                                                                            <!--<p class="text-right">
+                                                                                                <span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
+                                                                                            </p>-->
+
+                                                                                            <a class="megamenu_feature_link button-hover" data-text="Find All Personal Loan Here" href="<?php echo base_url();?>en/personal_loan">Find All Personal Loan Here</a>
+                                                                                        </div>
+                                                                                    </a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal_loan1.png" alt="img">
-                                                                                                <p class="item-title">Six Reasons to Get a Personal Loan</p>
-                                                                                                <p>
-                                                                                                    While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url();?>blog/personal_loan1">Read More</a>
+                                                                                                <a href="<?php echo base_url();?>blog/personal_loan1">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal_loan1.png" alt="img">
+                                                                                                    <p class="item-title">Six Reasons to Get a Personal Loan</p>
+                                                                                                    <!--<p>
+                                                                                                        While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution...
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal_loan2.png" alt="img">
-                                                                                                <p class="item-title">How to Get an Unsecured Personal Loan</p>
-                                                                                                <p>
-                                                                                                    If you want to finance an adoption, consolidate your credit card debt or move cross-country, a personal loan can help you cover your immediate expenses without breaking the bank. You can get these loans, typically unsecured,...
-                                                                                                </p>
+                                                                                                <a href="<?php echo base_url();?>blog/personal_loan2">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal_loan2.png" alt="img">
+                                                                                                    <p class="item-title">How to Get an Unsecured Personal Loan</p>
+                                                                                                    <!--<p>
+                                                                                                        If you want to finance an adoption, consolidate your credit card debt or move cross-country, a personal loan can help you cover your immediate expenses without breaking the bank. You can get these loans, typically unsecured,...
+                                                                                                    </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                                <a href="<?php echo base_url();?>blog/personal_loan2">Read More</a>
+                                                                                        <hr style="border-top: 1px solid #ddd; margin:0;">
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url();?>blog/personal_loan3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal_loan3.png" alt="img">
+                                                                                                    <p class="item-title">What to watch out for with personal loans</p>
+                                                                                                    <!--<p>
+                                                                                                        If you ignore the fine print in your personal loan agreement, you could find out the hard way that you agreed to less-than-desirable terms. Look for these gotchas before signing your contract:.....
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal_loan3.png" alt="img">
-                                                                                                <p class="item-title">What to watch out for with personal loans</p>
-                                                                                                <p>
-                                                                                                    If you ignore the fine print in your personal loan agreement, you could find out the hard way that you agreed to less-than-desirable terms. Look for these gotchas before signing your contract:.....
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url();?>blog/personal_loan3">Read More</a>
+                                                                                                <a href="<?php echo base_url();?>blog/personal_loan3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal_loan3.png" alt="img">
+                                                                                                    <p class="item-title">What to watch out for with personal loans</p>
+                                                                                                    <!--<p>
+                                                                                                        If you ignore the fine print in your personal loan agreement, you could find out the hard way that you agreed to less-than-desirable terms. Look for these gotchas before signing your contract:.....
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -465,55 +621,76 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/car_loan">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/menu-Auto-Loan.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																								 A <span class="focus-text">Auto Loan</span> in which the borrower's car title is used as collateral. The borrower must be the lien holder (i.e. own the car outright). Before the loan is repaid, the lender will be the title holder of that car and after repaying, the title will be transferred back to the borrower.
-																							</p>
+																							</p>-->
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/car_loan">Find All Car Loan Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Car Loan Here" href="<?php echo base_url();?>en/car_loan">Find All Car Loan Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto_loan1.png" alt="img">
-                                                                                                <p title="Buying a New Car – How to Research for What You Really Want" class="item-title">Buying a New Car – How to Research for What You...</p>
-                                                                                                <p>
-                                                                                                    Technology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago. These changes can be rather scary...
-                                                                                                </p>
+                                                                                                <a href="<?php echo base_url();?>blog/auto_loan1">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto_loan1.png" alt="img">
+                                                                                                    <p title="Buying a New Car – How to Research for What You Really Want" class="item-title">Buying a New Car – How to Research for What You...</p>
+                                                                                                    <!--<p>
+                                                                                                        Technology has come a long way... over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago. These changes can be rather scary...
+                                                                                                    </p>-->
 
-                                                                                                <a href="<?php echo base_url();?>blog/auto_loan1">Read More</a>
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto_loan2.png" alt="img">
-                                                                                                <p class="item-title">5 Reasons to Have Your Car Loan Ready Before Buying</p>
-                                                                                                <p>
-                                                                                                    Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s certainly easier to let the dealership handle the...
-                                                                                                </p>
+                                                                                                <a href="<?php echo base_url();?>blog/auto_loan2">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto_loan2.png" alt="img">
+                                                                                                    <p class="item-title">5 Reasons to Have Your Car Loan Ready...</p>
+                                                                                                    <!--<p>
+                                                                                                        Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s certainly easier to let the dealership handle the...
+                                                                                                    </p>-->
 
-                                                                                                <a href="<?php echo base_url();?>blog/auto_loan2">Read More</a>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url();?>blog/auto_loan3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto_loan3.png" alt="img">
+                                                                                                    <p class="item-title">Questions to Ask When Leasing a New Car</p>
+                                                                                                    <!--<p>
+                                                                                                        Leasing a new car is a serious financial commitment that should not be undergone without carefully weighing the pros and cons. While some people advise against leasing a...
+                                                                                                    </p>-->
+
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
-                                                                                            <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto_loan3.png" alt="img">
-                                                                                                <p class="item-title">Questions to Ask When Leasing a New Car</p>
-                                                                                                <p>
-                                                                                                    Leasing a new car is a serious financial commitment that should not be undergone without carefully weighing the pros and cons. While some people advise against leasing a...
-                                                                                                </p>
+                                                                                        <div class="col-sm-6 col-xs-12">
+                                                                                            <div class="menu-item bRight padding-top-13">
+                                                                                                <a href="<?php echo base_url();?>blog/auto_loan3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto_loan3.png" alt="img">
+                                                                                                    <p class="item-title">Questions to Ask When Leasing a New Car</p>
+                                                                                                    <!--<p>
+                                                                                                        Leasing a new car is a serious financial commitment that should not be undergone without carefully weighing the pros and cons. While some people advise against leasing a...
+                                                                                                    </p>-->
 
-                                                                                                <a href="<?php echo base_url();?>blog/auto_loan3">Read More</a>
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -556,55 +733,71 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/education_loan">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Education-Loan-Manu-Image.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																							   In <span class="focus-text">Education Loan,</span> money borrowed to finance education or school related expenses. Payments are often deferred while in school and repaid after graduation.
-																							</p>
+																							</p>-->
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/education_loan">Find All Education Loan Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Education Loan Here" href="<?php echo base_url();?>en/education_loan">Find All Education Loan Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education_loan1.png" alt="img">
-                                                                                                <p class="item-title">International Student Loans</p>
-                                                                                                <p>
-                                                                                                    The International Student Loan Center provides international students and study abroad students with access to a range of loan products to help fund...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/education_loan1">Read More</a>
+                                                                                                <a href="<?php echo base_url(); ?>blog/education_loan1">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education_loan1.png" alt="img">
+                                                                                                    <p class="item-title">International Student Loans</p>
+                                                                                                   <!-- <p>
+                                                                                                        The International Student Loan Center provides international students and study abroad students with access to a range of loan products to help fund...
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education_loan2.png" alt="img">
-                                                                                                <p class="item-title">How to Compare Student Loan Options</p>
-                                                                                                <p>
-                                                                                                    Have you already checked out our International Student Loan Comparison Tool, but realized that you weren’t exactly sure how to...
-                                                                                                </p>
+                                                                                                <a href="<?php echo base_url(); ?>blog/education_loan2">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education_loan2.png" alt="img">
+                                                                                                    <p class="item-title">How to Compare Student Loan Options</p>
+                                                                                                    <!--<p>
+                                                                                                        Have you already checked out our International Student Loan Comparison Tool, but realized that you weren’t exactly sure how to...
+                                                                                                    </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                                <a href="<?php echo base_url(); ?>blog/education_loan2">Read More</a>
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/education_loan3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education_loan3.png" alt="img">
+                                                                                                    <p class="item-title">What International Student Loan is Right for Me?</p>
+                                                                                                    <!--<p>
+                                                                                                        When choosing an international student loan, there are several questions you need to take into consideration...
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
-                                                                                            <div class="menu-item">
+                                                                                        <div class="col-sm-6 col-xs-12">
+                                                                                            <div class="menu-item bRight padding-top-13">
+                                                                                                <a href="<?php echo base_url(); ?>blog/education_loan3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education_loan3.png" alt="img">
                                                                                                 <p class="item-title">What International Student Loan is Right for Me?</p>
-                                                                                                <p>
+                                                                                                <!--<p>
                                                                                                     When choosing an international student loan, there are several questions you need to take into consideration...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/education_loan3">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -686,55 +879,74 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/fdr">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/FDR-Menu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																							   The term <span class="focus-text">Fixed Deposit Account</span>  refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
-																							</p>
+																							</p>-->
 
-																							<a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/fdr">Find All FDR Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All FDR Here" href="<?php echo base_url();?>en/fdr">Find All FDR Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/fdr1.png" alt="img">
-                                                                                                <p title="Four Reasons Why You Didn't Get the Best Fixed Deposit Rate From Your Bank" class="item-title">Four Reasons Why You Didn't Get the Best Fixed Deposit...</p>
-                                                                                                <p>
-                                                                                                    Fixed Deposits lately come with advertisements of super high, attractive interest rates but many people eagerly sign up only to find they didn't get the rate thought they...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/investment/fdr1">Read More</a>
+                                                                                                <a href="<?php echo base_url(); ?>blog/investment/fdr1">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/fdr1.png" alt="img">
+                                                                                                    <p title="Four Reasons Why You Didn't Get the Best Fixed Deposit Rate From Your Bank" class="item-title">Four Reasons Why You Didn't Get the Best Fixed Deposit...</p>
+                                                                                                    <!--<p>
+                                                                                                        Fixed Deposits lately come with advertisements of super high, attractive interest rates but many people eagerly sign up only to find they didn't get the rate thought they...
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/fdr2.png" alt="img">
-                                                                                                <p title="Fixed deposit Rates Render Good and Lucrative Rate of return on investment" class="item-title">Fixed deposit Rates Render Good and Lucrative Rate...</p>
-                                                                                                <p>
-                                                                                                    Each form investment has a rate of interest associated with it else the investment will be meaningless. The interest rate gives an idea of your earnings...
-                                                                                                </p>
+                                                                                                <a href="<?php echo base_url(); ?>blog/investment/fdr2">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/fdr2.png" alt="img">
+                                                                                                    <p title="Fixed deposit Rates Render Good and Lucrative Rate of return on investment" class="item-title">Fixed deposit Rates Render Good and Lucrative Rate...</p>
+                                                                                                    <!--<p>
+                                                                                                        Each form investment has a rate of interest associated with it else the investment will be meaningless. The interest rate gives an idea of your earnings...
+                                                                                                    </p>-->
 
-                                                                                                <a href="<?php echo base_url(); ?>blog/investment/fdr2">Read More</a>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/investment/fdr3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/fdr3.png" alt="img">
+                                                                                                    <p title="How and Why Do Interest Rates on Fixed Deposits Fluctuate" class="item-title">How and Why Do Interest Rates on Fixed...</p>
+                                                                                                    <!--<p>
+                                                                                                        For a number of Indians, a Fixed Deposit is the preferred option when it comes to investing. Why? Because Fixed Deposits offer attractive rates of interest,
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
-                                                                                            <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/fdr3.png" alt="img">
-                                                                                                <p title="How and Why Do Interest Rates on Fixed Deposits Fluctuate" class="item-title">How and Why Do Interest Rates on Fixed...</p>
-                                                                                                <p>
-                                                                                                    For a number of Indians, a Fixed Deposit is the preferred option when it comes to investing. Why? Because Fixed Deposits offer attractive rates of interest,
-                                                                                                </p>
+                                                                                        <div class="col-sm-6 col-xs-12 padding-top-13">
 
-                                                                                                <a href="<?php echo base_url(); ?>blog/investment/fdr3">Read More</a>
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/investment/fdr3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/fdr3.png" alt="img">
+                                                                                                    <p title="How and Why Do Interest Rates on Fixed Deposits Fluctuate" class="item-title">How and Why Do Interest Rates on Fixed...</p>
+                                                                                                    <!--<p>
+                                                                                                        For a number of Indians, a Fixed Deposit is the preferred option when it comes to investing. Why? Because Fixed Deposits offer attractive rates of interest,
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -776,7 +988,7 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/dps">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/DPSMenuIcon.svg" alt="img" class="thumbnail">
@@ -785,46 +997,62 @@
 																								<span class="focus-text">DPS</span> is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
 																							</p>
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
+                                                                                            <a class="megamenu_feature_link button-hover" data-text="Find All DPS Here" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps1.png" alt="img">
-                                                                                                <p class="item-title">DEPOSIT DISPUTES REACH RECORD HIGH</p>
-                                                                                                <p>
-                                                                                                    According to the Deposit Protection Scheme (DPS) quarterly statistics, the national average of a tenancy deposit in Q2 when renting a home in England and Wales	was £970.48 – an increase of 4.47% on Q1 2016...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url();?>blog/dps1">Read More</a>
+                                                                                                <a href="<?php echo base_url();?>blog/dps1">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps1.png" alt="img">
+                                                                                                    <p class="item-title">DEPOSIT DISPUTES REACH RECORD HIGH</p>
+                                                                                                    <!--<p>
+                                                                                                        According to the Deposit Protection Scheme (DPS) quarterly statistics, the national average of a tenancy deposit in Q2 when renting a home in England and Wales	was £970.48 – an increase of 4.47% on Q1 2016...
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps2.png" alt="img">
-                                                                                                <p class="item-title">What is different about the tenancy deposit schemes?</p>
-                                                                                                <p>
-                                                                                                    There are several answers to this question. The first is that there are going, from 1 April 2016, to be two new custodial tenancy deposit schemes. One from TDS and one from My Deposits. Another is, from...
-                                                                                                </p>
+                                                                                                <a href="<?php echo base_url();?>blog/dps2">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps2.png" alt="img">
+                                                                                                    <p class="item-title">What is different about the tenancy deposit schemes?</p>
+                                                                                                    <!--<p>
+                                                                                                        There are several answers to this question. The first is that there are going, from 1 April 2016, to be two new custodial tenancy deposit schemes. One from TDS and one from My Deposits. Another is, from...
+                                                                                                    </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                                <a href="<?php echo base_url();?>blog/dps2">Read More</a>
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url();?>blog/dps3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps3.png" alt="img">
+                                                                                                    <p class="item-title">The DPS Insured Scheme</p>
+                                                                                                    <!--<p>
+                                                                                                        From 1st April 2013, The DPS will be your one-stop shop for tenancy deposit protection, offering a choice of custodial or insurance-based protection. Whether you’re a landlord or an agent, you’ll have of mind that  your tenant’s deposit...
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 padding-top-13">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps3.png" alt="img">
-                                                                                                <p class="item-title">The DPS Insured Scheme</p>
-                                                                                                <p>
-                                                                                                    From 1st April 2013, The DPS will be your one-stop shop for tenancy deposit protection, offering a choice of custodial or insurance-based protection. Whether you’re a landlord or an agent, you’ll have of mind that  your tenant’s deposit...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url();?>blog/dps3">Read More</a>
+                                                                                                <a href="<?php echo base_url();?>blog/dps3">
+                                                                                                    <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps3.png" alt="img">
+                                                                                                    <p class="item-title">The DPS Insured Scheme</p>
+                                                                                                    <!--<p>
+                                                                                                        From 1st April 2013, The DPS will be your one-stop shop for tenancy deposit protection, offering a choice of custodial or insurance-based protection. Whether you’re a landlord or an agent, you’ll have of mind that  your tenant’s deposit...
+                                                                                                    </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -867,55 +1095,72 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/millionaire">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/LakhpotiManuIcon.svg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																								<span class="focus-text">Lakhpoti & Millionaire Scheme</span> is a monthly Savings Scheme with flexible long term tenure that gives account holder maturity Value of minimum BDT 1 (one) million.
-																							</p>
+																							</p>-->
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url();?>en/millionaire">Find All Lakhpoti & Millionaire Scheme Here</a>
+																							<a class="megamenu_feature_link button-hover"  data-text="Find All Lakhpoti & Millionaire Scheme Here" href="<?php echo base_url();?>en/millionaire">Find All Lakhpoti & Millionaire Scheme Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/millionaire1">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/millionaire1.png" alt="img">
                                                                                                 <p class="item-title">Apply Fixed Deposit | Compare FD Calculator</p>
-                                                                                                <p>
+                                                                                                <!--<p>
                                                                                                     Central Bank of India is a public sector commercial bank. Headquartered in Mumbai, it has a large branch network of about 4,600 branches in about 27...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/millionaire1">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/millionaire2">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/millionaire2.png" alt="img">
                                                                                                 <p class="item-title">Best Bank Account Interest Rates</p>
-                                                                                                <p>
+                                                                                                <!--<p>
                                                                                                     I’m seeing more signs that 2017 won’t be a repeat of 2016 in terms of the Fed. After the December rate hike of 2015, the Fed suggested in its dot...
-                                                                                                </p>
+                                                                                                </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                                <a href="<?php echo base_url(); ?>blog/millionaire2">Read More</a>
+
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/millionaire3">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/millionaire3.png" alt="img">
+                                                                                                <p class="item-title">How to Deposit Cash at an Online-Only Bank</p>
+                                                                                                <!--<p>
+                                                                                                    Online-only banks can let you deposit checks from your phone, but the same can’t be said for cash. In fact, it’s a transaction they haven’t completely figured out...
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 padding-top-13">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/millionaire3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/millionaire3.png" alt="img">
                                                                                                 <p class="item-title">How to Deposit Cash at an Online-Only Bank</p>
-                                                                                                <p>
+                                                                                                <!--<p>
                                                                                                     Online-only banks can let you deposit checks from your phone, but the same can’t be said for cash. In fact, it’s a transaction they haven’t completely figured out...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/millionaire3">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -958,55 +1203,71 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/money_maximizer">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Money-Maximizer-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																								<span class="focus-text">Money Maximizer</span> account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
-																							</p>
+																							</p>-->
 
-																							<a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/money_maximizer">Find All Money Maximizer Scheme Here</a>
+																							<a class="megamenu_feature_link land_modal button-hover" data-text="Find All Money Maximizer Scheme Here" href="<?php echo base_url();?>en/money_maximizer">Find All Money Maximizer Scheme Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/money-maximizer1">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/moneymax1.png" alt="img">
                                                                                                 <p class="item-title">Money Multiplier Plan</p>
-                                                                                                <p>
+                                                                                                <!--<p>
                                                                                                     The Money Multiplier feature gives you the liquidity of a Savings Account coupled with high earnings of a Fixed Deposit. This is achieved by creating a Fixed Deposit linked to your Savings Account providing you the...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/money-maximizer1">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/money-maximizer2">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/moneymax2.png" alt="img">
                                                                                                 <p title="How beneficial is it to invest in the ICICI Money Multiplier scheme with the Auto Sweep option?" class="item-title">How beneficial is it to invest in the ICICI Money...</p>
-                                                                                                <p>
+                                                                                                <!--<p>
                                                                                                     The money multiplier does not expect you to formally open a FD every time you have surplus and offers you a regular Fixed Deposit Interest. Hence, it is very good. However...
-                                                                                                </p>
+                                                                                                </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                                <a href="<?php echo base_url(); ?>blog/money-maximizer2">Read More</a>
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/money-maximizer3">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/moneymax3.png" alt="img">
+                                                                                                <p class="item-title">How to Open a Money Market Account</p>
+                                                                                                <!--<p>
+                                                                                                    Here’s how to open a money market account, a type of savings account that offers the security of FDIC insurance, the higher interest rates of a savings account and the flexibility...
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 padding-top-13">
                                                                                             <div class="menu-item">
+                                                                                                <a href="<?php echo base_url(); ?>blog/money-maximizer3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/moneymax3.png" alt="img">
                                                                                                 <p class="item-title">How to Open a Money Market Account</p>
-                                                                                                <p>
+                                                                                                <!--<p>
                                                                                                     Here’s how to open a money market account, a type of savings account that offers the security of FDIC insurance, the higher interest rates of a savings account and the flexibility...
-                                                                                                </p>
-
-                                                                                                <a href="<?php echo base_url(); ?>blog/money-maximizer3">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -1049,61 +1310,80 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/monthly_benefit">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Monthly-Benefit-Scheme-menu-Icon-.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																								<span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
-																							</p>
+																							</p>-->
 
-																							<a class="megamenu_feature_link land_modal" href="<?php echo base_url();?>en/monthly_benefit">Find All Monthly Benefit Scheme</a>
+																							<a class="megamenu_feature_link land_modal button-hover" data-text="Find All Monthly Benefit Scheme"  href="<?php echo base_url();?>en/monthly_benefit">Find All Monthly Benefit Scheme</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
+                                                                                                <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card2.png" alt="img">
-                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+                                                                                                <!--<p class="item-subtitle">BRAC Bank Debit Card</p>-->
 
-                                                                                                <p class="item-title">Heading</p>
-                                                                                                <p>
+                                                                                                <p title="Heading" class="item-title">Heading</p>
+                                                                                                <!--<p>
                                                                                                     Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
-                                                                                                </p>
-
-                                                                                                <a href="#">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
+                                                                                                <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
-                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+                                                                                                <!--<p class="item-subtitle">BRAC Bank Debit Card</p>-->
 
-                                                                                                <p class="item-title">Heading</p>
-                                                                                                <p>
+                                                                                                <p title="Heading" class="item-title">Heading</p>
+                                                                                                <!--<p>
                                                                                                     Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
-                                                                                                </p>
+                                                                                                </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                                <a href="#">Read More</a>
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="#">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
+                                                                                                <!--<p class="item-subtitle">BRAC Bank Debit Card</p>-->
+
+                                                                                                <p title="Heading" class="item-title">Heading</p>
+                                                                                                <!--<p>
+                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 padding-top-13">
                                                                                             <div class="menu-item">
+                                                                                                <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
-                                                                                                <p class="item-subtitle">BRAC Bank Debit Card</p>
+                                                                                                <!--<p class="item-subtitle">BRAC Bank Debit Card</p>-->
 
-                                                                                                <p class="item-title">Heading</p>
-                                                                                                <p>
+                                                                                                <p title="Heading" class="item-title">Heading</p>
+                                                                                                <!--<p>
                                                                                                     Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
-                                                                                                </p>
-
-                                                                                                <a href="#">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -1270,58 +1550,76 @@
                                                                             <hr class="menu-border-top">
 
                                                                             <div class="row">
-                                                                                <div class="col-sm-4 col-xs-12">
+                                                                                <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>en/export_import">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<p class="text-right">
+																							<!--<p class="text-right">
 																								<span class="focus-text">Export &amp; Import</span> An import is a good or service brought into one country from another. On the other hand, an export is a function of international trade whereby goods produced in one country are shipped to another country for future sale or trade.
-																							</p>
+																							</p>-->
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/export_import">Find All Export &amp; Import Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Export &amp; Import Here" href="<?php echo base_url(); ?>en/export_import">Find All Export &amp; Import Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
-                                                                                <div class="col-sm-8 col-xs-12">
+                                                                                <div class="col-sm-5 col-xs-12">
                                                                                     <div class="row">
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
+                                                                                                <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export1.png" alt="img">                                                                                                
 
-                                                                                                <p class="item-title">INTERNATIONAL TRADE LEAD AND BUSINESS SERVICE</p>
-                                                                                                <p>
+                                                                                                <p title="INTERNATIONAL TRADE LEAD AND BUSINESS SERVICE" class="item-title">INTERNATIONAL TRADE LEAD AND BUSINESS SERVICE</p>
+                                                                                                <!--<p>
                                                                                                     Trade leads, or business leads, by national or international business services facilitate different functions,Praesent dapibus...
-                                                                                                </p>
-
-                                                                                                <a href="#">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
+                                                                                                <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export2.png" alt="img">                                                                                                
 
-                                                                                                <p class="item-title">IMPORT FROM CHINA</p>
-                                                                                                <p>
+                                                                                                <p title="IMPORT FROM CHINA" class="item-title">IMPORT FROM CHINA</p>
+                                                                                                <!--<p>
                                                                                                     If you have an established source of sales that you are already selling into the market, and have a large volume, you might...
-                                                                                                </p>
+                                                                                                </p>-->
+                                                                                                </a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
 
-                                                                                                <a href="#">Read More</a>
+                                                                                    <hr style="border-top: 1px solid #ddd; margin:0;">
+
+                                                                                    <div class="row">
+
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
+                                                                                            <div class="menu-item">
+                                                                                                <a href="#">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export3.png" alt="img">                                                                                                
+
+                                                                                                <p title="START YOUR OWN EXPORT IMPORT BUSINESS" class="item-title">START YOUR OWN EXPORT IMPORT BUSINESS</p>
+                                                                                                <!--<p>
+                                                                                                    Register your business and ensure that all licenses and other legal requirements have been complied with...
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <div class="col-sm-4 col-xs-12">
+                                                                                        <div class="col-sm-6 col-xs-12 bRight padding-top-13">
                                                                                             <div class="menu-item">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export3.png" alt="img">                                                                                                
+                                                                                                <a href="#">
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export3.png" alt="img">
 
-                                                                                                <p class="item-title">START YOUR OWN EXPORT IMPORT BUSINESS</p>
-                                                                                                <p>
+                                                                                                <p title="START YOUR OWN EXPORT IMPORT BUSINESS" class="item-title">START YOUR OWN EXPORT IMPORT BUSINESS</p>
+                                                                                                <!--<p>
                                                                                                     Register your business and ensure that all licenses and other legal requirements have been complied with...
-                                                                                                </p>
-
-                                                                                                <a href="#">Read More</a>
+                                                                                                </p>-->
+                                                                                                </a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
