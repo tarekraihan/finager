@@ -225,7 +225,7 @@
 																							<!--<p class="text-right">
 																								<span class="focus-text">Debit Card</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
 																							</p>-->
-																							<a class="megamenu_feature_link button-hover" href="<?php echo base_url(); ?>en/debit_card">Find All Debit Cards Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Debit Cards Here" href="<?php echo base_url(); ?>en/debit_card">Find All Debit Cards Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
