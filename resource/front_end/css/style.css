@@ -980,6 +980,12 @@ body {
 }
 
 /* for credit card page */
+#credit_blog{
+    margin: 30px 0 200px 0;
+}
+#credit_blog a{
+    text-decoration:none;
+}
 #card {
     margin-top: 10px;
 }

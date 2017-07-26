@@ -32,8 +32,8 @@ class Blog extends CI_Controller
         $this->load->view('blog/card/credit_card5');
     }
 
-    public function credit_card5(){
-        $this->load->view('blog/card/credit_card5');
+    public function credit_card6(){
+        $this->load->view('blog/card/credit_card6');
     }
 
     public function dps1(){

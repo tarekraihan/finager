@@ -75,72 +75,50 @@
 	</section>
 	<div style="clear:both"></div>
 	<!-- Header part end -->
-	<section id="third_div">
-		<div class="container">
-			<div class="box"></div>
-		</div>
-	</section>
-	<section id="five_div">
-		<div class="container">
-			<div class="category">
-				<h3 class="text-left">Our top picks by category</h3>
-				<div class="col-md-4 col-sm-4">
-					<div class="card_box">
-						<p><i>Best Balance Transfer<br/> 
-						and 0% Interest<br/> 
-						Credit Cards of 2016<br/></i>
-					</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="card_box">
-						<p><i>Best Travel Credit<br/> 
-							Cards of 2016</i>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="card_box">
-						<p><i>Best Cash Back<br/> 
-							Credit Cards of 2016</i>
-						</p>
-					</div>
-				</div>
-			</div>
-			 <div class="category1">
-				<div class="col-md-4 col-sm-4">
-					<div class="card_box1">
-						<p><i>Best Balance Transfer<br/> 
-							and 0% Interest<br/> 
-							Credit Cards of 2016<br/></i>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="card_box1">
-						<p><i>Best Travel Credit<br/> 
-							Cards of 2016</i>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="card_box1">
-						<p><i>Best Cash Back<br/> 
-							Credit Cards of 2016</i>
-						</p>
-					</div>
-				</div>
-			</div> 
-		</div>
-	</section>
-	<div style="clear:both"></div>
-	<section id="logos">
-		<div class="container">
-			<button type="button" class="btn btn-info" data-toggle="collapse" data-target=".category1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/btnccardLandinMore.png"></button>
-		</div><
-	</section>
-	</button>
-	<section id="artical">
+
+    <section id="credit_blog">
+        <div class="container">
+            <div class="row">
+                <h3 class="debit_head">Credit Card Top Blog</h3>
+                <div class="col-md-3 col-sm-3">
+                    <a href="<?php echo base_url();?>blog/credit_card1">
+                        <div class="debit_blog_box">
+                            <img src="<?php echo base_url();?>resource/blog/images/CreditCard.png" alt="Image Not Found" />
+                            <p><i>6 Best Credit Card Bonuses Available Today</i></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="<?php echo base_url();?>blog/credit_card2">
+                        <div class="debit_blog_box">
+                            <img src="<?php echo base_url();?>resource/blog/images/credit-card3.jpg" alt="Image Not Found" />
+                            <p><i>Authorization, Clearing and Settlement: How MasterCard Works</i></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="<?php echo base_url();?>blog/credit_card4">
+                        <div class="debit_blog_box">
+                            <img src="<?php echo base_url();?>resource/blog/images/credit-card2.jpg" alt="Image Not Found" />
+                            <p><i>Top Ten Credit Cards – January 2017</i></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <a href="<?php echo base_url();?>blog/credit_card6">
+                        <div class="debit_blog_box">
+                            <img src="<?php echo base_url();?>resource/blog/images/Creditcard4.png" alt="Image Not Found" />
+                            <p><i>Refine Your New Year’s Resolutions With These Credit Card Tools</i></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+
+
+	<!--section id="artical">
 		<div class="container">
 				<h3><i>Recent Popular Article</i></h3><hr/>
 			<div class="popular_artical">
@@ -158,7 +136,7 @@
 				<span><a href="#">Tarek Raihan</a></span><hr/>
 			</div>
 		</div>
-	</section>
+	</section-->
 	
 	<section id="Basic">
 		<div class="container">
