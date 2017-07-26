@@ -1106,14 +1106,15 @@ class Card extends CI_Controller
     }
 
     public function ajax_get_credit_card(){
-        $card_user = $this->input->post('card_user');
-        $income_range = $this->input->post('income_range');
-        $credit_limit = $this->input->post('credit_limit');
-        $feature_benefits = $this->input->post('feature_benefits');
-        $credit_card_type = $this->input->post('credit_card_type');
-        $max_interest_free_period = $this->input->post('max_interest_free_period');
-        $card_type = $this->input->post('card_type');
-        $card_issuer = $this->input->post('card_issuer');
+        $card_user = (!empty($this->input->post('card_user'))) ? $this->input->post('card_user') : '';
+        $income_range = (!empty($this->input->post('income_range'))) ? $this->input->post('income_range') : '';
+        $credit_limit = (!empty($this->input->post('credit_limit'))) ? $this->input->post('credit_limit') : '';
+        $feature_benefits = (!empty($this->input->post('feature_benefits'))) ? $this->input->post('feature_benefits') : '';
+        $credit_card_type = (!empty($this->input->post('credit_card_type'))) ? $this->input->post('credit_card_type') : '';
+        $max_interest_free_period = (!empty($this->input->post('max_interest_free_period'))) ? $this->input->post('max_interest_free_period') : '';
+        $card_type = (!empty($this->input->post('card_type'))) ? $this->input->post('card_type') : '';
+        $card_issuer = (!empty($this->input->post('card_issuer'))) ? $this->input->post('card_issuer') : '';
+
         $WHERE = array(); $query = '';
         if(!empty($card_user)) {
             if(strstr($card_user,',')) {
@@ -1240,7 +1241,7 @@ class Card extends CI_Controller
                     $summary='';
                     if($length > 250){
                         $rest = substr($row->card_summary, 0,250);
-                        $summary = $rest.'<a href="'.base_url().'en/card_details/'. $row->id.'">read more..</a>';
+                        $summary = $rest.' <a href="'.base_url().'en/card_details/'. $row->id.'"> read more..</a>';
                     }else{
                         $summary = $row->card_summary;
                     }
@@ -1586,6 +1587,24 @@ class Card extends CI_Controller
     public function ajax_delete_card2_compare_session(){
         //$card_id = $this->input->post('card_id');
         $this->session->unset_userdata('second_card');
+        echo 'success';
+    }
+
+    public function ajax_credit_card_quick_link(){
+        $feature_benefits = (!empty($this->input->post('feature_benefits'))) ? $this->input->post('feature_benefits') : '';
+        $card_type = (!empty($this->input->post('card_type'))) ? $this->input->post('card_type') : '';
+
+        if( $feature_benefits != ''){
+            $newdata['feature_benefits'] = $feature_benefits;
+        }
+
+        $array_items = array('feature_benefits', 'card_type');
+        $this->session->unset_userdata($array_items);
+
+        if( $card_type != ''){
+            $newdata['card_type'] = $card_type;
+        }
+        $this->session->set_userdata($newdata);
         echo 'success';
     }
 }

@@ -10,59 +10,58 @@
 					apply, we've gathered everything you need in one easy<br/>
 					place.</i>
 				</h4>
-			
-
-				
-                           <a href="<?php echo base_url(); ?>en/all_credit_card"><span class="credit_card_button flash-button pull-right">Start Comparing</span></a>
+			<a href="<?php echo base_url(); ?>en/all_credit_card"><span class="credit_card_button flash-button pull-right">Start Comparing</span></a>
 			</div>	
 		</div>
 		<div class="container">
 			<div class="card_bank">
 				<div class="All_cradit_card">
-                                        <div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+                    <div class="col-md-3 col-sm-3 nopadding">
+						<a  class="land_modal feature" data-feature_benefits ="17"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/reaward.png" alt="reaward"/>
 							<p>Rewards Program</p>
 						</div></a>
 					</div>
-                                        <div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card1">
-							<img src="<?php echo base_url();?>resource/front_end/images/cash_back.png" alt="cash_back"/>
-							<p>Waiver on Annual Fee</p>
-						</div></a>
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal feature" data-feature_benefits ="23">
+							<div class="All_card1">
+								<img src="<?php echo base_url();?>resource/front_end/images/cash_back.png" alt="cash_back"/>
+								<p>Waiver on Annual Fee</p>
+							</div>
+						</a>
 					</div>
-                                        <div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card2">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal feature"  data-feature_benefits ="18"><div class="All_card2">
 							<img src="<?php echo base_url();?>resource/front_end/images/Installment-Payment-For-Purchase.png" alt="card"/>
 							<p>Installment Payment for Purchase</p>
 						</div></a>
 					</div>
-                                        <div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card3">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal feature"  data-feature_benefits ="19"  ><div class="All_card3">
 							<img src="<?php echo base_url();?>resource/front_end/images/travel.png" alt="travel"/>
 							<p>Airport Facility </p>
 						</div></a>
 					</div>	
-                                        <div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card4">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal feature"  data-feature_benefits ="20"><div class="All_card4">
 							<img src="<?php echo base_url();?>resource/front_end/images/zero.png" alt="zero"/>
-							<p>Interest Free Days</p>
+							<p>Fund Transfer Facility</p>
 						</div></a>
 					</div>
-                                        <div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card5">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal card_type" data-card_type="7" ><div class="All_card5">
 							<img src="<?php echo base_url();?>resource/front_end/images/MX-Card.png" alt="student"/>
 							<p>MaxX Card</p>
 						</div></a>
 					</div>
-                                        <div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card6">
+					<div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal card_type" data-card_type="3" data-toggle="modal"><div class="All_card5">
 							<img src="<?php echo base_url();?>resource/front_end/images/Signature-Card.png" alt="business"/>
 							<p>Signature Card</p>
 						</div></a>
 					</div>
-                                        <div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+                    <div class="col-md-3 col-sm-3 nopadding">
+						<a class="land_modal feature"  data-feature_benefits ="22" >
 							<div class="All_card7">
 								<img src="<?php echo base_url();?>resource/front_end/images/low_interest.png" alt="low_interest"/>
 								<p>Low Interest Rate</p>
@@ -75,6 +74,72 @@
 	</section>
 	<div style="clear:both"></div>
 	<!-- Header part end -->
+	<section id="third_div">
+		<div class="container">
+			<div class="box"></div>
+		</div>
+	</section>
+	<section id="five_div">
+		<div class="container">
+			<div class="category">
+				<h3 class="text-left">Our top picks by category</h3>
+				<div class="col-md-4 col-sm-4">
+					<div class="card_box">
+						<p><i>Best Balance Transfer<br/> 
+						and 0% Interest<br/> 
+						Credit Cards of 2016<br/></i>
+					</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="card_box">
+						<p><i>Best Travel Credit<br/> 
+							Cards of 2016</i>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="card_box">
+						<p><i>Best Cash Back<br/> 
+							Credit Cards of 2016</i>
+						</p>
+					</div>
+				</div>
+			</div>
+			 <div class="category1">
+				<div class="col-md-4 col-sm-4">
+					<div class="card_box1">
+						<p><i>Best Balance Transfer<br/> 
+							and 0% Interest<br/> 
+							Credit Cards of 2016<br/></i>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="card_box1">
+						<p><i>Best Travel Credit<br/> 
+							Cards of 2016</i>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4">
+					<div class="card_box1">
+						<p><i>Best Cash Back<br/> 
+							Credit Cards of 2016</i>
+						</p>
+					</div>
+				</div>
+			</div> 
+		</div>
+	</section>
+	<div style="clear:both"></div>
+	<section id="logos">
+		<div class="container">
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target=".category1"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/btnccardLandinMore.png"></button>
+		</div>
+	</section>
+
+	<section id="artical">
 
     <section id="credit_blog">
         <div class="container">
@@ -193,3 +258,37 @@
 			</div>
 		</div>
 	</section>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.feature').on('click',function(){
+				var  formData = $(this).data();
+				var feature_benefits = formData.feature_benefits;
+				var data = 'feature_benefits='+feature_benefits;
+				console.log(data);
+				quick_link(data);
+
+			});
+
+			$('.card_type').on('click',function(){
+				var  formData = $(this).data();
+				var card_type = formData.card_type;
+				var data = 'card_type='+card_type;
+				console.log(data);
+				quick_link(data);
+
+			});
+
+		});
+		function quick_link(data){
+			var url_str = "<?php echo base_url();?>card/ajax_credit_card_quick_link/";
+			$.ajax({
+				type: "POST",
+				url: url_str,
+				data: data,
+				cache: false,
+				success: function(response){
+					window.location.href = "<?php echo base_url();?>en/all_credit_card";
+				}
+			});
+		}
+	</script>
