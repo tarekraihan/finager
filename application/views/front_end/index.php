@@ -107,31 +107,7 @@
 				<h1>Top Categories</h1>
 					<div class="col-xs-6 col-sm-2">
 						<div class="Cicon">
-							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/all scheme.png" alt=""/>
-								<p>All Scheme</p>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-6 col-sm-2">
-						<div class="Cicon">
-							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/business loan.png" alt=""/>
-								<p>Business Loan</p>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-6 col-sm-2">
-						<div class="Cicon">
-							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/buy new car.png" alt=""/>
-								<p>Buy New Car</p>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-6 col-sm-2">
-						<div class="Cicon">
-							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+							<a href="<?php echo base_url(); ?>en/credit_card">
 								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/credit card.png" alt=""/>
 								<p>Credit Card</p>
 							</a>
@@ -139,25 +115,57 @@
 					</div>
 					<div class="col-xs-6 col-sm-2">
 						<div class="Cicon">
-							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/education loan.png" alt=""/>
-								<p>Education Loan</p>
+							<a href="<?php echo base_url(); ?>en/debit_card">
+								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/Debit Card.png" alt=""/>
+								<p>Debit Card</p>
+							</a>
+						</div>
+					</div>
+                    <div class="col-xs-6 col-sm-2">
+                        <div class="Cicon">
+                            <a href="<?php echo base_url(); ?>en/home_loan">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/home loan.png" alt=""/>
+                                <p>Home Loan</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-2">
+                        <div class="Cicon">
+                            <a href="<?php echo base_url(); ?>en/personal_loan">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/personal loan.png" alt=""/>
+                                <p>Personal Loan</p>
+                            </a>
+                        </div>
+                    </div>
+					<div class="col-xs-6 col-sm-2">
+						<div class="Cicon">
+							<a href="<?php echo base_url(); ?>en/car_loan">
+								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/buy new car.png" alt=""/>
+								<p>Auto Loan</p>
+							</a>
+						</div>
+					</div>
+                    <div class="col-xs-6 col-sm-2">
+                        <div class="Cicon">
+                            <a href="<?php echo base_url(); ?>en/education_loan">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/education loan.png" alt=""/>
+                                <p>Education Loan</p>
+                            </a>
+                        </div>
+                    </div>
+					<div class="col-xs-6 col-sm-2">
+						<div class="Cicon">
+							<a href="<?php echo base_url(); ?>en/fdr">
+								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/fdr.png" alt=""/>
+								<p>FDR</p>
 							</a>
 						</div>
 					</div>
 					<div class="col-xs-6 col-sm-2">
 						<div class="Cicon">
-							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/financial calculator.png" alt=""/>
-								<p>Financial Calculator</p>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-6 col-sm-2">
-						<div class="Cicon">
-							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/home loan.png" alt=""/>
-								<p>Home Loan</p>
+							<a href="<?php echo base_url(); ?>en/dps">
+								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/dps.png" alt=""/>
+								<p>DPS</p>
 							</a>
 						</div>
 					</div>
@@ -165,7 +173,7 @@
 						<div class="Cicon">
 							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
 								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/loan.png" alt=""/>
-								<p>Loan</p>
+								<p>Lakhpoti & Millionaire Scheme</p>
 							</a>
 						</div>
 					</div>
@@ -180,14 +188,6 @@
 					<div class="col-xs-6 col-sm-2">
 						<div class="Cicon">
 							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/personal loan.png" alt=""/>
-								<p>Personal Loan</p>
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-6 col-sm-2">
-						<div class="Cicon">
-							<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
 								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/bank map.png" alt=""/>
 								<p>Bank Map</p>
 							</a>
@@ -195,7 +195,7 @@
 					</div>
 					<div class="col-xs-6 col-sm-2">
 						<div class="Cicon">
-							<a href="<?php echo base_url(); ?>en/more_logo">
+							<a href="#">
 								<img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/more.png" alt=""/>
 								<p>More</p>
 							</a>
