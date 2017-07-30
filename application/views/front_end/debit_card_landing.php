@@ -9,61 +9,60 @@
 					apply, we've gathered everything you need in one easy<br/>
 					place.</i>
 				</h4>
-			
-                                <a href="<?php echo base_url();?>en/all_debit_card"><span class="debit_card_button flash-button pull-right">Start Comparing</span></a>
+					<a href="<?php echo base_url();?>en/all_debit_card"><span class="debit_card_button flash-button pull-right">Start Comparing</span></a>
 			</div>	
 		</div>
 		<div class="container">
 			<div class="card_bank">
 				<div class="All_debit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_reaward.png" alt="reaward"/>
-							<p>Rewards</p>
+						<a class="land_modal choose_account" data-choose_account ='1' ><div class="debit_All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_reaward.png" alt="current_account"/>
+							<p>Current Account</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card1">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_cash_back.png" alt="cash_back"/>
-							<p>Cash Back</p>
+						<a class="land_modal choose_account" data-choose_account = '2'><div class="debit_All_card1">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_cash_back.png" alt="savings_account"/>
+							<p>Savings Account</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card2">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_card.png" alt="card"/>
-							<p>Balance Transfer</p>
+						<a class="land_modal looking_for" data-looking_for = '2' ><div class="debit_All_card2">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_card.png" alt="International Debit Card"/>
+							<p>International Debit Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card3">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_travel.png" alt="travel"/>
-							<p>Travel</p>
+						<a class="land_modal looking_for" data-looking_for ='1'><div class="debit_All_card3">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_travel.png" alt="Local Debit Card"/>
+							<p>Local Debit Card</p>
 						</div></a>
 					</div>
 					<div style="clear:both"></div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card4">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_zero.png" alt="zero"/>
-							<p>Zero Percent</p>
+						<a class="land_modal card_issuer" data-card_issuer="1"><div class="debit_All_card4">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_zero.png" alt="Visa Card"/>
+							<p>Visa Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card5">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_student.png" alt="student"/>
-							<p>Student</p>
+						<a class="land_modal card_issuer" data-card_issuer = '2'><div class="debit_All_card5">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_student.png" alt="Master Card"/>
+							<p>Master Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="debit_All_card6">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_business.png" alt="business"/>
-							<p>Business</p>
+						<a class="land_modal i_want" data-i_want="2"><div class="debit_All_card6">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_business.png" alt="Student Debit Card"/>
+							<p>Student Debit Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+						<a class="land_modal i_want" data-i_want="1">
 							<div class="debit_All_card7">
-								<img src="<?php echo base_url();?>resource/front_end/images/debit_low_interest.png" alt="low_interest"/>
-								<p>Low Interest</p>
+								<img src="<?php echo base_url();?>resource/front_end/images/debit_low_interest.png" alt="Business Debit Card"/>
+								<p>Business Debit Card</p>
 							</div>
 						</a>
 					</div>	
@@ -193,3 +192,55 @@
 			</div>
 		</div>
 	</section>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.choose_account').on('click',function(){
+				var  formData = $(this).data();
+				var choose_account = formData.choose_account;
+				var data = 'choose_account='+choose_account;
+				console.log(data);
+				quick_link(data);
+
+			});
+
+			$('.looking_for').on('click',function(){
+				var  formData = $(this).data();
+				var looking_for = formData.looking_for;
+				var data = 'looking_for='+looking_for;
+				console.log(data);
+				quick_link(data);
+
+			});
+
+			$('.card_issuer').on('click',function(){
+				var  formData = $(this).data();
+				var card_issuer = formData.card_issuer;
+				var data = 'card_issuer='+card_issuer;
+				console.log(data);
+				quick_link(data);
+
+			});
+
+			$('.i_want').on('click',function(){
+				var  formData = $(this).data();
+				var i_want = formData.i_want;
+				var data = 'i_want='+i_want;
+				console.log(data);
+				quick_link(data);
+
+			});
+
+		});
+		function quick_link(data){
+			var url_str = "<?php echo base_url();?>debit_card/ajax_debit_card_quick_link/";
+			$.ajax({
+				type: "POST",
+				url: url_str,
+				data: data,
+				cache: false,
+				success: function(response){
+					window.location.href = "<?php echo base_url();?>en/all_debit_card";
+				}
+			});
+		}
+	</script>

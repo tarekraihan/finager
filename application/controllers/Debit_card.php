@@ -588,14 +588,14 @@ class Debit_card extends CI_Controller
         //-------------Pagination End-------------------
 
         $debit_card ='';
-        $debit_card .='<div class="col-md-12">
+       /* $debit_card .='<div class="col-md-12">
                         <div class="active-filters-container">
                          '.$debit_card_choose_account.'
                          '.$debit_card_looking_for.'
                          '.$debit_card_card_issuer.'
                          '.$debit_card_i_want.'
                          '.$debit_card_clear_all.'
-                        </div></div>';
+                        </div></div>';*/
         foreach($result->result() as $row) {
             $debit_card .= '<div class="full-card">
 
@@ -807,6 +807,34 @@ class Debit_card extends CI_Controller
             echo 'error';
         }
 
+    }
+
+    public function ajax_debit_card_quick_link(){
+        $choose_account = (!empty($this->input->post('choose_account'))) ? $this->input->post('choose_account') : '';
+        $looking_for = (!empty($this->input->post('looking_for'))) ? $this->input->post('looking_for') : '';
+        $card_issuer = (!empty($this->input->post('card_issuer'))) ? $this->input->post('card_issuer') : '';
+        $i_want = (!empty($this->input->post('i_want'))) ? $this->input->post('i_want') : '';
+
+        if( $choose_account != ''){
+            $newdata['choose_account'] = $choose_account;
+        }
+
+        if( $looking_for != ''){
+            $newdata['looking_for'] = $looking_for;
+        }
+
+        if( $card_issuer != ''){
+            $newdata['card_issuer'] = $card_issuer;
+        }
+        if( $i_want != ''){
+            $newdata['i_want'] = $i_want;
+        }
+
+        $array_items = array('choose_account', 'looking_for', 'card_issuer', 'i_want');
+        $this->session->unset_userdata($array_items);
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
     }
 
 
