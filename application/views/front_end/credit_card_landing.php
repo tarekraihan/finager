@@ -10,7 +10,7 @@
 					apply, we've gathered everything you need in one easy<br/>
 					place.</i>
 				</h4>
-			<a href="<?php echo base_url(); ?>en/all_credit_card"><span class="credit_card_button flash-button pull-right">Start Comparing</span></a>
+			<a href="javascript:void(0);" class="start_compare"><span class="credit_card_button flash-button pull-right">Start Comparing</span></a>
 			</div>	
 		</div>
 		<div class="container">
@@ -207,6 +207,12 @@
 				var  formData = $(this).data();
 				var card_type = formData.card_type;
 				var data = 'card_type='+card_type;
+				console.log(data);
+				quick_link(data);
+
+			});
+			$('.start_compare').on('click',function(){
+				var data = 'data = all';
 				console.log(data);
 				quick_link(data);
 

@@ -13,57 +13,57 @@
                 <div class="home_header_text">
 			<h3>Select your home loan</h3>
 			<p>Home loan comparison made easy</p>
-                        <a href="<?php echo base_url(); ?>en/all_home_loan"><span class="home_loan_landing_button flash-button">Start Comparing</span></a>
+            <a href="javascript:void(0);" class="start_compare"><span class="home_loan_landing_button flash-button">Start Comparing</span></a>
 		</div>
 		<div class="container">
 			<div class="home_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/Purchase-Apartment.png" alt="reaward"/>
+						<a class="land_modal i_want" data-i_want ="1" ><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Purchase-Apartment.png" alt="Purchase Apartment/Flat"/>
 							<p>Purchase Apartment/Flat </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/Home-Construction.png" alt="cash_back"/>
+						<a class="land_modal i_want" data-i_want ="2"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Home-Construction.png" alt="Home Construction"/>
 							<p> Home Construction </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/Housing-Plot.png" alt="card"/>
+						<a class="land_modal i_want" data-i_want ="3"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Housing-Plot.png" alt=" Housing Plot "/>
 							<p> Housing Plot </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/Renovation.png" alt="travel"/>
+						<a class="land_modal i_want" data-i_want ="4"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Renovation.png" alt="Renovation"/>
 							<p> Renovation</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/Home-Loan-Takeover.png" alt="zero"/>
-							<p>Home Loan Takeover</p>
+						<a class="land_modal i_am" data-i_am ="4"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Home-Loan-Takeover.png" alt="Landlord"/>
+							<p>Landlord</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/Salaried-Person.png" alt="student"/>
+						<a class="land_modal i_am" data-i_am ="1"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/Salaried-Person.png" alt="Salaried Person"/>
 							<p> Salaried Person </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal i_am" data-i_am ="2"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Business-Man.png" alt="business"/>
-							<p>	Businessman </p>
+							<p>	Businessman Businessman
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+						<a class="land_modal i_am" data-i_am ="3">
 							<div class="All_card">
-								<img src="<?php echo base_url();?>resource/front_end/images/Professional.png" alt="low_interest"/>
+								<img src="<?php echo base_url();?>resource/front_end/images/Professional.png" alt="Professional"/>
 								<p>Professional</p>
 							</div>
 						</a>
@@ -302,3 +302,43 @@
 			</div>
 		</div>
 	</section>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.i_am').on('click',function(){
+				var  formData = $(this).data();
+				var i_am = formData.i_am;
+				var data = 'i_am='+i_am;
+				console.log(data);
+				quick_link(data);
+
+			});
+
+			$('.i_want').on('click',function(){
+				var  formData = $(this).data();
+				var i_want = formData.i_want;
+				var data = 'i_want='+i_want;
+				console.log(data);
+				quick_link(data);
+
+			});
+			$('.start_compare').on('click',function(){
+				var data = 'data = all';
+				console.log(data);
+				quick_link(data);
+
+			});
+
+		});
+		function quick_link(data){
+			var url_str = "<?php echo base_url();?>home_loan/ajax_home_loan_quick_link/";
+			$.ajax({
+				type: "POST",
+				url: url_str,
+				data: data,
+				cache: false,
+				success: function(response){
+					window.location.href = "<?php echo base_url();?>en/all_home_loan";
+				}
+			});
+		}
+	</script>

@@ -9,7 +9,7 @@
 					apply, we've gathered everything you need in one easy<br/>
 					place.</i>
 				</h4>
-					<a href="<?php echo base_url();?>en/all_debit_card"><span class="debit_card_button flash-button pull-right">Start Comparing</span></a>
+					<a href="javascript:void(0);" class="start_compare"><span class="debit_card_button flash-button pull-right">Start Comparing</span></a>
 			</div>	
 		</div>
 		<div class="container">
@@ -225,6 +225,13 @@
 				var  formData = $(this).data();
 				var i_want = formData.i_want;
 				var data = 'i_want='+i_want;
+				console.log(data);
+				quick_link(data);
+
+			});
+
+			$('.start_compare').on('click',function(){
+				var data = 'data = all';
 				console.log(data);
 				quick_link(data);
 

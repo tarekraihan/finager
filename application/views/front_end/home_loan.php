@@ -85,7 +85,7 @@
                                                             ?>
                                                             <div class="col-sm-4 col-xs-12">
                                                                 <div class="material_checkbox_group">
-                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox">
+                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" >
                                                                     <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                         <div class="filter-check-img">
                                                                             <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
@@ -309,7 +309,7 @@
 
                                 <label class="material_radio_group">
 
-                                    <input type="radio" name="iWant" id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                    <input type="radio" name="iWant" id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"  <?php echo ($this->session->userdata("i_want") == $row->id) ? 'checked' :'' ?>/>
 
                                     <span class="material_check_radio"></span>
 
@@ -531,7 +531,7 @@
                             foreach($card_user->result() as $row){
                                 ?>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="iAm" id="iAm<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                    <input type="radio" name="iAm" id="iAm<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"  <?php echo ($this->session->userdata("i_am") == $row->id) ? 'checked' :''; ?>/>
                                     <span class="material_check_radio"></span>
                                     <?php echo $row->home_loan_user;?>
                                 </label><br/>

@@ -814,6 +814,7 @@ class Debit_card extends CI_Controller
         $looking_for = (!empty($this->input->post('looking_for'))) ? $this->input->post('looking_for') : '';
         $card_issuer = (!empty($this->input->post('card_issuer'))) ? $this->input->post('card_issuer') : '';
         $i_want = (!empty($this->input->post('i_want'))) ? $this->input->post('i_want') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
         if( $choose_account != ''){
             $newdata['choose_account'] = $choose_account;
@@ -830,6 +831,9 @@ class Debit_card extends CI_Controller
             $newdata['i_want'] = $i_want;
         }
 
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
         $array_items = array('choose_account', 'looking_for', 'card_issuer', 'i_want');
         $this->session->unset_userdata($array_items);
 

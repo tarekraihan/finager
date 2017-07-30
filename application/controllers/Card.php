@@ -1593,17 +1593,22 @@ class Card extends CI_Controller
     public function ajax_credit_card_quick_link(){
         $feature_benefits = (!empty($this->input->post('feature_benefits'))) ? $this->input->post('feature_benefits') : '';
         $card_type = (!empty($this->input->post('card_type'))) ? $this->input->post('card_type') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
         if( $feature_benefits != ''){
             $newdata['feature_benefits'] = $feature_benefits;
         }
 
-        $array_items = array('feature_benefits', 'card_type');
-        $this->session->unset_userdata($array_items);
-
         if( $card_type != ''){
             $newdata['card_type'] = $card_type;
         }
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+
+        $array_items = array('feature_benefits', 'card_type');
+        $this->session->unset_userdata($array_items);
+
         $this->session->set_userdata($newdata);
         echo 'success';
     }

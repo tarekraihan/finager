@@ -932,5 +932,28 @@ class Home_Loan extends CI_Controller {
         echo 'success';
     }
 
+    public function ajax_home_loan_quick_link(){
+        $i_want = (!empty($this->input->post('i_want'))) ? $this->input->post('i_want') : '';
+        $i_am = (!empty($this->input->post('i_am'))) ? $this->input->post('i_am') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
+
+        $array_items = array('i_want', 'i_am');
+        $this->session->unset_userdata($array_items);
+        if( $i_want != ''){
+            $newdata['i_want'] = $i_want;
+        }
+
+        if( $i_am != ''){
+            $newdata['i_am'] = $i_am;
+        }
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
 
 }

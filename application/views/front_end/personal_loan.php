@@ -83,7 +83,7 @@
 
 										<label class="material_radio_group">
 
-											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php //echo ($this->session->userdata('personal_loan_i_want_id')) ? 'checked' : '' ?> class="material_radiobox"/>
+											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php echo ($this->session->userdata('i_want')) ? 'checked' : '' ?> class="material_radiobox"/>
 
 											<span class="material_check_radio"></span>
 
@@ -97,11 +97,11 @@
 
 								<div>
 
-									<button class="btnPmore btn-open" data-toggle="collapse" data-target="#demo">More</button>
+									<button class="btnPmore btn-open" data-toggle="<?php echo ($this->session->userdata('i_want') != '') ? 'collapsed' : 'collapse' ?>" data-target="#demo"><?php echo ($this->session->userdata('i_want') != '') ? 'Less' : 'More' ?></button>
 
 								</div>
 
-								<div id="demo" class="collapse
+								<div id="demo" class="collapse <?php echo ($this->session->userdata('i_want') != '') ? 'in' : '' ?>">
 									<?php
 									$this->Common_model->table_name = 'personal_loan_looking_for';
 									$this->Common_model->offset = 3;
@@ -110,7 +110,7 @@
 									foreach($result->result() as $row){
 										?>
 										<label class="material_radio_group">
-											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php //echo ($this->session->userdata('personal_loan_i_want_id')) ? 'checked' : '' ?> class="material_radiobox"/>
+											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php echo ($this->session->userdata('i_want')) ? 'checked' : '' ?> class="material_radiobox"/>
 											<span class="material_check_radio"></span>
 											<?php echo $row->personal_loan_looking_for;?>
 										</label><br/>
@@ -394,7 +394,7 @@
 								foreach($result->result() as $row){
 								?>
 									<label class="material_radio_group">
-										<input type="radio" name="i_am"  id="i_am<?php echo $row->id; ?>"  value="<?php echo $row->id ;?>" class="material_radiobox"/>
+										<input type="radio" name="i_am"  id="i_am<?php echo $row->id; ?>"  value="<?php echo $row->id ;?>" class="material_radiobox"  <?php echo ($this->session->userdata('i_am')) ? 'checked' : '' ?>/>
 										<span class="material_check_radio"></span>
 										<?php echo $row->i_am; ?>
 									</label><br/>
@@ -466,11 +466,13 @@
     	$(".btnPmore").click(function(){
 
     		if($(this).hasClass("btn-open")){
-	    		$(this).text("Less");
-	    		$(this).removeClass("btn-open");
-	    	}else{
 	    		$(this).text("More");
+	    		$(this).removeClass("btn-open");
+				$('#demo').removeClass("in");
+	    	}else{
+	    		$(this).text("Less");
 	    		$(this).addClass("btn-open");
+				$('#demo').addClass("in");
 	    	}
     	});
 
@@ -563,9 +565,6 @@
         // Stop dragging calculator and fire event for search
 
 
-
-
-
 		$('#searchPersonalLoan').on('click', '.more_info', function (){
             var  formData = $(this).data();
             var loan_id = formData.loan_id;
@@ -578,22 +577,13 @@
             }else{
                 $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> more info");
             }
-
         });
 
 
-
         $('#searchPersonalLoan').on('click', '.rePaymentSchedule', function (){
-
-
-
             var  formData = $(this).data();
-
             var repayment = formData.repayment;
-
             console.log(repayment);
-
-
 
             $('#rePaymentSchedule'+repayment).html('<iframe  src="<?php echo base_url(); ?>en/personal_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
 
@@ -601,13 +591,7 @@
 
             $('#moreInfo'+repayment).removeClass("in");
 
-
-
         });
-
-
-
-
 
     });
 
