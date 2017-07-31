@@ -94,5 +94,82 @@ $(document).on('click','.filter-option a',function(){
     $(this).parents('li').remove();
 });
 
+/***********************For Fixed side Nav for credit card backup************************/
+// This function will be executed when the user scrolls the page.
+/*$(document).on("scroll",function () {
+    var scroller_anchor = $("#sidebar").offset().top;
+    var sidebar_height = $("#sidebar").height();
+    var window_height = $(window).height();
+
+    var offsetToTop = parseInt($(this).scrollTop());
+    var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
+
+    var top_height = $('#top-page').height();
+    var banner_height = $('#creditCard_header').height();
+    var filter_height = $('#filter-bar').height();
+    var total_top = parseInt(top_height+banner_height+filter_height+60);
+
+    var main_height = $(".main-content-area").height();
+    //console.log(main_height);
+    $(".sidebar_parent").height(main_height-20);
+    //console.log($(".sidebar_parent").height());
+    console.log( $(".footer").offset().top);
+
+
+    // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
+    if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
+    {
+        $('#sidebar').addClass('fixed');
+    }
+
+    if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
+    {
+        $('#sidebar').removeClass('fixed');
+        $("#sidebar").removeClass("fixed-bottom");
+    }
+
+    if($("#moreFilterText").css("display") == "block" && sidebar_height > window_height){
+        $('#sidebar').removeClass('fixed');
+        $("#sidebar").removeClass("fixed-bottom");
+        $('#sidebar').addClass('relative');
+        //alert();
+    }
+
+    if($("#moreFilterText").css("display") == "none" && sidebar_height < window_height){
+        $("#sidebar").removeClass("fixed-bottom");
+        $('#sidebar').removeClass('relative');
+        $('#sidebar').addClass('fixed');
+        //alert();
+    }
+
+    if(sidebar_height > window_height && $(window).scrollTop()>1510){
+        $('#sidebar').removeClass('relative');
+        $('#sidebar').addClass('fixed-bottom');
+    }
+
+    if($('#sidebar').offset().top + $('#sidebar').height()
+        >= $('.footer').offset().top - 65){
+        $("#sidebar").removeClass("fixed");
+        $("#sidebar").removeClass("fixed-bottom");
+        $("#sidebar").addClass("sidebar-absolute-bottom");
+    }
+
+    if(sidebar_height > window_height && $(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+        $("#sidebar").addClass("fixed-bottom");
+        $("#sidebar").removeClass("sidebar-absolute-bottom");
+    }
+
+    if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+        $("#sidebar").addClass("fixed");
+        $("#sidebar").removeClass("sidebar-absolute-bottom");
+    }
+
+    if($("#sidebar").offset().top < total_top){
+        $("#sidebar").removeClass("fixed");
+        $("#sidebar").removeClass("fixed-bottom");
+        $("#sidebar").addClass("sidebar-absolute");
+    }
+});*/
+
 
 

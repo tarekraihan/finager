@@ -4433,3 +4433,38 @@ div#filter-carousel {
 #currentAccountSearch #pagination>li{
     float: none;
 }
+
+/*Fixed sidebar*/
+.sidebar-absolute{
+    /*transition: all 1s ease;*/
+}
+.sidebar-absolute-bottom{
+    position: absolute;
+    width: 262px;
+    bottom: 35px;
+    left: 15px;
+}
+.fixed {
+    position: fixed;
+    top: 0px;
+    width: 262.5px;
+    transition: all 1s ease;
+}
+.sidebar_parent{
+    position: relative;
+    transition: all 1s ease;
+}
+#sidebar{
+    margin-top: 0;
+}
+.relative{
+    position: relative;
+    transition: all 1s ease;
+}
+.fixed-bottom{
+    position: fixed;
+    bottom: 0;
+    top: auto !important;
+    width: 262.5px;
+    transition: all 1s ease;
+}
