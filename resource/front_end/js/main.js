@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded',function(event){
     StartTextAnimation(0);
 });
 
-
 window.onload = function() {
     var elements = document.getElementsByClassName('typewrite');
     for (var i=0; i<elements.length; i++) {
