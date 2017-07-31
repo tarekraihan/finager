@@ -17,56 +17,56 @@
 		<div class="auto_header_text">
 			<h3>Select your auto loan</h3>
 			<p>Auto loan comparison made easy</p>
-			<a href="<?php echo base_url()?>en/all_car_loan"><span class="auto_button flash-button">Start Comparing</span></a>
+			<a href="javascript:void(0);" class="start_compare"><span class="auto_button flash-button">Start Comparing</span></a>
 		</div>
 
                 <div class="container">
 			<div class="home_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url()?>resource/front_end/images/auto-New-Car.png" alt="reaward"/>
+						<a class="land_modal auto_loan_i_want" data-auto_loan_i_want="1" ><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-New-Car.png" alt="New Car"/>
 							<p>New Car</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url()?>resource/front_end/images/auto-Reconditioned-Car.png" alt="cash_back"/>
+						<a class="land_modal auto_loan_i_want" data-auto_loan_i_want="2" ><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-Reconditioned-Car.png" alt="Reconditioned Car"/>
 							<p> Reconditioned Car </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url()?>resource/front_end/images/auto-NRB.png" alt="card"/>
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="5"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-NRB.png" alt="NRB"/>
 							<p> NRB </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="1"><div class="All_card">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-Low-Interest-Rate.png" alt="travel"/>
 							<p> Low Interest Rate</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url()?>resource/front_end/images/auto-Landlord.png" alt="zero"/>
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="4"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-Landlord.png" alt="Landlord"/>
 							<p>Landlord</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url()?>resource/front_end/images/auto-Salaried-Person.png" alt="student"/>
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="1"><div class="All_card">
+							<img src="<?php echo base_url()?>resource/front_end/images/auto-Salaried-Person.png" alt=" Salaried Person "/>
 							<p> Salaried Person </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="3"><div class="All_card">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-Professional.png" alt="business"/>
 							<p>	Professional </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="2">
 							<div class="All_card">
 								<img src="<?php echo base_url()?>resource/front_end/images/auto-Business-Man.png" alt="low_interest"/>
 								<p>Business Man</p>
@@ -127,7 +127,7 @@
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive"src="<?php echo base_url();?>resource/front_end/images/personal_loan.jpg" alt="img_logo_blue"/></div>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/personal_loan.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/>
 							<p>Personal Loan</p>
@@ -294,3 +294,45 @@
 			</div>
 		</div>
 	</section>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.auto_loan_i_want').on('click',function(){
+			var  formData = $(this).data();
+			var auto_loan_i_want = formData.auto_loan_i_want;
+			var data = 'auto_loan_i_want='+auto_loan_i_want;
+			console.log(data);
+			quick_link(data);
+
+		});
+
+		$('.auto_loan_i_am').on('click',function(){
+			var  formData = $(this).data();
+			var auto_loan_i_am = formData.auto_loan_i_am;
+			var data = '&auto_loan_i_am='+auto_loan_i_am;
+			console.log(data);
+			quick_link(data);
+
+		});
+
+
+		$('.start_compare').on('click',function(){
+			var data = 'data = all';
+			console.log(data);
+			quick_link(data);
+
+		});
+
+	});
+	function quick_link(data){
+		var url_str = "<?php echo base_url();?>auto_loan/ajax_auto_loan_quick_link/";
+		$.ajax({
+			type: "POST",
+			url: url_str,
+			data: data,
+			cache: false,
+			success: function(response){
+				window.location.href = "<?php echo base_url();?>en/all_car_loan";
+			}
+		});
+	}
+</script>

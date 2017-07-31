@@ -637,7 +637,7 @@
 
                                 <label class="material_radio_group">
 
-                                    <input type="radio" name="i_want" id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                    <input type="radio" name="i_want" id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"  <?php echo ($this->session->userdata("auto_loan_i_want") ==$row->id) ? 'checked' :'' ?>/>
 
                                     <span class="material_check_radio"></span>
 
@@ -969,115 +969,13 @@
                             foreach($card_user->result() as $row){
                                 ?>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="i_am" id="iAm<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                    <input type="radio" name="i_am" id="iAm<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"  <?php echo ($this->session->userdata("auto_loan_i_am") ==$row->id) ? 'checked' :'' ?>/>
                                     <span class="material_check_radio"></span>
                                     <?php echo $row->i_am;?>
                                 </label><br/>
                             <?php
                             }
                             ?>
-                        </div>
-                    </div>
-
-                    <div class="card_query">
-                        <p>I Am</p>
-                        <div class="query_radio">
-                            <label class="material_radio_group">
-                                <input type="radio" name="i_am" id="iAm1" value="1" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                Salaried Person
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="i_am" id="iAm2" value="2" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                Businessman
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="i_am" id="iAm3" value="3" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                Professional
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="i_am" id="iAm4" value="4" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                Landlord
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                NRB
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                NRB
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                NRB
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                NRB
-                            </label><br>
-                            <!-- <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br><label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>
-                             <label class="material_radio_group">
-                                 <input type="radio" name="i_am" id="iAm5" value="5" class="material_radiobox">
-                                 <span class="material_check_radio"></span>
-                                 NRB
-                             </label><br>-->
-
-
                         </div>
                     </div>
 

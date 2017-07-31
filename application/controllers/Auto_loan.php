@@ -972,4 +972,29 @@ class Auto_loan extends CI_Controller
     }
 
 
+    public function ajax_auto_loan_quick_link(){
+        $auto_loan_i_want = (!empty($this->input->post('auto_loan_i_want'))) ? $this->input->post('auto_loan_i_want') : '';
+        $auto_loan_i_am = (!empty($this->input->post('auto_loan_i_am'))) ? $this->input->post('auto_loan_i_am') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
+
+        if( $auto_loan_i_want != ''){
+            $newdata['auto_loan_i_want'] = $auto_loan_i_want;
+        }
+
+        if( $auto_loan_i_am != ''){
+            $newdata['auto_loan_i_am'] = $auto_loan_i_am;
+        }
+
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+        $array_items = array('auto_loan_i_want', 'auto_loan_i_am');
+        $this->session->unset_userdata($array_items);
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
+
+
 }
