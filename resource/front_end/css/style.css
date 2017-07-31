@@ -946,6 +946,12 @@ body {
 .card_query{
     border-bottom: 2px solid #DADADA;
 }
+.card_query p {
+    background-color: gray;
+    padding: 4px;
+    color: #fff;
+    font-weight: bold;
+}
 .calborder {
     width: 246px;
     border-bottom: 2px solid #DADADA;

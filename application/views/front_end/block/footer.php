@@ -66,10 +66,10 @@
 
                         <ul class="no-padding footer-menus">
                             <li><a href="<?php echo base_url();?>en/fdr">FDR</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">DPS</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Lakhpoti & Millionaire</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Money Maximizer</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Monthly Benefit Scheme</a></li>
+                            <li><a href="<?php echo base_url();?>en/dps">DPS</a></li>
+                            <li><a href="<?php echo base_url();?>en/millionaire">Lakhpoti & Millionaire</a></li>
+                            <li><a href="<?php echo base_url();?>en/money_maximizer">Money Maximizer</a></li>
+                            <li><a href="<?php echo base_url();?>en/monthly_benefit">Monthly Benefit Scheme</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Thrusts Sector</a></li>
                         </ul>

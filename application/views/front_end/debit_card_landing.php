@@ -17,51 +17,51 @@
 				<div class="All_debit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal choose_account" data-choose_account ='1' ><div class="debit_All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_reaward.png" alt="current_account"/>
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_business_card.png" alt="current_account"/>
 							<p>Current Account</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal choose_account" data-choose_account = '2'><div class="debit_All_card1">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_cash_back.png" alt="savings_account"/>
+						<a class="land_modal choose_account" data-choose_account = '2'><div class="debit_All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_business_card.png" alt="savings_account"/>
 							<p>Savings Account</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal looking_for" data-looking_for = '2' ><div class="debit_All_card2">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_card.png" alt="International Debit Card"/>
+						<a class="land_modal looking_for" data-looking_for = '2' ><div class="debit_All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_international_card.png" alt="International Debit Card"/>
 							<p>International Debit Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal looking_for" data-looking_for ='1'><div class="debit_All_card3">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_travel.png" alt="Local Debit Card"/>
+						<a class="land_modal looking_for" data-looking_for ='1'><div class="debit_All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_local_card.png" alt="Local Debit Card"/>
 							<p>Local Debit Card</p>
 						</div></a>
 					</div>
 					<div style="clear:both"></div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal card_issuer" data-card_issuer="1"><div class="debit_All_card4">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_zero.png" alt="Visa Card"/>
+						<a class="land_modal card_issuer" data-card_issuer="1"><div class="debit_All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_visa_card.png" alt="Visa Card"/>
 							<p>Visa Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal card_issuer" data-card_issuer = '2'><div class="debit_All_card5">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_student.png" alt="Master Card"/>
+						<a class="land_modal card_issuer" data-card_issuer = '2'><div class="debit_All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_master_card.png" alt="Master Card"/>
 							<p>Master Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal i_want" data-i_want="2"><div class="debit_All_card6">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_business.png" alt="Student Debit Card"/>
+						<a class="land_modal i_want" data-i_want="2"><div class="debit_All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_student_card.png" alt="Student Debit Card"/>
 							<p>Student Debit Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal i_want" data-i_want="1">
-							<div class="debit_All_card7">
-								<img src="<?php echo base_url();?>resource/front_end/images/debit_low_interest.png" alt="Business Debit Card"/>
+							<div class="debit_All_card">
+								<img src="<?php echo base_url();?>resource/front_end/images/debit_business_card.png" alt="Business Debit Card"/>
 								<p>Business Debit Card</p>
 							</div>
 						</a>
