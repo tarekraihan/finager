@@ -17,13 +17,13 @@
 				<div class="All_debit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal choose_account" data-choose_account ='1' ><div class="debit_All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_business_card.png" alt="current_account"/>
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_card_current.png" alt="current_account"/>
 							<p>Current Account</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal choose_account" data-choose_account = '2'><div class="debit_All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_business_card.png" alt="savings_account"/>
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_card_savings.png" alt="savings_account"/>
 							<p>Savings Account</p>
 						</div></a>
 					</div>
