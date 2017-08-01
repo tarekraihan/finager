@@ -2,7 +2,7 @@
 	<section id="millionier_header_part">
 		<div class="millionier_header_text">
                         <h3>Lakhpoti & Millionaire Scheme</h3>
-			<p>Millionier comaparison made easy</p>
+			<p>Millionaire  comparison made easy</p>
                         <a href="<?php echo base_url(); ?>en/all_millionaire"><span class="millionier_landing_button flash-button">Start Comparing</span></a>
 		</div>
 
@@ -10,51 +10,51 @@
 			<div class="millionaire_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-500-K.png" alt="reaward"/>
-							<p>Deposit for 1 Year</p>
+						<a class="land_modal millionaire_maturity_amount" data-maturity_amount = "5"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-500-K.png" alt="Deposit for 500K"/>
+							<p>Deposit for 500K</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-100-K.png" alt="cash_back"/>
-							<p> Deposit for 2 Years </p>
+						<a class="land_modal millionaire_maturity_amount" data-maturity_amount = "1"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-100-K.png" alt="Deposit for 100K"/>
+							<p> Deposit for 100K </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-1-Million.png" alt="card"/>
-							<p> Deposit for 3 Months </p>
+						<a class="land_modal millionaire_maturity_amount" data-maturity_amount = "6"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-1-Million.png" alt="Deposit for 1 Million "/>
+							<p> Deposit for 1 Million </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-2.5-Million.png" alt="travel"/>
-							<p> Deposit for 3 Years</p>
+						<a class="land_modal millionaire_maturity_amount" data-maturity_amount = "7"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-2.5-Million.png" alt="Deposit for 2.5 Million "/>
+							<p> Deposit for 2.5 Million</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-5-Million.png" alt="zero"/>
-							<p>Deposit for 4 Years</p>
+						<a class="land_modal millionaire_maturity_amount" data-maturity_amount = "8"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-5-Million.png" alt="Deposit for 5 Million "/>
+							<p>Deposit for 5 Million</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-10-Million.png" alt="student"/>
-							<p> Deposit for 5 Years </p>
+						<a class="land_modal millionaire_maturity_amount" data-maturity_amount = "9"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-10-Million.png" alt="Deposit for 10 Million "/>
+							<p> Deposit for 10 Million </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-Corporate-Bodies.png" alt="business"/>
+						<a class="land_modal  millionaire_i_am" data-millionaire_i_am = "2"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-Corporate-Bodies.png" alt="Corporate Bodies"/>
 							<p>	Corporate Bodies </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+						<a class="land_modal millionaire_i_am" data-millionaire_i_am = "1">
 							<div class="All_card">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-Individual.png" alt="low_interest"/>
+								<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-Individual.png" alt="Individual"/>
 								<p>Individual</p>
 							</div>
 						</a>
@@ -109,7 +109,7 @@
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive"src="<?php echo base_url(); ?>resource/front_end/images/MonthlyBenefitScheme.jpg" alt="img_logo_blue"/></div>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/MonthlyBenefitScheme.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
 							<p>Monthly Benefit Scheme</p>
@@ -282,3 +282,42 @@
 			</div>
 		</div>
 	</section>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.millionaire_maturity_amount').on('click',function(){
+				var  formData = $(this).data();
+				var millionaire_maturity_amount = formData.maturity_amount;
+				var data = 'millionaire_maturity_amount='+millionaire_maturity_amount;
+				quick_link(data);
+
+			});
+
+			$('.millionaire_i_am').on('click',function(){
+				var  formData = $(this).data();
+				var millionaire_i_am = formData.millionaire_i_am;
+				var data = 'millionaire_i_am='+millionaire_i_am;
+				quick_link(data);
+
+			});
+
+
+			$('.start_compare').on('click',function(){
+				var data = 'data = all';
+				quick_link(data);
+
+			});
+
+		});
+		function quick_link(data){
+			var url_str = "<?php echo base_url();?>millionaire/ajax_millionaire_quick_link/";
+			$.ajax({
+				type: "POST",
+				url: url_str,
+				data: data,
+				cache: false,
+				success: function(response){
+					window.location.href = "<?php echo base_url();?>en/all_millionaire";
+				}
+			});
+		}
+	</script>

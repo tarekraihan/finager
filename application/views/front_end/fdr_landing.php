@@ -2,55 +2,55 @@
 	<section id="fdr_header_part">
 		<div class="fdr_header_text">
 			<p>FDR comaparison made easy</p>
-			<a href="<?php echo base_url(); ?>en/all_fdr"><span class="fdr_landing_button flash-button">Start Comparing</span></a>
+			<a href="<?php echo base_url(); ?>en/all_fdr" class="start_compare"><span class="fdr_landing_button flash-button">Start Comparing</span></a>
 		</div>
           		<div class="container">
 			<div class="fdr_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal fdr_tenure" data-tenure="4"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-1-year.png" alt="reaward"/>
 							<p>Deposit for 1 Year</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal fdr_tenure" data-tenure="5"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-2-Years.png" alt="cash_back"/>
 							<p> Deposit for 2 Years </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal fdr_tenure" data-tenure="2"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-3-months.png" alt="card"/>
 							<p> Deposit for 3 Months </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal fdr_tenure" data-tenure="6"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-3-Years.png" alt="travel"/>
 							<p> Deposit for 3 Years</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal fdr_tenure" data-tenure="7"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-4-Years.png" alt="zero"/>
 							<p>Deposit for 4 Years</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal fdr_tenure" data-tenure="8"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-5-Years.png" alt="student"/>
 							<p> Deposit for 5 Years </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal fdr_i_am" data-fdr_i_am="2"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-Corporate-Bodies.png" alt="business"/>
 							<p>	Corporate Bodies </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+						<a class="land_modal fdr_i_am" data-fdr_i_am="1">
 							<div class="All_card">
 								<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-Individual.png" alt="low_interest"/>
 								<p>Individual</p>
@@ -272,3 +272,40 @@
 			</div>
 		</div>
 	</section>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.fdr_i_am').on('click',function(){
+				var  formData = $(this).data();
+				var fdr_i_am = formData.fdr_i_am;
+				var data = 'fdr_i_am='+fdr_i_am;
+				quick_link(data);
+
+			});
+
+			$('.fdr_tenure').on('click',function(){
+				var  formData = $(this).data();
+				var fdr_tenure = formData.tenure;
+				var data = 'fdr_tenure='+fdr_tenure;
+				quick_link(data);
+
+			});
+			$('.start_compare').on('click',function(){
+				var data = 'data = all';
+				quick_link(data);
+
+			});
+
+		});
+		function quick_link(data){
+			var url_str = "<?php echo base_url();?>fdr/ajax_fdr_quick_link/";
+			$.ajax({
+				type: "POST",
+				url: url_str,
+				data: data,
+				cache: false,
+				success: function(response){
+					window.location.href = "<?php echo base_url();?>en/all_fdr";
+				}
+			});
+		}
+	</script>

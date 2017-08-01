@@ -42,7 +42,7 @@
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="1"><div class="All_card">
+						<a class="land_modal start_compare"><div class="All_card">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-Low-Interest-Rate.png" alt="travel"/>
 							<p> Low Interest Rate</p>
 						</div></a>

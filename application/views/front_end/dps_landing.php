@@ -2,55 +2,55 @@
 	<section id="dps_header_part">
 		<div class="dps_header_text">
 			<p>DPS comaparison made easy</p>
-            <a href="<?php echo base_url(); ?>en/all_dps"><span class="dps_landing_button flash-button">Start Comparing</span></a>
+            <a href="javascript:void(0);" class="start_compare"><span class="dps_landing_button flash-button">Start Comparing</span></a>
 		</div>
 		<div class="container">
 			<div class="dps_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal dps_tenure" data-dps_tenure="1"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/dps-1-year.png" alt="reaward"/>
 							<p>Deposit for 1 Year</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal dps_tenure" data-dps_tenure="3"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/dps-3-years.png" alt="cash_back"/>
 							<p> Deposit for 3 Years </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal dps_tenure" data-dps_tenure="5"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/dps-5-years.png" alt="card"/>
 							<p> Deposit for 5 Years </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal dps_tenure" data-dps_tenure="13"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/dps-15-years.png" alt="travel"/>
 							<p> Deposit for 15 Years</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal dps_tenure" data-dps_tenure="10"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/dps-10-years.png" alt="zero"/>
 							<p>Deposit for 10 Years</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal dps_tenure" data-dps_tenure="14"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/dps-20-years.png" alt="student"/>
 							<p> Deposit for 20 Years </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
+						<a class="land_modal dps_i_am" data-dps_i_am = "2"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/dps-corporate-bodies.png" alt="business"/>
 							<p>	Corporate Bodies </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+						<a class="land_modal dps_i_am" data-dps_i_am = "1">
 							<div class="All_card">
 								<img src="<?php echo base_url();?>resource/front_end/images/dps-individual.png" alt="low_interest"/>
 								<p>Individual</p>
@@ -304,3 +304,41 @@
 			</div>
 		</div>
 	</section>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.dps_i_am').on('click',function(){
+				var  formData = $(this).data();
+				var dps_i_am = formData.dps_i_am;
+				var data = 'dps_i_am='+dps_i_am;
+				quick_link(data);
+
+			});
+
+			$('.dps_tenure').on('click',function(){
+				var  formData = $(this).data();
+				var dps_tenure = formData.dps_tenure;
+				var data = 'dps_tenure='+dps_tenure;
+				quick_link(data);
+
+			});
+			$('.start_compare').on('click',function(){
+				var data = 'data = all';
+				quick_link(data);
+
+			});
+
+		});
+		function quick_link(data){
+			var url_str = "<?php echo base_url();?>dps/ajax_dps_quick_link/";
+			$.ajax({
+				type: "POST",
+				url: url_str,
+				data: data,
+				cache: false,
+				success: function(response){
+					window.location.href = "<?php echo base_url();?>en/all_dps";
+				}
+			});
+		}
+	</script>

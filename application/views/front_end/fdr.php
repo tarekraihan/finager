@@ -51,7 +51,7 @@
                                 foreach($loan_user->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"/>
+                                        <input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_i_am") == $row->id) ? 'checked' :'' ?> />
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->i_am; ?>
                                     </label><br/>
@@ -171,56 +171,56 @@
 							<div class="fdrTenurepadding">
 								<div class="fdr_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="1" class="material_radiobox"/>
+										<input type="radio" name="fdr_tenure" value="1" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "1" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										1 Month 
 									</label>
 								</div>
 								<div class="fdr_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="2" class="material_radiobox"/>
+										<input type="radio" name="fdr_tenure" value="2" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "2" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										3 Month 
 									</label>
 								</div>
 								<div class="fdr_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="3" class="material_radiobox"/>
+										<input type="radio" name="fdr_tenure" value="3" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "3" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										6 Month 
 									</label>
 								</div>
 								<div class="fdr_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="4" class="material_radiobox"/>
+										<input type="radio" name="fdr_tenure" value="4" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "4" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										1 Year
 									</label>
 								</div>
 								<div class="fdr_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="5" class="material_radiobox"/>
+										<input type="radio" name="fdr_tenure" value="5" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "5" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										2 Year
 									</label>
 								</div>
 								<div class="fdr_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="6" class="material_radiobox"/>
+										<input type="radio" name="fdr_tenure" value="6" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "6") ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										3 Years 
 									</label>
 								</div>
 								<div class="fdr_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="7" class="material_radiobox"/>
+										<input type="radio" name="fdr_tenure" value="7" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "7") ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										4 Years
 									</label>
 								</div>
 								<div class="fdr_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="8" class="material_radiobox"/>
+										<input type="radio" name="fdr_tenure" value="8" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "8") ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										5 Years
 									</label>

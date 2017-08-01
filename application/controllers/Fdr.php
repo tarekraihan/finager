@@ -864,6 +864,29 @@ class Fdr extends CI_Controller {
         echo 'success';
     }
 
+    public function ajax_fdr_quick_link(){
+        $fdr_tenure = (!empty($this->input->post('fdr_tenure'))) ? $this->input->post('fdr_tenure') : '';
+        $fdr_i_am = (!empty($this->input->post('fdr_i_am'))) ? $this->input->post('fdr_i_am') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
+
+        $array_items = array('fdr_tenure', 'fdr_i_am');
+        $this->session->unset_userdata($array_items);
+
+        if( $fdr_tenure != ''){
+            $newdata['fdr_tenure'] = $fdr_tenure;
+        }
+
+        if( $fdr_i_am != ''){
+            $newdata['fdr_i_am'] = $fdr_i_am;
+        }
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
 
 
 }

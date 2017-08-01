@@ -870,5 +870,27 @@ class Millionaire extends CI_Controller
     }
 
 
+    public function ajax_millionaire_quick_link(){
+        $millionaire_maturity_amount = (!empty($this->input->post('millionaire_maturity_amount'))) ? $this->input->post('millionaire_maturity_amount') : '';
+        $millionaire_i_am = (!empty($this->input->post('millionaire_i_am'))) ? $this->input->post('millionaire_i_am') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
+
+        $array_items = array('millionaire_maturity_amount', 'millionaire_i_am');
+        $this->session->unset_userdata($array_items);
+
+        if( $millionaire_maturity_amount != ''){
+            $newdata['millionaire_maturity_amount'] = $millionaire_maturity_amount;
+        }
+
+        if( $millionaire_i_am != ''){
+            $newdata['millionaire_i_am'] = $millionaire_i_am;
+        }
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
 
 }

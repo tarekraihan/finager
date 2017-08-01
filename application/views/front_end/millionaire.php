@@ -114,7 +114,7 @@
                                 foreach($loan_user->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"/>
+                                        <input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_i_am") == $row->id) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->i_am; ?>
                                     </label><br/>
@@ -132,84 +132,84 @@
                             <div class="fdrTenurepadding">
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="1" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="1" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "1" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         100 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="2" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="2" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "2" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         200 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="3" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="3" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "3" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         300 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="4" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="4" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "4" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         400 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="5" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="5" class="material_radiobox" <?php echo ($this->session->userdata("millionaire_maturity_amount") == "5" ) ? 'checked' :'' ?> />
                                         <span class="material_check_radio"></span>
                                         500 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="6" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="6" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "6" ) ? 'checked' :'' ?> />
                                         <span class="material_check_radio"></span>
                                         1 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="7" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="7" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "7" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         2.5 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="8" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="8" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "8" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         5 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="9" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="9" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "9" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         10 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="10" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="10" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "10" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         20 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="11" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="11" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "11" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         30 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="12" class="material_radiobox"/>
+                                        <input type="radio" name="maturity_amount" value="12" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "12" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         40 Million
                                     </label>
@@ -534,23 +534,12 @@ $(window).on('scroll', function (){
                 cache: false,
                 success: function(msg)
                 {
-
-//                    loading_hide();
-//                    console.log(msg);
-
-
                     $("#millionaire_tenure").html(msg);
                     $('#tenure_label').html('Tenure Based on '+ amount_list[amount]);
-
-
-
                 }
             });
-
-
-
-        });
-        });
+        }).trigger('change');
+    });
 </script>
 
 
@@ -778,7 +767,6 @@ $(document).ready(function() {
         
 
     });
-	
 
     $(document).on('click','.compare-cross-btn',function(){
 
@@ -798,7 +786,6 @@ $(document).ready(function() {
         $(this).addClass("hidden");
 
     });
-
 
     $(document).on('click','.compare-cross-btn',function(){
 

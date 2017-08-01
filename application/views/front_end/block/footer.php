@@ -347,9 +347,9 @@ if($result){
     function overlay(s, l) {
         $('.overlay').remove();
         if( s )
-            $('#searchAutoLoan').append('<div class="overlay" style="text-align: center; width:100%;height:100%;position:absolute;display:block;background:rgba(255,255,255,0.4);opacity:0.7;top:0;left:0;z-index:1000;"></div>');
+            $('body').append('<div class="overlay" style="width:100%;height:100%;position:fixed;display:block;background:#000;opacity:0.7;top:0;left:0;z-index:1000;"></div>');
         if( l )
-            $('.overlay').html('<div style="position:fixed;top:50%;left:50%;text-align:center;"><img src="<?php echo base_url();?>resource/front_end/images/loader.gif" width="100" style="margin:0 auto; float: none; "></div>');
+            $('.overlay').html('<div style="position:absolute;top:'+(document.documentElement.clientHeight/2)+'px;left:'+(document.documentElement.clientWidth/2)+'px;"><img src="<?php echo base_url();?>resource/front_end/images/loader.gif" width="100"></div>');
     }
 
 

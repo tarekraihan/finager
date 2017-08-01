@@ -1218,4 +1218,28 @@ class Dps extends CI_Controller
         $this->session->set_userdata($newdata['dps']);
         echo 'success';
     }
+
+    public function ajax_dps_quick_link(){
+        $dps_tenure = (!empty($this->input->post('dps_tenure'))) ? $this->input->post('dps_tenure') : '';
+        $dps_i_am = (!empty($this->input->post('dps_i_am'))) ? $this->input->post('dps_i_am') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
+
+        $array_items = array('dps_tenure', 'dps_i_am');
+        $this->session->unset_userdata($array_items);
+
+        if( $dps_tenure != ''){
+            $newdata['dps_tenure'] = $dps_tenure;
+        }
+
+        if( $dps_i_am != ''){
+            $newdata['dps_i_am'] = $dps_i_am;
+        }
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
 }
