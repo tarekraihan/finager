@@ -433,4 +433,27 @@ class Money_maximizer extends CI_Controller {
         echo 'success';
     }
 
+    public function ajax_money_maximizer_quick_link(){
+        $maximizer_deposit_amount = (!empty($this->input->post('deposit'))) ? $this->input->post('deposit') : '';
+        $maximizer_benefit = (!empty($this->input->post('maximizer_benefit'))) ? $this->input->post('maximizer_benefit') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
+
+        $array_items = array('maximizer_deposit_amount', 'maximizer_benefit');
+        $this->session->unset_userdata($array_items);
+
+        if( $maximizer_deposit_amount != ''){
+            $newdata['maximizer_deposit_amount'] = $maximizer_deposit_amount;
+        }
+
+        if( $maximizer_benefit != ''){
+            $newdata['maximizer_benefit'] = $maximizer_benefit;
+        }
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
 }

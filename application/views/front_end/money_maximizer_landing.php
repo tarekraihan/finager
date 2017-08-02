@@ -13,58 +13,58 @@
 		<div class="mony_max_header_text">
 			<h3>Select Money Maximizer</h3>
 			<p>Money Maximizer comparison made easy</p>
-			<a href="<?php echo base_url(); ?>en/all_money_maximizer"><span class="maximizer_landing_button flash-button">Start Comparing</span></a>
+			<a href="javascript:void(0)" class="start_compare"><span class="maximizer_landing_button flash-button">Start Comparing</span></a>
 		</div>
 		<div class="container">
 			<div class="home_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-8.png" alt="reaward"/>
+						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit="1000000-3"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-8.png" alt="Get 40 Lac"/>
 							<p>Get 40 Lac </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-7.png" alt="cash_back"/>
+						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit = "500000-3"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-7.png" alt="Get 20 Lac"/>
 							<p> Get 20 Lac </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-6.png" alt="card"/>
+						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit = "500000-6"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-6.png" alt="Get 10 Lac"/>
 							<p> Get 10 Lac </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-5.png" alt="travel"/>
-							<p> 4 Time Benifits</p>
+						<a class="land_modal maximizer_benefit" data-maximizer_benefit="3"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-5.png" alt="4 Time Benefits"/>
+							<p> 4 Time Benefits</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-4.png" alt="zero"/>
-							<p>3 Time Benifits</p>
+						<a class="land_modal maximizer_benefit" data-maximizer_benefit="4"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-4.png" alt="3 Time Benefits"/>
+							<p>3 Time Benefits</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-3.png" alt="student"/>
-							<p> 2.5 Time Benifits </p>
+						<a class="land_modal maximizer_benefit" data-maximizer_benefit="5"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-3.png" alt="2.5 Time Benefits"/>
+							<p> 2.5 Time Benefits </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-2.png" alt="business"/>
-							<p>	2 Time Benifits </p>
+						<a class="land_modal maximizer_benefit" data-maximizer_benefit="6"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-2.png" alt="2 Time Benefits"/>
+							<p>	2 Time Benefits </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+						<a class="land_modal maximizer_benefit" data-maximizer_benefit="7">
 							<div class="All_card">
-								<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-1.png" alt="low_interest"/>
-								<p>1.5 Time Benifits</p>
+								<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-1.png" alt="1.5 Time Benefits"/>
+								<p>1.5 Time Benefits</p>
 							</div>
 						</a>
 					</div>	
@@ -329,3 +329,43 @@
 			</div>
 		</div>
 	</section>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('.maximizer_deposit_benefit').on('click',function(){
+			var  formData = $(this).data();
+			var deposit_benefit = formData.maximizer_deposit_benefit;
+			var deposit = deposit_benefit.split('-');
+			var data = 'deposit='+deposit[0]+'&maximizer_benefit='+deposit[1];
+			quick_link(data);
+
+		});
+
+		$('.maximizer_benefit').on('click',function(){
+			var  formData = $(this).data();
+			var maximizer_benefit = formData.maximizer_benefit;
+			var data = 'maximizer_benefit='+maximizer_benefit;
+			quick_link(data);
+
+		});
+
+		$('.start_compare').on('click',function(){
+			var data = 'data = all';
+			quick_link(data);
+
+		});
+
+	});
+	function quick_link(data){
+		var url_str = "<?php echo base_url();?>money_maximizer/ajax_money_maximizer_quick_link/";
+		$.ajax({
+			type: "POST",
+			url: url_str,
+			data: data,
+			cache: false,
+			success: function(response){
+				window.location.href = "<?php echo base_url();?>en/all_money_maximizer";
+			}
+		});
+	}
+</script>

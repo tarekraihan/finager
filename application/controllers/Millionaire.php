@@ -580,7 +580,6 @@ class Millionaire extends CI_Controller
         $response = $this->Select_model->select_millionaire_tenure_by_amount($selected_amount);
         $tenure ='';
 
-        $active = array();
         $data = array();
         foreach($response->result_array() as $row){
             $a = array(
@@ -588,21 +587,29 @@ class Millionaire extends CI_Controller
             );
             array_push($data,$a);
         }
-        array_push($active,$data) ;
-//        pr($active);die;
+
         for ($x = 1; $x <= 20; $x++) {
             $active_class ='checkDisable';
             $input_disable ='disabled';
-            if (in_array($x, $active)){
-                $active_class ='';
-                $input_disable ='';
+            $value = 0;
 
+            foreach($data as $row_o){
+                if(in_array($x,$row_o)){
+                    $active_class ='';
+                    $input_disable ='';
+                    $value = array_search($x,$row_o);
+                }
+            }
+
+            $val = $x;
+            if($value != 0){
+                $val = $value;
             }
             $tenure.= '<li>
                         <section title="">
                             <!-- .squaredOne -->
                             <div class="squaredOne">
-                                <input type="checkbox" value="'.$x.'" id="check'.$x.'" name="millionaire_tenure" '.$input_disable.'/>
+                                <input type="checkbox" value="'.$val.'" id="check'.$x.'" name="millionaire_tenure" '.$input_disable.'/>
                                 <label for="check'.$x.'" class="'.$active_class.'">'.$x.'</label>
                             </div>
                             <!-- end .squaredOne -->

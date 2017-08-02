@@ -232,7 +232,7 @@
                                 ?>
                                 <div class="fdr_tenure pull-left">
                                 <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="tenure" value="<?php echo $row->id; ?>" class="material_radiobox"/>
+                                    <input type="radio" name="tenure" value="<?php echo $row->id; ?>" class="material_radiobox" <?php echo ($this->session->userdata("maximizer_benefit") == $row->id ) ? 'checked' :'' ?> />
                                     <span class="material_check_radio"></span>
                                     <?php echo $row->your_benefit; ?> Times
                                 </label><br/>
@@ -307,6 +307,10 @@ $(window).on('scroll', function (){
 </script>
 <script type="text/javascript">
 
+    $(document).ready(function(){
+        $('#finalAssest').val(<?php echo $this->session->userdata("maximizer_deposit_amount");?>);
+    });
+
     $(document).on('click','#pagination a',function(e){
         e.preventDefault();
         var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
@@ -370,7 +374,11 @@ $(window).on('scroll', function (){
         });
     }
 
-    loadData( page = null );
+//    loadData( page = null );
+    setTimeout(function(){ //Updated by Tarek on 14-05-2017
+        //alert($("#finalAssest").val());
+        loadData(page = null);
+    }, 1000);
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
         loadData( page = null );
     } );

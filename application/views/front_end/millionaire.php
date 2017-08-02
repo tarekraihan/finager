@@ -520,7 +520,7 @@ $(window).on('scroll', function (){
         });
 
 
-        $('input[name="maturity_amount"]').on('click',function() {
+        $('input[name="maturity_amount"]').on('click checked',function() {
             var amount = $(this).val();
             var thisVal= 'selected_amount='+$(this).val();
 //            alert(thisVal);
@@ -538,7 +538,7 @@ $(window).on('scroll', function (){
                     $('#tenure_label').html('Tenure Based on '+ amount_list[amount]);
                 }
             });
-        }).trigger('change');
+        }).trigger('checked');
     });
 </script>
 
