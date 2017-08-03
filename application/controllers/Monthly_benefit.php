@@ -441,6 +441,28 @@ class Monthly_benefit extends CI_Controller {
         echo 'success';
     }
 
+    public function ajax_monthly_benefit_quick_link(){
+        $monthly_benefit_tenure = (!empty($this->input->post('monthly_benefit_tenure'))) ? $this->input->post('monthly_benefit_tenure') : '';
+        $monthly_benefit_deposit_amount = (!empty($this->input->post('monthly_benefit_deposit_amount'))) ? $this->input->post('monthly_benefit_deposit_amount') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
+
+        $array_items = array('monthly_benefit_tenure', 'monthly_benefit_deposit_amount');
+        $this->session->unset_userdata($array_items);
+        if( $monthly_benefit_tenure != ''){
+            $newdata['monthly_benefit_tenure'] = $monthly_benefit_tenure;
+        }
+
+        if( $monthly_benefit_deposit_amount != ''){
+            $newdata['monthly_benefit_deposit_amount'] = $monthly_benefit_deposit_amount;
+        }
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
 
 
 }

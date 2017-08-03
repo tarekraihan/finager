@@ -12,57 +12,70 @@
 <section id="monthly_benefit_header_part">
     <div class="month_benefit_header_text">
         <p>Monthly Benefit Scheme comparison made easy</p>
-        <a href="<?php echo base_url(); ?>en/all_monthly_benefit"><span class="dps_landing_button flash-button">Start Comparing</span></a>
+        <a href="javascript:void(0);" class="start_compare"><span class="dps_landing_button flash-button">Start Comparing</span></a>
     </div>
     <div class="container">
         <div class="home_loan_icon">
             <div class="All_cradit_card">
                 <div class="col-md-3 col-sm-3 nopadding">
-                    <a href="#"><div class="All_card">
-                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-1-Lac.png" alt="reaward"/>
+                    <a class="land_modal monthly_benefit_deposit_amount" data-monthly_benefit_deposit_amount="100000">
+                        <div class="All_card">
+                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-1-Lac.png" alt="1 Lac "/>
                             <p>1 Lac </p>
-                        </div></a>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-3 col-sm-3 nopadding">
-                    <a href="#"><div class="All_card">
-                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-5-Lac.png" alt="cash_back"/>
-                            <p> 5 Lac </p>
-                        </div></a>
+                    <a class="land_modal monthly_benefit_deposit_amount" data-monthly_benefit_deposit_amount="500000">
+                        <div class="All_card">
+                        <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-5-Lac.png" alt="5 Lac"/>
+                        <p> 5 Lac </p>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-3 col-sm-3 nopadding">
-                    <a href="#"><div class="All_card">
-                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-6-Months.png" alt="card"/>
+                    <a class="land_modal monthly_benefit_tenure" data-monthly_benefit_tenure="9">
+                        <div class="All_card">
+                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-6-Months.png" alt="6 Months"/>
                             <p> 6 Months </p>
                         </div></a>
                 </div>
                 <div class="col-md-3 col-sm-3 nopadding">
-                    <a href="#"><div class="All_card">
-                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-1-Year.png" alt="travel"/>
-                            <p> 1 Year</p>
-                        </div></a>
-                </div>
-                <div class="col-md-3 col-sm-3 nopadding">
-                    <a href="#"><div class="All_card">
-                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-2-Years.png" alt="zero"/>
-                            <p>2 Years</p>
-                        </div></a>
-                </div>
-                <div class="col-md-3 col-sm-3 nopadding">
-                    <a href="#"><div class="All_card">
-                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-3-Years.png" alt="student"/>
-                            <p> 3 Years </p>
-                        </div></a>
-                </div>
-                <div class="col-md-3 col-sm-3 nopadding">
-                    <a href="#"><div class="All_card">
-                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-4-Years.png" alt="business"/>
-                            <p>	4 Years </p>
-                        </div></a>
-                </div>
-                <div class="col-md-3 col-sm-3 nopadding">
-                    <a href="#">
+                    <a class="land_modal monthly_benefit_tenure" data-monthly_benefit_tenure="4">
                         <div class="All_card">
-                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-5-Years.png" alt="low_interest"/>
+                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-1-Year.png" alt="1 Year"/>
+                            <p> 1 Year</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 nopadding">
+                    <a class="land_modal monthly_benefit_tenure" data-monthly_benefit_tenure="5">
+                        <div class="All_card">
+                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-2-Years.png" alt="2 Years"/>
+                            <p>2 Years</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 nopadding">
+                    <a class="land_modal monthly_benefit_tenure" data-monthly_benefit_tenure="6">
+                        <div class="All_card">
+                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-3-Years.png" alt="3 Years"/>
+                            <p> 3 Years </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 nopadding">
+                    <a class="land_modal monthly_benefit_tenure" data-monthly_benefit_tenure="7">
+                        <div class="All_card">
+                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-4-Years.png" alt="4 Years"/>
+                            <p>	4 Years </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-3 nopadding">
+                    <a class="land_modal monthly_benefit_tenure" data-monthly_benefit_tenure="8">
+                        <div class="All_card">
+                            <img src="<?php echo base_url();?>resource/front_end/images/monthly-benefit-5-Years.png" alt="5 Years"/>
                             <p>5 Years</p>
                         </div>
                     </a>
@@ -296,7 +309,6 @@
         </div>
     </div>
 </section>
-
 <section id="footer_monthly_benefit">
     <div class="container">
         <div class="monthly_benefit_pr">
@@ -312,3 +324,40 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.monthly_benefit_tenure').on('click',function(){
+            var  formData = $(this).data();
+            var monthly_benefit_tenure = formData.monthly_benefit_tenure;
+            var data = 'monthly_benefit_tenure='+monthly_benefit_tenure;
+            quick_link(data);
+
+        });
+
+        $('.monthly_benefit_deposit_amount').on('click',function(){
+            var  formData = $(this).data();
+            var monthly_benefit_deposit_amount = formData.monthly_benefit_deposit_amount;
+            var data = 'monthly_benefit_deposit_amount='+monthly_benefit_deposit_amount;
+            quick_link(data);
+
+        });
+        $('.start_compare').on('click',function(){
+            var data = 'data = all';
+            quick_link(data);
+
+        });
+
+    });
+    function quick_link(data){
+        var url_str = "<?php echo base_url();?>monthly_benefit/ajax_monthly_benefit_quick_link/";
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: data,
+            cache: false,
+            success: function(response){
+                window.location.href = "<?php echo base_url();?>en/all_monthly_benefit";
+            }
+        });
+    }
+</script>

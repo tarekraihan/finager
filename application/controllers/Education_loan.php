@@ -807,5 +807,28 @@ class Education_Loan extends CI_Controller {
         echo 'success';
     }
 
+    public function ajax_education_loan_quick_link(){
+        $education_loan_amount = (!empty($this->input->post('education_loan_amount'))) ? $this->input->post('education_loan_amount') : '';
+        $education_loan_tenure = (!empty($this->input->post('education_loan_tenure'))) ? $this->input->post('education_loan_tenure') : '';
+        $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
+
+        $array_items = array('education_loan_amount', 'education_loan_tenure');
+        $this->session->unset_userdata($array_items);
+        if( $education_loan_amount != ''){
+            $newdata['education_loan_amount'] = $education_loan_amount;
+        }
+
+        if( $education_loan_tenure != ''){
+            $newdata['education_loan_tenure'] = $education_loan_tenure;
+        }
+        if($data == 'all'){
+            $newdata['all']= '';
+        }
+
+
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
 
 }

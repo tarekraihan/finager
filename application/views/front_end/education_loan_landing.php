@@ -2,57 +2,57 @@
 <section id="education_header_part">
     <div class="education_header_text">
         <h3>Education loan comparison made easy</h3>
-        <a href="<?php echo base_url();?>en/all_education_loan"><span class="education_landing_button flash-button">Start Comparing</span></a>
+        <a href="javascript:void(0);" class="start_compare"><span class="education_landing_button flash-button">Start Comparing</span></a>
     </div>
    <div class="container">
 			<div class="education_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/edu-1-Lakh.png" alt="reaward"/>
+						<a class="land_modal education_loan_amount" data-education_loan_amount="100000"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-1-Lakh.png" alt="1 Lakh"/>
 							<p>1 Lakh</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/edu-3-Lakh.png" alt="cash_back"/>
+						<a class="land_modal education_loan_amount" data-education_loan_amount="300000"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-3-Lakh.png" alt="3 Lakh"/>
 							<p> 3 Lakh </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/edu-10-Lakh.png" alt="card"/>
+						<a class="land_modal education_loan_amount" data-education_loan_amount="1000000"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-10-Lakh.png" alt="10 Lakh"/>
 							<p>10 Lakh </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/edu-20-Lakh.png" alt="travel"/>
+						<a class="land_modal education_loan_amount" data-education_loan_amount="2000000"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-20-Lakh.png" alt="20 Lakh"/>
 							<p> 20 Lakh</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/edu-40-Lakh.png" alt="zero"/>
+						<a class="land_modal education_loan_amount" data-education_loan_amount="4000000"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-40-Lakh.png" alt="40 Lakh"/>
 							<p>40 Lakh</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/edu-3-Years.png" alt="student"/>
+						<a class="land_modal education_loan_tenure" data-education_loan_tenure="3"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-3-Years.png" alt="3 Years"/>
 							<p> 3 Years </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/edu-4-Years.png" alt="business"/>
+						<a class="land_modal education_loan_tenure" data-education_loan_tenure="4"><div class="All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/edu-4-Years.png" alt="4 Years"/>
 							<p>	4 Years </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
+						<a class="land_modal education_loan_tenure" data-education_loan_tenure="5">
 							<div class="All_card">
-								<img src="<?php echo base_url();?>resource/front_end/images/edu-5-Years.png" alt="low_interest"/>
+								<img src="<?php echo base_url();?>resource/front_end/images/edu-5-Years.png" alt="5 Years"/>
 								<p>5 Years</p>
 							</div>
 						</a>
@@ -291,3 +291,40 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.education_loan_amount').on('click',function(){
+            var  formData = $(this).data();
+            var education_loan_amount = formData.education_loan_amount;
+            var data = 'education_loan_amount='+education_loan_amount;
+            quick_link(data);
+
+        });
+
+        $('.education_loan_tenure').on('click',function(){
+            var  formData = $(this).data();
+            var education_loan_tenure = formData.education_loan_tenure;
+            var data = 'education_loan_tenure='+education_loan_tenure;
+            quick_link(data);
+
+        });
+        $('.start_compare').on('click',function(){
+            var data = 'data = all';
+            quick_link(data);
+
+        });
+
+    });
+    function quick_link(data){
+        var url_str = "<?php echo base_url();?>education_loan/ajax_education_loan_quick_link/";
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: data,
+            cache: false,
+            success: function(response){
+                window.location.href = "<?php echo base_url();?>en/all_education_loan";
+            }
+        });
+    }
+</script>

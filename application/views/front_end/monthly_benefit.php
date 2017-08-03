@@ -231,7 +231,7 @@
                                 ?>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="tenure" value="<?php echo $row->id; ?>" class="material_radiobox"/>
+                                        <input type="radio" name="tenure" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("monthly_benefit_tenure") ==$row->id) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         <?php echo ($row->tenure == '0.5') ? '6 Months' : $row->tenure.' Years'; ?>
                                     </label><br/>
@@ -314,6 +314,12 @@
     });
 
 
+    $(document).ready(function(){
+        $('#finalAssest').val(<?php echo ($this->session->userdata('monthly_benefit_deposit_amount') ) ? $this->session->userdata('monthly_benefit_deposit_amount') : '' ?>);
+        setTimeout(function(){
+            loadData(page = null); // call on load
+        }, 1000);
+    });
 
     function loadData( page = null ){
 
@@ -333,7 +339,6 @@
             page_count = page ;
         }
         var url_str = "<?php echo base_url();?>monthly_benefit/ajax_get_monthly_benefit/" + page_count;
-        console.log(main_string);
         $.ajax
         ({
             type: "POST",
@@ -341,18 +346,16 @@
             data: main_string,
             cache: false,
             beforeSend: function() {
-                overlay(true,true);
+                //overlay(true,true);
             },
             success: function(msg)
             {
-                overlay(false);
                 $("#monthlyBenefitSearch").html(msg);
 
             }
         });
     }
 
-    loadData( page = null );
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
         loadData( page = null );
     } );
