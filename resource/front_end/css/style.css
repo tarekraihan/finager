@@ -1226,7 +1226,7 @@ a .education_landing_button{
     color:#000;
 }
 .btn_landing_view_mony_max:hover{
-    background-color:#CECAAA;
+    background-color:#A58D32;
     color:#fff;
 }
 .btn_landing_view2_mony_max{
@@ -1247,7 +1247,7 @@ a .education_landing_button{
     color:#000;
 }
 .btn_landing_mony_max_start:hover{
-    background-color:#CECAAA;
+    background-color:#A58D32;
     color:#ffffff;
 }
 #money_max_biggest_brand {
@@ -1511,6 +1511,7 @@ a .fdr_landing_button {
 .Sponsored_box1 p{
     padding:15px;
     text-align:justify;
+    height: 205px;
 }
 .Sponsored_box1 button {
     margin-left: 45px;
@@ -2862,7 +2863,27 @@ a .debit_card_button.flash-button{
 .monthly_benefit_pr img {
     margin-top: 36px;
 }
-
+#monthly_benefit_biggest_brand {
+    background-image: url(../images/Monthly-Benefit-middlebg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 395px;
+    width: 100%;
+    background-position: center center;
+    margin-top: 50px;
+}
+.btn_monthly_benefit{
+    border: 1px solid #A58D32;
+    padding: 5px 26px;
+    border-radius: 6px;
+    margin-left: 58px;
+    font-size: 16px;
+    color:#000;
+}
+.btn_monthly_benefit:hover{
+    background-color:#A58D32;
+    color:#fff;
+}
 /* card_box end */
 /* popular_artical start */
 #artical{

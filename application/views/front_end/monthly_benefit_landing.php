@@ -99,9 +99,10 @@
                         <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-text-bg.png" alt="text-bg"/>
                         <p>FDR</p>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    <p>
+                        The term Fixed Deposit Account refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
                     </p>
-                    <a href=""><span class="btn_monthly_benefit">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>en/fdr"><span class="btn_monthly_benefit">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -111,9 +112,10 @@
                         <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-text-bg.png" alt="text-bg"/>
                         <p>DPS</p>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    <p>
+                        DPS is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
                     </p>
-                    <a href=""><span class="btn_monthly_benefit">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>en/dps"><span class="btn_monthly_benefit">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -123,9 +125,10 @@
                         <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-text-bg.png" alt="text-bg"/>
                         <p>Lakhpoti & Millionaire Scheme</p>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    <p>
+                        Millionaire Scheme is a monthly Savings Scheme with flexible long term tenure that gives account holder maturity Value of minimum BDT 1 (one) million.
                     </p>
-                    <a href=""><span class="btn_monthly_benefit">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>en/millionaire"><span class="btn_monthly_benefit">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -133,11 +136,12 @@
                     <div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/MonthlyBenefitScheme.jpg" alt="img_logo_blue"/></div>
                     <div class="dps_spnrs1">
                         <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-text-bg.png" alt="text-bg"/>
-                        <p>Monthly Benefit Scheme</p>
+                        <p>Money Maximizer</p>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    <p>
+                        Money Maximizer account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
                     </p>
-                    <a href=""><span class="btn_monthly_benefit">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>en/money_maximizer"><span class="btn_monthly_benefit">Go to slide</span></a>
                 </div>
             </div>
         </div>
@@ -153,31 +157,22 @@
             <div class="col-md-4 col-sm-4">
                 <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-round.png" alt="round"/>
                 <h4>We’re different</h4>
-                <p>We’ve worked hard with our partners<br/>
-                    to bring you special home loan deals,<br/>
-                    competitive mortgage rates and a<br/>
-                    more seamless, efficient and<br/>
-                    convenient experience.
+                <p>
+                    We’ve worked hard with our partners to bring you special home loan deals, competitive mortgage rates and a more seamless, efficient and convenient experience.
                 </p>
             </div>
             <div class="col-md-4 col-sm-4">
                 <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-plenty.png" alt="plenty"/>
                 <h4>Plenty of choice</h4>
-                <p>We compare hundreds of home loan<br/>
-                    products from more than 20 of<br/>
-                    Australia’s most recognised lenders,<br/>
-                    so you’ll find the loan that’s right for<br/>
-                    you.
+                <p>
+                    We compare hundreds of home loan products from more than 20 of Bangladesh's most recognised lenders, so you’ll find the loan that’s right for you.
                 </p>
             </div>
             <div class="col-md-4 col-sm-4">
                 <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-qualifiled.png" alt="qualifiled"/>
-                <h4>We’re qualified</h4>
-                <p>Our consultants are fully accredited<br/>
-                    by the Mortgage and Finance<br/>
-                    Association of Australia (MFAA) or<br/>
-                    the Finance Broker Association of<br/>
-                    Australia (FBAA).
+                <h4>We’re Qualified</h4>
+                <p>
+                    Our research team and consultants are working in different well-known organizations all over the world. They are also one of the best financial solution providers in our country.
                 </p>
             </div>
         </div>
@@ -188,10 +183,9 @@
         <div class="biggest_pr">
             <div class="col-md-6 col-sm-6">
                 <div class="bigest_text1">
-                    <h3>We compare some of Australia’s biggest brands</h3>
-                    <p>We compare plenty of partners and products across our range of services, so you can rest as-
-                        sured you’re making the right choice. While our range of products is always growing, we
-                        don’t compare all products in the market.
+                    <h3>We Compare Bangladesh’s Biggest Banks and Financial Institutes</h3>
+                    <p>
+                        We compare plenty of banks and financial institutes’ products across our range of services, assuring you make the right choice.
                     </p>
                     <a href="#"><span class="btn_landing_view_mony_max">View Our Partners</a></span>
                 </div>
@@ -199,9 +193,7 @@
             <div class="col-md-6 col-sm-6">
                 <div class="bigest_text">
                     <h3>The tools to make the right choice</h3>
-                    <p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an<span class="clr_black"> applica-
-							tion tracker</span> that can help you keep on top of your home loan.<br/>
-                    </p>
+                    <p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an application tracker that can help you keep on top of your home loan.</p>
                     <a href="#"><span class="btn_landing_view2_mony_max">View Our Partners</a></span>
                 </div>
             </div>
@@ -214,26 +206,26 @@
             <h2>Finager Always get it right</h2>
             <div class="col-md-4 col-sm-4">
                 <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-box1.png" alt="box"/>
-                <h4>Step 1. Get acquainted</h4>
-                <p>Tell us a bit about yourself and what<br/>
-                    you’re looking for.
+                <h4>Step 1. Find your product</h4>
+                <p>
+                    Tell us a bit about yourself and you’re looking for.
                 </p>
             </div>
             <div class="col-md-4 col-sm-4">
-                <img class="img-responsive" src="images/Monthly-Benefit-box2.png" alt="box"/>
-                <h4>Step 1. Get acquainted</h4>
-                <p>Tell us a bit about yourself and what<br/>
-                    you’re looking for.
+                <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-box2.png" alt="box"/>
+                <h4>Step 2. Choose your product</h4>
+                <p>
+                    Choose your product suitable with your criteria.
                 </p>
             </div>
             <div class="col-md-4 col-sm-4">
                 <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Monthly-Benefit-box3.png" alt="box"/>
-                <h4>Step 1. Get acquainted</h4>
-                <p>Tell us a bit about yourself and what<br/>
-                    you’re looking for.
+                <h4>Step 3. Compare your product with other</h4>
+                <p>
+                    Compare your product with similar product based on   your criteria.
                 </p>
             </div>
-            <a href="#"><span class="btn_landing_mony_max_start">Get Started</span></a>
+            <a href="<?php echo base_url();?>en/all_monthly_benefit"><span class="btn_landing_mony_max_start">Get Started</span></a>
         </div>
     </div>
 </section>
@@ -243,8 +235,7 @@
         <div class="heading_pr">
             <div class="col-md-3 col-sm-6">
                 <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/mony_maximizer.jpg" alt="img_logo_blue"/>
-                    <p class="H_loan">Money Maximizer</p>
+                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/monthly_benefit.jpg" alt="img_logo_blue"/>
                     <h4>Money Multiplier Plan</h4>
                     <b>Let Your Money Multiply</b>
                     <p>
@@ -261,8 +252,7 @@
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/mony_maximizer2.jpg" alt="img_logo_blue"/>
-                    <p class="H_loan">Money Maximizer</p>
+                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/monthly_benefit.jpg" alt="img_logo_blue"/>
                     <h4>How to Open a Money Market Account</h4>
                     <p>
                         Here’s how to open a money market account, a type of savings account that offers the security of FDIC insurance, the higher interest rates of a savings account and
@@ -278,8 +268,7 @@
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/mony_maximizer3.jpg" alt="img_logo_blue"/>
-                    <p class="H_loan">Money Maximizer</p>
+                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/monthly_benefit.jpg" alt="img_logo_blue"/>
                     <h4>What is a Certificate of Deposit (CD)?</h4>
                     <p>
                         Sold by banks, certificates of deposit (better known as CDs) are low-risk –- and relatively low-return — investments suitable for cash you don’t need for months or
@@ -293,8 +282,7 @@
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/mony_maximizer4.jpg" alt="img_logo_blue"/>
-                    <p class="H_loan">Money Maximizer</p>
+                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/monthly_benefit.jpg" alt="img_logo_blue"/>
                     <h4>First anniversary of tenancy deposit protection</h4>
                     <p>
                         Deposits from over 3,500 tenants have been protected during the first year of the States’ approved tenancy deposit scheme, mydeposits Jersey. Since 2 November 2015,

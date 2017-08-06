@@ -76,9 +76,10 @@
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_text_bg.png" alt="text-bg"/>
 							<p>FDR</p>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+						<p>
+                            The term Fixed Deposit Account refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
 						</p>
-                                                <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_dps">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -88,9 +89,10 @@
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_text_bg.png" alt="text-bg"/>
 							<p>Lakhpoti & Millionaire Scheme</p>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
-                                                <a href="<?php echo base_url();?>en/millionaire"><span class="btn_landing_dps">Go to slide</span></a>
+						<p>
+                            Millionaire Scheme is a monthly Savings Scheme with flexible long term tenure that gives account holder maturity Value of minimum BDT 1 (one) million.
+                        </p>
+                        <a href="<?php echo base_url();?>en/millionaire"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -100,9 +102,10 @@
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_text_bg.png" alt="text-bg"/>
 							<p>Money Maximizer</p>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
-						<a href="<?php echo base_url();?>en/#"><span class="btn_landing_dps">Go to slide</span></a>
+						<p>
+                            Money Maximizer account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
+                        </p>
+						<a href="<?php echo base_url();?>en/money_maximizer"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -114,7 +117,7 @@
 						</div>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
-						<a href="<?php echo base_url();?>en/#"><span class="btn_landing_dps">Go to slide</span></a>
+						<a href="<?php echo base_url();?>en/monthly_benefit"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -130,31 +133,22 @@
 				<div class="col-md-4 col-sm-4">
 					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_round.png" alt="round"/>
 					<h4>We’re different</h4>
-					<p>We’ve worked hard with our partners<br/>
-						to bring you special home loan deals,<br/>
-						competitive mortgage rates and a<br/>
-						more seamless, efficient and<br/>
-						convenient experience.
+					<p>
+                        We’ve worked hard with our partners to bring you special home loan deals, competitive mortgage rates and a more seamless, efficient and convenient experience.
 					</p>
 				</div>
 				<div class="col-md-4 col-sm-4">
 					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_plenty.png" alt="plenty"/>
 					<h4>Plenty of choice</h4>
-					<p>We compare hundreds of home loan<br/>
-						products from more than 20 of<br/>
-						Australia’s most recognised lenders,<br/>
-						so you’ll find the loan that’s right for<br/>
-						you.
+					<p>
+                        We compare hundreds of home loan products from more than 20 of Bangladesh's most recognised lenders, so you’ll find the loan that’s right for you.
 					</p>
 				</div>
 				<div class="col-md-4 col-sm-4">
 					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_qualifiled.png" alt="qualifiled"/>
 					<h4>We’re qualified</h4>
-					<p>Our consultants are fully accredited<br/>
-						by the Mortgage and Finance<br/>
-						Association of Australia (MFAA) or<br/>
-						the Finance Broker Association of<br/>
-						Australia (FBAA).
+					<p>
+                        Our research team and consultants are working in different well-known organizations all over the world. They are also one of the best financial solution providers in our country.
 					</p>
 				</div>
 			</div>
@@ -165,10 +159,9 @@
 			<div class="biggest_pr">
 				<div class="col-md-6 col-sm-6">
 					<div class="bigest_text1">
-						<h3>We compare some of Australia’s biggest brands</h3>
-						<p>We compare plenty of partners and products across our range of services, so you can rest as-
-							sured you’re making the right choice. While our range of products is always growing, we
-							don’t compare all products in the market.
+						<h3>We Compare Bangladesh’s Biggest Banks and Financial Institutes</h3>
+						<p>
+                            We compare plenty of banks and financial institutes’ products across our range of services, assuring you make the right choice.
 						</p>
 						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view_dps">View Our Partners</span>
 					</div>
@@ -176,9 +169,7 @@
 				<div class="col-md-6 col-sm-6">
 					<div class="dps_bigest_text">
 						<h3>The tools to make the right choice</h3>
-						<p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an<span class="clr_black"> applica-
-							tion tracker</span> that can help you keep on top of your home loan.<br/>
-						</p>
+						<p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an application tracker that can help you keep on top of your home loan.</p>
 						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view2_dps">View Our Partners</span>
 					</div>
 				</div>
@@ -191,26 +182,26 @@
 		<h2>Finager Always get it right</h2>
 			<div class="col-md-4 col-sm-4">
 				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_box.png" alt="box"/>
-				<h4>Step 1. Get acquainted</h4>
-				<p>Tell us a bit about yourself and what<br/>
-					you’re looking for.
+				<h4>Step 1. Find your product</h4>
+				<p>
+                    Tell us a bit about yourself and you’re looking for.
 				</p>
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_box2.png" alt="box"/>
-				<h4>Step 1. Get acquainted</h4>
-				<p>Tell us a bit about yourself and what<br/>
-					you’re looking for.
+				<h4>Step 2. Choose your product</h4>
+				<p>
+                    Choose your product suitable with your criteria.
 				</p>
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_box3.png" alt="box"/>
-				<h4>Step 1. Get acquainted</h4>
-				<p>Tell us a bit about yourself and what<br/>
-					you’re looking for.
+				<h4>Step 3. Compare your product with other</h4>
+				<p>
+                    Compare your product with similar product based on   your criteria.
 				</p>
 			</div>
-			<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_dps_start">Get Started</span></a>
+			<a href="<?php echo base_url();?>en/all_dps"><span class="btn_landing_dps_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>
