@@ -75,7 +75,7 @@
                     <div><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/education_text-bg.png" alt="text-bg"/></div>
                     <p class="edu_spnrs">Auto Loan</p>
                     <p>
-                        echnology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago.
+                        Technology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago.
                         These changes can be rather scary. Online search bars and their results can spill mass amounts of information
                     </p>
                     <a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_education">Go to slide</span></a>
@@ -105,7 +105,7 @@
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="Sponsored_box1">
-                    <div class="spnrs"><img class="img-responsive"src="<?php echo base_url();?>resource/blog/images/personal_loan.jpg" alt="img_logo_blue"/></div>
+                    <div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan.jpg" alt="img_logo_blue"/></div>
                     <div><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/education_text-bg.png" alt="text-bg"/></div>
                     <p class="edu_spnrs">Personal Loan</p>
                     <p>
@@ -293,7 +293,7 @@
 </section>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.education_loan_amount').on('click',function(){
+       $('.education_loan_amount').on('click',function(){
             var  formData = $(this).data();
             var education_loan_amount = formData.education_loan_amount;
             var data = 'education_loan_amount='+education_loan_amount;

@@ -870,25 +870,21 @@
 
     $(document).ready(function() {
 
-        $('#finalAssest').val(<?php echo ($this->session->userdata('education_loan_amount')) ? $this->session->userdata('education_loan_amount') : 3000000 ;?>);
+        $('#finalAssest').val(<?php echo ($this->session->userdata('education_loan_amount')) ? $this->session->userdata('education_loan_amount') : 30000 ;?>);
         $('#finalLiability').val(<?php echo ($this->session->userdata('education_loan_tenure')) ? $this->session->userdata('education_loan_tenure') : 2 ;?>);
         $('#searchEducationLoan').on('click', '.more_info', function () {
-
             var formData = $(this).data();
             var loan_id = formData.loan_id;
             $("#moreInfo" + loan_id).toggleClass("in");
             $('#rePaymentSchedule' + loan_id).removeClass("in");
-
         });
 
         $('#searchEducationLoan').on('click', '.rePaymentSchedule', function () {
-
             var formData = $(this).data();
             var repayment = formData.repayment;
             $('#rePaymentSchedule' + repayment).html('<iframe  src="<?php echo base_url();?>en/auto_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#rePaymentSchedule' + repayment).toggleClass("in");
             $('#moreInfo' + repayment).removeClass("in");
-
         });
 
         $(document).on('click','#pagination a',function(e){
