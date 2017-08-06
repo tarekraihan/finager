@@ -292,18 +292,29 @@
 </section>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/money-max.js"></script>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 
-$(window).on('scroll', function (){    
-           
-	if ($(window).scrollTop() > 350){
-	  $('.home_loan_left_bar').addClass('fixedElement');
-	}if($(window).scrollTop()<350){
-	  $('.home_loan_left_bar').removeClass('fixedElement');
-	}if($(window).scrollTop() > 2260){
-	  $('.home_loan_left_bar').removeClass('fixedElement');
-	}
-});
+    $(document).ready(function(){
+        setTimeout(function(){
+            //alert($("#finalAssest").val());
+            $("#finalAssest").focus();
+            $("#finalAssest").blur();
+
+            $("#finalLiability").focus();
+            $("#finalLiability").blur();
+        },500);
+    });
+
+    $(window).on('scroll', function (){
+
+        if ($(window).scrollTop() > 350){
+          $('.home_loan_left_bar').addClass('fixedElement');
+        }if($(window).scrollTop()<350){
+          $('.home_loan_left_bar').removeClass('fixedElement');
+        }if($(window).scrollTop() > 2260){
+          $('.home_loan_left_bar').removeClass('fixedElement');
+        }
+    });
 </script>
 <script type="text/javascript">
 

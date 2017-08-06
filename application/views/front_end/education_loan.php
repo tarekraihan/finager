@@ -821,6 +821,16 @@
 	<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/education-loan-calculator.js"></script>
 	
 <script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function(){
+            //alert($("#finalAssest").val());
+            $("#finalAssest").focus();
+            $("#finalAssest").blur();
+
+            $("#finalLiability").focus();
+            $("#finalLiability").blur();
+        },500);
+    });
     $(document).on("scroll",function () {
         var scroller_anchor = $("#sidebar").offset().top;
         var sidebar_height = $("#sidebar").height();

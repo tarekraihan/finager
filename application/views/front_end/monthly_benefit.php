@@ -290,6 +290,16 @@
 </section>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/monthly_benefit.js"></script>
 <script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function(){
+            //alert($("#finalAssest").val());
+            $("#finalAssest").focus();
+            $("#finalAssest").blur();
+
+            $("#finalLiability").focus();
+            $("#finalLiability").blur();
+        },500);
+    });
 
     function overlay(s, l) {
         $('.overlay').remove();

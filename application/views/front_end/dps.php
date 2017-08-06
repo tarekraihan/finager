@@ -421,7 +421,18 @@
 	</div>
 </section>
 	<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/dps-calculator.js"></script>
-<script type="text/javascript"> 
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        setTimeout(function(){
+            //alert($("#finalAssest").val());
+            $("#finalAssest").focus();
+            $("#finalAssest").blur();
+
+            $("#finalLiability").focus();
+            $("#finalLiability").blur();
+        },500);
+    });
 
 $(window).on('scroll', function (){
 	if ($(window).scrollTop() > 350){

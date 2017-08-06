@@ -281,17 +281,17 @@
 </section>
 
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 
-$(window).on('scroll', function (){
-	if ($(window).scrollTop() > 350){
-	  $('.home_loan_left_bar').addClass('fixedElement');
-	}if($(window).scrollTop()<350){
-	  $('.home_loan_left_bar').removeClass('fixedElement');
-	}if($(window).scrollTop() > 2200){
-	  $('.home_loan_left_bar').removeClass('fixedElement');
-	}
-});
+    $(window).on('scroll', function (){
+        if ($(window).scrollTop() > 350){
+          $('.home_loan_left_bar').addClass('fixedElement');
+        }if($(window).scrollTop()<350){
+          $('.home_loan_left_bar').removeClass('fixedElement');
+        }if($(window).scrollTop() > 2200){
+          $('.home_loan_left_bar').removeClass('fixedElement');
+        }
+    });
 </script>
 
 <script type="text/javascript"> 
