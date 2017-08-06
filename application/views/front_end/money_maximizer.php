@@ -296,7 +296,6 @@
 
     $(document).ready(function(){
         setTimeout(function(){
-            //alert($("#finalAssest").val());
             $("#finalAssest").focus();
             $("#finalAssest").blur();
 
