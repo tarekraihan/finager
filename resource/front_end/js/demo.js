@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
                 vertical_tabs_effect_speed     : 0,
                 /* DROP DOWN */
                 drop_down_effect_in_speed      : 0,
-                drop_down_effect_out_speed     : 0,
+                drop_down_effect_out_speed     : 300,
                 drop_down_effect_in_delay      : 0,
                 drop_down_effect_out_delay     : 0,
                 /* STICKY HEADER */

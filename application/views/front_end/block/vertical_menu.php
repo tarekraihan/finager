@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>resource/front_end/css/mashable-menu.css">
 
 <style>
-    .button,
+   /* .button,
     [class*="button-"] {
         position: relative;
         display: inline-block;
@@ -17,13 +17,13 @@
         -o-transition: ease 0.35s all;
         -webkit-transition: ease 0.35s all;
         transition: ease 0.35s all;
-    }
-    .button:hover,
+    }*/
+    /*.button:hover,
     [class*="button-"]:hover {
         background: #fff;
-    }
+    }*/
 
-    .button-hover:hover {
+    /*.button-hover:hover {
         line-height: 9em;
     }
     .button-hover:before {
@@ -39,7 +39,7 @@
         animation-fill-mode: none;
         animation-play-state: running;
         font-weight: 600;
-    }
+    }*/
 
 </style>
 
@@ -997,7 +997,7 @@
 																								<span class="focus-text">DPS</span> is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
 																							</p>-->
 
-                                                                                            <a class="megamenu_feature_link button-hover" data-text="Find All DPS Here" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
+                                                                                            <a class="megamenu_feature_link button-hover" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
 																						</div>
 																					</a>
                                                                                 </div>

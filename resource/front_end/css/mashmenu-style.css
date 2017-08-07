@@ -10,14 +10,14 @@
 .megamenu_feature_link{
   margin: 0 auto;
   color: #224098;
-  animation-name: stretch;
+  /*animation-name: stretch;
   animation-duration: 1.5s; 
   animation-timing-function: ease-out; 
   animation-delay: 0;
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-fill-mode: none;
-  animation-play-state: running;
+  animation-play-state: running;*/
   font-weight: 500;
 }
 .mash-menu .vertical-tabs a{
@@ -35,6 +35,28 @@ a.megamenu_feature_link {
     position: absolute;
     bottom: 30px;
     right: 30px;
+    font-size: 15px;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3);
+    height: 36px;
+    padding: 8px 16px;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+    background-color: #ccc;
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorstr='#FFD9D9D9',endColorstr='#FFCCCCCC');
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(10%,#d9d9d9),color-stop(90%,#ccc));
+    background-image: -webkit-linear-gradient(#d9d9d9 10%,#ccc 90%);
+    background-image: -moz-linear-gradient(#d9d9d9 10%,#ccc 90%);
+    background-image: -o-linear-gradient(#d9d9d9 10%,#ccc 90%);
+    background-image: linear-gradient(#d9d9d9 10%,#ccc 90%);
+    border-top: 1px solid #caccce;
+    border-right: 1px solid #caccce;
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #caccce;
+    color: #1a1a1a!important;
+    border-radius: 4px;
+}
+a.megamenu_feature_link:hover {
+    background-color: #ececec;
+    background-image: none;
 }
 .bRight{
     border-right: 1px solid #ddd;
@@ -213,7 +235,7 @@ a.megamenu_feature_link {
 }
 a.megamenu_feature_link {
     color: #333;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 /*For golden nav*/
