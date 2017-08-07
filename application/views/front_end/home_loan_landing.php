@@ -90,7 +90,7 @@
 							echnology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago. 
 							These changes can be rather scary. Online search bars and their results can spill mass amounts of information
 						</p>
-                                               <a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_home">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_home">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -104,7 +104,7 @@
 							While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes 
 							we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution.
 						</p>
-                                                <a href="<?php echo base_url();?>en/personal_loan"><span class="btn_landing_home">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>en/personal_loan"><span class="btn_landing_home">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -132,7 +132,7 @@
 							Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s 
 							certainly easier to let the dealership handle the financing for you, but by doing so you may be conceding
 						</p>
-                                                <a href="#"><span class="btn_landing_home">Go to slide</span></a>
+                        <a href="#"><span class="btn_landing_home">Go to slide</span></a>
 						
 					</div>
 				</div>
@@ -215,7 +215,7 @@
 				</p>
 			</div>
 			<br/><br/><br/><br/>
-                        <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_home_start">Get Started</span></a>
+            <a href="<?php echo base_url();?>en/all_home_loan"><span class="btn_landing_home_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>

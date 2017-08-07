@@ -217,7 +217,7 @@
 				<p>Compare your product with similar product based on   your criteria.
 				</p>
 			</div><br/><br/><br/><br/>
-			<a  class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_personal_start">Get Started</span></a>
+			<a  href="<?php echo base_url();?>en/all_personal_loan"><span class="btn_landing_personal_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>

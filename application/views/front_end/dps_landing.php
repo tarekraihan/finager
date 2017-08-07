@@ -115,8 +115,9 @@
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/dps_text_bg.png" alt="text-bg"/>
 							<p>Monthly Benefit Scheme</p>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
+						<p>
+                            Monthly Benefit Scheme is a special deposit scheme, where a person will get a certain some of money at the end of every month. While the deposited principal amount remain untouched.
+                        </p>
 						<a href="<?php echo base_url();?>en/monthly_benefit"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
@@ -170,7 +171,7 @@
 					<div class="dps_bigest_text">
 						<h3>The tools to make the right choice</h3>
 						<p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an application tracker that can help you keep on top of your home loan.</p>
-						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view2_dps">View Our Partners</span>
+						<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_view2_dps">View Our Calculators</span>
 					</div>
 				</div>
 			</div>

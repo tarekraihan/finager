@@ -194,7 +194,7 @@
                 <div class="bigest_text">
                     <h3>The tools to make the right choice</h3>
                     <p class="pr">We’ve got a suite of calculators to help inform your borrowing, as well as an application tracker that can help you keep on top of your home loan.</p>
-                    <a href="#"><span class="btn_landing_view2_mony_max">View Our Partners</a></span>
+                    <a href="#"><span class="btn_landing_view2_mony_max">View Our Calculators</a></span>
                 </div>
             </div>
         </div>

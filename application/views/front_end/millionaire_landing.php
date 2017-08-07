@@ -78,9 +78,10 @@
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
 							<p>FDR</p>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
-                                                <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_millionaire">Go to slide</span></a>
+						<p>
+                            The term Fixed Deposit Account refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
+                        </p>
+                        <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -90,9 +91,10 @@
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
 							<p>DPS</p>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
-                                                <a href="<?php echo base_url();?>en/dps"><span class="btn_landing_millionaire">Go to slide</span></a>
+						<p>
+                            DPS is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
+                        </p>
+                        <a href="<?php echo base_url();?>en/dps"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -102,9 +104,10 @@
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
 							<p>Money Maximizer</p>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
-						<a href="<?php echo base_url();?>en/#"><span class="btn_landing_millionaire">Go to slide</span></a>
+						<p>
+                            Money Maximizer account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
+                        </p>
+						<a href="<?php echo base_url();?>en/money_maximizer"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -114,9 +117,10 @@
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
 							<p>Monthly Benefit Scheme</p>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
-						<a href="<?php echo base_url();?>en/#"><span class="btn_landing_millionaire">Go to slide</span></a>
+						<p>
+                            Monthly Benefit Scheme is a special deposit scheme, where a person will get a certain some of money at the end of every month. While the deposited principal amount remain untouched.
+                        </p>
+						<a href="<?php echo base_url();?>en/monthly_benefit"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -192,7 +196,7 @@
 					you’re looking for.
 				</p>
 			</div>
-			<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="btn_landing_millionaire_start">Get Started</span></a>
+			<a href="<?php echo base_url()?>en/all_millionaire"><span class="btn_landing_millionaire_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>
