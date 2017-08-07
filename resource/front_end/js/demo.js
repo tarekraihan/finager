@@ -272,9 +272,9 @@ jQuery(document).ready(function ($) {
         $object.options_change();
     });
 
-    $('.vertical-tabs>a').hover(function(){
+    /*$('.vertical-tabs>a').hover(function(){
         $(this).trigger("click");
-    });
+    });*/
 
 
 });

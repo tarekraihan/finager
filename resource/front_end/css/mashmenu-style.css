@@ -128,7 +128,7 @@ a.megamenu_feature_link:hover {
     border-right: 0 !important;
 }
 .mash-menu .mash-list-items>li>a:hover, .mash-menu .mash-list-items>li>a:active, .mash-menu .mash-list-items>li>a:focus{
-    background: #fff !important;
+    background: #f3f3f3 !important;
 }
 .mash-menu section.mash-menu-inner-container {
     background: #fff !important;
@@ -407,4 +407,9 @@ p.item-title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.mash-menu .vertical-tabs-content{
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
 }

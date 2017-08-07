@@ -870,7 +870,7 @@
 
     $(document).ready(function() {
 
-        $('#finalAssest').val(<?php echo ($this->session->userdata('education_loan_amount')) ? $this->session->userdata('education_loan_amount') : 30000 ;?>);
+        $('#finalAssest').val(<?php echo ($this->session->userdata('education_loan_amount')) ? $this->session->userdata('education_loan_amount') : 300000 ;?>);
         $('#finalLiability').val(<?php echo ($this->session->userdata('education_loan_tenure')) ? $this->session->userdata('education_loan_tenure') : 2 ;?>);
         $('#searchEducationLoan').on('click', '.more_info', function () {
             var formData = $(this).data();

@@ -73,7 +73,7 @@ body {
     height: 77px;
 }
 .header{
-    padding-top: 7px !important;
+    padding-top: 0px !important;
 }
 .logo{
     width:120px;
@@ -3257,6 +3257,7 @@ hr {
     z-index: 99999;
     max-height: 63px;
     width: 150px;
+    margin-top: 3px;
 }
 
 .logobar a .logo {
