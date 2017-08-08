@@ -215,7 +215,7 @@
 				</p>
 			</div>
 			<br/><br/><br/><br/>
-            <a href="<?php echo base_url();?>en/all_home_loan"><span class="btn_landing_home_start">Get Started</span></a>
+            <a class="start_compare" href="javascript:void(0);"><span class="btn_landing_home_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>

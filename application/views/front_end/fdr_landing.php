@@ -188,7 +188,7 @@
 				<h4>Step 3. Compare your product with other </h4>
 				<p>Compare your product with similar product based on your criteria.</p>
 			</div>
-			<a href="<?php echo base_url(); ?>en/fdr"><span class="btn_landing_fdr_start">Get Started</span></a>
+			<a class="start_compare" href="javascript:void(0);"><span class="btn_landing_fdr_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>
