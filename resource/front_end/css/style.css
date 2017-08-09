@@ -70,7 +70,8 @@ body {
 }
 #top-page {
     width: 100%;
-    height: 77px;
+    height: 58px;
+    border-bottom: 2px solid #a2a2a2;
 }
 .header{
     padding-top: 0px !important;
@@ -3400,7 +3401,7 @@ ul.footer-socio {
     width:150px;
 }
 .logo-lg{
-    height: 130px;
+    height: 180px;
     width: auto;
 }
 .login{
@@ -3415,6 +3416,7 @@ ul.footer-socio {
 .hr-bar{
     width:100%;
     height:3px;
+    display: none;
 }
 .footer-text p{
     margin-top:7px;
