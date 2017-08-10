@@ -219,14 +219,16 @@ font-size: 22px;
 </section>
 <section id="header2">
     <div class="container Aboutcredit_card">
-        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">            <img class="img-responsive about-logo" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg">        </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <img class="img-responsive about-logo" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg">
+        </div>
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             <div class="header_paragrph">
                 <h3 class="fin-about-heading"><span>A</span>bout <span>F</span>inager.com</h3>
                 <div class="fin-about-text">
-                    <p>                    "finager" is a fintech initiative of core-concept inc. This is the first 360 degree financial industry platfrom of                    bangladesh. It helps visitors taking perfect decisions on their financial affairs- providing updated, authentic and                    analysed data and tools.
-                    <p>                    Today is the age of knowladge based economy.To succeed, people need to work with someone who knows and understands,                    somewhere that  shares knowledge, risk and result and defines realistic objectives and the ways to reach them.                </p>
-                    <p>visit "finager" , a partner you can count on day after day, a partner who is committed to help you to lead you to success.</p>
+                    <p>"finager" is a fintech initiative of core-concept inc. This is the first 360 degree financial industry platform of Bangladesh. It helps visitors taking perfect decisions on their financial affairs- providing updated, authentic and analyzed data and tools.
+                    <p>Today is the age of knowledge based economy. To succeed, people need to work with someone who knows and understands,somewhere that  shares knowledge, risk and result and defines realistic objectives and the ways to reach them.</p>
+                    <p>Visit "finager" , a partner you can count on day after day, a partner who is committed to help you to lead you to success.</p>
                 </div>
             </div>
         </div>
@@ -236,29 +238,40 @@ font-size: 22px;
                 <div class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
                     <div class="req_card1">
                         <div class="card_div">
-                            <!--img class="img-responsive" src="images/card.png" alt="" />                            <span class="req_head">My Finager.com</span-->                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card.png" alt="" />                            <span>My Finager.com</span>
+                            <!--img class="img-responsive" src="images/card.png" alt="" />
+                            <span class="req_head">My Finager.com</span-->
+                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card.png" alt="" />
+                            <span>My Finager.com</span>
                         </div>
                         <i class="fa fa-arrow-right pull-right" style="font-size:18px;" aria-hidden="true"></i>
                         <div class="req_paragrph">Free Credit Score and Monitoring</div>
-                        Get an updated credit score for free                        each month.
+                        Get an updated credit score for free each month.
                     </div>
                 </div>
                 <div class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
                     <div class="req_card2">
                         <div class="card_div">
-                            <!--img class="img-responsive" src="images/card_2.png">                            <span class="match_crd">CardMatch</span><br/><span class="req_head1">by <b>finager.com</b></span-->                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card_2.png" alt="" />                            <span>CardMatch</span><br/><span class="req_head1">by <b>finager.com</b><span>								<i class="fa fa-arrow-right pull-right" style="font-size:18px;" aria-hidden="true"></i>
+                            <!--img class="img-responsive" src="images/card_2.png">
+                            <span class="match_crd">CardMatch</span><br/><span class="req_head1">by <b>finager.com</b></span-->
+                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card_2.png" alt="" />
+                            <span>CardMatch</span><br/><span class="req_head1">by <b>finager.com</b><span>
+                            <i class="fa fa-arrow-right pull-right" style="font-size:18px;" aria-hidden="true"></i>
                         </div>
                         <div class="req_paragrph">Better Offers via CardMatch</div>
-                        See offers matched with your credit                        profile.
+                        See offers matched with your credit profile.
                     </div>
                 </div>
                 <div class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
                     <div class="req_card3">
                         <div class="card_div">
-                            <!--img class="img-responsive" src="images/card_3.png">                            <span class="match_crd">WalletUp </span><br/><span class="req_head1">by <b>finager.com</b></span-->                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card_3.png" alt="" />                            <span>WalletUp</span><br/><span class="req_head1">by <b>finager.com</b></span>                            <i class="fa fa-arrow-right pull-right" style="font-size:18px;" aria-hidden="true"></i>
+                            <!--img class="img-responsive" src="images/card_3.png">
+                            <span class="match_crd">WalletUp </span><br/><span class="req_head1">by <b>finager.com</b></span-->
+                            <img src="<?php echo base_url(); ?>resource/front_end/images/frontCard/card_3.png" alt="" />
+                            <span>WalletUp</span><br/><span class="req_head1">by <b>finager.com</b></span>
+                            <i class="fa fa-arrow-right pull-right" style="font-size:18px;" aria-hidden="true"></i>
                         </div>
                         <div class="req_paragrph">Max Rewards with WallerUp</div>
-                        Maximize your rewards, cash back and                        points earnings.
+                        Maximize your rewards, cash back and points earnings.
                     </div>
                 </div>
             </div>

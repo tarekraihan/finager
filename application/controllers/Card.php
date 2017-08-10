@@ -1591,22 +1591,22 @@ class Card extends CI_Controller
     }
 
     public function ajax_credit_card_quick_link(){
-        $feature_benefits = (!empty($this->input->post('feature_benefits'))) ? $this->input->post('feature_benefits') : '';
-        $card_type = (!empty($this->input->post('card_type'))) ? $this->input->post('card_type') : '';
+        $credit_card_feature_benefits = (!empty($this->input->post('credit_card_feature_benefits'))) ? $this->input->post('credit_card_feature_benefits') : '';
+        $credit_card_type = (!empty($this->input->post('credit_card_type'))) ? $this->input->post('credit_card_type') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        if( $feature_benefits != ''){
-            $newdata['feature_benefits'] = $feature_benefits;
+        if( $credit_card_feature_benefits != ''){
+            $newdata['credit_card_feature_benefits'] = $credit_card_feature_benefits;
         }
 
-        if( $card_type != ''){
-            $newdata['card_type'] = $card_type;
+        if( $credit_card_type != ''){
+            $newdata['credit_card_type'] = $credit_card_type;
         }
         if($data == 'all'){
             $newdata['all']= '';
         }
 
-        $array_items = array('feature_benefits', 'card_type');
+        $array_items = array('credit_card_feature_benefits', 'credit_card_type');
         $this->session->unset_userdata($array_items);
 
         $this->session->set_userdata($newdata);
