@@ -4012,14 +4012,11 @@ a .auto_button.flash-button {
 .bank_info_box:hover {
     background-color:#dbeef2;
 }
-.bank_info_tabBody{
-    width:100%;
-    height:auto;
-    background-color:#F7F7F7;
-    padding: 20px;
+.bank_details_right{
+    background-color: #f5fbfb;
 }
-#bank_tab_wrapper{
-    margin-left:-17px !important;
+.bank_details_right{
+    background-color: #f5fbfb;
 }
 .bank_info_details h3 {
     padding: 10px;
@@ -4060,7 +4057,46 @@ a .auto_button.flash-button {
 .bank_loan_details table tr td{
     text-align:left;
 }
-
+.bank_details_head{
+    background-image: url(../images/Bank-Details-head.png);
+    width:100%;
+    height: 50px;
+    border-bottom: 3px solid #5aafd1;
+}
+.bank_details_head p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #6a6a6a;
+    text-align: left;
+    padding: 14px;
+}
+.bank_details_right_body p {
+    padding: 10px 16px;
+    border-bottom:1px solid #afafb0;
+}
+.bank_details_right_body p:last-child {
+    border-bottom:0px solid #afafb0;
+}
+.bank_details_right_body span {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px;
+}
+.bank_details_star{
+    color:#df8e35;
+}
+.bank_details_more {
+    text-align: center;
+}
+.bank_details_more a{
+    color:#000;
+}
+.bank_details_review {
+    font-size: 12px;
+    text-align: justify;
+    padding: 15px 15px;
+}
 /* for tab menu */
 
 #breadcrumbs-two{

@@ -1,5 +1,5 @@
 <section id="bank_details">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 nopadding">
                 <div class="bank_info_left">
@@ -95,8 +95,8 @@
     </div>
 </section>
 
-<section id="bank_info_tab">
-    <div class="container">
+<div class="container-fluid">
+    <div class="col-md-9">
         <section id="bank_tab_wrapper">
             <!-- Nav tabs -->
             <ul id="breadcrumbs-two" class="nav nav-tabs" role="tablist">
@@ -146,6 +146,40 @@
                             <div class="bank_info_map">
                                 <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_map.jpg" alt="AB Bank map" />
                             </div>
+							<h3>HISTORY OF CHASE BANK</h3>
+							<p>Below is a list of some important events in banks history, including mergers and acquisitions.</p>
+							<table class="table">
+								<tbody>
+								  <tr>
+									<td>Jan 01, 1824</td>
+									<td>Institution established: Original name: Chemical Bank & Trust Company</td>
+								  </tr>      
+								  <tr class="info">
+									<td>Oct 18, 1954</td>
+									<td>Changed name to Chemical Corn Exchange Bank</td>
+								  </tr>
+								  <tr>
+									<td>Aug 08, 1959</td>
+									<td>Changed name to Chemical Bank New York Trust Company</td>
+								  </tr>
+								  <tr class="info">
+									<td>Jan 18, 1975</td>
+									<td>Acquired Security National Bank (7113) in Hempstead, NY</td>
+								  </tr>
+								</tbody>
+							</table>
+							<p class="bank_details_more"><a href="#">View 36 More Events in Banks History…</a></p>
+							<h3>AB BANK REVIEWS & COMPLAINTS</h3>
+							<div class="col-md-1">
+								<img src="<?php echo base_url(); ?>resource/front_end/images/Bank-Details-Empty.png" alt="User Image">
+							</div>
+							<div class="col-md-11">
+								<p><span class="">Marie Woodson.</span> <span>4 August 2017</span></p>
+								<p>
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
+								</p>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -563,4 +597,87 @@
             </div>
         </section>
     </div>
-</section>
+	<div class="col-md-3">
+		<div class="bank_details_right">
+			<div class="bank_details_head">
+				<p>POPULAR BRANCHES</p>
+			</div>
+			<div class="bank_details_right_body">
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+			</div>
+			<div class="bank_details_head">
+				<p>NEW BRANCHES</p>
+			</div>
+			<div class="bank_details_right_body">
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+			</div>
+			<div class="bank_details_head">
+				<p>CLOSED BRANCHES</p>
+			</div>
+			<div class="bank_details_right_body">
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+				<p>
+					South Plainfield<br>
+					5201 Stelton Road, South Plainfield, NJ 07080
+				</p>
+			</div>
+			<div class="bank_details_head">
+				<p>BANK RATING & CUSTOMER REVIEWS</p>
+			</div>
+			<div class="bank_details_right_body">
+				<span>3.2 / 5</span><br>
+				<span class="bank_details_star">
+					<i class="fa fa-star" aria-hidden="true"></i>
+					<i class="fa fa-star" aria-hidden="true"></i>
+					<i class="fa fa-star" aria-hidden="true"></i>
+					<i class="fa fa-star" aria-hidden="true"></i>
+					<i class="fa fa-star" aria-hidden="true"></i>
+				</span>
+				<div class="bank_details_review">
+					Bank rating displayed here is the average value for all
+					Chase Bank branchs. A total of 73 customers had case
+					their vote for 5227 branches and in average, Chase Bank
+					got a score of 3.2 out of 5 stars. The bank has 12
+					reviews or customer complaints filed.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
