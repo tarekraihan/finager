@@ -19,49 +19,49 @@
 			<div class="home_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal i_want" data-i_want ="1" ><div class="All_card">
+						<a class="land_modal home_i_want" data-home_i_want ="1" ><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Purchase-Apartment.png" alt="Purchase Apartment/Flat"/>
 							<p>Purchase Apartment/Flat </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal i_want" data-i_want ="2"><div class="All_card">
+						<a class="land_modal home_i_want" data-home_i_want ="2"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Home-Construction.png" alt="Home Construction"/>
 							<p> Home Construction </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal i_want" data-i_want ="3"><div class="All_card">
+						<a class="land_modal home_i_want" data-home_i_want ="3"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Housing-Plot.png" alt=" Housing Plot "/>
 							<p> Housing Plot </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal i_want" data-i_want ="4"><div class="All_card">
+						<a class="land_modal home_i_want" data-home_i_want ="4"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Renovation.png" alt="Renovation"/>
 							<p> Renovation</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal i_am" data-i_am ="4"><div class="All_card">
+						<a class="land_modal home_i_am" data-home_i_am ="4"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Home-Loan-Takeover.png" alt="Landlord"/>
 							<p>Landlord</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal i_am" data-i_am ="1"><div class="All_card">
+						<a class="land_modal home_i_am" data-home_i_am ="1"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Salaried-Person.png" alt="Salaried Person"/>
 							<p> Salaried Person </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal i_am" data-i_am ="2"><div class="All_card">
+						<a class="land_modal home_i_am" data-home_i_am ="2"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Business-Man.png" alt="business"/>
 							<p>	Businessman Businessman
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal i_am" data-i_am ="3">
+						<a class="land_modal home_i_am" data-home_i_am ="3">
 							<div class="All_card">
 								<img src="<?php echo base_url();?>resource/front_end/images/Professional.png" alt="Professional"/>
 								<p>Professional</p>
@@ -72,7 +72,7 @@
 			</div>
 		</div>
 	</section>
-        <div class="clearfix"></div>
+    <div class="clearfix"></div>
 	<section id="Sponsored">
 		<div class="container">
 			<div class="home_Sponsored_heading">
@@ -304,19 +304,19 @@
 	</section>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('.i_am').on('click',function(){
+			$('.home_i_am').on('click',function(){
 				var  formData = $(this).data();
-				var i_am = formData.i_am;
-				var data = 'i_am='+i_am;
+				var home_i_am = formData.home_i_am;
+				var data = 'home_i_am='+home_i_am;
 				console.log(data);
 				quick_link(data);
 
 			});
 
-			$('.i_want').on('click',function(){
+			$('.home_i_want').on('click',function(){
 				var  formData = $(this).data();
-				var i_want = formData.i_want;
-				var data = 'i_want='+i_want;
+				var home_i_want = formData.home_i_want;
+				var data = 'home_i_want='+home_i_want;
 				console.log(data);
 				quick_link(data);
 

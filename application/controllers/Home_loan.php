@@ -631,26 +631,26 @@ class Home_Loan extends CI_Controller {
 
         $home_i_want = $this->input->post('home_i_want');
         $home_user = $this->input->post('home_user');
-        $bank_ids = $this->input->post('bank_ids');
+        $home_bank_ids = $this->input->post('home_bank_ids');
 
-        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '200000' );
-        if($principal_amount > 40000000 || $principal_amount < 200000){
-            $principal_amount = 200000;
+        $home_principal_amount = floatval ( ($this->input->post('home_principal_amount')) ? $this->input->post('home_principal_amount') : '200000' );
+        if($home_principal_amount > 40000000 || $home_principal_amount < 200000){
+            $home_principal_amount = 200000;
         }
 
-        $month_limit = floatval ( ($this->input->post('month_limit') > 1) ? $this->input->post('month_limit') : 1 );
+        $home_month_limit = floatval ( ($this->input->post('home_month_limit') > 1) ? $this->input->post('home_month_limit') : 1 );
 
-        if($month_limit > 25 || $month_limit < 1){
-            $month_limit = 1;
+        if($home_month_limit > 25 || $home_month_limit < 1){
+            $home_month_limit = 1;
         }
 
         $WHERE = array(); $query = '';
-        if(!empty($principal_amount)) {
-            $WHERE[] = 'CAST( home_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$principal_amount;
+        if(!empty($home_principal_amount)) {
+            $WHERE[] = 'CAST( home_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$home_principal_amount;
         }
 
-        if(!empty($principal_amount)) {
-            $WHERE[] = 'CAST( home_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$principal_amount;
+        if(!empty($home_principal_amount)) {
+            $WHERE[] = 'CAST( home_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$home_principal_amount;
         }
 
         if(!empty($home_user)) {
@@ -662,16 +662,16 @@ class Home_Loan extends CI_Controller {
             $WHERE[] = 'home_loan_info.home_loan_looking_for_id = '.$home_i_want;
 
         }
-        if(!empty($bank_ids)) {
-            if(strstr($bank_ids,',')) {
-                $data8 = explode(',',$bank_ids);
+        if(!empty($home_bank_ids)) {
+            if(strstr($home_bank_ids,',')) {
+                $data8 = explode(',',$home_bank_ids);
                 $bank_id_array = array();
                 foreach( $data8 as $bank_id ) {
                     $bank_id_array[] = "home_loan_info.bank_id = $bank_id";
                 }
                 $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
             } else {
-                $WHERE[] = '(home_loan_info.bank_id = '.$bank_ids.')';
+                $WHERE[] = '(home_loan_info.bank_id = '.$home_bank_ids.')';
             }
         }
 
@@ -741,11 +741,11 @@ class Home_Loan extends CI_Controller {
              }
              $monthly_interest = ($yearly_interest / 12 /100);
              $downpayment_percentage = $row->downpayment;
-             $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
+             $downpayment_amount = round( ($home_principal_amount * $downpayment_percentage)/ 100 );
 
-             $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($month_limit * 12 ) )) / (pow( ( 1 + $monthly_interest ) , ($month_limit * 12 ) ) -1 ));
+             $emi = $home_principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($home_month_limit * 12 ) )) / (pow( ( 1 + $monthly_interest ) , ($home_month_limit * 12 ) ) -1 ));
 
-             $total_payable = round( $emi * $month_limit * 12 );
+             $total_payable = round( $emi * $home_month_limit * 12 );
 
             $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
             $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
@@ -762,7 +762,7 @@ class Home_Loan extends CI_Controller {
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Amount</h5>
-                                           <p>BDT '.number_format( $principal_amount ).'</p>
+                                           <p>BDT '.number_format( $home_principal_amount ).'</p>
                                        </div>
                                    </div>
                                    <div class="col-sm-2 col-xs-2 w20">
@@ -781,7 +781,7 @@ class Home_Loan extends CI_Controller {
                                    <div class="col-sm-2 col-xs-2 w20">
                                        <div class="card_text2">
                                            <h5>Payable Amount</h5>
-                                           <p> BDT '.number_format( $total_payable) .'<br/><span class="tPaybleAmount">based on BDT '.number_format( $principal_amount ).'</span></p>
+                                           <p> BDT '.number_format( $total_payable) .'<br/><span class="tPaybleAmount">based on BDT '.number_format( $home_principal_amount ).'</span></p>
                                        </div>
                                    </div>
                                    <!--div class="col-sm-2 col-xs-2 w20">
@@ -933,18 +933,18 @@ class Home_Loan extends CI_Controller {
     }
 
     public function ajax_home_loan_quick_link(){
-        $i_want = (!empty($this->input->post('i_want'))) ? $this->input->post('i_want') : '';
-        $i_am = (!empty($this->input->post('i_am'))) ? $this->input->post('i_am') : '';
+        $i_want = (!empty($this->input->post('home_i_want'))) ? $this->input->post('home_i_want') : '';
+        $i_am = (!empty($this->input->post('home_i_am'))) ? $this->input->post('home_i_am') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('i_want', 'i_am');
+        $array_items = array('home_i_want', 'home_i_am');
         $this->session->unset_userdata($array_items);
         if( $i_want != ''){
-            $newdata['i_want'] = $i_want;
+            $newdata['home_i_want'] = $i_want;
         }
 
         if( $i_am != ''){
-            $newdata['i_am'] = $i_am;
+            $newdata['home_i_am'] = $i_am;
         }
         if($data == 'all'){
             $newdata['all']= '';

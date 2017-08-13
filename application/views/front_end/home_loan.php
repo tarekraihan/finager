@@ -309,7 +309,7 @@
 
                                 <label class="material_radio_group">
 
-                                    <input type="radio" name="iWant" id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"  <?php echo ($this->session->userdata("i_want") == $row->id) ? 'checked' :'' ?>/>
+                                    <input type="radio" name="iWant" id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"  <?php echo ($this->session->userdata("home_i_want") == $row->id) ? 'checked' :'' ?>/>
 
                                     <span class="material_check_radio"></span>
 
@@ -531,7 +531,7 @@
                             foreach($card_user->result() as $row){
                                 ?>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="iAm" id="iAm<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"  <?php echo ($this->session->userdata("i_am") == $row->id) ? 'checked' :''; ?>/>
+                                    <input type="radio" name="iAm" id="iAm<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"  <?php echo ($this->session->userdata("home_i_am") == $row->id) ? 'checked' :''; ?>/>
                                     <span class="material_check_radio"></span>
                                     <?php echo $row->home_loan_user;?>
                                 </label><br/>
@@ -676,9 +676,9 @@ $(document).ready(function(){
         function loadData( page = null ){
 //            loading_show();
 			 var amount = $('#finalAssest').val();
-            var principal_amount = "&principal_amount="+amount;
+            var principal_amount = "&home_principal_amount="+amount;
             var month = $('#finalLiability').val();
-            var month_limit = "&month_limit="+month;
+            var month_limit = "&home_month_limit="+month;
             var home_i_want = new Array();
             $('input[name="iWant"]:checked').each(function(){
                 home_i_want.push($(this).val());
@@ -695,7 +695,7 @@ $(document).ready(function(){
             $('input[name="bank_id"]:checked').each(function(){
                 bank_ids.push($(this).val());
             });
-            var bank_id_list = "&bank_ids="+bank_ids;
+            var bank_id_list = "&home_bank_ids="+bank_ids;
 
 
             var main_string = home_i_want_list+home_user_list+principal_amount+month_limit+bank_id_list;
