@@ -627,16 +627,26 @@ class Home_Loan extends CI_Controller {
 
 //    Front End query--------------------------------
 
-    public function ajax_get_home_loan(){
+     public function ajax_get_home_loan(){
 
         $home_i_want = $this->input->post('home_i_want');
         $home_user = $this->input->post('home_user');
         $home_bank_ids = $this->input->post('home_bank_ids');
+         $home_principal_amount = floatval ( ($this->input->post('home_principal_amount')) ? $this->input->post('home_principal_amount') : '200000' );
 
-        $home_principal_amount = floatval ( ($this->input->post('home_principal_amount')) ? $this->input->post('home_principal_amount') : '200000' );
-        if($home_principal_amount > 40000000 || $home_principal_amount < 200000){
-            $home_principal_amount = 200000;
-        }
+         if($home_principal_amount > 40000000 || $home_principal_amount < 200000){
+             $home_principal_amount = 200000;
+         }
+
+
+         $newdata = array(
+             'home_i_want'  => $home_i_want,
+             'home_i_am'  => $home_user,
+             'home_principal_amount'  => $home_principal_amount
+         );
+         $this->session->set_userdata($newdata);
+
+
 
         $home_month_limit = floatval ( ($this->input->post('home_month_limit') > 1) ? $this->input->post('home_month_limit') : 1 );
 
@@ -937,7 +947,7 @@ class Home_Loan extends CI_Controller {
         $i_am = (!empty($this->input->post('home_i_am'))) ? $this->input->post('home_i_am') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('home_i_want', 'home_i_am');
+        $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount');
         $this->session->unset_userdata($array_items);
         if( $i_want != ''){
             $newdata['home_i_want'] = $i_want;
