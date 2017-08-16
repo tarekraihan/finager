@@ -224,11 +224,11 @@ font-size: 22px;
         </div>
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             <div class="header_paragrph">
-                <h3 class="fin-about-heading"><span>A</span>bout <span>F</span>inager.com</h3>
+               <!-- <h3 class="fin-about-heading"><span>A</span>bout <span>F</span>inager.com</h3>-->
                 <div class="fin-about-text">
-                    <p>"finager" is a fintech initiative of core-concept inc. This is the first 360 degree financial industry platform of Bangladesh. It helps visitors taking perfect decisions on their financial affairs- providing updated, authentic and analyzed data and tools.
-                    <p>Today is the age of knowledge based economy. To succeed, people need to work with someone who knows and understands,somewhere that  shares knowledge, risk and result and defines realistic objectives and the ways to reach them.</p>
-                    <p>Visit "finager" , a partner you can count on day after day, a partner who is committed to help you to lead you to success.</p>
+                    <p>"finager" is a fintech initiative of core-concept inc. This is the first 360 degree financial industry platform of Bangladesh. It helps visitors taking perfect decisions on their financial affairs- providing updated, authentic and analyzed data and tools.</p>
+                    <p>In this age of knowledge based economy, you need to work with someone who knows and understands,somewhere that shares knowledge, risk and result and defines realistic objectives and the ways to reach them.</p>
+                    <p>Visit "finager.com" , a partner you can count on day after day, a partner who is committed to support your success.</p>
                 </div>
             </div>
         </div>

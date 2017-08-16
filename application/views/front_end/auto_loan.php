@@ -1039,10 +1039,10 @@
         var total_top = parseInt(top_height+banner_height+filter_height+60);
 
         var main_height = $(".main-content-area").height();
-        //console.log(main_height);
+        console.log(main_height);
         $(".sidebar_parent").height(main_height-20);
-        //console.log($(".sidebar_parent").height());
-        console.log( $(".footer").offset().top);
+        console.log($(".sidebar_parent").height());
+       // console.log( $(".footer").offset().top);
 
 
         // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
