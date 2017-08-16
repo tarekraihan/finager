@@ -858,14 +858,14 @@
         //console.log(main_height);
         $(".sidebar_parent").height(main_height-20);
         //console.log($(".sidebar_parent").height());
-        console.log( $(".footer").offset().top);
+        //console.log( $(".footer").offset().top);
 
         $(document).on("click","#displayMoreFilter",function(){
             if($("#moreFilterText").css("display") == "none"){
                 //alert();
                 $('#sidebar').removeClass('fixed');
                 $("#sidebar").removeClass("fixed-bottom");
-                $('#sidebar').addClass('relative');
+                $('#sidebar').addClass('pRelative');
                 //alert();
             }
             else{
@@ -888,19 +888,19 @@
         if($("#moreFilterText").css("display") == "block" && sidebar_height > window_height){
             $('#sidebar').removeClass('fixed');
             $("#sidebar").removeClass("fixed-bottom");
-            $('#sidebar').addClass('relative');
+            $('#sidebar').addClass('pRelative');
             //alert();
         }
 
         if($("#moreFilterText").css("display") == "none" && sidebar_height < window_height){
             $("#sidebar").removeClass("fixed-bottom");
-            $('#sidebar').removeClass('relative');
+            $('#sidebar').removeClass('pRelative');
             $('#sidebar').addClass('fixed');
             //alert();
         }
 
         if(sidebar_height > window_height && $(window).scrollTop()>1510){
-            $('#sidebar').removeClass('relative');
+            $('#sidebar').removeClass('pRelative');
             $('#sidebar').addClass('fixed-bottom');
         }
 

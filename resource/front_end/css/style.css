@@ -4523,10 +4523,10 @@ div#filter-carousel {
 #sidebar{
     margin-top: 0;
 }
-.relative{
+/*.relative{
     position: relative;
     transition: all 1s ease;
-}
+}*/
 .fixed-bottom{
     position: fixed;
     bottom: 0;
