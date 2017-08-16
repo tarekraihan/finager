@@ -960,7 +960,6 @@ class Home_Loan extends CI_Controller {
             $newdata['all']= '';
         }
 
-
         $this->session->set_userdata($newdata);
         echo 'success';
     }
