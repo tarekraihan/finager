@@ -955,7 +955,7 @@
 				<!-- Left bar query content end -->
 				<!-- Right bar content start -->
 				<div class="col-sm-9 col-xs-9">
-                    <div class="overlay"></div>
+
 					<div id="searchPersonalLoan">
                         <div id="loading" class="text-center" style="margin-top: 150px"></div>
 					</div>
