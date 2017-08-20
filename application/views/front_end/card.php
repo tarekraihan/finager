@@ -970,9 +970,13 @@
                 url: url_str,
                 data: main_string,
                 cache: false,
+                beforeSend: function() {
+                    overlay(true,true);
+                },
                 success: function(msg){
                     loading_hide();
                     $("#SearchCard").html(msg);
+                    overlay(false);
                 }
             });
         }
