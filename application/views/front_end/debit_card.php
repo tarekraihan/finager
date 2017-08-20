@@ -24,6 +24,7 @@
 <section id="debitCard_header">
 </section>
 
+<!--Filter bar by bank START -->
 <div class="container">
       <section id="filter-bar">
           <div class="row">
@@ -602,6 +603,7 @@
           </div>
       </section>
   </div>
+<!--Filter bar by bank START -->
 
 <section id="card">
 		<div class="container">

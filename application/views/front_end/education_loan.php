@@ -13,6 +13,7 @@
 	<section id="education_header">
 	</section>
 
+    <!--Filter bar by bank START -->
     <div class="container">
         <section id="filter-bar">
             <div class="row">
@@ -591,7 +592,8 @@
             </div>
         </section>
     </div>
-	
+    <!--Filter bar by bank END -->
+
 	<section id="card">
 		<div class="container">
 			<div class="row">
