@@ -897,16 +897,9 @@
             console.log(cur_page);
         });
 
-        function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
-        }
-
-        function loading_hide(){
-            $('#loading').html("");
-        }
 
         function loadData( page = null ){
-            loading_show();
+            //loading_show();
             var card_user = new Array();
             $('input[name="iAm"]:checked').each(function(){
                 card_user.push($(this).val());
@@ -974,7 +967,6 @@
                     overlay(true,true);
                 },
                 success: function(msg){
-                    loading_hide();
                     $("#SearchCard").html(msg);
                     overlay(false);
                 }
