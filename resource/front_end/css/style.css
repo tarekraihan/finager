@@ -4086,7 +4086,7 @@ a .auto_button.flash-button {
 .bank_details_star{
     color:#df8e35;
 }
-.bank_details_more {
+.bank_details_more  {
     text-align: center;
 }
 .bank_details_more a{
@@ -4500,6 +4500,15 @@ div#filter-carousel {
     float: none;
 }
 
+#savings_account_header{
+    background-image:url(../images/Saving-Banner.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:320px;
+    position:relative;
+    margin-bottom:10px;
+}
 /*Fixed sidebar*/
 .sidebar-absolute{
     /*transition: all 1s ease;*/
