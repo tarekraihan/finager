@@ -201,7 +201,7 @@ $(function(event) {
 			*******************Year*******************
 			*******************************************/
 			else if(valInput > 6){
-				alert("Minimum Year should be 1 & Maximum Year should be 6");
+				//alert("Minimum Year should be 1 & Maximum Year should be 6");
 				_this.val(25);
 				_this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-665px'});
 				_this.parents('#interest').find('.draggable').css('left','175px');
