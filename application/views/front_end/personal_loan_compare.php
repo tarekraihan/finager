@@ -88,7 +88,7 @@ if($second_personal_loan->is_non_bank == 1){
 
 						<tr>
 							<td><b> Tenure</b></td>
-							<td id="firstTenure"> 6 Month </td>
+							<td id="firstTenure"></td>
 						</tr>
 
 						<tr>
@@ -98,7 +98,7 @@ if($second_personal_loan->is_non_bank == 1){
 						
 						<tr>
 							<td><b> Total Payable Amount</b></td>
-                            <td id="firstPayableAmount"> 68,50,000 </td>
+                            <td id="firstPayableAmount">  </td>
 						</tr>
 						
 						<tr>
@@ -126,16 +126,16 @@ if($second_personal_loan->is_non_bank == 1){
 
 							<tr>
 								<td><b> Tenure</b></td>
-								<td id="secondTenure"> 6 Month </td>
+								<td id="secondTenure"> </td>
 							</tr>
 							<tr>
 								<td><b> Equal Monthly Installment (EMI)</b></td>
-                                <td id="secondEmiAmount"> 35624 </td>
+                                <td id="secondEmiAmount"> </td>
 							</tr>
 							
 							<tr>
 								<td><b> Total Payable Amount</b></td>
-                                <td id="secondPayableAmount"> 68,50,000 </td>
+                                <td id="secondPayableAmount"></td>
 							</tr>
 							
 							<tr>
@@ -353,13 +353,13 @@ $(document).ready(function () {
         var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
         var second_payable_amount = second_emi * month;
 
-        $('#firstEmiAmount').html("&#2547; " + number_format( first_emi, 0, '.', ',' ));
-        $('#firstPayableAmount').html("&#2547; " + number_format( first_payable_amount, 0, '.', ',' ) );
+        $('#firstEmiAmount').html("BDT " + number_format( first_emi, 0, '.', ',' ));
+        $('#firstPayableAmount').html("BDT " + number_format( first_payable_amount, 0, '.', ',' ) );
         $('#firstTenure').text(tenure +' Month' );
 //        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
 
-        $('#secondEmiAmount').html("&#2547; " + number_format( second_emi, 0, '.', ',' ));
-        $('#secondPayableAmount').html("&#2547; " + number_format( second_payable_amount, 0, '.', ',' ) );
+        $('#secondEmiAmount').html("BDT " + number_format( second_emi, 0, '.', ',' ));
+        $('#secondPayableAmount').html("BDT " + number_format( second_payable_amount, 0, '.', ',' ) );
 		$('#secondTenure').text(tenure +' Month' );
 //        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
 

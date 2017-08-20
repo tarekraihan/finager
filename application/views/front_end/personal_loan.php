@@ -618,39 +618,25 @@
 						<div class="card_query">
 							<p>I Want </p>
 							<div class="query_radio">
-
 								<div>
-
 									<?php
 									$this->Common_model->table_name = 'personal_loan_looking_for';
 									$this->Common_model->offset = 0;
 									$this->Common_model->limit = 3;
 									$result = $this->Common_model->select_all();
 									foreach($result->result() as $row){
-
 										?>
-
 										<label class="material_radio_group">
-
-											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php echo ($this->session->userdata('i_want')) ? 'checked' : '' ?> class="material_radiobox"/>
-
+											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php echo ($this->session->userdata('personal_loan_i_want') == $row->id) ? 'checked' : '' ?> class="material_radiobox"/>
 											<span class="material_check_radio"></span>
-
 											<?php echo $row->personal_loan_looking_for;?>
-
 										</label><br/>
-
 									<?php } ?>
-
 								</div>
-
 								<div>
-
-									<button class="btnPmore btn-open" data-toggle="<?php echo ($this->session->userdata('i_want') != '') ? 'collapsed' : 'collapse' ?>" data-target="#demo"><?php echo ($this->session->userdata('i_want') != '') ? 'Less' : 'More' ?></button>
-
+									<button class="btnPmore" data-toggle="<?php echo ($this->session->userdata('personal_loan_i_want') > 2) ? 'collapsed' : 'collapse' ?>" data-target="#demo"><?php echo ($this->session->userdata('personal_loan_i_want') > 2) ? 'Less' : 'More' ?></button>
 								</div>
-
-								<div id="demo" class="collapse <?php echo ($this->session->userdata('i_want') != '') ? 'in' : '' ?>">
+								<div id="demo" class="collapse <?php echo ($this->session->userdata('personal_loan_i_want') != '') ? 'in' : '' ?>">
 									<?php
 									$this->Common_model->table_name = 'personal_loan_looking_for';
 									$this->Common_model->offset = 3;
@@ -659,7 +645,7 @@
 									foreach($result->result() as $row){
 										?>
 										<label class="material_radio_group">
-											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php echo ($this->session->userdata('i_want')) ? 'checked' : '' ?> class="material_radiobox"/>
+											<input type="radio" name="i_want"  id="iWant<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php echo ($this->session->userdata('personal_loan_i_want') == $row->id) ? 'checked' : '' ?> class="material_radiobox"/>
 											<span class="material_check_radio"></span>
 											<?php echo $row->personal_loan_looking_for;?>
 										</label><br/>
@@ -943,7 +929,7 @@
 								foreach($result->result() as $row){
 								?>
 									<label class="material_radio_group">
-										<input type="radio" name="i_am"  id="i_am<?php echo $row->id; ?>"  value="<?php echo $row->id ;?>" class="material_radiobox"  <?php echo ($this->session->userdata('i_am')) ? 'checked' : '' ?>/>
+										<input type="radio" name="i_am"  id="i_am<?php echo $row->id; ?>"  value="<?php echo $row->id ;?>" class="material_radiobox"  <?php echo ($this->session->userdata('personal_loan_i_am') == $row->id) ? 'checked' : '' ?>/>
 										<span class="material_check_radio"></span>
 										<?php echo $row->i_am; ?>
 									</label><br/>

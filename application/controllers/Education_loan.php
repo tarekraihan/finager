@@ -609,7 +609,7 @@ class Education_Loan extends CI_Controller {
 									<div class="col-sm-2 col-xs-2 no-padding w20">
 										<div class="card_text2">
 											<h5>Selected Amount </h5>
-											<p> Tk. '.number_format($principal_amount).'</p>
+											<p> BDT '.number_format($principal_amount).'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2 no-padding w20">
@@ -621,13 +621,13 @@ class Education_Loan extends CI_Controller {
 									<div class="col-sm-1 col-xs-1 no-padding w20">
 										<div class="card_text2">
 											<h5>EMI</h5>
-											<p>Tk. '.number_format( $emi ).'</p>
+											<p>BDT '.number_format( $emi ).'</p>
 										</div>
 									</div>
 									<div class="col-sm-5 col-xs-2 w20 no-padding">
 										<div class="card_text2">
 											<h5>Total Payable Amount</h5>
-											<p>Tk.'.number_format($total_payable).'<br/><span class="tPaybleAmount">based on Tk. '.number_format($principal_amount).'</span></p>
+											<p>BDT'.number_format($total_payable).'<br/><span class="tPaybleAmount">based on BDT '.number_format($principal_amount).'</span></p>
 										</div>
 									</div>
 								</div>

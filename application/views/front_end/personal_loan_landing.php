@@ -20,49 +20,49 @@
 			<div class="home_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a  class="land_modal i_want" data-i_want="6" ><div class="All_card">
+						<a  class="land_modal personal_loan_i_want" data-personal_loan_i_want="6" ><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Medical-Treatment-Loan.png" alt=" Medical Treatment Loan"/>
 							<p> Medical Treatment Loan </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a  class="land_modal i_want" data-i_want="8"><div class="All_card">
+						<a  class="land_modal personal_loan_i_want" data-personal_loan_i_want="8"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Travel-Loan.png" alt="Travel Loan"/>
 							<p> Travel Loan </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a  class="land_modal i_want" data-i_want="12"><div class="All_card">
+						<a  class="land_modal personal_loan_i_want" data-personal_loan_i_want="12"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Personal-CNG-Conversion-Loan.png" alt="CNG Conversion Loan"/>
 							<p> CNG Conversion Loan </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a  class="land_modal i_want" data-i_want="10"><div class="All_card">
+						<a  class="land_modal personal_loan_i_want" data-personal_loan_i_want="10"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Hajj-Loan.png" alt="Hajj Loan "/>
 							<p>  Hajj Loan </p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a  class="land_modal i_am" data-i_am="4"><div class="All_card">
+						<a  class="land_modal personal_loan_i_am" data-personal_loan_i_am="4"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Landlord.png" alt="Landlord"/>
 							<p> Landlord </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a  class="land_modal i_am" data-i_am="1"><div class="All_card">
+						<a  class="land_modal personal_loan_i_am" data-personal_loan_i_am="1"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Salaried-Person.png" alt="Salaried Person"/>
 							<p> Salaried Person </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a  class="land_modal i_am" data-i_am="2"><div class="All_card">
+						<a  class="land_modal personal_loan_i_am" data-personal_loan_i_am="2"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Personal-Business-Man.png" alt="Businessman"/>
 							<p>	Businessman </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a  class="land_modal i_am" data-i_am="3">
+						<a  class="land_modal personal_loan_i_am" data-personal_loan_personal_loan_i_am="3">
 							<div class="All_card">
 								<img src="<?php echo base_url();?>resource/front_end/images/Personal-Professional.png" alt="Professional"/>
 								<p>Professional</p>
@@ -310,19 +310,19 @@
 	</section>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.i_am').on('click',function(){
+		$('.personal_loan_i_am').on('click',function(){
 			var  formData = $(this).data();
-			var i_am = formData.i_am;
-			var data = 'i_am='+i_am;
+			var personal_loan_i_am = formData.personal_loan_i_am;
+			var data = 'personal_loan_i_am='+personal_loan_i_am;
 //			console.log(data);
 			quick_link(data);
 
 		});
 
-		$('.i_want').on('click',function(){
+		$('.personal_loan_i_want').on('click',function(){
 			var  formData = $(this).data();
-			var i_want = formData.i_want;
-			var data = 'i_want='+i_want;
+			var personal_loan_i_want = formData.personal_loan_i_want;
+			var data = 'personal_loan_i_want='+personal_loan_i_want;
 //			console.log(data);
 			quick_link(data);
 
