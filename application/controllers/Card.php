@@ -1235,23 +1235,25 @@ class Card extends CI_Controller
 
 
         $credit_card='';
-                foreach($result->result() as $row){
+
+        if($result->num_rows() > 0){
+            foreach($result->result() as $row){
 //                    print_r($row);die;
-                    $length = strlen($row->card_summary);
-                    $summary='';
-                    if($length > 250){
-                        $rest = substr($row->card_summary, 0,250);
-                        $summary = $rest.' <a href="'.base_url().'en/card_details/'. $row->id.'"> read more..</a>';
-                    }else{
-                        $summary = $row->card_summary;
-                    }
-                    $card_image='';
-                    if($row->card_image_name == '&lt;'){
-                        $card_image = ' <a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
-                    }else{
-                        $card_image ='<a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
-                    }
-                    $credit_card .='<div class="full-card" >
+                $length = strlen($row->card_summary);
+                $summary='';
+                if($length > 250){
+                    $rest = substr($row->card_summary, 0,250);
+                    $summary = $rest.' <a href="'.base_url().'en/card_details/'. $row->id.'"> read more..</a>';
+                }else{
+                    $summary = $row->card_summary;
+                }
+                $card_image='';
+                if($row->card_image_name == '&lt;'){
+                    $card_image = ' <a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
+                }else{
+                    $card_image ='<a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
+                }
+                $credit_card .='<div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-3 col-xs-3">
                             '.$card_image.'
@@ -1530,8 +1532,11 @@ class Card extends CI_Controller
                     <!-- More Info Tab content end -->
                     </div>
                ';
-                }
-        $credit_card .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+            }
+            $credit_card .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+        }else{
+            $credit_card .=  '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';
+        }
         echo $credit_card;
     }
 

@@ -588,16 +588,18 @@ class Debit_card extends CI_Controller
         //-------------Pagination End-------------------
 
         $debit_card ='';
-       /* $debit_card .='<div class="col-md-12">
-                        <div class="active-filters-container">
-                         '.$debit_card_choose_account.'
-                         '.$debit_card_looking_for.'
-                         '.$debit_card_card_issuer.'
-                         '.$debit_card_i_want.'
-                         '.$debit_card_clear_all.'
-                        </div></div>';*/
-        foreach($result->result() as $row) {
-            $debit_card .= '<div class="full-card">
+         /* $debit_card .='<div class="col-md-12">
+                          <div class="active-filters-container">
+                           '.$debit_card_choose_account.'
+                           '.$debit_card_looking_for.'
+                           '.$debit_card_card_issuer.'
+                           '.$debit_card_i_want.'
+                           '.$debit_card_clear_all.'
+                          </div></div>';*/
+
+        if($result->num_rows() > 0){
+            foreach($result->result() as $row) {
+                $debit_card .= '<div class="full-card">
 
 						<div class="row card_right_bar no-margin-lr">
 							<div class="col-sm-3 col-xs-3">
@@ -756,8 +758,11 @@ class Debit_card extends CI_Controller
 						<!-- More Info Tab content end -->
 					</div>';
 
+            }
+            $debit_card .= '<div class="col-md-12">'.$data['pagination'].'</div>';
+        }else{
+            $debit_card .=  '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';
         }
-        $debit_card .= '<div class="col-md-12">'.$data['pagination'].'</div>';
         echo $debit_card;
     }
 
