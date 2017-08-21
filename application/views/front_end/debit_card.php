@@ -734,7 +734,6 @@
 
 <script type="text/javascript">
     // This function will be executed when the user scrolls the page.
-    /*
     $(document).on("scroll",function () {
         var scroller_anchor = $("#sidebar").offset().top;
         var sidebar_height = $("#sidebar").height();
@@ -744,28 +743,16 @@
         var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
 
         var top_height = $('#top-page').height();
-        var banner_height = $('#creditCard_header').height();
+        var banner_height = $('#debitCard_header').height();
         var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+45);
+        var total_top = parseInt(top_height+banner_height+filter_height+60);
 
-        var main_height = $(".main-content-area").height();
-        //console.log(main_height);
+        var main_height = parseInt($(".main-content-area").height());
+        console.log(main_height);
         $(".sidebar_parent").height(main_height-20);
         //console.log($(".sidebar_parent").height());
         //console.log( $(".footer").offset().top);
 
-        $(document).on("click","#displayMoreFilter",function(){
-            if($("#moreFilterText").css("display") == "none"){
-                //alert();
-                $('#sidebar').removeClass('fixed');
-                $("#sidebar").removeClass("fixed-bottom");
-                $('#sidebar').addClass('pRelative');
-                //alert();
-            }
-            else{
-
-            }
-        });
 
         // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
         if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
@@ -776,37 +763,12 @@
         if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
         {
             $('#sidebar').removeClass('fixed');
-            $("#sidebar").removeClass("fixed-bottom");
         }
 
-        if($("#moreFilterText").css("display") == "block" && sidebar_height > window_height){
-            $('#sidebar').removeClass('fixed');
-            $("#sidebar").removeClass("fixed-bottom");
-            $('#sidebar').addClass('pRelative');
-            //alert();
-        }
-
-        if($("#moreFilterText").css("display") == "none" && sidebar_height < window_height){
-            $("#sidebar").removeClass("fixed-bottom");
-            $('#sidebar').removeClass('pRelative');
-            $('#sidebar').addClass('fixed');
-            //alert();
-        }
-
-        if(sidebar_height > window_height && $(window).scrollTop()>1520){
-            $('#sidebar').removeClass('pRelative');
-            $('#sidebar').addClass('fixed-bottom');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 90){
+        if($('#sidebar').offset().top + $('#sidebar').height()
+            >= $('.footer').offset().top - 65){
             $("#sidebar").removeClass("fixed");
-            $("#sidebar").removeClass("fixed-bottom");
             $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if(sidebar_height > window_height && $(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
-            $("#sidebar").addClass("fixed-bottom");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
         }
 
         if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
@@ -816,10 +778,10 @@
 
         if($("#sidebar").offset().top < total_top){
             $("#sidebar").removeClass("fixed");
-            $("#sidebar").removeClass("fixed-bottom");
             $("#sidebar").addClass("sidebar-absolute");
         }
-    });*/
+
+    });
 </script>
 
 <script type="text/javascript">
