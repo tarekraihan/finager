@@ -1,4 +1,5 @@
   <style>
+      /*Testing comment*/
       .sidebar-absolute{
           /*transition: all 1s ease;*/
       }
@@ -15,6 +16,7 @@
       }
       .sidebar_parent{
           position: relative;
+          min-height: 600px;;
       }
       #sidebar{
           margin-top: 0;
