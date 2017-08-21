@@ -1114,7 +1114,7 @@
         });
 
 
-        $('input[name="maturity_amount"]').on('click checked',function() {
+        $('input[name="maturity_amount"]').on('click',function() {
             var amount = $(this).val();
             var thisVal= 'selected_amount='+$(this).val();
 //            alert(thisVal);
@@ -1132,7 +1132,26 @@
                     $('#tenure_label').html('Tenure Based on '+ amount_list[amount]);
                 }
             });
-        }).trigger('checked');
+        });
+        $('input[name="maturity_amount"]:checked').each(function(){
+            var amount = $(this).val();
+            var thisVal= 'selected_amount='+$(this).val();
+            var amount_list = {1:'100K', 2:'200K', 3:'300K',4:'400K',5:'500K',6:'1 Million',7:'2.5 Million', 8:'5 Million',9:'10 Million',10:'20 Million',11:'30 Million',12:'40 Million'};
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>millionaire/ajax_get_tenure",
+                data: thisVal,
+                cache: false,
+                success: function(msg)
+                {
+                    $("#millionaire_tenure").html(msg);
+                    $('#tenure_label').html('Tenure Based on '+ amount_list[amount]);
+                }
+            });
+        });
+
+
     });
 </script>
 
