@@ -619,7 +619,7 @@ class Debit_card extends CI_Controller
 								<div class="row">
 									<div class="col-sm-9 col-xs-9">
 										<div class="card_text1">
-											<b>'.$row->card_name.'</b>
+											<b>'.$row->card_name.'/'.$row->account_name.'</b>
 											<p class="card_description">Dual Currency Visa Classic Card of Brac Bank Ltd. is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.</p>
 										</div>
 									</div>
@@ -627,14 +627,6 @@ class Debit_card extends CI_Controller
 										<div class="card_text1 card_btn_apllication">
 											<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="img-responsive" src="' . base_url() . 'resource/front_end/images/card_btn_apllication.png" /></a>
 										</div>
-                                        <div>
-
-                                            <div class="card_text2">
-                                                <h5>Annual Fee</h5>
-                                                <p>'.$row->annual_fee.'</p>
-                                            </div>
-
-                                        </div>
 									</div>
 								</div>
 
@@ -665,8 +657,8 @@ class Debit_card extends CI_Controller
 									</div>
 									<div class="col-sm-2 col-xs-1 w20 no-padding">
 										<div class="card_text2">
-											<h5>Account Required</h5>
-											<p>'.$row->account_name.'</p>
+											 <h5>Annual Fee</h5>
+                                             <p>'.$row->annual_fee.'</p>
 										</div>
 									</div>
 								</div>
