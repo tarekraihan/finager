@@ -655,7 +655,7 @@ class Debit_card extends CI_Controller
 											<p>'.$row->per_transaction_limit.'</p>
 										</div>
 									</div>
-									<div class="col-sm-2 col-xs-1 w20 no-padding">
+									<div class="col-sm-2 col-xs-1 w20">
 										<div class="card_text2">
 											 <h5>Annual Fee</h5>
                                              <p>'.$row->annual_fee.'</p>
