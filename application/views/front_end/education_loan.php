@@ -1,12 +1,24 @@
     <style>
+        .sidebar-absolute{
+            /*transition: all 1s ease;*/
+        }
+        .sidebar-absolute-bottom{
+            position: absolute;
+            width: 262px;
+            bottom: 35px;
+            left: 15px;
+        }
         .fixed {
             position: fixed;
-            top: 0;
+            top: 0px;
             width: 262.5px;
-            transition: all 1s ease;
         }
-        .sidebar-absolute{
-            transition: all 1s ease;
+        .sidebar_parent{
+            position: relative;
+            min-height: 600px;;
+        }
+        #sidebar{
+            margin-top: 0;
         }
     </style>
 
@@ -598,7 +610,8 @@
 		<div class="container">
 			<div class="row">
 		<!-- Left bar query content start -->
-				<div class="col-sm-3 col-xs-3">
+				<div class="col-sm-3 col-xs-3 sidebar_parent">
+                    <div id="sticky-anchor"></div>
 					<div class="home_loan_left_bar" id="sidebar">
 						<!-- slider range sidebar start-->
 						<div class="row">
@@ -776,7 +789,7 @@
 				<!-- Left bar query content end -->
 				
 				<!-- Right bar content start -->
-				<div class="col-sm-9 col-xs-9">
+				<div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
                     <div id="searchEducationLoan">
                         <div id="loading" class="text-center" style="margin-top: 150px"></div>
                     </div>
@@ -824,14 +837,49 @@
 	
 <script type="text/javascript">
     $(document).ready(function(){
-        setTimeout(function(){
-            //alert($("#finalAssest").val());
-            $("#finalAssest").focus();
-            $("#finalAssest").blur();
+        $(document).on("scroll",function () {
+            var scroller_anchor = $("#sidebar").offset().top;
+            var sidebar_height = $("#sidebar").height();
+            var window_height = $(window).height();
 
-            $("#finalLiability").focus();
-            $("#finalLiability").blur();
-        },500);
+            var offsetToTop = parseInt($(this).scrollTop());
+            var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
+
+            var top_height = $('#top-page').height();
+            var banner_height = $('#education_header').height();
+            var filter_height = $('#filter-bar').height();
+            var total_top = parseInt(top_height+banner_height+filter_height+45);
+            var main_height = parseInt($(".main-content-area").height());
+
+            $(".sidebar_parent").height(main_height-20);
+
+            // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
+            if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
+            {
+                $('#sidebar').addClass('fixed');
+            }
+
+            if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
+            {
+                $('#sidebar').removeClass('fixed');
+            }
+
+            if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 65){
+                $("#sidebar").removeClass("fixed");
+                $("#sidebar").addClass("sidebar-absolute-bottom");
+            }
+
+            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top + 370){
+                $("#sidebar").addClass("fixed");
+                $("#sidebar").removeClass("sidebar-absolute-bottom");
+            }
+
+            if($("#sidebar").offset().top < total_top){
+                $("#sidebar").removeClass("fixed");
+                $("#sidebar").addClass("sidebar-absolute");
+            }
+
+        });
     });
     $(document).on("scroll",function () {
         var scroller_anchor = $("#sidebar").offset().top;

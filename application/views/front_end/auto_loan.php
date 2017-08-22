@@ -1038,7 +1038,7 @@
         var top_height = $('#top-page').height();
         var banner_height = $('#auto_header').height();
         var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+60);
+        var total_top = parseInt(top_height+banner_height+filter_height+45);
 
         var main_height = $(".main-content-area").height();
         console.log(main_height);
@@ -1064,7 +1064,7 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
 
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+65){
             $("#sidebar").addClass("fixed");
             $("#sidebar").removeClass("sidebar-absolute-bottom");
         }

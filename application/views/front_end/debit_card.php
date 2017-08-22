@@ -747,14 +747,10 @@
         var top_height = $('#top-page').height();
         var banner_height = $('#debitCard_header').height();
         var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+60);
-
+        var total_top = parseInt(top_height+banner_height+filter_height+35);
         var main_height = parseInt($(".main-content-area").height());
-        console.log(main_height);
-        $(".sidebar_parent").height(main_height-20);
-        //console.log($(".sidebar_parent").height());
-        //console.log( $(".footer").offset().top);
 
+        $(".sidebar_parent").height(main_height-20);
 
         // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
         if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
@@ -767,13 +763,12 @@
             $('#sidebar').removeClass('fixed');
         }
 
-        if($('#sidebar').offset().top + $('#sidebar').height()
-            >= $('.footer').offset().top - 65){
+        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 65){
             $("#sidebar").removeClass("fixed");
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
 
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top + 65){
             $("#sidebar").addClass("fixed");
             $("#sidebar").removeClass("sidebar-absolute-bottom");
         }
@@ -784,6 +779,7 @@
         }
 
     });
+
 </script>
 
 <script type="text/javascript">

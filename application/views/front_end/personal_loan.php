@@ -53,8 +53,29 @@
 		background-color: #2B99BB;
 		color: #fff;
 		border: 1px solid #2B99BB;
-
 	}
+
+    .sidebar-absolute{
+        /*transition: all 1s ease;*/
+    }
+    .sidebar-absolute-bottom{
+        position: absolute;
+        width: 262px;
+        bottom: 35px;
+        left: 15px;
+    }
+    .fixed {
+        position: fixed;
+        top: 0px;
+        width: 262.5px;
+    }
+    .sidebar_parent{
+        position: relative;
+        min-height: 600px;;
+    }
+    #sidebar{
+        margin-top: 0;
+    }
 </style>
 
 	<section id="personal_header">
@@ -612,8 +633,9 @@
 		<div class="container">
 			<div class="row">
 		<!-- Left bar query content start -->
-				<div class="col-sm-3 col-xs-3">
-					<div class="home_loan_left_bar">
+				<div class="col-sm-3 col-xs-3 sidebar_parent">
+                    <div id="sticky-anchor"></div>
+                    <div class="card_left_bar home_loan_left_bar" id="sidebar">
 						<!-- slider range sidebar start-->
 						<div class="card_query">
 							<p>I Want </p>
@@ -940,7 +962,7 @@
 				</div>
 				<!-- Left bar query content end -->
 				<!-- Right bar content start -->
-				<div class="col-sm-9 col-xs-9">
+                <div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
 
 					<div id="searchPersonalLoan">
                         <div id="loading" class="text-center" style="margin-top: 150px"></div>
@@ -989,6 +1011,50 @@
 <script>
 
     $(document).ready(function(){
+        // This function will be executed when the user scrolls the page.
+        /*$(document).on("scroll",function () {
+            var scroller_anchor = $("#sidebar").offset().top;
+            var sidebar_height = $("#sidebar").height();
+            var window_height = $(window).height();
+
+            var offsetToTop = parseInt($(this).scrollTop());
+            var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
+
+            var top_height = $('#top-page').height();
+            var banner_height = $('#personal_header').height();
+            var filter_height = $('#filter-bar').height();
+            var total_top = parseInt(top_height+banner_height+filter_height+35);
+            var main_height = parseInt($(".main-content-area").height());
+
+            $(".sidebar_parent").height(main_height-20);
+
+            // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
+            if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
+            {
+                $('#sidebar').addClass('fixed');
+            }
+
+            if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
+            {
+                $('#sidebar').removeClass('fixed');
+            }
+
+            if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top-65){
+                $("#sidebar").removeClass("fixed");
+                $("#sidebar").addClass("sidebar-absolute-bottom");
+            }
+
+            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+65){
+                $("#sidebar").addClass("fixed");
+                $("#sidebar").removeClass("sidebar-absolute-bottom");
+            }
+
+            if($("#sidebar").offset().top < total_top){
+                $("#sidebar").removeClass("fixed");
+                $("#sidebar").addClass("sidebar-absolute");
+            }
+
+        });*/
 
         var current_page = '<?php echo base_url();?>en/all_personal_loan';
 
