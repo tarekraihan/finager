@@ -193,15 +193,11 @@
                 </div>
                 <div class="col-md-8 no-padding">
                     <ul class="filter-list">
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 1</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
+                        <?php
 
+                            echo (!empty($this->session->userdata("home_i_want_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
+
+                        ?>
                         <li>
                             <span class="filter-option">
                                 <span>Filter Option 2</span>
@@ -615,8 +611,10 @@
             });
             var bank_id_list = "&home_bank_ids="+bank_ids;
 
+            var home_i_want_label = '&home_i_want_label='+ $('input[name="iWant"]:checked').parent().text().trim();
+            var home_i_am_label = '&home_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
 
-            var main_string = home_i_want_list+home_user_list+principal_amount+month_limit+bank_id_list;
+            var main_string = home_i_want_list+home_user_list+principal_amount+month_limit+bank_id_list+home_i_want_label+home_i_am_label;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
@@ -634,6 +632,44 @@
                 success: function(msg){
                     overlay(false);
                     $("#searchHomeLoan").html(msg);
+                }
+            });
+        }
+
+        function data_caching(){
+
+            $('input[name="iWant"]:checked').each(function(){
+                home_i_want.push($(this).val());
+            });
+            var home_i_want_list = "&home_i_want="+home_i_want;
+            var home_user = new Array();
+            $('input[name="iAm"]:checked').each(function(){
+                home_user.push($(this).val());
+            });
+            var home_user_list = "&home_user="+home_user;
+
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&home_bank_ids="+bank_ids;
+
+            var home_i_want_label = '&home_i_want_label='+ $('input[name="iWant"]:checked').parent().text().trim();
+            var home_i_am_label = '&home_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
+
+            var main_string = home_i_want_list+home_user_list+bank_id_list+home_i_want_label+home_i_am_label;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>home_loan/ajax_home_loan_caching/" ;
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response){
+
+                    var option = '<li><span class="filter-option"><span>Filter Option 2</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>'
+                    $("filter-lis").html(msg);
                 }
             });
         }
