@@ -4541,3 +4541,6 @@ div#filter-carousel {
     width: 262.5px;
     transition: all 1s ease;
 }
+.main-content-area{
+    min-height: 600px !important;
+}

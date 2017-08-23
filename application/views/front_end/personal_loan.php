@@ -1012,7 +1012,7 @@
 
     $(document).ready(function(){
         // This function will be executed when the user scrolls the page.
-        /*$(document).on("scroll",function () {
+        $(document).on("scroll",function () {
             var scroller_anchor = $("#sidebar").offset().top;
             var sidebar_height = $("#sidebar").height();
             var window_height = $(window).height();
@@ -1044,7 +1044,7 @@
                 $("#sidebar").addClass("sidebar-absolute-bottom");
             }
 
-            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+65){
+            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+200){
                 $("#sidebar").addClass("fixed");
                 $("#sidebar").removeClass("sidebar-absolute-bottom");
             }
@@ -1054,7 +1054,7 @@
                 $("#sidebar").addClass("sidebar-absolute");
             }
 
-        });*/
+        });
 
         var current_page = '<?php echo base_url();?>en/all_personal_loan';
 

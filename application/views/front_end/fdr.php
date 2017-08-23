@@ -622,8 +622,9 @@
 		<div class="container">
 			<div class="row">
 		<!-- Left bar query content start -->
-				<div class="col-sm-3 col-xs-3">
-					<div class="home_loan_left_bar">
+				<div class="col-sm-3 col-xs-3 sidebar_parent">
+                    <div id="sticky-anchor"></div>
+					<div class="home_loan_left_bar" id="sidebar">
 						<div class="card_query">
 							<p>I Am</p>
 							<div class="query_radio">
@@ -814,7 +815,7 @@
 				<!-- Left bar query content end -->
 				
 				<!-- Right bar content start -->
-				<div class="col-sm-9 col-xs-9">
+                <div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
                     <input type="hidden" id="principle_amount" name="principle_amount" value="500000">
                     <div id="searchFDR">
                        <div id="loading" class="text-center"></div>
@@ -863,14 +864,49 @@
 
 <script type="text/javascript">
 
-    $(window).on('scroll', function (){
-        if ($(window).scrollTop() > 350){
-          $('.home_loan_left_bar').addClass('fixedElement');
-        }if($(window).scrollTop()<350){
-          $('.home_loan_left_bar').removeClass('fixedElement');
-        }if($(window).scrollTop() > 2200){
-          $('.home_loan_left_bar').removeClass('fixedElement');
+    // This function will be executed when the user scrolls the page.
+    $(document).on("scroll",function () {
+        var scroller_anchor = $("#sidebar").offset().top;
+        var sidebar_height = $("#sidebar").height();
+        var window_height = $(window).height();
+
+        var offsetToTop = parseInt($(this).scrollTop());
+        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
+
+        var top_height = $('#top-page').height();
+        var banner_height = $('#fdr_header').height();
+        var filter_height = $('#filter-bar').height();
+        var total_top = parseInt(top_height+banner_height+filter_height+35);
+        var main_height = parseInt($(".main-content-area").height());
+
+        $(".sidebar_parent").height(main_height-20);
+
+        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
+        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
+        {
+            $('#sidebar').addClass('fixed');
         }
+
+        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
+        {
+            $('#sidebar').removeClass('fixed');
+        }
+
+        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top-65){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute-bottom");
+        }
+
+        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+80){
+            $("#sidebar").addClass("fixed");
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+        }
+
+        if($("#sidebar").offset().top < total_top){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute");
+        }
+
     });
 </script>
 

@@ -302,6 +302,7 @@
         <div class="row">
             <!-- Left bar query content start -->
             <div class="col-sm-3 col-xs-3 sidebar_parent">
+                <div id="sticky-anchor"></div>
                 <div class="home_loan_left_bar" id="sidebar">
                     <!-- slider range sidebar start-->
                     <div class="card_query">
@@ -573,7 +574,7 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
 
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+65){
+        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+180){
             $("#sidebar").addClass("fixed");
             $("#sidebar").removeClass("sidebar-absolute-bottom");
         }
