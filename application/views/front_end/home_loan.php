@@ -195,9 +195,13 @@
                     <ul class="filter-list">
                         <?php
 
-                            echo (!empty($this->session->userdata("home_i_want_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
+                        echo (!empty($this->session->userdata("home_i_want_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
+                        echo (!empty($this->session->userdata("home_i_am_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_am_label").'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
 
                         ?>
+                    </ul>
+                   <!-- <ul class="filter-list">
+
                         <li>
                             <span class="filter-option">
                                 <span>Filter Option 2</span>
@@ -207,78 +211,7 @@
                             </span>
                         </li>
 
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 3</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 4</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 5</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 6</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 7</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 8</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 9</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 10</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-                    </ul>
+                    </ul>-->
                 </div>
                 <div class="col-md-1 no-padding-left">
                     <a class="btn-filter-clear" href="javascript:;">
@@ -669,7 +602,7 @@
                 success: function(response){
 
                     var option = '<li><span class="filter-option"><span>Filter Option 2</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>'
-                    $("filter-lis").html(msg);
+                    $("filter-list").html(msg);
                 }
             });
         }

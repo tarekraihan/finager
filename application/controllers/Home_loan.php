@@ -638,21 +638,10 @@ class Home_Loan extends CI_Controller {
              $home_principal_amount = 200000;
          }
 
-         $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label');
-         $this->session->unset_userdata($array_items);
 
-         $data = array(
-             'home_i_want'  => $home_i_want,
-             'home_i_am'  => $home_user,
-             'home_principal_amount'  => $home_principal_amount,
-             'home_i_want_label' => $this->input->post('home_i_want_label'),
-             'home_i_am_label' => $this->input->post('home_i_am_label')
-         );
 
-         $this->session->set_userdata($data);
-
-         $home_i_want_label = ($this->session->userdata("home_i_want_label") != "") ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);" value="'.$this->session->userdata("home_i_want").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>
-' : '';
+/*        $home_i_want_label = ($this->session->userdata("home_i_want_label") != "") ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);" value="'.$this->session->userdata("home_i_want").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>
+' : '';*/
 
          $home_month_limit = floatval ( ($this->input->post('home_month_limit') > 1) ? $this->input->post('home_month_limit') : 1 );
 
@@ -972,6 +961,23 @@ class Home_Loan extends CI_Controller {
 
     public function ajax_home_loan_caching(){
 
+        $home_i_want = $this->input->post('home_i_want');
+        $home_user = $this->input->post('home_user');
+        $home_bank_ids = $this->input->post('home_bank_ids');
+        $home_principal_amount = floatval ( ($this->input->post('home_principal_amount')) ? $this->input->post('home_principal_amount') : '200000' );
+
+        $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label');
+        $this->session->unset_userdata($array_items);
+
+        $data = array(
+            'home_i_want'  => $home_i_want,
+            'home_i_am'  => $home_user,
+            'home_principal_amount'  => $home_principal_amount,
+            'home_i_want_label' => $this->input->post('home_i_want_label'),
+            'home_i_am_label' => $this->input->post('home_i_am_label')
+        );
+
+        $this->session->set_userdata($data);
     }
 
 
