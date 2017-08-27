@@ -768,7 +768,7 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
 
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top + 65){
+        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top + 230){
             $("#sidebar").addClass("fixed");
             $("#sidebar").removeClass("sidebar-absolute-bottom");
         }
