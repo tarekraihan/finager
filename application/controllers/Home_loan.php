@@ -964,6 +964,21 @@ class Home_Loan extends CI_Controller {
         $home_i_want = $this->input->post('home_i_want');
         $home_user = $this->input->post('home_user');
         $home_bank_ids = $this->input->post('home_bank_ids');
+
+        $bank_id_array = array();
+        if(!empty($home_bank_ids)) {
+            if(strstr($home_bank_ids,',')) {
+                $data8 = explode(',',$home_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $home_bank_ids;
+            }
+        }
+
         $home_principal_amount = floatval ( ($this->input->post('home_principal_amount')) ? $this->input->post('home_principal_amount') : '200000' );
 
         $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label');
@@ -974,10 +989,12 @@ class Home_Loan extends CI_Controller {
             'home_i_am'  => $home_user,
             'home_principal_amount'  => $home_principal_amount,
             'home_i_want_label' => $this->input->post('home_i_want_label'),
-            'home_i_am_label' => $this->input->post('home_i_am_label')
+            'home_i_am_label' => $this->input->post('home_i_am_label'),
+            'home_bank_ids' => $bank_id_array
         );
 
         $this->session->set_userdata($data);
+        echo json_encode($data);
     }
 
 

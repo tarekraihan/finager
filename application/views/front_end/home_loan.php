@@ -570,7 +570,7 @@
         }
 
         function data_caching(){
-
+            var home_i_want = new Array();
             $('input[name="iWant"]:checked').each(function(){
                 home_i_want.push($(this).val());
             });
@@ -583,8 +583,13 @@
 
 
             var bank_ids = new Array();
+
             $('input[name="bank_id"]:checked').each(function(){
-                bank_ids.push($(this).val());
+                bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text());
+//                console.log($(this).val());
+//                console.log($(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+                //bank_labels.push($(this).parent('.material_checkbox_group').find('.filter-check-name').text());
+
             });
             var bank_id_list = "&home_bank_ids="+bank_ids;
 
@@ -592,6 +597,7 @@
             var home_i_am_label = '&home_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
 
             var main_string = home_i_want_list+home_user_list+bank_id_list+home_i_want_label+home_i_am_label;
+            console.log(bank_ids);
             main_string = main_string.substring(1, main_string.length);
             var url_str = "<?php echo base_url();?>home_loan/ajax_home_loan_caching/" ;
             $.ajax({
@@ -601,25 +607,48 @@
                 cache: false,
                 success: function(response){
 
-                    var option = '<li><span class="filter-option"><span>Filter Option 2</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>'
-                    $("filter-list").html(msg);
+                    //console.log(response);
+
+                    var option = [];
+                    var obj = JSON.parse(response);
+                    if(obj.home_i_want_label !=''){
+                       option.push('<li><span class="filter-option"><span>'+obj.home_i_want_label+'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+                    if(obj.home_i_am_label !=''){
+                       option.push('<li><span class="filter-option"><span>'+obj.home_i_am_label+'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+                    console.log(obj.home_bank_ids);
+                    if(obj.home_bank_ids.length > 0 ){
+                        for (var i = 0; i < obj.home_bank_ids.length; i++) {
+                            option.push('<li><span class="filter-option"><span>'+obj.home_bank_ids[i]+'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        }
+
+                    }
+
+                    console.log(obj);
+                    console.log(option);
+                    $(".filter-list").html(option);
                 }
             });
         }
 
         loadData(page = null);
+        data_caching();
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             loadData(page = null);
+            data_caching();
         } );
 		// Stop dragging calculator and fire event for search
          $(".draggable").on("dragstop",function(ev,ui){
             setTimeout(function(){ //Updated by Tarek on 14-05-2017
                 loadData(page = null);
+                data_caching();
             }, 1000);
         });
 
         $("#finalAssest,#finalLiability").change(function () {
             loadData(page = null);
+            data_caching();
         });
 
         $(".leftCont").find(".next").click(function(){
