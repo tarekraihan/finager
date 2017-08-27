@@ -71,7 +71,7 @@
     }
     .sidebar_parent{
         position: relative;
-        min-height: 600px;;
+        min-height: 900px;;
     }
     #sidebar{
         margin-top: 0;
@@ -1044,7 +1044,7 @@
                 $("#sidebar").addClass("sidebar-absolute-bottom");
             }
 
-            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+200){
+            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
                 $("#sidebar").addClass("fixed");
                 $("#sidebar").removeClass("sidebar-absolute-bottom");
             }

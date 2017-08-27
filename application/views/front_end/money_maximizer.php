@@ -943,22 +943,11 @@
         var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
 //            alert(cur_page);
         loadData(cur_page);
-        console.log(cur_page);
+        //console.log(cur_page);
     });
 
 
-    function loading_show(){
-        //alert();
-        $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
-    }
-    function loading_hide(){
-        $('#loading').html("");
-    }
-
     function loadData( page = null ){
-        loading_show();
-
-
         var maximizer_tenure = new Array();
         $('input[name="tenure"]:checked').each(function(){
             maximizer_tenure.push($(this).val());
@@ -986,15 +975,12 @@
             url: url_str,
             data: main_string,
             cache: false,
-            beforeSend: function(){
-                loading_show()
+            beforeSend: function() {
+                overlay(true,true);
             },
             success: function(msg)
             {
-
-                loading_hide();
-                // console.log(msg);
-
+                overlay(false);
                 $("#moneyMaximizerSearch").html(msg);
 
             }

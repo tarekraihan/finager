@@ -1072,16 +1072,7 @@
 			loadData(page);
 		});
 
-        function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
-        }
-        function loading_hide(){
-            $('#loading').html("");
-        }
-
         function loadData(page = null ){
-            loading_show();
-
 
 			var amount = $('#finalAssest').val();
 			var deposited_amount = "&deposited_amount="+amount;
@@ -1116,12 +1107,12 @@
                 url: url_str,
                 data: main_string,
                 cache: false,
+                beforeSend: function() {
+                    overlay(true,true);
+                },
                 success: function(msg)
                 {
-
-                    loading_hide();
-                    // console.log(msg);
-
+                    overlay(false);
                     $("#searchDPS").html(msg);
 
                 }

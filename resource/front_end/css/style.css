@@ -4439,17 +4439,18 @@ span.filter-option {
     height: 22px;
     float: left;
     margin-right: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 .filter-check-img>img {
     max-width: 25px;
-    max-height: 22px;
+    max-height: 20px;
 }
 #filter-carousel .material_label_checkbox{
     padding-left: 30px;
 }
 .filter-check-name {
     margin-top: 5px;
-    float: left;
 }
 div#filter-carousel {
     padding: 10px 15px;

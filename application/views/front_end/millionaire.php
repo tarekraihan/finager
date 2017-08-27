@@ -1203,25 +1203,11 @@ $(document).ready(function() {
             var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
     //            alert(cur_page);
             loadData(cur_page);
-            console.log(cur_page);
+            //console.log(cur_page);
         });
 
-    function loading_show(){
-            $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50'  style='margin-top:150px'/>").fadeIn('fast');
-        }
-        function loading_hide(){
-            $('#loading').html("");
-        }
-/*
-
-    $('input[name="maturity_amount"]').on('click',function() {
-        loadData( page = null )
-    });
-*/
 
     function loadData( page = null ){
-            loading_show();
-
 
             var millionaire_tenure = new Array();
             $('input[name="millionaire_tenure"]:checked').each(function(){
@@ -1258,12 +1244,12 @@ $(document).ready(function() {
                 url: url_str,
                 data: main_string,
                 cache: false,
+                beforeSend: function() {
+                    overlay(true,true);
+                },
                 success: function(msg)
                 {
-
-                    loading_hide();
-                    // console.log(msg);
-
+                    overlay(false);
                     $("#searchMillionaire").html(msg);
 
                 }
