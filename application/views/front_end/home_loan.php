@@ -74,12 +74,25 @@
 
                                                     <div class="item active row">
                                                         <?php
+                                                        $selected_bank_ids = array();
+                                                        if(isset($this->session->userdata['home_bank_ids'])){
+                                                            $bank_ids = array_values($this->session->userdata['home_bank_ids']);
+                                                            foreach($bank_ids as $bank_id){
+                                                                $selected_bank = explode("=",$bank_id);
+                                                                array_push($selected_bank_ids,$selected_bank[0]);
+                                                            }
+                                                        }
+
                                                             $bank_info = $this->Front_end_select_model->select_bank_info(15,0);
                                                             foreach($bank_info->result() as $row){
+                                                                $selected ='';
+                                                                if(in_array($row->id,$selected_bank_ids)){
+                                                                    $selected ='checked';
+                                                                }
                                                                 ?>
                                                                 <div class="col-sm-4 col-xs-12">
                                                                     <div class="material_checkbox_group">
-                                                                        <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox">
+                                                                        <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
                                                                         <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                             <div class="filter-check-img">
                                                                                 <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
@@ -98,10 +111,14 @@
                                                         <?php
                                                         $bank_info = $this->Front_end_select_model->select_bank_info(15,15);
                                                         foreach($bank_info->result() as $row){
+                                                            $selected ='';
+                                                            if(in_array($row->id,$selected_bank_ids)){
+                                                                $selected ='checked';
+                                                            }
                                                             ?>
                                                             <div class="col-sm-4 col-xs-12">
                                                                 <div class="material_checkbox_group">
-                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" >
+                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
                                                                     <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                         <div class="filter-check-img">
                                                                             <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
@@ -120,10 +137,14 @@
                                                         <?php
                                                         $bank_info = $this->Front_end_select_model->select_bank_info(15,30);
                                                         foreach($bank_info->result() as $row){
+                                                            $selected ='';
+                                                            if(in_array($row->id,$selected_bank_ids)){
+                                                                $selected ='checked';
+                                                            }
                                                             ?>
                                                             <div class="col-sm-4 col-xs-12">
                                                                 <div class="material_checkbox_group">
-                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox">
+                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
                                                                     <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                         <div class="filter-check-img">
                                                                             <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
@@ -142,10 +163,14 @@
                                                         <?php
                                                         $bank_info = $this->Front_end_select_model->select_bank_info(15,45);
                                                         foreach($bank_info->result() as $row){
+                                                            $selected ='';
+                                                            if(in_array($row->id,$selected_bank_ids)){
+                                                                $selected ='checked';
+                                                            }
                                                             ?>
                                                             <div class="col-sm-4 col-xs-12">
                                                                 <div class="material_checkbox_group">
-                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox">
+                                                                    <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
                                                                     <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
                                                                         <div class="filter-check-img">
                                                                             <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
@@ -174,7 +199,7 @@
                                                     <div class="col-sm-6"></div>
 
                                                     <div class="col-sm-3">
-                                                        <a class="btn-filter-clear" href="javascript:;">
+                                                        <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
                                                             <span>
                                                                 <i class="fa fa-refresh" aria-hidden="true"></i>
                                                             </span>
@@ -195,26 +220,14 @@
                     <ul class="filter-list">
                         <?php
 
-                        echo (!empty($this->session->userdata("home_i_want_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
-                        echo (!empty($this->session->userdata("home_i_am_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_am_label").'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
+                        echo (!empty($this->session->userdata("home_i_want_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);"  class="home_loan_i_want" data-choose_account="home_loan_i_want-'.$this->session->userdata("home_i_want").'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
+                        echo (!empty($this->session->userdata("home_i_am_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_am_label").'</span><a href="javascript:void(0);"  class="home_loan_i_am" data-choose_account="home_loan_i_am-'.$this->session->userdata("home_i_am").'><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
 
                         ?>
                     </ul>
-                   <!-- <ul class="filter-list">
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 2</span>
-                                <a href="javascript:;">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                    </ul>-->
                 </div>
                 <div class="col-md-1 no-padding-left">
-                    <a class="btn-filter-clear" href="javascript:;">
+                    <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
                         <span>
                             <i class="fa fa-refresh" aria-hidden="true"></i>
                         </span>
@@ -435,6 +448,7 @@
             <!-- Right bar content end -->
         </div>
     </div>
+
 </section>
 
 <section id="hiden_div">
@@ -612,21 +626,23 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.home_i_want_label !=''){
-                       option.push('<li><span class="filter-option"><span>'+obj.home_i_want_label+'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                       option.push('<li><span class="filter-option"><span>'+obj.home_i_want_label+'</span><a href="javascript:void(0);" class="home_loan_i_want" data-choose_account="home_loan_i_want-'+obj.home_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                     }
                     if(obj.home_i_am_label !=''){
-                       option.push('<li><span class="filter-option"><span>'+obj.home_i_am_label+'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                       option.push('<li><span class="filter-option"><span>'+obj.home_i_am_label+'</span><a href="javascript:void(0);" class="home_loan_i_am" data-choose_account="home_loan_i_am-'+ obj.home_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                     }
-                    console.log(obj.home_bank_ids);
+//                    console.log(obj.home_bank_ids);
                     if(obj.home_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.home_bank_ids.length; i++) {
-                            option.push('<li><span class="filter-option"><span>'+obj.home_bank_ids[i]+'</span><a href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            var bank_id = obj.home_bank_ids[i].split("=");
+//                            console.log(bank_id[0]);
+                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="home_loan_bank_id" data-choose_account="home_loan_bank_id-'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                         }
 
                     }
 
-                    console.log(obj);
-                    console.log(option);
+//                    console.log(obj);
+//                    console.log(option);
                     $(".filter-list").html(option);
                 }
             });
@@ -849,6 +865,21 @@
         }else{
             alert("Please add 2 card for compare ! ")
         }
+    });
+
+    $(document).on('click','#clear_all',function(){
+        var data = 'session=home_loan';
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>home_loan/ajax_clear_session",
+            data:data,
+            success: function(response)
+            {
+                window.location.href = window.location.href;
+
+            }
+        });
     });
 </script>
 

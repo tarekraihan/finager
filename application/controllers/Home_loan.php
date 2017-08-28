@@ -997,5 +997,20 @@ class Home_Loan extends CI_Controller {
         echo json_encode($data);
     }
 
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='home_loan'){
+            $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+
+        echo 'success';
+
+
+    }
+
 
 }
