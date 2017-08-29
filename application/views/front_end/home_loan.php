@@ -216,14 +216,21 @@
                         </div>
                     </div>
                 </div>
+               <!-- <div class="col-md-8">
+                    <?php
+/*                    $bank = array_values($_SESSION['home_bank_ids']);
+
+                    if(in_array("8=Brac Bank Limited", $bank)){
+                        echo 'success';
+                    }else{
+                        echo 'sorry';
+                    }
+
+                    */?>
+                </div>-->
                 <div class="col-md-8 no-padding">
                     <ul class="filter-list">
-                        <?php
 
-                        echo (!empty($this->session->userdata("home_i_want_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);"  class="home_loan_i_want" data-choose_account="home_loan_i_want-'.$this->session->userdata("home_i_want").'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
-                        echo (!empty($this->session->userdata("home_i_am_label"))) ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_am_label").'</span><a href="javascript:void(0);"  class="home_loan_i_am" data-choose_account="home_loan_i_am-'.$this->session->userdata("home_i_am").'><i class="fa fa-times" aria-hidden="true"></i></a></span></li>' :'';
-
-                        ?>
                     </ul>
                 </div>
                 <div class="col-md-1 no-padding-left">
@@ -599,10 +606,7 @@
             var bank_ids = new Array();
 
             $('input[name="bank_id"]:checked').each(function(){
-                bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text());
-//                console.log($(this).val());
-//                console.log($(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
-                //bank_labels.push($(this).parent('.material_checkbox_group').find('.filter-check-name').text());
+                bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
 
             });
             var bank_id_list = "&home_bank_ids="+bank_ids;
@@ -611,7 +615,6 @@
             var home_i_am_label = '&home_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
 
             var main_string = home_i_want_list+home_user_list+bank_id_list+home_i_want_label+home_i_am_label;
-            console.log(bank_ids);
             main_string = main_string.substring(1, main_string.length);
             var url_str = "<?php echo base_url();?>home_loan/ajax_home_loan_caching/" ;
             $.ajax({
@@ -621,32 +624,28 @@
                 cache: false,
                 success: function(response){
 
-                    //console.log(response);
 
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.home_i_want_label !=''){
-                       option.push('<li><span class="filter-option"><span>'+obj.home_i_want_label+'</span><a href="javascript:void(0);" class="home_loan_i_want" data-choose_account="home_loan_i_want-'+obj.home_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                       option.push('<li><span class="filter-option"><span>'+obj.home_i_want_label+'</span><a href="javascript:void(0);" class="home_loan_i_want" data-home_loan_i_want="'+obj.home_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                     }
                     if(obj.home_i_am_label !=''){
-                       option.push('<li><span class="filter-option"><span>'+obj.home_i_am_label+'</span><a href="javascript:void(0);" class="home_loan_i_am" data-choose_account="home_loan_i_am-'+ obj.home_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                       option.push('<li><span class="filter-option"><span>'+obj.home_i_am_label+'</span><a href="javascript:void(0);" class="home_loan_i_am" data-home_loan_i_am="'+ obj.home_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                     }
-//                    console.log(obj.home_bank_ids);
                     if(obj.home_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.home_bank_ids.length; i++) {
                             var bank_id = obj.home_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="home_loan_bank_id" data-choose_account="home_loan_bank_id-'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="home_loan_bank_id" data-home_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                         }
 
                     }
-
-//                    console.log(obj);
-//                    console.log(option);
                     $(".filter-list").html(option);
                 }
             });
         }
+
 
         loadData(page = null);
         data_caching();
@@ -666,6 +665,71 @@
             loadData(page = null);
             data_caching();
         });
+
+
+        $(document).on('click','#clear_all',function(){
+            var data = 'session=home_loan';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>home_loan/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                    window.location.href = window.location.href;
+
+                }
+            });
+        });
+
+        $(document).on('click', '.home_loan_i_want', function (){
+            var  formData = $(this).data();
+            var home_loan_i_want = formData.home_loan_i_want;
+            $('#iWant'+home_loan_i_want).prop('checked', false);
+            var data = 'home_loan_i_want='+home_loan_i_want;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>home_loan/unset_home_loan_i_want_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
+        $(document).on('click', '.home_loan_i_am', function (){
+            var  formData = $(this).data();
+            var home_loan_i_am = formData.home_loan_i_am;
+            $('#iAm'+home_loan_i_am).prop('checked', false);
+            var data = 'home_loan_i_am='+home_loan_i_am;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>home_loan/unset_home_loan_i_am_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
+        $(document).on('click', '.home_loan_bank_id', function (){
+            var  formData = $(this).data();
+            var home_loan_bank_id = formData.home_loan_bank_id;
+            $('#filter-bank-'+home_loan_bank_id).prop('checked', false);
+            var data = 'home_loan_bank_id='+home_loan_bank_id;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>home_loan/unset_home_loan_bank_id_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
 
         $(".leftCont").find(".next").click(function(){
             setTimeout(function(){ //Updated by Tarek on 14-05-2017
@@ -867,20 +931,7 @@
         }
     });
 
-    $(document).on('click','#clear_all',function(){
-        var data = 'session=home_loan';
-        $.ajax
-        ({
-            type: "POST",
-            url: "<?php echo base_url();?>home_loan/ajax_clear_session",
-            data:data,
-            success: function(response)
-            {
-                window.location.href = window.location.href;
 
-            }
-        });
-    });
 </script>
 
 

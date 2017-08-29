@@ -942,7 +942,8 @@ class Home_Loan extends CI_Controller {
         $i_am = (!empty($this->input->post('home_i_am'))) ? $this->input->post('home_i_am') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount');
+//        $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount');
+        $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label','home_bank_ids');
         $this->session->unset_userdata($array_items);
         if( $i_want != ''){
             $newdata['home_i_want'] = $i_want;
@@ -981,9 +982,8 @@ class Home_Loan extends CI_Controller {
 
         $home_principal_amount = floatval ( ($this->input->post('home_principal_amount')) ? $this->input->post('home_principal_amount') : '200000' );
 
-        $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label');
+        $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label','home_bank_ids');
         $this->session->unset_userdata($array_items);
-
         $data = array(
             'home_i_want'  => $home_i_want,
             'home_i_am'  => $home_user,
@@ -1000,16 +1000,49 @@ class Home_Loan extends CI_Controller {
     public function ajax_clear_session(){
         $session = $this->input->post('session');
         if($session =='home_loan'){
-            $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label');
+            $array_items = array('home_i_want', 'home_i_am', 'home_principal_amount','home_i_want_label','home_i_am_label','home_bank_ids');
             $this->session->unset_userdata($array_items);
             $this->session->sess_destroy();
             $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
             $this->output->set_header("Pragma: no-cache");
         }
-
         echo 'success';
+    }
 
+    public function unset_home_loan_i_want_session(){
+        $session = $this->input->post('home_loan_i_want');
+        if($session){
+            $this->session->unset_userdata('home_i_want');
+            echo 'success';
+        }
 
+    }
+
+    public function unset_home_loan_i_am_session(){
+        $session = $this->input->post('home_loan_i_am');
+        if($session){
+            $this->session->unset_userdata('home_i_am');
+            echo 'success';
+        }
+    }
+
+    public function unset_home_loan_bank_id_session(){
+        $id = $this->input->post('home_loan_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['home_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['home_bank_ids'][$key]);
+            }
+            /*if(in_array($session, $bank)){
+                pr($_SESSION);
+            }else{
+                echo 'sorry';
+            }*/
+            pr($_SESSION);
+        }
     }
 
 
