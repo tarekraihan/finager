@@ -766,6 +766,73 @@
 <!-- card compare section ends-->
 <script type="text/javascript">
     // This function will be executed when the user scrolls the page.
+    /*$(document).on("scroll",function () {
+        var header = $("#sidebar").offset().top;
+        var scroll = $(window).scrollTop();
+
+        var top_height = $('#top-page').height();
+        var banner_height = $('#creditCard_header').height();
+        var filter_height = $('#filter-bar').height();
+        var total_top = parseInt(top_height+banner_height+filter_height+35);
+        var main_height = parseInt($(".main-content-area").height());
+
+        $(".sidebar_parent").height(main_height-20);
+
+        if (scroll > header || header > 0){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").addClass("fixed");
+        }
+        if ($('#SearchCard').offset().top > scroll){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").removeClass("fixed");
+        }
+        if($('#sidebar').offset().top + $('#sidebar').height() > $('.footer').offset().top-65){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute-bottom");
+        }
+        if($("#moreFilterText").css("display") == "block" && sidebar_height > window_height){
+            $('#sidebar').removeClass('fixed');
+            $("#sidebar").removeClass("fixed-bottom");
+            $('#sidebar').addClass('pRelative');
+            //alert();
+        }
+
+        if($("#moreFilterText").css("display") == "none" && sidebar_height < window_height){
+            $("#sidebar").removeClass("fixed-bottom");
+            $('#sidebar').removeClass('pRelative');
+            $('#sidebar').addClass('fixed');
+            //alert();
+        }
+
+        if(sidebar_height > window_height && $(window).scrollTop()>1520){
+            $('#sidebar').removeClass('pRelative');
+            $('#sidebar').addClass('fixed-bottom');
+        }
+
+        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 90){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").removeClass("fixed-bottom");
+            $("#sidebar").addClass("sidebar-absolute-bottom");
+        }
+
+        if(sidebar_height > window_height && $(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+            $("#sidebar").addClass("fixed-bottom");
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+        }
+
+        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+            $("#sidebar").addClass("fixed");
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+        }
+
+        if($("#sidebar").offset().top < total_top){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").removeClass("fixed-bottom");
+            $("#sidebar").addClass("sidebar-absolute");
+        }
+    });*/
+
+
     $(document).on("scroll",function () {
         var scroller_anchor = $("#sidebar").offset().top;
         var sidebar_height = $("#sidebar").height();
@@ -851,6 +918,7 @@
             $("#sidebar").addClass("sidebar-absolute");
         }
     });
+
 
     $(document).ready(function(){
         $(document).on('click','#pagination a',function(e){

@@ -15,7 +15,7 @@
         }
         .sidebar_parent{
             position: relative;
-            min-height: 600px;;
+            min-height: 700px;;
         }
         #sidebar{
             margin-top: 0;
@@ -836,6 +836,32 @@
 	<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/education-loan-calculator.js"></script>
 	
 <script type="text/javascript">
+    $(document).on("scroll",function () {
+        var header = $("#sidebar").offset().top;
+        var scroll = $(window).scrollTop();
+
+        var top_height = $('#top-page').height();
+        var banner_height = $('#education_header').height();
+        var filter_height = $('#filter-bar').height();
+        var total_top = parseInt(top_height+banner_height+filter_height+35);
+        var main_height = parseInt($(".main-content-area").height());
+
+        $(".sidebar_parent").height(main_height-20);
+
+        if (scroll > header || header > 0){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").addClass("fixed");
+        }
+        if ($('#SearchDebitCard').offset().top > scroll){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").removeClass("fixed");
+        }
+        if($('#sidebar').offset().top + $('#sidebar').height() > $('.footer').offset().top-65){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute-bottom");
+        }
+    });
+    /*
     $(document).ready(function(){
         $(document).on("scroll",function () {
             var scroller_anchor = $("#sidebar").offset().top;
@@ -881,42 +907,7 @@
 
         });
     });
-    $(document).on("scroll",function () {
-        var scroller_anchor = $("#sidebar").offset().top;
-        var sidebar_height = $("#sidebar").height();
-        var window_height = $(window).height();
-
-        var offsetToTop = parseInt($(this).scrollTop());
-        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#education_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+60);
-
-
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-        {
-            $('#sidebar').addClass('fixed');
-        }
-
-        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-        {
-            $('#sidebar').removeClass('fixed');
-        }
-
-        if (offsetToTop > $(".footer").offset().top-800) {
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-
-    });
+    */
 
     $(document).ready(function() {
 

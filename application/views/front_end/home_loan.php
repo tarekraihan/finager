@@ -26,7 +26,7 @@
     }
     .sidebar_parent{
         position: relative;
-        min-height: 600px;;
+        min-height: 700px;;
     }
     #sidebar{
         margin-top: 0;
