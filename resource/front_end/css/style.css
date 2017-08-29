@@ -4365,7 +4365,7 @@ a .auto_button.flash-button {
 span.filter-option {
     border: 1px solid #9c9c9c;
     border-radius: 7px;
-    padding: 3px 5px;
+    padding: 3px 7px;
     font-size: 12px;
     background: #ffffff;
     -webkit-box-shadow: 0px 7px 6px -6px #777;
@@ -4416,6 +4416,9 @@ span.filter-option {
     list-style-type: none;
     float: left;
     margin-bottom: 10px;
+}
+.filter-list>li>span>a {
+    margin-left: 5px;
 }
 .filter-by{
     padding: 0;
