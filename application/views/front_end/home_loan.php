@@ -493,6 +493,33 @@
 
     // This function will be executed when the user scrolls the page.
     $(document).on("scroll",function () {
+        var header = $("#sidebar").offset().top;
+        var scroll = $(window).scrollTop();
+
+        var top_height = $('#top-page').height();
+        var banner_height = $('#home_header').height();
+        var filter_height = $('#filter-bar').height();
+        var total_top = parseInt(top_height+banner_height+filter_height+35);
+        var main_height = parseInt($(".main-content-area").height());
+
+        $(".sidebar_parent").height(main_height-20);
+
+        if (scroll > header || header > 0){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").addClass("fixed");
+        }
+        if ($('#SearchDebitCard').offset().top > scroll){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").removeClass("fixed");
+        }
+        if($('#sidebar').offset().top + $('#sidebar').height() > $('.footer').offset().top-65){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute-bottom");
+        }
+    });
+
+    /*
+    $(document).on("scroll",function () {
         var scroller_anchor = $("#sidebar").offset().top;
         var sidebar_height = $("#sidebar").height();
         var window_height = $(window).height();
@@ -535,6 +562,7 @@
         }
 
     });
+    */
 
 
     $(document).ready(function(){
