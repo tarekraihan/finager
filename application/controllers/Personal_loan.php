@@ -374,6 +374,7 @@ class Personal_Loan extends CI_Controller {
 
         $personal_i_want = $this->input->post('personal_i_want');
         $personal_user = $this->input->post('personal_user');
+        $personal_loan_bank_ids = $this->input->post('personal_loan_bank_ids');
 
         $principal_amount = floatval ( ($this->input->post('principal_amount') > 25000) ? $this->input->post('principal_amount') : '25000' );
         if( $principal_amount > 2000000 || $principal_amount < 25000 ){
@@ -401,6 +402,19 @@ class Personal_Loan extends CI_Controller {
 
             $WHERE[] = 'personal_loan_info.personal_loan_looking_for_id = '.$personal_i_want;
 
+        }
+
+        if(!empty($personal_loan_bank_ids)) {
+            if(strstr($personal_loan_bank_ids,',')) {
+                $data8 = explode(',',$personal_loan_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "personal_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(personal_loan_info.bank_id = '.$personal_loan_bank_ids.')';
+            }
         }
 
         $query = implode(' AND ',$WHERE);
@@ -661,14 +675,14 @@ class Personal_Loan extends CI_Controller {
         $personal_loan_i_am = (!empty($this->input->post('personal_loan_i_am'))) ? $this->input->post('personal_loan_i_am') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('personal_loan_i_want', 'personal_loan_i_am');
+        $array_items = array('personal_i_want', 'personal_i_am', 'personal_i_want_label','personal_i_am_label','personal_bank_ids');
         $this->session->unset_userdata($array_items);
         if( $personal_loan_i_want != ''){
-            $newdata['personal_loan_i_want'] = $personal_loan_i_want;
+            $newdata['personal_i_want'] = $personal_loan_i_want;
         }
 
         if( $personal_loan_i_am != ''){
-            $newdata['personal_loan_i_am'] = $personal_loan_i_am;
+            $newdata['personal_i_am'] = $personal_loan_i_am;
         }
         if($data == 'all'){
             $newdata['all']= '';
@@ -678,6 +692,94 @@ class Personal_Loan extends CI_Controller {
         $this->session->set_userdata($newdata);
         echo 'success';
     }
+
+
+    public function ajax_personal_loan_caching(){
+
+        $personal_i_want = $this->input->post('personal_i_want');
+        $personal_i_am= $this->input->post('personal_i_am');
+
+        $personal_i_want_label = $this->input->post('personal_i_want_label');
+        $personal_i_am_label = $this->input->post('personal_i_am_label');
+
+        $personal_bank_ids = $this->input->post('personal_bank_ids');
+
+        $bank_id_array = array();
+        if(!empty($personal_bank_ids)) {
+            if(strstr($personal_bank_ids,',')) {
+                $data8 = explode(',',$personal_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $personal_bank_ids;
+            }
+        }
+
+
+        $array_items = array('personal_i_want', 'personal_i_am', 'personal_i_want_label','personal_i_am_label','personal_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'personal_i_want'  => $personal_i_want,
+            'personal_i_am'  => $personal_i_am,
+            'personal_i_want_label'  => $personal_i_want_label,
+            'personal_i_am_label' => $personal_i_am_label,
+            'personal_bank_ids' => $bank_id_array,
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='personal_loan'){
+            $array_items = array('personal_i_want', 'personal_i_am', 'personal_i_want_label','personal_i_am_label','personal_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+
+    }
+
+    public function unset_personal_i_want_session(){
+        $session = $this->input->post('personal_i_want');
+        if($session){
+            $this->session->unset_userdata('personal_i_want');
+            $this->session->unset_userdata('personal_i_am_label');
+            echo 'success';
+        }
+
+    }
+
+    public function unset_personal_i_am_session(){
+        $session = $this->input->post('personal_i_am');
+        if($session){
+            $this->session->unset_userdata('personal_i_am');
+            $this->session->unset_userdata('personal_i_am_label');
+            echo 'success';
+        }
+
+    }
+
+    public function unset_personal_bank_id_session(){
+        $id = $this->input->post('personal_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['personal_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['personal_bank_ids'][$key]);
+            }
+        }
+        echo 'success';
+    }
+
 
 
 }

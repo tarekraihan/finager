@@ -467,29 +467,7 @@ class Debit_card extends CI_Controller
         $looking_for = $this->input->post('looking_for');
         $card_issuer = $this->input->post('card_issuer');
         $i_want = $this->input->post('i_want');
-
-        $data = array(
-            'choose_account' => $this->input->post('choose_account'),
-            'looking_for' => $this->input->post('looking_for'),
-            'card_issuer' => $this->input->post('card_issuer'),
-            'i_want' => $this->input->post('i_want'),
-            'debit_card_choose_account' => $this->input->post('debit_card_choose_account'),
-            'debit_card_looking_for' => $this->input->post('debit_card_looking_for'),
-            'debit_card_card_issuer' => $this->input->post('debit_card_card_issuer'),
-            'debit_card_i_want' => $this->input->post('debit_card_i_want')
-        );
-
-        $this->session->set_userdata($data);
-
-        $debit_card_choose_account = ($this->session->userdata("debit_card_choose_account") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_choose_account").'<a href="javascript:void(0)" class="debit_card_choose_account" data-choose_account="choose_account-'.$this->session->userdata("choose_account").'"><i class="fa fa-times"></i></a></span></div>' : '';
-        $debit_card_looking_for = ($this->session->userdata("debit_card_looking_for") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_looking_for").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
-        $debit_card_card_issuer = ($this->session->userdata("debit_card_card_issuer") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_card_issuer").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
-        $debit_card_i_want = ($this->session->userdata("debit_card_i_want") != "") ? '<div class="active-filter">'.$this->session->userdata("debit_card_i_want").'<span company="false" value="'.$this->session->userdata("debit_card_choose_account").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times"></i></span></div>' : '';
-
-        $debit_card_clear_all ='';
-        if($debit_card_choose_account !='' || $debit_card_looking_for != '' || $debit_card_card_issuer !='' || $debit_card_i_want != ''){
-            $debit_card_clear_all = '<div class="active-filter"><a href="javascript:void(0);" id="clear_all"> Clear All</a> </div>';
-        }
+        $debit_card_bank_ids = $this->input->post('debit_card_bank_ids');
 
         $WHERE = array(); $query = '';
         if(!empty($choose_account)) {
@@ -544,6 +522,19 @@ class Debit_card extends CI_Controller
             }
         }
 
+        if(!empty($debit_card_bank_ids)) {
+            if(strstr($debit_card_bank_ids,',')) {
+                $data8 = explode(',',$debit_card_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "debit_card_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.bank_id = '.$debit_card_bank_ids.')';
+            }
+        }
+
         $query = implode(' AND ',$WHERE);
         if(!empty($query)) {$query = 'WHERE '.$query;}
 
@@ -588,14 +579,6 @@ class Debit_card extends CI_Controller
         //-------------Pagination End-------------------
 
         $debit_card ='';
-         /* $debit_card .='<div class="col-md-12">
-                          <div class="active-filters-container">
-                           '.$debit_card_choose_account.'
-                           '.$debit_card_looking_for.'
-                           '.$debit_card_card_issuer.'
-                           '.$debit_card_i_want.'
-                           '.$debit_card_clear_all.'
-                          </div></div>';*/
 
         if($result->num_rows() > 0){
             foreach($result->result() as $row) {
@@ -786,25 +769,6 @@ class Debit_card extends CI_Controller
         echo 'success';
     }
 
-    public function ajax_clear_session(){
-        $session = $this->input->post('session');
-        if($session =='debit_card'){
-            $this->session->unset_userdata('debit_card_choose_account');
-            $this->session->unset_userdata('debit_card_looking_for');
-            $this->session->unset_userdata('debit_card_card_issuer');
-            $this->session->unset_userdata('debit_card_i_want');
-            $this->session->sess_destroy();
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
-        }
-
-        if(!$this->session->has_userdata('debit_card_choose_account')){
-            echo 'success';
-        }else{
-            echo 'error';
-        }
-
-    }
 
     public function ajax_debit_card_quick_link(){
         $choose_account = (!empty($this->input->post('choose_account'))) ? $this->input->post('choose_account') : '';
@@ -831,12 +795,115 @@ class Debit_card extends CI_Controller
         if($data == 'all'){
             $newdata['all']= '';
         }
-        $array_items = array('choose_account', 'looking_for', 'card_issuer', 'i_want');
+        $array_items = array('choose_account', 'looking_for', 'card_issuer','i_want','choose_account_label','looking_for_label','card_issuer_label','i_want_label','debit_card_bank_ids');
         $this->session->unset_userdata($array_items);
 
         $this->session->set_userdata($newdata);
         echo 'success';
     }
 
+    public function ajax_debit_card_caching(){
+
+        $choose_account = $this->input->post('choose_account');
+        $looking_for = $this->input->post('looking_for');
+        $card_issuer = $this->input->post('card_issuer');
+        $i_want = $this->input->post('i_want');
+        $choose_account_label = $this->input->post('choose_account_label');
+        $looking_for_label = $this->input->post('looking_for_label');
+        $card_issuer_label = $this->input->post('card_issuer_label');
+        $i_want_label = $this->input->post('i_want_label');
+        $debit_card_bank_ids = $this->input->post('debit_card_bank_ids');
+
+        $bank_id_array = array();
+        if(!empty($debit_card_bank_ids)) {
+            if(strstr($debit_card_bank_ids,',')) {
+                $data8 = explode(',',$debit_card_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $debit_card_bank_ids;
+            }
+        }
+
+
+        $array_items = array('choose_account', 'looking_for', 'card_issuer','i_want','choose_account_label','looking_for_label','card_issuer_label','i_want_label','debit_card_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'choose_account'  => $choose_account,
+            'looking_for'  => $looking_for,
+            'card_issuer'  => $card_issuer,
+            'i_want' => $i_want,
+            'choose_account_label' => $choose_account_label,
+            'looking_for_label' => $looking_for_label,
+            'card_issuer_label' => $card_issuer_label,
+            'i_want_label' => $i_want_label,
+            'debit_card_bank_ids' => $bank_id_array,
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='debit_card'){
+            $array_items = array('choose_account', 'looking_for', 'card_issuer','i_want','choose_account_label','looking_for_label','card_issuer_label','i_want_label','debit_card_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+
+    }
+
+    public function unset_debit_card_choose_account_session(){
+        $session = $this->input->post('choose_account');
+        if($session){
+            $this->session->unset_userdata('choose_account');
+            echo 'success';
+        }
+
+    }
+    public function unset_debit_card_looking_for_session(){
+        $session = $this->input->post('looking_for');
+        if($session){
+            $this->session->unset_userdata('looking_for');
+            echo 'success';
+        }
+
+    }
+    public function unset_debit_card_i_want_session(){
+        $session = $this->input->post('i_want');
+        if($session){
+            $this->session->unset_userdata('i_want');
+            echo 'success';
+        }
+
+    }
+    public function unset_debit_card_card_issuer_session(){
+        $session = $this->input->post('card_issuer');
+        if($session){
+            $this->session->unset_userdata('card_issuer');
+            echo 'success';
+        }
+
+    }
+    public function unset_debit_card_bank_id_session(){
+        $id = $this->input->post('debit_card_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['debit_card_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['debit_card_bank_ids'][$key]);
+            }
+        }
+        echo 'success';
+    }
 
 }

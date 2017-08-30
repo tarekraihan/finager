@@ -119,416 +119,117 @@
                                             <div class="carousel-inner">
 
                                                 <div class="item active row">
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-01" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-01">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(1).png" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-02" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-02">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(2).png" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-03" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-03">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(3).png" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-04" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-04">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(4).png" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-05" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-05">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(4).png" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
+                                                    <?php
+                                                    $selected_bank_ids = array();
+                                                    if(isset($this->session->userdata['dps_bank_ids'])){
+                                                        $bank_ids = array_values($this->session->userdata['dps_bank_ids']);
+                                                        foreach($bank_ids as $bank_id){
+                                                            $selected_bank = explode("=",$bank_id);
+                                                            array_push($selected_bank_ids,$selected_bank[0]);
+                                                        }
+                                                    }
 
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-06" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-06">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(5).png" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
+                                                    $bank_info = $this->Front_end_select_model->select_bank_info(15,0);
+                                                    foreach($bank_info->result() as $row){
+                                                        $selected ='';
+                                                        if(in_array($row->id,$selected_bank_ids)){
+                                                            $selected ='checked';
+                                                        }
+                                                        ?>
+                                                        <div class="col-sm-4 col-xs-12">
+                                                            <div class="material_checkbox_group">
+                                                                <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
+                                                                <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
+                                                                    <div class="filter-check-img">
+                                                                        <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
+                                                                    </div>
+                                                                    <div class="filter-check-name">
+                                                                        <?php echo $row->bank_name; ?>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-07" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-07">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/filter_bank_logo/bank_small_icon_(6).png" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-08" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-08">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-09" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-09">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-10" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-10">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-11" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-11">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-12" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-12">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-13" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-13">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-03" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-14">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-03" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-15">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </div>
-
                                                 <div class="item row">
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-016" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-16">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
+                                                    <?php
+                                                    $bank_info = $this->Front_end_select_model->select_bank_info(15,15);
+                                                    foreach($bank_info->result() as $row){
+                                                        $selected ='';
+                                                        if(in_array($row->id,$selected_bank_ids)){
+                                                            $selected ='checked';
+                                                        }
+                                                        ?>
+                                                        <div class="col-sm-4 col-xs-12">
+                                                            <div class="material_checkbox_group">
+                                                                <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
+                                                                <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
+                                                                    <div class="filter-check-img">
+                                                                        <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
+                                                                    </div>
+                                                                    <div class="filter-check-name">
+                                                                        <?php echo $row->bank_name; ?>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-17" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-17">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="item row">
+                                                    <?php
+                                                    $bank_info = $this->Front_end_select_model->select_bank_info(15,30);
+                                                    foreach($bank_info->result() as $row){
+                                                        $selected ='';
+                                                        if(in_array($row->id,$selected_bank_ids)){
+                                                            $selected ='checked';
+                                                        }
+                                                        ?>
+                                                        <div class="col-sm-4 col-xs-12">
+                                                            <div class="material_checkbox_group">
+                                                                <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
+                                                                <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
+                                                                    <div class="filter-check-img">
+                                                                        <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
+                                                                    </div>
+                                                                    <div class="filter-check-name">
+                                                                        <?php echo $row->bank_name; ?>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-18" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-18">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="item row">
+                                                    <?php
+                                                    $bank_info = $this->Front_end_select_model->select_bank_info(15,45);
+                                                    foreach($bank_info->result() as $row){
+                                                        $selected ='';
+                                                        if(in_array($row->id,$selected_bank_ids)){
+                                                            $selected ='checked';
+                                                        }
+                                                        ?>
+                                                        <div class="col-sm-4 col-xs-12">
+                                                            <div class="material_checkbox_group">
+                                                                <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
+                                                                <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
+                                                                    <div class="filter-check-img">
+                                                                        <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
+                                                                    </div>
+                                                                    <div class="filter-check-name">
+                                                                        <?php echo $row->bank_name; ?>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-19" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-19">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-20" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-20">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-21" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-21">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-22" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-22">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-23" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-23">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-24" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-24">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-25" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-25">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-26" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-26">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-27" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-27">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-28" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-28">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-29" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-29">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4 col-xs-12">
-                                                        <div class="material_checkbox_group">
-                                                            <input type="checkbox" id="filter-bank-30" name="featuresBenefits" value="" class="material_checkbox">
-                                                            <label class="material_label_checkbox" for="filter-bank-30">
-                                                                <div class="filter-check-img">
-                                                                    <img src="<?php echo base_url();?>resource/front_end/images/ab_bank_sm_logo.jpg" alt=""/>
-                                                                </div>
-                                                                <div class="filter-check-name">
-                                                                    Waiver on Annual Fee
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="row">
