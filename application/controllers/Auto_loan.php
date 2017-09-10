@@ -668,6 +668,7 @@ class Auto_loan extends CI_Controller
 
         $auto_i_want = $this->input->post('auto_i_want');
         $auto_user = $this->input->post('auto_user');
+        $auto_loan_bank_ids = $this->input->post('auto_loan_bank_ids');
 
 
         $principal_amount = floatval ( ($this->input->post('principal_amount') > 100000 ) ? $this->input->post('principal_amount') : '100000' );
@@ -692,6 +693,20 @@ class Auto_loan extends CI_Controller
             $WHERE[] = 'auto_loan_info.auto_loan_looking_for_id = '.$auto_i_want;
 
         }
+
+        if(!empty($auto_loan_bank_ids)) {
+            if(strstr($auto_loan_bank_ids,',')) {
+                $data8 = explode(',',$auto_loan_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "auto_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(auto_loan_info.bank_id = '.$auto_loan_bank_ids.')';
+            }
+        }
+
 
         $query = implode(' AND ',$WHERE);
 
@@ -988,10 +1003,97 @@ class Auto_loan extends CI_Controller
         if($data == 'all'){
             $newdata['all']= '';
         }
-        $array_items = array('auto_loan_i_want', 'auto_loan_i_am');
+        $array_items = array('auto_loan_i_want', 'auto_loan_i_am', 'auto_loan_i_want_label','auto_loan_i_am_label','auto_loan_bank_ids');
         $this->session->unset_userdata($array_items);
 
         $this->session->set_userdata($newdata);
+        echo 'success';
+    }
+
+
+    public function ajax_auto_loan_caching(){
+
+        $auto_loan_i_want = $this->input->post('auto_loan_i_want');
+        $auto_loan_i_am= $this->input->post('auto_loan_i_am');
+
+        $auto_loan_i_want_label = $this->input->post('auto_loan_i_want_label');
+        $auto_loan_i_am_label = $this->input->post('auto_loan_i_am_label');
+
+        $auto_loan_bank_ids = $this->input->post('auto_loan_bank_ids');
+
+        $bank_id_array = array();
+        if(!empty($auto_loan_bank_ids)) {
+            if(strstr($auto_loan_bank_ids,',')) {
+                $data8 = explode(',',$auto_loan_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $auto_loan_bank_ids;
+            }
+        }
+
+
+        $array_items = array('auto_loan_i_want', 'auto_loan_i_am', 'auto_loan_i_want_label','auto_loan_i_am_label','auto_loan_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'auto_loan_i_want'  => $auto_loan_i_want,
+            'auto_loan_i_am'  => $auto_loan_i_am,
+            'auto_loan_i_want_label'  => $auto_loan_i_want_label,
+            'auto_loan_i_am_label' => $auto_loan_i_am_label,
+            'auto_loan_bank_ids' => $bank_id_array,
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='auto_loan'){
+            $array_items = array('auto_loan_i_want', 'auto_loan_i_am', 'auto_loan_i_want_label','auto_loan_i_am_label','auto_loan_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+
+    }
+
+    public function unset_auto_loan_i_want_session(){
+        $session = $this->input->post('auto_loan_i_want');
+        if($session){
+            $this->session->unset_userdata('auto_loan_i_want');
+            $this->session->unset_userdata('auto_loan_i_am_label');
+            echo 'success';
+        }
+
+    }
+
+    public function unset_auto_loan_i_am_session(){
+        $session = $this->input->post('auto_loan_i_am');
+        if($session){
+            $this->session->unset_userdata('auto_loan_i_am');
+            $this->session->unset_userdata('auto_loan_i_am_label');
+            echo 'success';
+        }
+
+    }
+
+    public function unset_auto_loan_bank_id_session(){
+        $id = $this->input->post('auto_loan_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['auto_loan_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['auto_loan_bank_ids'][$key]);
+            }
+        }
         echo 'success';
     }
 
