@@ -27,7 +27,7 @@
         border-bottom:0 solid #DADADA;
     }
     .card_query_fdr {
-        border-bottom: 2px solid #DADADA;
+        /*border-bottom: 2px solid #DADADA;*/
         height: 165px;
     }
     .pagination {

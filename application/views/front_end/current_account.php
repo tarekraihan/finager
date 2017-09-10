@@ -200,7 +200,7 @@
             <div class="col-sm-3 col-xs-3 sidebar_parent">
                 <div id="sticky-anchor"></div>
 
-                <div class="card_left_bar home_loan_left_bar" id="sidebar">
+                <div class="card_left_bar home_loan_left_bar no-padding" id="sidebar">
                     <div class="caccount_left_head">
                         <p>I Am</p>
                         <div class="query_radio">

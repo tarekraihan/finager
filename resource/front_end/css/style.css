@@ -226,7 +226,8 @@ body {
 /*for card page*/
 .card_left_bar {
     border: 1px solid #EAEAEA;
-    padding: 6px;
+    /*padding: 6px;*/
+    padding: 0px;
 }
 .card_right_bar {
     background-color: #F9F9F9;
@@ -741,7 +742,7 @@ body {
 .home_loan_left_bar p{
     border-bottom:1px solid #DADADA;
     background-color:#DADADA;
-    padding-left:8px;
+    padding-left:10px;
 }
 .no-margin-lr2 {
     margin-right: 0 !important;
@@ -947,7 +948,7 @@ body {
 }
 .card_query p {
     background-color: gray;
-    padding: 4px;
+    padding: 4px 10px;
     color: #fff;
     font-weight: bold;
 }
@@ -3159,7 +3160,21 @@ hr {
     margin:6px 0 0 8px;
 }
 .card_query_fdr{
-    border-bottom: 2px solid #DADADA;
+    /*border-bottom: 2px solid #DADADA;*/
+}
+.card_query_fdr p {
+    border-bottom: 1px solid #DADADA;
+    background-color: gray;
+    padding: 4px 10px;
+    color: #fff;
+    font-weight: 600;
+}
+.card_query_fdr2 p{
+    border-bottom: 1px solid #DADADA;
+    background-color: gray;
+    padding: 4px 10px;
+    color: #fff;
+    font-weight: 600;
 }
 .fdrTenurepadding{
     padding:5px;
@@ -4480,13 +4495,13 @@ div#filter-carousel {
     margin-bottom:10px;
 }
 .caccount_left_head{
-    border: 1px solid #dadada;
-    padding: 12px;
+    /*border: 1px solid #dadada;
+    padding: 12px;*/
 }
 .caccount_left_head p {
     background-color: gray;
     color: #fff;
-    padding: 2px 15px;
+    padding: 4px;
     font-weight: bold;
 }
 

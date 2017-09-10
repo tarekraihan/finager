@@ -47,7 +47,7 @@
 	.home_loan_left_bar p {
 		border-bottom: 1px solid #DADADA;
 		background-color: #D09F5C;
-		padding-left: 8px;
+		padding-left: 10px;
 		color: #fff;
 		font-weight: bold;
 	}
@@ -58,7 +58,7 @@
 		border-bottom: 0px;
 	}
 	.card_query_fdr {
-		border-bottom: 0px;
+		border-bottom: 0px !important;
 		height: 368px;
 	}
 	.fdr_right_bar {

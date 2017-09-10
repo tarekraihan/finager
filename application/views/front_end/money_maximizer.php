@@ -523,7 +523,7 @@
                         </div>
                     </div>
                     <div class="card_query_fdr">
-                        <p>Tenure</p>
+                        <p>Benifit Times</p>
                         <div class="fdrTenurepadding">
 
                             <?php
