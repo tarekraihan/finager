@@ -1,3 +1,9 @@
+<style>
+    .sidebar_parent{
+        min-height: 1600px;
+    }
+</style>
+
 <section id="creditCard_header"></section>
 
 <!--Filter bar by bank START -->

@@ -537,6 +537,8 @@
 	<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/education-loan-calculator.js"></script>
 	
 <script type="text/javascript">
+
+
     $(document).on("scroll",function () {
         var header = $("#sidebar").offset().top;
         var scroll = $(window).scrollTop();

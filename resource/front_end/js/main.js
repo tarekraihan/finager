@@ -18,6 +18,12 @@ jQuery(document).ready(function(){
 	}
 });
 
+
+    $('#filter-carousel').carousel({
+        interval: false
+    });
+
+
 // searching text effect for homepage search START
 document.addEventListener('DOMContentLoaded',function(event){
     // array with texts to type in typewriter
