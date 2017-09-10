@@ -1,12 +1,206 @@
 <section id="currantAccount_header">
-
 </section>
+
+<!--Filter bar by bank START -->
+<div class="container">
+    <section id="filter-bar">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="bank-filter">
+                    <p class="bank-small-filter">50 of 50 results filtered by:</p>
+                    <div class="bank-big-filter">
+
+                        <!--<div class="dropdown mega-dropdown">
+                            <a href="javascript:;" class="dropdown-toggle">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </a>
+                        </div>-->
+                        <ul class="filter-by">
+                            <li class="dropdown mega-dropdown">
+                                <a href="javascript:;" class="dropdown-toggle">
+                                    Filter By: Bank
+                                        <span>
+                                           <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        </span>
+                                </a>
+
+                                <ul class="dropdown-menu mega-dropdown-menu">
+                                    <li>
+                                        <div id="filter-carousel" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li class="" data-slide-to="0" data-target="#carousel"></li>
+                                                <li class="active" data-slide-to="1" data-target="#carousel"></li>
+                                            </ol>
+                                            <div class="carousel-inner">
+                                                <div class="item active row">
+                                                    <?php
+                                                    $selected_bank_ids = array();
+                                                    if(isset($this->session->userdata['debit_card_bank_ids'])){
+                                                        $bank_ids = array_values($this->session->userdata['debit_card_bank_ids']);
+                                                        foreach($bank_ids as $bank_id){
+                                                            $selected_bank = explode("=",$bank_id);
+                                                            array_push($selected_bank_ids,$selected_bank[0]);
+                                                        }
+                                                    }
+
+                                                    $bank_info = $this->Front_end_select_model->select_bank_info(15,0);
+                                                    foreach($bank_info->result() as $row){
+                                                        $selected ='';
+                                                        if(in_array($row->id,$selected_bank_ids)){
+                                                            $selected ='checked';
+                                                        }
+                                                        ?>
+                                                        <div class="col-sm-4 col-xs-12">
+                                                            <div class="material_checkbox_group">
+                                                                <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
+                                                                <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
+                                                                    <div class="filter-check-img">
+                                                                        <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
+                                                                    </div>
+                                                                    <div class="filter-check-name">
+                                                                        <?php echo $row->bank_name; ?>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="item row">
+                                                    <?php
+                                                    $bank_info = $this->Front_end_select_model->select_bank_info(15,15);
+                                                    foreach($bank_info->result() as $row){
+                                                        $selected ='';
+                                                        if(in_array($row->id,$selected_bank_ids)){
+                                                            $selected ='checked';
+                                                        }
+                                                        ?>
+                                                        <div class="col-sm-4 col-xs-12">
+                                                            <div class="material_checkbox_group">
+                                                                <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
+                                                                <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
+                                                                    <div class="filter-check-img">
+                                                                        <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
+                                                                    </div>
+                                                                    <div class="filter-check-name">
+                                                                        <?php echo $row->bank_name; ?>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="item row">
+                                                    <?php
+                                                    $bank_info = $this->Front_end_select_model->select_bank_info(15,30);
+                                                    foreach($bank_info->result() as $row){
+                                                        $selected ='';
+                                                        if(in_array($row->id,$selected_bank_ids)){
+                                                            $selected ='checked';
+                                                        }
+                                                        ?>
+                                                        <div class="col-sm-4 col-xs-12">
+                                                            <div class="material_checkbox_group">
+                                                                <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
+                                                                <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
+                                                                    <div class="filter-check-img">
+                                                                        <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
+                                                                    </div>
+                                                                    <div class="filter-check-name">
+                                                                        <?php echo $row->bank_name; ?>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="item row">
+                                                    <?php
+                                                    $bank_info = $this->Front_end_select_model->select_bank_info(15,45);
+                                                    foreach($bank_info->result() as $row){
+                                                        $selected ='';
+                                                        if(in_array($row->id,$selected_bank_ids)){
+                                                            $selected ='checked';
+                                                        }
+                                                        ?>
+                                                        <div class="col-sm-4 col-xs-12">
+                                                            <div class="material_checkbox_group">
+                                                                <input type="checkbox" id="filter-bank-<?php echo $row->id; ?>" name="bank_id" value="<?php echo $row->id; ?>" class="material_checkbox" <?php echo $selected;?>>
+                                                                <label class="material_label_checkbox" for="filter-bank-<?php echo $row->id; ?>">
+                                                                    <div class="filter-check-img">
+                                                                        <img src="<?php echo base_url();?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->bank_name; ?>"/>
+                                                                    </div>
+                                                                    <div class="filter-check-name">
+                                                                        <?php echo $row->bank_name; ?>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <a data-slide="prev" role="button" href="#filter-carousel" class="left">
+                                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                                    </a>
+                                                    <a data-slide="next" role="button" href="#filter-carousel" class="right">
+                                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                                    </a>
+                                                </div>
+
+                                                <div class="col-sm-6"></div>
+
+                                                <div class="col-sm-3">
+                                                    <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
+                                                            <span>
+                                                                <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                            </span>
+                                                        Clear All
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 no-padding">
+                <ul class="filter-list">
+
+                </ul>
+            </div>
+            <div class="col-md-1 no-padding-left">
+                <a class="btn-filter-clear"  href="javascript:void(0);" id="clear_all">
+                        <span>
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </span>
+                    Clear All
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+<!--Filter bar by bank START -->
+
 <section id="card">
     <div class="container">
         <div class="row">
             <!-- Left bar query content start -->
-            <div class="col-sm-3 col-xs-3">
-                <div class="card_left_bar">
+            <div class="col-sm-3 col-xs-3 sidebar_parent">
+                <div id="sticky-anchor"></div>
+
+                <div class="card_left_bar home_loan_left_bar" id="sidebar">
                     <div class="caccount_left_head">
                         <p>I Am</p>
                         <div class="query_radio">
@@ -30,7 +224,7 @@
             <!-- Left bar query content end -->
 
             <!-- Right bar content start -->
-            <div class="col-sm-9 col-xs-9">
+            <div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
                 <div id="currentAccountSearch">
                     <div id="loading" class="text-center"></div>
                 </div>
@@ -73,6 +267,36 @@
 
     </div>
 </section>
+
+<script type="text/javascript">
+    // This function will be executed when the user scrolls the page.
+    $(document).on("scroll",function () {
+        var header = $("#sidebar").offset().top;
+        var scroll = $(window).scrollTop();
+
+        var top_height = $('#top-page').height();
+        var banner_height = $('#currantAccount_header').height();
+        var filter_height = $('#filter-bar').height();
+        var total_top = parseInt(top_height+banner_height+filter_height+35);
+        var main_height = parseInt($(".main-content-area").height());
+
+        $(".sidebar_parent").height(main_height-20);
+
+        if (scroll > header || header > 0){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").addClass("fixed");
+        }
+        if ($('#SearchDebitCard').offset().top > scroll){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").removeClass("fixed");
+        }
+        if($('#sidebar').offset().top + $('#sidebar').height() > $('.footer').offset().top-65){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute-bottom");
+        }
+    });
+</script>
+
 <script type="text/javascript">
 
     function overlay(s, l) {

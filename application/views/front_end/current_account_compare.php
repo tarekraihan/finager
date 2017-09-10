@@ -42,7 +42,7 @@ if($second_current_account->is_non_bank == 1){
 		width: 41.5%;
 	}
 	.Card-Compare-hr2 {
-		width: 41%;
+		width: 39%;
 	}
 	.home-loan-Compare-hr3 {
 		width: 44.3%;

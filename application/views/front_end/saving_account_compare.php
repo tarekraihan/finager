@@ -60,7 +60,7 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 		width: 41.5%;
 	}
 	.Card-Compare-hr2 {
-		width: 41%;
+		width: 39%;
 	}
 	.home-loan-Compare-hr3 {
 		width: 44.3%;
