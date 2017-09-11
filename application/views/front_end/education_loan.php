@@ -184,10 +184,10 @@
                                                     <div class="col-sm-6"></div>
 
                                                     <div class="col-sm-3">
-                                                        <a class="btn-filter-clear" href="javascript:void(0);">
-                                                            <span>
-                                                                <i class="fa fa-refresh" aria-hidden="true"></i>
-                                                            </span>
+                                                        <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
+                                                        <span>
+                                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                        </span>
                                                             Clear All
                                                         </a>
                                                     </div>
@@ -203,99 +203,11 @@
                 </div>
                 <div class="col-md-8 no-padding">
                     <ul class="filter-list">
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 1</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
 
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 2</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 3</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 4</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 5</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 6</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 7</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 8</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 9</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="filter-option">
-                                <span>Filter Option 10</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-md-1 no-padding-left">
-                    <a class="btn-filter-clear" href="javascript:void(0);">
+                    <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
                         <span>
                             <i class="fa fa-refresh" aria-hidden="true"></i>
                         </span>
@@ -652,12 +564,18 @@
 
             var year = $('#finalLiability').val();
             var year_limit = "&year_limit="+year;
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&education_loan_bank_ids="+bank_ids;
+
             var page_count ='';
             if( page != null ){
                 page_count = page ;
             }
             var url_str = "<?php echo base_url();?>education_loan/ajax_get_education_loan/" + page_count;
-            var main_string = principal_amount+year_limit;
+            var main_string = principal_amount+year_limit+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
             $.ajax({
                 type: "POST",
@@ -673,15 +591,89 @@
             });
         }
 
+        function data_caching(){
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+
+            });
+            var bank_id_list = "&education_loan_bank_ids="+bank_ids;
+
+
+            var main_string = bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+
+            var url_str = "<?php echo base_url();?>education_loan/ajax_education_loan_caching/" ;
+
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response){
+
+
+                    var option = [];
+                    var obj = JSON.parse(response);
+                    if(obj.education_loan_bank_ids.length > 0 ){
+                        for (var i = 0; i < obj.education_loan_bank_ids.length; i++) {
+                            var bank_id = obj.education_loan_bank_ids[i].split("=");
+                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="education_loan_bank_id" data-education_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        }
+                    }
+                    $(".filter-list").html(option);
+                }
+            });
+        }
+
+        $("input[type='checkbox']").on( "click", function() {
+            loadData(page);
+            data_caching();
+        } );
+
         setTimeout(function(){
             loadData(page = null); // call on load
+            data_caching();
         }, 1000);
 
     // Stop dragging calculator and fire event for search
         $(".draggable").on("dragstop",function(ev,ui){
             setTimeout(function(){
                 loadData(page = null);
+                data_caching();
             }, 1000);
+        });
+
+        $(document).on('click','#clear_all',function(){
+            var data = 'session=education_loan';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>education_loan/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                    window.location.href = window.location.href;
+
+                }
+            });
+        });
+
+        $(document).on('click', '.education_loan_bank_id', function (){
+            var  formData = $(this).data();
+            var education_loan_bank_id = formData.education_loan_bank_id;
+            $('#filter-bank-'+education_loan_bank_id).prop('checked', false);
+            var data = 'education_loan_bank_id='+education_loan_bank_id;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>education_loan/unset_education_loan_bank_id_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
         });
 
         $(document).on('click','.add-to-compare',function(){

@@ -495,6 +495,7 @@ class Education_Loan extends CI_Controller {
     public function ajax_get_education_loan(){
 
         $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
+        $education_loan_bank_ids = $this->input->post('education_loan_bank_ids');
 
         if($principal_amount > 40000000 || $principal_amount < 50000){
             $principal_amount = 50000;
@@ -512,6 +513,19 @@ class Education_Loan extends CI_Controller {
 
         if(!empty($principal_amount)) {
             $WHERE[] = 'CAST( education_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$principal_amount;
+        }
+
+        if(!empty($education_loan_bank_ids)) {
+            if(strstr($education_loan_bank_ids,',')) {
+                $data8 = explode(',',$education_loan_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "education_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(education_loan_info.bank_id = '.$education_loan_bank_ids.')';
+            }
         }
 
         $query = implode(' AND ',$WHERE);
@@ -811,8 +825,7 @@ class Education_Loan extends CI_Controller {
         $education_loan_amount = (!empty($this->input->post('education_loan_amount'))) ? $this->input->post('education_loan_amount') : '';
         $education_loan_tenure = (!empty($this->input->post('education_loan_tenure'))) ? $this->input->post('education_loan_tenure') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
-
-        $array_items = array('education_loan_amount', 'education_loan_tenure');
+        $array_items = array('education_loan_amount', 'education_loan_tenure','education_loan_bank_ids');
         $this->session->unset_userdata($array_items);
         if( $education_loan_amount != ''){
             $newdata['education_loan_amount'] = $education_loan_amount;
@@ -824,11 +837,66 @@ class Education_Loan extends CI_Controller {
         if($data == 'all'){
             $newdata['all']= '';
         }
-
-
         $this->session->set_userdata($newdata);
         echo 'success';
     }
+
+
+    public function ajax_education_loan_caching(){;
+        $education_loan_bank_ids = $this->input->post('education_loan_bank_ids');
+
+        $bank_id_array = array();
+        if(!empty($education_loan_bank_ids)) {
+            if(strstr($education_loan_bank_ids,',')) {
+                $data8 = explode(',',$education_loan_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $education_loan_bank_ids;
+            }
+        }
+
+
+        $array_items = array('education_loan_amount', 'education_loan_tenure','education_loan_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'education_loan_bank_ids' => $bank_id_array,
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='education_loan'){
+            $array_items = array('education_loan_i_want', 'education_loan_i_am', 'education_loan_i_want_label','education_loan_i_am_label','education_loan_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+
+    }
+
+    public function unset_education_loan_bank_id_session(){
+        $id = $this->input->post('education_loan_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['education_loan_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['education_loan_bank_ids'][$key]);
+            }
+        }
+        echo 'success';
+    }
+
 
 
 }

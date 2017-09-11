@@ -1066,7 +1066,7 @@
             var data = 'auto_loan_bank_id='+auto_loan_bank_id;
             $.ajax({
                 type: "POST",
-                url: "<?php echo base_url();?>debit_card/unset_auto_loan_bank_id_session",
+                url: "<?php echo base_url();?>auto_loan/unset_auto_loan_bank_id_session",
                 data: data,
                 success: function(msg){
                     loadData( page = null );

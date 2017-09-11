@@ -236,95 +236,7 @@
             </div>
             <div class="col-md-8 no-padding">
                 <ul class="filter-list">
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 1</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
 
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 2</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 3</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 4</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 5</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 6</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 7</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 8</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 9</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 10</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
                 </ul>
             </div>
             <div class="col-md-1 no-padding-left">
@@ -355,7 +267,7 @@
                                 foreach($loan_user->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_i_am") == $row->id) ? 'checked' :'' ?> />
+                                        <input type="radio" name="i_am" id="i_am<?php echo $row->id; ?>" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_i_am") == $row->id) ? 'checked' :'' ?> />
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->i_am; ?>
                                     </label><br/>
@@ -612,53 +524,6 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
     });
-    /*
-    $(document).on("scroll",function () {
-        var scroller_anchor = $("#sidebar").offset().top;
-        var sidebar_height = $("#sidebar").height();
-        var window_height = $(window).height();
-
-        var offsetToTop = parseInt($(this).scrollTop());
-        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#fdr_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+35);
-        var main_height = parseInt($(".main-content-area").height());
-
-        $(".sidebar_parent").height(main_height-20);
-
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-        {
-            $('#sidebar').addClass('fixed');
-        }
-
-        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-        {
-            $('#sidebar').removeClass('fixed');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top-65){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+80){
-            $("#sidebar").addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-    });
-    */
-</script>
-
-<script type="text/javascript"> 
 
 
 //for show hide (more info & Available Offer)
@@ -727,9 +592,74 @@
             });
         }
 
+
+        function data_caching(){
+            var amount = $('#deposited_amount').val();
+            var fdr_deposit_amount = "&fdr_deposit_amount="+amount;
+
+            var fdr_user = new Array();
+            $('input[name="i_am"]:checked').each(function(){
+                fdr_user.push($(this).val());
+            });
+            var fdr_user_list = "&fdr_i_am="+fdr_user;
+
+            var fdr_tenure = new Array();
+            $('input[name="fdr_tenure"]:checked').each(function(){
+                fdr_tenure.push($(this).val());
+            });
+            var fdr_tenure_list = "&fdr_tenure="+fdr_tenure;
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+            });
+            var bank_id_list = "&fdr_bank_ids="+bank_ids;
+
+            var fdr_i_am_label = '&fdr_i_am_label='+$('input[name="i_am"]:checked').parent().text().trim();
+            var fdr_deposit_amount_label = '&fdr_deposit_amount_label='+$('input[name="deposit_amount"]:checked').parent().text().trim();
+            var fdr_tenure_label = '&fdr_tenure_label='+$('input[name="fdr_tenure"]:checked').parent().text().trim();
+
+            var main_string = fdr_user_list+bank_id_list+fdr_i_am_label+fdr_deposit_amount+fdr_deposit_amount_label+fdr_tenure_list+fdr_tenure_label;
+            main_string = main_string.substring(1, main_string.length);
+
+            var url_str = "<?php echo base_url();?>fdr/ajax_fdr_caching/" ;
+
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response){
+                    var option = [];
+                    var obj = JSON.parse(response);
+                    if(obj.fdr_deposit_amount !=''){
+                        option.push('<li><span class="filter-option"><span>'+obj.fdr_deposit_amount_label+'</span><a href="javascript:void(0);" class="fdr_deposit_amount" data-fdr_deposit_amount="'+obj.fdr_deposit_amount+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+                    if(obj.fdr_i_am !=''){
+                        option.push('<li><span class="filter-option"><span>'+obj.fdr_i_am_label+'</span><a href="javascript:void(0);" class="fdr_i_am" data-fdr_i_am="'+ obj.fdr_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+
+                    if(obj.fdr_tenure !=''){
+                        option.push('<li><span class="filter-option"><span>'+obj.fdr_tenure_label+'</span><a href="javascript:void(0);" class="fdr_tenure" data-fdr_tenure="'+ obj.fdr_tenure +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+
+                    if(obj.fdr_bank_ids.length > 0 ){
+                        for (var i = 0; i < obj.fdr_bank_ids.length; i++) {
+                            var bank_id = obj.fdr_bank_ids[i].split("=");
+//                            console.log(bank_id[0]);
+                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="fdr_bank_id" data-fdr_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        }
+                    }
+                    $(".filter-list").html(option);
+                }
+            });
+        }
+
         loadData( page = null );
+        data_caching();
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             loadData( page = null );
+            data_caching();
         } );
 
 

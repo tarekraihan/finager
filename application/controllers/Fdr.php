@@ -887,6 +887,47 @@ class Fdr extends CI_Controller {
         echo 'success';
     }
 
+    public function ajax_fdr_caching(){
+        $fdr_i_am= $this->input->post('fdr_i_am');
+        $fdr_i_am_label = $this->input->post('fdr_i_am_label');
+        $fdr_deposit_amount = $this->input->post('fdr_deposit_amount');
+        $fdr_deposit_amount_label = $this->input->post('fdr_deposit_amount_label');
+        $fdr_tenure = $this->input->post('fdr_tenure');
+        $fdr_tenure_label = $this->input->post('fdr_tenure_label');
+        $fdr_bank_ids = $this->input->post('fdr_bank_ids');
+
+        $bank_id_array = array();
+        if(!empty($fdr_bank_ids)) {
+            if(strstr($fdr_bank_ids,',')) {
+                $data8 = explode(',',$fdr_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $fdr_bank_ids;
+            }
+        }
+
+
+        $array_items = array('fdr_i_want', 'fdr_i_am', 'fdr_i_want_label','fdr_i_am_label','fdr_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'fdr_i_am'  => $fdr_i_am,
+            'fdr_i_am_label' => $fdr_i_am_label,
+            'fdr_deposit_amount' => $fdr_deposit_amount,
+            'fdr_deposit_amount_label' => $fdr_deposit_amount_label,
+            'fdr_tenure' => $fdr_tenure,
+            'fdr_tenure_label' => $fdr_tenure_label,
+            'fdr_bank_ids' => $bank_id_array,
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+
 
 
 }
