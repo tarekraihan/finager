@@ -217,10 +217,10 @@
                                                 <div class="col-sm-6"></div>
 
                                                 <div class="col-sm-3">
-                                                    <a class="btn-filter-clear" href="javascript:void(0);">
-                                                            <span>
-                                                                <i class="fa fa-refresh" aria-hidden="true"></i>
-                                                            </span>
+                                                    <a class="btn-filter-clear"  href="javascript:void(0);" id="clear_all">
+                    <span>
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
                                                         Clear All
                                                     </a>
                                                 </div>
@@ -240,10 +240,10 @@
                 </ul>
             </div>
             <div class="col-md-1 no-padding-left">
-                <a class="btn-filter-clear" href="javascript:void(0);">
-                        <span>
-                            <i class="fa fa-refresh" aria-hidden="true"></i>
-                        </span>
+                <a class="btn-filter-clear"  href="javascript:void(0);" id="clear_all">
+                    <span>
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
                     Clear All
                 </a>
             </div>
@@ -277,103 +277,103 @@
                         <div class="card_query_fdr2">
                             <p>Select Deposit Amount</p>
                             <div class="form-group_fdr">
-                                <input type="text" name="deposited_amount" class="form-control" id="deposited_amount" value="50000"/>
+                                <input type="text" name="deposited_amount" class="form-control" id="deposited_amount" value=""/>
                             </div>
                             <div class="fdrTenurepadding">
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="5000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount5000" value="5000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         5K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="50000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount50000" value="50000" class="material_radiobox" />
                                         <span class="material_check_radio"></span>
                                         50K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="100000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount100000" value="100000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         1 LAC
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="1000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount1000000"  value="1000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         10 LAC
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="2500000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount2500000" value="2500000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         25 LAC
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="5000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount5000000" value="5000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         50 LAC
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="10000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount10000000"  value="10000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         1 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="50000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount50000000" value="50000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         5 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="100000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount100000000"  value="100000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         10 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="250000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount250000000"  value="250000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         25 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="500000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount500000000" value="500000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         50 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="1000000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount1000000000" value="1000000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         100 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="2000000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount2000000000" value="2000000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         200 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" value="5000000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount5000000000" value="5000000000" class="material_radiobox"/>
                                         <span class="material_check_radio"></span>
                                         500 CORE
                                     </label>
@@ -387,56 +387,56 @@
 							<div class="fdrTenurepadding">
 								<div class="fdr_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="1" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "1" ) ? 'checked' :'' ?> />
+										<input type="radio" name="fdr_tenure" id="fdr_tenure1" value="1" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "1" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										1 Month 
 									</label>
 								</div>
 								<div class="fdr_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="2" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "2" ) ? 'checked' :'' ?> />
+										<input type="radio" name="fdr_tenure" value="2" id="fdr_tenure2" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "2" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										3 Month 
 									</label>
 								</div>
 								<div class="fdr_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="3" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "3" ) ? 'checked' :'' ?> />
+										<input type="radio" name="fdr_tenure" value="3" id="fdr_tenure3"  class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "3" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										6 Month 
 									</label>
 								</div>
 								<div class="fdr_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="4" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "4" ) ? 'checked' :'' ?> />
+										<input type="radio" name="fdr_tenure" value="4" id="fdr_tenure4" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "4" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										1 Year
 									</label>
 								</div>
 								<div class="fdr_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="5" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "5" ) ? 'checked' :'' ?> />
+										<input type="radio" name="fdr_tenure" value="5" id="fdr_tenure5"  class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "5" ) ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										2 Year
 									</label>
 								</div>
 								<div class="fdr_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="6" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "6") ? 'checked' :'' ?> />
+										<input type="radio" name="fdr_tenure" value="6" id="fdr_tenure6" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "6") ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										3 Years 
 									</label>
 								</div>
 								<div class="fdr_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="7" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "7") ? 'checked' :'' ?> />
+										<input type="radio" name="fdr_tenure" value="7" id="fdr_tenure7" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "7") ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										4 Years
 									</label>
 								</div>
 								<div class="fdr_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="fdr_tenure" value="8" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "8") ? 'checked' :'' ?> />
+										<input type="radio" name="fdr_tenure" value="8" id="fdr_tenure8" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_tenure") == "8") ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										5 Years
 									</label>
@@ -450,7 +450,7 @@
 				
 				<!-- Right bar content start -->
                 <div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
-                    <input type="hidden" id="principle_amount" name="principle_amount" value="500000">
+                    <input type="hidden" id="principle_amount" name="principle_amount" value="">
                     <div id="searchFDR">
                        <div id="loading" class="text-center"></div>
 
@@ -565,8 +565,14 @@
             });
             var fdr_user_list = "&fdr_user="+fdr_user;
 
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&fdr_bank_ids="+bank_ids;
 
-            var main_string = fdr_tenure_list+fdr_user_list+principal_amount;
+
+            var main_string = fdr_tenure_list+fdr_user_list+principal_amount+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
@@ -640,7 +646,7 @@
                     }
 
                     if(obj.fdr_tenure !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.fdr_tenure_label+'</span><a href="javascript:void(0);" class="fdr_tenure" data-fdr_tenure="'+ obj.fdr_tenure +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><span class="filter-option"><span>'+obj.fdr_tenure_label+'</span><a href="javascript:void(0);" class="fdr_tenure_id" data-fdr_tenure="'+ obj.fdr_tenure +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                     }
 
                     if(obj.fdr_bank_ids.length > 0 ){
@@ -833,9 +839,84 @@
         });
 
 
+        $(document).on('click','#clear_all',function(){
+            var data = 'session=fdr';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>fdr/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                    window.location.href = window.location.href;
 
+                }
+            });
+        });
 
+        $(document).on('click', '.fdr_tenure_id', function (){
+            var  formData = $(this).data();
+            var fdr_tenure = formData.fdr_tenure;
+            console.log(fdr_tenure);
+            $('#fdr_tenure'+fdr_tenure).prop('checked', false);
+            var data = 'fdr_tenure='+fdr_tenure;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>fdr/unset_fdr_tenure_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
 
+        });
+
+        $(document).on('click', '.fdr_i_am', function (){
+            var  formData = $(this).data();
+            var fdr_i_am = formData.fdr_i_am;
+            $('#i_am'+fdr_i_am).prop('checked', false);
+            var data = 'fdr_i_am='+fdr_i_am;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>fdr/unset_fdr_i_am_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+        $(document).on('click', '.fdr_deposit_amount', function (){
+            var  formData = $(this).data();
+            var fdr_deposit_amount = formData.fdr_deposit_amount;
+            $('#deposit_amount'+fdr_deposit_amount).prop('checked', false);
+            var data = 'deposit_amount='+fdr_deposit_amount;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>fdr/unset_fdr_deposit_amount_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
+        $(document).on('click', '.fdr_bank_id', function (){
+            var  formData = $(this).data();
+            var fdr_bank_id = formData.fdr_bank_id;
+            $('#filter-bank-'+fdr_bank_id).prop('checked', false);
+            var data = 'fdr_bank_id='+fdr_bank_id;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>auto_loan/unset_fdr_bank_id_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
 
     });
 

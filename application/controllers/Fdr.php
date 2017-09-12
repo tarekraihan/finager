@@ -627,7 +627,8 @@ class Fdr extends CI_Controller {
 
         $fdr_user = $this->input->post('fdr_user');
         $fdr_tenure = $this->input->post('fdr_tenure');
-        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '5000' );
+        $fdr_bank_ids = $this->input->post('fdr_bank_ids');
 
         $WHERE = array(); $query = '';
         if(!empty($fdr_user)) {
@@ -636,6 +637,18 @@ class Fdr extends CI_Controller {
 
         if(!empty($fdr_tenure)) {
             $WHERE[] = 'fdr_info.tenure_id = '.$fdr_tenure;
+        }
+        if(!empty($fdr_bank_ids)) {
+            if(strstr($fdr_bank_ids,',')) {
+                $data8 = explode(',',$fdr_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "fdr_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(fdr_info.bank_id = '.$fdr_bank_ids.')';
+            }
         }
 
         $query = implode(' AND ',$WHERE);
@@ -737,7 +750,7 @@ class Fdr extends CI_Controller {
 									<div class="col-sm-3 col-xs-3">
 										<div class="card_text3">
 											<h5>Deposited Amount</h5>
-											<p>&#2547; '.number_format( $principal_amount ).'</p>
+											<p>BDT '.number_format( $principal_amount ).'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
@@ -755,7 +768,7 @@ class Fdr extends CI_Controller {
 									<div class="col-sm-3 col-xs-3">
 										<div class="card_text3">
 											<h5>Maturity Amount</h5>
-											<p>&#2547; '. number_format( $payment ) .'</p>
+											<p>BDT '. number_format( $payment ) .'</p>
 										</div>
 									</div>
 									<div class="col-sm-2 col-xs-2">
@@ -869,7 +882,7 @@ class Fdr extends CI_Controller {
         $fdr_i_am = (!empty($this->input->post('fdr_i_am'))) ? $this->input->post('fdr_i_am') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('fdr_tenure', 'fdr_i_am');
+        $array_items = array('fdr_i_am', 'fdr_i_am_label', 'fdr_deposit_amount','fdr_deposit_amount_label','fdr_tenure','fdr_tenure_label','fdr_bank_ids');
         $this->session->unset_userdata($array_items);
 
         if( $fdr_tenure != ''){
@@ -911,7 +924,7 @@ class Fdr extends CI_Controller {
         }
 
 
-        $array_items = array('fdr_i_want', 'fdr_i_am', 'fdr_i_want_label','fdr_i_am_label','fdr_bank_ids');
+        $array_items = array('fdr_i_am', 'fdr_i_am_label', 'fdr_deposit_amount','fdr_deposit_amount_label','fdr_tenure','fdr_tenure_label','fdr_bank_ids');
         $this->session->unset_userdata($array_items);
         $data = array(
             'fdr_i_am'  => $fdr_i_am,
@@ -925,6 +938,60 @@ class Fdr extends CI_Controller {
 
         $this->session->set_userdata($data);
         echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='fdr'){
+            $array_items = array('fdr_i_am', 'fdr_i_am_label', 'fdr_deposit_amount','fdr_deposit_amount_label','fdr_tenure','fdr_tenure_label','fdr_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+
+    }
+    public function unset_fdr_tenure_session(){
+        $session = $this->input->post('fdr_tenure');
+        if($session){
+            $this->session->unset_userdata('fdr_tenure');
+            $this->session->unset_userdata('fdr_tenure_label');
+            echo 'success';
+        }
+
+    }
+
+    public function unset_fdr_i_am_session(){
+        $session = $this->input->post('fdr_i_am');
+        if($session){
+            $this->session->unset_userdata('fdr_i_am');
+            $this->session->unset_userdata('fdr_i_am_label');
+            echo 'success';
+        }
+
+    }
+    public function unset_fdr_deposit_amount_session(){
+        $session = $this->input->post('deposit_amount');
+        if($session){
+            $this->session->unset_userdata('fdr_deposit_amount');
+            $this->session->unset_userdata('fdr_deposit_amount_label');
+            echo 'success';
+        }
+
+    }
+    public function unset_fdr_bank_id_session(){
+        $id = $this->input->post('fdr_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['fdr_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['fdr_bank_ids'][$key]);
+            }
+        }
+        echo 'success';
     }
 
 
