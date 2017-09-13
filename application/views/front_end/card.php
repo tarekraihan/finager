@@ -161,10 +161,10 @@
                                                 </div>
                                                 <div class="col-sm-6"></div>
                                                 <div class="col-sm-3">
-                                                    <a class="btn-filter-clear" href="javascript:;">
-                                                    <span>
-                                                    <i class="fa fa-refresh" aria-hidden="true"></i>
-                                                    </span>
+                                                    <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
+                                                            <span>
+                                                                <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                            </span>
                                                         Clear All
                                                     </a>
                                                 </div>
@@ -179,93 +179,14 @@
             </div>
             <div class="col-md-8 no-padding">
                 <ul class="filter-list">
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 1</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 2</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 3</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 4</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 5</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 6</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 7</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 8</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 9</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
-                    <li>
-                        <span class="filter-option">
-                        <span>Filter Option 10</span>
-                        <a href="javascript:;">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </a>
-                        </span>
-                    </li>
+
                 </ul>
             </div>
             <div class="col-md-1 no-padding-left">
-                <a class="btn-filter-clear" href="javascript:;">
-                <span>
-                <i class="fa fa-refresh" aria-hidden="true"></i>
-                </span>
+                <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
+                    <span>
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
                     Clear All
                 </a>
             </div>
@@ -302,27 +223,27 @@
                         <p>My Income Range</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRangeTen" value="10000-19999" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange10000-19999" value="10000-19999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 10000- BDT 19999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRangeTwenty" value="20000-49999" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange20000-49999" value="20000-49999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 20000- BDT 49999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRangeFifty" value="50000-199999" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange50000-199999" value="50000-199999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 50000- BDT 199999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRangeTwoLac" value="200000-500000" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange200000-500000" value="200000-500000" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 200000- BDT 500000
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRangeFiveLac" value="500001-2500000" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange500001-2500000" value="500001-2500000" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 500000+
                             </label>
@@ -332,27 +253,27 @@
                         <p>Want Credit Limit</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimitTen" value="10000-49999" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit10000-49999" value="10000-49999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 10000- BDT 49999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimitFifty" value="50000-99999" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit50000-99999" value="50000-99999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 50000- BDT 99999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimitOneLac" value="100000-199999" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit100000-199999" value="100000-199999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 100000- BDT 199999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimitTwoLac" value="200000-500000" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit200000-500000" value="200000-500000" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 200000- BDT 500000
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimitFiveLac" value="500001-2500000" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit500001-2500000" value="500001-2500000" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 500000+
                             </label>
@@ -400,12 +321,12 @@
                             <p>Maximum Interest Free Period</p>
                             <div class="query_radio">
                                 <label class="material_radio_group">
-                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod15" value="15-30" class="material_radiobox"/>
+                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod15-30" value="15-30" class="material_radiobox"/>
                                     <span class="material_check_radio"></span>
                                     15-30 Days
                                 </label><br/>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod31" value="31-45" class="material_radiobox"/>
+                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod31-45" value="31-45" class="material_radiobox"/>
                                     <span class="material_check_radio"></span>
                                     31-45 Days
                                 </label><br/>
@@ -491,73 +412,6 @@
 </section>
 <!-- card compare section ends-->
 <script type="text/javascript">
-    // This function will be executed when the user scrolls the page.
-    /*$(document).on("scroll",function () {
-        var header = $("#sidebar").offset().top;
-        var scroll = $(window).scrollTop();
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#creditCard_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+35);
-        var main_height = parseInt($(".main-content-area").height());
-
-        $(".sidebar_parent").height(main_height-20);
-
-        if (scroll > header || header > 0){
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-            $("#sidebar").addClass("fixed");
-        }
-        if ($('#SearchCard').offset().top > scroll){
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-            $("#sidebar").removeClass("fixed");
-        }
-        if($('#sidebar').offset().top + $('#sidebar').height() > $('.footer').offset().top-65){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-        if($("#moreFilterText").css("display") == "block" && sidebar_height > window_height){
-            $('#sidebar').removeClass('fixed');
-            $("#sidebar").removeClass("fixed-bottom");
-            $('#sidebar').addClass('pRelative');
-            //alert();
-        }
-
-        if($("#moreFilterText").css("display") == "none" && sidebar_height < window_height){
-            $("#sidebar").removeClass("fixed-bottom");
-            $('#sidebar').removeClass('pRelative');
-            $('#sidebar').addClass('fixed');
-            //alert();
-        }
-
-        if(sidebar_height > window_height && $(window).scrollTop()>1520){
-            $('#sidebar').removeClass('pRelative');
-            $('#sidebar').addClass('fixed-bottom');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 90){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").removeClass("fixed-bottom");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if(sidebar_height > window_height && $(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
-            $("#sidebar").addClass("fixed-bottom");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
-            $("#sidebar").addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").removeClass("fixed-bottom");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-    });*/
-
 
     $(document).on("scroll",function () {
         var scroller_anchor = $("#sidebar").offset().top;
@@ -696,7 +550,13 @@
                 card_issuer.push($(this).val());
             });
             var card_issuer_list = "&card_issuer="+card_issuer;
-            var main_string = card_user_list+income_range_list+credit_limit_list+credit_card_type_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list;
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&credit_card_bank_ids="+bank_ids;
+            var main_string = card_user_list+income_range_list+credit_limit_list+credit_card_type_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
@@ -715,7 +575,106 @@
                 }
             });
         }
+
+
+        function data_caching(){
+            var credit_card_i_want = new Array();
+            $('input[name="iWant"]:checked').each(function(){
+                credit_card_i_want.push($(this).val());
+            });
+            var credit_card_i_want_list = "&credit_card_i_want="+credit_card_i_want;
+            var credit_card_i_am = new Array();
+            $('input[name="iAm"]:checked').each(function(){
+                credit_card_i_am.push($(this).val());
+            });
+            var credit_card_i_am_list = "&credit_card_i_am="+credit_card_i_am;
+
+            var credit_card_myIncomeRange = new Array();
+            $('input[name="myIncomeRange"]:checked').each(function(){
+                credit_card_myIncomeRange.push($(this).val());
+            });
+            var credit_card_myIncomeRange_list = "&credit_card__income_range="+credit_card_myIncomeRange;
+
+            var credit_card_wantCreditLimit = new Array();
+            $('input[name="wantCreditLimit"]:checked').each(function(){
+                credit_card_wantCreditLimit.push($(this).val());
+            });
+            var credit_card_wantCreditLimit_list = "&credit_card_want_credit_limit="+credit_card_wantCreditLimit;
+
+            var credit_card_maximumInterestFreePeriod = new Array();
+            $('input[name="maximumInterestFreePeriod"]:checked').each(function(){
+                credit_card_maximumInterestFreePeriod.push($(this).val());
+            });
+            var credit_card_maximumInterestFreePeriod_list = "&credit_card_maximum_interest_free_period="+credit_card_maximumInterestFreePeriod;
+
+            var credit_card_type = new Array();
+            $('input[name="cardType"]:checked').each(function(){
+                credit_card_type.push($(this).val());
+            });
+            var credit_card_type_list = "&credit_card_type="+credit_card_type;
+
+
+            var credit_card_featuresBenefits = new Array();
+            $('input[name="featuresBenefits"]:checked').each(function(){
+                credit_card_featuresBenefits.push($(this).val());
+            });
+            var credit_card_featuresBenefits_list = "&credit_card_features_benefits="+credit_card_featuresBenefits;
+
+
+            var credit_card_cardIssuer = new Array();
+            $('input[name="cardIssuer"]:checked').each(function(){
+                credit_card_cardIssuer.push($(this).val());
+            });
+            var credit_card_cardIssuer_list = "&credit_card_card_issuer="+credit_card_cardIssuer;
+
+
+            var bank_ids = new Array();
+
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+
+            });
+            var bank_id_list = "&credit_card_bank_ids="+bank_ids;
+
+            var credit_card_i_want_label = '&credit_card_i_want_label='+ $('input[name="iWant"]:checked').parent().text().trim();
+            var credit_card_i_am_label = '&credit_card_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
+
+            var main_string = credit_card_i_want_list+credit_card_i_am_list+bank_id_list+credit_card_myIncomeRange_list+credit_card_wantCreditLimit_list+credit_card_featuresBenefits_list+credit_card_maximumInterestFreePeriod_list+credit_card_type_list+credit_card_cardIssuer_list;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>credit_card_loan/ajax_credit_card_loan_caching/" ;
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response){
+
+
+                    var option = [];
+                    var obj = JSON.parse(response);
+                    if(obj.credit_card_i_want_label !=''){
+                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_i_want_label+'</span><a href="javascript:void(0);" class="credit_card_loan_i_want" data-credit_card_loan_i_want="'+obj.credit_card_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+                    if(obj.credit_card_i_am_label !=''){
+                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_i_am_label+'</span><a href="javascript:void(0);" class="credit_card_loan_i_am" data-credit_card_loan_i_am="'+ obj.credit_card_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+                    if(obj.credit_card_bank_ids.length > 0 ){
+                        for (var i = 0; i < obj.credit_card_bank_ids.length; i++) {
+                            var bank_id = obj.credit_card_bank_ids[i].split("=");
+//                            console.log(bank_id[0]);
+                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="credit_card_loan_bank_id" data-credit_card_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        }
+
+                    }
+                    $(".filter-list").html(option);
+                }
+            });
+        }
+
+
+
         loadData(page = null);
+        data_caching();
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             loadData(page = null);
         } );

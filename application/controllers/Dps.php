@@ -849,7 +849,8 @@ class Dps extends CI_Controller
         $dps_user = $this->input->post('dps_user');
         $dps_tenure = $this->input->post('dps_tenure');
         $deposited_amount = (int) $this->input->post('deposited_amount');
-//        $deposited_amount = 1000;
+        $dps_bank_ids = $this->input->post('dps_bank_ids');
+
 
 
         $WHERE = array(); $query = '';
@@ -859,6 +860,19 @@ class Dps extends CI_Controller
 
         if(!empty($dps_tenure)) {
             $WHERE[] = 'dps_info.tenure_id = '.$dps_tenure;
+        }
+
+        if(!empty($dps_bank_ids)) {
+            if(strstr($dps_bank_ids,',')) {
+                $data8 = explode(',',$dps_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "dps_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(dps_info.bank_id = '.$dps_bank_ids.')';
+            }
         }
 
         $query = implode(' AND ',$WHERE);
@@ -911,10 +925,6 @@ class Dps extends CI_Controller
             '100000' => array('one_lac_maturity','one_lac_interest','dps_info_id'),
         );
 
-
-//        pr($query);
-
-//        echo $deposited_amount;die;
         $s = array();
         if (array_key_exists($deposited_amount, $array_map)) {
             $s =  $array_map[$deposited_amount];
@@ -954,9 +964,6 @@ class Dps extends CI_Controller
                     }
                 }
                 $dps_search_id = array_unique($dps_search_id);
-
-//                pr($total_dps);
-//                pr($dps_search_id);die;
 
 //-----------Pagination start-----------------
 
@@ -1045,9 +1052,7 @@ class Dps extends CI_Controller
                     }
                     $count++;
                 }
-//
-//                pr(array_unique($dps_search_id));
-//                pr($deposit_result); die;
+
                 $dps = '';
                 foreach($deposit_result as $row) {
                     $bank = "";
@@ -1224,7 +1229,7 @@ class Dps extends CI_Controller
         $dps_i_am = (!empty($this->input->post('dps_i_am'))) ? $this->input->post('dps_i_am') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('dps_tenure', 'dps_i_am');
+        $array_items = array('dps_i_am', 'dps_i_am_label','dps_tenure','dps_tenure_label','dps_bank_ids');
         $this->session->unset_userdata($array_items);
 
         if( $dps_tenure != ''){
@@ -1241,5 +1246,87 @@ class Dps extends CI_Controller
         $this->session->set_userdata($newdata);
         echo 'success';
     }
+
+    public function ajax_dps_caching(){
+        $dps_i_am= $this->input->post('dps_i_am');
+        $dps_i_am_label = $this->input->post('dps_i_am_label');
+        $dps_tenure = $this->input->post('dps_tenure');
+        $dps_tenure_label = $this->input->post('dps_tenure_label');
+        $dps_bank_ids = $this->input->post('dps_bank_ids');
+
+        $bank_id_array = array();
+        if(!empty($dps_bank_ids)) {
+            if(strstr($dps_bank_ids,',')) {
+                $data8 = explode(',',$dps_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $dps_bank_ids;
+            }
+        }
+
+
+        $array_items = array('dps_i_am', 'dps_i_am_label','dps_tenure','dps_tenure_label','dps_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'dps_i_am'  => $dps_i_am,
+            'dps_i_am_label' => $dps_i_am_label,
+            'dps_tenure' => $dps_tenure,
+            'dps_tenure_label' => $dps_tenure_label,
+            'dps_bank_ids' => $bank_id_array,
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='dps'){
+            $array_items = array('dps_i_am', 'dps_i_am_label','dps_tenure','dps_tenure_label','dps_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+    }
+
+    public function unset_dps_tenure_session(){
+        $session = $this->input->post('dps_tenure');
+        if($session){
+            $this->session->unset_userdata('dps_tenure');
+            $this->session->unset_userdata('dps_tenure_label');
+            echo 'success';
+        }
+    }
+
+    public function unset_dps_i_am_session(){
+        $session = $this->input->post('dps_i_am');
+        if($session){
+            $this->session->unset_userdata('dps_i_am');
+            $this->session->unset_userdata('dps_i_am_label');
+            echo 'success';
+        }
+
+    }
+
+    public function unset_dps_bank_id_session(){
+        $id = $this->input->post('dps_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['dps_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['dps_bank_ids'][$key]);
+            }
+        }
+        echo 'success';
+    }
+
 
 }

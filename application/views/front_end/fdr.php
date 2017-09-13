@@ -909,7 +909,7 @@
             var data = 'fdr_bank_id='+fdr_bank_id;
             $.ajax({
                 type: "POST",
-                url: "<?php echo base_url();?>auto_loan/unset_fdr_bank_id_session",
+                url: "<?php echo base_url();?>fdr/unset_fdr_bank_id_session",
                 data: data,
                 success: function(msg){
                     loadData( page = null );

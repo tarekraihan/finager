@@ -245,10 +245,10 @@
                                                 <div class="col-sm-6"></div>
 
                                                 <div class="col-sm-3">
-                                                    <a class="btn-filter-clear" href="javascript:void(0);">
-                                                            <span>
-                                                                <i class="fa fa-refresh" aria-hidden="true"></i>
-                                                            </span>
+                                                    <a class="btn-filter-clear"  href="javascript:void(0);" id="clear_all">
+                                                        <span>
+                                                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                        </span>
                                                         Clear All
                                                     </a>
                                                 </div>
@@ -264,102 +264,14 @@
             </div>
             <div class="col-md-8 no-padding">
                 <ul class="filter-list">
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 1</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
 
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 2</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 3</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 4</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 5</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 6</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 7</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 8</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 9</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 10</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
                 </ul>
             </div>
             <div class="col-md-1 no-padding-left">
-                <a class="btn-filter-clear" href="javascript:void(0);">
-                        <span>
-                            <i class="fa fa-refresh" aria-hidden="true"></i>
-                        </span>
+                <a class="btn-filter-clear"  href="javascript:void(0);" id="clear_all">
+                    <span>
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
                     Clear All
                 </a>
             </div>
@@ -383,7 +295,7 @@
 								foreach($loan_user->result() as $row){
 								?>
 								<label class="material_radio_group">
-									<input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("dps_i_am") == $row->id) ? 'checked' :'' ?>/>
+									<input type="radio" name="i_am" value="<?php echo $row->id; ?>" id="i_am<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("dps_i_am") == $row->id) ? 'checked' :'' ?>/>
 									<span class="material_check_radio"></span>
 									<?php echo $row->i_am; ?>
 								</label><br/>
@@ -572,105 +484,105 @@
 							<div class="fdrTenurepadding">
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="1" class="material_radiobox" <?php echo ($this->session->userdata("dps_tenure") == "1") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure1" value="1" class="material_radiobox" <?php echo ($this->session->userdata("dps_tenure") == "1") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										1 Year
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="2" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "2") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure2" value="2" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "2") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										2 Year
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="3" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "3") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure3" value="3" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "3") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										3 Year 
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="4" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "4") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure4" value="4" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "4") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										4 Year 
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="5" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "5") ? 'checked' :'' ?> />
+										<input type="radio" name="dps_tenure" id="5" value="5" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "5") ? 'checked' :'' ?> />
 										<span class="material_check_radio"></span>
 										5 Year
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="6" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "6") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure6" value="6" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "6") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										6 Year
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="7" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "7") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure7" value="7" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "7") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										7 Years 
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="8" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "8") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure8" value="8" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "8") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										8 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="9" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "9") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure9" value="9" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "9") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										9 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="10" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "10") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure10" value="10" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "10") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										10 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="15" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "15") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure15" value="15" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "15") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										11 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="11" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "11") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure11" value="11" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "11") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										12 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="12" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "12") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure12" value="12" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "12") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										14 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-right">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="13" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "13") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure13" value="13" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "13") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										15 Years
 									</label>
 								</div>
 								<div class="dps_tenure pull-left">
 									<label class="material_radio_group fdr_radio">
-										<input type="radio" name="dps_tenure" value="14" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "14") ? 'checked' :'' ?>/>
+										<input type="radio" name="dps_tenure" id="dps_tenure14" value="14" class="material_radiobox"  <?php echo ($this->session->userdata("dps_tenure") == "14") ? 'checked' :'' ?>/>
 										<span class="material_check_radio"></span>
 										20 Years
 									</label>
@@ -836,9 +748,14 @@
                 dps_user.push($(this).val());
             });
             var dps_user_list = "&dps_user="+dps_user;
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&dps_bank_ids="+bank_ids;
 
 
-            var main_string = dps_tenure_list+dps_user_list+deposited_amount;
+            var main_string = dps_tenure_list+dps_user_list+deposited_amount+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
             console.log(main_string);
 			var page_count ='';
@@ -864,9 +781,68 @@
             });
         }
 
+        function data_caching(){
+
+            var dps_user = new Array();
+            $('input[name="i_am"]:checked').each(function(){
+                dps_user.push($(this).val());
+            });
+            var dps_user_list = "&dps_i_am="+dps_user;
+
+            var dps_tenure = new Array();
+            $('input[name="dps_tenure"]:checked').each(function(){
+                dps_tenure.push($(this).val());
+            });
+            var dps_tenure_list = "&dps_tenure="+dps_tenure;
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+            });
+            var bank_id_list = "&dps_bank_ids="+bank_ids;
+
+            var dps_i_am_label = '&dps_i_am_label='+$('input[name="i_am"]:checked').parent().text().trim();
+            var dps_tenure_label = '&dps_tenure_label='+$('input[name="dps_tenure"]:checked').parent().text().trim();
+
+            var main_string = dps_user_list+bank_id_list+dps_i_am_label+dps_tenure_list+dps_tenure_label;
+            main_string = main_string.substring(1, main_string.length);
+
+            var url_str = "<?php echo base_url();?>dps/ajax_dps_caching/" ;
+
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response){
+                    var option = [];
+                    var obj = JSON.parse(response);
+                    if(obj.dps_i_am !=''){
+                        option.push('<li><span class="filter-option"><span>'+obj.dps_i_am_label+'</span><a href="javascript:void(0);" class="dps_i_am" data-dps_i_am="'+ obj.dps_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+
+                    if(obj.dps_tenure !=''){
+                        option.push('<li><span class="filter-option"><span>'+obj.dps_tenure_label+'</span><a href="javascript:void(0);" class="dps_tenure_id" data-dps_tenure="'+ obj.dps_tenure +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+
+                    if(obj.dps_bank_ids.length > 0 ){
+                        for (var i = 0; i < obj.dps_bank_ids.length; i++) {
+                            var bank_id = obj.dps_bank_ids[i].split("=");
+//                            console.log(bank_id[0]);
+                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="dps_bank_id" data-dps_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        }
+                    }
+                    $(".filter-list").html(option);
+                }
+            });
+        }
+
+
         loadData( page = null );
+        data_caching();
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             loadData( page = null );
+            data_caching();
         } );
 
 
@@ -875,12 +851,14 @@
             setTimeout(function(){ //Updated by Tarek on 14-05-2017
                 //alert($("#finalAssest").val());
                 loadData(page = null);
+                data_caching();
             }, 1000);
 
         });
 
         $('#finalAssest').on('keyup',function(){
             loadData( page = null );
+            data_caching();
         });
 
 
@@ -1027,5 +1005,70 @@
 				alert("Please add 2 DPS for compare ! ");
 			}
 		});
+
+
+        $(document).on('click','#clear_all',function(){
+            var data = 'session=dps';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>dps/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                    window.location.href = window.location.href;
+
+                }
+            });
+        });
+
+        $(document).on('click', '.dps_tenure_id', function (){
+            var  formData = $(this).data();
+            var dps_tenure = formData.dps_tenure;
+            console.log(dps_tenure);
+            $('#dps_tenure'+dps_tenure).prop('checked', false);
+            var data = 'dps_tenure='+dps_tenure;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>dps/unset_dps_tenure_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
+        $(document).on('click', '.dps_i_am', function (){
+            var  formData = $(this).data();
+            var dps_i_am = formData.dps_i_am;
+            $('#i_am'+dps_i_am).prop('checked', false);
+            var data = 'dps_i_am='+dps_i_am;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>dps/unset_dps_i_am_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
+        $(document).on('click', '.dps_bank_id', function (){
+            var  formData = $(this).data();
+            var dps_bank_id = formData.dps_bank_id;
+            $('#filter-bank-'+dps_bank_id).prop('checked', false);
+            var data = 'dps_bank_id='+dps_bank_id;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>dps/unset_dps_bank_id_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
 	});
 </script>
