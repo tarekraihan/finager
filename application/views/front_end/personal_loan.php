@@ -647,83 +647,36 @@
 <script src="<?php echo base_url();?>resource/front_end/js/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/Ppersonal-loan-calculator.js"></script>
 
-
-
 <script>
+
+    $(document).on("scroll",function () {
+        var header = $("#sidebar").offset().top;
+        var scroll = $(window).scrollTop();
+
+        var top_height = $('#top-page').height();
+        var banner_height = $('#personal_header').height();
+        var filter_height = $('#filter-bar').height();
+        var total_top = parseInt(top_height+banner_height+filter_height+35);
+        var main_height = parseInt($(".main-content-area").height());
+
+        $(".sidebar_parent").height(main_height-20);
+
+        if (scroll > header || header > 0){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").addClass("fixed");
+        }
+        if ($('#SearchDebitCard').offset().top > scroll){
+            $("#sidebar").removeClass("sidebar-absolute-bottom");
+            $("#sidebar").removeClass("fixed");
+        }
+        if($('#sidebar').offset().top + $('#sidebar').height() > $('.footer').offset().top-65){
+            $("#sidebar").removeClass("fixed");
+            $("#sidebar").addClass("sidebar-absolute-bottom");
+        }
+    });
 
     $(document).ready(function(){
         // This function will be executed when the user scrolls the page.
-        $(document).on("scroll",function () {
-            var header = $("#sidebar").offset().top;
-            var scroll = $(window).scrollTop();
-
-            var top_height = $('#top-page').height();
-            var banner_height = $('#personal_header').height();
-            var filter_height = $('#filter-bar').height();
-            var total_top = parseInt(top_height+banner_height+filter_height+35);
-            var main_height = parseInt($(".main-content-area").height());
-
-            $(".sidebar_parent").height(main_height-20);
-
-            if (scroll > header || header > 0){
-                $("#sidebar").removeClass("sidebar-absolute-bottom");
-                $("#sidebar").addClass("fixed");
-            }
-            if ($('#SearchDebitCard').offset().top > scroll){
-                $("#sidebar").removeClass("sidebar-absolute-bottom");
-                $("#sidebar").removeClass("fixed");
-            }
-            if($('#sidebar').offset().top + $('#sidebar').height() > $('.footer').offset().top-65){
-                $("#sidebar").removeClass("fixed");
-                $("#sidebar").addClass("sidebar-absolute-bottom");
-            }
-        });
-        /*
-        $(document).on("scroll",function () {
-            var scroller_anchor = $("#sidebar").offset().top;
-            var sidebar_height = $("#sidebar").height();
-            var window_height = $(window).height();
-
-            var offsetToTop = parseInt($(this).scrollTop());
-            var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-            var top_height = $('#top-page').height();
-            var banner_height = $('#personal_header').height();
-            var filter_height = $('#filter-bar').height();
-            var total_top = parseInt(top_height+banner_height+filter_height+35);
-            var main_height = parseInt($(".main-content-area").height());
-
-            $(".sidebar_parent").height(main_height-20);
-
-            // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-            if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-            {
-                $('#sidebar').addClass('fixed');
-            }
-
-            if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-            {
-                $('#sidebar').removeClass('fixed');
-            }
-
-            if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top-65){
-                $("#sidebar").removeClass("fixed");
-                $("#sidebar").addClass("sidebar-absolute-bottom");
-            }
-
-            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
-                $("#sidebar").addClass("fixed");
-                $("#sidebar").removeClass("sidebar-absolute-bottom");
-            }
-
-            if($("#sidebar").offset().top < total_top){
-                $("#sidebar").removeClass("fixed");
-                $("#sidebar").addClass("sidebar-absolute");
-            }
-
-        });
-        */
-
         var current_page = '<?php echo base_url();?>en/all_personal_loan';
 
         var page = '<?php echo($this->uri->segment(3)) ?>';
@@ -848,7 +801,7 @@
                     if(obj.personal_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.personal_bank_ids.length; i++) {
                             var bank_id = obj.personal_bank_ids[i].split("=");
-//                            console.log(bank_id[0]);
+//                            //console.log(bank_id[0]);
                             option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="personal_bank_id" data-personal_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                         }
 
@@ -856,10 +809,7 @@
                     $(".filter-list").html(option);
                 }
             });
-        }
-
-
-
+        };
 
         loadData(page);
         data_caching();
@@ -907,7 +857,7 @@
 		$('#searchPersonalLoan').on('click', '.more_info', function (){
             var  formData = $(this).data();
             var loan_id = formData.loan_id;
-            console.log(loan_id);
+            //console.log(loan_id);
 
             $("#moreInfo"+loan_id).toggleClass("in");
             $('#rePaymentSchedule'+loan_id).removeClass("in");
@@ -922,7 +872,7 @@
         $('#searchPersonalLoan').on('click', '.rePaymentSchedule', function (){
             var  formData = $(this).data();
             var repayment = formData.repayment;
-            console.log(repayment);
+            //console.log(repayment);
 
             $('#rePaymentSchedule'+repayment).html('<iframe  src="<?php echo base_url(); ?>en/personal_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
 
@@ -950,7 +900,7 @@
         $(document).on('click', '.personal_i_want', function (){
             var  formData = $(this).data();
             var personal_i_want = formData.personal_i_want;
-            console.log(personal_i_want);
+            //console.log(personal_i_want);
             $('#iWant'+personal_i_want).prop('checked', false);
             var data = 'personal_i_want='+personal_i_want;
             $.ajax({
@@ -1142,7 +1092,7 @@
 
         var loan_ids = loan_id1+loan_id2+principal_amount+month_limit;
         if(loan_id1 != '' && loan_id2 != ''){
-            console.log(loan_ids);
+            //console.log(loan_ids);
             $.ajax
             ({
                 type: "POST",
