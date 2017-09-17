@@ -577,7 +577,31 @@ class Millionaire extends CI_Controller
 
     public function ajax_get_tenure(){
         $selected_amount = $this->input->post('selected_amount');
-        $response = $this->Select_model->select_millionaire_tenure_by_amount($selected_amount);
+        $millionaire_bank_ids = $this->input->post('millionaire_bank_ids');
+        $WHERE = array(); $query = '';
+        if(!empty($selected_amount)) {
+            $WHERE[] = '( millionaire_info.maturity_amount_id = ('.$selected_amount.'))';
+        }
+        if(!empty($millionaire_bank_ids)) {
+            if(strstr($millionaire_bank_ids,',')) {
+                $data8 = explode(',',$millionaire_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "millionaire_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(millionaire_info.bank_id = '.$millionaire_bank_ids.')';
+            }
+            $WHERE[] = '(millionaire_info.is_non_bank = 0)';
+        }
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+
+//        echo $query;
+        $response = $this->Select_model->select_millionaire_tenure_by_amount($query);
         $tenure ='';
 
         $data = array();
@@ -620,13 +644,14 @@ class Millionaire extends CI_Controller
         echo $tenure;
     }
 
-
-
     public function ajax_get_millionaire(){
 
         $millionaire_tenure = $this->input->post('millionaire_tenure');
         $millionaire_user = $this->input->post('millionaire_user');
         $maturity_amount = $this->input->post('maturity_amount');
+        $millionaire_bank_ids = $this->input->post('millionaire_bank_ids');
+
+
 
         $WHERE = array(); $query = '';
         if(!empty($millionaire_tenure)) {
@@ -641,16 +666,38 @@ class Millionaire extends CI_Controller
         if(!empty($maturity_amount)) {
             $WHERE[] = '(millionaire_info.maturity_amount_id = '.$maturity_amount.')';
         }
+        if(!empty($millionaire_bank_ids)) {
+            if(strstr($millionaire_bank_ids,',')) {
+                $data8 = explode(',',$millionaire_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "millionaire_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(millionaire_info.bank_id = '.$millionaire_bank_ids.')';
+            }
+        }
+/*
+        $sql[] = implode(' AND ',$WHERE);
+
+        if(!empty($millionaire_bank_ids)) {
+            if(strstr($millionaire_bank_ids,',')) {
+                $data8 = explode(',',$millionaire_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "millionaire_info.bank_id = $bank_id";
+                }
+                $sql[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $sql[] = '(millionaire_info.bank_id = '.$millionaire_bank_ids.')';
+            }
+        }*/
 
         $query = implode(' AND ',$WHERE);
-
-
         if(!empty($query)) {
             $query = 'WHERE '.$query;
         }
-//        print_r($query);die;
-
-
 
         $res = $this->Front_end_select_model->select_millionaire_info($query);
 
@@ -843,8 +890,6 @@ class Millionaire extends CI_Controller
         echo $million;
     }
 
-
-
     public function ajax_compare_millionaire_image(){
         $id = $this->input->post('millionaire_id');
         $result = $this->Front_end_select_model->select_millionaire_image($id);
@@ -876,7 +921,6 @@ class Millionaire extends CI_Controller
         echo 'success';
     }
 
-
     public function ajax_millionaire_quick_link(){
         $millionaire_maturity_amount = (!empty($this->input->post('millionaire_maturity_amount'))) ? $this->input->post('millionaire_maturity_amount') : '';
         $millionaire_i_am = (!empty($this->input->post('millionaire_i_am'))) ? $this->input->post('millionaire_i_am') : '';
@@ -899,5 +943,120 @@ class Millionaire extends CI_Controller
         $this->session->set_userdata($newdata);
         echo 'success';
     }
+
+
+    public function ajax_millionaire_caching(){
+        $millionaire_i_am = $this->input->post('millionaire_i_am');
+        $millionaire_i_am_label = $this->input->post('millionaire_i_am_label');
+        $millionaire_tenure = $this->input->post('millionaire_tenure');
+        $millionaire_maturity_amount = $this->input->post('millionaire_maturity_amount');
+        $millionaire_maturity_amount_label = $this->input->post('millionaire_maturity_amount_label');
+        $millionaire_bank_ids = $this->input->post('millionaire_bank_ids');
+
+        $tenure_array = array(
+            1 => 1,
+            2 => 2,
+            3 => 3,
+            4 => 4,
+            5 => 5,
+            6 => 6,
+            7 => 7,
+            8 => 8,
+            9 => 9,
+            10 => 10,
+            11 => 17,
+            12 => 15,
+            13 => 18,
+            14 => 20,
+            17 => 11
+        );
+        $millionaire_tenure_array = array();
+        if(!empty($millionaire_tenure)) {
+            if(strstr($millionaire_tenure,',')) {
+                $data1 = explode(',',$millionaire_tenure);
+
+                foreach( $data1 as $tenure_id ) {
+                    $millionaire_tenure_array[] =  $tenure_array[$tenure_id];
+                }
+
+            } else {
+                $millionaire_tenure_array[] = $tenure_array[$millionaire_tenure];
+            }
+        }
+
+        $bank_id_array = array();
+        if(!empty($millionaire_bank_ids)) {
+            if(strstr($millionaire_bank_ids,',')) {
+                $data8 = explode(',',$millionaire_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $millionaire_bank_ids;
+            }
+        }
+
+
+
+        $array_items = array('millionaire_i_am', 'millionaire_i_am_label','millionaire_tenure','millionaire_maturity_amount','millionaire_maturity_amount_label','millionaire_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'millionaire_i_am'  => $millionaire_i_am,
+            'millionaire_i_am_label' => $millionaire_i_am_label,
+            'millionaire_tenure' => $millionaire_tenure_array,
+            'millionaire_maturity_amount' => $millionaire_maturity_amount,
+            'millionaire_maturity_amount_label' => $millionaire_maturity_amount_label,
+            'millionaire_bank_ids' => $bank_id_array,
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function unset_millionaire_i_am_session(){
+        $session = $this->input->post('millionaire_i_am');
+        if($session){
+            $this->session->unset_userdata('millionaire_i_am');
+            $this->session->unset_userdata('millionaire_i_am_label');
+            echo 'success';
+        }
+
+    }
+    public function unset_millionaire_maturity_amount_session(){
+        $session = $this->input->post('millionaire_maturity_amount');
+        if($session){
+            $this->session->unset_userdata('millionaire_maturity_amount');
+            $this->session->unset_userdata('millionaire_maturity_amount_label');
+            echo 'success';
+        }
+
+    }
+    public function unset_millionaire_bank_id_session(){
+        $id = $this->input->post('millionaire_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['millionaire_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['millionaire_bank_ids'][$key]);
+            }
+        }
+        echo 'success';
+    }
+
+    public function unset_millionaire_tenure_session(){
+        $millionaire_tenure = $this->input->post('millionaire_tenure');
+        $millionaire_tenure_session = $this->session->userdata('millionaire_tenure');
+
+        if(($key = array_search($millionaire_tenure_session, $millionaire_tenure)) !== false) {
+            unset($_SESSION['millionaire_tenure'][$key]);
+        }
+
+        echo 'success';
+    }
+
 
 }
