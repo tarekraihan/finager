@@ -774,18 +774,18 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.dps_i_am !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.dps_i_am_label+'</span><a href="javascript:void(0);" class="dps_i_am" data-dps_i_am="'+ obj.dps_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.dps_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="dps_i_am" data-dps_i_am="'+ obj.dps_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.dps_tenure !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.dps_tenure_label+'</span><a href="javascript:void(0);" class="dps_tenure_id" data-dps_tenure="'+ obj.dps_tenure +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.dps_tenure_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="dps_tenure_id" data-dps_tenure="'+ obj.dps_tenure +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.dps_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.dps_bank_ids.length; i++) {
                             var bank_id = obj.dps_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="dps_bank_id" data-dps_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="dps_bank_id" data-dps_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
                     }
                     $(".filter-list").html(option);

@@ -476,53 +476,6 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
     });
-    /*
-    $(document).ready(function(){
-        $(document).on("scroll",function () {
-            var scroller_anchor = $("#sidebar").offset().top;
-            var sidebar_height = $("#sidebar").height();
-            var window_height = $(window).height();
-
-            var offsetToTop = parseInt($(this).scrollTop());
-            var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-            var top_height = $('#top-page').height();
-            var banner_height = $('#education_header').height();
-            var filter_height = $('#filter-bar').height();
-            var total_top = parseInt(top_height+banner_height+filter_height+45);
-            var main_height = parseInt($(".main-content-area").height());
-
-            $(".sidebar_parent").height(main_height-20);
-
-            // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-            if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-            {
-                $('#sidebar').addClass('fixed');
-            }
-
-            if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-            {
-                $('#sidebar').removeClass('fixed');
-            }
-
-            if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 65){
-                $("#sidebar").removeClass("fixed");
-                $("#sidebar").addClass("sidebar-absolute-bottom");
-            }
-
-            if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top + 370){
-                $("#sidebar").addClass("fixed");
-                $("#sidebar").removeClass("sidebar-absolute-bottom");
-            }
-
-            if($("#sidebar").offset().top < total_top){
-                $("#sidebar").removeClass("fixed");
-                $("#sidebar").addClass("sidebar-absolute");
-            }
-
-        });
-    });
-    */
 
     $(document).ready(function() {
 
@@ -619,7 +572,7 @@
                     if(obj.education_loan_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.education_loan_bank_ids.length; i++) {
                             var bank_id = obj.education_loan_bank_ids[i].split("=");
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="education_loan_bank_id" data-education_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="education_loan_bank_id" data-education_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></span></a></div></li>');
                         }
                     }
                     $(".filter-list").html(option);

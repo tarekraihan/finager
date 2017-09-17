@@ -2,7 +2,7 @@
 
 <div class="logobar">
     <a href="index.php">
-        <img class="logo" src="images/logo.png" alt="Logo" />
+        <img class="logo" src="images/logo.png" alt="Finager Logo" />
     </a>
 </div>
 

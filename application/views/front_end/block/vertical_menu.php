@@ -57,7 +57,7 @@
 
                         <div class="logobar">
                             <a href="<?php echo base_url(); ?>">
-                                <img class="logo" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg" alt="Logo" />
+                                <img class="logo" title="Finager Logo" src="<?php echo base_url(); ?>resource/front_end/images/finager-logo.svg" alt="Logo" />
                             </a>
                         </div>
 

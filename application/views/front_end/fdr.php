@@ -639,21 +639,21 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.fdr_deposit_amount !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.fdr_deposit_amount_label+'</span><a href="javascript:void(0);" class="fdr_deposit_amount" data-fdr_deposit_amount="'+obj.fdr_deposit_amount+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.fdr_deposit_amount_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_deposit_amount" data-fdr_deposit_amount="'+obj.fdr_deposit_amount+'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.fdr_i_am !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.fdr_i_am_label+'</span><a href="javascript:void(0);" class="fdr_i_am" data-fdr_i_am="'+ obj.fdr_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.fdr_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_i_am" data-fdr_i_am="'+ obj.fdr_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.fdr_tenure !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.fdr_tenure_label+'</span><a href="javascript:void(0);" class="fdr_tenure_id" data-fdr_tenure="'+ obj.fdr_tenure +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.fdr_tenure_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_tenure_id" data-fdr_tenure="'+ obj.fdr_tenure +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.fdr_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.fdr_bank_ids.length; i++) {
                             var bank_id = obj.fdr_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="fdr_bank_id" data-fdr_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_bank_id" data-fdr_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
                     }
                     $(".filter-list").html(option);
