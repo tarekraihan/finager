@@ -300,13 +300,26 @@
                         <p><a id="displayMoreFilter" href="javascript:toggle2();"><?php echo ($this->session->userdata("credit_card_feature_benefits") || $this->session->userdata("credit_card_type")) ? 'Fewer Filters ' :'More Filter' ?> <i class="fa fa-sort-desc fa-lg"></i></a></p>
                     </div>
                     <br/>
-                    <div id="moreFilterText" <?php echo ($this->session->userdata("credit_card_feature_benefits") || $this->session->userdata("credit_card_type")) ? 'style="display: block"' :'style="display: none"' ?>>
+                    <div id="moreFilterText" <?php echo ($this->session->userdata("credit_card_features_benefits") || $this->session->userdata("credit_card_type")) ? 'style="display: block"' :'style="display: none"' ?>>
                         <div class="card_query">
                             <p>Features & Benefits</p>
                             <div class="query_radio">
                                 <?php
+                                $selected_feature_benefits = array();
+                                if(isset($this->session->userdata['credit_card_features_benefits']) && !empty($this->session->userdata['credit_card_features_benefits'])){
+                                    $features = array_values($this->session->userdata['credit_card_features_benefits']);
+                                    foreach($features as $feature){
+                                        $selected_feature = explode("=",$feature);
+                                        array_push($selected_feature_benefits,$selected_feature[0]);
+                                    }
+                                }
+
                                 $card_benefits = $this->Select_model->select_all('card_reward');
                                 foreach($card_benefits->result() as $row){
+                                    $selected_benefit ='';
+                                    if(in_array($row->id,$selected_feature_benefits)){
+                                        $selected_benefit ='checked';
+                                    }
                                     ?>
                                     <div class="material_checkbox_group">
                                         <input type="checkbox" id="featuresBenefits<?php echo $row->id; ?>" name="featuresBenefits" value="<?php echo $row->id; ?>" class="material_checkbox"  <?php echo ($this->session->userdata("credit_card_feature_benefits") == $row->id) ? 'checked' :'' ?>/>
@@ -321,12 +334,12 @@
                             <p>Maximum Interest Free Period</p>
                             <div class="query_radio">
                                 <label class="material_radio_group">
-                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod15-30" value="15-30" class="material_radiobox"/>
+                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod15-30" value="15-30" class="material_radiobox"  <?php echo (!empty($this->session->userdata('credit_card_maximum_interest_free_period')) && ($this->session->userdata('credit_card_maximum_interest_free_period') == '15-30' )) ? 'checked' : '' ?>/>
                                     <span class="material_check_radio"></span>
                                     15-30 Days
                                 </label><br/>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod31-45" value="31-45" class="material_radiobox"/>
+                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod31-45" value="31-45" class="material_radiobox"  <?php echo (!empty($this->session->userdata('credit_card_maximum_interest_free_period')) && ($this->session->userdata('credit_card_maximum_interest_free_period') =='31-45' )) ? 'checked' : '' ?>/>
                                     <span class="material_check_radio"></span>
                                     31-45 Days
                                 </label><br/>
@@ -653,16 +666,16 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.credit_card_i_want_label !=''){
-                        option.push('<li><div class="filter-option"><span>'+obj.credit_card_i_want_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_loan_i_want" data-credit_card_loan_i_want="'+obj.credit_card_i_want+'"><i class="icon-close icons"></i></span></a></div></li>');
+                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_i_want_label+'</span><a href="javascript:void(0);" class="credit_card_loan_i_want" data-credit_card_loan_i_want="'+obj.credit_card_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                     }
                     if(obj.credit_card_i_am_label !=''){
-                        option.push('<li><div class="filter-option"><span>'+obj.credit_card_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_loan_i_am" data-credit_card_loan_i_am="'+ obj.credit_card_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
+                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_i_am_label+'</span><a href="javascript:void(0);" class="credit_card_loan_i_am" data-credit_card_loan_i_am="'+ obj.credit_card_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                     }
                     if(obj.credit_card_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.credit_card_bank_ids.length; i++) {
                             var bank_id = obj.credit_card_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_loan_bank_id" data-credit_card_loan_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
+                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="credit_card_loan_bank_id" data-credit_card_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                         }
 
                     }

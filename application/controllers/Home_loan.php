@@ -638,11 +638,6 @@ class Home_Loan extends CI_Controller {
              $home_principal_amount = 200000;
          }
 
-
-
-/*        $home_i_want_label = ($this->session->userdata("home_i_want_label") != "") ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);" value="'.$this->session->userdata("home_i_want").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>
-' : '';*/
-
          $home_month_limit = floatval ( ($this->input->post('home_month_limit') > 1) ? $this->input->post('home_month_limit') : 1 );
 
         if($home_month_limit > 25 || $home_month_limit < 1){
@@ -1036,11 +1031,6 @@ class Home_Loan extends CI_Controller {
             if(($key = array_search($session, $bank)) !== false) {
                 unset($_SESSION['home_bank_ids'][$key]);
             }
-            /*if(in_array($session, $bank)){
-                pr($_SESSION);
-            }else{
-                echo 'sorry';
-            }*/
             pr($_SESSION);
         }
     }
