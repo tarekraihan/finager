@@ -277,10 +277,10 @@
                                                 <div class="col-sm-6"></div>
 
                                                 <div class="col-sm-3">
-                                                    <a class="btn-filter-clear" href="javascript:void(0);">
-                                                            <span>
-                                                                <i class="fa fa-refresh" aria-hidden="true"></i>
-                                                            </span>
+                                                    <a class="btn-filter-clear"  href="javascript:void(0);" id="clear_all">
+                                                        <span>
+                                                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                        </span>
                                                         Clear All
                                                     </a>
                                                 </div>
@@ -296,102 +296,14 @@
             </div>
             <div class="col-md-8 no-padding">
                 <ul class="filter-list">
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 1</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
 
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 2</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 3</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 4</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 5</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 6</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 7</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 8</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 9</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 10</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
                 </ul>
             </div>
             <div class="col-md-1 no-padding-left">
-                <a class="btn-filter-clear" href="javascript:void(0);">
-                        <span>
-                            <i class="fa fa-refresh" aria-hidden="true"></i>
-                        </span>
+                <a class="btn-filter-clear"  href="javascript:void(0);" id="clear_all">
+                    <span>
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
                     Clear All
                 </a>
             </div>
@@ -811,51 +723,6 @@
         }
     });
 
-    /*
-    $(document).on("scroll",function () {
-        var scroller_anchor = $("#sidebar").offset().top;
-        var sidebar_height = $("#sidebar").height();
-        var window_height = $(window).height();
-
-        var offsetToTop = parseInt($(this).scrollTop());
-        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#maximizer_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+55);
-        var main_height = parseInt($(".main-content-area").height());
-
-        $(".sidebar_parent").height(main_height-20);
-
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-        {
-            $('#sidebar').addClass('fixed');
-        }
-
-        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-        {
-            $('#sidebar').removeClass('fixed');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top-65){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+130){
-            $("#sidebar").addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-    });
-    */
-
     $(document).ready(function(){
         // This function will be executed when the user scrolls the page.
         setTimeout(function(){
@@ -897,15 +764,21 @@
 
         $('input[name="maturity_amount"]').on('click',function() {
             var amount = $(this).val();
-            var thisVal= 'selected_amount='+$(this).val();
-//            alert(thisVal);
+            var thisVal= '&selected_amount='+$(this).val();
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&millionaire_bank_ids="+bank_ids;
+            var main_string = thisVal+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
 
             var amount_list = {1:'100K', 2:'200K', 3:'300K',4:'400K',5:'500K',6:'1 Million',7:'2.5 Million', 8:'5 Million',9:'10 Million',10:'20 Million',11:'30 Million',12:'40 Million'};
             $.ajax
             ({
                 type: "POST",
                 url: "<?php echo base_url();?>millionaire/ajax_get_tenure",
-                data: thisVal,
+                data: main_string,
                 cache: false,
                 success: function(msg)
                 {
@@ -916,13 +789,20 @@
         });
         $('input[name="maturity_amount"]:checked').each(function(){
             var amount = $(this).val();
-            var thisVal= 'selected_amount='+$(this).val();
+            var thisVal= '&selected_amount='+$(this).val();
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&millionaire_bank_ids="+bank_ids;
+            var main_string = thisVal+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
             var amount_list = {1:'100K', 2:'200K', 3:'300K',4:'400K',5:'500K',6:'1 Million',7:'2.5 Million', 8:'5 Million',9:'10 Million',10:'20 Million',11:'30 Million',12:'40 Million'};
             $.ajax
             ({
                 type: "POST",
                 url: "<?php echo base_url();?>millionaire/ajax_get_tenure",
-                data: thisVal,
+                data: main_string,
                 cache: false,
                 success: function(msg)
                 {
@@ -974,8 +854,13 @@ $(document).ready(function() {
             });
             var maturity_amount_list = "&maturity_amount="+maturity_amount;
 
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+        var bank_id_list = "&millionaire_bank_ids="+bank_ids;
 
-            var main_string = millionaire_tenure_list+millionaire_user_list+maturity_amount_list;
+        var main_string = millionaire_tenure_list+millionaire_user_list+maturity_amount_list+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
         var page_count ='';
         if( page != null ){
@@ -1000,14 +885,95 @@ $(document).ready(function() {
                 }
             });
         }
-    $("input[type='radio']").on( "click", function() {
+
+    function data_caching(){
+
+
+        var millionaire_tenure = new Array();
+        $('input[name="millionaire_tenure"]:checked').each(function(){
+            millionaire_tenure.push($(this).val());
+        });
+
+        var millionaire_tenure_list = "&millionaire_tenure="+millionaire_tenure;
+
+
+        var millionaire_user = new Array();
+        $('input[name="i_am"]:checked').each(function(){
+            millionaire_user.push($(this).val());
+        });
+        var millionaire_user_list = "&millionaire_i_am="+millionaire_user;
+
+        var maturity_amount = new Array();
+        $('input[name="maturity_amount"]:checked').each(function(){
+            maturity_amount.push($(this).val());
+        });
+        var maturity_amount_list = "&millionaire_maturity_amount="+maturity_amount;
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+        });
+        var bank_id_list = "&millionaire_bank_ids="+bank_ids;
+
+        var millionaire_i_am_label = '&millionaire_i_am_label='+$('input[name="i_am"]:checked').parent().text().trim();
+        var millionaire_maturity_amount_label = '&millionaire_maturity_amount_label='+$('input[name="maturity_amount"]:checked').parent().text().trim();
+
+        var main_string = millionaire_tenure_list+millionaire_user_list+maturity_amount_list+bank_id_list+millionaire_i_am_label+millionaire_maturity_amount_label;
+        main_string = main_string.substring(1, main_string.length);
+
+        var url_str = "<?php echo base_url();?>millionaire/ajax_millionaire_caching/" ;
+
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response){
+                var option = [];
+                var obj = JSON.parse(response);
+                if(obj.millionaire_i_am !=''){
+                    option.push('<li><span class="filter-option"><span>'+obj.millionaire_i_am_label+'</span><a href="javascript:void(0);" class="millionaire_i_am" data-millionaire_i_am="'+ obj.millionaire_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                }
+
+                if(obj.millionaire_maturity_amount !=''){
+                    option.push('<li><span class="filter-option"><span>'+obj.millionaire_maturity_amount_label+'</span><a href="javascript:void(0);" class="millionaire_maturity_amount" data-millionaire_maturity_amount="'+ obj.millionaire_maturity_amount +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                }
+
+                if(obj.millionaire_tenure.length > 0 ){
+                    for (var i = 0; i < obj.millionaire_tenure.length; i++) {
+                        var tenure_id = obj.millionaire_tenure[i];
+                        var tenure_label = 'Year';
+                        if(tenure_id > 1){
+                            tenure_label = 'Years'
+                        }
+
+                        option.push('<li><span class="filter-option"><span>'+tenure_id+' ' +tenure_label+'</span><a href="javascript:void(0);" class="millionaire_tenure" data-millionaire_tenure="'+ tenure_id +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+                }
+
+                if(obj.millionaire_bank_ids.length > 0 ){
+                    for (var i = 0; i < obj.millionaire_bank_ids.length; i++) {
+                        var bank_id = obj.millionaire_bank_ids[i].split("=");
+//                            console.log(bank_id[0]);
+                        option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="millionaire_bank_id" data-millionaire_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    }
+                }
+                $(".filter-list").html(option);
+            }
+        });
+    }
+
+
+    $("input[type='checkbox'],input[type='radio']").on( "click", function() {
+        data_caching();
         loadData( page = null );
     } );
 
     $(document).on('click','.squaredOne input[type="checkbox"]',function() {
+        data_caching();
         loadData( page = null )
     });
-
+    data_caching();
     loadData( page = null )
 });
 
