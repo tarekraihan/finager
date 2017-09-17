@@ -1632,11 +1632,8 @@ class Card extends CI_Controller
     }
 
     public function ajax_credit_card_caching(){
-
-        $credit_card_i_want = $this->input->post('credit_card_i_want');
         $credit_card_i_am = $this->input->post('credit_card_i_am');
         $credit_card_i_am_label = $this->input->post('credit_card_i_am_label');
-        $credit_card_i_want_label = $this->input->post('credit_card_i_want_label');
         $credit_card_income_range = $this->input->post('credit_card_income_range');
         $credit_card_income_range_label = $this->input->post('credit_card_income_range_label');
         $credit_card_want_credit_limit = $this->input->post('credit_card_want_credit_limit');
@@ -1713,10 +1710,8 @@ class Card extends CI_Controller
         $array_items = array('credit_card_i_want', 'credit_card_i_am', 'credit_card_principal_amount','credit_card_i_want_label','credit_card_i_am_label','credit_card_income_range','credit_card_income_range_label','credit_card_want_credit_limit','credit_card_type','card_types','credit_card_want_credit_limit_label','card_issuers','credit_card_features_benefits','credit_card_bank_ids','credit_card_maximum_interest_free_period','credit_card_maximum_interest_free_period_label');
         $this->session->unset_userdata($array_items);
         $data = array(
-            'credit_card_i_want'  => $credit_card_i_want,
             'credit_card_i_am'  => $credit_card_i_am,
             'credit_card_principal_amount'  => $credit_card_principal_amount,
-            'credit_card_i_want_label' => $credit_card_i_want_label,
             'credit_card_i_am_label' => $credit_card_i_am_label,
             'credit_card_income_range' => $credit_card_income_range,
             'credit_card_income_range_label' => $credit_card_income_range_label,

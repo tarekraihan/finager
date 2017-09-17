@@ -5,7 +5,8 @@
 </style>
 
 <section id="creditCard_header"></section>
-
+<div ><?php //session_destroy();
+    //pr($_SESSION);?></div>
 <!--Filter bar by bank START -->
 <div class="container">
     <section id="filter-bar">
@@ -210,7 +211,7 @@
                             foreach($card_user->result() as $row){
                                 ?>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="iAm" id="iAm<?php echo $row->id; ?>" value="<?php echo $row->id;?>" class="material_radiobox"/>
+                                    <input type="radio" name="iAm" id="iAm<?php echo $row->id; ?>" value="<?php echo $row->id;?>" <?php echo ($this->session->userdata('credit_card_i_am') == $row->id) ? 'checked' : '' ;?> class="material_radiobox"/>
                                     <span class="material_check_radio"></span>
                                     <?php echo $row->card_user;?>
                                 </label><br/>
@@ -223,27 +224,27 @@
                         <p>My Income Range</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRange10000-19999" value="10000-19999" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange10000-19999" value="10000-19999"  <?php echo ($this->session->userdata('credit_card_income_range') == '10000-19999') ? 'checked' : '' ;?>  class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 10000- BDT 19999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRange20000-49999" value="20000-49999" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange20000-49999"  <?php echo ($this->session->userdata('credit_card_income_range') == '20000-49999') ? 'checked' : '' ;?>  value="20000-49999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 20000- BDT 49999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRange50000-199999" value="50000-199999" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange50000-199999"  <?php echo ($this->session->userdata('credit_card_income_range') == '50000-199999') ? 'checked' : '' ;?>  value="50000-199999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 50000- BDT 199999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRange200000-500000" value="200000-500000" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange200000-500000"  <?php echo ($this->session->userdata('credit_card_income_range') == '200000-500000') ? 'checked' : '' ;?>  value="200000-500000" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 200000- BDT 500000
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="myIncomeRange" id="myIncomeRange500001-2500000" value="500001-2500000" class="material_radiobox"/>
+                                <input type="radio" name="myIncomeRange" id="myIncomeRange500001-2500000"  <?php echo ($this->session->userdata('credit_card_income_range') == '500001-2500000') ? 'checked' : '' ;?>  value="500001-2500000" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 500000+
                             </label>
@@ -253,27 +254,27 @@
                         <p>Want Credit Limit</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit10000-49999" value="10000-49999" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit10000-49999"  <?php echo ($this->session->userdata('credit_card_want_credit_limit') == '10000-49999') ? 'checked' : '' ;?>  value="10000-49999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 10000- BDT 49999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit50000-99999" value="50000-99999" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit50000-99999"  <?php echo ($this->session->userdata('credit_card_want_credit_limit') == '50000-99999') ? 'checked' : '' ;?>  value="50000-99999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 50000- BDT 99999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit100000-199999" value="100000-199999" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit100000-199999"  <?php echo ($this->session->userdata('credit_card_want_credit_limit') == '100000-199999') ? 'checked' : '' ;?>  value="100000-199999" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 100000- BDT 199999
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit200000-500000" value="200000-500000" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit200000-500000"  <?php echo ($this->session->userdata('credit_card_want_credit_limit') == '200000-500000') ? 'checked' : '' ;?>  value="200000-500000" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 200000- BDT 500000
                             </label><br/>
                             <label class="material_radio_group">
-                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit500001-2500000" value="500001-2500000" class="material_radiobox"/>
+                                <input type="radio" name="wantCreditLimit" id="wantCreditLimit500001-2500000"  <?php echo ($this->session->userdata('credit_card_want_credit_limit') == '500001-2500000') ? 'checked' : '' ;?>  value="500001-2500000" class="material_radiobox"/>
                                 <span class="material_check_radio"></span>
                                 BDT 500000+
                             </label>
@@ -287,7 +288,7 @@
                             foreach($credit_card_type->result() as $row){
                                 ?>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="creditCardType" id="looking<?php echo $row->id; ?>" value="<?php echo $row->id; ?>" class="material_radiobox"/>
+                                    <input type="radio" name="creditCardType" id="creditCardType<?php echo $row->id; ?>"  <?php echo ($this->session->userdata('credit_card_type') == $row->id) ? 'checked' : '' ;?>  value="<?php echo $row->id; ?>" class="material_radiobox"/>
                                     <span class="material_check_radio"></span>
                                     <?php echo $row->cc_card_type; ?>
                                 </label><br/>
@@ -300,7 +301,7 @@
                         <p><a id="displayMoreFilter" href="javascript:toggle2();"><?php echo ($this->session->userdata("credit_card_feature_benefits") || $this->session->userdata("credit_card_type")) ? 'Fewer Filters ' :'More Filter' ?> <i class="fa fa-sort-desc fa-lg"></i></a></p>
                     </div>
                     <br/>
-                    <div id="moreFilterText" <?php echo ($this->session->userdata("credit_card_features_benefits") || $this->session->userdata("credit_card_type")) ? 'style="display: block"' :'style="display: none"' ?>>
+                    <div id="moreFilterText" <?php echo ($this->session->userdata("credit_card_features_benefits") || $this->session->userdata("card_type")) ? 'style="display: block"' :'style="display: none"' ?>>
                         <div class="card_query">
                             <p>Features & Benefits</p>
                             <div class="query_radio">
@@ -322,8 +323,8 @@
                                     }
                                     ?>
                                     <div class="material_checkbox_group">
-                                        <input type="checkbox" id="featuresBenefits<?php echo $row->id; ?>" name="featuresBenefits" value="<?php echo $row->id; ?>" class="material_checkbox"  <?php echo ($this->session->userdata("credit_card_feature_benefits") == $row->id) ? 'checked' :'' ?>/>
-                                        <label class="material_label_checkbox" for="featuresBenefits<?php echo $row->id; ?>"><?php echo $row->reward_name; ?></label>
+                                        <input type="checkbox" id="featuresBenefits<?php echo $row->id; ?>" name="featuresBenefits" value="<?php echo $row->id; ?>" class="material_checkbox"/>
+                                        <label class="material_label_checkbox features_benefits_checkbox" for="featuresBenefits<?php echo $row->id; ?>"><?php echo $row->reward_name; ?></label>
                                     </div>
                                     <?php
                                 }
@@ -344,7 +345,7 @@
                                     31-45 Days
                                 </label><br/>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod46" value="46" class="material_radiobox"/>
+                                    <input type="radio" name="maximumInterestFreePeriod" id="maximumInterestFreePeriod46" value="46" class="material_radiobox"  <?php echo (!empty($this->session->userdata('credit_card_maximum_interest_free_period')) && ($this->session->userdata('credit_card_maximum_interest_free_period') =='46' )) ? 'checked' : '' ?> />
                                     <span class="material_check_radio"></span>
                                     More than 45 Days
                                 </label><br/>
@@ -359,7 +360,7 @@
                                     ?>
                                     <div class="material_checkbox_group">
                                         <input type="checkbox" id="cardType<?php echo $row->id;?>" name="cardType" value="<?php echo $row->id;?>" class="material_checkbox" <?php echo ($this->session->userdata("credit_card_type") == $row->id) ? 'checked' :'' ?> />
-                                        <label class="material_label_checkbox" for="cardType<?php echo $row->id;?>"><?php echo $row->card_type_name;?></label>
+                                        <label class="material_label_checkbox card_type_checkbox" for="cardType<?php echo $row->id;?>"><?php echo $row->card_type_name;?></label>
                                     </div>
                                     <?php
                                 }
@@ -375,7 +376,7 @@
                                     ?>
                                     <div class="material_checkbox_group">
                                         <input type="checkbox" id="cardIssuer<?php echo $row->id;?>" name="cardIssuer" value="<?php echo $row->id;?>" class="material_checkbox" />
-                                        <label class="material_label_checkbox" for="cardIssuer<?php echo $row->id;?>"><?php echo $row->card_issuer_name;?></label>
+                                        <label class="material_label_checkbox card_issuer_checkbox" for="cardIssuer<?php echo $row->id;?>"><?php echo $row->card_issuer_name;?></label>
                                     </div>
                                     <?php
                                 }
@@ -591,11 +592,6 @@
 
 
         function data_caching(){
-            var credit_card_i_want = new Array();
-            $('input[name="iWant"]:checked').each(function(){
-                credit_card_i_want.push($(this).val());
-            });
-            var credit_card_i_want_list = "&credit_card_i_want="+credit_card_i_want;
             var credit_card_i_am = new Array();
             $('input[name="iAm"]:checked').each(function(){
                 credit_card_i_am.push($(this).val());
@@ -606,7 +602,7 @@
             $('input[name="myIncomeRange"]:checked').each(function(){
                 credit_card_myIncomeRange.push($(this).val());
             });
-            var credit_card_myIncomeRange_list = "&credit_card__income_range="+credit_card_myIncomeRange;
+            var credit_card_myIncomeRange_list = "&credit_card_income_range="+credit_card_myIncomeRange;
 
             var credit_card_wantCreditLimit = new Array();
             $('input[name="wantCreditLimit"]:checked').each(function(){
@@ -614,31 +610,17 @@
             });
             var credit_card_wantCreditLimit_list = "&credit_card_want_credit_limit="+credit_card_wantCreditLimit;
 
-            var credit_card_maximumInterestFreePeriod = new Array();
-            $('input[name="maximumInterestFreePeriod"]:checked').each(function(){
-                credit_card_maximumInterestFreePeriod.push($(this).val());
-            });
-            var credit_card_maximumInterestFreePeriod_list = "&credit_card_maximum_interest_free_period="+credit_card_maximumInterestFreePeriod;
-
             var credit_card_type = new Array();
-            $('input[name="cardType"]:checked').each(function(){
+            $('input[name="creditCardType"]:checked').each(function(){
                 credit_card_type.push($(this).val());
             });
             var credit_card_type_list = "&credit_card_type="+credit_card_type;
 
-
-            var credit_card_featuresBenefits = new Array();
-            $('input[name="featuresBenefits"]:checked').each(function(){
-                credit_card_featuresBenefits.push($(this).val());
+            var credit_card_maximumInterestFreePeriod = new Array();
+            $('input[name="maximumInterestFreePeriod"]:checked').each(function(){
+                credit_card_type.push($(this).val());
             });
-            var credit_card_featuresBenefits_list = "&credit_card_features_benefits="+credit_card_featuresBenefits;
-
-
-            var credit_card_cardIssuer = new Array();
-            $('input[name="cardIssuer"]:checked').each(function(){
-                credit_card_cardIssuer.push($(this).val());
-            });
-            var credit_card_cardIssuer_list = "&credit_card_card_issuer="+credit_card_cardIssuer;
+            var credit_card_maximumInterestFreePeriod_list = "&credit_card_maximum_interest_free_period="+credit_card_maximumInterestFreePeriod;
 
 
             var bank_ids = new Array();
@@ -649,12 +631,38 @@
             });
             var bank_id_list = "&credit_card_bank_ids="+bank_ids;
 
-            var credit_card_i_want_label = '&credit_card_i_want_label='+ $('input[name="iWant"]:checked').parent().text().trim();
-            var credit_card_i_am_label = '&credit_card_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
+            var credit_card_features_benefits = new Array();
+            $('input[name="featuresBenefits"]:checked').each(function(){
+                credit_card_features_benefits.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.features_benefits_checkbox').text().trim());
 
-            var main_string = credit_card_i_want_list+credit_card_i_am_list+bank_id_list+credit_card_myIncomeRange_list+credit_card_wantCreditLimit_list+credit_card_featuresBenefits_list+credit_card_maximumInterestFreePeriod_list+credit_card_type_list+credit_card_cardIssuer_list;
+            });
+            var credit_card_features_benefits_list = "&credit_card_features_benefits="+credit_card_features_benefits;
+
+            var card_type = new Array();
+            $('input[name="cardType"]:checked').each(function(){
+                card_type.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.card_type_checkbox').text().trim());
+
+            });
+            var card_type_list = "&card_type="+card_type;
+
+            var card_issuers = new Array();
+            $('input[name="cardType"]:checked').each(function(){
+                card_issuers.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.card_issuer_checkbox').text().trim());
+
+            });
+            var card_issuers_list = "&card_issuers="+card_issuers;
+
+            var credit_card_i_am_label = '&credit_card_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
+            var credit_card_income_range_label = '&credit_card_income_range_label='+$('input[name="myIncomeRange"]:checked').parent().text().trim();
+            var credit_card_want_credit_limit_label = '&credit_card_want_credit_limit_label='+$('input[name="wantCreditLimit"]:checked').parent().text().trim();
+            var credit_card_type_label = '&credit_card_type_label='+$('input[name="creditCardType"]:checked').parent().text().trim();
+            var credit_card_maximum_interest_free_period_label = '&credit_card_maximum_interest_free_period_label='+$('input[name="maximumInterestFreePeriod"]:checked').parent().text().trim();
+
+
+
+            var main_string = credit_card_i_am_list+credit_card_myIncomeRange_list+credit_card_wantCreditLimit_list+credit_card_type_list+credit_card_maximumInterestFreePeriod_list +bank_id_list + credit_card_features_benefits_list+card_type_list+card_issuers_list+credit_card_i_am_label+credit_card_income_range_label+credit_card_want_credit_limit_label+credit_card_type_label+credit_card_maximum_interest_free_period_label;
             main_string = main_string.substring(1, main_string.length);
-            var url_str = "<?php echo base_url();?>credit_card_loan/ajax_credit_card_loan_caching/" ;
+            var url_str = "<?php echo base_url();?>card/ajax_credit_card_caching/" ;
             $.ajax({
                 type: "POST",
                 url: url_str,
@@ -665,17 +673,15 @@
 
                     var option = [];
                     var obj = JSON.parse(response);
-                    if(obj.credit_card_i_want_label !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_i_want_label+'</span><a href="javascript:void(0);" class="credit_card_loan_i_want" data-credit_card_loan_i_want="'+obj.credit_card_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
-                    }
-                    if(obj.credit_card_i_am_label !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_i_am_label+'</span><a href="javascript:void(0);" class="credit_card_loan_i_am" data-credit_card_loan_i_am="'+ obj.credit_card_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    if(obj.credit_card_i_am !=''){
+                        console.log(obj.credit_card_i_am_label);
+                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_i_am_label+'</span><a href="javascript:void(0);" class="credit_card_i_am" data-credit_card_i_am="'+ obj.credit_card_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                     }
                     if(obj.credit_card_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.credit_card_bank_ids.length; i++) {
                             var bank_id = obj.credit_card_bank_ids[i].split("=");
-//                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="credit_card_loan_bank_id" data-credit_card_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            //console.log(bank_id[1]);
+                            option.push('<li><span class="filter-option"><span>'+ bank_id[1] +'</span><a href="javascript:void(0);" class="credit_card_bank_id" data-credit_card_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
                         }
 
                     }
@@ -686,9 +692,10 @@
 
 
 
-        loadData(page = null);
         data_caching();
+        loadData(page = null);
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            data_caching();
             loadData(page = null);
         } );
     });
