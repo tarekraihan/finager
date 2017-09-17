@@ -111,6 +111,7 @@ font-size: 22px;
             </div>
         </div>
     </div>
+
 </section>
 <section id="CategoryIcon">
     <div class="container">
