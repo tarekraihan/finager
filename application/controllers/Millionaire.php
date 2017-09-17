@@ -953,17 +953,34 @@ class Millionaire extends CI_Controller
         $millionaire_maturity_amount_label = $this->input->post('millionaire_maturity_amount_label');
         $millionaire_bank_ids = $this->input->post('millionaire_bank_ids');
 
+        $tenure_array = array(
+            1 => 1,
+            2 => 2,
+            3 => 3,
+            4 => 4,
+            5 => 5,
+            6 => 6,
+            7 => 7,
+            8 => 8,
+            9 => 9,
+            10 => 10,
+            11 => 17,
+            12 => 15,
+            13 => 18,
+            14 => 20,
+            17 => 11
+        );
         $millionaire_tenure_array = array();
         if(!empty($millionaire_tenure)) {
             if(strstr($millionaire_tenure,',')) {
                 $data1 = explode(',',$millionaire_tenure);
 
                 foreach( $data1 as $tenure_id ) {
-                    $millionaire_tenure_array[] =  $tenure_id;
+                    $millionaire_tenure_array[] =  $tenure_array[$tenure_id];
                 }
 
             } else {
-                $millionaire_tenure_array[] = $millionaire_tenure;
+                $millionaire_tenure_array[] = $tenure_array[$millionaire_tenure];
             }
         }
 
@@ -996,6 +1013,49 @@ class Millionaire extends CI_Controller
 
         $this->session->set_userdata($data);
         echo json_encode($data);
+    }
+
+    public function unset_millionaire_i_am_session(){
+        $session = $this->input->post('millionaire_i_am');
+        if($session){
+            $this->session->unset_userdata('millionaire_i_am');
+            $this->session->unset_userdata('millionaire_i_am_label');
+            echo 'success';
+        }
+
+    }
+    public function unset_millionaire_maturity_amount_session(){
+        $session = $this->input->post('millionaire_maturity_amount');
+        if($session){
+            $this->session->unset_userdata('millionaire_maturity_amount');
+            $this->session->unset_userdata('millionaire_maturity_amount_label');
+            echo 'success';
+        }
+
+    }
+    public function unset_millionaire_bank_id_session(){
+        $id = $this->input->post('millionaire_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
+            $bank = array_values($_SESSION['millionaire_bank_ids']);
+
+            if(($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['millionaire_bank_ids'][$key]);
+            }
+        }
+        echo 'success';
+    }
+
+    public function unset_millionaire_tenure_session(){
+        $millionaire_tenure = $this->input->post('millionaire_tenure');
+        $millionaire_tenure_session = $this->session->userdata('millionaire_tenure');
+
+        if(($key = array_search($millionaire_tenure_session, $millionaire_tenure)) !== false) {
+            unset($_SESSION['millionaire_tenure'][$key]);
+        }
+
+        echo 'success';
     }
 
 

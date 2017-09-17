@@ -327,7 +327,7 @@
                                 foreach($loan_user->result() as $row){
                                     ?>
                                     <label class="material_radio_group">
-                                        <input type="radio" name="i_am" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_i_am") == $row->id) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="i_am" id="i_am<?php echo $row->id; ?>" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_i_am") == $row->id) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         <?php echo $row->i_am; ?>
                                     </label><br/>
@@ -345,84 +345,84 @@
                             <div class="fdrTenurepadding">
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="1" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "1" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount"  id="maturity_amount1" value="1" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "1" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         100 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="2" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "2" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount"  id="maturity_amount2" value="2" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "2" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         200 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="3" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "3" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount" id="maturity_amount3" value="3" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "3" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         300 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="4" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "4" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount" id="maturity_amount4" value="4" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "4" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         400 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="5" class="material_radiobox" <?php echo ($this->session->userdata("millionaire_maturity_amount") == "5" ) ? 'checked' :'' ?> />
+                                        <input type="radio" name="maturity_amount"  id="maturity_amount5" value="5" class="material_radiobox" <?php echo ($this->session->userdata("millionaire_maturity_amount") == "5" ) ? 'checked' :'' ?> />
                                         <span class="material_check_radio"></span>
                                         500 K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="6" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "6" ) ? 'checked' :'' ?> />
+                                        <input type="radio" name="maturity_amount" id="maturity_amount6" value="6" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "6" ) ? 'checked' :'' ?> />
                                         <span class="material_check_radio"></span>
                                         1 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="7" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "7" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount"  id="maturity_amount7" value="7" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "7" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         2.5 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="8" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "8" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount" id="maturity_amount8" value="8" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "8" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         5 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="9" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "9" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount" id="maturity_amount9" value="9" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "9" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         10 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="10" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "10" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount" id="maturity_amount10" value="10" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "10" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         20 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="11" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "11" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount" id="maturity_amount11" value="11" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "11" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         30 Million
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="maturity_amount" value="12" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "12" ) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="maturity_amount" id="maturity_amount12" value="12" class="material_radiobox"  <?php echo ($this->session->userdata("millionaire_maturity_amount") == "12" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         40 Million
                                     </label>
@@ -974,7 +974,72 @@ $(document).ready(function() {
         loadData( page = null )
     });
     data_caching();
-    loadData( page = null )
+    loadData( page = null );
+
+    $(document).on('click', '.millionaire_i_am', function (){
+        var  formData = $(this).data();
+        var millionaire_i_am = formData.millionaire_i_am;
+        $('#i_am'+millionaire_i_am).prop('checked', false);
+        var data = 'millionaire_i_am='+millionaire_i_am;
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>millionaire/unset_millionaire_i_am_session",
+            data: data,
+            success: function(msg){
+                loadData( page = null );
+            }
+        });
+
+    });
+    $(document).on('click', '.millionaire_maturity_amount', function (){
+        var  formData = $(this).data();
+        var millionaire_maturity_amount = formData.millionaire_maturity_amount;
+        $('#maturity_amount'+millionaire_maturity_amount).prop('checked', false);
+        var data = 'millionaire_maturity_amount='+millionaire_maturity_amount;
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>millionaire/unset_millionaire_maturity_amount_session",
+            data: data,
+            success: function(msg){
+                loadData( page = null );
+            }
+        });
+
+    });
+
+    $(document).on('click', '.millionaire_bank_id', function (){
+        var  formData = $(this).data();
+        var millionaire_bank_id = formData.millionaire_bank_id;
+        $('#filter-bank-'+millionaire_bank_id).prop('checked', false);
+        var data = 'millionaire_bank_id='+millionaire_bank_id;
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>millionaire/unset_millionaire_bank_id_session",
+            data: data,
+            success: function(msg){
+                loadData( page = null );
+            }
+        });
+
+    });
+
+    $(document).on('click', '.millionaire_tenure', function (){
+        var  formData = $(this).data();
+        var millionaire_tenure = formData.millionaire_tenure;
+        $('#check'+millionaire_tenure).prop('checked', false);
+        var data = 'millionaire_tenure='+millionaire_tenure;
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>millionaire/unset_millionaire_tenure_session",
+            data: data,
+            success: function(msg){
+                loadData( page = null );
+            }
+        });
+
+    });
+
+
 });
 
 </script>
@@ -990,127 +1055,126 @@ $(document).ready(function() {
             alert("Sorry");
         }
 		
-            if($(".cart_anchor").hasClass("img_active")){
+        if($(".cart_anchor").hasClass("img_active")){
 
-				var cart01 = $('.cart_anchor01');
-				var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
-				if (imgtodrag01) {
-					var imgclone01 = imgtodrag01.clone()
-						.offset({
-						top: imgtodrag01.offset().top,
-						left: imgtodrag01.offset().left
-					})
-						.css({
-						'opacity': '0.7',
-							'position': 'absolute',
-							'height': '150px',
-							'width': '150px',
-							'z-index': '100'
-					})
-						.appendTo($('body'))
-						.animate({
-						'top': cart01.offset().top,
-							'left': cart01.offset().left + 10,
-							'width': 75,
-							'height': 75
-					}, 1000, 'easeInOutExpo');
-					
-					setTimeout(function () {
-						cart01.effect("shake", {
-							times: 2
-						}, 200);
-					}, 1000);
+            var cart01 = $('.cart_anchor01');
+            var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
+            if (imgtodrag01) {
+                var imgclone01 = imgtodrag01.clone()
+                    .offset({
+                    top: imgtodrag01.offset().top,
+                    left: imgtodrag01.offset().left
+                })
+                    .css({
+                    'opacity': '0.7',
+                        'position': 'absolute',
+                        'height': '150px',
+                        'width': '150px',
+                        'z-index': '100'
+                })
+                    .appendTo($('body'))
+                    .animate({
+                    'top': cart01.offset().top,
+                        'left': cart01.offset().left + 10,
+                        'width': 75,
+                        'height': 75
+                }, 1000, 'easeInOutExpo');
 
-					imgclone01.animate({
-						'width': 0,
-						'height': 0
-					}, function () {
-						$(this).detach()
-					});
-				}
-				
-				$(".cart_anchor01").addClass("img_active");
-                $(this).addClass("hidden");
-				
-				var  formData = $(this).data();
-                var millionaire_id = "millionaire_id="+formData.millionaire_id;
+                setTimeout(function () {
+                    cart01.effect("shake", {
+                        times: 2
+                    }, 200);
+                }, 1000);
 
-                setTimeout(function(){
-                    $.ajax
-                    ({
-                        type: "POST",
-                        url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                        data: millionaire_id,
-                        success: function(msg)
-                        {
-                            $(".cart_anchor01").html(msg);
-                        }
-                    });
+                imgclone01.animate({
+                    'width': 0,
+                    'height': 0
+                }, function () {
+                    $(this).detach()
                 });
-				
-
             }
-			
-            else{
-				var cart = $('.cart_anchor');
-				var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
-				if (imgtodrag) {
-					var imgclone = imgtodrag.clone()
-						.offset({
-						top: imgtodrag.offset().top,
-						left: imgtodrag.offset().left
-					})
-						.css({
-						'opacity': '0.7',
-							'position': 'absolute',
-							'height': '150px',
-							'width': '150px',
-							'z-index': '100'
-					})
-						.appendTo($('body'))
-						.animate({
-						'top': cart.offset().top + 10,
-							'left': cart.offset().left + 10,
-							'width': 75,
-							'height': 75
-					}, 1000, 'easeInOutExpo');
-					
-					setTimeout(function () {
-						cart.effect("shake", {
-							times: 2
-						}, 200);
-					}, 1000);
 
-					imgclone.animate({
-						'width': 0,
-							'height': 0
-					}, function () {
-						$(this).detach()
-					});
-				}
-				
-				var  formData = $(this).data();
-                var millionaire_id = "millionaire_id="+formData.millionaire_id;
-                //alert(home_id);
+            $(".cart_anchor01").addClass("img_active");
+            $(this).addClass("hidden");
 
-                setTimeout(function(){
-                    $.ajax
-                    ({
-                        type: "POST",
-                        url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
-                        data: millionaire_id,
-                        success: function(msg)
-                        {
-                            $(".cart_anchor").html(msg);
-                        }
-                    });
+            var  formData = $(this).data();
+            var millionaire_id = "millionaire_id="+formData.millionaire_id;
+
+            setTimeout(function(){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
+                    data: millionaire_id,
+                    success: function(msg)
+                    {
+                        $(".cart_anchor01").html(msg);
+                    }
                 });
-				
-				$(".cart_anchor").addClass("img_active");
-				$(this).addClass("hidden");
-			
+            });
+
+
+        }
+
+        else{
+            var cart = $('.cart_anchor');
+            var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
+            if (imgtodrag) {
+                var imgclone = imgtodrag.clone()
+                    .offset({
+                    top: imgtodrag.offset().top,
+                    left: imgtodrag.offset().left
+                })
+                    .css({
+                    'opacity': '0.7',
+                        'position': 'absolute',
+                        'height': '150px',
+                        'width': '150px',
+                        'z-index': '100'
+                })
+                    .appendTo($('body'))
+                    .animate({
+                    'top': cart.offset().top + 10,
+                        'left': cart.offset().left + 10,
+                        'width': 75,
+                        'height': 75
+                }, 1000, 'easeInOutExpo');
+
+                setTimeout(function () {
+                    cart.effect("shake", {
+                        times: 2
+                    }, 200);
+                }, 1000);
+
+                imgclone.animate({
+                    'width': 0,
+                        'height': 0
+                }, function () {
+                    $(this).detach()
+                });
             }
-        
+
+            var  formData = $(this).data();
+            var millionaire_id = "millionaire_id="+formData.millionaire_id;
+            //alert(home_id);
+
+            setTimeout(function(){
+                $.ajax
+                ({
+                    type: "POST",
+                    url: "<?php echo base_url();?>millionaire/ajax_compare_millionaire_image",
+                    data: millionaire_id,
+                    success: function(msg)
+                    {
+                        $(".cart_anchor").html(msg);
+                    }
+                });
+            });
+
+            $(".cart_anchor").addClass("img_active");
+            $(this).addClass("hidden");
+
+        }
 
     });
 

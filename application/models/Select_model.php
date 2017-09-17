@@ -1723,7 +1723,7 @@ class Select_Model extends CI_Model
 
     public function select_millionaire_tenure_by_amount($query){
         $sql="SELECT millionaire_tenure.id,millionaire_tenure.tenure FROM millionaire_tenure WHERE millionaire_tenure.id IN (SELECT Distinct tenure_id as tenure FROM `millionaire_info` $query )";
-        echo $sql;
+//        echo $sql;
         $query=$this->db->query($sql);
         return $query;
     }
