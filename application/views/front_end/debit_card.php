@@ -557,22 +557,22 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.choose_account !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.choose_account_label+'</span><a href="javascript:void(0);" class="choose_account" data-choose_account="'+obj.choose_account+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.choose_account_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="choose_account" data-choose_account="'+obj.choose_account+'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.looking_for !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.looking_for_label+'</span><a href="javascript:void(0);" class="looking_for" data-looking_for="'+ obj.looking_for +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.looking_for_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="looking_for" data-looking_for="'+ obj.looking_for +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.card_issuer !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.card_issuer_label+'</span><a href="javascript:void(0);" class="card_issuer" data-card_issuer="'+ obj.card_issuer +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.card_issuer_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="card_issuer" data-card_issuer="'+ obj.card_issuer +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.i_want !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.i_want_label+'</span><a href="javascript:void(0);" class="i_want" data-i_want="'+ obj.i_want +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.i_want_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="i_want" data-i_want="'+ obj.i_want +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.debit_card_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.debit_card_bank_ids.length; i++) {
                             var bank_id = obj.debit_card_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="debit_card_bank_id" data-debit_card_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="debit_card_bank_id" data-debit_card_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }

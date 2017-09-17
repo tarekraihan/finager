@@ -235,93 +235,36 @@
             <div class="col-md-8 no-padding">
                 <ul class="filter-list">
                     <li>
-                            <span class="filter-option">
-                                <span>Filter Option 1</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
+                        <div class="filter-option">
+                            <span>Filter Option 1</span>
+                            <span class="filter-icon-wrapper">
+                                <a href="javascript:void(0);" class="" data-dps_tenure="">
+                                    <i class="icon-close icons"></i>
                                 </a>
                             </span>
+                        </div>
                     </li>
 
                     <li>
-                            <span class="filter-option">
-                                <span>Filter Option 2</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
+                        <div class="filter-option">
+                            <span>Filter Option 2</span>
+                            <span class="filter-icon-wrapper">
+                                <a href="javascript:void(0);" class="" data-dps_tenure="">
+                                    <i class="icon-close icons"></i>
                                 </a>
                             </span>
+                        </div>
                     </li>
 
                     <li>
-                            <span class="filter-option">
-                                <span>Filter Option 3</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
+                        <div class="filter-option">
+                            <span>Filter Option 3</span>
+                            <span class="filter-icon-wrapper">
+                                <a href="javascript:void(0);" class="" data-dps_tenure="">
+                                    <i class="icon-close icons"></i>
                                 </a>
                             </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 4</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 5</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 6</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 7</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 8</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 9</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 10</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
+                        </div>
                     </li>
                 </ul>
             </div>

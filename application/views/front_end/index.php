@@ -102,7 +102,7 @@ font-size: 22px;
         <a href=""><img src="<?php /*echo base_url();*/?>resource/front_end/images/serch-bar.png" alt="Serch box" class="img-responsive center-block" /></a>        </div>-->        <!--<div class="feature-bg">            <div class="find-bar">                <img class="logo-lg" src="<?php /*echo base_url(); */?>resource/front_end/images/FinAlfa.svg" alt="Large Logo" /><br/><br/>                <img class="search-image" data-toggle="modal" data-target="#serchModal" src="<?php /*echo base_url(); */?>resource/front_end/images/srcbutton.png" alt="Serch box" />            </div>        </div>-->
         <div class="feature-bg">
             <div class="find-bar">
-                <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/9.png" alt="Large Logo" /><br/><br/>
+                <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/finager-promotional-log.png" alt="Finager Promotional Logo" /><br/><br/>
                 <div class="home-search-section" data-toggle="modal" data-target="#serchModal" >
                     <img class="search-image" src="<?php echo base_url(); ?>resource/front_end/images/10.png" alt="Serch box" />
                     <p class="typewrite" data-period="3000" data-type='[ "Looking for..."]'>
@@ -220,7 +220,7 @@ font-size: 22px;
 <section id="header2">
     <div class="container Aboutcredit_card">
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            <img class="img-responsive about-logo" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg">
+            <img title="Finager Logo" class="img-responsive about-logo" src="<?php echo base_url(); ?>resource/front_end/images/finager-logo.svg">
         </div>
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             <div class="header_paragrph">
