@@ -21,6 +21,9 @@
       #sidebar{
           margin-top: 0;
       }
+      .card_query{
+          border-bottom: 0px !important;
+      }
 
 </style>
 <section id="debitCard_header">
