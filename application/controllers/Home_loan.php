@@ -663,17 +663,17 @@ class Home_Loan extends CI_Controller {
 
         }
         if(!empty($home_bank_ids)) {
-            if(strstr($home_bank_ids,',')) {
-                $data8 = explode(',',$home_bank_ids);
-                $bank_id_array = array();
-                foreach( $data8 as $bank_id ) {
-                    $bank_id_array[] = "home_loan_info.bank_id = $bank_id";
-                }
-                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
-            } else {
-                $WHERE[] = '(home_loan_info.bank_id = '.$home_bank_ids.')';
-            }
-        }
+             if(strstr($home_bank_ids,',')) {
+                 $data8 = explode(',',$home_bank_ids);
+                 $bank_id_array = array();
+                 foreach( $data8 as $bank_id ) {
+                     $bank_id_array[] = "home_loan_info.bank_id = $bank_id";
+                 }
+                 $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+             } else {
+                 $WHERE[] = '(home_loan_info.bank_id = '.$home_bank_ids.')';
+             }
+         }
 
 
         $query = implode(' AND ',$WHERE);

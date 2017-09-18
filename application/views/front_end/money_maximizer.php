@@ -215,7 +215,7 @@
                                                 <div class="col-sm-6"></div>
 
                                                 <div class="col-sm-3">
-                                                    <a class="btn-filter-clear" href="javascript:void(0);">
+                                                    <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
                                                             <span>
                                                                 <i class="fa fa-refresh" aria-hidden="true"></i>
                                                             </span>
@@ -234,42 +234,11 @@
             </div>
             <div class="col-md-8 no-padding">
                 <ul class="filter-list">
-                    <li>
-                        <div class="filter-option">
-                            <span>Filter Option 1</span>
-                            <span class="filter-icon-wrapper">
-                                <a href="javascript:void(0);" class="" data-dps_tenure="">
-                                    <i class="icon-close icons"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </li>
 
-                    <li>
-                        <div class="filter-option">
-                            <span>Filter Option 2</span>
-                            <span class="filter-icon-wrapper">
-                                <a href="javascript:void(0);" class="" data-dps_tenure="">
-                                    <i class="icon-close icons"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="filter-option">
-                            <span>Filter Option 3</span>
-                            <span class="filter-icon-wrapper">
-                                <a href="javascript:void(0);" class="" data-dps_tenure="">
-                                    <i class="icon-close icons"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </li>
                 </ul>
             </div>
             <div class="col-md-1 no-padding-left">
-                <a class="btn-filter-clear" href="javascript:void(0);">
+                <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
                         <span>
                             <i class="fa fa-refresh" aria-hidden="true"></i>
                         </span>
@@ -475,7 +444,7 @@
                                 ?>
                                 <div class="fdr_tenure pull-left">
                                 <label class="material_radio_group fdr_radio">
-                                    <input type="radio" name="tenure" value="<?php echo $row->id; ?>" class="material_radiobox" <?php echo ($this->session->userdata("maximizer_benefit") == $row->id ) ? 'checked' :'' ?> />
+                                    <input type="radio" name="tenure" value="<?php echo $row->id; ?>" id="maximizer_benefit<?php echo $row->id; ?>" class="material_radiobox" <?php echo ($this->session->userdata("maximizer_benefit") == $row->id ) ? 'checked' :'' ?> />
                                     <span class="material_check_radio"></span>
                                     <?php echo $row->your_benefit; ?> Times
                                 </label><br/>
@@ -562,51 +531,6 @@
         }
     });
 
-    /*
-    $(document).on("scroll",function () {
-        var scroller_anchor = $("#sidebar").offset().top;
-        var sidebar_height = $("#sidebar").height();
-        var window_height = $(window).height();
-
-        var offsetToTop = parseInt($(this).scrollTop());
-        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#mony_max_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+45);
-        var main_height = parseInt($(".main-content-area").height());
-
-        $(".sidebar_parent").height(main_height-20);
-
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-        {
-            $('#sidebar').addClass('fixed');
-        }
-
-        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-        {
-            $('#sidebar').removeClass('fixed');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top-65){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+400){
-            $("#sidebar").addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-    });
-    */
-
     $(document).ready(function(){
 
         setTimeout(function(){
@@ -644,11 +568,15 @@
 
         var amount = $('#finalAssest').val();
 
-//        localStorage.setItem("deposit_amount", amount);
         var deposit_amount = "&deposit_amount="+amount;
 
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+        var bank_id_list = "&maximizer_bank_ids="+bank_ids;
 
-        var main_string = maximizer_tenure_list+deposit_amount;
+        var main_string = maximizer_tenure_list+deposit_amount+bank_id_list;
         main_string = main_string.substring(1, main_string.length);
         var page_count ='';
         if( page != null ){
@@ -674,13 +602,115 @@
         });
     }
 
-//    loadData( page = null );
+    function data_caching(){
+
+        var amount = $('#finalAssest').val();
+        var deposit_amount = "&maximizer_deposit_amount="+amount;
+
+        var maximizer_benefit = new Array();
+        $('input[name="tenure"]:checked').each(function(){
+            maximizer_benefit.push($(this).val());
+        });
+        var maximizer_benefit_list = "&maximizer_benefit="+maximizer_benefit;
+
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+
+        });
+        var bank_id_list = "&maximizer_bank_ids="+bank_ids;
+        var maximizer_benefit_label = '&maximizer_benefit_label='+$('input[name="tenure"]:checked').parent().text().trim();
+
+
+        var main_string = maximizer_benefit_list+bank_id_list+deposit_amount+maximizer_benefit_label;
+        main_string = main_string.substring(1, main_string.length);
+        var url_str = "<?php echo base_url();?>money_maximizer/ajax_maximizer_caching/" ;
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response){
+                var option = [];
+                var obj = JSON.parse(response);
+                console.log(obj.maximizer_benefit_label);
+                if(obj.maximizer_benefit !='') {
+                    option.push('<li><div class="filter-option"><span>' + obj.maximizer_benefit_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="maximizer_benefit" data-maximizer_benefit="' + obj.maximizer_benefit + '"><i class="icon-close icons"></i></a></span></div></li>');
+                }
+                if(obj.maximizer_bank_ids.length > 0 ){
+                    for (var i = 0; i < obj.maximizer_bank_ids.length; i++) {
+                        var bank_id = obj.maximizer_bank_ids[i].split("=");
+                        option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="maximizer_bank_id" data-maximizer_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
+                    }
+
+                }
+                $(".filter-list").html(option);
+            }
+        });
+    }
+
+
+    $(document).on('click','#clear_all',function(){
+        var data = 'session=money_maximizer';
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>money_maximizer/ajax_clear_session",
+            data:data,
+            success: function(response)
+            {
+                window.location.href = window.location.href;
+
+            }
+        });
+    });
+
+
+    $(document).on('click', '.maximizer_benefit', function (){
+        var  formData = $(this).data();
+        var maximizer_benefit = formData.maximizer_benefit;
+        $('#maximizer_benefit'+maximizer_benefit).prop('checked', false);
+        var data = 'maximizer_benefit='+maximizer_benefit;
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>money_maximizer/unset_maximizer_benefit_session",
+            data: data,
+            success: function(msg){
+                loadData( page = null );
+            }
+        });
+
+    });
+
+
+    $(document).on('click', '.maximizer_bank_id', function (){
+        var  formData = $(this).data();
+        var maximizer_bank_id = formData.maximizer_bank_id;
+        $('#filter-bank-'+maximizer_bank_id).prop('checked', false);
+        var data = 'maximizer_bank_id='+maximizer_bank_id;
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>money_maximizer/unset_maximizer_bank_id_session",
+            data: data,
+            success: function(msg){
+                loadData( page = null );
+            }
+        });
+
+    });
+
+
+    //    loadData( page = null );
     setTimeout(function(){ //Updated by Tarek on 14-05-2017
         //alert($("#finalAssest").val());
+        data_caching();
         loadData(page = null);
     }, 1000);
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+        data_caching();
         loadData( page = null );
+
     } );
 
 
@@ -688,6 +718,7 @@
 
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
             //alert($("#finalAssest").val());
+            data_caching();
             loadData(page = null);
         }, 1000);
 
@@ -695,12 +726,14 @@
 
     $("#finalAssest,#finalLiability").change(function () {
         //alert($("#finalAssest").val());
+        data_caching();
         loadData(page = null);
     });
 
     $("#alreadySaved").find(".next").click(function(){
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
             //alert($("#finalAssest").val());
+            data_caching();
             loadData(page = null);
         }, 1000);
     });
@@ -708,6 +741,7 @@
     $("#alreadySaved").find(".prev").click(function(){
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
             //alert($("#finalAssest").val());
+            data_caching();
             loadData(page = null);
         }, 1000);
     });
