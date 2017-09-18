@@ -700,27 +700,27 @@
                     var obj = JSON.parse(response);
 
                     if(obj.credit_card_i_am !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_i_am_label+'</span><a href="javascript:void(0);" class="credit_card_i_am" data-credit_card_i_am="'+ obj.credit_card_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.credit_card_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_i_am" data-credit_card_i_am="'+ obj.credit_card_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.credit_card_income_range !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_income_range_label+'</span><a href="javascript:void(0);" class="credit_card_income_range" data-credit_card_income_range="'+ obj.credit_card_income_range +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.credit_card_income_range_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_income_range" data-credit_card_income_range="'+ obj.credit_card_income_range +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.credit_card_want_credit_limit !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_want_credit_limit_label+'</span><a href="javascript:void(0);" class="credit_card_want_credit_limit" data-credit_card_want_credit_limit="'+ obj.credit_card_want_credit_limit +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.credit_card_want_credit_limit_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_want_credit_limit" data-credit_card_want_credit_limit="'+ obj.credit_card_want_credit_limit +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.credit_card_type !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_type_label+'</span><a href="javascript:void(0);" class="credit_card_type" data-credit_card_type="'+ obj.credit_card_type +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.credit_card_type_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_type" data-credit_card_type="'+ obj.credit_card_type +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.credit_card_maximum_interest_free_period !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.credit_card_maximum_interest_free_period_label+'</span><a href="javascript:void(0);" class="credit_card_maximum_interest_free_period" data-credit_card_maximum_interest_free_period="'+ obj.credit_card_maximum_interest_free_period +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.credit_card_maximum_interest_free_period_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_maximum_interest_free_period" data-credit_card_maximum_interest_free_period="'+ obj.credit_card_maximum_interest_free_period +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.card_issuers.length > 0 ){
                         for (var i = 0; i < obj.card_issuers.length; i++) {
                             var card_issuer_id = obj.card_issuers[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+card_issuer_id[1]+'</span><a href="javascript:void(0);" class="card_issuer_id" data-card_issuer_id="'+ card_issuer_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+card_issuer_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="card_issuer_id" data-card_issuer_id="'+ card_issuer_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }

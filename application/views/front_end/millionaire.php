@@ -932,11 +932,11 @@ $(document).ready(function() {
                 var option = [];
                 var obj = JSON.parse(response);
                 if(obj.millionaire_i_am !=''){
-                    option.push('<li><span class="filter-option"><span>'+obj.millionaire_i_am_label+'</span><a href="javascript:void(0);" class="millionaire_i_am" data-millionaire_i_am="'+ obj.millionaire_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    option.push('<li><div class="filter-option"><span>'+obj.millionaire_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="millionaire_i_am" data-millionaire_i_am="'+ obj.millionaire_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                 }
 
                 if(obj.millionaire_maturity_amount !=''){
-                    option.push('<li><span class="filter-option"><span>'+obj.millionaire_maturity_amount_label+'</span><a href="javascript:void(0);" class="millionaire_maturity_amount" data-millionaire_maturity_amount="'+ obj.millionaire_maturity_amount +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                    option.push('<li><div class="filter-option"><span>'+obj.millionaire_maturity_amount_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="millionaire_maturity_amount" data-millionaire_maturity_amount="'+ obj.millionaire_maturity_amount +'"><i class="icon-close icons"></i></span></a></div></li>');
                 }
 
                 if(obj.millionaire_tenure.length > 0 ){
@@ -947,7 +947,7 @@ $(document).ready(function() {
                             tenure_label = 'Years'
                         }
 
-                        option.push('<li><span class="filter-option"><span>'+tenure_id+' ' +tenure_label+'</span><a href="javascript:void(0);" class="millionaire_tenure" data-millionaire_tenure="'+ tenure_id +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+tenure_id+' ' +tenure_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="millionaire_tenure" data-millionaire_tenure="'+ tenure_id +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                 }
 
@@ -955,7 +955,7 @@ $(document).ready(function() {
                     for (var i = 0; i < obj.millionaire_bank_ids.length; i++) {
                         var bank_id = obj.millionaire_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                        option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="millionaire_bank_id" data-millionaire_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="millionaire_bank_id" data-millionaire_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                 }
                 $(".filter-list").html(option);
