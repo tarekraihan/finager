@@ -4650,3 +4650,8 @@ div#filter-carousel {
 #filter-carousel .material_label_checkbox {
     font-size: 11px;
 }
+.mash-menu .vertical-tabs-content{
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}

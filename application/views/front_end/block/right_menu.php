@@ -354,16 +354,16 @@
                 </ul>
             </li>
             <li> <a href="<?php echo base_url(); ?>en/export_import"><i></i> Export Import</a> </li>
-            <li> <a href="#"><i></i> Calculator/Apps</a> </li>
-            <li> <a href="#"><i></i> Bank Job & Guide </a> </li>
-            <li> <a href="#"><i></i> Insurance</a> </li>
-            <li> <a href="#"><i></i> Maps</a> </li>
-            <li> <a href="#"><i></i> Gold Rate </a> </li>
-            <li> <a href="#"><i></i> Money Rate</a> </li>
-            <li> <a href="#"><i></i> Tax Guide</a> </li>
-            <li> <a href="#"><i></i> Blog </a> </li>
-            <li> <a href="#"><i></i> Events</a> </li>
-            <li> <a href="#"><i></i> Forum</a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Calculator/Apps</a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Bank Job & Guide </a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Insurance</a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Maps</a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Gold Rate </a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Money Rate</a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Tax Guide</a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Blog </a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Events</a> </li>
+            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Forum</a> </li>
         </ul>
     </nav>
     <!-- /#sidebar-wrapper -->
