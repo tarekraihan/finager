@@ -663,17 +663,17 @@ class Home_Loan extends CI_Controller {
 
         }
         if(!empty($home_bank_ids)) {
-             if(strstr($home_bank_ids,',')) {
-                 $data8 = explode(',',$home_bank_ids);
-                 $bank_id_array = array();
-                 foreach( $data8 as $bank_id ) {
-                     $bank_id_array[] = "home_loan_info.bank_id = $bank_id";
-                 }
-                 $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
-             } else {
-                 $WHERE[] = '(home_loan_info.bank_id = '.$home_bank_ids.')';
-             }
-         }
+            if(strstr($home_bank_ids,',')) {
+                $data8 = explode(',',$home_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "home_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(home_loan_info.bank_id = '.$home_bank_ids.')';
+            }
+        }
 
 
         $query = implode(' AND ',$WHERE);
@@ -1024,12 +1024,14 @@ class Home_Loan extends CI_Controller {
     public function unset_home_loan_bank_id_session(){
         $id = $this->input->post('home_loan_bank_id');
         $row = $this->Select_model->Select_bank_info_by_id($id);
-        if($row) {
-            $session = $row['id'] . '=' . $row['bank_name'];
+        if($row){
+            $session = $row['id'].'='.$row['bank_name'];
             $bank = array_values($_SESSION['home_bank_ids']);
-            if (($key = array_search($session, $bank)) !== false) {
+
+            if(($key = array_search($session, $bank)) !== false) {
                 unset($_SESSION['home_bank_ids'][$key]);
             }
+            pr($_SESSION);
         }
     }
 
