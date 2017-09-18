@@ -1604,7 +1604,6 @@ class Select_Model extends CI_Model
             $query=$this->db->query($sql);
             return $query->row_array();
         }
-
     }
 
     function Select_bank_info_by_id($id){
@@ -1613,7 +1612,29 @@ class Select_Model extends CI_Model
             $query=$this->db->query($sql);
             return $query->row_array();
         }
+    }
 
+    function Select_card_features_by_id($id){
+        if(!empty($id)){
+            $sql="SELECT * FROM `card_reward` WHERE `id` = $id";
+            $query=$this->db->query($sql);
+            return $query->row_array();
+        }
+    }
+    function Select_card_card_type_by_id($id){
+        if(!empty($id)){
+            $sql="SELECT * FROM `card_card_type` WHERE `id`  = $id";
+            $query=$this->db->query($sql);
+            return $query->row_array();
+        }
+    }
+
+    function Select_card_card_issuer_by_id($id){
+        if(!empty($id)){
+            $sql="SELECT * FROM `card_card_issuer` WHERE `id` =  = $id";
+            $query=$this->db->query($sql);
+            return $query->row_array();
+        }
     }
 
     function Select_range($table_name, $filed_name,$start,$limit){

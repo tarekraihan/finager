@@ -17,13 +17,13 @@
 			<div class="card_bank">
 				<div class="All_cradit_card">
                     <div class="col-md-3 col-sm-3 nopadding">
-						<a  class="land_modal feature" data-credit_card_feature_benefits ="17"><div class="All_card">
+						<a  class="land_modal feature" data-credit_card_feature_benefits ="17=Rewards Program"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/reaward.png" alt="reaward"/>
 							<p>Rewards Program</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal feature" data-credit_card_feature_benefits ="23">
+						<a class="land_modal feature" data-credit_card_feature_benefits ="23=Waiver on Annual Fee">
 							<div class="All_card1">
 								<img src="<?php echo base_url();?>resource/front_end/images/cash_back.png" alt="cash_back"/>
 								<p>Waiver on Annual Fee</p>
@@ -31,37 +31,37 @@
 						</a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal feature"  data-credit_card_feature_benefits ="18"><div class="All_card2">
+						<a class="land_modal feature"  data-credit_card_feature_benefits ="18=Installment Payment for Purchase"><div class="All_card2">
 							<img src="<?php echo base_url();?>resource/front_end/images/Installment-Payment-For-Purchase.png" alt="card"/>
 							<p>Installment Payment for Purchase</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal feature"  data-credit_card_feature_benefits ="19"  ><div class="All_card3">
+						<a class="land_modal feature"  data-credit_card_feature_benefits ="19=Airport Facility"  ><div class="All_card3">
 							<img src="<?php echo base_url();?>resource/front_end/images/travel.png" alt="travel"/>
 							<p>Airport Facility </p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal feature"  data-credit_card_feature_benefits ="20"><div class="All_card4">
+						<a class="land_modal feature"  data-credit_card_feature_benefits ="20=Fund Transfer Facility"><div class="All_card4">
 							<img src="<?php echo base_url();?>resource/front_end/images/zero.png" alt="zero"/>
 							<p>Fund Transfer Facility</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal credit_card_type" data-credit_card_type="7" ><div class="All_card5">
+						<a class="land_modal credit_card_type" data-credit_card_type="7=MaxX" ><div class="All_card5">
 							<img src="<?php echo base_url();?>resource/front_end/images/MX-Card.png" alt="student"/>
 							<p>MaxX Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal credit_card_type" data-credit_card_type="3" data-toggle="modal"><div class="All_card5">
+						<a class="land_modal credit_card_type" data-credit_card_type="3=Signature" data-toggle="modal"><div class="All_card5">
 							<img src="<?php echo base_url();?>resource/front_end/images/Signature-Card.png" alt="business"/>
 							<p>Signature Card</p>
 						</div></a>
 					</div>
                     <div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal feature"  data-credit_card_feature_benefits ="22" >
+						<a class="land_modal feature"  data-credit_card_feature_benefits ="22=Low Interest Rate" >
 							<div class="All_card7">
 								<img src="<?php echo base_url();?>resource/front_end/images/low_interest.png" alt="low_interest"/>
 								<p>Low Interest Rate</p>
@@ -197,7 +197,7 @@
 			$('.feature').on('click',function(){
 				var  formData = $(this).data();
 				var credit_card_feature_benefits = formData.credit_card_feature_benefits;
-				var data = 'credit_card_feature_benefits='+credit_card_feature_benefits;
+				var data = 'credit_card_features_benefits='+credit_card_feature_benefits;
 				quick_link(data);
 
 			});
@@ -205,7 +205,7 @@
 			$('.credit_card_type').on('click',function(){
 				var  formData = $(this).data();
 				var credit_card_type = formData.credit_card_type;
-				var data = 'credit_card_type='+credit_card_type;
+				var data = 'card_type='+credit_card_type;
 				quick_link(data);
 
 			});
