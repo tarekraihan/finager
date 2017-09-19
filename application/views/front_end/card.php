@@ -553,7 +553,7 @@
             loadData(cur_page);
         });
 
-        function loadData( page = null ){
+               function loadData( page = null ){
             var card_user = new Array();
             $('input[name="iAm"]:checked').each(function(){
                 card_user.push($(this).val());
@@ -616,8 +616,79 @@
                 url: url_str,
                 data: main_string,
                 cache: false,
+                beforeSend: function() {
+                       overlay(true,true);
+                   },
                 success: function(msg) {
+                    count_selected_row();
                     $("#SearchCard").html(msg);
+                    overlay(false);
+                }
+            });
+        }
+
+        function count_selected_row(){
+            var card_user = new Array();
+            $('input[name="iAm"]:checked').each(function(){
+                card_user.push($(this).val());
+            });
+            var card_user_list = "&card_user="+card_user;
+            var income_range = new Array();
+            $('input[name="myIncomeRange"]:checked').each(function(){
+                income_range.push($(this).val());
+            });
+            var income_range_list = "&income_range="+income_range;
+            var credit_limit = new Array();
+            $('input[name="wantCreditLimit"]:checked').each(function(){
+                credit_limit.push($(this).val());
+            });
+            var credit_limit_list = "&credit_limit="+credit_limit;
+            var credit_card_type = new Array();
+            $('input[name="creditCardType"]:checked').each(function(){
+                credit_card_type.push($(this).val());
+            });
+            var credit_card_type_list = "&credit_card_type="+credit_card_type;
+            var feature_benefits = new Array();
+            $('input[name="featuresBenefits"]:checked').each(function(){
+                feature_benefits.push($(this).val());
+            });
+            var feature_benefits_list = "&feature_benefits="+feature_benefits;
+            var max_interest_free_period = new Array();
+            $('input[name="maximumInterestFreePeriod"]:checked').each(function(){
+                max_interest_free_period.push($(this).val());
+            });
+            var max_interest_free_period_list = "&max_interest_free_period="+max_interest_free_period;
+
+            var card_type = new Array();
+            $('input[name="cardType"]:checked').each(function(){
+                card_type.push($(this).val());
+            });
+
+            var card_type_list = "&card_type="+card_type;
+            var card_issuer = new Array();
+            $('input[name="cardIssuer"]:checked').each(function(){
+                card_issuer.push($(this).val());
+            });
+            var card_issuer_list = "&card_issuer="+card_issuer;
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&credit_card_bank_ids="+bank_ids;
+            var main_string = card_user_list+income_range_list+credit_limit_list+credit_card_type_list+feature_benefits_list+max_interest_free_period_list+card_type_list+card_issuer_list+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+
+            var url_str = "<?php echo base_url();?>card/ajax_count_selected_row/";
+
+            $.ajax
+            ({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response) {
+                    $(".bank-small-filter").html(response);
                 }
             });
         }

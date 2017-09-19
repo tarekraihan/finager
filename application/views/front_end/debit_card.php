@@ -499,8 +499,59 @@
                     overlay(true,true);
                 },
                 success: function(msg){
+                    count_selected_row();
                     $("#SearchDebitCard").html(msg);
                     overlay( false );
+                }
+            });
+        }
+
+
+        function count_selected_row(){
+
+            var choose_account = new Array();
+            $('input[name="choose_account"]:checked').each(function(){
+                choose_account.push($(this).val());
+            });
+            var choose_account_list = "&choose_account="+choose_account;
+            var looking_for = new Array();
+            $('input[name="looking_for"]:checked').each(function(){
+                looking_for.push($(this).val());
+            });
+
+            var looking_for_list = "&looking_for="+looking_for;
+            var card_issuer = new Array();
+            $('input[name="card_issuer"]:checked').each(function(){
+                card_issuer.push($(this).val());
+            });
+            var card_issuer_list = "&card_issuer="+card_issuer;
+            var i_want = new Array();
+            $('input[name="i_want"]:checked').each(function(){
+                i_want.push($(this).val());
+            });
+            var i_want_list = "&i_want=" + i_want;
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&debit_card_bank_ids="+bank_ids;
+
+            var debit_card_choose_account = '&debit_card_choose_account='+ $('input[name="choose_account"]:checked').parent().text().trim();
+            var debit_card_looking_for = '&debit_card_looking_for='+$('input[name="looking_for"]:checked').parent().text().trim();
+            var debit_card_card_issuer = '&debit_card_card_issuer='+$('input[name="card_issuer"]:checked').parent().text().trim();
+            var debit_card_i_want = '&debit_card_i_want='+$('input[name="i_want"]:checked').parent().text().trim();
+
+            var main_string = choose_account_list + looking_for_list + card_issuer_list + i_want_list + debit_card_choose_account + debit_card_looking_for + debit_card_card_issuer + debit_card_i_want + bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>debit_card/ajax_count_selected_row/";
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response){
+                    $(".bank-small-filter").html(response);
                 }
             });
         }

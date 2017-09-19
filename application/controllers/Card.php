@@ -1562,6 +1562,124 @@ class Card extends CI_Controller
         echo $credit_card;
     }
 
+    public function ajax_count_selected_row(){
+        $card_user = (!empty($this->input->post('card_user'))) ? $this->input->post('card_user') : '';
+        $income_range = (!empty($this->input->post('income_range'))) ? $this->input->post('income_range') : '';
+        $credit_limit = (!empty($this->input->post('credit_limit'))) ? $this->input->post('credit_limit') : '';
+        $feature_benefits = (!empty($this->input->post('feature_benefits'))) ? $this->input->post('feature_benefits') : '';
+        $credit_card_type = (!empty($this->input->post('credit_card_type'))) ? $this->input->post('credit_card_type') : '';
+        $max_interest_free_period = (!empty($this->input->post('max_interest_free_period'))) ? $this->input->post('max_interest_free_period') : '';
+        $card_type = (!empty($this->input->post('card_type'))) ? $this->input->post('card_type') : '';
+        $card_issuer = (!empty($this->input->post('card_issuer'))) ? $this->input->post('card_issuer') : '';
+        $credit_card_bank_ids = (!empty( $this->input->post('credit_card_bank_ids'))) ? $this->input->post('credit_card_bank_ids') : '';
+
+        $WHERE = array(); $query = '';
+        if(!empty($card_user)) {
+            if(strstr($card_user,',')) {
+                $data1 = explode(',',$card_user);
+                $card_user_array = array();
+                foreach($data1 as $c_user) {
+                    $card_user_array[] = "card_info_card_user.card_user_id = $c_user";
+                }
+                $WHERE[] = '('.implode(' OR ',$card_user_array).')';
+            } else {
+                $WHERE[] = '(card_info_card_user.card_user_id = '.$card_user.')';
+            }
+        }
+        if(!empty($income_range)) {
+            $data2 = explode('-',$income_range);
+            if($card_user == '4'){ // check business person or salaried person
+                $WHERE[] = "(card_card_informations.income_range_min_business >= $data2[0] AND card_card_informations.income_range_max_business <= $data2[1])";
+            }else{
+                $WHERE[] = "(card_card_informations.income_range_min_salaried >= $data2[0] AND card_card_informations.income_range_max_salaried <= $data2[1])";
+            }
+        }
+        if(!empty($credit_limit)) {
+            $data3 = explode('-',$credit_limit);
+            if($card_user == '4'){ //check business person or salaried person
+                $WHERE[] = "(card_card_informations.credit_limit_min_business >= $data3[0] AND card_card_informations.credit_limit_max_business <= $data3[1])";
+            }else{
+                $WHERE[] = "(card_card_informations.credit_limit_min_salaried >= $data3[0] AND card_card_informations.credit_limit_max_salaried <= $data3[1])";
+            }
+        }
+
+        if(!empty($feature_benefits)) {
+            if(strstr($feature_benefits,',')) {
+                $data4 = explode(',',$feature_benefits);
+                $feature_benefits_array = array();
+                foreach($data4 as $c_benefits) {
+                    $feature_benefits_array[] = "card_info_card_reward.card_reward_id = $c_benefits";
+                }
+                $WHERE[] = '('.implode(' OR ',$feature_benefits_array).')';
+            } else {
+                $WHERE[] = '(card_info_card_reward.card_reward_id = '.$feature_benefits.')';
+            }
+        }
+
+        if(!empty($credit_card_type)) {
+            $WHERE[] = '(card_card_informations.cc_type_id = '.$credit_card_type.')';
+        }
+        if(!empty($max_interest_free_period)) {
+            if($max_interest_free_period == '46'){
+                $WHERE[] = "(card_card_informations.interest_free_pefiod_max < 45)";
+            }else{
+                $data5 = explode('-',$max_interest_free_period);
+                $WHERE[] = "(card_card_informations.interest_free_period_min >= $data5[0] OR card_card_informations.interest_free_pefiod_max <= $data5[1])";
+            }
+
+        }
+        if(!empty($card_type)) {
+            if(strstr($card_type,',')) {
+                $data6 = explode(',',$card_type);
+                $card_type_array = array();
+                foreach($data6 as $c_type) {
+                    $card_type_array[] = "card_card_informations.card_type_id = $c_type";
+                }
+                $WHERE[] = '('.implode(' OR ',$card_type_array).')';
+            } else {
+                $WHERE[] = '(card_card_informations.card_type_id = '.$card_type.')';
+            }
+        }
+        if(!empty($card_issuer)) {
+            if(strstr($card_issuer,',')) {
+                $data7 = explode(',',$card_issuer);
+                $card_issuer_array = array();
+                foreach($data7 as $c_issuer) {
+                    $card_issuer_array[] = "card_card_informations.cc_issuer_id = $c_issuer";
+                }
+                $WHERE[] = '('.implode(' OR ',$card_issuer_array).')';
+            } else {
+                $WHERE[] = '(card_card_informations.cc_issuer_id = '.$card_issuer.')';
+            }
+        }
+
+
+        if(!empty($credit_card_bank_ids)) {
+            if(strstr($credit_card_bank_ids,',')) {
+                $data8 = explode(',',$credit_card_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "card_card_informations.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(card_card_informations.bank_id = '.$credit_card_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+        $res = $this->Front_end_select_model->select_card_info($query);
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'card_card_informations';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+
+    }
+
     public function select_credit_card_user(){
         $sql= "SELECT id , card_user_id From card_card_informations";
         $query=$this->db->query($sql);

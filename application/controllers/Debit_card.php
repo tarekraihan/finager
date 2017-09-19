@@ -741,6 +741,93 @@ class Debit_card extends CI_Controller
         echo $debit_card;
     }
 
+
+    public function ajax_count_selected_row(){
+        $choose_account = $this->input->post('choose_account');
+        $looking_for = $this->input->post('looking_for');
+        $card_issuer = $this->input->post('card_issuer');
+        $i_want = $this->input->post('i_want');
+        $debit_card_bank_ids = $this->input->post('debit_card_bank_ids');
+
+        $WHERE = array(); $query = '';
+        if(!empty($choose_account)) {
+            if(strstr($choose_account,',')) {
+                $data1 = explode(',',$choose_account);
+                $choose_account_array = array();
+                foreach($data1 as $c_user) {
+                    $choose_account_array[] = "debit_card_info.choose_account_id = $c_user";
+                }
+                $WHERE[] = '('.implode(' OR ',$choose_account_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.choose_account_id = '.$choose_account.')';
+            }
+        }
+
+        if(!empty($looking_for)) {
+            if(strstr($looking_for,',')) {
+                $data2 = explode(',',$looking_for);
+                $looking_for_array = array();
+                foreach($data2 as $c_type) {
+                    $looking_for_array[] = "debit_card_info.looking_for_id = $c_type";
+                }
+                $WHERE[] = '('.implode(' OR ',$looking_for_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.looking_for_id = '.$looking_for.')';
+            }
+        }
+
+        if(!empty($card_issuer)) {
+            if(strstr($card_issuer,',')) {
+                $data3 = explode(',',$card_issuer);
+                $card_issuer_array = array();
+                foreach($data3 as $c_type) {
+                    $card_issuer_array[] = "debit_card_info.card_issuer_id = $c_type";
+                }
+                $WHERE[] = '('.implode(' OR ',$card_issuer_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.card_issuer_id = '.$card_issuer.')';
+            }
+        }
+
+        if(!empty($i_want)) {
+            if(strstr($i_want,',')) {
+                $data4 = explode(',',$i_want);
+                $i_want_array = array();
+                foreach($data4 as $c_type) {
+                    $i_want_array[] = "debit_card_info.i_want_id = $c_type";
+                }
+                $WHERE[] = '('.implode(' OR ',$i_want_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.i_want_id = '.$i_want.')';
+            }
+        }
+
+        if(!empty($debit_card_bank_ids)) {
+            if(strstr($debit_card_bank_ids,',')) {
+                $data8 = explode(',',$debit_card_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "debit_card_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.bank_id = '.$debit_card_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_debit_card_info($query);
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'debit_card_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
     public function ajax_compare_card_image(){
         $id = $this->input->post('card_id');
         $model_name = "debit_card_info";
