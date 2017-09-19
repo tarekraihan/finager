@@ -676,6 +676,69 @@
         });
     }
 
+
+    function data_caching(){
+        var monthly_tenure = new Array();
+        $('input[name="tenure"]:checked').each(function(){
+            monthly_tenure.push($(this).val());
+        });
+
+        var monthly_tenure_list = "&monthly_benefit_tenure="+monthly_tenure;
+        var amount = $('#finalAssest').val();
+        var deposit_amount = "&monthly_benefit_deposit_amount="+amount;
+
+        var bank_ids = new Array();
+
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+        });
+        var bank_id_list = "&monthly_benefit_bank_ids="+bank_ids;
+
+        var monthly_benefit_tenure_label = '&monthly_benefit_tenure_label='+ $('input[name="choose_account"]:checked').parent().text().trim();
+        var looking_for_label = '&looking_for_label='+$('input[name="looking_for"]:checked').parent().text().trim();
+        var card_issuer_label = '&card_issuer_label='+$('input[name="card_issuer"]:checked').parent().text().trim();
+        var i_want_label = '&i_want_label='+$('input[name="i_want"]:checked').parent().text().trim();
+
+        var main_string = choose_account_list+looking_for_list+bank_id_list+card_issuer_list+i_want_list+choose_account_label+looking_for_label+card_issuer_label+i_want_label;
+        main_string = main_string.substring(1, main_string.length);
+        var url_str = "<?php echo base_url();?>debit_card/ajax_debit_card_caching/" ;
+
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response){
+
+
+                var option = [];
+                var obj = JSON.parse(response);
+                if(obj.choose_account !=''){
+                    option.push('<li><div class="filter-option"><span>'+obj.choose_account_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="choose_account" data-choose_account="'+obj.choose_account+'"><i class="icon-close icons"></i></span></a></div></li>');
+                }
+                if(obj.looking_for !=''){
+                    option.push('<li><div class="filter-option"><span>'+obj.looking_for_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="looking_for" data-looking_for="'+ obj.looking_for +'"><i class="icon-close icons"></i></span></a></div></li>');
+                }
+                if(obj.card_issuer !=''){
+                    option.push('<li><div class="filter-option"><span>'+obj.card_issuer_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="card_issuer" data-card_issuer="'+ obj.card_issuer +'"><i class="icon-close icons"></i></span></a></div></li>');
+                }
+                if(obj.i_want !=''){
+                    option.push('<li><div class="filter-option"><span>'+obj.i_want_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="i_want" data-i_want="'+ obj.i_want +'"><i class="icon-close icons"></i></span></a></div></li>');
+                }
+                if(obj.debit_card_bank_ids.length > 0 ){
+                    for (var i = 0; i < obj.debit_card_bank_ids.length; i++) {
+                        var bank_id = obj.debit_card_bank_ids[i].split("=");
+//                            console.log(bank_id[0]);
+                        option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="debit_card_bank_id" data-debit_card_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
+                    }
+
+                }
+                $(".filter-list").html(option);
+            }
+        });
+    }
+
+
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
         loadData( page = null );
     } );

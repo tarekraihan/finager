@@ -446,7 +446,7 @@ class Monthly_benefit extends CI_Controller {
         $monthly_benefit_deposit_amount = (!empty($this->input->post('monthly_benefit_deposit_amount'))) ? $this->input->post('monthly_benefit_deposit_amount') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('monthly_benefit_tenure', 'monthly_benefit_deposit_amount');
+        $array_items = array('monthly_benefit_tenure','monthly_benefit_tenure_label', 'monthly_benefit_deposit_amount');
         $this->session->unset_userdata($array_items);
         if( $monthly_benefit_tenure != ''){
             $newdata['monthly_benefit_tenure'] = $monthly_benefit_tenure;
