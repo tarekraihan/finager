@@ -239,11 +239,26 @@ class Current_account extends CI_Controller
     public function ajax_get_current_account(){
 
         $current_account_i_am = $this->input->post('current_account_i_am');
+        $current_account_bank_ids = $this->input->post('current_account_bank_ids');
 
         $WHERE = array(); $query = '';
         if(!empty($current_account_i_am)) {
             $WHERE[] = '( current_account_info.i_am_id = '.$current_account_i_am.')';
         }
+
+            if(!empty($current_account_bank_ids)) {
+            if(strstr($current_account_bank_ids,',')) {
+                $data8 = explode(',',$current_account_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "current_account_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(current_account_info.bank_id = '.$current_account_bank_ids.')';
+            }
+        }
+
         $query = implode(' AND ',$WHERE);
         if(!empty($query)) {
             $query = 'WHERE '.$query;
@@ -311,7 +326,6 @@ class Current_account extends CI_Controller
                         <div class="col-sm-2 col-xs-2">
                             <a href="'.base_url().'en/current_account_details/'.$row->id.'"><img title="click here to details" class="img-responsive current_account_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
-                            <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                             </p>
@@ -323,7 +337,7 @@ class Current_account extends CI_Controller
                                 <div class="col-sm-3 col-xs-3 no-padding">
                                     <div class="caccount_text">
                                         <h5>Opening Balance</h5>
-                                        <p>'.$row->i_am.' : BDT.'.$row->opening_balance.'</p>
+                                        <p>'.$row->i_am.' : BDT '.number_format($row->opening_balance).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2 no-padding">
@@ -458,6 +472,46 @@ class Current_account extends CI_Controller
         echo $account;
     }
 
+    public function ajax_count_selected_row(){
+
+        $current_account_i_am = $this->input->post('current_account_i_am');
+        $current_account_bank_ids = $this->input->post('current_account_bank_ids');
+
+        $WHERE = array(); $query = '';
+        if(!empty($current_account_i_am)) {
+            $WHERE[] = '( current_account_info.i_am_id = '.$current_account_i_am.')';
+        }
+
+            if(!empty($current_account_bank_ids)) {
+            if(strstr($current_account_bank_ids,',')) {
+                $data8 = explode(',',$current_account_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "current_account_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(current_account_info.bank_id = '.$current_account_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+//        print_r($query);die;
+
+//        echo $query;
+        $res = $this->Front_end_select_model->select_current_account_info($query);
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'current_account_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
     public function ajax_compare_current_account_image(){
         $id = $this->input->post('account_id');
         $model_name = "current_account_info";//table name
@@ -486,6 +540,73 @@ class Current_account extends CI_Controller
         echo 'success';
     }
 
+
+    public function ajax_current_account_caching(){
+
+        $current_account_i_am = $this->input->post('current_account_i_am');
+        $current_account_bank_ids = $this->input->post('current_account_bank_ids');
+        $current_account_i_am_label = $this->input->post('current_account_i_am_label');
+
+        $bank_id_array = array();
+        if(!empty($current_account_bank_ids)) {
+            if(strstr($current_account_bank_ids,',')) {
+                $data3 = explode(',',$current_account_bank_ids);
+
+                foreach( $data3 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $current_account_bank_ids;
+            }
+        }
+
+        $array_items = array('current_account_i_am', 'current_account_i_am_label', 'current_account_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'current_account_i_am'  => $current_account_i_am,
+            'current_account_i_am_label' => $current_account_i_am_label,
+            'current_account_bank_ids' => $bank_id_array
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='current_account'){
+            $array_items = array('current_account_i_am', 'current_account_i_am_label', 'current_account_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+    }
+
+    public function unset_current_account_i_am_session(){
+        $session = $this->input->post('current_account_i_am');
+        if($session){
+            $this->session->unset_userdata('current_account_i_am');
+            $this->session->unset_userdata('current_account_i_am_label');
+            echo 'success';
+        }
+
+    }
+
+
+    public function unset_current_account_bank_id_session(){
+        $id = $this->input->post('current_account_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row) {
+            $session = $row['id'] . '=' . $row['bank_name'];
+            $bank = array_values($_SESSION['current_account_bank_ids']);
+            if (($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['current_account_bank_ids'][$key]);
+            }
+        }
+    }
 
 
 }
