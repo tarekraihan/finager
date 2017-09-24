@@ -890,6 +890,70 @@ class Millionaire extends CI_Controller
         echo $million;
     }
 
+    public function ajax_count_selected_row(){
+
+        $millionaire_tenure = $this->input->post('millionaire_tenure');
+        $millionaire_user = $this->input->post('millionaire_user');
+        $maturity_amount = $this->input->post('maturity_amount');
+        $millionaire_bank_ids = $this->input->post('millionaire_bank_ids');
+
+
+
+        $WHERE = array(); $query = '';
+        if(!empty($millionaire_tenure)) {
+            $WHERE[] = '( millionaire_info.tenure_id in ('.$millionaire_tenure.'))';
+        }
+
+
+        if(!empty($millionaire_user)) {
+            $WHERE[] = '(millionaire_info.i_am_id = '.$millionaire_user.')';
+        }
+
+        if(!empty($maturity_amount)) {
+            $WHERE[] = '(millionaire_info.maturity_amount_id = '.$maturity_amount.')';
+        }
+        if(!empty($millionaire_bank_ids)) {
+            if(strstr($millionaire_bank_ids,',')) {
+                $data8 = explode(',',$millionaire_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "millionaire_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(millionaire_info.bank_id = '.$millionaire_bank_ids.')';
+            }
+        }
+/*
+        $sql[] = implode(' AND ',$WHERE);
+
+        if(!empty($millionaire_bank_ids)) {
+            if(strstr($millionaire_bank_ids,',')) {
+                $data8 = explode(',',$millionaire_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "millionaire_info.bank_id = $bank_id";
+                }
+                $sql[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $sql[] = '(millionaire_info.bank_id = '.$millionaire_bank_ids.')';
+            }
+        }*/
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+
+        $res = $this->Front_end_select_model->select_millionaire_info($query);
+        $selected_row = $res->num_rows();
+        $this->Common_model->table_name = 'millionaire_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
     public function ajax_compare_millionaire_image(){
         $id = $this->input->post('millionaire_id');
         $result = $this->Front_end_select_model->select_millionaire_image($id);

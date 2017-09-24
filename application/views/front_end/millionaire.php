@@ -743,7 +743,7 @@
 
             var  formData = $(this).data();
             var millionaire_id = formData.millionaire_id;
-            console.log(millionaire_id);
+//            console.log(millionaire_id);
 
             $("#moreInfo"+millionaire_id).toggleClass("in");
             $('#availableOfferSchedule'+millionaire_id).removeClass("in");
@@ -754,7 +754,7 @@
 
             var  formData = $(this).data();
             var offer = formData.offer;
-            console.log(offer);
+//            console.log(offer);
             $('#availableOfferSchedule'+offer).html('<iframe  src="<?php echo base_url(); ?>en/home_loan_chart"  frameborder="0"  width="100%" height="1560" scrolling="no" ></iframe>');
             $('#availableOfferSchedule'+offer).toggleClass("in");
             $('#moreInfo'+offer).removeClass("in");
@@ -879,8 +879,9 @@ $(document).ready(function() {
                 },
                 success: function(msg)
                 {
-                    overlay(false);
+                    count_selected_row();
                     $("#searchMillionaire").html(msg);
+                    overlay(false);
 
                 }
             });
@@ -963,6 +964,49 @@ $(document).ready(function() {
         });
     }
 
+    function count_selected_row(){
+
+        var millionaire_tenure = new Array();
+        $('input[name="millionaire_tenure"]:checked').each(function(){
+            millionaire_tenure.push($(this).val());
+        });
+
+        var millionaire_tenure_list = "&millionaire_tenure="+millionaire_tenure;
+
+
+        var millionaire_user = new Array();
+        $('input[name="i_am"]:checked').each(function(){
+            millionaire_user.push($(this).val());
+        });
+        var millionaire_user_list = "&millionaire_user="+millionaire_user;
+
+        var maturity_amount = new Array();
+        $('input[name="maturity_amount"]:checked').each(function(){
+            maturity_amount.push($(this).val());
+        });
+        var maturity_amount_list = "&maturity_amount="+maturity_amount;
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+        var bank_id_list = "&millionaire_bank_ids="+bank_ids;
+
+        var main_string = millionaire_tenure_list+millionaire_user_list+maturity_amount_list+bank_id_list;
+        main_string = main_string.substring(1, main_string.length);
+        var url_str = "<?php echo base_url();?>millionaire/ajax_count_selected_row/";
+
+        $.ajax
+        ({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response) {
+                $(".bank-small-filter").html(response);
+            }
+        });
+    }
 
     $("input[type='checkbox'],input[type='radio']").on( "click", function() {
         data_caching();

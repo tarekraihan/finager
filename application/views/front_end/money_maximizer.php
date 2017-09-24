@@ -595,8 +595,9 @@
             },
             success: function(msg)
             {
-                overlay(false);
+                count_selected_row();
                 $("#moneyMaximizerSearch").html(msg);
+                overlay(false);
 
             }
         });
@@ -646,6 +647,40 @@
 
                 }
                 $(".filter-list").html(option);
+            }
+        });
+    }
+
+    function count_selected_row(){
+        var maximizer_tenure = new Array();
+        $('input[name="tenure"]:checked').each(function(){
+            maximizer_tenure.push($(this).val());
+        });
+
+        var maximizer_tenure_list = "&maximizer_tenure="+maximizer_tenure;
+
+        var amount = $('#finalAssest').val();
+
+        var deposit_amount = "&deposit_amount="+amount;
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+        var bank_id_list = "&maximizer_bank_ids="+bank_ids;
+
+        var main_string = maximizer_tenure_list+deposit_amount+bank_id_list;
+        main_string = main_string.substring(1, main_string.length);
+        var url_str = "<?php echo base_url();?>money_maximizer/ajax_count_selected_row/";
+
+        $.ajax
+        ({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response) {
+                $(".bank-small-filter").html(response);
             }
         });
     }

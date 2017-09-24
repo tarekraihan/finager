@@ -510,7 +510,6 @@
         }
 
         function loadData( page = null ){
-            loading_show();
 
             var amount = $('#finalAssest').val();
             var principal_amount = "&principal_amount="+amount;
@@ -522,24 +521,27 @@
                 bank_ids.push($(this).val());
             });
             var bank_id_list = "&education_loan_bank_ids="+bank_ids;
-
+            var main_string = principal_amount+year_limit+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
             var page_count ='';
             if( page != null ){
                 page_count = page ;
             }
             var url_str = "<?php echo base_url();?>education_loan/ajax_get_education_loan/" + page_count;
-            var main_string = principal_amount+year_limit+bank_id_list;
-            main_string = main_string.substring(1, main_string.length);
+
             $.ajax({
                 type: "POST",
                 url: url_str,
                 data: main_string,
                 cache: false,
+                beforeSend: function() {
+                    overlay(true,true);
+                },
                 success: function(msg)
                 {
-                    loading_hide();
+                    count_selected_row();
                     $("#searchEducationLoan").html(msg);
-
+                    overlay(false);
                 }
             });
         }
@@ -579,6 +581,35 @@
                 }
             });
         }
+
+        function count_selected_row(){
+
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
+
+            var year = $('#finalLiability').val();
+            var year_limit = "&year_limit="+year;
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&education_loan_bank_ids="+bank_ids;
+            var main_string = principal_amount+year_limit+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>education_loan/ajax_count_selected_row/";
+
+            $.ajax
+            ({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response) {
+                    $(".bank-small-filter").html(response);
+                }
+            });
+        }
+
 
         $("input[type='checkbox']").on( "click", function() {
             loadData(page);

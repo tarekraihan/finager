@@ -844,6 +844,49 @@ class Fdr extends CI_Controller {
     }
 
 
+    public function ajax_count_selected_row(){
+
+
+        $fdr_user = $this->input->post('fdr_user');
+        $fdr_tenure = $this->input->post('fdr_tenure');
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '5000' );
+        $fdr_bank_ids = $this->input->post('fdr_bank_ids');
+
+        $WHERE = array(); $query = '';
+        if(!empty($fdr_user)) {
+            $WHERE[] = 'fdr_info.i_am_id = '.$fdr_user;
+        }
+
+        if(!empty($fdr_tenure)) {
+            $WHERE[] = 'fdr_info.tenure_id = '.$fdr_tenure;
+        }
+        if(!empty($fdr_bank_ids)) {
+            if(strstr($fdr_bank_ids,',')) {
+                $data8 = explode(',',$fdr_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "fdr_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(fdr_info.bank_id = '.$fdr_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_fdr_loan_info($query);
+        $selected_row = $res->num_rows();
+        $this->Common_model->table_name = 'fdr_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
+
     public function ajax_compare_fdr_image(){
         $id = $this->input->post('fdr_id');
         $result = $this->Front_end_select_model->select_fdr_image($id);

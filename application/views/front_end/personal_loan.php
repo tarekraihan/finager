@@ -297,9 +297,9 @@
 									<?php } ?>
 								</div>
 								<div>
-									<button class="btnPmore" data-toggle="<?php echo ($this->session->userdata('personal_i_want') > 2) ? 'collapsed' : 'collapse' ?>" data-target="#demo"><?php echo ($this->session->userdata('personal_i_want') > 2) ? 'Less' : 'More' ?></button>
+									<button class="btnPmore  <?php echo ($this->session->userdata('personal_i_want') > 2) ? 'btn-open' : '' ?>" data-toggle="<?php echo ($this->session->userdata('personal_i_want') > 2) ? 'collapsed' : '' ?>" data-target="#demo"><?php echo ($this->session->userdata('personal_i_want') > 2) ? 'Less' : 'More' ?></button>
 								</div>
-								<div id="demo" class="collapse <?php echo ($this->session->userdata('personal_i_want') != '') ? 'in' : '' ?>">
+								<div id="demo" class="collapse <?php echo ($this->session->userdata('personal_i_want') > 2) ? 'in' : '' ?>">
 									<?php
 									$this->Common_model->table_name = 'personal_loan_looking_for';
 									$this->Common_model->offset = 3;

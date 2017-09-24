@@ -799,7 +799,7 @@
                         for (var i = 0; i < obj.card_types.length; i++) {
                             var card_type_id = obj.card_types[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><div class="filter-option"><span>'+card_type_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="card_type_id" data-card_type_id="'+ card_type_id[0] +'"><i class="fa fa-times" aria-hidden="true"><i class="icon-close icons"></i></span></a></div></li>');
+                            option.push('<li><div class="filter-option"><span>'+card_type_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="card_type_id" data-card_type_id="'+ card_type_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }

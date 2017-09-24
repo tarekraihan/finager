@@ -413,6 +413,43 @@ class Money_maximizer extends CI_Controller {
     }
 
 
+    public function ajax_count_selected_row(){
+
+        $maximizer_tenure = $this->input->post('maximizer_tenure');
+        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $maximizer_bank_ids = $this->input->post('maximizer_bank_ids');
+        $WHERE = array(); $query = '';
+        if(!empty($maximizer_tenure)) {
+            $WHERE[] = '( money_maxi_info.choose_your_benefit_id = '.$maximizer_tenure.')';
+        }
+
+        if(!empty($maximizer_bank_ids)) {
+            if(strstr($maximizer_bank_ids,',')) {
+                $data8 = explode(',',$maximizer_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "money_maxi_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(money_maxi_info.bank_id = '.$maximizer_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+        $res = $this->Front_end_select_model->select_money_maximizer_info($query);
+        $selected_row = $res->num_rows();
+        $this->Common_model->table_name = 'money_maxi_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
+
     public function ajax_compare_money_maximizer_image(){
         $id = $this->input->post('maximizer_id');
         $result = $this->Front_end_select_model->select_money_maximizer_image($id);

@@ -591,9 +591,9 @@
                 },
                 success: function(msg)
                 {
-                    overlay(false);
+                    count_selected_row();
                     $("#searchFDR").html(msg);
-
+                    overlay(false);
                 }
             });
         }
@@ -657,6 +657,47 @@
                         }
                     }
                     $(".filter-list").html(option);
+                }
+            });
+        }
+
+        function count_selected_row(){
+
+            var fdr_tenure = new Array();
+            $('input[name="fdr_tenure"]:checked').each(function(){
+                fdr_tenure.push($(this).val());
+            });
+
+            var amount = $('#deposited_amount').val();
+            var principal_amount = "&principal_amount="+amount;
+
+            var fdr_tenure_list = "&fdr_tenure="+fdr_tenure;
+
+
+            var fdr_user = new Array();
+            $('input[name="i_am"]:checked').each(function(){
+                fdr_user.push($(this).val());
+            });
+            var fdr_user_list = "&fdr_user="+fdr_user;
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&fdr_bank_ids="+bank_ids;
+
+            var main_string = fdr_tenure_list+fdr_user_list+principal_amount+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+
+            var url_str = "<?php echo base_url();?>fdr/ajax_count_selected_row/";
+            $.ajax
+            ({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response) {
+                    $(".bank-small-filter").html(response);
                 }
             });
         }

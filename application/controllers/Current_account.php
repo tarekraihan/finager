@@ -498,9 +498,7 @@ class Current_account extends CI_Controller
         if(!empty($query)) {
             $query = 'WHERE '.$query;
         }
-//        print_r($query);die;
 
-//        echo $query;
         $res = $this->Front_end_select_model->select_current_account_info($query);
         $selected_row = $res->num_rows();
 

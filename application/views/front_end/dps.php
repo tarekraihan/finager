@@ -713,7 +713,7 @@
 
             var main_string = dps_tenure_list+dps_user_list+deposited_amount+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
-            console.log(main_string);
+//            console.log(main_string);
 			var page_count ='';
 			if( page != null ){
 				page_count = page ;
@@ -730,8 +730,9 @@
                 },
                 success: function(msg)
                 {
-                    overlay(false);
+					count_selected_row();
                     $("#searchDPS").html(msg);
+					overlay(false);
 
                 }
             });
@@ -793,6 +794,46 @@
             });
         }
 
+		function count_selected_row(){
+
+
+			var amount = $('#finalAssest').val();
+			var deposited_amount = "&deposited_amount="+amount;
+
+
+			var dps_tenure = new Array();
+			$('input[name="dps_tenure"]:checked').each(function(){
+				dps_tenure.push($(this).val());
+			});
+
+			var dps_tenure_list = "&dps_tenure="+dps_tenure;
+
+
+			var dps_user = new Array();
+			$('input[name="i_am"]:checked').each(function(){
+				dps_user.push($(this).val());
+			});
+			var dps_user_list = "&dps_user="+dps_user;
+			var bank_ids = new Array();
+			$('input[name="bank_id"]:checked').each(function(){
+				bank_ids.push($(this).val());
+			});
+			var bank_id_list = "&dps_bank_ids="+bank_ids;
+			var main_string = dps_tenure_list+dps_user_list+deposited_amount+bank_id_list;
+			main_string = main_string.substring(1, main_string.length);
+
+			var url_str = "<?php echo base_url();?>dps/ajax_count_selected_row/";
+			$.ajax
+			({
+				type: "POST",
+				url: url_str,
+				data: main_string,
+				cache: false,
+				success: function(response) {
+					$(".bank-small-filter").html(response);
+				}
+			});
+		}
 
         loadData( page = null );
         data_caching();

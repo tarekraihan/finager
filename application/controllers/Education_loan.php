@@ -785,6 +785,57 @@ class Education_Loan extends CI_Controller {
         echo $education;
     }
 
+    public function ajax_count_selected_row(){
+
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '50000' );
+        $education_loan_bank_ids = $this->input->post('education_loan_bank_ids');
+
+        if($principal_amount > 40000000 || $principal_amount < 50000){
+            $principal_amount = 50000;
+        }
+
+        $year_limit = floatval ( ( $this->input->post('year_limit') > 1 ) ?  $this->input->post('year_limit') : 1 );
+
+        if($year_limit > 5 || $year_limit < 1){
+            $year_limit = 1;
+        }
+        $WHERE = array(); $query = '';
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( education_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$principal_amount;
+        }
+
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( education_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$principal_amount;
+        }
+
+        if(!empty($education_loan_bank_ids)) {
+            if(strstr($education_loan_bank_ids,',')) {
+                $data8 = explode(',',$education_loan_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "education_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(education_loan_info.bank_id = '.$education_loan_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_education_loan_info( $query );
+
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'education_loan_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
 
     public function ajax_compare_education_loan_image(){
         $id = $this->input->post('loan_id');
