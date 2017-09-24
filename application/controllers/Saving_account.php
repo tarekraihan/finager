@@ -31,7 +31,7 @@ class Saving_account extends CI_Controller
             $this->form_validation->set_rules('txtInterestRate', 'Interest Rate', 'trim|required');
             $this->form_validation->set_rules('txtMinAmountInterest', 'Min Amount for Interest', 'trim|required');
             $this->form_validation->set_rules('txtInterestPaid', 'Interest Paid', 'trim|required');
-            $this->form_validation->set_rules('txtAvailableFeatures', ' Features', 'trim|required');
+            $this->form_validation->set_rules('txtAvailableFeatures', 'Features', 'trim|required');
             $this->form_validation->set_rules('txtRequirement', 'Requirement', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
@@ -89,7 +89,6 @@ class Saving_account extends CI_Controller
         $this->load->view('admin/saving_account/saving_account_list');
         $this->load->view('admin/block/footer');
     }
-
 
     public function edit_account_info($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -158,10 +157,29 @@ class Saving_account extends CI_Controller
         }
     }
 
-
     public function ajax_get_savings_account(){
 
-        $res = $this->Front_end_select_model->select_savings_account_info();
+        $saving_account_bank_ids = $this->input->post('saving_account_bank_ids');
+        $WHERE = array(); $query = '';
+
+        if(!empty($saving_account_bank_ids)) {
+            if(strstr($saving_account_bank_ids,',')) {
+                $data8 = explode(',',$saving_account_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "saving_account_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(saving_account_info.bank_id = '.$saving_account_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+        $res = $this->Front_end_select_model->select_savings_account_info($query);
 
 //-----------Pagination start-----------------
         $config['base_url'] = base_url() . "en/savings_account/";
@@ -195,7 +213,7 @@ class Saving_account extends CI_Controller
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
 
-        $savings_account =  $this->Front_end_select_model->select_savings_account_info_pagination($config["per_page"],$page);
+        $savings_account =  $this->Front_end_select_model->select_savings_account_info_pagination($query,$config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
 
         $account = '';
@@ -263,7 +281,7 @@ class Saving_account extends CI_Controller
                                     </div>
                                 </div>
                             </div>
-                            <div class="row current-account">
+                            <div class="row saving-account">
                                 <div class="col-sm-4 col-xs-4">
                                     <span class="more_info_icon"><a href="javascript:void(0)" class="add-to-compare" data-account_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
                                 </div>
@@ -361,6 +379,38 @@ class Saving_account extends CI_Controller
         echo $account;
     }
 
+    public function ajax_count_selected_row(){
+
+        $saving_account_bank_ids = $this->input->post('saving_account_bank_ids');
+        $WHERE = array(); $query = '';
+
+        if(!empty($saving_account_bank_ids)) {
+            if(strstr($saving_account_bank_ids,',')) {
+                $data8 = explode(',',$saving_account_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "saving_account_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(saving_account_info.bank_id = '.$saving_account_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+        $res = $this->Front_end_select_model->select_savings_account_info($query);
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'saving_account_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
     public function ajax_compare_saving_account_image(){
         $id = $this->input->post('account_id');
         $result = $this->Front_end_select_model->select_saving_account_image($id);
@@ -392,6 +442,55 @@ class Saving_account extends CI_Controller
         echo 'success';
     }
 
+    public function ajax_saving_account_caching(){
+        $saving_account_bank_ids = $this->input->post('saving_account_bank_ids');
+        $bank_id_array = array();
+        if(!empty($saving_account_bank_ids)) {
+            if(strstr($saving_account_bank_ids,',')) {
+                $data3 = explode(',',$saving_account_bank_ids);
+
+                foreach( $data3 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $saving_account_bank_ids;
+            }
+        }
+
+        $array_items = array('saving_account_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'saving_account_bank_ids' => $bank_id_array
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='saving_account'){
+            $array_items = array('saving_account_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+    }
+
+    public function unset_saving_account_bank_id_session(){
+        $id = $this->input->post('saving_account_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row) {
+            $session = $row['id'] . '=' . $row['bank_name'];
+            $bank = array_values($_SESSION['saving_account_bank_ids']);
+            if (($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['saving_account_bank_ids'][$key]);
+            }
+        }
+    }
 
 
 }

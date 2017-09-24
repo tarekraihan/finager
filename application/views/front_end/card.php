@@ -616,10 +616,9 @@
                 url: url_str,
                 data: main_string,
                 cache: false,
-                async: false,
-                beforeSend: function() {
-                       overlay(true,true);
-                   },
+                    beforeSend: function() {
+                        overlay(true,true);
+                    },
                 success: function(msg) {
                     count_selected_row();
                     $("#SearchCard").html(msg);

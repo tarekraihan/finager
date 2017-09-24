@@ -897,6 +897,70 @@ class Home_Loan extends CI_Controller {
         echo $home;
     }
 
+    public function ajax_count_selected_row(){
+
+        $home_i_want = $this->input->post('home_i_want');
+        $home_user = $this->input->post('home_user');
+        $home_bank_ids = $this->input->post('home_bank_ids');
+        $home_principal_amount = floatval ( ($this->input->post('home_principal_amount')) ? $this->input->post('home_principal_amount') : '200000' );
+
+        if($home_principal_amount > 40000000 || $home_principal_amount < 200000){
+            $home_principal_amount = 200000;
+        }
+
+        $home_month_limit = floatval ( ($this->input->post('home_month_limit') > 1) ? $this->input->post('home_month_limit') : 1 );
+
+        if($home_month_limit > 25 || $home_month_limit < 1){
+            $home_month_limit = 1;
+        }
+
+        $WHERE = array(); $query = '';
+        if(!empty($home_principal_amount)) {
+            $WHERE[] = 'CAST( home_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$home_principal_amount;
+        }
+
+        if(!empty($home_principal_amount)) {
+            $WHERE[] = 'CAST( home_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$home_principal_amount;
+        }
+
+        if(!empty($home_user)) {
+            $WHERE[] = 'home_loan_user_home_loan_info.home_loan_user_id = '.$home_user;
+        }
+
+        if(!empty($home_i_want)) {
+
+            $WHERE[] = 'home_loan_info.home_loan_looking_for_id = '.$home_i_want;
+
+        }
+        if(!empty($home_bank_ids)) {
+            if(strstr($home_bank_ids,',')) {
+                $data8 = explode(',',$home_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "home_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(home_loan_info.bank_id = '.$home_bank_ids.')';
+            }
+        }
+
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_home_loan_info($query);
+
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'home_loan_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
     public function ajax_compare_home_loan_image(){
         $id = $this->input->post('home_id');
         $result = $this->Front_end_select_model->select_home_loan_image($id);

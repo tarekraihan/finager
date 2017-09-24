@@ -571,7 +571,7 @@
         });
 
         function loadData( page = null ){
-			 var amount = $('#finalAssest').val();
+            var amount = $('#finalAssest').val();
             var principal_amount = "&home_principal_amount="+amount;
             var month = $('#finalLiability').val();
             var month_limit = "&home_month_limit="+month;
@@ -612,6 +612,7 @@
                     overlay(true,true);
                 },
                 success: function(msg){
+                    count_selected_row();
                     overlay(false);
                     $("#searchHomeLoan").html(msg);
                 }
@@ -670,6 +671,48 @@
 
                     }
                     $(".filter-list").html(option);
+                }
+            });
+        }
+
+        function count_selected_row(){
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&home_principal_amount="+amount;
+            var month = $('#finalLiability').val();
+            var month_limit = "&home_month_limit="+month;
+            var home_i_want = new Array();
+            $('input[name="iWant"]:checked').each(function(){
+                home_i_want.push($(this).val());
+            });
+            var home_i_want_list = "&home_i_want="+home_i_want;
+            var home_user = new Array();
+            $('input[name="iAm"]:checked').each(function(){
+                home_user.push($(this).val());
+            });
+            var home_user_list = "&home_user="+home_user;
+
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&home_bank_ids="+bank_ids;
+
+            var home_i_want_label = '&home_i_want_label='+ $('input[name="iWant"]:checked').parent().text().trim();
+            var home_i_am_label = '&home_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
+
+            var main_string = home_i_want_list+home_user_list+principal_amount+month_limit+bank_id_list+home_i_want_label+home_i_am_label;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>home_loan/ajax_count_selected_row/";
+
+            $.ajax
+            ({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response) {
+                    $(".bank-small-filter").html(response);
                 }
             });
         }

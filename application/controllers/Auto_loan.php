@@ -950,6 +950,66 @@ class Auto_loan extends CI_Controller
 
     }
 
+    public function ajax_count_selected_row(){
+
+        $auto_i_want = $this->input->post('auto_i_want');
+        $auto_user = $this->input->post('auto_user');
+        $auto_loan_bank_ids = $this->input->post('auto_loan_bank_ids');
+
+
+        $principal_amount = floatval ( ($this->input->post('principal_amount') > 100000 ) ? $this->input->post('principal_amount') : '100000' );
+        $month_limit = floatval ( ( $this->input->post('month_limit') > 12 ) ?  $this->input->post('month_limit') : 12 );
+
+
+        if($principal_amount > 4000000 || $principal_amount < 100000){
+            $principal_amount = 100000;
+        }
+
+        if($month_limit > 72 || $month_limit < 12){
+            $month_limit = 12;
+        }
+
+        $WHERE = array(); $query = '';
+        if(!empty($auto_user)) {
+            $WHERE[] = 'auto_loan_info_vs_i_am.i_am_id = '.$auto_user;
+        }
+
+        if(!empty($auto_i_want)) {
+
+            $WHERE[] = 'auto_loan_info.auto_loan_looking_for_id = '.$auto_i_want;
+
+        }
+
+        if(!empty($auto_loan_bank_ids)) {
+            if(strstr($auto_loan_bank_ids,',')) {
+                $data8 = explode(',',$auto_loan_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "auto_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(auto_loan_info.bank_id = '.$auto_loan_bank_ids.')';
+            }
+        }
+
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_auto_loan_info($query);
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'auto_loan_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+
+
+    }
+
 
     public function ajax_compare_auto_loan_image(){
         $id = $this->input->post('loan_id');

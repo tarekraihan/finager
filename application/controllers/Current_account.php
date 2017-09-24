@@ -165,7 +165,6 @@ class Current_account extends CI_Controller
         $this->load->view('admin/block/footer');
     }
 
-
     public function edit_account_info($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -528,7 +527,6 @@ class Current_account extends CI_Controller
 
     }
 
-
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('account_id1');
         $id2 = $this->input->post('account_id2');
@@ -539,7 +537,6 @@ class Current_account extends CI_Controller
         $this->session->set_userdata($newdata);
         echo 'success';
     }
-
 
     public function ajax_current_account_caching(){
 
@@ -594,7 +591,6 @@ class Current_account extends CI_Controller
         }
 
     }
-
 
     public function unset_current_account_bank_id_session(){
         $id = $this->input->post('current_account_bank_id');
