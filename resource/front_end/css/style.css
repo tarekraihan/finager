@@ -122,7 +122,7 @@ body {
 	}
 }
 .hamburger {
-    top: 16px !important;
+    top: 11px !important;
     width: 26px !important;
 }
 /* Category Icon */
@@ -3636,6 +3636,7 @@ a .millionier_landing_button{
     position: fixed;
     margin-left: 120px;
     z-index:9999;
+    margin-top: 3px;
 }
 /* common button effect */
 .flash-button{
@@ -4390,14 +4391,14 @@ a .auto_button.flash-button {
 }*/
 .filter-option {
     border: 2px solid #9c9c9c;
-    border-radius: 7px;
+    border-radius: 12px;
     padding: 4px 7px;
     font-size: 11px;
     background: #ffffff;
     -webkit-box-shadow: 0px 7px 6px -6px #777;
     -moz-box-shadow: 0px 7px 6px -6px #777;
     box-shadow: 0px 7px 6px -6px #777;
-    margin-right: 10px;
+    margin-right: 5px;
     color: #797979;
     font-weight: 600;
 }
@@ -4655,3 +4656,16 @@ div#filter-carousel {
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow:         inset 0 0 10px #000000;
 }
+@keyframes spin {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+.btn-filter-clear:hover i{
+    animation: spin 2000ms;
+}
+/*
+.debit_All_card:hover img, .All_card1:hover img, .All_card:hover img{
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}*/

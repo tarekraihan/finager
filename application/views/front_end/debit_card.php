@@ -775,7 +775,7 @@
                             success: function(msg)
                             {
                                 //loading_hide();
-                                console.log(msg);
+                                //console.log(msg);
                                 $(".cart_anchor01").html(msg);
                             }
                         });
@@ -802,7 +802,7 @@
                             data: card_id,
                             success: function(msg)
                             {
-                                console.log(msg);
+                                //console.log(msg);
                                 $(".cart_anchor").html(msg);
                             }
                         });

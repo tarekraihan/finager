@@ -1076,6 +1076,6 @@ setTimeout(function(){
     $('#interest').find('.ui-draggable').css('left',140);
     $('#finacialAssest').children('ul').css('margin-left',-1295);
     $('#alreadySaved').find('.prev').addClass('active');
-},1000);
+},500);
 
 // Calculator Functionality END

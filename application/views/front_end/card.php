@@ -800,7 +800,7 @@
                         for (var i = 0; i < obj.card_types.length; i++) {
                             var card_type_id = obj.card_types[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+card_type_id[1]+'</span><a href="javascript:void(0);" class="card_type_id" data-card_type_id="'+ card_type_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+card_type_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="card_type_id" data-card_type_id="'+ card_type_id[0] +'"><i class="fa fa-times" aria-hidden="true"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }
@@ -808,7 +808,7 @@
                         for (var i = 0; i < obj.credit_card_features_benefits.length; i++) {
                             var feature_id = obj.credit_card_features_benefits[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+feature_id[1]+'</span><a href="javascript:void(0);" class="credit_card_feature_benefit_id" data-credit_card_feature_benefit_id="'+ feature_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+feature_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_feature_benefit_id" data-credit_card_feature_benefit_id="'+ feature_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }
@@ -816,7 +816,7 @@
                         for (var i = 0; i < obj.credit_card_bank_ids.length; i++) {
                             var bank_id = obj.credit_card_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="credit_card_bank_id" data-credit_card_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="credit_card_bank_id" data-credit_card_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }
