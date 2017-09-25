@@ -863,7 +863,7 @@
         $('#searchDPS').on('click', '.more_info', function (){
 			var  formData = $(this).data();
 			var dps_id = formData.dps_id;
-			console.log(dps_id);
+//			console.log(dps_id);
 			$("#moreInfo"+dps_id).toggleClass("in");
 			$('#availableOffer'+dps_id).removeClass("in");
 		});
@@ -871,7 +871,7 @@
 		$('#searchDPS').on('click', '.availableOffer', function (){
 			var  formData = $(this).data();
 			var available_offer = formData.available_offer;
-			console.log(available_offer);
+//			console.log(available_offer);
 
 			$('#availableOffer'+available_offer).toggleClass("in");
 			$('#moreInfo'+available_offer).removeClass("in");
@@ -1022,7 +1022,7 @@
         $(document).on('click', '.dps_tenure_id', function (){
             var  formData = $(this).data();
             var dps_tenure = formData.dps_tenure;
-            console.log(dps_tenure);
+//            console.log(dps_tenure);
             $('#dps_tenure'+dps_tenure).prop('checked', false);
             var data = 'dps_tenure='+dps_tenure;
             $.ajax({

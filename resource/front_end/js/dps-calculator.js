@@ -103,7 +103,7 @@ $(function(event) {
 			}
 			else if(finAsst >=100 && finAsst <=amtDetail)
 			{
-				console.log("more than 100");
+				//console.log("more than 100");
 				//alert(amtDetail)
 				$(this).parents('.slideWrapper').find('.highLight').css('visibility','visible').find('input').val(valInput);
 				$(this).parents('.slideWrapper').find('.draggable, .highLight ').css('left',0);
@@ -400,7 +400,7 @@ $(function(event) {
 				if(valueK<1000){
 					valLife +=  "<li>"+ valueK +"TK</li>";
 				}
-				else if(valueK=>1000 || valueK<=50000){
+				else if(valueK >= 1000 || valueK <= 50000){
 					var valueK = valueK/1000;
 					valLife +=  "<li>"+ valueK +"K</li>";
 					
@@ -726,12 +726,12 @@ function calculationSlider()
 		}
 		else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 		{
-			console.log(selectValue);
+			//console.log(selectValue);
 			finalFincialAssest =((selectValue) * 500 );
 			if(finalFincialAssest==0){
 				finalFincialAssest=100;
 			}
-			else if(finalFincialAssest=>50000){
+			else if(finalFincialAssest >= 50000){
 				//alert("Maximum amout is 50,000");
 				finalFincialAssest==50000;
 			}

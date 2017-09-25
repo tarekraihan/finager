@@ -579,7 +579,7 @@
                 page_count = page ;
             }
             var url_str = "<?php echo base_url();?>fdr/ajax_get_fdr/" + page_count;
-            console.log(main_string);
+//            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
@@ -723,7 +723,7 @@
         $('#searchFDR').on('click', '.more_info', function (){
             var  formData = $(this).data();
             var fdr_id = formData.fdr_id;
-            console.log(fdr_id);
+//            console.log(fdr_id);
             $("#moreInfo"+fdr_id).toggleClass("in");
             $('#availableOffer'+fdr_id).removeClass("in");
 
@@ -733,7 +733,7 @@
 
             var  formData = $(this).data();
             var available_offer = formData.available_offer;
-            console.log(available_offer);
+//            console.log(available_offer);
             $('#availableOffer'+available_offer).html('<iframe  src="<?php echo base_url();?>en/fdr_iframe"  frameborder="0"  width="100%" height="570" scrolling="no" ></iframe>');
             $('#availableOffer'+available_offer).toggleClass("in");
             $('#moreInfo'+available_offer).removeClass("in");
@@ -898,7 +898,7 @@
         $(document).on('click', '.fdr_tenure_id', function (){
             var  formData = $(this).data();
             var fdr_tenure = formData.fdr_tenure;
-            console.log(fdr_tenure);
+//            console.log(fdr_tenure);
             $('#fdr_tenure'+fdr_tenure).prop('checked', false);
             var data = 'fdr_tenure='+fdr_tenure;
             $.ajax({

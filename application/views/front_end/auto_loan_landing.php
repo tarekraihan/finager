@@ -300,7 +300,7 @@
 			var  formData = $(this).data();
 			var auto_loan_i_want = formData.auto_loan_i_want;
 			var data = 'auto_loan_i_want='+auto_loan_i_want;
-			console.log(data);
+//			console.log(data);
 			quick_link(data);
 
 		});
@@ -309,7 +309,7 @@
 			var  formData = $(this).data();
 			var auto_loan_i_am = formData.auto_loan_i_am;
 			var data = '&auto_loan_i_am='+auto_loan_i_am;
-			console.log(data);
+//			console.log(data);
 			quick_link(data);
 
 		});
@@ -317,7 +317,7 @@
 
 		$('.start_compare').on('click',function(){
 			var data = 'data = all';
-			console.log(data);
+//			console.log(data);
 			quick_link(data);
 
 		});

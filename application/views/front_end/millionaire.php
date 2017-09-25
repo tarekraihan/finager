@@ -867,7 +867,7 @@ $(document).ready(function() {
             page_count = page ;
         }
         var url_str = "<?php echo base_url();?>millionaire/ajax_get_millionaire/" + page_count;
-            console.log(main_string);
+//            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
