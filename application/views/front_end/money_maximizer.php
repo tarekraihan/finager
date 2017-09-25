@@ -583,7 +583,7 @@
             page_count = page ;
         }
         var url_str = "<?php echo base_url();?>money_maximizer/ajax_get_money_maximizer/" + page_count;
-        console.log(main_string);
+//        console.log(main_string);
         $.ajax
         ({
             type: "POST",
@@ -635,7 +635,7 @@
             success: function(response){
                 var option = [];
                 var obj = JSON.parse(response);
-                console.log(obj.maximizer_benefit_label);
+//                console.log(obj.maximizer_benefit_label);
                 if(obj.maximizer_benefit !='') {
                     option.push('<li><div class="filter-option"><span>' + obj.maximizer_benefit_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="maximizer_benefit" data-maximizer_benefit="' + obj.maximizer_benefit + '"><i class="icon-close icons"></i></a></span></div></li>');
                 }
@@ -786,7 +786,7 @@
          $('#moneyMaximizerSearch').on('click', '.more_info', function (){
              var  formData = $(this).data();
              var maximizer_id = formData.maximizer_id;
-             console.log(maximizer_id);
+//             console.log(maximizer_id);
              $("#moreInfo"+maximizer_id).toggleClass("in");
          });
         /*
