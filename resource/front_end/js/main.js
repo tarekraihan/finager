@@ -23,7 +23,6 @@ jQuery(document).ready(function(){
         interval: false
     });
 
-
 // searching text effect for homepage search START
 
     document.addEventListener('DOMContentLoaded', function (event) {
