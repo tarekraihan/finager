@@ -477,7 +477,7 @@
                                         <table class="table chartright-table">
                                             <tr>
                                                 <td>Total Amount Payable</td>
-                                                <td class="chart-right-val">&#2547; 250000</td>
+                                                <td class="chart-right-val">&#2547;<p id="chart_loan_amount"></p></td>
                                             </tr>
                                             <tr>
                                                 <td>Loan Amount</td>
@@ -602,7 +602,6 @@
 <script src="<?php echo base_url();?>resource/front_end/js/booNavigation.js"></script>
 
 <script src="<?php echo base_url();?>resource/front_end/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url();?>resource/front_end/js/main.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/modernizr.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/jquery-ui.min.js"></script>
 
@@ -618,8 +617,18 @@
 
 <script>
 	<!-- for chart-->
+    /*calculation START*/
+
+
+    /*calculation START*/
+
 	$(document).ready(function(){
-		
+        $(document).on('change','#princpAmt',function(){
+            //var principle_amount = $(this).text();
+            //var cal_loan_amount = $(this).text();
+            console.log('df');
+            //$('#chart_loan_amount').html(principle_amount);
+        });
 		//alert(localStorage.getItem("home_loan_principal_amount"));
 		//location.reload();
 		$('#finalAssest').val(localStorage.getItem("home_loan_principal_amount"));
@@ -745,7 +754,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/common.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/clientlib.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/jquery.ui.touch-punch.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>resource/front_end/js/homeloan-chart.js"></script>
 <script>
     $(document).ready(function() {
 
