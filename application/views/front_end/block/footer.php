@@ -200,36 +200,7 @@
                                        </div>
                                     </a>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -427,7 +398,7 @@ jQuery(document).keypress(function(e) {
             data: search_word,
             success: function(response)
             {
-                console.log(response);
+//                console.log(response);
 
                 $('#search_result').html(response);
             }
@@ -458,7 +429,7 @@ jQuery(document).keypress(function(e) {
             data: 'email='+email,
             success: function(response)
             {
-                console.log(response);
+//                console.log(response);
 
                 $('#subscribe_message').html(response);
                 $('#betaSubscribeEmail').val('');
@@ -477,7 +448,7 @@ jQuery(document).keypress(function(e) {
             data: 'email='+email,
             success: function(response)
             {
-                console.log(response);
+//                console.log(response);
                 $('#subscribe_message_footer').html(response);
 
                 $('#txtSubscribeEmail').val('');
