@@ -570,6 +570,15 @@
             interval: false
         });
 
+
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+            //            alert(cur_page);
+            loadData(cur_page);
+            //console.log(cur_page);
+        });
+
         function loadData( page = null ){
             var amount = $('#finalAssest').val();
             var principal_amount = "&home_principal_amount="+amount;
