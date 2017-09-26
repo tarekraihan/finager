@@ -307,7 +307,7 @@
                     <div class="more_filter">
                         <p><a id="displayMoreFilter" href="javascript:toggle2();"><?php echo ($this->session->userdata("credit_card_features_benefits") || $this->session->userdata("card_types")) ? 'Fewer Filters ' :'More Filter' ?> <i class="fa fa-sort-desc fa-lg"></i></a></p>
                     </div>
-                    <br/>
+
                     <div id="moreFilterText" <?php echo ($this->session->userdata("credit_card_features_benefits") || $this->session->userdata("card_types")) ? 'style="display: block"' :'style="display: none"' ?>>
                         <div class="card_query">
                             <p>Features & Benefits</p>

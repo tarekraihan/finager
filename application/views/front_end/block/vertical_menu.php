@@ -1530,7 +1530,7 @@
                                                 <!-- bootstrap start -->
                                                 <div class="container-fluid space-0">   <!-- bootstrap fluid container -->
                                                     <!-- bootstrap columns -->
-                                                    <div class="col-sm-3 col-md-2 clearfix space-0">
+                                                    <div class="col-sm-3 col-md-2 clearfix space-0" style="background: rgba(158,158,158,1); min-height:407px;">
                                                         <h4 class="nav-title">How To</h4>
                                                         <!-- vertical tab -->
                                                         <div class="vertical-tabs">
