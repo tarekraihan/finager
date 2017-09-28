@@ -345,6 +345,7 @@ class Debit_card extends CI_Controller
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms And Conditions', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees And Charges', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
+            $this->form_validation->set_rules('txtCardSummary', 'Card Summary', 'trim|required');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Card Info";
                 $this->load->view('admin/block/header', $data);
@@ -372,6 +373,7 @@ class Debit_card extends CI_Controller
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'review' => $this->input->post('txtReview'),
+                    'card_summary' => $this->input->post('txtCardSummary'),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
@@ -414,6 +416,7 @@ class Debit_card extends CI_Controller
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms And Conditions', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees And Charges', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
+            $this->form_validation->set_rules('txtCardSummary', 'Card Summary', 'trim|required');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Card Info";
                 $this->load->view('admin/block/header', $data);
@@ -441,8 +444,9 @@ class Debit_card extends CI_Controller
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'review' => $this->input->post('txtReview'),
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'card_summary' => $this->input->post('txtCardSummary'),
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
 
                 $this->Common_model->table_name = 'debit_card_info';
@@ -582,13 +586,25 @@ class Debit_card extends CI_Controller
 
         if($result->num_rows() > 0){
             foreach($result->result() as $row) {
+//                pr($row);
+                $summary ='';
+                if($row->card_summary != ''){
+                    $length = strlen($row->card_summary);
+                    if($length > 250){
+                        $rest = substr($row->card_summary, 0,250);
+                        $summary = $rest.' <a href="'.base_url().'en/debit_card_details/'. $row->id.'"> read more..</a>';
+                    }else{
+                        $summary = $row->card_summary;
+                    }
+                }else{
+
+                    $summary = $row->card_name.' of '.$row->bank_name.' is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.';
+                }
                 $debit_card .= '<div class="full-card">
 
 						<div class="row card_right_bar no-margin-lr">
 							<div class="col-sm-3 col-xs-3">
 								<a href="'.base_url().'en/debit_card_details/'.$row->id.'" ><img title="Click here to details" class="img-responsive selected_card" src="' . base_url() . 'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
-								<img class="btnCardApply img-responsive" src="' . base_url() . 'resource/front_end/images/BtnCard_apply.png" />
-
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 								</p>
@@ -603,7 +619,7 @@ class Debit_card extends CI_Controller
 									<div class="col-sm-9 col-xs-9">
 										<div class="card_text1">
 											<b>'.$row->card_name.'/'.$row->account_name.'</b>
-											<p class="card_description">Dual Currency Visa Classic Card of Brac Bank Ltd. is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.</p>
+											<p class="card_description">'.$summary.'</p>
 										</div>
 									</div>
 									<div class="col-sm-3 col-xs-3">
