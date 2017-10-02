@@ -242,6 +242,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
+                <button type="button" class="close" id="subscription_message_footer-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <div class="modal-footer text-center" id="subscribe_message_footer">
 
                 </div>

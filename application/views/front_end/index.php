@@ -3,26 +3,23 @@
 /*background-image: url(images/fana.gif);        height: 100%;        width: 100%;        background-size: cover;*/
 }
 .bg-gif {
-position: absolute;
-left: 0;
-right: 0;
-margin: 0 auto;
-top: 227px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 227px;
 }
 .find-bar {
-margin-top: 160px;
-text-align: center;
-position: absolute;
-margin: 0 auto;
-left: 0;
-right: 0;
-z-index: 99;
+    margin-top: 160px;
+    text-align: center;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 99;
 }
 .feature-bg {
-margin: 175px 0 !important;
-}
-#CategoryIcon {
-background: rgba(233, 238, 245, 0.33);
+    margin: 175px 0 !important;
 }
 /*#home_search {
 height: 664px;

@@ -2,12 +2,20 @@
 /* CSS Document */
 body {
     font-size: 14px !important;
+    font-family: 'Ubuntu', sans-serif;
 }
 *{
     margin:0;
     padding:0;
+    font-family: 'Ubuntu', sans-serif;
 }
-
+.mash-menu *{
+    font-family: 'Ubuntu', sans-serif;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600 !important;
+}
 .no-list-style{
     list-style:none;
 }
@@ -126,18 +134,21 @@ body {
     width: 26px !important;
 }
 /* Category Icon */
+#CategoryIcon {
+    background: rgba(233, 238, 245, 0.33);
+    box-shadow: 0px 0px 5px 1px #dedede;
+}
 #CategoryIcon{
     height:500px;
     width:auto;
-
 }
 .catagory-icon{
     margin-top:20px;
 }
 .catagory-icon h1 {
     text-align: center;
-    font-size: 50px;
-    margin: 20px;
+    font-size: 45px;
+    margin: 30px;
 }
 .catagory-icon p{
     font-size:15px;
@@ -158,11 +169,16 @@ body {
     -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
     filter: grayscale(100%);
 }
-.Cicon img:hover{
+.Cicon a:hover img{
     -webkit-filter: grayscale(0%);
     filter:grayscale(0%);
 }
-
+.Cicon a:hover p{
+    color: #333;
+}
+section#header2 {
+    padding: 30px 0;
+}
 /*for forth page*/
 #forth-page{
     clear:both;
@@ -804,6 +820,9 @@ body {
 
 #searchHomeLoan #pagination>li{
     float: none;
+}
+#main-search-modal-close{
+    outline: 0;
 }
 /* for home loan slider */
 .wrapper{
@@ -3315,7 +3334,7 @@ ul.footer-socio {
 .hello {
     font-weight: bold;
     color: #EE5726;
-    text-shadow: 1px 1px #5A5858;
+    /*text-shadow: 1px 1px #5A5858;*/
 }
 .footer-menus li a{
     text-decoration:none;
@@ -3340,9 +3359,13 @@ ul.footer-socio {
     background-color: #1a9cbe;
     font-weight: 600 !important;
     color: #fff;
-    font-size: 15px !important;
-    padding: 3px 6px !important;
+    font-size: 13px !important;
+    padding: 4px 11px !important;
     border-radius: 10px !important;
+    outline: 0 !important;
+}
+.subscribe-footer-btn:hover, .subscribe-footer-btn:focus, .subscribe-footer-btn:active{
+    color: #fff !important;
 }
 .footer-menus>li>a {
     color: #6d6d6d;
@@ -4664,8 +4687,25 @@ div#filter-carousel {
 .btn-filter-clear:hover i{
     animation: spin 2000ms;
 }
-/*
-.debit_All_card:hover img, .All_card1:hover img, .All_card:hover img{
-    transform: scale(1.1);
-    transition: all 0.5s ease;
-}*/
+section#card_details_Eligibility {
+    margin-bottom: 30px;
+}
+#subscription_message_footer-close{
+    position: absolute;
+    z-index: 99999;
+    right: 15px;
+    top: 15px;
+    color: #333;
+    background: #a4d2d8;
+    opacity: 1;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    outline: 0 !important;
+}
+#subscribe_message_footer{
+    border: 0;
+}
+#subscribe_message_footer .alert-danger{
+    margin-bottom: 0;
+}
