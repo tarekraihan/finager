@@ -1,7 +1,7 @@
 <?php
 //		print_r($this->session->userdata());
 $id = $this->session->userdata('first_fdr') ;
-$amount = $this->session->userdata('amount') ;
+$amount = ($this->session->userdata('fdr_deposit_amount')) ? $this->session->userdata('fdr_deposit_amount') : 5000;
 $result = $this->Front_end_select_model->select_fdr_details($id);
 $first_fdr = $result->row();
 
@@ -94,7 +94,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 						
 						<tr>
 							<td><b> Deposit Amount</b></td>
-							<td> <?php echo number_format( $amount );?> </td>
+							<td>BDT <?php echo number_format( $amount );?> </td>
 						</tr>
 
 						<tr>
@@ -104,7 +104,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
 						<tr>
 							<td><b> Maturity Amount</b></td>
-							<td> <?php echo number_format( $first_payment );?> </td>
+							<td>BDT <?php echo number_format( $first_payment );?> </td>
 						</tr>
 
 						<tr>
@@ -131,7 +131,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
                             <tr>
                                 <td><b> Deposit Amount</b></td>
-                                <td> <?php echo number_format( $amount );?> </td>
+                                <td>BDT <?php echo number_format( $amount );?> </td>
                             </tr>
 
                             <tr>
@@ -142,7 +142,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
                             <tr>
                                 <td><b> Maturity Amount</b></td>
-                                <td> <?php echo number_format( $second_payment );?> </td>
+                                <td>BDT <?php echo number_format( $second_payment );?> </td>
                             </tr>
 
 

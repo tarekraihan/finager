@@ -450,7 +450,7 @@
 				
 				<!-- Right bar content start -->
                 <div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
-                    <input type="hidden" id="principle_amount" name="principle_amount" value="">
+                    <input type="hidden" id="principle_amount" name="principle_amount" value="5000">
                     <div id="searchFDR">
                        <div id="loading" class="text-center"></div>
 
@@ -532,6 +532,7 @@
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             $('input[name="deposit_amount"]:checked').each(function(){
                 $('#deposited_amount').val($(this).val());
+                $('#principle_amount').val($(this).val());
 //                alert($('#deposited_amount').val());
 
             });
@@ -554,6 +555,7 @@
             });
 
             var amount = $('#deposited_amount').val();
+            $('#principle_amount').val(amount);
             var principal_amount = "&principal_amount="+amount;
 
             var fdr_tenure_list = "&fdr_tenure="+fdr_tenure;
@@ -852,7 +854,7 @@
             //alert(1);
             var  formData = $('.cart_anchor').children('img').data();
             var fdr_id1 = "fdr_id1="+formData.fdr_id;
-            var principal_amount = "&amount=" + $('#principle_amount').val();
+            var principal_amount = "&fdr_deposit_amount=" + $('#principle_amount').val();
 
             var  formData = $('.cart_anchor01').children('img').data();
             var fdr_id2 = "&fdr_id2="+formData.fdr_id;

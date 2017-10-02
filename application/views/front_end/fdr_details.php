@@ -13,7 +13,10 @@ if(!empty($id) && is_numeric($id) ){
         $bank_name = $row->bank_name;
         $bank_logo = $row->bank_logo;
     }
-    $amount = 100000;
+	$amount = 5000;
+	if($this->session->userdata('fdr_deposit_amount')){
+		$amount = $this->session->userdata('fdr_deposit_amount');
+	}
     $yearly_interest = floatval( $row->interest_rate ) ;
     $interest = ($yearly_interest / 100);
     $tenure = floatval($row->installment);
@@ -115,7 +118,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_features">
 
-										<?php echo number_format($amount); ?>
+										BDT <?php echo number_format($amount); ?>
 
 									</p>
 
@@ -163,7 +166,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_features">
 
-										&#2547; <?php echo number_format($payment);?>
+										BDT <?php echo number_format($payment);?>
 
 									</p>
 

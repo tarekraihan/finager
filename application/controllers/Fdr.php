@@ -909,12 +909,12 @@ class Fdr extends CI_Controller {
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('fdr_id1');
         $id2 = $this->input->post('fdr_id2');
-        $amount = $this->input->post('amount');
+        $amount = $this->input->post('fdr_deposit_amount');
 
         $newdata = array(
             'first_fdr'  => $id1,
             'second_fdr'  => $id2,
-            'amount'  => $amount
+            'fdr_deposit_amount'  => $amount
         );
         $this->session->set_userdata($newdata);
         echo 'success';
