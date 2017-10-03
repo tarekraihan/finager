@@ -115,7 +115,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_features">
 
-                                        BDT.<?php echo number_format($emi);?>
+                                        BDT <?php echo number_format($emi);?>
 
                                     </p>
 
@@ -131,7 +131,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_features">
 
-                                        BDT. <?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on  BDT. <?php echo number_format($principal_amount);?></span>
+                                        BDT  <?php echo number_format($total_payable);?><br/><span class="tPaybleAmount">based on  BDT <?php echo number_format($principal_amount);?></span>
 
 									</p>
 
@@ -145,7 +145,7 @@ if(!empty($id) && is_numeric($id) ){
 
 									<p class="card_details_head2">Down Payment (Min)</p>
 
-									<p class="card_details_features">BDT.
+									<p class="card_details_features">BDT
 
                                         <?php echo number_format($downpayment_amount);?>
 

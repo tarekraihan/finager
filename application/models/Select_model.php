@@ -709,7 +709,7 @@ class Select_Model extends CI_Model
 
     public function select_card_info_list()//To show Card Info list
     {
-        $sql="SELECT card_card_informations.id,card_card_informations.card_image_name,card_card_informations.card_name, card_bank.bank_name,card_card_issuer.card_issuer_name, card_card_type.card_type_name,card_credit_card_type.cc_card_type, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `card_card_informations` INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_card_issuer ON card_card_issuer.id=card_card_informations.cc_issuer_id INNER JOIN card_card_type ON card_card_type.id=card_card_informations.card_type_id INNER JOIN card_credit_card_type ON card_credit_card_type.id=card_card_informations.cc_type_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=card_card_informations.created_by";
+        $sql="SELECT card_card_informations.id,card_card_informations.card_image_name,card_card_informations.card_name, card_bank.bank_name, card_card_informations.modified,card_card_issuer.card_issuer_name, card_card_type.card_type_name,card_credit_card_type.cc_card_type, admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name  FROM `card_card_informations` INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_card_issuer ON card_card_issuer.id=card_card_informations.cc_issuer_id INNER JOIN card_card_type ON card_card_type.id=card_card_informations.card_type_id INNER JOIN card_credit_card_type ON card_credit_card_type.id=card_card_informations.cc_type_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= card_card_informations.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= card_card_informations.modified_by";
         $query=$this->db->query($sql);
         $result="";
         if($query->num_rows() > 0)
@@ -726,10 +726,12 @@ class Select_Model extends CI_Model
 					 <td class="center">'.$row->card_issuer_name.'</td>
 					 <td class="center">'.$row->card_type_name.'</td>
 					 <td class="center">'.$row->cc_card_type.'</td>
-					 <td class="center">'.$row->first_name.' '.$row->last_name. '</td>';
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
 
                 $result.='</td>
-                    <td><a href="'. base_url().'card/edit_card_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?fees_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'en/card_details/'.$row->id.'" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a> <a href="'. base_url().'card/edit_card_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?fees_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 					</tr>';
                 $sl++;
             }
@@ -803,7 +805,7 @@ class Select_Model extends CI_Model
 
     public function select_home_loan_information()//To show Home loan list
     {
-        $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank, home_loan_info.home_loan_name,home_loan_info.min_loan_amount,home_loan_info.max_loan_amount,home_loan_info.interest_rate_average,home_loan_info.is_fixed,home_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name,home_loan_looking_for.home_loan_looking_for FROM `home_loan_info` LEFT JOIN card_bank ON card_bank.id=home_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=home_loan_info.created_by INNER JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id ORDER BY home_loan_info.id ASC";
+        $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank, home_loan_info.home_loan_name,home_loan_info.min_loan_amount,home_loan_info.max_loan_amount,home_loan_info.interest_rate_average,home_loan_info.is_fixed,home_loan_info.interest_rate_fixed,home_loan_info.modified,card_bank.bank_name,card_bank.bank_logo , general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name ,home_loan_looking_for.home_loan_looking_for FROM `home_loan_info` LEFT JOIN card_bank ON card_bank.id=home_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= home_loan_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= home_loan_info.modified_by INNER JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id ORDER BY home_loan_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -833,12 +835,13 @@ class Select_Model extends CI_Model
 					<td class="center">'.$row->home_loan_name.'</td>
 					 <td class="center">'.$bank.'</td>
 					 <td class="center">'.$row->home_loan_looking_for.'</td>
-					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
+					 <td class="center"> BDT '. number_format($row->min_loan_amount).' - '.number_format($row->max_loan_amount).'</td>
 					 <td class="center"> '.$interest.'</td>
-					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
-
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
                 $result.='</td>
-                    <td><a href="'.base_url().'home_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'en/home_loan_details/'.$row->id.'" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a> <a href="'.base_url().'home_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;
@@ -850,7 +853,7 @@ class Select_Model extends CI_Model
 
     public function select_auto_loan_information()//To show Home loan list
     {
-        $sql="SELECT auto_loan_info.id,auto_loan_info.is_non_bank,auto_loan_info.auto_loan_name,auto_loan_info.min_loan_amount,auto_loan_info.max_loan_amount,auto_loan_info.interest_rate_average,auto_loan_info.is_fixed,auto_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name,auto_i_want.i_want FROM `auto_loan_info`  LEFT JOIN card_bank ON card_bank.id=auto_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=auto_loan_info.created_by INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id ORDER BY auto_loan_info.id ASC";
+        $sql="SELECT auto_loan_info.id,auto_loan_info.is_non_bank,auto_loan_info.auto_loan_name,auto_loan_info.modified,auto_loan_info.min_loan_amount,auto_loan_info.max_loan_amount,auto_loan_info.interest_rate_average,auto_loan_info.is_fixed,auto_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo, admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name ,auto_i_want.i_want FROM `auto_loan_info`  LEFT JOIN card_bank ON card_bank.id=auto_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id LEFT JOIN tbl_admin_user admin1 ON admin1.id= auto_loan_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= auto_loan_info.modified_by INNER JOIN auto_i_want ON auto_i_want.id=auto_loan_info.auto_loan_looking_for_id ORDER BY auto_loan_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -880,10 +883,11 @@ class Select_Model extends CI_Model
 					 <td class="center">'.$row->i_want.'</td>
 					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
 					 <td class="center"> '.$interest.'</td>
-					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
-
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
                 $result.='</td>
-                    <td><a href="'.base_url().'auto_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'en/car_loan_details/'.$row->id.'" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a> <a href="'.base_url().'auto_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;
@@ -894,7 +898,7 @@ class Select_Model extends CI_Model
 
     public function select_personal_loan_information()//To show Home loan list
     {
-        $sql="SELECT personal_loan_info.id,personal_loan_info.is_non_bank,personal_loan_info.personal_loan_name,personal_loan_info.min_loan_amount,personal_loan_info.max_loan_amount,personal_loan_info.interest_rate_average,personal_loan_info.is_fixed,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo,personal_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , tbl_admin_user.first_name,tbl_admin_user.last_name FROM `personal_loan_info`  LEFT JOIN card_bank ON card_bank.id=personal_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = personal_loan_info.non_bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=personal_loan_info.created_by  ORDER BY personal_loan_info.id ASC";
+        $sql="SELECT personal_loan_info.id,personal_loan_info.is_non_bank,personal_loan_info.personal_loan_name,personal_loan_info.min_loan_amount,personal_loan_info.modified,personal_loan_info.max_loan_amount,personal_loan_info.interest_rate_average,personal_loan_info.is_fixed,general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo,personal_loan_info.interest_rate_fixed,card_bank.bank_name,card_bank.bank_logo , admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name  FROM `personal_loan_info`  LEFT JOIN card_bank ON card_bank.id=personal_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = personal_loan_info.non_bank_id LEFT JOIN tbl_admin_user admin1 ON admin1.id= personal_loan_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= personal_loan_info.modified_by  ORDER BY personal_loan_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -918,15 +922,18 @@ class Select_Model extends CI_Model
                 $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg)' : $row->interest_rate_fixed.' % (Fixed)';
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
+					<td lang="bn">'. $row->id.'</td>
 					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					<td class="center">'.$row->personal_loan_name.'</td>
 					 <td class="center">'.$bank.'</td>
-					 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
+					 <td class="center"> BDT '.$row->min_loan_amount.' - '. $row->max_loan_amount.'</td>
 					 <td class="center"> '.$interest.'</td>
-					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
 
                 $result.='</td>
-                    <td><a href="'.base_url().'personal_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'en/personal_loan_details/'.$row->id.'" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a> <a href="'.base_url().'personal_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;
@@ -1276,7 +1283,7 @@ class Select_Model extends CI_Model
     }
 
     public function get_fdr_info(){
-        $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_i_am.i_am,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, fdr_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id LEFT JOIN card_bank ON card_bank.id = fdr_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=fdr_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id ORDER BY fdr_info.id ASC";
+        $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_info.`modified`,fdr_i_am.i_am,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, fdr_info.is_non_bank, admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id LEFT JOIN card_bank ON card_bank.id = fdr_info.bank_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= fdr_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= fdr_info.modified_by  LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id ORDER BY fdr_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -1312,16 +1319,19 @@ class Select_Model extends CI_Model
                 }
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
+					<td lang="bn">'. $row->id.'</td>
 					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					 <td class="text-center">'.$bank.'</td>
 					 <td class="text-center"> '.$row->tenure.'</td>
 					 <td class="text-center"> '.$min_amount.'</td>
 					 <td class="text-center"> '.$max_amount.'</td>
 					 <td class="text-center"> '.$row->interest_rate.'%</td>
-					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
 
                 $result.='</td>
-                    <td><a href="'.base_url().'fdr/fdr_edit_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'en/fdr_details/'.$row->id.'" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a> <a href="'.base_url().'fdr/fdr_edit_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?draft_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

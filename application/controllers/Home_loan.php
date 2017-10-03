@@ -989,7 +989,7 @@ class Home_Loan extends CI_Controller {
         $newdata = array(
             'first_home_loan'  => $id1,
             'second_home_loan'  => $id2,
-            'principal_amount'  => $principal_amount,
+            'home_principal_amount'  => $principal_amount,
             'month_limit'  => $month_limit
         );
         $this->session->set_userdata($newdata);

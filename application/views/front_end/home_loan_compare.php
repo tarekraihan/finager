@@ -58,7 +58,7 @@
     <input type="hidden" id="first_downpayment" name="first_downpayment" value="<?php echo $first_downpayment; ?>">
     <input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
     <input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
-    <input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $this->session->userdata('principal_amount'); ?>">
+    <input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $this->session->userdata('home_principal_amount'); ?>">
     <input type="hidden" id="month_limit" name="month_limit" value="<?php echo $this->session->userdata('month_limit'); ?>">
 
 			<div class="home_loan_com_cal container text-center">
