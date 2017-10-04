@@ -1319,7 +1319,7 @@ class Select_Model extends CI_Model
                 }
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
-					<td lang="bn">'. $row->id.'</td>
+					<td class="text-center">'. $row->id.'</td>
 					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					 <td class="text-center">'.$bank.'</td>
 					 <td class="text-center"> '.$row->tenure.'</td>
@@ -1341,7 +1341,7 @@ class Select_Model extends CI_Model
     }
 
     public function get_dps_info(){
-        $sql = "SELECT dps_info.id,dps_info.`loan_facility`,dps_info.`eligibility`,fdr_i_am.i_am,dps_tenure.id as tenure_id,dps_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, dps_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `dps_info` INNER JOIN fdr_i_am ON fdr_i_am.id = dps_info.i_am_id INNER JOIN dps_tenure ON dps_tenure.id = dps_info.tenure_id LEFT JOIN card_bank ON card_bank.id = dps_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=dps_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id ORDER BY dps_info.id ASC";
+        $sql = "SELECT dps_info.id,dps_info.`loan_facility`,dps_info.`eligibility`,fdr_i_am.i_am,dps_tenure.id as tenure_id,dps_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, dps_info.is_non_bank,  dps_info.modified,  admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name FROM `dps_info` INNER JOIN fdr_i_am ON fdr_i_am.id = dps_info.i_am_id INNER JOIN dps_tenure ON dps_tenure.id = dps_info.tenure_id LEFT JOIN card_bank ON card_bank.id = dps_info.bank_id   LEFT JOIN tbl_admin_user admin1 ON admin1.id= dps_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= dps_info.modified_by LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id ORDER BY dps_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -1367,15 +1367,17 @@ class Select_Model extends CI_Model
 
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
+					<td class="text-center">'. $row->id.'</td>
 					<td class="text-center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					 <td class="text-center">'.$bank.'</td>
 					 <td class="text-center"> '.$row->tenure.' '.$year.'</td>
 					 <td class="text-center"> '.$row->loan_facility.'%</td>
 					 <td> '.$row->eligibility.'</td>
-					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
-
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
                 $result.='</td>
-                    <td><a href="'.base_url().'dps/edit_dps_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?info_id='. $row->id.'&tenure_id='.$row->tenure_id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td><a href="'.base_url().'en/dps_details/'.$row->id.'/1000" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a> <a href="'.base_url().'dps/edit_dps_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?info_id='. $row->id.'&tenure_id='.$row->tenure_id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

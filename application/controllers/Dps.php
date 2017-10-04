@@ -252,7 +252,7 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
-            $this->form_validation->set_rules('txtFeesAndCharges', 'fees and charges', 'trim|required');
+            $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Draft Info";
@@ -716,11 +716,11 @@ class Dps extends CI_Controller
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
-                    'fees_and_charges' => $this->input->post('txtAvailableBenefit'),
+                    'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
                     'review' => $this->input->post('txtReview'),
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
                 $this->Common_model->table_name = 'dps_info';
                 $this->Common_model->where = array('id' => $this->input->post('txtInfoId'));
@@ -817,8 +817,8 @@ class Dps extends CI_Controller
                         'fifty_thousand_interest' => ($this->input->post('fifty_thousand_maturity') != '') ? ($this->input->post('fifty_thousand_maturity') - ($this->input->post('fifty_thousand_interest') * $installment )) : '',
                         'one_lac_maturity' => htmlentities($this->input->post('one_lac_maturity')),
                         'one_lac_interest' =>($this->input->post('one_lac_maturity') != '') ? ($this->input->post('one_lac_maturity') - ($this->input->post('one_lac_interest') * $installment )) : '',
-                        'created' => $date ,
-                        'created_by'=>$this->session->userdata('admin_user_id')
+                        'modified' => $date ,
+                        'modified_by'=>$this->session->userdata('admin_user_id')
                     );
 //                    echo $this->input->post('txtMaturityId');
 //                    pr($this->Common_model->data);die;

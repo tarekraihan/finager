@@ -61,6 +61,7 @@ if(isset($_GET['id'])){
     $row['twenty_eight_thousand_maturity']='';
     $row['twenty_nine_thousand_maturity']='';
     $row['thirty_thousand_maturity']='';
+    $row['fifty_thousand_maturity']='';
     $row['one_lac_maturity']='';
 
 }
@@ -1164,7 +1165,7 @@ if(isset($_GET['id'])){
                     <section class="col col-12">
 
                         <label class="input">
-                            <textarea id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo set_value('txtFeesAndCharges'); ?></textarea>
+                            <textarea id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo $row['fees_and_charges']; ?></textarea>
                         </label>
                     </section>
 
@@ -1230,7 +1231,7 @@ if(isset($_GET['id'])){
         </section>
         <section class="col-md-6">
             <label class="input">
-                <button class="btn btn-primary" type="submit" >Save</button>
+                <button class="btn btn-primary" type="submit" >Update</button>
             </label>
         </section>
 

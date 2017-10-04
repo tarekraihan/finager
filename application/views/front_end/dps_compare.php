@@ -225,7 +225,7 @@ if(!empty($dps_1) && is_numeric($dps_1) && !empty($dps_2) && is_numeric($dps_2) 
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
 				

@@ -1,6 +1,6 @@
 <?php
 $id=$this->uri->segment(3, 0);
-$deposited_amount=$this->uri->segment(4, 0);
+$deposited_amount=($this->uri->segment(4, 0)) ? $this->uri->segment(4,0) : 1000;
 if(!empty($id) && is_numeric($id) ){
 
 	$array_map = array(
