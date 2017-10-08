@@ -79,10 +79,10 @@ position: relative;
     right: 0;
     top: 21px;
     cursor: pointer;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 .fin-about-text {
-font-family: 'ubuntu', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 h3.fin-about-heading>span {
 font-size: 36px;

@@ -61,7 +61,6 @@ if($second_personal_loan->is_non_bank == 1){
 			
 			<div class="row">
 				<h3 class="text-center"><img class="Card-Compare-hr" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> User Reviews <img class="Card-Compare-hr" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
 				<table class="table text-center">
 					<tr>
 						<td> <p class="text-center">	<i class="fa fa-star-o"></i> 	<i class="fa fa-star-o"></i>   	<i class="fa fa-star-o"></i>   	<i class="fa fa-star-o"></i>   	<i class="fa fa-star-o"></i>   	<i class="fa fa-star-o"></i>  </p> </td>
@@ -72,8 +71,9 @@ if($second_personal_loan->is_non_bank == 1){
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="personal-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Personal Loan <img class="personal-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Personal Loan</span> </h3>
+
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
@@ -111,7 +111,7 @@ if($second_personal_loan->is_non_bank == 1){
 					</table>
 				</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
@@ -150,14 +150,13 @@ if($second_personal_loan->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Fees & Charges</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_personal_loan->fees_and_charges;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_personal_loan->fees_and_charges;?>
 					</div>
@@ -165,13 +164,13 @@ if($second_personal_loan->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="personal-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying  <img class="personal-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Eligibility for Applying</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_personal_loan->eligibility_for_applying;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_personal_loan->eligibility_for_applying;?>
 					</div>
@@ -179,14 +178,13 @@ if($second_personal_loan->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />Required Document<img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-		
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Required Document</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_personal_loan->required_document;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_personal_loan->required_document;?>
 					</div>
@@ -194,14 +192,13 @@ if($second_personal_loan->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />Terms and Conditions<img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Terms and Conditions</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_personal_loan->terms_and_conditions;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_personal_loan->terms_and_conditions;?>
 					</div>
@@ -209,14 +206,13 @@ if($second_personal_loan->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />Review<img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Review</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_personal_loan->review;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_personal_loan->review;?>
 					</div>
@@ -225,7 +221,7 @@ if($second_personal_loan->is_non_bank == 1){
 
 
 			
-			<div class="row">
+			<div class="row comparision-subscribe">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">
 					<form class="comparison_email">

@@ -85,8 +85,8 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="auto-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Car Loan <img class="auto-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Car Loan</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
@@ -130,7 +130,7 @@ if($second_auto_loan->is_non_bank == 1){
 					</table>
 				</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
@@ -177,14 +177,13 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Fees & Charges</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_auto_loan->fees_and_charges;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_auto_loan->fees_and_charges;?>
 					</div>
@@ -192,13 +191,13 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Features<img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Features</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_auto_loan->features;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_auto_loan->features;?>
 					</div>
@@ -206,13 +205,13 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="auto-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="auto-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Eligibility for Applying</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_auto_loan->eligibility_for_applying;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_auto_loan->eligibility_for_applying;?>
 					</div>
@@ -220,14 +219,13 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-		
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Terms and Conditions</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_auto_loan->terms_and_conditions;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_auto_loan->terms_and_conditions;?>
 					</div>
@@ -235,21 +233,20 @@ if($second_auto_loan->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center">  <img class="auto-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="auto-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Review</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_auto_loan->review;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive" >
                         <?php echo $second_auto_loan->review;?>
 					</div>
 				</div>
 			</div>
 			
-			<div class="row">
+			<div class="row comparision-subscribe">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">
 					<form class="comparison_email">

@@ -84,8 +84,9 @@
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Home Loan <img class="home-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+
+                <h3 class="text-center compare-feature-bar"> <span>Home Loan</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
@@ -126,7 +127,7 @@
 					</table>
 				</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
@@ -170,14 +171,14 @@
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="home-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
-				<div class="col-md-6 col-sm-6">
+
+                <h3 class="text-center compare-feature-bar"> <span>Fees & Charges</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_home_loan->fees_and_charges;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_home_loan->fees_and_charges;?>
 					</div>
@@ -185,13 +186,14 @@
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Features <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Features</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_home_loan->features;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_home_loan->features;?>
 					</div>
@@ -199,14 +201,14 @@
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-		
-				<div class="col-md-6 col-sm-6">
+
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Eligibility for Applying</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_home_loan->eligibility_for_applying;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_home_loan->eligibility_for_applying;?>
 					</div>
@@ -215,7 +217,7 @@
 			
 			
 			
-			<div class="row">
+			<div class="row comparision-subscribe">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">
 					<form class="comparison_email">
