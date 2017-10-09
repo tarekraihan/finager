@@ -1068,6 +1068,7 @@ class Dps extends CI_Controller
                         $bank_logo = $row['bank_logo'];
                     }
 
+                    $loan_facility = ($row["loan_facility"] == 'N/A') ? 'N/A': $row["loan_facility"].'%';
                     $dps .= '<div class="full-card">
 <div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
@@ -1108,7 +1109,7 @@ class Dps extends CI_Controller
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Loan Facility</h5>
-                                        <p>'.$row["loan_facility"].'</p>
+                                        <p>'.$loan_facility.'</p>
                                     </div>
                                 </div>
                             </div>

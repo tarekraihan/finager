@@ -556,13 +556,14 @@ class Personal_Loan extends CI_Controller {
 
                                         <!-- Tab panes -->
                                         <div class="tab-content">
+
                                             <div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
                                                 <section id="card_details_FeesCharges">
                                                     <div class="card_details_pronsCons">
-                                                        <h4>Fees & Charges</h4>
+                                                        <h4>Features</h4>
                                                         <div class="prosConsHr"></div><br/>
                                                         <div class="prosCons_body2 trbodywidth">
-                                                            '.$row->fees_and_charges.'
+                                                            '.$row->features.'
                                                         </div>
                                                     </div>
                                                 </section>
@@ -570,10 +571,10 @@ class Personal_Loan extends CI_Controller {
                                             <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
                                                 <section id="card_details_FeesCharges">
                                                     <div class="card_details_pronsCons">
-                                                        <h4>Features</h4>
+                                                        <h4>Fees & Charges</h4>
                                                         <div class="prosConsHr"></div><br/>
                                                         <div class="prosCons_body2 trbodywidth">
-                                                            '.$row->features.'
+                                                            '.$row->fees_and_charges.'
                                                         </div>
                                                     </div>
                                                 </section>

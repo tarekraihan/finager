@@ -976,14 +976,16 @@
     });
 
     $('#go_compare').click(function(){
-        //alert(1);
+
         var  formData = $('.cart_anchor').children('img').data();
         var maximizer_id1 = "maximizer_id1="+formData.maximizer_id;
 
         var  formData = $('.cart_anchor01').children('img').data();
         var maximizer_id2 = "&maximizer_id2="+formData.maximizer_id;
+        var amount = $('#finalAssest').val();
+        var deposit_amount = "&deposit_amount="+amount;
 
-        var maximizer_ids = maximizer_id1+maximizer_id2;
+        var maximizer_ids = maximizer_id1+maximizer_id2+deposit_amount;
         if( maximizer_id1 != '' && maximizer_id2 != '' ){
             $.ajax
             ({

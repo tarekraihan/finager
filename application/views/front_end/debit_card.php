@@ -900,12 +900,12 @@
             });
         });
 
-        $(document).on('click', '.debit_card_choose_account', function (){
+       /* $(document).on('click', '.debit_card_choose_account', function (){
             var  formData = $(this).data();
             var chose_account = formData.choose_account;
             var str = chose_account.split();
             alert(str);
-        });
+        });*/
 
 
 </script>

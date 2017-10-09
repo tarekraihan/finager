@@ -228,7 +228,7 @@ class Money_maximizer extends CI_Controller {
     public function ajax_get_money_maximizer(){
 
         $maximizer_tenure = $this->input->post('maximizer_tenure');
-        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 10000 ) ? $this->input->post('deposit_amount') : 10000 );
         $maximizer_bank_ids = $this->input->post('maximizer_bank_ids');
         $WHERE = array(); $query = '';
         if(!empty($maximizer_tenure)) {

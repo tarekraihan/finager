@@ -1308,31 +1308,31 @@ class Card extends CI_Controller
                                 <div class="col-sm-2 col-xs-2 w20">
                                     <div class="card_text2">
                                         <h5>Purchase Interest Rate</h5>
-                                        <p>'.$row->purchase_interest_rate.'%,<br> Monthly '.$row->purchase_interest_rate_monthly.'%</p>
+                                        <p>'.$row->purchase_interest_rate.',<br> Monthly '.$row->purchase_interest_rate_monthly.'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2 w20">
                                     <div class="card_text2">
                                         <h5>Balance Transfer Interest Rate</h5>
-                                        <p>'.$row->balance_transfer_rate.'%,<br> Monthly '.$row->balance_transfer_rate_monthly.'%</p>
+                                        <p>'.$row->balance_transfer_rate.',<br> Monthly '.$row->balance_transfer_rate_monthly.'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2 w20">
                                     <div class="card_text2">
                                         <h5>Cash Advance Interest Rate</h5>
-                                        <p>'.$row->cash_advance_interest_rate_yearly.'%,<br> Monthly '.$row->cash_advance_interest_rate.' %</p>
+                                        <p>'.$row->cash_advance_interest_rate_yearly.',<br> Monthly '.$row->cash_advance_interest_rate.' </p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2 w20">
                                     <div class="card_text2">
                                         <h5>Cash Advance Limit</h5>
-                                        <p>'.$row->cash_advance_limit.'%</p>
+                                        <p>'.$row->cash_advance_limit.'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-1 w20">
                                     <div class="card_text2">
                                         <h5>Annual Fee</h5>
-                                        <p>BDT '.$row->annual_fee.' + '.$row->annual_fee_vat.'</p>
+                                        <p>'.$row->annual_fee.' + '.$row->annual_fee_vat.'</p>
                                     </div>
                                 </div>
                             </div>
