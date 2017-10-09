@@ -87,8 +87,8 @@ if($second_current_account->is_non_bank == 1){
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Current account <img class="maximizer-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Current account</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
@@ -121,7 +121,7 @@ if($second_current_account->is_non_bank == 1){
 					</table>
 				</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 
@@ -158,13 +158,13 @@ if($second_current_account->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>Features<img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-					<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Features</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_current_account->features;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_current_account->features;?>
 					</div>
@@ -172,13 +172,13 @@ if($second_current_account->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>Privilege<img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-					<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Privilege</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_current_account->privilege;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_current_account->privilege;?>
 					</div>
@@ -186,14 +186,13 @@ if($second_current_account->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees and Charges <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Fees and Charges</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_current_account->fees_and_charges;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_current_account->fees_and_charges;?>
 					</div>
@@ -201,14 +200,13 @@ if($second_current_account->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Requirements <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Requirements</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_current_account->requirements;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_current_account->requirements;?>
 					</div>
@@ -216,14 +214,13 @@ if($second_current_account->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Terms and Conditions</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_current_account->terms_and_conditions;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_current_account->terms_and_conditions;?>
 					</div>
@@ -231,21 +228,20 @@ if($second_current_account->is_non_bank == 1){
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Review</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_current_account->review;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_current_account->review;?>
 					</div>
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row comparision-subscribe">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">
 					<form class="comparison_email">

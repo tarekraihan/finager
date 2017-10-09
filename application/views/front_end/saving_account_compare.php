@@ -94,7 +94,7 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 			
 			<div class="row">
 				<h3 class="text-center">  <img class="Card-Compare-hr" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> User Reviews <img class="Card-Compare-hr" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Review</span> </h3>
 				<table class="table text-center">
 					<tr>
 						<td> <p class="text-center">	<i class="fa fa-star-o"></i> 	<i class="fa fa-star-o"></i>   	<i class="fa fa-star-o"></i>   	<i class="fa fa-star-o"></i>   	<i class="fa fa-star-o"></i>   	<i class="fa fa-star-o"></i>  </p> </td>
@@ -105,8 +105,8 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Saving Account <img class="maximizer-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Saving Account</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
@@ -141,7 +141,7 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 					</table>
 				</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
@@ -178,13 +178,13 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>Features<img class="maximizer-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-					<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Features</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_saving_account->features;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_saving_account->features;?>
 					</div>
@@ -192,14 +192,13 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees and Charges <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Fees and Charges</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_saving_account->fees_and_charges;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_saving_account->fees_and_charges;?>
 					</div>
@@ -207,14 +206,13 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Requirements <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Requirements</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_saving_account->requirements;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_saving_account->requirements;?>
 					</div>
@@ -222,14 +220,13 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Terms and Conditions</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_saving_account->terms_and_conditions;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_saving_account->terms_and_conditions;?>
 					</div>
@@ -237,21 +234,20 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="maximizer-Compare-hr6" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Review</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_saving_account->review;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_saving_account->review;?>
 					</div>
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row comparision-subscribe">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">
 					<form class="comparison_email">
