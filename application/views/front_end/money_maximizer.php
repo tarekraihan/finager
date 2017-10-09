@@ -988,13 +988,13 @@
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>millionaire/ajax_go_compare_page",
-                data: millionaire_ids,
+                url: "<?php echo base_url();?>money_maximizer/ajax_go_compare_page",
+                data: maximizer_ids,
                 success: function(msg)
                 {
                     if(msg != 'error'){
 
-                        window.location.href = "<?php echo base_url();?>en/millionaire_compare";
+                        window.location.href = "<?php echo base_url();?>en/money_maximizer_compare";
                     }
                 }
             });
