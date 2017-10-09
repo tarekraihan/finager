@@ -447,7 +447,7 @@ $(function(event) {
 		{
 			var valLife='', cr_1_life='';
 			valLife = "<li>10K</li>"
-			for(var i=2; i<201; i++)
+			for(var i=1; i<201; i++)
 			{
 				
 				var valueK = i*50;
@@ -790,7 +790,7 @@ function calculationSlider()
 				finalFincialAssest =((selectValue+1) * 10000 );
 			}
 			else{
-				finalFincialAssest =((selectValue+1) * 50000 );
+				finalFincialAssest =((selectValue) * 50000 );
 			}
 			finalLiabilities = ((selectValue+1) * 1);
 			//console.log(selectValue);
