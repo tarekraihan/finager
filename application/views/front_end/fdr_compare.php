@@ -1,7 +1,7 @@
 <?php
 //		print_r($this->session->userdata());
 $id = $this->session->userdata('first_fdr') ;
-$amount = $this->session->userdata('amount') ;
+$amount = ($this->session->userdata('fdr_deposit_amount')) ? $this->session->userdata('fdr_deposit_amount') : 5000;
 $result = $this->Front_end_select_model->select_fdr_details($id);
 $first_fdr = $result->row();
 
@@ -78,8 +78,8 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="auto-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/>FDR <img class="auto-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>FDR</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover text-center table-align  compare_table">
 						<tr>
@@ -94,7 +94,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 						
 						<tr>
 							<td><b> Deposit Amount</b></td>
-							<td> <?php echo number_format( $amount );?> </td>
+							<td>BDT <?php echo number_format( $amount );?> </td>
 						</tr>
 
 						<tr>
@@ -104,7 +104,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
 						<tr>
 							<td><b> Maturity Amount</b></td>
-							<td> <?php echo number_format( $first_payment );?> </td>
+							<td>BDT <?php echo number_format( $first_payment );?> </td>
 						</tr>
 
 						<tr>
@@ -116,7 +116,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 					</table>
 				</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
@@ -131,7 +131,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
                             <tr>
                                 <td><b> Deposit Amount</b></td>
-                                <td> <?php echo number_format( $amount );?> </td>
+                                <td>BDT <?php echo number_format( $amount );?> </td>
                             </tr>
 
                             <tr>
@@ -142,7 +142,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
                             <tr>
                                 <td><b> Maturity Amount</b></td>
-                                <td> <?php echo number_format( $second_payment );?> </td>
+                                <td>BDT <?php echo number_format( $second_payment );?> </td>
                             </tr>
 
 
@@ -158,14 +158,13 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Requirement  <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Requirement</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_fdr->required_document;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_fdr->required_document;?>
 					</div>
@@ -173,13 +172,13 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Features<img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Features</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_fdr->available_feature;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_fdr->available_feature;?>
 					</div>
@@ -187,13 +186,13 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 			</div>
 
 			<div class="row">
-				<h3 class="text-center"> <img class="auto-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility  <img class="auto-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Eligibility</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_fdr->eligibility;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_fdr->eligibility;?>
 					</div>
@@ -201,14 +200,13 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 			</div>
 
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-		
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Terms and Conditions</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
                         <?php echo $first_fdr->terms_and_conditions;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_fdr->terms_and_conditions;?>
 					</div>
@@ -216,21 +214,20 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 			</div>
 
 			<div class="row">
-				<h3 class="text-center">  <img class="auto-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="auto-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Review</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
                         <?php echo $first_fdr->review;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive" >
                         <?php echo $second_fdr->review;?>
 					</div>
 				</div>
 			</div>
 			
-			<div class="row">
+			<div class="row comparision-subscribe">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">
 					<form class="comparison_email">
@@ -254,111 +251,8 @@ $(document).ready(function() {
 	});
 });
 </script>
-<script>
-	<!-- for chart-->
-	$(document).ready(function(){
-	    var plot2 = $.jqplot('pie2', [[['a',7],['b',88],['c',5]]], {
-	        seriesDefaults:{ renderer:$.jqplot.PieRenderer, trendline:{ show: true } },
-	        legend:{ show: false },
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
-	    });
-	});
 
 
-	<!-- for main chart-->
-	$(document).ready(function () {
-	    var s1 = [[2002, 112000], [2003, 122000], [2004, 104000], [2005, 99000], [2006, 121000]];
-	    var s2 = [[2002, 10200], [2003, 10800], [2004, 11200], [2005, 11800], [2006, 12400]];
-
-	    plot1 = $.jqplot("chart1", [s2, s1], {
-	        // Turns on animatino for all series in this plot.
-	        animate: true,
-	        // Will animate plot on calls to plot1.replot({resetAxes:true})
-	        animateReplot: true,
-	        cursor: {
-	            show: true,
-	            zoom: true,
-	            looseZoom: true,
-	            showTooltip: false
-	        },
-	        series:[
-	            {
-	                pointLabels: {
-	                    show: true
-	                },
-	                renderer: $.jqplot.BarRenderer,
-	                showHighlight: false,
-	                yaxis: 'y2axis',
-	                rendererOptions: {
-	                    // Speed up the animation a little bit.
-	                    // This is a number of milliseconds.
-	                    // Default for bar series is 3000.
-	                    animation: {
-	                        speed: 2500
-	                    },
-	                    barWidth: 15,
-	                    barPadding: -15,
-	                    barMargin: 0,
-	                    highlightMouseOver: false
-	                }
-	            },
-	            {
-	                rendererOptions: {
-	                    // speed up the animation a little bit.
-	                    // This is a number of milliseconds.
-	                    // Default for a line series is 2500.
-	                    animation: {
-	                        speed: 2000
-	                    }
-	                }
-	            }
-	        ],
-	        axesDefaults: {
-	            pad: 0
-	        },
-	        axes: {
-	            // These options will set up the x axis like a category axis.
-	            xaxis: {
-	                tickInterval: 1,
-	                drawMajorGridlines: false,
-	                drawMinorGridlines: true,
-	                drawMajorTickMarks: false,
-	                rendererOptions: {
-	                tickInset: 0.5,
-	                minorTicks: 1
-	            }
-	            },
-	            yaxis: {
-	                tickOptions: {
-	                    formatString: "$%'d"
-	                },
-	                rendererOptions: {
-	                    forceTickAt0: true
-	                }
-	            },
-	            y2axis: {
-	                tickOptions: {
-	                    formatString: "$%'d"
-	                },
-	                rendererOptions: {
-	                    // align the ticks on the y2 axis with the y axis.
-	                    alignTicks: true,
-	                    forceTickAt0: true
-	                }
-	            }
-	        },
-	        highlighter: {
-	            show: true,
-	            showLabel: true,
-	            tooltipAxes: 'y',
-	            sizeAdjust: 7.5 , tooltipLocation : 'ne'
-	        },
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
-	    });
-
-	});
-
-</script>
 
 <script type="text/javascript"> 
 

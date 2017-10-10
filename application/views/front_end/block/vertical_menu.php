@@ -57,7 +57,7 @@
 
                         <div class="logobar">
                             <a href="<?php echo base_url(); ?>">
-                                <img class="logo" src="<?php echo base_url(); ?>resource/front_end/images/FinAlfa.svg" alt="Logo" />
+                                <img class="logo" title="Finager Logo" src="<?php echo base_url(); ?>resource/front_end/images/finager-logo.svg" alt="Logo" />
                             </a>
                         </div>
 
@@ -85,7 +85,7 @@
                                                 <!-- bootstrap start -->
                                                 <div class="container-fluid space-0">   <!-- bootstrap fluid container -->
                                                     <!-- bootstrap columns -->
-                                                    <div class="col-sm-3 col-md-2 clearfix space-0" style="min-height: 400px; background: #dcdccb;">
+                                                    <div class="col-sm-3 col-md-2 clearfix space-0" style="min-height: 407px; background: rgba(159, 145, 100, 0.84);">
                                                         <h4 class="nav-title">Cards</h4>
                                                         <!-- vertical tab -->
                                                         <div class="vertical-tabs">
@@ -113,7 +113,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
 																					<a href="<?php echo base_url();?>en/credit_card">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/credit-card-mega-menu.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								 A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
@@ -220,7 +220,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
 																					<a href="<?php echo base_url(); ?>en/debit_card">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/DebitCardIcon.svg" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit-card-mega-menu.svg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">Debit Card</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
@@ -518,7 +518,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>en/home_loan">
                                                                                         <div class="features">
-                                                                                            <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/PersonalLoanmanuIcon.svg" alt="img" class="thumbnail">
+                                                                                            <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal-loan-mega-manu.svg" alt="img" class="thumbnail">
                                                                                             <div class="clearfix"></div>
                                                                                             <!--<p class="text-right">
                                                                                                 <span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
@@ -624,7 +624,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/car_loan">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/menu-Auto-Loan.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto-loan-mega-menu.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								 A <span class="focus-text">Auto Loan</span> in which the borrower's car title is used as collateral. The borrower must be the lien holder (i.e. own the car outright). Before the loan is repaid, the lender will be the title holder of that car and after repaying, the title will be transferred back to the borrower.
@@ -736,7 +736,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>en/education_loan">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Education-Loan-Manu-Image.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education-loan-mega-menu.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																							   In <span class="focus-text">Education Loan,</span> money borrowed to finance education or school related expenses. Payments are often deferred while in school and repaid after graduation.
@@ -1530,7 +1530,7 @@
                                                 <!-- bootstrap start -->
                                                 <div class="container-fluid space-0">   <!-- bootstrap fluid container -->
                                                     <!-- bootstrap columns -->
-                                                    <div class="col-sm-3 col-md-2 clearfix space-0">
+                                                    <div class="col-sm-3 col-md-2 clearfix space-0" style="background: rgba(158,158,158,1); min-height:407px;">
                                                         <h4 class="nav-title">How To</h4>
                                                         <!-- vertical tab -->
                                                         <div class="vertical-tabs">

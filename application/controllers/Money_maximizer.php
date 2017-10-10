@@ -228,16 +228,31 @@ class Money_maximizer extends CI_Controller {
     public function ajax_get_money_maximizer(){
 
         $maximizer_tenure = $this->input->post('maximizer_tenure');
-        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 10000 ) ? $this->input->post('deposit_amount') : 10000 );
+        $maximizer_bank_ids = $this->input->post('maximizer_bank_ids');
         $WHERE = array(); $query = '';
         if(!empty($maximizer_tenure)) {
             $WHERE[] = '( money_maxi_info.choose_your_benefit_id = '.$maximizer_tenure.')';
         }
+
+        if(!empty($maximizer_bank_ids)) {
+            if(strstr($maximizer_bank_ids,',')) {
+                $data8 = explode(',',$maximizer_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "money_maxi_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(money_maxi_info.bank_id = '.$maximizer_bank_ids.')';
+            }
+        }
+
         $query = implode(' AND ',$WHERE);
         if(!empty($query)) {
             $query = 'WHERE '.$query;
         }
-//        print_r($query);die;
+
 
         $res = $this->Front_end_select_model->select_money_maximizer_info($query);
 //-----------Pagination start-----------------
@@ -245,8 +260,6 @@ class Money_maximizer extends CI_Controller {
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
         $config["uri_segment"] = 3;
-//        $choice = $config["total_rows"] / $config["per_page"];
-//        $config["num_links"] = floor($choice);
         $config["num_links"] = 5;
         $config['use_page_numbers'] = TRUE;
 
@@ -400,6 +413,43 @@ class Money_maximizer extends CI_Controller {
     }
 
 
+    public function ajax_count_selected_row(){
+
+        $maximizer_tenure = $this->input->post('maximizer_tenure');
+        $maximizer_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $maximizer_bank_ids = $this->input->post('maximizer_bank_ids');
+        $WHERE = array(); $query = '';
+        if(!empty($maximizer_tenure)) {
+            $WHERE[] = '( money_maxi_info.choose_your_benefit_id = '.$maximizer_tenure.')';
+        }
+
+        if(!empty($maximizer_bank_ids)) {
+            if(strstr($maximizer_bank_ids,',')) {
+                $data8 = explode(',',$maximizer_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "money_maxi_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(money_maxi_info.bank_id = '.$maximizer_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+        $res = $this->Front_end_select_model->select_money_maximizer_info($query);
+        $selected_row = $res->num_rows();
+        $this->Common_model->table_name = 'money_maxi_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
+
     public function ajax_compare_money_maximizer_image(){
         $id = $this->input->post('maximizer_id');
         $result = $this->Front_end_select_model->select_money_maximizer_image($id);
@@ -438,7 +488,7 @@ class Money_maximizer extends CI_Controller {
         $maximizer_benefit = (!empty($this->input->post('maximizer_benefit'))) ? $this->input->post('maximizer_benefit') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('maximizer_deposit_amount', 'maximizer_benefit');
+        $array_items = array('maximizer_deposit_amount', 'maximizer_benefit', 'maximizer_benefit_label', 'maximizer_bank_ids');
         $this->session->unset_userdata($array_items);
 
         if( $maximizer_deposit_amount != ''){
@@ -455,5 +505,77 @@ class Money_maximizer extends CI_Controller {
         $this->session->set_userdata($newdata);
         echo 'success';
     }
+
+    public function ajax_maximizer_caching(){
+
+        $maximizer_deposit_amount = floatval ( ($this->input->post('maximizer_deposit_amount')) ? $this->input->post('maximizer_deposit_amount') : '50000' );
+        $maximizer_benefit = $this->input->post('maximizer_benefit');
+        $maximizer_bank_ids = $this->input->post('maximizer_bank_ids');
+        $maximizer_benefit_label = $this->input->post('maximizer_benefit_label');
+
+        $bank_id_array = array();
+        if(!empty($maximizer_bank_ids)) {
+            if(strstr($maximizer_bank_ids,',')) {
+                $data2 = explode(',',$maximizer_bank_ids);
+
+                foreach( $data2 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $maximizer_bank_ids;
+            }
+        }
+
+        $array_items = array('maximizer_deposit_amount', 'maximizer_benefit', 'maximizer_benefit_label', 'maximizer_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'maximizer_deposit_amount'  => $maximizer_deposit_amount,
+            'maximizer_benefit'  => $maximizer_benefit,
+            'maximizer_benefit_label' => $maximizer_benefit_label,
+            'maximizer_bank_ids' => $bank_id_array
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='money_maximizer'){
+            $array_items = array('maximizer_deposit_amount', 'maximizer_benefit', 'maximizer_benefit_label', 'maximizer_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+    }
+
+
+    public function unset_maximizer_benefit_session(){
+        $session = $this->input->post('maximizer_benefit');
+        if($session){
+            $this->session->unset_userdata('maximizer_benefit');
+            $this->session->unset_userdata('maximizer_benefit_label');
+            echo 'success';
+        }
+
+    }
+
+
+    public function unset_maximizer_bank_id_session(){
+        $id = $this->input->post('maximizer_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row) {
+            $session = $row['id'] . '=' . $row['bank_name'];
+            $bank = array_values($_SESSION['maximizer_bank_ids']);
+            if (($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['maximizer_bank_ids'][$key]);
+            }
+        }
+    }
+
+
 
 }

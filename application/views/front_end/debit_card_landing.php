@@ -198,7 +198,7 @@
 				var  formData = $(this).data();
 				var choose_account = formData.choose_account;
 				var data = 'choose_account='+choose_account;
-				console.log(data);
+//				console.log(data);
 				quick_link(data);
 
 			});
@@ -207,7 +207,7 @@
 				var  formData = $(this).data();
 				var looking_for = formData.looking_for;
 				var data = 'looking_for='+looking_for;
-				console.log(data);
+//				console.log(data);
 				quick_link(data);
 
 			});
@@ -216,7 +216,7 @@
 				var  formData = $(this).data();
 				var card_issuer = formData.card_issuer;
 				var data = 'card_issuer='+card_issuer;
-				console.log(data);
+//				console.log(data);
 				quick_link(data);
 
 			});
@@ -225,14 +225,14 @@
 				var  formData = $(this).data();
 				var i_want = formData.i_want;
 				var data = 'i_want='+i_want;
-				console.log(data);
+//				console.log(data);
 				quick_link(data);
 
 			});
 
 			$('.start_compare').on('click',function(){
 				var data = 'data = all';
-				console.log(data);
+//				console.log(data);
 				quick_link(data);
 
 			});

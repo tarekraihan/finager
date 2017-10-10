@@ -1,133 +1,57 @@
 <?php
-
-
-
 $id=$this->uri->segment(3, 0);
-
 if(!empty($id) && is_numeric($id) ){
-
     $query=$this->Front_end_select_model->select_home_loan_details($id);
-
     $row=$query->row();
-
-
-
     $interest =($row->is_fixed =='0')? $row->interest_rate_average.' % (Avg),' : $row->interest_rate_fixed.' % (Fixed)';
-
     $interest_min_max =($row->is_fixed =='0')? $row->interest_rate_min.'% (Min), <br> '.$row->interest_rate_max.'% (Max)</p>' : '';
-
-
-
     $bank_name = "";
-
     $bank_logo = "";
-
     if($row->is_non_bank == 1){
-
         $bank_name = $row->non_bank_name;
-
         $bank_logo = $row->non_bank_logo;
-
     }else{
-
         $bank_name = $row->bank_name;
-
         $bank_logo = $row->bank_logo;
-
     }
-
-
-
     $principal_amount = 500000;
-
-    $month_limit = 12;
-
-
-
-
-
-    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
-
-    if($yearly_interest =='' || $yearly_interest < 1){
-
-        $yearly_interest = floatval( '12');
-
+	if($this->session->userdata('home_principal_amount')){
+        $principal_amount = $this->session->userdata('home_principal_amount');
     }
-
+    $month_limit = 12;
+    $yearly_interest = floatval( ($row->is_fixed =='0')? $row->interest_rate_average : $row->interest_rate_fixed ) ;
+    if($yearly_interest =='' || $yearly_interest < 1){
+        $yearly_interest = floatval( '12');
+    }
     $monthly_interest = ($yearly_interest / 12 /100);
-
     $downpayment_percentage = $row->downpayment;
-
     $downpayment_amount = round( ($principal_amount * $downpayment_percentage)/ 100 );
-
-
-
     $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , $month_limit )) / (pow( ( 1 + $monthly_interest ) , $month_limit ) -1 ));
-
-
-
     $total_payable = round( $emi * $month_limit );
-
-
-
-   /* echo "<pre>";
-
-        print_r($row);die;
-
-
-
-    echo "</pre>";*/
-
-
-
 }else{
-
     redirect(base_url().'My404');
-
 }
 
 ?>
-
 <section id="card_details_top">
-
     <div class="container">
-
         <div class="row">
-
             <div class="card_details_body">
-
                 <div class="col-sm-2 col-xs-4">
-
                     <div><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo; ?>" /></div>
-
                     <p class="text-center">
-
                         <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
-
                     </p>
-
                     <p class="rating text-center">Rated By 5 Person</p>
-
                 </div>
-
                 <div class="col-sm-2 col-xs-8">
-
                     <div>
-
                         <p class="card_details_head2"><?php echo $row->bank_name;?></p>
-
                         <p class="card_details_features">
-
                             <?php echo $row->home_loan_looking_for;?>
-
                         </p>
-
                     </div>
-
                 </div>
-
-
-
                 <div class="col-sm-8 col-xs-12">
 
                     <div class="row">
@@ -156,7 +80,7 @@ if(!empty($id) && is_numeric($id) ){
 
                                 <p class="card_details_head2">EMI</p>
 
-                                <p class="card_details_features">Tk.<?php echo number_format($emi); ?></p>
+                                <p class="card_details_features">BDT <?php echo number_format($emi); ?></p>
 
                             </div>
 
@@ -170,7 +94,7 @@ if(!empty($id) && is_numeric($id) ){
 
                                 <p class="card_details_features">
 
-                                    Tk. <?php echo number_format($total_payable); ?> based on Tk.<?php echo $principal_amount;?>
+                                    BDT <?php echo number_format($total_payable); ?> based on BDT <?php echo number_format($principal_amount);?>
 
                                 </p>
 
@@ -186,7 +110,7 @@ if(!empty($id) && is_numeric($id) ){
 
                                 <p class="card_details_features">
 
-                                    Tk.<?php echo number_format($downpayment_amount); ?>
+                                    BDT <?php echo number_format($downpayment_amount); ?>
 
                                 </p>
 

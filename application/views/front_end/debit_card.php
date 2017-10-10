@@ -431,7 +431,7 @@
             var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
 //            alert(cur_page);
             loadData(cur_page);
-            console.log(cur_page);
+//            console.log(cur_page);
         });
 
         $('#SearchDebitCard').on('click', '.more_info', function (){
@@ -502,8 +502,59 @@
                     overlay(true,true);
                 },
                 success: function(msg){
+                    count_selected_row();
                     $("#SearchDebitCard").html(msg);
                     overlay( false );
+                }
+            });
+        }
+
+
+        function count_selected_row(){
+
+            var choose_account = new Array();
+            $('input[name="choose_account"]:checked').each(function(){
+                choose_account.push($(this).val());
+            });
+            var choose_account_list = "&choose_account="+choose_account;
+            var looking_for = new Array();
+            $('input[name="looking_for"]:checked').each(function(){
+                looking_for.push($(this).val());
+            });
+
+            var looking_for_list = "&looking_for="+looking_for;
+            var card_issuer = new Array();
+            $('input[name="card_issuer"]:checked').each(function(){
+                card_issuer.push($(this).val());
+            });
+            var card_issuer_list = "&card_issuer="+card_issuer;
+            var i_want = new Array();
+            $('input[name="i_want"]:checked').each(function(){
+                i_want.push($(this).val());
+            });
+            var i_want_list = "&i_want=" + i_want;
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&debit_card_bank_ids="+bank_ids;
+
+            var debit_card_choose_account = '&debit_card_choose_account='+ $('input[name="choose_account"]:checked').parent().text().trim();
+            var debit_card_looking_for = '&debit_card_looking_for='+$('input[name="looking_for"]:checked').parent().text().trim();
+            var debit_card_card_issuer = '&debit_card_card_issuer='+$('input[name="card_issuer"]:checked').parent().text().trim();
+            var debit_card_i_want = '&debit_card_i_want='+$('input[name="i_want"]:checked').parent().text().trim();
+
+            var main_string = choose_account_list + looking_for_list + card_issuer_list + i_want_list + debit_card_choose_account + debit_card_looking_for + debit_card_card_issuer + debit_card_i_want + bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>debit_card/ajax_count_selected_row/";
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response){
+                    $(".bank-small-filter").html(response);
                 }
             });
         }
@@ -560,22 +611,22 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.choose_account !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.choose_account_label+'</span><a href="javascript:void(0);" class="choose_account" data-choose_account="'+obj.choose_account+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.choose_account_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="choose_account" data-choose_account="'+obj.choose_account+'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.looking_for !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.looking_for_label+'</span><a href="javascript:void(0);" class="looking_for" data-looking_for="'+ obj.looking_for +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.looking_for_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="looking_for" data-looking_for="'+ obj.looking_for +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.card_issuer !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.card_issuer_label+'</span><a href="javascript:void(0);" class="card_issuer" data-card_issuer="'+ obj.card_issuer +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.card_issuer_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="card_issuer" data-card_issuer="'+ obj.card_issuer +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.i_want !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.i_want_label+'</span><a href="javascript:void(0);" class="i_want" data-i_want="'+ obj.i_want +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.i_want_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="i_want" data-i_want="'+ obj.i_want +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.debit_card_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.debit_card_bank_ids.length; i++) {
                             var bank_id = obj.debit_card_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="debit_card_bank_id" data-debit_card_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="debit_card_bank_id" data-debit_card_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }
@@ -727,7 +778,7 @@
                             success: function(msg)
                             {
                                 //loading_hide();
-                                console.log(msg);
+                                //console.log(msg);
                                 $(".cart_anchor01").html(msg);
                             }
                         });
@@ -754,7 +805,7 @@
                             data: card_id,
                             success: function(msg)
                             {
-                                console.log(msg);
+                                //console.log(msg);
                                 $(".cart_anchor").html(msg);
                             }
                         });
@@ -852,12 +903,12 @@
             });
         });
 
-        $(document).on('click', '.debit_card_choose_account', function (){
+       /* $(document).on('click', '.debit_card_choose_account', function (){
             var  formData = $(this).data();
             var chose_account = formData.choose_account;
             var str = chose_account.split();
             alert(str);
-        });
+        });*/
 
 
 </script>

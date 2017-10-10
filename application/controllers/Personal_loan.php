@@ -556,13 +556,14 @@ class Personal_Loan extends CI_Controller {
 
                                         <!-- Tab panes -->
                                         <div class="tab-content">
+
                                             <div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
                                                 <section id="card_details_FeesCharges">
                                                     <div class="card_details_pronsCons">
-                                                        <h4>Fees & Charges</h4>
+                                                        <h4>Features</h4>
                                                         <div class="prosConsHr"></div><br/>
                                                         <div class="prosCons_body2 trbodywidth">
-                                                            '.$row->fees_and_charges.'
+                                                            '.$row->features.'
                                                         </div>
                                                     </div>
                                                 </section>
@@ -570,10 +571,10 @@ class Personal_Loan extends CI_Controller {
                                             <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
                                                 <section id="card_details_FeesCharges">
                                                     <div class="card_details_pronsCons">
-                                                        <h4>Features</h4>
+                                                        <h4>Fees & Charges</h4>
                                                         <div class="prosConsHr"></div><br/>
                                                         <div class="prosCons_body2 trbodywidth">
-                                                            '.$row->features.'
+                                                            '.$row->fees_and_charges.'
                                                         </div>
                                                     </div>
                                                 </section>
@@ -633,6 +634,68 @@ class Personal_Loan extends CI_Controller {
                 }
                 echo $personal;
 
+    }
+
+    public function ajax_count_selected_row(){
+
+        $personal_i_want = $this->input->post('personal_i_want');
+        $personal_user = $this->input->post('personal_user');
+        $personal_loan_bank_ids = $this->input->post('personal_loan_bank_ids');
+
+        $principal_amount = floatval ( ($this->input->post('principal_amount') > 25000) ? $this->input->post('principal_amount') : '25000' );
+        if( $principal_amount > 2000000 || $principal_amount < 25000 ){
+            $principal_amount = 25000;
+        }
+        $month_limit = floatval ( ($this->input->post('month_limit') > 5) ? $this->input->post('month_limit') : 6 );
+        if($month_limit > 60 || $month_limit < 6 ){
+            $month_limit = 6;
+        }
+
+        $WHERE = array(); $query = '';
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( personal_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$principal_amount;
+        }
+
+        if(!empty($principal_amount)) {
+            $WHERE[] = 'CAST( personal_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$principal_amount;
+        }
+
+        if(!empty($personal_user)) {
+            $WHERE[] = 'personal_loan_info_vs_i_am.personal_loan_i_am_id = '.$personal_user;
+        }
+
+        if(!empty($personal_i_want)) {
+
+            $WHERE[] = 'personal_loan_info.personal_loan_looking_for_id = '.$personal_i_want;
+
+        }
+
+        if(!empty($personal_loan_bank_ids)) {
+            if(strstr($personal_loan_bank_ids,',')) {
+                $data8 = explode(',',$personal_loan_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "personal_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(personal_loan_info.bank_id = '.$personal_loan_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
+
+        $res = $this->Front_end_select_model->select_personal_loan_info($query);
+
+        $selected_row = $res->num_rows();
+        $this->Common_model->table_name = 'personal_loan_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
     }
 
     public function ajax_compare_personal_loan_image(){

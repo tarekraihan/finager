@@ -600,8 +600,8 @@ class Fdr extends CI_Controller {
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'review' => $this->input->post('txtReview'),
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
 
                 $this->Common_model->table_name = 'fdr_info';
@@ -844,6 +844,49 @@ class Fdr extends CI_Controller {
     }
 
 
+    public function ajax_count_selected_row(){
+
+
+        $fdr_user = $this->input->post('fdr_user');
+        $fdr_tenure = $this->input->post('fdr_tenure');
+        $principal_amount = floatval ( ($this->input->post('principal_amount')) ? $this->input->post('principal_amount') : '5000' );
+        $fdr_bank_ids = $this->input->post('fdr_bank_ids');
+
+        $WHERE = array(); $query = '';
+        if(!empty($fdr_user)) {
+            $WHERE[] = 'fdr_info.i_am_id = '.$fdr_user;
+        }
+
+        if(!empty($fdr_tenure)) {
+            $WHERE[] = 'fdr_info.tenure_id = '.$fdr_tenure;
+        }
+        if(!empty($fdr_bank_ids)) {
+            if(strstr($fdr_bank_ids,',')) {
+                $data8 = explode(',',$fdr_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "fdr_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(fdr_info.bank_id = '.$fdr_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_fdr_loan_info($query);
+        $selected_row = $res->num_rows();
+        $this->Common_model->table_name = 'fdr_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
+
     public function ajax_compare_fdr_image(){
         $id = $this->input->post('fdr_id');
         $result = $this->Front_end_select_model->select_fdr_image($id);
@@ -866,12 +909,12 @@ class Fdr extends CI_Controller {
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('fdr_id1');
         $id2 = $this->input->post('fdr_id2');
-        $amount = $this->input->post('amount');
+        $amount = $this->input->post('fdr_deposit_amount');
 
         $newdata = array(
             'first_fdr'  => $id1,
             'second_fdr'  => $id2,
-            'amount'  => $amount
+            'fdr_deposit_amount'  => $amount
         );
         $this->session->set_userdata($newdata);
         echo 'success';

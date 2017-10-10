@@ -217,10 +217,10 @@
                                                 <div class="col-sm-6"></div>
 
                                                 <div class="col-sm-3">
-                                                    <a class="btn-filter-clear" href="javascript:void(0);">
-                                                            <span>
-                                                                <i class="fa fa-refresh" aria-hidden="true"></i>
-                                                            </span>
+                                                    <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
+                                                        <span>
+                                                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                        </span>
                                                         Clear All
                                                     </a>
                                                 </div>
@@ -236,102 +236,14 @@
             </div>
             <div class="col-md-8 no-padding">
                 <ul class="filter-list">
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 1</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
 
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 2</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 3</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 4</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 5</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 6</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 7</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 8</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 9</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
-
-                    <li>
-                            <span class="filter-option">
-                                <span>Filter Option 10</span>
-                                <a href="javascript:void(0);">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                    </li>
                 </ul>
             </div>
             <div class="col-md-1 no-padding-left">
-                <a class="btn-filter-clear" href="javascript:void(0);">
-                        <span>
-                            <i class="fa fa-refresh" aria-hidden="true"></i>
-                        </span>
+                <a class="btn-filter-clear" href="javascript:void(0);" id="clear_all">
+                    <span>
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
                     Clear All
                 </a>
             </div>
@@ -534,7 +446,7 @@
                                 ?>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="tenure" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("monthly_benefit_tenure") ==$row->id) ? 'checked' :'' ?>/>
+                                        <input type="radio" name="tenure" id="monthly_benefit_tenure<?php echo $row->id; ?>" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("monthly_benefit_tenure") ==$row->id) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         <?php echo ($row->tenure == '0.5') ? '6 Months' : $row->tenure.' Years'; ?>
                                     </label><br/>
@@ -619,51 +531,6 @@
         }
     });
 
-    /*
-    $(document).on("scroll",function () {
-        var scroller_anchor = $("#sidebar").offset().top;
-        var sidebar_height = $("#sidebar").height();
-        var window_height = $(window).height();
-
-        var offsetToTop = parseInt($(this).scrollTop());
-        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#monthly_benefit_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+40);
-        var main_height = parseInt($(".main-content-area").height());
-
-        $(".sidebar_parent").height(main_height-20);
-
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-        {
-            $('#sidebar').addClass('fixed');
-        }
-
-        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-        {
-            $('#sidebar').removeClass('fixed');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top-65){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+400){
-            $("#sidebar").addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-    });
-    */
-
     $(document).ready(function(){
         setTimeout(function(){
             $("#finalAssest").focus();
@@ -678,6 +545,7 @@
         e.preventDefault();
         var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
 //            alert(cur_page);
+        data_caching();
         loadData(cur_page);
     });
 
@@ -685,17 +553,70 @@
         e.preventDefault();
         var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
 //            alert(cur_page);
+        data_caching();
         loadData(cur_page);
-        console.log(cur_page);
+//        console.log(cur_page);
     });
 
 
     $(document).ready(function(){
         $('#finalAssest').val(<?php echo ($this->session->userdata('monthly_benefit_deposit_amount') ) ? $this->session->userdata('monthly_benefit_deposit_amount') : '' ?>);
         setTimeout(function(){
+            data_caching();
             loadData(page = null); // call on load
         }, 1000);
-    });
+
+
+        $(document).on('click','#clear_all',function(){
+            var data = 'session=monthly_benefit';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>monthly_benefit/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                    window.location.href = window.location.href;
+
+                }
+            });
+        });
+
+
+        $(document).on('click', '.monthly_benefit_tenure', function (){
+            var  formData = $(this).data();
+            var monthly_benefit_tenure = formData.monthly_benefit_tenure;
+            $('#monthly_benefit_tenure'+monthly_benefit_tenure).prop('checked', false);
+            var data = 'monthly_benefit_tenure='+monthly_benefit_tenure;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>monthly_benefit/unset_monthly_benefit_tenure_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
+
+        $(document).on('click', '.monthly_benefit_bank_id', function (){
+            var  formData = $(this).data();
+            var monthly_benefit_bank_id = formData.monthly_benefit_bank_id;
+            $('#filter-bank-'+monthly_benefit_bank_id).prop('checked', false);
+            var data = 'monthly_benefit_bank_id='+monthly_benefit_bank_id;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>monthly_benefit/unset_monthly_benefit_bank_id_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
+    });// End of Document.Ready
 
     function loadData( page = null ){
 
@@ -708,7 +629,13 @@
         var amount = $('#finalAssest').val();
         var deposit_amount = "&deposit_amount="+amount;
 
-        var main_string = monthly_tenure_list+deposit_amount;
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+        var bank_id_list = "&monthly_benefit_bank_ids="+bank_ids;
+
+        var main_string = monthly_tenure_list+deposit_amount+bank_id_list;
         main_string = main_string.substring(1, main_string.length);
         var page_count ='';
         if( page != null ){
@@ -726,6 +653,7 @@
             },
             success: function(msg)
             {
+                count_selected_row();
                 overlay(false);
                 $("#monthlyBenefitSearch").html(msg);
 
@@ -733,7 +661,90 @@
         });
     }
 
+
+    function data_caching(){
+        var monthly_tenure = new Array();
+        $('input[name="tenure"]:checked').each(function(){
+            monthly_tenure.push($(this).val());
+        });
+
+        var monthly_tenure_list = "&monthly_benefit_tenure="+monthly_tenure;
+        var amount = $('#finalAssest').val();
+        var deposit_amount = "&monthly_benefit_deposit_amount="+amount;
+
+        var bank_ids = new Array();
+
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+        });
+        var bank_id_list = "&monthly_benefit_bank_ids="+bank_ids;
+
+        var monthly_benefit_tenure_label = '&monthly_benefit_tenure_label='+ $('input[name="tenure"]:checked').parent().text().trim();
+
+        var main_string = monthly_tenure_list+deposit_amount+bank_id_list+monthly_benefit_tenure_label;
+        main_string = main_string.substring(1, main_string.length);
+        var url_str = "<?php echo base_url();?>monthly_benefit/ajax_monthly_benefit_caching/" ;
+
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response){
+
+                var option = [];
+                var obj = JSON.parse(response);
+                if(obj.monthly_benefit_tenure !='') {
+                    option.push('<li><div class="filter-option"><span>' + obj.monthly_benefit_tenure_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="monthly_benefit_tenure" data-monthly_benefit_tenure="' + obj.monthly_benefit_tenure + '"><i class="icon-close icons"></i></a></span></div></li>');
+                }
+                if(obj.monthly_benefit_bank_ids.length > 0 ){
+                    for (var i = 0; i < obj.monthly_benefit_bank_ids.length; i++) {
+                        var bank_id = obj.monthly_benefit_bank_ids[i].split("=");
+                        option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="monthly_benefit_bank_id" data-monthly_benefit_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
+                    }
+
+                }
+                $(".filter-list").html(option);
+            }
+        });
+    }
+
+    function count_selected_row(){
+
+        var monthly_tenure = new Array();
+        $('input[name="tenure"]:checked').each(function(){
+            monthly_tenure.push($(this).val());
+        });
+
+        var monthly_tenure_list = "&monthly_tenure="+monthly_tenure;
+        var amount = $('#finalAssest').val();
+        var deposit_amount = "&deposit_amount="+amount;
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+        var bank_id_list = "&monthly_benefit_bank_ids="+bank_ids;
+
+        var main_string = monthly_tenure_list+deposit_amount+bank_id_list;
+        main_string = main_string.substring(1, main_string.length);
+
+        var url_str = "<?php echo base_url();?>monthly_benefit/ajax_count_selected_row/";
+
+        $.ajax
+        ({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response) {
+                $(".bank-small-filter").html(response);
+            }
+        });
+    }
+
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+        data_caching();
         loadData( page = null );
     } );
 
@@ -742,6 +753,7 @@
 
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
             //alert($("#finalAssest").val());
+            data_caching();
             loadData(page = null);
         }, 1000);
 

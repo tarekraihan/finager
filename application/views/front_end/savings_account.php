@@ -45,8 +45,8 @@
                                                 <div class="item active row">
                                                     <?php
                                                     $selected_bank_ids = array();
-                                                    if(isset($this->session->userdata['debit_card_bank_ids'])){
-                                                        $bank_ids = array_values($this->session->userdata['debit_card_bank_ids']);
+                                                    if(isset($this->session->userdata['saving_account_bank_ids'])){
+                                                        $bank_ids = array_values($this->session->userdata['saving_account_bank_ids']);
                                                         foreach($bank_ids as $bank_id){
                                                             $selected_bank = explode("=",$bank_id);
                                                             array_push($selected_bank_ids,$selected_bank[0]);
@@ -281,18 +281,25 @@
         if( page != null ){
             page_count = page ;
         }
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+
+        var bank_id_list = "saving_account_bank_ids="+bank_ids;
         var url_str = "<?php echo base_url();?>saving_account/ajax_get_savings_account/" + page_count;
         $.ajax
         ({
             type: "POST",
             url: url_str,
-            //data: main_string,
+            data: bank_id_list,
             cache: false,
             beforeSend: function() {
                 overlay(true,true);
             },
             success: function(msg)
             {
+                count_selected_row();
                 overlay(false);
                 $("#savingsAccountSearch").html(msg);
 
@@ -300,8 +307,100 @@
         });
     }
 
+    function count_selected_row(){
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+        var bank_id_list = "saving_account_bank_ids="+bank_ids;
+
+        var url_str = "<?php echo base_url();?>saving_account/ajax_count_selected_row/";
+
+        $.ajax
+        ({
+            type: "POST",
+            url: url_str,
+            data: bank_id_list,
+            cache: false,
+            success: function(response) {
+                $(".bank-small-filter").html(response);
+            }
+        });
+    }
+
+    function data_caching(){
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+        });
+        var bank_id_list = "saving_account_bank_ids="+bank_ids;
+
+        var url_str = "<?php echo base_url();?>saving_account/ajax_saving_account_caching/" ;
+
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: bank_id_list,
+            cache: false,
+            success: function(response){
+
+                var option = [];
+                var obj = JSON.parse(response);
+
+                if(obj.saving_account_bank_ids.length > 0 ){
+                    for (var i = 0; i < obj.saving_account_bank_ids.length; i++) {
+                        var bank_id = obj.saving_account_bank_ids[i].split("=");
+                        option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="saving_account_bank_id" data-saving_account_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
+                    }
+
+                }
+                $(".filter-list").html(option);
+            }
+        });
+    }
+
     $(document).ready(function(){
+        data_caching();
         loadData( page = null );
+
+        $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+            data_caching();
+            loadData(page = null);
+        } );
+
+
+        $(document).on('click','#clear_all',function(){
+            var data = 'session=saving_account';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>saving_account/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                    window.location.href = window.location.href;
+
+                }
+            });
+        });
+
+
+        $(document).on('click', '.saving_account_bank_id', function (){
+            var  formData = $(this).data();
+            var saving_account_bank_id = formData.saving_account_bank_id;
+            $('#filter-bank-'+saving_account_bank_id).prop('checked', false);
+            var data = 'saving_account_bank_id='+saving_account_bank_id;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>saving_account/unset_saving_account_bank_id_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
     });
 
     //for show hide (more info & Available Offer)

@@ -570,8 +570,17 @@
             interval: false
         });
 
+
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+            //            alert(cur_page);
+            loadData(cur_page);
+            //console.log(cur_page);
+        });
+
         function loadData( page = null ){
-			 var amount = $('#finalAssest').val();
+            var amount = $('#finalAssest').val();
             var principal_amount = "&home_principal_amount="+amount;
             var month = $('#finalLiability').val();
             var month_limit = "&home_month_limit="+month;
@@ -612,6 +621,7 @@
                     overlay(true,true);
                 },
                 success: function(msg){
+                    count_selected_row();
                     overlay(false);
                     $("#searchHomeLoan").html(msg);
                 }
@@ -656,20 +666,62 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.home_i_want_label !=''){
-                       option.push('<li><span class="filter-option"><span>'+obj.home_i_want_label+'</span><a href="javascript:void(0);" class="home_loan_i_want" data-home_loan_i_want="'+obj.home_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                       option.push('<li><div class="filter-option"><span>'+obj.home_i_want_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="home_loan_i_want" data-home_loan_i_want="'+obj.home_i_want+'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.home_i_am_label !=''){
-                       option.push('<li><span class="filter-option"><span>'+obj.home_i_am_label+'</span><a href="javascript:void(0);" class="home_loan_i_am" data-home_loan_i_am="'+ obj.home_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                       option.push('<li><div class="filter-option"><span>'+obj.home_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="home_loan_i_am" data-home_loan_i_am="'+ obj.home_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.home_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.home_bank_ids.length; i++) {
                             var bank_id = obj.home_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="home_loan_bank_id" data-home_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="home_loan_bank_id" data-home_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></span></a></div></li>');
                         }
 
                     }
                     $(".filter-list").html(option);
+                }
+            });
+        }
+
+        function count_selected_row(){
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&home_principal_amount="+amount;
+            var month = $('#finalLiability').val();
+            var month_limit = "&home_month_limit="+month;
+            var home_i_want = new Array();
+            $('input[name="iWant"]:checked').each(function(){
+                home_i_want.push($(this).val());
+            });
+            var home_i_want_list = "&home_i_want="+home_i_want;
+            var home_user = new Array();
+            $('input[name="iAm"]:checked').each(function(){
+                home_user.push($(this).val());
+            });
+            var home_user_list = "&home_user="+home_user;
+
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&home_bank_ids="+bank_ids;
+
+            var home_i_want_label = '&home_i_want_label='+ $('input[name="iWant"]:checked').parent().text().trim();
+            var home_i_am_label = '&home_i_am_label='+$('input[name="iAm"]:checked').parent().text().trim();
+
+            var main_string = home_i_want_list+home_user_list+principal_amount+month_limit+bank_id_list+home_i_want_label+home_i_am_label;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>home_loan/ajax_count_selected_row/";
+
+            $.ajax
+            ({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response) {
+                    $(".bank-small-filter").html(response);
                 }
             });
         }

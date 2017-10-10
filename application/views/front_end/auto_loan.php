@@ -766,8 +766,9 @@
                     overlay(true,true);
                 },
                 success: function(msg){
-                    overlay(false);
+                    count_selected_row();
                     $("#searchAutoLoan").html(msg);
+                    overlay(false);
                 }
 
             });
@@ -813,21 +814,62 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.auto_loan_i_want !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.auto_loan_i_want_label+'</span><a href="javascript:void(0);" class="auto_loan_i_want" data-auto_loan_i_want="'+obj.auto_loan_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.auto_loan_i_want_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="auto_loan_i_want" data-auto_loan_i_want="'+obj.auto_loan_i_want+'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.auto_loan_i_am !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.auto_loan_i_am_label+'</span><a href="javascript:void(0);" class="auto_loan_i_am" data-auto_loan_i_am="'+ obj.auto_loan_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.auto_loan_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="auto_loan_i_am" data-auto_loan_i_am="'+ obj.auto_loan_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.auto_loan_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.auto_loan_bank_ids.length; i++) {
                             var bank_id = obj.auto_loan_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="auto_loan_bank_id" data-auto_loan_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="auto_loan_bank_id" data-auto_loan_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="auto_loan_bank_id" data-auto_loan_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }
                     $(".filter-list").html(option);
+                }
+            });
+        }
+
+        function count_selected_row(){
+            var auto_i_want = new Array();
+            $('input[name="i_want"]:checked').each(function(){
+                auto_i_want.push($(this).val());
+            });
+
+            var auto_i_want_list = "&auto_i_want="+auto_i_want;
+            var amount = $('#finalAssest').val();
+            var principal_amount = "&principal_amount="+amount;
+            var month = $('#finalLiability').val();
+            var month_limit = "&month_limit="+month;
+            var auto_user = new Array();
+            $('input[name="i_am"]:checked').each(function(){
+                auto_user.push($(this).val());
+            });
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&auto_loan_bank_ids="+bank_ids;
+
+
+            var auto_user_list = "&auto_user="+auto_user;
+            var main_string = auto_i_want_list+auto_user_list+principal_amount+month_limit+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>auto_loan/ajax_count_selected_row/";
+
+            $.ajax
+            ({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response) {
+                    $(".bank-small-filter").html(response);
                 }
             });
         }

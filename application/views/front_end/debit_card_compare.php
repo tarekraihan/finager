@@ -59,10 +59,11 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="Debit-Card-Compare-hr1" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png"/> Debit Card<img class="Debit-Card-Compare-hr1" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-            <div class="col-md-6 col-sm-6">
+
+            <h3 class="text-center compare-feature-bar"> <span>Debit Card</span> </h3>
+            <div class="col-md-6 col-sm-6 tble-no-padding-left">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover text-center table-align  compare_table">
+                    <table class="table table-bordered table-hover text-center table-align compare_table">
                         <tr>
                             <td class="abc"><b> Bank Name </b></td>
                             <td> <?php echo $first_card->bank_name;?> </td>
@@ -96,9 +97,9 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6 tble-no-padding-right">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover text-center table-align  compare_table">
+                    <table class="table table-bordered table-hover text-center table-align compare_table">
                         <tr>
                             <td class="abc"><b> Bank Name </b></td>
                             <td> <?php echo $second_card->bank_name;?> </td>
@@ -135,14 +136,13 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="Debit-Card-Compare-hr2" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="Debit-Card-Compare-hr2" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-            <div class="col-md-6 col-sm-6">
+            <h3 class="text-center compare-feature-bar"> <span>Fees & Charges</span> </h3>
+            <div class="col-md-6 col-sm-6 tble-no-padding-left">
                 <div class="table-responsive">
                     <?php echo $first_card->fees_and_charges;?>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6 tble-no-padding-right">
                 <div class="table-responsive">
                     <?php echo $second_card->fees_and_charges;?>
                 </div>
@@ -150,13 +150,13 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Features <img class="home-loan-Compare-hr3" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-            <div class="col-md-6 col-sm-6">
+            <h3 class="text-center compare-feature-bar margin-top-50"> <span>Features</span> </h3>
+            <div class="col-md-6 col-sm-6 tble-no-padding-left">
                 <div class="table-responsive">
                     <?php echo $first_card->features;?>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6 tble-no-padding-right">
                 <div class="table-responsive">
                     <?php echo $second_card->features;?>
                 </div>
@@ -164,14 +164,13 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center">  <img class="Debit-Card-Compare-hr4" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Requirements<img class="Debit-Card-Compare-hr4" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-            <div class="col-md-6 col-sm-6">
+            <h3 class="text-center compare-feature-bar margin-top-50"> <span>Requirements</span> </h3>
+            <div class="col-md-6 col-sm-6 tble-no-padding-left">
                 <div class="table-responsive home_compare_div">
                     <?php echo $first_card->requirement;?>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6 tble-no-padding-right">
                 <div class="table-responsive home_compare_div">
                     <?php echo $second_card->requirement;?>
                 </div>
@@ -179,21 +178,20 @@
         </div>
 
         <div class="row">
-            <h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions<img class="home-loan-Compare-hr4" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-            <div class="col-md-6 col-sm-6">
+            <h3 class="text-center compare-feature-bar margin-top-50"> <span>Terms and Conditions</span> </h3>
+            <div class="col-md-6 col-sm-6 tble-no-padding-left">
                 <div class="table-responsive">
                     <?php echo $first_card->terms_and_conditions;?>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6 tble-no-padding-right">
                 <div class="table-responsive">
                     <?php echo $second_card->terms_and_conditions;?>
                 </div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row comparision-subscribe">
             <h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
             <div class="col-md-12">
                 <form class="comparison_email">

@@ -1130,6 +1130,5 @@ function dragLiAdjustFunction(){
 	}
 	ths.css({'margin-left': '-'+m+'px'});
 }
-
 // Calculator Functionality END
 

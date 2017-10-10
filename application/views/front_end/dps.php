@@ -662,50 +662,6 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
     });
-    /*
-    $(document).on("scroll",function () {
-        var scroller_anchor = $("#sidebar").offset().top;
-        var sidebar_height = $("#sidebar").height();
-        var window_height = $(window).height();
-
-        var offsetToTop = parseInt($(this).scrollTop());
-        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#dps_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+45);
-        var main_height = parseInt($(".main-content-area").height());
-
-        $(".sidebar_parent").height(main_height-20);
-
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-        {
-            $('#sidebar').addClass('fixed');
-        }
-
-        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-        {
-            $('#sidebar').removeClass('fixed');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top-65){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+95){
-            $("#sidebar").addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-    });
-    */
 
     $(document).ready(function(){
         setTimeout(function(){
@@ -757,7 +713,7 @@
 
             var main_string = dps_tenure_list+dps_user_list+deposited_amount+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
-            console.log(main_string);
+//            console.log(main_string);
 			var page_count ='';
 			if( page != null ){
 				page_count = page ;
@@ -774,8 +730,9 @@
                 },
                 success: function(msg)
                 {
-                    overlay(false);
+					count_selected_row();
                     $("#searchDPS").html(msg);
+					overlay(false);
 
                 }
             });
@@ -818,18 +775,18 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.dps_i_am !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.dps_i_am_label+'</span><a href="javascript:void(0);" class="dps_i_am" data-dps_i_am="'+ obj.dps_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.dps_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="dps_i_am" data-dps_i_am="'+ obj.dps_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.dps_tenure !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.dps_tenure_label+'</span><a href="javascript:void(0);" class="dps_tenure_id" data-dps_tenure="'+ obj.dps_tenure +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.dps_tenure_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="dps_tenure_id" data-dps_tenure="'+ obj.dps_tenure +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.dps_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.dps_bank_ids.length; i++) {
                             var bank_id = obj.dps_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="dps_bank_id" data-dps_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="dps_bank_id" data-dps_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
                     }
                     $(".filter-list").html(option);
@@ -837,6 +794,46 @@
             });
         }
 
+		function count_selected_row(){
+
+
+			var amount = $('#finalAssest').val();
+			var deposited_amount = "&deposited_amount="+amount;
+
+
+			var dps_tenure = new Array();
+			$('input[name="dps_tenure"]:checked').each(function(){
+				dps_tenure.push($(this).val());
+			});
+
+			var dps_tenure_list = "&dps_tenure="+dps_tenure;
+
+
+			var dps_user = new Array();
+			$('input[name="i_am"]:checked').each(function(){
+				dps_user.push($(this).val());
+			});
+			var dps_user_list = "&dps_user="+dps_user;
+			var bank_ids = new Array();
+			$('input[name="bank_id"]:checked').each(function(){
+				bank_ids.push($(this).val());
+			});
+			var bank_id_list = "&dps_bank_ids="+bank_ids;
+			var main_string = dps_tenure_list+dps_user_list+deposited_amount+bank_id_list;
+			main_string = main_string.substring(1, main_string.length);
+
+			var url_str = "<?php echo base_url();?>dps/ajax_count_selected_row/";
+			$.ajax
+			({
+				type: "POST",
+				url: url_str,
+				data: main_string,
+				cache: false,
+				success: function(response) {
+					$(".bank-small-filter").html(response);
+				}
+			});
+		}
 
         loadData( page = null );
         data_caching();
@@ -866,7 +863,7 @@
         $('#searchDPS').on('click', '.more_info', function (){
 			var  formData = $(this).data();
 			var dps_id = formData.dps_id;
-			console.log(dps_id);
+//			console.log(dps_id);
 			$("#moreInfo"+dps_id).toggleClass("in");
 			$('#availableOffer'+dps_id).removeClass("in");
 		});
@@ -874,7 +871,7 @@
 		$('#searchDPS').on('click', '.availableOffer', function (){
 			var  formData = $(this).data();
 			var available_offer = formData.available_offer;
-			console.log(available_offer);
+//			console.log(available_offer);
 
 			$('#availableOffer'+available_offer).toggleClass("in");
 			$('#moreInfo'+available_offer).removeClass("in");
@@ -1025,7 +1022,7 @@
         $(document).on('click', '.dps_tenure_id', function (){
             var  formData = $(this).data();
             var dps_tenure = formData.dps_tenure;
-            console.log(dps_tenure);
+//            console.log(dps_tenure);
             $('#dps_tenure'+dps_tenure).prop('checked', false);
             var data = 'dps_tenure='+dps_tenure;
             $.ajax({

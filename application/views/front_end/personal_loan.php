@@ -297,9 +297,9 @@
 									<?php } ?>
 								</div>
 								<div>
-									<button class="btnPmore" data-toggle="<?php echo ($this->session->userdata('personal_i_want') > 2) ? 'collapsed' : 'collapse' ?>" data-target="#demo"><?php echo ($this->session->userdata('personal_i_want') > 2) ? 'Less' : 'More' ?></button>
+									<button class="btnPmore  <?php echo ($this->session->userdata('personal_i_want') > 2) ? 'btn-open' : '' ?>" data-toggle="<?php echo ($this->session->userdata('personal_i_want') > 2) ? 'collapsed' : '' ?>" data-target="#demo"><?php echo ($this->session->userdata('personal_i_want') > 2) ? 'Less' : 'More' ?></button>
 								</div>
-								<div id="demo" class="collapse <?php echo ($this->session->userdata('personal_i_want') != '') ? 'in' : '' ?>">
+								<div id="demo" class="collapse <?php echo ($this->session->userdata('personal_i_want') > 2) ? 'in' : '' ?>">
 									<?php
 									$this->Common_model->table_name = 'personal_loan_looking_for';
 									$this->Common_model->offset = 3;
@@ -745,6 +745,7 @@
                     overlay(true,true);
                 },
                 success: function(msg){
+					count_selected_row();
                     $("#searchPersonalLoan").html(msg);
                     overlay(false);
                 }
@@ -792,26 +793,65 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.personal_i_want !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.personal_i_want_label+'</span><a href="javascript:void(0);" class="personal_i_want" data-personal_i_want="'+obj.personal_i_want+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.personal_i_want_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="personal_i_want" data-personal_i_want="'+obj.personal_i_want+'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.personal_i_am !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.personal_i_am_label+'</span><a href="javascript:void(0);" class="personal_i_am" data-personal_i_am="'+ obj.personal_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.personal_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="personal_i_am" data-personal_i_am="'+ obj.personal_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.personal_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.personal_bank_ids.length; i++) {
                             var bank_id = obj.personal_bank_ids[i].split("=");
 //                            //console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="personal_bank_id" data-personal_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="personal_bank_id" data-personal_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }
                     $(".filter-list").html(option);
                 }
             });
-        };
+        }
 
-        loadData(page);
+		function count_selected_row(){
+			var amount = $('#finalAssest').val();
+			var principal_amount = "&principal_amount="+amount;
+			var month = $('#finalLiability').val();
+			var month_limit = "&month_limit="+month;
+			var personal_i_want = new Array();
+			$('input[name="i_want"]:checked').each(function(){
+				personal_i_want.push($(this).val());
+			});
+			var personal_i_want_list = "&personal_i_want="+personal_i_want;
+			var personal_user = new Array();
+			$('input[name="i_am"]:checked').each(function(){
+				personal_user.push($(this).val());
+			});
+			var personal_user_list = "&personal_user="+personal_user;
+
+			var bank_ids = new Array();
+			$('input[name="bank_id"]:checked').each(function(){
+				bank_ids.push($(this).val());
+			});
+			var bank_id_list = "&personal_loan_bank_ids="+bank_ids;
+
+			var main_string = personal_i_want_list+personal_user_list+principal_amount+month_limit+bank_id_list;
+			main_string = main_string.substring(1, main_string.length);
+			var url_str = "<?php echo base_url();?>personal_loan/ajax_count_selected_row/";
+
+			$.ajax
+			({
+				type: "POST",
+				url: url_str,
+				data: main_string,
+				cache: false,
+				success: function(response) {
+					$(".bank-small-filter").html(response);
+				}
+			});
+		}
+
+
+		loadData(page);
         data_caching();
 
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {

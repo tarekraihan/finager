@@ -60,206 +60,7 @@ if($second_education_loan->is_non_bank == 1){
 			</div>
 		</div>
 	</section>
-<!--
-        <div class="home_loan_com_cal container text-center">
-             <p>
-								<div class="emi_cal">
-									<div id="">
-										<a href="#skip" class="offscreen">Skip to Content</a>
 
-										<div class="clear"></div>
-										<div class="overlay"></div>
-										<div class="row">
-											<div class="span8">
-												<div class="singleColumn page common">
-													<div class="htmltextarea section">
-
-
-
-														<div class="innerMdlWrapper">
-														  
-															<div class="innerMdlInner">
-																<div class="calcWrapper">
-																	<div class="clear"></div>
-																	  
-																	<div class="selectCalcWrapper" style="display:none;">
-																		<div class="radiobox">
-																		  <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
-																		  <label for="savingCalculator">Education Loan Calculator</label>
-																		</div>
-																		<div class="radiobox">
-																		  <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
-																		  <label for="depositCalculator">Education Loan Calculator</label>
-																		</div>
-																	</div>
-
-																	<div class="savingsContainer emiContainer">
-																
-																		<div class="leftCont" style="margin:0 auto; float: none;">
-																			<div class="slideWrapper" id="alreadySaved">
-																				<div class="questWrap">
-																				  <p class="quest">Enter your education loan amount required</p>
-																				</div>
-																			  
-																				<div class="inputWrapper"> <span class="rupee"></span>
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="0" id="finalAssest" class="input_LoanAmt"/>
-																					</div>
-																				  </div>
-																				</div>
-																				<div class="clear"></div>
-
-																				<div class="calcContainer">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="sliderHover"></div>
-																						<div class="draggable ui-widget-content drag3"> </div>
-																					  </div>
-																					  <div class="slideImg" id="finacialAssest">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">25000</div>
-																				  </div>
-																				</div>
-																				
-																			</div>
-																			  
-																			<div class="slideWrapper" id="avgSave">
-																				<p class="quest">Enter tenure for education loan</p>
-																				<div class="inputWrapper">
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="1" id="finalCustAge" maxlength="3" class="input_LoanPeriod"/>
-																					</div>
-																					<div class="inpRt"></div>
-																				  </div>
-																				  <div class="inpRadio">
-																					<div id="tenureType">
-																					  <label>Year</label>
-																					</div>
-																				  </div>
-																				</div>
-																				<div class="clear"></div>
-																				<div class="calcContainer yearWrap" style="display:none">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="draggable ui-widget-content drag3"></div>
-																					  </div>
-																					  <div class="slideImg" id="custAge">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">5</div>
-																				  </div>
-																				</div>
-																				<div class="calcContainer monthWrap">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag2"> <span></span>
-																						<div class="draggable draggable2 ui-widget-content drag3"></div>
-																					  </div>
-																					  <div class="slideImg" id="monthExp">
-																						<ul>
-																						</ul>
-																					  </div>
-																					</div>
-																					<div class="hideVal">5</div>
-																				  </div>
-																				</div>
-
-																			</div>
-
-
-																			<div class="slideWrapper hide" id="interest">
-																				<p class="quest">Interest rate on home loan</p>
-																				<div class="inputWrapper">
-																				  <div class="inputField">
-																					<div class="inpLft"></div>
-																					<div class="inpMdl">
-																					  <input type="text" name="" value="8" id="finalLiability" class="input_AIR"/>
-																					</div>
-																					<div class="inpRt"></div>
-																				  </div>
-																				  <span class="perc">%</span> 
-																				</div>
-																				<div class="clear"></div>
-																				<div class="calcContainer">
-																				  <div class="calcSection">
-																					<div class="dragBox">
-																					  <div class="drag"> <span></span>
-																						<div class="draggable ui-widget-content drag3"></div>
-																					  </div>
-																					  <div class="slideImg" id="liability">
-																						<ul>
-																						</ul>
-																					  </div>
-																					  <div class="prev"></div>
-																					  <div class="next active"></div>
-																					</div>
-																					<div class="hideVal">0.5</div>
-																				  </div>
-																				</div>
-
-																			</div>
-
-																			  <input type="hidden" id="input_Payment" />
-																		</div>
-
-																		<div class="rightCont"> 
-
-																		  <div class="resultWrapper hide">
-																			<h2>Education Loan EMI Result</h2>
-																			<div class="resultContainer">
-
-																			  <div class="rsltField">
-																				<p>Principal Amount</p>
-																				<span class="rupee"></span>
-																				<div id="princpAmt" class="result">2025</div>
-																			  </div>
-																			  <div class="rsltField">
-																				<p>Interest Payable</p>
-																				<span class="rupee"></span>
-																				<div id="totalInterest" class="result">2025</div>
-																			  </div>
-																			  <div class="rsltField">
-																				<p>Total Monthly Payment</p>
-																				<span class="rupee"></span>
-																				<div id="monthPayment" class="result">2025</div>
-																			  </div>
-																			  
-																			</div>
-																		  </div>
-																		</div>
-																		<div class="clear"></div>
-																	</div>
-
-																</div>
-															</div>
-														</div>
-
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-						
-							</p>
-        </div>
-
--->
 <input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
 <input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
 <input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $principal_amount; ?>">
@@ -281,10 +82,10 @@ if($second_education_loan->is_non_bank == 1){
 			</div>
 		
 			<div class="row">
-				<h3 class="text-center"> <img class="education-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png"/> Education Loan <img class="education-loan-Compare-hr1" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Education Loan</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 				<div class="table-responsive">
-					<table class="table table-bordered table-hover text-center table-align  compare_table">
+					<table class="table table-bordered table-hover text-center table-align compare_table">
 						<tr>
 							<td class="abc"><b> Bank Name </b></td>
 							<td> <?php echo $first_bank_name;?> </td>
@@ -317,7 +118,7 @@ if($second_education_loan->is_non_bank == 1){
 					</table>
 				</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center table-align  compare_table">
 							<tr>
@@ -355,8 +156,7 @@ if($second_education_loan->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="Card-Compare-hr2" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				
+                <h3 class="text-center compare-feature-bar"> <span>Fees & Charges</span> </h3>
 				<div class="col-md-12 col-sm-12">
 					<div class="table-responsive">
 						<table class="table table-bordered table-hover text-center compare_table">
@@ -390,13 +190,13 @@ if($second_education_loan->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center"> <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Features <img class="home-loan-Compare-hr3" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar"> <span>Features</span> </h3>
+                <div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_education_loan->feature;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
 						<?php echo $second_education_loan->feature;?>
 					</div>
@@ -404,14 +204,13 @@ if($second_education_loan->is_non_bank == 1){
 			</div>
 			
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Eligibility for Applying <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-		
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Eligibility for Applying</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
 						<?php echo $first_education_loan->eligibility;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_education_loan->eligibility;?>
 					</div>
@@ -421,14 +220,13 @@ if($second_education_loan->is_non_bank == 1){
 
 
 			<div class="row">
-				<h3 class="text-center">  <img class="education-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Requirements <img class="education-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Requirements</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive home_compare_div">
 						<?php echo $first_education_loan->requirement;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive home_compare_div">
                         <?php echo $second_education_loan->requirement;?>
 					</div>
@@ -437,14 +235,13 @@ if($second_education_loan->is_non_bank == 1){
 
 
 			<div class="row">
-				<h3 class="text-center">  <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Terms and Conditions <img class="home-loan-Compare-hr4" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Terms and Conditions</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_education_loan->terms_and_conditions;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_education_loan->terms_and_conditions;?>
 					</div>
@@ -453,14 +250,13 @@ if($second_education_loan->is_non_bank == 1){
 
 
 			<div class="row">
-				<h3 class="text-center">  <img class="education-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> Review <img class="education-loan-Compare-hr5" src="<?php echo base_url(); ?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
-				<div class="col-md-6 col-sm-6">
+                <h3 class="text-center compare-feature-bar margin-top-50"> <span>Review</span> </h3>
+				<div class="col-md-6 col-sm-6 tble-no-padding-left">
 					<div class="table-responsive">
 						<?php echo $first_education_loan->review;?>
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-6 col-sm-6 tble-no-padding-right">
 					<div class="table-responsive">
                         <?php echo $second_education_loan->review;?>
 					</div>
@@ -469,7 +265,7 @@ if($second_education_loan->is_non_bank == 1){
 
 
 			
-			<div class="row">
+			<div class="row comparision-subscribe">
 				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
 				<div class="col-md-12">
 					<form class="comparison_email">

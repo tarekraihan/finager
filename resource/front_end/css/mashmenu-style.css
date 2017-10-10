@@ -253,10 +253,21 @@ a.megamenu_feature_link {
     width: 320px;
     right:0;
 }
-.nav-golden .features {
+/*.nav-golden .features {
     padding: 30px 30px;
     background-image: url(../images/mashmenu/card/B3.png);
     background-size: cover;
+}*/
+.nav-golden .features {
+    padding: 30px 30px;
+    background: rgba(254,251,225,1);
+    background: -moz-linear-gradient(left, rgba(254,251,225,1) 0%, rgba(241,239,189,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(254,251,225,1)), color-stop(100%, rgba(241,239,189,1)));
+    background: -webkit-linear-gradient(left, rgba(254,251,225,1) 0%, rgba(241,239,189,1) 100%);
+    background: -o-linear-gradient(left, rgba(254,251,225,1) 0%, rgba(241,239,189,1) 100%);
+    background: -ms-linear-gradient(left, rgba(254,251,225,1) 0%, rgba(241,239,189,1) 100%);
+    background: linear-gradient(to right, rgba(254,251,225,1) 0%, rgba(241,239,189,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefbe1', endColorstr='#f1efbd', GradientType=1 );
 }
 .nav-golden .vertical-tabs{
     background: transparent !important;
@@ -296,8 +307,16 @@ a.megamenu_feature_link {
 }
 .nav-gray .features {
     padding: 30px 30px;
-    background-image: url(../images/mashmenu/export/B3.png);
-    background-size: cover;
+    /*background-image: url(../images/mashmenu/export/B3.png);
+    background-size: cover;*/
+    background: rgba(230,230,230,1);
+    background: -moz-linear-gradient(left, rgba(230,230,230,1) 0%, rgba(154,154,154,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(230,230,230,1)), color-stop(100%, rgba(154,154,154,1)));
+    background: -webkit-linear-gradient(left, rgba(230,230,230,1) 0%, rgba(154,154,154,1) 100%);
+    background: -o-linear-gradient(left, rgba(230,230,230,1) 0%, rgba(154,154,154,1) 100%);
+    background: -ms-linear-gradient(left, rgba(230,230,230,1) 0%, rgba(154,154,154,1) 100%);
+    background: linear-gradient(to right, rgba(230,230,230,1) 0%, rgba(154,154,154,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#9a9a9a', GradientType=1 );
 }
 .nav-gray .vertical-tabs{
     background: transparent !important;
@@ -335,10 +354,21 @@ a.megamenu_feature_link {
     width: 320px;
     right:0;
 }
-.nav-skyblue .features {
+/*.nav-skyblue .features {
     padding: 30px 30px;
     background-image: url(../images/mashmenu/loan/B3.png);
     background-size: cover;
+}*/
+.nav-skyblue .features {
+    padding: 30px 30px;
+    background: rgba(228, 244, 253, 1);
+    background: -moz-linear-gradient(left, rgba(228, 244, 253, 1) 0%, rgba(114, 198, 232, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(228, 244, 253, 1)), color-stop(100%, rgba(114, 198, 232, 1)));
+    background: -webkit-linear-gradient(left, rgba(228, 244, 253, 1) 0%, rgba(114, 198, 232, 1) 100%);
+    background: -o-linear-gradient(left, rgba(228, 244, 253, 1) 0%, rgba(114, 198, 232, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(228, 244, 253, 1) 0%, rgba(114, 198, 232, 1) 100%);
+    background: linear-gradient(to right, rgba(228, 244, 253, 1) 0%, rgba(114, 198, 232, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f4fd', endColorstr='#72c6e8', GradientType=1);
 }
 .nav-skyblue .vertical-tabs{
     background: transparent !important;
@@ -379,8 +409,16 @@ a.megamenu_feature_link {
 }
 .nav-green .features {
     padding: 30px 30px;
-    background-image: url(../images/mashmenu/investment/B3.png);
-    background-size: cover;
+    /*background-image: url(../images/mashmenu/investment/B3.png);
+    background-size: cover;*/
+    background: rgba(231,242,215,1);
+    background: -moz-linear-gradient(left, rgba(231,242,215,1) 0%, rgba(204,222,173,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(231,242,215,1)), color-stop(100%, rgba(204,222,173,1)));
+    background: -webkit-linear-gradient(left, rgba(231,242,215,1) 0%, rgba(204,222,173,1) 100%);
+    background: -o-linear-gradient(left, rgba(231,242,215,1) 0%, rgba(204,222,173,1) 100%);
+    background: -ms-linear-gradient(left, rgba(231,242,215,1) 0%, rgba(204,222,173,1) 100%);
+    background: linear-gradient(to right, rgba(231,242,215,1) 0%, rgba(204,222,173,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7f2d7', endColorstr='#ccdead', GradientType=1 );
 }
 .nav-green .vertical-tabs{
     background: transparent !important;

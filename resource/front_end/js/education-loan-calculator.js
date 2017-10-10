@@ -770,10 +770,10 @@ function calculationSlider()
 		}
 		else if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
 		{
-			console.log(selectValue+"fd");
+			//console.log(selectValue+"fd");
 			finalFincialAssest =((selectValue+1) * 50000 );
 			finalLiabilities = ((selectValue+1) * 1);
-			console.log(selectValue);
+			//console.log(selectValue);
 			if(selectValue>4){
 				finalLiabilities = ((selectValue) * 1);
 			}
@@ -1026,5 +1026,6 @@ setTimeout(function(){
     $('#interest').find('.ui-draggable').css('left',35);
     $('#finacialAssest').children('ul').css('margin-left',-105);
     $('#alreadySaved').find('.prev').addClass('active');
-});
+},500);
+
 // Calculator Functionality END

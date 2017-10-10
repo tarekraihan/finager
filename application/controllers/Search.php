@@ -87,36 +87,6 @@ class Search extends CI_Controller{
                           <span>FDR</span>
                        </div>
                     </a>
-                </div>
-                <div class="col-md-4">
-                    <div class="no_filte_div">
-                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                        <span>Sample Text</span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="no_filte_div">
-                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                        <span>Sample Text</span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="no_filte_div">
-                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                        <span>Sample Text</span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="no_filte_div">
-                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                        <span>Sample Text</span>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="no_filte_div">
-                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                        <span>Sample Text</span>
-                    </div>
                 </div>';
         }
     }

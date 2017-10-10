@@ -345,6 +345,7 @@ class Debit_card extends CI_Controller
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms And Conditions', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees And Charges', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
+            $this->form_validation->set_rules('txtCardSummary', 'Card Summary', 'trim|required');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Card Info";
                 $this->load->view('admin/block/header', $data);
@@ -372,6 +373,7 @@ class Debit_card extends CI_Controller
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'review' => $this->input->post('txtReview'),
+                    'card_summary' => $this->input->post('txtCardSummary'),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
@@ -414,6 +416,7 @@ class Debit_card extends CI_Controller
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms And Conditions', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees And Charges', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
+            $this->form_validation->set_rules('txtCardSummary', 'Card Summary', 'trim|required');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Card Info";
                 $this->load->view('admin/block/header', $data);
@@ -441,8 +444,9 @@ class Debit_card extends CI_Controller
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'review' => $this->input->post('txtReview'),
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'card_summary' => $this->input->post('txtCardSummary'),
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
 
                 $this->Common_model->table_name = 'debit_card_info';
@@ -582,13 +586,25 @@ class Debit_card extends CI_Controller
 
         if($result->num_rows() > 0){
             foreach($result->result() as $row) {
+//                pr($row);
+                $summary ='';
+                if($row->card_summary != ''){
+                    $length = strlen($row->card_summary);
+                    if($length > 250){
+                        $rest = substr($row->card_summary, 0,250);
+                        $summary = $rest.' <a href="'.base_url().'en/debit_card_details/'. $row->id.'"> read more..</a>';
+                    }else{
+                        $summary = $row->card_summary;
+                    }
+                }else{
+
+                    $summary = $row->card_name.' of '.$row->bank_name.' is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.';
+                }
                 $debit_card .= '<div class="full-card">
 
 						<div class="row card_right_bar no-margin-lr">
 							<div class="col-sm-3 col-xs-3">
 								<a href="'.base_url().'en/debit_card_details/'.$row->id.'" ><img title="Click here to details" class="img-responsive selected_card" src="' . base_url() . 'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
-								<img class="btnCardApply img-responsive" src="' . base_url() . 'resource/front_end/images/BtnCard_apply.png" />
-
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 								</p>
@@ -603,7 +619,7 @@ class Debit_card extends CI_Controller
 									<div class="col-sm-9 col-xs-9">
 										<div class="card_text1">
 											<b>'.$row->card_name.'/'.$row->account_name.'</b>
-											<p class="card_description">Dual Currency Visa Classic Card of Brac Bank Ltd. is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.</p>
+											<p class="card_description">'.$summary.'</p>
 										</div>
 									</div>
 									<div class="col-sm-3 col-xs-3">
@@ -739,6 +755,93 @@ class Debit_card extends CI_Controller
             $debit_card .=  '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';
         }
         echo $debit_card;
+    }
+
+
+    public function ajax_count_selected_row(){
+        $choose_account = $this->input->post('choose_account');
+        $looking_for = $this->input->post('looking_for');
+        $card_issuer = $this->input->post('card_issuer');
+        $i_want = $this->input->post('i_want');
+        $debit_card_bank_ids = $this->input->post('debit_card_bank_ids');
+
+        $WHERE = array(); $query = '';
+        if(!empty($choose_account)) {
+            if(strstr($choose_account,',')) {
+                $data1 = explode(',',$choose_account);
+                $choose_account_array = array();
+                foreach($data1 as $c_user) {
+                    $choose_account_array[] = "debit_card_info.choose_account_id = $c_user";
+                }
+                $WHERE[] = '('.implode(' OR ',$choose_account_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.choose_account_id = '.$choose_account.')';
+            }
+        }
+
+        if(!empty($looking_for)) {
+            if(strstr($looking_for,',')) {
+                $data2 = explode(',',$looking_for);
+                $looking_for_array = array();
+                foreach($data2 as $c_type) {
+                    $looking_for_array[] = "debit_card_info.looking_for_id = $c_type";
+                }
+                $WHERE[] = '('.implode(' OR ',$looking_for_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.looking_for_id = '.$looking_for.')';
+            }
+        }
+
+        if(!empty($card_issuer)) {
+            if(strstr($card_issuer,',')) {
+                $data3 = explode(',',$card_issuer);
+                $card_issuer_array = array();
+                foreach($data3 as $c_type) {
+                    $card_issuer_array[] = "debit_card_info.card_issuer_id = $c_type";
+                }
+                $WHERE[] = '('.implode(' OR ',$card_issuer_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.card_issuer_id = '.$card_issuer.')';
+            }
+        }
+
+        if(!empty($i_want)) {
+            if(strstr($i_want,',')) {
+                $data4 = explode(',',$i_want);
+                $i_want_array = array();
+                foreach($data4 as $c_type) {
+                    $i_want_array[] = "debit_card_info.i_want_id = $c_type";
+                }
+                $WHERE[] = '('.implode(' OR ',$i_want_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.i_want_id = '.$i_want.')';
+            }
+        }
+
+        if(!empty($debit_card_bank_ids)) {
+            if(strstr($debit_card_bank_ids,',')) {
+                $data8 = explode(',',$debit_card_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "debit_card_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(debit_card_info.bank_id = '.$debit_card_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_debit_card_info($query);
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'debit_card_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
     }
 
     public function ajax_compare_card_image(){

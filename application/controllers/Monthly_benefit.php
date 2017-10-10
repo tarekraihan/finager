@@ -239,6 +239,7 @@ class Monthly_benefit extends CI_Controller {
     public function ajax_get_monthly_benefit(){
 
         $monthly_tenure = $this->input->post('monthly_tenure');
+        $monthly_benefit_bank_ids = $this->input->post('monthly_benefit_bank_ids');
         $monthly_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
         $WHERE = array(); $query = '';
         if(!empty($monthly_tenure)) {
@@ -248,13 +249,29 @@ class Monthly_benefit extends CI_Controller {
 //        if(!empty($monthly_amount)) {
 //            $WHERE[] = '( monthly_benefit_info.deposit_amount >= '.$monthly_amount.')';
 //        }
+
+        if(!empty($monthly_benefit_bank_ids)) {
+            if(strstr($monthly_benefit_bank_ids,',')) {
+                $data8 = explode(',',$monthly_benefit_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "monthly_benefit_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(monthly_benefit_info.bank_id = '.$monthly_benefit_bank_ids.')';
+            }
+        }
+
+
         $query = implode(' AND ',$WHERE);
         if(!empty($query)) {
             $query = 'WHERE '.$query;
         }
-        //print_r($query);die;
+//        pr($query);die;
 
         $res = $this->Front_end_select_model->select_monthly_benefit($query);
+//        pr($res);die;
 //-----------Pagination start-----------------
         $config['base_url'] = base_url() . "en/all_monthly_benefit/";
         $config['total_rows'] = $res->num_rows();
@@ -292,14 +309,14 @@ class Monthly_benefit extends CI_Controller {
 
         $monthly_benefit = '';
 
-        //pr($money_maximizer->result());die;
+        //pr($money_monthly_benefit->result());die;
         if($result->num_rows() > 0){
             foreach($result->result() as $row){
 //                print_r($row);die;
 
                 $tenure = ($row->tenure == '0.5') ? '6 Months' : $row->tenure.' Years';
                 $loan_facility = (strtoupper($row->loan_facility) != 'N/A') ? $row->loan_facility.' %' :'N/A';
-                //$benefit_amount  = $maximizer_amount * $row->your_benefit;
+                //$benefit_amount  = $monthly_benefit_amount * $row->your_benefit;
 
                 $monthly_benefit .= '
 					 <div class="full-card">
@@ -318,7 +335,7 @@ class Monthly_benefit extends CI_Controller {
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Deposited Amount</h5>
-                                        <p>BDT. '.number_format($monthly_amount).'</p>
+                                        <p>BDT '.number_format($monthly_amount).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
@@ -330,7 +347,7 @@ class Monthly_benefit extends CI_Controller {
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Benefit Amount</h5>
-                                        <p>BDT. '.number_format( $row->benefit_amount ).'</p>
+                                        <p>BDT '.number_format( $row->benefit_amount ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
@@ -413,6 +430,46 @@ class Monthly_benefit extends CI_Controller {
     }
 
 
+    public function ajax_count_selected_row(){
+        $monthly_tenure = $this->input->post('monthly_tenure');
+        $monthly_benefit_bank_ids = $this->input->post('monthly_benefit_bank_ids');
+        $monthly_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $WHERE = array(); $query = '';
+        if(!empty($monthly_tenure)) {
+            $WHERE[] = '( monthly_benefit_info.tenure_id = '.$monthly_tenure.')';
+        }
+//
+//        if(!empty($monthly_amount)) {
+//            $WHERE[] = '( monthly_benefit_info.deposit_amount >= '.$monthly_amount.')';
+//        }
+
+        if(!empty($monthly_benefit_bank_ids)) {
+            if(strstr($monthly_benefit_bank_ids,',')) {
+                $data8 = explode(',',$monthly_benefit_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "monthly_benefit_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(monthly_benefit_info.bank_id = '.$monthly_benefit_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+        $res = $this->Front_end_select_model->select_monthly_benefit($query);
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'monthly_benefit_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+
+    }
+
+
     public function ajax_compare_monthly_image(){
         $id = $this->input->post('monthly_id');
         $result = $this->Front_end_select_model->select_monthly_benefit_image($id);
@@ -446,7 +503,7 @@ class Monthly_benefit extends CI_Controller {
         $monthly_benefit_deposit_amount = (!empty($this->input->post('monthly_benefit_deposit_amount'))) ? $this->input->post('monthly_benefit_deposit_amount') : '';
         $data = (!empty($this->input->post('data'))) ? $this->input->post('data') : '';
 
-        $array_items = array('monthly_benefit_tenure', 'monthly_benefit_deposit_amount');
+        $array_items = array('monthly_benefit_tenure', 'monthly_benefit_tenure', 'monthly_benefit_tenure_label', 'monthly_benefit_bank_ids');
         $this->session->unset_userdata($array_items);
         if( $monthly_benefit_tenure != ''){
             $newdata['monthly_benefit_tenure'] = $monthly_benefit_tenure;
@@ -464,5 +521,75 @@ class Monthly_benefit extends CI_Controller {
         echo 'success';
     }
 
+
+
+    public function ajax_monthly_benefit_caching(){
+
+        $monthly_benefit_deposit_amount = floatval ( ($this->input->post('monthly_benefit_deposit_amount')) ? $this->input->post('monthly_benefit_deposit_amount') : '50000' );
+        $monthly_benefit_tenure = $this->input->post('monthly_benefit_tenure');
+        $monthly_benefit_bank_ids = $this->input->post('monthly_benefit_bank_ids');
+        $monthly_benefit_tenure_label = $this->input->post('monthly_benefit_tenure_label');
+
+        $bank_id_array = array();
+        if(!empty($monthly_benefit_bank_ids)) {
+            if(strstr($monthly_benefit_bank_ids,',')) {
+                $data3 = explode(',',$monthly_benefit_bank_ids);
+
+                foreach( $data3 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $monthly_benefit_bank_ids;
+            }
+        }
+
+        $array_items = array('monthly_benefit_tenure', 'monthly_benefit_tenure', 'monthly_benefit_tenure_label', 'monthly_benefit_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'monthly_benefit_tenure'  => $monthly_benefit_tenure,
+            'monthly_benefit_deposit_amount'  => $monthly_benefit_deposit_amount,
+            'monthly_benefit_tenure_label' => $monthly_benefit_tenure_label,
+            'monthly_benefit_bank_ids' => $bank_id_array
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='monthly_benefit'){
+            $array_items = array('monthly_benefit_tenure', 'monthly_benefit_tenure', 'monthly_benefit_tenure_label', 'monthly_benefit_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+    }
+
+    public function unset_monthly_benefit_tenure_session(){
+        $session = $this->input->post('monthly_benefit_tenure');
+        if($session){
+            $this->session->unset_userdata('monthly_benefit_tenure');
+            $this->session->unset_userdata('monthly_benefit_tenure_label');
+            echo 'success';
+        }
+
+    }
+
+
+    public function unset_monthly_benefit_bank_id_session(){
+        $id = $this->input->post('monthly_benefit_bank_id');
+        $row = $this->Select_model->Select_bank_info_by_id($id);
+        if($row) {
+            $session = $row['id'] . '=' . $row['bank_name'];
+            $bank = array_values($_SESSION['monthly_benefit_bank_ids']);
+            if (($key = array_search($session, $bank)) !== false) {
+                unset($_SESSION['monthly_benefit_bank_ids'][$key]);
+            }
+        }
+    }
 
 }

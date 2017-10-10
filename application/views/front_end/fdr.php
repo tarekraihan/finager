@@ -450,7 +450,7 @@
 				
 				<!-- Right bar content start -->
                 <div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
-                    <input type="hidden" id="principle_amount" name="principle_amount" value="">
+                    <input type="hidden" id="principle_amount" name="principle_amount" value="5000">
                     <div id="searchFDR">
                        <div id="loading" class="text-center"></div>
 
@@ -532,6 +532,7 @@
         $("input[type='checkbox'], input[type='radio']").on( "click", function() {
             $('input[name="deposit_amount"]:checked').each(function(){
                 $('#deposited_amount').val($(this).val());
+                $('#principle_amount').val($(this).val());
 //                alert($('#deposited_amount').val());
 
             });
@@ -554,6 +555,7 @@
             });
 
             var amount = $('#deposited_amount').val();
+            $('#principle_amount').val(amount);
             var principal_amount = "&principal_amount="+amount;
 
             var fdr_tenure_list = "&fdr_tenure="+fdr_tenure;
@@ -579,7 +581,7 @@
                 page_count = page ;
             }
             var url_str = "<?php echo base_url();?>fdr/ajax_get_fdr/" + page_count;
-            console.log(main_string);
+//            console.log(main_string);
             $.ajax
             ({
                 type: "POST",
@@ -591,9 +593,9 @@
                 },
                 success: function(msg)
                 {
-                    overlay(false);
+                    count_selected_row();
                     $("#searchFDR").html(msg);
-
+                    overlay(false);
                 }
             });
         }
@@ -639,24 +641,65 @@
                     var option = [];
                     var obj = JSON.parse(response);
                     if(obj.fdr_deposit_amount !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.fdr_deposit_amount_label+'</span><a href="javascript:void(0);" class="fdr_deposit_amount" data-fdr_deposit_amount="'+obj.fdr_deposit_amount+'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.fdr_deposit_amount_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_deposit_amount" data-fdr_deposit_amount="'+obj.fdr_deposit_amount+'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.fdr_i_am !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.fdr_i_am_label+'</span><a href="javascript:void(0);" class="fdr_i_am" data-fdr_i_am="'+ obj.fdr_i_am +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.fdr_i_am_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_i_am" data-fdr_i_am="'+ obj.fdr_i_am +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.fdr_tenure !=''){
-                        option.push('<li><span class="filter-option"><span>'+obj.fdr_tenure_label+'</span><a href="javascript:void(0);" class="fdr_tenure_id" data-fdr_tenure="'+ obj.fdr_tenure +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                        option.push('<li><div class="filter-option"><span>'+obj.fdr_tenure_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_tenure_id" data-fdr_tenure="'+ obj.fdr_tenure +'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
 
                     if(obj.fdr_bank_ids.length > 0 ){
                         for (var i = 0; i < obj.fdr_bank_ids.length; i++) {
                             var bank_id = obj.fdr_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
-                            option.push('<li><span class="filter-option"><span>'+bank_id[1]+'</span><a href="javascript:void(0);" class="fdr_bank_id" data-fdr_bank_id="'+ bank_id[0] +'"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>');
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_bank_id" data-fdr_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
                     }
                     $(".filter-list").html(option);
+                }
+            });
+        }
+
+        function count_selected_row(){
+
+            var fdr_tenure = new Array();
+            $('input[name="fdr_tenure"]:checked').each(function(){
+                fdr_tenure.push($(this).val());
+            });
+
+            var amount = $('#deposited_amount').val();
+            var principal_amount = "&principal_amount="+amount;
+
+            var fdr_tenure_list = "&fdr_tenure="+fdr_tenure;
+
+
+            var fdr_user = new Array();
+            $('input[name="i_am"]:checked').each(function(){
+                fdr_user.push($(this).val());
+            });
+            var fdr_user_list = "&fdr_user="+fdr_user;
+
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&fdr_bank_ids="+bank_ids;
+
+            var main_string = fdr_tenure_list+fdr_user_list+principal_amount+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+
+            var url_str = "<?php echo base_url();?>fdr/ajax_count_selected_row/";
+            $.ajax
+            ({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                success: function(response) {
+                    $(".bank-small-filter").html(response);
                 }
             });
         }
@@ -682,7 +725,7 @@
         $('#searchFDR').on('click', '.more_info', function (){
             var  formData = $(this).data();
             var fdr_id = formData.fdr_id;
-            console.log(fdr_id);
+//            console.log(fdr_id);
             $("#moreInfo"+fdr_id).toggleClass("in");
             $('#availableOffer'+fdr_id).removeClass("in");
 
@@ -692,7 +735,7 @@
 
             var  formData = $(this).data();
             var available_offer = formData.available_offer;
-            console.log(available_offer);
+//            console.log(available_offer);
             $('#availableOffer'+available_offer).html('<iframe  src="<?php echo base_url();?>en/fdr_iframe"  frameborder="0"  width="100%" height="570" scrolling="no" ></iframe>');
             $('#availableOffer'+available_offer).toggleClass("in");
             $('#moreInfo'+available_offer).removeClass("in");
@@ -811,7 +854,7 @@
             //alert(1);
             var  formData = $('.cart_anchor').children('img').data();
             var fdr_id1 = "fdr_id1="+formData.fdr_id;
-            var principal_amount = "&amount=" + $('#principle_amount').val();
+            var principal_amount = "&fdr_deposit_amount=" + $('#principle_amount').val();
 
             var  formData = $('.cart_anchor01').children('img').data();
             var fdr_id2 = "&fdr_id2="+formData.fdr_id;
@@ -857,7 +900,7 @@
         $(document).on('click', '.fdr_tenure_id', function (){
             var  formData = $(this).data();
             var fdr_tenure = formData.fdr_tenure;
-            console.log(fdr_tenure);
+//            console.log(fdr_tenure);
             $('#fdr_tenure'+fdr_tenure).prop('checked', false);
             var data = 'fdr_tenure='+fdr_tenure;
             $.ajax({

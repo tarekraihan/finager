@@ -1026,12 +1026,11 @@ function dragLiAdjustFunction(){
 	ths.css({'margin-left': '-'+m+'px'});
 }
 
-
 setTimeout(function(){
     $('#alreadySaved').find('.ui-draggable').css('left',140);
     $('#interest').find('.ui-draggable').css('left',35);
     //$('#alreadySaved').find('.prev').addClass('active');
-});
+},500);
 
 // Calculator Functionality END
 

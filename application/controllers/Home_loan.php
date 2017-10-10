@@ -638,11 +638,6 @@ class Home_Loan extends CI_Controller {
              $home_principal_amount = 200000;
          }
 
-
-
-/*        $home_i_want_label = ($this->session->userdata("home_i_want_label") != "") ? '<li><span class="filter-option"><span>'.$this->session->userdata("home_i_want_label").'</span><a href="javascript:void(0);" value="'.$this->session->userdata("home_i_want").'" data-facet="Features" class="active-filter-close"><i class="fa fa-times" aria-hidden="true"></i></a></span></li>
-' : '';*/
-
          $home_month_limit = floatval ( ($this->input->post('home_month_limit') > 1) ? $this->input->post('home_month_limit') : 1 );
 
         if($home_month_limit > 25 || $home_month_limit < 1){
@@ -902,6 +897,70 @@ class Home_Loan extends CI_Controller {
         echo $home;
     }
 
+    public function ajax_count_selected_row(){
+
+        $home_i_want = $this->input->post('home_i_want');
+        $home_user = $this->input->post('home_user');
+        $home_bank_ids = $this->input->post('home_bank_ids');
+        $home_principal_amount = floatval ( ($this->input->post('home_principal_amount')) ? $this->input->post('home_principal_amount') : '200000' );
+
+        if($home_principal_amount > 40000000 || $home_principal_amount < 200000){
+            $home_principal_amount = 200000;
+        }
+
+        $home_month_limit = floatval ( ($this->input->post('home_month_limit') > 1) ? $this->input->post('home_month_limit') : 1 );
+
+        if($home_month_limit > 25 || $home_month_limit < 1){
+            $home_month_limit = 1;
+        }
+
+        $WHERE = array(); $query = '';
+        if(!empty($home_principal_amount)) {
+            $WHERE[] = 'CAST( home_loan_info.min_loan_amount as SIGNED INTEGER ) <= '.$home_principal_amount;
+        }
+
+        if(!empty($home_principal_amount)) {
+            $WHERE[] = 'CAST( home_loan_info.max_loan_amount as SIGNED INTEGER ) >= '.$home_principal_amount;
+        }
+
+        if(!empty($home_user)) {
+            $WHERE[] = 'home_loan_user_home_loan_info.home_loan_user_id = '.$home_user;
+        }
+
+        if(!empty($home_i_want)) {
+
+            $WHERE[] = 'home_loan_info.home_loan_looking_for_id = '.$home_i_want;
+
+        }
+        if(!empty($home_bank_ids)) {
+            if(strstr($home_bank_ids,',')) {
+                $data8 = explode(',',$home_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "home_loan_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(home_loan_info.bank_id = '.$home_bank_ids.')';
+            }
+        }
+
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_home_loan_info($query);
+
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'home_loan_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
     public function ajax_compare_home_loan_image(){
         $id = $this->input->post('home_id');
         $result = $this->Front_end_select_model->select_home_loan_image($id);
@@ -930,7 +989,7 @@ class Home_Loan extends CI_Controller {
         $newdata = array(
             'first_home_loan'  => $id1,
             'second_home_loan'  => $id2,
-            'principal_amount'  => $principal_amount,
+            'home_principal_amount'  => $principal_amount,
             'month_limit'  => $month_limit
         );
         $this->session->set_userdata($newdata);
@@ -1036,11 +1095,6 @@ class Home_Loan extends CI_Controller {
             if(($key = array_search($session, $bank)) !== false) {
                 unset($_SESSION['home_bank_ids'][$key]);
             }
-            /*if(in_array($session, $bank)){
-                pr($_SESSION);
-            }else{
-                echo 'sorry';
-            }*/
             pr($_SESSION);
         }
     }

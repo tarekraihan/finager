@@ -5,7 +5,7 @@
 
                 <div class="row margin_bottom_15">
                     <div class="col-sm-6">
-                        <img class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinAlfa.svg">
+                        <img title="Finager Logo" class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/finager-logo.svg">
                     </div>
 
                     <div class="col-sm-6">
@@ -200,36 +200,7 @@
                                        </div>
                                     </a>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="no_filte_div">
-                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                        <span>Sample Text</span>
-                                    </div>
-                                </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -271,6 +242,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
+                <button type="button" class="close" id="subscription_message_footer-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <div class="modal-footer text-center" id="subscribe_message_footer">
 
                 </div>
@@ -427,7 +399,7 @@ jQuery(document).keypress(function(e) {
             data: search_word,
             success: function(response)
             {
-                console.log(response);
+//                console.log(response);
 
                 $('#search_result').html(response);
             }
@@ -458,7 +430,7 @@ jQuery(document).keypress(function(e) {
             data: 'email='+email,
             success: function(response)
             {
-                console.log(response);
+//                console.log(response);
 
                 $('#subscribe_message').html(response);
                 $('#betaSubscribeEmail').val('');
@@ -477,7 +449,7 @@ jQuery(document).keypress(function(e) {
             data: 'email='+email,
             success: function(response)
             {
-                console.log(response);
+//                console.log(response);
                 $('#subscribe_message_footer').html(response);
 
                 $('#txtSubscribeEmail').val('');

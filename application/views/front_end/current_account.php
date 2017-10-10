@@ -35,8 +35,8 @@
                                                 <div class="item active row">
                                                     <?php
                                                     $selected_bank_ids = array();
-                                                    if(isset($this->session->userdata['debit_card_bank_ids'])){
-                                                        $bank_ids = array_values($this->session->userdata['debit_card_bank_ids']);
+                                                    if(isset($this->session->userdata['current_account_bank_ids'])){
+                                                        $bank_ids = array_values($this->session->userdata['current_account_bank_ids']);
                                                         foreach($bank_ids as $bank_id){
                                                             $selected_bank = explode("=",$bank_id);
                                                             array_push($selected_bank_ids,$selected_bank[0]);
@@ -212,7 +212,7 @@
                             foreach($result->result() as $row){
                                 ?>
                                 <label class="material_radio_group">
-                                    <input type="radio" name="i_am"  id="i_am<?php echo $row->id; ?>"  value="<?php echo $row->id ;?>" class="material_radiobox"/>
+                                    <input type="radio" name="i_am"  id="i_am<?php echo $row->id; ?>"  value="<?php echo $row->id ;?>" class="material_radiobox" <?php echo ($this->session->userdata('current_account_i_am') == $row->id ) ? 'checked' : '';?>/>
                                     <span class="material_check_radio"></span>
                                     <?php echo $row->i_am; ?>
                                 </label><br/>
@@ -333,18 +333,26 @@
             current_account_i_am.push($(this).val());
         });
         var current_account_i_am_list = "&current_account_i_am="+current_account_i_am;
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+
+        var bank_id_list = "&current_account_bank_ids="+bank_ids;
         var url_str = "<?php echo base_url();?>current_account/ajax_get_current_account/" + page_count;
         $.ajax
         ({
             type: "POST",
             url: url_str,
-            data: current_account_i_am_list,
+            data: current_account_i_am_list+bank_id_list,
             cache: false,
             beforeSend: function() {
                 overlay(true,true);
             },
             success: function(msg)
             {
+                count_selected_row();
                 overlay(false);
                 $("#currentAccountSearch").html(msg);
 
@@ -352,13 +360,144 @@
         });
     }
 
-    $(" input[type='radio']").on( "click", function() {
+
+    function data_caching(){
+        var current_account_i_am = new Array();
+        $('input[name="i_am"]:checked').each(function(){
+            current_account_i_am.push($(this).val());
+        });
+        var current_account_i_am_list = "&current_account_i_am="+current_account_i_am;
+
+        var bank_ids = new Array();
+
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+        });
+        var bank_id_list = "&current_account_bank_ids="+bank_ids;
+
+        var current_account_i_am_label = '&current_account_i_am_label='+ $('input[name="i_am"]:checked').parent().text().trim();
+
+        var main_string = current_account_i_am_list+bank_id_list+current_account_i_am_label;
+        main_string = main_string.substring(1, main_string.length);
+        var url_str = "<?php echo base_url();?>current_account/ajax_current_account_caching/" ;
+
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response){
+
+                var option = [];
+                var obj = JSON.parse(response);
+
+                if(obj.current_account_i_am !='') {
+                    option.push('<li><div class="filter-option"><span>' + obj.current_account_i_am_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="current_account_i_am" data-current_account_i_am="' + obj.current_account_i_am + '"><i class="icon-close icons"></i></a></span></div></li>');
+                }
+
+                if(obj.current_account_bank_ids.length > 0 ){
+                    for (var i = 0; i < obj.current_account_bank_ids.length; i++) {
+                        var bank_id = obj.current_account_bank_ids[i].split("=");
+                        option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="current_account_bank_id" data-current_account_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
+                    }
+
+                }
+                $(".filter-list").html(option);
+            }
+        });
+    }
+
+    function count_selected_row(){
+        var current_account_i_am = new Array();
+        $('input[name="i_am"]:checked').each(function(){
+            current_account_i_am.push($(this).val());
+        });
+        var current_account_i_am_list = "&current_account_i_am="+current_account_i_am;
+
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val());
+        });
+        var bank_id_list = "&current_account_bank_ids="+bank_ids;
+
+        var main_string = bank_id_list+current_account_i_am_list;
+        main_string = main_string.substring(1, main_string.length);
+
+        var url_str = "<?php echo base_url();?>current_account/ajax_count_selected_row/";
+
+        $.ajax
+        ({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response) {
+                $(".bank-small-filter").html(response);
+            }
+        });
+    }
+
+
+    $("input[type='checkbox'], input[type='radio']").on( "click", function() {
+        data_caching();
         loadData(page = null);
     } );
 
 
     $(document).ready(function(){
+        data_caching();
         loadData( page = null );
+
+
+        $(document).on('click','#clear_all',function(){
+            var data = 'session=current_account';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>current_account/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                    window.location.href = window.location.href;
+
+                }
+            });
+        });
+
+
+        $(document).on('click', '.current_account_i_am', function (){
+            var  formData = $(this).data();
+            var current_account_i_am = formData.current_account_i_am;
+            $('#i_am'+current_account_i_am ).prop('checked', false);
+            var data = 'current_account_i_am ='+current_account_i_am;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>current_account/unset_current_account_i_am_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
+
+
+        $(document).on('click', '.current_account_bank_id', function (){
+            var  formData = $(this).data();
+            var current_account_bank_id = formData.current_account_bank_id;
+            $('#filter-bank-'+current_account_bank_id).prop('checked', false);
+            var data = 'current_account_bank_id='+current_account_bank_id;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>current_account/unset_current_account_bank_id_session",
+                data: data,
+                success: function(msg){
+                    loadData( page = null );
+                }
+            });
+
+        });
     });
 
 

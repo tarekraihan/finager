@@ -252,7 +252,7 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
-            $this->form_validation->set_rules('txtFeesAndCharges', 'fees and charges', 'trim|required');
+            $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
             $this->form_validation->set_rules('txtReview', 'Review', 'trim');
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Draft Info";
@@ -716,11 +716,11 @@ class Dps extends CI_Controller
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
-                    'fees_and_charges' => $this->input->post('txtAvailableBenefit'),
+                    'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
                     'review' => $this->input->post('txtReview'),
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
                 $this->Common_model->table_name = 'dps_info';
                 $this->Common_model->where = array('id' => $this->input->post('txtInfoId'));
@@ -817,8 +817,8 @@ class Dps extends CI_Controller
                         'fifty_thousand_interest' => ($this->input->post('fifty_thousand_maturity') != '') ? ($this->input->post('fifty_thousand_maturity') - ($this->input->post('fifty_thousand_interest') * $installment )) : '',
                         'one_lac_maturity' => htmlentities($this->input->post('one_lac_maturity')),
                         'one_lac_interest' =>($this->input->post('one_lac_maturity') != '') ? ($this->input->post('one_lac_maturity') - ($this->input->post('one_lac_interest') * $installment )) : '',
-                        'created' => $date ,
-                        'created_by'=>$this->session->userdata('admin_user_id')
+                        'modified' => $date ,
+                        'modified_by'=>$this->session->userdata('admin_user_id')
                     );
 //                    echo $this->input->post('txtMaturityId');
 //                    pr($this->Common_model->data);die;
@@ -1068,6 +1068,7 @@ class Dps extends CI_Controller
                         $bank_logo = $row['bank_logo'];
                     }
 
+                    $loan_facility = ($row["loan_facility"] == 'N/A') ? 'N/A': $row["loan_facility"].'%';
                     $dps .= '<div class="full-card">
 <div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
@@ -1108,7 +1109,7 @@ class Dps extends CI_Controller
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Loan Facility</h5>
-                                        <p>'.$row["loan_facility"].'</p>
+                                        <p>'.$loan_facility.'</p>
                                     </div>
                                 </div>
                             </div>
@@ -1185,6 +1186,119 @@ class Dps extends CI_Controller
         }else{
             echo '<br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>';exit;
         }
+
+
+    }
+
+    public function ajax_count_selected_row(){
+
+        $dps_user = $this->input->post('dps_user');
+        $dps_tenure = $this->input->post('dps_tenure');
+        $deposited_amount = (int) $this->input->post('deposited_amount');
+        $dps_bank_ids = $this->input->post('dps_bank_ids');
+
+        $WHERE = array(); $query = '';
+        if(!empty($dps_user)) {
+            $WHERE[] = 'dps_info.i_am_id = '.$dps_user;
+        }
+
+        if(!empty($dps_tenure)) {
+            $WHERE[] = 'dps_info.tenure_id = '.$dps_tenure;
+        }
+
+        if(!empty($dps_bank_ids)) {
+            if(strstr($dps_bank_ids,',')) {
+                $data8 = explode(',',$dps_bank_ids);
+                $bank_id_array = array();
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] = "dps_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(dps_info.bank_id = '.$dps_bank_ids.')';
+            }
+        }
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $array_map = array(
+            '200' => array('two_hundred_maturity','two_hundred_interest','dps_info_id'),
+            '300' => array('three_hundred_maturity','three_hundred_interest','dps_info_id'),
+            '400' => array('four_hundred_maturity','four_hundred_interest','dps_info_id'),
+            '500' => array('five_hundred_maturity','five_hundred_interest','dps_info_id'),
+            '1000' => array('one_thousand_maturity','one_thousand_interest','dps_info_id'),
+            '1500' => array('one_thousand_five_hundred_maturity','one_thousand_five_hundred_interest','dps_info_id'),
+            '2000' => array('two_thousand_maturity','two_thousand_interest','dps_info_id'),
+            '2500' => array('two_thousand_five_hundred_maturity','two_thousand_five_hundred_interest','dps_info_id'),
+            '3000' => array('three_thousand_maturity','three_thousand_interest','dps_info_id'),
+            '3500' => array('three_thousand_five_hundred_maturity','three_thousand_five_hundred_interest','dps_info_id'),
+            '4000' => array('four_thousand_maturity','four_thousand_interest','dps_info_id'),
+            '4500' => array('four_thousand_five_hundred_maturity','four_thousand_five_hunderd_interest','dps_info_id'),
+            '5000' => array('five_thousand_maturity','five_thousand_interest','dps_info_id'),
+            '5500' => array('five_thousand_five_hundred_maturity','five_thousand_five_hundred_interest','dps_info_id'),
+            '6000' => array('six_thousand_maturity','six_thousand_interest','dps_info_id'),
+            '6500' => array('six_thousand_five_hundred_maturity','six_thousand_five_hundred_interest','dps_info_id'),
+            '7000' => array('seven_thousand_maturity','seven_thousand_interest','dps_info_id'),
+            '7500' => array('seven_thousand_five_hundred_maturity','seven_thousand_five_hundred_interest','dps_info_id'),
+            '8000' => array('eight_thousand_maturity','eight_thousand_interest','dps_info_id'),
+            '9000' => array('nine_thousand_maturity','nine_thousand_interest','dps_info_id'),
+            '10000' => array('ten_thousand_maturity','ten_thousand_interest','dps_info_id'),
+            '11000' => array('eleven_thousand_maturity','eleven_thousand_interest','dps_info_id'),
+            '12000' => array('twelve_thousand_maturity','twelve_thousand_interest','dps_info_id'),
+            '13000' => array('thirteen_thousadn_maturity','thirteen_thousand_interest','dps_info_id'),
+            '14000' => array('fourteen_thousand_maturity','fourteen_thousand_interest','dps_info_id'),
+            '15000' => array('fifteen_thousand_maturity','fifteen_thousand_interest','dps_info_id'),
+            '16000' => array('sixteen_thousand_maturity','sixteen_thousand_interest','dps_info_id'),
+            '17000' => array('seventeen_thousand_maturity','seventeen_thousand_interest','dps_info_id'),
+            '18000' => array('eighteen_thousand_maturity','eighteen_thousand_interest','dps_info_id'),
+            '19000' => array('nineteen_thousand_maturity','nineteen_thousand_interest','dps_info_id'),
+            '20000' => array('twenty_thousand_maturity','twenty_thousand_interest','dps_info_id'),
+            '21000' => array('twenty_one_thousand_maturity','twenty_one_thousand_interest','dps_info_id'),
+            '22000' => array('twenty_two_thousand_maturity','twenty_two_thousand_interest','dps_info_id'),
+            '23000' => array('twenty_three_thousand_maturity','twenty_three_thousand_interest','dps_info_id'),
+            '24000' => array('twenty_four_thousand_maturity','twenty_four_thousand_interest','dps_info_id'),
+            '25000' => array('twenty_five_thousand_maturity','twenty_five_thousand_interest','dps_info_id'),
+            '26000' => array('twenty_six_thousand_maturity','twenty_six_thousand_interest','dps_info_id'),
+            '27000' => array('twenty_seven_thousand_maturity','twenty_seven_thousand_interest','dps_info_id'),
+            '28000' => array('twenty_eight_thousand_maturity','twenty_eight_thousand_interest','dps_info_id'),
+            '29000' => array('twenty_nine_thousand_maturity','twenty_nine_thousand_interest','dps_info_id'),
+            '30000' => array('thirty_thousand_maturity','thirty_thousand_interest','dps_info_id'),
+            '50000' => array('fifty_thousand_maturity','fifty_thousand_interest','dps_info_id'),
+            '100000' => array('one_lac_maturity','one_lac_interest','dps_info_id'),
+        );
+
+        $s = array();
+        if (array_key_exists($deposited_amount, $array_map)) {
+            $s =  $array_map[$deposited_amount];
+        }
+        if(count($s) > 0) {
+            $res1 = $this->Front_end_select_model->select_dps_loan_info_id($s[0], $s[1], $s[2], $query);
+            if(!is_object($res1)){
+                $selected_row = 0;
+            }else{
+                $selected_row = $res1->num_rows();
+            }
+
+        }else{
+            $selected_row = 0;
+        }
+
+
+//        $this->Common_model->table_name = 'dps_info';
+//        $total_row = $this->Common_model->count_all();
+        $query1 ='';
+        $res2 = $this->Front_end_select_model->select_dps_loan_info_id($s[0], $s[1], $s[2], $query1);
+        if(!is_object($res2)){
+            $total_row = 0;
+        }else{
+            $total_row = $res2->num_rows();
+        }
+
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
 
 
     }

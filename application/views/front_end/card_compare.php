@@ -94,7 +94,7 @@ $(window).on('scroll', function (){
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="Card-Compare-hr1" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Basic Info <img class="Card-Compare-hr1" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+            <h3 class="text-center compare-feature-bar"> <span>Basic Info</span> </h3>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center table-align  compare_table">
                     <tr>
@@ -155,8 +155,7 @@ $(window).on('scroll', function (){
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="Card-Compare-hr2" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" />  Fees & Charges <img class="Card-Compare-hr2" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
+            <h3 class="text-center compare-feature-bar"> <span>Fees & Charges</span> </h3>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center compare_table">
                     <tr>
@@ -284,7 +283,7 @@ $(window).on('scroll', function (){
         </div>
 
         <div class="row">
-            <h3 class="text-center"> <img class="Card-Compare-hr3" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Benefits <img class="Card-Compare-hr3" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
+            <h3 class="text-center compare-feature-bar"> <span>Benefits</span> </h3>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center compare_table">
 
@@ -420,8 +419,7 @@ $(window).on('scroll', function (){
         </div>
 
         <div class="row">
-            <h3 class="text-center">  <img class="Card-Compare-hr4" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> Additional Info <img class="Card-Compare-hr4" src="<?php echo base_url();?>resource/front_end/images/Card-Compare-hr.png" /> </h3>
-
+            <h3 class="text-center compare-feature-bar"> <span>Additional Info</span> </h3>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center compare_table ">
 
@@ -460,7 +458,7 @@ $(window).on('scroll', function (){
                 </table>
             </div>
         </div>
-        <div class="row">
+        <div class="row comparision-subscribe">
             <h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
             <div class="col-md-12">
                 <form class="comparison_email">

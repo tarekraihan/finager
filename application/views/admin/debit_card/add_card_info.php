@@ -213,6 +213,17 @@
                                     <label class="red"><?php echo form_error('txtOtherAtmCharge');?></label>
                                 </section>
                             </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Card Summary</label>
+                                    <label class="input">
+                                        <textarea name="txtCardSummary" rows="5" class="form-control" ><?php echo set_value('txtCardSummary') ;?></textarea>
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtCardSummary');?></label>
+                                </section>
+                            </div>
+
+
 
 </article>
 <!-- WIDGET END -->
