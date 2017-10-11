@@ -525,21 +525,18 @@ class Backdoor extends CI_Controller {
                 if ($result->num_rows() > 0)
                 {
 
-                    foreach ($result->result() as $row)
-                    {
-                        $data['admin_role'] = $row->admin_role;
-                        $data['admin_first_login'] = $row->first_login;
-                        $data['admin_user_id'] = $row->id;
-                        $data['first_name'] = $row->first_name;
-                        $data['last_name'] = $row->last_name;
-                        $data['email_address'] = $row->email_address;
-                        $data['phone_no'] = $row->phone_no;
-                        $data['password'] = $row->password;
-                        $data['profile_picture'] = $row->profile_picture;
-                        $data['admin_first_login'] = $row->admin_first_login;
-                        $this->session->set_userdata($data);
-                        echo 'success';
-                    }
+                    $row = $result->row();
+                    $data['admin_role'] = $row->admin_role;
+                    $data['admin_user_id'] = $row->id;
+                    $data['first_name'] = $row->first_name;
+                    $data['last_name'] = $row->last_name;
+                    $data['email_address'] = $row->email_address;
+                    $data['phone_no'] = $row->phone_no;
+                    $data['password'] = $row->password;
+                    $data['profile_picture'] = $row->profile_picture;
+                    $data['admin_first_login'] = $row->admin_first_login;
+                    $this->session->set_userdata($data);
+                    echo 'success';
                 }
             }else{
                 $this->session->set_flashdata('error_message', '2');
@@ -554,11 +551,12 @@ class Backdoor extends CI_Controller {
     public function logout() {
         $this->session->unset_userdata('admin_role');
         $this->session->unset_userdata('admin_user_id');
-        $this->session->unset_userdata('admin_first_name');
-        $this->session->unset_userdata('admin_last_name');
-        $this->session->unset_userdata('admin_email');
-        $this->session->unset_userdata('profile_picture');
+        $this->session->unset_userdata('first_name');
+        $this->session->unset_userdata('last_name');
+        $this->session->unset_userdata('email_address');
+        $this->session->unset_userdata('phone_no');
         $this->session->unset_userdata('password');
+        $this->session->unset_userdata('profile_picture');
         $this->session->unset_userdata('admin_first_login');
 
         $this->session->sess_destroy();

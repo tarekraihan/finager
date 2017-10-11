@@ -69,6 +69,8 @@ class En extends CI_Controller {
     }
 
     public function index(){
+        $this->load->driver('cache');
+        $this->cache->file->save('index_page', 'index_page', 100);
         /*Get user ip address*/
         $ip_address=$_SERVER['REMOTE_ADDR'];
         /*Get user ip address details with geoplugin.net*/
@@ -105,6 +107,8 @@ class En extends CI_Controller {
 }
 
     public function credit_card(){
+        $this->load->driver('cache');
+        $this->cache->file->save('credit_card_landing', 'credit_card_landing', 100);
         $this->load->view('front_end/block/header');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -114,7 +118,8 @@ class En extends CI_Controller {
     }
 
     public function all_credit_card(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('card', 'card', 100);
         $this->load->view('front_end/block/header');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -123,6 +128,8 @@ class En extends CI_Controller {
     }
 
     public function card_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('card_details', 'card_details', 100);
         $this->load->view('front_end/block/header');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -133,6 +140,8 @@ class En extends CI_Controller {
 
 
     public function card_compare(){
+        $this->load->driver('cache');
+        $this->cache->file->save('card_compare', 'card_compare', 100);
         $this->load->view('front_end/block/header');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -143,6 +152,8 @@ class En extends CI_Controller {
 
 
     public function debit_card(){
+        $this->load->driver('cache');
+        $this->cache->file->save('debit_card_landing', 'debit_card_landing', 100);
         $this->load->view('front_end/block/header');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -151,6 +162,8 @@ class En extends CI_Controller {
     }
 
     public function all_debit_card(){
+        $this->load->driver('cache');
+        $this->cache->file->save('debit_card', 'debit_card', 100);
         $this->load->view('front_end/block/header');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -160,6 +173,8 @@ class En extends CI_Controller {
 
 
     public function debit_card_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('debit_card_details', 'debit_card_details', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -169,6 +184,8 @@ class En extends CI_Controller {
 
 
     public function debit_card_compare(){
+        $this->load->driver('cache');
+        $this->cache->file->save('debit_card_compare', 'debit_card_compare', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -177,7 +194,8 @@ class En extends CI_Controller {
     }
 
     public function home_loan(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('home_loan_landing', 'home_loan_landing', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -186,6 +204,8 @@ class En extends CI_Controller {
     }
 
     public function all_home_loan(){
+        $this->load->driver('cache');
+        $this->cache->file->save('home_loan', 'home_loan', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -195,6 +215,8 @@ class En extends CI_Controller {
     }
 
     public function home_loan_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('home_loan_details', 'home_loan_details', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -202,7 +224,8 @@ class En extends CI_Controller {
             $this->load->view('front_end/block/footer');
     }
     public function home_loan_compare(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('home_loan_compare', 'home_loan_compare', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -218,6 +241,8 @@ class En extends CI_Controller {
 
 
     public function car_loan(){
+        $this->load->driver('cache');
+        $this->cache->file->save('auto_loan_landing', 'auto_loan_landing', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -227,6 +252,8 @@ class En extends CI_Controller {
     }
 
     public function all_car_loan(){
+        $this->load->driver('cache');
+        $this->cache->file->save('auto_loan', 'auto_loan', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -235,6 +262,8 @@ class En extends CI_Controller {
     }
 
     public function car_loan_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('auto_loan_details', 'auto_loan_details', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -244,6 +273,8 @@ class En extends CI_Controller {
 
 
     public function car_loan_compare(){
+        $this->load->driver('cache');
+        $this->cache->file->save('auto_loan_compare', 'auto_loan_compare', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -258,6 +289,8 @@ class En extends CI_Controller {
     }
 
     public function personal_loan(){
+        $this->load->driver('cache');
+        $this->cache->file->save('personal_loan_landing', 'personal_loan_landing', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -267,6 +300,8 @@ class En extends CI_Controller {
 
 
     public function all_personal_loan(){
+        $this->load->driver('cache');
+        $this->cache->file->save('personal_loan', 'personal_loan', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -276,6 +311,8 @@ class En extends CI_Controller {
 
 
     public function personal_loan_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('personal_loan_details', 'personal_loan_details', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -284,6 +321,8 @@ class En extends CI_Controller {
 }
 
     public function personal_loan_compare(){
+        $this->load->driver('cache');
+        $this->cache->file->save('personal_loan_compare', 'personal_loan_compare', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -298,6 +337,8 @@ class En extends CI_Controller {
 
 
     public function education_loan(){
+        $this->load->driver('cache');
+        $this->cache->file->save('education_loan_landing', 'education_loan_landing', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -307,6 +348,8 @@ class En extends CI_Controller {
 
 
     public function all_education_loan(){
+        $this->load->driver('cache');
+        $this->cache->file->save('education_loan', 'education_loan', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -315,6 +358,8 @@ class En extends CI_Controller {
     }
 
     public function education_loan_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('education_loan_details', 'education_loan_details', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -324,6 +369,8 @@ class En extends CI_Controller {
 
 
     public function education_loan_compare(){
+        $this->load->driver('cache');
+        $this->cache->file->save('education_loan_compare', 'education_loan_compare', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -341,6 +388,8 @@ class En extends CI_Controller {
 
 
     public function fdr(){
+        $this->load->driver('cache');
+        $this->cache->file->save('fdr_landing', 'fdr_landing', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -351,6 +400,8 @@ class En extends CI_Controller {
 
 
     public function all_fdr(){
+        $this->load->driver('cache');
+        $this->cache->file->save('fdr', 'fdr', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -360,6 +411,8 @@ class En extends CI_Controller {
 
 
     public function fdr_compare(){
+        $this->load->driver('cache');
+        $this->cache->file->save('fdr_compare', 'fdr_compare', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -370,6 +423,8 @@ class En extends CI_Controller {
 
 
     public function fdr_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('fdr_details', 'fdr_details', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -380,7 +435,8 @@ class En extends CI_Controller {
 
 
     public function dps(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('dps_landing', 'dps_landing', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -390,7 +446,8 @@ class En extends CI_Controller {
 
 
     public function all_dps(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('dps', 'dps', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -400,6 +457,8 @@ class En extends CI_Controller {
     }
 
     public function dps_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('dps_details', 'dps_details', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -409,7 +468,8 @@ class En extends CI_Controller {
     }
 
     public function dps_compare(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('dps_compare', 'dps_compare', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -420,6 +480,8 @@ class En extends CI_Controller {
 
 
     public function millionaire(){
+        $this->load->driver('cache');
+        $this->cache->file->save('millionaire_landing', 'millionaire_landing', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -430,7 +492,8 @@ class En extends CI_Controller {
 
 
     public function all_millionaire(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('millionaire', 'millionaire', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -441,7 +504,8 @@ class En extends CI_Controller {
 
 
     public function millionaire_details(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('millionaire_details', 'millionaire_details', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -451,7 +515,8 @@ class En extends CI_Controller {
     }
 
     public function millionaire_compare(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('millionaire_compare', 'millionaire_compare', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -463,7 +528,8 @@ class En extends CI_Controller {
 
 
     public function money_maximizer(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('money_maximizer_landing', 'money_maximizer_landing', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -474,7 +540,8 @@ class En extends CI_Controller {
 
 
     public function all_money_maximizer(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('money_maximizer', 'money_maximizer', 100);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -485,7 +552,8 @@ class En extends CI_Controller {
 
 
     public function money_maximizer_details(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('money_maximizer_details', 'money_maximizer_details', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -495,7 +563,8 @@ class En extends CI_Controller {
     }
 
     public function money_maximizer_compare(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('money_maximizer_compare', 'money_maximizer_compare', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -508,7 +577,9 @@ class En extends CI_Controller {
 
 
     public function monthly_benefit(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('monthly_benefit_landing', 'monthly_benefit_landing', 100);
+        $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -519,7 +590,8 @@ class En extends CI_Controller {
 
 
     public function all_monthly_benefit(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('monthly_benefit', 'monthly_benefit', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -529,7 +601,8 @@ class En extends CI_Controller {
     }
 
     public function current_account(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('current_account', 'current_account', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -539,7 +612,8 @@ class En extends CI_Controller {
     }
 
     public function current_account_compare(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('current_account_compare', 'current_account_compare', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -550,7 +624,8 @@ class En extends CI_Controller {
 
 
     public function current_account_details(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('current_account_details', 'current_account_details', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -560,7 +635,8 @@ class En extends CI_Controller {
     }
 
     public function savings_account(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('savings_account', 'savings_account', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -571,7 +647,8 @@ class En extends CI_Controller {
 
 
     public function saving_account_compare(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('saving_account_compare', 'saving_account_compare', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -582,7 +659,8 @@ class En extends CI_Controller {
 
 
     public function saving_account_details(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('saving_account_details', 'saving_account_details', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -593,7 +671,8 @@ class En extends CI_Controller {
 
 
     public function monthly_benefit_details(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('monthly_benefit_details', 'monthly_benefit_details', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -603,7 +682,8 @@ class En extends CI_Controller {
     }
 
     public function monthly_benefit_compare(){
-
+        $this->load->driver('cache');
+        $this->cache->file->save('monthly_benefit_compare', 'monthly_benefit_compare', 100);
         $this->load->view('front_end/block/header_home_loan');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
@@ -615,6 +695,7 @@ class En extends CI_Controller {
 
 
     public function bank_details(){
+
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -624,6 +705,8 @@ class En extends CI_Controller {
     }
 
     public function export_import(){
+        $this->load->driver('cache');
+        $this->cache->file->save('export_import', 'export_import', 1000);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -633,6 +716,8 @@ class En extends CI_Controller {
     }
 
     public function more_logo(){
+        $this->load->driver('cache');
+        $this->cache->file->save('all_logo', 'all_logo', 1000);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -642,6 +727,8 @@ class En extends CI_Controller {
     }
 
     public function PrivacyPolicy(){
+        $this->load->driver('cache');
+        $this->cache->file->save('PrivacyPolicy', 'PrivacyPolicy', 1000);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -651,6 +738,8 @@ class En extends CI_Controller {
     }
 	
 	public function terms_condition(){
+        $this->load->driver('cache');
+        $this->cache->file->save('terms_condition', 'terms_condition', 1000);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
