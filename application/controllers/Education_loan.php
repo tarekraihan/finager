@@ -438,8 +438,8 @@ class Education_Loan extends CI_Controller {
                     'requirement' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'review' => $this->input->post('txtReview'),
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
                 print_r($this->Common_model->data);
                 $this->Common_model->table_name = 'education_loan_info';

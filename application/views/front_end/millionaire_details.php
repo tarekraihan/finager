@@ -13,7 +13,7 @@ if(!empty($id) && is_numeric($id) ){
 		$bank_logo = $row->bank_logo;
 	}
 
-	$initial_deposit  = ($row->initial_deposit) ? 'BDT.'.$row->initial_deposit : 'N/A';
+	$initial_deposit  = ($row->initial_deposit) ? 'BDT'.$row->initial_deposit : 'N/A';
 
 }else{
 	redirect(base_url().'My404');
@@ -50,7 +50,7 @@ if(!empty($id) && is_numeric($id) ){
 							<div>
 								<p class="card_details_head2">Monthly Instalment</p>
 								<p class="card_details_features">
-									BDT. <?php echo number_format( $row->monthly_deposit );?>
+									BDT <?php echo number_format( $row->monthly_deposit );?>
 								</p>
 							</div>
 						</div>
@@ -66,7 +66,7 @@ if(!empty($id) && is_numeric($id) ){
 							<div>
 								<p class="card_details_head2">Total Principal Amount</p>
 								<p class="card_details_features">
-									BDT. <?php echo number_format( $row->total_principal_amount );?>
+									BDT <?php echo number_format( $row->total_principal_amount );?>
 								</p>
 							</div>
 						</div>
@@ -74,7 +74,7 @@ if(!empty($id) && is_numeric($id) ){
 							<div>
 								<p class="card_details_head2">Accrued Interest</p>
 								<p class="card_details_features">
-									BDT. <?php echo number_format( $row->accured_interest );?>
+									BDT <?php echo number_format( $row->accured_interest );?>
 								</p>
 							</div>
 						</div>
@@ -83,7 +83,7 @@ if(!empty($id) && is_numeric($id) ){
 							<div>
 								<p class="card_details_head2">Maturity Amount</p>
 								<p class="card_details_features">
-									BDT. <?php echo number_format( $row->maturity_amount );?>
+									BDT <?php echo number_format( $row->maturity_amount );?>
 								</p>
 							</div>
 						</div>
@@ -120,7 +120,7 @@ if(!empty($id) && is_numeric($id) ){
 					</tr>
 					<tr>
 						<td><b> Monthly Installment Size</b></td>
-						<td> BDT. <?php echo number_format( $row->monthly_deposit );?> </td>
+						<td> BDT <?php echo number_format( $row->monthly_deposit );?> </td>
 					</tr>
 					<tr>
 						<td><b> Term</b></td>
@@ -132,15 +132,15 @@ if(!empty($id) && is_numeric($id) ){
 					</tr>
 					<tr>
 						<td><b>Total Principal Amount</b></td>
-						<td> BDT. <?php echo number_format( $row->total_principal_amount );?> </td>
+						<td> BDT <?php echo number_format( $row->total_principal_amount );?> </td>
 					</tr>
 					<tr>
 						<td><b>Total Accrued Interest</b></td>
-						<td> BDT. <?php echo number_format( $row->accured_interest );?> </td>
+						<td> BDT <?php echo number_format( $row->accured_interest );?> </td>
 					</tr>
 					<tr>
 						<td><b> Maturity Amount</b></td>
-						<td> BDT. <?php echo number_format( $row->maturity_amount );?> </td>
+						<td> BDT <?php echo number_format( $row->maturity_amount );?> </td>
 					</tr>
 				</table>
 			</div>
