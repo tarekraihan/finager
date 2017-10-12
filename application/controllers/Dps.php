@@ -337,6 +337,7 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtEligibility', 'Eligibility', 'trim|required');
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
+            $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
 
 
@@ -451,6 +452,7 @@ class Dps extends CI_Controller
                     'eligibility' => $this->input->post('txtEligibility'),
                     'required_document' => $this->input->post('txtRequiredDocument'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
+                    'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
                     'review' => $this->input->post('txtReview'),
                     'created' => $date ,
@@ -1114,7 +1116,7 @@ class Dps extends CI_Controller
                                 </div>
                             </div>
                             <div class="row more_availabe">
-                                <div class="col-md-2"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-dps_id="'.$row["id"].'"></i> More Info</a></div>
+                                <div class="col-md-2"><a role="button"  class="more_info" href="javascript:void(0)" data-toggle="collapse" data-dps_id="'.$row["id"].'"><i class="fa fa-info-circle" aria-hidden="true" ></i> More Info</a></div>
                                 <div class="col-md-4"><a class="availableOffer"  href="javascript:void(0)"  data-available_offer="'.$row["id"].'"><i class="fa fa-info-circle" aria-hidden="true" ></i> Available Offer</a></div>
                                 <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg" id="hideDetailsButton2"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/btnDpsApply.png" alt="DPS Application" /></a></div>
                                 <div class="col-md-2"><a id="hideDetailsButton2" href="javascript:void(0)" class="add-to-compare" data-dps_id="'.$row["id"].'"><img class="pull-right" src="'.base_url().'resource/front_end/images/btnDpsCom.png" alt="DPS Add to compare" /></a></div>

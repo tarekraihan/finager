@@ -258,7 +258,7 @@ class Saving_account extends CI_Controller
                                 <div class="col-sm-3">
                                     <div class="caccount_text">
                                         <h5>A/C Opening Balance</h5>
-                                        <p>BDT. '.number_format($row->opening_balance).'</p>
+                                        <p>BDT '.number_format($row->opening_balance).'</p>
 
                                     </div>
                                 </div>
@@ -271,7 +271,7 @@ class Saving_account extends CI_Controller
                                 <div class="col-sm-3">
                                     <div class="caccount_text">
                                         <h5>Minimum Balance for Interest</h5>
-                                        <p>BDT. '.number_format($min_balance).' Per Month</p>
+                                        <p>BDT '.number_format($min_balance).' Per Month</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2">

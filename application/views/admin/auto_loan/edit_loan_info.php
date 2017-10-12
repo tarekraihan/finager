@@ -181,7 +181,7 @@ if(isset($_GET['id'])){
 
                                                             foreach($result->result() as $row1){
                                                                 ?>
-                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["i_want"]) && $row["i_want"]==$row1->id){echo "selected='select'";}?><?php echo set_select("txtLookingFor",$row1->id)?>><?php echo $row1->i_want ; ?></option>';
+                                                                <option value="<?php echo $row1->id;?>" <?php if(isset($row["auto_loan_looking_for_id"]) && $row["auto_loan_looking_for_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtLookingFor",$row1->id)?>><?php echo $row1->i_want ; ?></option>';
                                                             <?php
                                                             }
                                                             ?>

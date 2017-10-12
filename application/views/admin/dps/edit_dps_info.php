@@ -1165,7 +1165,7 @@ if(isset($_GET['id'])){
                     <section class="col col-12">
 
                         <label class="input">
-                            <textarea id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php echo $row['fees_and_charges']; ?></textarea>
+                            <textarea id="txtFeesAndCharges" class="ckeditor" name="txtFeesAndCharges"><?php //echo $row['fees_and_charges']; ?></textarea>
                         </label>
                     </section>
 
@@ -1272,16 +1272,6 @@ if(isset($_GET['id'])){
 <script>
     $(document).ready(function(){
 
-        $("#txtBankName").on('change', function(){
-            call_draft_info();
-        });
-        $("#txtNonBankName").on('change', function(){
-            call_draft_info();
-        });
-        $("#txtIAm").on('change', function(){
-            call_draft_info();
-        });
-
 
         $("input[name ='is_non_bank']").click(function() {
             var v_value = $(this).val();
@@ -1295,15 +1285,26 @@ if(isset($_GET['id'])){
 
         if($("input[name ='is_non_bank']").is(':checked')){
             $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName">' +
-            '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
-            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["non_bank_id"]) && $row["non_bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option>;<?php } ?>'+
-            '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+                '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
+                '<option value="<?php echo $row1->id;?>" <?php if(isset($row["non_bank_id"]) && $row["non_bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option><?php } ?>'+
+                '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
         }else{
             $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName">' +
-            '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
-            '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
-            '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+                '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
+                '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option><?php } ?>'+
+                '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
         }
+
+
+        $("#txtBankName").on('change', function(){
+            call_draft_info();
+        }).trigger('change');
+        $("#txtNonBankName").on('change', function(){
+            call_draft_info();
+        }).trigger('change');
+        $("#txtIAm").on('change', function(){
+            call_draft_info();
+        }).trigger('change');
 
     });
 
@@ -1316,6 +1317,7 @@ if(isset($_GET['id'])){
         }else{
             var param = 'bank_id='+bank_id+'&i_am='+i_am+'&is_non_bank=0';
         }
+        console.log(param);
         if(bank_id != '' && i_am != ''){
             $.ajax({
                 url: "<?php echo base_url(); ?>dps/ajax_get_draft_dps_info",
@@ -1327,6 +1329,7 @@ if(isset($_GET['id'])){
 
                     if(data.process){
 
+                        console.log(data.fees_and_charges);
                         CKEDITOR.instances['txtAvailableFeatures'].setData(data.available_feature);
                         CKEDITOR.instances['txtEligibility'].setData(data.eligibility);
                         CKEDITOR.instances['txtRequiredDocument'].setData(data.required_document);
