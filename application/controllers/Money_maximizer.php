@@ -203,8 +203,8 @@ class Money_maximizer extends CI_Controller {
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'features' => $this->input->post('txtAvailableFeatures'),
                     'review' => $this->input->post('txtReview'),
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
 
 

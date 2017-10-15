@@ -22,6 +22,7 @@ if(isset($_GET['id'])){
     $row['requirement']='';
     $row['terms_and_conditions']='';
     $row['review']='';
+    $row['card_summary']='';
 }
 ?>
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
