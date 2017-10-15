@@ -22,7 +22,7 @@ if(!empty($id) && is_numeric($id) ){
 						</p>
 						<p class="rating text-center">Rated By 5 Person</p>
 					</div>
-					<div class="col-sm-2 col-xs-8">
+					<div class="col-sm-4 col-xs-8">
 						<div>
 							<p class="card_details_head2"><?php echo $row->card_name; ?></p>
 							<p class="card_details_features"><?php echo (!empty($row->card_summary)) ? $row->card_summary : $summary ;?></p>
@@ -30,9 +30,9 @@ if(!empty($id) && is_numeric($id) ){
 						</div>
 					</div>
 					
-					<div class="col-sm-8 col-xs-12">
-						<div class="row">
-							<div class="col-sm-3 col-xs-6">
+					<div class="col-sm-6 col-xs-12">
+						<div class="row ccard_details_feature">
+							<div class="col-sm-4 col-xs-6">
 								<div>
 									<p class="card_details_head2">Daily Withdrawal Limit</p>
 									<p class="card_details_features">
@@ -40,7 +40,7 @@ if(!empty($id) && is_numeric($id) ){
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-2 col-xs-6">
+							<div class="col-sm-4 col-xs-6">
 								<div>
 									<p class="card_details_head2">Number of Withdrawal</p>
 									<p class="card_details_features">
@@ -48,7 +48,7 @@ if(!empty($id) && is_numeric($id) ){
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-2 col-xs-6">
+							<div class="col-sm-4 col-xs-6">
 								<div>
 									<p class="card_details_head2">ATM Charge</p>
 									<p class="card_details_features head_margin">
@@ -58,7 +58,7 @@ if(!empty($id) && is_numeric($id) ){
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-2 col-xs-6">
+							<div class="col-sm-3 col-xs-6">
 								<div>
 									<p class="card_details_head2">Annual Fee</p>
 									<p class="card_details_features head_margin">
@@ -66,7 +66,7 @@ if(!empty($id) && is_numeric($id) ){
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-3 col-xs-6">
+							<div class="col-sm-4 col-xs-6">
 								<div>
 									<p class="card_details_head2">Account Required</p>
 									<p class="card_details_features">

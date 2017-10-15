@@ -4764,3 +4764,9 @@ section#card_details_Eligibility {
 .comparision-subscribe .btn:hover{
     color: #fff;
 }
+.ccard_details_feature {
+    border: 1px solid #ddd;
+    margin-right: 0 !important;
+    padding: 22px 6px;
+    background-color: #f2f2f3;
+}

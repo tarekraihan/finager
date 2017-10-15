@@ -33,13 +33,13 @@
                          ?>
 
                     </div>
-                    <img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/BtnCard_apply.png" />
+<!--                    <img class="btnCardApply img-responsive" src="--><?php //echo base_url();?><!--resource/front_end/images/BtnCard_apply.png" />-->
                     <p class="text-center">
                         <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                     </p>
                     <p class="rating text-center">Rated By 5 Person</p>
                 </div>
-                <div class="col-sm-2 col-xs-8">
+                <div class="col-sm-4 col-xs-8">
                     <div>
                         <p class="card_details_head2"><?php echo $row->card_name;?></p>
                         <p class="card_details_features">
@@ -49,9 +49,9 @@
                     </div>
                 </div>
 
-                <div class="col-sm-8 col-xs-12">
-                    <div class="row">
-                        <div class="col-sm-3 col-xs-6">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="row ccard_details_feature">
+                        <div class="col-sm-5 col-xs-6">
                             <div>
                                 <p class="card_details_head2">Balance Transfer Interest Rate</p>
                                 <p class="card_details_features">
@@ -59,7 +59,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-6">
+                        <div class="col-sm-4 col-xs-6">
                             <div>
                                 <p class="card_details_head2">Purchase Interest Rate</p>
                                 <p class="card_details_features">
@@ -67,7 +67,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-6">
+                        <div class="col-sm-3 col-xs-6">
                             <div>
                                 <p class="card_details_head2">Annual Fee</p>
                                 <p class="card_details_features head_margin">
@@ -75,7 +75,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-xs-6">
+                        <div class="col-sm-5 col-xs-6">
                             <div>
                                 <p class="card_details_head2">Cash Advance Interest Rate</p>
                                 <p class="card_details_features head_margin">
@@ -83,7 +83,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-sm-2 col-xs-6">
+                        <div class="col-sm-5 col-xs-6">
                             <div>
                                 <p class="card_details_head2">Cash Advance Limit</p>
                                 <p class="card_details_features">
