@@ -4,19 +4,7 @@ $id=$this->uri->segment(3, 0);
 if(!empty($id) && is_numeric($id) ){
     $query=$this->Front_end_select_model->select_debit_card_details($id);
     $row=$query->row();
-	$summary ='';
-	if($row->card_summary != ''){
-		$length = strlen($row->card_summary);
-		if($length > 250){
-			$rest = substr($row->card_summary, 0,250);
-			$summary = $rest.' <a href="'.base_url().'en/debit_card_details/'. $row->id.'"> read more..</a>';
-		}else{
-			$summary = $row->card_summary;
-		}
-	}else{
-
-		$summary = $row->card_name.' of '.$row->bank_name.' is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.';
-	}
+	$summary = $row->card_name.' of '.$row->bank_name.' is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.';
 }else{
     redirect(base_url().'My404');
 }
@@ -37,7 +25,7 @@ if(!empty($id) && is_numeric($id) ){
 					<div class="col-sm-2 col-xs-8">
 						<div>
 							<p class="card_details_head2"><?php echo $row->card_name; ?></p>
-							<p class="card_details_features"><?php echo $summary;?></p>
+							<p class="card_details_features"><?php echo (!empty($row->card_summary)) ? $row->card_summary : $summary ;?></p>
 							<p class="add_comp_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></p>
 						</div>
 					</div>
