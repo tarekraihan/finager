@@ -353,5 +353,22 @@ class General extends CI_Controller {
 
     }
 
+    public function bank_list(){
+        $data['title'] = "Finager:Bank List";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/general/bank_list');
+        $this->load->view('admin/block/footer');
+
+    }
+    public function non_bank_list(){
+        $data['title'] = "Finager:Bank List";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/general/non_bank_list');
+        $this->load->view('admin/block/footer');
+
+    }
+
 
 }

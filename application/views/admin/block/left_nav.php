@@ -47,7 +47,14 @@ foreach($module_id as $k){
                         <a href="<?php echo base_url();?>card/bank">Add Bank Name</a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url();?>general/bank_list">Bank List</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url();?>general/non_bank">Add Non Bank Institution</a>
+                    </li>
+
+                    <li>
+                        <a href="<?php echo base_url();?>general/non_bank_list">Non Bank Institution List</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url();?>general/update_bank_non_bank_info">Update Bank/Non Bank Info</a>

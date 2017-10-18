@@ -210,7 +210,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Call Center No</label>
                                                     <label class="input">
-                                                        <input type="tel" maxlength="10" name="txtCallCenterNo" value="<?php echo set_value('txtCallCenterNo'); ?>" placeholder="Write call center no">
+                                                        <input type="number" maxlength="10" name="txtCallCenterNo" value="<?php echo set_value('txtCallCenterNo'); ?>" placeholder="Write call center no">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCallCenterNo');?></label>
                                                 </section>

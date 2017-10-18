@@ -1854,4 +1854,19 @@ class Select_Model extends CI_Model
         return $query;
     }
 
+
+    public function select_all_bank_list()
+    {
+        $sql = "SELECT card_bank.* , admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name FROM `card_bank` LEFT JOIN tbl_admin_user admin1 ON admin1.id= card_bank.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= card_bank.modified_by ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function select_all_non_bank_list()
+    {
+        $sql = "SELECT general_non_bank.* , admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name FROM `general_non_bank` LEFT JOIN tbl_admin_user admin1 ON admin1.id= general_non_bank.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= general_non_bank.modified_by ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 }
