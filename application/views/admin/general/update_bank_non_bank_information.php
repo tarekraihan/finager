@@ -174,7 +174,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Fax No</label>
                                                     <label class="input">
-                                                        <input type="tel" maxlength="10" name="txtFaxNo" value="<?php echo set_value('txtFaxNo'); ?>" placeholder="Write Fax no">
+                                                        <input type="tel" maxlength="13" name="txtFaxNo" value="<?php echo set_value('txtFaxNo'); ?>" placeholder="Write Fax no">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtFaxNo');?></label>
                                                 </section>
