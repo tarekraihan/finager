@@ -304,6 +304,7 @@ class General extends CI_Controller {
             $this->form_validation->set_rules('txtHeadOfficeAddress', ' Head Office Address', 'trim|required|max_length[225]');
             $this->form_validation->set_rules('txtCallCenterNo', ' Call Center no', 'trim|required');
             $this->form_validation->set_rules('txtBasicInformation', ' Basic Information', 'trim|required');
+            $this->form_validation->set_rules('txtRoutingNo', ' Routing No', 'trim|required');
 
             if ($this->form_validation->run() == FALSE){
                 $data['title'] = "Bank / Non bank info";
@@ -327,6 +328,7 @@ class General extends CI_Controller {
                     'head_office_address' =>htmlentities($this->input->post('txtHeadOfficeAddress')),
                     'basic_information'=>$this->input->post('txtBasicInformation'),
                     'call_center'=>$this->input->post('txtCallCenterNo'),
+                    'routing_no'=>$this->input->post('txtRoutingNo'),
                     'modified' => $date ,
                     'modified_by'=>$this->session->userdata('admin_user_id')
                 );

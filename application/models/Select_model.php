@@ -1869,4 +1869,16 @@ class Select_Model extends CI_Model
         return $query;
     }
 
+    public function Select_bank_non_bank_info_by_id($id,$non_bank)
+    {
+        if($non_bank == 1){
+            $table_name = 'general_non_bank';
+        }else{
+            $table_name = 'card_bank';
+        }
+        $sql = "SELECT * FROM $table_name WHERE id = $id";
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+
 }

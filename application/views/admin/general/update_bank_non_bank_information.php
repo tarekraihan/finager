@@ -1,3 +1,34 @@
+<?php
+if(isset($_GET['id'])){
+    $non_bank= ($_GET['non_bank'] == 1) ? 1 : 0;
+    $id = ($_GET['id']) ? $_GET['id'] : 0;
+
+    if($id > 0){
+        $row=$this->Select_model->Select_bank_non_bank_info_by_id($id,$non_bank);
+        //pr($row);die;
+    }
+
+    $row['is_non_bank']= $non_bank;
+}else{
+    $row['id']='';
+    $row['bank_id']='';
+    $row['is_non_bank']= '';
+    $row['non_bank_id']='';
+    $row['known_as']='';
+    $row['swift_code']='';
+    $row['stock_code']='';
+    $row['category']='';
+    $row['bank_type_and_origin']='';
+    $row['phone_no']='';
+    $row['fax_no']='';
+    $row['email_address']='';
+    $row['head_office_address']='';
+    $row['web_address']='';
+    $row['basic_information']='';
+    $row['call_center']='';
+    $row['routing_no']='';
+}
+?>
 <script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
@@ -98,7 +129,7 @@
                                             <div class="row">
                                                 <section class="col col-6">
                                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> > Is Non Bank Institution ?
+                                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> <?php echo ($row['is_non_bank'] == '1') ? 'checked' : ''; ?>> Is Non Bank Institution ?
                                                     </label>
                                                 </section>
 
@@ -116,7 +147,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Known as </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="50" name="txtKnownAs" value="<?php echo set_value('txtKnownAs'); ?>" placeholder="Write known as">
+                                                        <input type="text" maxlength="50" name="txtKnownAs" value="<?php if(isset($row["known_as"]) && $row["known_as"] != ""){echo $row["known_as"];}else{echo set_value('txtKnownAs');} ?>" placeholder="Write known as">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtKnownAs');?></label>
                                                 </section>
@@ -126,14 +157,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Swift Code </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="50" name="txtSwiftCode" value="<?php echo set_value('txtSwiftCode'); ?>" placeholder="Write Swift Code">
+                                                        <input type="text" maxlength="50" name="txtSwiftCode" value="<?php if(isset($row["swift_code"]) && $row["swift_code"] != ""){echo $row["swift_code"];}else{echo set_value('txtSwiftCode');} ?>" placeholder="Write Swift Code">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtSwiftCode');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Stock Code</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="50" name="txtStockCode" value="<?php echo set_value('txtStockCode'); ?>" placeholder="Write Stock Code">
+                                                        <input type="text" maxlength="50" name="txtStockCode" value="<?php if(isset($row["stock_code"]) && $row["stock_code"] != ""){echo $row["stock_code"];}else{echo set_value('txtStockCode');} ?>" placeholder="Write Stock Code">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtStockCode');?></label>
                                                 </section>
@@ -141,11 +172,11 @@
 
                                             <div class="row">
                                                 <section class="col col-6">
-                                                    <label class="label">Loan User</label>
+                                                    <label class="label">Category</label>
                                                     <label class="select">
                                                         <select name="txtCategory" required>
-                                                            <option value="Commercial">Commercial</option>
-                                                            <option value="Specialized">Specialized</option>
+                                                            <option value="Commercial" <?php if(isset($row["category"]) && $row["category"]== 'Commercial'){echo "selected='select'";}?>>Commercial</option>
+                                                            <option value="Specialized" <?php if(isset($row["category"]) && $row["category"]== 'Specialized'){echo "selected='select'";}?>>Specialized</option>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCategory');?></label>
@@ -154,9 +185,9 @@
                                                     <label class="label">Bank Type & Origin</label>
                                                     <label class="select">
                                                         <select name="txtBankTypeOrigin" required>
-                                                            <option value="Private/Local">Private/Local</option>
-                                                            <option value="Public/Local">Public/Local</option>
-                                                            <option value="Private/Foreign">Private/Foreign</option>
+                                                            <option value="Private & Local" <?php if(isset($row["bank_type_and_origin"]) && $row["bank_type_and_origin"]== 'Private & Local'){echo "selected='select'";}?>>Private & Local</option>
+                                                            <option value="Public & Local" <?php if(isset($row["bank_type_and_origin"]) && $row["bank_type_and_origin"]== 'Public & Local'){echo "selected='select'";}?>>Public & Local</option>
+                                                            <option value="Private & Foreign" <?php if(isset($row["bank_type_and_origin"]) && $row["bank_type_and_origin"]== 'Private & Foreign'){echo "selected='select'";}?>>Private & Foreign</option>
                                                         </select>
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBankTypeOrigin');?></label>
@@ -167,14 +198,14 @@
                                                 <section class="col col-6">
                                                     <label class="label">Phone No</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="225" name="txtPhoneNo" value="<?php echo set_value('txtPhoneNo'); ?>" placeholder="Write Phone no (029880668,0290098856)">
+                                                        <input type="text" maxlength="225" name="txtPhoneNo" value="<?php if(isset($row["phone_no"]) && $row["phone_no"] != ""){echo $row["phone_no"];}else{echo set_value('txtPhoneNo');} ?>" placeholder="Write Phone no (029880668,0290098856)">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPhoneNo');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Fax No</label>
                                                     <label class="input">
-                                                        <input type="tel" maxlength="13" name="txtFaxNo" value="<?php echo set_value('txtFaxNo'); ?>" placeholder="Write Fax no">
+                                                        <input type="tel" maxlength="13" name="txtFaxNo" value="<?php if(isset($row["fax_no"]) && $row["fax_no"] != ""){echo $row["fax_no"];}else{echo set_value('txtFaxNo');} ?>" placeholder="Write Fax no">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtFaxNo');?></label>
                                                 </section>
@@ -185,34 +216,43 @@
                                                 <section class="col col-6">
                                                     <label class="label">Email Address</label>
                                                     <label class="input">
-                                                        <input type="email" maxlength="225" name="txtEmailAddress" value="<?php echo set_value('txtEmailAddress'); ?>" placeholder="Write Email Address">
+                                                        <input type="email" maxlength="225" name="txtEmailAddress" value="<?php if(isset($row["email_address"]) && $row["email_address"] != ""){echo $row["email_address"];}else{echo set_value('txtEmailAddress');} ?>" placeholder="Write Email Address">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtEmailAddress');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Web Address</label>
                                                     <label class="input">
-                                                        <input type="url" maxlength="255" name="txtWebAddress" value="<?php echo set_value('txtWebAddress'); ?>" placeholder="Write Web Address (https://www.indexgroupbd.com)">
+                                                        <input type="url" maxlength="255" name="txtWebAddress" value="<?php if(isset($row["web_address"]) && $row["web_address"] != ""){echo $row["web_address"];}else{echo set_value('txtWebAddress');} ?>" placeholder="Write Web Address (https://www.indexgroupbd.com)">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtWebAddress');?></label>
                                                 </section>
                                             </div>
 
                                             <div class="row">
-
                                                 <section class="col col-6">
                                                     <label class="label">Head Office Address</label>
                                                     <label class="input">
-                                                        <input type="email" maxlength="255" name="txtHeadOfficeAddress" value="<?php echo set_value('txtHeadOfficeAddress'); ?>" placeholder="Write Head Office Address">
+                                                        <input type="text" maxlength="255" name="txtHeadOfficeAddress" value="<?php if(isset($row["head_office_address"]) && $row["head_office_address"] != ""){echo $row["head_office_address"];}else{echo set_value('txtHeadOfficeAddress');} ?>" placeholder="Write Head Office Address">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtHeadOfficeAddress');?></label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label class="label">Call Center No</label>
                                                     <label class="input">
-                                                        <input type="number" maxlength="10" name="txtCallCenterNo" value="<?php echo set_value('txtCallCenterNo'); ?>" placeholder="Write call center no">
+                                                        <input type="number" maxlength="10" name="txtCallCenterNo" value="<?php if(isset($row["call_center"]) && $row["call_center"] != ""){echo $row["call_center"];}else{echo set_value('txtCallCenterNo');} ?>" placeholder="Write call center no">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtCallCenterNo');?></label>
+                                                </section>
+                                            </div>
+
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="label">Routing No</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="50" name="txtRoutingNo" value="<?php if(isset($row["routing_no"]) && $row["routing_no"] != ""){echo $row["routing_no"];}else{echo set_value('txtRoutingNo');} ?>" placeholder="Write Routing No">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtHeadOfficeAddress');?></label>
                                                 </section>
                                             </div>
 
@@ -246,7 +286,7 @@
                                 <section class="col col-12">
 
                                     <label class="input">
-                                        <textarea type="text" id="txtBasicInformation" class="ckeditor" name="txtBasicInformation"><?php echo set_value('txtBasicInformation'); ?></textarea>
+                                        <textarea type="text" id="txtBasicInformation" class="ckeditor" name="txtBasicInformation"><?php if(isset($row["basic_information"]) && $row["basic_information"] != ""){echo $row["basic_information"];}else{echo set_value('txtBasicInformation');} ?></textarea>
                                     </label>
                                 </section>
 
@@ -310,6 +350,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
+
         $("input[name ='is_non_bank']").click(function() {
             var v_value = $(this).val();
             if ($(this).is(":checked")) {
@@ -321,45 +362,15 @@
         });
 
         if($("input[name ='is_non_bank']").is(':checked')){
-            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName"><?php echo $this->Select_model->select_non_bank();?></select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName">' +
+                '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
+                '<option value="<?php echo $row1->id;?>" <?php if(isset($row["id"]) && $row["id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option>;<?php } ?>'+
+                '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
         }else{
-            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
-        }
-        $("#txtBankName").on('change', function(){
-            call_draft_info();
-        });
-        $("#txtNonBankName").on('change', function(){
-            call_draft_info();
-        });
-
-        function call_bank_non_bank_info(){
-            var bank_id = $('#txtBankName').val();
-            var non_bank_id = $('#txtNonBankName').val();
-
-            if($("input[name ='is_non_bank']").is(':checked')){
-                var param = 'non_bank_id='+non_bank_id+'&table_name=general_non_bank';
-            }else{
-                var param = 'bank_id='+bank_id+'&table_name=card_bank';
-            }
-            if(bank_id != ''){
-                $.ajax({
-                        url: "<?php echo base_url(); ?>general/ajax_get_bank_non_bank_info",
-                        type : "POST",
-                        dataType : "json",
-                        data : param
-                    })
-                    .done(function( data ) {
-
-                        if(data.process){
-
-
-                        }else{
-
-                        }
-
-                    });
-
-            }
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName">' +
+                '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
+                '<option value="<?php echo $row1->id;?>" <?php if(isset($row["id"]) && $row["id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
+                '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
         }
     });
 </script>

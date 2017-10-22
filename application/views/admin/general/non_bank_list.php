@@ -107,7 +107,7 @@
                                                 <td class="center"><?php echo $row->created_first_name.' '.$row->created_last_name; ?></td>
                                                 <td class="center"><?php echo $row->modified_first_name.' '.$row->modified_last_name; ?></td>
                                                 <td class="center"><?php echo date("j F Y",strtotime($row->modified)); ?></td>
-                                                <td><a href="<?php echo base_url();?>general/update_bank_non_bank_info/?id=<?php echo $row->id;?>" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="" onclick="return confirm('Delete Action off for security reason.')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                                                <td><a href="<?php echo base_url();?>general/update_bank_non_bank_info/?id=<?php echo $row->id;?>&non_bank=1" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="" onclick="return confirm('Delete Action off for security reason.')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
                                             </tr>
                                             <?php
                                             $sl++;
