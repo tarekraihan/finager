@@ -60,6 +60,12 @@ foreach($module_id as $k){
                         <a href="<?php echo base_url();?>general/update_bank_non_bank_info">Update Bank/Non Bank Info</a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url();?>general/add_branch_info">Add Branch Info</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url();?>general/institution_branch_info_list">Institution Branch Info</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url();?>general/db_backup">Take Database Backup</a>
                     </li>
                     <li>

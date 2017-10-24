@@ -29,26 +29,17 @@ if(isset($_GET['id'])){
     $row['routing_no']='';
 }
 ?>
-<script src="<?php echo base_url(); ?>resource/admin/js/plugin/ckeditor/ckeditor.js"></script>
+<script src="<?php echo base_url(); ?>resource/admin/js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
 
-        CKEDITOR.replace('.ckeditor', {
-            height: '80px',
-            startupFocus: true,
-            toolbarGroups: [
-                {name: 'document', groups: ['mode', 'document']}, // Displays document group with its two subgroups.
-                {name: 'clipboard', groups: ['clipboard', 'undo']}, // Group's name will be used to create voice label.
-                '/', // Line break - next group will be placed in new line.
-                {name: 'basicstyles', groups: ['basicstyles', 'cleanup']},
-                '/', // Line break - next group will be placed in new line.
-                {name: 'links'}
-            ]
-
-
-        });
-        CKEDITOR.config.removePlugins = 'save,print,about,preview,find,maximize,showblocks';
+        CKEDITOR.editorConfig = function( config ) {
+            config.language = 'es';
+            config.uiColor = '#F7B42C';
+            config.height = 300;
+            config.toolbarCanCollapse = true;
+        }
 
     });
 </script>
@@ -261,7 +252,7 @@ if(isset($_GET['id'])){
                 <!-- WIDGET END -->
 
                 <!-- NEW WIDGET START -->
-                <article class="col-sm-6 col-md-6 col-lg-6">
+                <article class="col-sm-12 col-md-12 col-lg-12">
 
                     <!-- Widget ID (each widget will need unique ID)-->
                     <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
@@ -284,10 +275,7 @@ if(isset($_GET['id'])){
                             <!-- widget content -->
                             <div class="widget-body no-padding">
                                 <section class="col col-12">
-
-                                    <label class="input">
-                                        <textarea type="text" id="txtBasicInformation" class="ckeditor" name="txtBasicInformation"><?php if(isset($row["basic_information"]) && $row["basic_information"] != ""){echo $row["basic_information"];}else{echo set_value('txtBasicInformation');} ?></textarea>
-                                    </label>
+                                    <textarea type="text" id="txtBasicInformation" class="ckeditor" name="txtBasicInformation"><?php if(isset($row["basic_information"]) && $row["basic_information"] != ""){echo $row["basic_information"];}else{echo set_value('txtBasicInformation');} ?></textarea>
                                 </section>
 
                             </div>

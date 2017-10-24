@@ -1869,6 +1869,13 @@ class Select_Model extends CI_Model
         return $query;
     }
 
+    public function select_all_institution_branch_info_list()
+    {
+        $sql = "SELECT general_institution_branch_info.* , admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name, general_non_bank.bank_logo as non_bank_logo,card_bank.bank_logo as bank_logo,general_non_bank.non_bank_name,card_bank.bank_name FROM `general_institution_branch_info` LEFT JOIN tbl_admin_user admin1 ON admin1.id= general_institution_branch_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= general_institution_branch_info.modified_by LEFT JOIN card_bank ON card_bank.id = general_institution_branch_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = general_institution_branch_info.non_bank_id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
     public function Select_bank_non_bank_info_by_id($id,$non_bank)
     {
         if($non_bank == 1){

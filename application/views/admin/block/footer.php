@@ -476,17 +476,18 @@ you can add as many as you like
             tabsize : 2
         });
 
-        /*
-         * MARKDOWN EDITOR
-         */
 
-       /* $("#mymarkdown").markdown({
-            autofocus:false,
-            savable:true
-        })
-*/
 
 //        Call Bootstrap DateTimePIcker For admin/general/go_maintenance
+
+        $('#txtDateOfOpening').datetimepicker({
+            format: 'DD-MM-YYYY',
+            sideBySide: false,
+            useCurrent: false,
+            showClose: true,
+            toolbarPlacement: 'bottom'
+
+        });
 
         $('#go_maintenance').datetimepicker({
             format: 'DD-MM-YYYY hh:mm A',

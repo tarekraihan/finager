@@ -373,4 +373,88 @@ class General extends CI_Controller {
     }
 
 
+
+    public function add_branch_info($msg=''){
+        if ($this->session->userdata('email_address')) {
+            if ($msg == 'success') {
+                $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
+            }
+
+            $is_non_bank =$this->input->post('is_non_bank');
+            $bank_id = '';
+            $non_bank_id = '';
+            if($is_non_bank == 1){
+                $this->form_validation->set_rules('txtNonBankName', ' Non Bank Name', 'trim|required');
+                $non_bank_id = $this->input->post('txtNonBankName');
+            }else{
+                $this->form_validation->set_rules('txtBankName', ' Bank Name', 'trim|required');
+                $bank_id = $this->input->post('txtBankName');
+            }
+
+            $this->form_validation->set_rules('txtBranchName', ' Branch Name', 'trim|required|max_length[250]');
+            $this->form_validation->set_rules('txtBranchAddress', ' Branch Address', 'trim|required|max_length[255]');
+            $this->form_validation->set_rules('txtPhoneNo', ' Phone No', 'trim|required|max_length[200]');
+            $this->form_validation->set_rules('txtFaxNo', ' Fax No', 'trim|required|max_length[50]');
+            $this->form_validation->set_rules('txtEmailAddress', ' Email Address', 'trim|required|valid_email|max_length[225]');
+            $this->form_validation->set_rules('txtDateOfOpening', ' Date of opening', 'trim');
+            $this->form_validation->set_rules('show_as', ' Show As', 'trim');
+            $this->form_validation->set_rules('txtRoutingNo', ' Routing No', 'trim|required|max_length[50]');
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Bank / Non bank Branch info";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/general/add_branch_information');
+                $this->load->view('admin/block/footer');
+            }else{
+
+                $date = date('Y-m-d h:i:s');
+                $this->Common_model->data = array(
+                    'bank_id' => $bank_id,
+                    'is_non_bank' => $is_non_bank,
+                    'non_bank_id' =>$non_bank_id,
+                    'branch_name' =>htmlentities($this->input->post('txtBranchName')),
+                    'branch_address' =>htmlentities($this->input->post('txtBranchAddress')),
+                    'phone_no' =>htmlentities($this->input->post('txtPhoneNo')),
+                    'fax_no' =>htmlentities($this->input->post('txtFaxNo')),
+                    'email_address' =>$this->input->post('txtEmailAddress'),
+                    'date_of_opening' => date('Y-m-d', strtotime($this->input->post('txtDateOfOpening'))),
+                    'show_as_popular_branch' =>(trim($this->input->post('show_as')) == 'popular branch') ? 1 : 0,
+                    'show_as_new_branch'=> (trim($this->input->post('show_as')) == 'new branch') ? 1 : 0,
+                    'show_as_closed_branch'=>(trim($this->input->post('show_as')) == 'closed branch') ? 1 : 0,
+                    'routing_no'=>$this->input->post('txtRoutingNo'),
+                    'created' => $date ,
+                    'modified' => $date ,
+                    'created_by'=>$this->session->userdata('admin_user_id')
+                );
+
+                $this->Common_model->table_name = 'general_institution_branch_info';
+                $result = $this->Common_model->insert();
+
+                if ($result) {
+                    redirect(base_url().'general/add_branch_info/success');
+                } else {
+                    redirect(base_url().'general/add_branch_info/error');
+                }
+            }
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+
+    }
+
+
+    public function institution_branch_info_list(){
+        $data['title'] = "Finager:Bank List";
+        $this->load->view('admin/block/header',$data);
+        $this->load->view('admin/block/left_nav');
+        $this->load->view('admin/general/institution_branch_info_list');
+        $this->load->view('admin/block/footer');
+
+    }
+
+
 }
