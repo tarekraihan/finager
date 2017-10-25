@@ -777,8 +777,20 @@ class En extends CI_Controller {
                 $html .= '</div>';
                 echo $html;
             }
-
         }
     }
+
+    public function snd(){
+        $this->load->driver('cache');
+        $this->cache->file->save('snd_compare', 'snd_compare', 100);
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/snd');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+
 
 }

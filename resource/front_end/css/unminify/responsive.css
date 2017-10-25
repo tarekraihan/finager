@@ -1,0 +1,430 @@
+
+@media screen and (min-width:981px) and (max-width:1400px){
+	#auto_footer {
+		height: 340px !important;
+	}
+	.auto_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	#home_loan_footer {
+		height: 340px !important;
+	}
+	.home_loan_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	.heading_text {
+		height: 617px !important;
+	}
+	#personal_footer {
+		height: 340px !important;
+	}
+	.personal_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	#personal_header_part {
+		height: 385px !important;
+	}
+        .personal_bigest_text1 button {
+	   margin-top: 67px !important;
+        }
+	/* edu star */
+	#edu_footer {
+		height: 340px !important;
+	}
+	.edu_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+        .edu_footer_pr h3{
+            margin-top:70px !important;
+        }
+	#education_header_part {
+		height: 344px !important;
+	}
+	.education_header_text {
+		top: 231px !important;
+                margin-left:404px !important;
+	}
+	/* dps start */
+	#dps_footer {
+		height: 340px !important;
+	}
+	.dps_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	#dps_header_part {
+		height: 385px !important;
+	}
+        .dps_heading_text{
+                min-height:608px !important;
+        }
+	/* dps end */
+	/* FDR star */
+	#fdr_footer {
+		height: 340px !important;
+	}
+	.fdr_footer_pr img {
+		height: 303px;
+		margin-left: 50px;
+	}
+	#fdr_header_part {
+		height: 344px !important;
+	}
+	.fdr_header_text {
+		top: 224px !important;
+		right: 50px;
+	}
+        .fdr_heading_text {
+	   min-height: 622px !important;
+        }
+       #millionier_header_part {
+	  height: 366px !important;
+       }
+      .millionier_header_text {
+	  margin-right: 89px !important;
+       }
+	
+	
+}
+
+@media screen and (max-width:1024px){
+	.card_text1 {
+		margin-left: 10px;
+	}
+	.card_text2 {
+		min-height: 100px !important;
+	}
+	.btnCardApply {
+		margin-left: 0px !important;
+	}
+	.card_btn_apllication {
+		margin: 56px 11px !important;
+	}
+        
+	.Card-Compare-hr {
+		width: 43.8% !important;
+	}
+	.Card-Compare-hr1 {
+		width: 41.8% !important;
+	}
+	.Card-Compare-hr2 {
+		width: 37.4% !important;
+	}
+	.Card-Compare-hr3 {
+		width: 43.3% !important;
+	}
+	.Card-Compare-hr4 {
+		width: 38.7% !important;
+	}
+	.material_label_checkbox{
+		margin-bottom:15px;
+	}
+	.innerMdlWrapper .innerMdlInner{
+		width:758px;
+	}
+	.slideWrapper{
+		width:380px;
+	}
+	.quest {
+		font-size: 15px;
+		padding: 0px 0px 0px 15px;
+	}
+	.calcSection .dragBox .drag{
+		width:316px;
+	}
+	.calcSection .dragBox .next {
+		width: 115px;
+	}
+	.calcSection .dragBox .slideImg {
+		width: 314px;
+	}
+	.savingsContainer .leftCont {
+		width: 405px;
+	}
+	.resultWrapper {
+		width: 314px;
+	}
+	.savingsContainer .rightCont {
+		width: 350px;
+		float: left;
+	}
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1279px){
+	.catagory-icon p {
+		font-size: 10px !important;
+	}
+}
+@media screen and (min-width:768px)and (max-width:801px){
+	.catagory-icon p {
+		font-size: 10px !important;
+	}
+	.slider_img {
+		width: auto;
+		height: 135px !important;
+		margin-top: 80px;
+	}
+	.carousel-indicators {
+		bottom: -80px !important;
+	}
+	.btn-aplly {
+		float: none !important;
+		margin-bottom: 10px;
+	}
+	.material_label_checkbox{
+		margin-bottom:15px;
+	}
+}
+
+@media screen and (max-width:980px){
+	.Card-Compare-hr {
+		width: 38.8% !important;
+	}
+	.savingsContainer .leftCont{ width:543px; float:none !important;}
+	.savingsContainer .rightCont{ width:368px; float:none !important;}
+	.resultWrapper {
+		margin-left: 20px;
+	}
+	.material_label_checkbox{
+		margin-bottom:20px;
+		font-size: 12px !important;
+	}
+	.home-loan-Compare-hr1 {
+		width: 39.5% !important;
+	}
+	.home-loan-Compare-hr3 {
+		width: 42.5% !important;
+	}
+	.home-loan-Compare-hr4 {
+		width: 33.8% !important;
+	}
+	.hamburger.is-closed{
+		margin-right:55px !important;
+	}
+	.about-logo{
+		max-width: 50% !important;
+		margin: 0 auto;
+	}
+	.req_card{
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width:768px){
+	.catagory-icon h1{
+		font-size:25px;
+	}
+	.card-deposit h1{
+		margin-left:10px;
+	}
+	.carousel-indicators {
+		bottom: -56px;
+	}
+	.vMenu{
+		display:none;
+	}
+	.top-menu{
+		display:inherit;
+	}
+	.carousel-indicators {
+		bottom: -80px !important;
+	}
+
+    .cc_menu{
+		display:none;
+	}
+	.card_text1{
+		margin-left:53px;
+	}
+	.card_btn_apllication {
+        margin: 56px -22px !important;
+	}
+	.card_text2 {
+		min-height: 120px !important;
+	}
+
+	.Card-Compare-hr {
+		width: 39% !important;
+	}
+	.Card-Compare-hr1 {
+		width: 41.9% !important;
+	}
+	.Card-Compare-hr2 {
+		width: 37.5% !important;
+	}
+	.Card-Compare-hr3 {
+		width: 43% !important;
+	}
+	.Card-Compare-hr4 {
+		width: 38.7% !important;
+	}
+	
+}
+
+@media screen and (max-width:640px){
+	.login{
+		margin-right:70px;
+	}
+	.header-right{
+		margin-top:0px;
+	}
+
+        .Card-Compare-hr {
+		width: 40% !important;
+	}
+	.Card-Compare-hr1 {
+		width: 42.6% !important;
+	}
+	.Card-Compare-hr2 {
+		width: 38.7% !important;
+	}
+	.Card-Compare-hr3 {
+		width: 43.6% !important;
+	}
+	.Card-Compare-hr4 {
+		width: 39.5% !important;
+	}
+}
+
+@media screen and (max-width:480px){
+	.carousel-inner{
+		margin-top:80px;
+	}
+	.margin_left_body{
+		margin-right:0px !important;
+	}
+	.container{
+		width:100% !important;
+	}
+	.overlay {
+		position: fixed;
+		display: none;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		z-index: 1;
+	}
+	.hamburger.is-open .hamb-top {
+		background-color: #F7F7F7 !important;
+	}
+	.hamburger.is-open .hamb-bottom {
+		background-color: #F7F7F7 !important;
+	}
+
+    .Card-Compare-hr {
+		width: 37% !important;
+	}
+	.Card-Compare-hr1 {
+		width: 39.6% !important;
+	}
+	.Card-Compare-hr2 {
+		width: 35% !important;
+	}
+	.Card-Compare-hr3 {
+		width: 41.5% !important;
+	}
+	.Card-Compare-hr4 {
+		width: 35.6% !important;
+	}
+}
+
+@media screen and (max-width:360px){
+	.carousel-indicators li,.carousel-indicators li.active {
+		width: 10px !important;
+		height: 10px !important;
+	}
+	.card-deposit h1 {
+		font-size: 40px !important;
+	}
+	.catagory-icon p {
+		font-size: 10px !important;
+	}
+}
+
+@media screen and (max-width:320px){
+	.find-bar .logo-lg{
+		width:150px;
+	}
+	.margin_left_body{
+		margin-right:0px !important;
+	}
+	.container{
+		width:100% !important;
+	}
+	.catagory-icon p {
+		font-size: 10px !important;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1365px){
+ .mash-menu section.mash-menu-inner-container ul li a {
+	font-size: 12px !important;
+ }
+ .search_icon {
+	margin-left: 122px !important;
+ }
+}
+
+/* Upto tab view */
+@media screen and (max-width: 1024px){
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        line-height: 1.3;
+    }
+    .search_icon {
+        display: none !important;
+    }
+    .mash-menu {
+        display: none !important;
+    }
+    .search-image {
+        max-width: 90%;
+    }
+    .home-search-section > p {
+        font-size: 17px !important;
+        top: 15px !important;
+    }
+    .Cicon img {
+        width: 80px !important;
+    }
+    .about-logo {
+        max-width: 30% !important;
+        margin: 0px auto 15px auto;
+    }
+
+    /*credit card START*/
+    #second_div{
+        background-size: cover !important;
+    }
+    .All_card, .All_card1, .All_card2,  .All_card3, .All_card4, .All_card5, .All_card6, .All_card7{
+        height: 200px;
+    }
+    .debit_blog_box p{
+        font-size: 12px !important;
+    }
+    #Basic{
+        height: auto !important;
+    }
+    /*credit card END*/
+
+    /*credit card compare START*/
+    #sidebar.fixed {
+        position: relative !important;
+    }
+    .sidebar_parent {
+        min-height: 1px !important;
+        height: auto !important;
+        margin-bottom: 50px;
+    }
+    .filter-list {
+        padding: 10px !important;
+    }
+    /*credit card compare END*/
+}
