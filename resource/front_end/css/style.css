@@ -4031,10 +4031,13 @@ a .auto_button.flash-button {
 
 
 /*Bank Details Page*/
+#bank_details{
+    margin-top:10px;
+}
 .bank_info_logo img {
     width: 100%;
     border: 1px solid #c1c1c1;
-    height:192px;
+    height:200px;
 }
 .bank_address {
     border: 1px solid #c1c1c1;
@@ -4146,7 +4149,7 @@ a .auto_button.flash-button {
 
 #breadcrumbs-two li{
     float: left;
-    margin: 0 .5em 0 1em;
+    margin: -1px 0.5em -2px 1em;
 }
 
 #breadcrumbs-two a{
@@ -4160,7 +4163,7 @@ a .auto_button.flash-button {
 }
 
 #breadcrumbs-two a:hover{
-    background: #99db76;
+    background: #ddd !important;
 }
 
 #breadcrumbs-two a::before{
@@ -4175,7 +4178,7 @@ a .auto_button.flash-button {
 }
 
 #breadcrumbs-two a:hover::before{
-    border-color: #99db76 #99db76 #99db76 transparent;
+    border-color: #ddd #ddd #ddd transparent;
 }
 
 #breadcrumbs-two a::after{
@@ -4189,7 +4192,7 @@ a .auto_button.flash-button {
     right: -1em;
 }
 #breadcrumbs-two a:hover::after{
-    border-left-color: #99db76;
+    border-left-color: #ddd;
 }
 #breadcrumbs-two .current,
 #breadcrumbs-two .current:hover{

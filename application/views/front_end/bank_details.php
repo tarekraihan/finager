@@ -1,7 +1,7 @@
 <section id="bank_details">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 nopadding">
+            <div class="col-md-3">
                 <div class="bank_info_left">
                     <div class="bank_info_logo">
                         <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_logo.jpg" alt="AB Bank Logo">
@@ -102,10 +102,12 @@
             <ul id="breadcrumbs-two" class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#Info" aria-controls="home" role="tab" data-toggle="tab">Info</a></li>
                 <li role="presentation"><a href="#Loan" aria-controls="profile" role="tab" data-toggle="tab">Loan</a></li>
-                <li role="presentation"><a href="#DPS" aria-controls="messages" role="tab" data-toggle="tab">DPS</a></li>
+                <li role="presentation"><a href="#DPS" aria-controls="messages" role="tab" data-toggle="tab">Investment</a></li>
                 <li role="presentation"><a href="#Cards" aria-controls="settings" role="tab" data-toggle="tab">Cards</a></li>
                 <li role="presentation"><a href="#Accounts" aria-controls="settings" role="tab" data-toggle="tab">Accounts</a></li>
                 <li role="presentation"><a href="#Services" aria-controls="settings" role="tab" data-toggle="tab">Services</a></li>
+                <li role="presentation"><a href="#ScheduleCharges" aria-controls="settings" role="tab" data-toggle="tab">Schedule of Charges</a></li>
+                <li role="presentation"><a href="#InterestRate" aria-controls="settings" role="tab" data-toggle="tab">Interest Rate</a></li>
             </ul>
 
             <!-- Tab panes -->
