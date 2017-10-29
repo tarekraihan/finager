@@ -1,3 +1,8 @@
+<style>
+    .nav > li > a:focus, .nav > li > a:hover {
+        background-color: #ddd !important;
+    }
+</style>
 <section id="bank_details">
     <div class="container-fluid">
         <div class="row">
@@ -102,7 +107,7 @@
             <ul id="breadcrumbs-two" class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#Info" aria-controls="home" role="tab" data-toggle="tab">Info</a></li>
                 <li role="presentation"><a href="#Loan" aria-controls="profile" role="tab" data-toggle="tab">Loan</a></li>
-                <li role="presentation"><a href="#DPS" aria-controls="messages" role="tab" data-toggle="tab">Investment</a></li>
+                <li role="presentation"><a href="#Investment" aria-controls="messages" role="tab" data-toggle="tab">Investment</a></li>
                 <li role="presentation"><a href="#Cards" aria-controls="settings" role="tab" data-toggle="tab">Cards</a></li>
                 <li role="presentation"><a href="#Accounts" aria-controls="settings" role="tab" data-toggle="tab">Accounts</a></li>
                 <li role="presentation"><a href="#Services" aria-controls="settings" role="tab" data-toggle="tab">Services</a></li>
@@ -186,6 +191,7 @@
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Loan">
+                    <h3 class="text-center">Home Loan</h3>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
@@ -195,17 +201,18 @@
                                 <h4>AB Bank Home Construction Loan</h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
-                                    <tr>
-                                        <td>Amount:</td>
-                                        <td>Payable Amount:</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Interest Rate:</td>
-                                        <td>Down Payment:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">EMI:</td>
-                                    </tr>
+                                        <tr>
+                                            <td>Minimum loan amount:</td>
+                                            <td>Payable Amount</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maximum loan amount:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Interest rate:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -220,16 +227,150 @@
                                 <h4>AB Bank Home Construction Loan</h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
+                                        <tr>
+                                            <td>Minimum loan period:</td>
+                                            <td>Payable Amount</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maximum Loan period:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loan type:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-center">Personal Loan</h3>
+                    <div class="col-md-6">
+                        <div class="bank_loan_details">
+                            <div class="col-md-2 nopadding">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
+                            </div>
+                            <div class="col-md-10 nopadding">
+                                <h4>AB Bank Any Purpose Loan</h4><br/>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>Minimum loan amount:</td>
+                                            <td>Payable Amount</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maximum loan amount:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Interest rate:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bank_loan_details">
+                            <div class="col-md-2 nopadding">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
+                            </div>
+                            <div class="col-md-10 nopadding">
+                                <h4>AB Bank Any Purpose Loan</h4><br/>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>Minimum loan period:</td>
+                                            <td>Payable Amount</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maximum Loan period:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loan type:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-center">Auto Loan</h3>
+                    <div class="col-md-6">
+                        <div class="bank_loan_details">
+                            <div class="col-md-2 nopadding">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
+                            </div>
+                            <div class="col-md-10 nopadding">
+                                <h4>AB Bank Reconditioned Car Loan</h4><br/>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>Minimum loan amount:</td>
+                                            <td>Payable Amount</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maximum loan amount:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Interest rate:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bank_loan_details">
+                            <div class="col-md-2 nopadding">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
+                            </div>
+                            <div class="col-md-10 nopadding">
+                                <h4>AB Bank Reconditioned Car Loan</h4><br/>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td>Minimum loan period:</td>
+                                            <td>Payable Amount</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maximum Loan period:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Loan type:</td>
+                                            <td>Down Payment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-center">Education Loan</h3>
+                    <div class="col-md-6">
+                        <div class="bank_loan_details">
+                            <div class="col-md-2 nopadding">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
+                            </div>
+                            <div class="col-md-10 nopadding">
+                                <h4>AB Bank Reconditioned Car Loan</h4><br/>
+                                <table class="table table-bordered">
+                                    <tbody>
                                     <tr>
-                                        <td>Amount:</td>
-                                        <td>Payable Amount:</td>
+                                        <td>Minimum loan amount:</td>
+                                        <td>Payable Amount</td>
                                     </tr>
                                     <tr>
-                                        <td>Interest Rate:</td>
-                                        <td>Down Payment:</td>
+                                        <td>Maximum loan amount:</td>
+                                        <td>Down Payment</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">EMI:</td>
+                                        <td>Interest rate:</td>
+                                        <td>Down Payment</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -242,44 +383,20 @@
                                 <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4>AB Bank Home Construction Loan</h4><br/>
+                                <h4>AB Bank Reconditioned Car Loan</h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Amount:</td>
-                                        <td>Payable Amount:</td>
+                                        <td>Minimum loan period:</td>
+                                        <td>Payable Amount</td>
                                     </tr>
                                     <tr>
-                                        <td>Interest Rate:</td>
-                                        <td>Down Payment:</td>
+                                        <td>Maximum Loan period:</td>
+                                        <td>Down Payment</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">EMI:</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="bank_loan_details">
-                            <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                            </div>
-                            <div class="col-md-10 nopadding">
-                                <h4>AB Bank Home Construction Loan</h4><br/>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                        <td>Amount:</td>
-                                        <td>Payable Amount:</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Interest Rate:</td>
-                                        <td>Down Payment:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">EMI:</td>
+                                        <td>Loan type:</td>
+                                        <td>Down Payment</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -287,26 +404,28 @@
                         </div>
                     </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="DPS">
+                <div role="tabpanel" class="tab-pane" id="Investment">
+                    <h3 class="text-center">FDR</h3>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
                                 <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4>AB Bank Deposit Pension Scheme</h4><br/>
+                                <h4>AB Bank Fixed Deposit Receipt</h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Installment Amount:</td>
-                                        <td>Accrued Interest:</td>
+                                        <td>Minimum Amount:</td>
+                                        <td>Accrued Interest</td>
                                     </tr>
                                     <tr>
-                                        <td>Number of Installment:</td>
-                                        <td>Loan Facility:</td>
+                                        <td>Maximum Amount:</td>
+                                        <td>Loan Facility</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">Maturity Amount:</td>
+                                        <td>Interest Rate</td>
+                                        <td>Loan Facility</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -323,15 +442,16 @@
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Installment Amount:</td>
-                                        <td>Accrued Interest:</td>
+                                        <td>Minimum Period:</td>
+                                        <td>Accrued Interest</td>
                                     </tr>
                                     <tr>
-                                        <td>Number of Installment:</td>
+                                        <td>Maximum Period:</td>
+                                        <td>Loan Facility</td>
+                                    </tr>
+                                    <tr>
                                         <td>Loan Facility:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Maturity Amount:</td>
+                                        <td>Loan Facility</td>
                                     </tr>
                                     </tbody>
                                 </table>

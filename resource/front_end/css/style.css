@@ -2793,9 +2793,9 @@ a .debit_card_button.flash-button{
 .All_cradit_card a{
     text-decoration:none;
 }
-.nopadding:hover{
-    background-color:#f2f2f3;
-}
+/*.nopadding:hover{*/
+    /*background-color:#f2f2f3;*/
+/*}*/
 .All_cradit_card :hover {
     background-color: #effbff;
 }
