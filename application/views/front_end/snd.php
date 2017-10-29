@@ -91,8 +91,8 @@
                                                 <div class="item active row">
                                                     <?php
                                                     $selected_bank_ids = array();
-                                                    if(isset($this->session->userdata['maximizer_bank_ids'])){
-                                                        $bank_ids = array_values($this->session->userdata['maximizer_bank_ids']);
+                                                    if(isset($this->session->userdata['snd_bank_ids'])){
+                                                        $bank_ids = array_values($this->session->userdata['snd_bank_ids']);
                                                         foreach($bank_ids as $bank_id){
                                                             $selected_bank = explode("=",$bank_id);
                                                             array_push($selected_bank_ids,$selected_bank[0]);
@@ -260,21 +260,16 @@
                     <div class="card_query">
                         <p>I Am</p>
                         <div class="query_radio">
-                            <label class="material_radio_group">
-                                <input type="radio" name="iAm" id="iAm1" value="1" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                Individual
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="iAm" id="iAm2" value="2" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                Corporate Bodies
-                            </label><br>
-                            <label class="material_radio_group">
-                                <input type="radio" name="iAm" id="iAm3" value="3" class="material_radiobox">
-                                <span class="material_check_radio"></span>
-                                NRB
-                            </label>
+                            <?php
+                            $loan_user = $this->Select_model->select_all('snd_account_i_am','ASC');
+                            foreach($loan_user->result() as $row){
+                                ?>
+                                <label class="material_radio_group">
+                                    <input type="radio" name="i_am" id="i_am<?php echo $row->id; ?>" value="<?php echo $row->id; ?>" class="material_radiobox"  <?php echo ($this->session->userdata("snd_i_am") == $row->id) ? 'checked' :'' ?>/>
+                                    <span class="material_check_radio"></span>
+                                    <?php echo $row->i_am; ?>
+                                </label><br/>
+                            <?php } ?>
                         </div>
                     </div>
 
@@ -283,9 +278,9 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group" style="position: relative !important; margin: 0; padding: 0; margin: 0 10px 10px 10px;">
-                                    <input type="text" class="form-control" placeholder="10L To 100C">
+                                    <input type="text" name="snd_amount" id="snd_amount" class="form-control" placeholder="10L To 100C">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
+                                        <button class="btn btn-default" name="btnGo" type="button">Go!</button>
                                     </span>
                                 </div><!-- /input-group -->
                             </div>
@@ -297,17 +292,22 @@
                         <p>I Want Interest</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
-                                <input type="radio" name="Interest" id="Monthly" value="1" class="material_radiobox">
+                                <input type="radio" name="i_want_interest" id="Monthly" value="Monthly" class="material_radiobox">
                                 <span class="material_check_radio"></span>
                                 Monthly
                             </label><br>
                             <label class="material_radio_group">
-                                <input type="radio" name="Interest" id="Half-Yearly" value="2" class="material_radiobox">
+                                <input type="radio" name="i_want_interest" id="Quarterly" value="Quarterly" class="material_radiobox">
+                                <span class="material_check_radio"></span>
+                                Quarterly
+                            </label><br>
+                            <label class="material_radio_group">
+                                <input type="radio" name="i_want_interest" id="Half Yearly" value="Half Yearly" class="material_radiobox">
                                 <span class="material_check_radio"></span>
                                 Half-Yearly
                             </label><br>
                             <label class="material_radio_group">
-                                <input type="radio" name="Interest" id="Yearly" value="3" class="material_radiobox">
+                                <input type="radio" name="i_want_interest" id="Yearly" value="Yearly" class="material_radiobox">
                                 <span class="material_check_radio"></span>
                                 Yearly
                             </label>
@@ -320,7 +320,7 @@
 
             <!-- Right bar content start -->
             <div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
-                <div id="moneyMaximizerSearch">
+                <div id="sndSearch">
                     <div id="loading" class="text-center"></div>
                 </div>
             </div>
@@ -380,7 +380,7 @@
             $("#sidebar").removeClass("sidebar-absolute-bottom");
             $("#sidebar").addClass("fixed");
         }
-        if ($('#moneyMaximizerSearch').offset().top > scroll){
+        if ($('#sndSearch').offset().top > scroll){
             $("#sidebar").removeClass("sidebar-absolute-bottom");
             $("#sidebar").removeClass("fixed");
         }
@@ -405,7 +405,7 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
-        $('#finalAssest').val(<?php echo $this->session->userdata("maximizer_deposit_amount");?>);
+        $('#finalAssest').val(<?php echo $this->session->userdata("snd_deposit_amount");?>);
     });
 
     $(document).on('click','#pagination a',function(e){
@@ -418,30 +418,37 @@
 
 
     function loadData( page = null ){
-        var maximizer_tenure = new Array();
-        $('input[name="tenure"]:checked').each(function(){
-            maximizer_tenure.push($(this).val());
+        var snd_i_am = new Array();
+        $('input[name="i_am"]:checked').each(function(){
+            snd_i_am.push($(this).val());
         });
 
-        var maximizer_tenure_list = "&maximizer_tenure="+maximizer_tenure;
+        var snd_i_am_list = "&snd_i_am="+snd_i_am;
 
-        var amount = $('#finalAssest').val();
+        var snd_i_want_interest = new Array();
+        $('input[name="i_want_interest"]:checked').each(function(){
+            snd_i_want_interest.push($(this).val());
+        });
 
-        var deposit_amount = "&deposit_amount="+amount;
+        var snd_i_want_interest_list = "&snd_i_want_interest="+snd_i_want_interest;
+
+        var snd_amount = $('#snd_amount').val();
+
+        var snd_amount = "&snd_amount="+snd_amount;
 
         var bank_ids = new Array();
         $('input[name="bank_id"]:checked').each(function(){
             bank_ids.push($(this).val());
         });
-        var bank_id_list = "&maximizer_bank_ids="+bank_ids;
+        var bank_id_list = "&snd_bank_ids="+bank_ids;
 
-        var main_string = maximizer_tenure_list+deposit_amount+bank_id_list;
+        var main_string = snd_i_am_list+snd_i_want_interest_list+bank_id_list+snd_amount;
         main_string = main_string.substring(1, main_string.length);
         var page_count ='';
         if( page != null ){
             page_count = page ;
         }
-        var url_str = "<?php echo base_url();?>money_maximizer/ajax_get_money_maximizer/" + page_count;
+        var url_str = "<?php echo base_url();?>snd_account/ajax_get_snd_account/" + page_count;
 //        console.log(main_string);
         $.ajax
         ({
@@ -455,68 +462,68 @@
             success: function(msg)
             {
                 count_selected_row();
-                $("#moneyMaximizerSearch").html(msg);
+                $("#sndSearch").html(msg);
                 overlay(false);
 
             }
         });
     }
 
-    function data_caching(){
-
-        var amount = $('#finalAssest').val();
-        var deposit_amount = "&maximizer_deposit_amount="+amount;
-
-        var maximizer_benefit = new Array();
-        $('input[name="tenure"]:checked').each(function(){
-            maximizer_benefit.push($(this).val());
-        });
-        var maximizer_benefit_list = "&maximizer_benefit="+maximizer_benefit;
-
-
-        var bank_ids = new Array();
-        $('input[name="bank_id"]:checked').each(function(){
-            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
-
-        });
-        var bank_id_list = "&maximizer_bank_ids="+bank_ids;
-        var maximizer_benefit_label = '&maximizer_benefit_label='+$('input[name="tenure"]:checked').parent().text().trim();
-
-
-        var main_string = maximizer_benefit_list+bank_id_list+deposit_amount+maximizer_benefit_label;
-        main_string = main_string.substring(1, main_string.length);
-        var url_str = "<?php echo base_url();?>money_maximizer/ajax_maximizer_caching/" ;
-        $.ajax({
-            type: "POST",
-            url: url_str,
-            data: main_string,
-            cache: false,
-            success: function(response){
-                var option = [];
-                var obj = JSON.parse(response);
-//                console.log(obj.maximizer_benefit_label);
-                if(obj.maximizer_benefit !='') {
-                    option.push('<li><div class="filter-option"><span>' + obj.maximizer_benefit_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="maximizer_benefit" data-maximizer_benefit="' + obj.maximizer_benefit + '"><i class="icon-close icons"></i></a></span></div></li>');
-                }
-                if(obj.maximizer_bank_ids.length > 0 ){
-                    for (var i = 0; i < obj.maximizer_bank_ids.length; i++) {
-                        var bank_id = obj.maximizer_bank_ids[i].split("=");
-                        option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="maximizer_bank_id" data-maximizer_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
-                    }
-
-                }
-                $(".filter-list").html(option);
-            }
-        });
-    }
+//    function data_caching(){
+//
+//        var amount = $('#finalAssest').val();
+//        var deposit_amount = "&snd_deposit_amount="+amount;
+//
+//        var snd_benefit = new Array();
+//        $('input[name="tenure"]:checked').each(function(){
+//            snd_benefit.push($(this).val());
+//        });
+//        var snd_benefit_list = "&snd_benefit="+snd_benefit;
+//
+//
+//        var bank_ids = new Array();
+//        $('input[name="bank_id"]:checked').each(function(){
+//            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+//
+//        });
+//        var bank_id_list = "&snd_bank_ids="+bank_ids;
+//        var snd_benefit_label = '&snd_benefit_label='+$('input[name="tenure"]:checked').parent().text().trim();
+//
+//
+//        var main_string = snd_benefit_list+bank_id_list+deposit_amount+snd_benefit_label;
+//        main_string = main_string.substring(1, main_string.length);
+//        var url_str = "<?php //echo base_url();?>//snd/ajax_snd_caching/" ;
+//        $.ajax({
+//            type: "POST",
+//            url: url_str,
+//            data: main_string,
+//            cache: false,
+//            success: function(response){
+//                var option = [];
+//                var obj = JSON.parse(response);
+////                console.log(obj.snd_benefit_label);
+//                if(obj.snd_benefit !='') {
+//                    option.push('<li><div class="filter-option"><span>' + obj.snd_benefit_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_benefit" data-snd_benefit="' + obj.snd_benefit + '"><i class="icon-close icons"></i></a></span></div></li>');
+//                }
+//                if(obj.snd_bank_ids.length > 0 ){
+//                    for (var i = 0; i < obj.snd_bank_ids.length; i++) {
+//                        var bank_id = obj.snd_bank_ids[i].split("=");
+//                        option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_bank_id" data-snd_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
+//                    }
+//
+//                }
+//                $(".filter-list").html(option);
+//            }
+//        });
+//    }
 
     function count_selected_row(){
-        var maximizer_tenure = new Array();
+        var snd_tenure = new Array();
         $('input[name="tenure"]:checked').each(function(){
-            maximizer_tenure.push($(this).val());
+            snd_tenure.push($(this).val());
         });
 
-        var maximizer_tenure_list = "&maximizer_tenure="+maximizer_tenure;
+        var snd_tenure_list = "&snd_tenure="+snd_tenure;
 
         var amount = $('#finalAssest').val();
 
@@ -526,11 +533,11 @@
         $('input[name="bank_id"]:checked').each(function(){
             bank_ids.push($(this).val());
         });
-        var bank_id_list = "&maximizer_bank_ids="+bank_ids;
+        var bank_id_list = "&snd_bank_ids="+bank_ids;
 
-        var main_string = maximizer_tenure_list+deposit_amount+bank_id_list;
+        var main_string = snd_tenure_list+deposit_amount+bank_id_list;
         main_string = main_string.substring(1, main_string.length);
-        var url_str = "<?php echo base_url();?>money_maximizer/ajax_count_selected_row/";
+        var url_str = "<?php echo base_url();?>snd_account/ajax_count_selected_row/";
 
         $.ajax
         ({
@@ -546,11 +553,11 @@
 
 
     $(document).on('click','#clear_all',function(){
-        var data = 'session=money_maximizer';
+        var data = 'session=snd';
         $.ajax
         ({
             type: "POST",
-            url: "<?php echo base_url();?>money_maximizer/ajax_clear_session",
+            url: "<?php echo base_url();?>snd_account/ajax_clear_session",
             data:data,
             success: function(response)
             {
@@ -561,14 +568,14 @@
     });
 
 
-    $(document).on('click', '.maximizer_benefit', function (){
+    $(document).on('click', '.snd_benefit', function (){
         var  formData = $(this).data();
-        var maximizer_benefit = formData.maximizer_benefit;
-        $('#maximizer_benefit'+maximizer_benefit).prop('checked', false);
-        var data = 'maximizer_benefit='+maximizer_benefit;
+        var snd_benefit = formData.snd_benefit;
+        $('#snd_benefit'+snd_benefit).prop('checked', false);
+        var data = 'snd_benefit='+snd_benefit;
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url();?>money_maximizer/unset_maximizer_benefit_session",
+            url: "<?php echo base_url();?>snd_account/unset_snd_benefit_session",
             data: data,
             success: function(msg){
                 loadData( page = null );
@@ -578,14 +585,14 @@
     });
 
 
-    $(document).on('click', '.maximizer_bank_id', function (){
+    $(document).on('click', '.snd_bank_id', function (){
         var  formData = $(this).data();
-        var maximizer_bank_id = formData.maximizer_bank_id;
-        $('#filter-bank-'+maximizer_bank_id).prop('checked', false);
-        var data = 'maximizer_bank_id='+maximizer_bank_id;
+        var snd_bank_id = formData.snd_bank_id;
+        $('#filter-bank-'+snd_bank_id).prop('checked', false);
+        var data = 'snd_bank_id='+snd_bank_id;
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url();?>money_maximizer/unset_maximizer_bank_id_session",
+            url: "<?php echo base_url();?>snd_account/unset_snd_bank_id_session",
             data: data,
             success: function(msg){
                 loadData( page = null );
@@ -642,11 +649,11 @@
 
     //for show hide (more info & Available Offer)
 
-    $('#moneyMaximizerSearch').on('click', '.more_info', function (){
+    $('#sndSearch').on('click', '.more_info', function (){
         var  formData = $(this).data();
-        var maximizer_id = formData.maximizer_id;
-//             console.log(maximizer_id);
-        $("#moreInfo"+maximizer_id).toggleClass("in");
+        var snd_id = formData.snd_id;
+//             console.log(snd_id);
+        $("#moreInfo"+snd_id).toggleClass("in");
     });
     /*
      $('#searchDPS').on('click', '.availableOffer', function (){
@@ -716,14 +723,14 @@
             $(this).addClass("hidden");
 
             var  formData = $(this).data();
-            var maximizer_id = "maximizer_id="+formData.maximizer_id;
+            var snd_id = "snd_id="+formData.snd_id;
 
             setTimeout(function(){
                 $.ajax
                 ({
                     type: "POST",
-                    url: "<?php echo base_url();?>money_maximizer/ajax_compare_money_maximizer_image",
-                    data: maximizer_id,
+                    url: "<?php echo base_url();?>snd_account/ajax_compare_snd_image",
+                    data: snd_id,
                     success: function(msg)
                     {
                         $(".cart_anchor01").html(msg);
@@ -773,15 +780,15 @@
             }
 
             var  formData = $(this).data();
-            var maximizer_id = "maximizer_id="+formData.maximizer_id;
+            var snd_id = "snd_id="+formData.snd_id;
             //alert(home_id);
 
             setTimeout(function(){
                 $.ajax
                 ({
                     type: "POST",
-                    url: "<?php echo base_url();?>money_maximizer/ajax_compare_money_maximizer_image",
-                    data: maximizer_id,
+                    url: "<?php echo base_url();?>snd_account/ajax_compare_snd_image",
+                    data: snd_id,
                     success: function(msg)
                     {
                         $(".cart_anchor").html(msg);
@@ -801,10 +808,10 @@
     $(document).on('click','.compare-cross-btn',function(){
         //alert();
 
-        var collected_card = $(this).prev().attr("data-maximizer_id");
+        var collected_card = $(this).prev().attr("data-snd_id");
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
-            var index=$(this).children().find('.add-to-compare').attr('data-maximizer_id');
+            var index=$(this).children().find('.add-to-compare').attr('data-snd_id');
             if(parseInt(collected_card)==parseInt(index)){
                 obj.removeClass("hidden");
             }
@@ -837,25 +844,25 @@
     $('#go_compare').click(function(){
 
         var  formData = $('.cart_anchor').children('img').data();
-        var maximizer_id1 = "maximizer_id1="+formData.maximizer_id;
+        var snd_id1 = "snd_id1="+formData.snd_id;
 
         var  formData = $('.cart_anchor01').children('img').data();
-        var maximizer_id2 = "&maximizer_id2="+formData.maximizer_id;
+        var snd_id2 = "&snd_id2="+formData.snd_id;
         var amount = $('#finalAssest').val();
         var deposit_amount = "&deposit_amount="+amount;
 
-        var maximizer_ids = maximizer_id1+maximizer_id2+deposit_amount;
-        if( maximizer_id1 != '' && maximizer_id2 != '' ){
+        var snd_ids = snd_id1+snd_id2+deposit_amount;
+        if( snd_id1 != '' && snd_id2 != '' ){
             $.ajax
             ({
                 type: "POST",
-                url: "<?php echo base_url();?>money_maximizer/ajax_go_compare_page",
-                data: maximizer_ids,
+                url: "<?php echo base_url();?>snd_account/ajax_go_compare_page",
+                data: snd_ids,
                 success: function(msg)
                 {
                     if(msg != 'error'){
 
-                        window.location.href = "<?php echo base_url();?>en/money_maximizer_compare";
+                        window.location.href = "<?php echo base_url();?>en/snd_compare";
                     }
                 }
             });
