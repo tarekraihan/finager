@@ -12,6 +12,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Snd_account extends CI_Controller
 {
+    public function __construct() {
+        parent:: __construct();
+        $this->load->library("pagination");
+    }
+
     public function i_am($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -307,10 +312,20 @@ class Snd_account extends CI_Controller
     }
 
     public function ajax_get_snd_account(){
-        snd_i_am_list+snd_i_want_interest_list+bank_id_list+snd_amount;
         $snd_bank_ids = (!empty( $this->input->post('snd_bank_ids'))) ? $this->input->post('snd_bank_ids') : '';
         $snd_i_want_interest = (!empty($this->input->post('snd_i_want_interest'))) ? $this->input->post('snd_i_want_interest') : '';
-        $snd_amount = (!empty($this->input->post('snd_amount'))) ? $this->input->post('snd_amount') : '';
+        $snd_amount = (!empty($this->input->post('snd_amount'))) ? (float)$this->input->post('snd_amount') : 100000;
+        $snd_tenure = 0;
+        if($snd_i_want_interest == 'Monthly'){
+            $snd_tenure = 1;
+        }else if($snd_i_want_interest == 'Quarterly'){
+            $snd_tenure = 3;
+        }else if($snd_i_want_interest == 'Half Yearly'){
+            $snd_tenure = 6;
+        }else{
+            $snd_tenure = 12;
+        }
+
         $WHERE = array(); $query = '';
 
         if(!empty($snd_bank_ids)) {
@@ -328,7 +343,7 @@ class Snd_account extends CI_Controller
 
 
         if(!empty($snd_i_want_interest)) {
-            $WHERE[] = '(snd_info.interest_paid LIKE '.$snd_i_want_interest.')';
+            $WHERE[] = '(snd_info.interest_paid LIKE "'.$snd_i_want_interest.'")';
         }
 
         if(!empty($snd_amount)) {
@@ -349,10 +364,10 @@ class Snd_account extends CI_Controller
         if(!empty($query)) {
             $query = 'WHERE '.$query;
         }
-        $res = $this->Front_end_select_model->select_snd_account_info($query);
+        $res = $this->Front_end_select_model->select_snd_info($query);
 
 //-----------Pagination start-----------------
-        $config['base_url'] = base_url() . "en/savings_account/";
+        $config['base_url'] = base_url() . "en/snd/";
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
         $config["uri_segment"] = 3;
@@ -383,14 +398,13 @@ class Snd_account extends CI_Controller
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? ($this->uri->segment(3)-1)*$config['per_page'] : 0;
 
-        $savings_account =  $this->Front_end_select_model->select_savings_account_info_pagination($query,$config["per_page"],$page);
+        $snd =  $this->Front_end_select_model->select_snd_info_pagination($query,$config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
 
         $account = '';
 
-        if($savings_account->num_rows() > 0){
-            foreach($savings_account->result() as $row){
-//                print_r($row);die;
+        if($snd->num_rows() > 0){
+            foreach($snd->result() as $row){
                 $bank = "";
                 if($row->is_non_bank == 1){
                     $bank = $row->non_bank_name;
@@ -403,20 +417,22 @@ class Snd_account extends CI_Controller
                 }else{
                     $bank_logo = $row->bank_logo;
                 }
-
+                $interest_amount = 0;
                 $interest = '';
                 if(is_numeric($row->interest_rate)){
+                    $interest_amount = ((float)$snd_amount * (float)$row->interest_rate * (float)$snd_tenure ) / (12 * 100);
                     $interest = $row->interest_rate.' %';
                 }else{
                     $interest = $row->interest_rate;
                 }
-                $min_balance = ($row->min_balance_for_interest != '') ? $row->min_balance_for_interest : 'N/A';
+
+                $maturity_amount = (float)$snd_amount + (float) $interest_amount;
 
                 $account .= '
 					<div class="full-card">
                     <div class="row card_right_bar">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'.base_url().'en/savings_account_details/'.$row->id.'"><img title="Free Web tutorials" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'.base_url().'en/snd_details/'.$row->id.'"><img title="Click Here for Details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -427,8 +443,8 @@ class Snd_account extends CI_Controller
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="caccount_text">
-                                        <h5>A/C Opening Balance</h5>
-                                        <p>BDT '.number_format($row->opening_balance).'</p>
+                                        <h5>Deposited Amount</h5>
+                                        <p>BDT '.number_format($snd_amount).'</p>
 
                                     </div>
                                 </div>
@@ -440,23 +456,23 @@ class Snd_account extends CI_Controller
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="caccount_text">
-                                        <h5>Minimum Balance for Interest</h5>
-                                        <p>BDT '.number_format($min_balance).' Per Month</p>
+                                        <h5>Maturity Amount</h5>
+                                        <p>BDT '.number_format($maturity_amount).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="caccount_text">
-                                        <h5>Interest Paid</h5>
-                                        <p>'.$row->interest_paid.'</p>
+                                        <h5>Notice Day</h5>
+                                        <p>'.$row->notice_day.'</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="row saving-account">
                                 <div class="col-sm-4 col-xs-4">
-                                    <span class="more_info_icon"><a href="javascript:void(0)" class="add-to-compare" data-account_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
+                                    <span class="more_info_icon"><a href="javascript:void(0)" class="add-to-compare" data-snd_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
-                                    <span class="more_info_icon"><a href="javascript:void(0)"   class="more_info" data-account_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
+                                    <span class="more_info_icon"><a href="javascript:void(0)"   class="more_info" data-snd_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text1">
@@ -474,17 +490,28 @@ class Snd_account extends CI_Controller
 								<section id="tab">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation"><a href="#Features'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Features</a></li>
-                                    <li role="presentation"><a href="#FeesCharges'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Fees & Charges</a></li>
-                                    <li role="presentation"><a href="#Requirement'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Requirement</a></li>
+                                    <li role="presentation"><a href="#AvailableOffer'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Available Offer</a></li>
+                                    <li role="presentation"><a href="#Features'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Features</a></li>
+                                    <li role="presentation"><a href="#FeesAndCharges'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Fees and Charges</a></li>
+                                    <li role="presentation"><a href="#Requirements'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Requirements</a></li>
                                     <li role="presentation"><a href="#TermsConditions'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Terms & Conditions</a></li>
                                     <li role="presentation"><a href="#Review'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Review</a></li>
-                                    <li role="presentation"><a href="#UserReview'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">User Review</a></li>
                                 </ul>
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="Features'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane active" id="AvailableOffer'.$row->id.'">
+                                        <div class="col-sm-12">
+                                            <div class="debit_card_tab">
+                                                <h4>Available Offer</h4>
+                                                <div class="prosConsHr"></div><br/>
+                                                <div class="prosCons_body2 trbodywidth">
+                                                    '.$row->available_offer.'
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="Features'.$row->id.'">
                                         <div class="col-sm-12">
                                             <div class="debit_card_tab">
                                                 <h4>Features</h4>
@@ -495,30 +522,19 @@ class Snd_account extends CI_Controller
                                             </div>
                                         </div>
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="FeesCharges'.$row->id.'">
-                                        <div class="col-sm-12">
-                                            <div class="debit_card_tab">
-                                                <h4>Fees & Charges</h4>
-                                                <div class="prosConsHr"></div><br/>
-                                                <div class="prosCons_body2 trbodywidth">
-                                                    '.$row->fees_and_charges.'
-                                                </div>
-                                            </div>
+
+                                    <div role="tabpanel" class="tab-pane" id="FeesAndCharges'.$row->id.'">
+                                        <div class="debit_card_tab">
+                                            <h4>Fees and Charges</h4>
+                                            <div class="prosConsHr"></div><br/>
+                                            <p>'.$row->fees_and_charges.'</p>
                                         </div>
                                     </div>
-
-                                    <div role="tabpanel" class="tab-pane" id="Requirement'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane" id="Requirements'.$row->id.'">
                                         <div class="debit_card_tab">
                                             <h4>Requirements</h4>
                                             <div class="prosConsHr"></div><br/>
-                                            <p>'.$row->requirements.'</p>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
-                                        <div class="debit_card_tab">
-                                            <h4>Review</h4>
-                                            <div class="prosConsHr"></div><br/>
-                                           <p>'.$row->review.'</p>
+                                           <p>'.$row->requirements.'</p>
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="TermsConditions'.$row->id.'">
@@ -528,11 +544,11 @@ class Snd_account extends CI_Controller
                                             <p>'.$row->terms_and_conditions.'</p>
                                         </div>
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="UserReview'.$row->id.'">
+                                    <div role="tabpanel" class="tab-pane" id="Review'.$row->id.'">
                                         <div class="debit_card_tab">
-                                            <h4>User Review</h4>
+                                            <h4>Review</h4>
                                             <div class="prosConsHr"></div><br/>
-                                            <p>Coming Soon...</p>
+                                            <p>'.$row->review.'</p>
                                         </div>
                                     </div>
                                 </div>

@@ -389,34 +389,11 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
     });
-
-    $(document).ready(function(){
-
-        setTimeout(function(){
-            $("#finalAssest").focus();
-            $("#finalAssest").blur();
-
-            $("#finalLiability").focus();
-            $("#finalLiability").blur();
-        },500);
-    });
-
 </script>
 <script type="text/javascript">
 
-    $(document).ready(function(){
-        $('#finalAssest').val(<?php echo $this->session->userdata("snd_deposit_amount");?>);
-    });
 
-    $(document).on('click','#pagination a',function(e){
-        e.preventDefault();
-        var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
-//            alert(cur_page);
-        loadData(cur_page);
-        //console.log(cur_page);
-    });
-
-
+    loadData(page = null );
     function loadData( page = null ){
         var snd_i_am = new Array();
         $('input[name="i_am"]:checked').each(function(){
@@ -433,7 +410,6 @@
         var snd_i_want_interest_list = "&snd_i_want_interest="+snd_i_want_interest;
 
         var snd_amount = $('#snd_amount').val();
-
         var snd_amount = "&snd_amount="+snd_amount;
 
         var bank_ids = new Array();
@@ -449,7 +425,6 @@
             page_count = page ;
         }
         var url_str = "<?php echo base_url();?>snd_account/ajax_get_snd_account/" + page_count;
-//        console.log(main_string);
         $.ajax
         ({
             type: "POST",
@@ -457,13 +432,13 @@
             data: main_string,
             cache: false,
             beforeSend: function() {
-                overlay(true,true);
+                //overlay(true,true);
             },
             success: function(msg)
             {
-                count_selected_row();
+                //count_selected_row();
                 $("#sndSearch").html(msg);
-                overlay(false);
+                //overlay(false);
 
             }
         });
@@ -552,6 +527,8 @@
     }
 
 
+/*
+
     $(document).on('click','#clear_all',function(){
         var data = 'session=snd';
         $.ajax
@@ -600,41 +577,38 @@
         });
 
     });
+*/
 
 
-    //    loadData( page = null );
-    setTimeout(function(){ //Updated by Tarek on 14-05-2017
-        //alert($("#finalAssest").val());
-        data_caching();
-        loadData(page = null);
-    }, 1000);
+
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
-        data_caching();
+        //data_caching();
         loadData( page = null );
 
     } );
-
+/*
 
     $(".draggable").on("dragstop",function(ev,ui){
 
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
             //alert($("#finalAssest").val());
-            data_caching();
+            //data_caching();
             loadData(page = null);
         }, 1000);
 
-    });
+    });*/
+/*
 
     $("#finalAssest,#finalLiability").change(function () {
         //alert($("#finalAssest").val());
-        data_caching();
+        //data_caching();
         loadData(page = null);
     });
 
     $("#alreadySaved").find(".next").click(function(){
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
             //alert($("#finalAssest").val());
-            data_caching();
+            //data_caching();
             loadData(page = null);
         }, 1000);
     });
@@ -642,17 +616,17 @@
     $("#alreadySaved").find(".prev").click(function(){
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
             //alert($("#finalAssest").val());
-            data_caching();
+            //data_caching();
             loadData(page = null);
         }, 1000);
     });
+*/
 
     //for show hide (more info & Available Offer)
 
     $('#sndSearch').on('click', '.more_info', function (){
         var  formData = $(this).data();
         var snd_id = formData.snd_id;
-//             console.log(snd_id);
         $("#moreInfo"+snd_id).toggleClass("in");
     });
     /*

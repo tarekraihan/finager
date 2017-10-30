@@ -501,4 +501,20 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+
+    public function select_snd_info($param){
+        $sql="SELECT snd_info.*,snd_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `snd_info` INNER JOIN snd_account_i_am ON snd_account_i_am.id=snd_info.i_am_id  LEFT JOIN card_bank on card_bank.id=snd_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id $param";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    function select_snd_info_pagination($param,$limit=null,$offset=null){
+        $link = 'ORDER BY snd_info.id ASC LIMIT ' . $offset . ', ' . $limit;
+        $sql = "SELECT snd_info.*,snd_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `snd_info` INNER JOIN snd_account_i_am ON snd_account_i_am.id=snd_info.i_am_id  LEFT JOIN card_bank on card_bank.id=snd_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id $param $link";
+//        echo $sql;die;
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+
 }
