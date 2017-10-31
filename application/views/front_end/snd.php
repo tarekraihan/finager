@@ -64,12 +64,6 @@
                 <div class="bank-filter">
                     <p class="bank-small-filter">50 of 50 results filtered by:</p>
                     <div class="bank-big-filter">
-
-                        <!--<div class="dropdown mega-dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle">
-                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                            </a>
-                        </div>-->
                         <ul class="filter-by">
                             <li class="dropdown mega-dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle">
@@ -278,9 +272,9 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group" style="position: relative !important; margin: 0; padding: 0; margin: 0 10px 10px 10px;">
-                                    <input type="text" name="snd_amount" id="snd_amount" class="form-control" placeholder="10L To 100C">
+                                    <input type="number" name="snd_amount" id="snd_amount" class="form-control" placeholder="10L To 100C" max="12">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" name="btnGo" type="button">Go!</button>
+                                        <button class="btn btn-default" name="btnGo" id="btnGo" type="button">Go!</button>
                                     </span>
                                 </div><!-- /input-group -->
                             </div>
@@ -364,7 +358,7 @@
 </section>
 
 <script type="text/javascript">
-    $(document).on("scroll",function () {
+    $(document).on("scroll",function (){
         var header = $("#sidebar").offset().top;
         var scroll = $(window).scrollTop();
 
@@ -391,9 +385,9 @@
     });
 </script>
 <script type="text/javascript">
-
-
-    loadData(page = null );
+    $(document).ready(function(){
+        loadData(page = null );
+    });
     function loadData( page = null ){
         var snd_i_am = new Array();
         $('input[name="i_am"]:checked').each(function(){
@@ -432,17 +426,29 @@
             data: main_string,
             cache: false,
             beforeSend: function() {
-                //overlay(true,true);
+                overlay(true,true);
             },
             success: function(msg)
             {
                 //count_selected_row();
                 $("#sndSearch").html(msg);
-                //overlay(false);
+                overlay(false);
 
             }
         });
     }
+
+
+    $('#sndSearch').on('click', '.more_info', function (){
+        var  formData = $(this).data();
+        var snd_id = formData.snd_id;
+        $("#more_info"+snd_id).toggleClass("in");
+        if($("#more_info"+snd_id).hasClass('in')){
+            $('#more_info'+snd_id).html("<i class='fa fa-info-circle'></i> Less info");
+        }else{
+            $('#more_info'+snd_id).html("<i class='fa fa-info-circle'></i> More info");
+        }
+    });
 
 //    function data_caching(){
 //
@@ -579,6 +585,9 @@
     });
 */
 
+    $('#btnGo').click(function(){
+        loadData( page = null );
+    });
 
 
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
@@ -586,41 +595,7 @@
         loadData( page = null );
 
     } );
-/*
 
-    $(".draggable").on("dragstop",function(ev,ui){
-
-        setTimeout(function(){ //Updated by Tarek on 14-05-2017
-            //alert($("#finalAssest").val());
-            //data_caching();
-            loadData(page = null);
-        }, 1000);
-
-    });*/
-/*
-
-    $("#finalAssest,#finalLiability").change(function () {
-        //alert($("#finalAssest").val());
-        //data_caching();
-        loadData(page = null);
-    });
-
-    $("#alreadySaved").find(".next").click(function(){
-        setTimeout(function(){ //Updated by Tarek on 14-05-2017
-            //alert($("#finalAssest").val());
-            //data_caching();
-            loadData(page = null);
-        }, 1000);
-    });
-
-    $("#alreadySaved").find(".prev").click(function(){
-        setTimeout(function(){ //Updated by Tarek on 14-05-2017
-            //alert($("#finalAssest").val());
-            //data_caching();
-            loadData(page = null);
-        }, 1000);
-    });
-*/
 
     //for show hide (more info & Available Offer)
 
@@ -658,7 +633,7 @@
 
             var cart01 = $('.cart_anchor01');
             var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
-            if (imgtodrag01) {
+            if (imgtodrag01.length) {
                 var imgclone01 = imgtodrag01.clone()
                     .offset({
                         top: imgtodrag01.offset().top,
@@ -707,18 +682,19 @@
                     data: snd_id,
                     success: function(msg)
                     {
+                        console.log(msg);
                         $(".cart_anchor01").html(msg);
                     }
                 });
             });
 
 
-        }
+        }else{
 
-        else{
             var cart = $('.cart_anchor');
             var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
-            if (imgtodrag) {
+            if (imgtodrag.length) {
+
                 var imgclone = imgtodrag.clone()
                     .offset({
                         top: imgtodrag.offset().top,
@@ -755,7 +731,6 @@
 
             var  formData = $(this).data();
             var snd_id = "snd_id="+formData.snd_id;
-            //alert(home_id);
 
             setTimeout(function(){
                 $.ajax
@@ -765,6 +740,7 @@
                     data: snd_id,
                     success: function(msg)
                     {
+                        console.log(msg);
                         $(".cart_anchor").html(msg);
                     }
                 });
@@ -774,14 +750,10 @@
             $(this).addClass("hidden");
 
         }
-
-
     });
 
 
     $(document).on('click','.compare-cross-btn',function(){
-        //alert();
-
         var collected_card = $(this).prev().attr("data-snd_id");
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');

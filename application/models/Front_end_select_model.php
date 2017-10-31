@@ -186,6 +186,12 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    public function select_snd_image($id){
+        $sql="SELECT snd_info.id,snd_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo  FROM `snd_info`  LEFT JOIN card_bank on card_bank.id=snd_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id WHERE snd_info.id=$id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 
     public function select_money_maximizer_image($id){
         $sql="SELECT money_maxi_info.id,money_maxi_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `money_maxi_info`  LEFT JOIN card_bank on card_bank.id=money_maxi_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id  WHERE money_maxi_info.id=$id";

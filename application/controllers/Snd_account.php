@@ -469,10 +469,10 @@ class Snd_account extends CI_Controller
                             </div>
                             <div class="row saving-account">
                                 <div class="col-sm-4 col-xs-4">
-                                    <span class="more_info_icon"><a href="javascript:void(0)" class="add-to-compare" data-snd_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
+                                    <span class="more_info_icon"><a href="javascript:void(0)" class="add-to-compare"  data-snd_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
-                                    <span class="more_info_icon"><a href="javascript:void(0)"   class="more_info" data-snd_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
+                                    <span class="more_info_icon"><a href="javascript:void(0)" id="more_info'.$row->id.'" class="more_info" data-snd_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text1">
@@ -564,6 +564,27 @@ class Snd_account extends CI_Controller
         }
         echo $account;
     }
+
+
+    public function ajax_compare_snd_image(){
+        $id = $this->input->post('snd_id');
+        $result = $this->Front_end_select_model->select_snd_image($id);
+        $row= $result->row();
+        $bank_logo ='';
+        if($row->is_non_bank == 1){
+            $bank_logo = $row->non_bank_logo;
+        }else{
+            $bank_logo = $row->bank_logo;
+        }
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-account_id='.$row->id.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
+    }
+
 
 
 
