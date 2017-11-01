@@ -1,53 +1,13 @@
 <style type="text/css">
-    .savingsContainer .leftCont {
-        padding: 0 0 0 0;
-    }
-    .calcSection .dragBox .drag {
-        width: 200px;
-    }
-    .calcSection .dragBox .next {
-        right: 103px;
-    }
-    .calcSection .dragBox .drag2 {
-        width: 201px;
-    }
-    .monthWrap .calcSection .dragBox {
-        width: 215px;
-    }
-    .calcSection .dragBox .slideImg {
-        width: 210px;
-    }
-    .monthWrap .calcSection .dragBox .slideImg {
-        width: 207px;
-    }
-    .calcSection .dragBox .drag span {
-        background: none;
-    }
-    .calborder {
-        border-bottom:0px solid #DADADA;
-    }
-    .card_query_fdr {
-        border-bottom: 2px solid #DADADA;
-        height: 165px;
-    }
+
     .pagination-centered{position:relative; top:0; right:0;}
-    .sidebar-absolute-bottom{
-        position: absolute;
-        width: 262px;
-        bottom: 35px;
-        left: 15px;
-    }
-    .fixed {
-        position: fixed;
-        top: 0px;
-        width: 262.5px;
-    }
-    .sidebar_parent{
-        position: relative;
-        min-height: 700px;;
-    }
-    #sidebar{
-        margin-top: 0;
+
+    .pagination li {
+        background-color: #8f8f8f;
+        float: left;
+        height: auto;
+        margin-right: 0;
+        width: auto;
     }
 
 </style>
@@ -386,7 +346,15 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function(){
+        data_caching();
         loadData(page = null );
+
+
+        $(document).on('click','#pagination a',function(e){
+            e.preventDefault();
+            var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
+            loadData(cur_page);
+        });
     });
     function loadData( page = null ){
         var snd_i_am = new Array();
@@ -430,7 +398,7 @@
             },
             success: function(msg)
             {
-                //count_selected_row();
+                count_selected_row();
                 $("#sndSearch").html(msg);
                 overlay(false);
 
@@ -450,65 +418,85 @@
         }
     });
 
-//    function data_caching(){
-//
-//        var amount = $('#finalAssest').val();
-//        var deposit_amount = "&snd_deposit_amount="+amount;
-//
-//        var snd_benefit = new Array();
-//        $('input[name="tenure"]:checked').each(function(){
-//            snd_benefit.push($(this).val());
-//        });
-//        var snd_benefit_list = "&snd_benefit="+snd_benefit;
-//
-//
-//        var bank_ids = new Array();
-//        $('input[name="bank_id"]:checked').each(function(){
-//            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
-//
-//        });
-//        var bank_id_list = "&snd_bank_ids="+bank_ids;
-//        var snd_benefit_label = '&snd_benefit_label='+$('input[name="tenure"]:checked').parent().text().trim();
-//
-//
-//        var main_string = snd_benefit_list+bank_id_list+deposit_amount+snd_benefit_label;
-//        main_string = main_string.substring(1, main_string.length);
-//        var url_str = "<?php //echo base_url();?>//snd/ajax_snd_caching/" ;
-//        $.ajax({
-//            type: "POST",
-//            url: url_str,
-//            data: main_string,
-//            cache: false,
-//            success: function(response){
-//                var option = [];
-//                var obj = JSON.parse(response);
-////                console.log(obj.snd_benefit_label);
-//                if(obj.snd_benefit !='') {
-//                    option.push('<li><div class="filter-option"><span>' + obj.snd_benefit_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_benefit" data-snd_benefit="' + obj.snd_benefit + '"><i class="icon-close icons"></i></a></span></div></li>');
-//                }
-//                if(obj.snd_bank_ids.length > 0 ){
-//                    for (var i = 0; i < obj.snd_bank_ids.length; i++) {
-//                        var bank_id = obj.snd_bank_ids[i].split("=");
-//                        option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_bank_id" data-snd_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
-//                    }
-//
-//                }
-//                $(".filter-list").html(option);
-//            }
-//        });
-//    }
+    function data_caching(){
+
+        var snd_amount = $('#snd_amount').val();
+        var snd_amount = "&snd_amount="+snd_amount;
+
+
+        var snd_i_am = new Array();
+        $('input[name="i_am"]:checked').each(function(){
+            snd_i_am.push($(this).val());
+        });
+        var snd_i_am_list = "&snd_i_am="+snd_i_am;
+
+        var snd_i_want_interest = new Array();
+        $('input[name="i_want_interest"]:checked').each(function(){
+            snd_i_want_interest.push($(this).val());
+        });
+        var snd_i_want_interest_list = "&snd_i_want_interest="+snd_i_want_interest;
+
+
+        var bank_ids = new Array();
+        $('input[name="bank_id"]:checked').each(function(){
+            bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+
+        });
+        var bank_id_list = "&snd_bank_ids="+bank_ids;
+        var snd_i_am_label = '&snd_i_am_label='+$('input[name="i_am"]:checked').parent().text().trim();
+        var snd_i_want_interest_label = '&snd_i_want_interest_label='+$('input[name="i_want_interest"]:checked').parent().text().trim();
+
+
+        var main_string = snd_i_am_list+bank_id_list+snd_amount+snd_i_want_interest_list+snd_i_am_label+snd_i_want_interest_label;
+        main_string = main_string.substring(1, main_string.length);
+        var url_str = "<?php echo base_url();?>snd_account/ajax_snd_caching/" ;
+        $.ajax({
+            type: "POST",
+            url: url_str,
+            data: main_string,
+            cache: false,
+            success: function(response){
+                var option = [];
+                var obj = JSON.parse(response);
+//                console.log(obj.snd_benefit_label);
+                if(obj.snd_i_am !='') {
+                    option.push('<li><div class="filter-option"><span>' + obj.snd_i_am_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_i_am" data-snd_i_am="' + obj.snd_i_am + '"><i class="icon-close icons"></i></a></span></div></li>');
+                }
+                if(obj.snd_i_want_interest !='') {
+                    option.push('<li><div class="filter-option"><span>' + obj.snd_i_want_interest_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_i_want_interest" data-snd_i_want_interest="' + obj.snd_i_want_interest + '"><i class="icon-close icons"></i></a></span></div></li>');
+                }
+                if(obj.snd_amount !='') {
+                    option.push('<li><div class="filter-option"><span>' + obj.snd_amount + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_amount" data-snd_amount="' + obj.snd_amount + '"><i class="icon-close icons"></i></a></span></div></li>');
+                }
+                if(obj.snd_bank_ids.length > 0 ){
+                    for (var i = 0; i < obj.snd_bank_ids.length; i++) {
+                        var bank_id = obj.snd_bank_ids[i].split("=");
+                        option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_bank_id" data-snd_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
+                    }
+
+                }
+                $(".filter-list").html(option);
+            }
+        });
+    }
 
     function count_selected_row(){
-        var snd_tenure = new Array();
-        $('input[name="tenure"]:checked').each(function(){
-            snd_tenure.push($(this).val());
+        var snd_i_am = new Array();
+        $('input[name="i_am"]:checked').each(function(){
+            snd_i_am.push($(this).val());
         });
 
-        var snd_tenure_list = "&snd_tenure="+snd_tenure;
+        var snd_i_am_list = "&snd_i_am="+snd_i_am;
 
-        var amount = $('#finalAssest').val();
+        var snd_i_want_interest = new Array();
+        $('input[name="i_want_interest"]:checked').each(function(){
+            snd_i_want_interest.push($(this).val());
+        });
 
-        var deposit_amount = "&deposit_amount="+amount;
+        var snd_i_want_interest_list = "&snd_i_want_interest="+snd_i_want_interest;
+
+        var snd_amount = $('#snd_amount').val();
+        var snd_amount = "&snd_amount="+snd_amount;
 
         var bank_ids = new Array();
         $('input[name="bank_id"]:checked').each(function(){
@@ -516,8 +504,9 @@
         });
         var bank_id_list = "&snd_bank_ids="+bank_ids;
 
-        var main_string = snd_tenure_list+deposit_amount+bank_id_list;
+        var main_string = snd_i_am_list+snd_i_want_interest_list+bank_id_list+snd_amount;
         main_string = main_string.substring(1, main_string.length);
+
         var url_str = "<?php echo base_url();?>snd_account/ajax_count_selected_row/";
 
         $.ajax
@@ -531,9 +520,6 @@
             }
         });
     }
-
-
-/*
 
     $(document).on('click','#clear_all',function(){
         var data = 'session=snd';
@@ -551,14 +537,30 @@
     });
 
 
-    $(document).on('click', '.snd_benefit', function (){
+    $(document).on('click', '.snd_i_am', function (){
         var  formData = $(this).data();
-        var snd_benefit = formData.snd_benefit;
-        $('#snd_benefit'+snd_benefit).prop('checked', false);
-        var data = 'snd_benefit='+snd_benefit;
+        var snd_i_am = formData.snd_i_am;
+        $('#i_am'+snd_i_am).prop('checked', false);
+        var data = 'snd_i_am='+snd_i_am;
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url();?>snd_account/unset_snd_benefit_session",
+            url: "<?php echo base_url();?>snd_account/unset_snd_i_am_session",
+            data: data,
+            success: function(msg){
+                loadData( page = null );
+            }
+        });
+
+    });
+
+    $(document).on('click', '.snd_i_want_interest', function (){
+        var  formData = $(this).data();
+        var snd_i_want_interest = formData.snd_i_want_interest;
+        $('#'+snd_i_want_interest).prop('checked', false);
+        var data = 'snd_i_want_interest='+snd_i_want_interest;
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>snd_account/unset_snd_i_want_interest_session",
             data: data,
             success: function(msg){
                 loadData( page = null );
@@ -583,15 +585,16 @@
         });
 
     });
-*/
+
 
     $('#btnGo').click(function(){
+        data_caching();
         loadData( page = null );
     });
 
 
     $("input[type='checkbox'], input[type='radio']").on( "click", function() {
-        //data_caching();
+        data_caching();
         loadData( page = null );
 
     } );
@@ -630,7 +633,6 @@
         }
 
         if($(".cart_anchor").hasClass("img_active")){
-
             var cart01 = $('.cart_anchor01');
             var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
             if (imgtodrag01.length) {
@@ -670,10 +672,8 @@
 
             $(".cart_anchor01").addClass("img_active");
             $(this).addClass("hidden");
-
             var  formData = $(this).data();
             var snd_id = "snd_id="+formData.snd_id;
-
             setTimeout(function(){
                 $.ajax
                 ({
@@ -752,7 +752,6 @@
         }
     });
 
-
     $(document).on('click','.compare-cross-btn',function(){
         var collected_card = $(this).prev().attr("data-snd_id");
         $(".full-card").each(function(){
@@ -769,7 +768,6 @@
         $(this).addClass("hidden");
 
     });
-
 
     $(document).on('click','.compare-cross-btn',function(){
 
@@ -818,4 +816,5 @@
 
 
     });
+
 </script>

@@ -315,6 +315,7 @@ class Snd_account extends CI_Controller
         $snd_bank_ids = (!empty( $this->input->post('snd_bank_ids'))) ? $this->input->post('snd_bank_ids') : '';
         $snd_i_want_interest = (!empty($this->input->post('snd_i_want_interest'))) ? $this->input->post('snd_i_want_interest') : '';
         $snd_amount = (!empty($this->input->post('snd_amount'))) ? (float)$this->input->post('snd_amount') : 100000;
+        $snd_i_am = (!empty($this->input->post('snd_i_am'))) ? (float)$this->input->post('snd_i_am') :'';
         $snd_tenure = 0;
         if($snd_i_want_interest == 'Monthly'){
             $snd_tenure = 1;
@@ -345,6 +346,9 @@ class Snd_account extends CI_Controller
         if(!empty($snd_i_want_interest)) {
             $WHERE[] = '(snd_info.interest_paid LIKE "'.$snd_i_want_interest.'")';
         }
+        if(!empty($snd_i_am)) {
+            $WHERE[] = '(snd_info.i_am_id = '.$snd_i_am.')';
+        }
 
         if(!empty($snd_amount)) {
             if($snd_amount > 100000 && $snd_amount < 10000000){
@@ -371,9 +375,8 @@ class Snd_account extends CI_Controller
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
         $config["uri_segment"] = 3;
-//        $choice = $config["total_rows"] / $config["per_page"];
-//        $config["num_links"] = floor($choice);
-        $config["num_links"] = 5;
+        $choice = $config["total_rows"] / $config["per_page"];
+        $config["num_links"] = floor($choice);
         $config['use_page_numbers'] = TRUE;
 
         //Link customization
@@ -565,7 +568,6 @@ class Snd_account extends CI_Controller
         echo $account;
     }
 
-
     public function ajax_compare_snd_image(){
         $id = $this->input->post('snd_id');
         $result = $this->Front_end_select_model->select_snd_image($id);
@@ -578,13 +580,139 @@ class Snd_account extends CI_Controller
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-account_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-snd_id='.$row->id.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;
+    }
+
+    public function ajax_snd_caching(){
+
+        $snd_amount = $this->input->post('snd_amount');
+        $snd_i_am = $this->input->post('snd_i_am');
+        $snd_i_want_interest = $this->input->post('snd_i_want_interest');
+
+        $snd_i_am_label = $this->input->post('snd_i_am_label');
+        $snd_i_want_interest_label = $this->input->post('snd_i_want_interest_label');
+
+        $snd_bank_ids = $this->input->post('snd_bank_ids');
+
+        $bank_id_array = array();
+        if(!empty($auto_loan_bank_ids)) {
+            if(strstr($auto_loan_bank_ids,',')) {
+                $data8 = explode(',',$auto_loan_bank_ids);
+
+                foreach( $data8 as $bank_id ) {
+                    $bank_id_array[] =  $bank_id;
+                }
+
+            } else {
+                $bank_id_array[] = $auto_loan_bank_ids;
+            }
+        }
+
+
+        $array_items = array('snd_amount', 'snd_i_am', 'snd_i_want_interest','snd_i_am_label','snd_i_want_interest_label','snd_i_want_interest_label','auto_loan_bank_ids');
+        $this->session->unset_userdata($array_items);
+        $data = array(
+            'snd_amount'  => $snd_amount,
+            'snd_i_am'  => $snd_i_am,
+            'snd_i_want_interest'  => $snd_i_want_interest,
+            'snd_i_am_label' => $snd_i_am_label,
+            'snd_i_want_interest_label' => $snd_i_want_interest_label,
+            'snd_bank_ids' => $bank_id_array,
+        );
+
+        $this->session->set_userdata($data);
+        echo json_encode($data);
+    }
+
+    public function ajax_count_selected_row(){
+
+        $snd_bank_ids = (!empty( $this->input->post('snd_bank_ids'))) ? $this->input->post('snd_bank_ids') : '';
+        $snd_i_want_interest = (!empty($this->input->post('snd_i_want_interest'))) ? $this->input->post('snd_i_want_interest') : '';
+        $snd_amount = (!empty($this->input->post('snd_amount'))) ? (float)$this->input->post('snd_amount') : 100000;
+        $snd_i_am = (!empty($this->input->post('snd_i_am'))) ? (float)$this->input->post('snd_i_am') :'';
+        $snd_tenure = 0;
+        if($snd_i_want_interest == 'Monthly'){
+            $snd_tenure = 1;
+        }else if($snd_i_want_interest == 'Quarterly'){
+            $snd_tenure = 3;
+        }else if($snd_i_want_interest == 'Half Yearly'){
+            $snd_tenure = 6;
+        }else{
+            $snd_tenure = 12;
+        }
+
+        $WHERE = array(); $query = '';
+
+        if(!empty($snd_bank_ids)) {
+            if(strstr($snd_bank_ids,',')) {
+                $data1 = explode(',',$snd_bank_ids);
+                $bank_id_array = array();
+                foreach( $data1 as $bank_id ) {
+                    $bank_id_array[] = "snd_info.bank_id = $bank_id";
+                }
+                $WHERE[] = '('.implode(' OR ',$bank_id_array).')';
+            } else {
+                $WHERE[] = '(snd_info.bank_id = '.$snd_bank_ids.')';
+            }
+        }
+
+
+        if(!empty($snd_i_want_interest)) {
+            $WHERE[] = '(snd_info.interest_paid LIKE "'.$snd_i_want_interest.'")';
+        }
+        if(!empty($snd_i_am)) {
+            $WHERE[] = '(snd_info.i_am_id = '.$snd_i_am.')';
+        }
+
+
+        $query = implode(' AND ',$WHERE);
+
+        if(!empty($query)) {$query = 'WHERE '.$query;}
+
+        $res = $this->Front_end_select_model->select_snd_info($query);
+        $selected_row = $res->num_rows();
+
+        $this->Common_model->table_name = 'snd_info';
+        $total_row = $this->Common_model->count_all();
+
+        $response = $selected_row.' of '.$total_row.' results filtered by:';
+        echo $response;
+    }
+
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='snd'){
+            $array_items = array('snd_amount', 'snd_i_am', 'snd_i_want_interest','snd_i_am_label','snd_i_want_interest_label','snd_i_want_interest_label','auto_loan_bank_ids');
+            $this->session->unset_userdata($array_items);
+            $this->session->sess_destroy();
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
 
     }
 
+    public function unset_snd_i_am_session(){
+        $session = $this->input->post('snd_i_am');
+        if($session){
+            $this->session->unset_userdata('snd_i_am');
+            $this->session->unset_userdata('snd_i_am_label');
+            echo 'success';
+        }
+
+    }
+    public function unset_snd_i_want_interest_session(){
+        $session = $this->input->post('snd_i_want_interest');
+        if($session){
+            $this->session->unset_userdata('snd_i_want_interest');
+            $this->session->unset_userdata('snd_i_want_interest_label');
+            echo 'success';
+        }
+
+    }
 
 
 
