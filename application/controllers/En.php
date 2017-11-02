@@ -695,7 +695,6 @@ class En extends CI_Controller {
 
 
     public function bank_details(){
-
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -707,45 +706,42 @@ class En extends CI_Controller {
     public function export_import(){
         $this->load->driver('cache');
         $this->cache->file->save('export_import', 'export_import', 1000);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/export_import');
-            $this->load->view('front_end/block/footer');
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/export_import');
+        $this->load->view('front_end/block/footer');
 
     }
 
     public function more_logo(){
         $this->load->driver('cache');
         $this->cache->file->save('all_logo', 'all_logo', 1000);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/all_logo');
-            $this->load->view('front_end/block/footer');
-
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/all_logo');
+        $this->load->view('front_end/block/footer');
     }
 
     public function PrivacyPolicy(){
         $this->load->driver('cache');
         $this->cache->file->save('PrivacyPolicy', 'PrivacyPolicy', 1000);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/PrivacyPolicy');
-            $this->load->view('front_end/block/footer');
-
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/PrivacyPolicy');
+        $this->load->view('front_end/block/footer');
     }
 	
 	public function terms_condition(){
         $this->load->driver('cache');
         $this->cache->file->save('terms_condition', 'terms_condition', 1000);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/terms_condition');
-            $this->load->view('front_end/block/footer');
-
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/terms_condition');
+        $this->load->view('front_end/block/footer');
     }
 
 
@@ -791,6 +787,28 @@ class En extends CI_Controller {
 
     }
 
+
+    public function snd_details(){
+        $this->load->driver('cache');
+        $this->cache->file->save('snd_details', 'snd_details', 100);
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/snd_details');
+        $this->load->view('front_end/block/footer');
+
+    }
+
+    public function snd_compare(){
+        $this->load->driver('cache');
+        $this->cache->file->save('snd_details', 'snd_details', 100);
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/snd_compare');
+        $this->load->view('front_end/block/footer');
+
+    }
 
 
 }

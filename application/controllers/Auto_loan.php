@@ -56,7 +56,6 @@ class Auto_loan extends CI_Controller
         }
     }
 
-
     public function edit_applicant_type($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -93,7 +92,6 @@ class Auto_loan extends CI_Controller
             redirect(base_url().'backdoor');
         }
     }
-
 
     public function feature($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -169,7 +167,6 @@ class Auto_loan extends CI_Controller
             redirect(base_url().'backdoor');
         }
     }
-
 
     public function looking_for($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -946,8 +943,6 @@ class Auto_loan extends CI_Controller
         }
         $auto .= '<div class="col-md-12">'.$data['pagination'].'</div>';
      echo $auto;
-
-
     }
 
     public function ajax_count_selected_row(){
@@ -1010,7 +1005,6 @@ class Auto_loan extends CI_Controller
 
     }
 
-
     public function ajax_compare_auto_loan_image(){
         $id = $this->input->post('loan_id');
         $result = $this->Front_end_select_model->select_auto_loan_image($id);
@@ -1046,7 +1040,6 @@ class Auto_loan extends CI_Controller
         echo 'success';
     }
 
-
     public function ajax_auto_loan_quick_link(){
         $auto_loan_i_want = (!empty($this->input->post('auto_loan_i_want'))) ? $this->input->post('auto_loan_i_want') : '';
         $auto_loan_i_am = (!empty($this->input->post('auto_loan_i_am'))) ? $this->input->post('auto_loan_i_am') : '';
@@ -1069,7 +1062,6 @@ class Auto_loan extends CI_Controller
         $this->session->set_userdata($newdata);
         echo 'success';
     }
-
 
     public function ajax_auto_loan_caching(){
 

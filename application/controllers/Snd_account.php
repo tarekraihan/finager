@@ -598,16 +598,16 @@ class Snd_account extends CI_Controller
         $snd_bank_ids = $this->input->post('snd_bank_ids');
 
         $bank_id_array = array();
-        if(!empty($auto_loan_bank_ids)) {
-            if(strstr($auto_loan_bank_ids,',')) {
-                $data8 = explode(',',$auto_loan_bank_ids);
+        if(!empty($snd_bank_ids)) {
+            if(strstr($snd_bank_ids,',')) {
+                $data1 = explode(',',$snd_bank_ids);
 
-                foreach( $data8 as $bank_id ) {
+                foreach( $data1 as $bank_id ) {
                     $bank_id_array[] =  $bank_id;
                 }
 
             } else {
-                $bank_id_array[] = $auto_loan_bank_ids;
+                $bank_id_array[] = $snd_bank_ids;
             }
         }
 
@@ -714,7 +714,21 @@ class Snd_account extends CI_Controller
 
     }
 
+    public function ajax_go_compare_page(){
+        $id1 = $this->input->post('snd_id1');
+        $id2 = $this->input->post('snd_id2');
+        $snd_amount = $this->input->post('snd_amount');
+        $snd_i_want_interest = (!empty($this->input->post('snd_i_want_interest'))) ? $this->input->post('snd_i_want_interest') : 'Monthly';
 
+        $newdata = array(
+            'first_snd'  => $id1,
+            'second_snd'  => $id2,
+            'snd_amount' => $snd_amount,
+            'snd_i_want_interest' => $snd_i_want_interest
+        );
+        $this->session->set_userdata($newdata);
+        echo 'success';
+    }
 
 
 }

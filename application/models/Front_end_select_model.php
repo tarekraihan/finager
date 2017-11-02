@@ -522,5 +522,11 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
 
+    public function select_snd_details($id){
+        $sql="SELECT DISTINCT snd_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,snd_account_i_am.i_am, general_non_bank.bank_logo AS non_bank_logo FROM snd_info LEFT JOIN card_bank on card_bank.id=snd_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id Left join snd_account_i_am ON snd_account_i_am.id = snd_info.i_am_id WHERE snd_info.id = $id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 
 }

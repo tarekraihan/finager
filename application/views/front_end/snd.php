@@ -468,6 +468,7 @@
                 if(obj.snd_amount !='') {
                     option.push('<li><div class="filter-option"><span>' + obj.snd_amount + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_amount" data-snd_amount="' + obj.snd_amount + '"><i class="icon-close icons"></i></a></span></div></li>');
                 }
+                console.log(obj.snd_bank_ids);
                 if(obj.snd_bank_ids.length > 0 ){
                     for (var i = 0; i < obj.snd_bank_ids.length; i++) {
                         var bank_id = obj.snd_bank_ids[i].split("=");
@@ -792,20 +793,26 @@
 
         var  formData = $('.cart_anchor01').children('img').data();
         var snd_id2 = "&snd_id2="+formData.snd_id;
-        var amount = $('#finalAssest').val();
-        var deposit_amount = "&deposit_amount="+amount;
 
-        var snd_ids = snd_id1+snd_id2+deposit_amount;
+        var snd_amount = $('#snd_amount').val();
+        var snd_amount = "&snd_amount="+snd_amount;
+
+        var snd_i_want_interest = new Array();
+        $('input[name="i_want_interest"]:checked').each(function(){
+            snd_i_want_interest.push($(this).val());
+        });
+
+        var snd_i_want_interest_list = "&snd_i_want_interest="+snd_i_want_interest;
+
+        var snd_ids = snd_id1+snd_id2+snd_amount+snd_i_want_interest_list;
         if( snd_id1 != '' && snd_id2 != '' ){
             $.ajax
             ({
                 type: "POST",
                 url: "<?php echo base_url();?>snd_account/ajax_go_compare_page",
                 data: snd_ids,
-                success: function(msg)
-                {
+                success: function(msg){
                     if(msg != 'error'){
-
                         window.location.href = "<?php echo base_url();?>en/snd_compare";
                     }
                 }
