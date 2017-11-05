@@ -9,13 +9,15 @@ if(!empty($id) && is_numeric($id) ){
 
 	$snd_tenure = 0;
 	if($snd_i_want_interest == 'Monthly'){
-		$snd_tenure = 1;
+		$snd_tenure = 1*30;
 	}else if($snd_i_want_interest == 'Quarterly'){
-		$snd_tenure = 3;
+		$snd_tenure = 3*30;
 	}else if($snd_i_want_interest == 'Half Yearly'){
-		$snd_tenure = 6;
+		$snd_tenure = 6*30;
+	}else if($snd_i_want_interest == 'Yearly'){
+		$snd_tenure = 12*30;
 	}else{
-		$snd_tenure = 12;
+		$snd_tenure = 1;
 	}
 
 	$bank = "";
@@ -33,12 +35,19 @@ if(!empty($id) && is_numeric($id) ){
 	$interest_amount = 0;
 	$interest = '';
 	if(is_numeric($row->interest_rate)){
-		$interest_amount = ((float)$snd_amount * (float)$row->interest_rate * (float)$snd_tenure ) / (12 * 100);
+		$interest_amount = ((float)$snd_amount * (float)$row->interest_rate * (float)$snd_tenure ) / (360 * 100);
 		$interest = $row->interest_rate.' %';
 	}else{
 		$interest = $row->interest_rate;
 	}
 	$maturity_amount = (float)$snd_amount + (float) $interest_amount;
+	$interest_calculated = '';
+	if($snd_tenure == 1){
+		$interest_calculated = '1 day';
+	}else{
+		$interest_calculated = $snd_tenure. ' days';
+	}
+
 }else{
     redirect(base_url().'My404');
 }
@@ -75,11 +84,19 @@ if(!empty($id) && is_numeric($id) ){
 					</div>
 					<div class="col-sm-8 col-xs-12">
 						<div class="row">
-							<div class="col-sm-3 col-xs-6">
+							<div class="col-sm-2 col-xs-6">
 								<div>
 									<p class="card_details_head2">Deposited Amount</p>
 									<p class="card_details_features">
 										BDT <?php echo number_format($snd_amount); ?>
+									</p>
+								</div>
+							</div>
+							<div class="col-sm-3 col-xs-6">
+								<div>
+									<p class="card_details_head2">Interest Calculated</p>
+									<p class="card_details_features">
+										<?php echo $interest_calculated; ?>
 									</p>
 								</div>
 							</div>
@@ -92,15 +109,15 @@ if(!empty($id) && is_numeric($id) ){
 								</div>
 							</div>
 
-							<div class="col-sm-3 col-xs-6">
+							<div class="col-sm-2 col-xs-6">
 								<div>
-									<p class="card_details_head2">Maturity Amount</p>
+									<p class="card_details_head2">Payable Amount</p>
 									<p class="card_details_features">
 										BDT <?php echo number_format($maturity_amount);?>
 									</p>
 								</div>
 							</div>
-							<div class="col-sm-3 col-xs-6">
+							<div class="col-sm-2 col-xs-6">
 								<div>
 									<p class="card_details_head2">Notice Day</p>
 									<p class="card_details_features">

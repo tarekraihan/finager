@@ -318,13 +318,15 @@ class Snd_account extends CI_Controller
         $snd_i_am = (!empty($this->input->post('snd_i_am'))) ? (float)$this->input->post('snd_i_am') :'';
         $snd_tenure = 0;
         if($snd_i_want_interest == 'Monthly'){
-            $snd_tenure = 1;
+            $snd_tenure = 1*30;
         }else if($snd_i_want_interest == 'Quarterly'){
-            $snd_tenure = 3;
+            $snd_tenure = 3*30;
         }else if($snd_i_want_interest == 'Half Yearly'){
-            $snd_tenure = 6;
+            $snd_tenure = 6*30;
+        }else if($snd_i_want_interest == 'Yearly'){
+            $snd_tenure = 12*30;
         }else{
-            $snd_tenure = 12;
+            $snd_tenure = 1;
         }
 
         $WHERE = array(); $query = '';
@@ -423,13 +425,19 @@ class Snd_account extends CI_Controller
                 $interest_amount = 0;
                 $interest = '';
                 if(is_numeric($row->interest_rate)){
-                    $interest_amount = ((float)$snd_amount * (float)$row->interest_rate * (float)$snd_tenure ) / (12 * 100);
+                    $interest_amount = ((float)$snd_amount * (float)$row->interest_rate * (float)$snd_tenure ) / (360 * 100);
                     $interest = $row->interest_rate.' %';
                 }else{
                     $interest = $row->interest_rate;
                 }
 
                 $maturity_amount = (float)$snd_amount + (float) $interest_amount;
+                $interest_calculated = '';
+                if($snd_tenure == 1){
+                    $interest_calculated = '1 day';
+                }else{
+                    $interest_calculated = $snd_tenure. ' days';
+                }
 
                 $account .= '
 					<div class="full-card">
@@ -444,22 +452,29 @@ class Snd_account extends CI_Controller
                         </div>
                         <div class="col-sm-10 col-xs-10">
                             <div class="row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                     <div class="caccount_text">
                                         <h5>Deposited Amount</h5>
                                         <p>BDT '.number_format($snd_amount).'</p>
 
                                     </div>
                                 </div>
-                                <div class="col-sm-4 ">
+                                <div class="col-sm-2">
+                                    <div class="caccount_text">
+                                        <h5>Interest Calculated</h5>
+                                        <p>'.$interest_calculated.' </p>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
                                     <div class="caccount_text text-center">
                                         <h5>Interest Rate</h5>
                                         <p>'.$interest.'</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-3 text-center">
                                     <div class="caccount_text">
-                                        <h5>Maturity Amount</h5>
+                                        <h5>Payable Amount</h5>
                                         <p>BDT '.number_format($maturity_amount).'</p>
                                     </div>
                                 </div>

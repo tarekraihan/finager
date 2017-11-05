@@ -232,7 +232,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group" style="position: relative !important; margin: 0; padding: 0; margin: 0 10px 10px 10px;">
-                                    <input type="number" name="snd_amount" id="snd_amount" class="form-control" placeholder="10L To 100C" max="12">
+                                    <input type="number" name="snd_amount" id="snd_amount" class="form-control" placeholder="1L To 100C" max="12">
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" name="btnGo" id="btnGo" type="button">Go!</button>
                                     </span>
@@ -243,7 +243,7 @@
 
 
                     <div class="card_query">
-                        <p>I Want Interest</p>
+                        <p>Interest Paid</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
                                 <input type="radio" name="i_want_interest" id="Monthly" value="Monthly" class="material_radiobox">

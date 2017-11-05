@@ -13,13 +13,15 @@ $snd_i_want_interest = ($this->session->userdata('snd_i_want_interest')) ? $this
 
 $snd_tenure = 0;
 if($snd_i_want_interest == 'Monthly'){
-	$snd_tenure = 1;
+	$snd_tenure = 1*30;
 }else if($snd_i_want_interest == 'Quarterly'){
-	$snd_tenure = 3;
+	$snd_tenure = 3*30;
 }else if($snd_i_want_interest == 'Half Yearly'){
-	$snd_tenure = 6;
+	$snd_tenure = 6*30;
+}else if($snd_i_want_interest == 'Yearly'){
+	$snd_tenure = 12*30;
 }else{
-	$snd_tenure = 12;
+	$snd_tenure = 1;
 }
 
 
@@ -38,7 +40,7 @@ if($first_snd->is_non_bank == 1){
 $interest_amount1 = 0;
 $interest1 = '';
 if(is_numeric($first_snd->interest_rate)){
-	$interest_amount1 = ((float)$snd_amount * (float)$first_snd->interest_rate * (float)$snd_tenure ) / (12 * 100);
+	$interest_amount1 = ((float)$snd_amount * (float)$first_snd->interest_rate * (float)$snd_tenure ) / (360 * 100);
 	$interest1 = $first_snd->interest_rate.' %';
 }else{
 	$interest1 = $first_snd->interest_rate;
@@ -61,12 +63,19 @@ if($second_snd->is_non_bank == 1){
 $interest_amount2 = 0;
 $interest2 = '';
 if(is_numeric($second_snd->interest_rate)){
-	$interest_amount2 = ((float)$snd_amount * (float)$second_snd->interest_rate * (float)$snd_tenure ) / (12 * 100);
+	$interest_amount2 = ((float)$snd_amount * (float)$second_snd->interest_rate * (float)$snd_tenure ) / (360 * 100);
 	$interest2 = $second_snd->interest_rate.' %';
 }else{
 	$interest2 = $second_snd->interest_rate;
 }
 $maturity_amount2 = (float)$snd_amount + (float) $interest_amount1;
+
+$interest_calculated = '';
+if($snd_tenure == 1){
+	$interest_calculated = '1 day';
+}else{
+	$interest_calculated = $snd_tenure. ' days';
+}
 
 ?>
 
@@ -128,11 +137,15 @@ $maturity_amount2 = (float)$snd_amount + (float) $interest_amount1;
 							<td>BDT <?php echo number_format($snd_amount);?> </td>
 						</tr>
 						<tr>
+							<td><b>Interest Calculated</b></td>
+							<td><?php echo $interest_calculated;?> </td>
+						</tr>
+						<tr>
 							<td><b> Interest Rate</b></td>
 							<td> <?php echo $interest1;?> </td>
 						</tr>
                         <tr>
-                            <td><b>Maturity Amount</b></td>
+                            <td><b>Payable Amount</b></td>
                             <td> BDT <?php echo number_format($maturity_amount1)?></td>
                         </tr>
 						
@@ -159,12 +172,17 @@ $maturity_amount2 = (float)$snd_amount + (float) $interest_amount1;
 								<td><b> Deposited Amount</b></td>
 								<td>BDT <?php echo number_format( $snd_amount );?> </td>
 							</tr>
+
+							<tr>
+								<td><b>Interest Calculated</b></td>
+								<td><?php echo $interest_calculated;?> </td>
+							</tr>
 							<tr>
 								<td><b> Interest Rate</b></td>
 								<td> <?php echo $interest2;?> </td>
 							</tr>
 							<tr>
-								<td><b>Maturity Amount</b></td>
+								<td><b>Payable Amount</b></td>
 								<td> BDT <?php echo number_format($maturity_amount2)?></td>
 							</tr>
 
