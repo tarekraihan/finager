@@ -353,7 +353,7 @@ class Snd_account extends CI_Controller
         }
 
         if(!empty($snd_amount)) {
-            if($snd_amount > 100000 && $snd_amount < 10000000){
+            if($snd_amount >= 100000 && $snd_amount < 10000000){
                 $WHERE[] = ' snd_info.deposit_amount_id = 2 ';
             }else if($snd_amount >= 10000000 && $snd_amount < 250000000 ){
                 $WHERE[] = ' snd_info.deposit_amount_id = 3 ';
@@ -445,6 +445,7 @@ class Snd_account extends CI_Controller
                         <div class="col-sm-2 col-xs-2">
                             <a href="'.base_url().'en/snd_details/'.$row->id.'"><img title="Click Here for Details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
+                            <p class="text-center">'.$row->snd_name.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                             </p>
@@ -650,13 +651,15 @@ class Snd_account extends CI_Controller
         $snd_i_am = (!empty($this->input->post('snd_i_am'))) ? (float)$this->input->post('snd_i_am') :'';
         $snd_tenure = 0;
         if($snd_i_want_interest == 'Monthly'){
-            $snd_tenure = 1;
+            $snd_tenure = 1*30;
         }else if($snd_i_want_interest == 'Quarterly'){
-            $snd_tenure = 3;
+            $snd_tenure = 3*30;
         }else if($snd_i_want_interest == 'Half Yearly'){
-            $snd_tenure = 6;
+            $snd_tenure = 6*30;
+        }else if($snd_i_want_interest == 'Yearly'){
+            $snd_tenure = 12*30;
         }else{
-            $snd_tenure = 12;
+            $snd_tenure = 1;
         }
 
         $WHERE = array(); $query = '';
@@ -682,10 +685,24 @@ class Snd_account extends CI_Controller
             $WHERE[] = '(snd_info.i_am_id = '.$snd_i_am.')';
         }
 
+        if(!empty($snd_amount)) {
+            if($snd_amount >= 100000 && $snd_amount < 10000000){
+                $WHERE[] = ' snd_info.deposit_amount_id = 2 ';
+            }else if($snd_amount >= 10000000 && $snd_amount < 250000000 ){
+                $WHERE[] = ' snd_info.deposit_amount_id = 3 ';
+            }else if($snd_amount >= 250000000 && $snd_amount < 500000000 ){
+                $WHERE[] = ' snd_info.deposit_amount_id = 4 ';
+            }else if($snd_amount >= 500000000 && $snd_amount < 1000000000 ){
+                $WHERE[] = ' snd_info.deposit_amount_id = 5 ';
+            }else if( $snd_amount >= 1000000000 ){
+                $WHERE[] = ' snd_info.deposit_amount_id = 6 ';
+            }
+        }
 
         $query = implode(' AND ',$WHERE);
-
-        if(!empty($query)) {$query = 'WHERE '.$query;}
+        if(!empty($query)) {
+            $query = 'WHERE '.$query;
+        }
 
         $res = $this->Front_end_select_model->select_snd_info($query);
         $selected_row = $res->num_rows();
