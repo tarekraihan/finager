@@ -66,6 +66,9 @@ foreach($module_id as $k){
                         <a href="<?php echo base_url();?>general/institution_branch_info_list">Institution Branch Info</a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url();?>general/add_event_history">Add Event History</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url();?>general/db_backup">Take Database Backup</a>
                     </li>
                     <li>
