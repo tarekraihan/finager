@@ -781,10 +781,10 @@
 				</p>
 			</div>
 			<div class="bank_details_head">
-				<p>BANK RATING & CUSTOMER REVIEWS</p>
-			</div>
-			<div class="bank_details_right_body">
-				<span>3.2 / 5</span><br>
+                <p>BANK RATING & CUSTOMER REVIEWS</p>
+            </div>
+            <div class="bank_details_right_body">
+                <span>3.2 / 5</span><br>
 				<span class="bank_details_star">
 					<i class="fa fa-star" aria-hidden="true"></i>
 					<i class="fa fa-star" aria-hidden="true"></i>
@@ -792,14 +792,50 @@
 					<i class="fa fa-star" aria-hidden="true"></i>
 					<i class="fa fa-star" aria-hidden="true"></i>
 				</span>
-				<div class="bank_details_review">
-					Bank rating displayed here is the average value for all
-					Chase Bank branchs. A total of 73 customers had case
-					their vote for 5227 branches and in average, Chase Bank
-					got a score of 3.2 out of 5 stars. The bank has 12
-					reviews or customer complaints filed.
-				</div>
-			</div>
+                <div class="bank_details_review">
+                    Bank rating displayed here is the average value for all
+                    Chase Bank branchs. A total of 73 customers had case
+                    their vote for 5227 branches and in average, Chase Bank
+                    got a score of 3.2 out of 5 stars. The bank has 12
+                    reviews or customer complaints filed.
+                </div>
+            </div>
+            <div class="bank_details_head">
+                <p>LATEST NEWS</p>
+            </div>
+            <div class="bank_details_right_body">
+                <div class="bank_details_review">
+                    Bank rating displayed here is the average value for all
+                    Chase Bank branchs. A total of 73 customers had case
+                    their vote for 5227 branches and in average, Chase Bank
+                    got a score of 3.2 out of 5 stars. The bank has 12
+                    reviews or customer complaints filed.
+                </div>
+            </div>
+            <div class="bank_details_head">
+                <p>CIRCULAR</p>
+            </div>
+            <div class="bank_details_right_body">
+                <div class="bank_details_review">
+                    Bank rating displayed here is the average value for all
+                    Chase Bank branchs. A total of 73 customers had case
+                    their vote for 5227 branches and in average, Chase Bank
+                    got a score of 3.2 out of 5 stars. The bank has 12
+                    reviews or customer complaints filed.
+                </div>
+            </div>
+            <div class="bank_details_head">
+                <p>SUBSIDIARIES</p>
+            </div>
+            <div class="bank_details_right_body">
+                <div class="bank_details_review">
+                    Bank rating displayed here is the average value for all
+                    Chase Bank branchs. A total of 73 customers had case
+                    their vote for 5227 branches and in average, Chase Bank
+                    got a score of 3.2 out of 5 stars. The bank has 12
+                    reviews or customer complaints filed.
+                </div>
+            </div>
 		</div>
 	</div>
 </div>
