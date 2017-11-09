@@ -1889,18 +1889,24 @@ class Select_Model extends CI_Model
     }
 
 
+
+    public function Select_bank_non_bank_event_info_by_id($id)
+    {
+        $sql = "SELECT * FROM institution_event_history WHERE id = $id";
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+
+
     public function select_all_institution_event_list()
     {
         $sql = "SELECT institution_event_history.* , admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name, general_non_bank.bank_logo as non_bank_logo,card_bank.bank_logo as bank_logo,general_non_bank.non_bank_name,card_bank.bank_name FROM `institution_event_history` LEFT JOIN tbl_admin_user admin1 ON admin1.id= institution_event_history.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= institution_event_history.modified_by LEFT JOIN card_bank ON card_bank.id = institution_event_history.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = institution_event_history.non_bank_id";
         $query=$this->db->query($sql);
         $result="";
 
-        if($query->num_rows() > 0)
-        {
-
+        if($query->num_rows() > 0){
             $sl=1;
-            foreach($query->result() as $row)
-            {
+            foreach($query->result() as $row){
                 $bank = "";
                 if($row->is_non_bank == 1){
                     $bank = $row->non_bank_name;
@@ -1924,7 +1930,7 @@ class Select_Model extends CI_Model
 					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
 					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
                 $result.='</td>
-                    <td> <a href="'.base_url().'egneral/edit_event_history?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?event_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
+                    <td> <a href="'.base_url().'general/edit_event_history?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?event_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
 					</tr>';
                 $sl++;

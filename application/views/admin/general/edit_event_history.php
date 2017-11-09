@@ -1,20 +1,24 @@
 <?php
-if(isset($_GET['event_id'])){
-    $non_bank= ($_GET['non_bank'] == 1) ? 1 : 0;
+if(isset($_GET['id'])){
     $id = ($_GET['id']) ? $_GET['id'] : 0;
-
     if($id > 0){
-        $row=$this->Select_model->Select_bank_non_bank_info_by_id($id,$non_bank);
-        //pr($row);die;
+        $row=$this->Select_model->Select_bank_non_bank_event_info_by_id($id);
+        $bank = "";
+        if($row["is_non_bank"] == 1){
+            $bank = $row["non_bank_id"];
+        }else{
+            $bank = $row["bank_id"];
+        }
     }
 
-    $row['is_non_bank']= $non_bank;
 }else{
     $row['id']='';
-    $row['bank_id']='';
-    $row['is_non_bank']= '';
-    $row['non_bank_id']='';
+    $row['is_non_bank']='';
+    $bank = "";
+    $row['event_date'] = '';
+    $row['event_title'] = '';
 }
+
 ?>
 <!-- MAIN PANEL -->
 <div id="main" role="main">
@@ -88,7 +92,7 @@ if(isset($_GET['event_id'])){
                                             <div>
                                                 <section class="col-md-12">
                                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
-                                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?>> Is Non Bank Institution ?
+                                                        <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php if(isset($row["is_non_bank"]) && $row["is_non_bank"] == 1){ echo "checked";}else{set_checkbox('is_non_bank', '1');}?>> Is Non Bank Institution ?
                                                     </label>
                                                 </section>
                                                 <section class="col-md-12" id="institution">
@@ -97,38 +101,37 @@ if(isset($_GET['event_id'])){
                                                         <select name="txtBankName" id="txtBankName">
                                                             <?php echo $this->Select_model->select_bank();?>
                                                         </select>
+
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBankName');?></label>
                                                 </section>
                                                 <section class="col-md-12">
                                                     <label class="label">Event Date </label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="255" name="txtEventDate" value="<?php echo set_value('txtEventDate'); ?>" placeholder="Write event date">
+                                                        <input type="text" maxlength="255" name="txtEventDate" value="<?php if(isset($row["event_date"]) && $row["event_date"] != ""){echo $row["event_date"];}else{ set_value('txtEventDate');} ?>" placeholder="Write event date">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtEventDate');?></label>
                                                 </section>
                                                 <section class="col-md-12">
                                                     <label class="label">Event Title</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="255" name="txtEventTitle" value="<?php echo set_value('txtEventTitle'); ?>" placeholder="Write Event Title">
+                                                        <input type="text" maxlength="255" name="txtEventTitle" value="<?php  if(isset($row["event_title"]) && $row["event_title"] != ""){echo $row["event_title"];}else{ set_value('txtEventTitle');}  ?>" placeholder="Write Event Title">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtEventTitle');?></label>
                                                 </section>
                                                 <section class="col-md-12">
                                                     <label class="input">
-                                                        <button class="btn btn-primary" type="submit" style="padding:5px 10px;" >Save</button>
+                                                        <input type="hidden" value="<?php  echo $row["id"]; ?>" name="event_id">
+                                                        <button class="btn btn-primary" type="submit" style="padding:5px 10px;" >Update</button>
                                                     </label>
                                                 </section>
                                             </div>
-
                                     </article>
                                 </form>
-
                         </article>
                         <!-- END COL -->
                         <!-- NEW WIDGET START -->
                         <article class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-
                             <!-- Widget ID (each widget will need unique ID)-->
                             <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                                 <header>
@@ -204,6 +207,7 @@ if(isset($_GET['event_id'])){
 <script>
     $(document).ready(function(){
 
+
         $("input[name ='is_non_bank']").click(function() {
             var v_value = $(this).val();
             if ($(this).is(":checked")) {
@@ -213,5 +217,17 @@ if(isset($_GET['event_id'])){
                 $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName"><?php echo $this->Select_model->select_bank();?></select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
             }
         });
+
+        if($("input[name ='is_non_bank']").is(':checked')){
+            $('#institution').html(' <label class="label">Non Bank Name</label><label class="select"><select name="txtNonBankName" id="txtNonBankName">' +
+                '<?php $result=$this->Select_model->select_all('general_non_bank'); foreach($result->result() as $row1){ ?>'+
+                '<option value="<?php echo $row1->id;?>" <?php if(isset($row["non_bank_id"]) && $row["non_bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtNonBankName",$row1->id)?>><?php echo $row1->non_bank_name ; ?></option>;<?php } ?>'+
+                '</select></label><label class="red"><?php echo form_error('txtNonBankName');?></label>');
+        }else{
+            $('#institution').html(' <label class="label">Bank Name</label><label class="select"><select name="txtBankName" id="txtBankName">' +
+                '<?php $result=$this->Select_model->select_all('card_bank'); foreach($result->result() as $row1){ ?>'+
+                '<option value="<?php echo $row1->id;?>" <?php if(isset($row["bank_id"]) && $row["bank_id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
+                '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
+        }
     });
 </script>
