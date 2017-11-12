@@ -18,7 +18,12 @@ if(isset($_GET['id'])){
     $row['event_date'] = '';
     $row['event_title'] = '';
 }
-
+if(isset($_GET['event_id'])){
+    $id = $_GET['event_id'];
+    $table='institution_event_history';
+    $id_field='id';
+    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+}
 ?>
 <!-- MAIN PANEL -->
 <div id="main" role="main">
@@ -90,9 +95,14 @@ if(isset($_GET['id'])){
                                     <fieldset>
                                         <section>
                                             <div>
-                                                <section class="col-md-12">
+                                                <section class="col-md-6">
                                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
                                                         <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php if(isset($row["is_non_bank"]) && $row["is_non_bank"] == 1){ echo "checked";}else{set_checkbox('is_non_bank', '1');}?>> Is Non Bank Institution ?
+                                                    </label>
+                                                </section>
+                                                <section class="col-md-6">
+                                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                                        <input type="checkbox" name="is_history" id="is_history" value="1"  <?php if(isset($row["is_history"]) && $row["is_history"] == 1){ echo "checked";}else{set_checkbox('is_history', '1');}?>> Is History ?
                                                     </label>
                                                 </section>
                                                 <section class="col-md-12" id="institution">
@@ -160,6 +170,7 @@ if(isset($_GET['id'])){
                                                 <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Institution Logo </th>
                                                 <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Institution Name </th>
                                                 <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Event Date</th>
+                                                <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Event Type</th>
                                                 <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Event Title</th>
                                                 <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created By</th>
                                                 <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Modified By</th>

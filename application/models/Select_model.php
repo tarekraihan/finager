@@ -1919,12 +1919,17 @@ class Select_Model extends CI_Model
                 }else{
                     $bank_logo = $row->bank_logo;
                 }
+                $event_type = 'Event';
+                if($row->is_history == 1){
+                    $event_type = 'History';
+                }
 
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
 					<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
 					 <td class="center">'.$bank.'</td>
 					 <td class="center">'.$row->event_date.'</td>
+					 <td class="center">'.$event_type.'</td>
 					 <td class="center">'.$row->event_title.'</td>
 					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
 					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
