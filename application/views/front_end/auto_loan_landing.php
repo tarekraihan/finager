@@ -90,11 +90,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/student-loan-debt.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/>
-							<p>Student Loan</p>
+							<h4>Education Loan</h4>
 						</div>
 						<p>
-							The International Student Loan Center provides international students and study abroad students with access to a range of loan products to help fund their 
-							education abroad. Get started by finding your student loan in just 10 seconds.
+                            Education loan is granted by banks for helping the needy student. With the help of education loan, students fulfill their study expenses. Education loan is granted for 5 year period and up to BDT 10 lac is granted maximum loan amount.
 						</p>
 						<a href="<?php echo base_url();?>en/education_loan"><span class="btn_landing_auto">Go to slide</span></a>
 					</div>
@@ -104,10 +103,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/Home-loan2.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/>
-							<p>Home Loan</p>
+							<h4>Home Loan</h4>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
+						<p>Home loan is a loan granted by banks and other financial institutes for purchasing a home or apartment. You can apply for a home loan if you can fulfill the criteria stated by banks. Banks will grant that amount of money which you can repay easily.
+                        </p>
 						<a href="<?php echo base_url();?>en/home_loan"><span class="btn_landing_auto">Go to slide</span></a>
 					</div>
 				</div>
@@ -116,12 +115,11 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/sme.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/>
-							<p>SME Loan</p>
+							<h4>SME Loan</h4>
 						</div>
 						<p>
-							Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s 
-							certainly easier to let the dealership handle the financing for you, but by doing so you may be conceding
-						</p>
+                            SME loan is a loan which helps in business expansion, working capital, purchasing fixed asset for small and medium enterprises. This loan is provided by banks to encourage the entrepreneurs to develop and expand their business.
+                        </p>
 						<a href="#"><span class="btn_landing_auto">Go to slide</span></a>
 					</div>
 				</div>
@@ -130,11 +128,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/personal_loan.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/>
-							<p>Personal Loan</p>
+							<h4>Personal Loan</h4>
 						</div>
 						<p>
-							While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes 
-							we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution.
+                            Personal loan is provided by banks to its customer for various reasons such as medical treatment loan, Hajj loan, and festival loan and overall any purpose to fulfill personal needs. You can get up to BDT 5 Lac for 3 year period as personal loan.
 						</p>
 						<a href="<?php echo base_url();?>en/education_loan"><span class="btn_landing_auto">Go to slide</span></a>
 					</div>

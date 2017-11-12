@@ -76,10 +76,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr1.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
-							<p>FDR</p>
+							<h4>FDR</h4>
 						</div>
 						<p>
-                            The term Fixed Deposit Account refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
+                            FDR or Fixed Deposit Receipt is a deposit scheme where you can deposit minimum BDT 1 Lac for a certain period such as 1 year and after passing that period, bank will provide some extra amount as interest with principle amount.
                         </p>
                         <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
@@ -89,10 +89,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/DepositPensionScheme.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
-							<p>DPS</p>
+							<h4>DPS</h4>
 						</div>
 						<p>
-                            DPS is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
+                            DPS or Deposit Pension Scheme is a deposit scheme where you can deposit a small amount in monthly basis for a certain period and after that period bank will pay more money than you deposited and the extra money will be considered as interest.
                         </p>
                         <a href="<?php echo base_url();?>en/dps"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
@@ -102,10 +102,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/Money Maximizer1.png" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
-							<p>Money Maximizer</p>
+							<h4>Money Maximizer</h4>
 						</div>
 						<p>
-                            Money Maximizer account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
+                            Money maximize is a deposit scheme where you deposit a fixed amount such as BDT 1Lac and after banks defined time. Bank will pay you double amount of that deposited amount. Banks offer various maximization offers such as 1.5 times, 2 times and 3 times etc.
                         </p>
 						<a href="<?php echo base_url();?>en/money_maximizer"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
@@ -115,10 +115,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/MonthlyBenefitScheme.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr_text_bg.png" alt="text-bg"/>
-							<p>Monthly Benefit Scheme</p>
+							<h4>Monthly Benefit Scheme</h4>
 						</div>
 						<p>
-                            Monthly Benefit Scheme is a special deposit scheme, where a person will get a certain some of money at the end of every month. While the deposited principal amount remain untouched.
+                            Monthly Benefit Scheme is a deposit scheme where you deposit a certain amount of money such as BDT 1 Lac or more. Against that money, bank will pay you a fixed amount of money monthly for a certain period as interest.
                         </p>
 						<a href="<?php echo base_url();?>en/monthly_benefit"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>

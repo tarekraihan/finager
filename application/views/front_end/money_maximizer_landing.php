@@ -85,10 +85,11 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/fdr1.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-textbg.png" alt="text-bg"/>
-							<p>FDR</p>
+							<h4>FDR</h4>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
+						<p>
+                            FDR or Fixed Deposit Receipt is a deposit scheme where you can deposit minimum BDT 1 Lac for a certain period such as 1 year and after passing that period, bank will provide some extra amount as interest with principle amount.
+                        </p>
 						<a href=""><span class="btn_mony_max">Go to slide</span></a>
 					</div>
 				</div>
@@ -97,10 +98,11 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/DepositPensionScheme.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-textbg.png" alt="text-bg"/>
-							<p>DPS</p>
+							<h4>DPS</h4>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
+						<p>
+                            DPS or Deposit Pension Scheme is a deposit scheme where you can deposit a small amount in monthly basis for a certain period and after that period bank will pay more money than you deposited and the extra money will be considered as interest.
+                        </p>
 						<a href=""><span class="btn_mony_max">Go to slide</span></a>
 					</div>
 				</div>
@@ -109,10 +111,11 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/lakhpati2.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-textbg.png" alt="text-bg"/>
-							<p>Lakhpoti & Millionaire Scheme</p>
+							<h4>Lakhpoti & Millionaire Scheme</h4>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
+						<p>
+                            Lakhpoti & Millionaire scheme is a deposit scheme where you deposited a fixed amount of money monthly for a certain period of time and after completing that period bank will pay you BDT 1Lac.
+                        </p>
 						<a href=""><span class="btn_mony_max">Go to slide</span></a>
 					</div>
 				</div>
@@ -121,10 +124,11 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/MonthlyBenefitScheme.jpg" alt="img_logo_blue"/></div>
 						<div class="dps_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-textbg.png" alt="text-bg"/>
-							<p>Monthly Benefit Scheme</p>
+							<h4>Monthly Benefit Scheme</h4>
 						</div>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</p>
+						<p>
+                            Monthly Benefit Scheme is a deposit scheme where you deposit a certain amount of money such as BDT 1 Lac or more. Against that money, bank will pay you a fixed amount of money monthly for a certain period as interest.
+                        </p>
 						<a href=""><span class="btn_mony_max">Go to slide</span></a>
 					</div>
 				</div>

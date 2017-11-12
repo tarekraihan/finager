@@ -84,11 +84,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/new-car3.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/>
-							<p>Auto Loan</p>
+							<h4>Auto Loan</h4>
 						</div>
 						<p>
-							echnology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago. 
-							These changes can be rather scary. Online search bars and their results can spill mass amounts of information
+                            Car loan is provided by banks and non-banking financial institutes for purchasing a new or reconditioned car. You can apply for a car loan if you have enough monthly income to repay the loan. Banks will pay up to 70% of the price of the car.
 						</p>
                         <a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_home">Go to slide</span></a>
 					</div>
@@ -98,11 +97,10 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/personal_loan.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/>
-							<p>Personal Loan</p>
+							<h4>Personal Loan</h4>
 						</div>
 						<p>
-							While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes 
-							we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution.
+                            Personal loan is provided by banks to its customer for various reasons such as medical treatment loan, Hajj loan, and festival loan and overall any purpose to fulfill personal needs. You can get up to BDT 5 Lac for 3 year period as personal loan.
 						</p>
                         <a href="<?php echo base_url();?>en/personal_loan"><span class="btn_landing_home">Go to slide</span></a>
 					</div>
@@ -112,13 +110,12 @@
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/student-loan-debt.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/>
-							<p>Student Loan</p>
+							<h4>Education Loan</h4>
 						</div>
 						<p>
-							The International Student Loan Center provides international students and study abroad students with access to a range of loan products to help fund their 
-							education abroad. Get started by finding your student loan in just 10 seconds.
+                            Education loan is granted by banks for helping the needy student. With the help of education loan, students fulfill their study expenses. Education loan is granted for 5 year period and up to BDT 10 lac is granted maximum loan amount.
 						</p>
-                                                <a href="<?php echo base_url();?>en/education_loan"><span class="btn_landing_home">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>en/education_loan"><span class="btn_landing_home">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -126,12 +123,11 @@
 						<div class="spnrs"><img class="img-responsive"src="<?php echo base_url();?>resource/front_end/images/sme.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/>
-							<p>SME Loan</p>
+							<h4>SME Loan</h4>
 						</div>
 						<p>
-							Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s 
-							certainly easier to let the dealership handle the financing for you, but by doing so you may be conceding
-						</p>
+                            SME loan is a loan which helps in business expansion, working capital, purchasing fixed asset for small and medium enterprises. This loan is provided by banks to encourage the entrepreneurs to develop and expand their business.
+                        </p>
                         <a href="#"><span class="btn_landing_home">Go to slide</span></a>
 						
 					</div>

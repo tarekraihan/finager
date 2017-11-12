@@ -1530,6 +1530,12 @@ a .fdr_landing_button {
     font-size: 15px;
     color: #fff;
 }
+.auto_spnrs1 h4 {
+    margin-top: -39px;
+    z-index: 9999;
+    position: absolute;
+    margin-left: 15px;
+}
 .Sponsored_box1 p{
     padding:15px;
     text-align:justify;
@@ -1967,6 +1973,11 @@ a:hover {
     width:100%;
     position:relative;
 }
+.personal_spnrs1 h4 {
+    margin-top: -39px;
+    position: absolute;
+    margin-left: 17px;
+}
 .personal_spnrs1 p {
     position: absolute;
     top: 134px;
@@ -2179,9 +2190,9 @@ a:hover {
 }
 .edu_spnrs {
     position: absolute;
-    top: 134px;
-    font-size: 15px;
+    top: 141px;
     color: #fff;
+    margin-left: 19px;
 }
 .edu_btn{
     border:2px solid #636565;
@@ -2310,6 +2321,12 @@ a:hover {
     top: 134px;
     font-size: 15px;
     color: #fff;
+}
+.fdr_spnrs1 h4 {
+    margin-top: -37px;
+    margin-left: 15px;
+    position: absolute;
+    font-size: 16px;
 }
 .fdr_btn {
     border: 2px solid #205984;
@@ -2464,6 +2481,12 @@ a:hover {
 .dps_spnrs1 img {
     width: 100%;
     position: relative;
+}
+.dps_spnrs1 h4 {
+    margin-top: -37px;
+    margin-left: 18px;
+    position: absolute;
+    font-size: 16px;
 }
 .dps_spnrs1 p {
     position: absolute;

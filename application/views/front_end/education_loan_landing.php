@@ -1,5 +1,5 @@
 <!-- header part start -->
-<section id="education_header_part">
+<section id="education_header_part" xmlns="http://www.w3.org/1999/html">
     <div class="education_header_text">
         <h3>Education loan comparison made easy</h3>
         <a href="javascript:void(0);" class="start_compare"><span class="education_landing_button flash-button">Start Comparing</span></a>
@@ -73,10 +73,9 @@
                 <div class="Sponsored_box1">
                     <div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/new-car3.jpg" alt="img_logo_blue"/></div>
                     <div><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/education_text-bg.png" alt="text-bg"/></div>
-                    <p class="edu_spnrs">Auto Loan</p>
+                    <h4 class="edu_spnrs">Auto Loan</h4>
                     <p>
-                        Technology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago.
-                        These changes can be rather scary. Online search bars and their results can spill mass amounts of information
+                        Car loan is provided by banks and non-banking financial institutes for purchasing a new or reconditioned car. You can apply for a car loan if you have enough monthly income to repay the loan. Banks will pay up to 70% of the price of the car.
                     </p>
                     <a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
@@ -85,8 +84,8 @@
                 <div class="Sponsored_box1">
                     <div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/Home-loan2.jpg" alt="img_logo_blue"/></div>
                     <div><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/education_text-bg.png" alt="text-bg"/></div>
-                    <p class="edu_spnrs">Home Loan</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    <h4 class="edu_spnrs">Home Loan</h4>
+                    <p>Home loan is a loan granted by banks and other financial institutes for purchasing a home or apartment. You can apply for a home loan if you can fulfill the criteria stated by banks. Banks will grant that amount of money which you can repay easily.
                     </p>
                     <a href="<?php echo base_url();?>en/home_loan"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
@@ -95,10 +94,9 @@
                 <div class="Sponsored_box1">
                     <div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/sme.jpg" alt="img_logo_blue"/></div>
                     <div><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/education_text-bg.png" alt="text-bg"/></div>
-                    <p class="edu_spnrs">SME Loan</p>
+                    <h4 class="edu_spnrs">SME Loan</h4>
                     <p>
-                        Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s
-                        certainly easier to let the dealership handle the financing for you, but by doing so you may be conceding
+                        SME loan is a loan which helps in business expansion, working capital, purchasing fixed asset for small and medium enterprises. This loan is provided by banks to encourage the entrepreneurs to develop and expand their business.
                     </p>
                     <a href="<?php echo base_url();?>en/#"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
@@ -107,10 +105,9 @@
                 <div class="Sponsored_box1">
                     <div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan.jpg" alt="img_logo_blue"/></div>
                     <div><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/education_text-bg.png" alt="text-bg"/></div>
-                    <p class="edu_spnrs">Personal Loan</p>
+                    <h4 class="edu_spnrs">Personal Loan</h4>
                     <p>
-                        While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes
-                        we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution.
+                        Personal loan is provided by banks to its customer for various reasons such as medical treatment loan, Hajj loan, and festival loan and overall any purpose to fulfill personal needs. You can get up to BDT 5 Lac for 3 year period as personal loan.
                     </p>
                     <a href="<?php echo base_url();?>en/personal_loan"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
