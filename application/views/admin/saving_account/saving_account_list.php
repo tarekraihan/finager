@@ -79,6 +79,8 @@ if(isset($_GET['account_id']))
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Min Amount for Interest</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>I Am</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created By</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Modified By</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Last Modified</th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>

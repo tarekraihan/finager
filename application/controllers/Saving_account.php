@@ -139,8 +139,8 @@ class Saving_account extends CI_Controller
                     'requirements' => $this->input->post('txtRequirement'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'review' => $this->input->post('txtReview'),
-                    'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'modified' => $date ,
+                    'modified_by'=>$this->session->userdata('admin_user_id')
                 );
                 $this->Common_model->table_name = 'saving_account_info';
                 $this->Common_model->where = array('id' => $this->input->post('txtSavingAccountInfoId'));

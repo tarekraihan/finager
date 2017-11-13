@@ -1119,7 +1119,7 @@ class Select_Model extends CI_Model
 
     public function select_monthly_benefit_info()//To show FDR Common Info list
     {
-        $sql="SELECT monthly_benefit_info.*,card_bank.bank_name,card_bank.bank_logo, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `monthly_benefit_info` INNER JOIN card_bank ON card_bank.id=monthly_benefit_info.bank_id INNER JOIN tbl_admin_user ON tbl_admin_user.id=monthly_benefit_info.created_by ORDER BY monthly_benefit_info.id ASC";
+        $sql="SELECT monthly_benefit_info.*,card_bank.bank_name,card_bank.bank_logo,  admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name  FROM `monthly_benefit_info` INNER JOIN card_bank ON card_bank.id=monthly_benefit_info.bank_id LEFT JOIN tbl_admin_user admin1 ON admin1.id= monthly_benefit_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= monthly_benefit_info.modified_by  ORDER BY monthly_benefit_info.id ASC";
         $query=$this->db->query($sql);
 
         $result="";
@@ -1136,7 +1136,9 @@ class Select_Model extends CI_Model
 					 <td class="center">'.$row->deposit_name.'</td>
 					 <td class="center"> '.$row->bank_name.'</td>
 					 <td class="center"> '.$row->loan_facility.'</td>
-					 <td class="center"> '.$row->first_name.' '.$row->last_name.'</td>';
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
 
                 $result.='</td>
                     <td><a href="'.base_url().'monthly_benefit/edit_deposit_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?deposit_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
@@ -1435,7 +1437,7 @@ class Select_Model extends CI_Model
     }
 
     public function get_current_account_info(){
-        $sql = "SELECT current_account_info.id,current_account_info.`opening_balance`,current_account_info.`total_branch`,current_account_info.`overdraft_facility`,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, current_account_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `current_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id = current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id = current_account_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=current_account_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = current_account_info.non_bank_id ORDER BY current_account_info.id ASC";
+        $sql = "SELECT current_account_info.id,current_account_info.`opening_balance`,current_account_info.`total_branch`,current_account_info.`overdraft_facility`,current_account_info.`modified`,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, current_account_info.is_non_bank,  admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name FROM `current_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id = current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id = current_account_info.bank_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= current_account_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= current_account_info.modified_by  LEFT JOIN general_non_bank ON general_non_bank.id = current_account_info.non_bank_id ORDER BY current_account_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -1467,8 +1469,9 @@ class Select_Model extends CI_Model
 					 <td class="text-center"> '.$row->total_branch.'</td>
 					 <td> '.$row->overdraft_facility.'</td>
 					 <td> '.$row->i_am.'</td>
-					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
-
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
                 $result.='</td>
                     <td><a href="'.base_url().'current_account/edit_account_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?account_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
 
@@ -1480,7 +1483,7 @@ class Select_Model extends CI_Model
     }
 
     public function get_saving_account_info(){
-        $sql = "SELECT saving_account_info.id,saving_account_info.`opening_balance`,saving_account_info.`interest_rate`,saving_account_info.`min_balance_for_interest`,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, saving_account_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id = saving_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id = saving_account_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=saving_account_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id ORDER BY saving_account_info.id ASC";
+        $sql = "SELECT saving_account_info.id,saving_account_info.`opening_balance`,saving_account_info.`interest_rate`,saving_account_info.`min_balance_for_interest`,saving_account_info.`modified`,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, saving_account_info.is_non_bank,  admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name  FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id = saving_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id = saving_account_info.bank_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= saving_account_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= saving_account_info.modified_by  LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id ORDER BY saving_account_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -1512,7 +1515,9 @@ class Select_Model extends CI_Model
 					 <td class="text-center"> '.$row->interest_rate.'</td>
 					 <td> '.$row->min_balance_for_interest.'</td>
 					 <td> '.$row->i_am.'</td>
-					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
 
                 $result.='</td>
                     <td><a href="'.base_url().'saving_account/edit_account_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?account_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
@@ -1526,7 +1531,7 @@ class Select_Model extends CI_Model
 
 
     public function get_snd_account_info(){
-        $sql = "SELECT snd_info.id,snd_info.`opening_balance`,snd_info.`interest_rate`,snd_info.`notice_day`,snd_info.`interest_paid`,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, snd_info.is_non_bank, tbl_admin_user.first_name,tbl_admin_user.last_name FROM `snd_info` INNER JOIN current_account_i_am ON current_account_i_am.id = snd_info.i_am_id LEFT JOIN card_bank ON card_bank.id = snd_info.bank_id  INNER JOIN tbl_admin_user ON tbl_admin_user.id=snd_info.created_by LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id ORDER BY snd_info.id ASC";
+        $sql = "SELECT snd_info.id,snd_info.`opening_balance`,snd_info.`interest_rate`,snd_info.`notice_day`,snd_info.`interest_paid`,snd_info.`modified`,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, snd_info.is_non_bank,  admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name  FROM `snd_info` INNER JOIN current_account_i_am ON current_account_i_am.id = snd_info.i_am_id LEFT JOIN card_bank ON card_bank.id = snd_info.bank_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= snd_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= snd_info.modified_by  LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id ORDER BY snd_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -1558,7 +1563,9 @@ class Select_Model extends CI_Model
 					 <td class="text-center"> '.$row->interest_rate.'</td>
 					 <td> '.$row->notice_day.'</td>
 					 <td> '.$row->i_am.'</td>
-					 <td class="text-center"> '.$row->first_name.' '.$row->last_name.'</td>';
+					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
+					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
+					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
 
                 $result.='</td>
                     <td><a href="'.base_url().'snd_account/edit_account_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?account_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>

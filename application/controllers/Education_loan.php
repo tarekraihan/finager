@@ -441,7 +441,7 @@ class Education_Loan extends CI_Controller {
                     'modified' => $date ,
                     'modified_by'=>$this->session->userdata('admin_user_id')
                 );
-                print_r($this->Common_model->data);
+                //print_r($this->Common_model->data);
                 $this->Common_model->table_name = 'education_loan_info';
                 $this->Common_model->where = array('id' => $this->input->post('txtEducationLoanId'));
                 $this->Common_model->update();
