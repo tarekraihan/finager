@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/git/finager/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = '.html';
 
 /*
 |--------------------------------------------------------------------------

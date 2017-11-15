@@ -292,6 +292,13 @@ class General extends CI_Controller {
                 $this->form_validation->set_rules('txtBankName', ' Bank Name', 'trim|required');
             }
 
+            $not_available_call_center = $this->input->post('not_available_call_center');
+            if($not_available_call_center == 1){
+                $this->form_validation->set_rules('txtCallCenterNo', ' Call Center no', 'trim');
+            }else{
+                $this->form_validation->set_rules('txtCallCenterNo', ' Call Center no', 'trim|required');
+            }
+
             $this->form_validation->set_rules('txtKnownAs', ' Known As', 'trim|required|max_length[50]');
             $this->form_validation->set_rules('txtSwiftCode', ' Swift Code', 'trim|required|max_length[50]');
             $this->form_validation->set_rules('txtStockCode', ' Stock Code', 'trim|required|max_length[50]');
@@ -302,7 +309,6 @@ class General extends CI_Controller {
             $this->form_validation->set_rules('txtEmailAddress', ' Email Address', 'trim|required|valid_email|max_length[225]');
             $this->form_validation->set_rules('txtWebAddress', ' Web Address', 'trim|required|valid_url|max_length[225]');
             $this->form_validation->set_rules('txtHeadOfficeAddress', ' Head Office Address', 'trim|required|max_length[225]');
-            $this->form_validation->set_rules('txtCallCenterNo', ' Call Center no', 'trim|required');
             $this->form_validation->set_rules('txtBasicInformation', ' Basic Information', 'trim|required');
             $this->form_validation->set_rules('txtRoutingNo', ' Routing No', 'trim|required');
 
@@ -327,7 +333,8 @@ class General extends CI_Controller {
                     'web_address' =>$this->input->post('txtWebAddress'),
                     'head_office_address' =>htmlentities($this->input->post('txtHeadOfficeAddress')),
                     'basic_information'=>$this->input->post('txtBasicInformation'),
-                    'call_center'=>$this->input->post('txtCallCenterNo'),
+                    'not_available_call_center'=> ($not_available_call_center) ? $not_available_call_center : 0,
+                    'call_center'=> ($this->input->post('txtCallCenterNo')) ? $this->input->post('txtCallCenterNo') : '',
                     'routing_no'=>$this->input->post('txtRoutingNo'),
                     'modified' => $date ,
                     'modified_by'=>$this->session->userdata('admin_user_id')

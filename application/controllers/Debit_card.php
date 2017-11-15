@@ -586,7 +586,7 @@ class Debit_card extends CI_Controller
 
         if($result->num_rows() > 0){
             foreach($result->result() as $row) {
-//                pr($row);
+                //pr($row);die;
                 $summary ='';
                 if($row->card_summary != ''){
                     $length = strlen($row->card_summary);
@@ -604,7 +604,7 @@ class Debit_card extends CI_Controller
 
 						<div class="row card_right_bar no-margin-lr">
 							<div class="col-sm-3 col-xs-3">
-								<a href="'.base_url().'en/debit_card_details/'.$row->id.'" ><img title="Click here to details" class="img-responsive selected_card" src="' . base_url() . 'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+								<a href="'.base_url().'en/debit_card_details/'.$row->meta_url.'.html" ><img title="Click here to details" class="img-responsive selected_card" src="' . base_url() . 'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 								</p>

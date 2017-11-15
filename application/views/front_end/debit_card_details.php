@@ -1,13 +1,13 @@
 <?php
 
 $id=$this->uri->segment(3, 0);
-if(!empty($id) && is_numeric($id) ){
+//if(!empty($id) && is_numeric($id) ){
     $query=$this->Front_end_select_model->select_debit_card_details($id);
     $row=$query->row();
 	$summary = $row->card_name.' of '.$row->bank_name.' is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.';
-}else{
-    redirect(base_url().'My404');
-}
+//}else{
+ //   redirect(base_url().'My404');
+//}
 
 ?>
 <section id="card_details_top">

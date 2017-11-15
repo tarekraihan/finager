@@ -27,6 +27,7 @@ if(isset($_GET['id'])){
     $row['basic_information']='';
     $row['call_center']='';
     $row['routing_no']='';
+    $row['not_available_call_center']='';
 }
 ?>
 <script src="<?php echo base_url(); ?>resource/admin/js/ckeditor/ckeditor.js"></script>
@@ -229,21 +230,26 @@ if(isset($_GET['id'])){
                                                     <label class="red"><?php echo form_error('txtHeadOfficeAddress');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Call Center No</label>
-                                                    <label class="input">
-                                                        <input type="number" maxlength="10" name="txtCallCenterNo" value="<?php if(isset($row["call_center"]) && $row["call_center"] != ""){echo $row["call_center"];}else{echo set_value('txtCallCenterNo');} ?>" placeholder="Write call center no">
-                                                    </label>
-                                                    <label class="red"><?php echo form_error('txtCallCenterNo');?></label>
-                                                </section>
-                                            </div>
-
-                                            <div class="row">
-                                                <section class="col col-6">
                                                     <label class="label">Routing No</label>
                                                     <label class="input">
                                                         <input type="text" maxlength="50" name="txtRoutingNo" value="<?php if(isset($row["routing_no"]) && $row["routing_no"] != ""){echo $row["routing_no"];}else{echo set_value('txtRoutingNo');} ?>" placeholder="Write Routing No">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtHeadOfficeAddress');?></label>
+                                                </section>
+                                            </div>
+
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
+                                                        <input type="checkbox" name="not_available_call_center" id="not_available_call_center" value="1" <?php set_checkbox('not_available_call_center', '1')?> <?php echo ($row['not_available_call_center'] == '1') ? 'checked' : ''; ?>> Call Center Not Available
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label class="label">Call Center No</label>
+                                                    <label class="input">
+                                                        <input type="text" maxlength="100" name="txtCallCenterNo"  id="txtCallCenterNo" value="<?php if(isset($row["call_center"]) && $row["call_center"] != ""){echo $row["call_center"];}else{echo set_value('txtCallCenterNo');} ?>" placeholder="Write call center no">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtCallCenterNo');?></label>
                                                 </section>
                                             </div>
 
@@ -360,5 +366,17 @@ if(isset($_GET['id'])){
                 '<option value="<?php echo $row1->id;?>" <?php if(isset($row["id"]) && $row["id"]==$row1->id){echo "selected";}?><?php echo set_select("txtBankName",$row1->id)?>><?php echo $row1->bank_name ; ?></option>;<?php } ?>'+
                 '</select></label><label class="red"><?php echo form_error('txtBankName');?></label>');
         }
+        $("input[name='not_available_call_center']").click(function(){
+            if ($(this).is(":checked")) {
+                $('#txtCallCenterNo').prop('readonly',true);
+                $("#txtCallCenterNo").attr("placeholder", "Readonly").placeholder();
+                $('#txtCallCenterNo').val('');
+            }else{
+                $('#txtCallCenterNo').prop('readonly',false);
+                $("#txtCallCenterNo").attr("placeholder", "Write call center no").placeholder();
+            }
+
+        })
+
     });
 </script>

@@ -1,3 +1,16 @@
+<?php
+$id=$this->uri->segment(3, 0);
+if(!empty($id) && is_numeric($id) ){
+    $institution_info = $this->Front_end_select_model->Select_bank_non_bank_info_by_id($id,0);
+    $home_loan = $this->Front_end_select_model->select_all_home_loan_by_bank_non_bank_id($id,0);
+   // pr($home_loan->result());die;
+
+
+}else{
+    redirect(base_url().'My404');
+}
+
+?>
 <style>
     .nav > li > a:focus, .nav > li > a:hover {
         background-color: #ddd !important;
@@ -9,10 +22,10 @@
             <div class="col-md-3">
                 <div class="bank_info_left">
                     <div class="bank_info_logo">
-                        <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_logo.jpg" alt="AB Bank Logo">
+                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $institution_info['bank_logo']; ?>" alt="<?php echo $institution_info['head_office_address']; ?>">
                     </div>
                     <div class="bank_address">
-                        <p><b>Corporate Office:</b> BCIC Bhaban, 30-31 Dilkusha C/A, Dhaka 1000, Bangladesh, GPO Box: 3522</p>
+                        <p><b>Corporate Office:</b> <?php echo $institution_info['head_office_address']; ?></p>
                     </div>
                 </div>
             </div>
@@ -21,76 +34,76 @@
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Bank Name:</b><br/>
-                            AB Bank Limited
+                            <?php echo $institution_info['bank_name']; ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Known As:</b><br/>
-                            ABBL
+                            <?php echo $institution_info['known_as']; ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>SWIFT Code:</b><br/>
-                            ABBLBDDH
+                            <?php echo $institution_info['swift_code']; ?>
                         </div>
                     </div>
 
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Stock Coad:</b><br/>
-                            ABBLBDDH
+                            <?php echo $institution_info['stock_code']; ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Category:</b><br/>
-                            Commercial
+                            <?php echo $institution_info['category']; ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Bank Type & Origin:</b><br/>
-                            Private / Local
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 nopadding">
-                        <div class="bank_info_box">
-                            <b>Stock Coad:</b><br/>
-                            ABBLBDDH
-                        </div>
-                    </div>
-                    <div class="col-md-4 nopadding">
-                        <div class="bank_info_box">
-                            <b>Category:</b><br/>
-                            Commercial
-                        </div>
-                    </div>
-                    <div class="col-md-4 nopadding">
-                        <div class="bank_info_box">
-                            <b>Bank Type & Origin:</b><br/>
-                            Private / Local
+                            <?php echo $institution_info['bank_type_and_origin']; ?>
                         </div>
                     </div>
 
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Bank Phone:</b><br/>
-                            +88-02-9560312
+                            <?php echo $institution_info['phone_no']; ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Bank Fax:</b><br/>
-                            +88-02-9564122, 23
+                            <?php echo $institution_info['fax_no']; ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Bank  Email:</b><br/>
-                            info@abbank.com.bd
+                            <?php echo $institution_info['email_address']; ?>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 nopadding">
+                        <div class="bank_info_box">
+                            <b>Web Address:</b><br/>
+                            <?php echo $institution_info['web_address']; ?>
+                        </div>
+                    </div>
+                    <div class="col-md-4 nopadding">
+                        <div class="bank_info_box">
+                            <b>Call Center:</b><br/>
+                            <?php echo ($institution_info['not_available_call_center']) ? 'Not Available' : $institution_info['call_center'] ; ?>
+                        </div>
+                    </div>
+                    <div class="col-md-4 nopadding">
+                        <div class="bank_info_box">
+                            <b>Routing No:</b><br/>
+                            <?php echo $institution_info['routing_no']; ?>
                         </div>
                     </div>
                 </div>
@@ -120,28 +133,9 @@
                 <div role="tabpanel" class="tab-pane active" id="Info">
                     <div class="bank_info_tabBody">
                         <div class="bank_info_details">
-                            <h3>AB Bank Information</h3>
+                            <h3> <?php echo $institution_info['bank_name']; ?> Information</h3>
                             <p>
-                                AB Bank Limited is the pioneer in commercial banking under private ownership in Bangladesh. It started functioning
-                                as Arab Bangladesh Bank Ltd. on 12 April, 1982. ‘To be the trendsetter for innovative banking with
-                            </p>
-                            <p>
-                                excellence and perfection’ was pronounced as the banks vision. Side by side it spoke out about its mission, ‘To be the best performing bank in the country’.
-                            </p>
-                            <p>
-                                Since inception AB Bank Limited has spread over the country through 82 branches at all economically potential locations.
-                                ABBL has established a foreign branch in Mumbai, India and a subsidiary finance company in Hongkong.
-                            </p>
-                            <p>
-                                AB Bank Limited provides all commercial banking services like Current and Savings accounts, fund transfer, and utility bills receiving.
-                                In addition it presents a good number of deposit and credit schemes for the clients. All its services may be classified as follows:
-                            <ul>
-                                <li>Retail Banking</li>
-                                <li>Corporate Banking</li>
-                                <li>SME Banking</li>
-                                <li>NRB Banking</li>
-                                <li>Islami Banking</li>
-                            </ul>
+                                <?php echo $institution_info['basic_information']; ?>
                             </p>
                             <br/><br/>
                             <h3>AB Bank Branch Locations</h3>
@@ -192,58 +186,53 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Loan">
                     <h3 class="text-center">Home Loan</h3>
+                    <?php foreach($home_loan->result() as $home ) {
+                        $interest =($home->is_fixed =='0')? $home->interest_rate_average.' % (Avg),' : $home->interest_rate_fixed.' % (Fixed)';
+                        $interest_min_max =($home->is_fixed =='0')? $home->interest_rate_min.'% (Min), <br> '.$home->interest_rate_max.'% (Max)</p>' : '';
+                        ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
+                                <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $home->bank_logo; ?>" alt="<?php echo $home->bank_name; ?> Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4>AB Bank Home Construction Loan</h4><br/>
+                                <h4><?php echo $home->home_loan_looking_for; ?></h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
                                         <tr>
                                             <td>Minimum loan amount:</td>
-                                            <td>Payable Amount</td>
+                                            <td> BDT <?php echo number_format( $home->min_loan_amount ); ?></td>
                                         </tr>
                                         <tr>
                                             <td>Maximum loan amount:</td>
-                                            <td>Down Payment</td>
+                                            <td> BDT <?php echo number_format( $home->max_loan_amount ); ?></td>
                                         </tr>
                                         <tr>
                                             <td>Interest rate:</td>
-                                            <td>Down Payment</td>
+                                            <td><?php echo $interest .''.$interest_min_max; ?></td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="bank_loan_details">
-                            <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                            </div>
-                            <div class="col-md-10 nopadding">
-                                <h4>AB Bank Home Construction Loan</h4><br/>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                        <tr>
-                                            <td>Minimum loan period:</td>
-                                            <td>Payable Amount</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Maximum Loan period:</td>
-                                            <td>Down Payment</td>
-                                        </tr>
+
                                         <tr>
                                             <td>Loan type:</td>
-                                            <td>Down Payment</td>
+                                            <td> <?php echo $home->home_loan_looking_for; ?></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Minimum loan period:</td>
+                                            <td> N/A</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Maximum loan period:</td>
+                                            <td> N/A</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
+
                     </div>
+                    <?php } ?>
                     <h3 class="text-center">Personal Loan</h3>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
