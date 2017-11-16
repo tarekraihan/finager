@@ -97,7 +97,7 @@ if(!empty($id) && is_numeric($id) ){
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Call Center:</b><br/>
-                            <?php echo ($institution_info['not_available_call_center']) ? 'Not Available' : $institution_info['call_center'] ; ?>
+                            <?php echo /*($institution_info['not_available_call_center']) ? 'Not Available' :*/ $institution_info['call_center'] ; ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
@@ -233,6 +233,7 @@ if(!empty($id) && is_numeric($id) ){
 
                     </div>
                     <?php } ?>
+                    <div class="clearfix"></div>
                     <h3 class="text-center">Personal Loan</h3>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
