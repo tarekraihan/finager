@@ -26,8 +26,13 @@ if(isset($_GET['id'])){
     $row['web_address']='';
     $row['basic_information']='';
     $row['call_center']='';
-    $row['routing_no']='';
     $row['not_available_call_center']='';
+    $row['routing_no']='';
+    $row['alternate_phone_no']='';
+    $row['other_services']='';
+    $row['schedule_of_charges']='';
+    $row['interest_rate']='';
+    $row['routing_no_list']='';
 }
 ?>
 <script src="<?php echo base_url(); ?>resource/admin/js/ckeditor/ckeditor.js"></script>
@@ -190,16 +195,16 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="label">Phone No</label>
                                                     <label class="input">
-                                                        <input type="text" maxlength="225" name="txtPhoneNo" value="<?php if(isset($row["phone_no"]) && $row["phone_no"] != ""){echo $row["phone_no"];}else{echo set_value('txtPhoneNo');} ?>" placeholder="Write Phone no (029880668,0290098856)">
+                                                        <input type="text" maxlength="25" name="txtPhoneNo" value="<?php if(isset($row["phone_no"]) && $row["phone_no"] != ""){echo $row["phone_no"];}else{echo set_value('txtPhoneNo');} ?>" placeholder="Write Phone no (+88029880668)">
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtPhoneNo');?></label>
                                                 </section>
                                                 <section class="col col-6">
-                                                    <label class="label">Fax No</label>
+                                                    <label class="label">Alternate Phone No</label>
                                                     <label class="input">
-                                                        <input type="tel" maxlength="13" name="txtFaxNo" value="<?php if(isset($row["fax_no"]) && $row["fax_no"] != ""){echo $row["fax_no"];}else{echo set_value('txtFaxNo');} ?>" placeholder="Write Fax no">
+                                                        <input type="text" maxlength="25" name="txtAlternatePhoneNo" value="<?php if(isset($row["alternate_phone_no"]) && $row["alternate_phone_no"] != ""){echo $row["alternate_phone_no"];}else{echo set_value('txtAlternatePhoneNo');} ?>" placeholder="Write Phone no (+88029880668)">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtFaxNo');?></label>
+                                                    <label class="red"><?php echo form_error('txtAlternatePhoneNo');?></label>
                                                 </section>
                                             </div>
 
@@ -254,6 +259,18 @@ if(isset($_GET['id'])){
                                             </div>
 
 
+                                            <div class="row">
+
+                                                <section class="col col-6">
+                                                    <label class="label">Fax No</label>
+                                                    <label class="input">
+                                                        <input type="tel" maxlength="13" name="txtFaxNo" value="<?php if(isset($row["fax_no"]) && $row["fax_no"] != ""){echo $row["fax_no"];}else{echo set_value('txtFaxNo');} ?>" placeholder="Write Fax no">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtFaxNo');?></label>
+                                                </section>
+                                            </div>
+
+
                 </article>
                 <!-- WIDGET END -->
 
@@ -287,6 +304,158 @@ if(isset($_GET['id'])){
                             </div>
                             <!-- end widget content -->
                             <label class="red"><?php echo form_error('txtBasicInformation');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-12 col-md-12 col-lg-12">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Other Services</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+                                    <textarea type="text" id="txtOtherServices" class="ckeditor" name="txtOtherServices"><?php if(isset($row["other_services"]) && $row["other_services"] != ""){echo $row["other_services"];}else{echo set_value('txtOtherServices');} ?></textarea>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtOtherServices');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-12 col-md-12 col-lg-12">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Schedule of Charges</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+                                    <textarea type="text" id="txtScheduleOfCharges" class="ckeditor" name="txtScheduleOfCharges"><?php if(isset($row["schedule_of_charges"]) && $row["schedule_of_charges"] != ""){echo $row["schedule_of_charges"];}else{echo set_value('txtScheduleOfCharges');} ?></textarea>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtScheduleOfCharges');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-12 col-md-12 col-lg-12">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Interest Rate</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+                                    <textarea type="text" id="txtInterestRate" class="ckeditor" name="txtInterestRate"><?php if(isset($row["interest_rate"]) && $row["interest_rate"] != ""){echo $row["interest_rate"];}else{echo set_value('txtInterestRate');} ?></textarea>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtInterestRate');?></label>
+                        </div>
+                        <!-- end widget div -->
+
+                    </div>
+                    <!-- end widget -->
+
+                </article>
+                <!-- WIDGET END -->
+                <!-- NEW WIDGET START -->
+                <article class="col-sm-12 col-md-12 col-lg-12">
+
+                    <!-- Widget ID (each widget will need unique ID)-->
+                    <div class="jarviswidget jarviswidget-color-blue" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-fullscreenbutton="false" data-widget-sortable="false">
+                        <header>
+                            <span class="widget-icon"> <i class="fa fa-pencil"></i> </span>
+                            <h2>Routing No List</h2>
+
+                        </header>
+
+                        <!-- widget div-->
+                        <div>
+
+                            <!-- widget edit box -->
+                            <div class="jarviswidget-editbox">
+                                <!-- This area used as dropdown edit box -->
+
+                            </div>
+                            <!-- end widget edit box -->
+
+                            <!-- widget content -->
+                            <div class="widget-body no-padding">
+                                <section class="col col-12">
+                                    <textarea type="text" id="txtRoutingNoList" class="ckeditor" name="txtRoutingNoList"><?php if(isset($row["routing_no_list"]) && $row["routing_no_list"] != ""){echo $row["routing_no_list"];}else{echo set_value('txtRoutingNoList');} ?></textarea>
+                                </section>
+
+                            </div>
+                            <!-- end widget content -->
+                            <label class="red"><?php echo form_error('txtRoutingNoList');?></label>
                         </div>
                         <!-- end widget div -->
 
@@ -368,9 +537,10 @@ if(isset($_GET['id'])){
         }
         $("input[name='not_available_call_center']").click(function(){
             if ($(this).is(":checked")) {
+                $('#txtCallCenterNo').val('');
                 $('#txtCallCenterNo').prop('readonly',true);
                 $("#txtCallCenterNo").attr("placeholder", "Readonly").placeholder();
-                $('#txtCallCenterNo').val('');
+
             }else{
                 $('#txtCallCenterNo').prop('readonly',false);
                 $("#txtCallCenterNo").attr("placeholder", "Write call center no").placeholder();

@@ -328,6 +328,7 @@ class General extends CI_Controller {
                     'category' =>htmlentities($this->input->post('txtCategory')),
                     'bank_type_and_origin' =>htmlentities($this->input->post('txtBankTypeOrigin')),
                     'phone_no' =>htmlentities($this->input->post('txtPhoneNo')),
+                    'alternate_phone_no' =>htmlentities($this->input->post('txtAlternatePhoneNo')),
                     'fax_no' =>htmlentities($this->input->post('txtFaxNo')),
                     'email_address' =>$this->input->post('txtEmailAddress'),
                     'web_address' =>$this->input->post('txtWebAddress'),
@@ -336,6 +337,10 @@ class General extends CI_Controller {
                     'not_available_call_center'=> ($not_available_call_center) ? $not_available_call_center : 0,
                     'call_center'=> ($this->input->post('txtCallCenterNo')) ? $this->input->post('txtCallCenterNo') : '',
                     'routing_no'=>$this->input->post('txtRoutingNo'),
+                    'other_services'=>$this->input->post('txtOtherServices'),
+                    'schedule_of_charges'=>$this->input->post('txtScheduleOfCharges'),
+                    'interest_rate'=>$this->input->post('txtInterestRate'),
+                    'routing_no_list'=>$this->input->post('txtRoutingNoList'),
                     'modified' => $date ,
                     'modified_by'=>$this->session->userdata('admin_user_id')
                 );

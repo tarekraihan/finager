@@ -55,8 +55,16 @@ if(!empty($id) && is_numeric($id) ){
 
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
-                            <b>Stock Coad:</b><br/>
-                            <?php echo $institution_info['stock_code']; ?>
+                            <b>Stock Code:</b><br/>
+                            <?php
+                                if($institution_info['stock_code'] == 'N/A'){
+                                    echo 'Not Available';
+                                }else{
+                                    ?>
+                                    <a href="http://dsebd.org/displayCompany.php?name=<?php echo $institution_info['stock_code'];?>" target="_blank"><?php echo $institution_info['stock_code'];?></a>
+                                    <?php
+                                }
+                            ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
@@ -75,7 +83,17 @@ if(!empty($id) && is_numeric($id) ){
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Bank Phone:</b><br/>
-                            <?php echo $institution_info['phone_no']; ?>
+
+                              <a href="tel:<?php echo $institution_info['phone_no'];?>"><?php echo $institution_info['phone_no'];?></a>
+                            <?php
+                                if(!empty($institution_info['alternate_phone_no'])){
+                                    ?>
+                                    , <a href="tel:<?php echo $institution_info['alternate_phone_no'];?>"><?php echo $institution_info['alternate_phone_no'];?></a>
+                                    <?php
+                                }
+                            ?>
+
+
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
@@ -87,20 +105,21 @@ if(!empty($id) && is_numeric($id) ){
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Bank  Email:</b><br/>
-                            <?php echo $institution_info['email_address']; ?>
+                            <a href="mailto:<?php echo $institution_info['email_address']; ?>" target="_top"><?php echo $institution_info['email_address']; ?></a>
                         </div>
                     </div>
 
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Web Address:</b><br/>
-                            <?php echo $institution_info['web_address']; ?>
+                            <a href="<?php echo $institution_info['web_address']; ?>" target="_blank"><?php echo $institution_info['web_address']; ?></a>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Call Center:</b><br/>
-                            <?php echo /*($institution_info['not_available_call_center']) ? 'Not Available' :*/ $institution_info['call_center'] ; ?>
+                            <a href="tel:<?php echo $institution_info['call_center'];?>"><?php echo $institution_info['call_center'];?></a>
+                            <?php  /*echo ($institution_info['not_available_call_center']) ? 'Not Available' :$institution_info['call_center'] ; */ ?>
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
@@ -189,9 +208,10 @@ if(!empty($id) && is_numeric($id) ){
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Loan">
                     <h3 class="text-center">Home Loan</h3>
-                    <?php foreach($home_loan->result() as $home ) {
-                        $interest =($home->is_fixed =='0')? $home->interest_rate_average.' % (Avg),' : $home->interest_rate_fixed.' % (Fixed)';
-                        $interest_min_max =($home->is_fixed =='0')? $home->interest_rate_min.'% (Min), <br> '.$home->interest_rate_max.'% (Max)</p>' : '';
+                    <?php
+                    if(count($home_loan->result()) > 0){
+                    foreach($home_loan->result() as $home ) {
+                        $interest =($home->is_fixed =='1')? $home->interest_rate_fixed.' % (Fixed)' : $home->interest_rate_min.'% (Min), <br> '.$home->interest_rate_max.'% (Max)';
                         ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
@@ -199,7 +219,7 @@ if(!empty($id) && is_numeric($id) ){
                                 <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $home->bank_logo; ?>" alt="<?php echo $home->bank_name; ?> Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4><?php echo $home->home_loan_looking_for; ?></h4><br/>
+                                <h4><?php echo $home->home_loan_name; ?></h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
                                         <tr>
@@ -212,7 +232,7 @@ if(!empty($id) && is_numeric($id) ){
                                         </tr>
                                         <tr>
                                             <td>Interest rate:</td>
-                                            <td><?php echo $interest .''.$interest_min_max; ?></td>
+                                            <td><?php echo $interest; ?></td>
                                         </tr>
 
                                         <tr>
@@ -235,7 +255,11 @@ if(!empty($id) && is_numeric($id) ){
                         </div>
 
                     </div>
-                    <?php } ?>
+                    <?php }
+
+                        }else{?>
+                        <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
+                    <?php }?>
                     <div class="clearfix"></div>
                     <h3 class="text-center">Personal Loan</h3>
                     <div class="col-md-6">
