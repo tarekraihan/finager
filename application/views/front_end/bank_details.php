@@ -1,5 +1,8 @@
 <?php
 $id=$this->uri->segment(3, 0);
+if(empty($id)){
+    $id = rand(8,50);
+}
 if(!empty($id) && is_numeric($id) ){
     $institution_info = $this->Front_end_select_model->Select_bank_non_bank_info_by_id($id,0);
     $home_loan = $this->Front_end_select_model->select_all_home_loan_by_bank_non_bank_id($id,0);
