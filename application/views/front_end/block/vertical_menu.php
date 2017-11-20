@@ -1466,7 +1466,7 @@
 																								<span class="focus-text">SND Account</span> is an interest bearing deposit where advance notice of 7 to 30 days required for amount withdrawal.
 																							</p>
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/snd">Find All SND Here</a>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/snd">Find All SND Account Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
