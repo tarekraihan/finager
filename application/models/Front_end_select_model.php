@@ -592,8 +592,18 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
 
     }
-    public function select_all_education_loan_by_bank_non_bank_id($id){
-        $sql="SELECT education_loan_info.*,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo  FROM `education_loan_info` LEFT JOIN card_bank on card_bank.id=education_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id  WHERE education_loan_info.bank_id={$id}";
+    public function select_all_education_loan_by_bank_non_bank_id($id,$non_bank){
+        if($non_bank == 1){
+            $column = 'general_non_bank.non_bank_name, general_non_bank.bank_logo';
+            $join = 'LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id';
+            $where = "education_loan_info.non_bank_id={$id}";
+        }else{
+            $column = 'card_bank.bank_name,card_bank.bank_logo';
+            $join = 'LEFT join card_bank on card_bank.id=education_loan_info.bank_id';
+            $where = "education_loan_info.bank_id={$id}";
+        }
+
+        $sql="SELECT education_loan_info.* , tenure1.tenure as min_tenure,tenure2.tenure as max_tenure , {$column} FROM `education_loan_info`  LEFT JOIN education_loan_tenure tenure1 ON tenure1.id= education_loan_info.min_term LEFT JOIN education_loan_tenure tenure2 ON tenure2.id= education_loan_info.max_term  {$join} WHERE {$where}";
         $query = $this->db->query($sql);
         return $query;
     }

@@ -8,7 +8,7 @@ if(!empty($id) && is_numeric($id) ){
     $home_loan = $this->Front_end_select_model->select_all_home_loan_by_bank_non_bank_id($id,0);
     $personal_loan = $this->Front_end_select_model->select_all_personal_loan_by_bank_non_bank_id($id,0);
     $auto_loan = $this->Front_end_select_model->select_all_auto_loan_by_bank_non_bank_id($id,0);
-    $education_loan = $this->Front_end_select_model->select_all_education_loan_by_bank_non_bank_id($id);
+    $education_loan = $this->Front_end_select_model->select_all_education_loan_by_bank_non_bank_id($id,0);
     //pr($education_loan->result());die;
 
 
@@ -128,7 +128,7 @@ if(!empty($id) && is_numeric($id) ){
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Routing No:</b><br/>
-                            <a href="#RoutingNoList" aria-controls="settings" role="tab" data-toggle="tab"><?php echo $institution_info['routing_no']; ?></a>
+                            <!--<a href="#RoutingNoList" aria-controls="settings" role="tab" data-toggle="tab">--><?php echo $institution_info['routing_no']; ?><!--</a>-->
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@ if(!empty($id) && is_numeric($id) ){
                 <li role="presentation"><a href="#Services" aria-controls="settings" role="tab" data-toggle="tab">Services</a></li>
                 <li role="presentation"><a href="#ScheduleCharges" aria-controls="settings" role="tab" data-toggle="tab">Schedule of Charges</a></li>
                 <li role="presentation"><a href="#InterestRate" aria-controls="settings" role="tab" data-toggle="tab">Interest Rate</a></li>
-                <li role="presentation"><a href="#RoutingNoList" aria-controls="settings" role="tab" data-toggle="tab">Routing No List</a></li>
+<!--                <li role="presentation"><a href="#RoutingNoList" aria-controls="settings" role="tab" data-toggle="tab">Routing No List</a></li>-->
             </ul>
 
             <!-- Tab panes -->
@@ -215,7 +215,7 @@ if(!empty($id) && is_numeric($id) ){
                     <?php
                     if(count($home_loan->result()) > 0){
                     foreach($home_loan->result() as $home ) {
-                        $interest =($home->is_fixed =='1')? $home->interest_rate_fixed.' % (Fixed)' : $home->interest_rate_min.'% (Min), <br> '.$home->interest_rate_max.'% (Max)';
+                        $interest =($home->is_fixed =='1')? $home->interest_rate_fixed.' % ' : $home->interest_rate_min.'% (Min), <br> '.$home->interest_rate_max.'% (Max)';
                         ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
@@ -227,31 +227,31 @@ if(!empty($id) && is_numeric($id) ){
                                 <table class="table table-bordered">
                                     <tbody>
                                         <tr>
-                                            <td>Loan type:</td>
+                                            <td><b>Loan type:</b></td>
                                             <td> <?php echo $home->home_loan_looking_for; ?></td>
                                         </tr>
 
                                         <tr>
-                                            <td>Minimum loan amount:</td>
+                                            <td><b>Minimum loan amount:</b></td>
                                             <td> BDT <?php echo number_format( $home->min_loan_amount ); ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Maximum loan amount:</td>
+                                            <td><b>Maximum loan amount:</b></td>
                                             <td> BDT <?php echo number_format( $home->max_loan_amount ); ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Interest rate:</td>
+                                            <td><b>Interest rate:</b></td>
                                             <td><?php echo $interest; ?></td>
                                         </tr>
 
 
                                         <tr>
-                                            <td>Minimum loan period:</td>
+                                            <td><b>Minimum loan period:</b></td>
                                             <td> N/A</td>
                                         </tr>
 
                                         <tr>
-                                            <td>Maximum loan period:</td>
+                                            <td><b>Maximum loan period:</b></td>
                                             <td> N/A</td>
                                         </tr>
                                     </tbody>
@@ -270,7 +270,8 @@ if(!empty($id) && is_numeric($id) ){
                     <?php
                     if(count($personal_loan->result()) > 0){
                     foreach($personal_loan->result() as $personal ) {
-                    $interest =($personal->is_fixed =='1')? $personal->interest_rate_fixed.' % (Fixed)' : $personal->interest_rate_min.'% (Min), <br> '.$personal->interest_rate_max.'% (Max)';
+                        //pr($personal);die;
+                    $interest =($personal->is_fixed =='1')? $personal->interest_rate_fixed.' % ' : $personal->interest_rate_min.'% (Min), <br> '.$personal->interest_rate_max.'% (Max)';
                     ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
@@ -278,19 +279,23 @@ if(!empty($id) && is_numeric($id) ){
                                 <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $personal->bank_logo; ?>" alt="AB Bank Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4><?php echo $personal->personal_loan_looking_for;?></h4><br/>
+                                <h4><?php echo $personal->personal_loan_name;?></h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
                                         <tr>
-                                            <td>Minimum loan amount:</td>
-                                            <td><?php echo $personal->min_loan_amount;?></td>
+                                            <td><b>Loan Type:</b></td>
+                                            <td><?php echo $personal->personal_loan_looking_for;?></td>
                                         </tr>
                                         <tr>
-                                            <td>Maximum loan amount:</td>
-                                            <td><?php echo $personal->max_loan_amount;?></td>
+                                            <td><b>Minimum loan amount:</b></td>
+                                            <td>BDT <?php echo number_format( $personal->min_loan_amount );?></td>
                                         </tr>
                                         <tr>
-                                            <td>Interest rate:</td>
+                                            <td><b>Maximum loan amount:</b></td>
+                                            <td>BDT <?php echo number_format($personal->max_loan_amount);?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Interest rate:</b></td>
                                             <td><?php echo $interest;?></td>
                                         </tr>
                                     </tbody>
@@ -307,7 +312,8 @@ if(!empty($id) && is_numeric($id) ){
                     <?php
                     if(count($auto_loan->result()) > 0){
                     foreach($auto_loan->result() as $auto ) {
-                    $interest =($auto->is_fixed =='1')? $auto->interest_rate_fixed.' % (Fixed)' : $auto->interest_rate_min.'% (Min), <br> '.$auto->interest_rate_max.'% (Max)';
+                        //pr($auto);die;
+                    $interest =($auto->is_fixed =='1')? $auto->interest_rate_fixed.' %' : $auto->interest_rate_min.'% (Min), <br> '.$auto->interest_rate_max.'% (Max)';
                     ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
@@ -315,20 +321,28 @@ if(!empty($id) && is_numeric($id) ){
                                 <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $auto->bank_logo; ?>" alt="AB Bank Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4><?php echo $auto->i_want;?></h4><br/>
+                                <h4><?php echo $auto->auto_loan_name;?></h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
                                         <tr>
-                                            <td>Minimum loan amount:</td>
-                                            <td><?php echo $auto->min_loan_amount;?></td>
+                                            <td><b>Loan Type :</b></td>
+                                            <td><?php echo $auto->i_want;?></td>
                                         </tr>
                                         <tr>
-                                            <td>Maximum loan amount:</td>
-                                            <td><?php echo $auto->max_loan_amount;?></td>
+                                            <td><b>Minimum loan amount:</b></td>
+                                            <td>BDT <?php echo number_format($auto->min_loan_amount);?></td>
                                         </tr>
                                         <tr>
-                                            <td>Interest rate:</td>
+                                            <td><b>Maximum loan amount:</b></td>
+                                            <td>BDT <?php echo number_format($auto->max_loan_amount);?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Interest rate:</b></td>
                                             <td><?php echo $interest;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Minimum Down payment:</b></td>
+                                            <td><?php echo $auto->downpayment;?> %</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -340,44 +354,60 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
+                    <h3 class="text-center">Education Loan</h3>
                     <?php
                     if(count($education_loan->result()) > 0){
                     foreach($education_loan->result() as $education ) {
-                    $interest =($education->is_fixed =='1')? $education->interest_rate_fixed.' % (Fixed)' : $education->interest_rate_min.'% (Min), <br> '.$education->interest_rate_max.'% (Max)';
+                        //pr($education);die;
+                    $interest =($education->is_fixed =='1')? $education->fixed_interest.' %' : $education->min_interest.'% (Min), <br> '.$education->max_interest.'% (Max)';
                     ?>
-                    <h3 class="text-center">Education Loan</h3>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
                                 <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $education->bank_logo; ?>" alt="AB Bank Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4>AB Bank Reconditioned Car Loan</h4><br/>
+                                <h4><?php echo $education->loan_name;?></h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
-                                    <tr>
-                                        <td>Minimum loan amount:</td>
-                                        <td>Payable Amount</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Maximum loan amount:</td>
-                                        <td>Down Payment</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Interest rate:</td>
-                                        <td>Down Payment</td>
-                                    </tr>
+                                        <tr>
+                                            <td><b>Minimum loan amount:</b></td>
+                                            <td>BDT <?php echo number_format($education->min_loan_amount);?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Maximum loan amount:</b></td>
+                                            <td>BDT <?php echo number_format($education->max_loan_amount);?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Interest rate:</b></td>
+                                            <td><?php echo $interest;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Minimum Down-payment:</b></td>
+                                            <td><?php echo ($education->down_payment == 'N/A') ? 'Not Applicable' : $education->down_payment.'%';?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Min Period:</b></td>
+                                            <td><?php echo $education->min_tenure.' Year';?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Max Period:</b></td>
+                                            <td><?php echo $education->max_tenure.' Years';?></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-
                     <?php }
                     }else{?>
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
+                    <div class="clearfix"></div>
+                    <br/>
+                    <br/>
                 </div>
+
                 <div role="tabpanel" class="tab-pane" id="Investment">
                     <h3 class="text-center">FDR</h3>
                     <div class="col-md-6">
