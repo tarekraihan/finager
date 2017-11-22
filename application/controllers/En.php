@@ -703,6 +703,15 @@ class En extends CI_Controller {
 
     }
 
+    public function bank_details_landing(){
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/bank_details_landing');
+        $this->load->view('front_end/block/footer');
+
+    }
+
     public function export_import(){
         $this->load->driver('cache');
         $this->cache->file->save('export_import', 'export_import', 1000);

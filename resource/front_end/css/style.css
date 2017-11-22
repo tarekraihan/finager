@@ -4054,6 +4054,69 @@ a .auto_button.flash-button {
 
 
 /*Bank Details Page*/
+.bank_details_landing_head{
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #5aafd1;
+    background-color: #c1c1c1;
+}
+.bank_details_landing_head p {
+    padding: 8px 0 0px 25px;
+    font-weight: bold;
+}
+.bdetails_bd_bank{
+    margin-top: 5px;
+    margin-left: -15px;
+    height: 145px;
+}
+.bdetails_text{
+    text-align: justify;
+    font-size: 16px;
+    margin-left: -30px;
+    margin-top: 5px;
+}
+.bank_details_landing_head2{
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #5aafd1;
+    background-color: #c1c1c1;
+    margin-left: -15px;
+}
+.bank_details_landing_head2 p {
+    padding: 16px 0 0px 25px;
+    font-weight: bold;
+}
+.bd_landing_details {
+    margin-top: 5px;
+}
+.bd_sorting {
+    margin-top: 22px;
+    margin-bottom: 20px;
+}
+.bd_sorting span{
+    display: inline;
+    color: #fff;
+    background-color: #5aafd1;
+    border: 1px solid gray;
+    border-radius:5px;
+    margin: 12px;
+    padding: 15px 18px;
+}
+.bd_sorting span a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+.bank_details_landing_box img {
+    height: 136px;
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+.bank_details_landing_box{
+    border:1px solid #dddddd;
+    margin: 10px;
+}
+
 #bank_details{
     margin-top:10px;
 }
