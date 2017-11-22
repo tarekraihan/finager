@@ -196,7 +196,7 @@ class En extends CI_Controller {
     public function home_loan(){
         $this->load->driver('cache');
         $this->cache->file->save('home_loan_landing', 'home_loan_landing', 100);
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header');
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/home_loan_landing');

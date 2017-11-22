@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid">
     <div class="bank_details_landing_head">
         <p>BANKS IN THE BANGLADESH</p>
@@ -58,34 +60,23 @@
                 <p>BIGGEST BANKS IN BANGLADESH</p>
             </div>
             <div class="bank_details_landing_logo">
+                <?php
+                $this->Common_model->order_column = 'bank_name';
+                $this->Common_model->order_type = 'ASC';
+                $this->Common_model->table_name = 'card_bank';
+                $query=$this->Common_model->select_all();
+
+                foreach ($query->result() as $row){
+                    //pr($row);
+                ?>
                 <div class="col-md-3">
                     <div class="bank_details_landing_box">
-                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/AB-Bank.png">
-                        <h5 class="text-center">AB Bank LTD.</h5>
-                        <p class="text-center">56 Office in 8 City</p>
+                        <a href="<?php echo base_url();?>en/bank_details/<?php echo $row->id;?>" > <img class="text-center" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" title="<?php echo $row->known_as; ?>"></a>
+                        <h5 class="text-center"><?php echo $row->bank_name; ?></h5>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="bank_details_landing_box">
-                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/AB-Bank.png">
-                        <h5 class="text-center">AB Bank LTD.</h5>
-                        <p class="text-center">56 Office in 8 City</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bank_details_landing_box">
-                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/AB-Bank.png">
-                        <h5 class="text-center">AB Bank LTD.</h5>
-                        <p class="text-center">56 Office in 8 City</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="bank_details_landing_box">
-                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/AB-Bank.png">
-                        <h5 class="text-center">AB Bank LTD.</h5>
-                        <p class="text-center">56 Office in 8 City</p>
-                    </div>
-                </div>
+                <?php } ?>
+
             </div>
         </div>
         <div class="col-md-3">

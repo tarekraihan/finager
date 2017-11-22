@@ -22,9 +22,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/responsive.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>resource/front_end/css/frontCard.css" />
-	<script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
-   <!--  <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script> -->
-	<script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
+    <script src="<?php echo base_url();?>resource/front_end/js/jquery-1.11.3.js"></script>
+    <!--  <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script> -->
+    <script src="<?php echo base_url();?>resource/front_end/js/codex-fly.js"></script>
     <script src="<?php echo base_url();?>resource/front_end/js/booNavigation.js"></script>
 
     <style>

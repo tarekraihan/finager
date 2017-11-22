@@ -149,8 +149,8 @@ if(!empty($id) && is_numeric($id) ){
                 <li role="presentation"><a href="#Cards" aria-controls="settings" role="tab" data-toggle="tab">Cards</a></li>
                 <li role="presentation"><a href="#Accounts" aria-controls="settings" role="tab" data-toggle="tab">Accounts</a></li>
                 <li role="presentation"><a href="#Services" aria-controls="settings" role="tab" data-toggle="tab">Services</a></li>
-                <li role="presentation"><a href="#ScheduleCharges" aria-controls="settings" role="tab" data-toggle="tab">Schedule of Charges</a></li>
-                <li role="presentation"><a href="#InterestRate" aria-controls="settings" role="tab" data-toggle="tab">Interest Rate</a></li>
+<!--                <li role="presentation"><a href="#ScheduleCharges" aria-controls="settings" role="tab" data-toggle="tab">Schedule of Charges</a></li>-->
+<!--                <li role="presentation"><a href="#InterestRate" aria-controls="settings" role="tab" data-toggle="tab">Interest Rate</a></li>-->
 <!--                <li role="presentation"><a href="#RoutingNoList" aria-controls="settings" role="tab" data-toggle="tab">Routing No List</a></li>-->
             </ul>
 
