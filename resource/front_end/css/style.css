@@ -1,4868 +1,9754 @@
 @charset "utf-8";
+
 /* CSS Document */
+
 body {
+
     font-size: 15px !important;
+
     /*font-family: 'Ubuntu', sans-serif;*/
+
     font-family: 'Lato', sans-serif;
+
     font-weight: 500;
+
 }
+
 *{
+
     margin:0;
+
     padding:0;
+
     /*font-family: 'Ubuntu', sans-serif;*/
+
     font-family: 'Lato', sans-serif;
+
     font-weight: 500;
+
 }
+
+
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+
     /*font-family: 'Ubuntu', sans-serif;*/
+
     font-family: 'Lato', sans-serif;
+
     font-weight: 600 !important;
+
 }
+
 .no-list-style{
+
     list-style:none;
+
 }
+
 .com_title {
+
     font-family: 'Lato', sans-serif;
+
     font-size: 58px;
+
 }
+
 .bottom{
+
     bottom:0;
+
 }
+
+
 
 /*vertical menu START*/
+
 .sidebar-nav li a{
+
     color: #fff !important;
+
     font-size: 12px;
+
     padding: 5px 20px !important;
+
 }
+
 .sidebar-nav .dropdown-header {
+
     display: none !important;
+
 }
+
 .nav>li>a:focus, .nav>li>a:hover{
+
 	background:#337ab7 !important;
+
 }
+
 /*Vertical menu END*/
 
+
+
 /* for bootstrap horizontal menu  */
+
 .margin_botton_30{
+
     margin-bottom: 30px;
+
 }
+
 .margin-bottom-n70{
+
     margin-bottom: -70px !important;
+
 }
+
 .w100{
+
     width: 100%;
+
 }
+
 .navbar-default {
+
     bacground-color: transparent;
+
     border-color: transparent;
+
     margin:0px auto;
+
 }
+
 .navbar-default .navbar-nav>li>a {
+
     color: #000;
+
     text-transform:uppercase;
+
     font-size:14px;
+
     margin-left:-8px;
+
     font-weight:bold;
+
 }
+
 .navbar-default .navbar-nav>li>a:hover{
+
     color:#67B5D4;
+
 }
+
 .navbar-default .navbar-nav>li>a:focus{
+
     color:#000;
+
 }
+
 .top-menu{
+
     display:none;
+
 }
+
 .slider_img{
+
     width:auto;
+
     height:135px;
+
 }
+
 #top-page {
+
     width: 100%;
+
     height: 58px;
+
     border-bottom: 2px solid #a2a2a2;
+
 }
+
 .header{
+
     padding-top: 0px !important;
+
 }
+
 .logo{
+
     width:120px;
+
 }
+
 .login{
+
     font-family:"Eras Demi ITC";
+
     font-weight:bold;
+
     font-size:18px;
+
     margin-right:80px;
+
 }
+
 .header-right{
+
     margin-top:8px;
+
 }
+
 .hr-bar{
+
     width:100%;
+
     height:3px;
+
 }
+
 .footer-text p{
+
     margin-top:7px;
+
 }
+
 .find-bar {
+
     margin-top: 15%;
+
     text-align: center;
+
 }
+
+
 
 .device-bg{
+
     width:100%;
+
     height:350px;
+
     background-color:#9e9e9e;
+
     background-attachment:fixed;
+
 }
+
 .device-img{
+
     height:auto;
+
     width:100%;
+
     margin-top:53px;
+
 }
+
 @media only screen and (min-width: 1281px){
+
 	.hamburger.is-open{
+
 		right: 200px !important;
+
 	}
+
 }
+
 @media only screen and (max-width: 1280px){
+
 	.hamburger.is-open{
+
 		right: 195px !important;
+
 	}
+
 }
+
 .hamburger {
+
     top: 11px !important;
+
     width: 26px !important;
+
 }
+
 /* Category Icon */
+
 #CategoryIcon {
+
     background: rgba(233, 238, 245, 0.33);
+
     box-shadow: 0px 0px 5px 1px #dedede;
+
 }
+
 #CategoryIcon{
+
     height:500px;
+
     width:auto;
+
 }
+
 .catagory-icon{
+
     margin-top:20px;
+
 }
+
 .catagory-icon h1 {
+
     text-align: center;
+
     font-size: 45px;
+
     margin: 30px;
+
 }
+
 .catagory-icon p{
+
     font-size:15px;
+
     font-weight:bold;
+
     margin-top:10px;
+
     color:gray;
+
 }
+
 .Cicon{
+
     text-align:center;
+
     margin:20px 10px;
+
 }
+
+
 
 .Cicon a{
+
     text-decoration:none;
+
 }
+
 .Cicon img{
+
     width:100px;
+
     -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+
     filter: grayscale(100%);
+
 }
+
 .Cicon a:hover img{
+
     -webkit-filter: grayscale(0%);
+
     filter:grayscale(0%);
+
 }
+
 .Cicon a:hover p{
+
     color: #333;
+
 }
+
 section#header2 {
+
     padding: 30px 0;
+
 }
+
 /*for forth page*/
+
 #forth-page{
+
     clear:both;
+
     margin-bottom:25px;
+
 }
+
 .card-deposit h1{
+
     font-size:50px;
+
     color:#3390b6;
+
     font-family:SaintAndrewsQueen;
+
 }
+
 .card-deposit p{
+
     color:#000;
+
     text-align:justify;
+
     font-family:Kalpurush Regular;
+
 }
+
 .see-more{
+
     font-family:SaintAndrewsQueen;
+
     color:#3390b6;
+
     font-weight:bolder;
+
 }
+
 .btn-aplly{
+
     float:right;
+
     margin-bottom:10px;
+
 }
+
 @font-face {
+
     font-family: SaintAndrewsQueen;
+
     src:url(../fonts/SaintAndrewsQueen.ttf);
+
 }
+
 /*for slider*/
+
 .carousel-indicators .active {
+
     width: 15px;
+
     height: 15px;
+
     margin: 0;
+
     background-color: #9a9a9b;
+
 }
+
 .carousel-indicators {
+
     bottom: -60px;
+
 }
+
 .carousel-indicators li{
+
     background-color:#cdcece;
+
     width:15px;
+
     height: 15px;
+
     border-radius:25px;
+
 }
+
 .carousel-inner>.item img{
+
     margin-left:auto;
+
     margin-right: auto;
+
     float: none;
+
 }
+
 .remittance{
+
     font-size:30px;
+
 }
+
 .rem-readmore{
+
     float:right;
+
     margin-right:180px;
+
 }
+
 .rem-readmore a{
+
     text-decoration:none;
+
 }
+
+
 
 /*for card page*/
+
 .card_left_bar {
+
     border: 1px solid #EAEAEA;
+
     /*padding: 6px;*/
+
     padding: 0px;
+
 }
+
 .card_right_bar {
+
     background-color: #F9F9F9;
+
     padding: 15px 15px;
+
     margin-bottom: 15px;
+
     clear: both;
+
     margin-left: 0 !important;
+
     margin-right: 0 !important;
+
     border: 1px solid #EAEAEA;
+
     box-shadow: 0px 0px 2px 2px #f2f2f2;
+
 }
+
 .card_right_bar:hover {
+
     box-shadow: 0px 0px 9px 3px #808080;
+
 }
+
 .w20{
+
     width:20% !important;
+
 }
+
+
 
 .card_text2 p {
+
     font-size: 13px;
+
     position: absolute;
+
     bottom: 0;
+
     left: 0;
+
     margin: 0;
+
 }
 
+
+
 .card_description{
+
     font-size:12px;
+
 }
+
 .cc_menu{
+
     background-image:url(../images/cc_menu_bg.png);
+
 }
+
 .query_radio{
+
     margin-left:14px;
+
     margin-bottom:10px;
+
 }
+
+
 
 .btnCardApply{
+
     margin-left:9px;
+
     margin-top:0px;
+
 }
+
 .card_text1{
+
     margin-top:6px;
+
 }
+
 .card_text2 {
+
     margin-top: 6px;
+
     position: relative;
+
     min-height: 100px;
+
 }
+
 .card_text2 h5{
+
     font-weight:bold;
+
     font-size: 12px;
+
 }
+
 .more_info_icon{
+
     margin-top:20px;
+
     font-size:14px;
+
 }
+
 .more_info_icon a{
+
     text-decoration:none;
+
 }
+
 .more_info_icon i{
+
     color:#2c8aca;
+
 }
+
 #tab{
+
     margin-bottom:20px;
+
 }
+
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+
     border-bottom:1px solid #5AAFD1;
+
 }
+
 .nav-tabs {
+
     border-bottom: none;
+
 }
+
 .nav-tabs>li>a{
+
     border-radius:0;
+
 }
+
 .card_more_info {
+
     background-color: #FBFBFB;
+
     margin-bottom: 20px;
+
     margin-top: -14px;
+
     border: 1px solid #EAEAEA;
+
     box-shadow: 0px 0px 2px 2px #f2f2f2;
+
 }
+
 .tab-content{
+
     margin-top:10px;
+
 }
+
 .tab_body{
+
     margin-left:20px;
+
 }
+
 .tab-pane h3{
+
     margin-left:30px;
+
 }
+
 .tab_td_text{
+
     margin: 10px 0 0 5px;
+
 }
+
 .tab_body_icon li{
+
     list-style:circle url("../images/Icon-For-Credit-Card 2.2.png");
+
 }
+
 .tab_body_icon2 li{
+
     list-style:circle url("../images/Icon-For-Credit-Card2.png");
+
     list-style-position:initial;
+
 }
+
 .more_filter{
+
     border:1px solid #ececec;
+
     text-align:center;
+
 }
+
 .more_filter a{
+
     text-decoration:none;
+
 }
+
 .more_filter p{
+
     margin-top:10px;
+
 }
+
 .card_btn_apllication{
+
     margin:30px 24px;
+
 }
+
 .rating{
+
     font-size:12px;
+
 }
+
+
 
 /* for custome radio & checkbox */
+
 .material_check_radio {
+
     width: 15px;
+
     height: 15px;
+
     background-color: #fff;
+
 }
+
 .material_check_radio:after {
+
     width: 5px;
+
     height: 5px;
+
     left: 3px;
+
     top: 3px;
+
 }
+
 .material_radio_group {
+
     cursor: pointer;
+
     font-size: 12px !important;
+
 }
+
 .material_label_checkbox:before {
+
     width: 22px;
+
     height: 22px;
+
     font-size:12px;
+
 }
+
 .material_label_checkbox{
+
     font-size:12px;
+
     font-weight: 700;
+
     line-height: 14px;
+
 }
+
 /* for Card Compare Page */
+
 .card_compare_head{
+
     font-family:SaintAndrewsQueen;
+
     font-size:60px;
+
 }
+
 .compare_btnApplication{
+
     margin-left:39px;
+
 }
+
 .compare_btnApplication1{
+
     margin-left: 35px;
+
     margin-top: 121px;
 
+
+
 }
+
+
 
 .Card-Compare-hr2{
+
     width: 42%;
+
 }
+
+
 
 .Card-Compare-hr3{
+
     width: 45%;
+
 }
+
 .Card-Compare-hr4{
+
     width: 42.8%;
+
 }
+
+
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+
     border-top: none !important;
+
 }
+
+
 
 .comparison_email{
+
     width: 33.33333333%;
+
     height:auto;
+
     margin: 0px auto;
+
 }
+
+
 
 /* for Card Details Page */
+
 .card_details_head{
+
     height:auto;
+
     width:100%;
+
     background-color:#DEDDDD;
+
     color:#000;
+
     text-align:center;
+
     border-bottom:2px solid #9D9A9A;
+
     margin-bottom:10px;
+
     font-size:11px;
+
     padding-top:3px;
+
     font-weight:bold;
+
 }
+
 .card_details_ImgCard{
+
     width:165px;
+
     height:auto;
+
 }
+
 .card_details_features{
+
     font-size:11px;
+
     text-align:justify;
+
 }
+
 .card_details_Btransfer{
+
     text-align:center;
+
 }
+
 .card_details_head2{
+
     font-size:12px;
+
     font-weight:bold;
+
 }
+
 .add_comp_icon{
+
     margin-top:20px;
+
     font-size:15px;
+
 }
+
 .add_comp_icon a{
+
     text-decoration:none;
+
 }
+
 .add_comp_icon i{
+
     color:#2c8aca;
+
 }
+
 #card_details_2nd{
+
     margin-top:40px;
+
 }
+
 .card_details_pronsCons{
+
     background-color:#F2F2F3;
+
     padding:10px;
+
     margin-top:10px;
+
     border-bottom:2px solid #C1C1C0;
+
 }
+
 .card_details_pronsCons_head{
+
     margin-left:18px;
+
 }
+
 .prosCons_body{
+
     margin-left:20px;
+
 }
+
 .prosCons_body b{
+
     font-size:15px;
+
 }
+
 .prosCons_body2{
+
     margin-left:20px;
+
 }
+
 .prosCons_body2 ul li{
+
     font-size:12px;
+
     margin-bottom:10px;
+
 }
+
 .prosConsHr{
+
     height:2px;
+
     width:auto;
+
     background-color:#C1C1C0;
+
     margin:5px 0;
+
 }
+
 .userReview_body{
+
     text-align:center;
+
 }
+
 .userReviewLeft1{
+
     font-size:46px;
+
 }
+
 .userReviewLeft2{
+
     font-size:22px;
+
     color:#999999;
+
 }
+
 .userReviewLeft3{
+
     font-size:12px;
+
     color:#999999;
+
     text-decoration:underline;
+
 }
+
 .userreviw_note{
+
     font-size:12px;
+
     color:#999999;
+
 }
+
 .prosCons_body ul li {
+
     list-style-type: none;
+
 }
+
 .prosCons_body ol, ul {
+
     padding-left:30px;
+
 }
+
 .w20{
+
     width:20% !important;
+
 }
+
+
 
 .card_text2 p {
+
     font-size: 13px;
+
     position: absolute;
+
     bottom: 0;
+
     left: 0;
+
     margin: 0;
+
 }
+
+
 
 .card_description{
+
     font-size:12px;
+
 }
+
+
 
 .cc_menu{
+
     background-image:url(../images/cc_menu_bg.png);
+
 }
+
 .query_radio{
+
     margin-left:14px;
+
 }
+
+
 
 .card_text1{
+
     margin-top:6px;
+
 }
+
+
 
 .card_text2 h5{
+
     font-weight:bold;
+
     font-size: 12px;
+
 }
+
 .more_info_icon{
+
     margin-top:20px;
+
     font-size:14px;
+
 }
+
 .more_info_icon a{
+
     text-decoration:none;
+
 }
+
 .more_info_icon i{
+
     color:#2c8aca;
+
 }
+
 #tab{
+
     margin-bottom:20px;
+
 }
+
+
 
 .tab-content{
+
     margin-top:10px;
+
 }
+
 .tab_body{
+
     margin-left:20px;
+
 }
+
 .tab-pane h3{
+
     margin-left:30px;
+
 }
+
 .tab_td_text{
+
     margin: 10px 0 0 5px;
+
 }
+
 .more_filter{
+
     border:1px solid #ececec;
+
     text-align:center;
+
 }
+
 .more_filter a{
+
     text-decoration:none;
+
 }
+
 .more_filter p{
+
     margin-top:10px;
+
 }
+
+
 
 .rating{
+
     font-size:12px;
+
 }
 
+
+
 .prosCons_body2 table {
+
     width: 100% !important;
+
 }
+
+
+
 
 
 /*Compare section starts*/
+
 .hiden_div {
+
     height: 130px;
+
     width: 100%;
+
     border-radius: 0;
+
     background-color: #EAEAEC;
+
 }
+
 .cart_anchor {
+
     float: left;
+
     vertical-align: top;
+
     background: url('../images/card-frame.png') no-repeat center center / 100% auto;
+
     width: 173px;
+
     height: 110px;
+
     margin: 10px;
+
     position:relative;
+
 }
+
 .cart_anchor01 {
+
     float: left;
+
     vertical-align: top;
+
     background: url('../images/card-frame.png') no-repeat center center / 100% auto;
+
     width: 173px;
+
     height: 110px;
+
     margin: 10px;
+
     position:relative;
+
 }
+
+
 
 .card-holder {
+
     background-color: rgb(93, 93, 94);
+
     padding: 0;
+
     border-radius: 0px;
+
     height: 130px;
+
     width: 100%;
+
     border-radius: 17px;
-}
-.common-btn.v-middle-btn {
-    background-color: #F9F9F9;
-    border-radius: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: 32px;
-    vertical-align: middle;
-    margin: auto;
-    font-weight: 600;
+
 }
 
-.hidden_div {
-    height: 130px;
-    width: 100%;
+.common-btn.v-middle-btn {
+
+    background-color: #F9F9F9;
+
     border-radius: 0;
-    background-image: url(../images/card-holder.png);
-    background-repeat: no-repeat;
-}
-.hidden_div_container {
+
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+
+    top: 0;
+
     bottom: 0;
-    float: none;
-    display: block;
-    width: 600px;
+
+    height: 32px;
+
+    vertical-align: middle;
+
+    margin: auto;
+
+    font-weight: 600;
+
 }
-.compare-cross-btn {
-    height: 20px;
-    position: absolute;
-    right: -5px;
-    top: -5px;
-    cursor:pointer;
-}
-/*
-#hiden_div {
-    position: fixed;
-    z-index: 999;
-    right: 0;
+
+
+
+.hidden_div {
+
+    height: 130px;
+
     width: 100%;
+
+    border-radius: 0;
+
+    background-image: url(../images/card-holder.png);
+
+    background-repeat: no-repeat;
+
 }
-*/
+
+.hidden_div_container {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    margin: 0 auto;
+
+    bottom: 0;
+
+    float: none;
+
+    display: block;
+
+    width: 600px;
+
+}
+
+.compare-cross-btn {
+
+    height: 20px;
+
+    position: absolute;
+
+    right: -5px;
+
+    top: -5px;
+
+    cursor:pointer;
+
+}
+
+/*
+
 #hiden_div {
+
+    position: fixed;
+
+    z-index: 999;
+
+    right: 0;
+
+    width: 100%;
+
+}
+
+*/
+
+#hiden_div {
+
 	position: fixed;
+
 	z-index: 999;
+
 	right: 0;
+
 	width: 100%;
+
     bottom:0;
+
     display: none;
+
 }
+
 .hiddenDown{
+
     bottom: -158px;
+
 }
+
 .hiddenHalfDown{
+
     bottom:-68px !important;
+
 }
+
 /*Compare section end*/
+
 /*hidden div*/
 
 
+
+
+
 /* for Card Compare Page====Saddam Start===== */
+
 .card_compare_head{
+
     font-family:SaintAndrewsQueen;
+
     font-size:60px;
+
 }
+
 .compare_btnApplication{
+
     margin-left:39px;
+
 }
+
 .compare_btnApplication1{
+
     margin-left: 35px;
+
     margin-top: 121px;
 
+
+
 }
+
 .Card-Compare-hr{
+
     height:2px;
+
     width: 42%;
+
 }
+
 .Card-Compare-hr1{
+
     width: 44.9%;
+
 }
+
+
 
 .Card-Compare-hr3{
+
     width: 45.7%;
+
 }
+
 .Card-Compare-hr4{
+
     width: 42.8%;
+
 }
+
+
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+
     border-top: none !important;
-}
-.comparison_email{
-    width: 33.33333333%;
-    height:auto;
-    margin: 0px auto;
+
 }
 
-.compare_image{
-    width:250px;
-    height: auto;
+.comparison_email{
+
+    width: 33.33333333%;
+
+    height:auto;
+
+    margin: 0px auto;
+
 }
+
+
+
+.compare_image{
+
+    width:250px;
+
+    height: auto;
+
+}
+
 /*------Card compare Saddam End----------*/
+
+
+
 
 
 /*New edited for hidden div*/
 
+
+
 .full-card:last-child {
+
     margin-bottom: 140px;
+
 }
+
+
 
 /*for home loan */
+
 .home_loan_com_cal {
+
     /*margin-left: 288px !important;*/
+
     margin-top: -55px !important;
-}
-.home_loan_img{
-    max-width: 175px;
-    border: 1px solid #E1E1E1;
-}
-.full-wrapper{
-    border:1px solid gray;
-}
-.home_loan_left_bar{
-    border:2px solid #DADADA;
-}
-.home_loan_left_bar p{
-    border-bottom:1px solid #DADADA;
-    background-color:#DADADA;
-    padding-left:10px;
-}
-.no-margin-lr2 {
-    margin-right: 0 !important;
-}
-.home_loan_right_bar {
-    padding: 11px 0 0 0;
-    margin-bottom: 15px;
-    clear: both;
-    border: 2px solid #DADADA;
-}
-.home_loan_right_bar:hover{
-    box-shadow: 0px 0px 8px -2px #808080;
-}
-.loan_query{
-    padding:6px;
-    margin-bottom: 14px;
-}
-.Hloan_more_icon{
-    margin:10px;
-}
-.home_loan_more_info{
-    text-align:center;
-    font-size:12px;
-}
-.Hlborder{
-    border-right:2px solid #DADADA;
-}
-.home_loan_more_info h3{
-    color:gray;
-}
-.home_loan_button{
-    /* border-bottom:2px solid #DADADA; */
-    padding-bottom:10px;
-}
-.panel {
-    margin-bottom: 0px;
-    background-color: none;
-    /* border:none;  */
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
-}
-.pietd{
-    border-top:1px solid #DADADA;
-}
-.loan_div{
-    height:10px;
-    width:10px;
-    border-radius:50%;
-    border:1px solid gray;
+
 }
 
-#searchHomeLoan #pagination {
-    position: relative !important;
-    top: 0 !important;
-    margin-bottom: 50px;
+.home_loan_img{
+
+    max-width: 175px;
+
+    border: 1px solid #E1E1E1;
+
 }
+
+.full-wrapper{
+
+    border:1px solid gray;
+
+}
+
+.home_loan_left_bar{
+
+    border:2px solid #DADADA;
+
+}
+
+.home_loan_left_bar p{
+
+    border-bottom:1px solid #DADADA;
+
+    background-color:#DADADA;
+
+    padding-left:10px;
+
+}
+
+.no-margin-lr2 {
+
+    margin-right: 0 !important;
+
+}
+
+.home_loan_right_bar {
+
+    padding: 11px 0 0 0;
+
+    margin-bottom: 15px;
+
+    clear: both;
+
+    border: 2px solid #DADADA;
+
+}
+
+.home_loan_right_bar:hover{
+
+    box-shadow: 0px 0px 8px -2px #808080;
+
+}
+
+.loan_query{
+
+    padding:6px;
+
+    margin-bottom: 14px;
+
+}
+
+.Hloan_more_icon{
+
+    margin:10px;
+
+}
+
+.home_loan_more_info{
+
+    text-align:center;
+
+    font-size:12px;
+
+}
+
+.Hlborder{
+
+    border-right:2px solid #DADADA;
+
+}
+
+.home_loan_more_info h3{
+
+    color:gray;
+
+}
+
+.home_loan_button{
+
+    /* border-bottom:2px solid #DADADA; */
+
+    padding-bottom:10px;
+
+}
+
+.panel {
+
+    margin-bottom: 0px;
+
+    background-color: none;
+
+    /* border:none;  */
+
+    border-radius: 4px;
+
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+
+}
+
+.pietd{
+
+    border-top:1px solid #DADADA;
+
+}
+
+.loan_div{
+
+    height:10px;
+
+    width:10px;
+
+    border-radius:50%;
+
+    border:1px solid gray;
+
+}
+
+
+
+#searchHomeLoan #pagination {
+
+    position: relative !important;
+
+    top: 0 !important;
+
+    margin-bottom: 50px;
+
+}
+
+
+
 
 
 #searchHomeLoan #pagination>li{
+
     float: none;
+
 }
+
 #main-search-modal-close{
+
     outline: 0;
+
 }
+
 /* for home loan slider */
+
 .wrapper{
+
     margin-bottom:10px;
+
 }
+
 .wrapper p{
+
     margin-left:10px;
+
 }
+
 .slider-box {
+
     height: 60px;
+
     width: 515px;
+
     margin: 0 auto;
+
     float: none;
+
     background-color: #f3f3f3;
+
     position: relative;
+
 }
+
 .slider-rangebar {
+
     height: 10px;
+
     width: 465px;
+
     margin: 24px auto;
+
     float: none;
+
     border: 1px solid #aaaaaa;
+
     background: #ffffff;
+
     color: #222222;
+
     border-radius: 4px;
+
     position: absolute;
+
     margin-left: 30px;
+
 }
+
 #slider-button {
+
     height: 14px;
+
     width: 14px;
+
     margin: -3px auto;
+
     float: none;
+
     border: 1px solid #aaaaaa;
+
     border-radius: 4px;
+
     margin-left: 0px;
+
     background-color: #c2c2c2;
+
     position: absolute;
+
     cursor: pointer;
+
 }
+
 .slider-range-list {
+
     width: 458px;
+
     overflow: hidden;
+
     position: absolute;
+
     height: 30px;
+
     bottom: 0;
+
     margin-left: 27px;
+
 }
+
 .slider-range {
+
     list-style: none;
+
     width: 2500px;
+
     overflow: hidden;
+
     position: absolute;
+
     bottom: -10px;
+
     left: 0px;
+
     padding-left: 0;
+
 }
+
 .slider-range li{
+
     display: inline;
+
     width: auto;
+
     margin-right: 10px;
+
 }
+
 .prev, .next {
+
     width: 15px;
+
     font-size: 25px;
+
     position: absolute;
+
     cursor: pointer;
+
 }
+
 .prev {
+
     left: 15px;
+
     top: 12px;
+
 }
+
 .next {
+
     right: 0;
+
     top: 11px;
+
 }
+
 /* for home loan grap table */
+
 .pric_table {
+
     width: 100%;
+
     border-collapse: collapse;
+
     margin:50px auto;
+
 }
+
 .pric_table th {
+
     background: #3498db;
+
     color: white;
+
     font-weight: bold;
+
 }
+
 .pric_table td, th {
+
     padding: 10px;
+
     border: 1px solid #ccc;
+
     text-align: left;
+
     font-size: 18px;
+
 }
+
 .labels tr td {
+
     background-color: #2cc16a;
+
     font-weight: bold;
+
     color: #fff;
+
 }
+
 .label tr td label {
+
     display: block;
+
 }
+
 [data-toggle="toggle"] {
+
     display: none;
+
 }
+
 /* for home loan emi cal */
+
 .Hloan_emi_cal{
+
     border:1px solid #E2DBDB;
+
     margin:5px;
+
     padding:5px;
+
     border-radius:14px;
+
 }
+
 .loan_input {
+
     margin: 5px;
+
     height: 26px;
+
     width: 110px;
+
     border-radius:5px;
+
 }
+
 #chart1{
+
     width:100%;
+
 }
+
 /* for home loan compare page */
+
 .home_compare_div{
+
     border:1px solid #ddd;
+
     padding: 5px;
+
 }
+
 .compare_table td {
+
     width: 33%;
+
 }
+
 .home-loan-Compare-hr4{
+
     width: 38.5%;
+
 }
+
 .home-loan-Compare-hr5{
+
     width: 46%;
+
 }
+
 .loan-iframe{
+
     width:100%;
+
     height:auto;
+
     overflow:hidden;
+
 }
+
 .card_query{
+
     border-bottom: 2px solid #DADADA;
+
 }
+
 .card_query p {
+
     background-color: gray;
+
     padding: 4px 10px;
+
     color: #fff;
+
     font-weight: bold;
+
 }
+
 .calborder {
+
     width: 246px;
+
     border-bottom: 2px solid #DADADA;
+
 }
+
 .monthWrap .calborder {
+
     width: 244px;
+
 }
+
 .quest {
+
     font-size: 14px;
+
 }
+
 #alreadySaved .inputWrapper {
+
     margin: 0 0 5px 0;
+
 }
+
 #avgSave .inputWrapper {
+
     margin: -4px 0 0 8px;
+
 }
+
 #tenureType label {
+
     font-size: 16px;
+
     margin-top: 4px;
+
 }
+
 .slideWrapper {
+
     padding: 15px 20px 0 20px;
+
 }
+
 #interest .inputWrapper {
+
     margin: -3px 0 0 10px;
+
 }
+
 .calcSection {
+
     padding: 8px 0 0px 20px;
+
 }
+
 .btnHomeLoan {
+
     margin-top: 79px;
+
 }
+
+
 
 /* for credit card page */
+
 #credit_blog{
+
     margin: 30px 0 200px 0;
+
 }
+
 #credit_blog a{
+
     text-decoration:none;
+
 }
+
 #card {
+
     margin-top: 10px;
+
 }
+
 #creditCard_header{
+
     background-image:url(../images/CreaditCardmainpage.jpg);
+
     background-size:cover;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     width:100%;
+
     height:300px;
+
 }
+
 /* for debit card */
+
 #debitCard_header{
+
     background-image:url(../images/Debit-Card-Main-Page-Banner.jpg);
+
     background-size:cover;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     width:100%;
+
     height:300px;
+
 }
+
 /* for debit card compare */
+
 .Debit-Card-Compare-hr{
+
     height: 2px;
+
     width: 40.2%;
+
 }
+
 .Debit-Card-Compare-hr1 {
+
     width: 43.5%;
+
 }
+
 .Debit-Card-Compare-hr2{
+
     width: 40.7%;
+
 }
+
 .Debit-Card-Compare-hr4{
+
     width: 42%;
+
 }
+
 /*for home loan */
+
 #home_header{
+
     background-image:url(../images/HomeLoanMainPageBackground1680x320.jpg);
+
     background-size:cover;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     width:100%;
+
     height:300px;
+
     margin-bottom:6px;
+
 }
+
 .home-Compare-hr{
+
     height: 2px;
+
     width: 41.6%;
+
 }
+
 .home-Compare-hr2{
+
     width: 41.6%;
+
 }
+
 .home-Compare-hr3{
+
     width: 40%;
+
 }
+
 /* for personal loan compare */
+
 .Personal-Compare-hr1{
+
     width:41.5%;
+
 }
+
 .Personal-Compare-hr3{
+
     width:38.5%;
+
 }
+
 .Personal-Compare-hr4{
+
     width: 39.5%;
+
 }
+
 .Personal-Compare-hr5{
+
     width: 38.7%;
+
 }
+
 .Personal-Compare-hr6{
+
     width: 45.2%;
+
 }
+
+
 
 /* for personal loan */
+
 #personal_header{
+
     background-image:url(../images/Personal-Loan-Main-page-final.jpg);
+
     background-size:cover;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     width:100%;
+
     height:300px;
+
     margin-bottom: 6px;
+
 }
+
+
 
 #searchPersonalLoan #pagination {
+
     position: relative !important;
+
     top: 0 !important;
+
     margin-bottom: 50px;
+
 }
+
+
 
 #searchPersonalLoan #pagination>li{
+
     float: none;
+
 }
+
+
 
 .personal_loan_landing_button{
+
     background: #8D6E35; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #fff, #8D6E35); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #fff, #8D6E35); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #fff, #8D6E35); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #fff, #8D6E35); /* Standard syntax (must be last) */
+
     width: 180px;
+
     padding: 9px 20px;
+
     text-align: center;
+
     font-size: 16px;
+
 }
+
 a .personal_loan_landing_button.flash-button {
+
     color: #000 !important;
+
     font-weight: bold;
+
     float: right;
+
 }
+
 /* for auto loan */
+
 #auto_header{
+
     background-image:url(../images/Car-Loan-main-page.jpg);
+
     background-size:cover;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     width:100%;
+
     height:300px;
+
     margin-bottom:10px;
+
 }
+
 /* for auto loan compare */
+
 .auto-loan-Compare-hr1{
+
     width: 44%;
+
 }
+
 .auto-loan-Compare-hr3{
+
     width: 38.3%;
+
 }
+
 .auto-loan-Compare-hr5{
+
     width: 44.8%;
+
 }
+
 /* Education loan start */
+
 #education_header_part{
+
     background-image:url(../images/Education-Loan-landing-Page-banner-Final.jpg);
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     background-position:center center;
+
     width:100%;
+
     height:429px;
+
     position:relative;
+
 }
+
+
 
 #searchEducationLoan #pagination {
+
     position: relative !important;
+
     top: 0 !important;
+
     margin-bottom: 50px;
+
 }
+
+
 
 #searchEducationLoan #pagination>li{
+
     float: none;
+
 }
+
 .education_landing_button {
+
     background: #D3D3D3; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #fff, #D3D3D3); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #fff, #D3D3D3); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #fff, #D3D3D3); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #fff, #D3D3D3); /* Standard syntax (must be last) */
+
     width: 180px;
+
     padding: 9px 20px;
+
     text-align: center;
+
     font-size: 16px;
+
 }
+
 a .education_landing_button{
+
     color: #000;
+
     font-weight: bold;
+
 }
+
+
 
 /* for education loan compary */
+
 .education-loan-Compare-hr1{
+
     width: 41%;
+
 }
+
 .education-loan-Compare-hr4{
+
     width: 41.7%;
+
 }
+
 .education-loan-Compare-hr5{
+
     width: 45%;
+
 }
+
 /* for maony max */
+
 #mony_max_header_part{
+
 	background-image:url(../images/Money-Maximizer-Landing-Page-Banner-F.jpg);
+
 	background-repeat:no-repeat;
+
 	background-size:cover;
+
 	width:100%;
+
 	height:450px;
+
 	position:relative;
+
 }
+
 .mony_max_header_text {
+
 	text-align: right;
+
 	top: 120px;
+
 	position: relative;
+
 	float: right;
+
 	margin-right: 220px;
+
 }
+
 .mony_max_header_text p {
+
 	color: #6D4848;
+
 	font-size: 18px;
+
 	font-style: italic;
+
         margin-bottom:26px;
+
 }
+
 .mony_max_header_text h3 {
+
 	color: #585858;
+
 	font-size: 35px;
+
 	font-style: italic;
+
 }
+
 #fdr_loan {
+
     margin-top: 10px;
+
 }
+
 .form-group_fdr{
+
     padding:0 6px;
+
 }
+
 #mony_max_header{
+
 	background-image:url(../images/Money-Maximizer-Main-Page.jpg);
+
 	background-repeat:no-repeat;
+
 	background-size:cover;
+
 	background-position:center center;
+
 	width:100%;
+
 	height:320px;
+
 	position:relative;
+
 }
+
 .btn_mony_max{
+
 	border:1px solid #CECAAA;
+
     padding: 5px 26px;
+
     border-radius: 6px;
+
     margin-left: 58px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_mony_max:hover{
+
 	background-color:#CECAAA;
+
 }
+
 .btn_landing_view_mony_max{
+
     border: 1px solid #CECAAA;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#000;
+
 }
+
 .btn_landing_view_mony_max:hover{
+
     background-color:#A58D32;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_mony_max{
+
     border: 1px solid #fff;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_mony_max:hover{
+
     background-color:#fff;
+
     color:#000;
+
 }
+
 .btn_landing_mony_max_start{
+
     border: 1px solid #CECAAA;
+
     padding: 6px 35px;
+
     border-radius: 6px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_mony_max_start:hover{
+
     background-color:#A58D32;
+
     color:#ffffff;
+
 }
+
 #money_max_biggest_brand {
+
 	background-image:url(../images/Money-Maximizer-middle.png);
+
 	background-repeat:no-repeat;
+
 	background-size:cover;
+
 	height:385px;
+
 	width:100%;
+
 	background-position:center center;
+
 	margin-top:30px;
+
 }
+
 #footer_money_max{
+
 	background-image:url(../images/Money-Maximizer-footerbg.png);
+
 	background-position:center center;
+
 	background-repeat:no-repeat;
+
 	background-size:cover;
+
 	height:427px;
+
 	width:100%;
+
 }
+
 .money_max_woman {
+
 	margin-top: 36px;
+
 }
+
 .money_max_footer_text {
+
     margin-top: 85px;
+
     font-size: 16px;
+
     line-height: 1.3;
+
     text-align: justify;
+
 }
+
 .maximizer_landing_button {
+
     background: #d2ceb1; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #d2ceb1, #fff); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #d2ceb1, #fff); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #d2ceb1, #fff); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #d2ceb1, #fff); /* Standard syntax (must be last) */
+
     width: 180px;
+
     padding: 9px 20px;
+
     text-align: center;
+
     font-size: 16px;
+
 }
+
 a .maximizer_landing_button{
+
     color: #000 !important;
+
     font-weight: bold;
+
 }
+
 .more_info_tab{
+
     border: 1px solid #dde3e3;
+
     overflow: auto;
+
 }
+
 /* for FDR */
+
 #fdr_header{
+
     background-image:url(../images/FDR-Main-Page-Banner.jpg);
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     background-position:center center;
+
     width:100%;
+
     height:320px;
+
     position:relative;
+
 }
+
 #dps_header{
+
     background-image:url(../images/DPSMainPageBanner.jpg);
+
     background-size:cover;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     width:100%;
+
     height:300px;
+
     margin-bottom:10px;
+
 }
+
+
 
 #searchFDR #pagination {
+
     position: relative !important;
+
     top: 0 !important;
+
     margin-bottom: 50px;
+
 }
+
+
 
 #searchFDR #pagination>li{
+
     float: none;
+
 }
+
 .fdr_landing_button {
+
     background: #25688C; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #fff, #25688C); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #fff, #25688C); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #fff, #25688C); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #fff, #25688C); /* Standard syntax (must be last) */
+
     width: 180px;
+
     padding: 9px 20px;
+
     text-align: center;
+
     font-size: 16px;
+
 }
+
 a .fdr_landing_button {
+
     color: #000;
+
     font-weight: bold;
+
     float: right;
+
 }
+
 #availableOffer1 {
+
 	border: 1px solid #d09f5c;
+
 	padding: 16px;
+
 	margin-bottom: 15px;
+
 }
+
+
 
 /* for home loan compare page */
+
 .compare_table td {
+
     width: 33%;
+
 }
+
 .home-loan-Compare-hr1{
+
     width:42.8%;
+
 }
+
 .home-loan-Compare-hr3{
+
     width:44.1%;
+
 }
+
 .loan-iframe{
+
     width:100%;
+
     height:auto;
+
     overflow:hidden;
+
 }
+
 .quest {
+
     font-size: 14px;
+
 }
+
 #alreadySaved .inputWrapper {
+
     margin: 0 0 5px 0;
+
 }
+
 #avgSave .inputWrapper {
+
     margin: -4px 0 0 8px;
+
 }
+
 #tenureType label {
+
     font-size: 16px;
+
     margin-top: 4px;
+
 }
+
 .slideWrapper {
+
     padding: 15px 20px 0 20px;
+
 }
+
 #interest .inputWrapper {
+
     margin: -3px 0 0 10px;
+
 }
+
 .calcSection {
+
     padding: 8px 0 0 20px;
+
 }
+
 .fdr_loan_icon {
+
     position: relative;
+
     margin-top: 382px;
+
 }
+
 .millionaire_loan_icon {
+
     position: relative;
+
     margin-top: 400px;
+
 }
+
+
 
 #searchMillionaire #pagination {
+
     position: relative !important;
+
     top: 0 !important;
+
     margin-bottom: 50px;
+
 }
 
+
+
 #searchMillionaire #pagination>li{
+
     float: none;
+
 }
+
 /* nirob */
+
 @font-face {
+
     font-family: Myriad Pro Regular;
+
     src: url(../fonts/Myriad Pro Regular.ttf);
+
 }
+
 /* header part start*/
+
 .btn-group-lg > .btn, .btn-lg {
+
     padding: 3px 39px;
+
     font-size: 17px;
+
     line-height: 1.3333333;
+
     border-radius: 6px;
+
 }
+
+
+
 
 
 /* auto loan start */
+
 #auto_header_part{
+
     background-image:url(../images/Auto-loan-banner.jpg);
+
     width:100%;
+
     height:450px;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     position: relative;
-}
-.auto_header_text h3 {
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
-    font-style: italic;
-    text-shadow: 4px 3px #000;
-}
-.auto_header_text p {
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-align: right;
-}
-.auto_header_text {
-    top: 120px;
-    position: relative;
-    margin-right: 220px;
-    float: right;
+
 }
 
+.auto_header_text h3 {
+
+    color: #fff;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    font-style: italic;
+
+    text-shadow: 4px 3px #000;
+
+}
+
+.auto_header_text p {
+
+    color: #fff;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+    text-align: right;
+
+}
+
+.auto_header_text {
+
+    top: 120px;
+
+    position: relative;
+
+    margin-right: 220px;
+
+    float: right;
+
+}
+
+
+
 .auto_button {
+
     background: #C95254; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #fff, #C95254); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #fff, #C95254); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #fff, #C95254); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #fff, #C95254); /* Standard syntax (must be last) */
+
     width: 180px;
+
     padding: 9px 20px;
+
     text-align: center;
+
     font-size: 16px;
+
 }
+
 .auto_link{
+
     margin: 37px 16px;
+
     color:#d1a05e;
+
 }
+
+
+
 
 
 #searchAutoLoan #pagination {
+
     position: relative !important;
+
     top: 0 !important;
+
     margin-bottom: 50px;
+
 }
+
+
 
 #searchAutoLoan #pagination>li{
+
     float: none;
+
 }
 
+
+
 /* header part end*/
+
 /* Sponsored part strat */
+
 .btnLanding{
+
     color: #000;
+
     background-color: #fff;
+
     border-color: #2e6da4;
+
 }
+
 .Sponsored_heading{
+
     color:#59add2;
+
 }
+
 .Sponsored_box1 {
+
     border: 1px solid gray;
+
     height: 430px;
+
     width: 100%;
+
 }
+
 .spnrs img {
+
     height: 121px;
+
     width: 92%;
+
     border-left: 1px solid #DADADA;
+
     border-right: 1px solid #DADADA;
+
     border-top: 1px solid #DADADA;
+
     margin: 10px 10px 0 10px;
+
 }
+
 .Sponsored_box1 h4 {
+
     color:#fff;
+
 }
+
 .auto_spnrs1 img{
+
     width:100%;
+
     position:relative;
+
 }
+
 .auto_spnrs1 p {
+
     position: absolute;
+
     top: 134px;
+
     font-size: 15px;
+
     color: #fff;
+
 }
+
 .auto_spnrs1 h4 {
+
     margin-top: -39px;
+
     z-index: 9999;
+
     position: absolute;
+
     margin-left: 15px;
+
 }
+
 .Sponsored_box1 p{
+
     padding:15px;
+
     text-align:justify;
+
     height: 205px;
+
 }
+
 .Sponsored_box1 button {
+
     margin-left: 45px;
+
 }
+
 .auto_text{
+
     color:#d19f59;
+
     text-align:center;
+
     padding: 59px;
+
 }
+
 .auto_text p{
+
     font-size:15px;
+
 }
+
 .auto_box img {
+
     width: 80px;
+
     margin: 0px auto;
+
 }
+
 .auto_box {
+
     text-align: center;
+
 }
+
 .auto_box h4{
+
     color:#d19f59;
+
     margin-bottom:30px;
+
 }
+
 #auto_brand {
+
     background-image:url('../images/auto_background_middle.jpg');
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     height:380px;
+
     width:100%;
+
     background-position:center center;
+
     margin-top: 50px;
+
 }
+
 .pr {
+
     color: #fff;
+
     margin-bottom: 88px;
+
 }
+
 .clr_black {
+
     color: #000;
+
 }
+
 .biggest_pr{
+
     text-align:center;
+
 }
+
 .bigest_text h3 {
+
     margin-bottom: 40px;
+
     color:#fff;
+
 }
+
 .bigest_text {
+
     margin-left: 58px;
+
     font-size: 17px;
+
     margin-top: 50px;
+
 }
+
 .bigest_text1 h3 {
+
     margin-bottom: 40px;
+
 }
+
 .bigest_text1 {
+
     margin-left: 58px;
+
     font-size: 17px;
+
     margin-top: 50px;
+
 }
+
 .bigest_text button {
+
     margin-top: 92px;
+
     padding: 7px;
+
     color:#fff;
+
     border-color:#fff;
+
     background-color:#d19f59;
+
 }
+
 .bigest_text1 button {
+
     margin-top: 67px;
+
     padding:7px;
+
     border-color:#DADADA
+
 }
+
 .auto_text img {
+
     margin: 0px auto;
+
     margin-top: 40px;
+
 }
+
 .auto_text {
+
     text-align: center;
+
 }
+
 .auto_text h4 {
+
     margin-top: 50px;
+
 }
+
 .auto_text button {
+
     text-align: center;
+
     margin-top: 50px;
+
     color:#d19f59;
+
     border-color:#d19f59;
+
 }
+
 #finager_ready {
+
     background-color: #fbfcfd;
+
 }
+
 /* footer start */
+
 a {
+
     color: #000;
+
     text-decoration: none !important;
+
 }
+
 a:hover {
+
     color: gray;
+
     text-decoration: none;
+
 }
+
 #auto_footer{
+
     background-image:url('../images/auto_footer.jpg');
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     height:427px;
+
     width:100%;
+
 }
+
 .auto_footer_pr h3 {
+
     color: #fff;
+
     margin-top: 85px;
+
 }
+
 .auto_footer_pr img {
+
     margin-top: 36px;
+
 }
+
 .footer_text {
+
     color: #fff;
+
     margin-top: 31px;
+
     font-size:16px;
+
 }
+
 .heading_text {
+
     width: 100%;
+
     min-height: 580px;
+
     border: 1px solid #DADADA;
+
     padding: 15px;
+
 }
+
 .heading_text p {
+
     text-align: justify;
+
 }
+
 .heading_text img {
+
     width: 100%;
+
     border: 1px solid #DADADA;
+
     height:170px;
+
 }
+
 .H_loan {
+
     color: #59add2;
+
     margin: 25px 0px 15px;
+
 }
+
 .auto_btn{
+
     border:1px solid #d19f59;
+
 }
+
 #heading_title {
+
     margin: 62px 20px;
+
 }
+
 .home_read a {
+
     float: right;
+
     font-style: italic;
+
     color: #4C9ED9;
+
 }
+
 /* home loan start*/
+
 #home_header_part{
+
     background-image:url('../images/Home loan landing page banner 2.jpg');
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     width:100%;
+
     height:450px;
+
     position:relative;
+
 }
+
 .home_header_text h3 {
+
     color: #fff;
+
     font-size: 35px;
+
     font-style: italic;
+
 }
+
 .home_header_text p {
+
     color: #ccc;
+
     font-size: 18px;
+
     font-style: italic;
+
     margin-bottom:24px;
+
 }
+
 .home_header_text {
+
     text-align: right;
+
     top: 120px;
+
     position: relative;
+
     float: right;
+
     margin-right: 222px;
+
 }
+
 .home_loan_landing_button{
+
     background: #205F34; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #fff, #205F34); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #fff, #205F34); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #fff, #205F34); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #fff, #205F34); /* Standard syntax (must be last) */
+
     width: 180px;
+
     padding: 9px 20px;
+
     text-align: center;
+
     font-size: 16px;
+
 }
+
 a .home_loan_landing_button{
+
     color: #002d0c !important;
+
     font-weight: bold;
+
 }
+
+
+
 
 
 /* header part end*/
+
 /* Sponsored part start */
 
+
+
 .home_Sponsored_heading {
+
     color: #59add2;
+
     margin: 100px 0px 28px 16px;
+
 }
+
 .Sponsored_box1 {
+
     border: 1px solid gray;
+
     height: 430px;
+
     width: 100%;
+
 }
+
 .spnrs img {
+
     height: 121px;
+
     width: 92%;
+
     border-left: 1px solid #DADADA;
+
     border-right: 1px solid #DADADA;
+
     border-top: 1px solid #DADADA;
+
     margin: 10px 10px 0 10px;
+
 }
+
 .Sponsored_box1 h4 {
+
     color:#fff;
+
 }
+
 .spnrs1 img{
+
     width:100%;
+
 }
+
 .Sponsored_box1 p{
+
     padding:15px;
+
     text-align:justify;
+
 }
+
 .Sponsored_box1 button {
+
     margin-left: 45px;
+
 }
+
 .compare_text{
+
     color:#59add2;
+
     text-align:center;
+
     padding: 59px;
+
 }
+
 .compare_text p{
+
     font-size:15px;
+
 }
+
 .compare_box img {
+
     width: 80px;
+
     margin: 0px auto;
+
 }
+
 .compare_box {
+
     text-align: center;
+
 }
+
 .compare_box h4{
+
     color:#59add2;
+
     margin-bottom:30px;
+
 }
+
 #biggest_brand {
+
     background-image:url('../images/home_background.jpg');
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     height:385px;
+
     width:100%;
+
     background-position:center center;
+
     margin-top:30px;
+
 }
 
+
+
 .clr_black {
+
     color: #000;
+
 }
+
 .biggest_pr{
+
     text-align:center;
+
 }
+
 .bigest_text h3 {
+
     margin-bottom: 40px;
+
     color:#fff;
+
 }
+
 .bigest_text {
+
     margin-left: 58px;
+
     font-size: 17px;
+
     margin-top: 50px;
+
 }
+
 .bigest_text1 h3 {
+
     margin-bottom: 40px;
+
 }
+
 .bigest_text1 {
+
     margin-left: 58px;
+
     font-size: 17px;
+
     margin-top: 50px;
+
 }
+
 .bigest_text button {
+
     margin-top: 92px;
+
     padding: 7px;
+
     color:#000;
+
     border-color:#fff
+
 }
+
 .bigest_text1 button {
+
     margin-top: 67px;
+
     padding:7px;
+
     border-color:#DADADA
+
 }
+
 .ready_text img {
+
     margin: 0px auto;
+
     margin-top: 40px;
+
 }
+
 .ready_text {
+
     text-align: center;
+
 }
+
 .ready_text {
+
     text-align: center;
+
 }
+
 .ready_text h4 {
+
     margin-top: 50px;
+
 }
+
 .ready_text p {
+
     margin-top: 45px;
+
     margin-bottom:50px;
+
 }
+
 .ready_text button {
+
     text-align: center;
+
     margin-top: 50px;
+
     color:#59add2;
+
     border-color:#59add2;
+
 }
+
 #finager_ready {
+
     background-color: #fbfcfd;
+
 }
+
 /* footer start */
+
 a {
+
     color: #000;
+
     text-decoration: none;
+
 }
+
 a:hover {
+
     color: gray;
+
     text-decoration: none;
+
 }
+
 #home_loan_footer{
+
     background-image:url('../images/home_background2.png');
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     height:427px;
+
     width:100%;
+
 }
+
 .home_loan_footer_pr h3 {
+
     color: #fff;
+
     margin-top: 162px;
+
 }
+
 .home_loan_footer_pr img {
+
     margin-top: 36px;
+
 }
+
 .home_loan_footer_text {
+
     color: #fff;
+
     margin-top: 31px;
+
     font-size:16px;
+
 }
+
 .heading_text {
+
     width: 100%;
+
     height: 580px;
+
     border: 1px solid #DADADA;
+
     padding: 15px;
+
 }
+
 .heading_text p {
+
     text-align: justify;
+
 }
+
 .H_loan {
+
     color: #59add2;
+
     margin: 25px 0px 15px;
+
 }
+
 #heading_title {
+
     margin: 62px 20px;
+
 }
+
 .home_read {
+
     float: right;
+
     font-style: italic;
+
     color: #4C9ED9;
+
 }
+
 /* home loan end */
+
 /* personal loan start */
+
 .personal_button a{
+
     color:#256e92;
+
 }
+
 .personal_link{
+
     margin: 37px 16px;
+
     color:#256e92;
+
 }
+
 #personal_header_part{
+
     background-image:url(../images/Personal-Loan-Landingpage-final.jpg);
+
     width:100%;
+
     height:450px;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
 }
+
 #header_part{
+
     background-color:#393e41;
+
     width:100%;
+
     height:380px;
+
     position:relative;
+
 }
+
 .personal_header_text h3 {
+
     color: #000;
+
     font-size: 36px;
+
     font-weight: bold;
+
     font-style: italic;
+
 }
+
 .personal_header_text p {
+
     color: #000;
+
     font-size: 18px;
+
     margin-bottom: 24px;
+
     text-align: right;
+
 }
+
 .personal_header_text {
+
     top: 125px;
+
     position: relative;
+
     margin-right: 222px;
+
     float: right;
+
 }
+
 /*#personal_header_part img {
+
     float: right;
+
 }
+
  header part end*/
+
 /* Sponsored part strat */
+
 .Sponsored_heading{
+
     color:#59add2;
+
 }
+
 .Sponsored_box1 {
+
     border: 1px solid gray;
+
     height: 448px;
+
     width: 100%;
+
 }
+
 .spnrs img {
+
     height: 121px;
+
     width: 92%;
+
     border-left: 1px solid #DADADA;
+
     border-right: 1px solid #DADADA;
+
     border-top: 1px solid #DADADA;
+
     margin: 10px 10px 0 10px;
+
 }
+
 .Sponsored_box1 h4 {
+
     color:#fff;
+
 }
+
 .personal_spnrs1 img{
+
     width:100%;
+
     position:relative;
+
 }
+
 .personal_spnrs1 h4 {
+
     margin-top: -39px;
+
     position: absolute;
+
     margin-left: 17px;
+
 }
+
 .personal_spnrs1 p {
+
     position: absolute;
+
     top: 134px;
+
     font-size: 15px;
+
     color: #fff;
+
 }
+
 .Sponsored_box1 p{
+
     padding:15px;
+
     text-align:justify;
+
 }
+
 .Sponsored_box1 button {
+
     margin-left: 45px;
+
 }
+
 .personal_text{
+
     color:#256e92;
+
     text-align:center;
+
     padding: 59px;
+
 }
+
 /* .personal_text p{
+
 	font-size:15px;
+
 } */
+
 .personal_box img {
+
     width: 80px;
+
     margin: 0px auto;
+
 }
+
 .personal_box {
+
     text-align: center;
+
 }
+
 .personal_box h4{
+
     color:#256e92;
+
     margin-bottom:30px;
+
 }
+
 #personal_brand {
+
     background-image:url(../images/personal_background_middel.jpg);
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     height:380px;
+
     width:100%;
+
     background-position:center center;
+
     margin-top: 50px;
+
 }
+
+
 
 .clr_black {
+
     color: #000;
+
 }
+
 .biggest_pr{
+
     text-align:center;
+
 }
+
 .bigest_text h3 {
+
     margin-bottom: 40px;
+
     color:#fff;
+
 }
+
 .bigest_text {
+
     margin-left: 58px;
+
     font-size: 17px;
+
     margin-top: 50px;
+
 }
+
 .personal_bigest_text1 h3 {
+
     margin-bottom: 40px;
+
     font-weight: bold;
+
 }
+
 .personal_bigest_text1 {
+
     margin-left: 58px;
+
     font-size: 17px;
+
     margin-top: 50px;
+
 }
+
 .bigest_text button {
+
     margin-top: 92px;
+
     padding: 7px;
+
     color:#fff;
+
     border-color:#fff;
+
     background-color:#256e92;
+
 }
+
 .personal_bigest_text1 button {
+
     margin-top: 67px;
+
     padding:7px;
+
     border-color:#DADADA
+
 }
+
 .personal_text img {
+
     margin: 0px auto;
+
     margin-top: 40px;
+
 }
+
 .personal_text {
+
     text-align: center;
+
 }
+
 .personal_text h4 {
+
     margin-top: 50px;
+
 }
+
 .personal_text button {
+
     text-align: center;
+
     margin-top: 50px;
+
     color:#256e92;
+
     border-color:#256e92;
+
 }
+
 .personal-loan-Compare-hr1{
+
     width: 41.4%;
+
 }
+
 .personal-loan-Compare-hr3{
+
     width: 39.1%;
+
 }
+
 #finager_ready {
+
     background-color: #fbfcfd;
+
 }
+
 /* footer start */
+
 a {
+
     color: #000;
+
     text-decoration: none;
+
 }
+
 a:hover {
+
     color: gray;
+
     text-decoration: none;
+
 }
+
 #personal_footer{
+
     background-image:url('../images/Personal_footer.png');
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     height:427px;
+
     width:100%;
+
 }
+
 .personal_footer_pr h3 {
+
     color: #fff;
+
     margin-top: 85px;
+
 }
+
 .personal_footer_pr img {
+
     margin-top: 36px;
+
 }
+
 .footer_text {
+
     color: #fff;
+
     margin-top: 31px;
+
     font-size:16px;
+
 }
+
 .heading_text {
+
     width: 100%;
+
     min-height: 580px;
+
     border: 1px solid #DADADA;
+
     padding: 15px;
+
 }
+
 .heading_text p {
+
     text-align: justify;
+
 }
+
+
 
 .H_loan {
+
     color: #59add2;
+
     margin: 25px 0px 15px;
+
 }
+
 .personal_btn{
+
     border:2px solid #256e92;
+
 }
+
 #heading_title {
+
     margin: 62px 20px;
+
 }
+
 .home_read {
+
     float: right;
+
     font-style: italic;
+
     color: #4C9ED9;
+
 }
+
 #education_header{
+
     background-image:url(../images/Education-Loan-main-page-Final.jpg);
+
     background-size:cover;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     width:100%;
+
     height:300px;
+
     margin-bottom:6px;
+
 }
+
 /* personal loan end */
+
 /* Education loan start */
+
 #education_header_part{
+
     background-image:url('../images/Education-Loan-landing-Page-banner-Final.jpg');
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     background-position:center center;
+
     width:100%;
+
     height:450px;
+
     position:relative;
+
 }
+
 #edu_biggest_brand {
+
     margin-top: 30px;
+
 }
+
 .education_header_text h3 {
+
     color: #5e5c5c;
+
     font-size: 25px;
+
     font-style: italic;
+
     margin-bottom: 26px;
+
 }
+
 .education_header_text p {
+
     color: #5e5c5c;
+
     font-size: 18px;
+
     font-style: italic;
+
 }
+
 .education_header_text {
+
     text-align: right;
+
     top: 250px;
+
     margin-right: 220px;
+
     position: relative;
+
     float: right;
+
 }
+
 .education_loan_icon {
+
     position: relative;
+
     margin-top: 371px;
+
 }
+
 .education_btn{
+
     color:#636565;
+
     border:1px solid #fff;
+
 }
+
 .education_Sponsored_heading{
+
     color:#636565;
+
     margin:37px 16px;
+
 }
+
 .edu_spnrs {
+
     position: absolute;
+
     top: 141px;
+
     color: #fff;
+
     margin-left: 19px;
+
 }
+
 .edu_btn{
+
     border:2px solid #636565;
+
 }
+
 .edu_compare_text{
+
     color:#636565;
+
     text-align:center;
+
     padding: 59px;
+
 }
+
 .edu_compare_text p{
+
     font-size:15px;
+
 }
+
 .edu_compare_box img {
+
     width: 80px;
+
     margin: 0px auto;
+
 }
+
 .edu_compare_box {
+
     text-align: center;
+
 }
+
 .edu_compare_box h4{
+
     color:#636565;
+
     margin-bottom:30px;
+
 }
+
 #edu_biggest_brand {
+
     background-image:url(../images/edu_background_middle.jpg);
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     height:385px;
+
     width:100%;
+
     background-position:center center;
+
 }
+
 .edu_ready_text button {
+
     text-align: center;
+
     margin-top: 50px;
+
     color:#636565;
+
     border-color:#636565;
+
 }
+
 .edu_ready_text img {
+
     margin: 0px auto;
+
     margin-top: 40px;
+
 }
+
 .edu_ready_text {
+
     text-align: center;
+
 }
+
 .edu_ready_text {
+
     text-align: center;
+
 }
+
 .edu_ready_text h4 {
+
     margin-top: 50px;
+
 }
+
 .edu_ready_text p {
+
     margin-top: 45px;
+
 }
+
 .edu_H_loan {
+
     color: #636565;
+
     margin: 25px 0px 15px;
+
 }
+
 .edu_home_read {
+
     float: right;
+
     font-style: italic;
+
     color: #636565;
+
 }
+
 #edu_footer{
+
     background-image:url(../images/education_footer.jpg);
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     height:427px;
+
     width:100%;
+
 }
+
 .edu_footer_pr img {
+
     margin-top: 34px;
+
 }
+
 .edu_footer_pr h3 {
+
     color: #fff;
+
     margin-top: 126px;
+
 }
+
 .edu_bigest_text button {
+
     margin-top: 92px;
+
     padding: 7px;
+
     color: #fff;
+
     border-color: #fff;
+
     background-color: #636565;
+
 }
+
 .edu_bigest_text h3 {
+
     margin-bottom: 40px;
+
     color:#fff;
+
 }
+
 .edu_bigest_text {
+
     margin-left: 58px;
+
     font-size: 17px;
+
     margin-top: 50px;
+
 }
+
 /* Education loan end */
+
 /* FDR start */
+
 #fdr_header_part {
+
     background-image: url(../images/FDR-Landing-Page-banner-final.jpg);
+
     width: 100%;
+
     height: 450px;
+
     background-position: center center;
+
     background-repeat: no-repeat;
+
     background-size: cover;
 
+
+
 }
+
 .fdr_header_text {
+
     top: 270px;
+
     position: relative;
+
     margin-right: 223px;
+
     float: right;
-}
-.fdr_header_text p{
-    font-size:18px;
-    margin-bottom: 25px;
-    color: #d7d7d7;
-}
-.fdr_link {
-    margin: 37px 16px;
-    color: #1F5883;
-}
-.fdr_spnrs1 img {
-    width: 100%;
-    position: relative;
-}
-.fdr_spnrs1 p {
-    position: absolute;
-    top: 134px;
-    font-size: 15px;
-    color: #fff;
-}
-.fdr_spnrs1 h4 {
-    margin-top: -37px;
-    margin-left: 15px;
-    position: absolute;
-    font-size: 16px;
-}
-.fdr_btn {
-    border: 2px solid #205984;
-}
-.fdr_text {
-    color: #d19f59;
-    text-align: center;
-    padding: 59px;
-}
-.fdr_text h3{
-    color:#1F5883;
-}
-.fdr_box {
-    text-align: center;
-}
-.fdr_box img {
-    width: 80px;
-    margin: 0px auto;
-}
-.fdr_box {
-    text-align: center;
-}
-.fdr_box h4{
-    color:#1F5883;
-    margin-bottom:30px;
-}
-#fdr_brand {
-    background-image: url(../images/fdr_background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 395px;
-    width: 100%;
-    background-position: center center;
-    margin-top: 50px;
-}
-.fdr_text {
-    color: #1F5883;
-    text-align: center;
-    padding: 59px;
-}
-.fdr_text p{
-    font-size:15px;
-    color:#1F5883;
-    margin-bottom:55px;
-}
-.fdr_text img {
-    margin: 0px auto;
-    margin-top: 40px;
-}
-.fdr_text h4 {
-    margin-top: 50px;
-}
-.fdr_text button {
-    text-align: center;
-    margin-top: 50px;
-    color:#205a85;
-    border-color:#205a85;
-}
-#fdr_ready {
-    background-color: #fbfcfd;
-}
-.fdr_loan {
-    color: #1F5883;
-    margin: 25px 0px 15px;
-    text-align:justify;
-}
-.fdr_heading_text {
-    width: 100%;
-    min-height: 580px;
-    border: 1px solid #DADADA;
-    padding: 15px;
-}
-.fdr_heading_text p {
-    text-align: justify;
-}
-.fdr_heading_text img {
-    width: 100%;
-    border: 1px solid #DADADA;
-    height:170px;
-}
-.fdr_read a {
-    float: right;
-    font-style: italic;
-    color: #000;
-}
-#fdr_footer {
-    background-image: url(../images/fdr_footer_bg.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 428px;
-    width: 100%;
-}
-.fdr_footer_pr h3 {
-    color: #fff;
-    margin-top: 130px;
-}
-.fdr_footer_pr img {
-    margin-top: 36px;
-}
-.fdr_footer_text {
-    color: #fff;
-    margin-top: 31px;
-    font-size:16px;
-}
-.fdr_bigest_text button {
-    margin-top: 92px;
-    padding: 7px;
-    color: #fff;
-    border-color: #fff;
-    background-color: #205a85;
-}
-.fdr_bigest_text h3 {
-    margin-bottom: 40px;
-    color:#fff;
-}
-.fdr_bigest_text {
-    margin-left: 58px;
-    font-size: 17px;
-    margin-top: 50px;
-}
-/* fdr end */
-/* DPS start */
-#dps_header_part {
-    background-image: url(../images/DPS-Landing-Page-banner-edit2.jpg);
-    width: 100%;
-    height: 450px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
 }
-.dps_loan_icon {
-    position: relative;
-    margin-top: 388px;
-}
-.dps_header_text {
-    top: 220px;
-    position: relative;
-    margin-right: 224px;
-    float: right;
-}
-.dps_header_text p{
+
+.fdr_header_text p{
+
     font-size:18px;
+
+    margin-bottom: 25px;
+
+    color: #d7d7d7;
+
+}
+
+.fdr_link {
+
+    margin: 37px 16px;
+
+    color: #1F5883;
+
+}
+
+.fdr_spnrs1 img {
+
+    width: 100%;
+
+    position: relative;
+
+}
+
+.fdr_spnrs1 p {
+
+    position: absolute;
+
+    top: 134px;
+
+    font-size: 15px;
+
+    color: #fff;
+
+}
+
+.fdr_spnrs1 h4 {
+
+    margin-top: -37px;
+
+    margin-left: 15px;
+
+    position: absolute;
+
+    font-size: 16px;
+
+}
+
+.fdr_btn {
+
+    border: 2px solid #205984;
+
+}
+
+.fdr_text {
+
+    color: #d19f59;
+
+    text-align: center;
+
+    padding: 59px;
+
+}
+
+.fdr_text h3{
+
+    color:#1F5883;
+
+}
+
+.fdr_box {
+
+    text-align: center;
+
+}
+
+.fdr_box img {
+
+    width: 80px;
+
+    margin: 0px auto;
+
+}
+
+.fdr_box {
+
+    text-align: center;
+
+}
+
+.fdr_box h4{
+
+    color:#1F5883;
+
+    margin-bottom:30px;
+
+}
+
+#fdr_brand {
+
+    background-image: url(../images/fdr_background.jpg);
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    height: 395px;
+
+    width: 100%;
+
+    background-position: center center;
+
+    margin-top: 50px;
+
+}
+
+.fdr_text {
+
+    color: #1F5883;
+
+    text-align: center;
+
+    padding: 59px;
+
+}
+
+.fdr_text p{
+
+    font-size:15px;
+
+    color:#1F5883;
+
+    margin-bottom:55px;
+
+}
+
+.fdr_text img {
+
+    margin: 0px auto;
+
+    margin-top: 40px;
+
+}
+
+.fdr_text h4 {
+
+    margin-top: 50px;
+
+}
+
+.fdr_text button {
+
+    text-align: center;
+
+    margin-top: 50px;
+
+    color:#205a85;
+
+    border-color:#205a85;
+
+}
+
+#fdr_ready {
+
+    background-color: #fbfcfd;
+
+}
+
+.fdr_loan {
+
+    color: #1F5883;
+
+    margin: 25px 0px 15px;
+
+    text-align:justify;
+
+}
+
+.fdr_heading_text {
+
+    width: 100%;
+
+    min-height: 580px;
+
+    border: 1px solid #DADADA;
+
+    padding: 15px;
+
+}
+
+.fdr_heading_text p {
+
+    text-align: justify;
+
+}
+
+.fdr_heading_text img {
+
+    width: 100%;
+
+    border: 1px solid #DADADA;
+
+    height:170px;
+
+}
+
+.fdr_read a {
+
+    float: right;
+
+    font-style: italic;
+
+    color: #000;
+
+}
+
+#fdr_footer {
+
+    background-image: url(../images/fdr_footer_bg.jpg);
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    height: 428px;
+
+    width: 100%;
+
+}
+
+.fdr_footer_pr h3 {
+
+    color: #fff;
+
+    margin-top: 130px;
+
+}
+
+.fdr_footer_pr img {
+
+    margin-top: 36px;
+
+}
+
+.fdr_footer_text {
+
+    color: #fff;
+
+    margin-top: 31px;
+
+    font-size:16px;
+
+}
+
+.fdr_bigest_text button {
+
+    margin-top: 92px;
+
+    padding: 7px;
+
+    color: #fff;
+
+    border-color: #fff;
+
+    background-color: #205a85;
+
+}
+
+.fdr_bigest_text h3 {
+
+    margin-bottom: 40px;
+
+    color:#fff;
+
+}
+
+.fdr_bigest_text {
+
+    margin-left: 58px;
+
+    font-size: 17px;
+
+    margin-top: 50px;
+
+}
+
+/* fdr end */
+
+/* DPS start */
+
+#dps_header_part {
+
+    background-image: url(../images/DPS-Landing-Page-banner-edit2.jpg);
+
+    width: 100%;
+
+    height: 450px;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+
+
+}
+
+.dps_loan_icon {
+
+    position: relative;
+
+    margin-top: 388px;
+
+}
+
+.dps_header_text {
+
+    top: 220px;
+
+    position: relative;
+
+    margin-right: 224px;
+
+    float: right;
+
+}
+
+.dps_header_text p{
+
+    font-size:18px;
+
     margin-bottom: 22px;
 
+
+
 }
+
 .dps_link {
+
     margin: 37px 16px;
+
     color: #a9a270;
+
 }
+
 .dps_spnrs1 img {
+
     width: 100%;
+
     position: relative;
+
 }
+
 .dps_spnrs1 h4 {
+
     margin-top: -37px;
+
     margin-left: 18px;
+
     position: absolute;
+
     font-size: 16px;
+
 }
+
 .dps_spnrs1 p {
+
     position: absolute;
+
     top: 134px;
+
     font-size: 15px;
+
     color: #fff;
+
 }
+
 .dps_btn {
+
     border: 2px solid #a9a270;
+
 }
+
 .dps_text {
+
     color: #a9a270;
+
     text-align: center;
+
     padding: 59px;
+
 }
+
 .dps_text h2 {
+
     color: #a9a270;
+
 }
+
 .dps_text h3{
+
     color:#a9a270;
+
 }
+
 .dps_box {
+
     text-align: center;
+
 }
+
 .dps_box img {
+
     width: 80px;
+
     margin: 0px auto;
+
 }
+
 .dps_box {
+
     text-align: center;
+
 }
+
 .dps_box h4{
+
     color:#a9a270;
+
     margin-bottom:30px;
+
 }
+
 #dps_brand {
+
     background-image: url(../images/dps_background.jpg);
+
     background-repeat: no-repeat;
+
     background-size: cover;
+
     height: 395px;
+
     width: 100%;
+
     background-position: center center;
+
     margin-top: 50px;
+
 }
+
 .dps_text {
+
     color: #1F5883;
+
     text-align: center;
+
     padding: 59px;
+
 }
+
 .dps_text p{
+
     font-size:15px;
+
     color:#a9a270;
+
     margin-bottom:50px;
+
 }
+
 .dps_text img {
+
     margin: 0px auto;
+
     margin-top: 40px;
+
 }
+
 .dps_text h4 {
+
     margin-top: 50px;
+
     color: #a9a270;
+
 }
+
 .dps_text button {
+
     text-align: center;
+
     margin-top: 50px;
+
     color:#a9a270;
+
     border-color:#a9a270;
+
 }
+
 #dps_ready {
+
     background-color: #fbfcfd;
+
 }
+
 .dps_loan {
+
     color: #a9a270;
+
     margin: 25px 0px 15px;
+
     text-align:justify;
+
 }
+
 .dps_button a {
+
     border: 1px solid #fff;
+
     color: #a9a270;
+
 }
+
 .dps_heading_text {
+
     width: 100%;
+
     min-height: 580px;
+
     border: 1px solid #DADADA;
+
     padding: 15px;
+
 }
+
 .dps_heading_text p {
+
     text-align: justify;
+
 }
+
 .dps_heading_text img {
+
     width: 100%;
+
     border: 1px solid #DADADA;
+
 }
+
 .dps_read a {
+
     float: right;
+
     font-style: italic;
+
     color: #000;
+
 }
+
 #dps_footer {
+
     background-image: url(../images/dps_footer.jpg);
+
     background-position: center center;
+
     background-repeat: no-repeat;
+
     background-size: cover;
+
     height: 428px;
+
     width: 100%;
+
 }
+
 .dps_footer_pr h3 {
+
     color: #fff;
+
     margin-top: 130px;
+
 }
+
 .dps_footer_pr img {
+
     margin-top: 36px;
+
 }
+
 .dps_footer_text {
+
     color: #fff;
+
     margin-top: 31px;
+
     font-size:16px;
+
 }
+
 .dps_bigest_text button {
+
     margin-top: 92px;
+
     padding: 7px;
+
     color: #fff;
+
     border-color: #fff;
+
     background-color: #a9a270;
+
 }
+
 .dps_bigest_text h3 {
+
     margin-bottom: 40px;
+
     color:#fff;
+
 }
+
 .dps_bigest_text {
+
     margin-left: 58px;
+
     font-size: 17px;
+
     margin-top: 50px;
+
 }
+
 #searchDPS #pagination {
+
     position: relative !important;
+
     top: 0 !important;
+
     margin-bottom: 50px;
+
 }
+
+
 
 #searchDPS #pagination>li{
+
     float: none;
+
 }
+
 .dps_landing_button {
+
     background: #C7F0F9; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #fff, #C7F0F9); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #fff, #C7F0F9); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #fff, #C7F0F9); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #fff, #C7F0F9); /* Standard syntax (must be last) */
+
     width: 180px;
+
     padding: 9px 20px;
+
     text-align: center;
+
     font-size: 16px;
+
 }
+
 a .dps_landing_button {
+
     color: #000;
+
     font-weight: bold;
+
     float: right;
+
 }
+
+
 
 /* DPS End */
+
 /* card landing page */
 
+
+
 #header_part{
+
     background-color:#57aed3;
+
     width:100%;
+
     height:60px;
+
 }
+
 #second_div{
+
     background-image:url(../images/cardbg.jpg);
+
     height:450px;
+
     width:100%;
+
     background-size:contain;
+
     background-repeat:no-repeat;
+
     position:relative;
+
     background-position:center center;
 
-}
-.best_card {
-    margin-top: 70px;
-}
-.best_card h4 {
-    margin-top: 60px;
-    line-height:28px;
-}
-.best_card h1 {
-    font-weight:bold;
-}
-.best_card_image img {
-    position: absolute;
-    margin-left: 943px;
-    width:200px;
+
 
 }
+
+.best_card {
+
+    margin-top: 70px;
+
+}
+
+.best_card h4 {
+
+    margin-top: 60px;
+
+    line-height:28px;
+
+}
+
+.best_card h1 {
+
+    font-weight:bold;
+
+}
+
+.best_card_image img {
+
+    position: absolute;
+
+    margin-left: 943px;
+
+    width:200px;
+
+
+
+}
+
 .All_cradit_card p {
+
     color: #57aed3;
+
     font-weight: bold;
+
     font-size: 15px;
+
     margin-top: 18px;
+
 }
+
 .All_cradit_card {
+
     margin: 0 auto;
+
     float: none;
+
     display: block;
+
     text-align: center;
+
 }
+
 .All_card1 p {
+
     margin-top: 37px;
+
 }
+
 .All_card2 img {
+
     margin-top: 9px;
+
 }
+
 .All_card2 p {
+
     margin-top: 25px;
+
 }
+
 .All_card {
+
     border: 1px solid #DADADA;
+
     padding: 19px;
+
     background-color: #fff;
+
 }
+
 .All_card1 {
+
     border-top: 1px solid #DADADA;
+
     padding: 18px;
+
     background-color: #fff;
+
 }
+
 .All_card2 {
+
     border-top: 1px solid #DADADA;
+
     border-right: 1px solid #DADADA;
+
     border-left: 1px solid #DADADA;
+
     padding: 19px;
+
     background-color: #fff;
+
 }
+
 .All_card3 {
+
     border-top: 1px solid #DADADA;
+
     border-right: 1px solid #DADADA;
+
     padding: 18px;
+
     background-color: #fff;
+
 }
+
 .All_card4 {
+
     border-left:1px solid #DADADA;
+
     border-bottom:1px solid #DADADA;
+
     padding: 18px;
+
 }
+
 .All_card5 {
+
     border: 1px solid #DADADA;
+
     padding: 17px;
+
     margin: -1px -1px 0px -1px;
+
 }
+
 .All_card6 {
+
     border-top: 1px solid #DADADA;
+
     border-bottom: 1px solid #DADADA;
+
     border-left: 1px solid #DADADA;
+
     padding: 22px;
+
     margin: -1px 0px;
+
 }
+
 .All_card7 {
+
     border: 1px solid #DADADA;
+
     padding: 19px;
+
     margin: -1px 0px 0px -1px;
+
 }
+
 .home_loan_icon {
+
     position: relative;
+
     margin-top: 400px;
+
 }
+
+
 
 .home_card5 {
+
     border: 1px solid #DADADA;
+
     padding: 38px;
+
     margin: -1px -1px 0px -1px;
+
 }
+
+
 
 .home_card6 {
+
     border-top: 1px solid #DADADA;
+
     border-bottom: 1px solid #DADADA;
+
     padding: 38px;
+
     margin: -1px 1px;
+
 }
+
+
 
 .nopadding {
+
     padding: 0 !important;
+
     margin: 0 !important;
+
 }
+
 .card_bank {
+
     position: relative;
+
     margin-top: 30px;
+
 }
+
+
 
 .credit_card_button {
+
     background: #5AB1D2; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #fff, #5AB1D2 ); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #fff, #5AB1D2); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #fff, #5AB1D2); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #fff, #5AB1D2); /* Standard syntax (must be last) */
+
     width: 180px;
+
     padding: 9px 20px;
+
     text-align: center;
+
     font-size: 16px;
+
 }
+
 a .credit_card_button.flash-button{
+
     color: #000;
+
     font-weight: bold;
+
 }
+
 .debit_card_button {
+
 	background: #9F9164; /* For browsers that do not support gradients */    
+
     background: -webkit-linear-gradient(left, #fff, #9F9164 ); /* For Safari 5.1 to 6.0 */
+
     background: -o-linear-gradient(right, #fff, #9F9164); /* For Opera 11.1 to 12.0 */
+
     background: -moz-linear-gradient(right, #fff, #9F9164); /* For Firefox 3.6 to 15 */
+
     background: linear-gradient(to right, #fff, #9F9164); /* Standard syntax (must be last) */
+
 	width: 180px;
+
 	padding: 9px 20px;
+
 	text-align: center;
+
 	font-size: 16px;
+
 }
+
 a .debit_card_button.flash-button{
+
     color: #000;
+
     font-weight: bold;
+
 }
+
 /* second_div end */
+
 /* third_div star */
+
 .box{
+
     border:1px solid #DADADA;
+
     height:70px;
+
     width:100%;
+
     margin-top: 45px;
+
     background-color:#DADADA;
+
 }
+
 .All_cradit_card a{
+
     text-decoration:none;
+
 }
+
 /*.nopadding:hover{*/
+
     /*background-color:#f2f2f3;*/
+
 /*}*/
+
 .All_cradit_card :hover {
+
     background-color: #effbff;
+
 }
+
 /* third_div end */
+
 /* card_box star */
+
 .card_box {
+
     border: 1px solid #e0dfe0;
+
     width: 100%;
+
     height: 150px;
+
     background-color: #e0dfe0;
+
 }
+
 .card_box1 {
+
     border: 1px solid #e0dfe0;
+
     width: 100%;
+
     height: 150px;
+
     background-color: #e0dfe0;
+
     margin-top: 100px;
+
 }
+
 .category p {
+
     font-size: 16px;
+
     font-weight: bold;
+
     background-color: #f5fbfe;
+
     text-align: center;
+
     height: 100px;
+
     width: 300px;
+
     margin-left: 24px;
+
     margin-top: 108px;
-    padding-top: 14px;
-}
-.category1 p {
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #f5fbfe;
-    text-align: center;
-    height: 100px;
-    width: 300px;
-    margin-left: 24px;
-    margin-top: 108px;
+
     padding-top: 14px;
 
 }
-/* for monthly benefit */
-#monthly_benefit_header_part{
-    background-image: url(../images/Monthly-Benefit-Scheme-Landing-page-Banner.jpg);
-    width: 100%;
-    height: 450px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.month_benefit_header_text {
-    text-align: right;
-    top: 278px;
-    position: relative;
-    float: right;
-    margin-right: 220px;
-}
-.month_benefit_header_text p {
-    color: #2697D5;
-    font-size: 18px;
-    font-style: italic;
-    margin-bottom: 26px;
-    font-weight: bold;
-    text-shadow: 1px 1px #fff;
-}
-#monthly_benefit_header{
-    background-image:url('../images/Monthly-Benefit-Scheme-Main-page-Banner.jpg');
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center center;
-    width:100%;
-    height:320px;
-    position:relative;
-}
-#footer_monthly_benefit{
-    background-image:url(../images/Monthly-Benefit-footerbg.png);
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    height:427px;
-    width:100%;
-}
-.monthly_benefit_pr h3 {
-    color: #fff;
-    margin-top: 85px;
-}
-.monthly_benefit_pr img {
-    margin-top: 36px;
-}
-#monthly_benefit_biggest_brand {
-    background-image: url(../images/Monthly-Benefit-middlebg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 395px;
-    width: 100%;
-    background-position: center center;
-    margin-top: 50px;
-}
-.btn_monthly_benefit{
-    border: 1px solid #A58D32;
-    padding: 5px 26px;
-    border-radius: 6px;
-    margin-left: 58px;
+
+.category1 p {
+
     font-size: 16px;
+
+    font-weight: bold;
+
+    background-color: #f5fbfe;
+
+    text-align: center;
+
+    height: 100px;
+
+    width: 300px;
+
+    margin-left: 24px;
+
+    margin-top: 108px;
+
+    padding-top: 14px;
+
+
+
+}
+
+/* for monthly benefit */
+
+#monthly_benefit_header_part{
+
+    background-image: url(../images/Monthly-Benefit-Scheme-Landing-page-Banner.jpg);
+
+    width: 100%;
+
+    height: 450px;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+}
+
+.month_benefit_header_text {
+
+    text-align: right;
+
+    top: 278px;
+
+    position: relative;
+
+    float: right;
+
+    margin-right: 220px;
+
+}
+
+.month_benefit_header_text p {
+
+    color: #2697D5;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    margin-bottom: 26px;
+
+    font-weight: bold;
+
+    text-shadow: 1px 1px #fff;
+
+}
+
+#monthly_benefit_header{
+
+    background-image:url('../images/Monthly-Benefit-Scheme-Main-page-Banner.jpg');
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+
+    background-position:center center;
+
+    width:100%;
+
+    height:320px;
+
+    position:relative;
+
+}
+
+#footer_monthly_benefit{
+
+    background-image:url(../images/Monthly-Benefit-footerbg.png);
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+
+    height:427px;
+
+    width:100%;
+
+}
+
+.monthly_benefit_pr h3 {
+
+    color: #fff;
+
+    margin-top: 85px;
+
+}
+
+.monthly_benefit_pr img {
+
+    margin-top: 36px;
+
+}
+
+#monthly_benefit_biggest_brand {
+
+    background-image: url(../images/Monthly-Benefit-middlebg.png);
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    height: 395px;
+
+    width: 100%;
+
+    background-position: center center;
+
+    margin-top: 50px;
+
+}
+
+.btn_monthly_benefit{
+
+    border: 1px solid #A58D32;
+
+    padding: 5px 26px;
+
+    border-radius: 6px;
+
+    margin-left: 58px;
+
+    font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_monthly_benefit:hover{
+
     background-color:#A58D32;
+
     color:#fff;
+
 }
+
 /* card_box end */
+
 /* popular_artical start */
+
 #artical{
+
     margin-top:200px;
+
 }
+
 .popular_artical img{
+
     width:45px;
+
     height:45px;
+
     border:1px solid #DADADA;
+
     border-radius:50%;
 
-}
-.popular_artical h5 {
-    font-size: 16px;
-    color: black;
-}
-.popular_artical a {
-    text-decoration: none;
-    color: #bcbcbc;
-    font-weight: bold;
-    font-size: 15px;
-}
-.Card_partner_imgs h3 {
-    margin: 0;
-    color: black;
-    font-size:20px;
-}
-.Card_partner_imgs p {
-    font-size: 12px;
-    color: black;
-}
-.partenrs_card img{
-    float:left;
-    margin:0 10px 40px 0;
-}
-#Basic{
-    background-image:url('../images/Back.jpg');
-    background-position:center center;
-    background-size:cover;
-    background-repeat:no-repeat;
-    height:490px;
-    width:100%;
-}
-.card_basic p {
-    font-size: 13px;
-    margin-top: 20px;
-    text-align:justify;
-}
-.All_card4 p {
-    margin-top: 31px;
-}
-.All_card5 p {
-    margin-top: 40px;
-}
-.All_card6 p {
-    margin-top: 31px;
-}
-.All_card7 p {
-    margin-top: 30px;
-}
-.All_card4 img {
-    margin-top: 20px;
-}
-.All_card5 img {
-    margin-top: 20px;
-}
-.All_card6 img {
-    margin-top: 19px;
-}
-.All_card7 img {
-    margin-top: 20px;
-}
-hr {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    border-top: 1px solid #DADADA;
-}
-.par_card {
-    margin-top: 40px;
-}
-#our_partners {
-    margin-top: 40px;
+
+
 }
 
-#logos img {
-    margin-top: 60px;
+.popular_artical h5 {
+
+    font-size: 16px;
+
+    color: black;
+
 }
-.btn-info {
-    color: #fff !important;
-    background-color: #fff !important;
-    border-color: #fff !important;
-}
-.btn-info:hover {
-    color: #fff;
-    background-color: #fff;
-    border-color: #fff;
-}
-/* .card_basic {
-	margin-top: 40px;
-} */
-/* debit car start */
-.debit_card_box1 {
-    border: 1px solid #ddd4b5;
-    width: 100%;
-    height: 150px;
-    background-color: #ddd4b5;
-    margin-top: 100px;
-}
-.debit_card_box {
-    border: 1px solid #ddd4b5;
-    width: 100%;
-    height: 150px;
-    background-color: #ddd4b5;
-}
-.debit_box{
-    border:2px solid #dededf;
-    height:70px;
-    width:100%;
-    margin-top: 45px;
-    background-color:#fff;
-}
-#debit_header_part{
-    background-color:#9a8d5c;
-    width:100%;
-    height:60px;
-}
-#debit_second_div{
-    background-image:url(../images/debit_background.jpg);
-    height:450px;
-    width:100%;
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center center;
-}
-.debit_best_card_image img {
-    position: absolute;
-    margin-left: 943px;
-    width:200px;
-}
-.debit_All_card1 p {
-    margin-top: 37px;
-}
-.debit_All_card2 img {
-    margin-top: 12px;
-}
-.debit_All_card2 p {
-    margin-top: 47px;
-}
-.debit_All_card {
-    border: 1px solid #DADADA;
-    padding: 20px;
-    background-color: #fff;
-}
-.debit_All_card1 {
-    border-top: 1px solid #DADADA;
-    padding: 18px;
-    background-color: #fff;
-}
-.debit_All_card2 {
-    border-top: 1px solid #DADADA;
-    border-right: 1px solid #DADADA;
-    border-left: 1px solid #DADADA;
-    padding: 19px;
-    background-color: #fff;
-}
-.debit_All_card3 {
-    border-top: 1px solid #DADADA;
-    border-right: 1px solid #DADADA;
-    padding: 18px;
-    background-color: #fff;
-}
-.debit_All_card4 {
-    border-left:1px solid #DADADA;
-    border-bottom:1px solid #DADADA;
-    padding: 18px;
-}
-.debit_All_card5 {
-    border: 1px solid #DADADA;
-    padding: 17px;
-    margin: -1px -1px 0px -1px;
-}
-.debit_All_card6 {
-    border-top: 1px solid #DADADA;
-    border-bottom: 1px solid #DADADA;
-    border-left: 1px solid #DADADA;
-    padding: 23px;
-    margin: -1px 0px;
-}
-.debit_All_card7 {
-    border: 1px solid #DADADA;
-    padding: 29px;
-    margin: -1px 0px 0px -1px;
-}
-.debit_All_card4 p {
-    margin-top: 31px;
-}
-.debit_All_card5 p {
-    margin-top: 30px;
-}
-.debit_All_card6 p {
-    margin-top: 31px;
-}
-.debit_All_card7 p {
-    margin-top: 30px;
-}
-.debit_All_card4 img {
-    margin-top: 20px;
-}
-.debit_All_card5 img {
-    margin-top: 20px;
-}
-.debit_All_card6 img {
-    margin-top: 20px;
-}
-.All_card7 img {
-    margin-top: 20px;
-}
-.All_debit_card a{
+
+.popular_artical a {
+
     text-decoration: none;
-}
-.All_debit_card p {
-    color: #9a8d5c;
+
+    color: #bcbcbc;
+
     font-weight: bold;
+
     font-size: 15px;
-    margin-top: 18px;
+
 }
-.All_debit_card {
-    margin: 0 auto;
-    float: none;
-    display: block;
-    text-align: center;
+
+.Card_partner_imgs h3 {
+
+    margin: 0;
+
+    color: black;
+
+    font-size:20px;
+
 }
-.All_debit_card a{
-    text-decoration:none;
+
+.Card_partner_imgs p {
+
+    font-size: 12px;
+
+    color: black;
+
 }
-.All_debit_card :hover {
-    background-color: #e2e3e4;
+
+.partenrs_card img{
+
+    float:left;
+
+    margin:0 10px 40px 0;
+
 }
-.debit_All_card2 img {
-    margin-top: 35px;
-}
-.debit_All_card1 img {
-    margin-top: 19px;
-}
-#debit_Basic{
-    background-image:url(../images/debit_BG.jpg);
+
+#Basic{
+
+    background-image:url('../images/Back.jpg');
+
     background-position:center center;
+
     background-size:cover;
+
     background-repeat:no-repeat;
+
     height:490px;
+
     width:100%;
+
 }
+
+.card_basic p {
+
+    font-size: 13px;
+
+    margin-top: 20px;
+
+    text-align:justify;
+
+}
+
+.All_card4 p {
+
+    margin-top: 31px;
+
+}
+
+.All_card5 p {
+
+    margin-top: 40px;
+
+}
+
+.All_card6 p {
+
+    margin-top: 31px;
+
+}
+
+.All_card7 p {
+
+    margin-top: 30px;
+
+}
+
+.All_card4 img {
+
+    margin-top: 20px;
+
+}
+
+.All_card5 img {
+
+    margin-top: 20px;
+
+}
+
+.All_card6 img {
+
+    margin-top: 19px;
+
+}
+
+.All_card7 img {
+
+    margin-top: 20px;
+
+}
+
+hr {
+
+    margin-top: 0px;
+
+    margin-bottom: 0px;
+
+    border-top: 1px solid #DADADA;
+
+}
+
+.par_card {
+
+    margin-top: 40px;
+
+}
+
+#our_partners {
+
+    margin-top: 40px;
+
+}
+
+
+
+#logos img {
+
+    margin-top: 60px;
+
+}
+
+.btn-info {
+
+    color: #fff !important;
+
+    background-color: #fff !important;
+
+    border-color: #fff !important;
+
+}
+
+.btn-info:hover {
+
+    color: #fff;
+
+    background-color: #fff;
+
+    border-color: #fff;
+
+}
+
+/* .card_basic {
+
+	margin-top: 40px;
+
+} */
+
+/* debit car start */
+
+.debit_card_box1 {
+
+    border: 1px solid #ddd4b5;
+
+    width: 100%;
+
+    height: 150px;
+
+    background-color: #ddd4b5;
+
+    margin-top: 100px;
+
+}
+
+.debit_card_box {
+
+    border: 1px solid #ddd4b5;
+
+    width: 100%;
+
+    height: 150px;
+
+    background-color: #ddd4b5;
+
+}
+
+.debit_box{
+
+    border:2px solid #dededf;
+
+    height:70px;
+
+    width:100%;
+
+    margin-top: 45px;
+
+    background-color:#fff;
+
+}
+
+#debit_header_part{
+
+    background-color:#9a8d5c;
+
+    width:100%;
+
+    height:60px;
+
+}
+
+#debit_second_div{
+
+    background-image:url(../images/debit_background.jpg);
+
+    height:450px;
+
+    width:100%;
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    background-position:center center;
+
+}
+
+.debit_best_card_image img {
+
+    position: absolute;
+
+    margin-left: 943px;
+
+    width:200px;
+
+}
+
+.debit_All_card1 p {
+
+    margin-top: 37px;
+
+}
+
+.debit_All_card2 img {
+
+    margin-top: 12px;
+
+}
+
+.debit_All_card2 p {
+
+    margin-top: 47px;
+
+}
+
+.debit_All_card {
+
+    border: 1px solid #DADADA;
+
+    padding: 20px;
+
+    background-color: #fff;
+
+}
+
+.debit_All_card1 {
+
+    border-top: 1px solid #DADADA;
+
+    padding: 18px;
+
+    background-color: #fff;
+
+}
+
+.debit_All_card2 {
+
+    border-top: 1px solid #DADADA;
+
+    border-right: 1px solid #DADADA;
+
+    border-left: 1px solid #DADADA;
+
+    padding: 19px;
+
+    background-color: #fff;
+
+}
+
+.debit_All_card3 {
+
+    border-top: 1px solid #DADADA;
+
+    border-right: 1px solid #DADADA;
+
+    padding: 18px;
+
+    background-color: #fff;
+
+}
+
+.debit_All_card4 {
+
+    border-left:1px solid #DADADA;
+
+    border-bottom:1px solid #DADADA;
+
+    padding: 18px;
+
+}
+
+.debit_All_card5 {
+
+    border: 1px solid #DADADA;
+
+    padding: 17px;
+
+    margin: -1px -1px 0px -1px;
+
+}
+
+.debit_All_card6 {
+
+    border-top: 1px solid #DADADA;
+
+    border-bottom: 1px solid #DADADA;
+
+    border-left: 1px solid #DADADA;
+
+    padding: 23px;
+
+    margin: -1px 0px;
+
+}
+
+.debit_All_card7 {
+
+    border: 1px solid #DADADA;
+
+    padding: 29px;
+
+    margin: -1px 0px 0px -1px;
+
+}
+
+.debit_All_card4 p {
+
+    margin-top: 31px;
+
+}
+
+.debit_All_card5 p {
+
+    margin-top: 30px;
+
+}
+
+.debit_All_card6 p {
+
+    margin-top: 31px;
+
+}
+
+.debit_All_card7 p {
+
+    margin-top: 30px;
+
+}
+
+.debit_All_card4 img {
+
+    margin-top: 20px;
+
+}
+
+.debit_All_card5 img {
+
+    margin-top: 20px;
+
+}
+
+.debit_All_card6 img {
+
+    margin-top: 20px;
+
+}
+
+.All_card7 img {
+
+    margin-top: 20px;
+
+}
+
+.All_debit_card a{
+
+    text-decoration: none;
+
+}
+
+.All_debit_card p {
+
+    color: #9a8d5c;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    margin-top: 18px;
+
+}
+
+.All_debit_card {
+
+    margin: 0 auto;
+
+    float: none;
+
+    display: block;
+
+    text-align: center;
+
+}
+
+.All_debit_card a{
+
+    text-decoration:none;
+
+}
+
+.All_debit_card :hover {
+
+    background-color: #e2e3e4;
+
+}
+
+.debit_All_card2 img {
+
+    margin-top: 35px;
+
+}
+
+.debit_All_card1 img {
+
+    margin-top: 19px;
+
+}
+
+#debit_Basic{
+
+    background-image:url(../images/debit_BG.jpg);
+
+    background-position:center center;
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    height:490px;
+
+    width:100%;
+
+}
+
+
+
+
 
 
 
 /* for FDR Loan */
+
 #fdr_header{
+
     background-image:url(../images/FDR-Main-Page-Banner-Final.jpg);
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     background-position:center center;
+
     width:100%;
+
     height:320px;
+
     position:relative;
+
     margin-bottom:6px;
+
 }
+
 .fdr_tenure{
+
     background-image:url(../images/radiobg.png);
+
     width:119px;
+
     height:31px;
+
     margin-bottom:10px;
+
 }
+
 .fdr_radio{
+
     margin:6px 0 0 8px;
+
 }
+
 .card_query_fdr{
+
     /*border-bottom: 2px solid #DADADA;*/
+
 }
+
 .card_query_fdr p {
+
     border-bottom: 1px solid #DADADA;
+
     background-color: gray;
+
     padding: 4px 10px;
+
     color: #fff;
+
     font-weight: 600;
+
 }
+
 .card_query_fdr2 p{
+
     border-bottom: 1px solid #DADADA;
+
     background-color: gray;
+
     padding: 4px 10px;
+
     color: #fff;
+
     font-weight: 600;
+
 }
+
 .fdrTenurepadding{
+
     padding:5px;
+
 }
+
 .card_text3 {
+
     margin-top: 6px;
+
     position: relative;
+
     min-height: 50px;
+
     text-align:center;
+
 }
+
 .fdr_apply {
+
     margin-bottom: 10px;
+
     width: 97px;
+
 }
+
 .more_availabe{
+
     margin-top:48px;
+
 }
+
 .more_availabe i{
+
     color:#2c8aca;
+
 }
+
 .more_availabe a{
+
     text-decoration:none;
+
     color:#000;
+
 }
+
 .fdr_right_bar{
+
     padding: 15px 15px;
+
     margin-bottom: 15px;
+
     clear: both;
+
     border: 1px solid #EAEAEC;
+
 }
+
 .fdr_right_bar:hover{
+
     background-color:#f4f4f4;
+
 }
+
 .fdr_bank_logo{
+
     border: 1px solid #EAEAEC;
+
 }
+
 .fdr_terms {
+
     padding: 28px;
+
     text-align: justify;
+
 }
+
 .fdr_terms ol li{
+
     margin-bottom:8px;
+
 }
+
 .offer_table table th, td{
+
     text-align:center;
+
 }
+
 .offer_table table th{
+
     background-color:#57add3;
+
 }
+
 .offer_table tr:nth-child(even){
+
     background: #c4c4c4;
+
 }
+
 .fdr_iframe{
+
     background-color:#EAEAEC;
+
     padding:10px;
+
 }
+
 /* for dps */
+
 #dps_header{
+
     background-image:url(../images/DPSMainPageBanner.jpg);
+
     background-size:cover;
+
     background-position:center center;
+
     background-repeat:no-repeat;
+
     width:100%;
+
     height:300px;
+
     margin-bottom:10px;
+
 }
+
 .dps_tenure{
+
     background-image:url(../images/btnDps.png);
+
     width:120px;
+
     height:32px;
+
     margin-bottom:10px;
+
 }
+
 .nav>li>a {
+
     font-size: 13px !important;
+
 }
+
+
+
+
 
 
 
 /*For Mashmenu*/
+
 .no-padding{
+
     padding: 0;
+
 }
+
 .margin_bottom_10{
+
     margin-bottom: 10px;
+
 }
+
+
 
 #page-content-wrapper {
+
     z-index: 99999;
+
     position: absolute;
+
 }
+
 .logobar{
+
     position: absolute;
+
     left: 15px;
+
     z-index: 99999;
+
     max-height: 63px;
+
     width: 150px;
+
     margin-top: 3px;
+
 }
+
+
 
 .logobar a .logo {
+
     max-height: 70px;
+
     width: 185px;
+
 }
+
+
 
 /*For Footer menu*/
+
 .footer-logo{
+
     width: 155px;
+
     height: 55px;
+
 }
+
 .footer{
+
     background: #e2e5e6;
+
     padding: 30px 15px 15px 15px;
+
 }
+
 ul.footer-socio {
+
     float: right;
+
 }
+
 .footer-socio li {
+
     display: inline;
+
 }
+
 .footer-socio li img {
+
     height: 60px;
+
     max-width: 51px;
+
     transition: 1s;
+
 }
+
 .footer-menu-title{
+
     color: #129bbe;
+
     font-weight: 600;
+
     font-size: 15px;
+
     margin-bottom: 15px;
+
 }
+
 .footer-socio li img:hover {
+
     max-width: 60px;
+
     transform: scale(1.3);
+
 }
+
 .footer-socio li a:hover {
+
     text-decoration: none;
+
 }
+
 .hello {
+
     font-weight: bold;
+
     color: #EE5726;
+
     /*text-shadow: 1px 1px #5A5858;*/
+
 }
+
 .footer-menus li a{
+
     text-decoration:none;
+
 }
+
 .footer-menus li a:hover {
+
     color: #000;
+
 }
+
 .footer-menus li{
+
     list-style: none;
+
 }
+
 .footer-hr{
+
     margin-top: 20px;
+
     margin-bottom: 15px;
+
     border-top: 2px solid #b9b8b8;
+
 }
+
 .subscribe-footer{
+
     border: 2px solid #757779 !important;
+
     border-radius: 14px !important;
+
     background-color: #e2e5e6 !important;
+
 }
+
 .subscribe-footer-btn {
+
     background-color: #1a9cbe;
+
     font-weight: 600 !important;
+
     color: #fff;
+
     font-size: 13px !important;
+
     padding: 4px 11px !important;
+
     border-radius: 10px !important;
+
     outline: 0 !important;
+
 }
+
 .subscribe-footer-btn:hover, .subscribe-footer-btn:focus, .subscribe-footer-btn:active{
+
     color: #fff !important;
+
 }
+
 .footer-menus>li>a {
+
     color: #6d6d6d;
+
     font-weight: 600;
+
     font-size: 13px;
+
 }
+
 .footer-ass-text{
+
     color: #6d6d6d !important;
+
     font-weight: 600;
+
     font-size: 12px;
+
 }
+
 .footer-ass-text a{
+
     color: #1a9cbe;
+
 }
+
 /* for bootstrap horizontal menu  */
+
 .navbar-default {
+
     background-color: transparent;
+
     border-color: transparent;
+
     margin:0px auto;
+
 }
+
 .navbar-default .navbar-nav>li>a {
+
     color: #000;
+
     text-transform:uppercase;
+
     font-size:14px;
+
     margin-left:-8px;
+
     font-weight:bold;
+
 }
+
 .navbar-default .navbar-nav>li>a:hover{
+
     color:#67B5D4;
+
 }
+
 .navbar-default .navbar-nav>li>a:focus{
+
     color:#000;
+
 }
+
 .top-menu{
+
     display:none;
+
 }
+
 .vMenu {
+
     text-align: center;
+
     margin: 0px auto;
+
     height: auto;
+
     width: 531px;
+
 }
+
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+
     background-color: none;
+
     border-bottom: 1px solid #000;
+
     border-bottom-color: transparent;
+
 }
+
 .nav-tabs > li > a {
+
     margin-right: 0px;
+
 }
+
 .nav-tabs {
+
     border-bottom: none;
+
 }
+
 .no-margin-lr{
+
     margin-left:0 !important;
+
     margin-right:0 !important;
+
 }
+
 .dropdown-menu {
+
     margin: 2px -8px 0;
+
 }
+
 #home-page{
+
     width:100%;
+
     height:600px;
+
 }
+
 #top-page{
+
     min-height:48px;
+
 }
+
 .logo{
+
     width:150px;
+
 }
+
 .logo-lg{
+
     height: 180px;
+
     width: auto;
+
 }
+
 .login{
+
     font-family:"Eras Demi ITC";
+
     font-weight:bold;
+
     font-size:18px;
+
     margin-right:80px;
+
 }
+
 .header-right{
+
     margin-top:8px;
+
 }
+
 .hr-bar{
+
     width:100%;
+
     height:3px;
+
     display: none;
+
 }
+
 .footer-text p{
+
     margin-top:7px;
+
 }
+
 .find-bar{
+
     margin-top:160px;
+
     text-align:center;
+
 }
+
+
 
 .device-bg{
+
     width:100%;
+
     height:350px;
+
     background-color:#9e9e9e;
+
     background-attachment:fixed;
-}
-.device-img{
-    height:auto;
-    width:100%;
-    margin-top:53px;
-}
-/* for millionier */
-#millionier_header_part {
-    background-image: url('../images/Lakhpoti-&-Millionaire.jpg');
-    width: 100%;
-    height: 450px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.millionier_header_text {
-    text-align: right;
-    top: 130px;
-    position: relative;
-    float: right;
-    margin-right: 221px;
-}
-.millionier_header_text p {
-    color: #000;
-    font-size: 18px;
-    font-style: italic;
-    margin-bottom:25px;
-}
-.millionier_header_text h3 {
-    color: #000;
-    font-size: 35px;
-    font-style: italic;
-    font-weight: bold;
-}
-.millionier_landing_button {
-    background: #a7a8aa; /* For browsers that do not support gradients */    
-    background: -webkit-linear-gradient(left, #a7a8aa, #fff); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #a7a8aa, #fff); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #a7a8aa, #fff); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #a7a8aa, #fff); /* Standard syntax (must be last) */
-    width: 180px;
-    padding: 9px 20px;
-    text-align: center;
-    font-size: 16px;
-}
-a .millionier_landing_button{
-    color: #000;
-    font-weight: bold;
+
 }
 
-#maximizer_header{
-    background-image: url('../images/Millionaire-main.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-    position: relative;
+.device-img{
+
+    height:auto;
+
+    width:100%;
+
+    margin-top:53px;
+
 }
+
+/* for millionier */
+
+#millionier_header_part {
+
+    background-image: url('../images/Lakhpoti-&-Millionaire.jpg');
+
+    width: 100%;
+
+    height: 450px;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+}
+
+.millionier_header_text {
+
+    text-align: right;
+
+    top: 130px;
+
+    position: relative;
+
+    float: right;
+
+    margin-right: 221px;
+
+}
+
+.millionier_header_text p {
+
+    color: #000;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    margin-bottom:25px;
+
+}
+
+.millionier_header_text h3 {
+
+    color: #000;
+
+    font-size: 35px;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+}
+
+.millionier_landing_button {
+
+    background: #a7a8aa; /* For browsers that do not support gradients */    
+
+    background: -webkit-linear-gradient(left, #a7a8aa, #fff); /* For Safari 5.1 to 6.0 */
+
+    background: -o-linear-gradient(right, #a7a8aa, #fff); /* For Opera 11.1 to 12.0 */
+
+    background: -moz-linear-gradient(right, #a7a8aa, #fff); /* For Firefox 3.6 to 15 */
+
+    background: linear-gradient(to right, #a7a8aa, #fff); /* Standard syntax (must be last) */
+
+    width: 180px;
+
+    padding: 9px 20px;
+
+    text-align: center;
+
+    font-size: 16px;
+
+}
+
+a .millionier_landing_button{
+
+    color: #000;
+
+    font-weight: bold;
+
+}
+
+
+
+#maximizer_header{
+
+    background-image: url('../images/Millionaire-main.jpg');
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center center;
+
+    width: 100%;
+
+    height: 300px;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+}
+
+
+
 
 
 /* for millionaire compare */
+
 .millionaire-Compare-hr1{
+
     width: 34.3%;
+
 }
+
 .millionaire-Compare-hr2{
+
     width: 33.2%;
+
 }
+
 .millionaire-Compare-hr3{
+
     width: 44.7%;
+
 }
+
 .millionaire-Compare-hr4{
+
     width: 38.5%;
+
 }
+
 .millionaire-Compare-hr5{
+
     width: 42.3%;
+
 }
+
 .millionaire-Compare-hr6{
+
     width: 38.2%;
+
 }
+
 #debit_blog{
+
     margin:30px 0;
+
 }
+
 #debit_blog a{
+
     text-decoration:none;
+
 }
+
 .debit_head{
+
     margin-left:15px;
+
     padding: 10px 0;
+
 }
+
 .debit_blog_box{
+
     position:relative;
+
 }
+
 .debit_blog_box img{
+
     width:100%;
+
     height:180px;
+
     border:1px solid #DEDEDE;
+
     position:absolute;
+
     padding: 6px;
+
 }
+
 .debit_blog_box p {
+
     position: absolute;
+
     background-color: #F5FBFE;
+
     text-align: center;
+
     width: 100%;
+
     margin: 98px 0 0 0;
+
     padding: 12px;
+
     font-size: 16px;
+
 }
+
+
 
 /* search page */
+
 #search_page{
+
     background-color:#FFF9EA;
+
     width:100%;
+
     height:100%;
+
 }
+
 #search_page_content .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+
     color: #555;
+
     cursor: default;
+
     background-color: transparent;
+
     border: none;
+
     border-bottom: 2px solid #A4D2D8;
+
     outline:0;
+
 }
+
 #search_page_content .nav-tabs {
+
     border-bottom: none;
+
     margin-left: 566px;
+
     margin-bottom: 40px;
+
 }
+
 #search_page .form-control {
+
     border: 0;
+
     border-bottom: 2px solid #A4D2D8;
+
     height: 50px;
+
     background-color: transparent;
+
     border-radius: 0;
+
     -webkit-box-shadow: none;
+
     box-shadow: none;
+
     -webkit-transition: none;
+
     -o-transition: none;
+
     transition: none;
+
     font-size: 26px;
+
     padding-top: 18px
+
 }
+
 #search_page_content{
+
     height:650px;
+
     overflow:auto;
+
 }
+
 .no_filter_tab_content h4{
+
     text-align:center;
+
     color:#96938F;
+
     font-size:26px;
+
 }
+
 .no_filte_div{
+
     background-color:#403B2C;
+
     cursor: pointer;
+
 }
+
 .no_filte_div {
+
     background-color: #403B2C;
+
     padding: 20px;
+
     color: #fff;
+
     margin-bottom:35px;
+
 }
+
 .no_filte_div i {
+
     font-size: 30px;
+
 }
+
 .no_filte_div span {
+
     font-size: 18px;
+
     margin-left: 10px;
+
     color:#fff;
+
 }
+
 .modal-open .modal {
+
     overflow-x: hidden !important;
+
     overflow-y: hidden !important;
+
     z-index:99999999999 !important;
+
 }
+
 .close {
+
     font-size: 40px;
+
 }
+
 .search-image{
+
     cursor:pointer;
+
 }
+
 .esc{
+
     font-size:16px !important;
+
     display:block;
+
 }
+
 .search_icon {
+
     font-size: 24px;
+
     cursor:pointer;
+
     position: fixed;
+
     margin-left: 120px;
+
     z-index:9999;
+
     margin-top: 3px;
+
 }
+
 /* common button effect */
+
 .flash-button{
+
     border:none;
+
     border-radius:5px;
+
     animation-name: flash;
+
     animation-duration: 1s;
+
     animation-timing-function: linear;
+
     animation-iteration-count: infinite;
 
+
+
 /* Firefox 1+*/
+
 -webkit-animation-name: flash;
+
     -webkit-animation-duration: 1s;
+
     -webkit-animation-timing-function: linear;
+
     -webkit-animation-iteration-count: infinite;
 
+
+
     /*Safari 3-4*/
+
 -moz-animation-name: flash;
+
     -moz-animation-duration: 1s;
+
     -moz-animation-timing-function: linear;
+
     -moz-animation-iteration-count: infinite;
+
 }
+
+
 
 @keyframes flash {
+
     0% { opacity: 1.0; }
+
     50% { opacity: 0.5; }
+
     100% { opacity: 1.0; }
+
 }
+
+
 
 /*Firefox 1+*/
+
 @-webkit-keyframes flash {
+
     0% { opacity: 1.0; }
+
     50% { opacity: 0.5; }
+
     100% { opacity: 1.0; }
+
 }
 
+
+
 /*Safari 3-4*/
+
 @-moz-keyframes flash {
+
     0% { opacity: 1.0; }
+
     50% { opacity: 0.5; }
+
     100% { opacity: 1.0; }
+
 }
+
 a .auto_button.flash-button {
+
     color: #1a181b;
+
     font-weight: bold;
+
     text-decoration: none;
+
     float: right;
+
 }
+
 /*Auto loan button*/
+
 .btn_landing_auto {
+
     border: 1px solid #D19F59;
+
     padding: 5px 26px;
+
     border-radius: 6px;
+
     margin-left: 58px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_auto:hover{
+
     background-color:#D19F59;
+
     color:#ffffff;
+
 }
+
 .bigest_text1 p {
+
     margin-bottom: 64px;
+
 }
+
 .btn_landing_view_auto {
+
     border: 1px solid #D19F58;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#000;
+
 }
+
 .btn_landing_view_auto:hover{
+
     background-color:#D19F58;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_auto{
+
     border: 1px solid #fff;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_auto:hover{
+
     background-color:#fff;
+
     color:#000;
+
 }
+
 .btn_landing_auto_start{
+
     border: 1px solid #D19F59;
+
     padding: 6px 35px;
+
     border-radius: 6px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_auto_start:hover{
+
     background-color:#D19F59;
+
     color:#ffffff;
+
 }
+
 /*Home loan button*/
+
 .btn_landing_home{
+
     border: 1px solid #57ADD3;
+
     padding: 5px 26px;
+
     border-radius: 6px;
+
     margin-left: 58px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_home:hover{
+
     background-color:#57ADD3;
+
     color:#ffffff;
+
 }
+
 .btn_landing_view_home{
+
     border: 1px solid #57ACD1;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#000;
+
 }
+
 .btn_landing_view_home:hover{
+
     background-color:#57ACD1;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_home{
+
     border: 1px solid #fff;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_home:hover{
+
     background-color:#fff;
+
     color:#57ACD1;
+
 }
+
 .btn_landing_home_start{
+
     border: 1px solid #57ACD1;
+
     padding: 6px 35px;
+
     border-radius: 6px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_home_start:hover{
+
     background-color:#57ACD1;
+
     color:#ffffff;
+
 }
+
 /*Personal loan button*/
+
 .btn_landing_personal{
+
     border: 1px solid #256E92;
+
     padding: 5px 26px;
+
     border-radius: 6px;
+
     margin-left: 58px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_personal:hover{
+
     background-color:#256E92;
+
     color:#ffffff;
+
 }
+
 .btn_landing_view_personal{
+
     border: 1px solid #256D93;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#000;
+
 }
+
 .btn_landing_view_personal:hover{
+
     background-color:#256D93;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_personal{
+
     border: 1px solid #fff;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_personal:hover{
+
     background-color:#fff;
+
     color:#256D93;
+
 }
+
 .personal_bigest_text1 p {
+
     margin-bottom: 64px;
+
 }
+
 .btn_landing_personal_start{
+
     border: 1px solid #256D93;
+
     padding: 6px 35px;
+
     border-radius: 6px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_personal_start:hover{
+
     background-color:#256D93;
+
     color:#ffffff;
+
 }
+
 /*education loan button*/
+
 .btn_landing_education{
+
     border: 1px solid #636565;
+
     padding: 5px 26px;
+
     border-radius: 6px;
+
     margin-left: 58px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_education:hover{
+
     background-color:#636565;
+
     color:#ffffff;
+
 }
+
 .btn_landing_view_education{
+
     border: 1px solid #636565;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#000;
+
 }
+
 .btn_landing_view_education:hover{
+
     background-color:#636565;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_education{
+
     border: 1px solid #fff;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_education:hover{
+
     background-color:#fff;
+
     color:#636565;
+
 }
+
 .btn_landing_education_start{
+
     border: 1px solid #636565;
+
     padding: 6px 35px;
+
     border-radius: 6px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_education_start:hover{
+
     background-color:#636565;
+
     color:#ffffff;
+
 }
+
 /*FDR button*/
+
 .btn_landing_fdr{
+
     border: 1px solid #1F5883;
+
     padding: 5px 26px;
+
     border-radius: 6px;
+
     margin-left: 58px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_fdr:hover{
+
     background-color:#1F5883;
+
     color:#ffffff;
+
 }
+
 .btn_landing_view_fdr{
+
     border: 1px solid #1F5883;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#000;
+
 }
+
 .btn_landing_view_fdr:hover{
+
     background-color:#1F5883;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_fdr{
+
     border: 1px solid #fff;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_fdr:hover{
+
     background-color:#fff;
+
     color:#1F5883;
+
 }
+
 .btn_landing_fdr_start{
+
     border: 1px solid #1F5883;
+
     padding: 6px 35px;
+
     border-radius: 6px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_fdr_start:hover{
+
     background-color:#1F5883;
+
     color:#ffffff;
+
 }
+
 /*DPS button*/
+
 .btn_landing_dps{
+
     border: 1px solid #A9A270;
+
     padding: 5px 26px;
+
     border-radius: 6px;
+
     margin-left: 58px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_dps:hover{
+
     background-color:#A9A270;
+
     color:#ffffff;
+
 }
+
 .btn_landing_view_dps{
+
     border: 1px solid #A9A270;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#000;
+
 }
+
 .btn_landing_view_dps:hover{
+
     background-color:#A9A270;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_dps{
+
     border: 1px solid #fff;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_dps:hover{
+
     background-color:#fff;
+
     color:#A9A270;
+
 }
+
 .btn_landing_dps_start{
+
     border: 1px solid #A9A270;
+
     padding: 6px 35px;
+
     border-radius: 6px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_dps_start:hover{
+
     background-color:#A9A270;
+
     color:#ffffff;
+
 }
+
 /*millionaire button*/
+
 .btn_landing_millionaire{
+
     border: 1px solid #1F5883;
+
     padding: 5px 26px;
+
     border-radius: 6px;
+
     margin-left: 58px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_millionaire:hover{
+
     background-color:#1F5883;
+
     color:#ffffff;
+
 }
+
 .btn_landing_view_millionaire{
+
     border: 1px solid #1F5883;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#000;
+
 }
+
 .btn_landing_view_millionaire:hover{
+
     background-color:#1F5883;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_millionaire{
+
     border: 1px solid #fff;
+
     padding: 6px 23px;
+
     border-radius: 5px;
+
     color:#fff;
+
 }
+
 .btn_landing_view2_millionaire:hover{
+
     background-color:#fff;
+
     color:#1F5883;
+
 }
+
 .btn_landing_millionaire_start{
+
     border: 1px solid #1F5883;
+
     padding: 6px 35px;
+
     border-radius: 6px;
+
     font-size: 16px;
+
     color:#000;
+
 }
+
 .btn_landing_millionaire_start:hover{
+
     background-color:#1F5883;
+
     color:#ffffff;
+
 }
+
 #card_details_top {
+
     margin-top: 15px;
+
 }
+
+
+
 
 
 /*Bank Details Page*/
+
 .bank_details_landing_head{
+
     width: 100%;
     height: auto;
     border-bottom: 3px solid #5aafd1;
-    background-color: #c1c1c1;
+    background-color: #e8e8e8;
+    margin-top: 20px;
+    border-top: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+
 }
+
 .bank_details_landing_head p {
-    padding: 8px 0 0px 25px;
+
+    padding: 15px 0 0px 25px;
     font-weight: bold;
+    font-size: 13px;
+
 }
+
 .bdetails_bd_bank{
+
     margin-top: 5px;
+
     margin-left: -15px;
+
     height: 145px;
+
 }
+
 .bdetails_text{
+
     text-align: justify;
+
     font-size: 16px;
+
     margin-left: -30px;
+
     margin-top: 5px;
+
 }
+
 .bank_details_landing_head2{
+
     width: 100%;
+
     height: auto;
+
     border-bottom: 3px solid #5aafd1;
-    background-color: #c1c1c1;
+
+    background-color: #e8e8e8;
+
     margin-left: -15px;
+    margin-top: 20px;
+    border-top: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+
 }
+
 .bank_details_landing_head2 p {
-    padding: 16px 0 0px 25px;
+
+    padding: 15px 0 0px 25px;
+
     font-weight: bold;
+
+    font-size: 13px;
+
 }
+
 .bd_landing_details {
+
     margin-top: 5px;
+
 }
+
 .bd_sorting {
+
     margin-top: 22px;
+
     margin-bottom: 20px;
+
 }
+
 .bd_sorting span{
+
     display: inline;
+
     color: #fff;
+
     background-color: #5aafd1;
+
     border: 1px solid gray;
+
     border-radius:5px;
+
     margin: 12px;
+
     padding: 15px 18px;
+
 }
+
 .bd_sorting span a {
+
     color: #fff;
+
     font-weight: bold;
+
     font-size: 18px;
+
 }
+
 .bank_details_landing_box img {
+
     height: 136px;
+
     border: 1px solid #ddd;
+
     margin: 10px auto;
+
     display: block;
+
 }
+
 .bank_details_landing_box {
-    border: 1px solid #dddddd;
+    border: 1px solid #d6d6d6;
     margin: 10px;
     width: 100%;
     height: 205px;
+    box-shadow: 0px 0px 5px 0px #dedede;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bank_details_landing_box:hover {
+    box-shadow: 0px 0px 12px 0px #dedede;
 }
 
 #bank_details{
+
     margin-top:10px;
+
 }
+
 .bank_info_logo img {
+
     width: 100%;
+
     border: 1px solid #c1c1c1;
+
     height:200px;
+
 }
+
 .bank_address {
+
     border: 1px solid #c1c1c1;
+
     margin-top: 15px;
+
     padding: 7px 0 0 4px;
+
     text-align: center;
+
     font-size: 12px;
+
 }
+
 .bank_info_box {
     border: 1px solid #c1c1c1;
     text-align: center;
-    margin:0 0 17px 17px;
-    padding: 5px 0;
+    margin: 0 0 17px 17px;
+    padding: 6px 0;
+    font-size: 13px;
 }
+
 .bank_info_box:hover {
-    background-color:#dbeef2;
+    background-color: #f7f7f7;
+    box-shadow: 0px 0px 7px 0px #e0e0e0;
+    border-radius: 4px;
 }
+
 .bank_details_right{
+
     background-color: #f5fbfb;
+
 }
+
 .bank_details_right{
+
     background-color: #f5fbfb;
+
 }
+
 .bank_info_details h3 {
+
     padding: 10px;
+
     background-color: #e7e5e7;
+
     margin: 0;
+
     border-bottom: 2px solid #59afd2;
+
     font-weight: bold;
+
 }
+
 .bank_info_details p {
+
     margin: 10px 0;
+
     font-size: 16px;
+
 }
+
 .bank_info_map img {
+
     width: 100%;
+
     margin: 10px 0;
+
 }
+
 .bank_loan_details{
+
     background-color:#e2e3e4;
+
     width:100%;
+
     height:350px;
+
     padding:15px;
+
     margin-top: 20px;
+
 }
+
 .bank_loan_details img {
+
     width: 100%;
+
     height: auto;
+
     margin-top: 41px;
+
 }
+
 .bank_loan_details h4 {
+
     margin: 0;
+
     text-align: center;
+
 }
+
 .bank_loan_details table {
+
     background-color: #f9fafb;
+
     width: 425px;
+
     margin-left: 11px;
+
 }
+
 .bank_loan_details table tr td{
+
     text-align:left;
+
 }
+
 .bank_details_head{
+
     background-image: url(../images/Bank-Details-head.png);
+
     width:100%;
+
     height: 50px;
+
     border-bottom: 3px solid #5aafd1;
+
 }
+
 .bank_details_head p {
-    font-size: 16px;
+
+    font-size: 14px;
+
     font-weight: bold;
+
     color: #6a6a6a;
+
     text-align: left;
+
     padding: 14px;
+
 }
+
 .bank_details_right_body p {
+
     padding: 10px 16px;
+
     border-bottom:1px solid #afafb0;
+
 }
+
 .bank_details_right_body p:last-child {
+
     border-bottom:0px solid #afafb0;
+
 }
+
 .bank_details_right_body span {
+
     font-size: 24px;
+
     font-weight: bold;
+
     text-align: center;
+
     padding: 14px;
+
 }
+
 .bank_details_star{
+
     color:#df8e35;
+
 }
+
 .bank_details_more  {
+
     text-align: center;
+
 }
+
 .bank_details_more a{
+
     color:#000;
+
 }
+
 .bank_details_review {
+
     font-size: 12px;
+
     text-align: justify;
+
     padding: 15px 15px;
+
 }
+
 /* for tab menu */
 
+
+
 #breadcrumbs-two{
+
     overflow: hidden;
+
     width: 100%;
+
 }
+
+
 
 #breadcrumbs-two li{
+
     float: left;
+
     margin: -1px 0.5em -2px 1em;
+
 }
+
+
 
 #breadcrumbs-two a{
+
     background: #ddd;
+
     padding: .7em 1em;
+
     float: left;
+
     text-decoration: none;
+
     color: #444;
+
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
+
     position: relative;
+
 }
+
+
 
 #breadcrumbs-two a:hover{
+
     background: #ddd !important;
+
 }
+
+
 
 #breadcrumbs-two a::before{
+
     content: "";
+
     position: absolute;
+
     top: 50%;
+
     margin-top: -1.5em;
+
     border-width: 1.5em 0 1.5em 1em;
+
     border-style: solid;
+
     border-color: #ddd #ddd #ddd transparent;
+
     left: -1em;
+
 }
+
+
 
 #breadcrumbs-two a:hover::before{
+
     border-color: #ddd #ddd #ddd transparent;
+
 }
+
+
 
 #breadcrumbs-two a::after{
+
     content: "";
+
     position: absolute;
+
     top: 50%;
+
     margin-top: -1.5em;
+
     border-top: 1.5em solid transparent;
+
     border-bottom: 1.5em solid transparent;
+
     border-left: 1em solid #ddd;
+
     right: -1em;
-}
-#breadcrumbs-two a:hover::after{
-    border-left-color: #ddd;
-}
-#breadcrumbs-two .current,
-#breadcrumbs-two .current:hover{
-    font-weight: bold;
-    background: none;
-}
-#breadcrumbs-two .current::after,
-#breadcrumbs-two .current::before{
-    content: normal;
-}
-/* tab menu end */
-/*for left bar fixed*/
-        .fixedElement {
-           position: fixed;
-           width: 262px;
-           height: auto;
-           padding: 0px;
-           top: 0;
-       }
-/*for compare page header fixed*/
-.compare-bg{
-    position: fixed;
-    width: 100%;
-    height: 148px !important;
-    padding: 0px;
-    background-color: #f1f1f1;
-    top: 0;
-    z-index:9999;
-}
-.compare-bg img {
-	width: 140px;
+
 }
 
-/*---------------All Logo Page-----------*/
-#all_logo{
-    height:auto;
-    width:100%;
-    background-image:url('../images/categoybg.jpg');
+#breadcrumbs-two a:hover::after{
+
+    border-left-color: #ddd;
+
 }
+
+#breadcrumbs-two .current,
+
+#breadcrumbs-two .current:hover{
+
+    font-weight: bold;
+
+    background: none;
+
+}
+
+#breadcrumbs-two .current::after,
+
+#breadcrumbs-two .current::before{
+
+    content: normal;
+
+}
+
+/* tab menu end */
+
+/*for left bar fixed*/
+
+        .fixedElement {
+
+           position: fixed;
+
+           width: 262px;
+
+           height: auto;
+
+           padding: 0px;
+
+           top: 0;
+
+       }
+
+/*for compare page header fixed*/
+
+.compare-bg{
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 148px !important;
+
+    padding: 0px;
+
+    background-color: #f1f1f1;
+
+    top: 0;
+
+    z-index:9999;
+
+}
+
+.compare-bg img {
+
+	width: 140px;
+
+}
+
+
+
+/*---------------All Logo Page-----------*/
+
+#all_logo{
+
+    height:auto;
+
+    width:100%;
+
+    background-image:url('../images/categoybg.jpg');
+
+}
+
+
+
 
 
 /*For hover compare box*/
 
+
+
 .hovering.hiddenHalfDown{
+
     bottom: 0px !important;
+
 }
+
 .hiddenHalfDown {
+
     bottom: -68px !important;
+
 }
+
+
 
 /* for maintains modal */
+
 .maintains_pop_bg {
+
     background-image: url(../images/Fin-Maintenance.jpg);
+
     width: 600px;
+
     height: 500px;
+
     background-repeat: no-repeat;
+
     background-size: contain;
+
     background-position: center;
+
     margin-top: 27%;
+
 }
+
+
 
 /* for beta modal */
+
 .beta_modal .modal-content {
+
     -webkit-box-shadow: none;
+
     box-shadow: none !important;
+
 	background-color:transparent;
+
 	border: none;
+
 	border-radius: 0px;
+
 }
+
 .land_modal{
+
 	cursor: pointer;
+
 }
+
 .beta_pop_bg{
+
 	background-image:url(../images/Fin-Pop-Up-Beta-bg.jpg);
+
 	width:600px;
+
 	height:500px;
+
 	background-repeat:no-repeat;
+
 	background-position:cover;
+
 }
+
 .input-group {
+
 	position: absolute !important;
+
 	margin-top: 296px;
+
 	padding: 65px;
+
 }
+
 .beta_pop_text {
+
 	text-align: center;
+
 	margin-top: 333px;
+
 	position: absolute;
+
 	margin-left: 66px;
+
 }
+
 .beta_pop_text span{
+
 	color:#e2b958;
+
 }
+
+
 
 /*Sticky Sidebar START*/
+
 #sidebar.stick {
+
 	position: fixed;
+
 	top: 0;
+
 	z-index: 10;
+
 	transition: all 1s ease;
+
 	width: 249px; 
+
 }
+
 /*Sticky Sidebar END*/
 
+
+
 #privacy_header{
+
 	background-image:url(../images/PrivacyPolicyBanner.jpg);
+
 	background-size:cover;
+
 	background-position:center center;
+
 	background-repeat:no-repeat;
+
 	width:100%;
+
 	height:198px;
+
 	margin-bottom:25px;
+
 }
+
 .privacy_margin{
+
 	margin-left:15px;
+
 }
+
 #terms_header{
+
 	background-image:url(../images/terms-condition.jpg);
+
 	background-size:cover;
+
 	background-position:center center;
+
 	background-repeat:no-repeat;
+
 	width:100%;
+
 	height:198px;
+
 	margin-bottom:25px;
+
 }
+
+
+
 
 
 .loading_overlay{
+
     position: fixed;
+
     top: 0; right: 0; bottom: 0; left: 0;
+
     display: block;
+
     background: rgba(0,0,0,0.5);
+
     overflow: hidden;
+
     text-align: center;
+
     width: 100%;
+
     height: 100%;
+
     z-index: 10000;
 
+
+
 }
+
 .hide{
+
     display: none;
+
 }
+
+
 
 /* for ExportImport */
+
 #ExportImport_header{
+
 	background-image:url(../images/exportImport.png);
+
 	background-size:cover;
+
 	background-position:center center;
+
 	background-repeat:no-repeat;
+
 	width:100%;
+
 	height:300px;
+
 }
+
 #ExportImport_body {
+
     margin: 20px 0;
+
 }
+
 .panel-default > .panel-heading {
+
     background-color: #d2dad9;
+
 }
+
+
 
 .ExportImportAccordion .panel-heading a{
+
 	color:#000;
+
 	outline:0;
+
 	text-decoration:none;
+
 }
+
 .exportImport_ol{
+
 	margin-left:20px;
+
 }
+
 .export_table {
+
 	border: 1px solid #ddd;
+
 	padding: 10px;
+
 }
+
 .main-search-modal-icon{
+
     top: 15px !important;
+
     left: 15px;
+
     position: absolute !important;
+
     font-size: 22px !important;
+
     transform: rotate(85deg);
+
     color: #999999;
+
 }
+
 .pRelative{
+
     position: relative;
+
 }
+
 #search_word{
+
     padding-left: 34px !important;
+
 }
+
 #main-search-modal-close {
+
     position: absolute;
+
     z-index: 99999;
+
     right: 15px;
+
     top: 15px;
+
     color: #333;
+
     background: #a4d2d8;
+
     opacity: 1;
+
     height: 23px;
+
     width: 23px;
+
     border-radius: 50%;
+
 }
+
 #serchModal{
+
     padding-right: 0 !important;
+
 }
+
 .esc{
+
     dislpay: none !important;
+
 }
+
 .bank-small-filter {
+
     color: #8d8d8e;
+
     font-weight: 600;
+
     font-size: 11px;
+
     margin-bottom: 5px;
+
 }
+
 .bank-big-filter {
+
     color: #000;
+
     font-weight: 600;
+
     font-size: 12px;
+
 }
+
 /*span.filter-option {
+
     border: 1px solid #9c9c9c;
+
     border-radius: 7px;
+
     padding: 3px 7px;
+
     font-size: 12px;
+
     background: #ffffff;
+
     -webkit-box-shadow: 0px 7px 6px -6px #777;
+
     -moz-box-shadow: 0px 7px 6px -6px #777;
+
     box-shadow: 0px 7px 6px -6px #777;
+
     margin-right: 10px;
+
 }*/
+
 .filter-option {
+
     border: 2px solid #9c9c9c;
+
     border-radius: 12px;
+
     padding: 4px 7px;
+
     font-size: 11px;
+
     background: #ffffff;
+
     -webkit-box-shadow: 0px 7px 6px -6px #777;
+
     -moz-box-shadow: 0px 7px 6px -6px #777;
+
     box-shadow: 0px 7px 6px -6px #777;
+
     margin-right: 5px;
+
     color: #797979;
+
     font-weight: 600;
+
 }
+
 .filter-option:hover {
+
     background: #2b99be;
+
     color: #fff;
+
     border: 2px solid #c3c3c3;
+
 }
+
 .filter-option:hover a {
+
     color: #fff;
+
 }
+
 .filter-option i {
+
     font-weight: 600;
+
     font-size: 14px;
+
 }
+
 .filter-icon-wrapper{
+
     float: right;
+
     margin-left: 7px;
+
     margin-top: 1px;
+
 }
+
 .filter-icon-wrapper>a>i{
+
     font-weight: 600;
+
     font-size: 13px;
+
 }
+
 .no-padding{
+
     padding: 0px !important;
+
 }
+
 .no-margin{
+
     nargin: 0 !important;
+
 }
+
 .filter-option>a:hover {
+
     color: #333 !important;
+
 }
+
 /*.btn-filter-clear {
+
     float: right;
+
     border: 1px solid #ccc !important;
+
     padding: 3px 7px;
+
     font-size: 12px;
+
     border-radius: 12px;
+
     color: #8d8d8e;
+
 }*/
+
 .btn-filter-clear {
+
     float: right;
+
     border: 2px solid #9c9c9c;
+
     padding: 3px 7px;
+
     font-size: 11px;
+
     border-radius: 12px;
+
     /* color: #797979; */
+
     font-weight: 600;
+
     background: #fff;
+
     color: #337ab7 !important;
+
 }
+
 .btn-filter-clear :hover, .btn-filter-clear i{
+
     color: #337ab7 !important;
+
 }
+
 .filter-hr{
+
     margin: 10px 0;
+
 }
+
 #filter-bar {
+
     margin-top: 5px;
+
     border: 2px solid #DADADA;
+
     padding: 10px;
+
     box-shadow: 0px 7px 6px -6px #c7c7c7;
+
     background-color: rgba(238, 238, 238, 0.51);
+
 }
+
 .dropdown.mega-dropdown{
+
     list-style: none;
+
 }
+
 .dropdown.mega-dropdown>a{
+
     color: #000;
+
 }
+
 .mega-dropdown-menu {
+
     min-width: 850px !important;
+
 }
+
 .filter-list{
+
     padding:0;
+
     margin: 0;
+
 }
+
 .filter-list>li {
+
     list-style-type: none;
+
     float: left;
+
     margin-bottom: 10px;
+
 }
+
 .filter-list>li>span>a {
+
     margin-left: 5px;
+
 }
+
 .filter-by{
+
     padding: 0;
+
     margin: 0;
+
 }
+
 .filter-by {
+
     padding: 0;
+
     margin-top: 10px;
+
     margin-bottom: 0;
+
 }
+
 .no-padding-left{
+
     padding-left: 0 !important;
+
 }
+
 #filer-by-carousel .left{
 
+
+
 }
+
 #filer-by-carousel .right {
+
 }
+
 .filter-check-img {
+
     width: 25px;
+
     height: 22px;
+
     float: left;
+
     margin-right: 10px;
+
     text-align: center;
+
 }
+
 .filter-check-img>img {
+
     max-width: 25px;
+
     max-height: 20px;
+
 }
+
 #filter-carousel .material_label_checkbox{
+
     padding-left: 30px;
+
 }
+
 .filter-check-name {
+
     margin-top: 5px;
+
 }
+
 div#filter-carousel {
+
     padding: 10px 15px;
+
 }
+
 /*------Current Account-----------*/
 
+
+
 .current-account{
+
     margin-top:30px;
+
 }
+
 .caccount_text h5{
+
     font-weight:bold;
+
     font-size:13px;
+
 }
+
 .caccount_text p{
+
     font-size:12px;
+
 }
+
 #currantAccount_header{
+
     background-image:url(../images/Current-Ac-Banner.jpg);
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     width:100%;
+
     height:320px;
+
     position:relative;
+
     margin-bottom:10px;
+
 }
+
 .caccount_left_head{
+
     /*border: 1px solid #dadada;
+
     padding: 12px;*/
+
 }
+
 .caccount_left_head p {
+
     background-color: gray;
+
     color: #fff;
+
     padding: 4px;
+
     font-weight: bold;
+
 }
+
+
+
 
 
 #currentAccountSearch #pagination {
+
     position: relative !important;
+
     top: 0 !important;
+
     margin-bottom: 50px;
+
 }
+
+
+
 
 
 #currentAccountSearch #pagination>li{
+
     float: none;
+
 }
+
+
 
 #savings_account_header{
+
     background-image:url(../images/Saving-Banner.jpg);
+
     background-repeat:no-repeat;
+
     background-size:cover;
+
     width:100%;
+
     height:320px;
+
     position:relative;
+
     margin-bottom:10px;
-}
-/*Fixed sidebar*/
-.sidebar-absolute{
-    /*transition: all 1s ease;*/
-}
-.sidebar-absolute-bottom{
-    position: absolute;
-    width: 262px;
-    bottom: 35px;
-    left: 15px;
-}
-.fixed {
-    position: fixed;
-    top: 0px;
-    width: 262.5px;
-    transition: all 1s ease;
-}
-.sidebar_parent{
-    position: relative;
-    transition: all 1s ease;
-}
-#sidebar{
-    margin-top: 0;
-}
-/*.relative{
-    position: relative;
-    transition: all 1s ease;
-}*/
-.fixed-bottom{
-    position: fixed;
-    bottom: 0;
-    top: auto !important;
-    width: 262.5px;
-    transition: all 1s ease;
-}
-.main-content-area{
-    min-height: 600px !important;
+
 }
 
+/*Fixed sidebar*/
+
+.sidebar-absolute{
+
+    /*transition: all 1s ease;*/
+
+}
+
+.sidebar-absolute-bottom{
+
+    position: absolute;
+
+    width: 262px;
+
+    bottom: 35px;
+
+    left: 15px;
+
+}
+
+.fixed {
+
+    position: fixed;
+
+    top: 0px;
+
+    width: 262.5px;
+
+    transition: all 1s ease;
+
+}
+
+.sidebar_parent{
+
+    position: relative;
+
+    transition: all 1s ease;
+
+}
+
+#sidebar{
+
+    margin-top: 0;
+
+}
+
+/*.relative{
+
+    position: relative;
+
+    transition: all 1s ease;
+
+}*/
+
+.fixed-bottom{
+
+    position: fixed;
+
+    bottom: 0;
+
+    top: auto !important;
+
+    width: 262.5px;
+
+    transition: all 1s ease;
+
+}
+
+.main-content-area{
+
+    min-height: 600px !important;
+
+}
+
+
+
 /*Filterbar change*/
+
 #filter-carousel .material_label_checkbox {
+
     padding-left: 25px;
+
 }
+
 #filter-carousel .material_checkbox:checked + .material_label_checkbox:before {
+
     background-color: #4ca1ea;
+
     color: #fff;
+
     border: 0;
+
 }
+
 #filter-carousel .material_checkbox:checked + label:after {
+
     border-color: #ffffff;
+
 }
+
 #filter-carousel .material_label_checkbox:before {
+
     width: 15px;
+
     height: 15px;
+
     font-size: 12px;
+
     border-radius: 4px;
+
 }
+
 #filter-carousel .material_label_checkbox:after {
+
     content: '';
+
     display: block;
+
     -ms-transform: scaleX(-1) rotate(135deg);
+
     -webkit-transform: scaleX(-1) rotate(135deg);
+
     transform: scaleX(-1) rotate(135deg);
+
     -ms-transform-origin: left top;
+
     -webkit-transform-origin: left top;
+
     transform-origin: left top;
+
     border-right: 2px solid #cee;
+
     border-top: 2px solid #cee;
+
     position: absolute;
+
     left: 3px;
+
     top: 8px;
+
     width: 5px;
+
     height: 9px;
+
 }
+
 #filter-carousel .material_label_checkbox {
+
     font-size: 11px;
+
 }
+
 .mash-menu .vertical-tabs-content{
+
     -moz-box-shadow:    inset 0 0 10px #000000;
+
     -webkit-box-shadow: inset 0 0 10px #000000;
+
     box-shadow:         inset 0 0 10px #000000;
+
 }
+
 @keyframes spin {
+
     to {
+
         transform: rotateZ(360deg);
+
     }
+
 }
+
 .btn-filter-clear:hover i{
+
     animation: spin 2000ms;
+
 }
+
 section#card_details_Eligibility {
+
     margin-bottom: 30px;
+
 }
+
 #subscription_message_footer-close{
+
     position: absolute;
+
     z-index: 99999;
+
     right: 15px;
+
     top: 15px;
+
     color: #333;
+
     background: #a4d2d8;
+
     opacity: 1;
+
     height: 23px;
+
     width: 23px;
+
     border-radius: 50%;
+
     outline: 0 !important;
+
 }
+
 #subscribe_message_footer{
+
     border: 0;
+
 }
+
 #subscribe_message_footer .alert-danger{
+
     margin-bottom: 0;
+
 }
+
 /*compare page corrections*/
+
 .compare-feature-bar{
+
     background: #fff;
+
     margin: 30px auto 40px auto;
+
     font-size: 17px;
+
 }
+
 .compare-feature-bar::before{
+
     content: '';
+
     display: block;
+
     width: 100%;
+
     z-index: 999;
+
     background: #b3b3b3;
+
     height: 5px;
+
     width: 100%;
+
     border-radius: 14px;
+
     margin-bottom: -13px;
+
 }
+
 .compare-feature-bar span{
+
     background: #fff;
+
     padding: 10px 15px;
+
     border: 1px solid #dedede;
+
 }
+
 .compare_table ul {
+
     padding: 0;
+
     list-style: none;
+
 }
+
 .tble-no-padding-left{
+
     padding-left: 0 !important;
+
 }
+
 .tble-no-padding-right{
+
     padding-right: 0 !important;
+
 }
+
 .margin-top-50{
+
     margin-top: 50px;
+
 }
+
 .comparision-subscribe{
+
     margin-bottom: 30px;
+
     margin-top: 20px;
+
 }
+
 .comparision-subscribe h4{
+
     margin-bottom: 20px;
+
 }
+
 .comparision-subscribe .btn{
+
     color: #fff !important;
+
     font-size: 12px;
+
     font-weight: 600;
+
     background-color: #337ab7 !important;
+
     border-color: #2e6da4 !important;
+
 }
+
 .comparision-subscribe .btn:hover{
+
     color: #fff;
+
 }
+
 .ccard_details_feature {
+
     border: 1px solid #ddd;
+
     margin-right: 0 !important;
+
     padding: 22px 6px;
+
     background-color: #f2f2f3;
+
 }
+
 .mash-list-items hr{
+
     margin-top: 20px;
+
     margin-bottom: 20px;
+
+}
+
+.bank_info_box>a {
+    color: #337ab7 !important;
+    font-size: 13px;
+}
+#breadcrumbs-two>li.active>a{
+    background: #008fd8 !important;
+    color: #fff !important;
+}
+#breadcrumbs-two>li.active>a:before {
+    border-color: #008fd8 #008fd8 #008fd8 transparent !important;
+}
+
+#breadcrumbs-two>li.active>a:after {
+    border-left: 1em solid #008fd8 !important;
 }

@@ -9,7 +9,8 @@ if(!empty($id) && is_numeric($id) ){
     $personal_loan = $this->Front_end_select_model->select_all_personal_loan_by_bank_non_bank_id($id,0);
     $auto_loan = $this->Front_end_select_model->select_all_auto_loan_by_bank_non_bank_id($id,0);
     $education_loan = $this->Front_end_select_model->select_all_education_loan_by_bank_non_bank_id($id,0);
-    //pr($education_loan->result());die;
+    $fdrs = $this->Front_end_select_model->select_all_fdr_by_bank_non_bank_id($id,0);
+    ///pr($fdr->result());die;
 
 
 }else{
@@ -410,108 +411,52 @@ if(!empty($id) && is_numeric($id) ){
 
                 <div role="tabpanel" class="tab-pane" id="Investment">
                     <h3 class="text-center">FDR</h3>
-                    <div class="col-md-6">
-                        <div class="bank_loan_details">
-                            <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
+                    <?php
+                    if(count($fdrs->result()) > 0){
+                        foreach($fdrs->result() as $fdr ) {
+
+                            $min_amount = ($fdr->no_limit_min_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->min_amount);
+                            $max_amount = ($fdr->no_limit_max_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->max_amount);
+                            ?>
+                            <div class="col-md-6">
+                                <div class="bank_loan_details">
+                                    <div class="col-md-2 nopadding">
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $fdr->bank_logo; ?>" alt="AB Bank Logo" />
+                                    </div>
+                                    <div class="col-md-10 nopadding">
+                                        <h4><?php echo $fdr->bank_name;?> FDR</h4><br/>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                            <tr>
+                                                <td><b>Minimum loan amount:</b></td>
+                                                <td><?php echo $min_amount;?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Maximum loan amount:</b></td>
+                                                <td><?php echo $max_amount;?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Interest rate:</b></td>
+                                                <td><?php echo $fdr->interest_rate;?> %</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Tenure:</b></td>
+                                                <td><?php echo $fdr->tenure;?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Loan Facility:</b></td>
+                                                <td><?php echo ($fdr->loan_facility) ? $fdr->loan_facility.' % of the Deposited Amount' : 'N/A';?></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-10 nopadding">
-                                <h4>AB Bank Fixed Deposit Receipt</h4><br/>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                        <td>Minimum Amount:</td>
-                                        <td>Accrued Interest</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Maximum Amount:</td>
-                                        <td>Loan Facility</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Interest Rate</td>
-                                        <td>Loan Facility</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="bank_loan_details">
-                            <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                            </div>
-                            <div class="col-md-10 nopadding">
-                                <h4>AB Bank Deposit Pension Scheme</h4><br/>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                        <td>Minimum Period:</td>
-                                        <td>Accrued Interest</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Maximum Period:</td>
-                                        <td>Loan Facility</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Loan Facility:</td>
-                                        <td>Loan Facility</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="bank_loan_details">
-                            <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                            </div>
-                            <div class="col-md-10 nopadding">
-                                <h4>AB Bank Deposit Pension Scheme</h4><br/>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                        <td>Installment Amount:</td>
-                                        <td>Accrued Interest:</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Number of Installment:</td>
-                                        <td>Loan Facility:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Maturity Amount:</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="bank_loan_details">
-                            <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/ab_bank_sm_logo.jpg" alt="AB Bank Logo" />
-                            </div>
-                            <div class="col-md-10 nopadding">
-                                <h4>AB Bank Deposit Pension Scheme</h4><br/>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                        <td>Installment Amount:</td>
-                                        <td>Accrued Interest:</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Number of Installment:</td>
-                                        <td>Loan Facility:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Maturity Amount:</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                        <?php }
+                    }else{?>
+                        <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
+                    <?php }?>
+                    <div class="clearfix"></div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Cards">
                     <div class="col-md-6">

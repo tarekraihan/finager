@@ -608,6 +608,22 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    public function select_all_fdr_by_bank_non_bank_id($id,$non_bank){
+        if($non_bank == 1){
+            $column = 'general_non_bank.non_bank_name, general_non_bank.bank_logo';
+            $join = 'LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id';
+            $where = "fdr_info.non_bank_id={$id}";
+        }else{
+            $column = 'card_bank.bank_name,card_bank.bank_logo';
+            $join = 'LEFT join card_bank on card_bank.id = fdr_info.bank_id';
+            $where = "fdr_info.bank_id={$id}";
+        }
+
+        $sql="SELECT fdr_info.* , fdr_tenure.tenure , {$column} FROM `fdr_info`  LEFT JOIN fdr_tenure ON fdr_tenure.id= fdr_info.tenure_id  {$join} WHERE {$where}";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 
 
 }
