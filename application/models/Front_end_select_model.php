@@ -625,5 +625,81 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
 
+    function Select_dps_info_by_id($id,$non_bank){
+        if($non_bank == 1){
+            $column = 'general_non_bank.non_bank_name, general_non_bank.bank_logo';
+            $join = 'LEFT JOIN general_non_bank ON general_non_bank.id = dps_info.non_bank_id';
+            $where = "dps_info.non_bank_id={$id}";
+        }else{
+            $column = 'card_bank.bank_name,card_bank.bank_logo';
+            $join = 'LEFT join card_bank on card_bank.id=dps_info.bank_id';
+            $where = "dps_info.bank_id={$id}";
+        }
+        if(!empty($id)){
+            $sql="SELECT `dps_info`.*, {$column} FROM `dps_info`  {$join} WHERE {$where}";
+            $query = $this->db->query($sql);
+            return $query;
+        }
+
+    }
+
+    function Select_all_millionaire_info_by_id($id,$non_bank){
+        if($non_bank == 1){
+            $column = 'general_non_bank.non_bank_name, general_non_bank.bank_logo';
+            $join = 'LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id';
+            $where = "millionaire_info.non_bank_id={$id}";
+        }else{
+            $column = 'card_bank.bank_name,card_bank.bank_logo';
+            $join = 'LEFT join card_bank on card_bank.id=millionaire_info.bank_id';
+            $where = "millionaire_info.bank_id={$id}";
+        }
+        if(!empty($id)){
+            $sql="SELECT `millionaire_info`.*,millionaire_maturity_amount.maturity_amount,millionaire_tenure.tenure, {$column} FROM `millionaire_info` LEFT JOIN millionaire_tenure ON millionaire_tenure.id = millionaire_info.tenure_id LEFT JOIN millionaire_maturity_amount ON millionaire_maturity_amount.id = millionaire_info.maturity_amount_id  {$join} WHERE  {$where}";
+            $query = $this->db->query($sql);
+            return $query;
+        }
+
+    }
+
+
+    function Select_all_money_maximizer_info_by_id($id,$non_bank){
+        if($non_bank == 1){
+            $column = 'general_non_bank.non_bank_name, general_non_bank.bank_logo';
+            $join = 'LEFT JOIN general_non_bank ON general_non_bank.id = money_maxi_info.non_bank_id';
+            $where = "money_maxi_info.non_bank_id={$id}";
+        }else{
+            $column = 'card_bank.bank_name,card_bank.bank_logo';
+            $join = 'LEFT join card_bank on card_bank.id=money_maxi_info.bank_id';
+            $where = "money_maxi_info.bank_id={$id}";
+        }
+        if(!empty($id)){
+            $sql="SELECT `money_maxi_info`.*,money_maxi_choose_your_benefit.your_benefit, {$column} FROM `money_maxi_info` LEFT JOIN money_maxi_choose_your_benefit ON money_maxi_choose_your_benefit.id = money_maxi_info.choose_your_benefit_id {$join} WHERE  {$where}";
+            $query = $this->db->query($sql);
+            return $query;
+        }
+
+    }
+
+    function Select_all_monthly_benefit_info_by_id($id,$non_bank){
+        if($non_bank == 1){
+            $column = 'general_non_bank.non_bank_name, general_non_bank.bank_logo';
+            $join = 'LEFT JOIN general_non_bank ON general_non_bank.id = monthly_benefit_info.non_bank_id';
+            $where = "monthly_benefit_info.non_bank_id={$id}";
+        }else{
+            $column = 'card_bank.bank_name,card_bank.bank_logo';
+            $join = 'LEFT join card_bank on card_bank.id=monthly_benefit_info.bank_id';
+            $where = "monthly_benefit_info.bank_id={$id}";
+        }
+        if(!empty($id)){
+            $sql="SELECT `monthly_benefit_info`.*,monthly_benefit_tenure.tenure, {$column} FROM `monthly_benefit_info` LEFT JOIN monthly_benefit_tenure ON monthly_benefit_tenure.id = monthly_benefit_info.tenure_id {$join} WHERE  {$where}";
+            $query = $this->db->query($sql);
+            return $query;
+        }
+
+    }
+
+
+
+
 
 }
