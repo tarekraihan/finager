@@ -4,11 +4,11 @@
             <div class="col-sm-12">
 
                 <div class="row margin_bottom_15">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 col-xs-12">
                         <img title="Finager Logo" class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/finager-logo.svg">
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 col-xs-12">
                         <ul class="footer-socio">
                             <li>
                                 <a href="">
@@ -45,7 +45,7 @@
 
 
                 <div class="row">
-                    <div class="col-sm-2">
+                    <div class="col-sm-2 col-xs-12">
                         <p class="footer-menu-title">Loan</p>
 
                         <ul class="no-padding footer-menus">
@@ -61,7 +61,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-sm-2">
+                    <div class="col-sm-2 col-xs-12">
                         <p class="footer-menu-title">Investment</p>
 
                         <ul class="no-padding footer-menus">
@@ -75,7 +75,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-xs-12">
                         <p class="footer-menu-title">SME</p>
 
                         <ul class="no-padding footer-menus">
@@ -90,7 +90,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-sm-2">
+                    <div class="col-sm-2 col-xs-12">
                         <p class="footer-menu-title">Others</p>
 
                         <ul class="no-padding footer-menus">
@@ -105,7 +105,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-xs-12 text-center">
                         <p class="footer-menu-title uppercase">Talk With Us</p>
 
                         <p class="no-margin"><span class="hello">Hello Finager :</span> +8801998-123123</p>

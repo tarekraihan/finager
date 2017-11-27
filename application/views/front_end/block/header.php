@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Finager.com help them to take financial decisions intheir every day life.">
     <meta name="keywords" content="Loan,homeLoan,PersonalLoan,Bank,Investment,CreditCard,DebitCard,FDR,DPS,AutoLoan,EducationLoan,,Bangladesh">
     <meta name="author" content="Finager">
