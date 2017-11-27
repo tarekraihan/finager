@@ -50,7 +50,8 @@
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="462812130062-6rk4bss17ogse329b3mnh6duub3i2qse.apps.googleusercontent.com">
     <style>
 
         .error{
@@ -168,6 +169,7 @@
                             <button type="button" id="btnSubmit" class="btn btn-primary">
                                 Sign in
                             </button>
+                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
                         </footer>
                     </form>
 
@@ -325,6 +327,14 @@
         });
 
     });
+
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
 </script>
 
 </body>
