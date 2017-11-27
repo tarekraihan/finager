@@ -215,8 +215,8 @@ if(!empty($id) && is_numeric($id) ){
                         </div>
                     </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="Loan">
-                    <h3 class="text-center">Home Loan</h3>
+                <div role="tabpanel" class="tab-pane bank_info_details" id="Loan">
+                    <h3>Home Loan</h3>
                     <?php
                     if(count($home_loan->result()) > 0){
                     foreach($home_loan->result() as $home ) {
@@ -271,7 +271,7 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
-                    <h3 class="text-center">Personal Loan</h3>
+                    <h3>Personal Loan</h3>
                     <?php
                     if(count($personal_loan->result()) > 0){
                     foreach($personal_loan->result() as $personal ) {
@@ -313,7 +313,7 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
-                    <h3 class="text-center">Auto Loan</h3>
+                    <h3>Auto Loan</h3>
                     <?php
                     if(count($auto_loan->result()) > 0){
                     foreach($auto_loan->result() as $auto ) {
@@ -359,7 +359,7 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
-                    <h3 class="text-center">Education Loan</h3>
+                    <h3>Education Loan</h3>
                     <?php
                     if(count($education_loan->result()) > 0){
                     foreach($education_loan->result() as $education ) {
@@ -412,8 +412,8 @@ if(!empty($id) && is_numeric($id) ){
                     <br/>
                     <br/>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="Investment">
-                    <h3 class="text-center">FDR</h3>
+                <div role="tabpanel" class="tab-pane bank_info_details" id="Investment">
+                    <h3>FDR</h3>
                     <?php
                     if(count($fdrs->result()) > 0){
                         foreach($fdrs->result() as $fdr ) {
@@ -468,7 +468,7 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
-                    <h3 class="text-center">DPS</h3>
+                    <h3>DPS</h3>
                     <?php
                     if(count($all_dps->result()) > 0){
                         foreach($all_dps->result() as $dps ) {
@@ -519,7 +519,7 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
-                    <h3 class="text-center">Lakhpoti & Millionaire Scheme</h3>
+                    <h3>Lakhpoti & Millionaire Scheme</h3>
                     <?php
                     if(count($millionaires->result()) > 0){
                         foreach($millionaires->result() as $millionaire ) {
@@ -570,7 +570,7 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
-                    <h3 class="text-center">Money Maximizer</h3>
+                    <h3>Money Maximizer</h3>
                     <?php
                     if(count($money_maximizers->result()) > 0){
                         foreach($money_maximizers->result() as $money_maximizer ) {
@@ -621,7 +621,7 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
-                    <h3 class="text-center">Monthly Benefit Scheme</h3>
+                    <h3>Monthly Benefit Scheme</h3>
                     <?php
                     if(count($monthly_benefits->result()) > 0){
                         foreach($monthly_benefits->result() as $monthly_benefit ) {
@@ -676,7 +676,7 @@ if(!empty($id) && is_numeric($id) ){
                     <br/>
                     <br/>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="Cards">
+                <div role="tabpanel" class="tab-pane bank_info_details" id="Cards">
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
@@ -778,7 +778,7 @@ if(!empty($id) && is_numeric($id) ){
                         </div>
                     </div>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="Accounts">
+                <div role="tabpanel" class="tab-pane bank_info_details" id="Accounts">
                     <img src="<?php echo base_url(); ?>resource/front_end/images/no-data-found.jpg" alt="Not Found" />
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Services">

@@ -7339,779 +7339,385 @@ a .millionier_landing_button{
     z-index:99999999999 !important;
 
 }
-
 .close {
-
     font-size: 40px;
-
 }
-
 .search-image{
-
     cursor:pointer;
-
 }
-
 .esc{
-
     font-size:16px !important;
-
     display:block;
-
 }
-
 .search_icon {
-
     font-size: 24px;
-
     cursor:pointer;
-
     position: fixed;
-
     margin-left: 120px;
-
     z-index:9999;
-
     margin-top: 3px;
-
 }
-
 /* common button effect */
-
 .flash-button{
-
     border:none;
-
     border-radius:5px;
-
     animation-name: flash;
-
     animation-duration: 1s;
-
     animation-timing-function: linear;
-
     animation-iteration-count: infinite;
-
-
-
 /* Firefox 1+*/
-
 -webkit-animation-name: flash;
-
     -webkit-animation-duration: 1s;
-
     -webkit-animation-timing-function: linear;
-
     -webkit-animation-iteration-count: infinite;
-
-
-
     /*Safari 3-4*/
-
 -moz-animation-name: flash;
-
     -moz-animation-duration: 1s;
-
     -moz-animation-timing-function: linear;
-
     -moz-animation-iteration-count: infinite;
-
 }
-
-
-
 @keyframes flash {
-
     0% { opacity: 1.0; }
-
     50% { opacity: 0.5; }
-
     100% { opacity: 1.0; }
-
 }
-
-
-
 /*Firefox 1+*/
-
 @-webkit-keyframes flash {
-
     0% { opacity: 1.0; }
-
     50% { opacity: 0.5; }
-
     100% { opacity: 1.0; }
-
 }
-
-
-
 /*Safari 3-4*/
-
 @-moz-keyframes flash {
-
     0% { opacity: 1.0; }
-
     50% { opacity: 0.5; }
-
     100% { opacity: 1.0; }
-
 }
-
 a .auto_button.flash-button {
-
     color: #1a181b;
-
     font-weight: bold;
-
     text-decoration: none;
-
     float: right;
-
 }
-
 /*Auto loan button*/
-
 .btn_landing_auto {
-
     border: 1px solid #D19F59;
-
     padding: 5px 26px;
-
     border-radius: 6px;
-
     margin-left: 58px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_auto:hover{
-
     background-color:#D19F59;
-
     color:#ffffff;
-
 }
-
 .bigest_text1 p {
-
     margin-bottom: 64px;
-
 }
-
 .btn_landing_view_auto {
-
     border: 1px solid #D19F58;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#000;
-
 }
-
 .btn_landing_view_auto:hover{
-
     background-color:#D19F58;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_auto{
-
     border: 1px solid #fff;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_auto:hover{
-
     background-color:#fff;
-
     color:#000;
-
 }
-
 .btn_landing_auto_start{
-
     border: 1px solid #D19F59;
-
     padding: 6px 35px;
-
     border-radius: 6px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_auto_start:hover{
-
     background-color:#D19F59;
-
     color:#ffffff;
-
 }
-
 /*Home loan button*/
-
 .btn_landing_home{
-
     border: 1px solid #57ADD3;
-
     padding: 5px 26px;
-
     border-radius: 6px;
-
     margin-left: 58px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_home:hover{
-
     background-color:#57ADD3;
-
     color:#ffffff;
-
 }
-
 .btn_landing_view_home{
-
     border: 1px solid #57ACD1;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#000;
-
 }
-
 .btn_landing_view_home:hover{
-
     background-color:#57ACD1;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_home{
-
     border: 1px solid #fff;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_home:hover{
-
     background-color:#fff;
-
     color:#57ACD1;
-
 }
-
 .btn_landing_home_start{
-
     border: 1px solid #57ACD1;
-
     padding: 6px 35px;
-
     border-radius: 6px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_home_start:hover{
-
     background-color:#57ACD1;
-
     color:#ffffff;
-
 }
-
 /*Personal loan button*/
-
 .btn_landing_personal{
-
     border: 1px solid #256E92;
-
     padding: 5px 26px;
-
     border-radius: 6px;
-
     margin-left: 58px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_personal:hover{
-
     background-color:#256E92;
-
     color:#ffffff;
-
 }
-
 .btn_landing_view_personal{
-
     border: 1px solid #256D93;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#000;
-
 }
-
 .btn_landing_view_personal:hover{
-
     background-color:#256D93;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_personal{
-
     border: 1px solid #fff;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_personal:hover{
-
     background-color:#fff;
-
     color:#256D93;
-
 }
-
 .personal_bigest_text1 p {
-
     margin-bottom: 64px;
-
 }
-
 .btn_landing_personal_start{
-
     border: 1px solid #256D93;
-
     padding: 6px 35px;
-
     border-radius: 6px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_personal_start:hover{
-
     background-color:#256D93;
-
     color:#ffffff;
-
 }
-
 /*education loan button*/
-
 .btn_landing_education{
-
     border: 1px solid #636565;
-
     padding: 5px 26px;
-
     border-radius: 6px;
-
     margin-left: 58px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_education:hover{
-
     background-color:#636565;
-
     color:#ffffff;
-
 }
-
 .btn_landing_view_education{
-
     border: 1px solid #636565;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#000;
-
 }
-
 .btn_landing_view_education:hover{
-
     background-color:#636565;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_education{
-
     border: 1px solid #fff;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_education:hover{
-
     background-color:#fff;
-
     color:#636565;
-
 }
-
 .btn_landing_education_start{
-
     border: 1px solid #636565;
-
     padding: 6px 35px;
-
     border-radius: 6px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_education_start:hover{
-
     background-color:#636565;
-
     color:#ffffff;
-
 }
-
 /*FDR button*/
-
 .btn_landing_fdr{
-
     border: 1px solid #1F5883;
-
     padding: 5px 26px;
-
     border-radius: 6px;
-
     margin-left: 58px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_fdr:hover{
-
     background-color:#1F5883;
-
     color:#ffffff;
-
 }
-
 .btn_landing_view_fdr{
-
     border: 1px solid #1F5883;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#000;
-
 }
-
 .btn_landing_view_fdr:hover{
-
     background-color:#1F5883;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_fdr{
-
     border: 1px solid #fff;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_fdr:hover{
-
     background-color:#fff;
-
     color:#1F5883;
-
 }
-
 .btn_landing_fdr_start{
-
     border: 1px solid #1F5883;
-
     padding: 6px 35px;
-
     border-radius: 6px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_fdr_start:hover{
-
     background-color:#1F5883;
-
     color:#ffffff;
-
 }
-
 /*DPS button*/
-
 .btn_landing_dps{
-
     border: 1px solid #A9A270;
-
     padding: 5px 26px;
-
     border-radius: 6px;
-
     margin-left: 58px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_dps:hover{
-
     background-color:#A9A270;
-
     color:#ffffff;
-
 }
-
 .btn_landing_view_dps{
-
     border: 1px solid #A9A270;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#000;
-
 }
-
 .btn_landing_view_dps:hover{
-
     background-color:#A9A270;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_dps{
-
     border: 1px solid #fff;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_dps:hover{
-
     background-color:#fff;
-
     color:#A9A270;
-
 }
-
 .btn_landing_dps_start{
-
     border: 1px solid #A9A270;
-
     padding: 6px 35px;
-
     border-radius: 6px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_dps_start:hover{
-
     background-color:#A9A270;
-
     color:#ffffff;
-
 }
-
 /*millionaire button*/
-
 .btn_landing_millionaire{
-
     border: 1px solid #1F5883;
-
     padding: 5px 26px;
-
     border-radius: 6px;
-
     margin-left: 58px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_millionaire:hover{
-
     background-color:#1F5883;
-
     color:#ffffff;
-
 }
-
 .btn_landing_view_millionaire{
-
     border: 1px solid #1F5883;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#000;
-
 }
-
 .btn_landing_view_millionaire:hover{
-
     background-color:#1F5883;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_millionaire{
-
     border: 1px solid #fff;
-
     padding: 6px 23px;
-
     border-radius: 5px;
-
     color:#fff;
-
 }
-
 .btn_landing_view2_millionaire:hover{
-
     background-color:#fff;
-
     color:#1F5883;
-
 }
-
 .btn_landing_millionaire_start{
-
     border: 1px solid #1F5883;
-
     padding: 6px 35px;
-
     border-radius: 6px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_landing_millionaire_start:hover{
-
     background-color:#1F5883;
-
     color:#ffffff;
-
 }
-
 #card_details_top {
-
     margin-top: 15px;
-
 }
-
-
-
-
-
 /*Bank Details Page*/
-
 .bank_details_landing_head{
-
     width: 100%;
     height: auto;
     border-bottom: 3px solid #5aafd1;
@@ -8122,119 +7728,66 @@ a .auto_button.flash-button {
     border-right: 1px solid #dedede;
 
 }
-
 .bank_details_landing_head p {
-
     padding: 15px 0 0px 25px;
     font-weight: bold;
     font-size: 13px;
-
 }
-
 .bdetails_bd_bank{
-
     margin-top: 5px;
-
     margin-left: -15px;
-
     height: 145px;
-
 }
-
 .bdetails_text{
-
     text-align: justify;
-
     font-size: 16px;
-
     margin-left: -30px;
-
     margin-top: 5px;
-
 }
-
 .bank_details_landing_head2{
-
     width: 100%;
-
     height: auto;
-
     border-bottom: 3px solid #5aafd1;
-
     background-color: #e8e8e8;
-
     margin-left: -15px;
     margin-top: 20px;
     border-top: 1px solid #dedede;
     border-left: 1px solid #dedede;
     border-right: 1px solid #dedede;
-
 }
-
 .bank_details_landing_head2 p {
-
     padding: 15px 0 0px 25px;
-
     font-weight: bold;
-
     font-size: 13px;
-
 }
-
 .bd_landing_details {
-
     margin-top: 5px;
-
 }
-
 .bd_sorting {
-
     margin-top: 22px;
-
     margin-bottom: 20px;
-
 }
-
 .bd_sorting span{
-
     display: inline;
-
     color: #fff;
-
     background-color: #5aafd1;
-
     border: 1px solid gray;
-
     border-radius:5px;
-
     margin: 12px;
-
     padding: 15px 18px;
-
 }
-
 .bd_sorting span a {
-
     color: #fff;
-
     font-weight: bold;
-
     font-size: 18px;
-
 }
-
 .bank_details_landing_box img {
-
     height: 136px;
-
     border: 1px solid #ddd;
-
     margin: 10px auto;
-
     display: block;
 
 }
-
 .bank_details_landing_box {
     border: 1px solid #d6d6d6;
     margin: 10px;
@@ -8244,41 +7797,29 @@ a .auto_button.flash-button {
     border-radius: 4px;
     cursor: pointer;
 }
-
 .bank_details_landing_box:hover {
     box-shadow: 0px 0px 12px 0px #dedede;
 }
-
 #bank_details{
-
     margin-top:10px;
-
 }
-
+#bank_tab_wrapper {
+    border: 1px solid #ddd;
+    padding: 6px;
+    border-radius: 5px;
+}
 .bank_info_logo img {
-
     width: 100%;
-
     border: 1px solid #c1c1c1;
-
-    height:200px;
-
+    height:187px;
 }
-
 .bank_address {
-
     border: 1px solid #c1c1c1;
-
     margin-top: 15px;
-
-    padding: 7px 0 0 4px;
-
+    padding: 8px 0 0 5px;
     text-align: center;
-
     font-size: 12px;
-
 }
-
 .bank_info_box {
     border: 1px solid #c1c1c1;
     text-align: center;
@@ -8286,95 +7827,52 @@ a .auto_button.flash-button {
     padding: 6px 0;
     font-size: 13px;
 }
-
 .bank_info_box:hover {
     background-color: #f7f7f7;
     box-shadow: 0px 0px 7px 0px #e0e0e0;
     border-radius: 4px;
 }
-
 .bank_details_right{
-
     background-color: #f5fbfb;
-
 }
-
 .bank_details_right{
-
     background-color: #f5fbfb;
-
 }
-
 .bank_info_details h3 {
-
     padding: 10px;
-
     background-color: #e7e5e7;
-
     margin: 0;
-
     border-bottom: 2px solid #59afd2;
-
     font-weight: bold;
-
 }
-
 .bank_info_details p {
-
     margin: 10px 0;
-
     font-size: 16px;
-
 }
-
 .bank_info_map img {
-
     width: 100%;
-
     margin: 10px 0;
-
 }
-
-.bank_loan_details{
-
-    background-color:#e2e3e4;
-
-    width:100%;
-
-    height:350px;
-
-    padding:15px;
-
-    margin-top: 20px;
-
-}
-
-.bank_loan_details img {
-
+.bank_loan_details {
+    background-color: #e2e3e4;
     width: 100%;
-
+    height: 200px;
+    padding: 6px;
+    margin-top: 20px;
+}
+.bank_loan_details img {
+    width: 100%;
     height: auto;
-
-    margin-top: 41px;
-
+    margin-top: 62px;
+    box-shadow: 4px 4px gray;
 }
-
 .bank_loan_details h4 {
-
-    margin: 0;
-
-    text-align: center;
-
+    margin-left: 14px;
 }
-
 .bank_loan_details table {
-
     background-color: #f9fafb;
-
     width: 425px;
-
     margin-left: 11px;
-
 }
 
 .bank_loan_details table tr td{
