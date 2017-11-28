@@ -79,6 +79,8 @@ if(isset($_GET['draft_id']))
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Min Amount</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Max Amount</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Interest Rate</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Loan Facility</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Category</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created By</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Modified By</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Last Modified</th>

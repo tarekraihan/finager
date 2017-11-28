@@ -14,7 +14,12 @@ if(!empty($id) && is_numeric($id) ){
     $millionaires = $this->Front_end_select_model->Select_all_millionaire_info_by_id($id,0);
     $money_maximizers = $this->Front_end_select_model->Select_all_money_maximizer_info_by_id($id,0);
     $monthly_benefits = $this->Front_end_select_model->Select_all_monthly_benefit_info_by_id($id,0);
-    //pr($monthly_benefits->result());die;
+    $credit_cards = $this->Front_end_select_model->Select_all_credit_card_info_by_id($id,0);
+    $debit_cards = $this->Front_end_select_model->select_all_debit_card_info($id,0);
+    $saving_accounts = $this->Front_end_select_model->select_all_savings_account_info($id,0);
+    $current_accounts = $this->Front_end_select_model->select_all_current_account_info($id,0);
+    $snds = $this->Front_end_select_model->select_all_snd_info($id,0);
+    //pr($snds->result());die;
 
 
 }else{
@@ -152,9 +157,9 @@ if(!empty($id) && is_numeric($id) ){
                 <li role="presentation"><a href="#Loan" aria-controls="profile" role="tab" data-toggle="tab">Loan</a></li>
                 <li role="presentation"><a href="#Investment" aria-controls="messages" role="tab" data-toggle="tab">Investment</a></li>
                 <li role="presentation"><a href="#Cards" aria-controls="settings" role="tab" data-toggle="tab">Cards</a></li>
-                <li role="presentation"><a href="#Accounts" aria-controls="settings" role="tab" data-toggle="tab">Accounts</a></li>
+                <li role="presentation"><a href="#Account" aria-controls="accounts" role="tab" data-toggle="tab">Accounts</a></li>
                 <li role="presentation"><a href="#Services" aria-controls="settings" role="tab" data-toggle="tab">Services</a></li>
-<!--                <li role="presentation"><a href="#ScheduleCharges" aria-controls="settings" role="tab" data-toggle="tab">Schedule of Charges</a></li>-->
+                <li role="presentation"><a href="#ScheduleCharges" aria-controls="settings" role="tab" data-toggle="tab">Schedule of Charges</a></li>
 <!--                <li role="presentation"><a href="#InterestRate" aria-controls="settings" role="tab" data-toggle="tab">Interest Rate</a></li>-->
 <!--                <li role="presentation"><a href="#RoutingNoList" aria-controls="settings" role="tab" data-toggle="tab">Routing No List</a></li>-->
             </ul>
@@ -677,109 +682,240 @@ if(!empty($id) && is_numeric($id) ){
                     <br/>
                 </div>
                 <div role="tabpanel" class="tab-pane bank_info_details" id="Cards">
+                    <h3>Credit Card</h3>
+                    <?php
+                    if(count($credit_cards->result()) > 0){
+                    foreach($credit_cards->result() as $credit_card ) {
+                    //$interest =($home->is_fixed =='1')? $home->interest_rate_fixed.' % ' : $home->interest_rate_min.'% (Min), <br> '.$home->interest_rate_max.'% (Max)';
+                        $annual_fee_vat = ($credit_card->annual_fee_vat == 'N/A') ? '' : ' + '.$credit_card->annual_fee_vat.'%';
+                    ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_card.jpg" alt="AB Bank Logo" />
+                                <img src="<?php echo base_url(); ?>resource/card/credit_card/<?php echo $credit_card->card_image_name; ?>" alt="<?php echo $credit_card->card_name; ?>" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4>AB Bank Credit Card</h4><br/>
+                                <h4><?php echo $credit_card->card_name; ?></h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
                                         <td>Purchase Interest Rate:</td>
+                                        <td><?php echo $credit_card->purchase_interest_rate; ?></td>
+                                    </tr>
+                                    <tr>
                                         <td>Cash Advance Limit:</td>
+                                        <td><?php echo $credit_card->cash_advance_limit; ?></td>
                                     </tr>
                                     <tr>
                                         <td>Cash Advance Interest Rate:</td>
-                                        <td>Annual Fee:</td>
+                                        <td><?php echo $credit_card->cash_advance_interest_rate; ?></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">Bank Transfer Interest Rate:</td>
+                                        <td>Annual Fee:</td>
+                                        <td><?php echo 'BDT '.$credit_card->annual_fee .' '.$annual_fee_vat; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bank Transfer Interest Rate:</td>
+                                        <td><?php echo $credit_card->balance_transfer_rate;?></td>
+                                    </tr
+                                    <tr>
+                                        <td>Card Issuer:</td>
+                                        <td><?php echo $credit_card->card_issuer_name;?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Card Type:</td>
+                                        <td><?php echo $credit_card->cc_card_type;?></td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
+                    <?php }
+                    }else{?>
+                        <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
+                    <?php }?>
+                    <div class="clearfix"></div>
+                    <h3>Debit Card</h3>
+                    <?php
+                    if(count($debit_cards->result()) > 0){
+                    foreach($debit_cards->result() as $debit_card ) {
+                       // $annual_fee_vat = ($credit_card->annual_fee_vat == 'N/A') ? '' : ' + '.$credit_card->annual_fee_vat;
+                    ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_card.jpg" alt="AB Bank Logo" />
+                                <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $debit_card->bank_logo; ?>" alt="<?php echo $debit_card->card_name; ?>" />
                             </div>
                             <div class="col-md-10 nopadding">
-                                <h4>AB Bank Credit Card</h4><br/>
+                                <h4><?php echo $debit_card->card_name; ?></h4><br/>
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Purchase Interest Rate:</td>
-                                        <td>Cash Advance Limit:</td>
+                                        <td>Daily Withdraw Limit:</td>
+                                        <td><?php echo $debit_card->daily_withdrawal_limit; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Cash Advance Interest Rate:</td>
+                                        <td>Per Transaction Limit:</td>
+                                        <td> BDT <?php echo $debit_card->per_transaction_limit; ?></td>
+                                    </tr>
+                                    <tr>
                                         <td>Annual Fee:</td>
+                                        <td><?php echo $debit_card->annual_fee; ?></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">Bank Transfer Interest Rate:</td>
+                                        <td>Account:</td>
+                                        <td><?php echo $debit_card->account_name;?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Card Issuer:</td>
+                                        <td><?php echo $debit_card->card_issuer_name;?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Looking For:</td>
+                                        <td><?php echo $debit_card->looking_for; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>I Want:</td>
+                                        <td><?php echo $debit_card->i_want;?></td>
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="bank_loan_details">
-                            <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_card.jpg" alt="AB Bank Logo" />
-                            </div>
-                            <div class="col-md-10 nopadding">
-                                <h4>AB Bank Credit Card</h4><br/>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                        <td>Purchase Interest Rate:</td>
-                                        <td>Cash Advance Limit:</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cash Advance Interest Rate:</td>
-                                        <td>Annual Fee:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Bank Transfer Interest Rate:</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="bank_loan_details">
-                            <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_card.jpg" alt="AB Bank Logo" />
-                            </div>
-                            <div class="col-md-10 nopadding">
-                                <h4>AB Bank Credit Card</h4><br/>
-                                <table class="table table-bordered">
-                                    <tbody>
-                                    <tr>
-                                        <td>Purchase Interest Rate:</td>
-                                        <td>Cash Advance Limit:</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cash Advance Interest Rate:</td>
-                                        <td>Annual Fee:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">Bank Transfer Interest Rate:</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <?php }
+                    }else{?>
+                        <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
+                    <?php }?>
+                    <div class="clearfix"></div>
+
                 </div>
-                <div role="tabpanel" class="tab-pane bank_info_details" id="Accounts">
-                    <img src="<?php echo base_url(); ?>resource/front_end/images/no-data-found.jpg" alt="Not Found" />
+                <div role="tabpanel" class="tab-pane bank_info_details" id="Account">
+                    <h3>Saving Account</h3>
+                    <?php
+                    if(count($saving_accounts->result()) > 0){
+                        foreach($saving_accounts->result() as $saving_account ) {
+                            ?>
+                            <div class="col-md-6">
+                                <div class="bank_loan_details">
+                                    <div class="col-md-2 nopadding">
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $saving_account->bank_logo; ?>" alt="<?php echo $saving_account->saving_account_name; ?>" />
+                                    </div>
+                                    <div class="col-md-10 nopadding">
+                                        <h4><?php echo $saving_account->saving_account_name; ?></h4><br/>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                            <tr>
+                                                <td>Opening Balance:</td>
+                                                <td>BDT <?php echo number_format($saving_account->opening_balance); ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Minimum Balance for interest:</td>
+                                                <td> BDT <?php echo number_format($saving_account->min_balance_for_interest); ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Interest Paid:</td>
+                                                <td><?php echo $saving_account->interest_paid; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Account's For:</td>
+                                                <td><?php echo $saving_account->i_am;?></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php }
+                    }else{?>
+                        <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
+                    <?php }?>
+                    <div class="clearfix"></div>
+                    <h3>Current Account</h3>
+                    <?php
+                    if(count($current_accounts->result()) > 0){
+                        foreach($current_accounts->result() as $current_account ) {
+                            ?>
+                            <div class="col-md-6">
+                                <div class="bank_loan_details">
+                                    <div class="col-md-2 nopadding">
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $current_account->bank_logo; ?>" alt="<?php echo $current_account->current_account_name; ?>" />
+                                    </div>
+                                    <div class="col-md-10 nopadding">
+                                        <h4><?php echo $current_account->current_account_name; ?></h4><br/>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                            <tr>
+                                                <td>Opening Balance:</td>
+                                                <td>BDT <?php echo number_format($current_account->opening_balance); ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total Branch:</td>
+                                                <td> <?php echo $current_account->total_branch; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fund Transfer:</td>
+                                                <td><?php echo $current_account->fund_transfer; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Overdraft Facility:</td>
+                                                <td><?php echo $current_account->overdraft_facility; ?></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php }
+                    }else{?>
+                        <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
+                    <?php }?>
+                    <div class="clearfix"></div>
+                    <h3>SND Account</h3>
+                    <?php
+                    if(count($snds->result()) > 0){
+                        foreach($snds->result() as $snd ) {
+                            ?>
+                            <div class="col-md-6">
+                                <div class="bank_loan_details">
+                                    <div class="col-md-2 nopadding">
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $snd->bank_logo; ?>" alt="<?php echo $snd->bank_logo; ?>" />
+                                    </div>
+                                    <div class="col-md-10 nopadding">
+                                        <h4><?php echo $snd->snd_name; ?></h4><br/>
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                            <tr>
+                                                <td>Opening Balance:</td>
+                                                <td>BDT <?php echo number_format($snd->opening_balance); ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Interest Rate:</td>
+                                                <td> <?php echo $snd->interest_rate; ?> %</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Notice Day:</td>
+                                                <td> <?php echo $snd->notice_day; ?> %</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Interest Paid:</td>
+                                                <td><?php echo $snd->interest_paid; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Account For:</td>
+                                                <td><?php echo $snd->i_am; ?></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php }
+                    }else{?>
+                        <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
+                    <?php }?>
+                    <div class="clearfix"></div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="Services">
                     <div class="col-md-6">

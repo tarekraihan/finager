@@ -698,8 +698,57 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     }
 
+    public function Select_all_credit_card_info_by_id($id,$non_bank){
+        if($non_bank == 1){
+            $column = 'general_non_bank.non_bank_name, general_non_bank.bank_logo';
+            $join = 'LEFT JOIN general_non_bank ON general_non_bank.id = card_card_informations.non_bank_id';
+            $where = "card_card_informations.non_bank_id={$id}";
+        }else{
+            $column = 'card_bank.bank_name,card_bank.bank_logo';
+            $join = 'LEFT join card_bank on card_bank.id=card_card_informations.bank_id';
+            $where = "card_card_informations.bank_id={$id}";
+        }
+        $sql="SELECT DISTINCT card_card_informations.*,card_bank.bank_name,card_card_type.card_type_name,card_credit_card_type.cc_card_type,card_card_issuer.card_issuer_name, card_fees_charges.`card_id`, card_fees_charges.`basic_card_annual_fee`, card_fees_charges.`supplementary_card_annual_fee`, card_fees_charges.`purchase_fee`, card_fees_charges.`balance_transfer_fee`, card_fees_charges.`cash_advance_fee_own_atm`, card_fees_charges.`cash_advance_fee_other_atm`, card_fees_charges.`cash_advance_fee_international`, card_fees_charges.`late_payment_fee`, card_fees_charges.`card_replacement_fee`, card_fees_charges.`pin_replacement_fee`, card_fees_charges.`over_limit_charge`, card_fees_charges.`transaction_alert_service`, card_fees_charges.`credit_assurance_program_fee`, card_fees_charges.`monthly_e_statement_fee`, card_fees_charges.`check_book_fee`, card_fees_charges.`minimum_payment`, card_fees_charges.`cheque_return_fee`, card_fees_charges.`duplicate_statement`, card_fees_charges.`card_cheque_processing_fee`, card_fees_charges.`card_cheque_issuing_fee`
+FROM card_card_informations INNER JOIN card_bank ON card_bank.id=card_card_informations.bank_id INNER JOIN card_card_type ON card_card_type.id=card_card_informations.card_type_id INNER JOIN
+ card_credit_card_type ON card_credit_card_type.id=card_card_informations.cc_type_id
+INNER JOIN card_card_issuer ON card_card_issuer.id=card_card_informations.cc_issuer_id LEFT JOIN
+card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER JOIN card_info_card_user ON card_info_card_user.card_info_id=card_card_informations.id INNER JOIN card_info_card_reward ON
+ card_info_card_reward.card_info_id=card_card_informations.id WHERE $where";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
 
+    public function select_all_debit_card_info($id,$non_bank){
+        $where = "debit_card_info.bank_id={$id}";
+        $sql="SELECT debit_card_info.*,card_bank.bank_name,card_bank.bank_logo,debit_card_looking_for.looking_for,debit_card_choose_account.account_name,debit_card_issuer.card_issuer_name,debit_card_i_want.i_want,debit_card_looking_for.looking_for FROM debit_card_info  INNER JOIN card_bank ON card_bank.id=debit_card_info.bank_id INNER JOIN debit_card_choose_account ON debit_card_choose_account.id=debit_card_info.choose_account_id INNER JOIN debit_card_issuer ON debit_card_issuer.id=debit_card_info.card_issuer_id INNER JOIN debit_card_i_want ON debit_card_i_want.id=debit_card_info.i_want_id INNER JOIN debit_card_looking_for ON debit_card_looking_for.id=debit_card_info.looking_for_id WHERE $where";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
+
+    public function select_all_savings_account_info($id,$non_bank){
+        $where = "saving_account_info.bank_id={$id}";
+        $sql="SELECT saving_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `saving_account_info` INNER JOIN current_account_i_am ON current_account_i_am.id=saving_account_info.i_am_id  LEFT JOIN card_bank on card_bank.id=saving_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id WHERE $where";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+    function select_all_current_account_info($id,$non_bank){
+        $where = "current_account_info.bank_id={$id}";
+        $sql = "SELECT current_account_info.*,current_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name,general_non_bank.bank_logo as non_bank_logo FROM current_account_info INNER JOIN current_account_i_am ON current_account_i_am.id=current_account_info.i_am_id LEFT JOIN card_bank ON card_bank.id=current_account_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id=current_account_info.non_bank_id WHERE $where";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
+    public function select_all_snd_info($id,$non_bank){
+        $where = "snd_info.bank_id={$id}";
+        $sql="SELECT snd_info.*,snd_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `snd_info` INNER JOIN snd_account_i_am ON snd_account_i_am.id=snd_info.i_am_id  LEFT JOIN card_bank on card_bank.id=snd_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id WHERE $where";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
 }

@@ -9,14 +9,10 @@
     </div>
     <div class="col-md-10">
         <p class="bdetails_text">
-            Bank Branch Locator helps you find all national and regional bank offices in United States. Get bank addresses, maps, routing numbers,
-            phone numbers, business hours, driving directions and more. Search for banking centers, offices and ATMs from a database of 5825
-            banks operating with nearly 87000 branches in 10308 different towns and cities.
+            Finager.com helps you to find all national and international banks and their branches in Bangladesh. Finager.com provides all the banks product offers, features, contact details, routing number, address, location and so on.
         </p>
         <p class="bdetails_text">
-            We have provided several convenient ways to find your bank. You can easily search by zip number or address using the search form
-            on top. Alternatively, start browsing all banks by selecting a state from map or list below. To view all banks near your location click on
-            find my location button below.
+            We provide more than 50 financial institutes details with location situated all over Bangladesh. We have provided a smooth and easy way to find your bank with its details. You can easily search by bank name, routing number, location or product name to find your required information. You can also choose from the list of all banks given below. To know more about the banks then click on the logo.
         </p>
     </div>
     <div class="clearfix"></div>

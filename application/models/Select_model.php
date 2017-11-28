@@ -1287,7 +1287,7 @@ class Select_Model extends CI_Model
     }
 
     public function get_fdr_info(){
-        $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_info.`modified`,fdr_i_am.i_am,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, fdr_info.is_non_bank, admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id LEFT JOIN card_bank ON card_bank.id = fdr_info.bank_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= fdr_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= fdr_info.modified_by  LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id ORDER BY fdr_info.id ASC";
+        $sql = "SELECT fdr_info.id,fdr_info.`no_limit_min_amount`,fdr_info.`min_amount`,fdr_info.`no_limit_max_amount`,fdr_info.`max_amount`,fdr_info.`interest_rate`,fdr_info.`loan_facility`,fdr_info.`modified`,fdr_i_am.i_am,fdr_tenure.tenure,card_bank.bank_name,card_bank.bank_logo ,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo, fdr_info.is_non_bank, admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name FROM `fdr_info` INNER JOIN fdr_i_am ON fdr_i_am.id = fdr_info.i_am_id INNER JOIN fdr_tenure ON fdr_tenure.id = fdr_info.tenure_id LEFT JOIN card_bank ON card_bank.id = fdr_info.bank_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= fdr_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= fdr_info.modified_by  LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id ORDER BY fdr_info.id ASC";
         $query=$this->db->query($sql);
         $result="";
 
@@ -1321,6 +1321,7 @@ class Select_Model extends CI_Model
                 }else{
                     $bank_logo = $row->bank_logo;
                 }
+                $loan_facility = ($row->loan_facility != 0) ? $row->loan_facility.' % ' : 'N/A';
                 $result.='<tr>
 					<td lang="bn">'. $sl.'</td>
 					<td class="text-center">'. $row->id.'</td>
@@ -1330,6 +1331,8 @@ class Select_Model extends CI_Model
 					 <td class="text-center"> '.$min_amount.'</td>
 					 <td class="text-center"> '.$max_amount.'</td>
 					 <td class="text-center"> '.$row->interest_rate.'%</td>
+					 <td class="text-center"> '.$loan_facility.'</td>
+					 <td class="text-center"> '.$row->i_am.'</td>
 					 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
 					 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
 					 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
