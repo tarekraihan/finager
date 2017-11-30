@@ -12,14 +12,14 @@
             Finager.com helps you to find all national and international banks and their branches in Bangladesh. Finager.com provides all the banks product offers, features, contact details, routing number, address, location and so on.
         </p>
         <p class="bdetails_text">
-            We provide more than 50 financial institutes details with location situated all over Bangladesh. We have provided a smooth and easy way to find your bank with its details. You can easily search by bank name, routing number, location or product name to find your required information. You can also choose from the list of all banks given below. To know more about the banks then click on the logo.
+            We provide more than 50 financial institutes details with location all over Bangladesh. We have provided a smooth and easy way to find your bank with its details. You can easily search by bank name, routing number, location or product name to find your required information. You can also choose from the list of all banks given below. To know more about the banks then click on the logo.
         </p>
     </div>
     <div class="clearfix"></div>
     <div class="bd_landing_details">
         <div class="col-md-9">
             <div class="bank_details_landing_head2">
-                <p>ALPHABETICAL OF ALL BD BANKS</p>
+                <p>ALPHABETICAL LIST OF ALL BD BANKS</p>
             </div>
             <div class="bd_sorting">
                 <span><a href="#"> A </a></span>

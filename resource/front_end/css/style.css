@@ -5615,249 +5615,128 @@ a .debit_card_button.flash-button{
 /* third_div star */
 
 .box{
-
     border:1px solid #DADADA;
-
     height:70px;
-
     width:100%;
-
     margin-top: 45px;
-
     background-color:#DADADA;
-
 }
-
 .All_cradit_card a{
-
     text-decoration:none;
-
 }
-
 /*.nopadding:hover{*/
 
     /*background-color:#f2f2f3;*/
 
 /*}*/
-
 .All_cradit_card :hover {
-
     background-color: #effbff;
-
 }
-
 /* third_div end */
-
 /* card_box star */
-
 .card_box {
-
     border: 1px solid #e0dfe0;
-
     width: 100%;
-
     height: 150px;
-
     background-color: #e0dfe0;
-
 }
-
 .card_box1 {
-
     border: 1px solid #e0dfe0;
-
     width: 100%;
-
     height: 150px;
-
     background-color: #e0dfe0;
-
     margin-top: 100px;
-
 }
-
 .category p {
-
     font-size: 16px;
-
     font-weight: bold;
-
     background-color: #f5fbfe;
-
     text-align: center;
-
     height: 100px;
-
     width: 300px;
-
     margin-left: 24px;
-
     margin-top: 108px;
-
     padding-top: 14px;
-
 }
-
 .category1 p {
-
     font-size: 16px;
-
     font-weight: bold;
-
     background-color: #f5fbfe;
-
     text-align: center;
-
     height: 100px;
-
     width: 300px;
-
     margin-left: 24px;
-
     margin-top: 108px;
-
     padding-top: 14px;
-
-
-
 }
-
 /* for monthly benefit */
-
 #monthly_benefit_header_part{
-
     background-image: url(../images/Monthly-Benefit-Scheme-Landing-page-Banner.jpg);
-
     width: 100%;
-
     height: 450px;
-
     background-position: center center;
-
     background-repeat: no-repeat;
-
     background-size: cover;
-
 }
-
 .month_benefit_header_text {
-
     text-align: right;
-
     top: 278px;
-
     position: relative;
-
     float: right;
-
     margin-right: 220px;
-
 }
-
 .month_benefit_header_text p {
-
     color: #2697D5;
-
     font-size: 18px;
-
     font-style: italic;
-
     margin-bottom: 26px;
-
     font-weight: bold;
-
     text-shadow: 1px 1px #fff;
-
 }
-
 #monthly_benefit_header{
-
     background-image:url('../images/Monthly-Benefit-Scheme-Main-page-Banner.jpg');
-
     background-repeat:no-repeat;
-
     background-size:cover;
-
     background-position:center center;
-
     width:100%;
-
     height:320px;
-
     position:relative;
-
 }
-
 #footer_monthly_benefit{
-
     background-image:url(../images/Monthly-Benefit-footerbg.png);
-
     background-position:center center;
-
     background-repeat:no-repeat;
-
     background-size:cover;
-
     height:427px;
-
     width:100%;
-
 }
-
 .monthly_benefit_pr h3 {
-
     color: #fff;
-
     margin-top: 85px;
-
 }
-
 .monthly_benefit_pr img {
-
     margin-top: 36px;
-
 }
-
 #monthly_benefit_biggest_brand {
-
     background-image: url(../images/Monthly-Benefit-middlebg.png);
-
     background-repeat: no-repeat;
-
     background-size: cover;
-
     height: 395px;
-
     width: 100%;
-
     background-position: center center;
-
     margin-top: 50px;
-
 }
-
 .btn_monthly_benefit{
-
     border: 1px solid #A58D32;
-
     padding: 5px 26px;
-
     border-radius: 6px;
-
     margin-left: 58px;
-
     font-size: 16px;
-
     color:#000;
-
 }
-
 .btn_monthly_benefit:hover{
-
     background-color:#A58D32;
-
     color:#fff;
-
 }
 
 /* card_box end */
@@ -5865,1479 +5744,728 @@ a .debit_card_button.flash-button{
 /* popular_artical start */
 
 #artical{
-
     margin-top:200px;
-
 }
-
 .popular_artical img{
-
     width:45px;
-
     height:45px;
-
     border:1px solid #DADADA;
-
     border-radius:50%;
-
-
-
 }
-
 .popular_artical h5 {
-
     font-size: 16px;
-
     color: black;
-
 }
-
 .popular_artical a {
-
     text-decoration: none;
-
     color: #bcbcbc;
-
     font-weight: bold;
-
     font-size: 15px;
-
 }
-
 .Card_partner_imgs h3 {
-
     margin: 0;
-
     color: black;
-
     font-size:20px;
-
 }
-
 .Card_partner_imgs p {
-
     font-size: 12px;
-
     color: black;
-
 }
-
 .partenrs_card img{
-
     float:left;
-
     margin:0 10px 40px 0;
-
 }
-
 #Basic{
-
     background-image:url('../images/Back.jpg');
-
     background-position:center center;
-
     background-size:cover;
-
     background-repeat:no-repeat;
-
     height:490px;
-
     width:100%;
-
 }
-
 .card_basic p {
-
     font-size: 13px;
-
     margin-top: 20px;
-
     text-align:justify;
-
 }
-
 .All_card4 p {
-
     margin-top: 31px;
-
 }
-
 .All_card5 p {
-
     margin-top: 40px;
-
 }
-
 .All_card6 p {
-
     margin-top: 31px;
-
 }
-
 .All_card7 p {
-
     margin-top: 30px;
-
 }
-
 .All_card4 img {
-
     margin-top: 20px;
-
 }
-
 .All_card5 img {
-
     margin-top: 20px;
-
 }
-
 .All_card6 img {
-
     margin-top: 19px;
-
 }
-
 .All_card7 img {
-
     margin-top: 20px;
-
 }
-
 hr {
-
     margin-top: 0px;
-
     margin-bottom: 0px;
-
     border-top: 1px solid #DADADA;
-
 }
-
 .par_card {
-
     margin-top: 40px;
-
 }
-
 #our_partners {
-
     margin-top: 40px;
-
 }
-
-
-
 #logos img {
-
     margin-top: 60px;
-
 }
-
 .btn-info {
-
     color: #fff !important;
-
     background-color: #fff !important;
-
     border-color: #fff !important;
-
 }
-
 .btn-info:hover {
-
     color: #fff;
-
     background-color: #fff;
-
     border-color: #fff;
-
 }
-
 /* .card_basic {
-
 	margin-top: 40px;
-
 } */
-
 /* debit car start */
-
 .debit_card_box1 {
-
     border: 1px solid #ddd4b5;
-
     width: 100%;
-
     height: 150px;
-
     background-color: #ddd4b5;
-
     margin-top: 100px;
-
 }
-
 .debit_card_box {
-
     border: 1px solid #ddd4b5;
-
     width: 100%;
-
     height: 150px;
-
     background-color: #ddd4b5;
-
 }
-
 .debit_box{
-
     border:2px solid #dededf;
-
     height:70px;
-
     width:100%;
-
     margin-top: 45px;
-
     background-color:#fff;
-
 }
-
 #debit_header_part{
-
     background-color:#9a8d5c;
-
     width:100%;
-
     height:60px;
-
 }
-
 #debit_second_div{
-
     background-image:url(../images/debit_background.jpg);
-
     height:450px;
-
     width:100%;
-
     background-size:cover;
-
     background-repeat:no-repeat;
-
     background-position:center center;
-
 }
-
 .debit_best_card_image img {
-
     position: absolute;
-
     margin-left: 943px;
-
     width:200px;
-
 }
-
 .debit_All_card1 p {
-
     margin-top: 37px;
-
 }
-
 .debit_All_card2 img {
-
     margin-top: 12px;
-
 }
-
 .debit_All_card2 p {
-
     margin-top: 47px;
-
 }
-
 .debit_All_card {
-
     border: 1px solid #DADADA;
-
     padding: 20px;
-
     background-color: #fff;
-
 }
-
 .debit_All_card1 {
-
     border-top: 1px solid #DADADA;
-
     padding: 18px;
-
     background-color: #fff;
-
 }
-
 .debit_All_card2 {
-
     border-top: 1px solid #DADADA;
-
     border-right: 1px solid #DADADA;
-
     border-left: 1px solid #DADADA;
-
     padding: 19px;
-
     background-color: #fff;
-
 }
-
 .debit_All_card3 {
-
     border-top: 1px solid #DADADA;
-
     border-right: 1px solid #DADADA;
-
     padding: 18px;
-
     background-color: #fff;
-
 }
-
 .debit_All_card4 {
-
     border-left:1px solid #DADADA;
-
     border-bottom:1px solid #DADADA;
-
     padding: 18px;
-
 }
-
 .debit_All_card5 {
-
     border: 1px solid #DADADA;
-
     padding: 17px;
-
     margin: -1px -1px 0px -1px;
-
 }
-
 .debit_All_card6 {
-
     border-top: 1px solid #DADADA;
-
     border-bottom: 1px solid #DADADA;
-
     border-left: 1px solid #DADADA;
-
     padding: 23px;
-
     margin: -1px 0px;
-
 }
-
 .debit_All_card7 {
-
     border: 1px solid #DADADA;
-
     padding: 29px;
-
     margin: -1px 0px 0px -1px;
-
 }
-
 .debit_All_card4 p {
-
     margin-top: 31px;
-
 }
-
 .debit_All_card5 p {
-
     margin-top: 30px;
-
 }
-
 .debit_All_card6 p {
-
     margin-top: 31px;
-
 }
-
 .debit_All_card7 p {
-
     margin-top: 30px;
-
 }
-
 .debit_All_card4 img {
-
     margin-top: 20px;
-
 }
-
 .debit_All_card5 img {
-
     margin-top: 20px;
-
 }
-
 .debit_All_card6 img {
-
     margin-top: 20px;
-
 }
-
 .All_card7 img {
-
     margin-top: 20px;
-
 }
-
 .All_debit_card a{
-
     text-decoration: none;
-
 }
-
 .All_debit_card p {
-
     color: #9a8d5c;
-
     font-weight: bold;
-
     font-size: 15px;
-
     margin-top: 18px;
-
 }
-
 .All_debit_card {
-
     margin: 0 auto;
-
     float: none;
-
     display: block;
-
     text-align: center;
-
 }
-
 .All_debit_card a{
-
     text-decoration:none;
-
 }
-
 .All_debit_card :hover {
-
     background-color: #e2e3e4;
-
 }
-
 .debit_All_card2 img {
-
     margin-top: 35px;
-
 }
-
 .debit_All_card1 img {
-
     margin-top: 19px;
-
 }
-
 #debit_Basic{
-
     background-image:url(../images/debit_BG.jpg);
-
     background-position:center center;
-
     background-size:cover;
-
     background-repeat:no-repeat;
-
     height:490px;
-
     width:100%;
-
 }
-
-
-
-
-
-
-
 /* for FDR Loan */
-
 #fdr_header{
-
     background-image:url(../images/FDR-Main-Page-Banner-Final.jpg);
-
     background-repeat:no-repeat;
-
     background-size:cover;
-
     background-position:center center;
-
     width:100%;
-
     height:320px;
-
     position:relative;
-
     margin-bottom:6px;
-
 }
-
 .fdr_tenure{
-
     background-image:url(../images/radiobg.png);
-
     width:119px;
-
     height:31px;
-
     margin-bottom:10px;
-
 }
-
 .fdr_radio{
-
     margin:6px 0 0 8px;
-
 }
-
 .card_query_fdr{
-
     /*border-bottom: 2px solid #DADADA;*/
-
 }
-
 .card_query_fdr p {
-
     border-bottom: 1px solid #DADADA;
-
     background-color: gray;
-
     padding: 4px 10px;
-
     color: #fff;
-
     font-weight: 600;
-
 }
-
 .card_query_fdr2 p{
-
     border-bottom: 1px solid #DADADA;
-
     background-color: gray;
-
     padding: 4px 10px;
-
     color: #fff;
-
     font-weight: 600;
-
 }
-
 .fdrTenurepadding{
-
     padding:5px;
-
 }
-
 .card_text3 {
-
     margin-top: 6px;
-
     position: relative;
-
     min-height: 50px;
-
     text-align:center;
-
 }
-
 .fdr_apply {
-
     margin-bottom: 10px;
-
     width: 97px;
-
 }
-
 .more_availabe{
-
     margin-top:48px;
-
 }
-
 .more_availabe i{
-
     color:#2c8aca;
-
 }
-
 .more_availabe a{
-
     text-decoration:none;
-
     color:#000;
-
 }
-
 .fdr_right_bar{
-
     padding: 15px 15px;
-
     margin-bottom: 15px;
-
     clear: both;
-
     border: 1px solid #EAEAEC;
-
 }
-
 .fdr_right_bar:hover{
-
     background-color:#f4f4f4;
-
 }
-
 .fdr_bank_logo{
-
     border: 1px solid #EAEAEC;
-
 }
-
 .fdr_terms {
-
     padding: 28px;
-
     text-align: justify;
-
 }
-
 .fdr_terms ol li{
-
     margin-bottom:8px;
-
 }
-
 .offer_table table th, td{
-
     text-align:center;
-
 }
-
 .offer_table table th{
-
     background-color:#57add3;
-
 }
-
 .offer_table tr:nth-child(even){
-
     background: #c4c4c4;
-
 }
-
 .fdr_iframe{
-
     background-color:#EAEAEC;
-
     padding:10px;
-
 }
-
 /* for dps */
-
 #dps_header{
-
     background-image:url(../images/DPSMainPageBanner.jpg);
-
     background-size:cover;
-
     background-position:center center;
-
     background-repeat:no-repeat;
-
     width:100%;
-
     height:300px;
-
     margin-bottom:10px;
-
 }
-
 .dps_tenure{
-
     background-image:url(../images/btnDps.png);
-
     width:120px;
-
     height:32px;
-
     margin-bottom:10px;
-
 }
-
 .nav>li>a {
-
     font-size: 13px !important;
-
 }
-
-
-
-
-
-
-
 /*For Mashmenu*/
-
 .no-padding{
-
     padding: 0;
-
 }
-
 .margin_bottom_10{
-
     margin-bottom: 10px;
-
 }
-
-
-
 #page-content-wrapper {
-
     z-index: 99999;
-
     position: absolute;
-
 }
-
 .logobar{
-
     position: absolute;
-
     left: 15px;
-
     z-index: 99999;
-
     max-height: 63px;
-
     width: 150px;
-
     margin-top: 3px;
-
 }
-
-
-
 .logobar a .logo {
-
     max-height: 70px;
-
     width: 185px;
-
 }
-
-
-
 /*For Footer menu*/
-
 .footer-logo{
-
     width: 155px;
-
     height: 55px;
-
 }
-
 .footer{
-
     background: #e2e5e6;
-
     padding: 30px 15px 15px 15px;
-
 }
-
 ul.footer-socio {
-
     float: right;
-
 }
-
 .footer-socio li {
-
     display: inline;
-
 }
-
 .footer-socio li img {
-
     height: 60px;
-
     max-width: 51px;
-
     transition: 1s;
-
 }
-
 .footer-menu-title{
-
     color: #129bbe;
-
     font-weight: 600;
-
     font-size: 15px;
-
     margin-bottom: 15px;
-
 }
-
 .footer-socio li img:hover {
-
     max-width: 60px;
-
     transform: scale(1.3);
-
 }
-
 .footer-socio li a:hover {
-
     text-decoration: none;
-
 }
-
 .hello {
-
     font-weight: bold;
-
     color: #EE5726;
-
     /*text-shadow: 1px 1px #5A5858;*/
-
 }
-
 .footer-menus li a{
-
     text-decoration:none;
-
 }
-
 .footer-menus li a:hover {
-
     color: #000;
-
 }
-
 .footer-menus li{
-
     list-style: none;
-
 }
-
 .footer-hr{
-
     margin-top: 20px;
-
     margin-bottom: 15px;
-
     border-top: 2px solid #b9b8b8;
-
 }
-
 .subscribe-footer{
-
     border: 2px solid #757779 !important;
-
     border-radius: 14px !important;
-
     background-color: #e2e5e6 !important;
-
 }
-
 .subscribe-footer-btn {
-
     background-color: #1a9cbe;
-
     font-weight: 600 !important;
-
     color: #fff;
-
     font-size: 13px !important;
-
     padding: 4px 11px !important;
-
     border-radius: 10px !important;
-
     outline: 0 !important;
-
 }
-
 .subscribe-footer-btn:hover, .subscribe-footer-btn:focus, .subscribe-footer-btn:active{
-
     color: #fff !important;
-
 }
-
 .footer-menus>li>a {
-
     color: #6d6d6d;
-
     font-weight: 600;
-
     font-size: 13px;
-
 }
-
 .footer-ass-text{
-
     color: #6d6d6d !important;
-
     font-weight: 600;
-
     font-size: 12px;
-
 }
-
 .footer-ass-text a{
-
     color: #1a9cbe;
-
 }
 
 /* for bootstrap horizontal menu  */
 
 .navbar-default {
-
     background-color: transparent;
-
     border-color: transparent;
-
     margin:0px auto;
-
 }
-
 .navbar-default .navbar-nav>li>a {
-
     color: #000;
-
     text-transform:uppercase;
-
     font-size:14px;
-
     margin-left:-8px;
-
     font-weight:bold;
-
 }
-
 .navbar-default .navbar-nav>li>a:hover{
-
     color:#67B5D4;
-
 }
-
 .navbar-default .navbar-nav>li>a:focus{
-
     color:#000;
-
 }
-
 .top-menu{
-
     display:none;
-
 }
-
 .vMenu {
-
     text-align: center;
-
     margin: 0px auto;
-
     height: auto;
-
     width: 531px;
-
 }
-
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-
     background-color: none;
-
     border-bottom: 1px solid #000;
-
     border-bottom-color: transparent;
-
 }
-
 .nav-tabs > li > a {
-
     margin-right: 0px;
-
 }
-
 .nav-tabs {
-
     border-bottom: none;
-
 }
-
 .no-margin-lr{
-
     margin-left:0 !important;
-
     margin-right:0 !important;
-
 }
-
 .dropdown-menu {
-
     margin: 2px -8px 0;
-
 }
-
 #home-page{
-
     width:100%;
-
     height:600px;
-
 }
-
 #top-page{
-
     min-height:48px;
-
 }
-
 .logo{
-
     width:150px;
-
 }
-
 .logo-lg{
-
     height: 180px;
-
     width: auto;
-
 }
-
 .login{
-
     font-family:"Eras Demi ITC";
-
     font-weight:bold;
-
     font-size:18px;
-
     margin-right:80px;
-
 }
-
 .header-right{
-
     margin-top:8px;
-
 }
-
 .hr-bar{
-
     width:100%;
-
     height:3px;
-
     display: none;
-
 }
-
 .footer-text p{
-
     margin-top:7px;
-
 }
-
 .find-bar{
-
     margin-top:160px;
-
     text-align:center;
-
 }
-
-
-
 .device-bg{
-
     width:100%;
-
     height:350px;
-
     background-color:#9e9e9e;
-
     background-attachment:fixed;
-
 }
-
 .device-img{
-
     height:auto;
-
     width:100%;
-
     margin-top:53px;
-
 }
-
 /* for millionier */
-
 #millionier_header_part {
-
     background-image: url('../images/Lakhpoti-&-Millionaire.jpg');
-
     width: 100%;
-
     height: 450px;
-
     background-position: center center;
-
     background-repeat: no-repeat;
-
     background-size: cover;
-
 }
-
 .millionier_header_text {
-
     text-align: right;
-
     top: 130px;
-
     position: relative;
-
     float: right;
-
     margin-right: 221px;
-
 }
-
 .millionier_header_text p {
-
     color: #000;
-
     font-size: 18px;
-
     font-style: italic;
-
     margin-bottom:25px;
-
 }
-
 .millionier_header_text h3 {
-
     color: #000;
-
     font-size: 35px;
-
     font-style: italic;
-
     font-weight: bold;
-
 }
-
 .millionier_landing_button {
-
-    background: #a7a8aa; /* For browsers that do not support gradients */    
-
+    background: #a7a8aa; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(left, #a7a8aa, #fff); /* For Safari 5.1 to 6.0 */
-
     background: -o-linear-gradient(right, #a7a8aa, #fff); /* For Opera 11.1 to 12.0 */
-
     background: -moz-linear-gradient(right, #a7a8aa, #fff); /* For Firefox 3.6 to 15 */
-
     background: linear-gradient(to right, #a7a8aa, #fff); /* Standard syntax (must be last) */
-
     width: 180px;
-
     padding: 9px 20px;
-
     text-align: center;
-
     font-size: 16px;
-
 }
-
 a .millionier_landing_button{
-
     color: #000;
-
     font-weight: bold;
-
 }
-
-
-
 #maximizer_header{
-
     background-image: url('../images/Millionaire-main.jpg');
-
     background-repeat: no-repeat;
-
     background-size: cover;
-
     background-position: center center;
-
     width: 100%;
-
     height: 300px;
-
     margin-bottom: 20px;
-
     position: relative;
-
 }
-
-
-
-
-
 /* for millionaire compare */
-
 .millionaire-Compare-hr1{
-
     width: 34.3%;
-
 }
-
 .millionaire-Compare-hr2{
-
     width: 33.2%;
-
 }
-
 .millionaire-Compare-hr3{
-
     width: 44.7%;
-
 }
-
 .millionaire-Compare-hr4{
-
     width: 38.5%;
-
 }
-
 .millionaire-Compare-hr5{
-
     width: 42.3%;
-
 }
-
 .millionaire-Compare-hr6{
-
     width: 38.2%;
-
 }
-
 #debit_blog{
-
     margin:30px 0;
-
 }
-
 #debit_blog a{
-
     text-decoration:none;
-
 }
-
 .debit_head{
-
     margin-left:15px;
-
     padding: 10px 0;
-
 }
-
 .debit_blog_box{
-
     position:relative;
-
 }
-
 .debit_blog_box img{
-
     width:100%;
-
     height:180px;
-
     border:1px solid #DEDEDE;
-
     position:absolute;
-
     padding: 6px;
-
 }
-
 .debit_blog_box p {
-
     position: absolute;
-
     background-color: #F5FBFE;
-
     text-align: center;
-
     width: 100%;
-
     margin: 98px 0 0 0;
-
     padding: 12px;
-
     font-size: 16px;
-
 }
-
-
-
 /* search page */
-
 #search_page{
-
     background-color:#FFF9EA;
-
     width:100%;
-
     height:100%;
-
 }
-
 #search_page_content .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
-
     color: #555;
-
     cursor: default;
-
     background-color: transparent;
-
     border: none;
-
     border-bottom: 2px solid #A4D2D8;
-
     outline:0;
-
 }
-
 #search_page_content .nav-tabs {
-
     border-bottom: none;
-
     margin-left: 566px;
-
     margin-bottom: 40px;
-
 }
-
 #search_page .form-control {
-
     border: 0;
-
     border-bottom: 2px solid #A4D2D8;
-
     height: 50px;
-
     background-color: transparent;
-
     border-radius: 0;
-
     -webkit-box-shadow: none;
-
     box-shadow: none;
-
     -webkit-transition: none;
-
     -o-transition: none;
-
     transition: none;
-
     font-size: 26px;
-
     padding-top: 18px
-
 }
-
 #search_page_content{
-
     height:650px;
-
     overflow:auto;
-
 }
-
 .no_filter_tab_content h4{
-
     text-align:center;
-
     color:#96938F;
-
     font-size:26px;
-
 }
-
 .no_filte_div{
-
     background-color:#403B2C;
-
     cursor: pointer;
-
 }
-
 .no_filte_div {
-
     background-color: #403B2C;
-
     padding: 20px;
-
     color: #fff;
-
     margin-bottom:35px;
-
 }
-
 .no_filte_div i {
-
     font-size: 30px;
-
 }
-
 .no_filte_div span {
-
     font-size: 18px;
-
     margin-left: 10px;
-
     color:#fff;
-
 }
-
 .modal-open .modal {
-
     overflow-x: hidden !important;
-
     overflow-y: hidden !important;
-
     z-index:99999999999 !important;
-
 }
 .close {
     font-size: 40px;

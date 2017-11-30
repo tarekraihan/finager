@@ -855,7 +855,7 @@ if(!empty($id) && is_numeric($id) ){
                                                 <td> <?php echo $current_account->total_branch; ?></td>
                                             </tr>
                                             <tr>
-                                                <td>Fund Transfer:</td>
+                                                <td>Fund Transfer Facility:</td>
                                                 <td><?php echo $current_account->fund_transfer; ?></td>
                                             </tr>
                                             <tr>
