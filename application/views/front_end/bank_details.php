@@ -19,7 +19,9 @@ if(!empty($id) && is_numeric($id) ){
     $saving_accounts = $this->Front_end_select_model->select_all_savings_account_info($id,0);
     $current_accounts = $this->Front_end_select_model->select_all_current_account_info($id,0);
     $snds = $this->Front_end_select_model->select_all_snd_info($id,0);
-    //pr($snds->result());die;
+    $event_histories = $this->Front_end_select_model->select_institution_event_history($id,0);
+    $event_histories2 = $this->Front_end_select_model->select_institution_event_history2($id,0);
+    //pr($event_histories->result());die;
 
 
 }else{
@@ -31,6 +33,7 @@ if(!empty($id) && is_numeric($id) ){
     .nav > li > a:focus, .nav > li > a:hover {
         background-color: #ddd !important;
     }
+   
 </style>
 <section id="bank_details">
     <div class="container-fluid">
@@ -185,27 +188,32 @@ if(!empty($id) && is_numeric($id) ){
                             </div>
 							<h3>HISTORY OF  <?php echo $institution_info['bank_name']; ?></h3>
 							<p>Below is a list of some important events in banks history, including mergers and acquisitions.</p>
-							<table class="table">
+                            <table class="table table-striped">
 								<tbody>
-								  <tr>
-									<td>Jan 01, 1824</td>
-									<td>Institution established: Original name: Chemical Bank & Trust Company</td>
-								  </tr>      
-								  <tr class="info">
-									<td>Oct 18, 1954</td>
-									<td>Changed name to Chemical Corn Exchange Bank</td>
-								  </tr>
-								  <tr>
-									<td>Aug 08, 1959</td>
-									<td>Changed name to Chemical Bank New York Trust Company</td>
-								  </tr>
-								  <tr class="info">
-									<td>Jan 18, 1975</td>
-									<td>Acquired Security National Bank (7113) in Hempstead, NY</td>
-								  </tr>
-								</tbody>
+                                <?php
+                                if(count($event_histories->result()) > 0){
+                                    foreach($event_histories->result() as $event_history ) {
+                                            echo '<tr><td>'.$event_history->event_date.'</td><td>'.$event_history->event_title.'</td></tr>';
+                                    }
+                                }else{
+                                    echo '<tr><td colspan="2">There is no event.</td></tr>';
+                                }
+
+                                ?><?php
+                                if(count($event_histories2->result()) > 0){
+                                    foreach($event_histories2->result() as $event_history2 ) {
+                                            echo '<tr class="extra"><td>'.$event_history2->event_date.'</td><td>'.$event_history2->event_title.'</td></tr>';
+                                    }
+                                }
+                                ?>
+                                </tbody>
 							</table>
-							<p class="bank_details_more"><a href="#">View 36 More Events in Banks History…</a></p>
+                            <?php if(count($event_histories->result()) == 10){
+                                ?>
+                                <p class="bank_details_more"><a href="#" id="extra_view">View <?php echo count(count($event_histories2->result())); ?> More Events in Banks History…</a></p>
+                            <?php
+                            }?>
+
 							<h3><?php echo $institution_info['bank_name']; ?> REVIEWS & COMPLAINTS</h3>
 							<div class="col-md-1">
 								<img src="<?php echo base_url(); ?>resource/front_end/images/Bank-Details-Empty.png" alt="User Image">
@@ -699,32 +707,24 @@ if(!empty($id) && is_numeric($id) ){
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Purchase Interest Rate:</td>
+                                        <td>Card Type:</td>
+                                        <td><?php echo $credit_card->cc_card_type;?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Interest Rate:</td>
                                         <td><?php echo $credit_card->purchase_interest_rate; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Cash Advance Limit:</td>
-                                        <td><?php echo $credit_card->cash_advance_limit; ?></td>
+                                        <td>Credit Limit( Min ):</td>
+                                        <td> <?php echo $credit_card->credit_limit_min_salaried ; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Cash Advance Interest Rate:</td>
-                                        <td><?php echo $credit_card->cash_advance_interest_rate; ?></td>
+                                        <td>Credit Limit ( Max ):</td>
+                                        <td> <?php echo $credit_card->credit_limit_max_salaried ; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Annual Fee:</td>
-                                        <td><?php echo 'BDT '.$credit_card->annual_fee .' '.$annual_fee_vat; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank Transfer Interest Rate:</td>
-                                        <td><?php echo $credit_card->balance_transfer_rate;?></td>
-                                    </tr
-                                    <tr>
-                                        <td>Card Issuer:</td>
-                                        <td><?php echo $credit_card->card_issuer_name;?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Card Type:</td>
-                                        <td><?php echo $credit_card->cc_card_type;?></td>
+                                        <td>Maximum Interest Free Period:</td>
+                                        <td><?php echo $credit_card->interest_free_pefiod_max;?> days</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -752,32 +752,20 @@ if(!empty($id) && is_numeric($id) ){
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Daily Withdraw Limit:</td>
-                                        <td><?php echo $debit_card->daily_withdrawal_limit; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Per Transaction Limit:</td>
-                                        <td> BDT <?php echo $debit_card->per_transaction_limit; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Annual Fee:</td>
-                                        <td><?php echo $debit_card->annual_fee; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Account:</td>
-                                        <td><?php echo $debit_card->account_name;?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Card Issuer:</td>
-                                        <td><?php echo $debit_card->card_issuer_name;?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Looking For:</td>
+                                        <td>Card Type:</td>
                                         <td><?php echo $debit_card->looking_for; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>I Want:</td>
-                                        <td><?php echo $debit_card->i_want;?></td>
+                                        <td>Daily Withdraw Limit:</td>
+                                        <td>BDT <?php echo  $debit_card->daily_withdrawal_limit ; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Per Transaction Limit:</td>
+                                        <td> BDT <?php echo number_format( $debit_card->per_transaction_limit ); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Card Against:</td>
+                                        <td><?php echo $debit_card->account_name;?></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -811,7 +799,7 @@ if(!empty($id) && is_numeric($id) ){
                                                 <td>BDT <?php echo number_format($saving_account->opening_balance); ?></td>
                                             </tr>
                                             <tr>
-                                                <td>Minimum Balance for interest:</td>
+                                                <td>Minimum Balance For Interest:</td>
                                                 <td> BDT <?php echo number_format($saving_account->min_balance_for_interest); ?></td>
                                             </tr>
                                             <tr>
@@ -862,6 +850,10 @@ if(!empty($id) && is_numeric($id) ){
                                                 <td>Overdraft Facility:</td>
                                                 <td><?php echo $current_account->overdraft_facility; ?></td>
                                             </tr>
+                                            <tr>
+                                                <td>Account's For:</td>
+                                                <td><?php echo $current_account->i_am; ?></td>
+                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -896,7 +888,7 @@ if(!empty($id) && is_numeric($id) ){
                                             </tr>
                                             <tr>
                                                 <td>Notice Day:</td>
-                                                <td> <?php echo $snd->notice_day; ?> %</td>
+                                                <td> <?php echo $snd->notice_day; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Interest Paid:</td>
@@ -1103,7 +1095,7 @@ if(!empty($id) && is_numeric($id) ){
 				</span>
                 <div class="bank_details_review">
                     Bank rating displayed here is the average value for all
-                    Chase Bank branchs. A total of 73 customers had case
+                    Chase Bank branches. A total of 73 customers had case
                     their vote for 5227 branches and in average, Chase Bank
                     got a score of 3.2 out of 5 stars. The bank has 12
                     reviews or customer complaints filed.
@@ -1115,7 +1107,7 @@ if(!empty($id) && is_numeric($id) ){
             <div class="bank_details_right_body">
                 <div class="bank_details_review">
                     Bank rating displayed here is the average value for all
-                    Chase Bank branchs. A total of 73 customers had case
+                    Chase Bank branches. A total of 73 customers had case
                     their vote for 5227 branches and in average, Chase Bank
                     got a score of 3.2 out of 5 stars. The bank has 12
                     reviews or customer complaints filed.
@@ -1127,7 +1119,7 @@ if(!empty($id) && is_numeric($id) ){
             <div class="bank_details_right_body">
                 <div class="bank_details_review">
                     Bank rating displayed here is the average value for all
-                    Chase Bank branchs. A total of 73 customers had case
+                    Chase Bank branches. A total of 73 customers had case
                     their vote for 5227 branches and in average, Chase Bank
                     got a score of 3.2 out of 5 stars. The bank has 12
                     reviews or customer complaints filed.
@@ -1139,7 +1131,7 @@ if(!empty($id) && is_numeric($id) ){
             <div class="bank_details_right_body">
                 <div class="bank_details_review">
                     Bank rating displayed here is the average value for all
-                    Chase Bank branchs. A total of 73 customers had case
+                    Chase Bank branches. A total of 73 customers had case
                     their vote for 5227 branches and in average, Chase Bank
                     got a score of 3.2 out of 5 stars. The bank has 12
                     reviews or customer complaints filed.
@@ -1148,3 +1140,14 @@ if(!empty($id) && is_numeric($id) ){
 		</div>
 	</div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('.extra').hide();
+
+        $('#extra_view').click(function(){
+            $('.extra').show();
+        });
+
+    })
+</script>

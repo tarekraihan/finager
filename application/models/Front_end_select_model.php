@@ -751,4 +751,18 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    public function select_institution_event_history($id,$non_bank){
+        $where = "bank_id={$id}";
+        $sql="SELECT * FROM `institution_event_history` WHERE $where ORDER BY id DESC LIMIT 0,10";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function select_institution_event_history2($id,$non_bank){
+        $where = "bank_id={$id}";
+        $sql="SELECT * FROM `institution_event_history` WHERE $where ORDER BY id DESC LIMIT 10,1000";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 }
