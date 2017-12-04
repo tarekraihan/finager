@@ -636,7 +636,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
             $where = "dps_info.bank_id={$id}";
         }
         if(!empty($id)){
-            $sql="SELECT `dps_info`.*, {$column} FROM `dps_info`  {$join} WHERE {$where}";
+            $sql="SELECT `dps_info`.*,dps_tenure.tenure, {$column} FROM `dps_info` LEFT JOIN dps_tenure ON dps_tenure.id= dps_info.tenure_id  {$join} WHERE {$where}";
             $query = $this->db->query($sql);
             return $query;
         }
