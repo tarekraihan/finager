@@ -245,6 +245,8 @@ if(!empty($id) && is_numeric($id) ){
                     if(count($home_loan->result()) > 0){
                     foreach($home_loan->result() as $home ) {
                         $interest =($home->is_fixed =='1')? $home->interest_rate_fixed.' % ' : $home->interest_rate_min.'% (Min), <br> '.$home->interest_rate_max.'% (Max)';
+                        $minimum_loan_period =($home->minimum_loan_period > 1 )? $home->minimum_loan_period.' Years' : (($home->minimum_loan_period == 'N/A') ? 'N/A': $home->minimum_loan_period.' Year');
+                        $maximum_loan_period =($home->maximum_loan_period > 1 )? $home->maximum_loan_period.' Years' : (($home->maximum_loan_period == 'N/A') ? 'N/A': $home->maximum_loan_period.' Year');
                         ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
@@ -272,16 +274,14 @@ if(!empty($id) && is_numeric($id) ){
                                             <td><b>Interest rate:</b></td>
                                             <td><?php echo $interest; ?></td>
                                         </tr>
-
-
                                         <tr>
                                             <td><b>Minimum loan period:</b></td>
-                                            <td><?php echo $home->minimum_loan_period;?></td>
+                                            <td><?php echo $minimum_loan_period;?></td>
                                         </tr>
 
                                         <tr>
                                             <td><b>Maximum loan period:</b></td>
-                                            <td><?php echo $home->maximum_loan_period;?></td>
+                                            <td><?php echo $maximum_loan_period;?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -300,7 +300,9 @@ if(!empty($id) && is_numeric($id) ){
                     if(count($personal_loan->result()) > 0){
                     foreach($personal_loan->result() as $personal ) {
                         //pr($personal);die;
-                    $interest =($personal->is_fixed =='1')? $personal->interest_rate_fixed.' % ' : $personal->interest_rate_min.'% (Min), <br> '.$personal->interest_rate_max.'% (Max)';
+                        $interest =($personal->is_fixed =='1')? $personal->interest_rate_fixed.' % ' : $personal->interest_rate_min.'% (Min), <br> '.$personal->interest_rate_max.'% (Max)';
+                        $minimum_loan_period =($personal->minimum_loan_period > 1 )? $personal->minimum_loan_period.' Years' : (($personal->minimum_loan_period == 'N/A') ? 'N/A': $personal->minimum_loan_period.' Year');
+                        $maximum_loan_period =($personal->maximum_loan_period > 1 )? $personal->maximum_loan_period.' Years' : (($personal->maximum_loan_period == 'N/A') ? 'N/A': $personal->maximum_loan_period.' Year');
                     ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
@@ -327,15 +329,14 @@ if(!empty($id) && is_numeric($id) ){
                                             <td><b>Interest rate:</b></td>
                                             <td><?php echo $interest;?></td>
                                         </tr>
-
                                         <tr>
                                             <td><b>Minimum loan period:</b></td>
-                                            <td><?php echo $personal->minimum_loan_period;?></td>
+                                            <td><?php echo $minimum_loan_period;?></td>
                                         </tr>
 
                                         <tr>
                                             <td><b>Maximum loan period:</b></td>
-                                            <td><?php echo $personal->maximum_loan_period;?></td>
+                                            <td><?php echo $maximum_loan_period;?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -470,7 +471,7 @@ if(!empty($id) && is_numeric($id) ){
                                         <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $fdr->bank_logo; ?>" alt="<?php echo $fdr->bank_name;?> Logo" />
                                     </div>
                                     <div class="col-md-10 nopadding">
-                                        <h4><?php echo $fdr->bank_name;?> FDR</h4><br/>
+                                        <h4><?php echo ($fdr->product_name) ? $fdr->product_name : $fdr->bank_name.' FDR';?></h4><br/>
                                         <table class="table table-bordered">
                                             <tbody>
                                             <tr>
@@ -509,6 +510,8 @@ if(!empty($id) && is_numeric($id) ){
                     <?php
                     if(count($all_dps->result()) > 0){
                         foreach($all_dps->result() as $dps ) {
+                            $minimum_amount =($dps->minimum_amount != 'N/A' ) ? 'BDT '.number_format($dps->minimum_amount) : 'N/A';
+                            $maximum_amount =($dps->maximum_amount != 'N/A' ) ? 'BDT '.number_format($dps->maximum_amount) : 'N/A';
                             ?>
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
@@ -521,11 +524,11 @@ if(!empty($id) && is_numeric($id) ){
                                             <tbody>
                                             <tr>
                                                 <td><b>Minimum Amount:</b></td>
-                                                <td><?php echo $dps->minimum_amount;?></td>
+                                                <td><?php echo $minimum_amount;?></td>
                                             </tr>
                                             <tr>
                                                 <td><b>Maximum Amount:</b></td>
-                                                <td><?php echo $dps->maximum_amount;?></td>
+                                                <td><?php echo $maximum_amount;?></td>
                                             </tr>
                                             <tr>
                                                 <td><b>Interest Rate:</b></td>

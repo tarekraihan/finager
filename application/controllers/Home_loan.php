@@ -394,8 +394,8 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
-//            $this->form_validation->set_rules('txtApplicantType[]', ' Looking For ', 'trim|required');
-//            $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumLoanPeriod', ' Minimum Loan Period ', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumLoanPeriod', ' Maximum Loan Period', 'trim|required');
             $this->form_validation->set_rules('txtHomeLoanUser[]', ' Loan User ', 'trim|required');
             $this->form_validation->set_rules('txtSecurityRequired', 'Security Required ', 'trim|required');
             $this->form_validation->set_rules('txtLoanShortDescription', 'Short Description', 'trim|required');
@@ -405,8 +405,6 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
-
-//            echo validation_errors('<div class="error">', '</div>');// die;
 
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
@@ -436,6 +434,8 @@ class Home_Loan extends CI_Controller {
                     'home_loan_name' => htmlentities($this->input->post('txtLoanName')),
                     'min_loan_amount' => htmlentities($this->input->post('txtMinimumLoanAmount')),
                     'max_loan_amount' => htmlentities($this->input->post('txtMaximumLonAmount')),
+                    'minimum_loan_period' => htmlentities($this->input->post('txtMinimumLoanPeriod')),
+                    'maximum_loan_period' => htmlentities($this->input->post('txtMaximumLoanPeriod')),
                     'loan_short_description' => $this->input->post('txtLoanShortDescription'),
                     'interest_rate_min' => htmlentities($this->input->post('txtInterestRateMin')),
                     'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
@@ -479,7 +479,9 @@ class Home_Loan extends CI_Controller {
                 }
 
                 if ($result) {
-                    redirect(base_url().'home_loan/loan_info/success');
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Save !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'home_loan/loan_list');
                 } else {
                     redirect(base_url().'home_loan/loan_info/error');
                 }
@@ -510,8 +512,8 @@ class Home_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtLookingFor', ' Looking for', 'trim|required');
             $this->form_validation->set_rules('txtMinimumLoanAmount', 'Min Loan Amount ', 'trim|required');
             $this->form_validation->set_rules('txtMaximumLonAmount', 'Max Loan Amount ', 'trim|required');
-//            $this->form_validation->set_rules('txtApplicantType[]', ' Looking For ', 'trim|required');
-//            $this->form_validation->set_rules('txtLookingFor[]', ' Looking For ', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumLoanPeriod', ' Minimum Loan Period ', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumLoanPeriod', ' Maximum Loan Period', 'trim|required');
             $this->form_validation->set_rules('txtHomeLoanUser[]', ' Loan User ', 'trim|required');
             $this->form_validation->set_rules('txtSecurityRequired', 'Security Required ', 'trim|required');
             $this->form_validation->set_rules('txtLoanShortDescription', 'Short Description', 'trim|required');
@@ -558,6 +560,8 @@ class Home_Loan extends CI_Controller {
                     'interest_rate_max' => htmlentities($this->input->post('txtInterestRateMax')),
                     'interest_rate_average' => htmlentities($this->input->post('txtInterestRateAverage')),
                     'interest_rate_fixed' => htmlentities($this->input->post('txtInterestRateFixed')),
+                    'minimum_loan_period' => htmlentities($this->input->post('txtMinimumLoanPeriod')),
+                    'maximum_loan_period' => htmlentities($this->input->post('txtMaximumLoanPeriod')),
                     'security_required' => $this->input->post('txtSecurityRequired'),
                     'fees_and_charges' => $this->input->post('txtFeesAndCharges'),
                     'features' => $this->input->post('txtFeatures'),
@@ -601,7 +605,9 @@ class Home_Loan extends CI_Controller {
                 }
 
                 if ($result) {
-                    redirect(base_url().'home_loan/edit_loan_info/success');
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Updated !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'home_loan/loan_list');
                 } else {
                     redirect(base_url().'home_loan/edit_loan_info/error');
                 }

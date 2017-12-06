@@ -29,6 +29,8 @@ if(isset($_GET['id'])){
     $row['required_document']='';
     $row['terms_and_conditions']='';
     $row['review']='';
+    $row['minimum_loan_period']='';
+    $row['maximum_loan_period']='';
 
 
 }
@@ -229,10 +231,7 @@ if(isset($_GET['id'])){
                                                     <label class="red"><?php echo form_error('txtPersonalLoanUser[]');?></label>
                                                 </section>
                                             </div>
-
-
                                             <div class="row">
-
                                                 <section class="col col-6">
                                                     <label class="label">Minimum Loan Amount</label>
                                                     <label class="input">
@@ -249,8 +248,23 @@ if(isset($_GET['id'])){
                                                 </section>
                                             </div>
                                             <div class="row">
+                                                <section class="col col-6">
+                                                    <label class="label">Minimum Loan Period</label>
+                                                    <label class="input">
+                                                        <input type="number"  name="txtMinimumLoanPeriod" value="<?php if(isset($row["minimum_loan_period"]) && $row["minimum_loan_period"] != ""){echo $row["minimum_loan_period"];}else{echo set_value('txtMinimumLoanPeriod');} ?>" placeholder="Write Minimum Loan Period">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtMinimumLoanPeriod');?></label>
+                                                </section>
+                                                <section class="col col-6"  >
+                                                    <label class="label">Maximum Loan Period</label>
+                                                    <label class="input">
+                                                        <input type="number"  name="txtMaximumLoanPeriod" value="<?php if(isset($row["maximum_loan_period"]) && $row["maximum_loan_period"] != ""){echo $row["maximum_loan_period"];}else{echo set_value('txtMaximumLoanPeriod');} ?>" placeholder="Write Maximum Loan Period">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtMaximumLoanPeriod');?></label>
+                                                </section>
 
-
+                                            </div>
+                                            <div class="row">
                                                 <section class="col col-6"  >
                                                     <label class="radio-inline" style="margin-left: 25px ">
                                                         <input type="radio" name="is_fixed" value="variable" id="is_variable" <?php if($row['is_fixed'] == '0'){echo 'checked'; }?>> Variable Interest
