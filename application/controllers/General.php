@@ -277,6 +277,7 @@ class General extends CI_Controller {
         }
     }
 
+
     public function update_bank_non_bank_info($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -320,6 +321,7 @@ class General extends CI_Controller {
                 $this->load->view('admin/block/footer');
             }else{
 
+                $slug = url_title($this->input->post('bank_name'),'dash',TRUE);
                 $date = date('Y-m-d h:i:s');
                 $this->Common_model->data = array(
                     'known_as' =>htmlentities($this->input->post('txtKnownAs')),
@@ -341,6 +343,7 @@ class General extends CI_Controller {
                     'schedule_of_charges'=>$this->input->post('txtScheduleOfCharges'),
                     'interest_rate'=>$this->input->post('txtInterestRate'),
                     'routing_no_list'=>$this->input->post('txtRoutingNoList'),
+                    'slug'=>$slug,
                     'modified' => $date ,
                     'modified_by'=>$this->session->userdata('admin_user_id')
                 );

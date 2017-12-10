@@ -877,7 +877,10 @@ class En extends CI_Controller {
 
 
 
-    public function bank_details(){
+    public function bank_details($url){
+        //$query = $this->db->get_where('card_bank',array('slug'=>$url));
+        //$data['institution_info'] = $query->row_array();
+
         if($this->session->userdata('lovemebaby')){
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
