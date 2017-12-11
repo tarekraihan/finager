@@ -277,7 +277,6 @@ class General extends CI_Controller {
         }
     }
 
-
     public function update_bank_non_bank_info($msg=''){
         if ($this->session->userdata('email_address')) {
             if ($msg == 'success') {
@@ -378,6 +377,7 @@ class General extends CI_Controller {
         $this->load->view('admin/block/footer');
 
     }
+
     public function non_bank_list(){
         $data['title'] = "Finager:Bank List";
         $this->load->view('admin/block/header',$data);
@@ -386,8 +386,6 @@ class General extends CI_Controller {
         $this->load->view('admin/block/footer');
 
     }
-
-
 
     public function add_branch_info($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -461,7 +459,6 @@ class General extends CI_Controller {
 
     }
 
-
     public function institution_branch_info_list(){
         $data['title'] = "Finager:Bank List";
         $this->load->view('admin/block/header',$data);
@@ -470,8 +467,6 @@ class General extends CI_Controller {
         $this->load->view('admin/block/footer');
 
     }
-
-
 
     public function add_event_history($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -531,7 +526,6 @@ class General extends CI_Controller {
         }
 
     }
-
 
     public function edit_event_history($msg=''){
         if ($this->session->userdata('email_address')) {

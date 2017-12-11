@@ -256,8 +256,7 @@
                 <div class="heading_text">
                     <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student_loan4.jpg" alt="img_logo_blue"/>
                     <p class="edu_H_loan">Education Loan</p>
-                    <h4>THE TOP WAYS TO GET STUDENT LOAN FORGIVENESS</h4>
-                    <h4><b>THE TOP WAYS TO GET STUDENT LOAN FORGIVENESS</b></h4>
+                    <h4><b>The top ways to get student loan forgiveness</b></h4>
                     <p>
                         Student loans can be a great investment in your future, or can be a huge burden if not fully thought out or abused. If you currently have a student loan or are
                         thinking about getting student loans, you should know that student loans CANNOT discharged in bankruptcy (in most cases).

@@ -1,35 +1,3 @@
-<?php
-$id=$this->uri->segment(3, 0);
-if(empty($id)){
-    $id = rand(8,50);
-}
-if(!empty($id) && is_numeric($id) ){
-    $institution_info = $this->Front_end_select_model->Select_bank_non_bank_info_by_id($id,0);
-    $home_loan = $this->Front_end_select_model->select_all_home_loan_by_bank_non_bank_id($id,0);
-    $personal_loan = $this->Front_end_select_model->select_all_personal_loan_by_bank_non_bank_id($id,0);
-    $auto_loan = $this->Front_end_select_model->select_all_auto_loan_by_bank_non_bank_id($id,0);
-    $education_loan = $this->Front_end_select_model->select_all_education_loan_by_bank_non_bank_id($id,0);
-    $fdrs = $this->Front_end_select_model->select_all_fdr_by_bank_non_bank_id($id,0);
-    $all_dps = $this->Front_end_select_model->Select_dps_info_by_id($id,0);
-    $millionaires = $this->Front_end_select_model->Select_all_millionaire_info_by_id($id,0);
-    $money_maximizers = $this->Front_end_select_model->Select_all_money_maximizer_info_by_id($id,0);
-    $monthly_benefits = $this->Front_end_select_model->Select_all_monthly_benefit_info_by_id($id,0);
-    $credit_cards = $this->Front_end_select_model->Select_all_credit_card_info_by_id($id,0);
-    $debit_cards = $this->Front_end_select_model->select_all_debit_card_info($id,0);
-    $saving_accounts = $this->Front_end_select_model->select_all_savings_account_info($id,0);
-    $current_accounts = $this->Front_end_select_model->select_all_current_account_info($id,0);
-    $snds = $this->Front_end_select_model->select_all_snd_info($id,0);
-    $event_histories = $this->Front_end_select_model->select_institution_event_history($id,0);
-    $event_histories2 = $this->Front_end_select_model->select_institution_event_history2($id,0);
-
-    //pr($all_dps->result());die;
-
-
-}else{
-    redirect(base_url().'My404');
-}
-
-?>
 <style>
     .nav > li > a:focus, .nav > li > a:hover {
         background-color: #ddd !important;
