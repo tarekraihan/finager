@@ -111,14 +111,14 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-																					<a href="<?php echo base_url();?>en/credit_card">
+																					<a href="<?php echo base_url();?>en/credit-card.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/credit-card-mega-menu.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								 A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
 																							</p>-->
-																							<a class="megamenu_feature_link button-hover" data-text="Find All Credit Cards Here" href="<?php echo base_url();?>en/credit_card">Find All Credit Cards Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Credit Cards Here" href="<?php echo base_url();?>en/credit-card.html">Find All Credit Cards Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -218,14 +218,14 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-																					<a href="<?php echo base_url(); ?>en/debit_card">
+																					<a href="<?php echo base_url(); ?>en/debit-card.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit-card-mega-menu.svg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">Debit Card</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
 																							</p>-->
-																							<a class="megamenu_feature_link button-hover" data-text="Find All Debit Cards Here" href="<?php echo base_url(); ?>en/debit_card">Find All Debit Cards Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Debit Cards Here" href="<?php echo base_url(); ?>en/debit-card.html">Find All Debit Cards Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -362,7 +362,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url(); ?>en/home_loan">
+                                                                                    <a href="<?php echo base_url(); ?>en/home-loan.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/menu_home_loan.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -370,7 +370,7 @@
 																								<span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
 																							</p>-->
 
-																							<a class="megamenu_feature_link button-hover" data-text="Find All Home Loan Here"  href="<?php echo base_url(); ?>en/home_loan">Find All Home Loan Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Home Loan Here"  href="<?php echo base_url(); ?>en/home-loan.html">Find All Home Loan Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -516,7 +516,7 @@
                                                                             <div class="row">
 
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url(); ?>en/home_loan">
+                                                                                    <a href="<?php echo base_url(); ?>en/personal-loan.html">
                                                                                         <div class="features">
                                                                                             <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal-loan-mega-manu.svg" alt="img" class="thumbnail">
                                                                                             <div class="clearfix"></div>
@@ -524,7 +524,7 @@
                                                                                                 <span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
                                                                                             </p>-->
 
-                                                                                            <a class="megamenu_feature_link button-hover" data-text="Find All Personal Loan Here" href="<?php echo base_url();?>en/personal_loan">Find All Personal Loan Here</a>
+                                                                                            <a class="megamenu_feature_link button-hover" data-text="Find All Personal Loan Here" href="<?php echo base_url();?>en/personal-loan.html">Find All Personal Loan Here</a>
                                                                                         </div>
                                                                                     </a>
                                                                                 </div>
@@ -622,7 +622,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url();?>en/car_loan">
+                                                                                    <a href="<?php echo base_url();?>en/car-loan.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto-loan-mega-menu.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -630,7 +630,7 @@
 																								 A <span class="focus-text">Auto Loan</span> in which the borrower's car title is used as collateral. The borrower must be the lien holder (i.e. own the car outright). Before the loan is repaid, the lender will be the title holder of that car and after repaying, the title will be transferred back to the borrower.
 																							</p>-->
 
-																							<a class="megamenu_feature_link button-hover" data-text="Find All Car Loan Here" href="<?php echo base_url();?>en/car_loan">Find All Car Loan Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Car Loan Here" href="<?php echo base_url();?>en/car-loan.html">Find All Car Loan Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -734,7 +734,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url();?>en/education_loan">
+                                                                                    <a href="<?php echo base_url();?>en/education-loan.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education-loan-mega-menu.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -742,7 +742,7 @@
 																							   In <span class="focus-text">Education Loan,</span> money borrowed to finance education or school related expenses. Payments are often deferred while in school and repaid after graduation.
 																							</p>-->
 
-																							<a class="megamenu_feature_link button-hover" data-text="Find All Education Loan Here" href="<?php echo base_url();?>en/education_loan">Find All Education Loan Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Education Loan Here" href="<?php echo base_url();?>en/education-loan.html">Find All Education Loan Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -880,7 +880,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url();?>en/fdr">
+                                                                                    <a href="<?php echo base_url();?>en/fdr.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/FDR-Menu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -888,7 +888,7 @@
 																							   The term <span class="focus-text">Fixed Deposit Account</span>  refers to a type of savings account or certificate of deposit where deposits are made for a specified period of time and that pay out a fixed rate of interest.
 																							</p>-->
 
-																							<a class="megamenu_feature_link button-hover" data-text="Find All FDR Here" href="<?php echo base_url();?>en/fdr">Find All FDR Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All FDR Here" href="<?php echo base_url();?>en/fdr.html">Find All FDR Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -989,7 +989,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url();?>en/dps">
+                                                                                    <a href="<?php echo base_url();?>en/dps.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/DPSMenuIcon.svg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -997,7 +997,7 @@
 																								<span class="focus-text">DPS</span> is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
 																							</p>-->
 
-                                                                                            <a class="megamenu_feature_link button-hover" href="<?php echo base_url();?>en/dps">Find All DPS Here</a>
+                                                                                            <a class="megamenu_feature_link button-hover" href="<?php echo base_url();?>en/dps.html">Find All DPS Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -1096,7 +1096,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url();?>en/millionaire">
+                                                                                    <a href="<?php echo base_url();?>en/millionaire.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/LakhpotiManuIcon.svg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -1104,7 +1104,7 @@
 																								<span class="focus-text">Lakhpoti & Millionaire Scheme</span> is a monthly Savings Scheme with flexible long term tenure that gives account holder maturity Value of minimum BDT 1 (one) million.
 																							</p>-->
 
-																							<a class="megamenu_feature_link button-hover"  data-text="Find All Lakhpoti & Millionaire Scheme Here" href="<?php echo base_url();?>en/millionaire">Find All Lakhpoti & Millionaire Scheme Here</a>
+																							<a class="megamenu_feature_link button-hover"  data-text="Find All Lakhpoti & Millionaire Scheme Here" href="<?php echo base_url();?>en/millionaire.html">Find All Lakhpoti & Millionaire Scheme Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -1204,7 +1204,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url();?>en/money_maximizer">
+                                                                                    <a href="<?php echo base_url();?>en/money-maximizer.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Money-Maximizer-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -1212,7 +1212,7 @@
 																								<span class="focus-text">Money Maximizer</span> account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
 																							</p>-->
 
-																							<a class="megamenu_feature_link land_modal button-hover" data-text="Find All Money Maximizer Scheme Here" href="<?php echo base_url();?>en/money_maximizer">Find All Money Maximizer Scheme Here</a>
+																							<a class="megamenu_feature_link land_modal button-hover" data-text="Find All Money Maximizer Scheme Here" href="<?php echo base_url();?>en/money-maximizer.html">Find All Money Maximizer Scheme Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -1311,7 +1311,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url();?>en/monthly_benefit">
+                                                                                    <a href="<?php echo base_url();?>en/monthly-benefit.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Monthly-Benefit-Scheme-menu-Icon-.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -1319,7 +1319,7 @@
 																								<span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
 																							</p>-->
 
-																							<a class="megamenu_feature_link land_modal button-hover" data-text="Find All Monthly Benefit Scheme"  href="<?php echo base_url();?>en/monthly_benefit">Find All Monthly Benefit Scheme</a>
+																							<a class="megamenu_feature_link land_modal button-hover" data-text="Find All Monthly Benefit Scheme"  href="<?php echo base_url();?>en/monthly-benefit.html">Find All Monthly Benefit Scheme</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -1428,7 +1428,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <a href="">
+                                                                                    <a href="<?php echo base_url(); ?>en/savings-account.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Saving-Acc-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -1437,13 +1437,13 @@
                                                                                                 <span class="focus-text">Saving Account</span>  is an interest-bearing deposit account held at a bank or another financial institution that provides ...
                                                                                             </p>
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/savings_account">Find All Saving Account Here</a>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/savings-account.html">Find All Saving Account Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <a href="">
+                                                                                    <a href="<?php echo base_url(); ?>en/current-account.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/CurrentAccMenuIcon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -1452,13 +1452,13 @@
                                                                                                 <span class="focus-text">Current Account</span> is made with Bank or financial institution that permits the withdrawal of funds and allows checks to be ...
                                                                                             </p>
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/current_account">Find All Current Account Here</a>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/current-account.html">Find All Current Account Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
 
                                                                                 <div class="col-sm-4 col-xs-12">
-                                                                                    <a href="<?php echo base_url(); ?>en/snd">
+                                                                                    <a href="<?php echo base_url(); ?>en/snd.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/SND-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -1466,7 +1466,7 @@
 																								<span class="focus-text">SND Account</span> is an interest bearing deposit where advance notice of 7 to 30 days required for amount withdrawal.
 																							</p>
 
-																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/snd">Find All SND Account Here</a>
+																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>en/snd.html">Find All SND Account Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -1553,7 +1553,7 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-                                                                                    <a href="<?php echo base_url(); ?>en/export_import">
+                                                                                    <a href="<?php echo base_url(); ?>en/export-import.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
@@ -1561,7 +1561,7 @@
 																								<span class="focus-text">Export &amp; Import</span> An import is a good or service brought into one country from another. On the other hand, an export is a function of international trade whereby goods produced in one country are shipped to another country for future sale or trade.
 																							</p>-->
 
-																							<a class="megamenu_feature_link button-hover" data-text="Find All Export &amp; Import Here" href="<?php echo base_url(); ?>en/export_import">Find All Export &amp; Import Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Export &amp; Import Here" href="<?php echo base_url(); ?>en/export-import.html">Find All Export &amp; Import Here</a>
 																						</div>
 																					</a>
                                                                                 </div>
@@ -1660,7 +1660,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="<?php echo base_url(); ?>en/bank_details_landing">Bank Page </a></li>
+                                    <li><a href="<?php echo base_url(); ?>en/bank-details-landing.html">Bank Page </a></li>
 									
                                     <!--li><a href="#">Contact <i class="fa fa-caret-down fa-indicator"></i> </a>
                                        
