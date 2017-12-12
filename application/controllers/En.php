@@ -877,12 +877,33 @@ class En extends CI_Controller {
 
 
 
-    public function bank_details(){
+    public function bank_details($url){
+        $query = $this->db->get_where('card_bank',array('slug'=>$url));
+        $data['institution_info'] = $query->row_array();
+
+        //$institution_info = $this->Front_end_select_model->Select_bank_non_bank_info_by_id($data['institution_info']['id'],0);
+        $data['home_loan'] = $this->Front_end_select_model->select_all_home_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
+        $data['personal_loan'] = $this->Front_end_select_model->select_all_personal_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
+        $data['auto_loan'] = $this->Front_end_select_model->select_all_auto_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
+        $data['education_loan'] = $this->Front_end_select_model->select_all_education_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
+        $data['fdrs'] = $this->Front_end_select_model->select_all_fdr_by_bank_non_bank_id($data['institution_info']['id'],0);
+        $data['all_dps'] = $this->Front_end_select_model->Select_dps_info_by_id($data['institution_info']['id'],0);
+        $data['millionaires'] = $this->Front_end_select_model->Select_all_millionaire_info_by_id($data['institution_info']['id'],0);
+        $data['money_maximizers'] = $this->Front_end_select_model->Select_all_money_maximizer_info_by_id($data['institution_info']['id'],0);
+        $data['monthly_benefits'] = $this->Front_end_select_model->Select_all_monthly_benefit_info_by_id($data['institution_info']['id'],0);
+        $data['credit_cards'] = $this->Front_end_select_model->Select_all_credit_card_info_by_id($data['institution_info']['id'],0);
+        $data['debit_cards'] = $this->Front_end_select_model->select_all_debit_card_info($data['institution_info']['id'],0);
+        $data['saving_accounts'] = $this->Front_end_select_model->select_all_savings_account_info($data['institution_info']['id'],0);
+        $data['current_accounts'] = $this->Front_end_select_model->select_all_current_account_info($data['institution_info']['id'],0);
+        $data['snds'] = $this->Front_end_select_model->select_all_snd_info($data['institution_info']['id'],0);
+        $data['event_histories'] = $this->Front_end_select_model->select_institution_event_history($data['institution_info']['id'],0);
+        $data['event_histories2'] = $this->Front_end_select_model->select_institution_event_history2($data['institution_info']['id'],0);
+
         if($this->session->userdata('lovemebaby')){
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/bank_details');
+            $this->load->view('front_end/bank_details',$data);
             $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login');

@@ -320,6 +320,7 @@ class General extends CI_Controller {
                 $this->load->view('admin/block/footer');
             }else{
 
+                $slug = url_title($this->input->post('bank_name'),'dash',TRUE);
                 $date = date('Y-m-d h:i:s');
                 $this->Common_model->data = array(
                     'known_as' =>htmlentities($this->input->post('txtKnownAs')),
@@ -341,6 +342,7 @@ class General extends CI_Controller {
                     'schedule_of_charges'=>$this->input->post('txtScheduleOfCharges'),
                     'interest_rate'=>$this->input->post('txtInterestRate'),
                     'routing_no_list'=>$this->input->post('txtRoutingNoList'),
+                    'slug'=>$slug,
                     'modified' => $date ,
                     'modified_by'=>$this->session->userdata('admin_user_id')
                 );
@@ -375,6 +377,7 @@ class General extends CI_Controller {
         $this->load->view('admin/block/footer');
 
     }
+
     public function non_bank_list(){
         $data['title'] = "Finager:Bank List";
         $this->load->view('admin/block/header',$data);
@@ -383,8 +386,6 @@ class General extends CI_Controller {
         $this->load->view('admin/block/footer');
 
     }
-
-
 
     public function add_branch_info($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -458,7 +459,6 @@ class General extends CI_Controller {
 
     }
 
-
     public function institution_branch_info_list(){
         $data['title'] = "Finager:Bank List";
         $this->load->view('admin/block/header',$data);
@@ -467,8 +467,6 @@ class General extends CI_Controller {
         $this->load->view('admin/block/footer');
 
     }
-
-
 
     public function add_event_history($msg=''){
         if ($this->session->userdata('email_address')) {
@@ -528,7 +526,6 @@ class General extends CI_Controller {
         }
 
     }
-
 
     public function edit_event_history($msg=''){
         if ($this->session->userdata('email_address')) {

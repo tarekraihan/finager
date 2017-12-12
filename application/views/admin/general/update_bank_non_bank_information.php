@@ -127,6 +127,7 @@ if(isset($_GET['id'])){
                                                 <section class="col col-6">
                                                     <label class="radio-inline" style="margin-left: 25px; margin-top: 25px;">
                                                         <input type="checkbox" name="is_non_bank" id="is_non_bank" value="1" <?php set_checkbox('is_non_bank', '1')?> <?php echo ($row['is_non_bank'] == '1') ? 'checked' : ''; ?>> Is Non Bank Institution ?
+                                                        <input type="hidden" name="bank_name" id="bank_name">
                                                     </label>
                                                 </section>
 
@@ -138,6 +139,7 @@ if(isset($_GET['id'])){
                                                         <select name="txtBankName" id="txtBankName">
                                                             <?php echo $this->Select_model->select_bank();?>
                                                         </select>
+
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtBankName');?></label>
                                                 </section>
@@ -546,7 +548,11 @@ if(isset($_GET['id'])){
                 $("#txtCallCenterNo").attr("placeholder", "Write call center no").placeholder();
             }
 
-        })
+        });
+
+        var bank_name = $("#txtBankName option:selected").text();
+        $('#bank_name').val(bank_name);
+        //alert(bank_name);
 
     });
 </script>

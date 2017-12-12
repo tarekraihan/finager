@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/git/finager/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '.html';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ $config['uri_protocol']	= 'REQUEST_URI';
 |
 | https://codeigniter.com/user_guide/general/urls.html
 */
-$config['url_suffix'] = '';
+$config['url_suffix'] = '.html';
 
 /*
 |--------------------------------------------------------------------------

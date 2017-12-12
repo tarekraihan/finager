@@ -63,11 +63,17 @@
                 $query=$this->Common_model->select_all();
 
                 foreach ($query->result() as $row){
-                    //pr($row);
+                    $slug = url_title($row->bank_name,'dash',TRUE);
+                   /* $this->Common_model->data = array(
+                        'slug' => $slug
+                    );
+                    $this->Common_model->where = array('id' => $row->id);
+                    $this->Common_model->table_name = 'card_bank';
+                    $this->Common_model->update();*/
                 ?>
                 <div class="col-md-3">
                     <div class="bank_details_landing_box">
-                        <a href="<?php echo base_url();?>en/bank_details/<?php echo $row->id;?>" > <img class="text-center" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" title="<?php echo $row->known_as; ?>"></a>
+                        <a href="<?php echo base_url();?>en/bank-details/<?php echo ($row->slug) ? $row->slug : $slug;?>.html" > <img class="text-center" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" title="<?php echo $row->known_as; ?>"></a>
                         <h5 class="text-center"><?php echo $row->bank_name; ?></h5>
                     </div>
                 </div>
