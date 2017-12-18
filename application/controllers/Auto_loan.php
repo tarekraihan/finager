@@ -729,7 +729,7 @@ class Auto_loan extends CI_Controller
 
         //-----------Pagination start-----------------
 
-        $config['base_url'] = base_url() . "en/all_car_loan/";
+        $config['base_url'] = base_url() . "all_car_loan/";
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
         $config["uri_segment"] = 3;
@@ -820,7 +820,7 @@ class Auto_loan extends CI_Controller
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
                <div class="col-sm-3 col-xs-3">
-                   <a href="'.base_url().'en/car_loan_details/'.$row->id.'"><img title="Click Here To Show details" class="img-responsive auto_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                   <a href="'.base_url().'car_loan_details/'.$row->id.'"><img title="Click Here To Show details" class="img-responsive auto_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                    <small class="home_loan_bank_name"><a  href="javascript:void(0)">'.$bank.'</a></small>
                    <small class="home_loan_bank_name">'.$row->i_want.'</small>
                </div>

@@ -45,7 +45,7 @@ class En extends CI_Controller {
 
     public function login(){
             if($this->session->userdata('lovemebaby')){
-                redirect(base_url().'en/index/');
+                redirect(base_url());
             }else{
                 $email = htmlentities($this->input->post('txtEmail'));
                 $password = htmlentities($this->input->post('txtPassword'));
@@ -53,7 +53,7 @@ class En extends CI_Controller {
                 if($email == "sujat" && $password == "007"){
                     $data['lovemebaby'] = "lovemebaby";
                     $this->session->set_userdata($data);
-                    redirect(base_url().'en/index/');
+                    redirect(base_url());
                 }else{
                     $this->load->view('front_end/login');
                 }
@@ -109,7 +109,7 @@ class En extends CI_Controller {
                 $this->load->view('front_end/block/footer');
             }
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -123,7 +123,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/credit_card_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -151,7 +151,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/card_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -166,7 +166,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/card_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -181,7 +181,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/debit_card_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -195,7 +195,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/debit_card');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -210,7 +210,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/debit_card_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -225,7 +225,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/debit_card_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -239,7 +239,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/home_loan_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -253,7 +253,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/home_loan');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
 
     }
@@ -268,7 +268,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/home_loan_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
     public function home_loan_compare(){
@@ -281,7 +281,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/home_loan_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -302,7 +302,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/auto_loan_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -316,7 +316,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/auto_loan');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -330,7 +330,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/auto_loan_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -345,7 +345,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/auto_loan_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -364,7 +364,7 @@ class En extends CI_Controller {
         $this->load->view('front_end/personal_loan_landing');
         $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -379,7 +379,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/personal_loan');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -394,7 +394,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/personal_loan_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -408,7 +408,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/personal_loan_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -428,7 +428,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/education_loan_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -443,7 +443,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/education_loan');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -457,7 +457,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/education_loan_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -472,7 +472,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/education_loan_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -495,7 +495,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/fdr_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -511,7 +511,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/fdr');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -526,7 +526,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/fdr_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -542,7 +542,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/fdr_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -558,7 +558,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/dps_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -573,7 +573,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/dps');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -587,7 +587,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/dps_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -601,7 +601,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/dps_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -616,7 +616,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/millionaire_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -632,7 +632,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/millionaire');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -647,7 +647,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/millionaire_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -661,7 +661,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/millionaire_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -677,7 +677,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/money_maximizer_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -692,7 +692,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/money_maximizer');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -707,7 +707,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/money_maximizer_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -721,7 +721,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/money_maximizer_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
 
     }
@@ -740,7 +740,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/monthly_benefit_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -755,7 +755,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/monthly_benefit');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -769,7 +769,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/current_account');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -783,7 +783,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/current_account_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -798,7 +798,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/current_account_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -812,7 +812,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/savings_account');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -827,7 +827,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/saving_account_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -842,7 +842,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/saving_account_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -857,7 +857,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/monthly_benefit_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -871,7 +871,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/monthly_benefit_compare');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -906,7 +906,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/bank_details',$data);
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -918,7 +918,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/bank_details_landing');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -932,7 +932,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/export_import');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -946,7 +946,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/all_logo');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -1013,7 +1013,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/snd');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -1028,7 +1028,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/snd_details');
             $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 
@@ -1042,7 +1042,7 @@ class En extends CI_Controller {
         $this->load->view('front_end/snd_compare');
         $this->load->view('front_end/block/footer');
         }else{
-            redirect(base_url().'en/login');
+            redirect(base_url().'en/login.html');
         }
     }
 

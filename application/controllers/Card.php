@@ -1219,7 +1219,7 @@ class Card extends CI_Controller
 //        print_r($res->result()); die;
         //-----------Pagination start-----------------
 
-        $config['base_url'] = base_url() . "en/all_credit_card/";
+        $config['base_url'] = base_url() . "all_credit_card/";
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
         $config["uri_segment"] = 3;
@@ -1265,15 +1265,15 @@ class Card extends CI_Controller
                 $summary='';
                 if($length > 250){
                     $rest = substr($row->card_summary, 0,250);
-                    $summary = $rest.' <a href="'.base_url().'en/card_details/'. $row->id.'"> read more..</a>';
+                    $summary = $rest.' <a href="'.base_url().'card_details/'. $row->id.'"> read more..</a>';
                 }else{
                     $summary = $row->card_summary;
                 }
                 $card_image='';
                 if($row->card_image_name == '&lt;'){
-                    $card_image = ' <a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
+                    $card_image = ' <a href="'.base_url().'card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
                 }else{
-                    $card_image ='<a href="'.base_url().'en/card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
+                    $card_image ='<a href="'.base_url().'card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
                 }
                 $credit_card .='<div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
