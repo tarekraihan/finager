@@ -1265,16 +1265,27 @@ class Card extends CI_Controller
                 $summary='';
                 if($length > 250){
                     $rest = substr($row->card_summary, 0,250);
-                    $summary = $rest.' <a href="'.base_url().'card_details/'. $row->id.'"> read more..</a>';
+                    $summary = $rest.' <a href="'.base_url().'credit-cards/compare-credit-cards/'. $row->slug.'.html"> read more..</a>';
                 }else{
                     $summary = $row->card_summary;
                 }
                 $card_image='';
                 if($row->card_image_name == '&lt;'){
-                    $card_image = ' <a href="'.base_url().'card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
+                    $card_image = ' <a href="'.base_url().'credit-cards/compare-credit-cards/'. $row->slug.'.html"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
                 }else{
-                    $card_image ='<a href="'.base_url().'card_details/'. $row->id.'"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
+                    $card_image ='<a href="'.base_url().'credit-cards/compare-credit-cards/'. $row->slug.'.html"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
                 }
+                /*
+                $url = $row->bank_name.' '.$row->card_name;
+                $slug = url_title($url,'dash',TRUE);
+                $slug = str_replace("/","-",$slug);
+                $this->Common_model->data = array(
+                        'slug' => $slug
+                    );
+                $this->Common_model->where = array('id' => $row->id);
+                $this->Common_model->table_name = 'card_card_informations';
+                $this->Common_model->update();*/
+
                 $credit_card .='<div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-3 col-xs-3">

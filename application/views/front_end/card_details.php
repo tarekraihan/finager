@@ -1,19 +1,12 @@
 <?php
-
-    $id=$this->uri->segment(3, 0);
-    if(!empty($id) && is_numeric($id) ){
+$id= (int)$card_details['id'];
+if(!empty($id) && is_numeric($id) ){
         $query=$this->Front_end_select_model->select_card_details($id);
         $row=$query->row();
-//        print_r($row);die;
     }else{
         redirect(base_url().'My404');
     }
-
-
-
-
 ?>
-
 <section id="card_details_top">
     <div class="container">
         <div class="row">

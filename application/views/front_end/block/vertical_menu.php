@@ -70,14 +70,14 @@
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
-																					<a href="<?php echo base_url();?>credit-card.html">
+																					<a href="<?php echo base_url();?>credit-cards.html">
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/credit-card-mega-menu.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								 A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
 																							</p>-->
-																							<a class="megamenu_feature_link button-hover" data-text="Find All Credit Cards Here" href="<?php echo base_url();?>credit-card.html">Find All Credit Cards Here</a>
+																							<a class="megamenu_feature_link button-hover" data-text="Find All Credit Cards Here" href="<?php echo base_url();?>credit-cards.html">Find All Credit Cards Here</a>
 																						</div>
 																					</a>
                                                                                 </div>

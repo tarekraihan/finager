@@ -141,11 +141,13 @@ class En extends CI_Controller {
         }
     }
 
-    public function card_details(){
+    public function card_details($url){
+        $query = $this->db->get_where('card_card_informations',array('slug'=>$url));
+        $data['card_details'] = $query->row_array();
         if($this->session->userdata('lovemebaby')){
             $this->load->driver('cache');
             $this->cache->file->save('card_details', 'card_details', 100);
-            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/header',$data);
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/card_details');
