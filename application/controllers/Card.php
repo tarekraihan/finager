@@ -1265,17 +1265,17 @@ class Card extends CI_Controller
                 $summary='';
                 if($length > 250){
                     $rest = substr($row->card_summary, 0,250);
-                    $summary = $rest.' <a href="'.base_url().'credit-cards/compare-credit-cards/'. $row->slug.'.html"> read more..</a>';
+                    $summary = $rest.' <a href="'.base_url().'compare-credit-cards/'. $row->slug.'.html"> read more..</a>';
                 }else{
                     $summary = $row->card_summary;
                 }
                 $card_image='';
                 if($row->card_image_name == '&lt;'){
-                    $card_image = ' <a href="'.base_url().'credit-cards/compare-credit-cards/'. $row->slug.'.html"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
+                    $card_image = ' <a href="'.base_url().'compare-credit-cards/'. $row->slug.'.html"><img class="img-responsive selected_card" src="'.base_url().'resource/front_end/images/demo_card.png" alt="Demo Card" /></a>';
                 }else{
-                    $card_image ='<a href="'.base_url().'credit-cards/compare-credit-cards/'. $row->slug.'.html"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
+                    $card_image ='<a href="'.base_url().'compare-credit-cards/'. $row->slug.'.html"><img class="img-responsive selected_card" src="'.base_url().'resource/card/credit_card/'.$row->card_image_name.'" alt="Card Image" /></a>';
                 }
-                /*
+/*
                 $url = $row->bank_name.' '.$row->card_name;
                 $slug = url_title($url,'dash',TRUE);
                 $slug = str_replace("/","-",$slug);
@@ -1711,7 +1711,7 @@ class Card extends CI_Controller
         $row= $result->row();
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/card/credit_card/'.$row->card_image_name.'" data-card_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/card/credit_card/'.$row->card_image_name.'" data-card_id='.$row->id.' data-card_url='.$row->slug.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;

@@ -224,7 +224,7 @@
 				data: data,
 				cache: false,
 				success: function(response){
-					window.location.href = "<?php echo base_url();?>credit-cards/compare-credit-cards.html";
+					window.location.href = "<?php echo base_url();?>compare-credit-cards.html";
 				}
 			});
 		}

@@ -142,16 +142,32 @@ class En extends CI_Controller {
     }
 
     public function card_details($url){
-        $query = $this->db->get_where('card_card_informations',array('slug'=>$url));
-        $data['card_details'] = $query->row_array();
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('card_details', 'card_details', 100);
-            $this->load->view('front_end/block/header',$data);
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/card_details');
-            $this->load->view('front_end/block/footer');
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('card_card_informations',array('slug'=>$compare[0]));
+                $data['card1'] = $query1->row_array();
+                $query2 = $this->db->get_where('card_card_informations',array('slug'=>$compare[1]));
+                $data['card2'] = $query2->row_array();
+
+                $this->load->driver('cache');
+                $this->cache->file->save('card_compare', 'card_compare', 100);
+                $this->load->view('front_end/block/header',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/card_compare');
+                $this->load->view('front_end/block/footer');
+            }else{
+                $query = $this->db->get_where('card_card_informations',array('slug'=>$url));
+                $data['card_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('card_details', 'card_details', 100);
+                $this->load->view('front_end/block/header',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/card_details');
+                $this->load->view('front_end/block/footer');
+            }
         }else{
             redirect(base_url().'en/login.html');
         }
@@ -1002,6 +1018,52 @@ class En extends CI_Controller {
                 $html .= '</div>';
                 echo $html;
             }
+        }
+    }
+
+
+    public function ajax_send_comparison(){
+        $ip_address=$_SERVER['REMOTE_ADDR'];
+        $email = $this->input->post('email');
+        $url = $this->input->post('url');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('url', 'URL', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $html = '<div class="alert alert-danger">';
+            $html .= validation_errors();
+            $html .= '</div>';
+            echo $html;
+        } else {
+            $this->Common_model->data = array(
+                'email_address' => htmlentities($email),
+                'url' => $url,
+                'ip_address' => $ip_address,
+                'created' => date('Y-m-d h:i:s')
+            );
+            $this->Common_model->table_name = "send_comparison_url";
+            $result = $this->Common_model->insert();
+
+
+            if ($result) {
+                $this->load->library('email');
+
+                $this->email->from('info@finager.com', 'Finager.com');
+                $this->email->to($email);
+
+                $this->email->subject('Finager Product Comparison');
+                $this->email->message($url);
+                if ($this->email->send())
+                {
+                    $html = '<div class="alert alert-success text-center" role="alert"><strong> Thank You!</strong> Your requested comparison url send.</div>'; echo $html;
+                } else {
+                    $html = '<div class="alert alert-danger text-center">';
+                    $html .= 'Something going wrong. Please try again!';
+                    $html .= '</div>';
+                    echo $html;
+                }
+            }
+
         }
     }
 

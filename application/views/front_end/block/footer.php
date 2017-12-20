@@ -253,6 +253,25 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div id="send_comparison_url" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div id="send_comparison_url_message">
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" data-dismiss="modal">close</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" id="maintains-modal">
   <div class="modal-dialog beta_modal" role="document">
@@ -456,6 +475,39 @@ jQuery(document).keypress(function(e) {
 
                 $('#txtSubscribeEmail').val('');
                 $('#subscription_message_footer').modal('show');
+            }
+        });
+
+    });
+
+    $('#send_comparison_button').on('click',function(){
+        var email = $('#send_comparison_email').val();
+        var url = "<?php echo current_url();?>";
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if ( email == '') {
+            var msg = '<div class="alert alert-danger">Email address is required field</div>';
+            $('#send_comparison_url_message').html( msg );
+            $('#send_comparison_email').val('');
+            $('#send_comparison_url').modal('show');
+            return false;
+        }else if (!filter.test( email )) {
+            var msg = '<div class="alert alert-danger">Please provide a valid email address</div>';
+            $('#send_comparison_url_message').html( msg );
+            $('#send_comparison_email').val('');
+            $('#send_comparison_url').modal('show');
+            return false;
+        }
+
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>en/ajax_send_comparison/",
+            data: 'email='+email+'&url='+url,
+            success: function(response)
+            {
+                $('#send_comparison_url_message').html(response);
+                $('#send_comparison_email').val('');
+                $('#send_comparison_url').modal('show');
             }
         });
 
