@@ -173,7 +173,7 @@ class En extends CI_Controller {
         }
     }
 
-
+/*
     public function card_compare(){
         if($this->session->userdata('lovemebaby')){
             $this->load->driver('cache');
@@ -186,7 +186,7 @@ class En extends CI_Controller {
         }else{
             redirect(base_url().'en/login.html');
         }
-    }
+    }*/
 
 
     public function debit_card(){
@@ -218,21 +218,40 @@ class En extends CI_Controller {
     }
 
 
-    public function debit_card_details(){
+    public function debit_card_details($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('debit_card_details', 'debit_card_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card_details');
-            $this->load->view('front_end/block/footer');
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('debit_card_info',array('meta_url'=>$compare[0]));
+                $data['card1'] = $query1->row_array();
+                $query2 = $this->db->get_where('debit_card_info',array('meta_url'=>$compare[1]));
+                $data['card2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('debit_card_compare', 'debit_card_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/debit_card_compare');
+                $this->load->view('front_end/block/footer');
+            }else{
+                $query = $this->db->get_where('debit_card_info',array('meta_url'=>$url));
+                $data['card_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('debit_card_details', 'debit_card_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/debit_card_details');
+                $this->load->view('front_end/block/footer');
+            }
         }else{
             redirect(base_url().'en/login.html');
         }
+
+
     }
 
-
+/*
     public function debit_card_compare(){
         if($this->session->userdata('lovemebaby')){
             $this->load->driver('cache');
@@ -245,7 +264,7 @@ class En extends CI_Controller {
         }else{
             redirect(base_url().'en/login.html');
         }
-    }
+    }*/
 
     public function home_loan(){
         if($this->session->userdata('lovemebaby')){

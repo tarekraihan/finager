@@ -63,7 +63,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_debit_card_details($id){
-        $sql="SELECT debit_card_info.*,card_bank.bank_name,card_bank.bank_logo,debit_card_looking_for.looking_for,debit_card_choose_account.account_name,debit_card_issuer.card_issuer_name,debit_card_i_want.i_want,debit_card_looking_for.looking_for FROM debit_card_info  INNER JOIN card_bank ON card_bank.id=debit_card_info.bank_id INNER JOIN debit_card_choose_account ON debit_card_choose_account.id=debit_card_info.choose_account_id INNER JOIN debit_card_issuer ON debit_card_issuer.id=debit_card_info.card_issuer_id INNER JOIN debit_card_i_want ON debit_card_i_want.id=debit_card_info.i_want_id INNER JOIN debit_card_looking_for ON debit_card_looking_for.id=debit_card_info.looking_for_id WHERE debit_card_info.meta_url=$id";
+        $sql="SELECT debit_card_info.*,card_bank.bank_name,card_bank.bank_logo,debit_card_looking_for.looking_for,debit_card_choose_account.account_name,debit_card_issuer.card_issuer_name,debit_card_i_want.i_want,debit_card_looking_for.looking_for FROM debit_card_info  INNER JOIN card_bank ON card_bank.id=debit_card_info.bank_id INNER JOIN debit_card_choose_account ON debit_card_choose_account.id=debit_card_info.choose_account_id INNER JOIN debit_card_issuer ON debit_card_issuer.id=debit_card_info.card_issuer_id INNER JOIN debit_card_i_want ON debit_card_i_want.id=debit_card_info.i_want_id INNER JOIN debit_card_looking_for ON debit_card_looking_for.id=debit_card_info.looking_for_id WHERE debit_card_info.id=$id";
         //echo $sql; die;
         $query = $this->db->query($sql);
 

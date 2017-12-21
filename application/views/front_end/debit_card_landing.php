@@ -246,7 +246,7 @@
 				data: data,
 				cache: false,
 				success: function(response){
-					window.location.href = "<?php echo base_url();?>en/all_debit_card";
+					window.location.href = "<?php echo base_url();?>compare-debit-cards.html";
 				}
 			});
 		}
