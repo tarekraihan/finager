@@ -470,7 +470,7 @@
         var top_height = $('#top-page').height();
         var banner_height = $('#creditCard_header').height();
         var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+45);
+        var total_top = parseInt(top_height+banner_height+filter_height + 45);
 
         var main_height = $(".main-content-area").height();
         //console.log(main_height);
@@ -522,7 +522,7 @@
             $('#sidebar').addClass('fixed-bottom');
         }
 
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 90){
+        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top + 50){
             $("#sidebar").removeClass("fixed");
             $("#sidebar").removeClass("fixed-bottom");
             $("#sidebar").addClass("sidebar-absolute-bottom");
@@ -1171,12 +1171,23 @@
 
     $('#go_compare').click(function(){
         var  formData = $('.cart_anchor').children('img').data();
-        var card_url1 = formData.card_url;
+        var card_id1 = "card_id1="+formData.card_id;
         var  formData = $('.cart_anchor01').children('img').data();
-        var card_url2 = formData.card_url;
-        var card_urls = card_url1+'-vs-'+card_url2;
-        if(card_url1 != '' && card_url2 != ''){
-            window.location.href = "<?php echo base_url();?>compare-credit-cards/"+card_urls+".html";
+        var card_id2 = "&card_id2="+formData.card_id;
+        var card_ids = card_id1+card_id2;
+        if(card_id1 != '' && card_id2 != ''){
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>card/ajax_go_card_compare_page",
+                data: card_ids,
+                success: function(msg)
+                {
+                    if(msg != 'error'){
+                        window.location.href = "<?php echo base_url();?>en/card_compare";
+                    }
+                }
+            });
         }else{
             alert("Please add 2 card for compare ! ");
         }
