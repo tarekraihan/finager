@@ -340,6 +340,9 @@ class Auto_loan extends CI_Controller
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
+            $this->form_validation->set_rules('txtMinimumLoanPeriod', ' Minimum Loan Period ', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumLoanPeriod', ' Maximum Loan Period', 'trim|required');
+
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
                 $this->load->view('admin/block/header', $data);
@@ -384,7 +387,9 @@ class Auto_loan extends CI_Controller
                     'downpayment' => $this->input->post('txtDownPayment'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'created_by'=>$this->session->userdata('admin_user_id'),
+                    'minimum_loan_period' => htmlentities($this->input->post('txtMinimumLoanPeriod')),
+                    'maximum_loan_period' => htmlentities($this->input->post('txtMaximumLoanPeriod'))
                 );
                 $this->Common_model->table_name = 'auto_loan_info';
               $last_insert_id = $this->Common_model->insert();
@@ -410,7 +415,9 @@ class Auto_loan extends CI_Controller
                 }
 
                 if ($result) {
-                    redirect(base_url().'auto_loan/loan_info/success');
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully save !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'auto_loan/loan_list');
                 } else {
                     redirect(base_url().'auto_loan/loan_info/error');
                 }
@@ -450,6 +457,9 @@ class Auto_loan extends CI_Controller
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
             $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
+            $this->form_validation->set_rules('txtMinimumLoanPeriod', ' Minimum Loan Period ', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumLoanPeriod', ' Maximum Loan Period', 'trim|required');
+
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
                 $this->load->view('admin/block/header', $data);
@@ -495,7 +505,9 @@ class Auto_loan extends CI_Controller
                     'downpayment' => $this->input->post('txtDownPayment'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'modified' => $date ,
-                    'modified_by'=>$this->session->userdata('admin_user_id')
+                    'modified_by'=>$this->session->userdata('admin_user_id'),
+                    'minimum_loan_period' => htmlentities($this->input->post('txtMinimumLoanPeriod')),
+                    'maximum_loan_period' => htmlentities($this->input->post('txtMaximumLoanPeriod'))
                 );
                 /*$this->Common_model->table_name = 'auto_loan_info';
                 $last_insert_id = $this->Common_model->insert();*/
@@ -517,7 +529,9 @@ class Auto_loan extends CI_Controller
                 }
 
                 if ($result) {
-                    redirect(base_url().'auto_loan/edit_loan_info/success');
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Updated !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'auto_loan/loan_list');
                 } else {
                     redirect(base_url().'auto_loan/edit_loan_info/error');
                 }
@@ -604,7 +618,8 @@ class Auto_loan extends CI_Controller
                     'availablity_of_partial_settlement' => $this->input->post('txtAvailableOfPartialSettlement'),
                     'minimum_age' => htmlentities($this->input->post('txtMinimumAge')),
                     'required_document' => htmlentities($this->input->post('txtRequiredDocument')),
-
+                    'minimum_loan_period' => htmlentities($this->input->post('txtMinimumLoanPeriod')),
+                    'maximum_loan_period' => htmlentities($this->input->post('txtMaximumLoanPeriod')),
                     'created' => $date ,
                     'created_by'=>$this->session->userdata('admin_user_id')
                 );
@@ -714,7 +729,7 @@ class Auto_loan extends CI_Controller
 
         //-----------Pagination start-----------------
 
-        $config['base_url'] = base_url() . "en/all_car_loan/";
+        $config['base_url'] = base_url() . "all_car_loan/";
         $config['total_rows'] = $res->num_rows();
         $config['per_page'] = "10";
         $config["uri_segment"] = 3;
@@ -805,7 +820,7 @@ class Auto_loan extends CI_Controller
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
                <div class="col-sm-3 col-xs-3">
-                   <a href="'.base_url().'en/car_loan_details/'.$row->id.'"><img title="Click Here To Show details" class="img-responsive auto_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                   <a href="'.base_url().'car_loan_details/'.$row->id.'"><img title="Click Here To Show details" class="img-responsive auto_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                    <small class="home_loan_bank_name"><a  href="javascript:void(0)">'.$bank.'</a></small>
                    <small class="home_loan_bank_name">'.$row->i_want.'</small>
                </div>

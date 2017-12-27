@@ -52,4 +52,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'En';
 $route['404_override'] = 'My404';
 $route['translate_uri_dashes'] = TRUE;
-//$route['home-loan'] = "en/home_loan";
+//$route['index'] = "index";
+$route['/'] = "en/index/";
+$route['debit-cards'] = "en/debit_card";
+$route['compare-debit-cards'] = "en/all_debit_card";
+$route['compare-debit-cards/(:any)'] = "en/debit_card_details/$1";
+$route['credit-cards'] = "en/credit_card";
+$route['compare-credit-cards'] = "en/all_credit_card";
+$route['compare-credit-cards/(:any)'] = "en/card_details/$1";
+$route['home-loan'] = "en/home_loan";
+$route['personal-loan'] = "en/personal_loan";
+$route['auto-loan'] = "en/car_loan";
+$route['education-loan'] = "en/education_loan";
+$route['fdr'] = "en/fdr";
+$route['dps'] = "en/dps";
+$route['millionaire'] = "en/millionaire";
+$route['money-maximizer'] = "en/money_maximizer";
+$route['monthly-benefit'] = "en/monthly_benefit";
+$route['savings-account'] = "en/savings_account";
+$route['current-account'] = "en/current_account";
+$route['snd'] = "en/snd";
+$route['export-import'] = "en/export_import";
+$route['all-bank-details'] = "en/bank_details_landing";
+$route['bank-details/(:any)'] = "en/bank_details/$1";
+/*
+$default_controller = "En";
+$controller_exceptions = array('admin','forums');
+
+$route['default_controller'] = $default_controller;
+$route["^((?!\b".implode('\b|\b', $controller_exceptions)."\b).*)$"] = $default_controller.'/$1';*/

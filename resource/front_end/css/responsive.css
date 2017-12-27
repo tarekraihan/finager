@@ -470,4 +470,12 @@
         right: -15px !important;
         top: 2px !important;
     }
+    #second_div{
+        height: auto !important;
+    }
+    .land_modal>div{
+        background-color: #fff;
+        margin-bottom: 10px;
+        border: 1px solid #dedede;
+    }
 }

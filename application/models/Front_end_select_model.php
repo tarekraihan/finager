@@ -63,7 +63,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_debit_card_details($id){
-        $sql="SELECT debit_card_info.*,card_bank.bank_name,card_bank.bank_logo,debit_card_looking_for.looking_for,debit_card_choose_account.account_name,debit_card_issuer.card_issuer_name,debit_card_i_want.i_want,debit_card_looking_for.looking_for FROM debit_card_info  INNER JOIN card_bank ON card_bank.id=debit_card_info.bank_id INNER JOIN debit_card_choose_account ON debit_card_choose_account.id=debit_card_info.choose_account_id INNER JOIN debit_card_issuer ON debit_card_issuer.id=debit_card_info.card_issuer_id INNER JOIN debit_card_i_want ON debit_card_i_want.id=debit_card_info.i_want_id INNER JOIN debit_card_looking_for ON debit_card_looking_for.id=debit_card_info.looking_for_id WHERE debit_card_info.meta_url=$id";
+        $sql="SELECT debit_card_info.*,card_bank.bank_name,card_bank.bank_logo,debit_card_looking_for.looking_for,debit_card_choose_account.account_name,debit_card_issuer.card_issuer_name,debit_card_i_want.i_want,debit_card_looking_for.looking_for FROM debit_card_info  INNER JOIN card_bank ON card_bank.id=debit_card_info.bank_id INNER JOIN debit_card_choose_account ON debit_card_choose_account.id=debit_card_info.choose_account_id INNER JOIN debit_card_issuer ON debit_card_issuer.id=debit_card_info.card_issuer_id INNER JOIN debit_card_i_want ON debit_card_i_want.id=debit_card_info.i_want_id INNER JOIN debit_card_looking_for ON debit_card_looking_for.id=debit_card_info.looking_for_id WHERE debit_card_info.id=$id";
         //echo $sql; die;
         $query = $this->db->query($sql);
 
@@ -153,7 +153,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_card_image($id){
-        $sql="SELECT id,card_image_name FROM `card_card_informations`  WHERE id=$id";
+        $sql="SELECT id,card_image_name,slug FROM `card_card_informations`  WHERE id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -636,7 +636,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
             $where = "dps_info.bank_id={$id}";
         }
         if(!empty($id)){
-            $sql="SELECT `dps_info`.*, {$column} FROM `dps_info`  {$join} WHERE {$where}";
+            $sql="SELECT `dps_info`.*,dps_tenure.tenure, {$column} FROM `dps_info` LEFT JOIN dps_tenure ON dps_tenure.id= dps_info.tenure_id  {$join} WHERE {$where}";
             $query = $this->db->query($sql);
             return $query;
         }
@@ -747,6 +747,20 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     public function select_all_snd_info($id,$non_bank){
         $where = "snd_info.bank_id={$id}";
         $sql="SELECT snd_info.*,snd_account_i_am.i_am,card_bank.bank_name,card_bank.bank_logo,general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `snd_info` INNER JOIN snd_account_i_am ON snd_account_i_am.id=snd_info.i_am_id  LEFT JOIN card_bank on card_bank.id=snd_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = snd_info.non_bank_id WHERE $where";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function select_institution_event_history($id,$non_bank){
+        $where = "bank_id={$id}";
+        $sql="SELECT * FROM `institution_event_history` WHERE $where ORDER BY id DESC LIMIT 0,10";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function select_institution_event_history2($id,$non_bank){
+        $where = "bank_id={$id}";
+        $sql="SELECT * FROM `institution_event_history` WHERE $where ORDER BY id DESC LIMIT 10,1000";
         $query = $this->db->query($sql);
         return $query;
     }

@@ -53,7 +53,12 @@ if(isset($_GET['loan_id']))
                             <h2>Auto Loan Information List </h2>
 
                         </header>
+                        <div >
+                            <?php echo ($this->session->userdata('success_message')) ?  $this->session->userdata('success_message') : ''; $this->session->unset_userdata('success_message');?>
 
+                            <?php echo ($this->session->userdata('error_message')) ?  $this->session->userdata('error_message') : ''; $this->session->unset_userdata('error_message');?>
+
+                        </div>
                         <!-- widget div-->
                         <div>
 
@@ -78,6 +83,8 @@ if(isset($_GET['loan_id']))
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Loan Amount</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Interest Rate</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Created By</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Modified By</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Last Modified</th>
                                         <th data-hide="phone"><i class="fa fa-pencil-square-o text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
 
                                     </tr>

@@ -54,7 +54,12 @@ if(isset($_GET['loan_id']))
                             <h2>Home Loan Information List </h2>
 
                         </header>
+                        <div >
+                            <?php echo ($this->session->userdata('success_message')) ?  $this->session->userdata('success_message') : ''; $this->session->unset_userdata('success_message');?>
 
+                            <?php echo ($this->session->userdata('error_message')) ?  $this->session->userdata('error_message') : ''; $this->session->unset_userdata('error_message');?>
+
+                        </div>
                         <!-- widget div-->
                         <div>
 

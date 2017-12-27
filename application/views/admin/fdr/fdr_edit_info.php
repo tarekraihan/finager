@@ -31,6 +31,7 @@ if(isset($_GET['id'])){
     $row['required_document']='';
     $row['terms_and_conditions']='';
     $row['review']='';
+    $row['product_name']='';
 
 }
 ?>
@@ -238,6 +239,16 @@ if(isset($_GET['id'])){
                                     <label class="red"><?php echo form_error('txtMaximumDepositAmount');?></label>
                                 </section>
 
+                            </div>
+
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Product Name</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="250" name="txtProductName" id="txtProductName" value="<?php echo $row['product_name']; ?>" placeholder="Write product name">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtProductName');?></label>
+                                </section>
                             </div>
 
 

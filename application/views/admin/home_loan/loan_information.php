@@ -192,6 +192,23 @@
 
                                             <div class="row">
                                                 <section class="col col-6"  >
+                                                    <label class="label">Minimum Loan Period</label>
+                                                    <label class="input">
+                                                        <input type="number"  name="txtMinimumLoanPeriod" value="<?php echo set_value('txtMinimumLoanPeriod'); ?>" placeholder="Write Minimum Loan Period">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtMinimumLoanPeriod');?></label>
+                                                </section>
+                                                <section class="col col-6"  >
+                                                    <label class="label">Maximum Loan Period</label>
+                                                    <label class="input">
+                                                        <input type="number"  name="txtMaximumLoanPeriod" value="<?php echo set_value('txtMaximumLoanPeriod'); ?>" placeholder="Write Maximum Loan Period">
+                                                    </label>
+                                                    <label class="red"><?php echo form_error('txtMaximumLoanPeriod');?></label>
+                                                </section>
+
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6"  >
                                                     <label class="radio-inline" style="margin-left: 25px ">
                                                         <input type="radio" name="is_fixed" value="variable" > Variable Interest
                                                     </label>

@@ -339,6 +339,8 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumAmount', 'Minimum Amount', 'trim|required|min_length[3]');
+            $this->form_validation->set_rules('txtMaximumAmount', 'Maximum Amount', 'trim|required|min_length[3]');
 
 
             $this->form_validation->set_rules('two_hundred_maturity', 'two_hundred_maturity', 'trim|numeric');
@@ -456,7 +458,9 @@ class Dps extends CI_Controller
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
                     'review' => $this->input->post('txtReview'),
                     'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'created_by'=>$this->session->userdata('admin_user_id'),
+                    'minimum_amount'=>$this->input->post('txtMinimumAmount'),
+                    'maximum_amount'=>$this->input->post('txtMaximumAmount')
                 );
                 $this->Common_model->table_name = 'dps_info';
                 $res = $this->Common_model->insert();
@@ -557,7 +561,9 @@ class Dps extends CI_Controller
                     $this->Common_model->table_name = 'dps_maturity_amount';
                     $result = $this->Common_model->insert();
                     if ($result) {
-                        redirect(base_url().'dps/add_info/success');
+                        $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Updated !!</div>';
+                        $this->session->set_userdata($data);
+                        redirect(base_url().'dps/add_info/');
                     } else {
                         redirect(base_url().'dps/add_info/error');
                     }
@@ -601,6 +607,8 @@ class Dps extends CI_Controller
             $this->form_validation->set_rules('txtTermsAndConditions', 'TermsAndConditions', 'trim|required');
             $this->form_validation->set_rules('txtAvailableBenefit', 'Available Benefit', 'trim|required');
             $this->form_validation->set_rules('txtFeesAndCharges', 'Fees and Charges', 'trim|required');
+            $this->form_validation->set_rules('txtMinimumAmount', 'Minimum Amount', 'trim|required|min_length[3]');
+            $this->form_validation->set_rules('txtMaximumAmount', 'Maximum Amount', 'trim|required|min_length[3]');
 
             $this->form_validation->set_rules('two_hundred_maturity', 'two_hundred_maturity', 'trim|numeric');
             $this->form_validation->set_rules('two_hundred_interest', 'two_hundred_interest', 'trim|numeric');
@@ -722,7 +730,9 @@ class Dps extends CI_Controller
                     'available_benefit' => $this->input->post('txtAvailableBenefit'),
                     'review' => $this->input->post('txtReview'),
                     'modified' => $date ,
-                    'modified_by'=>$this->session->userdata('admin_user_id')
+                    'modified_by'=>$this->session->userdata('admin_user_id'),
+                    'minimum_amount'=>$this->input->post('txtMinimumAmount'),
+                    'maximum_amount'=>$this->input->post('txtMaximumAmount')
                 );
                 $this->Common_model->table_name = 'dps_info';
                 $this->Common_model->where = array('id' => $this->input->post('txtInfoId'));
@@ -828,12 +838,14 @@ class Dps extends CI_Controller
                     $this->Common_model->where = array('id' => $this->input->post('txtMaturityId'));
                     $result = $this->Common_model->update();
                     if ($result) {
-                        redirect(base_url().'dps/deposit_list/success');
+                        $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Updated !!</div>';
+                        $this->session->set_userdata($data);
+                        redirect(base_url().'dps/deposit_list');
                     } else {
-                        redirect(base_url().'dps/edit_dps_info/error');
+                        redirect(uri_string());
                     }
                 }else {
-                    redirect(base_url().'dps/edit_dps_info/error');
+                    redirect(uri_string());
                 }
 
             }

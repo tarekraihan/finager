@@ -199,6 +199,15 @@
                                     <label class="red"><?php echo form_error('txtMaximumDepositAmount');?></label>
                                 </section>
                             </div>
+                            <div class="row">
+                                <section class="col col-6">
+                                    <label class="label">Product Name</label>
+                                    <label class="input">
+                                        <input type="text" maxlength="250" name="txtProductName" id="txtProductName" value="<?php echo set_value('txtProductName'); ?>" placeholder="Write product name">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtProductName');?></label>
+                                </section>
+                            </div>
 
 </article>
 <!-- WIDGET END -->

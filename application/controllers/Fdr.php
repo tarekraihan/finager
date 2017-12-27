@@ -452,7 +452,7 @@ class Fdr extends CI_Controller {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 //            print_r($this->input->post()); die;
-//            $this->form_validation->set_rules('txtBankName', 'Bank Name', 'trim|required');
+            $this->form_validation->set_rules('txtProductName', 'Product Name', 'trim|required');
             $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
@@ -482,6 +482,7 @@ class Fdr extends CI_Controller {
 
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
+                    'product_name' => $this->input->post('txtProductName'),
                     'i_am_id' => $this->input->post('txtIAm'),
                     'is_non_bank' => $non_bank,
                     'non_bank_id' => $this->input->post('txtNonBankName'),
@@ -504,7 +505,9 @@ class Fdr extends CI_Controller {
                 $this->Common_model->table_name = 'fdr_info';
                 $result = $this->Common_model->insert();
                 if ($result) {
-                    redirect(base_url().'fdr/fdr_info/success');
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Save !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'fdr/fdr_info_list');
                 } else {
                     redirect(base_url().'fdr/fdr_info/error');
                 }
@@ -540,7 +543,7 @@ class Fdr extends CI_Controller {
     }
 
     public function fdr_info_list(){
-        $data['title'] = "Draft Information";
+        $data['title'] = "FDR List Information";
         $this->load->view('admin/block/header',$data);
         $this->load->view('admin/block/left_nav');
         $this->load->view('admin/fdr/fdr_info_list');
@@ -555,6 +558,7 @@ class Fdr extends CI_Controller {
             } else if ($msg == 'error') {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
+            $this->form_validation->set_rules('txtProductName', 'Product', 'trim|required');
             $this->form_validation->set_rules('txtDepositType', 'Deposit type', 'trim|required');
             $this->form_validation->set_rules('txtIAm', 'I Am', 'trim|required');
             $this->form_validation->set_rules('txtLoanFacility', 'Loan Facility', 'trim|required');
@@ -584,6 +588,7 @@ class Fdr extends CI_Controller {
                 }
                 $this->Common_model->data = array(
                     'bank_id' => $this->input->post('txtBankName'),
+                    'product_name' => $this->input->post('txtProductName'),
                     'deposit_type_id' => $this->input->post('txtDepositType'),
                     'i_am_id' => $this->input->post('txtIAm'),
                     'is_non_bank' => $non_bank,
@@ -609,7 +614,9 @@ class Fdr extends CI_Controller {
                 $result = $this->Common_model->update();
 
                 if ($result) {
-                    redirect(base_url().'fdr/fdr_edit_info/success');
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Updated !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'fdr/fdr_info_list');
                 } else {
                     redirect(base_url().'fdr/fdr_edit_info/error');
                 }

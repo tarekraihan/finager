@@ -187,8 +187,8 @@ class Personal_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
 //            $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
-
-//            echo validation_errors('<div class="error">', '</div>');// die;
+            $this->form_validation->set_rules('txtMinimumLoanPeriod', ' Minimum Loan Period ', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumLoanPeriod', ' Maximum Loan Period', 'trim|required');
 
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
@@ -232,7 +232,9 @@ class Personal_Loan extends CI_Controller {
 //                    'downpayment' => $this->input->post('txtDownPayment'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'created' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'created_by'=>$this->session->userdata('admin_user_id'),
+                    'minimum_loan_period' => htmlentities($this->input->post('txtMinimumLoanPeriod')),
+                    'maximum_loan_period' => htmlentities($this->input->post('txtMaximumLoanPeriod'))
                 );
                 $this->Common_model->table_name = 'personal_loan_info';
                 $last_insert_id = $this->Common_model->insert();
@@ -248,7 +250,9 @@ class Personal_Loan extends CI_Controller {
                 }
 
                 if ($result) {
-                    redirect(base_url().'personal_loan/loan_info/success');
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Save !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'personal_loan/loan_list');
                 } else {
                     redirect(base_url().'personal_loan/loan_info/error');
                 }
@@ -290,8 +294,8 @@ class Personal_Loan extends CI_Controller {
             $this->form_validation->set_rules('txtRequiredDocument', 'Required Document', 'trim|required');
 //            $this->form_validation->set_rules('txtDownPayment', 'down payment ', 'trim');
             $this->form_validation->set_rules('txtTermsAndConditions', 'Terms and Conditions', 'required|trim');
-
-//            echo validation_errors('<div class="error">', '</div>');// die;
+            $this->form_validation->set_rules('txtMinimumLoanPeriod', ' Minimum Loan Period ', 'trim|required');
+            $this->form_validation->set_rules('txtMaximumLoanPeriod', ' Maximum Loan Period', 'trim|required');
 
             if ($this->form_validation->run() == FALSE) {
                 $data['title'] = "Finager - Loan Information";
@@ -335,7 +339,9 @@ class Personal_Loan extends CI_Controller {
 //                    'downpayment' => $this->input->post('txtDownPayment'),
                     'terms_and_conditions' => $this->input->post('txtTermsAndConditions'),
                     'modified' => $date ,
-                    'modified_by'=>$this->session->userdata('admin_user_id')
+                    'modified_by'=>$this->session->userdata('admin_user_id'),
+                    'minimum_loan_period' => htmlentities($this->input->post('txtMinimumLoanPeriod')),
+                    'maximum_loan_period' => htmlentities($this->input->post('txtMaximumLoanPeriod'))
                 );
                 /*$this->Common_model->table_name = 'personal_loan_info';
                 $last_insert_id = $this->Common_model->insert();*/
@@ -359,7 +365,9 @@ class Personal_Loan extends CI_Controller {
                 }
 
                 if ($result) {
-                    redirect(base_url().'personal_loan/edit_loan_info/success');
+                    $data['success_message'] = '<div id="message" class=" text-center alert alert-success">Successfully Updated !!</div>';
+                    $this->session->set_userdata($data);
+                    redirect(base_url().'personal_loan/loan_list');
                 } else {
                     redirect(base_url().'personal_loan/edit_loan_info/error');
                 }

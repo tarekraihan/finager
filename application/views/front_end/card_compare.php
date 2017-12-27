@@ -1,30 +1,22 @@
     <?php
-        $id = $this->session->userdata('first_card') ;
+        //$id = $this->session->userdata('first_card') ;
+    $id = (int)$card1['id'];
         $result = $this->Front_end_select_model->select_card_details($id);
         $first_card = $result->row();
 
-    $id1 = $this->session->userdata('second_card') ;
+    //$id1 = $this->session->userdata('second_card') ;
+    $id1 = (int)$card2['id'];
     $result1 = $this->Front_end_select_model->select_card_details($id1);
     $second_card = $result1->row();
-    //print_r($this->session->userdata());
-
-//    print_r($first_card); die;
-
     $first_card_benefit = explode(',',$first_card->card_benifit_id);
     $second_card_benefit = explode(',',$second_card->card_benifit_id);
 
     $result = $this->Select_model->get_card_benefit();
-//    $row = $query->result_array();
 
-
-    //if(in_array($result[0]['id'], $first_card_benifit)){echo " YES";}else{ echo "No"; }
-    //echo $result[0]['id'];die;
-    //print_r($result);
 
     ?>
 <script type="text/javascript">
 $(window).on('scroll', function (){
-        alert();
 	if ($(window).scrollTop() > 150){
 	  $('#card_compare_default').addClass('compare-bg');
 	} else {
@@ -47,9 +39,9 @@ $(window).on('scroll', function (){
         <div class="row">
             <table class="table">
                 <tr>
-                    <td> <p><img class="pull-left compare_image img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $first_card->card_image_name; ?>" /></p></td>
+                    <td> <p><a href="<?php echo base_url();?>compare-credit-cards/<?php echo $first_card->slug; ?>.html"> <img class="pull-left compare_image img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $first_card->card_image_name; ?>" /></a></p></td>
                     <td><b> <p class="text-center com_title">Comparison </p></b></td>
-                    <td> <p><img class="pull-right compare_image img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $second_card->card_image_name; ?>" /></p></td>
+                    <td> <p><a href="<?php echo base_url();?>compare-credit-cards/<?php echo $second_card->slug; ?>.html"><img class="pull-right compare_image img-responsive" src="<?php echo base_url();?>resource/card/credit_card/<?php echo $second_card->card_image_name; ?>" /></a></p></td>
                 </tr>
             </table>
         </div>
@@ -461,14 +453,14 @@ $(window).on('scroll', function (){
         <div class="row comparision-subscribe">
             <h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
             <div class="col-md-12">
-                <form class="comparison_email">
+                <div class="comparison_email">
                     <div class="form-group col-md-11">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
+                        <input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
                     </div>
                     <div class="form-group col-md-1">
-                        <button type="submit" class="btn btn-default">SEND </button>
+                        <button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

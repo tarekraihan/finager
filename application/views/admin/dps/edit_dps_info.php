@@ -19,6 +19,8 @@ if(isset($_GET['id'])){
     $row['terms_and_conditions']='';
     $row['dps_name']='';
     $row['review']='';
+    $row['minimum_amount']='';
+    $row['maximum_amount']='';
     $row['id']='';
     $row['two_hundred_maturity']='';
     $row['three_hundred_maturity']='';
@@ -227,6 +229,25 @@ if(isset($_GET['id'])){
                                     <label class="red"><?php echo form_error('txtTenure');?></label>
                                 </section>
                             </div>
+
+                            <div class="row">
+                                <section class="col col-6"  >
+                                    <label class="label">Minimum Amount</label>
+                                    <label class="input">
+                                        <input type="number"  name="txtMinimumAmount" value="<?php echo $row['minimum_amount']; ?>" placeholder="Write Minimum amount">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtMinimumAmount');?></label>
+                                </section>
+                                <section class="col col-6"  >
+                                    <label class="label">Maximum Loan Period</label>
+                                    <label class="input">
+                                        <input type="number"  name="txtMaximumAmount" value="<?php echo $row['maximum_amount']; ?>" placeholder="Write Maximum Amount">
+                                    </label>
+                                    <label class="red"><?php echo form_error('txtMaximumAmount');?></label>
+                                </section>
+
+                            </div>
+
                             <div class="row">
                                 <section class="col col-6">
                                     <label class="label">DPS Name</label>

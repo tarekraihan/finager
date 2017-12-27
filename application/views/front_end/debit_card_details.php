@@ -1,21 +1,21 @@
 <?php
 
-$id=$this->uri->segment(3, 0);
-//if(!empty($id) && is_numeric($id) ){
-    $query=$this->Front_end_select_model->select_debit_card_details($id);
-    $row=$query->row();
+$id= (int)$card_details['id'];
+if(!empty($id) && is_numeric($id) ){
+	$query=$this->Front_end_select_model->select_debit_card_details($id);
+	$row=$query->row();
 	$summary = $row->card_name.' of '.$row->bank_name.' is a valid both in Bangladesh & outside the country. It has waiver on annual fee from the second year if 18 transactions (including 10 POS transaction) is done in a physical year.';
-//}else{
- //   redirect(base_url().'My404');
-//}
 
+}else{
+	redirect(base_url().'My404');
+}
 ?>
 <section id="card_details_top">
 		<div class="container">
 			<div class="row">
 				<div class="card_details_body">
 					<div class="col-sm-2 col-xs-4">
-						<div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" /></div>
+						<div><a href="<?php echo base_url();?>compare-debit-cards/<?php echo $row->meta_url;?>.html"> <img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" /></a></div>
 						<img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/BtnCard_apply.png" />
 						<p class="text-center">
 							<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>

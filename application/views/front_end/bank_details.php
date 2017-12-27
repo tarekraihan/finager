@@ -1,36 +1,8 @@
-<?php
-$id=$this->uri->segment(3, 0);
-if(empty($id)){
-    $id = rand(8,50);
-}
-if(!empty($id) && is_numeric($id) ){
-    $institution_info = $this->Front_end_select_model->Select_bank_non_bank_info_by_id($id,0);
-    $home_loan = $this->Front_end_select_model->select_all_home_loan_by_bank_non_bank_id($id,0);
-    $personal_loan = $this->Front_end_select_model->select_all_personal_loan_by_bank_non_bank_id($id,0);
-    $auto_loan = $this->Front_end_select_model->select_all_auto_loan_by_bank_non_bank_id($id,0);
-    $education_loan = $this->Front_end_select_model->select_all_education_loan_by_bank_non_bank_id($id,0);
-    $fdrs = $this->Front_end_select_model->select_all_fdr_by_bank_non_bank_id($id,0);
-    $all_dps = $this->Front_end_select_model->Select_dps_info_by_id($id,0);
-    $millionaires = $this->Front_end_select_model->Select_all_millionaire_info_by_id($id,0);
-    $money_maximizers = $this->Front_end_select_model->Select_all_money_maximizer_info_by_id($id,0);
-    $monthly_benefits = $this->Front_end_select_model->Select_all_monthly_benefit_info_by_id($id,0);
-    $credit_cards = $this->Front_end_select_model->Select_all_credit_card_info_by_id($id,0);
-    $debit_cards = $this->Front_end_select_model->select_all_debit_card_info($id,0);
-    $saving_accounts = $this->Front_end_select_model->select_all_savings_account_info($id,0);
-    $current_accounts = $this->Front_end_select_model->select_all_current_account_info($id,0);
-    $snds = $this->Front_end_select_model->select_all_snd_info($id,0);
-    //pr($snds->result());die;
-
-
-}else{
-    redirect(base_url().'My404');
-}
-
-?>
 <style>
     .nav > li > a:focus, .nav > li > a:hover {
         background-color: #ddd !important;
     }
+   
 </style>
 <section id="bank_details">
     <div class="container-fluid">
@@ -131,8 +103,18 @@ if(!empty($id) && is_numeric($id) ){
                     <div class="col-md-4 nopadding">
                         <div class="bank_info_box">
                             <b>Call Center:</b><br/>
-                            <a href="tel:<?php echo $institution_info['call_center'];?>"><?php echo $institution_info['call_center'];?></a>
-                            <?php  /*echo ($institution_info['not_available_call_center']) ? 'Not Available' :$institution_info['call_center'] ; */ ?>
+                            <?php
+                                $call_center = ($institution_info['not_available_call_center']) ? 'Not Available' :$institution_info['call_center'];
+
+                                if($institution_info['not_available_call_center']){
+                                    ?><?php  echo $call_center;  ?><?php
+                                }else{
+                                    ?><a href="tel:<?php echo $institution_info['call_center'];?>"><?php  echo $call_center;?></a><?php
+                                }
+
+                            ?>
+
+
                         </div>
                     </div>
                     <div class="col-md-4 nopadding">
@@ -160,7 +142,7 @@ if(!empty($id) && is_numeric($id) ){
                 <li role="presentation"><a href="#Account" aria-controls="accounts" role="tab" data-toggle="tab">Accounts</a></li>
                 <li role="presentation"><a href="#Services" aria-controls="settings" role="tab" data-toggle="tab">Services</a></li>
                 <li role="presentation"><a href="#ScheduleCharges" aria-controls="settings" role="tab" data-toggle="tab">Schedule of Charges</a></li>
-<!--                <li role="presentation"><a href="#InterestRate" aria-controls="settings" role="tab" data-toggle="tab">Interest Rate</a></li>-->
+                <li role="presentation"><a href="#InterestRate" aria-controls="settings" role="tab" data-toggle="tab">Interest Rate List</a></li>
 <!--                <li role="presentation"><a href="#RoutingNoList" aria-controls="settings" role="tab" data-toggle="tab">Routing No List</a></li>-->
             </ul>
 
@@ -185,27 +167,32 @@ if(!empty($id) && is_numeric($id) ){
                             </div>
 							<h3>HISTORY OF  <?php echo $institution_info['bank_name']; ?></h3>
 							<p>Below is a list of some important events in banks history, including mergers and acquisitions.</p>
-							<table class="table">
+                            <table class="table table-striped">
 								<tbody>
-								  <tr>
-									<td>Jan 01, 1824</td>
-									<td>Institution established: Original name: Chemical Bank & Trust Company</td>
-								  </tr>      
-								  <tr class="info">
-									<td>Oct 18, 1954</td>
-									<td>Changed name to Chemical Corn Exchange Bank</td>
-								  </tr>
-								  <tr>
-									<td>Aug 08, 1959</td>
-									<td>Changed name to Chemical Bank New York Trust Company</td>
-								  </tr>
-								  <tr class="info">
-									<td>Jan 18, 1975</td>
-									<td>Acquired Security National Bank (7113) in Hempstead, NY</td>
-								  </tr>
-								</tbody>
+                                <?php
+                                if(count($event_histories->result()) > 0){
+                                    foreach($event_histories->result() as $event_history ) {
+                                            echo '<tr><td>'.$event_history->event_date.'</td><td>'.$event_history->event_title.'</td></tr>';
+                                    }
+                                }else{
+                                    echo '<tr><td colspan="2">There is no event.</td></tr>';
+                                }
+
+                                ?><?php
+                                if(count($event_histories2->result()) > 0){
+                                    foreach($event_histories2->result() as $event_history2 ) {
+                                            echo '<tr class="extra"><td>'.$event_history2->event_date.'</td><td>'.$event_history2->event_title.'</td></tr>';
+                                    }
+                                }
+                                ?>
+                                </tbody>
 							</table>
-							<p class="bank_details_more"><a href="#">View 36 More Events in Banks History…</a></p>
+                            <?php if(count($event_histories->result()) == 10){
+                                ?>
+                                <p class="bank_details_more"><a href="#" id="extra_view">View <?php echo count(count($event_histories2->result())); ?> More Events in Banks History…</a></p>
+                            <?php
+                            }?>
+
 							<h3><?php echo $institution_info['bank_name']; ?> REVIEWS & COMPLAINTS</h3>
 							<div class="col-md-1">
 								<img src="<?php echo base_url(); ?>resource/front_end/images/Bank-Details-Empty.png" alt="User Image">
@@ -226,6 +213,8 @@ if(!empty($id) && is_numeric($id) ){
                     if(count($home_loan->result()) > 0){
                     foreach($home_loan->result() as $home ) {
                         $interest =($home->is_fixed =='1')? $home->interest_rate_fixed.' % ' : $home->interest_rate_min.'% (Min), <br> '.$home->interest_rate_max.'% (Max)';
+                        $minimum_loan_period =($home->minimum_loan_period > 1 )? $home->minimum_loan_period.' Years' : (($home->minimum_loan_period == 'N/A') ? 'N/A': $home->minimum_loan_period.' Year');
+                        $maximum_loan_period =($home->maximum_loan_period > 1 )? $home->maximum_loan_period.' Years' : (($home->maximum_loan_period == 'N/A') ? 'N/A': $home->maximum_loan_period.' Year');
                         ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
@@ -253,16 +242,14 @@ if(!empty($id) && is_numeric($id) ){
                                             <td><b>Interest rate:</b></td>
                                             <td><?php echo $interest; ?></td>
                                         </tr>
-
-
                                         <tr>
                                             <td><b>Minimum loan period:</b></td>
-                                            <td> N/A</td>
+                                            <td><?php echo $minimum_loan_period;?></td>
                                         </tr>
 
                                         <tr>
                                             <td><b>Maximum loan period:</b></td>
-                                            <td> N/A</td>
+                                            <td><?php echo $maximum_loan_period;?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -281,7 +268,9 @@ if(!empty($id) && is_numeric($id) ){
                     if(count($personal_loan->result()) > 0){
                     foreach($personal_loan->result() as $personal ) {
                         //pr($personal);die;
-                    $interest =($personal->is_fixed =='1')? $personal->interest_rate_fixed.' % ' : $personal->interest_rate_min.'% (Min), <br> '.$personal->interest_rate_max.'% (Max)';
+                        $interest =($personal->is_fixed =='1')? $personal->interest_rate_fixed.' % ' : $personal->interest_rate_min.'% (Min), <br> '.$personal->interest_rate_max.'% (Max)';
+                        $minimum_loan_period =($personal->minimum_loan_period > 1 )? $personal->minimum_loan_period.' Years' : (($personal->minimum_loan_period == 'N/A') ? 'N/A': $personal->minimum_loan_period.' Year');
+                        $maximum_loan_period =($personal->maximum_loan_period > 1 )? $personal->maximum_loan_period.' Years' : (($personal->maximum_loan_period == 'N/A') ? 'N/A': $personal->maximum_loan_period.' Year');
                     ?>
                     <div class="col-md-6">
                         <div class="bank_loan_details">
@@ -307,6 +296,15 @@ if(!empty($id) && is_numeric($id) ){
                                         <tr>
                                             <td><b>Interest rate:</b></td>
                                             <td><?php echo $interest;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Minimum loan period:</b></td>
+                                            <td><?php echo $minimum_loan_period;?></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><b>Maximum loan period:</b></td>
+                                            <td><?php echo $maximum_loan_period;?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -353,6 +351,16 @@ if(!empty($id) && is_numeric($id) ){
                                         <tr>
                                             <td><b>Minimum Down payment:</b></td>
                                             <td><?php echo $auto->downpayment;?> %</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><b>Minimum loan period:</b></td>
+                                            <td><?php echo $auto->minimum_loan_period;?></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><b>Maximum loan period:</b></td>
+                                            <td><?php echo $auto->maximum_loan_period;?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -422,17 +430,16 @@ if(!empty($id) && is_numeric($id) ){
                     <?php
                     if(count($fdrs->result()) > 0){
                         foreach($fdrs->result() as $fdr ) {
-
                             $min_amount = ($fdr->no_limit_min_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->min_amount);
                             $max_amount = ($fdr->no_limit_max_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->max_amount);
                             ?>
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
                                     <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $fdr->bank_logo; ?>" alt="AB Bank Logo" />
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $fdr->bank_logo; ?>" alt="<?php echo $fdr->bank_name;?> Logo" />
                                     </div>
                                     <div class="col-md-10 nopadding">
-                                        <h4><?php echo $fdr->bank_name;?> FDR</h4><br/>
+                                        <h4><?php echo ($fdr->product_name) ? $fdr->product_name : $fdr->bank_name.' FDR';?></h4><br/>
                                         <table class="table table-bordered">
                                             <tbody>
                                             <tr>
@@ -452,14 +459,6 @@ if(!empty($id) && is_numeric($id) ){
                                                 <td><?php echo $fdr->tenure;?></td>
                                             </tr>
                                             <tr>
-                                                <td><b>Minimum Period:</b></td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Maximum Period:</b></td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
                                                 <td><b>Loan Facility:</b></td>
                                                 <td><?php echo ($fdr->loan_facility) ? $fdr->loan_facility.' % of the Deposited Amount' : 'N/A';?></td>
                                             </tr>
@@ -473,13 +472,14 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
+                    <br/>
+                    <br/>
                     <h3>DPS</h3>
                     <?php
                     if(count($all_dps->result()) > 0){
                         foreach($all_dps->result() as $dps ) {
-
-                            //$min_amount = ($fdr->no_limit_min_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->min_amount);
-                            //$max_amount = ($fdr->no_limit_max_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->max_amount);
+                            $minimum_amount =($dps->minimum_amount != 'N/A' ) ? 'BDT '.number_format($dps->minimum_amount) : 'N/A';
+                            $maximum_amount =($dps->maximum_amount != 'N/A' ) ? 'BDT '.number_format($dps->maximum_amount) : 'N/A';
                             ?>
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
@@ -492,23 +492,19 @@ if(!empty($id) && is_numeric($id) ){
                                             <tbody>
                                             <tr>
                                                 <td><b>Minimum Amount:</b></td>
-                                                <td>N/A</td>
+                                                <td><?php echo $minimum_amount;?></td>
                                             </tr>
                                             <tr>
                                                 <td><b>Maximum Amount:</b></td>
-                                                <td>N/A</td>
+                                                <td><?php echo $maximum_amount;?></td>
                                             </tr>
                                             <tr>
                                                 <td><b>Interest Rate:</b></td>
                                                 <td><?php echo $dps->interest_rate;?> %</td>
                                             </tr>
                                             <tr>
-                                                <td><b>Minimum Period:</b></td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Maximum Period:</b></td>
-                                                <td>N/A</td>
+                                                <td><b>Tenure:</b></td>
+                                                <td><?php echo $dps->tenure;?> Years</td>
                                             </tr>
                                             <tr>
                                                 <td><b>Loan Facility:</b></td>
@@ -524,13 +520,12 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
+                    <br/>
+                    <br/>
                     <h3>Lakhpoti & Millionaire Scheme</h3>
                     <?php
                     if(count($millionaires->result()) > 0){
                         foreach($millionaires->result() as $millionaire ) {
-
-                            //$min_amount = ($fdr->no_limit_min_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->min_amount);
-                            //$max_amount = ($fdr->no_limit_max_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->max_amount);
                             ?>
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
@@ -541,25 +536,14 @@ if(!empty($id) && is_numeric($id) ){
                                         <h4><?php echo $millionaire->millionaire_info_name;?></h4><br/>
                                         <table class="table table-bordered">
                                             <tbody>
-                                            <tr>
-                                                <td><b>Minimum Amount:</b></td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Maximum Amount:</b></td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Interest Rate:</b></td>
-                                                <td><?php echo ($millionaire->interest_rate) ? $millionaire->interest_rate.' % ' : ' N/A';?> </td>
-                                            </tr>
+
                                             <tr>
                                                 <td><b>Minimum Period:</b></td>
-                                                <td>N/A</td>
+                                                <td>BDT <?php echo number_format( (float)$millionaire->total_principal_amount + (float)$millionaire->accured_interest ); ?></td>
                                             </tr>
                                             <tr>
-                                                <td><b>Maximum Period:</b></td>
-                                                <td>N/A</td>
+                                                <td><b>Maturity Period:</b></td>
+                                                <td><?php echo $millionaire->tenure;?> Years</td>
                                             </tr>
                                             <tr>
                                                 <td><b>Loan Facility:</b></td>
@@ -575,13 +559,12 @@ if(!empty($id) && is_numeric($id) ){
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
                     <div class="clearfix"></div>
+                    <br/>
+                    <br/>
                     <h3>Money Maximizer</h3>
                     <?php
                     if(count($money_maximizers->result()) > 0){
                         foreach($money_maximizers->result() as $money_maximizer ) {
-
-                            //$min_amount = ($fdr->no_limit_min_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->min_amount);
-                            //$max_amount = ($fdr->no_limit_max_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->max_amount);
                             ?>
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
@@ -589,29 +572,18 @@ if(!empty($id) && is_numeric($id) ){
                                         <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $money_maximizer->bank_logo; ?>" alt="AB Bank Logo" />
                                     </div>
                                     <div class="col-md-10 nopadding">
-                                        <h4><?php //echo $money_maximizer->deposit_name;?></h4><br/>
+                                        <h4><?php echo $money_maximizer->deposit_name;?></h4><br/>
                                         <table class="table table-bordered">
                                             <tbody>
                                             <tr>
-                                                <td><b>Minimum Amount:</b></td>
-                                                <td>N/A</td>
+                                                <td><b>Benefit Times:</b></td>
+                                                <td><?php echo $money_maximizer->your_benefit; ?> Times</td>
                                             </tr>
                                             <tr>
-                                                <td><b>Maximum Amount:</b></td>
-                                                <td>N/A</td>
+                                                <td><b>Duration of Benefit:</b></td>
+                                                <td><?php echo $money_maximizer->duration_of_benefit; ?></td>
                                             </tr>
-                                            <tr>
-                                                <td><b>Interest Rate:</b></td>
-                                                <td>N/A </td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Minimum Period:</b></td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Maximum Period:</b></td>
-                                                <td>N/A</td>
-                                            </tr>
+
                                             <tr>
                                                 <td><b>Loan Facility:</b></td>
                                                 <td><?php echo ($money_maximizer->credit_facility) ? $money_maximizer->credit_facility.' % of the Deposited Amount' : 'N/A';?></td>
@@ -625,14 +597,14 @@ if(!empty($id) && is_numeric($id) ){
                     }else{?>
                         <br/><div class="alert alert-warning text-center" role="alert">No data found !!</div>
                     <?php }?>
+
                     <div class="clearfix"></div>
+                    <br/>
+                    <br/>
                     <h3>Monthly Benefit Scheme</h3>
                     <?php
                     if(count($monthly_benefits->result()) > 0){
                         foreach($monthly_benefits->result() as $monthly_benefit ) {
-
-                            //$min_amount = ($fdr->no_limit_min_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->min_amount);
-                            //$max_amount = ($fdr->no_limit_max_amount == 1) ? 'No Limit' : 'BDT '.number_format($fdr->max_amount);
                             ?>
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
@@ -645,23 +617,19 @@ if(!empty($id) && is_numeric($id) ){
                                             <tbody>
                                             <tr>
                                                 <td><b>Minimum Amount:</b></td>
-                                                <td><?php echo $monthly_benefit->min_amount; ?></td>
+                                                <td>BDT <?php echo number_format( $monthly_benefit->min_amount ); ?></td>
                                             </tr>
                                             <tr>
                                                 <td><b>Maximum Amount:</b></td>
-                                                <td><?php echo $monthly_benefit->max_amount; ?></td>
+                                                <td>BDT <?php echo number_format( $monthly_benefit->max_amount ); ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Benefit Amount:</b></td>
+                                                <td>BDT <?php echo number_format( $monthly_benefit->benefit_amount ); ?> <small><i>based on BDT <?php echo number_format($monthly_benefit->deposit_amount); ?></i></small></td>
                                             </tr>
                                             <tr>
                                                 <td><b>Interest Rate:</b></td>
-                                                <td>N/A </td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Minimum Period:</b></td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
-                                                <td><b>Maximum Period:</b></td>
-                                                <td>N/A</td>
+                                                <td><?php echo $monthly_benefit->tenure; ?> Years</td>
                                             </tr>
                                             <tr>
                                                 <td><b>Loan Facility:</b></td>
@@ -699,32 +667,24 @@ if(!empty($id) && is_numeric($id) ){
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Purchase Interest Rate:</td>
+                                        <td>Card Type:</td>
+                                        <td><?php echo $credit_card->cc_card_type;?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Interest Rate:</td>
                                         <td><?php echo $credit_card->purchase_interest_rate; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Cash Advance Limit:</td>
-                                        <td><?php echo $credit_card->cash_advance_limit; ?></td>
+                                        <td>Credit Limit( Min ):</td>
+                                        <td> <?php echo $credit_card->credit_limit_min_salaried ; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Cash Advance Interest Rate:</td>
-                                        <td><?php echo $credit_card->cash_advance_interest_rate; ?></td>
+                                        <td>Credit Limit ( Max ):</td>
+                                        <td> <?php echo $credit_card->credit_limit_max_salaried ; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Annual Fee:</td>
-                                        <td><?php echo 'BDT '.$credit_card->annual_fee .' '.$annual_fee_vat; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bank Transfer Interest Rate:</td>
-                                        <td><?php echo $credit_card->balance_transfer_rate;?></td>
-                                    </tr
-                                    <tr>
-                                        <td>Card Issuer:</td>
-                                        <td><?php echo $credit_card->card_issuer_name;?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Card Type:</td>
-                                        <td><?php echo $credit_card->cc_card_type;?></td>
+                                        <td>Maximum Interest Free Period:</td>
+                                        <td><?php echo $credit_card->interest_free_pefiod_max;?> days</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -752,32 +712,20 @@ if(!empty($id) && is_numeric($id) ){
                                 <table class="table table-bordered">
                                     <tbody>
                                     <tr>
-                                        <td>Daily Withdraw Limit:</td>
-                                        <td><?php echo $debit_card->daily_withdrawal_limit; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Per Transaction Limit:</td>
-                                        <td> BDT <?php echo $debit_card->per_transaction_limit; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Annual Fee:</td>
-                                        <td><?php echo $debit_card->annual_fee; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Account:</td>
-                                        <td><?php echo $debit_card->account_name;?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Card Issuer:</td>
-                                        <td><?php echo $debit_card->card_issuer_name;?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Looking For:</td>
+                                        <td>Card Type:</td>
                                         <td><?php echo $debit_card->looking_for; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>I Want:</td>
-                                        <td><?php echo $debit_card->i_want;?></td>
+                                        <td>Daily Withdraw Limit:</td>
+                                        <td>BDT <?php echo  $debit_card->daily_withdrawal_limit ; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Per Transaction Limit:</td>
+                                        <td> BDT <?php echo number_format( $debit_card->per_transaction_limit ); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Card Against:</td>
+                                        <td><?php echo $debit_card->account_name;?></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -811,7 +759,7 @@ if(!empty($id) && is_numeric($id) ){
                                                 <td>BDT <?php echo number_format($saving_account->opening_balance); ?></td>
                                             </tr>
                                             <tr>
-                                                <td>Minimum Balance for interest:</td>
+                                                <td>Minimum Balance For Interest:</td>
                                                 <td> BDT <?php echo number_format($saving_account->min_balance_for_interest); ?></td>
                                             </tr>
                                             <tr>
@@ -862,6 +810,10 @@ if(!empty($id) && is_numeric($id) ){
                                                 <td>Overdraft Facility:</td>
                                                 <td><?php echo $current_account->overdraft_facility; ?></td>
                                             </tr>
+                                            <tr>
+                                                <td>Account's For:</td>
+                                                <td><?php echo $current_account->i_am; ?></td>
+                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -896,7 +848,7 @@ if(!empty($id) && is_numeric($id) ){
                                             </tr>
                                             <tr>
                                                 <td>Notice Day:</td>
-                                                <td> <?php echo $snd->notice_day; ?> %</td>
+                                                <td> <?php echo $snd->notice_day; ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Interest Paid:</td>
@@ -1103,7 +1055,7 @@ if(!empty($id) && is_numeric($id) ){
 				</span>
                 <div class="bank_details_review">
                     Bank rating displayed here is the average value for all
-                    Chase Bank branchs. A total of 73 customers had case
+                    Chase Bank branches. A total of 73 customers had case
                     their vote for 5227 branches and in average, Chase Bank
                     got a score of 3.2 out of 5 stars. The bank has 12
                     reviews or customer complaints filed.
@@ -1115,7 +1067,7 @@ if(!empty($id) && is_numeric($id) ){
             <div class="bank_details_right_body">
                 <div class="bank_details_review">
                     Bank rating displayed here is the average value for all
-                    Chase Bank branchs. A total of 73 customers had case
+                    Chase Bank branches. A total of 73 customers had case
                     their vote for 5227 branches and in average, Chase Bank
                     got a score of 3.2 out of 5 stars. The bank has 12
                     reviews or customer complaints filed.
@@ -1127,7 +1079,7 @@ if(!empty($id) && is_numeric($id) ){
             <div class="bank_details_right_body">
                 <div class="bank_details_review">
                     Bank rating displayed here is the average value for all
-                    Chase Bank branchs. A total of 73 customers had case
+                    Chase Bank branches. A total of 73 customers had case
                     their vote for 5227 branches and in average, Chase Bank
                     got a score of 3.2 out of 5 stars. The bank has 12
                     reviews or customer complaints filed.
@@ -1139,7 +1091,7 @@ if(!empty($id) && is_numeric($id) ){
             <div class="bank_details_right_body">
                 <div class="bank_details_review">
                     Bank rating displayed here is the average value for all
-                    Chase Bank branchs. A total of 73 customers had case
+                    Chase Bank branches. A total of 73 customers had case
                     their vote for 5227 branches and in average, Chase Bank
                     got a score of 3.2 out of 5 stars. The bank has 12
                     reviews or customer complaints filed.
@@ -1148,3 +1100,14 @@ if(!empty($id) && is_numeric($id) ){
 		</div>
 	</div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('.extra').hide();
+
+        $('#extra_view').click(function(){
+            $('.extra').show();
+        });
+
+    })
+</script>

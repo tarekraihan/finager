@@ -63,11 +63,17 @@
                 $query=$this->Common_model->select_all();
 
                 foreach ($query->result() as $row){
-                    //pr($row);
+                    $slug = url_title($row->bank_name,'dash',TRUE);
+                   /* $this->Common_model->data = array(
+                        'slug' => $slug
+                    );
+                    $this->Common_model->where = array('id' => $row->id);
+                    $this->Common_model->table_name = 'card_bank';
+                    $this->Common_model->update();*/
                 ?>
                 <div class="col-md-3">
                     <div class="bank_details_landing_box">
-                        <a href="<?php echo base_url();?>en/bank_details/<?php echo $row->id;?>" > <img class="text-center" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" title="<?php echo $row->known_as; ?>"></a>
+                        <a href="<?php echo base_url();?>bank-details/<?php echo ($row->slug) ? $row->slug : $slug;?>.html" > <img class="text-center" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" title="<?php echo $row->known_as; ?>"></a>
                         <h5 class="text-center"><?php echo $row->bank_name; ?></h5>
                     </div>
                 </div>
@@ -79,26 +85,23 @@
             <div class="bank_details_head">
                 <p>POPULAR BANK</p>
                 <div class="bank_details_right_body">
-                    <p>
-                        South Plainfield<br>
-                        5201 Stelton Road, South Plainfield, NJ 07080
-                    </p>
-                    <p>
-                        South Plainfield<br>
-                        5201 Stelton Road, South Plainfield, NJ 07080
-                    </p>
-                    <p>
-                        South Plainfield<br>
-                        5201 Stelton Road, South Plainfield, NJ 07080
-                    </p>
-                    <p>
-                        South Plainfield<br>
-                        5201 Stelton Road, South Plainfield, NJ 07080
-                    </p>
-                    <p>
-                        South Plainfield<br>
-                        5201 Stelton Road, South Plainfield, NJ 07080
-                    </p>
+                    <?php
+                        //$this->Common_model->order_column = 'bank_name';
+                        $this->Common_model->order_type = 'ASC';
+                        $this->Common_model->offset = 0;
+                        $this->Common_model->limit = 10;
+                        $this->Common_model->table_name = 'card_bank';
+                        $query=$this->Common_model->select_all();
+                    foreach ($query->result() as $bank) {
+                        ?>
+                        <p>
+                            <?php echo $bank->bank_name; ?><br>
+                            <?php echo $bank->head_office_address; ?>
+                        </p>
+                        <?php
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>

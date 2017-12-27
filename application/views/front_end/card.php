@@ -470,7 +470,7 @@
         var top_height = $('#top-page').height();
         var banner_height = $('#creditCard_header').height();
         var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+45);
+        var total_top = parseInt(top_height+banner_height+filter_height + 45);
 
         var main_height = $(".main-content-area").height();
         //console.log(main_height);
@@ -522,7 +522,7 @@
             $('#sidebar').addClass('fixed-bottom');
         }
 
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 90){
+        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top + 50){
             $("#sidebar").removeClass("fixed");
             $("#sidebar").removeClass("fixed-bottom");
             $("#sidebar").addClass("sidebar-absolute-bottom");

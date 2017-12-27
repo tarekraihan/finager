@@ -54,7 +54,9 @@ if(isset($_GET['draft_id']))
                             <h2>FDR Info List </h2>
 
                         </header>
-
+                        <div >
+                            <?php echo ($this->session->userdata('success_message')) ?  $this->session->userdata('success_message') : ''; $this->session->unset_userdata('success_message');?>
+                        </div>
                         <!-- widget div-->
                         <div>
 
