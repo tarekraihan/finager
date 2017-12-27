@@ -222,9 +222,9 @@ class En extends CI_Controller {
         if($this->session->userdata('lovemebaby')){
             if(strpos( $url, '-vs-' ) == true){
                 $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('debit_card_info',array('meta_url'=>$compare[0]));
+                $query1 = $this->db->get_where('debit_card_info',array('slug'=>$compare[0]));
                 $data['card1'] = $query1->row_array();
-                $query2 = $this->db->get_where('debit_card_info',array('meta_url'=>$compare[1]));
+                $query2 = $this->db->get_where('debit_card_info',array('slug'=>$compare[1]));
                 $data['card2'] = $query2->row_array();
                 $this->load->driver('cache');
                 $this->cache->file->save('debit_card_compare', 'debit_card_compare', 100);
@@ -234,7 +234,7 @@ class En extends CI_Controller {
                 $this->load->view('front_end/debit_card_compare');
                 $this->load->view('front_end/block/footer');
             }else{
-                $query = $this->db->get_where('debit_card_info',array('meta_url'=>$url));
+                $query = $this->db->get_where('debit_card_info',array('slug'=>$url));
                 $data['card_details'] = $query->row_array();
                 $this->load->driver('cache');
                 $this->cache->file->save('debit_card_details', 'debit_card_details', 100);

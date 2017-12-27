@@ -233,7 +233,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     public function select_compare_image($id,$model_name){
-        $sql="SELECT $model_name.id,card_bank.bank_logo FROM $model_name  LEFT JOIN card_bank on card_bank.id=$model_name.bank_id WHERE $model_name.id=$id";
+        $sql="SELECT $model_name.id,$model_name.slug,card_bank.bank_logo FROM $model_name  LEFT JOIN card_bank on card_bank.id=$model_name.bank_id WHERE $model_name.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
