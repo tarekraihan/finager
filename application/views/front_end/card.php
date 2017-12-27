@@ -1021,7 +1021,7 @@
         $("#hiden_div").animate({bottom:'0px'});
 
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
-            alert("Sorry");
+            $('#comparison_alert').modal('show');
         }else{
             if($(".cart_anchor").hasClass("img_active")){
                 var cart01 = $('.cart_anchor01');
@@ -1169,27 +1169,17 @@
         });
     });
 
+
     $('#go_compare').click(function(){
         var  formData = $('.cart_anchor').children('img').data();
-        var card_id1 = "card_id1="+formData.card_id;
+        var card_url1 = formData.card_url;
         var  formData = $('.cart_anchor01').children('img').data();
-        var card_id2 = "&card_id2="+formData.card_id;
-        var card_ids = card_id1+card_id2;
-        if(card_id1 != '' && card_id2 != ''){
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>card/ajax_go_card_compare_page",
-                data: card_ids,
-                success: function(msg)
-                {
-                    if(msg != 'error'){
-                        window.location.href = "<?php echo base_url();?>en/card_compare";
-                    }
-                }
-            });
+        var card_url2 = formData.card_url;
+        var card_urls = card_url1+'-vs-'+card_url2;
+        if(card_url1 != '' && card_url2 != ''){
+            window.location.href = "<?php echo base_url();?>compare-credit-cards/"+card_urls+".html";
         }else{
-            alert("Please add 2 card for compare ! ");
+            $('#comparison_min_two_alert').modal('show');
         }
 
     });

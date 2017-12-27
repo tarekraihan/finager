@@ -173,21 +173,6 @@ class En extends CI_Controller {
         }
     }
 
-/*
-    public function card_compare(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('card_compare', 'card_compare', 100);
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/card_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }*/
-
 
     public function debit_card(){
         if($this->session->userdata('lovemebaby')){
@@ -250,21 +235,6 @@ class En extends CI_Controller {
 
 
     }
-
-/*
-    public function debit_card_compare(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('debit_card_compare', 'debit_card_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }*/
 
     public function home_loan(){
         if($this->session->userdata('lovemebaby')){

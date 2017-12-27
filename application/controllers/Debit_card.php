@@ -600,7 +600,7 @@ class Debit_card extends CI_Controller
                     $length = strlen($row->card_summary);
                     if($length > 250){
                         $rest = substr($row->card_summary, 0,250);
-                        $summary = $rest.' <a href="'.base_url().'en/debit_card_details/'. $row->id.'"> read more..</a>';
+                        $summary = $rest.' <a href="'.base_url().'compare-debit-cards/'.$row->slug.'"> read more ..</a>';
                     }else{
                         $summary = $row->card_summary;
                     }

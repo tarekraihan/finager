@@ -272,6 +272,46 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div id="comparison_alert" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="alert alert-danger">
+                    <strong>Sorry!</strong> We allow only 2 items for comparison.
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" data-dismiss="modal">close</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="comparison_min_two_alert" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="alert alert-warning">
+                    <strong>Sorry!</strong> Please add at least 2 items to compare.
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" data-dismiss="modal">close</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" id="maintains-modal">
   <div class="modal-dialog beta_modal" role="document">

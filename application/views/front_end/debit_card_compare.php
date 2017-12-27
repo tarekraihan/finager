@@ -1,10 +1,12 @@
 <?php
-    $id = $this->session->userdata('first_card') ;
+    //$id = $this->session->userdata('first_card') ;
+$id = (int)$card1['id'];
     $result = $this->Front_end_select_model->select_debit_card_details($id);
     $first_card = $result->row();
 //    print_r($first_card); die;
 
-    $id1 = $this->session->userdata('second_card') ;
+    //$id1 = $this->session->userdata('second_card') ;
+$id1 = (int)$card2['id'];
     $result1 = $this->Front_end_select_model->select_debit_card_details($id1);
     $second_card = $result1->row();
 ?>
@@ -194,14 +196,14 @@
         <div class="row comparision-subscribe">
             <h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
             <div class="col-md-12">
-                <form class="comparison_email">
+                <div class="comparison_email">
                     <div class="form-group col-md-11">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
+                        <input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
                     </div>
                     <div class="form-group col-md-1">
-                        <button type="submit" class="btn btn-default">SEND </button>
+                        <button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
