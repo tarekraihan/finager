@@ -339,13 +339,13 @@ class Current_account extends CI_Controller
                                         <p>'.$row->i_am.' : BDT '.number_format($row->opening_balance).'</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-2 col-xs-2 no-padding">
+                                <div class="col-sm-3 col-xs-3 no-padding">
                                     <div class="caccount_text">
                                         <h5>Total Branch</h5>
                                         <p>'.$row->total_branch.'</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-5 col-xs-5 no-padding">
+                                <div class="col-sm-3 col-xs-3 no-padding">
                                     <div class="caccount_text">
                                         <h5>Fund Transfer</h5>
                                         <p>'.$row->fund_transfer.'</p>

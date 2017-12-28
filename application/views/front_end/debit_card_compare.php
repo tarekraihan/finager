@@ -35,11 +35,11 @@ $id1 = (int)$card2['id'];
         <div class="row">
             <table class="table">
                 <tr>
-                    <td><p> <a href="<?php echo base_url(); ?>en/debit_card_details/<?php echo $first_card->id; ?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_card->bank_logo; ?>" /></a></p></td>
+                    <td><p> <a href="<?php echo base_url(); ?>compare-debit-cards/<?php echo $first_card->slug; ?>.html" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_card->bank_logo; ?>" /></a></p></td>
                     <td><b><p class="text-center com_title">Comparison </p></b>
                        
                     </td>
-                    <td> <a href="<?php echo base_url(); ?>en/debit_card_details/<?php echo $second_card->id; ?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_card->bank_logo; ?>" /></a></td>
+                    <td> <a href="<?php echo base_url(); ?>compare-debit-cards/<?php echo $first_card->slug; ?>.html" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_card->bank_logo; ?>" /></a></td>
                 </tr>
             </table>
         </div>

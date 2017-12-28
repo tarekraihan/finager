@@ -707,7 +707,7 @@
             });
 
             if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
-                alert("Sorry");
+                $('#comparison_alert').modal('show');
             }else{
                 if($(".cart_anchor").hasClass("img_active")){
                     //Select item image and pass to the function
@@ -799,6 +799,10 @@
         });
 
         $('#go_compare').click(function(){
+            if( ! $('.cart_anchor01').children('img').data()){
+                $("#comparison_min_two_alert").modal('show');
+            }
+
             var  formData = $('.cart_anchor').children('img').data();
             var card_url1 = formData.card_url;
             var  formData = $('.cart_anchor01').children('img').data();
