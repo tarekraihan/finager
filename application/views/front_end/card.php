@@ -522,13 +522,14 @@
             $('#sidebar').addClass('fixed-bottom');
         }
 
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top + 50){
+        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top + 30){
             $("#sidebar").removeClass("fixed");
             $("#sidebar").removeClass("fixed-bottom");
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
 
         if(sidebar_height > window_height && $(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+            $("#sidebar").removeClass("fixed");
             $("#sidebar").addClass("fixed-bottom");
             $("#sidebar").removeClass("sidebar-absolute-bottom");
         }
