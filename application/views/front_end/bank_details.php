@@ -721,7 +721,7 @@
                                     </tr>
                                     <tr>
                                         <td>Per Transaction Limit:</td>
-                                        <td> BDT <?php echo number_format( $debit_card->per_transaction_limit ); ?></td>
+                                        <td>  <?php echo $debit_card->per_transaction_limit ; ?></td>
                                     </tr>
                                     <tr>
                                         <td>Card Against:</td>

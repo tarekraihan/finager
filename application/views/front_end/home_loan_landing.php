@@ -333,7 +333,7 @@
 				data: data,
 				cache: false,
 				success: function(response){
-					window.location.href = "<?php echo base_url();?>en/all_home_loan";
+					window.location.href = "<?php echo base_url();?>compare-home-loans.html";
 				}
 			});
 		}
