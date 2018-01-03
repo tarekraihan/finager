@@ -283,9 +283,9 @@ class En extends CI_Controller {
             if(strpos( $url, '-vs-' ) == true){
                 $compare = explode("-vs-",$url);
                 $query1 = $this->db->get_where('home_loan_info',array('slug'=>$compare[0]));
-                $data['card1'] = $query1->row_array();
+                $data['loan1'] = $query1->row_array();
                 $query2 = $this->db->get_where('home_loan_info',array('slug'=>$compare[1]));
-                $data['card2'] = $query2->row_array();
+                $data['loan2'] = $query2->row_array();
                 $this->load->driver('cache');
                 $this->cache->file->save('home_loan_compare', 'home_loan_compare', 100);
                 $this->load->view('front_end/block/header_home_loan',$data);
@@ -295,7 +295,7 @@ class En extends CI_Controller {
                 $this->load->view('front_end/block/footer');
             }else{
                 $query = $this->db->get_where('home_loan_info',array('slug'=>$url));
-                $data['card_details'] = $query->row_array();
+                $data['home_loan_details'] = $query->row_array();
                 $this->load->driver('cache');
                 $this->cache->file->save('home_loan_details', 'home_loan_details', 100);
                 $this->load->view('front_end/block/header_home_loan',$data);

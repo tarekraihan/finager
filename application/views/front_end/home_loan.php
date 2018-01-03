@@ -854,7 +854,7 @@
         $('html, body').animate({
         });
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
-            alert("Sorry");
+            $('#comparison_alert').modal('show');
         }else{
             if($(".cart_anchor").hasClass("img_active")){
 
@@ -986,29 +986,21 @@
     });
 
     $('#go_compare').click(function(){
-        var  formData = $('.cart_anchor').children('img').data();
-        var home_id1 = "home_id1="+formData.home_id;
-        var  formData1 = $('.cart_anchor01').children('img').data();
-        var home_id2 = "&home_id2="+formData1.home_id;
-        var amount = $('#finalAssest').val();
-        var principal_amount = "&principal_amount="+amount;
-        var month = $('#finalCustAge').val();
-        var month_limit = "&month_limit="+month;
-        var home_ids = home_id1+home_id2+principal_amount+month_limit;
-        if(home_id1 != '' && home_id2 != ''){
-            $.ajax({
-                type: "POST",
-                url: "<?php echo base_url();?>home_loan/ajax_go_compare_page",
-                data: home_ids,
-                success: function(msg){
-                    if(msg != 'error'){
-                        window.location.href = "<?php echo base_url();?>en/home_loan_compare";
-                    }
-                }
-            });
-        }else{
-            alert("Please add 2 card for compare ! ")
+        if( ! $('.cart_anchor01').children('img').data()){
+            $("#comparison_min_two_alert").modal('show');
         }
+        var  formData = $('.cart_anchor').children('img').data();
+        var loan_url1 = formData.loan_url;
+        var  formData = $('.cart_anchor01').children('img').data();
+        var loan_url2 = formData.loan_url;
+        var loan_urls = loan_url1+'-vs-'+loan_url2;
+        if(loan_url1 != '' && loan_url2 != ''){
+            window.location.href = "<?php echo base_url();?>compare-home-loans/"+loan_urls+".html";
+        }else{
+            $('#comparison_min_two_alert').modal('show');
+        }
+
+
     });
 
 

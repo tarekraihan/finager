@@ -1619,7 +1619,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="<?php echo base_url(); ?>all-bank-details.html">Bank Page </a></li>
+                                    <li><a href="<?php echo base_url(); ?>all-bank-details.html">Bank Info </a></li>
 									
                                     <!--li><a href="#">Contact <i class="fa fa-caret-down fa-indicator"></i> </a>
                                        

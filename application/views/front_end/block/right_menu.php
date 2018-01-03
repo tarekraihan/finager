@@ -328,33 +328,35 @@
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Cards <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header"></li>
-                    <li><a href="<?php echo base_url();?>en/credit_card">Credit Card</a></li>
-                    <li><a href="<?php echo base_url(); ?>en/debit_card">Debit Card</a></li>
+                    <li><a href="<?php echo base_url();?>credit-cards.html">Credit Card</a></li>
+                    <li><a href="<?php echo base_url(); ?>debit-cards.html">Debit Card</a></li>
                 </ul>
             </li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Loans <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header"></li>
-                    <li><a href="<?php echo base_url(); ?>en/home_loan">Home Loan  </a></li>
-                    <li><a href="<?php echo base_url();?>en/personal_loan">Personal Loan</a></li>
-                    <li><a href="<?php echo base_url();?>en/car_loan">Auto Loan</a></li>
-                    <li><a href="<?php echo base_url();?>en/education_loan">Education Loan</a></li>
+                    <li><a href="<?php echo base_url(); ?>home-loan.html">Home Loan  </a></li>
+                    <li><a href="<?php echo base_url();?>personal-loan.html">Personal Loan</a></li>
+                    <li><a href="<?php echo base_url();?>auto-loan.html">Auto Loan</a></li>
+                    <li><a href="<?php echo base_url();?>education-loan.html">Education Loan</a></li>
                 </ul>
             </li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i>	Investment <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li class="dropdown-header"></li>
-                    <li><a href="<?php echo base_url();?>en/fdr">FDR</a></li>
-                    <li><a href="<?php echo base_url();?>en/dps">DPS</a></li>
-                    <li><a href="<?php echo base_url();?>en/millionaire">Lakhpoti & Millionaire Scheme </a></li>
-                    <li><a href="<?php echo base_url();?>en/money_maximizer">Money Maximizer</a></li>
-                    <li><a href="<?php echo base_url();?>en/monthly_benefit">Monthly Benefit Scheme</a></li>
-                    <li><a href="<?php echo base_url(); ?>en/savings_account">Saving Account</a></li>
-                    <li><a href="<?php echo base_url(); ?>en/current_account">Current Account</a></li>
+                    <li><a href="<?php echo base_url();?>fdr.html">FDR</a></li>
+                    <li><a href="<?php echo base_url();?>dps.html">DPS</a></li>
+                    <li><a href="<?php echo base_url();?>millionaire.html">Lakhpoti & Millionaire Scheme </a></li>
+                    <li><a href="<?php echo base_url();?>money-maximizer.html">Money Maximizer</a></li>
+                    <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit Scheme</a></li>
+                    <li><a href="<?php echo base_url(); ?>savings-account.html">Saving Account</a></li>
+                    <li><a href="<?php echo base_url(); ?>current-account.html">Current Account</a></li>
+                    <li><a href="<?php echo base_url(); ?>snd.html">SND Account</a></li>
                 </ul>
             </li>
-            <li> <a href="<?php echo base_url(); ?>en/export_import"><i></i> Export Import</a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Calculator/Apps</a> </li>
+            <li> <a href="<?php echo base_url(); ?>export-import.html"><i></i> Export Import</a> </li>
+            <li> <a href="<?php echo base_url(); ?>all-bank-details.html"><i></i> Bank Info</a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Calculator/Apps</a> </li>
             <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Bank Job & Guide </a> </li>
             <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Insurance</a> </li>
             <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Maps</a> </li>

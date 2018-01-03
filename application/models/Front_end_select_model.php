@@ -160,7 +160,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_home_loan_image($id){
-        $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `home_loan_info`  LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id  WHERE home_loan_info.id=$id";
+        $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo, home_loan_info.slug FROM `home_loan_info`  LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id  WHERE home_loan_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
