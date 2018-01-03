@@ -336,7 +336,6 @@ $(document).ready(function () {
 
     }
 
-
 		$('#hideDetailsDiv').hide();
 		$('a#hideDetailsButton').click(function() {
 			if (!$('#hideDetailsDiv').is(':visible')) {
