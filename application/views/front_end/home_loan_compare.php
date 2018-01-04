@@ -43,27 +43,21 @@
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><a href="<?php echo base_url();?>compare-home-loans/<?php echo $first_home_loan->slug; ?>"> <img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a><br/><br/><?php echo $first_home_loan->home_loan_looking_for;?></td>
+						<td><a href="<?php echo base_url();?>compare-home-loans/<?php echo $first_home_loan->slug; ?>.html"> <img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a><br/><br/><?php echo $first_home_loan->home_loan_looking_for;?></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><a href="<?php echo base_url();?>compare-home-loans/<?php echo $second_home_loan->slug; ?>"> <img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a><br/><br/><?php echo $second_home_loan->home_loan_looking_for;?></td>
+						<td><a href="<?php echo base_url();?>compare-home-loans/<?php echo $second_home_loan->slug; ?>.html"> <img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a><br/><br/><?php echo $second_home_loan->home_loan_looking_for;?></td>
 					</tr>	
                 </table>
             </div>
        </section>
-    <input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
-    <input type="hidden" id="first_downpayment" name="first_downpayment" value="<?php echo $first_downpayment; ?>">
-    <input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
-    <input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
-    <input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $this->session->userdata('home_principal_amount'); ?>">
-    <input type="hidden" id="month_limit" name="month_limit" value="<?php echo $this->session->userdata('month_limit'); ?>">
-
-			<div class="home_loan_com_cal container text-center">
-			</div>
-				
+			<input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
+			<input type="hidden" id="first_downpayment" name="first_downpayment" value="<?php echo $first_downpayment; ?>">
+			<input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
+			<input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
+			<input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $this->session->userdata('home_principal_amount'); ?>">
+			<input type="hidden" id="month_limit" name="month_limit" value="<?php echo $this->session->userdata('month_limit'); ?>">
+			<div class="home_loan_com_cal container text-center"></div>
 		</div>
-		
-	
-	
 	<section id="basic_info">
 		<div class="container">
 			
