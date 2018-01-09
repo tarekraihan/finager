@@ -478,4 +478,40 @@
         margin-bottom: 10px;
         border: 1px solid #dedede;
     }
+
+    .btnCardApply {
+        margin-left: auto !important;
+        margin-right: auto;
+        margin-top: 20px !important;
+        clear: both;
+    }
+    .card_text1 {
+        margin-left: auto;
+    }
+    .card_btn_apllication {
+        margin: 15px auto !important;
+    }
+    .xs-center{
+        margin: 0 auto;
+    }
+    .card_text2 {
+        min-height: initial !important;
+        text-align: center;
+        padding: 5px 0 15px 0;
+    }
+    .full-card .w20 {
+        width: 100% !important;
+        border-bottom: 1px solid #cccccc;
+    }
+    .card_text2 p {
+        position: relative !important;
+        margin-bottom: 5px !important;
+    }
+    .card_text2 h5 {
+        margin-bottom: 5px !important;
+    }
+    #creditCard_header {
+        background-size: contain;
+    }
+
 }

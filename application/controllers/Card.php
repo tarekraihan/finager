@@ -1288,7 +1288,7 @@ class Card extends CI_Controller
 
                 $credit_card .='<div class="full-card" >
                     <div class="row card_right_bar no-margin-lr">
-                        <div class="col-sm-3 col-xs-3">
+                        <div class="col-sm-3 col-xs-12">
                             '.$card_image.'
                             <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" alt="Apply Image" />
                             <p class="text-center">
@@ -1300,47 +1300,47 @@ class Card extends CI_Controller
                             </span><br/>
                             <span class="more_info_icon"><a class="displayText" style="cursor:pointer"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                         </div>
-                        <div class="col-sm-9 col-xs-9">
+                        <div class="col-sm-9 col-xs-12">
                             <div class="row">
-                                <div class="col-sm-9 col-xs-9">
+                                <div class="col-sm-9 col-xs-12">
                                     <div class="card_text1">
                                         <b>'.$row->bank_name.' '.$row->card_name.'</b>
                                         <p class="card_description">
                                             '.$summary.'
                                     </div>
                                 </div>
-                                <div class="col-sm-3 col-xs-3">
+                                <div class="col-sm-3 col-xs-12">
                                     <div class="card_text1 card_btn_apllication">
-                                        <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="img-responsive" src="'.base_url().'resource/front_end/images/card_btn_application.png" alt="Apply Image" /></a>
+                                        <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="img-responsive xs-center" src="'.base_url().'resource/front_end/images/card_btn_application.png" alt="Apply Image" /></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-2 col-xs-2 w20">
+                                <div class="col-sm-2 col-xs-6 w20">
                                     <div class="card_text2">
                                         <h5>Purchase Interest Rate</h5>
                                         <p>'.$row->purchase_interest_rate.',<br> Monthly '.$row->purchase_interest_rate_monthly.'</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-2 col-xs-2 w20">
+                                <div class="col-sm-2 col-xs-6 w20">
                                     <div class="card_text2">
                                         <h5>Balance Transfer Interest Rate</h5>
                                         <p>'.$row->balance_transfer_rate.',<br> Monthly '.$row->balance_transfer_rate_monthly.'</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-2 col-xs-2 w20">
+                                <div class="col-sm-2 col-xs-6 w20">
                                     <div class="card_text2">
                                         <h5>Cash Advance Interest Rate</h5>
                                         <p>'.$row->cash_advance_interest_rate_yearly.',<br> Monthly '.$row->cash_advance_interest_rate.' </p>
                                     </div>
                                 </div>
-                                <div class="col-sm-2 col-xs-2 w20">
+                                <div class="col-sm-2 col-xs-6 w20">
                                     <div class="card_text2">
                                         <h5>Cash Advance Limit</h5>
                                         <p>'.$row->cash_advance_limit.'</p>
                                     </div>
                                 </div>
-                                <div class="col-sm-2 col-xs-1 w20">
+                                <div class="col-sm-2 col-xs-6 w20">
                                     <div class="card_text2">
                                         <h5>Annual Fee</h5>
                                         <p>'.$row->annual_fee.' + '.$row->annual_fee_vat.'</p>

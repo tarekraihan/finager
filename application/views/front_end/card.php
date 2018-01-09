@@ -209,7 +209,10 @@
             <!-- Left bar query content start -->
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar_parent">
                 <div id="sticky-anchor"></div>
-                <div class="card_left_bar home_left_bar"  id="sidebar">
+                <div class="hidden-sm hidden-md hidden-lg visible-xs">
+                    <a href="javascript:;" class="btn btn-default btn-block">Sort By</a>
+                </div>
+                <div class="card_left_bar home_left_bar hidden-xs"  id="sidebar">
                     <div class="card_query">
                         <p>I Am</p>
                         <div class="query_radio">
