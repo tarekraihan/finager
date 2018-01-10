@@ -586,21 +586,21 @@ class Debit_card extends CI_Controller
 
         if($result->num_rows() > 0){
             foreach($result->result() as $row) {
-              /*  $url = $row->card_name.' for '.$row->account_name;
+              $url = $row->card_name.' for '.$row->account_name;
                 $slug = url_title($url,'dash',TRUE);
                 $slug = str_replace("/","-",$slug);
                 $this->Common_model->data = array(
-                    'meta_url' => $slug
+                    'slug' => $slug
                 );
                 $this->Common_model->where = array('id' => $row->id);
                 $this->Common_model->table_name = 'debit_card_info';
-                $this->Common_model->update();*/
+                $this->Common_model->update();
                 $summary ='';
                 if($row->card_summary != ''){
                     $length = strlen($row->card_summary);
                     if($length > 250){
                         $rest = substr($row->card_summary, 0,250);
-                        $summary = $rest.' <a href="'.base_url().'en/debit_card_details/'. $row->id.'"> read more..</a>';
+                        $summary = $rest.' <a href="'.base_url().'compare-debit-cards/'.$row->slug.'"> read more ..</a>';
                     }else{
                         $summary = $row->card_summary;
                     }
@@ -612,7 +612,7 @@ class Debit_card extends CI_Controller
 
 						<div class="row card_right_bar no-margin-lr">
 							<div class="col-sm-3 col-xs-3">
-								<a href="'.base_url().'compare-debit-cards/'.$row->meta_url.'.html" ><img title="Click here to details" class="img-responsive selected_card" src="' . base_url() . 'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+								<a href="'.base_url().'compare-debit-cards/'.$row->slug.'.html" ><img title="Click here to details" class="img-responsive selected_card" src="' . base_url() . 'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 								</p>
@@ -852,21 +852,22 @@ class Debit_card extends CI_Controller
         echo $response;
     }
 
+
     public function ajax_compare_card_image(){
         $id = $this->input->post('card_id');
         $model_name = "debit_card_info";
         $result = $this->Front_end_select_model->select_compare_image($id,$model_name);
-
         $row= $result->row();
 
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-card_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-card_id='.$row->id.' data-card_url='.$row->slug.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;
 
     }
+
 
     public function ajax_go_card_compare_page(){
         $id1 = $this->input->post('card_id1');

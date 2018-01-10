@@ -173,21 +173,6 @@ class En extends CI_Controller {
         }
     }
 
-/*
-    public function card_compare(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('card_compare', 'card_compare', 100);
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/card_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }*/
-
 
     public function debit_card(){
         if($this->session->userdata('lovemebaby')){
@@ -222,9 +207,9 @@ class En extends CI_Controller {
         if($this->session->userdata('lovemebaby')){
             if(strpos( $url, '-vs-' ) == true){
                 $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('debit_card_info',array('meta_url'=>$compare[0]));
+                $query1 = $this->db->get_where('debit_card_info',array('slug'=>$compare[0]));
                 $data['card1'] = $query1->row_array();
-                $query2 = $this->db->get_where('debit_card_info',array('meta_url'=>$compare[1]));
+                $query2 = $this->db->get_where('debit_card_info',array('slug'=>$compare[1]));
                 $data['card2'] = $query2->row_array();
                 $this->load->driver('cache');
                 $this->cache->file->save('debit_card_compare', 'debit_card_compare', 100);
@@ -234,7 +219,7 @@ class En extends CI_Controller {
                 $this->load->view('front_end/debit_card_compare');
                 $this->load->view('front_end/block/footer');
             }else{
-                $query = $this->db->get_where('debit_card_info',array('meta_url'=>$url));
+                $query = $this->db->get_where('debit_card_info',array('slug'=>$url));
                 $data['card_details'] = $query->row_array();
                 $this->load->driver('cache');
                 $this->cache->file->save('debit_card_details', 'debit_card_details', 100);
@@ -250,21 +235,6 @@ class En extends CI_Controller {
 
 
     }
-
-/*
-    public function debit_card_compare(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('debit_card_compare', 'debit_card_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }*/
 
     public function home_loan(){
         if($this->session->userdata('lovemebaby')){
@@ -295,7 +265,7 @@ class En extends CI_Controller {
 
     }
 
-    public function home_loan_details(){
+    /*public function home_loan_details(){
         if($this->session->userdata('lovemebaby')){
             $this->load->driver('cache');
             $this->cache->file->save('home_loan_details', 'home_loan_details', 100);
@@ -307,16 +277,34 @@ class En extends CI_Controller {
         }else{
             redirect(base_url().'en/login.html');
         }
-    }
-    public function home_loan_compare(){
+    }*/
+    public function home_loan_compare($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('home_loan_compare', 'home_loan_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/home_loan_compare');
-            $this->load->view('front_end/block/footer');
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('home_loan_info',array('slug'=>$compare[0]));
+                $data['loan1'] = $query1->row_array();
+                $query2 = $this->db->get_where('home_loan_info',array('slug'=>$compare[1]));
+                $data['loan2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('home_loan_compare', 'home_loan_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/home_loan_compare');
+                $this->load->view('front_end/block/footer');
+            }else{
+                $query = $this->db->get_where('home_loan_info',array('slug'=>$url));
+                $data['home_loan_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('home_loan_details', 'home_loan_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/home_loan_details');
+                $this->load->view('front_end/block/footer');
+            }
+
         }else{
             redirect(base_url().'en/login.html');
         }

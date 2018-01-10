@@ -160,7 +160,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_home_loan_image($id){
-        $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `home_loan_info`  LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id  WHERE home_loan_info.id=$id";
+        $sql="SELECT home_loan_info.id,home_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo, home_loan_info.slug FROM `home_loan_info`  LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id  WHERE home_loan_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -233,7 +233,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     public function select_compare_image($id,$model_name){
-        $sql="SELECT $model_name.id,card_bank.bank_logo FROM $model_name  LEFT JOIN card_bank on card_bank.id=$model_name.bank_id WHERE $model_name.id=$id";
+        $sql="SELECT $model_name.id,$model_name.slug,card_bank.bank_logo FROM $model_name  LEFT JOIN card_bank on card_bank.id=$model_name.bank_id WHERE $model_name.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -251,7 +251,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     function select_home_loan_info_pagination($query,$limit=null,$offset=null){
         $link = 'ORDER BY home_loan_info.id ASC LIMIT ' . $offset . ', ' . $limit;
 
-        $sql = "SELECT DISTINCT home_loan_info.*,card_bank.bank_name,card_bank.bank_logo,home_loan_looking_for.home_loan_looking_for, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `home_loan_info` LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id LEFT JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id INNER JOIN home_loan_user_home_loan_info ON home_loan_user_home_loan_info.home_loan_info_id = home_loan_info.id $query $link";
+        $sql = "SELECT DISTINCT home_loan_info.*,card_bank.bank_name,card_bank.bank_logo,card_bank.slug as bank_url,home_loan_looking_for.home_loan_looking_for, general_non_bank.non_bank_name, general_non_bank.bank_logo AS non_bank_logo FROM `home_loan_info` LEFT JOIN card_bank on card_bank.id=home_loan_info.bank_id LEFT JOIN home_loan_looking_for ON home_loan_looking_for.id=home_loan_info.home_loan_looking_for_id LEFT JOIN general_non_bank ON general_non_bank.id = home_loan_info.non_bank_id INNER JOIN home_loan_user_home_loan_info ON home_loan_user_home_loan_info.home_loan_info_id = home_loan_info.id $query $link";
 
         $query = $this->db->query($sql);
         ///echo $sql;

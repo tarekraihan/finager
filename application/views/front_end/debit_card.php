@@ -375,52 +375,6 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
     });
-    /*
-    $(document).on("scroll",function () {
-        var scroller_anchor = $("#sidebar").offset().top;
-        var sidebar_height = $("#sidebar").height();
-        var window_height = $(window).height();
-
-        var offsetToTop = parseInt($(this).scrollTop());
-        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#debitCard_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+35);
-        var main_height = parseInt($(".main-content-area").height());
-
-        $(".sidebar_parent").height(main_height-20);
-
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-        {
-            $('#sidebar').addClass('fixed');
-        }
-
-        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-        {
-            $('#sidebar').removeClass('fixed');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top - 65){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top + 230){
-            $("#sidebar").addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-
-    });
-    */
-
 </script>
 
 <script type="text/javascript">
@@ -431,14 +385,11 @@
             var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
 //            alert(cur_page);
             loadData(cur_page);
-//            console.log(cur_page);
         });
 
         $('#SearchDebitCard').on('click', '.more_info', function (){
             var  formData = $(this).data();
             var loan_id = formData.loan_id;
-
-            //console.log(loan_id);
 
             $("#moreInfo"+loan_id).toggleClass("in");
             if($("#moreInfo"+loan_id).hasClass('in')){
@@ -756,7 +707,7 @@
             });
 
             if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
-                alert("Sorry");
+                $('#comparison_alert').modal('show');
             }else{
                 if($(".cart_anchor").hasClass("img_active")){
                     //Select item image and pass to the function
@@ -777,8 +728,6 @@
                             data: card_id,
                             success: function(msg)
                             {
-                                //loading_hide();
-                                //console.log(msg);
                                 $(".cart_anchor01").html(msg);
                             }
                         });
@@ -805,7 +754,6 @@
                             data: card_id,
                             success: function(msg)
                             {
-                                //console.log(msg);
                                 $(".cart_anchor").html(msg);
                             }
                         });
@@ -819,16 +767,9 @@
         $(document).on('click','.compare-cross-btn',function(){
 
             var collected_card = $(this).prev().attr("data-card_id");
-            //var card_id = collected_card.card_id;
-
-            //var card_id = "data-card_id="+collected_card.card_id;
-            //alert(collected_card);
-
             $(".full-card").each(function(){
                 var obj=$(this).children().find('.add-to-compare');
                 var index=$(this).children().find('.add-to-compare').attr('data-card_id');
-                //alert(index);
-                //if()
                 if(parseInt(collected_card)==parseInt(index)){
                     obj.removeClass("hidden");
                 }
@@ -858,35 +799,23 @@
         });
 
         $('#go_compare').click(function(){
-            //alert(1);
-            var  formData = $('.cart_anchor').children('img').data();
-            var card_id1 = "card_id1="+formData.card_id;
-
-            var  formData = $('.cart_anchor01').children('img').data();
-            var card_id2 = "&card_id2="+formData.card_id;
-
-            var card_ids = card_id1+card_id2;
-            if(card_id1 != '' && card_id2 != ''){
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "<?php echo base_url();?>debit_card/ajax_go_card_compare_page",
-                    data: card_ids,
-                    success: function(msg)
-                    {
-                        if(msg != 'error'){
-
-                            window.location.href = "<?php echo base_url();?>en/debit_card_compare";
-                        }
-                    }
-                });
-            }else{
-                alert("Please add 2 card for compare ! ")
+            if( ! $('.cart_anchor01').children('img').data()){
+                $("#comparison_min_two_alert").modal('show');
             }
 
-            //alert(card_ids);
+            var  formData = $('.cart_anchor').children('img').data();
+            var card_url1 = formData.card_url;
+            var  formData = $('.cart_anchor01').children('img').data();
+            var card_url2 = formData.card_url;
+            var card_urls = card_url1+'-vs-'+card_url2;
+            if(card_url1 != '' && card_url2 != ''){
+                window.location.href = "<?php echo base_url();?>compare-debit-cards/"+card_urls+".html";
+            }else{
+                alert("Please add 2 card for compare ! ");
+            }
 
         });
+
 
         $(document).on('click','#clear_all',function(){
             var data = 'session='+'debit_card';
@@ -902,13 +831,5 @@
                 }
             });
         });
-
-       /* $(document).on('click', '.debit_card_choose_account', function (){
-            var  formData = $(this).data();
-            var chose_account = formData.choose_account;
-            var str = chose_account.split();
-            alert(str);
-        });*/
-
 
 </script>

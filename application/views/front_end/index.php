@@ -116,7 +116,7 @@ font-size: 22px;
                 <h1>Top Categories</h1>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/credit_card">
+                        <a href="<?php echo base_url(); ?>credit-cards.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/credit card.png" alt="Credit Card"/>
                             <p>Credit Card</p>
                         </a>
@@ -124,7 +124,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/debit_card">
+                        <a href="<?php echo base_url(); ?>debit-cards.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/Debit Card.png" alt="Debit Card"/>
                             <p>Debit Card</p>
                         </a>
@@ -132,7 +132,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/home_loan">
+                        <a href="<?php echo base_url(); ?>home-loan.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/home loan.png" alt="Home Loan"/>
                             <p>Home Loan</p>
                         </a>
@@ -140,7 +140,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/personal_loan">
+                        <a href="<?php echo base_url(); ?>personal-loan.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/personal loan.png" alt="Personal Loan"/>
                             <p>Personal Loan</p>
                         </a>
@@ -148,7 +148,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/car_loan">
+                        <a href="<?php echo base_url(); ?>auto-loan.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/buy new car.png" alt="Auto Loan"/>
                             <p>Auto Loan</p>
                         </a>
@@ -156,7 +156,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/education_loan">
+                        <a href="<?php echo base_url(); ?>education-loan.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/education loan.png" alt="Education Loan"/>
                             <p>Education Loan</p>
                         </a>
@@ -164,7 +164,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/fdr">
+                        <a href="<?php echo base_url(); ?>fdr.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/fdr.png" alt="FDR"/>
                             <p>FDR</p>
                         </a>
@@ -172,7 +172,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/dps">
+                        <a href="<?php echo base_url(); ?>dps.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/dps.png" alt="DPS"/>
                             <p>DPS</p>
                         </a>
@@ -180,7 +180,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>en/millionaire">
+                        <a href="<?php echo base_url(); ?>millionaire.html">
                             <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/loan.png" alt="Lakhpoti & Millionaire Scheme"/>
                             <p>Lakhpoti & Millionaire Scheme</p>
                         </a>

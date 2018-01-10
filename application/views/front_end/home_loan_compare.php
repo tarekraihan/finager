@@ -1,16 +1,12 @@
     <?php
 //		print_r($this->session->userdata());
-	$id = $this->session->userdata('first_home_loan') ;
+	$id =(int)$loan1['id'];
     $result = $this->Front_end_select_model->select_home_loan_details($id);
     $first_home_loan = $result->row();
 
-    $id1 = $this->session->userdata('second_home_loan') ;
+    $id1 = (int)$loan2['id'];
     $result1 = $this->Front_end_select_model->select_home_loan_details($id1);
     $second_home_loan = $result1->row();
-
-//    	print_r($first_home_loan);
-
-    //	echo $first_home_loan->loan_short_description;
     $first_interest =($first_home_loan->is_fixed =='0')? $first_home_loan->interest_rate_average.' % (Avg)' : $first_home_loan->interest_rate_fixed.' % (Fixed)';
 
     $first_yearly_interest = floatval( ( $first_home_loan->is_fixed =='0' ) ? $first_home_loan->interest_rate_average : $first_home_loan->interest_rate_fixed ) ;
@@ -47,27 +43,21 @@
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /><br/><br/><?php echo $first_home_loan->home_loan_looking_for;?></td>
+						<td><a href="<?php echo base_url();?>compare-home-loans/<?php echo $first_home_loan->slug; ?>.html"> <img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a><br/><br/><?php echo $first_home_loan->home_loan_looking_for;?></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /><br/><br/><?php echo $second_home_loan->home_loan_looking_for;?></td>
+						<td><a href="<?php echo base_url();?>compare-home-loans/<?php echo $second_home_loan->slug; ?>.html"> <img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a><br/><br/><?php echo $second_home_loan->home_loan_looking_for;?></td>
 					</tr>	
                 </table>
             </div>
        </section>
-    <input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
-    <input type="hidden" id="first_downpayment" name="first_downpayment" value="<?php echo $first_downpayment; ?>">
-    <input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
-    <input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
-    <input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $this->session->userdata('home_principal_amount'); ?>">
-    <input type="hidden" id="month_limit" name="month_limit" value="<?php echo $this->session->userdata('month_limit'); ?>">
-
-			<div class="home_loan_com_cal container text-center">
-			</div>
-				
+			<input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
+			<input type="hidden" id="first_downpayment" name="first_downpayment" value="<?php echo $first_downpayment; ?>">
+			<input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
+			<input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
+			<input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $this->session->userdata('home_principal_amount'); ?>">
+			<input type="hidden" id="month_limit" name="month_limit" value="<?php echo $this->session->userdata('month_limit'); ?>">
+			<div class="home_loan_com_cal container text-center"></div>
 		</div>
-		
-	
-	
 	<section id="basic_info">
 		<div class="container">
 			
@@ -214,140 +204,24 @@
 					</div>
 				</div>
 			</div>
-			
-			
-			
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
-
-
-<script>
-	<!-- for chart-->
-	/*$(document).ready(function(){
-	    var plot2 = $.jqplot('pie2', [[['a',7],['b',88],['c',5]]], {
-	        seriesDefaults:{ renderer:$.jqplot.PieRenderer, trendline:{ show: true } },
-	        legend:{ show: false },
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
-	    });
-	});*/
-	
-
-	<!-- for main chart-->	
-	/*$(document).ready(function () {
-	    var s1 = [[2002, 112000], [2003, 122000], [2004, 104000], [2005, 99000], [2006, 121000]];
-	    var s2 = [[2002, 10200], [2003, 10800], [2004, 11200], [2005, 11800], [2006, 12400]];
-	 
-	    plot1 = $.jqplot("chart1", [s2, s1], {
-	        // Turns on animatino for all series in this plot.
-	        animate: true,
-	        // Will animate plot on calls to plot1.replot({resetAxes:true})
-	        animateReplot: true,
-	        cursor: {
-	            show: true,
-	            zoom: true,
-	            looseZoom: true,
-	            showTooltip: false
-	        },
-	        series:[
-	            {
-	                pointLabels: {
-	                    show: true
-	                },
-	                renderer: $.jqplot.BarRenderer,
-	                showHighlight: false,
-	                yaxis: 'y2axis',
-	                rendererOptions: {
-	                    // Speed up the animation a little bit.
-	                    // This is a number of milliseconds.  
-	                    // Default for bar series is 3000.  
-	                    animation: {
-	                        speed: 2500
-	                    },
-	                    barWidth: 15,
-	                    barPadding: -15,
-	                    barMargin: 0,
-	                    highlightMouseOver: false
-	                }
-	            }, 
-	            {
-	                rendererOptions: {
-	                    // speed up the animation a little bit.
-	                    // This is a number of milliseconds.
-	                    // Default for a line series is 2500.
-	                    animation: {
-	                        speed: 2000
-	                    }
-	                }
-	            }
-	        ],
-	        axesDefaults: {
-	            pad: 0
-	        },
-	        axes: {
-	            // These options will set up the x axis like a category axis.
-	            xaxis: {
-	                tickInterval: 1,
-	                drawMajorGridlines: false,
-	                drawMinorGridlines: true,
-	                drawMajorTickMarks: false,
-	                rendererOptions: {
-	                tickInset: 0.5,
-	                minorTicks: 1
-	            }
-	            },
-	            yaxis: {
-	                tickOptions: {
-	                    formatString: "$%'d"
-	                },
-	                rendererOptions: {
-	                    forceTickAt0: true
-	                }
-	            },
-	            y2axis: {
-	                tickOptions: {
-	                    formatString: "$%'d"
-	                },
-	                rendererOptions: {
-	                    // align the ticks on the y2 axis with the y axis.
-	                    alignTicks: true,
-	                    forceTickAt0: true
-	                }
-	            }
-	        },
-	        highlighter: {
-	            show: true, 
-	            showLabel: true, 
-	            tooltipAxes: 'y',
-	            sizeAdjust: 7.5 , tooltipLocation : 'ne'
-	        },
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
-	    });
-	   
-	});*/
-
-</script>
-
 <script type="text/javascript">
-
-
 //for left bar query
 $(document).ready(function () {
-
-
-
 	$('[data-toggle="toggle"]').change(function(){
 		$(this).parents().next('.hide').toggle();
 	});
@@ -456,7 +330,6 @@ $(document).ready(function () {
 
     }
 
-
 		$('#hideDetailsDiv').hide();
 		$('a#hideDetailsButton').click(function() {
 			if (!$('#hideDetailsDiv').is(':visible')) {
@@ -473,17 +346,12 @@ $(document).ready(function () {
 			$('#hideDetailsDiv2').toggle(400);
 		});
 });
-</script>
-<script>
 $(window).on('scroll', function (){
 	if ($(window).scrollTop() > 150){
-	  $('#card_compare_default').addClass('compare-bg');
+		$('#card_compare_default').addClass('compare-bg');
 	} else {
-	  $('#card_compare_default').removeClass('compare-bg');
+		$('#card_compare_default').removeClass('compare-bg');
 	}
-
-
-
 
 });
 </script>

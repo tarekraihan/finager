@@ -735,6 +735,18 @@ class Home_Loan extends CI_Controller {
                 $bank = $row->bank_name;
             }
             $bank_logo = "";
+/*
+             $url = $bank.' '.$row->home_loan_looking_for;
+             $slug = str_replace("/"," ",$url);
+             $slug = url_title($slug,'dash',TRUE);
+
+             $this->Common_model->data = array(
+                 'slug' => $slug
+             );
+             $this->Common_model->where = array('id' => $row->id);
+             $this->Common_model->table_name = 'home_loan_info';
+             $this->Common_model->update();*/
+
             if($row->is_non_bank == 1){
                 $bank_logo = $row->non_bank_logo;
             }else{
@@ -759,8 +771,8 @@ class Home_Loan extends CI_Controller {
             $home .='<div class="full-card">
                        <div class="row home_loan_right_bar no-margin-lr2">
                            <div class="col-sm-3 col-xs-3">
-                               <a href="'.base_url().'en/home_loan_details/'.$row->id.'"><img title="Click Here To Show details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
-                               <small class="home_loan_bank_name"><a  href="">'.$bank.'</a></small>
+                               <a href="'.base_url().'compare-home-loans/'.$row->slug.'.html"><img title="Click Here To Show details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                               <small class="home_loan_bank_name"><a  href="'.base_url().'bank-details/'.$row->bank_url.'.html">'.$bank.'</a></small>
                                <small class="home_loan_bank_name">'.$row->home_loan_looking_for.'</small>
                            </div>
                            <div class="col-sm-9 col-xs-9">
@@ -979,7 +991,7 @@ class Home_Loan extends CI_Controller {
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-home_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'"  data-loan_url='.$row->slug.' data-home_id='.$row->id.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;

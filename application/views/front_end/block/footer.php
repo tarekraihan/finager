@@ -49,15 +49,15 @@
                         <p class="footer-menu-title">Loan</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="<?php echo base_url();?>en/home_loan">Home Loan</a></li>
-                            <li><a href="<?php echo base_url();?>en/personal_loan">Personal Loan</a></li>
-                            <li><a href="<?php echo base_url();?>en/car_loan">Auto Loan</a></li>
-                            <li><a href="<?php echo base_url();?>en/education_loan">Education Loan</a></li>
+                            <li><a href="<?php echo base_url();?>home-loan.html">Home Loan</a></li>
+                            <li><a href="<?php echo base_url();?>personal-loan.html">Personal Loan</a></li>
+                            <li><a href="<?php echo base_url();?>auto-loan.html">Auto Loan</a></li>
+                            <li><a href="<?php echo base_url();?>education-loan.html">Education Loan</a></li>
 						</ul>
 						<p class="footer-menu-title">Card</p>
 						<ul class="no-padding footer-menus">
-                            <li><a href="<?php echo base_url();?>en/credit_card">Credit Card</a></li>
-                            <li><a href="<?php echo base_url();?>en/debit_card">Debit Card</a></li>
+                            <li><a href="<?php echo base_url();?>credit-cards.html">Credit Card</a></li>
+                            <li><a href="<?php echo base_url();?>debit-cards.html">Debit Card</a></li>
                         </ul>
                     </div>
 
@@ -65,28 +65,30 @@
                         <p class="footer-menu-title">Investment</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="<?php echo base_url();?>en/fdr">FDR</a></li>
-                            <li><a href="<?php echo base_url();?>en/dps">DPS</a></li>
-                            <li><a href="<?php echo base_url();?>en/millionaire">Lakhpoti & Millionaire</a></li>
-                            <li><a href="<?php echo base_url();?>en/money_maximizer">Money Maximizer</a></li>
-                            <li><a href="<?php echo base_url();?>en/monthly_benefit">Monthly Benefit Scheme</a></li>
+                            <li><a href="<?php echo base_url();?>fdr.html">FDR</a></li>
+                            <li><a href="<?php echo base_url();?>dps.html">DPS</a></li>
+                            <li><a href="<?php echo base_url();?>millionaire.html">Lakhpoti & Millionaire</a></li>
+                            <li><a href="<?php echo base_url();?>money-maximizer.html">Money Maximizer</a></li>
+                            <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit Scheme</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Thrusts Sector</a></li>
                         </ul>
                     </div>
 
                     <div class="col-sm-3 col-xs-12">
-                        <p class="footer-menu-title">SME</p>
+                        <p class="footer-menu-title">Accounts</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Loan</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Guideline for SME Business</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Funding</a></li>
+                            <li><a href="<?php echo base_url();?>current-account.html">Current Account</a></li>
+                            <li><a href="<?php echo base_url();?>savings-account.html">Saving Account</a></li>
+                            <li><a href="<?php echo base_url();?>snd.html">SND Account</a></li>
+                            <!--
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Potential SME Sector</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Traning Calender</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Bank Wise SME Service Centre</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Service Centre</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Blog</a></li>
+                            -->
                         </ul>
                     </div>
 
@@ -94,7 +96,7 @@
                         <p class="footer-menu-title">Others</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="<?php echo base_url();?>en/">Blog</a></li>
+                            <li><a href="<?php echo base_url();?>">Blog</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Forum</a></li>
                             <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
@@ -261,6 +263,46 @@
 
             <div class="modal-body">
                 <div id="send_comparison_url_message">
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" data-dismiss="modal">close</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="comparison_alert" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="alert alert-danger">
+                    <strong>Sorry!</strong> We allow only 2 items for comparison.
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" data-dismiss="modal">close</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="comparison_min_two_alert" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="alert alert-warning">
+                    <strong>Sorry!</strong> Please add at least 2 items to compare.
                 </div>
                 <div class="text-right">
                     <button class="btn btn-primary" data-dismiss="modal">close</button>

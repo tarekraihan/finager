@@ -209,7 +209,10 @@
             <!-- Left bar query content start -->
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar_parent">
                 <div id="sticky-anchor"></div>
-                <div class="card_left_bar home_left_bar"  id="sidebar">
+                <div class="hidden-sm hidden-md hidden-lg visible-xs">
+                    <a href="javascript:;" class="btn btn-default btn-block">Sort By</a>
+                </div>
+                <div class="card_left_bar home_left_bar hidden-xs"  id="sidebar">
                     <div class="card_query">
                         <p>I Am</p>
                         <div class="query_radio">
@@ -522,13 +525,14 @@
             $('#sidebar').addClass('fixed-bottom');
         }
 
-        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top + 50){
+        if($('#sidebar').offset().top + $('#sidebar').height() >= $('.footer').offset().top + 30){
             $("#sidebar").removeClass("fixed");
             $("#sidebar").removeClass("fixed-bottom");
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
 
         if(sidebar_height > window_height && $(document).scrollTop() + window.innerHeight < $('.footer').offset().top){
+            $("#sidebar").removeClass("fixed");
             $("#sidebar").addClass("fixed-bottom");
             $("#sidebar").removeClass("sidebar-absolute-bottom");
         }
@@ -1021,7 +1025,7 @@
         $("#hiden_div").animate({bottom:'0px'});
 
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
-            alert("Sorry");
+            $('#comparison_alert').modal('show');
         }else{
             if($(".cart_anchor").hasClass("img_active")){
                 var cart01 = $('.cart_anchor01');
@@ -1169,27 +1173,20 @@
         });
     });
 
+
     $('#go_compare').click(function(){
+        if( ! $('.cart_anchor01').children('img').data()){
+            $("#comparison_min_two_alert").modal('show');
+        }
         var  formData = $('.cart_anchor').children('img').data();
-        var card_id1 = "card_id1="+formData.card_id;
+        var card_url1 = formData.card_url;
         var  formData = $('.cart_anchor01').children('img').data();
-        var card_id2 = "&card_id2="+formData.card_id;
-        var card_ids = card_id1+card_id2;
-        if(card_id1 != '' && card_id2 != ''){
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>card/ajax_go_card_compare_page",
-                data: card_ids,
-                success: function(msg)
-                {
-                    if(msg != 'error'){
-                        window.location.href = "<?php echo base_url();?>en/card_compare";
-                    }
-                }
-            });
+        var card_url2 = formData.card_url;
+        var card_urls = card_url1+'-vs-'+card_url2;
+        if(card_url1 != '' && card_url2 != ''){
+            window.location.href = "<?php echo base_url();?>compare-credit-cards/"+card_urls+".html";
         }else{
-            alert("Please add 2 card for compare ! ");
+            $('#comparison_min_two_alert').modal('show');
         }
 
     });
