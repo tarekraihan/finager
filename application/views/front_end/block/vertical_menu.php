@@ -72,7 +72,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
 																					<a href="<?php echo base_url();?>credit-cards.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/credit-card-mega-menu.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/Credit-Card-Manu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								 A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
@@ -179,7 +179,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
 																					<a href="<?php echo base_url(); ?>debit-cards.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit-card-mega-menu.svg" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/Debit-Card-Icon-2.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">Debit Card</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
@@ -323,7 +323,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>home-loan.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/menu_home_loan.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Home-Loan-manu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
@@ -477,7 +477,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>personal-loan.html">
                                                                                         <div class="features">
-                                                                                            <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/personal-loan-mega-manu.svg" alt="img" class="thumbnail">
+                                                                                            <img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Personal-loan-menu-icon.png" alt="img" class="thumbnail">
                                                                                             <div class="clearfix"></div>
                                                                                             <!--<p class="text-right">
                                                                                                 <span class="focus-text">Home Loan</span> is given by a bank or other financial institution for the purchase of residence. In home loan, the owner of the property transfers the title to the lender on the condition that the title will be transferred back to the owner once the payment has been made.
@@ -583,7 +583,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>auto-loan.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/auto-loan-mega-menu.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Auto-Loan-menu-icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								 A <span class="focus-text">Auto Loan</span> in which the borrower's car title is used as collateral. The borrower must be the lien holder (i.e. own the car outright). Before the loan is repaid, the lender will be the title holder of that car and after repaying, the title will be transferred back to the borrower.
@@ -695,7 +695,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>education-loan.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/education-loan-mega-menu.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/loan/Edu-Laon-Menu-icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																							   In <span class="focus-text">Education Loan,</span> money borrowed to finance education or school related expenses. Payments are often deferred while in school and repaid after graduation.
@@ -950,7 +950,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>dps.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/DPSMenuIcon.svg" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/DPS-Menu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">DPS</span> is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
@@ -1057,7 +1057,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>millionaire.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/LakhpotiManuIcon.svg" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Lakhpoti-&-Millionaire-manu-icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">Lakhpoti & Millionaire Scheme</span> is a monthly Savings Scheme with flexible long term tenure that gives account holder maturity Value of minimum BDT 1 (one) million.
@@ -1165,7 +1165,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>money-maximizer.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Money-Maximizer-Menu-Icon.jpg" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Money-Maximizer-Manu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">Money Maximizer</span> account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
@@ -1272,7 +1272,7 @@
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url();?>monthly-benefit.html">
 																						<div class="features">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Monthly-Benefit-Scheme-menu-Icon-.png" alt="img" class="thumbnail">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Monthly-Benefit-Scheme-menu-icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
@@ -1388,7 +1388,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>savings-account.html">
-																						<div class="features">
+																						<div class="features2">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Saving-Acc-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
@@ -1403,7 +1403,7 @@
 
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>current-account.html">
-																						<div class="features">
+																						<div class="features2">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/CurrentAccMenuIcon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
@@ -1418,7 +1418,7 @@
 
                                                                                 <div class="col-sm-4 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>snd.html">
-																						<div class="features">
+																						<div class="features2">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/SND-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
@@ -1513,7 +1513,7 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>export-import.html">
-																						<div class="features">
+																						<div class="features2">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
