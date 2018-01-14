@@ -2913,15 +2913,10 @@ a .fdr_landing_button {
 }
 
 .auto_header_text p {
-
-    color: #fff;
-
+    color: #000;
     font-size: 18px;
-
     margin-bottom: 20px;
-
     text-align: right;
-
 }
 
 .auto_header_text {
@@ -3400,25 +3395,16 @@ a:hover {
 }
 
 .home_header_text h3 {
-
-    color: #fff;
-
+    color: #000;
     font-size: 35px;
-
     font-style: italic;
-
 }
 
 .home_header_text p {
-
-    color: #ccc;
-
-    font-size: 18px;
-
+    color: #000;
+    font-size: 20px;
     font-style: italic;
-
     margin-bottom:24px;
-
 }
 
 .home_header_text {
@@ -4324,15 +4310,10 @@ a:hover {
 }
 
 .education_header_text h3 {
-
     color: #5e5c5c;
-
     font-size: 25px;
-
     font-style: italic;
-
     margin-bottom: 26px;
-
 }
 
 .education_header_text p {
@@ -4346,17 +4327,11 @@ a:hover {
 }
 
 .education_header_text {
-
     text-align: right;
-
-    top: 250px;
-
+    top: 140px;
     margin-right: 220px;
-
     position: relative;
-
     float: right;
-
 }
 
 .education_loan_icon {
@@ -4603,25 +4578,16 @@ a:hover {
 }
 
 .fdr_header_text {
-
-    top: 270px;
-
+    top: 180px;
     position: relative;
-
     margin-right: 223px;
-
     float: right;
-
 }
 
 .fdr_header_text p{
-
     font-size:18px;
-
     margin-bottom: 25px;
-
-    color: #d7d7d7;
-
+    color: #000;
 }
 
 .fdr_link {
@@ -5341,9 +5307,8 @@ a .dps_landing_button {
 }
 
 .best_card {
-
-    margin-top: 70px;
-
+    margin-top: 18px;
+    float: right;
 }
 
 .best_card h4 {
@@ -5689,7 +5654,7 @@ a .debit_card_button.flash-button{
 }
 .month_benefit_header_text {
     text-align: right;
-    top: 278px;
+    top: 198px;
     position: relative;
     float: right;
     margin-right: 220px;
