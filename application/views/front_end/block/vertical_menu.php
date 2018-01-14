@@ -1513,8 +1513,8 @@
                                                                             <div class="row">
                                                                                 <div class="col-sm-7 col-xs-12">
                                                                                     <a href="<?php echo base_url(); ?>export-import.html">
-																						<div class="features2">
-																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/card_feature.png" alt="img" class="thumbnail">
+																						<div class="features">
+																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/Export-Import-Menu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<!--<p class="text-right">
 																								<span class="focus-text">Export &amp; Import</span> An import is a good or service brought into one country from another. On the other hand, an export is a function of international trade whereby goods produced in one country are shipped to another country for future sale or trade.
