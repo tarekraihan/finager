@@ -1261,6 +1261,11 @@ class Select_Model extends CI_Model
         $query=$this->db->query($sql);
         return $query->row();
     }
+    public function get_product_list($table_name){
+        $sql = "SELECT `id`,`slug` FROM $table_name";
+        $query=$this->db->query($sql);
+        return $query->result_array();
+    }
     public function get_all_dps_draft_info($bank_id,$i_am,$is_non_bank){
         $where ='';
         if($is_non_bank == 1){

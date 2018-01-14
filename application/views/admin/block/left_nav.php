@@ -82,8 +82,11 @@ foreach($module_id as $k){
                         <a href="<?php echo base_url();?>general/subscriptions">Subscriptions</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url();?>general/add_meta_tag_description">Add Tags && Description</a>
+                        <a href="<?php echo base_url();?>general/add_meta_tag_description">Add Tags & Description</a>
                     </li>
+                    <!--<li>-->
+                    <!--    <a href="--><?php //echo base_url();?><!--general/meta_tags">Add Tags & Description</a>-->
+                    <!--</li>-->
 
                 </ul>
             </li>

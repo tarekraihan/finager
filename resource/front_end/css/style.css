@@ -260,7 +260,7 @@ body {
 
 	.hamburger.is-open{
 
-		right: 195pxt;
+		right: 195px;
 
 	}
 
@@ -1296,7 +1296,7 @@ section#header2 {
 
     border-radius: 0;
 
-    background-image: url(../images/card-holder.png);
+    background-image: url('../images/card-holder.png');
 
     background-repeat: no-repeat;
 

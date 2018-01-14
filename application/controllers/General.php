@@ -595,53 +595,53 @@ class General extends CI_Controller {
                 $data['feedback'] = '<div id="message" class=" text-center alert alert-danger">Problem to Insert !!</div>';
             }
 
-            $is_non_bank =$this->input->post('is_non_bank');
-            $bank_id = '';
-            $non_bank_id = '';
-            if($is_non_bank == 1){
-                $this->form_validation->set_rules('txtNonBankName', ' Non Bank Name', 'trim|required');
-                $non_bank_id = $this->input->post('txtNonBankName');
-            }else{
-                $this->form_validation->set_rules('txtBankName', ' Bank Name', 'trim|required');
-                $bank_id = $this->input->post('txtBankName');
-            }
-
-            $this->form_validation->set_rules('txtEventDate', 'Event Date', 'trim|required|max_length[250]');
-            $this->form_validation->set_rules('txtEventTitle', 'Event Title', 'trim|required|max_length[255]');
+            $this->form_validation->set_rules('txtProductType', 'Product Type', 'trim|required');
+            $this->form_validation->set_rules('txtProductName', 'Product Name', 'trim|required');
+            $this->form_validation->set_rules('txtMetaTags', 'Meta Tags', 'trim|required|max_length[150]');
+            $this->form_validation->set_rules('txtMetaDescription', 'Meta Description', 'trim|required|max_length[300]');
 
             if ($this->form_validation->run() == FALSE){
-                $data['title'] = "Event History";
+                $data['title'] = "Add Meta Tags";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/general/add_meta_tag_description');
                 $this->load->view('admin/block/footer');
             }else{
-
-                $date = date('Y-m-d h:i:s');
                 $this->Common_model->data = array(
-                    'bank_id' => $bank_id,
-                    'is_non_bank' => $is_non_bank,
-                    'non_bank_id' =>$non_bank_id,
-                    'is_history' => ($this->input->post('is_history')) ? 1 : 0,
-                    'event_date' =>htmlentities($this->input->post('txtEventDate')),
-                    'event_title' =>htmlentities($this->input->post('txtEventTitle')),
-                    'created' => $date ,
-                    'modified' => $date ,
-                    'created_by'=>$this->session->userdata('admin_user_id')
+                    'meta_tags' =>htmlentities($this->input->post('txtMetaTags')),
+                    'meta_description' =>htmlentities($this->input->post('txtMetaDescription'))
                 );
 
-                $this->Common_model->table_name = 'institution_event_history';
-                $result = $this->Common_model->insert();
+                $this->Common_model->where = array('id' => $this->input->post('txtProductName'));
+                $this->Common_model->table_name = $this->input->post('txtProductType');
+                $result = $this->Common_model->update();
 
                 if ($result) {
-                    redirect(base_url().'general/add_event_history/success');
+                    redirect(base_url().'general/add_meta_tag_description/success');
                 } else {
-                    redirect(base_url().'general/add_event_history/error');
+                    redirect(base_url().'general/add_meta_tag_description/error');
                 }
             }
         }else {
             $this->session->set_flashdata('error_message', '1');
             redirect(base_url().'backdoor/dashboard');
+        }
+
+    }
+
+    public function ajax_get_product_list(){
+        if ($this->session->userdata('email_address')) {
+            $table_name = $this->input->post('table_name');
+            echo $table_name;die;
+            $result = $this->Select_model->get_product_list($table_name);
+            $result = (array)$result;
+            /*if($result){
+                $data['process'] = true;
+                $result = array_merge( $data, $result);
+            }*/
+            echo json_encode($result);
+        }else{
+            redirect(base_url().'backdoor');
         }
 
     }
