@@ -1,5 +1,5 @@
 <?php
-$id=$this->uri->segment(3, 0);
+$id = (int) $personal_loan_details['id'];
 
 if(!empty($id) && is_numeric($id) ){
     $query=$this->Front_end_select_model->select_personal_loan_details($id);

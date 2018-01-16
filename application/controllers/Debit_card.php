@@ -586,7 +586,7 @@ class Debit_card extends CI_Controller
 
         if($result->num_rows() > 0){
             foreach($result->result() as $row) {
-              $url = $row->card_name.' for '.$row->account_name;
+             /* $url = $row->card_name.' for '.$row->account_name;
                 $slug = url_title($url,'dash',TRUE);
                 $slug = str_replace("/","-",$slug);
                 $this->Common_model->data = array(
@@ -594,7 +594,7 @@ class Debit_card extends CI_Controller
                 );
                 $this->Common_model->where = array('id' => $row->id);
                 $this->Common_model->table_name = 'debit_card_info';
-                $this->Common_model->update();
+                $this->Common_model->update();*/
                 $summary ='';
                 if($row->card_summary != ''){
                     $length = strlen($row->card_summary);

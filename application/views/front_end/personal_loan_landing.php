@@ -340,7 +340,7 @@
 			data: data,
 			cache: false,
 			success: function(response){
-				window.location.href = "<?php echo base_url();?>en/all_personal_loan";
+				window.location.href = "<?php echo base_url();?>compare-personal-loans.html";
 			}
 		});
 	}

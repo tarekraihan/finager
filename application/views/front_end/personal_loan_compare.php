@@ -1,11 +1,11 @@
 <?php
 //print_r($this->session->userdata());
 
-$id = $this->session->userdata('first_personal_loan') ;
+$id =(int)$loan1['id'];
 $result = $this->Front_end_select_model->select_personal_loan_details($id);
 $first_personal_loan = $result->row();
 
-$id1 = $this->session->userdata('second_personal_loan') ;
+$id1 = (int)$loan2['id'];
 $result1 = $this->Front_end_select_model->select_personal_loan_details($id1);
 $second_personal_loan = $result1->row();
 
@@ -41,10 +41,10 @@ if($second_personal_loan->is_non_bank == 1){
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/personal_loan_details/<?php echo $first_personal_loan->id;?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
+						<td><p><a href="<?php echo base_url();?>compare-personal-loans/<?php echo $first_personal_loan->slug;?>.html" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 						</td>
-						<td><a href="<?php echo base_url();?>en/personal_loan_details/<?php echo $second_personal_loan->id;?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
+						<td><a href="<?php echo base_url();?>compare-personal-loans/<?php echo $second_personal_loan->slug;?>.html" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
 					</tr>			
 				</table>
 			</div>
@@ -53,8 +53,8 @@ if($second_personal_loan->is_non_bank == 1){
 
 <input type="hidden" id="first_yearly_interest" name="first_yearly_interest" value="<?php echo $first_yearly_interest; ?>">
 <input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
-<input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $this->session->userdata('principal_amount'); ?>">
-<input type="hidden" id="month_limit" name="month_limit" value="<?php echo $this->session->userdata('month_limit'); ?>">
+<input type="hidden" id="principal_amount" name="principal_amount" value="100000">
+<input type="hidden" id="month_limit" name="month_limit" value="12">
 
 	<section id="basic_info">
 		<div class="container">
@@ -85,6 +85,12 @@ if($second_personal_loan->is_non_bank == 1){
 							<td><b> Interest Rate</b></td>
 							<td> <?php echo $first_interest; ?> </td>
 						</tr>
+
+						<tr>
+							<td><b> Amount</b></td>
+							<td>BDT 1,000,000</td>
+						</tr>
+
 
 						<tr>
 							<td><b> Tenure</b></td>
@@ -122,6 +128,10 @@ if($second_personal_loan->is_non_bank == 1){
 							<tr>
 								<td><b> Interest Rate</b></td>
 								<td> <?php echo $second_interest; ?> </td>
+							</tr>
+							<tr>
+								<td><b> Amount</b></td>
+								<td>BDT 1,000,000</td>
 							</tr>
 
 							<tr>
@@ -218,21 +228,18 @@ if($second_personal_loan->is_non_bank == 1){
 					</div>
 				</div>
 			</div>
-
-
-			
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

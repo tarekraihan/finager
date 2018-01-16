@@ -474,6 +474,7 @@ class Personal_Loan extends CI_Controller {
                 if($personal_loan->num_rows() > 0){
                     foreach($personal_loan->result() as $row){
 
+                        //pr($row);die;
                         $bank = "";
                         if($row->is_non_bank == 1){
                             $bank = $row->non_bank_name;
@@ -505,14 +506,21 @@ class Personal_Loan extends CI_Controller {
                         $emi = $principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ( $month_limit ) )) / (pow( ( 1 + $monthly_interest ) , ( $month_limit ) ) -1 ));
 
                         $total_payable = round( $emi * $month_limit );
-
-
+/*
+                        $url = $bank.'-'.$row->personal_loan_looking_for;
+                        $slug = url_title($url,'dash',TRUE);
+                        $slug = str_replace("/","-",$slug);
+                        $this->Common_model->data = array(
+                            'slug' => $slug
+                        );
+                        $this->Common_model->where = array('id' => $row->id);
+                        $this->Common_model->table_name = 'personal_loan_info';
+                        $this->Common_model->update();*/
 
                         $personal .='<div class="full-card">
                             <div class="row home_loan_right_bar no-margin-lr2">
                             <div class="col-sm-3 col-xs-3">
-                                <a href="'.base_url().'en/personal_loan_details/'.$row->id.'"><img title="click here to details" class="img-responsive personal_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
-
+                                <a href="'.base_url().'compare-personal-loans/'.$row->slug.'.html"><img title="click here to details" class="img-responsive personal_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                                 <small class="home_loan_bank_name"><a  href="">'.$row->personal_loan_name.'</a></small>
                             </div>
                             <div class="col-sm-9 col-xs-9">
@@ -706,7 +714,7 @@ class Personal_Loan extends CI_Controller {
         echo $response;
     }
 
-    public function ajax_compare_personal_loan_image(){
+   /* public function ajax_compare_personal_loan_image(){
         $id = $this->input->post('loan_id');
         $result = $this->Front_end_select_model->select_personal_loan_image($id);
         $row= $result->row();
@@ -723,7 +731,24 @@ class Personal_Loan extends CI_Controller {
         }
         echo $html;
 
+    }*/
+
+
+    public function ajax_compare_personal_loan_image(){
+        $id = $this->input->post('loan_id');
+        $model_name = "personal_loan_info";
+        $result = $this->Front_end_select_model->select_compare_image($id,$model_name);
+        $row= $result->row();
+
+        $html ='';
+        if(isset($row)){
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-loan_id='.$row->id.' data-loan_url='.$row->slug.' class="img-responsive compare_delay "/>
+                     <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
+        }
+        echo $html;
+
     }
+
 
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('loan_id1');
