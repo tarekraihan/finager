@@ -328,7 +328,7 @@
 			data: data,
 			cache: false,
 			success: function(response){
-				window.location.href = "<?php echo base_url();?>all_car_loan.html";
+				window.location.href = "<?php echo base_url();?>compare-auto-loans.html";
 			}
 		});
 	}

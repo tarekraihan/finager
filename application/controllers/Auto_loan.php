@@ -803,6 +803,16 @@ class Auto_loan extends CI_Controller
 
             $total_payable = round( $emi * $month_limit );
 
+           /* $url = $bank.'-auto-loan-for '.$row->i_want;
+            $slug = str_replace("/"," ",$url);
+            $slug = url_title($slug,'dash',TRUE);
+
+            $this->Common_model->data = array(
+                'slug' => $slug
+            );
+            $this->Common_model->where = array('id' => $row->id);
+            $this->Common_model->table_name = 'auto_loan_info';
+            $this->Common_model->update();*/
 
             /*
 
@@ -820,7 +830,7 @@ class Auto_loan extends CI_Controller
             $auto .='<div class="full-card">
            <div class="row home_loan_right_bar no-margin-lr2">
                <div class="col-sm-3 col-xs-3">
-                   <a href="'.base_url().'car_loan_details/'.$row->id.'"><img title="Click Here To Show details" class="img-responsive auto_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                   <a href="'.base_url().'compare-auto-loans/'.$row->slug.'.html"><img title="Click Here To Show details" class="img-responsive auto_loan_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                    <small class="home_loan_bank_name"><a  href="javascript:void(0)">'.$bank.'</a></small>
                    <small class="home_loan_bank_name">'.$row->i_want.'</small>
                </div>
@@ -1020,6 +1030,7 @@ class Auto_loan extends CI_Controller
 
     }
 
+
     public function ajax_compare_auto_loan_image(){
         $id = $this->input->post('loan_id');
         $result = $this->Front_end_select_model->select_auto_loan_image($id);
@@ -1032,7 +1043,7 @@ class Auto_loan extends CI_Controller
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-loan_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'"  data-loan_url='.$row->slug.' data-loan_id='.$row->id.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;

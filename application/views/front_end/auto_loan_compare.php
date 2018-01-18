@@ -1,19 +1,17 @@
 <?php
 		//print_r($this->session->userdata());
-$id = $this->session->userdata('first_auto_loan') ;
+$id = $loan1['id'] ;
 $result = $this->Front_end_select_model->select_auto_loan_details($id);
 $first_auto_loan = $result->row();
 
-$id1 = $this->session->userdata('second_auto_loan') ;
+$id1 = $loan2['id'];
 $result1 = $this->Front_end_select_model->select_auto_loan_details($id1);
 $second_auto_loan = $result1->row();
 
 
-$principal_amount = intval ($this->session->userdata('principal_amount'));
-$month_limit = intval( $this->session->userdata('year_limit'));
+$principal_amount = intval (500000);
+$month_limit = intval( 24);
 
-
-//print_r($second_auto_loan);
 
 $first_interest =($first_auto_loan->is_fixed =='0')? $first_auto_loan->interest_rate_average.' % (Avg)' : $first_auto_loan->interest_rate_fixed.' % (Fixed)';
 $first_yearly_interest = floatval( ( $first_auto_loan->is_fixed =='0' ) ? $first_auto_loan->interest_rate_average : $first_auto_loan->interest_rate_fixed ) ;
@@ -51,9 +49,9 @@ if($second_auto_loan->is_non_bank == 1){
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><a href="<?php echo base_url();?>en/car_loan_details/<?php echo $first_auto_loan->id;?>" ><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></p> <p><?php echo $first_auto_loan->auto_loan_looking_for;?></p></a></td>
+						<td><a href="<?php echo base_url();?>compare-auto-loans/<?php echo $first_auto_loan->slug;?>.html" ><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></p> <p><?php echo $first_auto_loan->auto_loan_looking_for;?></p></a></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><a href="<?php echo base_url();?>en/car_loan_details/<?php echo $second_auto_loan->id;?>" ><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></p></a><p><?php echo $second_auto_loan->auto_loan_looking_for;?></p></td>
+						<td><a href="<?php echo base_url();?>compare-auto-loans/<?php echo $second_auto_loan->slug;?>.html" ><p><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></p></a><p><?php echo $second_auto_loan->auto_loan_looking_for;?></p></td>
 					</tr>			
 				</table>
 			</div>
@@ -245,19 +243,19 @@ if($second_auto_loan->is_non_bank == 1){
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

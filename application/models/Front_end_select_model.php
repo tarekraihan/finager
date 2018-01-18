@@ -207,7 +207,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     public function select_auto_loan_image($id){
-        $sql="SELECT auto_loan_info.id,auto_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `auto_loan_info`  LEFT JOIN card_bank on card_bank.id=auto_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id  WHERE auto_loan_info.id=$id";
+        $sql="SELECT auto_loan_info.id,auto_loan_info.slug,auto_loan_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `auto_loan_info`  LEFT JOIN card_bank on card_bank.id=auto_loan_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = auto_loan_info.non_bank_id  WHERE auto_loan_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
