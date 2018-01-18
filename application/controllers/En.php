@@ -523,15 +523,33 @@ class En extends CI_Controller {
     }
 
 
-    public function education_loan_compare(){
+    public function education_loan_compare($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('education_loan_compare', 'education_loan_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/education_loan_compare');
-            $this->load->view('front_end/block/footer');
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('education_loan_info',array('slug'=>$compare[0]));
+                $data['loan1'] = $query1->row_array();
+                $query2 = $this->db->get_where('education_loan_info',array('slug'=>$compare[1]));
+                $data['loan2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('education_loan_compare', 'education_loan_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/education_loan_compare');
+                $this->load->view('front_end/block/footer');
+
+            }else{
+                $query = $this->db->get_where('education_loan_info',array('slug'=>$url));
+                $data['education_loan_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('education_loan_details', 'education_loan_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/education_loan_details');
+                $this->load->view('front_end/block/footer');
+            }
         }else{
             redirect(base_url().'en/login.html');
         }

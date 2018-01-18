@@ -831,6 +831,7 @@
                 }
             });
         });
+/*
 
         $('#go_compare').click(function(){
             var  formData = $('.cart_anchor').children('img').data();
@@ -862,6 +863,26 @@
             }else{
                 alert("Please add 2 card for compare ! ")
             }
+        });
+*/
+
+
+        $('#go_compare').click(function(){
+            if( ! $('.cart_anchor01').children('img').data()){
+                $("#comparison_min_two_alert").modal('show');
+            }
+            var  formData = $('.cart_anchor').children('img').data();
+            var loan_url1 = formData.loan_url;
+            var  formData = $('.cart_anchor01').children('img').data();
+            var loan_url2 = formData.loan_url;
+            var loan_urls = loan_url1+'-vs-'+loan_url2;
+            if(loan_url1 != '' && loan_url2 != ''){
+                window.location.href = "<?php echo base_url();?>compare-education-loans/"+loan_urls+".html";
+            }else{
+                $('#comparison_min_two_alert').modal('show');
+            }
+
+
         });
     });
 </script>

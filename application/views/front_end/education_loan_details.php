@@ -1,95 +1,45 @@
 <?php
-
-
-
-$id=$this->uri->segment(3, 0);
-
+$id= (int) $education_loan_details['id'];
 if(!empty($id) && is_numeric($id) ){
-
     $query=$this->Front_end_select_model->select_education_loan_details($id);
-
     $row=$query->row();
-
-
-
     $bank_name = "";
-
     $bank_logo = "";
-
     if($row->is_non_bank == 1){
-
         $bank_name = $row->non_bank_name;
-
         $bank_logo = $row->non_bank_logo;
-
     }else{
-
         $bank_name = $row->bank_name;
-
         $bank_logo = $row->bank_logo;
-
     }
-
-
 
     $principal_amount = 100000;
-
     $year_limit = 1;
-
-
-
     $is_fixed =$row->is_fixed;
-
     $show_interest ='';
-
     if($is_fixed == 1){
-
         $show_interest .='<p class="card_details_head2">Interest (Fixed Rate)</p><p>Fixed '.$row->fixed_interest.'%</p>';
-
     }else{
-
         $show_interest .='<p class="card_details_head2">Interest (Avg Rate)</p><p>Avg '.$row->avg_interest.'% <br/>min '.$row->min_interest.'%,<br> max '.$row->max_interest.'%</p>';
-
     }
-
-
 
 	$yearly_interest = floatval( ($row->is_fixed =='0')? $row->avg_interest : $row->fixed_interest ) ;
-
 	if($yearly_interest =='' || $yearly_interest < 1){
-
 		$yearly_interest = floatval( '10');
-
 	}
-
 	$monthly_interest = ($yearly_interest / 12 /100);
-
-
-
 	$emi = round($principal_amount * $monthly_interest * ((pow( ( 1 + $monthly_interest ) , ($year_limit * 12) )) / (pow( ( 1 + $monthly_interest ) , ($year_limit * 12) ) -1 )));
-
 	$total_payable = round( $emi * $year_limit * 12 );
-
-
-
     $result1 = $this->Front_end_select_model->select_education_loan_expenses_considered($id);
-
     $expense_consider ='';
-
     foreach($result1->result() as $row1){
-
         $expense_consider .= "<li>".$row1->expenses_considered."</li>";
-
     }
-
 }else{
-
     redirect(base_url().'My404');
-
 }
 
 ?>
-
 <style type="text/css">
 	.btnHomeLoan {
 	    margin-top: 30px;
@@ -100,9 +50,7 @@ if(!empty($id) && is_numeric($id) ){
 </style>
 
 	<section id="card_details_top">
-
 		<div class="container">
-
 			<div class="row">
 
 				<div class="card_details_body">

@@ -1,21 +1,14 @@
 <?php
-//		print_r($this->session->userdata());
-$id = $this->session->userdata('first_education_loan') ;
-//echo $id;die;
+$id = $loan1['id'] ;
 $result = $this->Front_end_select_model->select_education_loan_details($id);
 $first_education_loan = $result->row();
 
-$id1 = $this->session->userdata('second_education_loan') ;
+$id1 = $loan2['id'] ;
 $result1 = $this->Front_end_select_model->select_education_loan_details($id1);
 $second_education_loan = $result1->row();
 
-$principal_amount = intval ($this->session->userdata('principal_amount'));
-$year_limit = intval( $this->session->userdata('year_limit'));
-
-
-//	print_r($second_education_loan);die;
-
-//	echo $first_home_loan->loan_short_description;
+$principal_amount = intval (50000);
+$year_limit = intval( 2);
 
 $first_interest =($first_education_loan->is_fixed =='0')? $first_education_loan->avg_interest.' % (Avg)' : $first_education_loan->fixed_interest.' % (Fixed)';
 $first_yearly_interest = floatval( ( $first_education_loan->is_fixed =='0' ) ? $first_education_loan->avg_interest : $first_education_loan->fixed_interest ) ;
@@ -45,16 +38,14 @@ if($second_education_loan->is_non_bank == 1){
 }
 
 ?>
-
-
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/education_loan_details/<?php echo $first_education_loan->id;?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
+						<td><p><a href="<?php echo base_url();?>compare-education-loans/<?php echo $first_education_loan->slug;?>.html" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><a href="<?php echo base_url();?>en/education_loan_details/<?php echo $second_education_loan->id;?>" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
+						<td><a href="<?php echo base_url();?>compare-education-loans/<?php echo $second_education_loan->id;?>.html" ><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
 					</tr>			
 				</table>
 			</div>
@@ -232,8 +223,6 @@ if($second_education_loan->is_non_bank == 1){
 					</div>
 				</div>
 			</div>
-
-
 			<div class="row">
                 <h3 class="text-center compare-feature-bar margin-top-50"> <span>Terms and Conditions</span> </h3>
 				<div class="col-md-6 col-sm-6 tble-no-padding-left">
@@ -247,8 +236,6 @@ if($second_education_loan->is_non_bank == 1){
 					</div>
 				</div>
 			</div>
-
-
 			<div class="row">
                 <h3 class="text-center compare-feature-bar margin-top-50"> <span>Review</span> </h3>
 				<div class="col-md-6 col-sm-6 tble-no-padding-left">
@@ -263,20 +250,18 @@ if($second_education_loan->is_non_bank == 1){
 				</div>
 			</div>
 
-
-			
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -361,45 +346,29 @@ $(document).ready(function () {
     });
 
     calculation();
-    function calculation(){
-
-//        var x = number_format( 5400000, 0, '.', ',' );
-//        alert(x);
-//        parseFloat();
+    function calculation(){;
 
         var principle_amount = parseFloat($('#principal_amount').val());
         var amount = (principle_amount <= 50000) ? 50000 : principle_amount;
         var tenure = parseInt($('#year_limit').val());
-        //alert(tenure);
         var tenure_year = (tenure > 1 ) ? 1 : tenure;
         var month = parseInt(tenure_year * 12 );
-
-
         var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
         var first_interest_rate = first_yearly_interest / 100 / 12;
         var second_yearly_interest = parseFloat($('#second_yearly_interest').val());
         var second_monthly_interest  =  second_yearly_interest / 12 /100 ;
-//        var first_downpayment_amount =  Math.round( ( amount * first_downpayment ) / 100 );
-//        var second_downpayment_amount =  Math.round( ( amount * second_downpayment ) / 100 );
-
         var rate =Math.pow( ( 1 + first_interest_rate ),month);
-
 
         var first_emi = Math.round(amount * first_interest_rate * (( Math.pow( (1+first_interest_rate),month)) / ( Math.pow( ( 1 + first_interest_rate ) , month ) -1 )));
         var first_payable_amount = first_emi * month;
 
         var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
         var second_payable_amount = second_emi * month;
-
-        //alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
-
         $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
         $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
-//        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
 
         $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
         $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
-//        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
 
     }
 

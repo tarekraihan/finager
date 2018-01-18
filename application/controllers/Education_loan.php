@@ -613,10 +613,21 @@ class Education_Loan extends CI_Controller {
                 $expense_consider .= "<li>".$row1->expenses_considered."</li>";
             }
 
+      /*      $url = $bank.'-education-loan';
+            $slug = str_replace("/"," ",$url);
+            $slug = url_title($slug,'dash',TRUE);
+
+            $this->Common_model->data = array(
+                'slug' => $slug
+            );
+            $this->Common_model->where = array('id' => $row->id);
+            $this->Common_model->table_name = 'education_loan_info';
+            $this->Common_model->update();*/
+
             $education .= '<div class="full-card">
 						<div class="row home_loan_right_bar no-margin-lr2">
 							<div class="col-sm-3 col-xs-3">
-								<a href="'.base_url().'en/education_loan_details/'.$row->id.'"><img title="click here to details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<a href="'.base_url().'compare-education-loans/'.$row->slug.'.html"><img title="click here to details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 							</div>
 							<div class="col-sm-9 col-xs-9">
 								<div class="row">
@@ -641,7 +652,7 @@ class Education_Loan extends CI_Controller {
 									<div class="col-sm-5 col-xs-2 w20 no-padding">
 										<div class="card_text2">
 											<h5>Total Payable Amount</h5>
-											<p>BDT'.number_format($total_payable).'<br/><span class="tPaybleAmount">based on BDT '.number_format($principal_amount).'</span></p>
+											<p>BDT '.number_format($total_payable).'<br/><span class="tPaybleAmount">based on BDT '.number_format($principal_amount).'</span></p>
 										</div>
 									</div>
 								</div>
@@ -836,7 +847,6 @@ class Education_Loan extends CI_Controller {
         echo $response;
     }
 
-
     public function ajax_compare_education_loan_image(){
         $id = $this->input->post('loan_id');
         $result = $this->Front_end_select_model->select_education_loan_image($id);
@@ -849,12 +859,13 @@ class Education_Loan extends CI_Controller {
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-loan_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'"  data-loan_url='.$row->slug.' data-loan_id='.$row->id.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;
 
     }
+
 
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('loan_id1');
