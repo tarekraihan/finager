@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/front_end/compare_email_template.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan_compare" afterPath="$PROJECT_DIR$/application/cache/home_loan_compare" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/personal_loan" afterPath="$PROJECT_DIR$/application/cache/personal_loan" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/personal_loan_landing" afterPath="$PROJECT_DIR$/application/cache/personal_loan_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Debit_card.php" afterPath="$PROJECT_DIR$/application/controllers/Debit_card.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/En.php" afterPath="$PROJECT_DIR$/application/controllers/En.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Personal_loan.php" afterPath="$PROJECT_DIR$/application/controllers/Personal_loan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/block/footer.php" afterPath="$PROJECT_DIR$/application/views/front_end/block/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/personal_loan.php" afterPath="$PROJECT_DIR$/application/views/front_end/personal_loan.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/personal_loan_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/personal_loan_compare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/personal_loan_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/personal_loan_details.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/personal_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/personal_loan_landing.php" />
     </list>
     <ignored path="finager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +34,8 @@
       <file leaf-file-name="En.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.0">
-              <caret line="428" column="48" selection-start-line="428" selection-start-column="48" selection-end-line="428" selection-end-column="48" />
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="1026" column="6" selection-start-line="1026" selection-start-column="6" selection-end-line="1026" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -51,8 +44,8 @@
       <file leaf-file-name="personal_loan_compare.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_compare.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.072727">
-              <caret line="55" column="76" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -61,24 +54,34 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.430878">
-              <caret line="374" column="0" selection-start-line="374" selection-start-column="0" selection-end-line="376" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.115385">
+              <caret line="524" column="48" selection-start-line="524" selection-start-column="48" selection-end-line="524" selection-end-column="48" />
               <folding>
-                <marker date="1516110711042" expanded="true" signature="16363:16492" placeholder="..." />
-                <marker date="1516110711042" expanded="true" signature="16394:16482" placeholder="{...}" />
-                <marker date="1516110711042" expanded="true" signature="16432:16474" placeholder="{&quot;show&quot;: true...}" />
-                <marker date="1516110711042" expanded="true" signature="18149:18255" placeholder="..." />
+                <marker date="1516204033143" expanded="true" signature="16363:16492" placeholder="..." />
+                <marker date="1516204033143" expanded="true" signature="16394:16482" placeholder="{...}" />
+                <marker date="1516204033143" expanded="true" signature="16432:16474" placeholder="{&quot;show&quot;: true...}" />
+                <marker date="1516204033143" expanded="true" signature="18149:18255" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="compare_email_template.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/compare_email_template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.016781837">
+              <caret line="170" column="41" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,7 +89,7 @@
       <file leaf-file-name="header_home_loan.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header_home_loan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="24.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -96,7 +99,7 @@
       <file leaf-file-name="home_loan_compare.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_compare.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.423077">
+            <state vertical-scroll-proportion="0.0">
               <caret line="218" column="18" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
               <folding />
             </state>
@@ -106,7 +109,7 @@
       <file leaf-file-name="Personal_loan.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Personal_loan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693">
+            <state vertical-scroll-proportion="0.0">
               <caret line="500" column="74" selection-start-line="500" selection-start-column="74" selection-end-line="500" selection-end-column="74" />
               <folding>
                 <marker date="1516110375035" expanded="true" signature="28098:38069" placeholder="..." />
@@ -158,7 +161,7 @@
       <file leaf-file-name="personal_loan_details.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_details.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.301887">
+            <state vertical-scroll-proportion="0.0">
               <caret line="29" column="22" selection-start-line="28" selection-start-column="4" selection-end-line="29" selection-end-column="22" />
               <folding />
             </state>
@@ -168,18 +171,8 @@
       <file leaf-file-name="personal_loan.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.113208">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1125" column="0" selection-start-line="1125" selection-start-column="0" selection-end-line="1125" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.115385">
-              <caret line="67" column="12" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -196,7 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/home_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/controllers/personal_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/controllers/millionaire_landing.php" />
         <option value="$PROJECT_DIR$/application/controllers/auto_loan_landing.php" />
@@ -242,10 +234,11 @@
         <option value="$PROJECT_DIR$/application/controllers/Debit_card.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/personal_loan_details.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/application/controllers/En.php" />
         <option value="$PROJECT_DIR$/application/controllers/Personal_loan.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/block/footer.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/personal_loan.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/compare_email_template.php" />
+        <option value="$PROJECT_DIR$/application/controllers/En.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/block/footer.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/personal_loan_compare.php" />
       </list>
     </option>
@@ -388,6 +381,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="block" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -712,14 +723,20 @@
       <option name="project" value="LOCAL" />
       <updated>1515939690278</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Update url re-write of personal loan">
+      <created>1516114198023</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1516114198023</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2196162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21927084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.76044565" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -801,7 +818,8 @@
     <MESSAGE value="Loan &amp; Investment landing page content update&#10;style.css page some css change &amp; added" />
     <MESSAGE value="bank details page update&#10;css page update" />
     <MESSAGE value="bank details landing page &amp; css page update" />
-    <option name="LAST_COMMIT_MESSAGE" value="bank details landing page &amp; css page update" />
+    <MESSAGE value="Update url re-write of personal loan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update url re-write of personal loan" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -810,13 +828,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/card.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Backdoor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1073,51 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="465" column="17" selection-start-line="458" selection-start-column="16" selection-end-line="465" selection-end-column="17" />
-          <folding>
-            <marker date="1515076157581" expanded="true" signature="38587:49855" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="38662:49829" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="38721:39257" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="39316:41464" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="39365:41430" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="39436:39745" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="39500:39703" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="39816:40164" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="39880:40122" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="39993:40116" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="40235:40526" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="40299:40484" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="40597:41003" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="40661:40961" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="41044:41390" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="41542:42526" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="42602:49551" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="42655:49516" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="42709:49478" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="42846:44318" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="44442:49432" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="44558:45319" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="44649:45269" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="44741:45211" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="45013:45153" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="45430:46185" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="45517:46135" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="45605:46077" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="45871:46019" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="46294:46994" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="46381:46944" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="46469:46886" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="46738:46827" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="47106:47761" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="47190:47711" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="47429:47657" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="47878:48577" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="47964:48527" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="48052:48470" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="48322:48411" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="48692:49138" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="48943:49088" placeholder="..." />
-            <marker date="1515076157581" expanded="true" signature="49636:49799" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1125,53 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.5">
           <caret line="869" column="0" selection-start-line="854" selection-start-column="0" selection-end-line="869" selection-end-column="0" />
-          <folding>
-            <element signature="n#ajax_debit_card_info#0;n#Debit_card#0;n#!!top" expanded="false" />
-            <marker date="1516106721227" expanded="true" signature="31641:37868" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="31694:34457" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="31733:32636" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="31994:32161" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="32676:34444" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="32702:33271" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="32743:32928" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="32778:32912" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="32969:33256" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="33025:33240" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="33298:34430" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="33354:33517" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="33389:33501" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="33573:33727" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="33608:33711" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="33783:33981" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="33818:33965" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="34037:34197" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="34072:34181" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="34242:34415" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="34277:34399" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="34547:37815" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="34603:37802" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="34630:37788" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="34707:35606" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="35670:37769" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="35752:36087" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="35787:36070" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="35828:36034" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="35962:36015" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="36165:36514" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="36200:36497" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="36241:36461" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="36381:36442" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="36599:36880" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="36639:36863" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="36773:36827" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="36963:37261" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="37003:37244" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="37145:37208" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="37335:37606" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="37375:37589" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="37504:37553" placeholder="..." />
-            <marker date="1516106721227" expanded="true" signature="37683:37753" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1179,7 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.723512">
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,7 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-33.53846">
           <caret line="1003" column="7" selection-start-line="987" selection-start-column="4" selection-end-line="1003" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1195,21 +1112,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.115385">
           <caret line="67" column="12" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.0">
-          <caret line="428" column="48" selection-start-line="428" selection-start-column="48" selection-end-line="428" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Personal_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
+        <state vertical-scroll-proportion="0.0">
           <caret line="500" column="74" selection-start-line="500" selection-start-column="74" selection-end-line="500" selection-end-column="74" />
           <folding>
             <marker date="1516110375035" expanded="true" signature="28098:38069" placeholder="..." />
@@ -1259,8 +1167,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header_home_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="24.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="218" column="18" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1125" column="0" selection-start-line="1125" selection-start-column="0" selection-end-line="1125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="22" selection-start-line="28" selection-start-column="4" selection-end-line="29" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1273,48 +1205,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_compare.php">
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.423077">
-          <caret line="218" column="18" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="-14.115385">
+          <caret line="524" column="48" selection-start-line="524" selection-start-column="48" selection-end-line="524" selection-end-column="48" />
+          <folding>
+            <marker date="1516204033143" expanded="true" signature="16363:16492" placeholder="..." />
+            <marker date="1516204033143" expanded="true" signature="16394:16482" placeholder="{...}" />
+            <marker date="1516204033143" expanded="true" signature="16432:16474" placeholder="{&quot;show&quot;: true...}" />
+            <marker date="1516204033143" expanded="true" signature="18149:18255" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.113208">
-          <caret line="1125" column="0" selection-start-line="1125" selection-start-column="0" selection-end-line="1125" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.301887">
-          <caret line="29" column="22" selection-start-line="28" selection-start-column="4" selection-end-line="29" selection-end-column="22" />
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="1026" column="6" selection-start-line="1026" selection-start-column="6" selection-end-line="1026" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_compare.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.072727">
-          <caret line="55" column="76" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/compare_email_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.430878">
-          <caret line="374" column="0" selection-start-line="374" selection-start-column="0" selection-end-line="376" selection-end-column="0" />
-          <folding>
-            <marker date="1516110711042" expanded="true" signature="16363:16492" placeholder="..." />
-            <marker date="1516110711042" expanded="true" signature="16394:16482" placeholder="{...}" />
-            <marker date="1516110711042" expanded="true" signature="16432:16474" placeholder="{&quot;show&quot;: true...}" />
-            <marker date="1516110711042" expanded="true" signature="18149:18255" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.016781837">
+          <caret line="170" column="41" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>

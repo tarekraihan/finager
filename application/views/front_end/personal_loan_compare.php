@@ -243,7 +243,10 @@ if($second_personal_loan->is_non_bank == 1){
 			</div>
 		</div>
 	</section>
-
+<?php
+	$url = $this->uri->segment_array();
+	$table_name = 'personal_loan_info';
+?>
 <script type="text/javascript">
 //for left bar query
 $(document).ready(function () {
