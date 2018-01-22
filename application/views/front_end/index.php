@@ -117,7 +117,7 @@ font-size: 22px;
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
                         <a href="<?php echo base_url(); ?>credit-cards.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/credit card.png" alt="Credit Card"/>
+                            <img class="svg" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/creditcard.png" alt="Credit Card"/>
                             <p>Credit Card</p>
                         </a>
                     </div>
