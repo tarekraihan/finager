@@ -851,32 +851,20 @@
         });
 
         $('#go_compare').click(function(){
-            //alert(1);
-            var  formData = $('.cart_anchor').children('img').data();
-            var fdr_id1 = "fdr_id1="+formData.fdr_id;
-            var principal_amount = "&fdr_deposit_amount=" + $('#principle_amount').val();
-
-            var  formData = $('.cart_anchor01').children('img').data();
-            var fdr_id2 = "&fdr_id2="+formData.fdr_id;
-
-            var fdr_ids = fdr_id1+fdr_id2+principal_amount;
-            if(fdr_id1 != '' && fdr_id2 != ''){
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "<?php echo base_url();?>fdr/ajax_go_compare_page",
-                    data: fdr_ids,
-                    success: function(msg)
-                    {
-                        if(msg != 'error'){
-
-                            window.location.href = "<?php echo base_url();?>en/fdr_compare";
-                        }
-                    }
-                });
-            }else{
-                alert("Please add 2 Deposit for compare ! ")
+            if( ! $('.cart_anchor01').children('img').data()){
+                $("#comparison_min_two_alert").modal('show');
             }
+            var  formData = $('.cart_anchor').children('img').data();
+            var fdr_url1 = formData.fdr_url;
+            var  formData = $('.cart_anchor01').children('img').data();
+            var fdr_url2 = formData.fdr_url;
+            var fdr_urls = fdr_url1+'-vs-'+fdr_url2;
+            if(fdr_url1 != '' && fdr_url2 != ''){
+                window.location.href = "<?php echo base_url();?>compare-fdrs/"+fdr_urls+".html";
+            }else{
+                $('#comparison_min_two_alert').modal('show');
+            }
+
 
 
         });

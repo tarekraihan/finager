@@ -1,11 +1,11 @@
 <?php
 //		print_r($this->session->userdata());
-$id = $this->session->userdata('first_fdr') ;
+$id = $fdr1['id'] ;
 $amount = ($this->session->userdata('fdr_deposit_amount')) ? $this->session->userdata('fdr_deposit_amount') : 5000;
 $result = $this->Front_end_select_model->select_fdr_details($id);
 $first_fdr = $result->row();
 
-$id1 = $this->session->userdata('second_fdr') ;
+$id1 = $fdr2['id'] ;
 $result1 = $this->Front_end_select_model->select_fdr_details($id1);
 $second_fdr = $result1->row();
 
@@ -53,9 +53,9 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/fdr_details/<?php echo $first_fdr->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
+						<td><p><a href="<?php echo base_url();?>compare-fdrs/<?php echo $first_fdr->slug?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a></p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><a href="<?php echo base_url();?>en/fdr_details/<?php echo $second_fdr->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
+						<td><a href="<?php echo base_url();?>compare-fdrs/<?php echo $second_fdr->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a></td>
 					</tr>			
 				</table>
 			</div>
@@ -226,19 +226,19 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

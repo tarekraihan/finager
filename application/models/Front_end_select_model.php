@@ -221,7 +221,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_fdr_image($id){
-        $sql="SELECT fdr_info.id,fdr_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `fdr_info`  LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id  WHERE fdr_info.id=$id";
+        $sql="SELECT fdr_info.id,fdr_info.slug,fdr_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `fdr_info`  LEFT JOIN card_bank on card_bank.id=fdr_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = fdr_info.non_bank_id  WHERE fdr_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }

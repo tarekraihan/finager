@@ -308,7 +308,7 @@
 				data: data,
 				cache: false,
 				success: function(response){
-					window.location.href = "<?php echo base_url();?>en/all_fdr";
+					window.location.href = "<?php echo base_url();?>compare-fdrs.html";
 				}
 			});
 		}

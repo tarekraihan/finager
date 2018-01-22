@@ -711,8 +711,6 @@ class Fdr extends CI_Controller {
         $fdr = '';
         foreach($fdr_deposit->result() as $row) {
 
-//            print_r($row);
-
             $bank = "";
             if ($row->is_non_bank == 1) {
                 $bank = $row->non_bank_name;
@@ -734,17 +732,21 @@ class Fdr extends CI_Controller {
             $payment = ($principal_amount * pow(1 + $interest /$no_of_times,($no_of_times*($tenure/12))));
             $loan_facility = (!empty($row->loan_facility)) ? $row->loan_facility.'%' : 'N/A';
 
+           /*$url = $bank.' '.$row->i_am.' '.$row->tenure.'-fdr';
+            $slug = str_replace("/"," ",$url);
+            $slug = url_title($slug,'dash',TRUE);
 
-//            $emi = round( ( $principal_amount * $monthly_interest ) * pow( ( 1 + $monthly_interest ) , $month_limit ) ) / ( pow( ( 1 + $monthly_interest ) , $month_limit ) - 1 );
-
-//            $total_payable = round( $emi * $month_limit );
-
-
+            $this->Common_model->data = array(
+                'slug' => $slug
+            );
+            $this->Common_model->where = array('id' => $row->id);
+            $this->Common_model->table_name = 'fdr_info';
+            $this->Common_model->update();*/
 
             $fdr .= '<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
 							<div class="col-sm-2 col-xs-2">
-								<a href="'. base_url() .'en/fdr_details/'.$row->id.'"><img title="'.$bank.'" class="img-responsive fdr_bank_logo" src="'. base_url() .'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<a href="'. base_url() .'compare-fdrs/'.$row->slug.'.html"><img title="'.$bank.'" class="img-responsive fdr_bank_logo" src="'. base_url() .'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -906,12 +908,13 @@ class Fdr extends CI_Controller {
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-fdr_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'"  data-fdr_url='.$row->slug.' data-fdr_id='.$row->id.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;
 
     }
+
 
     public function ajax_go_compare_page(){
         $id1 = $this->input->post('fdr_id1');
