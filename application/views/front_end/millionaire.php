@@ -1143,7 +1143,6 @@ $(document).ready(function() {
 
             var  formData = $(this).data();
             var millionaire_id = "millionaire_id="+formData.millionaire_id;
-
             setTimeout(function(){
                 $.ajax
                 ({
@@ -1200,8 +1199,6 @@ $(document).ready(function() {
 
             var  formData = $(this).data();
             var millionaire_id = "millionaire_id="+formData.millionaire_id;
-            //alert(home_id);
-
             setTimeout(function(){
                 $.ajax
                 ({
@@ -1258,32 +1255,18 @@ $(document).ready(function() {
     });
 
     $('#go_compare').click(function(){
-        //alert(1);
-        var  formData = $('.cart_anchor').children('img').data();
-        var millionaire_id1 = "millionaire_id1="+formData.millionaire_id;
-
-        var  formData = $('.cart_anchor01').children('img').data();
-        var millionaire_id2 = "&millionaire_id2="+formData.millionaire_id;
-
-        var millionaire_ids = millionaire_id1+millionaire_id2;
-        if( millionaire_id1 != '' && millionaire_id2 != '' ){
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>millionaire/ajax_go_compare_page",
-                data: millionaire_ids,
-                success: function(msg)
-                {
-                    if(msg != 'error'){
-
-                        window.location.href = "<?php echo base_url();?>en/millionaire_compare";
-                    }
-                }
-            });
-        }else{
-            alert("Please add 2 card for compare ! ")
+        if( ! $('.cart_anchor01').children('img').data()){
+            $("#comparison_min_two_alert").modal('show');
         }
-
-
+        var  formData = $('.cart_anchor').children('img').data();
+        var millionaire_url1 = formData.millionaire_url;
+        var  formData = $('.cart_anchor01').children('img').data();
+        var millionaire_url2 = formData.millionaire_url;
+        var millionaire_urls = millionaire_url1+'-vs-'+millionaire_url2;
+        if(millionaire_url1 != '' && millionaire_url2 != ''){
+            window.location.href = "<?php echo base_url();?>compare-millionaires/"+millionaire_urls+".html";
+        }else{
+            $('#comparison_min_two_alert').modal('show');
+        }
     });
 </script>

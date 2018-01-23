@@ -3,7 +3,7 @@
 		<div class="millionier_header_text">
                         <h3>Lakhpoti & Millionaire Scheme</h3>
 			<p>Millionaire  comparison made easy</p>
-                        <a href="<?php echo base_url(); ?>en/all_millionaire"><span class="millionier_landing_button flash-button">Start Comparing</span></a>
+                        <a  href="javascript:void(0);" class="start_compare"><span class="millionier_landing_button flash-button">Start Comparing</span></a>
 		</div>
 
        <div class="container">
@@ -320,7 +320,7 @@
 				data: data,
 				cache: false,
 				success: function(response){
-					window.location.href = "<?php echo base_url();?>en/all_millionaire";
+					window.location.href = "<?php echo base_url();?>compare-millionaires.html";
 				}
 			});
 		}

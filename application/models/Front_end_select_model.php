@@ -168,7 +168,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_millionaire_image($id){
-        $sql="SELECT millionaire_info.id,millionaire_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `millionaire_info`  LEFT JOIN card_bank on card_bank.id=millionaire_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id  WHERE millionaire_info.id=$id";
+        $sql="SELECT millionaire_info.id,millionaire_info.slug,millionaire_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo   FROM `millionaire_info`  LEFT JOIN card_bank on card_bank.id=millionaire_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = millionaire_info.non_bank_id  WHERE millionaire_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }

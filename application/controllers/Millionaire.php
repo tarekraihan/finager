@@ -742,7 +742,7 @@ class Millionaire extends CI_Controller
         $million = '';
         if($millionaire->num_rows() > 0){
             foreach($millionaire->result() as $row){
-            //print_r($row);die;
+//            print_r($row);die;
             $bank = "";
             if($row->is_non_bank == 1){
                 $bank = $row->non_bank_name;
@@ -756,6 +756,21 @@ class Millionaire extends CI_Controller
                 $bank_logo = $row->bank_logo;
             }
 
+            $year = 'year';
+            if($row->tenure > 1){
+                $year = 'years';
+            }
+
+            $url = $bank.' '.$row->i_am.' '.$row->tenure.' '.$year.'-millionaire-scheme';
+            $slug = str_replace("/"," ",$url);
+            $slug = url_title($slug,'dash',TRUE);
+
+            $this->Common_model->data = array(
+                'slug' => $slug
+            );
+            $this->Common_model->where = array('id' => $row->id);
+            $this->Common_model->table_name = 'millionaire_info';
+            $this->Common_model->update();
 
             $initial_deposit  = ($row->initial_deposit) ? 'BDT '.$row->initial_deposit : 'N/A';
 
@@ -763,7 +778,7 @@ class Millionaire extends CI_Controller
 					<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
 							<div class="col-sm-2 col-xs-2">
-								<a href="'.base_url().'en/millionaire_details/'.$row->id.'"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<a href="'.base_url().'compare-millionaires/'.$row->slug.'.html"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -966,7 +981,7 @@ class Millionaire extends CI_Controller
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-millionaire_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'"  data-millionaire_url='.$row->slug.' data-millionaire_id='.$row->id.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;

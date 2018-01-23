@@ -734,7 +734,7 @@ class En extends CI_Controller {
             redirect(base_url().'en/login.html');
         }
     }
-
+/*
 
     public function millionaire_details(){
         if($this->session->userdata('lovemebaby')){
@@ -748,17 +748,37 @@ class En extends CI_Controller {
         }else{
             redirect(base_url().'en/login.html');
         }
-    }
+    }*/
 
-    public function millionaire_compare(){
+    public function millionaire_compare($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('millionaire_compare', 'millionaire_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/millionaire_compare');
-            $this->load->view('front_end/block/footer');
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('millionaire_info',array('slug'=>$compare[0]));
+                $data['millionaire1'] = $query1->row_array();
+                $query2 = $this->db->get_where('millionaire_info',array('slug'=>$compare[1]));
+                $data['millionaire2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('millionaire_compare', 'millionaire_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/millionaire_compare');
+                $this->load->view('front_end/block/footer');
+
+            }else{
+                $query = $this->db->get_where('millionaire_info',array('slug'=>$url));
+                $data['millionaire_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('millionaire_details', 'millionaire_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/millionaire_details');
+                $this->load->view('front_end/block/footer');
+            }
+
+
         }else{
             redirect(base_url().'en/login.html');
         }

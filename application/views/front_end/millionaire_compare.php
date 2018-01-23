@@ -1,17 +1,12 @@
 <?php
-//		print_r($this->session->userdata());
-$id = $this->session->userdata('first_millionaire_id') ;
+$id = $millionaire1['id'] ;
 $result = $this->Front_end_select_model->select_millionaire_info_details($id);
 $first_millionaire = $result->row();
 
-$id1 = $this->session->userdata('second_millionaire_id') ;
+$id1 = $millionaire2['id'] ;
 $result1 = $this->Front_end_select_model->select_millionaire_info_details($id1);
 $second_millionaire = $result1->row();
 
-//	print_r($second_millionaire);die;
-
-//	echo $first_home_loan->loan_short_description;
-//$first_interest =($first_home_loan->is_fixed =='0')? $first_home_loan->interest_rate_average.' % (Avg)' : $first_home_loan->interest_rate_fixed.' % (Fixed)';
 $first_bank_name = "";
 $first_bank_logo = "";
 if($first_millionaire->is_non_bank == 1){
@@ -22,7 +17,6 @@ if($first_millionaire->is_non_bank == 1){
     $first_bank_logo = $first_millionaire->bank_logo;
 }
 
-//$second_interest =($second_home_loan->is_fixed =='0')? $second_home_loan->interest_rate_average.' % (Avg)' : $second_home_loan->interest_rate_fixed.' % (Fixed)';
 $second_bank_name = "";
 $second_bank_logo = "";
 if($second_millionaire->is_non_bank == 1){
@@ -277,19 +271,18 @@ if($second_millionaire->is_non_bank == 1){
 					</div>
 				</div>
 			</div>
-			
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -309,7 +302,6 @@ $(document).ready(function() {
 $(document).ready(function () {
 	
 	$('[data-toggle="toggle"]').change(function(){
-		;
 		$(this).parents().next('.hide').toggle();
 	});
 
