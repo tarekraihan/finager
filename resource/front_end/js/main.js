@@ -1,1 +1,117 @@
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('1p(7).11(2(){8($(\'.j-G-6\').9>0){3 v=$(\'.j-G-6\');v.13(2(){3 p=$(u),B=p.1n(\'.j-6-w\');B.g(\'d\',2(5){5.1o();p.y(\'6-h-J\')})});$(7).g(\'d\',2(5){(!$(5.c).h(\'.j-6-w\')&&!$(5.c).h(\'.j-6-w t\'))&&v.A(\'6-h-J\')})}});$(\'#E-I\').I({1g:1f});7.1e(\'1d\',2(5){3 n=["1c z..."];2 q(b,i,o){8(i<(b.9)){$(".x").1b(b.1a(0,i+1)+\'<t 19-18="17"></t>\');r(2(){q(b,i+1,o)},15)}14 8(F o==\'2\'){r(o,12)}}2 m(i){8(F n[i]==\'10\'){r(2(){m(0)},Y)}8(i<n.9){q(n[i],0,2(){m(i+1)})}}m(0)});T.S=2(){3 l=7.R(\'x\');z(3 i=0;i<l.9;i++){3 K=l[i].C(\'M-O\');3 L=l[i].C(\'M-L\');8(K){}}3 f=7.1h("16");f.O="b/f";f.Z=".x > .W { V-U: 0.Q P #1m}";7.H.1l(f)};$(\'.4.k-4 a\').g(\'d\',2(5){$(u).1i().y("s")});$(\'H\').g(\'d\',2(e){8(!$(\'.4.k-4\').h(e.c)&&$(\'N.4.k-4\').D(e.c).9===0&&$(\'.s\').D(e.c).9===0){$(\'.4.k-4\').A(\'s\')}});$(7).g(\'d\',\'.E-1j a\',2(){$(u).X(\'N\').1k()});',62,88,'||function|var|dropdown|event|nav|document|if|length||text|target|click||css|on|is||cd|mega|elements|StartTextAnimation|dataText|fnCallback|stretchyNav|typeWriter|setTimeout|open|span|this|stretchyNavs|trigger|typewrite|toggleClass|for|removeClass|stretchyNavTrigger|getAttribute|has|filter|typeof|stretchy|body|carousel|visible|toRotate|period|data|li|type|solid|08em|getElementsByClassName|onload|window|right|border|wrap|parents|1500|innerHTML|undefined|ready|800|each|else|200|style|true|hidden|aria|substring|html|Looking|DOMContentLoaded|addEventListener|false|interval|createElement|parent|option|remove|appendChild|fff|find|preventDefault|jQuery'.split('|'),0,{}))
+jQuery(document).ready(function(){
+	if( $('.cd-stretchy-nav').length > 0 ) {
+		var stretchyNavs = $('.cd-stretchy-nav');
+		
+		stretchyNavs.each(function(){
+			var stretchyNav = $(this),
+				stretchyNavTrigger = stretchyNav.find('.cd-nav-trigger');
+			
+			stretchyNavTrigger.on('click', function(event){
+				event.preventDefault();
+				stretchyNav.toggleClass('nav-is-visible');
+			});
+		});
+
+		$(document).on('click', function(event){
+			( !$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span') ) && stretchyNavs.removeClass('nav-is-visible');
+		});
+	}
+});
+
+
+    $('#filter-carousel').carousel({
+        interval: false
+    });
+
+// searching text effect for homepage search START
+
+    document.addEventListener('DOMContentLoaded', function (event) {
+        // array with texts to type in typewriter
+        var dataText = ["Looking for..."];
+
+        function typeWriter(text, i, fnCallback) {
+
+            if (i < (text.length)) {
+                //document.querySelector(".typewrite").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+                $(".typewrite").html(text.substring(0, i + 1) + '<span aria-hidden="true"></span>');
+
+                // wait for a while and call this function again for next character
+                setTimeout(function () {
+                    typeWriter(text, i + 1, fnCallback)
+                }, 200);
+            }
+            // text finished, call callback if there is a callback function
+            else if (typeof fnCallback == 'function') {
+                // call callback after timeout
+                setTimeout(fnCallback, 800);
+            }
+        }
+
+        // start a typewriter animation for a text in the dataText array
+        function StartTextAnimation(i) {
+            if (typeof dataText[i] == 'undefined') {
+                setTimeout(function () {
+                    StartTextAnimation(0);
+                }, 1500);
+            }
+            // check if dataText[i] exists
+            if (i < dataText.length) {
+                // text exists! start typewriter animation
+                typeWriter(dataText[i], 0, function () {
+                    // after callback (and whole text has been animated), start next text
+                    StartTextAnimation(i + 1);
+                });
+            }
+        }
+
+        // start the text animation
+        StartTextAnimation(0);
+    });
+
+
+window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+            //new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    document.body.appendChild(css);
+};
+// searching text effect for homepage search END
+
+// main page filter var
+$('.dropdown.mega-dropdown a').on('click', function (event) {
+    $(this).parent().toggleClass("open");
+});
+
+$('body').on('click', function (e) {
+    if (!$('.dropdown.mega-dropdown').is(e.target) && $('li.dropdown.mega-dropdown').has(e.target).length === 0 && $('.open').has(e.target).length === 0) {
+        $('.dropdown.mega-dropdown').removeClass('open');
+    }
+});
+
+$(document).on('click','.filter-option a',function(){
+    $(this).parents('li').remove();
+});
+
+//svg animations
+$('.svg').hover(
+    function(){
+        var img = $(this).attr('src');
+        img = img.replace('png', 'svg');
+        $(this).attr('src',img);
+    },
+    function(){
+        var img = $(this).attr('src');
+        img = img.replace('svg','png');
+        $(this).attr('src',img);
+    }
+);
+
