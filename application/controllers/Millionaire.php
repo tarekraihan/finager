@@ -755,22 +755,22 @@ class Millionaire extends CI_Controller
             }else{
                 $bank_logo = $row->bank_logo;
             }
+                /*
+                            $year = 'year';
+                            if($row->tenure > 1){
+                                $year = 'years';
+                            }
 
-            $year = 'year';
-            if($row->tenure > 1){
-                $year = 'years';
-            }
+                            $url = $bank.' '.$row->i_am.' '.$row->tenure.' '.$year.'-millionaire-scheme';
+                            $slug = str_replace("/"," ",$url);
+                            $slug = url_title($slug,'dash',TRUE);
 
-            $url = $bank.' '.$row->i_am.' '.$row->tenure.' '.$year.'-millionaire-scheme';
-            $slug = str_replace("/"," ",$url);
-            $slug = url_title($slug,'dash',TRUE);
-
-            $this->Common_model->data = array(
-                'slug' => $slug
-            );
-            $this->Common_model->where = array('id' => $row->id);
-            $this->Common_model->table_name = 'millionaire_info';
-            $this->Common_model->update();
+                            $this->Common_model->data = array(
+                                'slug' => $slug
+                            );
+                            $this->Common_model->where = array('id' => $row->id);
+                            $this->Common_model->table_name = 'millionaire_info';
+                            $this->Common_model->update();*/
 
             $initial_deposit  = ($row->initial_deposit) ? 'BDT '.$row->initial_deposit : 'N/A';
 
