@@ -90,6 +90,9 @@ font-size: 36px;
 font-family: 'Courgette', cursive;
 font-size: 22px;
 }
+/*svg*/
+.Cicon a {display: block;  }
+
 </style>
 <section id="home_search">
     <div class="header container-fluid">
@@ -117,7 +120,10 @@ font-size: 22px;
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
                         <a href="<?php echo base_url(); ?>credit-cards.html">
-                            <img class="svg" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/creditcard.png" alt="Credit Card"/>
+                            <!--<img class="svg" src="<?php /*echo base_url(); */?>resource/front_end/images/categoryIcon/creditcard.svg" alt="Credit Card"/>-->
+                            <object class="svg" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/creditcard.svg" style="width: 100px; height: 95px;">
+                                Kiwi Logo <!-- fallback image in CSS -->
+                            </object>
                             <p>Credit Card</p>
                         </a>
                     </div>
@@ -125,7 +131,7 @@ font-size: 22px;
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
                         <a href="<?php echo base_url(); ?>debit-cards.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/Debit Card.png" alt="Debit Card"/>
+                            <img class="svg" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/DebitCard.png" alt="Debit Card"/>
                             <p>Debit Card</p>
                         </a>
                     </div>

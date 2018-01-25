@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps" afterPath="$PROJECT_DIR$/application/cache/dps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps_landing" afterPath="$PROJECT_DIR$/application/cache/dps_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr" afterPath="$PROJECT_DIR$/application/cache/fdr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr_details" afterPath="$PROJECT_DIR$/application/cache/fdr_details" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr_landing" afterPath="$PROJECT_DIR$/application/cache/fdr_landing" />
+      <change type="DELETED" beforePath="E:\xampp\htdocs\git\finager\resource\front_end\images\categoryIcon\Debit Card.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/credit_card_landing" afterPath="$PROJECT_DIR$/application/cache/credit_card_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/index.php" afterPath="$PROJECT_DIR$/application/views/front_end/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire" afterPath="$PROJECT_DIR$/application/cache/millionaire" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire_compare" afterPath="$PROJECT_DIR$/application/cache/millionaire_compare" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire_details" afterPath="$PROJECT_DIR$/application/cache/millionaire_details" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire_landing" afterPath="$PROJECT_DIR$/application/cache/millionaire_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/En.php" afterPath="$PROJECT_DIR$/application/controllers/En.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Millionaire.php" afterPath="$PROJECT_DIR$/application/controllers/Millionaire.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Front_end_select_model.php" afterPath="$PROJECT_DIR$/application/models/Front_end_select_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/millionaire.php" afterPath="$PROJECT_DIR$/application/views/front_end/millionaire.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/millionaire_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/millionaire_compare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/millionaire_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/millionaire_details.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/millionaire_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/millionaire_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/js/main.js" afterPath="$PROJECT_DIR$/resource/front_end/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="finager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,227 +23,30 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="finager" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="millionaire_details.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_details.php">
+    <leaf>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1425" max-vertical-offset="4896">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="millionaire_compare.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_compare.php">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resource/front_end/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="85.03846">
-              <caret line="203" column="12" selection-start-line="203" selection-start-column="12" selection-end-line="203" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fdr.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.346153">
-              <caret line="869" column="11" selection-start-line="851" selection-start-column="0" selection-end-line="869" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auto_loan_compare.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_compare.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-75.26923">
-              <caret line="258" column="18" selection-start-line="246" selection-start-column="12" selection-end-line="258" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auto_loan_landing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077">
-              <caret line="19" column="63" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Millionaire.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Millionaire.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49654493">
-              <caret line="772" column="42" selection-start-line="772" selection-start-column="42" selection-end-line="772" selection-end-column="42" />
-              <folding>
-                <marker date="1516719243766" expanded="true" signature="32935:33463" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="32978:33437" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="33080:33349" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="38494:44653" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="38545:41459" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="38584:39122" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="38881:39048" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39164:41446" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39190:40443" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39231:39374" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39266:39358" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39415:39588" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39450:39572" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39629:39782" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39664:39766" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39823:40006" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="39858:39990" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="40047:40218" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="40082:40202" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="40259:40428" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="40294:40412" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="40483:41432" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="41559:44367" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="41612:44354" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="41639:44340" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="41716:42927" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="42991:44321" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="43073:43158" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="43239:43331" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="43409:43491" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="43575:43670" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="43753:43847" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="43939:44037" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="44110:44160" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="44233:44305" placeholder="..." />
-                <marker date="1516719243766" expanded="true" signature="44478:44641" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Front_end_select_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Front_end_select_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.818182">
-              <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-              <folding>
-                <marker date="1516718027474" expanded="true" signature="193:1884" placeholder="SELECT DISTI... card_card_informations" />
-                <marker date="1516718027474" expanded="true" signature="2186:3884" placeholder="SELECT DISTI... card_card_informations" />
-                <marker date="1516718027474" expanded="true" signature="4057:4734" placeholder="SELECT debit... debit_card_info" />
-                <marker date="1516718027474" expanded="true" signature="5035:5719" placeholder="SELECT debit... debit_card_info" />
-                <marker date="1516718027474" expanded="true" signature="5894:6596" placeholder="SELECT debit... debit_card_info" />
-                <marker date="1516718027474" expanded="true" signature="6758:6772" placeholder="SELECT * FRO... ${$table}" />
-                <marker date="1516718027474" expanded="true" signature="6911:8633" placeholder="SELECT DISTI... card_card_informations" />
-                <marker date="1516718027474" expanded="true" signature="8777:9245" placeholder="SELECT home_... home_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="9394:9910" placeholder="SELECT perso... personal_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="10054:10757" placeholder="SELECT milli... millionaire_info" />
-                <marker date="1516718027474" expanded="true" signature="11057:11767" placeholder="SELECT milli... millionaire_info" />
-                <marker date="1516718027474" expanded="true" signature="11919:12648" placeholder="SELECT milli... millionaire_info" />
-                <marker date="1516718027474" expanded="true" signature="12804:13304" placeholder="SELECT money... money_maxi_info" />
-                <marker date="1516718027474" expanded="true" signature="13444:13896" placeholder="SELECT auto_... auto_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="14045:14397" placeholder="SELECT educa... education_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="14534:14605" placeholder="SELECT id,ca... card_card_informations" />
-                <marker date="1516718027474" expanded="true" signature="14746:15071" placeholder="SELECT home_... home_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="15215:15555" placeholder="SELECT milli... millionaire_info" />
-                <marker date="1516718027474" expanded="true" signature="15702:15877" placeholder="SELECT month... monthly_benefit_info" />
-                <marker date="1516718027474" expanded="true" signature="16022:16356" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1516718027474" expanded="true" signature="16490:16758" placeholder="SELECT snd_i... snd_info" />
-                <marker date="1516718027474" expanded="true" signature="16905:17217" placeholder="SELECT money... money_maxi_info" />
-                <marker date="1516718027474" expanded="true" signature="17362:17692" placeholder="SELECT perso... personal_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="17832:18158" placeholder="SELECT auto_... auto_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="18293:18563" placeholder="SELECT dps_i... dps_info" />
-                <marker date="1516718027474" expanded="true" signature="18698:18982" placeholder="SELECT fdr_i... fdr_info" />
-                <marker date="1516718027474" expanded="true" signature="19127:19488" placeholder="SELECT educa... education_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="19638:19792" placeholder="SELECT ${$mo... ${$model_name}" />
-                <marker date="1516718027474" expanded="true" signature="19929:20495" placeholder="SELECT DISTI... home_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="20779:21379" placeholder="SELECT DISTI... home_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="21551:22041" placeholder="SELECT DISTI... education_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="22332:22787" placeholder="SELECT DISTI... education_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="22927:23559" placeholder="SELECT DISTI... auto_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="23816:24414" placeholder="SELECT DISTI... auto_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="24559:25260" placeholder="SELECT DISTI... personal_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="25528:26236" placeholder="SELECT DISTI... personal_loan_info" />
-                <marker date="1516718027474" expanded="true" signature="26409:26518" placeholder="Select ${$fi... dps_maturity_amount" />
-                <marker date="1516718027474" expanded="true" signature="26645:27115" placeholder="SELECT dps_i... dps_info" />
-                <marker date="1516718027474" expanded="true" signature="27279:27303" placeholder="Select id FR... dps_info" />
-                <marker date="1516718027474" expanded="true" signature="27549:27658" placeholder="Select ${$fi... dps_maturity_amount" />
-                <marker date="1516718027474" expanded="true" signature="27952:27983" placeholder="Select id FR... dps_info" />
-                <marker date="1516718027474" expanded="true" signature="28261:28292" placeholder="Select id FR... dps_info" />
-                <marker date="1516718027474" expanded="true" signature="28501:28610" placeholder="Select ${$fi... dps_maturity_amount" />
-                <marker date="1516718027474" expanded="true" signature="28881:29348" placeholder="SELECT DISTI... dps_info" />
-                <marker date="1516718027474" expanded="true" signature="29487:29870" placeholder="SELECT DISTI... fdr_info" />
-                <marker date="1516718027474" expanded="true" signature="30117:30581" placeholder="SELECT DISTI... fdr_info" />
-                <marker date="1516718027474" expanded="true" signature="30721:31192" placeholder="SELECT DISTI... fdr_info" />
-                <marker date="1516718027474" expanded="true" signature="31342:31776" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1516718027474" expanded="true" signature="32046:32488" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1516718027474" expanded="true" signature="32669:33133" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1516718027474" expanded="true" signature="33293:33776" placeholder="SELECT educa... education_loan_info_vs_expenses_considered" />
-                <marker date="1516718027474" expanded="true" signature="33917:34350" placeholder="SELECT curre... current_account_info" />
-                <marker date="1516718027474" expanded="true" signature="34620:35060" placeholder="SELECT curre... current_account_info" />
-                <marker date="1516718027474" expanded="true" signature="35211:35681" placeholder="SELECT curre... current_account_info" />
-                <marker date="1516718027474" expanded="true" signature="35824:36292" placeholder="SELECT money... money_maxi_info" />
-                <marker date="1516718027474" expanded="true" signature="36553:37028" placeholder="SELECT money... money_maxi_info" />
-                <marker date="1516718027474" expanded="true" signature="37174:37535" placeholder="SELECT month... monthly_benefit_info" />
-                <marker date="1516718027474" expanded="true" signature="37671:37995" placeholder="SELECT month... monthly_benefit_info" />
-                <marker date="1516718027474" expanded="true" signature="38263:38594" placeholder="SELECT month... monthly_benefit_info" />
-                <marker date="1516718027474" expanded="true" signature="38741:38813" placeholder="SELECT * FRO... search_index" />
-                <marker date="1516718027474" expanded="true" signature="38945:38998" placeholder="SELECT * FRO... active_website" />
-                <marker date="1516718027474" expanded="true" signature="39134:39227" placeholder="SELECT `id`,... card_bank" />
-                <marker date="1516718027474" expanded="true" signature="39367:39734" placeholder="SELECT snd_i... snd_info" />
-                <marker date="1516718027474" expanded="true" signature="39980:40355" placeholder="SELECT snd_i... snd_info" />
-                <marker date="1516718027474" expanded="true" signature="40519:40913" placeholder="SELECT DISTI... snd_info" />
-                <marker date="1516718027474" expanded="true" signature="41217:41254" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1516718027474" expanded="true" signature="41932:42147" placeholder="SELECT home_... " />
-                <marker date="1516718027474" expanded="true" signature="42838:43085" placeholder="SELECT perso... " />
-                <marker date="1516718027474" expanded="true" signature="43756:43926" placeholder="SELECT auto_... " />
-                <marker date="1516718027474" expanded="true" signature="44623:44935" placeholder="SELECT educa... " />
-                <marker date="1516718027474" expanded="true" signature="45577:45717" placeholder="SELECT fdr_i... " />
-                <marker date="1516718027474" expanded="true" signature="46366:46504" placeholder="SELECT `dps_... " />
-                <marker date="1516718027474" expanded="true" signature="47215:47557" placeholder="SELECT `mill... " />
-                <marker date="1516718027474" expanded="true" signature="48269:48508" placeholder="SELECT `mone... " />
-                <marker date="1516718027474" expanded="true" signature="49239:49450" placeholder="SELECT `mont... " />
-                <marker date="1516718027474" expanded="true" signature="50163:51860" placeholder="SELECT DISTI... card_card_informations" />
-                <marker date="1516718027474" expanded="true" signature="52069:52752" placeholder="SELECT debit... debit_card_info" />
-                <marker date="1516718027474" expanded="true" signature="52969:53409" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1516718027474" expanded="true" signature="53622:54061" placeholder="SELECT curre... current_account_info" />
-                <marker date="1516718027474" expanded="true" signature="54255:54628" placeholder="SELECT snd_i... snd_info" />
-                <marker date="1516718027474" expanded="true" signature="54825:54907" placeholder="SELECT * FRO... institution_event_history" />
-                <marker date="1516718027474" expanded="true" signature="55099:55184" placeholder="SELECT * FRO... institution_event_history" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="millionaire.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.5">
-              <caret line="1261" column="55" selection-start-line="1261" selection-start-column="55" selection-end-line="1261" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="millionaire_landing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_landing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308">
-              <caret line="5" column="75" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.807692">
-              <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.44790256" vertical-offset="1131" max-vertical-offset="1870">
+              <caret line="86" column="33" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -273,6 +63,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/application/views/front_end/credit_card_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/home_loan_compare.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/debit_card_compare.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/savings_account.php" />
@@ -285,6 +77,7 @@
         <option value="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/home_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/dps_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/millionaire_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/bank_details_landing.php" />
@@ -310,20 +103,17 @@
         <option value="$PROJECT_DIR$/application/views/front_end/education_loan.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/education_loan_details.php" />
         <option value="$PROJECT_DIR$/application/controllers/Education_loan.php" />
+        <option value="$PROJECT_DIR$/application/config/routes.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/fdr_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/fdr_details.php" />
+        <option value="$PROJECT_DIR$/application/controllers/En.php" />
+        <option value="$PROJECT_DIR$/application/models/Front_end_select_model.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/fdr.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/fdr_compare.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/application/controllers/Fdr.php" />
-        <option value="$PROJECT_DIR$/application/controllers/En.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/millionaire_details.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/millionaire_compare.php" />
-        <option value="$PROJECT_DIR$/application/models/Front_end_select_model.php" />
-        <option value="$PROJECT_DIR$/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/millionaire.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/millionaire_landing.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Millionaire.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/resource/front_end/js/main.js" />
+        <option value="$PROJECT_DIR$/application/views/front_end/index.php" />
       </list>
     </option>
   </component>
@@ -334,15 +124,12 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
-  <component name="PhpServers">
-    <servers />
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1176" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -365,10 +152,9 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -397,7 +183,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
+              <option name="myItemId" value="resource" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -411,29 +197,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="resource" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -441,33 +205,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -479,18 +225,18 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
       <method />
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
@@ -505,12 +251,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
-      <scripts />
-      <envs />
-      <method />
-    </configuration>
+    <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -805,62 +546,62 @@
       <option name="project" value="LOCAL" />
       <updated>1516285299116</updated>
     </task>
-    <task id="LOCAL-00048" summary="Url Update for Education Loan">
-      <created>1516631391020</created>
+    <task id="LOCAL-00048" summary="svg animation test">
+      <created>1516636037981</created>
       <option name="number" value="00048" />
       <option name="project" value="LOCAL" />
-      <updated>1516631391020</updated>
+      <updated>1516636037981</updated>
     </task>
     <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21927084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.756705" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.76044565" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.756705" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.76044565" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.76044565" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16645244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.76044565" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.76044565" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16645244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -877,7 +618,9 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="some changes in auto loan, personal loan, education loan, auto loan, fdr, millionaire landing page." />
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
     <MESSAGE value="hide Recent Popular Article section in debit card landing page" />
     <MESSAGE value="Add filter bar in home loan main page." />
     <MESSAGE value="some changes in vertical menu." />
@@ -902,7 +645,8 @@
     <MESSAGE value="Update url re-write of personal loan" />
     <MESSAGE value="Url Update for auto loan" />
     <MESSAGE value="Url Update for Education Loan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Url Update for Education Loan" />
+    <MESSAGE value="svg animation test" />
+    <option name="LAST_COMMIT_MESSAGE" value="svg animation test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -911,562 +655,362 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/bank_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="805" column="74" selection-start-line="805" selection-start-column="74" selection-end-line="805" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/mashmenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.046623792" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/mashmenu-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78838176" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="9065" selection-start-line="0" selection-start-column="9065" selection-end-line="0" selection-end-column="9065" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.01715439" vertical-offset="0" max-vertical-offset="0">
+          <caret line="1515" column="109" selection-start-line="1515" selection-start-column="109" selection-end-line="1515" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5489404">
+        <state vertical-scroll-proportion="-2.5489404" vertical-offset="0" max-vertical-offset="0">
           <caret line="1706" column="23" selection-start-line="1706" selection-start-column="23" selection-end-line="1706" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/admin/js/demo.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/admin/js/app.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/general/add_meta_tag_description.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68989897">
+        <state vertical-scroll-proportion="0.68989897" vertical-offset="0" max-vertical-offset="0">
           <caret line="185" column="42" selection-start-line="185" selection-start-column="42" selection-end-line="185" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/errors/cli/error_exception.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/core/URI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5030303">
+        <state vertical-scroll-proportion="-3.5030303" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Log.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5969697">
+        <state vertical-scroll-proportion="-1.5969697" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/license.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/npm-debug.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9969697">
+        <state vertical-scroll-proportion="-4.9969697" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2363636">
+        <state vertical-scroll-proportion="-1.2363636" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_landing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82828283">
+        <state vertical-scroll-proportion="0.82828283" vertical-offset="0" max-vertical-offset="0">
           <caret line="342" column="91" selection-start-line="342" selection-start-column="91" selection-end-line="342" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Debit_card.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.5">
+        <state vertical-scroll-proportion="-10.5" vertical-offset="0" max-vertical-offset="0">
           <caret line="869" column="0" selection-start-line="854" selection-start-column="0" selection-end-line="869" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.723512">
+        <state vertical-scroll-proportion="-12.723512" vertical-offset="0" max-vertical-offset="0">
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header_home_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/compare_email_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.016781837">
+        <state vertical-scroll-proportion="0.016781837" vertical-offset="0" max-vertical-offset="0">
           <caret line="170" column="41" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36229023">
+        <state vertical-scroll-proportion="0.36229023" vertical-offset="0" max-vertical-offset="0">
           <caret line="524" column="48" selection-start-line="524" selection-start-column="48" selection-end-line="524" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_compare.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1342547">
+        <state vertical-scroll-proportion="0.1342547" vertical-offset="0" max-vertical-offset="0">
           <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Personal_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.016781837">
+        <state vertical-scroll-proportion="0.016781837" vertical-offset="0" max-vertical-offset="0">
           <caret line="500" column="74" selection-start-line="500" selection-start-column="74" selection-end-line="500" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_details.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.016781837">
+        <state vertical-scroll-proportion="0.016781837" vertical-offset="0" max-vertical-offset="0">
           <caret line="29" column="22" selection-start-line="28" selection-start-column="4" selection-end-line="29" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.016781837">
+        <state vertical-scroll-proportion="0.016781837" vertical-offset="0" max-vertical-offset="0">
           <caret line="1125" column="0" selection-start-line="1125" selection-start-column="0" selection-end-line="1125" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-69.69231" vertical-offset="0" max-vertical-offset="0">
+          <caret line="330" column="82" selection-start-line="330" selection-start-column="82" selection-end-line="330" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Home_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.423077">
+        <state vertical-scroll-proportion="-29.423077" vertical-offset="0" max-vertical-offset="0">
           <caret line="998" column="5" selection-start-line="980" selection-start-column="0" selection-end-line="998" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.461538">
+        <state vertical-scroll-proportion="-31.461538" vertical-offset="0" max-vertical-offset="0">
           <caret line="1003" column="7" selection-start-line="987" selection-start-column="4" selection-end-line="1003" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_compare.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.192308">
+        <state vertical-scroll-proportion="-27.192308" vertical-offset="0" max-vertical-offset="0">
           <caret line="218" column="18" selection-start-line="206" selection-start-column="12" selection-end-line="218" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Auto_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="1051" column="0" selection-start-line="1032" selection-start-column="0" selection-end-line="1051" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="834" column="0" selection-start-line="833" selection-start-column="0" selection-end-line="867" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan_details.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Education_loan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.192308">
-          <caret line="866" column="5" selection-start-line="849" selection-start-column="2" selection-end-line="866" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1071" column="11" selection-start-line="1054" selection-start-column="0" selection-end-line="1071" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="310" column="80" selection-start-line="310" selection-start-column="80" selection-end-line="310" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_compare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="241" column="18" selection-start-line="241" selection-start-column="18" selection-end-line="241" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16361886">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Dps.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="682.96155">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1513091090573" expanded="true" signature="90615:98866" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="90660:94520" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="90716:91402" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="91081:91291" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="91461:94493" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="91507:93332" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="91571:91871" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="91632:91832" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="91935:92227" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="91996:92188" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="92291:92593" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="92352:92554" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="92657:92961" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="92718:92922" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="93025:93297" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="93086:93258" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="93392:94462" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="94649:98273" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="94698:98246" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="94748:98215" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="94871:96127" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="96237:98176" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="96347:96519" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="96625:96802" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="96912:97097" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="97213:97382" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="97488:97669" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="97770:97928" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="98033:98137" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="98405:98860" placeholder="..." />
-            <marker date="1513091090573" expanded="true" signature="98453:98779" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.346153">
-          <caret line="770" column="42" selection-start-line="770" selection-start-column="23" selection-end-line="770" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan_compare.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.76923">
-          <caret line="264" column="18" selection-start-line="251" selection-start-column="0" selection-end-line="264" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Fdr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.692308">
-          <caret line="917" column="0" selection-start-line="897" selection-start-column="0" selection-end-line="917" selection-end-column="0" />
-          <folding>
-            <marker date="1516712804011" expanded="true" signature="35927:41047" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="35978:38632" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="36017:36539" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="36298:36465" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="36581:38619" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="36607:37564" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="36648:36814" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="36683:36798" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="36855:36987" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="36890:36971" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="37028:37170" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="37063:37154" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="37211:37369" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="37246:37353" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="37410:37549" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="37445:37533" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="37604:38605" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="38722:40867" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="38778:40854" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="38805:40840" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="38882:39802" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="39866:40821" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="39948:40033" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="40111:40193" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="40277:40372" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="40464:40562" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="40635:40679" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="40756:40805" placeholder="..." />
-            <marker date="1516712804011" expanded="true" signature="40970:41020" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Front_end_select_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.818182">
-          <caret line="175" column="0" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          <folding>
-            <marker date="1516718027474" expanded="true" signature="193:1884" placeholder="SELECT DISTI... card_card_informations" />
-            <marker date="1516718027474" expanded="true" signature="2186:3884" placeholder="SELECT DISTI... card_card_informations" />
-            <marker date="1516718027474" expanded="true" signature="4057:4734" placeholder="SELECT debit... debit_card_info" />
-            <marker date="1516718027474" expanded="true" signature="5035:5719" placeholder="SELECT debit... debit_card_info" />
-            <marker date="1516718027474" expanded="true" signature="5894:6596" placeholder="SELECT debit... debit_card_info" />
-            <marker date="1516718027474" expanded="true" signature="6758:6772" placeholder="SELECT * FRO... ${$table}" />
-            <marker date="1516718027474" expanded="true" signature="6911:8633" placeholder="SELECT DISTI... card_card_informations" />
-            <marker date="1516718027474" expanded="true" signature="8777:9245" placeholder="SELECT home_... home_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="9394:9910" placeholder="SELECT perso... personal_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="10054:10757" placeholder="SELECT milli... millionaire_info" />
-            <marker date="1516718027474" expanded="true" signature="11057:11767" placeholder="SELECT milli... millionaire_info" />
-            <marker date="1516718027474" expanded="true" signature="11919:12648" placeholder="SELECT milli... millionaire_info" />
-            <marker date="1516718027474" expanded="true" signature="12804:13304" placeholder="SELECT money... money_maxi_info" />
-            <marker date="1516718027474" expanded="true" signature="13444:13896" placeholder="SELECT auto_... auto_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="14045:14397" placeholder="SELECT educa... education_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="14534:14605" placeholder="SELECT id,ca... card_card_informations" />
-            <marker date="1516718027474" expanded="true" signature="14746:15071" placeholder="SELECT home_... home_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="15215:15555" placeholder="SELECT milli... millionaire_info" />
-            <marker date="1516718027474" expanded="true" signature="15702:15877" placeholder="SELECT month... monthly_benefit_info" />
-            <marker date="1516718027474" expanded="true" signature="16022:16356" placeholder="SELECT savin... saving_account_info" />
-            <marker date="1516718027474" expanded="true" signature="16490:16758" placeholder="SELECT snd_i... snd_info" />
-            <marker date="1516718027474" expanded="true" signature="16905:17217" placeholder="SELECT money... money_maxi_info" />
-            <marker date="1516718027474" expanded="true" signature="17362:17692" placeholder="SELECT perso... personal_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="17832:18158" placeholder="SELECT auto_... auto_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="18293:18563" placeholder="SELECT dps_i... dps_info" />
-            <marker date="1516718027474" expanded="true" signature="18698:18982" placeholder="SELECT fdr_i... fdr_info" />
-            <marker date="1516718027474" expanded="true" signature="19127:19488" placeholder="SELECT educa... education_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="19638:19792" placeholder="SELECT ${$mo... ${$model_name}" />
-            <marker date="1516718027474" expanded="true" signature="19929:20495" placeholder="SELECT DISTI... home_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="20779:21379" placeholder="SELECT DISTI... home_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="21551:22041" placeholder="SELECT DISTI... education_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="22332:22787" placeholder="SELECT DISTI... education_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="22927:23559" placeholder="SELECT DISTI... auto_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="23816:24414" placeholder="SELECT DISTI... auto_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="24559:25260" placeholder="SELECT DISTI... personal_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="25528:26236" placeholder="SELECT DISTI... personal_loan_info" />
-            <marker date="1516718027474" expanded="true" signature="26409:26518" placeholder="Select ${$fi... dps_maturity_amount" />
-            <marker date="1516718027474" expanded="true" signature="26645:27115" placeholder="SELECT dps_i... dps_info" />
-            <marker date="1516718027474" expanded="true" signature="27279:27303" placeholder="Select id FR... dps_info" />
-            <marker date="1516718027474" expanded="true" signature="27549:27658" placeholder="Select ${$fi... dps_maturity_amount" />
-            <marker date="1516718027474" expanded="true" signature="27952:27983" placeholder="Select id FR... dps_info" />
-            <marker date="1516718027474" expanded="true" signature="28261:28292" placeholder="Select id FR... dps_info" />
-            <marker date="1516718027474" expanded="true" signature="28501:28610" placeholder="Select ${$fi... dps_maturity_amount" />
-            <marker date="1516718027474" expanded="true" signature="28881:29348" placeholder="SELECT DISTI... dps_info" />
-            <marker date="1516718027474" expanded="true" signature="29487:29870" placeholder="SELECT DISTI... fdr_info" />
-            <marker date="1516718027474" expanded="true" signature="30117:30581" placeholder="SELECT DISTI... fdr_info" />
-            <marker date="1516718027474" expanded="true" signature="30721:31192" placeholder="SELECT DISTI... fdr_info" />
-            <marker date="1516718027474" expanded="true" signature="31342:31776" placeholder="SELECT savin... saving_account_info" />
-            <marker date="1516718027474" expanded="true" signature="32046:32488" placeholder="SELECT savin... saving_account_info" />
-            <marker date="1516718027474" expanded="true" signature="32669:33133" placeholder="SELECT savin... saving_account_info" />
-            <marker date="1516718027474" expanded="true" signature="33293:33776" placeholder="SELECT educa... education_loan_info_vs_expenses_considered" />
-            <marker date="1516718027474" expanded="true" signature="33917:34350" placeholder="SELECT curre... current_account_info" />
-            <marker date="1516718027474" expanded="true" signature="34620:35060" placeholder="SELECT curre... current_account_info" />
-            <marker date="1516718027474" expanded="true" signature="35211:35681" placeholder="SELECT curre... current_account_info" />
-            <marker date="1516718027474" expanded="true" signature="35824:36292" placeholder="SELECT money... money_maxi_info" />
-            <marker date="1516718027474" expanded="true" signature="36553:37028" placeholder="SELECT money... money_maxi_info" />
-            <marker date="1516718027474" expanded="true" signature="37174:37535" placeholder="SELECT month... monthly_benefit_info" />
-            <marker date="1516718027474" expanded="true" signature="37671:37995" placeholder="SELECT month... monthly_benefit_info" />
-            <marker date="1516718027474" expanded="true" signature="38263:38594" placeholder="SELECT month... monthly_benefit_info" />
-            <marker date="1516718027474" expanded="true" signature="38741:38813" placeholder="SELECT * FRO... search_index" />
-            <marker date="1516718027474" expanded="true" signature="38945:38998" placeholder="SELECT * FRO... active_website" />
-            <marker date="1516718027474" expanded="true" signature="39134:39227" placeholder="SELECT `id`,... card_bank" />
-            <marker date="1516718027474" expanded="true" signature="39367:39734" placeholder="SELECT snd_i... snd_info" />
-            <marker date="1516718027474" expanded="true" signature="39980:40355" placeholder="SELECT snd_i... snd_info" />
-            <marker date="1516718027474" expanded="true" signature="40519:40913" placeholder="SELECT DISTI... snd_info" />
-            <marker date="1516718027474" expanded="true" signature="41217:41254" placeholder="SELECT * FRO... ${$table_name}" />
-            <marker date="1516718027474" expanded="true" signature="41932:42147" placeholder="SELECT home_... " />
-            <marker date="1516718027474" expanded="true" signature="42838:43085" placeholder="SELECT perso... " />
-            <marker date="1516718027474" expanded="true" signature="43756:43926" placeholder="SELECT auto_... " />
-            <marker date="1516718027474" expanded="true" signature="44623:44935" placeholder="SELECT educa... " />
-            <marker date="1516718027474" expanded="true" signature="45577:45717" placeholder="SELECT fdr_i... " />
-            <marker date="1516718027474" expanded="true" signature="46366:46504" placeholder="SELECT `dps_... " />
-            <marker date="1516718027474" expanded="true" signature="47215:47557" placeholder="SELECT `mill... " />
-            <marker date="1516718027474" expanded="true" signature="48269:48508" placeholder="SELECT `mone... " />
-            <marker date="1516718027474" expanded="true" signature="49239:49450" placeholder="SELECT `mont... " />
-            <marker date="1516718027474" expanded="true" signature="50163:51860" placeholder="SELECT DISTI... card_card_informations" />
-            <marker date="1516718027474" expanded="true" signature="52069:52752" placeholder="SELECT debit... debit_card_info" />
-            <marker date="1516718027474" expanded="true" signature="52969:53409" placeholder="SELECT savin... saving_account_info" />
-            <marker date="1516718027474" expanded="true" signature="53622:54061" placeholder="SELECT curre... current_account_info" />
-            <marker date="1516718027474" expanded="true" signature="54255:54628" placeholder="SELECT snd_i... snd_info" />
-            <marker date="1516718027474" expanded="true" signature="54825:54907" placeholder="SELECT * FRO... institution_event_history" />
-            <marker date="1516718027474" expanded="true" signature="55099:55184" placeholder="SELECT * FRO... institution_event_history" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_compare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="85.03846">
-          <caret line="203" column="12" selection-start-line="203" selection-start-column="12" selection-end-line="203" selection-end-column="12" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.807692">
-          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-          <folding />
+        <state vertical-scroll-proportion="-25.576923" vertical-offset="0" max-vertical-offset="0">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire.php">
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_details.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.5">
-          <caret line="1261" column="55" selection-start-line="1261" selection-start-column="55" selection-end-line="1261" selection-end-column="55" />
-          <folding />
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="0">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Education_loan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-30.192308" vertical-offset="0" max-vertical-offset="0">
+          <caret line="866" column="5" selection-start-line="849" selection-start-column="2" selection-end-line="866" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Front_end_select_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3791" max-vertical-offset="13141">
+          <caret line="223" column="46" selection-start-line="223" selection-start-column="46" selection-end-line="223" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18207" max-vertical-offset="19448">
+          <caret line="1071" column="11" selection-start-line="1054" selection-start-column="0" selection-end-line="1071" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.346153">
-          <caret line="869" column="11" selection-start-line="851" selection-start-column="0" selection-end-line="869" selection-end-column="11" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="14824" max-vertical-offset="16303">
+          <caret line="872" column="47" selection-start-line="872" selection-start-column="47" selection-end-line="872" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5270" max-vertical-offset="5440">
+          <caret line="310" column="80" selection-start-line="310" selection-start-column="80" selection-end-line="310" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_compare.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-75.26923">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4386" max-vertical-offset="5984">
           <caret line="258" column="18" selection-start-line="246" selection-start-column="12" selection-end-line="258" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="4556">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4097" max-vertical-offset="6205">
+          <caret line="241" column="18" selection-start-line="241" selection-start-column="18" selection-end-line="241" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2300406" vertical-offset="0" max-vertical-offset="739">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Fdr.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="12631" max-vertical-offset="17986">
+          <caret line="743" column="44" selection-start-line="734" selection-start-column="11" selection-end-line="743" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="10472" max-vertical-offset="20400">
+          <caret line="616" column="59" selection-start-line="616" selection-start-column="59" selection-end-line="616" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/js/unminify/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3247633" vertical-offset="2457" max-vertical-offset="3196">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1425" max-vertical-offset="4896">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php">
+    <entry file="file://$PROJECT_DIR$/resource/front_end/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077">
-          <caret line="19" column="63" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.44790256" vertical-offset="1131" max-vertical-offset="1870">
+          <caret line="86" column="33" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="5" column="75" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Millionaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49654493">
-          <caret line="772" column="42" selection-start-line="772" selection-start-column="42" selection-end-line="772" selection-end-column="42" />
-          <folding>
-            <marker date="1516719243766" expanded="true" signature="32935:33463" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="32978:33437" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="33080:33349" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="38494:44653" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="38545:41459" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="38584:39122" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="38881:39048" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39164:41446" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39190:40443" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39231:39374" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39266:39358" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39415:39588" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39450:39572" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39629:39782" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39664:39766" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39823:40006" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="39858:39990" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="40047:40218" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="40082:40202" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="40259:40428" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="40294:40412" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="40483:41432" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="41559:44367" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="41612:44354" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="41639:44340" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="41716:42927" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="42991:44321" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="43073:43158" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="43239:43331" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="43409:43491" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="43575:43670" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="43753:43847" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="43939:44037" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="44110:44160" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="44233:44305" placeholder="..." />
-            <marker date="1516719243766" expanded="true" signature="44478:44641" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>

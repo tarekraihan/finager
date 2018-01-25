@@ -101,17 +101,4 @@ $(document).on('click','.filter-option a',function(){
     $(this).parents('li').remove();
 });
 
-//svg animations
-$('.svg').hover(
-    function(){
-        var img = $(this).attr('src');
-        img = img.replace('png', 'svg');
-        $(this).attr('src',img);
-    },
-    function(){
-        var img = $(this).attr('src');
-        img = img.replace('svg','png');
-        $(this).attr('src',img);
-    }
-);
 
