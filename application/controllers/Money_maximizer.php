@@ -292,7 +292,9 @@ class Money_maximizer extends CI_Controller {
 
         if($money_maximizer->num_rows() > 0){
             foreach($money_maximizer->result() as $row){
-                //print_r($row);die;
+//                print_r($row);die;
+
+
                 $bank = "";
                 if($row->is_non_bank == 1){
                     $bank = $row->non_bank_name;
@@ -305,6 +307,24 @@ class Money_maximizer extends CI_Controller {
                 }else{
                     $bank_logo = $row->bank_logo;
                 }
+/*
+                $year = 'time';
+                if($row->your_benefit > 1){
+                    $year = 'times';
+                }
+
+                $url = $bank.' '.$row->your_benefit.' '.$year.'-benefit';
+                $slug = str_replace("/"," ",$url);
+                $slug = url_title($slug,'dash',TRUE);
+
+                $this->Common_model->data = array(
+                    'slug' => $slug
+                );
+
+                $this->Common_model->where = array('id' => $row->id);
+                $this->Common_model->table_name = 'money_maxi_info';
+                $this->Common_model->update();*/
+
 
                 $credit_facility = ($row->credit_facility != 'N/A') ? $row->credit_facility.' %' :'N/A';
                 $benefit_amount  = $maximizer_amount * $row->your_benefit;
@@ -313,7 +333,7 @@ class Money_maximizer extends CI_Controller {
 					<div class="full-card">
 						<div class="row fdr_right_bar no-margin-lr">
 							<div class="col-sm-2 col-xs-2">
-								<a href="'.base_url().'en/money_maximizer_details/'.$row->id.'"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+								<a href="'.base_url().'compare-money-maximizer/'.$row->slug.'.html"><img title="click here to details" class="img-responsive selected_card" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
 								<p class="text-center">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>

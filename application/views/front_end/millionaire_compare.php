@@ -55,11 +55,11 @@ if($second_millionaire->is_non_bank == 1){
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/millionaire_details/<?php echo $first_millionaire->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
+						<td><p><a href="<?php echo base_url();?>compare-millionaires/<?php echo $first_millionaire->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							
 						</td>
-						<td><a href="<?php echo base_url();?>en/millionaire_details/<?php echo $second_millionaire->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
+						<td><a href="<?php echo base_url();?>compare-millionaires/<?php echo $second_millionaire->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
 					</tr>			
 				</table>
 			</div>
