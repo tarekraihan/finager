@@ -212,20 +212,20 @@ if($second_maximizer->is_non_bank == 1){
 					</div>
 				</div>
 			</div>
-			
-			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
-				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
-			</div>
+
+            <div class="row comparision-subscribe">
+                <h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
+                <div class="col-md-12">
+                    <div class="comparison_email">
+                        <div class="form-group col-md-11">
+                            <input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+                        </div>
+                        <div class="form-group col-md-1">
+                            <button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</section>
 <script>
