@@ -175,7 +175,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
 
     public function select_monthly_benefit_image($id){
-        $sql="SELECT monthly_benefit_info.id,card_bank.bank_logo FROM `monthly_benefit_info`  LEFT JOIN card_bank on card_bank.id=monthly_benefit_info.bank_id WHERE monthly_benefit_info.id=$id";
+        $sql="SELECT monthly_benefit_info.id,monthly_benefit_info.slug,card_bank.bank_logo FROM `monthly_benefit_info`  LEFT JOIN card_bank on card_bank.id=monthly_benefit_info.bank_id WHERE monthly_benefit_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }

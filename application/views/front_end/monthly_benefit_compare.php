@@ -2,13 +2,13 @@
 
 //pr($this->session->userdata());
 
-$id = $this->session->userdata('first_monthly_id') ;
+$id = $monthly_benefit1['id'] ;
 
 $monthly_amount = $this->session->userdata('monthly_deposit_amount') ;
 $result = $this->Front_end_select_model->select_monthly_benefit_details($id);
 $first_monthly_benefit = $result->row();
 
-$id1 = $this->session->userdata('second_monthly_id') ;
+$id1 = $monthly_benefit2['id'] ;
 $result1 = $this->Front_end_select_model->select_monthly_benefit_details($id1);
 $second_monthly_benefit = $result1->row();
 
@@ -49,11 +49,11 @@ $first_monthly_benefit_loan_facility = (strtoupper($first_monthly_benefit->loan_
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/monthly_benefit_details/<?php echo $first_monthly_benefit->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_monthly_benefit->bank_logo; ?>" /></a> </p></td>
+						<td><p><a href="<?php echo base_url();?>compare-monthly-benefit/<?php echo $first_monthly_benefit->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_monthly_benefit->bank_logo; ?>" /></a> </p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							
 						</td>
-						<td><a href="<?php echo base_url();?>en/monthly_benefit_details/<?php echo $second_monthly_benefit->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_monthly_benefit->bank_logo; ?>" /></a> </td>
+						<td><a href="<?php echo base_url();?>compare-monthly-benefit/<?php echo $second_monthly_benefit->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_monthly_benefit->bank_logo; ?>" /></a> </td>
 					</tr>			
 				</table>
 			</div>
@@ -221,17 +221,17 @@ $first_monthly_benefit_loan_facility = (strtoupper($first_monthly_benefit->loan_
 			</div>
 
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -250,7 +250,6 @@ $(document).ready(function() {
 $(document).ready(function () {
 	
 	$('[data-toggle="toggle"]').change(function(){
-		;
 		$(this).parents().next('.hide').toggle();
 	});
 

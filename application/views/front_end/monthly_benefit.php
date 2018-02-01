@@ -867,34 +867,22 @@
         });
     });
 
+
     $('#go_compare').click(function(){
-        //alert(1);
-        var  formData = $('.cart_anchor').children('img').data();
-        var monthly_id1 = "monthly_id1="+formData.monthly_id;
-        var principal_amount = "&monthly_amount=" + $('#finalAssest').val();
-
-        var  formData = $('.cart_anchor01').children('img').data();
-        var monthly_id2 = "&monthly_id2="+formData.monthly_id;
-
-        var monthly_ids = monthly_id1+monthly_id2+principal_amount;
-        if(monthly_id1 != '' && monthly_id2 != ''){
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>monthly_benefit/ajax_go_compare_page",
-                data: monthly_ids,
-                success: function(msg)
-                {
-                    if(msg != 'error'){
-
-                        window.location.href = "<?php echo base_url();?>en/monthly_benefit_compare";
-                    }
-                }
-            });
-        }else{
-            alert("Please add 2 Deposit for compare ! ")
+        if( ! $('.cart_anchor01').children('img').data()){
+            $("#comparison_min_two_alert").modal('show');
         }
 
+        var  formData = $('.cart_anchor').children('img').data();
+        var monthly_url1 = formData.monthly_url;
+        var  formData = $('.cart_anchor01').children('img').data();
+        var monthly_url2 = formData.monthly_url;
+        var monthly_urls = monthly_url1+'-vs-'+monthly_url2;
+        if(monthly_url1 != '' && monthly_url2 != ''){
+            window.location.href = "<?php echo base_url();?>compare-monthly-benefit/"+monthly_urls+".html";
+        }else{
+            alert("Please add 2 card for compare ! ");
+        }
 
     });
 

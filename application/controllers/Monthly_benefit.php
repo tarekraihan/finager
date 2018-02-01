@@ -316,13 +316,24 @@ class Monthly_benefit extends CI_Controller {
 
                 $tenure = ($row->tenure == '0.5') ? '6 Months' : $row->tenure.' Years';
                 $loan_facility = (strtoupper($row->loan_facility) != 'N/A') ? $row->loan_facility.' %' :'N/A';
-                //$benefit_amount  = $monthly_benefit_amount * $row->your_benefit;
+
+                /*$url = $row->bank_name.' '.$row->no_of_month.'-month-monthly-benefit';
+                $slug = str_replace("/"," ",$url);
+                $slug = url_title($slug,'dash',TRUE);
+
+                $this->Common_model->data = array(
+                    'slug' => $slug
+                );
+
+                $this->Common_model->where = array('id' => $row->id);
+                $this->Common_model->table_name = 'monthly_benefit_info';
+                $this->Common_model->update();*/
 
                 $monthly_benefit .= '
 					 <div class="full-card">
                     <div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'.base_url().'en/monthly_benefit_details/'.$row->id.'"><img title="Bank Logo" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
+                            <a href="'.base_url().'compare-monthly-benefit/'.$row->slug.'.html"><img title="Bank Logo" class="img-responsive fdr_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" /></a>
                             <p class="text-center">'.$row->bank_name.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -477,7 +488,7 @@ class Monthly_benefit extends CI_Controller {
 
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-monthly_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-monthly_url='.$row->slug.' data-monthly_id='.$row->id.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;
