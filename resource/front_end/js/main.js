@@ -102,3 +102,13 @@ $(document).on('click','.filter-option a',function(){
 });
 
 
+$('.Cicon_a').hover(function(){
+        $(this).children('.svg_img').addClass('hidden');
+        $(this).children('.svg_icon').removeClass('hidden');
+    },
+    function(){
+        $(this).children('.svg_img').removeClass('hidden');
+        $(this).children('.svg_icon').addClass('hidden');
+    }
+);
+

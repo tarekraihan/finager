@@ -119,10 +119,10 @@ font-size: 22px;
                 <h1>Top Categories</h1>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>credit-cards.html">
-                            <!--<img class="svg" src="<?php /*echo base_url(); */?>resource/front_end/images/categoryIcon/creditcard.svg" alt="Credit Card"/>-->
-                            <object class="svg" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/creditcard.svg" style="width: 100px; height: 95px;">
-                                Kiwi Logo <!-- fallback image in CSS -->
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>credit-cards.html">
+                            <img class="svg_img" src="<?php /*echo base_url(); */?>resource/front_end/images/categoryIcon/creditcard.png" alt="Credit Card"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/creditcard.svg">
+                                Credit Card
                             </object>
                             <p>Credit Card</p>
                         </a>
@@ -130,40 +130,55 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>debit-cards.html">
-                            <img class="svg" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/DebitCard.png" alt="Debit Card"/>
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>debit-cards.html">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/DebitCard.png" alt="Debit Card"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/DebitCard.svg">
+                                Debit Card <!-- fallback image in CSS -->
+                            </object>
                             <p>Debit Card</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>home-loan.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/home loan.png" alt="Home Loan"/>
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>home-loan.html">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/homeloan.png" alt="Home Loan"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/homeloan.svg">
+                                Home Loan
+                            </object>
                             <p>Home Loan</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>personal-loan.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/personal loan.png" alt="Personal Loan"/>
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>personal-loan.html">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/personalloan.png" alt="Personal Loan"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/personalloan.svg">
+                                Personal Loan
+                            </object>
                             <p>Personal Loan</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>auto-loan.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/buy new car.png" alt="Auto Loan"/>
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>auto-loan.html">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/buynewcar.png" alt="Auto Loan"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/buynewcar.svg">
+                                Auto Loan
+                            </object>
                             <p>Auto Loan</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>education-loan.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/education loan.png" alt="Education Loan"/>
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>education-loan.html">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/educationloan.png" alt="Education Loan"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/educationloan.svg">
+                                Education Loan
+                            </object>
                             <p>Education Loan</p>
                         </a>
                     </div>

@@ -8344,3 +8344,8 @@ section#card_details_Eligibility {
 #breadcrumbs-two>li.active>a:after {
     border-left: 1em solid #008fd8 !important;
 }
+.svg_icon{
+    width: 100px;
+    height: 100px;
+    margin-bottom: -5px !important;
+}
