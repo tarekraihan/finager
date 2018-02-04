@@ -242,7 +242,7 @@ class Saving_account extends CI_Controller
                 }
                 $min_balance = ($row->min_balance_for_interest != '') ? $row->min_balance_for_interest : 'N/A';
 
-              /*  $url = $row->saving_account_name;
+               /*$url = $row->saving_account_name;
                 if (strpos($url, 'Savings Account') == false) {
                     if (strpos($url, 'Account') == false){
                         if (strpos($url, 'Savings') == false){
@@ -269,7 +269,7 @@ class Saving_account extends CI_Controller
 					<div class="full-card">
                     <div class="row card_right_bar">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'.base_url().'compare-saving-account/'.$row->slug.'.html"><img title="Saving Account" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'.base_url().'compare-savings-account/'.$row->slug.'.html"><img title="Saving Account" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -446,7 +446,7 @@ class Saving_account extends CI_Controller
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-account_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-account_id='.$row->id.' data-account_slug='.$row->slug.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;

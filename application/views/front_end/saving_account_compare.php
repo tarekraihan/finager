@@ -1,10 +1,10 @@
 <?php
 //		print_r($this->session->userdata());
-$id = $this->session->userdata('first_account_id') ;
+$id = $saving_account1['id'] ;
 $result = $this->Front_end_select_model->select_savings_account_info_details($id);
 $first_saving_account = $result->row();
 
-$id1 = $this->session->userdata('second_account_id') ;
+$id1 = $saving_account2['id'] ;
 $result1 = $this->Front_end_select_model->select_savings_account_info_details($id1);
 $second_saving_account = $result1->row();
 //	pr($second_maximizer);die;
@@ -78,11 +78,11 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/saving_account_details/<?php echo $first_saving_account->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo1; ?>" /></a> </p></td>
+						<td><p><a href="<?php echo base_url();?>compare-savings-account/<?php echo $first_saving_account->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo1; ?>" /></a> </p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							
 						</td>
-						<td><a href="<?php echo base_url();?>en/saving_account_details/<?php echo $second_saving_account->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo2; ?>" /></a> </td>
+						<td><a href="<?php echo base_url();?>compare-savings-account/<?php echo $second_saving_account->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo2; ?>" /></a> </td>
 					</tr>			
 				</table>
 			</div>

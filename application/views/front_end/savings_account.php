@@ -512,33 +512,19 @@
     });
 
     $('#go_compare').click(function(){
-        //alert(1);
-        var  formData = $('.cart_anchor').children('img').data();
-        var account_id1 = "account_id1="+formData.account_id;
-
-        var  formData = $('.cart_anchor01').children('img').data();
-        var account_id2 = "&account_id2="+formData.account_id;
-
-        var account_ids = account_id1+account_id2;
-        if(account_id1 != '' && account_id2 != ''){
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>saving_account/ajax_go_compare_page",
-                data: account_ids,
-                success: function(msg)
-                {
-                    if(msg != 'error'){
-
-                        window.location.href = "<?php echo base_url();?>en/saving_account_compare";
-                    }
-                }
-            });
-        }else{
-            alert("Please add 2 Deposit for compare ! ")
+        if( ! $('.cart_anchor01').children('img').data()){
+            $("#comparison_min_two_alert").modal('show');
         }
-
-
+        var  formData = $('.cart_anchor').children('img').data();
+        var account_url1 = formData.account_slug;
+        var  formData = $('.cart_anchor01').children('img').data();
+        var account_url2 = formData.account_slug;
+        var account_urls = account_url1+'-vs-'+account_url2;
+        if(account_url1 != '' && account_url2 != ''){
+            window.location.href = "<?php echo base_url();?>compare-savings-account/"+account_urls+".html";
+        }else{
+            $('#comparison_min_two_alert').modal('show');
+        }
     });
 
 

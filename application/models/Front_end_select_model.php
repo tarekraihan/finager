@@ -181,7 +181,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
     }
 
     public function select_saving_account_image($id){
-        $sql="SELECT saving_account_info.id,saving_account_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo  FROM `saving_account_info`  LEFT JOIN card_bank on card_bank.id=saving_account_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id WHERE saving_account_info.id=$id";
+        $sql="SELECT saving_account_info.id,saving_account_info.slug,saving_account_info.is_non_bank,card_bank.bank_logo, general_non_bank.bank_logo AS non_bank_logo  FROM `saving_account_info`  LEFT JOIN card_bank on card_bank.id=saving_account_info.bank_id  LEFT JOIN general_non_bank ON general_non_bank.id = saving_account_info.non_bank_id WHERE saving_account_info.id=$id";
         $query = $this->db->query($sql);
         return $query;
     }
