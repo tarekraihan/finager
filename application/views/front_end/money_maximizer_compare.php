@@ -1,15 +1,13 @@
 <?php
-//		print_r($this->session->userdata());
-$id = $this->session->userdata('first_maximizer_id') ;
+$id = $money_maximizer1['id'] ;
 $result = $this->Front_end_select_model->select_money_maximizer_info_details($id);
 $first_maximizer = $result->row();
 
-$id1 = $this->session->userdata('second_maximizer_id') ;
+$id1 = $money_maximizer2['id'] ;
 $result1 = $this->Front_end_select_model->select_money_maximizer_info_details($id1);
 $second_maximizer = $result1->row();
 $maximizer_amount = floatval($this->session->userdata('maximizer_deposit_amount')) ;
 
-//	pr($second_maximizer);die;
 $first_benefit_amount  = $maximizer_amount * $first_maximizer->your_benefit;
 $first_credit_facility = ($first_maximizer->credit_facility != 'N/A') ? $first_maximizer->credit_facility.' %' :'N/A';
 $first_bank_name = "";
@@ -63,11 +61,11 @@ if($second_maximizer->is_non_bank == 1){
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/money_maximizer_details/<?php echo $first_maximizer->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
+						<td><p><a href="<?php echo base_url();?>compare-money-maximizer/<?php echo $first_maximizer->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							
 						</td>
-						<td><a href="<?php echo base_url();?>en/money_maximizer_details/<?php echo $second_maximizer->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
+						<td><a href="<?php echo base_url();?>compare-money-maximizer/<?php echo $second_maximizer->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
 					</tr>			
 				</table>
 			</div>
@@ -214,20 +212,20 @@ if($second_maximizer->is_non_bank == 1){
 					</div>
 				</div>
 			</div>
-			
-			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
-				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
-			</div>
+
+            <div class="row comparision-subscribe">
+                <h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
+                <div class="col-md-12">
+                    <div class="comparison_email">
+                        <div class="form-group col-md-11">
+                            <input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+                        </div>
+                        <div class="form-group col-md-1">
+                            <button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</section>
 <script>

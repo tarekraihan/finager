@@ -976,34 +976,18 @@
     });
 
     $('#go_compare').click(function(){
-
-        var  formData = $('.cart_anchor').children('img').data();
-        var maximizer_id1 = "maximizer_id1="+formData.maximizer_id;
-
-        var  formData = $('.cart_anchor01').children('img').data();
-        var maximizer_id2 = "&maximizer_id2="+formData.maximizer_id;
-        var amount = $('#finalAssest').val();
-        var deposit_amount = "&deposit_amount="+amount;
-
-        var maximizer_ids = maximizer_id1+maximizer_id2+deposit_amount;
-        if( maximizer_id1 != '' && maximizer_id2 != '' ){
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>money_maximizer/ajax_go_compare_page",
-                data: maximizer_ids,
-                success: function(msg)
-                {
-                    if(msg != 'error'){
-
-                        window.location.href = "<?php echo base_url();?>en/money_maximizer_compare";
-                    }
-                }
-            });
-        }else{
-            alert("Please add 2 card for compare ! ")
+        if( ! $('.cart_anchor01').children('img').data()){
+            $("#comparison_min_two_alert").modal('show');
         }
-
-
+        var  formData = $('.cart_anchor').children('img').data();
+        var maximizer_url1 = formData.maximizer_url;
+        var  formData = $('.cart_anchor01').children('img').data();
+        var maximizer_url2 = formData.maximizer_url;
+        var maximizer_urls = maximizer_url1+'-vs-'+maximizer_url2;
+        if(maximizer_url1 != '' && maximizer_url2 != ''){
+            window.location.href = "<?php echo base_url();?>compare-money-maximizer/"+maximizer_urls+".html";
+        }else{
+            $('#comparison_min_two_alert').modal('show');
+        }
     });
 </script>

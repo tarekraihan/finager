@@ -356,7 +356,7 @@
 			data: data,
 			cache: false,
 			success: function(response){
-				window.location.href = "<?php echo base_url();?>en/all_money_maximizer";
+				window.location.href = "<?php echo base_url();?>compare-money-maximizer.html";
 			}
 		});
 	}

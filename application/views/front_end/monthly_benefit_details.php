@@ -1,5 +1,5 @@
 <?php
-$id=$this->uri->segment(3, 0);
+$id= $monthly_benefit_details['id'];
 if(!empty($id) && is_numeric($id) ){
     $query=$this->Front_end_select_model->select_monthly_benefit_details($id);
     $row=$query->row();
@@ -31,7 +31,7 @@ if(!empty($id) && is_numeric($id) ){
 						<div>
 							<p class="card_details_head2">Deposit Amount</p>
 							<p class="card_details_features">
-                                BDT. <?php echo number_format($row->deposit_amount);?>
+                                BDT <?php echo number_format($row->deposit_amount);?>
 							</p>
 						</div>
 					</div>
@@ -49,13 +49,13 @@ if(!empty($id) && is_numeric($id) ){
 								<div>
 									<p class="card_details_head2">Benefit Amount</p>
 									<p class="card_details_features">
-                                        BDT. <?php echo number_format($row->benefit_amount);?>
+                                        BDT <?php echo number_format($row->benefit_amount);?>
 									</p>
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div>
-									<p class="card_details_head2">Preiod</p>
+									<p class="card_details_head2">Period</p>
 									<p>Monthly</p>
 								</div>
 							</div>
@@ -96,7 +96,7 @@ if(!empty($id) && is_numeric($id) ){
                         </tr>
 						<tr>
 							<td><b>Deposited Amount</b></td>
-							<td> BDT. <?php echo number_format($row->deposit_amount);?> </td>
+							<td> BDT <?php echo number_format($row->deposit_amount);?> </td>
 						</tr>
 
 						<tr>
@@ -106,7 +106,7 @@ if(!empty($id) && is_numeric($id) ){
 
 						<tr>
 							<td><b> Benefit Amount</b></td>
-							<td> BDT. <?php echo number_format($row->benefit_amount);?> </td>
+							<td> BDT <?php echo number_format($row->benefit_amount);?> </td>
 						</tr>
 						<tr>
 							<td><b> Loan Facility</b></td>
@@ -218,114 +218,3 @@ if(!empty($id) && is_numeric($id) ){
 			</div>
 		</div>
 	</section>
-
-<script>
-
-$(document).ready(function() {
-	$('[data-toggle="toggle"]').change(function(){
-		$(this).parents().next('.hide').toggle();
-	});
-});
-
-</script>
-<!--
-<script>
-
-	$(document).ready(function(){
-	    var plot2 = $.jqplot('pie2', [[['a',7],['b',88],['c',5]]], {
-	        seriesDefaults:{ renderer:$.jqplot.PieRenderer, trendline:{ show: true } },
-	        legend:{ show: false },
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
-	    });
-	});
-
-	$(document).ready(function () {
-	    var s1 = [[2002, 112000], [2003, 122000], [2004, 104000], [2005, 99000], [2006, 121000]];
-	    var s2 = [[2002, 10200], [2003, 10800], [2004, 11200], [2005, 11800], [2006, 12400]];
-	    plot1 = $.jqplot("chart1", [s2, s1], {
-	        // Turns on animatino for all series in this plot.
-	        animate: true,
-	        // Will animate plot on calls to plot1.replot({resetAxes:true})
-	        animateReplot: true,
-	        cursor: {
-	            show: true,
-	            zoom: true,
-	            looseZoom: true,
-	            showTooltip: false
-	        },
-	        series:[
-	            {
-	                pointLabels: {
-	                    show: true
-	                },
-	                renderer: $.jqplot.BarRenderer,
-	                showHighlight: false,
-	                yaxis: 'y2axis',
-	                rendererOptions: {
-	                    // Speed up the animation a little bit.
-	                    // This is a number of milliseconds.
-	                    // Default for bar series is 3000.
-	                    animation: {
-	                        speed: 2500
-	                    },
-	                    barWidth: 15,
-	                    barPadding: -15,
-	                    barMargin: 0,
-	                    highlightMouseOver: false
-	                }
-	            },
-	            {
-	                rendererOptions: {
-	                    // speed up the animation a little bit.
-	                    // This is a number of milliseconds.
-	                    // Default for a line series is 2500.
-	                    animation: {
-	                        speed: 2000
-	                    }
-	                }
-	            }
-	        ],
-	        axesDefaults: {
-	            pad: 0
-	        },
-	        axes: {
-	            // These options will set up the x axis like a category axis.
-	            xaxis: {
-	                tickInterval: 1,
-	                drawMajorGridlines: false,
-	                drawMinorGridlines: true,
-	                drawMajorTickMarks: false,
-	                rendererOptions: {
-	                tickInset: 0.5,
-	                minorTicks: 1
-				}
-	            },
-	            yaxis: {
-	                tickOptions: {
-	                    formatString: "$%'d"
-	                },
-	                rendererOptions: {
-	                    forceTickAt0: true
-	                }
-	            },
-	            y2axis: {
-	                tickOptions: {
-	                    formatString: "$%'d"
-	                },
-	                rendererOptions: {
-	                    // align the ticks on the y2 axis with the y axis.
-	                    alignTicks: true,
-	                    forceTickAt0: true
-	                }
-	            }
-	        },
-	        highlighter: {
-	            show: true,
-	            showLabel: true,
-	            tooltipAxes: 'y',
-	            sizeAdjust: 7.5 , tooltipLocation : 'ne'
-	        },
-	        grid: {borderColor: 'white', shadow: false, drawBorder: true}
-	    });
-	});
-</script>-->

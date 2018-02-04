@@ -242,11 +242,34 @@ class Saving_account extends CI_Controller
                 }
                 $min_balance = ($row->min_balance_for_interest != '') ? $row->min_balance_for_interest : 'N/A';
 
+              /*  $url = $row->saving_account_name;
+                if (strpos($url, 'Savings Account') == false) {
+                    if (strpos($url, 'Account') == false){
+                        if (strpos($url, 'Savings') == false){
+                            $url = $url.'-savings-account';
+                        }else{
+                            $url = str_replace("Savings"," Savings Account ",$url);
+                        }
+                    }else{
+                        $url = str_replace("Account"," Savings Account ",$url);
+                    }
+
+
+                }
+                $slug = url_title($url,'dash',TRUE);
+                $this->Common_model->data = array(
+                    'slug' => $slug
+                );
+
+                $this->Common_model->where = array('id' => $row->id);
+                $this->Common_model->table_name = 'saving_account_info';
+                $this->Common_model->update();*/
+
                 $account .= '
 					<div class="full-card">
                     <div class="row card_right_bar">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'.base_url().'en/savings_account_details/'.$row->id.'"><img title="Free Web tutorials" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'.base_url().'compare-saving-account/'.$row->slug.'.html"><img title="Saving Account" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>

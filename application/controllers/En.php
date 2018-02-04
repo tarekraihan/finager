@@ -734,21 +734,6 @@ class En extends CI_Controller {
             redirect(base_url().'en/login.html');
         }
     }
-/*
-
-    public function millionaire_details(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('millionaire_details', 'millionaire_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/millionaire_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }*/
 
     public function millionaire_compare($url){
         if($this->session->userdata('lovemebaby')){
@@ -815,30 +800,34 @@ class En extends CI_Controller {
         }
     }
 
-
-    public function money_maximizer_details(){
+    public function money_maximizer_compare($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('money_maximizer_details', 'money_maximizer_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/money_maximizer_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }
 
-    public function money_maximizer_compare(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('money_maximizer_compare', 'money_maximizer_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/money_maximizer_compare');
-            $this->load->view('front_end/block/footer');
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('money_maxi_info',array('slug'=>$compare[0]));
+                $data['money_maximizer1'] = $query1->row_array();
+                $query2 = $this->db->get_where('money_maxi_info',array('slug'=>$compare[1]));
+                $data['money_maximizer2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('money_maximizer_compare', 'money_maximizer_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/money_maximizer_compare');
+                $this->load->view('front_end/block/footer');
+
+            }else{
+                $query = $this->db->get_where('money_maxi_info',array('slug'=>$url));
+                $data['money_maximizer_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('money_maximizer_details', 'money_maximizer_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/money_maximizer_details');
+                $this->load->view('front_end/block/footer');
+            }
         }else{
             redirect(base_url().'en/login.html');
         }
@@ -877,6 +866,55 @@ class En extends CI_Controller {
             redirect(base_url().'en/login.html');
         }
     }
+
+    public function monthly_benefit_details(){
+        if($this->session->userdata('lovemebaby')){
+            $this->load->driver('cache');
+            $this->cache->file->save('monthly_benefit_details', 'monthly_benefit_details', 100);
+            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/monthly_benefit_details');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'en/login.html');
+        }
+    }
+
+    public function monthly_benefit_compare($url){
+        if($this->session->userdata('lovemebaby')){
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('monthly_benefit_info',array('slug'=>$compare[0]));
+                $data['monthly_benefit1'] = $query1->row_array();
+                $query2 = $this->db->get_where('monthly_benefit_info',array('slug'=>$compare[1]));
+                $data['monthly_benefit2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('monthly_benefit_details', 'monthly_benefit_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/monthly_benefit_compare');
+                $this->load->view('front_end/block/footer');
+
+            }else{
+                $query = $this->db->get_where('monthly_benefit_info',array('slug'=>$url));
+                $data['monthly_benefit_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('monthly_benefit_compare', 'monthly_benefit_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/monthly_benefit_details');
+                $this->load->view('front_end/block/footer');
+            }
+
+
+        }else{
+            redirect(base_url().'en/login.html');
+        }
+    }
+
 
     public function current_account(){
         if($this->session->userdata('lovemebaby')){
@@ -936,65 +974,38 @@ class En extends CI_Controller {
     }
 
 
-    public function saving_account_compare(){
+    public function saving_account_compare($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('saving_account_compare', 'saving_account_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/saving_account_compare');
-            $this->load->view('front_end/block/footer');
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('saving_account_info',array('slug'=>$compare[0]));
+                $data['saving_account1'] = $query1->row_array();
+                $query2 = $this->db->get_where('saving_account_info',array('slug'=>$compare[1]));
+                $data['saving_account2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('saving_account_compare', 'saving_account_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/saving_account_compare');
+                $this->load->view('front_end/block/footer');
+            }else{
+                $query = $this->db->get_where('saving_account_info',array('slug'=>$url));
+                $data['saving_account_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('saving_account_details', 'saving_account_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/saving_account_details');
+                $this->load->view('front_end/block/footer');
+            }
+
+
         }else{
             redirect(base_url().'en/login.html');
         }
     }
-
-
-    public function saving_account_details(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('saving_account_details', 'saving_account_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/saving_account_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }
-
-
-    public function monthly_benefit_details(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('monthly_benefit_details', 'monthly_benefit_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/monthly_benefit_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }
-
-    public function monthly_benefit_compare(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('monthly_benefit_compare', 'monthly_benefit_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/monthly_benefit_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }
-
-
 
     public function bank_details($url){
         $query = $this->db->get_where('card_bank',array('slug'=>$url));

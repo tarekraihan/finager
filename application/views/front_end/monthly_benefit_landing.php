@@ -344,7 +344,7 @@
             data: data,
             cache: false,
             success: function(response){
-                window.location.href = "<?php echo base_url();?>en/all_monthly_benefit";
+                window.location.href = "<?php echo base_url();?>compare-monthly-benefit.html";
             }
         });
     }
