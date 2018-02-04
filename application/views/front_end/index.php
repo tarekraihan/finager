@@ -150,6 +150,7 @@ font-size: 22px;
                         </a>
                     </div>
                 </div>
+
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
                         <a class="Cicon_a" href="<?php echo base_url(); ?>personal-loan.html">
