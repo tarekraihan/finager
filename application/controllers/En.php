@@ -930,30 +930,33 @@ class En extends CI_Controller {
         }
     }
 
-    public function current_account_compare(){
+    public function current_account_compare($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('current_account_compare', 'current_account_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/current_account_compare');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('current_account_info',array('slug'=>$compare[0]));
+                $data['current_account1'] = $query1->row_array();
+                $query2 = $this->db->get_where('current_account_info',array('slug'=>$compare[1]));
+                $data['current_account2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('current_account_details', 'current_account_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/current_account_compare');
+                $this->load->view('front_end/block/footer');
+            }else{
+                $query = $this->db->get_where('current_account_info',array('slug'=>$url));
+                $data['current_account_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('current_account_compare', 'current_account_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/current_account_details');
+                $this->load->view('front_end/block/footer');
+            }
 
-
-    public function current_account_details(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('current_account_details', 'current_account_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/current_account_details');
-            $this->load->view('front_end/block/footer');
         }else{
             redirect(base_url().'en/login.html');
         }
@@ -1000,8 +1003,6 @@ class En extends CI_Controller {
                 $this->load->view('front_end/saving_account_details');
                 $this->load->view('front_end/block/footer');
             }
-
-
         }else{
             redirect(base_url().'en/login.html');
         }
@@ -1193,30 +1194,32 @@ class En extends CI_Controller {
         }
     }
 
-
-    public function snd_details(){
+    public function snd_compare($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('snd_details', 'snd_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/snd_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }
-
-    public function snd_compare(){
-        if($this->session->userdata('lovemebaby')){
-        $this->load->driver('cache');
-        $this->cache->file->save('snd_details', 'snd_details', 100);
-        $this->load->view('front_end/block/header_home_loan');
-        $this->load->view('front_end/block/right_menu');
-        $this->load->view('front_end/block/vertical_menu');
-        $this->load->view('front_end/snd_compare');
-        $this->load->view('front_end/block/footer');
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $query1 = $this->db->get_where('snd_info',array('slug'=>$compare[0]));
+                $data['snd_account1'] = $query1->row_array();
+                $query2 = $this->db->get_where('snd_info',array('slug'=>$compare[1]));
+                $data['snd_account2'] = $query2->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('snd_details', 'snd_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/snd_compare');
+                $this->load->view('front_end/block/footer');
+            }else{
+                $query = $this->db->get_where('snd_info',array('slug'=>$url));
+                $data['snd_account_details'] = $query->row_array();
+                $this->load->driver('cache');
+                $this->cache->file->save('snd_details', 'snd_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/snd_details');
+                $this->load->view('front_end/block/footer');
+            }
         }else{
             redirect(base_url().'en/login.html');
         }

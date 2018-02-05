@@ -304,7 +304,6 @@ class Current_account extends CI_Controller
 
         if($current_account->num_rows() > 0){
             foreach($current_account->result() as $row){
-//                print_r($row);die;
                 $bank = "";
                 if($row->is_non_bank == 1){
                     $bank = $row->non_bank_name;
@@ -318,12 +317,23 @@ class Current_account extends CI_Controller
                     $bank_logo = $row->bank_logo;
                 }
 
+                $url = $bank.'-current-account-for-'.$row->i_am;
+                $slug = str_replace("/"," ",$url);
+                $slug = url_title($slug,'dash',TRUE);
+
+                $this->Common_model->data = array(
+                    'slug' => $slug
+                );
+                $this->Common_model->where = array('id' => $row->id);
+                $this->Common_model->table_name = 'current_account_info';
+                $this->Common_model->update();
+
 
                 $account .= '
 					<div class="full-card">
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'.base_url().'en/current_account_details/'.$row->id.'"><img title="click here to details" class="img-responsive current_account_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'.base_url().'compare-current-account/'.$row->slug.'.html"><img title="click here to details" class="img-responsive current_account_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
 								<p class="text-center">'.$bank.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -518,7 +528,7 @@ class Current_account extends CI_Controller
 
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-account_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$row->bank_logo.'" data-account_id='.$row->id.' data-account_slug='.$row->slug.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;

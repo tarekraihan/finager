@@ -439,11 +439,22 @@ class Snd_account extends CI_Controller
                     $interest_calculated = $snd_tenure. ' days';
                 }
 
+                $url = $bank.' '.$row->i_am.' '.$row->interest_paid.'-snd-account';
+                $slug = str_replace("/"," ",$url);
+                $slug = url_title($slug,'dash',TRUE);
+
+                $this->Common_model->data = array(
+                    'slug' => $slug
+                );
+                $this->Common_model->where = array('id' => $row->id);
+                $this->Common_model->table_name = 'snd_info';
+                $this->Common_model->update();
+
                 $account .= '
 					<div class="full-card">
                     <div class="row card_right_bar">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'.base_url().'en/snd_details/'.$row->id.'"><img title="Click Here for Details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'.base_url().'compare-snd-account/'.$row->slug.'.html"><img title="Click Here for Details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">'.$row->snd_name.'</p>
                             <p class="text-center">
@@ -596,7 +607,7 @@ class Snd_account extends CI_Controller
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-snd_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-snd_id='.$row->id.' data-account_slug='.$row->slug.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;

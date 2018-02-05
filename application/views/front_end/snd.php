@@ -1,7 +1,5 @@
 <style type="text/css">
-
     .pagination-centered{position:relative; top:0; right:0;}
-
     .pagination li {
         background-color: #8f8f8f;
         float: left;
@@ -11,11 +9,7 @@
     }
 
 </style>
-
-
-
 <section id="mony_max_header"></section>
-
 <!--Filter bar by bank START -->
 <div class="container">
     <section id="filter-bar">
@@ -787,41 +781,19 @@
     });
 
     $('#go_compare').click(function(){
-
-        var  formData = $('.cart_anchor').children('img').data();
-        var snd_id1 = "snd_id1="+formData.snd_id;
-
-        var  formData = $('.cart_anchor01').children('img').data();
-        var snd_id2 = "&snd_id2="+formData.snd_id;
-
-        var snd_amount = $('#snd_amount').val();
-        var snd_amount = "&snd_amount="+snd_amount;
-
-        var snd_i_want_interest = new Array();
-        $('input[name="i_want_interest"]:checked').each(function(){
-            snd_i_want_interest.push($(this).val());
-        });
-
-        var snd_i_want_interest_list = "&snd_i_want_interest="+snd_i_want_interest;
-
-        var snd_ids = snd_id1+snd_id2+snd_amount+snd_i_want_interest_list;
-        if( snd_id1 != '' && snd_id2 != '' ){
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php echo base_url();?>snd_account/ajax_go_compare_page",
-                data: snd_ids,
-                success: function(msg){
-                    if(msg != 'error'){
-                        window.location.href = "<?php echo base_url();?>en/snd_compare";
-                    }
-                }
-            });
-        }else{
-            alert("Please add 2 card for compare ! ")
+        if( ! $('.cart_anchor01').children('img').data()){
+            $("#comparison_min_two_alert").modal('show');
         }
-
-
+        var  formData = $('.cart_anchor').children('img').data();
+        var account_url1 = formData.account_slug;
+        var  formData = $('.cart_anchor01').children('img').data();
+        var account_url2 = formData.account_slug;
+        var account_urls = account_url1+'-vs-'+account_url2;
+        if(account_url1 != '' && account_url2 != ''){
+            window.location.href = "<?php echo base_url();?>compare-snd-account/"+account_urls+".html";
+        }else{
+            $('#comparison_min_two_alert').modal('show');
+        }
     });
 
 </script>

@@ -1,15 +1,11 @@
 <?php
-//		print_r($this->session->userdata());die;
-$id = $this->session->userdata('first_account_id') ;
+$id = $current_account1['id'] ;
 $result = $this->Front_end_select_model->select_current_account_info_details($id);
 $first_current_account = $result->row();
 
-$id1 = $this->session->userdata('second_account_id') ;
+$id1 = $current_account2['id'];
 $result1 = $this->Front_end_select_model->select_current_account_info_details($id1);
 $second_current_account = $result1->row();
-	//pr($second_current_account);die;
-
-
 $first_bank_name = "";
 $first_bank_logo = "";
 if($first_current_account->is_non_bank == 1){
@@ -19,8 +15,6 @@ if($first_current_account->is_non_bank == 1){
     $first_bank_name = $first_current_account->bank_name;
     $first_bank_logo = $first_current_account->bank_logo;
 }
-
-
 
 $second_bank_name = "";
 $second_bank_logo = "";
@@ -33,7 +27,6 @@ if($second_current_account->is_non_bank == 1){
 }
 
 ?>
-
 <style>
 	.innerMdlWrapper .innerMdlInner {
 		width: 418px;
@@ -60,11 +53,11 @@ if($second_current_account->is_non_bank == 1){
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/current_account_details/<?php echo $first_current_account->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
+						<td><p><a href="<?php echo base_url();?>compare-current-account/<?php echo $first_current_account->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $first_bank_logo; ?>" /></a> </p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							
 						</td>
-						<td><a href="<?php echo base_url();?>en/current_account_details/<?php echo $second_current_account->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
+						<td><a href="<?php echo base_url();?>compare-current-account/<?php echo $second_current_account->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $second_bank_logo; ?>" /></a> </td>
 					</tr>			
 				</table>
 			</div>
@@ -242,17 +235,17 @@ if($second_current_account->is_non_bank == 1){
 			</div>
 
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

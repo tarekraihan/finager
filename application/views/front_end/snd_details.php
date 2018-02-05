@@ -1,5 +1,5 @@
 <?php
-$id=$this->uri->segment(3, 0);
+$id=$snd_account_details['id'];
 if(!empty($id) && is_numeric($id) ){
 
     $query=$this->Front_end_select_model->select_snd_details($id);
@@ -68,7 +68,7 @@ if(!empty($id) && is_numeric($id) ){
 			<div class="row">
 				<div class="card_details_body">
 					<div class="col-sm-2 col-xs-4">
-						<div><img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo; ?>" /></div>
+						<div> <img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo; ?>" /></div>
 						<p class="text-center">
 							<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 						</p>

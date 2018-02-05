@@ -1,10 +1,10 @@
 <?php
 //pr($this->session->userdata());die;
-$id = $this->session->userdata('first_snd') ;
+$id = $snd_account1['id'] ;
 $result = $this->Front_end_select_model->select_snd_details($id);
 $first_snd = $result->row();
 
-$id1 = $this->session->userdata('second_snd') ;
+$id1 = $snd_account2['id'] ;
 $result1 = $this->Front_end_select_model->select_snd_details($id1);
 $second_snd = $result1->row();
 
@@ -105,11 +105,11 @@ if($snd_tenure == 1){
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/snd_details/<?php echo $first_snd->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo1; ?>" /></a> </p></td>
+						<td><p><a href="<?php echo base_url();?>compare-snd-account/<?php echo $first_snd->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo1; ?>" /></a> </p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b>
 							
 						</td>
-						<td><a href="<?php echo base_url();?>en/snd_details/<?php echo $second_snd->id;?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo2; ?>" /></a> </td>
+						<td><a href="<?php echo base_url();?>compare-snd-account/<?php echo $second_snd->slug;?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $bank_logo2; ?>" /></a> </td>
 					</tr>			
 				</table>
 			</div>
@@ -279,17 +279,17 @@ if($snd_tenure == 1){
 			</div>
 
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
