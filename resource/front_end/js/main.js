@@ -112,3 +112,6 @@ $('.Cicon_a').hover(function(){
     }
 );
 
+$('.svg_icon').click(function(){
+    alert();
+});

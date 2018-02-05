@@ -186,48 +186,66 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>fdr.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/fdr.png" alt="FDR"/>
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>fdr.html">
+                            <img class="svg_img"  src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/fdr.png" alt="FDR"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/fdr.svg">
+                                FDR
+                            </object>
                             <p>FDR</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>dps.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/dps.png" alt="DPS"/>
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>dps.html">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/dps.png" alt="DPS"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/dps.svg">
+                                DPS
+                            </object>
                             <p>DPS</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="<?php echo base_url(); ?>millionaire.html">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/loan.png" alt="Lakhpoti & Millionaire Scheme"/>
+                        <a class="Cicon_a" href="<?php echo base_url(); ?>millionaire.html">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/loan.png" alt="Lakhpoti & Millionaire Scheme"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/loan.svg">
+                                Lakhpoti & Millionaire Scheme
+                            </object>
                             <p>Lakhpoti & Millionaire Scheme</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/money market.png" alt="Money Market"/>
+                        <a class="land_modal Cicon_a" data-toggle="modal" data-target=".bs-example-modal-lg">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/moneymarket.png" alt="Money Market"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/moneymarket.svg">
+                                Money Market
+                            </object>
                             <p>Money Market</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/bank map.png" alt="Bank Map"/>
+                        <a class="land_modal Cicon_a" data-toggle="modal" data-target=".bs-example-modal-lg">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/bankmap.png" alt="bank map"/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/bankmap.svg">
+                                Bank Map
+                            </object>
                             <p>Bank Map</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a href="#">
-                            <img src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/more.png" alt=""/>
+                        <a class="Cicon_a" href="#">
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/more.png" alt=""/>
+                            <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/more.svg">
+                                More
+                            </object>
                             <p>More</p>
                         </a>
                     </div>
