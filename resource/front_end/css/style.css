@@ -7552,6 +7552,8 @@ a .auto_button.flash-button {
     width: 23px;
 
     border-radius: 50%;
+    font-size: 20px;
+    line-height: 19px;
 
 }
 
