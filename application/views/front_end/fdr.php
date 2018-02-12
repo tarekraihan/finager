@@ -728,6 +728,11 @@
 //            console.log(fdr_id);
             $("#moreInfo"+fdr_id).toggleClass("in");
             $('#availableOffer'+fdr_id).removeClass("in");
+            if($("#moreInfo"+fdr_id).hasClass('in')){
+                $('#more_info'+fdr_id).html("<i class='fa fa-info-circle'></i> Less info");
+            }else{
+                $('#more_info'+fdr_id).html("<i class='fa fa-info-circle'></i> More info");
+            }
 
         });
 

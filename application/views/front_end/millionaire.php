@@ -743,10 +743,13 @@
 
             var  formData = $(this).data();
             var millionaire_id = formData.millionaire_id;
-//            console.log(millionaire_id);
-
             $("#moreInfo"+millionaire_id).toggleClass("in");
             $('#availableOfferSchedule'+millionaire_id).removeClass("in");
+            if($("#moreInfo"+millionaire_id).hasClass('in')){
+                $('#more_info'+millionaire_id).html("<i class='fa fa-info-circle'></i> Less info");
+            }else{
+                $('#more_info'+millionaire_id).html("<i class='fa fa-info-circle'></i> More info");
+            }
 
         });
 

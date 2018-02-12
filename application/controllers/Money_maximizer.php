@@ -346,7 +346,7 @@ class Money_maximizer extends CI_Controller {
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
                                             <h5>Deposited Amount</h5>
-                                            <p>BDT. '.number_format( $maximizer_amount ).'</p>
+                                            <p>BDT '.number_format( $maximizer_amount ).'</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3">
@@ -358,7 +358,7 @@ class Money_maximizer extends CI_Controller {
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
                                             <h5>Benefit Amount</h5>
-                                            <p>BDT.'.number_format( $benefit_amount ).'</p>
+                                            <p>BDT '.number_format( $benefit_amount ).'</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-3 col-xs-3">
@@ -369,14 +369,12 @@ class Money_maximizer extends CI_Controller {
                                     </div>
                                 </div>
                                 <div class="row more_availabe">
-                                    <div class="col-md-2"><a href="javascript:void(0)"   class="more_info" data-maximizer_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
+                                    <div class="col-md-2"><a href="javascript:void(0)" class="more_info" id="more_info'.$row->id.'" data-maximizer_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
                                     <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Money Maximizer Application" /></a></div>
                                     <div class="col-md-2"><a href="javascript:void(0)" class="add-to-compare" data-maximizer_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Money Maximizer Comparison" /></a></div>
                                 </div>
                             </div>
 						</div>
-
-
 						<!-- More Info Tab content start -->
 						<div class="more_info_tab collapse" id="moreInfo'.$row->id.'">
                              <div class="col-md-12">

@@ -544,7 +544,6 @@
     $(document).on('click','#pagination a',function(e){
         e.preventDefault();
         var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
-//            alert(cur_page);
         data_caching();
         loadData(cur_page);
     });
@@ -552,10 +551,8 @@
     $(document).on('click','#pagination a',function(e){
         e.preventDefault();
         var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
-//            alert(cur_page);
         data_caching();
         loadData(cur_page);
-//        console.log(cur_page);
     });
 
 
@@ -565,8 +562,6 @@
             data_caching();
             loadData(page = null); // call on load
         }, 1000);
-
-
         $(document).on('click','#clear_all',function(){
             var data = 'session=monthly_benefit';
             $.ajax
@@ -702,7 +697,6 @@
                         var bank_id = obj.monthly_benefit_bank_ids[i].split("=");
                         option.push('<li><div class="filter-option"><span>' + bank_id[1] + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="monthly_benefit_bank_id" data-monthly_benefit_bank_id="' +  bank_id[0] + '"><i class="icon-close icons"></i></a></span></div></li>');
                     }
-
                 }
                 $(".filter-list").html(option);
             }
@@ -752,7 +746,6 @@
     $(".draggable").on("dragstop",function(ev,ui){
 
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
-            //alert($("#finalAssest").val());
             data_caching();
             loadData(page = null);
         }, 1000);
@@ -764,8 +757,12 @@
     $('#monthlyBenefitSearch').on('click', '.more_info', function (){
         var  formData = $(this).data();
         var monthly_id = formData.monthly_id;
-        console.log(monthly_id);
         $("#moreInfo"+monthly_id).toggleClass("in");
+        if($("#moreInfo"+monthly_id).hasClass('in')){
+            $('#more_info'+monthly_id).html("<i class='fa fa-info-circle'></i> Less info");
+        }else{
+            $('#more_info'+monthly_id).html("<i class='fa fa-info-circle'></i> More info");
+        }
     });
 
     $(document).on('click','.add-to-compare',function(){
@@ -805,8 +802,6 @@
 
                 //Select item image and pass to the function
                 var itemImg = $(this).parents('div:eq(0)').find('.auto_loan_logo').eq(0);
-                //flyToElement($(itemImg), $('.cart_anchor'));
-
                 $(".cart_anchor").addClass("img_active");
                 $(this).addClass("hidden");
 
@@ -832,16 +827,13 @@
     });
 
     $(document).on('click','.compare-cross-btn',function(){
-
         var collected_card = $(this).prev().attr("data-monthly_id");
-
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
             var index=$(this).children().find('.add-to-compare').attr('data-monthly_id');
             if(parseInt(collected_card)==parseInt(index)){
                 obj.removeClass("hidden");
             }
-
         });
 
         $(this).parent(".cart_anchor").removeClass("img_active");

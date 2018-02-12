@@ -826,9 +826,9 @@ class Millionaire extends CI_Controller
 									</div>
 								</div>
 								<div class="row more_availabe">
-									<div class="col-md-2"><a href="javascript:void(0)" id="hideDetailsButton"  class="more_info" data-millionaire_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
-									<div class="col-md-4"><a id="hideDetailsButton2" class="availableOffer" role="button" data-toggle="collapse" data-offer="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> Available Offer</a></div>
-									<div class="col-md-4"><a id="hideDetailsButton2" class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
+									<div class="col-md-2"><a href="javascript:void(0)" class="more_info" id="more_info'.$row->id.'" data-millionaire_id="'.$row->id.'" ><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
+									<div class="col-md-4"><a class="availableOffer" role="button" data-toggle="collapse" data-offer="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> Available Offer</a></div>
+									<div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
 									<div class="col-md-2"><a href="javascript:void(0)" class="add-to-compare" data-millionaire_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
 								</div>
 							</div>

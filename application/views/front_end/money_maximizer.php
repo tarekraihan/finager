@@ -551,10 +551,8 @@
 
     $(document).on('click','#pagination a',function(e){
         e.preventDefault();
-        var cur_page = $(this).attr('data-ci-pagination-page'); // I haved test with attr('href') but not ok.
-//            alert(cur_page);
+        var cur_page = $(this).attr('data-ci-pagination-page');
         loadData(cur_page);
-        //console.log(cur_page);
     });
 
 
@@ -565,17 +563,13 @@
         });
 
         var maximizer_tenure_list = "&maximizer_tenure="+maximizer_tenure;
-
         var amount = $('#finalAssest').val();
-
         var deposit_amount = "&deposit_amount="+amount;
-
         var bank_ids = new Array();
         $('input[name="bank_id"]:checked').each(function(){
             bank_ids.push($(this).val());
         });
         var bank_id_list = "&maximizer_bank_ids="+bank_ids;
-
         var main_string = maximizer_tenure_list+deposit_amount+bank_id_list;
         main_string = main_string.substring(1, main_string.length);
         var page_count ='';
@@ -583,7 +577,6 @@
             page_count = page ;
         }
         var url_str = "<?php echo base_url();?>money_maximizer/ajax_get_money_maximizer/" + page_count;
-//        console.log(main_string);
         $.ajax
         ({
             type: "POST",
@@ -604,7 +597,6 @@
     }
 
     function data_caching(){
-
         var amount = $('#finalAssest').val();
         var deposit_amount = "&maximizer_deposit_amount="+amount;
 
@@ -613,17 +605,12 @@
             maximizer_benefit.push($(this).val());
         });
         var maximizer_benefit_list = "&maximizer_benefit="+maximizer_benefit;
-
-
         var bank_ids = new Array();
         $('input[name="bank_id"]:checked').each(function(){
             bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
-
         });
         var bank_id_list = "&maximizer_bank_ids="+bank_ids;
         var maximizer_benefit_label = '&maximizer_benefit_label='+$('input[name="tenure"]:checked').parent().text().trim();
-
-
         var main_string = maximizer_benefit_list+bank_id_list+deposit_amount+maximizer_benefit_label;
         main_string = main_string.substring(1, main_string.length);
         var url_str = "<?php echo base_url();?>money_maximizer/ajax_maximizer_caching/" ;
@@ -635,7 +622,6 @@
             success: function(response){
                 var option = [];
                 var obj = JSON.parse(response);
-//                console.log(obj.maximizer_benefit_label);
                 if(obj.maximizer_benefit !='') {
                     option.push('<li><div class="filter-option"><span>' + obj.maximizer_benefit_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="maximizer_benefit" data-maximizer_benefit="' + obj.maximizer_benefit + '"><i class="icon-close icons"></i></a></span></div></li>');
                 }
@@ -735,10 +721,7 @@
 
     });
 
-
-    //    loadData( page = null );
     setTimeout(function(){ //Updated by Tarek on 14-05-2017
-        //alert($("#finalAssest").val());
         data_caching();
         loadData(page = null);
     }, 1000);
@@ -752,7 +735,6 @@
     $(".draggable").on("dragstop",function(ev,ui){
 
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
-            //alert($("#finalAssest").val());
             data_caching();
             loadData(page = null);
         }, 1000);
@@ -760,14 +742,12 @@
     });
 
     $("#finalAssest,#finalLiability").change(function () {
-        //alert($("#finalAssest").val());
         data_caching();
         loadData(page = null);
     });
 
     $("#alreadySaved").find(".next").click(function(){
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
-            //alert($("#finalAssest").val());
             data_caching();
             loadData(page = null);
         }, 1000);
@@ -775,7 +755,6 @@
 
     $("#alreadySaved").find(".prev").click(function(){
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
-            //alert($("#finalAssest").val());
             data_caching();
             loadData(page = null);
         }, 1000);
@@ -783,37 +762,26 @@
 
     //for show hide (more info & Available Offer)
 
-         $('#moneyMaximizerSearch').on('click', '.more_info', function (){
-             var  formData = $(this).data();
-             var maximizer_id = formData.maximizer_id;
-//             console.log(maximizer_id);
-             $("#moreInfo"+maximizer_id).toggleClass("in");
-         });
-        /*
-         $('#searchDPS').on('click', '.availableOffer', function (){
+     $('#moneyMaximizerSearch').on('click', '.more_info', function (){
          var  formData = $(this).data();
-         var available_offer = formData.available_offer;
-         console.log(available_offer);
-
-         $('#availableOffer'+available_offer).toggleClass("in");
-         $('#moreInfo'+available_offer).removeClass("in");
-        */
-         //});
+         var maximizer_id = formData.maximizer_id;
+         $("#moreInfo"+maximizer_id).toggleClass("in");
+         if($("#moreInfo"+maximizer_id).hasClass('in')){
+             $('#more_info'+maximizer_id).html("<i class='fa fa-info-circle'></i> Less info");
+         }else{
+             $('#more_info'+maximizer_id).html("<i class='fa fa-info-circle'></i> More info");
+         }
+     });
 
 </script>
-
-
 <script>
 
     $(document).on('click','.add-to-compare',function(){
-
         $("#hiden_div").animate({bottom:'0px'});
-
         // For card fly START
         if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
             alert("Sorry");
         }
-
         if($(".cart_anchor").hasClass("img_active")){
 
             var cart01 = $('.cart_anchor01');
@@ -871,11 +839,7 @@
                     }
                 });
             });
-
-
-        }
-
-        else{
+        }else{
             var cart = $('.cart_anchor');
             var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
             if (imgtodrag) {
@@ -915,8 +879,6 @@
 
             var  formData = $(this).data();
             var maximizer_id = "maximizer_id="+formData.maximizer_id;
-            //alert(home_id);
-
             setTimeout(function(){
                 $.ajax
                 ({
@@ -940,8 +902,6 @@
 
 
     $(document).on('click','.compare-cross-btn',function(){
-        //alert();
-
         var collected_card = $(this).prev().attr("data-maximizer_id");
         $(".full-card").each(function(){
             var obj=$(this).children().find('.add-to-compare');
@@ -958,9 +918,7 @@
 
     });
 
-
     $(document).on('click','.compare-cross-btn',function(){
-
         $(this).parent(".cart_anchor01").removeClass("img_active");
         $(this).parent(".cart_anchor01").html('');
     });

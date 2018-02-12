@@ -373,7 +373,7 @@ class Current_account extends CI_Controller
                                     <span class="more_info_icon"><a href="javascript:void(0)" class="add-to-compare" data-account_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
-                                    <span class="more_info_icon"><a href="javascript:void(0)" class="more_info" data-account_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
+                                    <span class="more_info_icon"><a href="javascript:void(0)" class="more_info"  id="more_info'.$row->id.'" data-account_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text1">

@@ -506,8 +506,12 @@
     $('#currentAccountSearch').on('click', '.more_info', function (){
         var  formData = $(this).data();
         var account_id = formData.account_id;
-        console.log(account_id);
         $("#moreInfo"+account_id).toggleClass("in");
+        if($("#moreInfo"+account_id).hasClass('in')){
+            $('#more_info'+account_id).html("<i class='fa fa-info-circle'></i> Less info");
+        }else{
+            $('#more_info'+account_id).html("<i class='fa fa-info-circle'></i> More info");
+        }
     });
 
     //Add Items for compare

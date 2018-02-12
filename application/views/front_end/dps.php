@@ -866,6 +866,11 @@
 //			console.log(dps_id);
 			$("#moreInfo"+dps_id).toggleClass("in");
 			$('#availableOffer'+dps_id).removeClass("in");
+			if($("#moreInfo"+dps_id).hasClass('in')){
+				$('#more_info'+dps_id).html("<i class='fa fa-info-circle'></i> Less info");
+			}else{
+				$('#more_info'+dps_id).html("<i class='fa fa-info-circle'></i> More info");
+			}
 		});
 
 		$('#searchDPS').on('click', '.availableOffer', function (){

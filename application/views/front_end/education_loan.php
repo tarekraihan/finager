@@ -33,12 +33,6 @@
                     <div class="bank-filter">
                         <p class="bank-small-filter">50 of 50 results filtered by:</p>
                         <div class="bank-big-filter">
-
-                            <!--<div class="dropdown mega-dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle">
-                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                </a>
-                            </div>-->
                             <ul class="filter-by">
                                 <li class="dropdown mega-dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle">
@@ -486,6 +480,11 @@
             var loan_id = formData.loan_id;
             $("#moreInfo" + loan_id).toggleClass("in");
             $('#rePaymentSchedule' + loan_id).removeClass("in");
+            if($("#moreInfo"+loan_id).hasClass('in')){
+                $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> Less info");
+            }else{
+                $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> More info");
+            }
         });
 
         $('#searchEducationLoan').on('click', '.rePaymentSchedule', function () {
@@ -663,8 +662,6 @@
         $(document).on('click','.add-to-compare',function(){
 
             $("#hiden_div").animate({bottom:'0px'});
-            //$("#hiden_div").addClass("hiddenHalfDown");
-
 
             if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
                 alert("Sorry");
@@ -678,12 +675,6 @@
                     if (imgtodrag01) {
 
                         var imgclone01 = imgtodrag01.clone()
-                            /*
-                            .offset({
-                                top: imgtodrag01.offset().top,
-                                left: imgtodrag01.offset().left
-                            })
-                            */
                             .css({
                             'opacity': '0.7',
                                 'position': 'absolute',
@@ -741,12 +732,6 @@
                     var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
                     if (imgtodrag) {
                         var imgclone = imgtodrag.clone()
-                            /*
-                            .offset({
-                            top: imgtodrag.offset().top,
-                            left: imgtodrag.offset().left
-                        })
-                        */
                         .css({
                             'opacity': '0.7',
                             'position': 'absolute',
@@ -831,43 +816,7 @@
                 }
             });
         });
-/*
-
-        $('#go_compare').click(function(){
-            var  formData = $('.cart_anchor').children('img').data();
-            var loan_id1 = "loan_id1="+formData.loan_id;
-
-            var  formData2 = $('.cart_anchor01').children('img').data();
-            var loan_id2 = "&loan_id2="+formData2.loan_id;
-
-            var amount = $('#finalAssest').val();
-            var principal_amount = "&principal_amount="+amount;
-
-            var year = $('#finalLiability').val();
-            var year_limit = "&year_limit="+year;
-
-            var loan_ids = loan_id1+loan_id2+principal_amount+year_limit;
-            if(loan_id1 != '' && loan_id2 != ''){
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "<?php echo base_url();?>education_loan/ajax_go_compare_page",
-                    data: loan_ids,
-                    success: function(msg)
-                    {
-                        if(msg != 'error'){
-                            window.location.href = "<?php echo base_url();?>en/education_loan_compare";
-                        }
-                    }
-                });
-            }else{
-                alert("Please add 2 card for compare ! ")
-            }
-        });
-*/
-
-
-        $('#go_compare').click(function(){
+    $('#go_compare').click(function(){
             if( ! $('.cart_anchor01').children('img').data()){
                 $("#comparison_min_two_alert").modal('show');
             }
