@@ -407,6 +407,7 @@
         });
     }
 
+
     function count_selected_row(){
         var current_account_i_am = new Array();
         $('input[name="i_am"]:checked').each(function(){
