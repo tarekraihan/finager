@@ -1298,7 +1298,7 @@ class Card extends CI_Controller
                             <span class="more_info_icon">
                                 <a id="" href="javascript:void(0);" class="add-to-compare" data-card_id="'.$row->id.'" ><i class="fa fa-plus-circle"></i> Add to comparison</a>
                             </span><br/>
-                            <span class="more_info_icon"><a class="displayText" style="cursor:pointer"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
+                            <span class="more_info_icon"><a id="card_more_info" class="displayText" style="cursor:pointer"  data-card_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                         </div>
                         <div class="col-sm-9 col-xs-12">
                             <div class="row">

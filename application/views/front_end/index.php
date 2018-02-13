@@ -103,7 +103,7 @@ font-size: 22px;
             <div class="find-bar">
                 <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/finager-promotional-log.png" alt="Finager Promotional Logo" /><br/><br/>
                 <div class="home-search-section" data-toggle="modal" data-target="#serchModal" >
-                    <img class="search-image" src="<?php echo base_url(); ?>resource/front_end/images/10.png" alt="Serch box" />
+                    <img class="search-image" src="<?php echo base_url(); ?>resource/front_end/images/10.png" alt="Search box" />
                     <p class="typewrite" data-period="3000" data-type='[ "Looking for..."]'>
                     <span class="wrap"></span>
                 </div>

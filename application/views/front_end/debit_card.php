@@ -395,7 +395,7 @@
             if($("#moreInfo"+loan_id).hasClass('in')){
                 $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> Less info");
             }else{
-                $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> more info");
+                $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> More info");
             }
 
         });

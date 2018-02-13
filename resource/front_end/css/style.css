@@ -83,6 +83,7 @@ body {
 .nav>li>a:focus, .nav>li>a:hover{
 
 	background:#337ab7 !important;
+    color:#fff;
 
 }
 
@@ -6203,9 +6204,10 @@ ul.footer-socio {
     width: 531px;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-    background-color: none;
+    background-color: #337ab7;
     border-bottom: 1px solid #000;
     border-bottom-color: transparent;
+    color:#fff;
 }
 .nav-tabs > li > a {
     margin-right: 0px;
@@ -6375,7 +6377,7 @@ a .millionier_landing_button{
     height:100%;
 }
 #search_page_content .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
-    color: #555;
+    color: #fff;
     cursor: default;
     background-color: transparent;
     border: none;
@@ -6447,7 +6449,7 @@ a .millionier_landing_button{
     font-size: 24px;
     cursor:pointer;
     position: fixed;
-    margin-left: 120px;
+    margin-left: 160px;
     z-index:9999;
     margin-top: 3px;
 }
