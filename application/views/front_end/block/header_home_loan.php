@@ -2,6 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <!-- For disable caching -->
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+
     <title>Welcome to finager</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Finager.com help them to take financial decisions intheir every day life.">
