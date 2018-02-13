@@ -1890,9 +1890,9 @@ class Card extends CI_Controller
         if($session =='credit_card'){
             $array_items = array( 'credit_card_i_am', 'credit_card_principal_amount','credit_card_i_am_label','credit_card_income_range','credit_card_income_range_label','credit_card_want_credit_limit','credit_card_type','card_types','credit_card_want_credit_limit_label','card_issuers','credit_card_features_benefits','credit_card_bank_ids','credit_card_maximum_interest_free_period','credit_card_maximum_interest_free_period_label','credit_card_type_label');
             $this->session->unset_userdata($array_items);
-            $this->session->sess_destroy();
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
+//            $this->session->sess_destroy();
+//            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+//            $this->output->set_header("Pragma: no-cache");
         }
         echo 'success';
     }
