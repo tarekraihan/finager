@@ -995,15 +995,13 @@
         var  formData = $(this).data();
         var card_id = formData.card_id;
         var ele = document.getElementById("toggleText"+card_id);
-        var text = document.getElementById("displayText");
-        console.log(ele);
         if(ele.style.display == "block") {
             ele.style.display = "none";
-            text.html("<i class='fa fa-info-circle'></i> More info");
+            $(this).html("<i class='fa fa-info-circle'></i> More info");
         }
         else {
             ele.style.display = "block";
-            text.html("<i class='fa fa-info-circle'></i> Less info");
+            $(this).html("<i class='fa fa-info-circle'></i> Less info");
         }
     });
 
