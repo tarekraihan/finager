@@ -278,10 +278,11 @@ body {
 /* Category Icon */
 
 #CategoryIcon {
+    background: rgba(255,255,255,255);
 
-    background: rgba(233, 238, 245, 0.33);
+    /*background: rgba(233, 238, 245, 0.33);
 
-    box-shadow: 0px 0px 5px 1px #dedede;
+    box-shadow: 0px 0px 5px 1px #dedede;*/
 
 }
 
@@ -339,7 +340,7 @@ body {
 
 .Cicon img{
 
-    width:100px;
+    width:105px;
 
     -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
 
@@ -364,6 +365,8 @@ body {
 section#header2 {
 
     padding: 30px 0;
+    background: rgba(233, 238, 245, 0.33);
+    box-shadow: 0px 0px 5px 1px #dedede;
 
 }
 
@@ -8349,7 +8352,10 @@ section#card_details_Eligibility {
     border-left: 1em solid #008fd8 !important;
 }
 .svg_icon{
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     margin-bottom: -5px !important;
+}
+object{
+    pointer-events: none;
 }
