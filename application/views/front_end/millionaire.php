@@ -1087,6 +1087,22 @@ $(document).ready(function() {
     });
 
 
+    $(document).on('click','#clear_all',function(){
+        var data = 'session=millionaire';
+        $.ajax
+        ({
+            type: "POST",
+            url: "<?php echo base_url();?>millionaire/ajax_clear_session",
+            data:data,
+            success: function(response)
+            {
+                window.location.href = window.location.href;
+
+            }
+        });
+    });
+
+
 });
 
 </script>

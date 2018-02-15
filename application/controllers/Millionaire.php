@@ -1094,6 +1094,18 @@ class Millionaire extends CI_Controller
         echo json_encode($data);
     }
 
+    public function ajax_clear_session(){
+        $session = $this->input->post('session');
+        if($session =='millionaire'){
+            $array_items = array('millionaire_i_am', 'millionaire_i_am_label','millionaire_tenure','millionaire_maturity_amount','millionaire_maturity_amount_label','millionaire_bank_ids');
+            $this->session->unset_userdata($array_items);
+//            $this->session->sess_destroy();
+//            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+//            $this->output->set_header("Pragma: no-cache");
+        }
+        echo 'success';
+    }
+
     public function unset_millionaire_i_am_session(){
         $session = $this->input->post('millionaire_i_am');
         if($session){
