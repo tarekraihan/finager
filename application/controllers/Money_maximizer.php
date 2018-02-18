@@ -563,9 +563,9 @@ class Money_maximizer extends CI_Controller {
         if($session =='money_maximizer'){
             $array_items = array('maximizer_deposit_amount', 'maximizer_benefit', 'maximizer_benefit_label', 'maximizer_bank_ids');
             $this->session->unset_userdata($array_items);
-            $this->session->sess_destroy();
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
+//            $this->session->sess_destroy();
+//            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+//            $this->output->set_header("Pragma: no-cache");
         }
         echo 'success';
     }

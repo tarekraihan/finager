@@ -393,6 +393,11 @@
     .Cicon img {
         width: 80px !important;
     }
+    .svg_icon{
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: -5px !important;
+    }
     .about-logo {
         max-width: 30% !important;
         margin: 0px auto 15px auto;
@@ -408,8 +413,9 @@
     .debit_blog_box p{
         font-size: 12px !important;
     }
-    #Basic{
+    #Basic, #debit_Basic{
         height: auto !important;
+        padding-bottom: 30px;
     }
     /*credit card END*/
 

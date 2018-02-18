@@ -176,7 +176,7 @@ font-size: 22px;
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
                         <a class="Cicon_a" href="<?php echo base_url(); ?>education-loan.html">
-                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/educationloan.png" alt="Education Loan"/>
+                            <img class="svg_img " src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/educationloan.png" alt="Education Loan"/>
                             <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/educationloan.svg">
                                 Education Loan
                             </object>
@@ -187,7 +187,7 @@ font-size: 22px;
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
                         <a class="Cicon_a" href="<?php echo base_url(); ?>fdr.html">
-                            <img class="svg_img"  src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/fdr.png" alt="FDR"/>
+                            <img class="svg_img "  src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/fdr.png" alt="FDR"/>
                             <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/fdr.svg">
                                 FDR
                             </object>

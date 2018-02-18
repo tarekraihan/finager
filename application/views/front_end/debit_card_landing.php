@@ -53,9 +53,9 @@
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal i_want" data-i_want="2"><div class="debit_All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/debit_student_card.png" alt="Student Debit Card"/>
-							<p>Student Debit Card</p>
+						<a class="land_modal i_want" data-i_want="3"><div class="debit_All_card">
+							<img src="<?php echo base_url();?>resource/front_end/images/debit_student_card.png" alt="General Debit Card"/>
+							<p>General Debit Card</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">

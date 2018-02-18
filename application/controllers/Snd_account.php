@@ -730,9 +730,9 @@ class Snd_account extends CI_Controller
         if($session =='snd'){
             $array_items = array('snd_amount', 'snd_i_am', 'snd_i_want_interest','snd_i_am_label','snd_i_want_interest_label','snd_i_want_interest_label','auto_loan_bank_ids');
             $this->session->unset_userdata($array_items);
-            $this->session->sess_destroy();
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
+//            $this->session->sess_destroy();
+//            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+//            $this->output->set_header("Pragma: no-cache");
         }
         echo 'success';
 
