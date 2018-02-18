@@ -1,4 +1,3 @@
 # Remove the file from the repository
-.idea
-.idea/workspace.xml
-.application/cache/
+.idea/*
+application/cache/*
