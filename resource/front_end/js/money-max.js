@@ -168,7 +168,7 @@ $(function(event) {
 					}
 					else */if(amtDetail>=10000)
 					{
-						var marLft_input = ((valInput/50000)-1) *35;
+						var marLft_input = ((valInput/50000)) *35;
 					}
 					
 					//console.log("marLft_input" + marLft_input +'Difference'+ diff);
