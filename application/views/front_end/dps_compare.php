@@ -1,9 +1,7 @@
 <?php
-//pr($_SESSION);die;
-
-$dps_1 = $this->session->userdata('first_dps_id');
-$dps_2 = $this->session->userdata('second_dps_id');
-$deposited_amount = $this->session->userdata('deposit_amount');
+$dps_1 = $dps1['id'];
+$dps_2 = $dps2['id'];
+$deposited_amount = (!empty($dps_amount) && is_numeric($dps_amount) ) ? $dps_amount : 1000;
 if(!empty($dps_1) && is_numeric($dps_1) && !empty($dps_2) && is_numeric($dps_2) ){
 
 	$array_map = array(
@@ -297,17 +295,17 @@ if(!empty($dps_1) && is_numeric($dps_1) && !empty($dps_2) && is_numeric($dps_2) 
 			</div>
 
 			<div class="row comparision-subscribe">
-				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>	
+				<h4 class="text-center">  Send this comparison to yourself. Enter your email here.  </h4>
 				<div class="col-md-12">
-					<form class="comparison_email">
-					  <div class="form-group col-md-11">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email here">
-					  </div>
-					  <div class="form-group col-md-1">
-						<button type="submit" class="btn btn-default">SEND </button>
-					  </div>
-					</form>
-				</div>			
+					<div class="comparison_email">
+						<div class="form-group col-md-11">
+							<input type="email" class="form-control" id="send_comparison_email" placeholder="Enter your email here">
+						</div>
+						<div class="form-group col-md-1">
+							<button type="submit" class="btn btn-default" id="send_comparison_button">SEND </button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

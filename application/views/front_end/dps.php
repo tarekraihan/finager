@@ -977,37 +977,28 @@
 			});
 		});
 
-
-
 		$('#go_compare').click(function(){
-
-			var  formData = $('.cart_anchor').children('img').data();
-			var dps_id1 = "dps_id1="+formData.dps_id;
-			var  formData = $('.cart_anchor01').children('img').data();
-			var dps_id2 = "&dps_id2="+formData.dps_id;
+			if( ! $('.cart_anchor01').children('img').data()){
+				$("#comparison_min_two_alert").modal('show');
+			}
 			var amount = $('#finalAssest').val();
 			if(amount == ''){
 				amount = 500;
 			}
-			var deposit_amount = "&deposit_amount="+amount;
-
-			var dps_info = dps_id1+dps_id2+deposit_amount;
-			if(dps_id1 != '' && dps_id2 != ''){
-				$.ajax({
-					type: "POST",
-					url: "<?php echo base_url();?>dps/ajax_go_compare_page",
-					data: dps_info,
-					success: function(msg){
-						if(msg != 'error'){
-							window.location.href = "<?php echo base_url();?>en/dps_compare";
-						}
-					}
-				});
+			var deposit_amount = "-tk"+amount;
+			var  formData = $('.cart_anchor').children('img').data();
+			var dps_url1 = formData.dps_url;
+			var  formData = $('.cart_anchor01').children('img').data();
+			var dps_url2 = formData.dps_url;
+			var dps_urls = dps_url1+'-vs-'+dps_url2+deposit_amount;
+			console.log(dps_urls);
+			if(dps_url1 != '' && dps_url2 != ''){
+				window.location.href = "<?php echo base_url();?>compare-dps/"+dps_urls+".html";
 			}else{
-				alert("Please add 2 DPS for compare ! ");
+				alert("Please add 2 card for compare ! ");
 			}
-		});
 
+		});
 
         $(document).on('click','#clear_all',function(){
             var data = 'session=dps';

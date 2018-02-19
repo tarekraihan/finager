@@ -265,19 +265,6 @@ class En extends CI_Controller {
 
     }
 
-    /*public function home_loan_details(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('home_loan_details', 'home_loan_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/home_loan_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }*/
     public function home_loan_compare($url){
         if($this->session->userdata('lovemebaby')){
             if(strpos( $url, '-vs-' ) == true){
@@ -424,21 +411,6 @@ class En extends CI_Controller {
             redirect(base_url().'en/login.html');
         }
     }
-
-/*
-    public function personal_loan_details(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('personal_loan_details', 'personal_loan_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/personal_loan_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }*/
 
     public function personal_loan_compare($url){
         if($this->session->userdata('lovemebaby')){
@@ -629,24 +601,6 @@ class En extends CI_Controller {
         }
     }
 
-
-/*
-    public function fdr_details(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('fdr_details', 'fdr_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/fdr_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }*/
-
-
-
     public function dps(){
         if($this->session->userdata('lovemebaby')){
             $this->load->driver('cache');
@@ -676,29 +630,38 @@ class En extends CI_Controller {
         }
     }
 
-    public function dps_details(){
+    public function dps_compare($url){
         if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('dps_details', 'dps_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/dps_details');
-            $this->load->view('front_end/block/footer');
-        }else{
-            redirect(base_url().'en/login.html');
-        }
-    }
+            if(strpos( $url, '-vs-' ) == true){
+                $compare = explode("-vs-",$url);
+                $dps_amount = explode("-tk",$compare[1]);
+                $query1 = $this->db->get_where('dps_info',array('slug'=>$compare[0]));
+                $data['dps1'] = $query1->row_array();
+                $query2 = $this->db->get_where('dps_info',array('slug'=>$dps_amount[0]));
+                $data['dps2'] = $query2->row_array();
+                $data['dps_amount'] = $dps_amount[1];
+                $this->load->driver('cache');
+                $this->cache->file->save('dps_compare', 'dps_compare', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/dps_compare');
+                $this->load->view('front_end/block/footer');
 
-    public function dps_compare(){
-        if($this->session->userdata('lovemebaby')){
-            $this->load->driver('cache');
-            $this->cache->file->save('dps_compare', 'dps_compare', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/dps_compare');
-            $this->load->view('front_end/block/footer');
+            }else{
+                $dps_data = explode("-tk",$url);
+                $query = $this->db->get_where('dps_info',array('slug'=>$dps_data[0]));
+                $data['dps_details'] = $query->row_array();
+                $data['dps_amount'] = $dps_data[1];
+                $this->load->driver('cache');
+                $this->cache->file->save('dps_details', 'dps_details', 100);
+                $this->load->view('front_end/block/header_home_loan',$data);
+                $this->load->view('front_end/block/right_menu');
+                $this->load->view('front_end/block/vertical_menu');
+                $this->load->view('front_end/dps_details');
+                $this->load->view('front_end/block/footer');
+            }
+
         }else{
             redirect(base_url().'en/login.html');
         }
@@ -1011,8 +974,6 @@ class En extends CI_Controller {
     public function bank_details($url){
         $query = $this->db->get_where('card_bank',array('slug'=>$url));
         $data['institution_info'] = $query->row_array();
-
-        //$institution_info = $this->Front_end_select_model->Select_bank_non_bank_info_by_id($data['institution_info']['id'],0);
         $data['home_loan'] = $this->Front_end_select_model->select_all_home_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
         $data['personal_loan'] = $this->Front_end_select_model->select_all_personal_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
         $data['auto_loan'] = $this->Front_end_select_model->select_all_auto_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
