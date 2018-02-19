@@ -1,0 +1,45 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-222 345.9 150 150" style="" xml:space="preserve">
+<script xlink:href="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<style type="text/css">
+	.st0{fill:none;stroke:url(#skyGradient);stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:url(#skyGradient);stroke-width:7;stroke-miterlimit:10;}
+	svg:hover .st{
+		stroke:url(#skyGradient);
+	}  
+</style>
+
+<defs>
+    <linearGradient id="skyGradient" x1="100%" y1="100%">
+      <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue" dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="lightblue;orange;purple;purple;black;purple;purple;blue;lightblue;lightblue;orange;purple;purple;black;purple;purple;blue;lightblue;lightblue;orange;purple;purple;black;purple;purple;blue;lightblue" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+</defs>
+
+<g id="XMLID_158_">
+	<path id="XMLID_155_" class="st st0 VmuzpDPO_0" d="M-92.8,446.5L-139.8,446.51"></path>
+	<path id="XMLID_156_" class="st st0 VmuzpDPO_1" d="M-116.3,471.11L-115.3,423.51"></path>
+	<path id="XMLID_159_" class="st st0 VmuzpDPO_2" d="M-122.1,398.9L-172.9,398.91"></path>
+	<path id="XMLID_163_" class="st st0 VmuzpDPO_3" d="M-130.3,419.7L-172.9,419.71"></path>
+	<path id="XMLID_171_" class="st st0 VmuzpDPO_4" d="M-147.5,439.5L-172.9,439.51"></path>
+	<path id="XMLID_174_" class="st st0 VmuzpDPO_5" d="M-151.3,457.9c0-24.9,20.2-45.1,45.1-45.1v-28.6h-82.6v75.1h37.5
+		C-151.3,458.8-151.3,458.4-151.3,457.9z"></path>
+</g>
+<path class="st st1 VmuzpDPO_6" d="M-219.5,420.9A72.5,72.5 0,1,1 -74.5,420.9A72.5,72.5 0,1,1 -219.5,420.9"></path>
+<style>.VmuzpDPO_0{stroke-dasharray:47 49;stroke-dashoffset:48;animation:VmuzpDPO_draw 700ms linear 0ms forwards;}.VmuzpDPO_1{stroke-dasharray:47 49;stroke-dashoffset:48;animation:VmuzpDPO_draw 700ms linear 166ms forwards;}.VmuzpDPO_2{stroke-dasharray:51 53;stroke-dashoffset:52;animation:VmuzpDPO_draw 700ms linear 333ms forwards;}.VmuzpDPO_3{stroke-dasharray:43 45;stroke-dashoffset:44;animation:VmuzpDPO_draw 700ms linear 500ms forwards;}.VmuzpDPO_4{stroke-dasharray:26 28;stroke-dashoffset:27;animation:VmuzpDPO_draw 700ms linear 666ms forwards;}.VmuzpDPO_5{stroke-dasharray:297 299;stroke-dashoffset:298;animation:VmuzpDPO_draw 700ms linear 833ms forwards;}.VmuzpDPO_6{stroke-dasharray:456 458;stroke-dashoffset:457;animation:VmuzpDPO_draw 700ms linear 500ms forwards;}@keyframes VmuzpDPO_draw{100%{stroke-dashoffset:0;}}@keyframes VmuzpDPO_fade{0%{stroke-opacity:1;}94.44444444444444%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style>
+<script type="text/ecmascript">
+<!-- <![CDATA[
+	$('svg').hover(
+	function(){
+		location.reload();
+	},
+	function(e){
+		e.preventDefault();
+	});
+]]> -->
+</script>
+</svg>
