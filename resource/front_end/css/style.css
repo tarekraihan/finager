@@ -3,15 +3,10 @@
 /* CSS Document */
 
 body {
-
     font-size: 15px !important;
-
     /*font-family: 'Ubuntu', sans-serif;*/
-
     font-family: 'Lato', sans-serif;
-
     font-weight: 500;
-
 }
 
 *{
@@ -174,12 +169,6 @@ body {
 .header{
 
     padding-top: 0px !important;
-
-}
-
-.logo{
-
-    width:120px;
 
 }
 
@@ -471,89 +460,46 @@ section#header2 {
 }
 
 .remittance{
-
     font-size:30px;
-
 }
-
 .rem-readmore{
-
     float:right;
-
     margin-right:180px;
-
 }
-
 .rem-readmore a{
-
     text-decoration:none;
-
 }
-
-
-
 /*for card page*/
 
 .card_left_bar {
-
     border: 1px solid #EAEAEA;
-
     /*padding: 6px;*/
-
     padding: 0px;
-
 }
 
 .card_right_bar {
-
     background-color: #F9F9F9;
-
     padding: 15px 15px;
-
     margin-bottom: 15px;
-
     clear: both;
-
     margin-left: 0 !important;
-
     margin-right: 0 !important;
-
     border: 1px solid #EAEAEA;
-
     box-shadow: 0px 0px 2px 2px #f2f2f2;
-
 }
-
 .card_right_bar:hover {
-
     box-shadow: 0px 0px 9px 3px #808080;
-
 }
-
 .w20{
-
     width:20% !important;
-
 }
-
-
-
 .card_text2 p {
-
     font-size: 13px;
-
-    position: absolute;
-
+    /*position: absolute;*/
     bottom: 0;
-
     left: 0;
-
     margin: 0;
-
 }
-
-
-
 .card_description{
 
     font-size:12px;
@@ -1025,67 +971,28 @@ section#header2 {
     color:#999999;
 
     text-decoration:underline;
-
 }
-
 .userreviw_note{
-
     font-size:12px;
-
     color:#999999;
-
 }
-
 .prosCons_body ul li {
-
     list-style-type: none;
-
 }
-
 .prosCons_body ol, ul {
-
     padding-left:30px;
-
 }
-
 .w20{
-
     width:20% !important;
-
 }
-
-
-
-.card_text2 p {
-
-    font-size: 13px;
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    margin: 0;
-
-}
-
-
-
 .card_description{
-
     font-size:12px;
-
 }
-
-
-
 .cc_menu{
 
     background-image:url(../images/cc_menu_bg.png);
 
 }
-
 .query_radio{
 
     margin-left:14px;
@@ -6089,12 +5996,17 @@ hr {
     left: 15px;
     z-index: 99999;
     max-height: 63px;
-    width: 150px;
+    width: 196px;
     margin-top: 3px;
 }
 .logobar a .logo {
     max-height: 70px;
-    width: 185px;
+    width: 145px
+}
+.beta-icon {
+    width: 46px;
+    float: right;
+    margin-top: 5px;
 }
 /*For Footer menu*/
 .footer-logo{
@@ -6233,9 +6145,6 @@ ul.footer-socio {
 }
 #top-page{
     min-height:48px;
-}
-.logo{
-    width:150px;
 }
 .logo-lg{
     height: 180px;
