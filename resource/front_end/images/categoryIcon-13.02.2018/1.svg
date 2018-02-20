@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#4289C8;stroke-width:4.6596;stroke-linecap:round;stroke-miterlimit:10;}
+	.st1{fill:#4289C8;}
+	.st2{fill:none;stroke:#4289C8;stroke-width:3.2336;stroke-linecap:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#4289C8;stroke-width:3.6695;stroke-linecap:round;stroke-miterlimit:10;}
+	svg{background-color: #f8f9fc;}
+	svg:hover .path {
+	  stroke-dasharray: 2000;
+	  stroke-dashoffset: 2000;
+	  animation: dash 5s linear;
+	  animation-fill-mode: forwards;
+	 
+	}
+	svg:hover #path0 {
+	  <!-- animation-delay: 0.7s; -->
+	}
+
+	svg:hover #path2 {
+	  animation-delay: 0.3s;
+	}
+
+	svg:hover #path2 {
+	  animation-delay: 0.5s;
+	}
+
+	svg:hover #path3 {
+	  animation-delay: 0.8s;
+	}
+
+	svg:hover #path4 {
+	  animation-delay: 1s;
+	}
+
+	svg:hover #path5 {
+	  animation-delay: 1.3s;
+	}
+
+	svg:hover #path6 {
+	  animation-delay: 1.5s;
+	}
+
+	@keyframes dash {
+	  from {
+	    stroke-dashoffset: 2000;
+	  }
+	  to {
+	    stroke-dashoffset: 0;
+	  }
+	}
+</style>
+<rect x="-1" y="-1" width="582" height="402" id="canvas_background" fill="#f8f9fc"/>
+<g id="XMLID_4_">
+	<path class="path st2" id="path1" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M30,46.3c0,0,3.6-30.8,42.5-30.8c42.4,0,42.2,41.1,42.2,41.1"/>
+	<path class="path st2" id="path2" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M33.5,43.1c0,0-6.3,2-3.3,9.1"/>
+	<g id="XMLID_7_">
+		<path class="path st2" id="path3" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M113.7,57.9l5.8,3.5c0.9,0.6,1.5,1.9,1.5,3.4V85c0,1.5-0.6,2.8-1.5,3.4l-5.8,3.7V57.9z"/>
+		<path class="path st2" id="path4" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M114.1,58.7l5.1,3.1c0.8,0.5,1.3,1.7,1.3,3.1V85c0,1.3-0.5,2.5-1.3,3l-5.1,3.3V58.7
+			 M113.2,57.1v35.8l6.5-4.1c1-0.7,1.7-2.1,1.7-3.8V64.8c0-1.7-0.7-3.1-1.8-3.8L113.2,57.1L113.2,57.1z"/>
+	</g>
+	<path class="path st2" id="path3" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M108.2,97.3h-3.1c-1.6,0-3-1.3-3-3V55.9c0-1.6,1.3-3,3-3h3.1c1.6,0,3,1.3,3,3v38.4
+		C111.2,96,109.8,97.3,108.2,97.3z"/>
+	<path class="path st2" id="path1" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M127.9,81.7h-2.4c-0.8,0-1.4-0.6-1.4-1.4V69.1c0-0.8,0.6-1.4,1.4-1.4h2.4c0.8,0,1.4,0.6,1.4,1.4
+		v11.2C129.3,81,128.7,81.7,127.9,81.7z"/>
+	<path class="path st2" id="path4" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M126.7,81.7c0,0-2.3,46.6-40,46.6"/>
+	<path class="path st2" id="path5" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M83.4,133.9H70.9c-1.6,0-2.9-1.3-2.9-2.9v-5.4c0-1.6,1.3-2.9,2.9-2.9h12.6
+		c1.6,0,2.9,1.3,2.9,2.9v5.4C86.3,132.6,85,133.9,83.4,133.9z"/>
+	<g id="XMLID_13_">
+		<path class="path st1" id="path0" fill="none" stroke="#000" stroke-width="1.5" stroke-opacity="null" fill-opacity="null" d="M75,6.1c38,0,68.9,30.9,68.9,68.9S113,143.9,75,143.9S6.1,113,6.1,75S37,6.1,75,6.1 M75,0
+			C33.6,0,0,33.6,0,75s33.6,75,75,75s75-33.6,75-75S116.4,0,75,0L75,0z"/> 
+
+	</g>
+</g>
+</svg>

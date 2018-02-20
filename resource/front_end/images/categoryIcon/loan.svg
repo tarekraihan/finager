@@ -1,0 +1,60 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-222 345.9 150 150" style="" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:url(#skyGradient);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:url(#skyGradient);stroke-width:4.5361;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:url(#skyGradient);stroke-width:7;stroke-miterlimit:10;}
+	svg:hover .st{
+		stroke:url(#skyGradient);
+	}
+</style>
+
+<defs>
+    <linearGradient id="skyGradient" x1="100%" y1="100%">
+      <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue" dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="lightblue;orange;purple;purple;black;purple;purple;blue;lightblue;lightblue;orange;purple;purple;black;purple;purple;blue;lightblue;lightblue;orange;purple;purple;black;purple;purple;blue;lightblue" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+</defs>
+
+<path class="st st0 kmiPseDB_0" d="M-104.9,429.3l-0.4-2.2c-0.1-0.8-0.3-1.5-0.4-2.2c-0.2-0.7-0.4-1.5-0.6-2.2l-0.7-2.2c-1-2.8-2.4-5.6-4-8.1
+	c-3.3-5-7.7-9.2-12.4-12.8l-1.8-1.3c-0.6-0.4-1.2-0.8-1.7-1.3c-1.1-0.9-2.2-1.8-3.2-2.9c-2-2-3.6-4.4-4.9-6.9
+	c-0.6-1.3-1.1-2.6-1.6-4c-0.4-1.3-0.4-2.7,0.1-3.9c0.1-0.3,0.3-0.6,0.5-0.9c0.1-0.1,0.2-0.3,0.3-0.4c0.1-0.2,0.2-0.3,0.3-0.4
+	l1.4-1.7c0.9-1.1,2-2.1,3-3.1l3.7-4.4l0.7-0.6l-1,0.3l-2.4,0.7c-0.8,0.2-1.6,0.5-2.4,0.5c-0.4,0-0.8,0-1.2-0.2
+	c-0.4-0.1-0.7-0.3-1.2-0.4c-0.8-0.3-1.8-0.3-2.6-0.1c-0.8,0.2-1.6,0.5-2.5,0.6c-0.8,0.1-1.7,0.2-2.5,0.2c-0.8,0-1.7-0.1-2.5-0.2
+	h-3.4l-3.1,0c-0.8,0.1-1.7,0.2-2.5,0.2s-1.7-0.1-2.5-0.2c-0.9-0.1-1.7-0.4-2.5-0.6c-0.8-0.2-1.8-0.2-2.6,0.1
+	c-0.5,0.1-0.8,0.3-1.2,0.4c-0.4,0.2-0.8,0.2-1.2,0.2c-0.8,0-1.6-0.3-2.4-0.5l-2.4-0.7l-1-0.3l0.7,0.6l3.7,4.4c1,1,2.1,2,3,3.1
+	l1.4,1.7c0.1,0.1,0.2,0.2,0.3,0.4c0.1,0.1,0.2,0.3,0.3,0.4c0.2,0.3,0.4,0.6,0.5,0.9c0.5,1.2,0.5,2.6,0.1,3.9c-0.5,1.4-1,2.7-1.6,4
+	c-1.3,2.5-2.9,4.9-4.9,6.9c-1,1.1-2.1,2-3.2,2.9c-0.5,0.5-1.1,0.9-1.7,1.3l-1.8,1.3c-4.7,3.6-9.1,7.8-12.4,12.8
+	c-1.6,2.5-3,5.3-4,8.1l-0.7,2.2c-0.2,0.7-0.4,1.5-0.6,2.2c-0.1,0.7-0.3,1.4-0.4,2.2l-0.4,2.2c-0.4,3-0.7,6-0.7,9s0.2,6,0.8,9
+	c0.5,3,1.5,5.9,2.9,8.7c1.4,2.8,3.2,5.4,5.4,7.6s4.7,4.1,7.4,5.6c2.7,1.5,5.7,2.4,8.7,3c6.4,1.4,12.5,2.5,18.7,2.3
+	c6.2,0.2,12.4-0.8,18.8-2.2c3-0.6,6-1.5,8.7-3s5.2-3.4,7.4-5.6c2.2-2.2,4-4.8,5.4-7.6c1.4-2.8,2.4-5.7,2.9-8.7c0.6-3,0.8-6,0.8-9
+	S-104.5,432.3-104.9,429.3z"></path>
+<path id="XMLID_2_" class="st1 kmiPseDB_1" d="M-161.3,418.2c0,0,2.3-0.7,3.8,0.3c1,0.7,1.1,2.1,1.1,2.1v9.6h-8.5l4.2,4.8h4.2v15.2
+	c0,0,0.5,4.2,6.3,6.6c5.7,2.4,14.6-2.6,17.9-8.5c1.9-3.4,5.1-10.2,1.1-16.1c-5.5-7.9-12.7-3.2-12.2,3.1c0,0-0.4,5.1,6.9,5.2
+	c0,0-0.1,5.7-6.6,10.2c0,0-6.6,4.4-8.7-1.8v-14l6.8-0.1l-4.3-4.7l-2.7,0.1v-10.7c0,0,0.2-6.2-3.8-7.8c-3.7-1.4-6.8,1-6.8,1
+	s-1.1,0.7-0.5,2.2C-162.3,416.6-161.3,418.2-161.3,418.2z"></path>
+<path class="st st2 kmiPseDB_2" d="M-219.5,420.9A72.5,72.5 0,1,1 -74.5,420.9A72.5,72.5 0,1,1 -219.5,420.9"></path>
+<path class="st st0 kmiPseDB_3" d="M-160,384.1c0,0,8.6,4.4,23.8,0.9"></path>
+<path class="st st0 kmiPseDB_4" d="M-159,396.5L-150.9,385.7L-154,374.6"></path>
+<path class="st st0 kmiPseDB_5" d="M-147.8,397.6L-147.3,386.3"></path>
+<path class="st st0 kmiPseDB_6" d="M-136,395.2L-143.1,386.4"></path>
+<path class="st st0 kmiPseDB_7" d="M-141.1,377.6L-143.7,386.2"></path>
+<style>.kmiPseDB_0{stroke-dasharray:346 348;stroke-dashoffset:347;animation:kmiPseDB_draw 700ms linear 0ms forwards;}.kmiPseDB_1{stroke-dasharray:213 215;stroke-dashoffset:214;animation:kmiPseDB_draw 700ms linear 142ms forwards;}.kmiPseDB_2{stroke-dasharray:456 458;stroke-dashoffset:457;animation:kmiPseDB_draw 700ms linear 285ms forwards;}.kmiPseDB_3{stroke-dasharray:25 27;stroke-dashoffset:26;animation:kmiPseDB_draw 700ms linear 428ms forwards;}.kmiPseDB_4{stroke-dasharray:26 28;stroke-dashoffset:27;animation:kmiPseDB_draw 700ms linear 571ms forwards;}.kmiPseDB_5{stroke-dasharray:12 14;stroke-dashoffset:13;animation:kmiPseDB_draw 700ms linear 714ms forwards;}.kmiPseDB_6{stroke-dasharray:12 14;stroke-dashoffset:13;animation:kmiPseDB_draw 700ms linear 857ms forwards;}.kmiPseDB_7{stroke-dasharray:9 11;stroke-dashoffset:10;animation:kmiPseDB_draw 700ms linear 500ms forwards;}@keyframes kmiPseDB_draw{100%{stroke-dashoffset:0;}}@keyframes kmiPseDB_fade{0%{stroke-opacity:1;}94.44444444444444%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style>
+<script type="text/ecmascript">
+<!-- <![CDATA[
+	$('svg').hover(
+	function(){
+		location.reload();
+	},
+	function(e){
+		e.preventDefault();
+	});
+]]> -->
+</script>
+</svg>

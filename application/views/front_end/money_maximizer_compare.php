@@ -143,7 +143,7 @@ if($second_maximizer->is_non_bank == 1){
 
                             <tr>
                                 <td><b> Deposit Amount</b></td>
-                                <td> BDT. <?php echo number_format($maximizer_amount)?> </td>
+                                <td> BDT <?php echo number_format($maximizer_amount)?> </td>
                             </tr>
 
                             <tr>
@@ -158,7 +158,7 @@ if($second_maximizer->is_non_bank == 1){
 
                             <tr>
                                 <td><b> Maturity Amount</b></td>
-                                <td>BDT. <?php echo number_format($second_benefit_amount);?> </td>
+                                <td>BDT <?php echo number_format($second_benefit_amount);?> </td>
                             </tr>
 
                             <tr>

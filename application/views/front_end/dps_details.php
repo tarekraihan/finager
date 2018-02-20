@@ -1,6 +1,6 @@
 <?php
-$id=$this->uri->segment(3, 0);
-$deposited_amount=($this->uri->segment(4, 0)) ? $this->uri->segment(4,0) : 1000;
+$id=$dps_details['id'];
+$deposited_amount=(!empty($dps_amount) && is_numeric($dps_amount) ) ? $dps_amount : 1000;
 if(!empty($id) && is_numeric($id) ){
 
 	$array_map = array(
@@ -74,11 +74,6 @@ if(!empty($id) && is_numeric($id) ){
 	} else {
 		$bank_logo = $row['bank_logo'];
 	}
-	/*pr($deposit_result);die;
-
-	echo $id;
-	echo '<br/>';
-	echo 'deposit='.$deposited_amount;*/
 
 }else{
 	redirect(base_url().'My404');

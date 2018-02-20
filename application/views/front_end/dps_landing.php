@@ -329,7 +329,7 @@
 				data: data,
 				cache: false,
 				success: function(response){
-					window.location.href = "<?php echo base_url();?>en/all_dps";
+					window.location.href = "<?php echo base_url();?>compare-dps.html";
 				}
 			});
 		}

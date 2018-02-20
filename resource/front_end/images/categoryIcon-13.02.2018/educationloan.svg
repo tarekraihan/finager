@@ -1,0 +1,51 @@
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-222 345.9 150 150" style="" xml:space="preserve">
+<script xlink:href="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<style type="text/css">
+	.st0{fill:url(#skyGradient);stroke:url(#skyGradient);stroke-width:4.4602;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:url(#skyGradient);stroke:url(#skyGradient);stroke-width:2.8338;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:url(#skyGradient);stroke-width:2.4464;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:url(#skyGradient);stroke-width:7.3391;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:#FFFFFF;}
+	.st5{fill:none;stroke:url(#skyGradient);stroke-width:5;stroke-miterlimit:10;}
+	svg:hover .st{
+		stroke:url(#skyGradient);
+	}
+
+	svg:hover .st0{
+		fill:url(#skyGradient);
+	} 
+</style>
+
+<defs>
+    <linearGradient id="skyGradient" x1="100%" y1="100%">
+      <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue;lightblue;blue;red;red;black;red;red;purple;lightblue" dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+        <animate attributeName="stop-color" values="lightblue;orange;purple;purple;black;purple;purple;blue;lightblue;lightblue;orange;purple;purple;black;purple;purple;blue;lightblue;lightblue;orange;purple;purple;black;purple;purple;blue;lightblue" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="6s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+</defs>
+
+<path id="XMLID_256_" class="st st0 CxdkJecJ_0" d="M-144.6,428L-191.6,402.8L-144.8,388.5L-97.7,402.7Z"></path>
+<path id="XMLID_2_" class="st st1 CxdkJecJ_1" d="M-175.9,439c15.3-6,22.8,8.3,31.3,8.3l0,0c8,0,15.3-11.9,31.3-8.2l0,0v-19.7l-31.3,16.8
+	l-31.3-17.1V439z"></path>
+<path id="XMLID_198_" class="st st2 CxdkJecJ_2" d="M-188.155,402.9L-188.1,463.510.105"></path>
+<path id="XMLID_197_" class="st st3 CxdkJecJ_3" d="M-188.110,440.5L-188.1,463.510.100"></path>
+<path id="XMLID_190_" class="st st4 CxdkJecJ_4" d="M-148.4,395.7A3.8,2.4 0,1,1 -140.79999999999998,395.7A3.8,2.4 0,1,1 -148.4,395.7"></path>
+<path class="st5 CxdkJecJ_5" d="M-219.5,420.9A72.5,72.5 0,1,1 -74.5,420.9A72.5,72.5 0,1,1 -219.5,420.9"></path>
+<style>.CxdkJecJ_0{stroke-dasharray:205 207;stroke-dashoffset:206;animation:CxdkJecJ_draw 666ms linear 0ms forwards;}.CxdkJecJ_1{stroke-dasharray:178 180;stroke-dashoffset:179;animation:CxdkJecJ_draw 666ms linear 66ms forwards;}.CxdkJecJ_2{stroke-dasharray:61 63;stroke-dashoffset:62;animation:CxdkJecJ_draw 666ms linear 133ms forwards;}.CxdkJecJ_3{stroke-dasharray:23 25;stroke-dashoffset:24;animation:CxdkJecJ_draw 666ms linear 199ms forwards;}.CxdkJecJ_4{stroke-dasharray:20 22;stroke-dashoffset:21;animation:CxdkJecJ_draw 666ms linear 266ms forwards;}.CxdkJecJ_5{stroke-dasharray:456 458;stroke-dashoffset:457;animation:CxdkJecJ_draw 666ms linear 333ms forwards;}@keyframes CxdkJecJ_draw{100%{stroke-dashoffset:0;}}@keyframes CxdkJecJ_fade{0%{stroke-opacity:1;}92.3076923076923%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style>
+<script type="text/ecmascript">
+<![CDATA[
+	$('svg').hover(
+	function(){
+		location.reload();
+	},
+	function(e){
+		e.preventDefault();
+	});
+]]> 
+</script>
+</svg>

@@ -75,9 +75,6 @@
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/Credit-Card-Manu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<!--<p class="text-right">
-																								 A <span class="focus-text">credit card</span> is a card issued by a financial company giving the holder an option to borrow funds, usually at point of sale. Credit cards charge interest and are primarily used for short-term financing.
-																							</p>-->
 																							<a class="megamenu_feature_link button-hover" data-text="Find All Credit Cards Here" href="<?php echo base_url();?>credit-cards.html">Find All Credit Cards Here</a>
 																						</div>
 																					</a>
@@ -90,9 +87,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/credit_card1">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card2.png" alt="img">
                                                                                                 <p title="6 Best Credit Card Bonuses Available Today" class="item-title">6 Best Credit Card Bonuses Available Today</p>
-                                                                                                <!--<p>
-                                                                                                    Chase currently offers new Chase Sapphire Reserves cardholders a bonus of 100,000 points when they spend $4,000 within the...... 
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -102,9 +96,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/credit_card2">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
                                                                                                 <p title="Authorization, Clearing and Settlement: How Master Card Works" class="item-title">Authorization, Clearing and Settlement.....</p>
-                                                                                               <!-- <p>
-                                                                                                    The credit card companies are proud with the reliability of their payment processing systems. The big ones are processing millions.....
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -120,9 +111,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/credit_card3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/credit_card_menu.png" alt="img">
                                                                                                 <p title="The Basics About MasterCard’s Excessive Chargeback Program That You Absolutely HAVE To Know" class="item-title">The Basics About MasterCard’s Excessive...</p>
-                                                                                                <!--<p>
-                                                                                                    MasterCard’s Excessive Chargeback Program (ECP) sets the rules that all acquiring banks (also called acquirers or processors)...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -132,9 +120,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/credit_card3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/credit_card_menu.png" alt="img">
                                                                                                 <p title="The Basics About MasterCard’s Excessive Chargeback Program That You Absolutely HAVE To Know" class="item-title">The Basics About MasterCard’s Excessive...</p>
-                                                                                                <!--<p>
-                                                                                                    MasterCard’s Excessive Chargeback Program (ECP) sets the rules that all acquiring banks (also called acquirers or processors)...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -151,7 +136,6 @@
                                                                                 <a href="#">
                                                                                     <p>
                                                                                         <span class="help-normal">Get Help From</span><br>
-                                                                                        <!--span class="help-topic">Fin</span><br-->
                                                                                         <span class="help-focus">Fin Guru</span>
                                                                                     </p>
                                                                                 </a>
@@ -182,9 +166,6 @@
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/Debit-Card-Icon-2.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<!--<p class="text-right">
-																								<span class="focus-text">Debit Card</span> is a payment card that deducts money directly from a consumer’s checking account to pay for a purchase. Debit cards eliminate the need to carry cash to make purchases.
-																							</p>-->
 																							<a class="megamenu_feature_link button-hover" data-text="Find All Debit Cards Here" href="<?php echo base_url(); ?>debit-cards.html">Find All Debit Cards Here</a>
 																						</div>
 																					</a>
@@ -197,9 +178,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/debit_card1">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card1.png" alt="img">
                                                                                                 <p title="The Basics of Your Debit Card" class="item-title">The Basics of Your Debit Card</p>
-                                                                                                <!--<p>
-                                                                                                    Debit cards are being used at an all-time high today and are used more often than credit cards. Last year debit card use exceeded a trillion dollars. That's a lot of...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -209,9 +187,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/debit_card2">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card2.png" alt="img">
                                                                                                 <p title="What Is a Debit Card and How Is It Used?" class="item-title">What Is a Debit Card and How Is It Used?</p>
-                                                                                                <!--<p>
-                                                                                                    Debit cards are one of the most basic bank cards, and using them the right way can help you avoid unnecessary costs. Here’s what to know. A debit card, also known as...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -226,9 +201,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/debit_card3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card3.png" alt="img">
                                                                                                 <p title="Chip Debit Cards: What You Need to Know" class="item-title">Chip Debit Cards: What You Need to Know</p>
-                                                                                                <!--<p>
-                                                                                                   That little 3" x 2" piece of plastic in your wallet is getting an upgrade. That’s right, your debit card is getting a facelift. Talk about plastic surgery!...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -238,9 +210,7 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/debit_card3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card/debit_card3.png" alt="img">
                                                                                                 <p title="Chip Debit Cards: What You Need to Know" class="item-title">Chip Debit Cards: What You Need to Know</p>
-                                                                                                <!--<p>
-                                                                                                    That little 3" x 2" piece of plastic in your wallet is getting an upgrade. That’s right, your debit card is getting a facelift. Talk about plastic surgery!...
-                                                                                                </p>-->
+
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -257,7 +227,6 @@
                                                                                 <a href="#">
                                                                                     <p>
                                                                                         <span class="help-normal">Get Help From</span><br>
-                                                                                        <!--span class="help-topic">Fin</span><br-->
                                                                                         <span class="help-focus">Fin Guru</span>
                                                                                     </p>
                                                                                 </a>
@@ -953,10 +922,6 @@
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/DPS-Menu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<!--<p class="text-right">
-																								<span class="focus-text">DPS</span> is an installment based on savings deposit (on monthly basis) for individual customer. In this account a customer deposits a certain amount of money for a certain period,and on maturity, agreed amount will be paid to the customer.
-																							</p>-->
-
                                                                                             <a class="megamenu_feature_link button-hover" href="<?php echo base_url();?>dps.html">Find All DPS Here</a>
 																						</div>
 																					</a>
@@ -969,9 +934,6 @@
                                                                                                 <a href="<?php echo base_url();?>blog/dps1">
                                                                                                     <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps1.png" alt="img">
                                                                                                     <p class="item-title">DEPOSIT DISPUTES REACH RECORD HIGH</p>
-                                                                                                    <!--<p>
-                                                                                                        According to the Deposit Protection Scheme (DPS) quarterly statistics, the national average of a tenancy deposit in Q2 when renting a home in England and Wales	was £970.48 – an increase of 4.47% on Q1 2016...
-                                                                                                    </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -981,9 +943,6 @@
                                                                                                 <a href="<?php echo base_url();?>blog/dps2">
                                                                                                     <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps2.png" alt="img">
                                                                                                     <p class="item-title">What is different about the tenancy deposit schemes?</p>
-                                                                                                    <!--<p>
-                                                                                                        There are several answers to this question. The first is that there are going, from 1 April 2016, to be two new custodial tenancy deposit schemes. One from TDS and one from My Deposits. Another is, from...
-                                                                                                    </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -997,9 +956,6 @@
                                                                                                 <a href="<?php echo base_url();?>blog/dps3">
                                                                                                     <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps3.png" alt="img">
                                                                                                     <p class="item-title">The DPS Insured Scheme</p>
-                                                                                                    <!--<p>
-                                                                                                        From 1st April 2013, The DPS will be your one-stop shop for tenancy deposit protection, offering a choice of custodial or insurance-based protection. Whether you’re a landlord or an agent, you’ll have of mind that  your tenant’s deposit...
-                                                                                                    </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1009,9 +965,6 @@
                                                                                                 <a href="<?php echo base_url();?>blog/dps3">
                                                                                                     <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/dps3.png" alt="img">
                                                                                                     <p class="item-title">The DPS Insured Scheme</p>
-                                                                                                    <!--<p>
-                                                                                                        From 1st April 2013, The DPS will be your one-stop shop for tenancy deposit protection, offering a choice of custodial or insurance-based protection. Whether you’re a landlord or an agent, you’ll have of mind that  your tenant’s deposit...
-                                                                                                    </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1028,7 +981,6 @@
                                                                                 <a href="#">
                                                                                     <p>
                                                                                         <span class="help-normal">Get Help From</span><br>
-                                                                                        <!--span class="help-topic">Fin</span><br-->
                                                                                         <span class="help-focus">Fin Guru</span>
                                                                                     </p>
                                                                                 </a>
@@ -1060,10 +1012,6 @@
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Lakhpoti-&-Millionaire-manu-icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<!--<p class="text-right">
-																								<span class="focus-text">Lakhpoti & Millionaire Scheme</span> is a monthly Savings Scheme with flexible long term tenure that gives account holder maturity Value of minimum BDT 1 (one) million.
-																							</p>-->
-
 																							<a class="megamenu_feature_link button-hover"  data-text="Find All Lakhpoti & Millionaire Scheme Here" href="<?php echo base_url();?>millionaire.html">Find All Lakhpoti & Millionaire Scheme Here</a>
 																						</div>
 																					</a>
@@ -1076,9 +1024,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/millionaire1">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/millionaire1.png" alt="img">
                                                                                                 <p class="item-title">Apply Fixed Deposit | Compare FD Calculator</p>
-                                                                                                <!--<p>
-                                                                                                    Central Bank of India is a public sector commercial bank. Headquartered in Mumbai, it has a large branch network of about 4,600 branches in about 27...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1088,9 +1033,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/millionaire2">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/millionaire2.png" alt="img">
                                                                                                 <p class="item-title">Best Bank Account Interest Rates</p>
-                                                                                                <!--<p>
-                                                                                                    I’m seeing more signs that 2017 won’t be a repeat of 2016 in terms of the Fed. After the December rate hike of 2015, the Fed suggested in its dot...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1105,9 +1047,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/millionaire3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/millionaire3.png" alt="img">
                                                                                                 <p class="item-title">How to Deposit Cash at an Online-Only Bank</p>
-                                                                                                <!--<p>
-                                                                                                    Online-only banks can let you deposit checks from your phone, but the same can’t be said for cash. In fact, it’s a transaction they haven’t completely figured out...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1117,9 +1056,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/millionaire3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/millionaire3.png" alt="img">
                                                                                                 <p class="item-title">How to Deposit Cash at an Online-Only Bank</p>
-                                                                                                <!--<p>
-                                                                                                    Online-only banks can let you deposit checks from your phone, but the same can’t be said for cash. In fact, it’s a transaction they haven’t completely figured out...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1136,7 +1072,6 @@
                                                                                 <a href="#">
                                                                                     <p>
                                                                                         <span class="help-normal">Get Help From</span><br>
-                                                                                        <!--span class="help-topic">Fin</span><br-->
                                                                                         <span class="help-focus">Fin Guru</span>
                                                                                     </p>
                                                                                 </a>
@@ -1168,10 +1103,6 @@
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Money-Maximizer-Manu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<!--<p class="text-right">
-																								<span class="focus-text">Money Maximizer</span> account holder will earn more interest than with traditional bank accounts and many short-term investments or money-market funds. The interest earned with Money Maximizer is based upon proposed rates.
-																							</p>-->
-
 																							<a class="megamenu_feature_link land_modal button-hover" data-text="Find All Money Maximizer Scheme Here" href="<?php echo base_url();?>money-maximizer.html">Find All Money Maximizer Scheme Here</a>
 																						</div>
 																					</a>
@@ -1184,9 +1115,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/money-maximizer1">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/moneymax1.png" alt="img">
                                                                                                 <p class="item-title">Money Multiplier Plan</p>
-                                                                                                <!--<p>
-                                                                                                    The Money Multiplier feature gives you the liquidity of a Savings Account coupled with high earnings of a Fixed Deposit. This is achieved by creating a Fixed Deposit linked to your Savings Account providing you the...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1196,9 +1124,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/money-maximizer2">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/moneymax2.png" alt="img">
                                                                                                 <p title="How beneficial is it to invest in the ICICI Money Multiplier scheme with the Auto Sweep option?" class="item-title">How beneficial is it to invest in the ICICI Money...</p>
-                                                                                                <!--<p>
-                                                                                                    The money multiplier does not expect you to formally open a FD every time you have surplus and offers you a regular Fixed Deposit Interest. Hence, it is very good. However...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1212,9 +1137,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/money-maximizer3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/moneymax3.png" alt="img">
                                                                                                 <p class="item-title">How to Open a Money Market Account</p>
-                                                                                                <!--<p>
-                                                                                                    Here’s how to open a money market account, a type of savings account that offers the security of FDIC insurance, the higher interest rates of a savings account and the flexibility...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1224,9 +1146,6 @@
                                                                                                 <a href="<?php echo base_url(); ?>blog/money-maximizer3">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/moneymax3.png" alt="img">
                                                                                                 <p class="item-title">How to Open a Money Market Account</p>
-                                                                                                <!--<p>
-                                                                                                    Here’s how to open a money market account, a type of savings account that offers the security of FDIC insurance, the higher interest rates of a savings account and the flexibility...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1243,7 +1162,6 @@
                                                                                 <a href="#">
                                                                                     <p>
                                                                                         <span class="help-normal">Get Help From</span><br>
-                                                                                        <!--span class="help-topic">Fin</span><br-->
                                                                                         <span class="help-focus">Fin Guru</span>
                                                                                     </p>
                                                                                 </a>
@@ -1275,10 +1193,6 @@
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Monthly-Benefit-Scheme-menu-icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<!--<p class="text-right">
-																								<span class="focus-text">Monthly Benefit Scheme</span> is the most used plastic money in Bangladesh. Whether to shop or dine or to carry all the money of your account into one single plastic card, Debit card is the part of our finance life.
-																							</p>-->
-
 																							<a class="megamenu_feature_link land_modal button-hover" data-text="Find All Monthly Benefit Scheme"  href="<?php echo base_url();?>monthly-benefit.html">Find All Monthly Benefit Scheme</a>
 																						</div>
 																					</a>
@@ -1290,12 +1204,7 @@
                                                                                             <div class="menu-item">
                                                                                                 <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card2.png" alt="img">
-                                                                                                <!--<p class="item-subtitle">BRAC Bank Debit Card</p>-->
-
                                                                                                 <p title="Heading" class="item-title">Heading</p>
-                                                                                                <!--<p>
-                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1304,12 +1213,7 @@
                                                                                             <div class="menu-item">
                                                                                                 <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
-                                                                                                <!--<p class="item-subtitle">BRAC Bank Debit Card</p>-->
-
                                                                                                 <p title="Heading" class="item-title">Heading</p>
-                                                                                                <!--<p>
-                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1323,12 +1227,7 @@
                                                                                             <div class="menu-item">
                                                                                                 <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
-                                                                                                <!--<p class="item-subtitle">BRAC Bank Debit Card</p>-->
-
                                                                                                 <p title="Heading" class="item-title">Heading</p>
-                                                                                                <!--<p>
-                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1337,12 +1236,7 @@
                                                                                             <div class="menu-item">
                                                                                                 <a href="#">
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/card1.png" alt="img">
-                                                                                                <!--<p class="item-subtitle">BRAC Bank Debit Card</p>-->
-
                                                                                                 <p title="Heading" class="item-title">Heading</p>
-                                                                                                <!--<p>
-                                                                                                    Lorem ipsum dolor sit amet,adip iscing elit. Praesent dapibus.
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1359,7 +1253,6 @@
                                                                                 <a href="#">
                                                                                     <p>
                                                                                         <span class="help-normal">Get Help From</span><br>
-                                                                                        <!--span class="help-topic">Fin</span><br-->
                                                                                         <span class="help-focus">Fin Guru</span>
                                                                                     </p>
                                                                                 </a>
@@ -1393,10 +1286,8 @@
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/Saving-Acc-Menu-Icon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
-																								<!--<span class="focus-text">Saving Account</span>  is an interest-bearing deposit account held at a bank or another financial institution that provides a modest interest rate on deposits.-->
-                                                                                                <span class="focus-text">Saving Account</span>  is an interest-bearing deposit account held at a bank or another financial institution that provides ...
+																							<span class="focus-text">Saving Account</span>  is an interest-bearing deposit account held at a bank or another financial institution that provides ...
                                                                                             </p>
-
 																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>savings-account.html">Find All Saving Account Here</a>
 																						</div>
 																					</a>
@@ -1408,8 +1299,7 @@
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/investment/CurrentAccMenuIcon.jpg" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
 																							<p class="text-right">
-                                                                                                <!--<span class="focus-text">Current Account</span> is made with Bank or financial institution that permits the withdrawal of funds and allows checks to be written against the balance.-->
-                                                                                                <span class="focus-text">Current Account</span> is made with Bank or financial institution that permits the withdrawal of funds and allows checks to be ...
+                                                                                               <span class="focus-text">Current Account</span> is made with Bank or financial institution that permits the withdrawal of funds and allows checks to be ...
                                                                                             </p>
 
 																							<a class="megamenu_feature_link" href="<?php echo base_url(); ?>current-account.html">Find All Current Account Here</a>
@@ -1441,7 +1331,7 @@
                                                                                 <a href="#">
                                                                                     <p>
                                                                                         <span class="help-normal">Get Help From</span><br>
-                                                                                        <!--span class="help-topic">Fin</span><br-->
+
                                                                                         <span class="help-focus">Fin Guru</span>
                                                                                     </p>
                                                                                 </a>
@@ -1465,21 +1355,6 @@
                                             </div>
                                         </div>
                                     </li>
-
-                                    <!--li><a href="#">Fundings <i class="fa fa-caret-down fa-indicator"></i> </a>
-                                        -
-                                        <div class="drop-down-large">
-                                            -
-                                            <div class="container-fluid">
-                                                <div class="row">
-                                                    <h3 class="text-center">Coming Soon</h3>
-                                                </div>
-                                            </div>
-                                           -
-                                        </div>
-                                    </li-->
-
-									
 									<!-- How to menu details -->
 									<li><a href="#">How To<i class="fa fa-caret-down fa-indicator"></i> </a>
                                         <!-- full size drop down -->
@@ -1517,10 +1392,6 @@
 																						<div class="features">
 																							<img class="pull-right" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/Export-Import-Menu-Icon.png" alt="img" class="thumbnail">
 																							<div class="clearfix"></div>
-																							<!--<p class="text-right">
-																								<span class="focus-text">Export &amp; Import</span> An import is a good or service brought into one country from another. On the other hand, an export is a function of international trade whereby goods produced in one country are shipped to another country for future sale or trade.
-																							</p>-->
-
 																							<a class="megamenu_feature_link button-hover" data-text="Find All Export &amp; Import Here" href="<?php echo base_url(); ?>export-import.html">Find All Export &amp; Import Here</a>
 																						</div>
 																					</a>
@@ -1531,12 +1402,8 @@
                                                                                         <div class="col-sm-6 col-xs-12 bRight">
                                                                                             <div class="menu-item">
                                                                                                 <a href="#">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export1.png" alt="img">                                                                                                
-
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export1.png" alt="img">
                                                                                                 <p title="INTERNATIONAL TRADE LEAD AND BUSINESS SERVICE" class="item-title">INTERNATIONAL TRADE LEAD AND BUSINESS SERVICE</p>
-                                                                                                <!--<p>
-                                                                                                    Trade leads, or business leads, by national or international business services facilitate different functions,Praesent dapibus...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1544,12 +1411,8 @@
                                                                                         <div class="col-sm-6 col-xs-12">
                                                                                             <div class="menu-item">
                                                                                                 <a href="#">
-                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export2.png" alt="img">                                                                                                
-
+                                                                                                <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export2.png" alt="img">
                                                                                                 <p title="IMPORT FROM CHINA" class="item-title">IMPORT FROM CHINA</p>
-                                                                                                <!--<p>
-                                                                                                    If you have an established source of sales that you are already selling into the market, and have a large volume, you might...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1565,9 +1428,6 @@
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export3.png" alt="img">                                                                                                
 
                                                                                                 <p title="START YOUR OWN EXPORT IMPORT BUSINESS" class="item-title">START YOUR OWN EXPORT IMPORT BUSINESS</p>
-                                                                                                <!--<p>
-                                                                                                    Register your business and ensure that all licenses and other legal requirements have been complied with...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1578,9 +1438,6 @@
                                                                                                 <img class="item-image thumbnail" src="<?php echo base_url(); ?>resource/front_end/images/mashmenu/export/export3.png" alt="img">
 
                                                                                                 <p title="START YOUR OWN EXPORT IMPORT BUSINESS" class="item-title">START YOUR OWN EXPORT IMPORT BUSINESS</p>
-                                                                                                <!--<p>
-                                                                                                    Register your business and ensure that all licenses and other legal requirements have been complied with...
-                                                                                                </p>-->
                                                                                                 </a>
                                                                                             </div>
                                                                                         </div>
@@ -1621,111 +1478,7 @@
                                         </div>
                                     </li>
                                     <li><a href="<?php echo base_url(); ?>all-bank-details.html">Bank Info </a></li>
-									
-                                    <!--li><a href="#">Contact <i class="fa fa-caret-down fa-indicator"></i> </a>
-                                       
-                                        <div class="drop-down-large">
-                                            
-                                            <div class="container-fluid">
-                                                <div class="row">
-                                                    <div class="col-sm-12 col-md-4">
-                                                        
-                                                        <form class="form-horizontal" method="post" action="mail/nav-form.php">
-                                                            <
-                                                            <h3>Contact Us</h3>
-                                                            
-                                                            <p>Please fill in the following form to contact us <br> <br></p>
-                                                            
-                                                            <div class="col-md-3">
-                                                                <label for="name">Name</label>
-                                                            </div>
-                                                            <div class="col-md-9">
-                                                                <label>
-                                                                    <input id="name" name="nav_form_subject" required="required" placeholder="Name" type="text">
-                                                                </label>
-                                                            </div>
-                                                            
-                                                            <div class="col-md-3">
-                                                                <label for="email">Email</label>
-                                                            </div>
-                                                            <div class="col-md-9">
-                                                                <label>
-                                                                    <input id="email" name="nav_form_mail" required="required" placeholder="E-mail Address" type="email">
-                                                                </label>
-                                                            </div>
-                                                            
-                                                            <div class="col-md-3">
-                                                                <label for="message">Message</label>
-                                                            </div>
-                                                            <div class="col-md-9">
-                                                                <label>
-                                                                    <textarea id="message" name="nav_form_message" required="required" placeholder="Message"></textarea>
-                                                                </label>
-                                                            </div>
-                                                            
-                                                            <div class="col-sm-2">
-                                                                <br>
-                                                                <button class="btn btn-custom space-0" type="submit">
-                                                                    Submit Me !
-                                                                    <i class="fa fa-circle-o-notch fa-spin"></i>
-                                                                </button>
-                                                            </div>
-                                                            
-                                                            <div class="clearfix"></div>
-                                                            
-                                                            <div class="form-notifier"></div>
-                                                        </form>
-                                                    </div>
-
-                                                    <div class="col-sm-12 col-md-4">
-                                                        
-                                                        <form class="form-horizontal" method="post" action="#">
-                                                            
-                                                            <h3>Register Now</h3>
-                                                            
-                                                            <div class="col-md-12">
-                                                                <br>
-                                                                <label>
-                                                                    <input name="register_name" placeholder="Your name" required="" type="text">
-                                                                </label>
-                                                            </div>
-                                                            
-                                                            <div class="col-md-12">
-                                                                <label>
-                                                                    <input name="register_email" placeholder="Email address" required="" type="email">
-                                                                </label>
-                                                            </div>
-                                                           
-                                                            <div class="col-md-12">
-                                                                <label>
-                                                                    <input name="register_phone" placeholder="Phone" required="" type="text">
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <br>
-                                                                
-                                                                <input class="menu-checkbox" id="register-checkbox" type="checkbox">
-                                                                <label class="menu-checkbox" for="register-checkbox">Accept all conditions</label>
-                                                            </div>
-                                                            
-                                                            <div class="col-md-12">
-                                                                <br>
-                                                                <button class="btn btn-custom space-0" type="submit">Register me !</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
-                                                    <div class="col-sm-12 col-md-4">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </li-->
                                 </ul>
-
-
                             </section>
                         </nav>
 

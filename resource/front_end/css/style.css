@@ -8270,3 +8270,11 @@ section#card_details_Eligibility {
 object{
     pointer-events: none;
 }
+
+.pagination li {
+    margin-right: 0;
+    width: auto;
+}
+ol>li, ul>li{
+    list-style-position: inside;
+}

@@ -1081,12 +1081,29 @@ class Dps extends CI_Controller
                     } else {
                         $bank_logo = $row['bank_logo'];
                     }
+/*
+                   $year = 'year';
+                    if($row['tenure'] > 1){
+                        $year = 'years';
+                    }
+
+                    $url = $bank.' '.$row['tenure'].' '.$year;
+                    $slug = str_replace("/"," ",$url);
+                    $slug = url_title($slug,'dash',TRUE);
+                    $this->Common_model->data = array(
+                        'slug' => $slug
+                    );
+
+                    $this->Common_model->where = array('id' => $row['dps_info_id']);
+                    $this->Common_model->table_name = 'dps_info';
+                    $this->Common_model->update();*/
+
 
                     $loan_facility = ($row["loan_facility"] == 'N/A') ? 'N/A': $row["loan_facility"].'%';
                     $dps .= '<div class="full-card">
 <div class="row fdr_right_bar no-margin-lr">
                         <div class="col-sm-2 col-xs-2">
-                            <a href="'. base_url().'en/dps_details/'.$row["id"].'/'.$deposited_amount.'"><img title="Click For Details" class="img-responsive dps_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
+                            <a href="'. base_url().'compare-dps/'.$row["slug"].'-tk'.$deposited_amount.'.html"><img title="Click For Details" class="img-responsive dps_bank_logo" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
                             <p class="text-center">'.$bank.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -1329,7 +1346,7 @@ class Dps extends CI_Controller
         }
         $html ='';
         if(isset($row)){
-            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-dps_id='.$row->id.' class="img-responsive compare_delay "/>
+            $html .='<img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" data-dps_id='.$row->id.' data-dps_url='.$row->slug.' class="img-responsive compare_delay "/>
                      <img class="compare-cross-btn" src="'.base_url().'resource/front_end/images/dialog_close.png"/>';
         }
         echo $html;
