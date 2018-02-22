@@ -1128,13 +1128,13 @@ class Dps extends CI_Controller
                                 <div class="col-sm-2 col-xs-2">
                                     <div class="card_text3">
                                         <h5>Maturity Amount</h5>
-                                        <p>BDT '.number_format( (int) $row["maturity"]).'</p>
+                                        <p>BDT '.number_format( $row["maturity"]).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Accrued Interest</h5>
-                                        <p>BDT '.number_format( (int) $row["interest"] ).'</p>
+                                        <p>BDT '.number_format( $row["interest"] ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
