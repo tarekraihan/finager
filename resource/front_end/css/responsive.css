@@ -212,6 +212,119 @@
     .req_card{
         margin-top: 10px;
     }
+    .margin_left_body {
+        margin-right: 0 !important;
+        overflow-x: hidden;
+    }
+    .Sponsored_box1 {
+        margin-bottom: 30px;
+        height: 468px !important;
+    }
+    .Sponsored_box1 p {
+        height: 185px;
+        overflow: hidden;
+    }
+    .Sponsored_box1>a {
+        width: 100%;
+        text-align: center;
+        clear: both;
+        display: block;
+    }
+    .Sponsored_box1>a>span {
+        margin: 0;
+    }
+    .bigest_text1 {
+        margin-left: 0 !important;
+        font-size: 17px;
+        margin-top: 50px;
+        margin-right: 50px;
+    }
+    .bigest_text1 p, .personal_bigest_text1 p {
+        margin-bottom: 40px !important;
+    }
+    .pr {
+        margin-bottom: 40px !important;
+    }
+    .heading_text,.fdr_heading_text,.dps_heading_text {
+        width: 100%;
+        min-height: 690px !important;
+        border: 1px solid #DADADA;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    #personal_brand, #biggest_brand, #auto_brand, #edu_biggest_brand, #fdr_brand, #dps_brand,#money_max_biggest_brand, #monthly_benefit_biggest_brand{
+        background: none !important;
+    }
+    .bigest_text h3,.bigest_text p, .edu_bigest_text h3, .edu_bigest_text p, .fdr_bigest_text h3, .fdr_bigest_text p, #dps_brand h3, #dps_brand p{
+        color: #333 !important;
+    }
+    .btn_landing_view2_personal, .btn_landing_view2_home, .btn_landing_view2_auto {
+        border: 1px solid #256D93 !important;
+        padding: 6px 23px;
+        border-radius: 5px;
+        color: #333 !important;
+    }
+    .btn_landing_view2_auto{
+        border: 1px solid #D19F58 !important;
+        padding: 6px 23px;
+        border-radius: 5px;
+        color: #000;
+    }
+    .btn_landing_view2_education{
+        border: 1px solid #636565 !important;
+        padding: 6px 23px;
+        border-radius: 5px;
+        color: #000 !important;
+    }
+    .edu_ready_text{
+        margin-top: 40px;
+    }
+    #edu_footer {
+        height: auto !important;
+        padding-bottom: 40px;
+    }
+    .btn_landing_view2_fdr{
+        border: 1px solid #1F5883 !important;
+        color: #000 !important;
+    }
+    .btn_landing_view2_dps {
+        border: 1px solid #A9A270 !important;
+        color: #000 !important;
+    }
+    .btn_landing_view2_millionaire{
+        border: 1px solid #1F5883 !important;
+        color: #000 !important;
+    }
+    .btn_landing_view2_mony_max {
+        border: 1px solid #CECAAA !important;
+        color: #000 !important;
+    }
+    #creditCard_header, #debitCard_header, #home_header, #personal_header, #auto_header, #education_header, #fdr_header, #dps_header, #maximizer_header, #mony_max_header, #monthly_benefit_header, #savings_account_header, #currantAccount_header {
+        height: 140px !important;
+    }
+    .calcSection .dragBox .next {
+        right: 0 !important;
+    }
+    .Card-Compare-hr {
+        width: 25% !important;
+    }
+    section#tab {
+        clear: both;
+    }
+    .home_loan_right_bar .collapse{
+        clear: both;
+    }
+    .fdr_tenure, .dps_tenure {
+        margin-bottom: 10px;
+        float: left !important;
+        margin-right: 15px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    #millionaire_tenure {
+        width: 233px;
+        margin: 10px auto;
+    }
 }
 
 @media screen and (max-width:768px){
@@ -248,10 +361,10 @@
     }
 
     .Card-Compare-hr {
-        width: 39% !important;
+        width: 25% !important;
     }
     .Card-Compare-hr1 {
-        width: 41.9% !important;
+        width: 25% !important;
     }
     .Card-Compare-hr2 {
         width: 37.5% !important;

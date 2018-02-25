@@ -217,7 +217,7 @@
 		<div class="container">
 			<div class="row">
 		<!-- Left bar query content start -->
-				<div class="col-sm-3 col-xs-3 sidebar_parent">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar_parent">
                     <div id="sticky-anchor"></div>
 					<div class="home_loan_left_bar" id="sidebar">
 						<!-- slider range sidebar start-->
@@ -396,7 +396,7 @@
 				<!-- Left bar query content end -->
 				
 				<!-- Right bar content start -->
-				<div class="col-sm-9 col-xs-9 main-content-area" id="SearchDebitCard">
+				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 main-content-area" id="SearchDebitCard">
                     <div id="searchEducationLoan">
                         <div id="loading" class="text-center" style="margin-top: 150px"></div>
                     </div>
