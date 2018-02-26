@@ -217,12 +217,10 @@
 
 .hamburger.is-closed:hover .hamb-top {
     -webkit-transition: all 0.35s ease-in-out;
-    top: 0;
 }
 
 .hamburger.is-closed:hover .hamb-bottom {
     -webkit-transition: all 0.35s ease-in-out;
-    bottom: 0;
 }
 
 .hamburger.is-closed .hamb-top {
@@ -408,8 +406,8 @@
         $('[data-toggle="offcanvas"]').click(function () {
             $('#wrapper').toggleClass('toggled');
             $("body").toggleClass("margin_left_body"),1000;
-            $(".container").css('width','80%'),1000;
-            $(".catagory-icon p").css('font-size','10px');
+            //$(".container").css('width','80%'),1000;
+            //$(".catagory-icon p").css('font-size','10px');
         });
     });
 </script>
