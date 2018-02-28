@@ -62,7 +62,7 @@
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a  class="land_modal personal_loan_i_am" data-personal_loan_personal_loan_i_am="3">
+						<a  class="land_modal personal_loan_i_am" data-personal_loan_i_am="3">
 							<div class="All_card">
 								<img src="<?php echo base_url();?>resource/front_end/images/Personal-Professional.png" alt="Professional"/>
 								<p>Professional</p>

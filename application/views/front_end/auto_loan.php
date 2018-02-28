@@ -825,7 +825,6 @@
                             var bank_id = obj.auto_loan_bank_ids[i].split("=");
 //                            console.log(bank_id[0]);
                             option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="auto_loan_bank_id" data-auto_loan_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
-                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="auto_loan_bank_id" data-auto_loan_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
                         }
 
                     }
