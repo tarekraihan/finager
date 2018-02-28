@@ -16,7 +16,8 @@
 
                         <div class="logobar">
                             <a href="<?php echo base_url(); ?>">
-                                <img class="logo" title="Finager Logo" src="<?php echo base_url(); ?>resource/front_end/images/finager-logo.svg" alt="Logo" />
+                                <img class="logo" title="Finager Logo" src="<?php echo base_url(); ?>resource/front_end/images/FinagerLogo.svg" alt="Logo" />
+                                <img class="beta-icon" title="Finager Logo" src="<?php echo base_url(); ?>resource/front_end/images/Beta-Ico.png" alt="Logo" />
                             </a>
                         </div>
 

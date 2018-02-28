@@ -5,7 +5,7 @@
 
                 <div class="row margin_bottom_15">
                     <div class="col-sm-6 col-xs-12">
-                        <img title="Finager Logo" class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/finager-logo.svg">
+                        <img title="Finager Logo" class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg">
                     </div>
 
                     <div class="col-sm-6 col-xs-12">
@@ -21,7 +21,6 @@
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/G+-1.png">
                                 </a>
                             </li>
-
                             <li>
                                 <a href="">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/IN-1.png">

@@ -2,11 +2,17 @@
 	<section id="fdr_header_part">
 		<div class="fdr_header_text">
 			<p>FDR comaparison made easy</p>
-			<a href="<?php echo base_url(); ?>en/all_fdr" class="start_compare"><span class="fdr_landing_button flash-button">Start Comparing</span></a>
+			<a href="<?php echo base_url(); ?>en/all_fdr" class="start_compare"><span class="fdr_landing_button flash-button">Start Comparison</span></a>
 		</div>
           		<div class="container">
 			<div class="fdr_loan_icon">
 				<div class="All_cradit_card">
+                    <div class="col-md-3 col-sm-3 nopadding">
+                        <a class="land_modal fdr_tenure" data-tenure="2"><div class="All_card">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/fdr-3-months.png" alt="card"/>
+                                <p> Deposit for 3 Months </p>
+                            </div></a>
+                    </div>
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal fdr_tenure" data-tenure="4"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-1-year.png" alt="reaward"/>
@@ -17,12 +23,6 @@
 						<a class="land_modal fdr_tenure" data-tenure="5"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-2-Years.png" alt="cash_back"/>
 							<p> Deposit for 2 Years </p>
-						</div></a>
-					</div>
-					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal fdr_tenure" data-tenure="2"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/fdr-3-months.png" alt="card"/>
-							<p> Deposit for 3 Months </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">

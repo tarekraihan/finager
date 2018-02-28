@@ -57,7 +57,7 @@
 					<div class="col-md-3 col-sm-3 nopadding">	
 						<a class="land_modal home_i_am" data-home_i_am ="2"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/Business-Man.png" alt="business"/>
-							<p>	Businessman Businessman
+							<p>	Businessman </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">

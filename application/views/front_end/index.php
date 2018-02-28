@@ -257,7 +257,7 @@ font-size: 22px;
 <section id="header2">
     <div class="container Aboutcredit_card">
         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            <img title="Finager Logo" class="img-responsive about-logo" src="<?php echo base_url(); ?>resource/front_end/images/finager-logo.svg">
+            <img title="Finager Logo" class="img-responsive about-logo" src="<?php echo base_url(); ?>resource/front_end/images/FinagerLogo.svg">
         </div>
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             <div class="header_paragrph">
