@@ -5993,7 +5993,7 @@ hr {
     z-index: 99999;
     position: absolute;
 }
-.logobar{
+.logobar {
     position: absolute;
     left: 15px;
     z-index: 99999;
@@ -6003,7 +6003,7 @@ hr {
 }
 .logobar a .logo {
     max-height: 70px;
-    width: 145px
+    width: 145px;
 }
 .beta-icon {
     width: 46px;

@@ -471,7 +471,15 @@
         }
     });
 
-    $(document).ready(function() {
+    $(document).ready(function(){
+        setTimeout(function(){
+            //alert($("#finalAssest").val());
+            $("#finalAssest").focus();
+            $("#finalAssest").blur();
+
+            $("#finalLiability").focus();
+            $("#finalLiability").blur();
+        },500);
 
         $('#finalAssest').val(<?php echo ($this->session->userdata('education_loan_amount')) ? $this->session->userdata('education_loan_amount') : 300000 ;?>);
         $('#finalLiability').val(<?php echo ($this->session->userdata('education_loan_tenure')) ? $this->session->userdata('education_loan_tenure') : 2 ;?>);
