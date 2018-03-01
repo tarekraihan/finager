@@ -8110,6 +8110,8 @@ section#card_details_Eligibility {
     border-radius: 50%;
 
     outline: 0 !important;
+    line-height: 23px;
+    font-size: 24px;
 
 }
 

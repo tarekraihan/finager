@@ -241,7 +241,7 @@ font-size: 22px;
                 </div>
                 <div class="col-xs-6 col-sm-2">
                     <div class="Cicon">
-                        <a class="Cicon_a" href="#">
+                        <a class="land_modal Cicon_a" data-toggle="modal" data-target=".bs-example-modal-lg">
                             <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/more.png" alt=""/>
                             <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/more.svg">
                                 More
