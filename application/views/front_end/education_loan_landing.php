@@ -1,7 +1,8 @@
 <!-- header part start -->
 <section id="education_header_part" xmlns="http://www.w3.org/1999/html">
     <div class="education_header_text">
-        <h3>Education loan comparison made easy</h3>
+        <h3>Education loan</h3>
+        <p>Education loan comparison made easy</p>
         <a href="javascript:void(0);" class="start_compare"><span class="education_landing_button flash-button">Start Comparing</span></a>
     </div>
    <div class="container">

@@ -16,7 +16,6 @@ if(!empty($id) && is_numeric($id) ){
 				<div class="card_details_body">
 					<div class="col-sm-2 col-xs-4">
 						<div><a href="<?php echo base_url();?>compare-debit-cards/<?php echo $row->slug;?>.html"> <img class="card_details_ImgCard img-responsive" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" /></a></div>
-						<img class="btnCardApply img-responsive" src="<?php echo base_url();?>resource/front_end/images/BtnCard_apply.png" />
 						<p class="text-center">
 							<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 						</p>
@@ -26,7 +25,6 @@ if(!empty($id) && is_numeric($id) ){
 						<div>
 							<p class="card_details_head2"><?php echo $row->card_name; ?></p>
 							<p class="card_details_features"><?php echo (!empty($row->card_summary)) ? $row->card_summary : $summary ;?></p>
-							<p class="add_comp_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></p>
 						</div>
 					</div>
 					

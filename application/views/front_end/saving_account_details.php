@@ -76,12 +76,6 @@ if(!empty($id) && is_numeric($id) ){
 
 					</div>
 				</div>
-				<div class="col-sm-8 col-xs-12">
-					<div class="btnHomeLoan">
-						<!-- <div class="col-sm-3 col-xs-12"><span class="add_comp_icon"><a id="" href="#"><i class="fa fa-plus-circle"></i> Add to comparison</a></span></div> -->
-						<div class="col-sm-3 col-xs-12"><span><a href="#"><img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/BtnCard_apply.png" /></a></span></div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

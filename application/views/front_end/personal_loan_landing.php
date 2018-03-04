@@ -117,7 +117,7 @@
 						<p>
                             SME loan is a loan which helps in business expansion, working capital, purchasing fixed asset for small and medium enterprises. This loan is provided by banks to encourage the entrepreneurs to develop and expand their business.
                         </p>
-						<a href="#"><span class="btn_landing_personal">Go to slide</span></a>
+						<a href="<?php echo base_url();?>en/home_loan">><span class="btn_landing_personal">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">

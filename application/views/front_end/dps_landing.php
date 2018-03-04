@@ -1,7 +1,8 @@
 	<!-- header part start -->
 	<section id="dps_header_part">
 		<div class="dps_header_text">
-			<p>DPS comaparison made easy</p>
+            <h3>Deposit Pension Scheme</h3>
+			<p>DPS comparison made easy</p>
             <a href="javascript:void(0);" class="start_compare"><span class="dps_landing_button flash-button">Start Comparison</span></a>
 		</div>
 		<div class="container">

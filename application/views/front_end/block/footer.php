@@ -11,30 +11,30 @@
                     <div class="col-sm-6 col-xs-12">
                         <ul class="footer-socio">
                             <li>
-                                <a href="">
+                                <a href="javascript:;">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/Facebook-1.png">
                                 </a>
                             </li>
 
                             <li>
-                                <a href="">
+                                <a href="javascript:;">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/G+-1.png">
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="javascript:;">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/IN-1.png">
                                 </a>
                             </li>
 
                             <li>
-                                <a href="">
+                                <a href="javascript:;">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/RSS-1.png">
                                 </a>
                             </li>
 
                             <li>
-                                <a href="">
+                                <a href="javascript:;">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/Twitter-1.png">
                                 </a>
                             </li>

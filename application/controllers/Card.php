@@ -1290,7 +1290,7 @@ class Card extends CI_Controller
                     <div class="row card_right_bar no-margin-lr">
                         <div class="col-sm-3 col-xs-12">
                             '.$card_image.'
-                            <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" alt="Apply Image" />
+
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
                             </p>

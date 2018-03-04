@@ -455,7 +455,6 @@ class Snd_account extends CI_Controller
                     <div class="row card_right_bar">
                         <div class="col-sm-2 col-xs-2">
                             <a href="'.base_url().'compare-snd-account/'.$row->slug.'.html"><img title="Click Here for Details" class="img-responsive" src="'.base_url().'resource/common_images/bank_logo/'.$bank_logo.'" /></a>
-                            <img class="btnCardApply img-responsive" src="'.base_url().'resource/front_end/images/BtnCard_apply.png" />
                             <p class="text-center">'.$row->snd_name.'</p>
                             <p class="text-center">
                                 <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
@@ -520,7 +519,7 @@ class Snd_account extends CI_Controller
 								<section id="tab">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation"><a href="#AvailableOffer'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Available Offer</a></li>
+                                    <li class="active" role="presentation"><a href="#AvailableOffer'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Available Offer</a></li>
                                     <li role="presentation"><a href="#Features'.$row->id.'" aria-controls="profile" role="tab" data-toggle="tab">Features</a></li>
                                     <li role="presentation"><a href="#FeesAndCharges'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Fees and Charges</a></li>
                                     <li role="presentation"><a href="#Requirements'.$row->id.'" aria-controls="settings" role="tab" data-toggle="tab">Requirements</a></li>

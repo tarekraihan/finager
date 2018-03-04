@@ -1,7 +1,8 @@
 	<!-- header part start -->
 	<section id="fdr_header_part">
 		<div class="fdr_header_text">
-			<p>FDR comaparison made easy</p>
+            <h3>Fixed Deposit Receipt</h3>
+			<p>FDR comparison made easy</p>
 			<a href="<?php echo base_url(); ?>en/all_fdr" class="start_compare"><span class="fdr_landing_button flash-button">Start Comparison</span></a>
 		</div>
           		<div class="container">
