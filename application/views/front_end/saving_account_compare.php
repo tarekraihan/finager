@@ -121,7 +121,7 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 						
 						<tr>
 							<td><b> A/C Opening Balance</b></td>
-							<td> BDT. <?php echo number_format($first_saving_account->opening_balance)?> </td>
+							<td> BDT <?php echo number_format($first_saving_account->opening_balance)?> </td>
 
 						</tr>
 						
@@ -131,7 +131,7 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 						</tr>
                         <tr>
                             <td><b>Minimum Balance for Interest</b></td>
-                            <td> BDT. <?php echo number_format($min_balance1)?>  Per Month</td>
+                            <td> BDT <?php echo number_format($min_balance1)?>  Per Month</td>
                         </tr>
 						
 						<tr>
@@ -156,7 +156,7 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 
 							<tr>
 								<td><b> A/C Opening Balance</b></td>
-								<td> BDT. <?php echo number_format($second_saving_account->opening_balance)?> </td>
+								<td> BDT <?php echo number_format($second_saving_account->opening_balance)?> </td>
 
 							</tr>
 
@@ -166,7 +166,7 @@ $min_balance2 = ($second_saving_account->min_balance_for_interest != '') ? $seco
 							</tr>
 							<tr>
 								<td><b>Minimum Balance for Interest</b></td>
-								<td> BDT. <?php echo number_format($min_balance2)?>  Per Month</td>
+								<td> BDT <?php echo number_format($min_balance2)?>  Per Month</td>
 							</tr>
 							<tr>
 								<td><b> Interest Paid</b></td>

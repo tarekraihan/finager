@@ -96,7 +96,7 @@ if($second_current_account->is_non_bank == 1){
 						
 						<tr>
 							<td><b> A/C Opening Balance</b></td>
-							<td> BDT. <?php echo number_format($first_current_account->opening_balance)?> </td>
+							<td> BDT <?php echo number_format($first_current_account->opening_balance)?> </td>
 						</tr>
 						
 						<tr>
@@ -130,7 +130,7 @@ if($second_current_account->is_non_bank == 1){
 
 							<tr>
 								<td><b> A/C Opening Balance</b></td>
-								<td> BDT. <?php echo number_format($second_current_account->opening_balance)?> </td>
+								<td> BDT <?php echo number_format($second_current_account->opening_balance)?> </td>
 							</tr>
 
 							<tr>

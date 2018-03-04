@@ -41,7 +41,7 @@ if(!empty($id) && is_numeric($id) ){
 				<div class="col-sm-2 col-xs-8">
 					<div class="text-center">
 						<p><b>A/C Opening Balance</b></p>
-						<p>BDT. <?php echo number_format($row->opening_balance); ?></p>
+						<p>BDT <?php echo number_format($row->opening_balance); ?></p>
 					</div>
 				</div>
 				<div class="col-sm-8 col-xs-12">
@@ -90,7 +90,7 @@ if(!empty($id) && is_numeric($id) ){
 
 					<tr>
 						<td><b> A/C Opening Balance</b></td>
-						<td> BDT. <?php echo number_format($row->opening_balance)?> </td>
+						<td> BDT <?php echo number_format($row->opening_balance)?> </td>
 
 					</tr>
 

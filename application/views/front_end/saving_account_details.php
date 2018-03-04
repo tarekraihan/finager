@@ -50,7 +50,7 @@ if(!empty($id) && is_numeric($id) ){
 				<div class="col-sm-2 col-xs-8">
 					<div>
 						<p><b>A/C Opening Balance</b></p>
-						<p>BDT. <?php echo number_format($row->opening_balance); ?></p>
+						<p>BDT <?php echo number_format($row->opening_balance); ?></p>
 					</div>
 				</div>
 				<div class="col-sm-8 col-xs-12">
@@ -64,7 +64,7 @@ if(!empty($id) && is_numeric($id) ){
 						<div class="col-sm-4 col-xs-6">
 							<div>
 								<p><b>Minimum Balance for Interest</b></p>
-								<p>BDT.<?php echo number_format($min_balance); ?> Per Month</p>
+								<p>BDT <?php echo number_format($min_balance); ?> Per Month</p>
 							</div>
 						</div>
 						<div class="col-sm-3 col-xs-6">
@@ -99,7 +99,7 @@ if(!empty($id) && is_numeric($id) ){
 
 					<tr>
 						<td><b> A/C Opening Balance</b></td>
-						<td> BDT. <?php echo number_format($row->opening_balance)?> </td>
+						<td> BDT <?php echo number_format($row->opening_balance)?> </td>
 
 					</tr>
 
@@ -109,7 +109,7 @@ if(!empty($id) && is_numeric($id) ){
 					</tr>
 					<tr>
 						<td><b>Minimum Balance for Interest</b></td>
-						<td> BDT. <?php echo number_format($min_balance)?>  Per Month</td>
+						<td> BDT <?php echo number_format($min_balance)?>  Per Month</td>
 					</tr>
 
 					<tr>
