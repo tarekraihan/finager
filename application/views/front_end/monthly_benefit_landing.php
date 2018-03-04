@@ -11,6 +11,7 @@
 <!-- header part start -->
 <section id="monthly_benefit_header_part">
     <div class="month_benefit_header_text">
+        <h3>Monthly Benefit Scheme</h3>
         <p>Monthly Benefit Scheme comparison made easy</p>
         <a href="javascript:void(0);" class="start_compare"><span class="dps_landing_button flash-button">Start Comparing</span></a>
     </div>

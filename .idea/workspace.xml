@@ -2,13 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Card.php" afterPath="$PROJECT_DIR$/application/controllers/Card.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Debit_card.php" afterPath="$PROJECT_DIR$/application/controllers/Debit_card.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Snd_account.php" afterPath="$PROJECT_DIR$/application/controllers/Snd_account.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan" afterPath="$PROJECT_DIR$/application/cache/auto_loan" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_details" afterPath="$PROJECT_DIR$/application/cache/auto_loan_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_landing" afterPath="$PROJECT_DIR$/application/cache/auto_loan_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card" afterPath="$PROJECT_DIR$/application/cache/card" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card_compare" afterPath="$PROJECT_DIR$/application/cache/card_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card_details" afterPath="$PROJECT_DIR$/application/cache/card_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/credit_card_landing" afterPath="$PROJECT_DIR$/application/cache/credit_card_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account" afterPath="$PROJECT_DIR$/application/cache/current_account" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account_compare" afterPath="$PROJECT_DIR$/application/cache/current_account_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/current_account_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/current_account_details.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card" afterPath="$PROJECT_DIR$/application/cache/debit_card" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/debit_card_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/debit_card_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_details" afterPath="$PROJECT_DIR$/application/cache/debit_card_details" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_landing" afterPath="$PROJECT_DIR$/application/cache/debit_card_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps" afterPath="$PROJECT_DIR$/application/cache/dps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/dps_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/dps_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps_details" afterPath="$PROJECT_DIR$/application/cache/dps_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/dps_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/dps_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps_landing" afterPath="$PROJECT_DIR$/application/cache/dps_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/education_loan" afterPath="$PROJECT_DIR$/application/cache/education_loan" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/education_loan_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/education_loan_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/education_loan_details" afterPath="$PROJECT_DIR$/application/cache/education_loan_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/education_loan_landing" afterPath="$PROJECT_DIR$/application/cache/education_loan_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/export_import.php" afterPath="$PROJECT_DIR$/application/views/front_end/export_import.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/export_import" afterPath="$PROJECT_DIR$/application/cache/export_import" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr" afterPath="$PROJECT_DIR$/application/cache/fdr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/fdr_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/fdr_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr_details" afterPath="$PROJECT_DIR$/application/cache/fdr_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/fdr_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/fdr_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr_landing" afterPath="$PROJECT_DIR$/application/cache/fdr_landing" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan" afterPath="$PROJECT_DIR$/application/cache/home_loan" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/home_loan_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/home_loan_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan_details" afterPath="$PROJECT_DIR$/application/cache/home_loan_details" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan_landing" afterPath="$PROJECT_DIR$/application/cache/home_loan_landing" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/saving_account_compare" afterPath="$PROJECT_DIR$/application/cache/saving_account_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire" afterPath="$PROJECT_DIR$/application/cache/millionaire" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/millionaire_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/millionaire_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire_details" afterPath="$PROJECT_DIR$/application/cache/millionaire_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire_landing" afterPath="$PROJECT_DIR$/application/cache/millionaire_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/money_maximizer" afterPath="$PROJECT_DIR$/application/cache/money_maximizer" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/money_maximizer_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/money_maximizer_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/money_maximizer_details" afterPath="$PROJECT_DIR$/application/cache/money_maximizer_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/money_maximizer_landing" afterPath="$PROJECT_DIR$/application/cache/money_maximizer_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/monthly_benefit" afterPath="$PROJECT_DIR$/application/cache/monthly_benefit" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/monthly_benefit_compare" afterPath="$PROJECT_DIR$/application/cache/monthly_benefit_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/monthly_benefit_landing" afterPath="$PROJECT_DIR$/application/cache/monthly_benefit_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/personal_loan" afterPath="$PROJECT_DIR$/application/cache/personal_loan" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/personal_loan_compare" afterPath="$PROJECT_DIR$/application/cache/personal_loan_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/personal_loan_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/personal_loan_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/personal_loan_landing" afterPath="$PROJECT_DIR$/application/cache/personal_loan_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/saving_account_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/saving_account_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/saving_account_details" afterPath="$PROJECT_DIR$/application/cache/saving_account_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/savings_account" afterPath="$PROJECT_DIR$/application/cache/savings_account" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/snd_compare" afterPath="$PROJECT_DIR$/application/cache/snd_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/snd_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/snd_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/snd_details" afterPath="$PROJECT_DIR$/application/cache/snd_details" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/css/style.css" afterPath="$PROJECT_DIR$/resource/front_end/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="finager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +90,196 @@
     <favorites_list name="finager" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="fdr_landing.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_landing.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="34" max-vertical-offset="5457">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dps_landing.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_landing.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="34" max-vertical-offset="5814">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30711043" vertical-offset="133553" max-vertical-offset="140556">
+              <caret line="7868" column="32" selection-start-line="7868" selection-start-column="32" selection-end-line="7868" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="snd.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/snd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="23.0" vertical-offset="11414" max-vertical-offset="13668">
+              <caret line="597" column="48" selection-start-line="597" selection-start-column="33" selection-end-line="597" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Snd_account.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Snd_account.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.7636364" vertical-offset="7545" max-vertical-offset="13277">
+              <caret line="456" column="225" selection-start-line="456" selection-start-column="225" selection-end-line="456" selection-end-column="225" />
+              <folding>
+                <marker date="1520170318308" expanded="true" signature="22124:31121" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="22177:25912" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="22233:22906" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="22585:22795" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="22964:25885" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="23010:24769" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="23065:23360" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="23129:23321" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="23415:23704" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="23479:23665" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="23759:24041" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="23835:24002" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="24108:24405" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="24172:24366" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="24460:24734" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="24524:24695" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="24830:25854" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="24894:25146" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="25210:25470" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="25534:25819" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="25595:25780" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="26054:31043" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="26103:31016" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="26130:30985" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="26253:27337" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="27447:30946" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="27561:28218" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="27625:28175" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="27698:28128" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="27944:28077" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="28319:28962" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="28383:28919" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="28456:28872" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="28695:28821" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="29070:29457" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="29139:29414" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="29562:29940" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="29631:29897" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="30048:30441" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="30117:30398" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="30540:30907" placeholder="..." />
+                <marker date="1520170318308" expanded="true" signature="30609:30864" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monthly_benefit_details.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.0" vertical-offset="830" max-vertical-offset="3723">
+              <caret line="58" column="67" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="money_maximizer_details.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/money_maximizer_details.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.8363636" vertical-offset="1391" max-vertical-offset="5134">
+              <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="debit_card.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-28.472727" vertical-offset="11711" max-vertical-offset="14297">
+              <caret line="781" column="0" selection-start-line="781" selection-start-column="0" selection-end-line="781" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Debit_card.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Debit_card.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.4545455" vertical-offset="10231" max-vertical-offset="17425">
+              <caret line="613" column="30" selection-start-line="613" selection-start-column="30" selection-end-line="613" selection-end-column="30" />
+              <folding>
+                <marker date="1520165321135" expanded="true" signature="31641:37790" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="31694:34379" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="31733:32635" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="31994:32161" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="32675:34366" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="32701:33193" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="32742:32927" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="32777:32911" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="32968:33178" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33003:33162" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33220:34352" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33276:33439" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33311:33423" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33495:33649" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33530:33633" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33705:33903" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33740:33887" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33959:34119" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="33994:34103" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="34164:34337" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="34199:34321" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="34469:37737" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="34525:37724" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="34552:37710" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="34629:35528" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="35592:37691" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="35674:36009" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="35709:35992" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="35750:35956" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="35884:35937" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36087:36436" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36122:36419" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36163:36383" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36303:36364" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36521:36802" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36561:36785" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36695:36749" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36885:37183" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="36925:37166" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="37067:37130" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="37257:37528" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="37297:37511" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="37426:37475" placeholder="..." />
+                <marker date="1520165321135" expanded="true" signature="37605:37675" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fdr.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="12461" max-vertical-offset="16388">
+              <caret line="734" column="13" selection-start-line="730" selection-start-column="11" selection-end-line="734" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,36 +290,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Desktop/New folder/vertical_menu.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/money_maximizer_compare.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit_compare.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/saving_account_details.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/current_account_details.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/current_account_compare.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/saving_account_compare.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/snd.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/snd_details.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/snd_compare.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/education_loan.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/fdr.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/money_maximizer.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/savings_account.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/current_account.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/card.php" />
         <option value="$PROJECT_DIR$/application/controllers/Auto_loan.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Card.php" />
         <option value="$PROJECT_DIR$/application/controllers/Current_account.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Debit_card.php" />
         <option value="$PROJECT_DIR$/application/controllers/Education_loan.php" />
         <option value="$PROJECT_DIR$/application/controllers/Fdr.php" />
         <option value="$PROJECT_DIR$/application/controllers/Home_loan.php" />
         <option value="$PROJECT_DIR$/application/controllers/Money_maximizer.php" />
         <option value="$PROJECT_DIR$/application/controllers/Personal_loan.php" />
         <option value="$PROJECT_DIR$/application/controllers/Saving_account.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Snd_account.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" />
         <option value="$PROJECT_DIR$/application/controllers/Millionaire.php" />
         <option value="$PROJECT_DIR$/application/controllers/Monthly_benefit.php" />
@@ -83,7 +311,6 @@
         <option value="$PROJECT_DIR$/application/models/Front_end_select_model.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/dps.php" />
         <option value="$PROJECT_DIR$/application/controllers/En.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/dps_details.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/dps_compare.php" />
         <option value="$PROJECT_DIR$/application/controllers/Dps.php" />
@@ -91,9 +318,29 @@
         <option value="$USER_HOME$/AppData/Local/Temp/scp28050/asdf/application/views/front_end/index.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp31358/asdf/application/views/front_end/block/footer.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp01216/asdf/application/views/front_end/fdr_landing.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/scp10122/asdf/application/views/front_end/dps_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/export_import.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/debit_card_details.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Card.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/home_loan_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/personal_loan_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/education_loan_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/fdr_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/dps_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/millionaire_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/money_maximizer_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/saving_account_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/current_account_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/snd_details.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Debit_card.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/fdr_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/dps_landing.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/scp10122/asdf/application/views/front_end/dps_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Snd_account.php" />
+        <option value="$PROJECT_DIR$/resource/front_end/css/style.css" />
       </list>
     </option>
   </component>
@@ -106,9 +353,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1599" />
-    <option name="height" value="867" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -133,6 +381,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,6 +397,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front_end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front_end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -205,9 +508,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -241,6 +561,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -248,9 +571,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -564,8 +884,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1599" height="867" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -573,7 +893,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21225521" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23650385" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42698193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -607,9 +927,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16645244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -663,127 +983,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="5440">
-          <caret line="4" column="142" selection-start-line="4" selection-start-column="142" selection-end-line="4" selection-end-column="142" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5797">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/snd_compare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="111" column="117" selection-start-line="111" selection-start-column="117" selection-end-line="111" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account_compare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="248" column="18" selection-start-line="236" selection-start-column="12" selection-end-line="248" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.230769" vertical-offset="0" max-vertical-offset="0">
-          <caret line="486" column="13" selection-start-line="482" selection-start-column="12" selection-end-line="486" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.461538" vertical-offset="0" max-vertical-offset="0">
-          <caret line="324" column="0" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/savings_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.964462" vertical-offset="0" max-vertical-offset="0">
-          <caret line="415" column="9" selection-start-line="411" selection-start-column="7" selection-end-line="415" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/money_maximizer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.834156" vertical-offset="0" max-vertical-offset="0">
-          <caret line="586" column="23" selection-start-line="586" selection-start-column="16" selection-end-line="586" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/snd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.8302073" vertical-offset="0" max-vertical-offset="0">
-          <caret line="407" column="20" selection-start-line="407" selection-start-column="20" selection-end-line="407" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/card.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5034551" vertical-offset="0" max-vertical-offset="0">
-          <caret line="996" column="64" selection-start-line="996" selection-start-column="64" selection-end-line="996" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Auto_loan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.692307" vertical-offset="0" max-vertical-offset="0">
-          <caret line="1130" column="38" selection-start-line="1130" selection-start-column="20" selection-end-line="1130" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Card.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.436363" vertical-offset="0" max-vertical-offset="0">
-          <caret line="1895" column="9" selection-start-line="1895" selection-start-column="9" selection-end-line="1895" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Current_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.436363" vertical-offset="0" max-vertical-offset="0">
-          <caret line="588" column="9" selection-start-line="588" selection-start-column="9" selection-end-line="588" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Education_loan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.545455" vertical-offset="0" max-vertical-offset="0">
-          <caret line="942" column="9" selection-start-line="942" selection-start-column="9" selection-end-line="942" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Fdr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.436363" vertical-offset="0" max-vertical-offset="0">
-          <caret line="1003" column="9" selection-start-line="1003" selection-start-column="9" selection-end-line="1003" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/fdr_info.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/General.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -809,13 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="501" column="9" selection-start-line="501" selection-start-column="9" selection-end-line="501" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Snd_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57551825" vertical-offset="0" max-vertical-offset="0">
-          <caret line="741" column="50" selection-start-line="741" selection-start-column="50" selection-end-line="741" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -847,31 +1039,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="219" column="14" selection-start-line="219" selection-start-column="14" selection-end-line="219" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="763" column="37" selection-start-line="763" selection-start-column="37" selection-end-line="763" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="734" column="13" selection-start-line="730" selection-start-column="11" selection-end-line="734" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Debit_card.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="16.261599" vertical-offset="0" max-vertical-offset="0">
-          <caret line="969" column="9" selection-start-line="969" selection-start-column="9" selection-end-line="969" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -910,13 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-35.26923" vertical-offset="0" max-vertical-offset="0">
-          <caret line="816" column="11" selection-start-line="800" selection-start-column="6" selection-end-line="816" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -935,13 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="1165" column="45" selection-start-line="1165" selection-start-column="45" selection-end-line="1165" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -994,18 +1151,393 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_landing.php">
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_landing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="5797">
-          <caret line="4" column="116" selection-start-line="4" selection-start-column="116" selection-end-line="4" selection-end-column="126" />
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="5644">
+          <caret line="3" column="62" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="102" max-vertical-offset="6069">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="5644">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/export_import.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="18734">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="17" max-vertical-offset="2652">
+          <caret line="17" column="270" selection-start-line="17" selection-start-column="270" selection-end-line="17" selection-end-column="270" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="49.98182" vertical-offset="19579" max-vertical-offset="20230">
+          <caret line="996" column="64" selection-start-line="996" selection-start-column="64" selection-end-line="996" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1454546" vertical-offset="1935" max-vertical-offset="4267">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7636364" vertical-offset="21757" max-vertical-offset="34034">
+          <caret line="1292" column="0" selection-start-line="1292" selection-start-column="0" selection-end-line="1292" selection-end-column="0" />
+          <folding>
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1520159711515" expanded="true" signature="-1:-1" placeholder="SELECT id , ..card_card_informations..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6" vertical-offset="2836" max-vertical-offset="6902">
+          <caret line="172" column="34" selection-start-line="172" selection-start-column="34" selection-end-line="172" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/saving_account_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8363636" vertical-offset="1153" max-vertical-offset="3315">
+          <caret line="77" column="22" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8363636" vertical-offset="1000" max-vertical-offset="3332">
+          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/snd_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8363636" vertical-offset="2020" max-vertical-offset="4182">
+          <caret line="128" column="26" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1414791" vertical-offset="3142" max-vertical-offset="19924">
+          <caret line="190" column="34" selection-start-line="190" selection-start-column="34" selection-end-line="190" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1414791" vertical-offset="2377" max-vertical-offset="23800">
+          <caret line="145" column="34" selection-start-line="145" selection-start-column="34" selection-end-line="145" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27813506" vertical-offset="1595" max-vertical-offset="4471">
+          <caret line="104" column="22" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27244094" vertical-offset="2241" max-vertical-offset="4216">
+          <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25080386" vertical-offset="1374" max-vertical-offset="6273">
+          <caret line="90" column="22" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/money_maximizer_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8363636" vertical-offset="1391" max-vertical-offset="5134">
+          <caret line="91" column="22" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.472727" vertical-offset="11711" max-vertical-offset="14297">
+          <caret line="781" column="0" selection-start-line="781" selection-start-column="0" selection-end-line="781" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Debit_card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4545455" vertical-offset="10231" max-vertical-offset="17425">
+          <caret line="613" column="30" selection-start-line="613" selection-start-column="30" selection-end-line="613" selection-end-column="30" />
+          <folding>
+            <marker date="1520165321135" expanded="true" signature="31641:37790" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="31694:34379" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="31733:32635" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="31994:32161" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="32675:34366" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="32701:33193" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="32742:32927" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="32777:32911" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="32968:33178" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33003:33162" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33220:34352" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33276:33439" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33311:33423" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33495:33649" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33530:33633" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33705:33903" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33740:33887" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33959:34119" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="33994:34103" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="34164:34337" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="34199:34321" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="34469:37737" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="34525:37724" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="34552:37710" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="34629:35528" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="35592:37691" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="35674:36009" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="35709:35992" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="35750:35956" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="35884:35937" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36087:36436" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36122:36419" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36163:36383" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36303:36364" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36521:36802" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36561:36785" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36695:36749" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36885:37183" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="36925:37166" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="37067:37130" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="37257:37528" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="37297:37511" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="37426:37475" placeholder="..." />
+            <marker date="1520165321135" expanded="true" signature="37605:37675" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="12461" max-vertical-offset="16388">
+          <caret line="734" column="13" selection-start-line="730" selection-start-column="11" selection-end-line="734" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_landing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="5440">
-          <caret line="4" column="142" selection-start-line="4" selection-start-column="142" selection-end-line="4" selection-end-column="142" />
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="34" max-vertical-offset="5457">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="34" max-vertical-offset="5814">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0" vertical-offset="830" max-vertical-offset="3723">
+          <caret line="58" column="67" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/snd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="23.0" vertical-offset="11414" max-vertical-offset="13668">
+          <caret line="597" column="48" selection-start-line="597" selection-start-column="33" selection-end-line="597" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Snd_account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7636364" vertical-offset="7545" max-vertical-offset="13277">
+          <caret line="456" column="225" selection-start-line="456" selection-start-column="225" selection-end-line="456" selection-end-column="225" />
+          <folding>
+            <marker date="1520170318308" expanded="true" signature="22124:31121" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="22177:25912" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="22233:22906" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="22585:22795" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="22964:25885" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="23010:24769" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="23065:23360" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="23129:23321" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="23415:23704" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="23479:23665" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="23759:24041" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="23835:24002" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="24108:24405" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="24172:24366" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="24460:24734" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="24524:24695" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="24830:25854" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="24894:25146" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="25210:25470" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="25534:25819" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="25595:25780" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="26054:31043" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="26103:31016" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="26130:30985" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="26253:27337" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="27447:30946" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="27561:28218" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="27625:28175" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="27698:28128" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="27944:28077" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="28319:28962" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="28383:28919" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="28456:28872" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="28695:28821" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="29070:29457" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="29139:29414" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="29562:29940" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="29631:29897" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="30048:30441" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="30117:30398" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="30540:30907" placeholder="..." />
+            <marker date="1520170318308" expanded="true" signature="30609:30864" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30711043" vertical-offset="133553" max-vertical-offset="140556">
+          <caret line="7868" column="32" selection-start-line="7868" selection-start-column="32" selection-end-line="7868" selection-end-column="32" />
           <folding />
         </state>
       </provider>

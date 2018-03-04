@@ -617,7 +617,6 @@ class Debit_card extends CI_Controller
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i>
 								</p>
 								<p class="rating text-center">Rated By 5 Person</p>
-
 								<span class="more_info_icon"><a id="" href="javascript:void(0);" class="add-to-compare" data-card_id="'.$row->id.'" ><i class="fa fa-plus-circle"></i> Add to comparison</a></span><br/>
 								<span class="more_info_icon"><a role="button" id="more_info'.$row->id.'" class="more_info" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i>  More info </a></span>
 							</div>
@@ -631,8 +630,8 @@ class Debit_card extends CI_Controller
 										</div>
 									</div>
 									<div class="col-sm-3 col-xs-3">
-										<div class="card_text1 card_btn_apllication">
-											<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="img-responsive" src="' . base_url() . 'resource/front_end/images/card_btn_apllication.png" /></a>
+										<div class="card_text1">
+											<a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="card_btn_apllication">Favorite </div></a>
 										</div>
 									</div>
 								</div>
