@@ -240,15 +240,18 @@ class Monthly_benefit extends CI_Controller {
 
         $monthly_tenure = $this->input->post('monthly_tenure');
         $monthly_benefit_bank_ids = $this->input->post('monthly_benefit_bank_ids');
-        $monthly_amount = (floatval($this->input->post('deposit_amount') > 50000 ) ? $this->input->post('deposit_amount') : 50000 );
+        $monthly_amount = (floatval($this->input->post('deposit_amount') > 100000 ) ? $this->input->post('deposit_amount') : 100000 );
         $WHERE = array(); $query = '';
         if(!empty($monthly_tenure)) {
             $WHERE[] = '( monthly_benefit_info.tenure_id = '.$monthly_tenure.')';
         }
-//
-//        if(!empty($monthly_amount)) {
-//            $WHERE[] = '( monthly_benefit_info.deposit_amount >= '.$monthly_amount.')';
-//        }
+
+        if(!empty($monthly_amount)) {
+            $WHERE[] = '( monthly_benefit_info.min_amount <= '.$monthly_amount.')';
+        }
+        if(!empty($monthly_amount)) {
+            $WHERE[] = '( monthly_benefit_info.max_amount >= '.$monthly_amount.')';
+        }
 
         if(!empty($monthly_benefit_bank_ids)) {
             if(strstr($monthly_benefit_bank_ids,',')) {
@@ -317,6 +320,7 @@ class Monthly_benefit extends CI_Controller {
                 $tenure = ($row->tenure == '0.5') ? '6 Months' : $row->tenure.' Years';
                 $loan_facility = (strtoupper($row->loan_facility) != 'N/A') ? $row->loan_facility.' %' :'N/A';
 
+                $benefit =  $monthly_amount * $row->benefit_rate;
                 /*$url = $row->bank_name.' '.$row->no_of_month.'-month-monthly-benefit';
                 $slug = str_replace("/"," ",$url);
                 $slug = url_title($slug,'dash',TRUE);
@@ -358,7 +362,7 @@ class Monthly_benefit extends CI_Controller {
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text3">
                                         <h5>Benefit Amount</h5>
-                                        <p>BDT '.number_format( $row->benefit_amount ).'</p>
+                                        <p>BDT '.number_format( $benefit ).'</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-2 col-xs-2">
