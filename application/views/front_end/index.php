@@ -21,22 +21,6 @@
 .feature-bg {
     margin: 175px 0 !important;
 }
-/*#home_search {
-height: 664px;
-width: 100%;
-background-image: url(<?php echo base_url();
-?>resource/front_end/images/Fin-background.jpg);
-background-repeat: no-repeat;
-background-position: center center;
-background-attachment: fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
--ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
--moz-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
-}*/
 #home_search {
     height: 664px;
     width: 100%;
@@ -56,18 +40,6 @@ filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.j
 .home-search-section {
 position: relative;
 }
-/*.home-search-section>p {
-    font-size: 25px;
-    font-style: italic;
-    color: rgb(84, 172, 208);
-    font-weight: 500;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 7px;
-    cursor: pointer;
-    font-family: 'ubuntu', sans-serif;
-}*/
 .home-search-section>p {
     font-size: 25px;
     font-style: italic;
@@ -96,9 +68,6 @@ font-size: 22px;
 </style>
 <section id="home_search">
     <div class="header container-fluid">
-        <!-- <div class="find-bar">
-        <img class="logo-lg" src="<?php /*echo base_url();*/?>resource/front_end/images/FinAlfa.svg" alt="Large Logo" /><br/><br/>
-        <a href=""><img src="<?php /*echo base_url();*/?>resource/front_end/images/serch-bar.png" alt="Serch box" class="img-responsive center-block" /></a>        </div>-->        <!--<div class="feature-bg">            <div class="find-bar">                <img class="logo-lg" src="<?php /*echo base_url(); */?>resource/front_end/images/FinAlfa.svg" alt="Large Logo" /><br/><br/>                <img class="search-image" data-toggle="modal" data-target="#serchModal" src="<?php /*echo base_url(); */?>resource/front_end/images/srcbutton.png" alt="Serch box" />            </div>        </div>-->
         <div class="feature-bg">
             <div class="find-bar">
                 <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/finager-promotional-log.png" alt="Finager Promotional Logo" /><br/><br/>

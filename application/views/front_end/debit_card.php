@@ -702,9 +702,9 @@
             $("#hiden_div").animate({bottom:'0px'});
             //$("#hiden_div").addClass("hiddenHalfDown");
 
-            $('html, body').animate({
+            /*$('html, body').animate({
                 //'scrollTop' : $(".cart_anchor").position().top+1500
-            });
+            });*/
 
             if($(".cart_anchor").hasClass("img_active") && $(".cart_anchor01").hasClass("img_active")){
                 $('#comparison_alert').modal('show');

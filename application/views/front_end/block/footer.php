@@ -375,7 +375,8 @@ if($result){
 <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">-->
 
 <script>
-    
+
+
     function overlay(s, l) {
         $('.overlay').remove();
         if( s )
@@ -397,44 +398,7 @@ if($result){
         }else{
             $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> More info");
         }
-    })
-//stcikey sidebar START
-/*
-$(document).ready(function(){
-	function sticky_relocate() {
-		var topOffset = 0;
-		var window_top = $(window).scrollTop();
-		var footer_top = $(".footer").offset().top;
-        var target_div = $('#sticky-anchor').offset();
-		var div_top = target_div.top;
-		var div_height = $("#sidebar").height();
-		var win_height = $(window).height();
-
-        var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
-        if (isNaN(top)) {
-            console.log("something is wrong, no top");
-        } else {
-            console.log(top);
-        }
-		
-		if (window_top + div_height > footer_top){
-			$('#sidebar').removeClass('stick');    
-		}
-		else if (window_top > div_top) {
-			$('#sidebar').addClass('stick');
-		}
-		else {
-			$('#sidebar').removeClass('stick');
-		}
-	}
-
-	$(function () {
-		$(window).scroll(sticky_relocate);
-		sticky_relocate();
-	});
-});
-*/
-//stcikey sidebar END
+    });
 
     $("#buttons button").click(function() {
         var id = $(this).attr("id");
@@ -442,7 +406,6 @@ $(document).ready(function(){
         $("#pages div#" + id + "").css("display", "block");
     });
 
-<!--Esc key press to hide search modal-->
 
 jQuery(document).keypress(function(e) {
   if (e.keyCode == 27) {
