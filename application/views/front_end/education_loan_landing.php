@@ -274,16 +274,19 @@
 <section id="edu_footer">
     <div class="container">
         <div class="edu_footer_pr">
-            <div class="col-md-4 col-sm-4">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/AdamSmith.png">
             </div>
-            <div class="col-md-8 col-sm-8">
+            <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
                 <h3>“In regards to the price of commodities, the rise of wages operates as simple interest does, the rise of profit operates like compound interest.
 
                     Our merchants and masters complain much of the bad effects of high wages in raising the price and lessening the sale of goods. They say nothing concerning the bad effects of high profits. They are silent with regard to the pernicious effects of their own gains. They complain only of those of other people.”
 
                 </h3>
                 <div class="footer_text">Adam Smith, the Wealth of Nations</div>
+            </div>
+
+            <div class="col-lg-1 col-md-1">
             </div>
         </div>
     </div>

@@ -18,7 +18,12 @@
         height: 617px !important;
     }
     #personal_footer {
-        height: 340px !important;
+        height: 420px !important;
+    }
+    .heading_text{
+        height: auto !important;
+        max-height: inherit;
+        padding-bottom: 35px !important;
     }
     .personal_footer_pr img {
         height: 303px;
@@ -32,7 +37,7 @@
     }
     /* edu star */
     #edu_footer {
-        height: 340px !important;
+        height: 380px !important;
     }
     .edu_footer_pr img {
         height: 303px;
@@ -88,7 +93,7 @@
         margin-right: 89px !important;
     }
     .search_icon{
-        margin-left: 110px !important;
+        margin-left: 82px !important;
     }
 
 }
@@ -483,7 +488,13 @@
         font-size: 12px !important;
     }
     .search_icon {
-        margin-left: 122px !important;
+        margin-left: 82px !important;
+    }
+    .features2 {
+        min-height: 290px !important;
+    }
+    a.megamenu_feature_link{
+        padding: 8px 10px !important;
     }
 }
 

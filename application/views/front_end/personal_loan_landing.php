@@ -291,10 +291,10 @@
 	<section id="personal_footer">
 		<div class="container">
 			<div class="personal_footer_pr">
-				<div class="col-md-4 col-sm-4">
+				<div class="col-lg-4 col-md-4 col-sm-4">
 					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/LudwigvonMises.png">
 				</div>
-				<div class="col-md-8 col-sm-8">
+				<div class="col-lg-7 col-md-7 col-sm-8">
 					<h3>
                         “Inequality of wealth and incomes is an essential feature of the market economy. It is the implement that makes the consumers supreme in giving them the power to force all those engaged in production to comply with their orders. It forces all those engaged in production to the utmost exertion in the service of the consumers. It makes competition work. He who best serves the consumers profits most and accumulates
                         riches.”
@@ -302,6 +302,8 @@
                     </h3>
 					<div class="footer_text">Ludwig von Mises, <br>Economic Freedom and Interventionism </div>
 				</div>
+                <div class="col-lg-1 col-md-1">
+                </div>
 			</div>
 		</div>
 	</section>

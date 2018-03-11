@@ -279,15 +279,18 @@
 	<section id="auto_footer">
 		<div class="container">
 			<div class="auto_footer_pr">
-				<div class="col-md-4 col-sm-4">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/JohnGreen.png">
 				</div>
-				<div class="col-md-8 col-sm-8">
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
 					<h3>“One of the Great Rules of Economics According to John Green
                         If you are rich, you have to be an idiot not to stay rich. And if you are poor, you have to be really smart to get rich.”
                     </h3>
 					<div class="footer_text">John Green</div>
 				</div>
+
+                <div class="col-lg-1 col-md-1">
+                </div>
 			</div>
 		</div>
 	</section>
