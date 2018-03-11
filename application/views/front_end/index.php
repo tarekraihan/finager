@@ -40,7 +40,7 @@ filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.j
 #home_search {
     height: 664px;
     width: 100%;
-    background-image: url(<?php echo base_url();?>resource/front_end/images/lightbg.jpg);
+    background-image: url(<?php echo base_url();?>resource/front_end/images/FInBackground.svg);
     /*background-color: #b4bcc8;*/
     background-repeat: no-repeat;
     background-position: center center;
