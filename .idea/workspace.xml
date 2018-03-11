@@ -2,27 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_landing" afterPath="$PROJECT_DIR$/application/cache/auto_loan_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/credit_card_landing" afterPath="$PROJECT_DIR$/application/cache/credit_card_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps" afterPath="$PROJECT_DIR$/application/cache/dps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps_landing" afterPath="$PROJECT_DIR$/application/cache/dps_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/education_loan_landing" afterPath="$PROJECT_DIR$/application/cache/education_loan_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/home_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/home_loan_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan_landing" afterPath="$PROJECT_DIR$/application/cache/home_loan_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/DebitCard.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/DebitCard.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/bankmap.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/bankmap.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/buynewcar.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/buynewcar.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/creditcard.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/creditcard.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/dps.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/dps.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/educationloan.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/educationloan.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/fdr.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/fdr.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/homeloan.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/homeloan.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/money_maximizer" afterPath="$PROJECT_DIR$/application/cache/money_maximizer" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/money_maximizer_landing" afterPath="$PROJECT_DIR$/application/cache/money_maximizer_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/js/monthly_benefit.js" afterPath="$PROJECT_DIR$/resource/front_end/js/monthly_benefit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/monthly_benefit" afterPath="$PROJECT_DIR$/application/cache/monthly_benefit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/monthly_benefit_landing" afterPath="$PROJECT_DIR$/application/cache/monthly_benefit_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/personal_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/personal_loan_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/personal_loan_landing" afterPath="$PROJECT_DIR$/application/cache/personal_loan_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/css/responsive.css" afterPath="$PROJECT_DIR$/resource/front_end/css/responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/savings_account" afterPath="$PROJECT_DIR$/application/cache/savings_account" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/snd_compare" afterPath="$PROJECT_DIR$/application/cache/snd_compare" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/css/style.css" afterPath="$PROJECT_DIR$/resource/front_end/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/loan.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/loan.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/moneymarket.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/moneymarket.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/more.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/more.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/personalloan.svg" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/personalloan.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="finager.iws" />
@@ -129,7 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/controllers/Home_loan.php" />
         <option value="$PROJECT_DIR$/application/controllers/Money_maximizer.php" />
         <option value="$PROJECT_DIR$/application/controllers/Personal_loan.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" />
@@ -180,6 +171,7 @@
         <option value="$PROJECT_DIR$/resource/front_end/css/style.css" />
         <option value="$PROJECT_DIR$/resource/front_end/css/responsive.css" />
         <option value="$PROJECT_DIR$/resource/front_end/js/monthly_benefit.js" />
+        <option value="$PROJECT_DIR$/resource/front_end/images/categoryIcon/creditcard.svg" />
       </list>
     </option>
   </component>
@@ -288,7 +280,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front_end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="categoryIcon" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -365,12 +383,6 @@
       <created>1494340092258</created>
       <option name="number" value="Default" />
       <updated>1494340092258</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Landing page footer change">
-      <created>1500816472060</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1500816472060</updated>
     </task>
     <task id="LOCAL-00015" summary="Landing page footer change">
       <created>1500821331375</created>
@@ -660,13 +672,20 @@
       <option name="project" value="LOCAL" />
       <updated>1520170616924</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="1280 responsive isses and monthly benifit 100000 value initial">
+      <created>1520778055046</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1520778055057</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1599" height="867" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -683,7 +702,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -730,7 +748,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="1. Cradit card landing page blog section change&#10;2. css page update" />
     <MESSAGE value="footer link change" />
     <MESSAGE value="debit card landing page icon change" />
     <MESSAGE value="css change" />
@@ -755,7 +772,8 @@
     <MESSAGE value="More Info Less Info problem solved" />
     <MESSAGE value="index page &amp; footer page logo change" />
     <MESSAGE value="style sheet &amp; more page" />
-    <option name="LAST_COMMIT_MESSAGE" value="style sheet &amp; more page" />
+    <MESSAGE value="1280 responsive isses and monthly benifit 100000 value initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="1280 responsive isses and monthly benifit 100000 value initial" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -764,13 +782,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/Front_end_select_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2727275" vertical-offset="0" max-vertical-offset="0">
-          <caret line="216" column="46" selection-start-line="216" selection-start-column="46" selection-end-line="216" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -1129,6 +1140,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.379311" vertical-offset="16214" max-vertical-offset="16915">
           <caret line="980" column="0" selection-start-line="980" selection-start-column="0" selection-end-line="982" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/images/categoryIcon/creditcard.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.70711297" vertical-offset="524" max-vertical-offset="1241">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
