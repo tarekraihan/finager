@@ -459,10 +459,10 @@
                 if(obj.snd_i_want_interest !='') {
                     option.push('<li><div class="filter-option"><span>' + obj.snd_i_want_interest_label + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_i_want_interest" data-snd_i_want_interest="' + obj.snd_i_want_interest + '"><i class="icon-close icons"></i></a></span></div></li>');
                 }
-                if(obj.snd_amount !='') {
+               /* if(obj.snd_amount !='') {
                     option.push('<li><div class="filter-option"><span>' + obj.snd_amount + '</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="snd_amount" data-snd_amount="' + obj.snd_amount + '"><i class="icon-close icons"></i></a></span></div></li>');
                 }
-                console.log(obj.snd_bank_ids);
+                console.log(obj.snd_bank_ids);*/
                 if(obj.snd_bank_ids.length > 0 ){
                     for (var i = 0; i < obj.snd_bank_ids.length; i++) {
                         var bank_id = obj.snd_bank_ids[i].split("=");
