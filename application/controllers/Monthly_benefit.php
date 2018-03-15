@@ -380,8 +380,8 @@ class Monthly_benefit extends CI_Controller {
                             </div>
                             <div class="row more_availabe">
                                 <div class="col-md-2"><a href="javascript:void(0)" class="more_info"  id="more_info'.$row->id.'" data-monthly_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a></div>
-                                <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"  href="javascript:void(0)"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="Monthly Benefit Application" /></a></div>
                                 <div class="col-md-2"><a href="javascript:void(0)" class="add-to-compare" data-monthly_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="Monthly Benefit Comparison" /></a></div>
+                                <div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="loan_btn_apllication pull-right">Favorite </div></a></div>
                             </div>
                         </div>
                     </div>

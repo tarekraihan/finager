@@ -1310,8 +1310,8 @@ class Card extends CI_Controller
                                     </div>
                                 </div>
                                 <div class="col-sm-3 col-xs-12">
-                                    <div class="card_text1 card_btn_apllication">
-                                        <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="img-responsive xs-center" src="'.base_url().'resource/front_end/images/card_btn_application.png" alt="Apply Image" /></a>
+                                    <div class="card_text1">
+                                        <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="card_btn_apllication">Favorite </div></a>
                                     </div>
                                 </div>
                             </div>

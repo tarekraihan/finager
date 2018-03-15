@@ -377,7 +377,7 @@ class Current_account extends CI_Controller
                                 </div>
                                 <div class="col-sm-3 col-xs-3">
                                     <div class="card_text1">
-                                        <img class="img-responsive" src="'.base_url().'resource/front_end/images/card_btn_apllication.png" />
+                                        <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="loan_btn_apllication pull-right">Favorite </div></a>
                                     </div>
                                 </div>
                             </div>

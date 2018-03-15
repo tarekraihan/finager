@@ -789,9 +789,9 @@ class Fdr extends CI_Controller {
 								</div>
 								<div class="row more_availabe">
 									<div class="col-md-2"><a class="more_info" id="more_info'.$row->id.'" href="javascript:void(0)" data-toggle="collapse" data-fdr_id="'.$row->id.'"><i class="fa fa-info-circle" aria-hidden="true" ></i> More Info</a></div>
-									<div class="col-md-4"><a class="availableOffer" href="javascript:void(0)" data-toggle="collapse" data-available_offer="'.$row->id.'"><i class="fa fa-info-circle " aria-hidden="true" role="button" ></i> Available Offer</a></div>
-									<div class="col-md-4"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><img class="fdr_apply pull-right" src="'.base_url().'resource/front_end/images/application.png" alt="FDR Application" /></a></div>
-									<div class="col-md-2"><a id="" href="javascript:void(0)" class="add-to-compare" data-fdr_id="'.$row->id.'"><img class="pull-right" src="'.base_url().'resource/front_end/images/comparison.png" alt="FDR Application" /></a></div>
+									<div class="col-md-3"><a class="availableOffer" href="javascript:void(0)" data-toggle="collapse" data-available_offer="'.$row->id.'"><i class="fa fa-info-circle " aria-hidden="true" role="button" ></i> Available Offer</a></div>
+									<div class="col-md-4"><a id="" href="javascript:void(0)" class="add-to-compare" data-fdr_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></div>
+									<div class="col-md-3"><a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="loan_btn_apllication pull-right">Favorite </div></a></div>
 								</div>
 							</div>
 						</div>

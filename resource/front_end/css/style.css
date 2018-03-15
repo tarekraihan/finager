@@ -16,6 +16,47 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 500;
 }
+/*.add-to-compare, .more_info, .more_info_icon {*/
+    /*background-color: #04316f;*/
+    /*color: #fff;*/
+    /*padding: 5px;*/
+    /*border-radius: 6px;*/
+    /*line-height: 2.1;*/
+/*}*/
+
+/*.more_info_icon i,a {*/
+    /*color: #fff !important;*/
+/*}*/
+.card_btn_apllication {
+    margin: 30px 24px;
+    padding: 6px 17px;
+    border-radius: 10px;
+    background-color: #04316f;
+    color: #fff;
+    width: 86px;
+    height: 33px;
+    font-weight: bold;
+    box-shadow: 3px 4px #000000b3;
+}
+.card_btn_apllication:hover {
+    background-color: #fff;
+    color: #04316f;
+}
+.loan_btn_apllication {
+    margin:  -15px 24px;
+    padding: 6px 17px;
+    border-radius: 10px;
+    background-color: #04316f;
+    color: #fff;
+    width: 86px;
+    height: 33px;
+    font-weight: bold;
+    box-shadow: 3px 4px #000000b3;
+}
+.loan_btn_apllication:hover {
+    background-color: #fff;
+    color: #04316f;
+}
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
     /*font-family: 'Ubuntu', sans-serif;*/
     font-family: 'Lato', sans-serif;
@@ -1379,9 +1420,7 @@ section#header2 {
 }
 
 .home_loan_button{
-
-    /* border-bottom:2px solid #DADADA; */
-
+    margin-top: 18px;
     padding-bottom:10px;
 
 }
