@@ -108,15 +108,15 @@ $(window).on('scroll', function (){
                     </tr>
 
                     <tr>
-                        <td> <?php echo $first_card->income_range_min_salaried; ?>  for Salaried & <?php echo $first_card->income_range_min_business; ?>  for self-employed </td>
+                        <td> BDT <?php echo $first_card->income_range_min_salaried; ?>  for Salaried & BDT <?php echo $first_card->income_range_min_business; ?>  for self-employed </td>
                         <td><b> Income Range</b></td>
-                        <td> <?php echo $second_card->income_range_min_salaried; ?>  for Salaried & <?php echo $second_card->income_range_min_business; ?>  for self-employed </td>
+                        <td> BDT <?php echo $second_card->income_range_min_salaried; ?>  for Salaried & BDT <?php echo $second_card->income_range_min_business; ?>  for self-employed </td>
                     </tr>
 
                     <tr>
-                        <td> <?php echo $first_card->credit_limit_max_business; ?> </td>
+                        <td> BDT <?php echo $first_card->credit_limit_max_business; ?> </td>
                         <td><b> Maximum Credit Limit</b></td>
-                        <td> <?php echo $second_card->credit_limit_max_business; ?> </td>
+                        <td> BDT <?php echo $second_card->credit_limit_max_business; ?> </td>
                     </tr>
 
                     <tr>
@@ -138,9 +138,9 @@ $(window).on('scroll', function (){
                     </tr>
 
                     <tr>
-                        <td> <?php echo $first_card->balance_transfer_limit; ?>% </td>
+                        <td> <?php echo $first_card->balance_transfer_limit; ?> </td>
                         <td><b>Balance Transfer Limit</b></td>
-                        <td> <?php echo $second_card->balance_transfer_limit; ?>% </td>
+                        <td> <?php echo $second_card->balance_transfer_limit; ?> </td>
                     </tr>
                 </table>
             </div>
