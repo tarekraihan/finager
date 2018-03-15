@@ -512,7 +512,6 @@ class Snd_account extends CI_Controller
                         </div>
                     </div>
 
-
                     <!-- More Info Tab content start -->
                     <div class="more_info_tab collapse" id="moreInfo'.$row->id.'">
                          <div class="col-md-12">
