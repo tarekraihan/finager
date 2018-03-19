@@ -166,6 +166,18 @@
         font-size: 10px !important;
     }
 }
+@media only screen and (min-width: 1281px){
+    .hamburger.is-open{
+        right: 200px !important;
+    }
+}
+@media only screen and (max-width: 1280px){
+    .hamburger.is-open{
+        right: 195px;
+    }
+
+}
+
 @media screen and (min-width:768px)and (max-width:801px){
     .catagory-icon p {
         font-size: 10px !important;

@@ -1,3 +1,4 @@
 # Remove the file from the repository
 .idea/*
+.idea/
 application/cache/*
