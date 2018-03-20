@@ -853,11 +853,22 @@
 
         });
 
-        $('#finalAssest').on('keyup',function(){
-            loadData( page = null );
+        $("#finalAssest,#finalLiability").change(function () {
+            loadData(page = null);
             data_caching();
         });
 
+        $("#alreadySaved").find(".next").click(function(){
+            setTimeout(function(){
+                loadData(page = null);
+            }, 1000);
+        });
+
+        $("#alreadySaved").find(".prev").click(function(){
+            setTimeout(function(){
+                loadData(page = null);
+            }, 1000);
+        });
 
 
         $('#searchDPS').on('click', '.more_info', function (){
