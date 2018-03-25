@@ -1,6 +1,6 @@
 
 
-<div class="container-fluid">
+<div class="container-fluid m-b-30">
     <div class="bank_details_landing_head">
         <p>BANKS IN THE BANGLADESH</p>
     </div>
