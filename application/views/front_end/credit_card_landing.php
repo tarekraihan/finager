@@ -116,27 +116,6 @@
     </section>
     <div class="clearfix"></div>
 
-
-	<!--section id="artical">
-		<div class="container">
-				<h3><i>Recent Popular Article</i></h3><hr/>
-			<div class="popular_artical">
-				<h5>What Dave Ramsey Doesn’t Acknowledge About Credit Cards</h5>
-				<img src="<?php echo base_url();?>resource/front_end/images/Sujat.jpg"/>
-				<span><a href="#">Sujat Barua</a></span><hr/>
-				<h5>How to Pick the Best Credit Card for You: 4 Easy Steps</h5>
-				<img src="<?php echo base_url();?>resource/front_end/images/nirob.jpg"/>
-				<span><a href="#">Nirob</a></span><hr/>
-				<h5>What Is the Range for Credit Scores?</h5>
-				<img src="<?php echo base_url();?>resource/front_end/images/Rubayat.jpg"/>
-				<span><a href="#">Rubayat</a></span><hr/>
-				<h5>What Dave Ramsey Doesn’t Acknowledge About Credit Cards</h5>
-				<img src="<?php echo base_url();?>resource/front_end/images/Tarek Raihan.jpg"/>
-				<span><a href="#">Tarek Raihan</a></span><hr/>
-			</div>
-		</div>
-	</section-->
-	
 	<section id="Basic">
 		<div class="container">
 		<h3><i>The Basics</i></h3><hr/>

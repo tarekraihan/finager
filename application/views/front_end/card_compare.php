@@ -15,25 +15,7 @@
 
 
     ?>
-<script type="text/javascript">
-$(window).on('scroll', function (){
-	if ($(window).scrollTop() > 150){
-	  $('#card_compare_default').addClass('compare-bg');
-	} else {
-	  $('#card_compare_default').removeClass('compare-bg');
-	}
-});
-</script>
-<style>
-.compare-bg{
-    position: fixed;
-    width: 100%;
-    height: 128px !important;
-    padding: 0px;
-    background-color: #f1f1f1;
-    top: 0;
-}
-</style>
+
 <section id="card_compare_default">
     <div class="container">
         <div class="row">

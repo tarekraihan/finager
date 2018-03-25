@@ -1,5 +1,4 @@
-<section id="currantAccount_header">
-</section>
+<section id="currantAccount_header"></section>
 
 <!--Filter bar by bank START -->
 <div class="container">

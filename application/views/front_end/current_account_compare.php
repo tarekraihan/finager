@@ -27,27 +27,6 @@ if($second_current_account->is_non_bank == 1){
 }
 
 ?>
-<style>
-	.innerMdlWrapper .innerMdlInner {
-		width: 418px;
-	}
-	.home-loan-Compare-hr1 {
-		width: 41.5%;
-	}
-	.Card-Compare-hr2 {
-		width: 39%;
-	}
-	.home-loan-Compare-hr3 {
-		width: 44.3%;
-	}
-	.home-loan-Compare-hr4 {
-		width: 39.5%;
-	}
-	#basic_info {
-		margin-top: -45px;
-	}
-
-</style>
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
@@ -350,14 +329,5 @@ if($second_current_account->is_non_bank == 1){
             }
             $('#hideDetailsDiv2').toggle(400);
         });
-    });
-</script>
-<script>
-    $(window).on('scroll', function (){
-        if ($(window).scrollTop() > 150){
-            $('#card_compare_default').addClass('compare-bg');
-        } else {
-            $('#card_compare_default').removeClass('compare-bg');
-        }
     });
 </script>

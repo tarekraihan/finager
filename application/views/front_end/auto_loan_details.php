@@ -41,14 +41,7 @@ if(!empty($id) && is_numeric($id) ){
 }
 
 ?>
-<style type="text/css">
-	.btnHomeLoan {
-	    margin-top: 30px;
-	}
-	.margin-bottom{
-		margin-bottom: 30px;
-	}
-</style>
+
 <section id="card_details_top">
 	<div class="container">
 		<div class="row">
@@ -158,7 +151,7 @@ if(!empty($id) && is_numeric($id) ){
         </div>
     </div>
 </section>
-<div style="clear:both;"></div>
+
 <section id="card_details_review">
     <div class="container">
         <div class="card_details_pronsCons">
@@ -168,90 +161,46 @@ if(!empty($id) && is_numeric($id) ){
         </div>
     </div>
 </section>
-<div style="clear:both;"></div>
 
 <section id="card_details_userReview">
-
 		<div class="container">
-
 			<div class="card_details_pronsCons">
-
 				<h4 class="card_details_pronsCons_head">User reviews</h4>
-
 				<h5 class="card_details_pronsCons_head"><b>How well does it rate with cardholders?</b></h5>
-
 				<div class="prosConsHr"></div>
-
 				<div class="row">
-
 					<div class="col-sm-4 col-xs-4">
-
 						<div class="userReview_body">
-
 							<span class="userReviewLeft1">4.4</span><br/>
-
 							<span class="userReviewLeft2">out of 5.0</span><br/>
-
 							<span class="userReviewLeft3">based on 2 reviews</span>
-
 						</div>
-
 					</div>
-
-					
-
 					<div class="col-sm-4 col-xs-4">
-
 						<div class="prosCons_body2">
-
 							<p>Rates and fees</p>
-
 							<p>Rewards</p>
-
 							<p>Customer service</p>
-
 							<p>Convenience</p>
-
 							<p>Trust</p>
-
 						</div>
-
 					</div>
-
-					
-
 					<div class="col-sm-4 col-xs-4">
-
 						<div class="prosCons_body2">
-
 							<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-
 							<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-
 							<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-
 							<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
-
 							<p><i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i></p>
 
 						</div>
-
 					</div>
-
 					<div class="col-sm-12">
-
 						<div class="prosCons_body2">
-
 							<p class="userreviw_note">Disclaimer: The opinions expressed about credit cards are the reviewer's alone, and do not reflect the views of Credit Card Compare or the credit card issuer. Reviews have not been approved or otherwise endorsed by Credit Card Compare.</p>
-
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</section>

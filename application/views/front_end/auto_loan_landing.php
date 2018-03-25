@@ -1,17 +1,3 @@
-<style>
-.All_card {
-	border: 1px solid #DADADA;
-	padding: 23px;
-	background-color: #fff;
-}
-.All_card img {
-	height: 81px;
-}
-.All_cradit_card p {
-	color: #D19F59;
-}
-</style>	
-
 <!-- header part start -->
 	<section id="auto_header_part">
 		<div class="auto_header_text">
@@ -22,52 +8,52 @@
 
                 <div class="container">
 			<div class="home_loan_icon">
-				<div class="All_cradit_card">
+				<div class="auto_land">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal auto_loan_i_want" data-auto_loan_i_want="1" ><div class="All_card">
+						<a class="land_modal auto_loan_i_want" data-auto_loan_i_want="1" ><div class="auto_land_icon">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-New-Car.png" alt="New Car"/>
 							<p>New Car</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal auto_loan_i_want" data-auto_loan_i_want="2" ><div class="All_card">
+						<a class="land_modal auto_loan_i_want" data-auto_loan_i_want="2" ><div class="auto_land_icon">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-Reconditioned-Car.png" alt="Reconditioned Car"/>
 							<p> Reconditioned Car </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="5"><div class="All_card">
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="5"><div class="auto_land_icon">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-NRB.png" alt="NRB"/>
 							<p> NRB </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal start_compare"><div class="All_card">
+						<a class="land_modal start_compare"><div class="auto_land_icon">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-Low-Interest-Rate.png" alt="travel"/>
 							<p> Low Interest Rate</p>
 						</div></a>
 					</div>	
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="4"><div class="All_card">
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="4"><div class="auto_land_icon">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-Landlord.png" alt="Landlord"/>
 							<p>Landlord</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="1"><div class="All_card">
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="1"><div class="auto_land_icon">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-Salaried-Person.png" alt=" Salaried Person "/>
 							<p> Salaried Person </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
-						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="3"><div class="All_card">
+						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="3"><div class="auto_land_icon">
 							<img src="<?php echo base_url()?>resource/front_end/images/auto-Professional.png" alt="business"/>
 							<p>	Professional </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal auto_loan_i_am" data-auto_loan_i_am="2">
-							<div class="All_card">
+							<div class="auto_land_icon">
 								<img src="<?php echo base_url()?>resource/front_end/images/auto-Business-Man.png" alt="low_interest"/>
 								<p>Business Man</p>
 							</div>

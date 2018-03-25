@@ -273,16 +273,11 @@ $(document).ready(function() {
 
     calculation();
     function calculation(){
-
-
         var principle_amount = parseInt($('#principal_amount').val());
         var amount = (principle_amount <= 100000) ? 100000 : principle_amount;
         var tenure = parseInt($('#month_limit').val());
         //alert(tenure);
         var month = parseInt(tenure > 12 ) ? 12 : tenure;
-
-
-
         var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
         var first_interest_rate = first_yearly_interest / 100 / 12;
         var first_downpayment = parseFloat($('#first_downpayment').val());

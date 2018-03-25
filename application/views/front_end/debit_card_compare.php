@@ -10,26 +10,7 @@ $id1 = (int)$card2['id'];
     $result1 = $this->Front_end_select_model->select_debit_card_details($id1);
     $second_card = $result1->row();
 ?>
-<style>
-    .innerMdlWrapper .innerMdlInner {
-        width: 418px;
-    }
-    .home-loan-Compare-hr1 {
-        width: 41.5%;
-    }
-    .Card-Compare-hr2 {
-        width: 41%;
-    }
-    .home-loan-Compare-hr3 {
-        width: 44.3%;
-    }
-    .home-loan-Compare-hr4 {
-        width: 39.5%;
-    }
-    #basic_info {
-        margin-top: -45px;
-    }
-</style>
+
 <section id="card_compare_default">
     <div class="container">
         <div class="row">

@@ -1100,7 +1100,6 @@ class Card extends CI_Controller
 
     public function get_card_name(){
         $id = $this->input->post('id');
-       // echo $id;die;
         $response = $this->Select_model->select_card_name($id);
         echo $response;
     }
@@ -1210,13 +1209,9 @@ class Card extends CI_Controller
             }
         }
 
-
-//        print_r($WHERE);
         $query = implode(' AND ',$WHERE);
-//        echo $WHERE;
         if(!empty($query)) {$query = 'WHERE '.$query;}
         $res = $this->Front_end_select_model->select_card_info($query);
-//        print_r($res->result()); die;
         //-----------Pagination start-----------------
 
         $config['base_url'] = base_url() . "all_credit_card/";
@@ -1251,7 +1246,6 @@ class Card extends CI_Controller
 
         $result =  $this->Front_end_select_model->select_credit_card_info_pagination($query,$config["per_page"],$page);
         $data['pagination'] = $this->pagination->create_links();
-//        print_r($result->result()); die;
         //-------------Pagination End-------------------
 
 

@@ -1,33 +1,5 @@
-  <style>
-      /*Testing comment*/
-      .sidebar-absolute{
-          /*transition: all 1s ease;*/
-      }
-      .sidebar-absolute-bottom{
-          position: absolute;
-          width: 262px;
-          bottom: 35px;
-          left: 15px;
-      }
-      .fixed {
-          position: fixed;
-          top: 0px;
-          width: 262.5px;
-      }
-      .sidebar_parent{
-          position: relative;
-          min-height: 700px;;
-      }
-      #sidebar{
-          margin-top: 0;
-      }
-      .card_query{
-          border-bottom: 0px !important;
-      }
 
-</style>
-<section id="debitCard_header">
-</section>
+<section id="debitCard_header"></section>
 
 <!--Filter bar by bank START -->
 <div class="container">

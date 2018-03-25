@@ -120,8 +120,6 @@ if(!empty($id) && is_numeric($id) ){
     </div>
 </section>
 
-<div style="clear:both;"></div>
-
 <section id="card_details_review">
     <div class="container">
         <div class="card_details_pronsCons">

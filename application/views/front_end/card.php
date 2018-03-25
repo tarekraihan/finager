@@ -3,7 +3,6 @@
         min-height: 1600px;
     }
 </style>
-
 <section id="creditCard_header"></section>
 <section><?php
 //  pr($_SESSION);

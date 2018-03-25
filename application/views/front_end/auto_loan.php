@@ -1,31 +1,4 @@
-<style type="text/css">
-
-    .sidebar-absolute{
-        /*transition: all 1s ease;*/
-    }
-    .sidebar-absolute-bottom{
-        position: absolute;
-        width: 262px;
-        bottom: 35px;
-        left: 15px;
-    }
-    .fixed {
-        position: fixed;
-        top: 0px;
-        width: 262.5px;
-    }
-    .sidebar_parent{
-        position: relative;
-        min-height: 700px;;
-    }
-    #sidebar{
-        margin-top: 0;
-    }
-
-</style>
-
-<section id="auto_header">
-</section>
+<section id="auto_header"></section>
 
 <!--Filter bar by bank START -->
 <div class="container">
@@ -666,55 +639,7 @@
             $("#sidebar").addClass("sidebar-absolute-bottom");
         }
     });
-    /*
-    $(document).on("scroll",function () {
-        var scroller_anchor = $("#sidebar").offset().top;
-        var sidebar_height = $("#sidebar").height();
-        var window_height = $(window).height();
 
-        var offsetToTop = parseInt($(this).scrollTop());
-        var stickySidebar = $('#sidebar').offset() || { "top": NaN }.top;
-
-        var top_height = $('#top-page').height();
-        var banner_height = $('#auto_header').height();
-        var filter_height = $('#filter-bar').height();
-        var total_top = parseInt(top_height+banner_height+filter_height+45);
-
-        var main_height = $(".main-content-area").height();
-        console.log(main_height);
-        $(".sidebar_parent").height(main_height-20);
-        console.log($(".sidebar_parent").height());
-       // console.log( $(".footer").offset().top);
-
-
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top
-        if ($(window).scrollTop() >= scroller_anchor && sidebar_height < window_height )
-        {
-            $('#sidebar').addClass('fixed');
-        }
-
-        if ($(window).scrollTop() < scroller_anchor && sidebar_height > window_height )
-        {
-            $('#sidebar').removeClass('fixed');
-        }
-
-        if($('#sidebar').offset().top + $('#sidebar').height()
-            >= $('.footer').offset().top - 65){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute-bottom");
-        }
-
-        if($(document).scrollTop() + window.innerHeight < $('.footer').offset().top+250){
-            $("#sidebar").addClass("fixed");
-            $("#sidebar").removeClass("sidebar-absolute-bottom");
-        }
-
-        if($("#sidebar").offset().top < total_top){
-            $("#sidebar").removeClass("fixed");
-            $("#sidebar").addClass("sidebar-absolute");
-        }
-    });
-    */
 
 
     $(document).ready(function(){
@@ -1023,34 +948,6 @@
                 }
             });
         });
-
-/*
-        $('#go_compare').click(function(){
-
-            var  formData = $('.cart_anchor').children('img').data();
-            var loan_id1 = "loan_id1="+formData.loan_id;
-            var  formData = $('.cart_anchor01').children('img').data();
-            var loan_id2 = "&loan_id2="+formData.loan_id;
-            var amount = $('#finalAssest').val();
-            var principal_amount = "&principal_amount="+amount;
-            var year = $('#finalLiability').val();
-            var year_limit = "&year_limit="+year;
-            var loan_ids = loan_id1+loan_id2+principal_amount+year_limit;
-            if(loan_id1 != '' && loan_id2 != ''){
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo base_url();?>auto_loan/ajax_go_compare_page",
-                    data: loan_ids,
-                    success: function(msg){
-                        if(msg != 'error'){
-                            window.location.href = "<?php echo base_url();?>en/car_loan_compare";
-                        }
-                    }
-                });
-            }else{
-                alert("Please add 2 card for compare ! ");
-            }
-        });*/
 
         $('#go_compare').click(function(){
             if( ! $('.cart_anchor01').children('img').data()){

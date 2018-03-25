@@ -1,14 +1,611 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="controllers update">
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\css\jquerysctipttop.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\css\mashable-menu - backup-24.07.2017.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\css\mashmenu-style - backup-24.07.2017.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/index.php" afterPath="$PROJECT_DIR$/application/views/front_end/index.php" />
+    <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\controllers\Auto_loan-18.07.2017.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\auto_loan-18.07.2017.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\block\mashmenu - Copy.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\block\vertical_menu - backup-24.07.2017.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\card -backup-31.07.2017.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\card_backed_by_tarek_20-08-2017.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\card_backup.php" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\1.2.1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\1.2.2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\10.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Auto-Loan-cal-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Auto-loan-banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Auto-loan-banner_old.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\AutoLoan_background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Back.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Bank-Details-Empty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Bank-Details-head.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Banner EX-1 1170x350.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\BannerEX-21680x550.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\BtnCard_apply.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Business-Man.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Car Loan main page Banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Car-Loan-main-page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CarLoanBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Card-Compare-hr.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Cradit-card-&amp;-Deposit.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CreaditCardmainpage.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CreaditCardmainpage_old (2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CreaditCardmainpage_old.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Cross-Button.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Current-Ac-Banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CurrentAccMenuIcon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DPS-Landing-Page-banner-edit.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DPS-Landing-Page-banner-edit2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DPS-Landing-Page-banner-edit2_old.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DPSMainPageBanner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Debit-Card-Main-Page-Banner-old.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Debit-Card-Main-Page-Banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DepositHline.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DepositPensionScheme.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\EMI-calculator.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Early-pay-off-calculator-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Early-pay-off-calculator-overlay.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education-Loan-Main-Page-Banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education-Loan-landing-Page-banner-Final.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education-Loan-landing-Page-banner-Final_old.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education-Loan-main-page-Final.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education_background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Equal.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR-Landing-Page-banner-final.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR-Landing-Page-banner-final_old.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR-Main-Page-Banner-Final.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR-Main-Page-Banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR_Landing_Page_Edited_banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FIN-Fav-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin logo With out tag 150px.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin-Maintenance.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin-Pop-Up-Beta-bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin-background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FinAlfa.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FinFavIcon.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin_logo17.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finager-logo-search.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finagersearchbackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-Savings-1-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-Savings-2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-Savings-3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-Savings-4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-box.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Home loan landing page banner 2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Home-Construction.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Home-Loan-Takeover.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Home-loan2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\HomeLoanMainPageBackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\HomeLoanMainPageBackground1680x320.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Housing-Plot.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card 2.2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card 2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card 2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Installment-Payment-For-Purchase.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Lakhpoti-&amp;-Millionaire.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\LakhpotiMillionaire.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Loan-Prequalification-overlay.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MX-Card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Millionaire-main.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Milonaire.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money Maximizer1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-5.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-6.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-7.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-8.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-Landing-Page-Banner-F.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-Main-Page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-Plenty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-Round.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-box1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-box2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-box3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-footerbg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-middle.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-qualifiled.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-textbg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-Scheme-Landing-page-Banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-Scheme-Main-page-Banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-box1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-box2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-box3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-footerbg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-middlebg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-plenty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-qualifiled.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-round.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-text-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MonthlyBenefitScheme.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MonthlyBenefitScheme2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MonthlyBenefitScheme3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MonthlyBenefitScheme4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\NButton.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Business-Man.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-CNG-Conversion-Loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Hajj-Loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Landlord.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Loan-Landingpage-final-old.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Loan-Landingpage-final.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Loan-Landingpage-final_old.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Loan-Main-page-final.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Medical-Treatment-Loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Professional.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Salaried-Person.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Travel-Loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\PersonalLoanMainpagebackground.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal_box2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal_box3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal_footer.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal_footer.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Privacy-Policy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\PrivacyPolicyBanner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Professional.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Purchase-Apartment.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Remittance.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Renovation.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Rubayat.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\SND-Menu-Icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Salaried-Person.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Saving-Acc-Menu-Icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Saving-Banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Shetu.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Signature-Card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Sujat.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Tarek Raihan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Untitled-2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\ab_bank_logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\ab_bank_sm_logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\application.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\application_fdr.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\apply.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Business-Man.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Landlord.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Low-Interest-Rate.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-NRB.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-New-Car.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Professional.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Reconditioned-Car.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Salaried-Person.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_background_middle.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_box.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_box1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_box2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_footer.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\bank_info_card.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\bank_info_map.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\bgFinculator.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\bottun.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\box.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\box1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\box2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\brac-bank-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btn.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btnDps.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btnDpsApply.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btnDpsCom.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btnccardLandinMore.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\business.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card-frame.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_5.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_6.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_7.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_btn_apllication.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_btn_application.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_thamb.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\cardbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\cardbg01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\cash_back.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\1.2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\2.2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\3.2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\4.2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\5.2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\5.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\6.2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\6.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\7.2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\7.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\Icons For Fin.ai" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\calculator-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\calculator.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\head-phone-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\head-phone.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\hiring-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\hiring.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\legal-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\legal.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\more-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\more.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\sbusiness-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\sbusiness.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\taka-icon-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\taka-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon.zip" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\Debit Card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\Portfolio of business.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\SME loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\all scheme.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\bank map.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\business loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\buy new car.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\credit card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\dps.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\education loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\fdr.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\financial calculator.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\home loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\money market.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\more.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\personal loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\secure payment.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\support.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoybg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\cc_menu_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\ccpayoff.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\close.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\coming_soon_ribbon.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\comparison.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_BG.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_background01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_bottun.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_btn.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_business.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_business_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_card_current.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_card_savings.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_cash_back.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_international_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_local_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_low_interest.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_master_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_reaward.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_student.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_student_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_travel.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_visa_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_zero.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\demo_card.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\demo_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\deposit-bg1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\deskgreenplant.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dialog_close.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-1-year.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-10-years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-15-years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-20-years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-3-years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-5-years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-corporate-bodies.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-individual.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_box.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_box2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_box3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_footer.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_plenty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_qualifiled.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_round.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_text_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dti-cal.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-1-Lakh.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-10-Lakh.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-20-Lakh.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-3-Lakh.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-3-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-4-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-40-Lakh.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-5-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_background_middle.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_box.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_box1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_box2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_plenty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_qualifiled.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\education_box.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\education_footer.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\education_text-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\exportImport.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fana.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fb.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-1-year.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-2-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-3-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-3-months.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-4-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-5-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-Corporate-Bodies.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-Individual.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_box.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_box2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_box3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_compare.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_footer_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_plenty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_qualifiled.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_round.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_text_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\BL_(1).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\BL_(2).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\BL_(3).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (10).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (11).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (12).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (8).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (9).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(1).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(2).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(3).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(4).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(5).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(6).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(7).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fin-logo-small.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\finager-logo.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\finager-promotional-log.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\finager_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\appstore.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\background-img.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\card_2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\card_3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\card_thamb.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\front_card_head.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\gmail_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\googlestore.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo-2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo-3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\master-card-2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\master-card-background.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\master-card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_button.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_head.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_icon1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_icon2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_icon3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\hidendivshead.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home-text-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_background2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_loan_land_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_plenty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_qualifiled.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_round.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\hr-bar.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\i-temp.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\i-temp2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\icon.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\img_logo_blue.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\in.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\interest-rate.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\lakhpati2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\large.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\lightbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\loader(1).png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\loder.gif" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\logo-lg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\logo_old.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\low_interest.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\c_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B300.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\Untitled-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\card_feature.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\card_feature.png.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\credit-card-mega-menu.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\credit_card_mega_menu.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\credit_card_menu.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\debit-card-mega-menu.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\debit_card1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\debit_card2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\debit_card3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\menu_home_loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\credit-cards-icon-11.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\credit_card.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\B3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\B4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\export1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\export2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\export3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\guru-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\B3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\B4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\CurrentAccMenuIcon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\DPSMenuIcon.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\FDR-Menu-Icon.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\LakhpotiManuIcon.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\MM 3-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\MM 3-2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Mega-Menu 3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Money-Maximizer-Menu-Icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Money-Maximizer-Menu-Icon1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Monthly-Benefit-Scheme-menu-Icon-.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\SND-Menu-Icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Saving-Acc-Menu-Icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\card_feature.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\dps1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\dps2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\dps3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\fdr1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\fdr2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\fdr3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\millionaire1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\millionaire2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\millionaire3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\moneymax1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\moneymax2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\moneymax3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\B2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\B3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\B4.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\MM 2-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\Mega-Menu 2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\PersonalLoanmanuIcon.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\auto-loan-mega-menu.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\auto_loan1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\auto_loan2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\auto_loan3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\card_feature.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\education-loan-mega-menu.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\education_loan1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\education_loan2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\education_loan3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\home_loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\home_loan2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\home_loan3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\menu_personal_loan.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\menu_sme.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\personal-loan-mega-manu.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\personal_loan1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\personal_loan2.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\personal_loan3.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\menubg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\menu-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-1-Million.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-10-Million.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-100-K.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-2.5-Million.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-5-Million.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-500-K.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-Corporate-Bodies.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-Individual.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\moneyMaxLangding.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-1-Lac.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-1-Year.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-2-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-3-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-4-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-5-Lac.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-5-Years.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-6-Months.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monymax_main_page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\new-car3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\nirob.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\no-data-found.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_background_middel.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_box.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_box1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_loan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_plenty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_round.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personla_qualifiled.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\plenty.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\pop.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\pop1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\principal-cal.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\qualifiled.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\radiobg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\reaward.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\round.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\scale.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\serch-bar.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\sme.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\Facebook-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\G+-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\IN-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\RSS-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\Twitter-1.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\index.html" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\srcbutton.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\srcbutton00.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\student-loan-debt.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\student.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\taka.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\terms-condition.jpg" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\text-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\travel.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\tw.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\visa_card.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\vline.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\woman.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\year.png" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\zero.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Auto_loan.php" afterPath="$PROJECT_DIR$/application/controllers/Auto_loan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Card.php" afterPath="$PROJECT_DIR$/application/controllers/Card.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/all_logo.php" afterPath="$PROJECT_DIR$/application/views/front_end/all_logo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan" afterPath="$PROJECT_DIR$/application/cache/auto_loan" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan_compare.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_compare" afterPath="$PROJECT_DIR$/application/cache/auto_loan_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_details" afterPath="$PROJECT_DIR$/application/cache/auto_loan_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_landing" afterPath="$PROJECT_DIR$/application/cache/auto_loan_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/card.php" afterPath="$PROJECT_DIR$/application/views/front_end/card.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card" afterPath="$PROJECT_DIR$/application/cache/card" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/card_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/card_compare.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card_compare" afterPath="$PROJECT_DIR$/application/cache/card_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/card_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/card_details.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card_details" afterPath="$PROJECT_DIR$/application/cache/card_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/credit_card_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/credit_card_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/credit_card_landing" afterPath="$PROJECT_DIR$/application/cache/credit_card_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/current_account.php" afterPath="$PROJECT_DIR$/application/views/front_end/current_account.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account" afterPath="$PROJECT_DIR$/application/cache/current_account" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/current_account_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/current_account_compare.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account_compare" afterPath="$PROJECT_DIR$/application/cache/current_account_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account_details" afterPath="$PROJECT_DIR$/application/cache/current_account_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/debit_card.php" afterPath="$PROJECT_DIR$/application/views/front_end/debit_card.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card" afterPath="$PROJECT_DIR$/application/cache/debit_card" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/debit_card_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/debit_card_compare.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_compare" afterPath="$PROJECT_DIR$/application/cache/debit_card_compare" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_details" afterPath="$PROJECT_DIR$/application/cache/debit_card_details" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_landing" afterPath="$PROJECT_DIR$/application/cache/debit_card_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps" afterPath="$PROJECT_DIR$/application/cache/dps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps_landing" afterPath="$PROJECT_DIR$/application/cache/dps_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan" afterPath="$PROJECT_DIR$/application/cache/home_loan" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan_landing" afterPath="$PROJECT_DIR$/application/cache/home_loan_landing" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/css/responsive.css" afterPath="$PROJECT_DIR$/resource/front_end/css/responsive.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/css/style.css" afterPath="$PROJECT_DIR$/resource/front_end/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -35,11 +632,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.1759398" vertical-offset="80510" max-vertical-offset="82348">
-              <caret line="4821" column="36" selection-start-line="4821" selection-start-column="36" selection-end-line="4821" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="22951" max-vertical-offset="82620">
+              <caret line="1382" column="1" selection-start-line="1382" selection-start-column="1" selection-end-line="1382" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="debit_card_compare.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card_compare.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2710" max-vertical-offset="3332">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="debit_card_details.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card_details.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2652">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="debit_card_landing.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card_landing.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3310" max-vertical-offset="3961">
+              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dps.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/dps.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="18224">
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="current_account_compare.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account_compare.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5141" max-vertical-offset="5763">
+              <caret line="333" column="0" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="current_account_details.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account_details.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2681" max-vertical-offset="3332">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="debit_card.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="13170" max-vertical-offset="13821">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -56,23 +723,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/application/models/Front_end_select_model.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/dps.php" />
-        <option value="$PROJECT_DIR$/application/controllers/En.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/dps_compare.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/scp28050/asdf/application/views/front_end/index.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/scp31358/asdf/application/views/front_end/block/footer.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/scp01216/asdf/application/views/front_end/fdr_landing.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/scp10122/asdf/application/views/front_end/dps_landing.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/export_import.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/debit_card_details.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Card.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/home_loan_details.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/personal_loan_details.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/education_loan_details.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/fdr_details.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/dps_details.php" />
@@ -86,10 +738,8 @@
         <option value="$PROJECT_DIR$/application/views/front_end/saving_account_details.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/saving_account_compare.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/current_account_details.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/current_account_compare.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/personal_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/home_loan_landing.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" />
         <option value="$PROJECT_DIR$/resource/front_end/js/monthly_benefit.js" />
         <option value="$PROJECT_DIR$/resource/front_end/images/categoryIcon/creditcard.svg" />
@@ -106,7 +756,24 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/application/views/front_end/index.php" />
         <option value="$PROJECT_DIR$/resource/front_end/css/responsive.css" />
+        <option value="$PROJECT_DIR$/application/controllers/Auto_loan.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Card.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/all_logo.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/auto_loan.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/auto_loan_compare.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/card.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/card_compare.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/card_details.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/credit_card_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/current_account.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/current_account_compare.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/debit_card.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/debit_card_compare.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" />
         <option value="$PROJECT_DIR$/resource/front_end/css/style.css" />
+        <option value="$PROJECT_DIR$/application/views/front_end/dps.php" />
       </list>
     </option>
   </component>
@@ -147,6 +814,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,21 +875,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resource" />
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="front_end" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -279,12 +978,6 @@
       <created>1494340092258</created>
       <option name="number" value="Default" />
       <updated>1494340092258</updated>
-    </task>
-    <task id="LOCAL-00016" summary="1. Cradit card landing page blog section change&#10;2. css page update">
-      <created>1501083173419</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1501083173419</updated>
     </task>
     <task id="LOCAL-00017" summary="1. Cradit card landing page blog section change&#10;2. css page update">
       <created>1501155627743</created>
@@ -574,12 +1267,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521116033339</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="controllers update">
+      <created>1521452925437</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1521452925438</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -587,7 +1286,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24293059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2622108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42698193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -678,251 +1377,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="734" column="13" selection-start-line="730" selection-start-column="11" selection-end-line="734" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/saving_account_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/saving_account_compare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="201" column="50" selection-start-line="201" selection-start-column="50" selection-end-line="201" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="37" column="30" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account_compare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="132" column="40" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/savings_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.018182" vertical-offset="0" max-vertical-offset="0">
-          <caret line="305" column="22" selection-start-line="305" selection-start-column="22" selection-end-line="305" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.7818184" vertical-offset="0" max-vertical-offset="0">
-          <caret line="298" column="26" selection-start-line="297" selection-start-column="16" selection-end-line="298" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.4" vertical-offset="0" max-vertical-offset="0">
-          <caret line="291" column="16" selection-start-line="291" selection-start-column="16" selection-end-line="292" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="0">
-          <caret line="289" column="18" selection-start-line="289" selection-start-column="18" selection-end-line="289" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_compare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/dps.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="339" column="126" selection-start-line="339" selection-start-column="115" selection-end-line="339" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/js/dps-calculator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="980" column="0" selection-start-line="980" selection-start-column="0" selection-end-line="982" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/images/categoryIcon/creditcard.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.70711297" vertical-offset="0" max-vertical-offset="0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/js/monthly_benefit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8849647" vertical-offset="0" max-vertical-offset="0">
-          <caret line="1027" column="3" selection-start-line="1027" selection-start-column="3" selection-end-line="1027" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.017616581" vertical-offset="0" max-vertical-offset="0">
-          <caret line="623" column="36" selection-start-line="623" selection-start-column="25" selection-end-line="623" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/snd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="420" column="35" selection-start-line="420" selection-start-column="35" selection-end-line="420" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/General.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.547546" vertical-offset="1530" max-vertical-offset="9418">
-          <caret line="212" column="44" selection-start-line="212" selection-start-column="44" selection-end-line="212" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Home_loan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13682" max-vertical-offset="19142">
-          <caret line="817" column="172" selection-start-line="817" selection-start-column="31" selection-end-line="817" selection-end-column="172" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Dps.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19129" max-vertical-offset="25194">
-          <caret line="1150" column="195" selection-start-line="1150" selection-start-column="195" selection-end-line="1150" selection-end-column="195" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Millionaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13891" max-vertical-offset="19686">
-          <caret line="831" column="199" selection-start-line="831" selection-start-column="199" selection-end-line="831" selection-end-column="199" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Money_maximizer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5950" max-vertical-offset="10268">
-          <caret line="373" column="205" selection-start-line="373" selection-start-column="205" selection-end-line="373" selection-end-column="205" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Monthly_benefit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6052" max-vertical-offset="10455">
-          <caret line="383" column="201" selection-start-line="383" selection-start-column="201" selection-end-line="383" selection-end-column="201" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Saving_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4862" max-vertical-offset="8891">
-          <caret line="314" column="181" selection-start-line="314" selection-start-column="181" selection-end-line="314" selection-end-column="181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Fdr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13257" max-vertical-offset="17986">
-          <caret line="793" column="58" selection-start-line="793" selection-start-column="58" selection-end-line="793" selection-end-column="199" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Current_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6120" max-vertical-offset="10557">
-          <caret line="379" column="181" selection-start-line="379" selection-start-column="181" selection-end-line="379" selection-end-column="181" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04927536" vertical-offset="0" max-vertical-offset="690">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Snd_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7050691" vertical-offset="8262" max-vertical-offset="13260">
-          <caret line="513" column="0" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/responsive.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.172413" vertical-offset="2470" max-vertical-offset="11322">
-          <caret line="178" column="1" selection-start-line="178" selection-start-column="1" selection-end-line="178" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3791">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header_home_loan.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="1700">
@@ -930,45 +1384,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/mashable-menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource/front_end/css/unminify/mashmenu-style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55243725" vertical-offset="1530" max-vertical-offset="7786">
           <caret line="112" column="21" selection-start-line="112" selection-start-column="11" selection-end-line="112" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/mashmenu-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="74" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/allheadingcss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/booNavigation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="2321" selection-start-line="0" selection-start-column="2319" selection-end-line="0" selection-end-column="2329" />
         </state>
       </provider>
     </entry>
@@ -993,6 +1412,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/right_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.860215" vertical-offset="0" max-vertical-offset="7123">
+          <caret line="301" column="23" selection-start-line="301" selection-start-column="23" selection-end-line="301" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/allheadingcss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/booNavigation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/clientlib.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="2321" selection-start-line="0" selection-start-column="2319" selection-end-line="0" selection-end-column="2329" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/frontCard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resource/front_end/css/hover.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
@@ -1007,14 +1482,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/right_menu.php">
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/jquery.mCustomScrollbar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.860215" vertical-offset="0" max-vertical-offset="7123">
-          <caret line="301" column="23" selection-start-line="301" selection-start-column="23" selection-end-line="301" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/right-menu-style.css">
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/jquery.mCustomScrollbar.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/jquery.ui.slider.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/jquery-ui.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/mashable-menu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/mashmenu-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="74" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/material_theme.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1028,10 +1538,206 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/responsive.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.4697194" vertical-offset="0" max-vertical-offset="11322">
+          <caret line="178" column="1" selection-start-line="178" selection-start-column="1" selection-end-line="178" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/right-menu-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/stylecal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/sweetalert.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="677">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Backdoor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="176.53847" vertical-offset="4590" max-vertical-offset="9758">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7680491" vertical-offset="33281" max-vertical-offset="33932">
+          <caret line="1890" column="23" selection-start-line="1890" selection-start-column="23" selection-end-line="1890" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Auto_loan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.30568355" vertical-offset="17267" max-vertical-offset="17918">
+          <caret line="1004" column="0" selection-start-line="1004" selection-start-column="0" selection-end-line="1006" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/all_logo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.995482" vertical-offset="1989" max-vertical-offset="2686">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_chart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0368664" vertical-offset="1326" max-vertical-offset="13039">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="16.2" vertical-offset="17058" max-vertical-offset="17680">
+          <caret line="951" column="0" selection-start-line="951" selection-start-column="0" selection-end-line="951" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-34.846153" vertical-offset="3769" max-vertical-offset="5899">
+          <caret line="275" column="0" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-50.69091" vertical-offset="0" max-vertical-offset="3604">
+          <caret line="164" column="6" selection-start-line="164" selection-start-column="6" selection-end-line="164" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5593">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="749.7692" vertical-offset="19562" max-vertical-offset="20213">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/card_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="130.57692" vertical-offset="5452" max-vertical-offset="6103">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/card_edited.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="332.6154" vertical-offset="8648" max-vertical-offset="9299">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/compare_email_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="13.730769" vertical-offset="357" max-vertical-offset="7191">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/credit_card_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="39.03846" vertical-offset="3004" max-vertical-offset="3655">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="385.57693" vertical-offset="10212" max-vertical-offset="10863">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/card_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="124.07273" vertical-offset="7113" max-vertical-offset="7735">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5141" max-vertical-offset="5763">
+          <caret line="333" column="0" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/current_account_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2681" max-vertical-offset="3332">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13170" max-vertical-offset="13821">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2710" max-vertical-offset="3332">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3310" max-vertical-offset="3961">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1759398" vertical-offset="80510" max-vertical-offset="82348">
-          <caret line="4821" column="36" selection-start-line="4821" selection-start-column="36" selection-end-line="4821" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="22951" max-vertical-offset="82620">
+          <caret line="1382" column="1" selection-start-line="1382" selection-start-column="1" selection-end-line="1382" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/debit_card_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2652">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/dps.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="18224">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding />
         </state>
       </provider>

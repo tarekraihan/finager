@@ -1,6 +1,3 @@
-<style>
-
-</style>
 <section id="all_logo">
     <div class="container">
         <div class="row">
