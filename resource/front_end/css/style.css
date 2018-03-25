@@ -8201,7 +8201,7 @@ ol>li, ul>li{
 .letter-sort>ul>li {
     display: inline-block;
     background-color: #5aafd1;
-    border: 1px solid gray;
+    border: 1px solid #3c7a92;
     border-radius: 4px;
     margin: 5px 5px;
     min-width: 36px;
