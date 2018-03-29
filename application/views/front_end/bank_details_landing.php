@@ -1,19 +1,23 @@
 
 
 <div class="container-fluid m-b-30">
-    <div class="bank_details_landing_head">
-        <p>BANKS IN THE BANGLADESH</p>
+    <div class="col-md-12">
+        <div class="bank_details_landing_head">
+            <p>BANKS IN THE BANGLADESH</p>
+        </div>
     </div>
-    <div class="col-md-2">
-        <img class="bdetails_bd_bank" src="<?php echo base_url(); ?>resource/front_end/images/bangladesh-bank.jpg" alt="bangladesh bank image" />
-    </div>
-    <div class="col-md-10">
-        <p class="bdetails_text">
-            Finager.com helps you to find all national and international banks and their branches in Bangladesh. Finager.com provides all the banks product offers, features, contact details, routing number, address, location and so on.
-        </p>
-        <p class="bdetails_text">
-            We provide more than 50 financial institutes details with location all over Bangladesh. We have provided a smooth and easy way to find your bank with its details. You can easily search by bank name, routing number, location or product name to find your required information. You can also choose from the list of all banks given below. To know more about the banks then click on the logo.
-        </p>
+    <div class="">
+        <div class="col-md-2">
+            <img class="bdetails_bd_bank" src="<?php echo base_url(); ?>resource/front_end/images/bangladesh-bank.jpg" alt="bangladesh bank image" />
+        </div>
+        <div class="col-md-10">
+            <p class="bdetails_text m-t-15">
+                Finager.com helps you to find all national and international banks and their branches in Bangladesh. Finager.com provides all the banks product offers, features, contact details, routing number, address, location and so on.
+            </p>
+            <p class="bdetails_text">
+                We provide more than 50 financial institutes details with location all over Bangladesh. We have provided a smooth and easy way to find your bank with its details. You can easily search by bank name, routing number, location or product name to find your required information. You can also choose from the list of all banks given below. To know more about the banks then click on the logo.
+            </p>
+        </div>
     </div>
 
     <div class="clearfix"></div>

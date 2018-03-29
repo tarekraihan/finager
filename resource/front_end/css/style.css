@@ -6664,24 +6664,25 @@ a .auto_button.flash-button {
     font-weight: bold;
     font-size: 13px;
 }
-.bdetails_bd_bank{
-    margin-top: 5px;
-    margin-left: -15px;
+.bdetails_bd_bank {
+    margin-top: 15px;
+    margin-left: 0px;
     height: 145px;
+}
+.m-t-15{
+    margin-top: 15px;
 }
 .bdetails_text{
     text-align: justify;
     font-size: 16px;
     margin-left: -30px;
-    margin-top: 5px;
 }
 .bank_details_landing_head2{
     width: 100%;
     height: auto;
     border-bottom: 3px solid #5aafd1;
     background-color: #e8e8e8;
-    margin-left: -15px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-top: 1px solid #dedede;
     border-left: 1px solid #dedede;
     border-right: 1px solid #dedede;
@@ -6721,12 +6722,13 @@ a .auto_button.flash-button {
 }
 .bank_details_landing_box {
     border: 1px solid #d6d6d6;
-    margin: 10px;
-    padding: 10px;
+    margin: 10px 0 10px 0;
     width: 100%;
+    height: 205px;
     box-shadow: 0px 0px 5px 0px #dedede;
     border-radius: 4px;
     cursor: pointer;
+    padding: 10px;
 }
 .bank_details_landing_box>h5{
     height: 30px;
@@ -6824,6 +6826,7 @@ a .auto_button.flash-button {
     height: 50px;
 
     border-bottom: 3px solid #5aafd1;
+    margin-top: 10px;
 
 }
 
@@ -6831,9 +6834,9 @@ a .auto_button.flash-button {
 
     font-size: 14px;
 
-    font-weight: bold;
+    font-weight: 600;
 
-    color: #6a6a6a;
+    color: #333;
 
     text-align: left;
 
@@ -6842,11 +6845,10 @@ a .auto_button.flash-button {
 }
 
 .bank_details_right_body p {
-
     padding: 10px 16px;
-
     border-bottom:1px solid #afafb0;
-
+    font-weight: 500;
+    color: #000;
 }
 
 .bank_details_right_body p:last-child {
@@ -8211,7 +8213,9 @@ ol>li, ul>li{
     border: 1px solid #3c7a92;
     border-radius: 4px;
     margin: 5px 5px;
-    min-width: 36px;
+    width: 57px;
+    box-shadow: inset 1px 1px 7px 1px #3c7a92;
+    text-align: center;
 }
 .letter-sort>ul>li>a {
     color: #fff;
