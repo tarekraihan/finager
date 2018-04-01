@@ -19,15 +19,15 @@
 			<div class="home_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit="1000000-3"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-8.png" alt="Get 40 Lac"/>
-							<p>Get 40 Lac </p>
+						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit="1000000-6"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-8.png" alt="Get 20 Lac"/>
+							<p>Get 20 Lac </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit = "500000-3"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-7.png" alt="Get 20 Lac"/>
-							<p> Get 20 Lac </p>
+						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit = "500000-6"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-7.png" alt="Get 10 Lac"/>
+							<p> Get 10 Lac </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
