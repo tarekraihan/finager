@@ -284,7 +284,41 @@
 			</div>
 		</div>
 	</section>
-        <section id="home_loan_footer">
+
+    <section id="Basic">
+        <div class="container">
+            <h3><i>The Basics</i></h3><hr/>
+            <div class="card_basic row">
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>What is amortization schedule?</strong></h4>
+                    <p>A schedule/table where all the detailed amount such as principal amount, amount of interest, equal monthly installment etc.
+                    </p>
+                    <hr/>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>What is the eligibility of taking home loan?</strong></h4>
+                    <p>Borrower must be a Bangladeshi citizen aged between 21 years to 60 years and his monthly income must be above BDT 35,000.
+                    </p>
+                    <hr/>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>How much home loan can be taken?</strong></h4>
+                    <p>A borrower can take home loan between BDT 2,00,000 to BDT 4,00,00,000 depend on borrower’s annual income.
+                    </p>
+                    <hr/>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>For how long home loan can be taken?</strong></h4>
+                    <p>A borrower can take loan for 1 year to 25 year.
+                    </p>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="home_loan_footer">
 		<div class="container">
 			<div class="home_loan_footer_pr">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

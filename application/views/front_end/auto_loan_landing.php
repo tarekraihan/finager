@@ -276,6 +276,40 @@
 			</div>
 		</div>
 	</section>
+
+    <section id="Basic">
+        <div class="container">
+            <h3><i>The Basics</i></h3><hr/>
+            <div class="card_basic row">
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>What is amortization schedule?</strong></h4>
+                    <p>A schedule/table where all the detailed amount such as principal amount, amount of interest, equal monthly installment etc.
+                    </p>
+                    <hr/>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>What is the eligibility of taking auto loan?</strong></h4>
+                    <p>Borrower must be a Bangladeshi citizen aged between 21 years to 60 years and his monthly income must be above BDT 40,000.
+                    </p>
+                    <hr/>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>How much auto loan can be taken?</strong></h4>
+                    <p>A borrower can take auto loan between BDT 1,00,000 to BDT 40,00,000 depend on borrower’s annual income.
+                    </p>
+                    <hr/>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>For how long auto loan can be taken?</strong></h4>
+                    <p>A borrower can take loan for 1 year to 6 year.
+                    </p>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </section>
+
 	<section id="auto_footer">
 		<div class="container">
 			<div class="auto_footer_pr">

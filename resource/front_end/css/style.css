@@ -5575,16 +5575,22 @@ a .debit_card_button.flash-button{
 }
 #Basic{
     background-image:url('../images/Back.jpg');
-    background-position:center center;
-    background-size:cover;
-    background-repeat:no-repeat;
-    height:490px;
-    width:100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+.card_basic h4 {
+    margin-top: 30px;
 }
 .card_basic p {
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 20px;
     text-align:justify;
+    min-height: 42px;
 }
 .All_card4 p {
     margin-top: 31px;
@@ -5787,8 +5793,10 @@ hr {
     background-position:center center;
     background-size:cover;
     background-repeat:no-repeat;
-    height:490px;
-    width:100%;
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 60px;
 }
 /* for FDR Loan */
 #fdr_header{
@@ -6918,7 +6926,10 @@ a .auto_button.flash-button {
     margin: -1px 0.5em -2px 1em;
 
 }
-
+.bank_info_details p>span {
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 14px !important;
+}
 
 
 #breadcrumbs-two a{
