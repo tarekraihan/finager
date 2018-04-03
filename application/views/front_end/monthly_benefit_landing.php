@@ -298,6 +298,40 @@
         </div>
     </div>
 </section>
+
+<section id="Basic">
+    <div class="container">
+        <h3><i>The Basics</i></h3><hr/>
+        <div class="card_basic row">
+            <div class="col-md-6 col-sm-6">
+                <h4><strong>For how long a user can deposit his money?</strong></h4>
+                <p>A user can deposit his money for 5 years.
+                </p>
+                <hr/>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <h4><strong>Does any loan available against deposited money?</strong></h4>
+                <p>Yes, 80% of the deposited amount can be available as loan amount.
+                </p>
+                <hr/>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+                <h4><strong>How will the maturity amount be paid to user?</strong></h4>
+                <p>The maturity amount will be paid through user’s account which is linked with deposit scheme.
+                </p>
+                <hr/>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <h4><strong>What is the minimum eligibility for investing in Money Maximizer scheme?</strong></h4>
+                <p>Applicant must be a Bangladeshi citizen aged between 21 years to 60 years.
+                </p>
+                <hr/>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="footer_monthly_benefit">
     <div class="container">
         <div class="monthly_benefit_pr">

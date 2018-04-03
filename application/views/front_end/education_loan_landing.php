@@ -208,9 +208,6 @@
                         To compare loans, the first step is to use our comparison tool above. Select the college you will be attending and the amount of money you
                         need to borrow. You can then see the loans that meet your criteria.
                     </p>
-                    <p>
-                        Next, see what lenders are available at your school. Compare the terms and conditions and
-                    </p>
                     <div class="edu_home_read"><a href="<?php echo base_url();?>blog/student_loan1">Read More</a></div>
                 </div>
             </div>
@@ -226,10 +223,6 @@
                     </p>
                     <p>
                         Now, before jumping into the loan jargon here are some basic questions you should ask yourself in order to compare loans efficiently:
-                    <ul style="margin-left:15px;">
-                        <li>Do I plan to work and study at the same time?</li>
-
-                    </ul>
                     </p>
                     <div class="edu_home_read"><a href="<?php echo base_url();?>blog/student_loan2">Read More</a></div>
                 </div>
@@ -283,21 +276,21 @@
                 <hr/>
             </div>
             <div class="col-md-6 col-sm-6">
-                <h4><strong>What is the eligibility of taking auto loan?</strong></h4>
-                <p>Borrower must be a Bangladeshi citizen aged between 21 years to 60 years and his monthly income must be above BDT 40,000.
+                <h4><strong>What is the eligibility of taking educational loan?</strong></h4>
+                <p>Co - Borrower must be a Bangladeshi citizen aged between 21 years to 60 years and his monthly income must be above BDT 30,000.
                 </p>
                 <hr/>
             </div>
 
             <div class="col-md-6 col-sm-6">
-                <h4><strong>How much auto loan can be taken?</strong></h4>
-                <p>A borrower can take auto loan between BDT 1,00,000 to BDT 40,00,000 depend on borrower’s annual income.
+                <h4><strong>How much educational loan can be taken?</strong></h4>
+                <p>A Co - borrower can take educational loan between BDT 50,000 to BDT 40, 00,000 depend on Co - borrower’s annual income.
                 </p>
                 <hr/>
             </div>
             <div class="col-md-6 col-sm-6">
-                <h4><strong>For how long auto loan can be taken?</strong></h4>
-                <p>A borrower can take loan for 1 year to 6 year.
+                <h4><strong>For how long personal loan can be taken?</strong></h4>
+                <p>A borrower can take loan for 1 year to 5 year.
                 </p>
                 <hr/>
             </div>
