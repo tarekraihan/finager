@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card" afterPath="$PROJECT_DIR$/application/cache/card" />
+    <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="large logo change">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/credit_card_landing" afterPath="$PROJECT_DIR$/application/cache/credit_card_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account" afterPath="$PROJECT_DIR$/application/cache/current_account" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/dps_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/dps_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_landing" afterPath="$PROJECT_DIR$/application/cache/debit_card_landing" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps_landing" afterPath="$PROJECT_DIR$/application/cache/dps_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/education_loan_landing" afterPath="$PROJECT_DIR$/application/cache/education_loan_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/fdr_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/fdr_landing.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr_landing" afterPath="$PROJECT_DIR$/application/cache/fdr_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/millionaire_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/millionaire_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/index.php" afterPath="$PROJECT_DIR$/application/views/front_end/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire_landing" afterPath="$PROJECT_DIR$/application/cache/millionaire_landing" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/money_maximizer_landing" afterPath="$PROJECT_DIR$/application/cache/money_maximizer_landing" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/monthly_benefit_landing" afterPath="$PROJECT_DIR$/application/cache/monthly_benefit_landing" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/savings_account" afterPath="$PROJECT_DIR$/application/cache/savings_account" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/snd_compare" afterPath="$PROJECT_DIR$/application/cache/snd_compare" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/css/style.css" afterPath="$PROJECT_DIR$/resource/front_end/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="finager.iws" />
@@ -48,71 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.4827585" vertical-offset="83727" max-vertical-offset="140080">
-              <caret line="4943" column="18" selection-start-line="4943" selection-start-column="18" selection-end-line="4943" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="education_loan_landing.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan_landing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.002980626" vertical-offset="4656" max-vertical-offset="6154">
-              <caret line="274" column="20" selection-start-line="267" selection-start-column="0" selection-end-line="298" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dps_landing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_landing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6923075" vertical-offset="4757" max-vertical-offset="6392">
-              <caret line="287" column="4" selection-start-line="287" selection-start-column="4" selection-end-line="318" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="millionaire_landing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_landing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6923075" vertical-offset="4434" max-vertical-offset="6222">
-              <caret line="268" column="4" selection-start-line="268" selection-start-column="4" selection-end-line="299" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="money_maximizer_landing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7692308" vertical-offset="5216" max-vertical-offset="6834">
-              <caret line="308" column="14" selection-start-line="308" selection-start-column="14" selection-end-line="308" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monthly_benefit_landing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.576923" vertical-offset="4995" max-vertical-offset="6647">
-              <caret line="310" column="18" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fdr_landing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_landing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.230769" vertical-offset="4400" max-vertical-offset="6035">
-              <caret line="276" column="22" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.3323398" vertical-offset="1001" max-vertical-offset="4947">
+              <caret line="72" column="105" selection-start-line="72" selection-start-column="105" selection-end-line="72" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -133,7 +67,6 @@
         <option value="$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/dps_compare.php" />
         <option value="$PROJECT_DIR$/application/controllers/Dps.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/index.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp28050/asdf/application/views/front_end/index.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp31358/asdf/application/views/front_end/block/footer.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/scp01216/asdf/application/views/front_end/fdr_landing.php" />
@@ -172,14 +105,15 @@
         <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/bank_details_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/credit_card_landing.php" />
-        <option value="$PROJECT_DIR$/resource/front_end/css/style.css" />
         <option value="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/home_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/personal_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/education_loan_landing.php" />
         <option value="$PROJECT_DIR$/application/controllers/Money_maximizer.php" />
+        <option value="$PROJECT_DIR$/resource/front_end/css/style.css" />
         <option value="$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/index.php" />
       </list>
     </option>
   </component>
@@ -197,7 +131,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
+    <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -310,6 +244,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front_end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="block" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -329,126 +289,6 @@
       <recent name="D:\xampp\htdocs\git\finager\application" />
       <recent name="D:\xampp\htdocs\git\finager\application\views\front_end" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/dataSources.local.xml</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/dataSources.xml</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/application/cache/index_page</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/application/cache/money_maximizer</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/application/cache/money_maximizer_compare</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/application/cache/money_maximizer_landing</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/application/controllers/Money_maximizer.php</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -477,9 +317,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -487,6 +324,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -504,12 +344,6 @@
       <workItem from="1522594233877" duration="1365000" />
       <workItem from="1522598028028" duration="703000" />
       <workItem from="1522598752927" duration="13000" />
-    </task>
-    <task id="LOCAL-00024" summary="debit card landing icon change">
-      <created>1501588930354</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1501588930354</updated>
     </task>
     <task id="LOCAL-00025" summary="debit card landing icon change">
       <created>1501680995996</created>
@@ -799,14 +633,20 @@
       <option name="project" value="LOCAL" />
       <updated>1522595214010</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="basic test for all investments">
+      <created>1522768104541</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1522768104565</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="2081000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1612" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -815,21 +655,21 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.170625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17042607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4250326" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -850,9 +690,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23626027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -875,8 +715,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="bank details page update" />
-    <MESSAGE value="savings account banner update" />
     <MESSAGE value="debit &amp; credit card details page update" />
     <MESSAGE value="update_bank_non_bank_information" />
     <MESSAGE value="bank_details page &amp; style.css page update" />
@@ -900,7 +738,9 @@
     <MESSAGE value="bank details" />
     <MESSAGE value="landing pages changes" />
     <MESSAGE value="Change money maximizer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change money maximizer" />
+    <MESSAGE value="basic test for all investments" />
+    <MESSAGE value="large logo change" />
+    <option name="LAST_COMMIT_MESSAGE" value="large logo change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -909,13 +749,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/personal_loan_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6" vertical-offset="0" max-vertical-offset="0">
-          <caret line="172" column="34" selection-start-line="172" selection-start-column="34" selection-end-line="172" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/snd_details.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.8363636" vertical-offset="0" max-vertical-offset="0">
@@ -1210,25 +1043,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.4827585" vertical-offset="83727" max-vertical-offset="140080">
-          <caret line="4943" column="18" selection-start-line="4943" selection-start-column="18" selection-end-line="4943" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/dps.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="4.928571" vertical-offset="11102" max-vertical-offset="18411">
           <caret line="856" column="34" selection-start-line="856" selection-start-column="34" selection-end-line="856" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_landing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.230769" vertical-offset="4400" max-vertical-offset="6035">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4400" max-vertical-offset="6035">
           <caret line="276" column="22" selection-start-line="276" selection-start-column="22" selection-end-line="276" selection-end-column="22" />
           <folding />
         </state>
@@ -1236,23 +1060,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.576923" vertical-offset="4995" max-vertical-offset="6647">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4995" max-vertical-offset="6647">
           <caret line="310" column="18" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7692308" vertical-offset="5216" max-vertical-offset="6834">
-          <caret line="308" column="14" selection-start-line="308" selection-start-column="14" selection-end-line="308" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/millionaire_landing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6923075" vertical-offset="4434" max-vertical-offset="6222">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4434" max-vertical-offset="6222">
           <caret line="268" column="4" selection-start-line="268" selection-start-column="4" selection-end-line="299" selection-end-column="14" />
           <folding />
         </state>
@@ -1260,7 +1076,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/dps_landing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6923075" vertical-offset="4757" max-vertical-offset="6392">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4757" max-vertical-offset="6392">
           <caret line="287" column="4" selection-start-line="287" selection-start-column="4" selection-end-line="318" selection-end-column="14" />
           <folding />
         </state>
@@ -1268,8 +1084,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/education_loan_landing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.002980626" vertical-offset="4656" max-vertical-offset="6154">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4656" max-vertical-offset="6154">
           <caret line="274" column="20" selection-start-line="267" selection-start-column="0" selection-end-line="298" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.038462" vertical-offset="4451" max-vertical-offset="6698">
+          <caret line="294" column="37" selection-start-line="294" selection-start-column="37" selection-end-line="294" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4113667" vertical-offset="83727" max-vertical-offset="140080">
+          <caret line="4943" column="18" selection-start-line="4943" selection-start-column="18" selection-end-line="4943" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3323398" vertical-offset="1001" max-vertical-offset="4947">
+          <caret line="72" column="105" selection-start-line="72" selection-start-column="105" selection-end-line="72" selection-end-column="105" />
           <folding />
         </state>
       </provider>
