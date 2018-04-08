@@ -96,6 +96,7 @@ $route['compare-snd-account/(:any)'] = "en/snd_compare/$1";
 $route['export-import'] = "en/export_import";
 $route['all-bank-details'] = "en/bank_details_landing";
 $route['bank-details/(:any)'] = "en/bank_details/$1";
+$route['about-us'] = "en/about_us";
 /*
 $default_controller = "En";
 $controller_exceptions = array('admin','forums');

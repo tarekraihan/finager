@@ -355,15 +355,16 @@
             <li> <a href="<?php echo base_url(); ?>export-import.html"><i></i> Export Import</a> </li>
             <li> <a href="<?php echo base_url(); ?>all-bank-details.html"><i></i> Bank Info</a> </li>
             <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Calculator/Apps</a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Bank Job & Guide </a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Insurance</a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Maps</a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Gold Rate </a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Money Rate</a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Tax Guide</a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Blog </a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Events</a> </li>
-            <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Forum</a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Bank Job & Guide </a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Insurance</a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Maps</a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Gold Rate </a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Money Rate</a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Tax Guide</a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Blog </a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Events</a> </li>
+            <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i></i> Forum</a> </li>
+            <li> <a href="<?php echo base_url(); ?>about-us.html"><i></i> About Us</a> </li>
         </ul>
     </nav>
     <!-- /#sidebar-wrapper -->

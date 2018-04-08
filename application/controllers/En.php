@@ -1186,5 +1186,20 @@ class En extends CI_Controller {
         }
     }
 
+    public function about_us(){
+        if($this->session->userdata('lovemebaby')){
+            $this->load->driver('cache');
+            $this->cache->file->save('about_us', 'about_us', 100);
+            $this->load->view('front_end/block/header');
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/about_us');
+            $this->load->view('front_end/block/footer');
+        }else{
+            redirect(base_url().'en/login.html');
+        }
+    }
+
+
 
 }
