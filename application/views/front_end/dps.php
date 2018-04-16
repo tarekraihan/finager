@@ -7,34 +7,6 @@
 **********************************/
 -->
 <style type="text/css">
-	.savingsContainer .leftCont {
-		padding: 0 0 0 0;
-	}
-	.calcSection .dragBox .drag {
-	    width: 200px;
-	}
-	.calcSection .dragBox .next {
-		right: 103px;
-	}
-	.calcSection .dragBox .drag2 {
-		width: 201px;
-	}
-	.monthWrap .calcSection .dragBox {
-		width: 215px;
-	}
-	.calcSection .dragBox .slideImg {
-		width: 210px;
-	}
-	.monthWrap .calcSection .dragBox .slideImg {
-		width: 207px;
-	}
-	.calcSection .dragBox .drag span {
-		background: none;
-	}
-	.calborder {
-		border-bottom:0px solid #DADADA;
-	}
-
 	.material_check_radio {
 		border: 2px solid #d7ad75;
 	}
@@ -467,7 +439,6 @@
 																  <input type="hidden" id="input_Payment" />
 															</div>
 
-														   
 														</div>
 
 													</div>
@@ -938,8 +909,6 @@
 				}
 			}
 		});
-
-
 
 		$(document).on('click','.compare-cross-btn',function(){
 

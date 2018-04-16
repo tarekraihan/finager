@@ -2,611 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\controllers\Auto_loan-18.07.2017.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\auto_loan-18.07.2017.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\block\mashmenu - Copy.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\block\vertical_menu - backup-24.07.2017.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\card -backup-31.07.2017.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\card_backed_by_tarek_20-08-2017.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\application\views\front_end\card_backup.php" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\1.2.1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\1.2.2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\10.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Auto-Loan-cal-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Auto-loan-banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Auto-loan-banner_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\AutoLoan_background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Back.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Bank-Details-Empty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Bank-Details-head.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Banner EX-1 1170x350.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\BannerEX-21680x550.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\BtnCard_apply.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Business-Man.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Car Loan main page Banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Car-Loan-main-page.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CarLoanBackground.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Card-Compare-hr.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Cradit-card-&amp;-Deposit.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CreaditCardmainpage.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CreaditCardmainpage_old (2).jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CreaditCardmainpage_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Cross-Button.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Current-Ac-Banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\CurrentAccMenuIcon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DPS-Landing-Page-banner-edit.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DPS-Landing-Page-banner-edit2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DPS-Landing-Page-banner-edit2_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DPSMainPageBanner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Debit-Card-Main-Page-Banner-old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Debit-Card-Main-Page-Banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DepositHline.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\DepositPensionScheme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\EMI-calculator.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Early-pay-off-calculator-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Early-pay-off-calculator-overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education-Loan-Main-Page-Banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education-Loan-landing-Page-banner-Final.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education-Loan-landing-Page-banner-Final_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education-Loan-main-page-Final.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Education_background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Equal.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR-Landing-Page-banner-final.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR-Landing-Page-banner-final_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR-Main-Page-Banner-Final.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR-Main-Page-Banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FDR_Landing_Page_Edited_banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FIN-Fav-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin logo With out tag 150px.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin-Maintenance.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin-Pop-Up-Beta-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin-background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FinAlfa.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\FinFavIcon.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Fin_logo17.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finager-logo-search.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finagersearchbackground.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-Savings-1-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-Savings-2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-Savings-3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-Savings-4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator-box.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Finculator.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Home loan landing page banner 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Home-Construction.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Home-Loan-Takeover.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Home-loan2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\HomeLoanMainPageBackground.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\HomeLoanMainPageBackground1680x320.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Housing-Plot.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card 2.2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card 2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Icon-For-Credit-Card2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Installment-Payment-For-Purchase.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Lakhpoti-&amp;-Millionaire.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\LakhpotiMillionaire.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Loan-Prequalification-overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MX-Card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Millionaire-main.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Milonaire.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money Maximizer1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-5.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-6.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-7.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-8.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-Landing-Page-Banner-F.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-Main-Page.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-Plenty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-Round.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-box1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-box2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-box3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-footerbg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-middle.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-qualifiled.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer-textbg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Money-Maximizer4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-Scheme-Landing-page-Banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-Scheme-Main-page-Banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-box1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-box2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-box3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-footerbg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-middlebg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-plenty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-qualifiled.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-round.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Monthly-Benefit-text-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MonthlyBenefitScheme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MonthlyBenefitScheme2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MonthlyBenefitScheme3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\MonthlyBenefitScheme4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\NButton.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Business-Man.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-CNG-Conversion-Loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Hajj-Loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Landlord.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Loan-Landingpage-final-old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Loan-Landingpage-final.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Loan-Landingpage-final_old.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Loan-Main-page-final.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Medical-Treatment-Loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Professional.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Salaried-Person.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal-Travel-Loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\PersonalLoanMainpagebackground.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal_box2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal_box3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal_footer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Personal_footer.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Privacy-Policy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\PrivacyPolicyBanner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Professional.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Purchase-Apartment.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Remittance.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Renovation.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Rubayat.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\SND-Menu-Icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Salaried-Person.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Saving-Acc-Menu-Icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Saving-Banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Shetu.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Signature-Card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Sujat.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Tarek Raihan.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\Untitled-2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\ab_bank_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\ab_bank_sm_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\application.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\application_fdr.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\apply.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Business-Man.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Landlord.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Low-Interest-Rate.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-NRB.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-New-Car.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Professional.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Reconditioned-Car.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto-Salaried-Person.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_background_middle.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_box.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_box1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_box2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\auto_footer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\bank_info_card.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\bank_info_map.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\bgFinculator.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\bottun.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\box.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\box1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\box2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\brac-bank-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btn.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btnDps.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btnDpsApply.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btnDpsCom.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\btnccardLandinMore.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\business.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card-frame.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_5.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_6.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_7.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_btn_apllication.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_btn_application.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\card_thamb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\cardbg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\cardbg01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\cash_back.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\1.2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\2.2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\3.2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\4.2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\5.2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\5.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\6.2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\6.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\7.2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\7.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\Icons For Fin.ai" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\calculator-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\calculator.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\head-phone-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\head-phone.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\hiring-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\hiring.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\legal-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\legal.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\more-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\more.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\sbusiness-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\sbusiness.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\taka-icon-hover.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\category icon\taka-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon.zip" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\Debit Card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\Portfolio of business.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\SME loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\all scheme.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\bank map.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\business loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\buy new car.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\credit card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\dps.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\education loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\fdr.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\financial calculator.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\home loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\money market.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\more.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\personal loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\secure payment.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoryIcon\support.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\categoybg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\cc_menu_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\ccpayoff.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\close.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\coming_soon_ribbon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\comparison.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_BG.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_background01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_bottun.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_btn.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_business.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_business_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_card_current.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_card_savings.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_cash_back.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_international_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_local_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_low_interest.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_master_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_reaward.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_student.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_student_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_travel.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_visa_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\debit_zero.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\demo_card.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\demo_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\deposit-bg1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\deskgreenplant.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dialog_close.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-1-year.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-10-years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-15-years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-20-years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-3-years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-5-years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-corporate-bodies.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps-individual.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_box.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_box2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_box3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_footer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_plenty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_qualifiled.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_round.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dps_text_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\dti-cal.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-1-Lakh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-10-Lakh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-20-Lakh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-3-Lakh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-3-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-4-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-40-Lakh.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu-5-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_background_middle.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_box.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_box1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_box2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_plenty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\edu_qualifiled.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\education_box.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\education_footer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\education_text-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\exportImport.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fana.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-1-year.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-2-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-3-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-3-months.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-4-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-5-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-Corporate-Bodies.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr-Individual.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_box.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_box2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_box3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_compare.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_footer_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_plenty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_qualifiled.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_round.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fdr_text_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\BL_(1).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\BL_(2).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\BL_(3).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (10).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (11).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (12).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (8).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank small icon (9).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(1).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(2).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(3).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(4).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(5).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(6).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\filter_bank_logo\bank_small_icon_(7).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\fin-logo-small.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\finager-logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\finager-promotional-log.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\finager_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\appstore.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\background-img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\card_2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\card_3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\card_thamb.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\front_card_head.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\gmail_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\googlestore.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo-2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo-3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\logo4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\master-card-2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\master-card-background.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\frontCard\master-card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_button.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_head.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_icon1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_icon2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\front_card_icon3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\hidendivshead.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home-text-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_background2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_loan_land_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_plenty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_qualifiled.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\home_round.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\hr-bar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\i-temp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\i-temp2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\img_logo_blue.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\in.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\interest-rate.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\lakhpati2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\large.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\lightbg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\loader(1).png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\loder.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\logo-lg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\logo_old.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\low_interest.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\c_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B300.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\B4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\Untitled-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\card_feature.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\card_feature.png.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\credit-card-mega-menu.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\credit_card_mega_menu.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\credit_card_menu.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\debit-card-mega-menu.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\debit_card1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\debit_card2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\debit_card3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\card\menu_home_loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\credit-cards-icon-11.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\credit_card.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\B3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\B4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\export1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\export2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\export3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\export\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\guru-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\B3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\B4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\CurrentAccMenuIcon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\DPSMenuIcon.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\FDR-Menu-Icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\LakhpotiManuIcon.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\MM 3-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\MM 3-2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Mega-Menu 3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Money-Maximizer-Menu-Icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Money-Maximizer-Menu-Icon1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Monthly-Benefit-Scheme-menu-Icon-.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\SND-Menu-Icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\Saving-Acc-Menu-Icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\card_feature.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\dps1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\dps2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\dps3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\fdr1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\fdr2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\fdr3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\millionaire1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\millionaire2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\millionaire3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\moneymax1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\moneymax2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\investment\moneymax3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\B2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\B3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\B4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\MM 2-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\Mega-Menu 2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\PersonalLoanmanuIcon.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\auto-loan-mega-menu.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\auto_loan1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\auto_loan2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\auto_loan3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\card_feature.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\education-loan-mega-menu.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\education_loan1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\education_loan2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\education_loan3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\home_loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\home_loan2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\home_loan3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\menu_personal_loan.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\menu_sme.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\personal-loan-mega-manu.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\personal_loan1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\personal_loan2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\loan\personal_loan3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\mashmenu\menubg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\menu-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-1-Million.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-10-Million.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-100-K.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-2.5-Million.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-5-Million.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-500-K.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-Corporate-Bodies.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\millionaire-Individual.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\moneyMaxLangding.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-1-Lac.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-1-Year.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-2-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-3-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-4-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-5-Lac.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-5-Years.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monthly-benefit-6-Months.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\monymax_main_page.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\new-car3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\nirob.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\no-data-found.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_background_middel.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_box.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_box1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_loan.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_plenty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personal_round.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\personla_qualifiled.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\plenty.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\pop.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\pop1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\principal-cal.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\qualifiled.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\radiobg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\reaward.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\round.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\scale.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\serch-bar.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\sme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\Facebook-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\G+-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\IN-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\RSS-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\Twitter-1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\social\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\srcbutton.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\srcbutton00.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\student-loan-debt.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\student.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\taka.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\terms-condition.jpg" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\text-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\travel.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\tw.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\visa_card.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\vline.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\woman.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\year.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\git\finager\resource\front_end\images_bu_shahriaz\zero.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Auto_loan.php" afterPath="$PROJECT_DIR$/application/controllers/Auto_loan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Card.php" afterPath="$PROJECT_DIR$/application/controllers/Card.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/all_logo.php" afterPath="$PROJECT_DIR$/application/views/front_end/all_logo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan" afterPath="$PROJECT_DIR$/application/cache/auto_loan" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan_compare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_compare" afterPath="$PROJECT_DIR$/application/cache/auto_loan_compare" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan_details.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_details" afterPath="$PROJECT_DIR$/application/cache/auto_loan_details" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/auto_loan_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/auto_loan_landing" afterPath="$PROJECT_DIR$/application/cache/auto_loan_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/card.php" afterPath="$PROJECT_DIR$/application/views/front_end/card.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card" afterPath="$PROJECT_DIR$/application/cache/card" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/card_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/card_compare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card_compare" afterPath="$PROJECT_DIR$/application/cache/card_compare" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/card_details.php" afterPath="$PROJECT_DIR$/application/views/front_end/card_details.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/card_details" afterPath="$PROJECT_DIR$/application/cache/card_details" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/credit_card_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/credit_card_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/credit_card_landing" afterPath="$PROJECT_DIR$/application/cache/credit_card_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/current_account.php" afterPath="$PROJECT_DIR$/application/views/front_end/current_account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account" afterPath="$PROJECT_DIR$/application/cache/current_account" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/current_account_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/current_account_compare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account_compare" afterPath="$PROJECT_DIR$/application/cache/current_account_compare" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/current_account_details" afterPath="$PROJECT_DIR$/application/cache/current_account_details" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/debit_card.php" afterPath="$PROJECT_DIR$/application/views/front_end/debit_card.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card" afterPath="$PROJECT_DIR$/application/cache/debit_card" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/debit_card_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/debit_card_compare.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_compare" afterPath="$PROJECT_DIR$/application/cache/debit_card_compare" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_details" afterPath="$PROJECT_DIR$/application/cache/debit_card_details" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_landing" afterPath="$PROJECT_DIR$/application/cache/debit_card_landing" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/dps.php" afterPath="$PROJECT_DIR$/application/views/front_end/dps.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps" afterPath="$PROJECT_DIR$/application/cache/dps" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps_landing" afterPath="$PROJECT_DIR$/application/cache/dps_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan" afterPath="$PROJECT_DIR$/application/cache/home_loan" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan_landing" afterPath="$PROJECT_DIR$/application/cache/home_loan_landing" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/css/style.css" afterPath="$PROJECT_DIR$/resource/front_end/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="finager.iws" />
@@ -675,8 +74,8 @@
       <file leaf-file-name="dps.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/dps.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="18224">
-              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.15668203" vertical-offset="51" max-vertical-offset="17697">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -814,7 +213,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -921,6 +319,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -954,9 +353,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -964,6 +360,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -978,12 +377,6 @@
       <created>1494340092258</created>
       <option name="number" value="Default" />
       <updated>1494340092258</updated>
-    </task>
-    <task id="LOCAL-00017" summary="1. Cradit card landing page blog section change&#10;2. css page update">
-      <created>1501155627743</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1501155627743</updated>
     </task>
     <task id="LOCAL-00018" summary="1. Cradit card landing page blog section change&#10;2. css page update">
       <created>1501165958926</created>
@@ -1273,12 +666,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521452925438</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="controllers update">
+      <created>1521969890831</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1521969890831</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1286,21 +685,21 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2622108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2718509" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42698193" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1321,9 +720,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23626027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1736,8 +1135,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/dps.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="18224">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.15668203" vertical-offset="51" max-vertical-offset="17697">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>
