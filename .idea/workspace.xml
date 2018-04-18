@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/application/cache/home_loan" afterPath="$PROJECT_DIR$/application/cache/home_loan" />
+      <change beforePath="$PROJECT_DIR$/application/cache/home_loan_compare" afterPath="$PROJECT_DIR$/application/cache/home_loan_compare" />
+      <change beforePath="$PROJECT_DIR$/application/cache/home_loan_landing" afterPath="$PROJECT_DIR$/application/cache/home_loan_landing" />
       <change beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
-      <change beforePath="$PROJECT_DIR$/application/views/front_end/block/footer.php" afterPath="$PROJECT_DIR$/application/views/front_end/block/footer.php" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/En.php" afterPath="$PROJECT_DIR$/application/controllers/En.php" />
+      <change beforePath="$PROJECT_DIR$/application/views/front_end/home_loan.php" afterPath="$PROJECT_DIR$/application/views/front_end/home_loan.php" />
+      <change beforePath="$PROJECT_DIR$/application/views/front_end/home_loan_compare.php" afterPath="$PROJECT_DIR$/application/views/front_end/home_loan_compare.php" />
     </list>
     <ignored path="finager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,12 +31,52 @@
     <favorites_list name="finager" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="En.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
-              <caret line="1188" column="28" lean-forward="false" selection-start-line="1188" selection-start-column="20" selection-end-line="1188" selection-end-column="28" />
+            <state relative-caret-position="-14912">
+              <caret line="280" column="54" lean-forward="true" selection-start-line="280" selection-start-column="54" selection-end-line="280" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_loan_details.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_details.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fdr_compare.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_compare.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_loan_compare.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_compare.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="97" column="86" lean-forward="false" selection-start-line="97" selection-start-column="86" selection-end-line="97" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home_loan.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="643">
+              <caret line="996" column="0" lean-forward="false" selection-start-line="996" selection-start-column="0" selection-end-line="996" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,14 +85,14 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="79" column="51" lean-forward="true" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+            <state relative-caret-position="1343">
+              <caret line="79" column="51" lean-forward="false" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="771">
@@ -69,6 +113,8 @@
     <findStrings>
       <find>en/</find>
       <find>terms_condition</find>
+      <find>firstEmiAmount</find>
+      <find>month_limit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,8 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/AppData/Local/Temp/scp01216/asdf/application/views/front_end/fdr_landing.php" />
-        <option value="$USER_HOME$/AppData/Local/Temp/scp10122/asdf/application/views/front_end/dps_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/monthly_benefit_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/export_import.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/debit_card_details.php" />
@@ -125,12 +169,14 @@
         <option value="$PROJECT_DIR$/resource/front_end/css/style.css" />
         <option value="$PROJECT_DIR$/application/views/front_end/money_maximizer_landing.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/index.php" />
-        <option value="$PROJECT_DIR$/application/controllers/En.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/about_us.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/block/right_menu.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/block/footer.php" />
+        <option value="$PROJECT_DIR$/application/controllers/En.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/home_loan.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/home_loan_compare.php" />
       </list>
     </option>
   </component>
@@ -167,7 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,6 +229,12 @@
               <item name="finager" type="b2602c69:ProjectViewProjectNode" />
               <item name="finager" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="finager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finager" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -192,14 +243,6 @@
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="front_end" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="finager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finager" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="front_end" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="block" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="finager" type="b2602c69:ProjectViewProjectNode" />
@@ -216,6 +259,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -291,14 +335,8 @@
       <workItem from="1522598028028" duration="703000" />
       <workItem from="1522598752927" duration="13000" />
       <workItem from="1523195359469" duration="1300000" />
-      <workItem from="1523968745863" duration="2668000" />
-    </task>
-    <task id="LOCAL-00027" summary="Investment landing change">
-      <created>1502032707302</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1502032707302</updated>
+      <workItem from="1523968745863" duration="2689000" />
+      <workItem from="1524052888565" duration="5212000" />
     </task>
     <task id="LOCAL-00028" summary="Investment landing change">
       <created>1502102460184</created>
@@ -636,17 +674,24 @@
       <option name="project" value="LOCAL" />
       <updated>1523196034874</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="add About us page">
+      <created>1523973823756</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1523973823756</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6049000" />
+    <option name="totallyTimeSpent" value="11282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14166667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19270833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
@@ -744,34 +789,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/Debit_card.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="613" column="30" lean-forward="false" selection-start-line="613" selection-start-column="30" selection-end-line="613" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/monthly_benefit_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Snd_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="455" column="55" lean-forward="false" selection-start-line="455" selection-start-column="55" selection-end-line="455" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Saving_account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="269" column="52" lean-forward="false" selection-start-line="269" selection-start-column="52" selection-end-line="269" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/saving_account_details.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1081,18 +1098,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="1188" column="28" lean-forward="false" selection-start-line="1188" selection-start-column="20" selection-end-line="1188" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="79" column="51" lean-forward="true" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
+        <state relative-caret-position="1343">
+          <caret line="79" column="51" lean-forward="false" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1107,6 +1116,46 @@
             <marker date="1523973721666" expanded="true" signature="16712:16754" ph="{&quot;backdrop&quot;: 'static'...}" />
             <marker date="1523973721666" expanded="true" signature="18426:18532" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14912">
+          <caret line="280" column="54" lean-forward="true" selection-start-line="280" selection-start-column="54" selection-end-line="280" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="996" column="0" lean-forward="false" selection-start-line="996" selection-start-column="0" selection-end-line="996" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/home_loan_compare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="97" column="86" lean-forward="false" selection-start-line="97" selection-start-column="86" selection-end-line="97" selection-end-column="86" />
+          <folding />
         </state>
       </provider>
     </entry>

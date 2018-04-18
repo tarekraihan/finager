@@ -37,7 +37,6 @@
     }
 
 	?>
-
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">
@@ -54,8 +53,8 @@
 			<input type="hidden" id="first_downpayment" name="first_downpayment" value="<?php echo $first_downpayment; ?>">
 			<input type="hidden" id="second_yearly_interest" name="second_yearly_interest" value="<?php echo $second_yearly_interest; ?>">
 			<input type="hidden" id="second_downpayment" name="second_downpayment" value="<?php echo $second_downpayment; ?>">
-			<input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $this->session->userdata('home_principal_amount'); ?>">
-			<input type="hidden" id="month_limit" name="month_limit" value="<?php echo $this->session->userdata('month_limit'); ?>">
+			<input type="hidden" id="principal_amount" name="principal_amount" value="<?php echo $amount; ?>">
+			<input type="hidden" id="month_limit" name="month_limit" value="<?php echo $month; ?>">
 			<div class="home_loan_com_cal container text-center"></div>
 		</div>
 	<section id="basic_info">
@@ -84,16 +83,26 @@
 							<td> <?php echo $first_bank_name; ?> </td>
 						</tr>
 
-                                                <tr>
+                        <tr>
 							<td class="abc"><b> Purpose </b></td>
 							<td><?php echo $first_home_loan->home_loan_looking_for;?> </td>
 						</tr>
-						
-						<tr>
+
+                        <tr>
+                            <td><b> Loan Amount</b></td>
+                            <td>BDT  <?php echo number_format( $amount ); ?>  </td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Tenure</b></td>
+                            <td> <?php echo $month; echo ($month > 1 ) ? ' Years' : ' Year';?>  </td>
+                        </tr>
+
+                        <tr>
 							<td><b> Interest Rate</b></td>
 							<td>  <?php echo $first_interest; ?> </td>
 						</tr>
-						
+
 						<tr>
 							<td><b> Equal Monthly Installment (EMI)</b></td>
 							<td id="firstEmiAmount"> </td>
@@ -125,12 +134,22 @@
 								<td> <?php echo $second_bank_name; ?>  </td>
 							</tr>
 
-                                                        <tr>
-							        <td class="abc"><b> Purpose </b></td>
-							        <td> <?php echo $second_home_loan->home_loan_looking_for;?></td>
-						        </tr>
-							
-							<tr>
+                            <tr>
+                                <td class="abc"><b> Purpose </b></td>
+                                <td> <?php echo $second_home_loan->home_loan_looking_for;?></td>
+                            </tr>
+
+                            <tr>
+                                <td><b> Loan Amount</b></td>
+                                <td>BDT  <?php echo number_format( $amount ); ?> </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Tenure</b></td>
+                                <td> <?php echo $month; echo ($month > 1 ) ? ' Years' : ' Year';?>  </td>
+                            </tr>
+
+                            <tr>
 								<td><b> Interest Rate</b></td>
 								<td> <?php echo $second_interest; ?>  </td>
 							</tr>
@@ -297,7 +316,8 @@ $(document).ready(function () {
         var principle_amount = parseFloat($('#principal_amount').val());
         var amount = (principle_amount <= 50000) ? 50000 : principle_amount;
         var tenure = parseInt($('#month_limit').val());
-        var month = (tenure <= 6 ) ? 6 : tenure;
+        var month = (tenure <= 1 ) ? 1 : tenure;
+        month = month * 12;
 
 
         var first_yearly_interest = parseFloat($('#first_yearly_interest').val());
@@ -318,15 +338,15 @@ $(document).ready(function () {
         var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
         var second_payable_amount = second_emi * month;
 
-//        alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
+       // alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
 
-        $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
-        $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
-        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
+        $('#firstEmiAmount').text("BDT " + number_format( first_emi, 0, '.', ',' ));
+        $('#firstPayableAmount').text("BDT " + number_format( first_payable_amount, 0, '.', ',' ) );
+        $('#firstDownpaymentAmount').text("BDT " + number_format( first_downpayment_amount, 0, '.', ',' ) );
 
-        $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
-        $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
-        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
+        $('#secondEmiAmount').text("BDT " + number_format( second_emi, 0, '.', ',' ));
+        $('#secondPayableAmount').text("BDT " + number_format( second_payable_amount, 0, '.', ',' ) );
+        $('#secondDownpaymentAmount').text("BDT " + number_format( second_downpayment_amount, 0, '.', ',' ) );
 
     }
 

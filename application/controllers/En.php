@@ -268,11 +268,18 @@ class En extends CI_Controller {
     public function home_loan_compare($url){
         if($this->session->userdata('lovemebaby')){
             if(strpos( $url, '-vs-' ) == true){
+                $amount = explode("-",$url);
+                $data['amount'] = ( $amount[0] ) ? $amount[0] : 60000;
+                $data['month'] = ( $amount[1] ) ? $amount[1] : 12;
+                $url = array_slice($amount,2, count($amount)-1, true);
+                $url = implode('-',$url);
+                //echo $url;die;
                 $compare = explode("-vs-",$url);
                 $query1 = $this->db->get_where('home_loan_info',array('slug'=>$compare[0]));
                 $data['loan1'] = $query1->row_array();
                 $query2 = $this->db->get_where('home_loan_info',array('slug'=>$compare[1]));
                 $data['loan2'] = $query2->row_array();
+
                 $this->load->driver('cache');
                 $this->cache->file->save('home_loan_compare', 'home_loan_compare', 100);
                 $this->load->view('front_end/block/header_home_loan',$data);
