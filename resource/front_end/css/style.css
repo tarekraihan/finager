@@ -21,6 +21,10 @@ body {
     font-family: 'sf-pro', sans-serif ;
     font-weight: 500;
 }
+.fin-about-text {
+    font-family: 'sf-pro', sans-serif ;
+    fontr-size: 16px;
+}
 /*.add-to-compare, .more_info, .more_info_icon {*/
     /*background-color: #04316f;*/
     /*color: #fff;*/

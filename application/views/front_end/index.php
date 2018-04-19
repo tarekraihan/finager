@@ -52,9 +52,7 @@ position: relative;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
 }
-.fin-about-text {
-    font-family: 'Lato', sans-serif;
-}
+
 h3.fin-about-heading>span {
 font-size: 36px;
 }
