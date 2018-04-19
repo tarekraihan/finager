@@ -221,7 +221,7 @@
 							Technology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago.
 							These changes can be rather scary. Online search bars and their results can spill mass amounts of information your way when looking for
 							a simple answer. So how do you know what to read and what to take seriously? How do you know where to start when all the top results lead 
-							to a dealership? This process is much more simple than you would think, and if anything is a key factor in your searching and researching 
+							to a dealership?...
 						</p>
 						<div class="home_read"><a href="<?php echo base_url();?>blog/car_loan1">Read More</a></div>
 					</div>
@@ -233,11 +233,11 @@
 						<h4>5 Reasons to Have Your Car Loan Ready Before Buying</h4>
 						<p>
 							Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s 
-							certainly easier to let the dealership handle the financing for you, but by doing so you may be conceding too much. Here are five reasons 
-							to have your car loan ready before buying. 
+							certainly easier to let the dealership handle the financing for you, but by doing so you may be conceding too much. Here are five reasons
+							to have your car loan ready before buying.
 						</p>
 						<p>
-							It’s all too easy to “throw yourself on the mercy of the dealer” for the entire purchase transaction. After all, car dealerships routinely handle virtually all aspects of car purchase, including:
+							It’s all too easy to “throw yourself on the mercy of the dealer” for the entire purchase transaction
 						</p>
 						<div class="home_read"><a href="<?php echo base_url();?>blog/car_loan2">Read More</a></div>
 					</div>
@@ -252,7 +252,7 @@
 							people advise against leasing a car, it is a reasonable and preferable option in many cases. However, there are several questions that one should consider before signing on the dotted line.
 						</p>
 						<p>
-							Many lease options come with down payments toward the value of the lease that lowers your monthly payments. If you are planning on leasing a car then you should carefully 
+							Many lease options come with down payments toward the value of the lease that lowers your monthly payments.
 						<div class="home_read"><a href="<?php echo base_url();?>blog/car_loan3">Read More</a></div>
 					</div>
 				</div>
@@ -264,7 +264,7 @@
 						<p>
 							Being able to travel at godlike speed is nothing short of marvellous. Owning a car has moved from being a status symbol to being a necessity. 
 							It affords us time and comfort along with the luxury of spending time with our dear ones as we commute. While the demand for a personally 
-							owned car has increased, figuring out how you are going to finance a car is far more important. It is more important than finding the perfect car model.
+							owned car has increased, figuring out how you are going to finance a car is far more important.
 						</p>
 						<p>
 							Having the finance in place ensures you being ready when the right deal presents itself. 

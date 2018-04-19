@@ -871,6 +871,7 @@
         });
 
 
+
         $('#searchDPS').on('click', '.more_info', function (){
 			var  formData = $(this).data();
 			var dps_id = formData.dps_id;
