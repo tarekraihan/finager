@@ -765,4 +765,18 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return $query;
     }
 
+    public function select_blog_post_by_product_category($category_name,$offset){
+
+        $sql="SELECT blog_posts.* FROM `blog_posts` INNER JOIN blog_term_relationships ON blog_term_relationships.object_id = blog_posts.ID INNER JOIN blog_term_taxonomy ON blog_term_taxonomy.term_taxonomy_id = blog_term_relationships.term_taxonomy_id INNER JOIN blog_terms ON blog_terms.term_id = blog_term_taxonomy.term_id WHERE blog_terms.name ='{$category_name}' ORDER BY blog_posts.post_date DESC LIMIT {$offset},1";
+        $query = $this->db->query($sql);
+        return  $query->row();
+    }
+
+    public function select_blog_post_image_url_by_post_id($post_id){
+
+        $sql="SELECT concat((select option_value from blog_options where option_name ='siteurl' limit 1),'/wp-content/uploads/',childmeta.meta_value) as image_url FROM blog_postmeta childmeta INNER JOIN blog_postmeta parentmeta ON (childmeta.post_id=parentmeta.meta_value) WHERE parentmeta.meta_key='_thumbnail_id' and childmeta.meta_key = '_wp_attached_file' AND parentmeta.post_id = {$post_id}";
+        $query = $this->db->query($sql);
+        return  $query->row();
+    }
+
 }
