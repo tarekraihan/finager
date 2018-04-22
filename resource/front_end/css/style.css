@@ -4,7 +4,7 @@
 @font-face {
     font-family: 'sf-pro';
     src: url('../fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Regular.otf').format("opentype"),
-    font-weight: normal;
+font-weight: normal;
     font-style: normal;
 }
 body {
@@ -26,15 +26,15 @@ body {
     font-size: 16px;
 }
 /*.add-to-compare, .more_info, .more_info_icon {*/
-    /*background-color: #04316f;*/
-    /*color: #fff;*/
-    /*padding: 5px;*/
-    /*border-radius: 6px;*/
-    /*line-height: 2.1;*/
+/*background-color: #04316f;*/
+/*color: #fff;*/
+/*padding: 5px;*/
+/*border-radius: 6px;*/
+/*line-height: 2.1;*/
 /*}*/
 
 /*.more_info_icon i,a {*/
-    /*color: #fff !important;*/
+/*color: #fff !important;*/
 /*}*/
 
 .m-b-30{
@@ -95,7 +95,7 @@ body {
     display: none !important;
 }
 .nav>li>a:focus, .nav>li>a:hover{
-	background:#337ab7 !important;
+    background:#337ab7 !important;
     color:#fff;
 }
 /*Vertical menu END*/
@@ -176,19 +176,19 @@ body {
 }
 
 @media only screen and (min-width: 1281px){
-	.hamburger.is-open{
-		right: 200px !important;
-	}
+    .hamburger.is-open{
+        right: 200px !important;
+    }
 
 }
 
 @media only screen and (max-width: 1280px){
 
-	.hamburger.is-open{
+    .hamburger.is-open{
 
-		right: 195px;
+        right: 195px;
 
-	}
+    }
 
 }
 
@@ -1196,13 +1196,13 @@ section#header2 {
 
 #hiden_div {
 
-	position: fixed;
+    position: fixed;
 
-	z-index: 999;
+    z-index: 999;
 
-	right: 0;
+    right: 0;
 
-	width: 100%;
+    width: 100%;
 
     bottom:0;
 
@@ -2056,7 +2056,7 @@ section#header2 {
 
 .personal_loan_landing_button{
 
-    background: #8D6E35; /* For browsers that do not support gradients */    
+    background: #8D6E35; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #fff, #8D6E35); /* For Safari 5.1 to 6.0 */
 
@@ -2168,7 +2168,7 @@ a .personal_loan_landing_button.flash-button {
 
 .education_landing_button {
 
-    background: #D3D3D3; /* For browsers that do not support gradients */    
+    background: #D3D3D3; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #fff, #D3D3D3); /* For Safari 5.1 to 6.0 */
 
@@ -2222,54 +2222,54 @@ a .education_landing_button{
 
 #mony_max_header_part{
 
-	/*background-image:url(../images/Money-Maximizer-Landing-Page-Banner-F.jpg);*/
+    /*background-image:url(../images/Money-Maximizer-Landing-Page-Banner-F.jpg);*/
     background-image:url(../images/banners/Money-Maximizer-New-Banner.jpg);
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-size:cover;
+    background-size:cover;
 
-	width:100%;
+    width:100%;
 
-	height:450px;
+    height:450px;
 
-	position:relative;
+    position:relative;
 
 }
 
 .mony_max_header_text {
 
-	text-align: right;
+    text-align: right;
 
-	top: 120px;
+    top: 120px;
 
-	position: relative;
+    position: relative;
 
-	float: right;
+    float: right;
 
-	margin-right: 220px;
+    margin-right: 220px;
 
 }
 
 .mony_max_header_text p {
 
-	color: #6D4848;
+    color: #6D4848;
 
-	font-size: 18px;
+    font-size: 18px;
 
-	font-style: italic;
+    font-style: italic;
 
-        margin-bottom:26px;
+    margin-bottom:26px;
 
 }
 
 .mony_max_header_text h3 {
 
-	color: #585858;
+    color: #585858;
 
-	font-size: 35px;
+    font-size: 35px;
 
-	font-style: italic;
+    font-style: italic;
 
 }
 
@@ -2287,26 +2287,26 @@ a .education_landing_button{
 
 #mony_max_header{
 
-	/*background-image:url(../images/Money-Maximizer-Main-Page.jpg);*/
+    /*background-image:url(../images/Money-Maximizer-Main-Page.jpg);*/
     background-image:url(../images/banners/SND-New-Banner.jpg);
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-size:cover;
+    background-size:cover;
 
-	background-position:center center;
+    background-position:center center;
 
-	width:100%;
+    width:100%;
 
-	height:320px;
+    height:320px;
 
-	position:relative;
+    position:relative;
 
 }
 
 .btn_mony_max{
 
-	border:1px solid #CECAAA;
+    border:1px solid #CECAAA;
 
     padding: 5px 26px;
 
@@ -2322,7 +2322,7 @@ a .education_landing_button{
 
 .btn_mony_max:hover{
 
-	background-color:#CECAAA;
+    background-color:#CECAAA;
 
 }
 
@@ -2390,41 +2390,41 @@ a .education_landing_button{
 
 #money_max_biggest_brand {
 
-	background-image:url(../images/Money-Maximizer-middle.png);
+    background-image:url(../images/Money-Maximizer-middle.png);
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-size:cover;
+    background-size:cover;
 
-	height:385px;
+    height:385px;
 
-	width:100%;
+    width:100%;
 
-	background-position:center center;
+    background-position:center center;
 
-	margin-top:30px;
+    margin-top:30px;
 
 }
 
 #footer_money_max{
 
-	background-image:url(../images/Money-Maximizer-footerbg.png);
+    background-image:url(../images/Money-Maximizer-footerbg.png);
 
-	background-position:center center;
+    background-position:center center;
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-size:cover;
+    background-size:cover;
 
-	height:427px;
+    height:427px;
 
-	width:100%;
+    width:100%;
 
 }
 
 .money_max_woman {
 
-	margin-top: 36px;
+    margin-top: 36px;
 
 }
 
@@ -2442,7 +2442,7 @@ a .education_landing_button{
 
 .maximizer_landing_button {
 
-    background: #d2ceb1; /* For browsers that do not support gradients */    
+    background: #d2ceb1; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #d2ceb1, #fff); /* For Safari 5.1 to 6.0 */
 
@@ -2540,7 +2540,7 @@ a .maximizer_landing_button{
 
 .fdr_landing_button {
 
-    background: #25688C; /* For browsers that do not support gradients */    
+    background: #25688C; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #fff, #25688C); /* For Safari 5.1 to 6.0 */
 
@@ -2572,11 +2572,11 @@ a .fdr_landing_button {
 
 #availableOffer1 {
 
-	border: 1px solid #d09f5c;
+    border: 1px solid #d09f5c;
 
-	padding: 16px;
+    padding: 16px;
 
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 
 }
 
@@ -2777,7 +2777,7 @@ a .fdr_landing_button {
 
 .auto_button {
 
-    background: #C95254; /* For browsers that do not support gradients */    
+    background: #C95254; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #fff, #C95254); /* For Safari 5.1 to 6.0 */
 
@@ -3222,7 +3222,7 @@ a:hover {
 
 #home_header_part{
 
-   /* background-image:url('../images/Home loan landing page banner 2.jpg');*/
+    /* background-image:url('../images/Home loan landing page banner 2.jpg');*/
     background-image:url('../images/banners/Home-loan-new-banner.jpg');
 
     background-repeat:no-repeat;
@@ -3266,7 +3266,7 @@ a:hover {
 
 .home_loan_landing_button{
 
-    background: #205F34; /* For browsers that do not support gradients */    
+    background: #205F34; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #fff, #205F34); /* For Safari 5.1 to 6.0 */
 
@@ -5070,7 +5070,7 @@ a:hover {
 
 .dps_landing_button {
 
-    background: #C7F0F9; /* For browsers that do not support gradients */    
+    background: #C7F0F9; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #fff, #C7F0F9); /* For Safari 5.1 to 6.0 */
 
@@ -5348,7 +5348,7 @@ a .dps_landing_button {
 
 .credit_card_button {
 
-    background: #5AB1D2; /* For browsers that do not support gradients */    
+    background: #5AB1D2; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #fff, #5AB1D2 ); /* For Safari 5.1 to 6.0 */
 
@@ -5378,7 +5378,7 @@ a .credit_card_button.flash-button{
 
 .debit_card_button {
 
-	background: #9F9164; /* For browsers that do not support gradients */    
+    background: #9F9164; /* For browsers that do not support gradients */
 
     background: -webkit-linear-gradient(left, #fff, #9F9164 ); /* For Safari 5.1 to 6.0 */
 
@@ -5388,13 +5388,13 @@ a .credit_card_button.flash-button{
 
     background: linear-gradient(to right, #fff, #9F9164); /* Standard syntax (must be last) */
 
-	width: 180px;
+    width: 180px;
 
-	padding: 9px 20px;
+    padding: 9px 20px;
 
-	text-align: center;
+    text-align: center;
 
-	font-size: 16px;
+    font-size: 16px;
 
 }
 
@@ -5422,7 +5422,7 @@ a .debit_card_button.flash-button{
 }
 /*.nopadding:hover{*/
 
-    /*background-color:#f2f2f3;*/
+/*background-color:#f2f2f3;*/
 
 /*}*/
 .All_cradit_card :hover {
@@ -5675,7 +5675,7 @@ hr {
     height:60px;
 }
 #debit_second_div{
-   /* background-image:url(../images/debit_background.jpg);*/
+    /* background-image:url(../images/debit_background.jpg);*/
     background-image:url(../images/banners/Debit-Card-New-Banner.jpg);
     height:450px;
     width:100%;
@@ -6314,13 +6314,13 @@ a .millionier_landing_button{
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-/* Firefox 1+*/
--webkit-animation-name: flash;
+    /* Firefox 1+*/
+    -webkit-animation-name: flash;
     -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     /*Safari 3-4*/
--moz-animation-name: flash;
+    -moz-animation-name: flash;
     -moz-animation-duration: 1s;
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
@@ -7048,19 +7048,19 @@ a .auto_button.flash-button {
 
 /*for left bar fixed*/
 
-        .fixedElement {
+.fixedElement {
 
-           position: fixed;
+    position: fixed;
 
-           width: 262px;
+    width: 262px;
 
-           height: auto;
+    height: auto;
 
-           padding: 0px;
+    padding: 0px;
 
-           top: 0;
+    top: 0;
 
-       }
+}
 
 /*for compare page header fixed*/
 
@@ -7084,7 +7084,7 @@ a .auto_button.flash-button {
 
 .compare-bg img {
 
-	width: 140px;
+    width: 140px;
 
 }
 
@@ -7154,59 +7154,88 @@ a .auto_button.flash-button {
 
     box-shadow: none !important;
 
-	background-color:transparent;
+    background-color:transparent;
 
-	border: none;
+    border: none;
 
-	border-radius: 0px;
+    border-radius: 0px;
 
 }
 
 .land_modal{
 
-	cursor: pointer;
+    cursor: pointer;
 
 }
 
 .beta_pop_bg{
 
-	background-image:url(../images/Fin-Pop-Up-Beta-bg.jpg);
+    background-image:url(../images/Fin-Pop-Up-Beta-bg.jpg);
 
-	width:600px;
+    width:600px;
 
-	height:500px;
+    height:500px;
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-position:cover;
+    background-size:contain;
 
 }
 
+@media only screen and (max-width: 767px){
+    .beta_pop_bg {
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #fffced;
+    }
+    .beta_pop_text {
+        margin-left: 26px;
+    }
+    .beta_pop_bg .input-group {
+        position: absolute !important;
+        margin-top: 296px;
+        padding: 25px;
+    }
+    .beta_pop_text {
+        text-align: center;
+        top: -100px;
+        left: 0;
+    }
+}
+.mega-blog-img-wrapper {
+    height: 94px;
+    max-width: 100%;
+}
+.mega-blog-img-wrapper img.item-image {
+    max-height: 94px;
+}
 .input-group {
 
-	position: absolute !important;
+    position: absolute !important;
 
-	margin-top: 296px;
+    margin-top: 296px;
 
-	padding: 65px;
+    padding: 65px;
 
 }
 
 .beta_pop_text {
 
-	text-align: center;
+    text-align: center;
 
-	margin-top: 333px;
+    margin-top: 333px;
 
-	position: absolute;
+    position: absolute;
 
-	margin-left: 66px;
+    margin-left: 66px;
 
 }
 
 .beta_pop_text span{
 
-	color:#e2b958;
+    color:#e2b958;
 
 }
 
@@ -7216,15 +7245,15 @@ a .auto_button.flash-button {
 
 #sidebar.stick {
 
-	position: fixed;
+    position: fixed;
 
-	top: 0;
+    top: 0;
 
-	z-index: 10;
+    z-index: 10;
 
-	transition: all 1s ease;
+    transition: all 1s ease;
 
-	width: 249px; 
+    width: 249px;
 
 }
 
@@ -7234,43 +7263,43 @@ a .auto_button.flash-button {
 
 #privacy_header{
 
-	background-image:url(../images/PrivacyPolicyBanner.jpg);
+    background-image:url(../images/PrivacyPolicyBanner.jpg);
 
-	background-size:cover;
+    background-size:cover;
 
-	background-position:center center;
+    background-position:center center;
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	width:100%;
+    width:100%;
 
-	height:198px;
+    height:198px;
 
-	margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
 .privacy_margin{
 
-	margin-left:15px;
+    margin-left:15px;
 
 }
 
 #terms_header{
 
-	background-image:url(../images/terms-condition.jpg);
+    background-image:url(../images/terms-condition.jpg);
 
-	background-size:cover;
+    background-size:cover;
 
-	background-position:center center;
+    background-position:center center;
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	width:100%;
+    width:100%;
 
-	height:198px;
+    height:198px;
 
-	margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
@@ -7313,12 +7342,12 @@ a .auto_button.flash-button {
 /* for ExportImport */
 
 #ExportImport_header{
-	background-image:url(../images/exportImport.png);
-	background-size:cover;
-	background-position:center center;
-	background-repeat:no-repeat;
-	width:100%;
-	height:300px;
+    background-image:url(../images/exportImport.png);
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    width:100%;
+    height:300px;
 }
 .exportShadow {
     position: absolute;
@@ -7351,25 +7380,25 @@ a .auto_button.flash-button {
 
 .ExportImportAccordion .panel-heading a{
 
-	color:#000;
+    color:#000;
 
-	outline:0;
+    outline:0;
 
-	text-decoration:none;
+    text-decoration:none;
 
 }
 
 .exportImport_ol{
 
-	margin-left:20px;
+    margin-left:20px;
 
 }
 
 .export_table {
 
-	border: 1px solid #ddd;
+    border: 1px solid #ddd;
 
-	padding: 10px;
+    padding: 10px;
 
 }
 
@@ -8252,7 +8281,7 @@ ol>li, ul>li{
     background-size: cover;
     height: 100%;
     width: 100%;
-    min-height: 100vh; 
+    min-height: 100vh;
     padding: 10px 0;
     background-attachment: fixed;
     font-family: 'Lato', sans-serif;
@@ -8289,7 +8318,7 @@ ol>li, ul>li{
 }
 .about-promo-ul>li>img{
     height: 200px;
-    width:200px; 
+    width:200px;
 }
 .about-promo-ul>li:nth-child(1)>img{
     margin-left: 6px;
