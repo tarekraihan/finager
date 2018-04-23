@@ -95,7 +95,7 @@
 						<p>
                             Education loan is granted by banks for helping the needy student. With the help of education loan, students fulfill their study expenses. Education loan is granted for 5 year period and up to BDT 10 lac is granted maximum loan amount.
 						</p>
-						<a href="<?php echo base_url();?>en/education_loan"><span class="btn_landing_auto">Go to slide</span></a>
+						<a href="<?php echo base_url();?>education-loan.html"><span class="btn_landing_auto">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -107,7 +107,7 @@
 						</div>
 						<p>Home loan is a loan granted by banks and other financial institutes for purchasing a home or apartment. You can apply for a home loan if you can fulfill the criteria stated by banks. Banks will grant that amount of money which you can repay easily.
                         </p>
-						<a href="<?php echo base_url();?>en/home_loan"><span class="btn_landing_auto">Go to slide</span></a>
+						<a href="<?php echo base_url();?>home-loan.html"><span class="btn_landing_auto">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -120,20 +120,20 @@
 						<p>
                             SME loan is a loan which helps in business expansion, working capital, purchasing fixed asset for small and medium enterprises. This loan is provided by banks to encourage the entrepreneurs to develop and expand their business.
                         </p>
-						<a href="#"><span class="btn_landing_auto">Go to slide</span></a>
+						<a href="<?php echo base_url();?>"><span class="btn_landing_auto">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
 						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/personal_loan.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
-							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg"/>
+							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/text-bg.png" alt="text-bg" />
 							<h4>Personal Loan</h4>
 						</div>
 						<p>
                             Personal loan is provided by banks to its customer for various reasons such as medical treatment loan, Hajj loan, and festival loan and overall any purpose to fulfill personal needs. You can get up to BDT 5 Lac for 3 year period as personal loan.
 						</p>
-						<a href="<?php echo base_url();?>en/education_loan"><span class="btn_landing_auto">Go to slide</span></a>
+						<a href="<?php echo base_url();?>personal-loan.html"><span class="btn_landing_auto">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -213,65 +213,104 @@
 		<div class="container-fluid">
 			<div class="heading_pr">
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/new-car4.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Auto Loan</p>
-						<h4>Buying a New Car – How to Research for What You Really Want</h4>
-						<p>
-							Technology has come a long way over the years, taking even shopping for the car you want to a level beyond what it was just a decade ago.
-							These changes can be rather scary. Online search bars and their results can spill mass amounts of information your way when looking for
-							a simple answer. So how do you know what to read and what to take seriously? How do you know where to start when all the top results lead 
-							to a dealership?...
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/car_loan1">Read More</a></div>
-					</div>
+                    <?php
+                        $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Auto Loan',0);
+                        if($post_details) {
+                            $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                            ?>
+                            <div class="heading_text">
+                                <img class="img-responsive"
+                                     src="<?php echo $post_image->image_url; ?>"
+                                     alt="img_logo_blue"/>
+                                <p class="H_loan">Auto Loan</p>
+                                <h4><?php echo $post_details->post_title;?></h4>
+                                <p>
+                                    <?php
+                                    $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                    echo $content;
+                                    ?>
+                                </p>
+                                <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/new-car2.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Auto Loan</p>
-						<h4>5 Reasons to Have Your Car Loan Ready Before Buying</h4>
-						<p>
-							Why go through the trouble of getting a car loan from a bank or credit union, rather than just getting it through the dealership? It’s 
-							certainly easier to let the dealership handle the financing for you, but by doing so you may be conceding too much. Here are five reasons
-							to have your car loan ready before buying.
-						</p>
-						<p>
-							It’s all too easy to “throw yourself on the mercy of the dealer” for the entire purchase transaction
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/car_loan2">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Auto Loan',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive"
+                                 src="<?php echo $post_image->image_url; ?>"
+                                 alt="img_logo_blue"/>
+                            <p class="H_loan">Auto Loan</p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/new-car5.png" alt="img_logo_blue"/>
-						<p class="H_loan">Auto Loan</p>
-						<h4>Questions to Ask When Leasing a New Car</h4>
-						<p>
-							Leasing a new car is a serious financial commitment that should not be undergone without carefully weighing the pros and cons. While some
-							people advise against leasing a car, it is a reasonable and preferable option in many cases. However, there are several questions that one should consider before signing on the dotted line.
-						</p>
-						<p>
-							Many lease options come with down payments toward the value of the lease that lowers your monthly payments.
-						<div class="home_read"><a href="<?php echo base_url();?>blog/car_loan3">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Auto Loan',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive"
+                                 src="<?php echo $post_image->image_url; ?>"
+                                 alt="img_logo_blue"/>
+                            <p class="H_loan">Auto Loan</p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/new car.png" alt="img_logo_blue"/>
-						<p class="H_loan">Auto Loan</p>
-						<h4>Car Loans</h4>
-						<p>
-							Being able to travel at godlike speed is nothing short of marvellous. Owning a car has moved from being a status symbol to being a necessity. 
-							It affords us time and comfort along with the luxury of spending time with our dear ones as we commute. While the demand for a personally 
-							owned car has increased, figuring out how you are going to finance a car is far more important.
-						</p>
-						<p>
-							Having the finance in place ensures you being ready when the right deal presents itself. 
-							 
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/car_loan4">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Auto Loan',3);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive"
+                                 src="<?php echo $post_image->image_url; ?>"
+                                 alt="img_logo_blue"/>
+                            <p class="H_loan">Auto Loan</p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 				</div>
 			</div>
 		</div>
