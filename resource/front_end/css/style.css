@@ -4,7 +4,7 @@
 @font-face {
     font-family: 'sf-pro';
     src: url('../fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Regular.otf').format("opentype"),
-font-weight: normal;
+    font-weight: normal;
     font-style: normal;
 }
 body {
@@ -21,20 +21,23 @@ body {
     font-family: 'sf-pro', sans-serif ;
     font-weight: 500;
 }
+.mash-menu, .mash-menu *:not(.fa){
+    font-family: 'sf-pro', sans-serif !important;
+}
 .fin-about-text {
     font-family: 'sf-pro', sans-serif ;
     font-size: 16px;
 }
 /*.add-to-compare, .more_info, .more_info_icon {*/
-/*background-color: #04316f;*/
-/*color: #fff;*/
-/*padding: 5px;*/
-/*border-radius: 6px;*/
-/*line-height: 2.1;*/
+    /*background-color: #04316f;*/
+    /*color: #fff;*/
+    /*padding: 5px;*/
+    /*border-radius: 6px;*/
+    /*line-height: 2.1;*/
 /*}*/
 
 /*.more_info_icon i,a {*/
-/*color: #fff !important;*/
+    /*color: #fff !important;*/
 /*}*/
 
 .m-b-30{
@@ -2056,7 +2059,7 @@ section#header2 {
 
 .personal_loan_landing_button{
 
-    background: #8D6E35; /* For browsers that do not support gradients */
+    background: #8D6E35; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #8D6E35); /* For Safari 5.1 to 6.0 */
 
@@ -2168,7 +2171,7 @@ a .personal_loan_landing_button.flash-button {
 
 .education_landing_button {
 
-    background: #D3D3D3; /* For browsers that do not support gradients */
+    background: #D3D3D3; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #D3D3D3); /* For Safari 5.1 to 6.0 */
 
@@ -2259,7 +2262,7 @@ a .education_landing_button{
 
     font-style: italic;
 
-    margin-bottom:26px;
+        margin-bottom:26px;
 
 }
 
@@ -2442,7 +2445,7 @@ a .education_landing_button{
 
 .maximizer_landing_button {
 
-    background: #d2ceb1; /* For browsers that do not support gradients */
+    background: #d2ceb1; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #d2ceb1, #fff); /* For Safari 5.1 to 6.0 */
 
@@ -2540,7 +2543,7 @@ a .maximizer_landing_button{
 
 .fdr_landing_button {
 
-    background: #25688C; /* For browsers that do not support gradients */
+    background: #25688C; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #25688C); /* For Safari 5.1 to 6.0 */
 
@@ -2777,7 +2780,7 @@ a .fdr_landing_button {
 
 .auto_button {
 
-    background: #C95254; /* For browsers that do not support gradients */
+    background: #C95254; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #C95254); /* For Safari 5.1 to 6.0 */
 
@@ -3222,7 +3225,7 @@ a:hover {
 
 #home_header_part{
 
-    /* background-image:url('../images/Home loan landing page banner 2.jpg');*/
+   /* background-image:url('../images/Home loan landing page banner 2.jpg');*/
     background-image:url('../images/banners/Home-loan-new-banner.jpg');
 
     background-repeat:no-repeat;
@@ -3266,7 +3269,7 @@ a:hover {
 
 .home_loan_landing_button{
 
-    background: #205F34; /* For browsers that do not support gradients */
+    background: #205F34; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #205F34); /* For Safari 5.1 to 6.0 */
 
@@ -3830,7 +3833,7 @@ a:hover {
 
 /* .personal_text p{
 
-	font-size:15px;
+    font-size:15px;
 
 } */
 
@@ -5070,7 +5073,7 @@ a:hover {
 
 .dps_landing_button {
 
-    background: #C7F0F9; /* For browsers that do not support gradients */
+    background: #C7F0F9; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #C7F0F9); /* For Safari 5.1 to 6.0 */
 
@@ -5348,7 +5351,7 @@ a .dps_landing_button {
 
 .credit_card_button {
 
-    background: #5AB1D2; /* For browsers that do not support gradients */
+    background: #5AB1D2; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #5AB1D2 ); /* For Safari 5.1 to 6.0 */
 
@@ -5378,7 +5381,7 @@ a .credit_card_button.flash-button{
 
 .debit_card_button {
 
-    background: #9F9164; /* For browsers that do not support gradients */
+    background: #9F9164; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #9F9164 ); /* For Safari 5.1 to 6.0 */
 
@@ -5422,7 +5425,7 @@ a .debit_card_button.flash-button{
 }
 /*.nopadding:hover{*/
 
-/*background-color:#f2f2f3;*/
+    /*background-color:#f2f2f3;*/
 
 /*}*/
 .All_cradit_card :hover {
@@ -5646,7 +5649,7 @@ hr {
     border-color: #fff;
 }
 /* .card_basic {
-	margin-top: 40px;
+    margin-top: 40px;
 } */
 /* debit car start */
 .debit_card_box1 {
@@ -5675,7 +5678,7 @@ hr {
     height:60px;
 }
 #debit_second_div{
-    /* background-image:url(../images/debit_background.jpg);*/
+   /* background-image:url(../images/debit_background.jpg);*/
     background-image:url(../images/banners/Debit-Card-New-Banner.jpg);
     height:450px;
     width:100%;
@@ -6314,13 +6317,13 @@ a .millionier_landing_button{
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    /* Firefox 1+*/
-    -webkit-animation-name: flash;
+/* Firefox 1+*/
+-webkit-animation-name: flash;
     -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     /*Safari 3-4*/
-    -moz-animation-name: flash;
+-moz-animation-name: flash;
     -moz-animation-duration: 1s;
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
@@ -7048,19 +7051,19 @@ a .auto_button.flash-button {
 
 /*for left bar fixed*/
 
-.fixedElement {
+        .fixedElement {
 
-    position: fixed;
+           position: fixed;
 
-    width: 262px;
+           width: 262px;
 
-    height: auto;
+           height: auto;
 
-    padding: 0px;
+           padding: 0px;
 
-    top: 0;
+           top: 0;
 
-}
+       }
 
 /*for compare page header fixed*/
 
@@ -7253,7 +7256,7 @@ a .auto_button.flash-button {
 
     transition: all 1s ease;
 
-    width: 249px;
+    width: 249px; 
 
 }
 
@@ -8281,7 +8284,7 @@ ol>li, ul>li{
     background-size: cover;
     height: 100%;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vh; 
     padding: 10px 0;
     background-attachment: fixed;
     font-family: 'Lato', sans-serif;
@@ -8318,7 +8321,7 @@ ol>li, ul>li{
 }
 .about-promo-ul>li>img{
     height: 200px;
-    width:200px;
+    width:200px; 
 }
 .about-promo-ul>li:nth-child(1)>img{
     margin-left: 6px;

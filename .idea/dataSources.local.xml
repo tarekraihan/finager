@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - finager_db@localhost" uuid="cf142830-5c6f-47e9-bb73-110df404d25b">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-    </data-source>
-    <data-source name="MySQL - @localhost" uuid="6cbb7951-8cd5-41f3-ba41-769a47bbe619">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-    </data-source>
+    <data-source name="MySQL - finager_db@localhost" uuid="cf142830-5c6f-47e9-bb73-110df404d25b" />
+    <data-source name="MySQL - @localhost" uuid="6cbb7951-8cd5-41f3-ba41-769a47bbe619" />
   </component>
 </project>
