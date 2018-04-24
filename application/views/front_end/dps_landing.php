@@ -80,7 +80,7 @@
 						<p>
                             FDR or Fixed Deposit Receipt is a deposit scheme where you can deposit minimum BDT 1 Lac for a certain period such as 1 year and after passing that period, bank will provide some extra amount as interest with principle amount.
 						</p>
-                        <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_dps">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>fdr.html"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -93,7 +93,7 @@
 						<p>
                             Lakhpoti & Millionaire scheme is a deposit scheme where you deposited a fixed amount of money monthly for a certain period of time and after completing that period bank will pay you BDT 1Lac.
                         </p>
-                        <a href="<?php echo base_url();?>en/millionaire"><span class="btn_landing_dps">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>millionaire.html"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -106,7 +106,7 @@
 						<p>
                             Money maximize is a deposit scheme where you deposit a fixed amount such as BDT 1Lac and after banks defined time. Bank will pay you double amount of that deposited amount. Banks offer various maximization offers such as 1.5 times, 2 times and 3 times etc.
                         </p>
-						<a href="<?php echo base_url();?>en/money_maximizer"><span class="btn_landing_dps">Go to slide</span></a>
+						<a href="<?php echo base_url();?>money-maximizer.html"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -119,7 +119,7 @@
 						<p>
                             Monthly Benefit Scheme is a deposit scheme where you deposit a certain amount of money such as BDT 1 Lac or more. Against that money, bank will pay you a fixed amount of money monthly for a certain period as interest.
                         </p>
-						<a href="<?php echo base_url();?>en/monthly_benefit"><span class="btn_landing_dps">Go to slide</span></a>
+						<a href="<?php echo base_url();?>monthly-benefit.html"><span class="btn_landing_dps">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -211,75 +211,171 @@
 		<div class="container-fluid">
 			<div class="heading_pr">
 				<div class="col-md-3 col-sm-6">
-					<div class="dps_heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme1.jpg" alt="img_logo_blue"/>
-						<p class="dps_loan">DPS</p>
-						<h4>DEPOSIT DISPUTES REACH RECORD HIGH</h4>
-						<p>
-							According to the Deposit Protection Scheme (DPS) quarterly statistics, the national average of a tenancy deposit in Q2 when renting a home in England and Wales
-							was £970.48 – an increase of 4.47% on Q1 2016.
-						</p><br/>
-						<p>
-							The costs of moving into a rental property are increasingly on the rise despite campaigns from charity organisations such as Shelter in a bid to cut agent fees to 
-							tenants – some charging over £1000 in administrations fees.
-						</p>
-						<div class="dps_read"><a href="<?php echo base_url();?>blog/dps1">Read More</a></div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="dps_heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme2.jpg" alt="img_logo_blue"/>
-						<p class="dps_loan">DPS</p>
-						<h4>What is different about the tenancy deposit schemes?</h4>
-						<p>
-							There are several answers to this question.
-						</p>
-						<p>
-							The first is that there are going, from 1 April 2016, to be two new custodial tenancy deposit schemes. One from TDS and one from My Deposits.
-						</p>
-						<p>
-							Another is, from 1 April 2016, very little.
-						</p><br/>
-						<h4><b>In the beginning</b></h4>
-						<p>
-							When the tenancy deposit schemes first launched in 2007 it was fairly easy.
-						</p>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('DPS',0);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="dps_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="dps_loan"><a href="<?php echo base_url();?>blog/dps/" target="_blank">DPS</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="dps_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="dps_heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme1.jpg" alt="img_logo_blue"/>
+                            <p class="dps_loan"><a href="<?php echo base_url();?>blog/dps/" target="_blank">DPS</a></p>
+                            <h4>DEPOSIT DISPUTES REACH RECORD HIGH</h4>
+                            <p>
+                                According to the Deposit Protection Scheme (DPS) quarterly statistics, the national average of a tenancy deposit in Q2 when renting a home in England and Wales
+                                was £970.48 – an increase of 4.47% on Q1 2016.
+                            </p><br/>
+                            <p>
+                                The costs of moving into a rental property are increasingly on the rise despite campaigns from charity organisations such as Shelter in a bid to cut agent fees to
+                                tenants – some charging over £1000 in administrations fees.
+                            </p>
+                            <div class="dps_read"><a href="<?php echo base_url();?>blog/dps/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 
-						<div class="dps_read"><a href="<?php echo base_url();?>blog/dps2">Read More</a></div>
-					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="dps_heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme3.jpg" alt="img_logo_blue"/>
-						<p class="dps_loan">DPS</p>
-						<h4>The DPS Insured Scheme</h4>
-						<p>
-							From 1st April 2013, The DPS will be your one-stop shop for tenancy deposit protection, offering a choice of custodial or insurance-based protection. 
-							Whether you’re a landlord or an agent, you’ll have peace of mind that your tenant’s deposit will be protected by the largest supplier of deposit protection in the UK.
-						</p>
-						<p>
-							Computershare are pleased to announce that they have received approval from the Department of Communities and Local Government (DCLG) to operate an ‘insured’ Tenancy
-							Deposit Protection (TDP) scheme and that, subject to the 
-						</p>
-						<div class="dps_read"><a href="<?php echo base_url();?>blog/dps3">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('DPS',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="dps_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="dps_loan"><a href="<?php echo base_url();?>blog/dps/" target="_blank">DPS</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="dps_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="dps_heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme2.jpg" alt="img_logo_blue"/>
+                            <p class="dps_loan"><a href="<?php echo base_url();?>blog/dps/" target="_blank">DPS</a></p>
+                            <h4>What is different about the tenancy deposit schemes?</h4>
+                            <p>
+                                There are several answers to this question.
+                            </p>
+                            <p>
+                                The first is that there are going, from 1 April 2016, to be two new custodial tenancy deposit schemes. One from TDS and one from My Deposits.
+                            </p>
+                            <p>
+                                Another is, from 1 April 2016, very little.
+                            </p><br/>
+                            <h4><b>In the beginning</b></h4>
+                            <p>
+                                When the tenancy deposit schemes first launched in 2007 it was fairly easy.
+                            </p>
+
+                            <div class="dps_read"><a href="<?php echo base_url();?>blog/dps/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="dps_heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme4.jpg" alt="img_logo_blue"/>
-						<p class="dps_loan">DPS</p>
-						<h4>Where do we stand currently with tenancy deposits?</h4>
-						<p>
-							Deposit protection was introduced eight years ago, but some confusion still remains about a landlord’s obligations. In this month’s column, Alex Byard brings us up to date…
-						</p>
-						<p>
-							As we have discussed many times before, it has been mandatory for residential landlords to protect deposits taken against a new assured shorthold tenancy since April 2007.
-						</p>
-						<p>
-							It is important to note that the law does not apply to any other types of tenancy, but you cannot contract out of the obligation. 
-						</p>
-						<div class="dps_read"><a href="<?php echo base_url();?>blog/dps4">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('DPS',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="dps_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="dps_loan"><a href="<?php echo base_url();?>blog/dps/" target="_blank">DPS</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="dps_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="dps_heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme3.jpg" alt="img_logo_blue"/>
+                            <p class="dps_loan"><a href="<?php echo base_url();?>blog/dps/" target="_blank">DPS</a></p>
+                            <h4>The DPS Insured Scheme</h4>
+                            <p>
+                                From 1st April 2013, The DPS will be your one-stop shop for tenancy deposit protection, offering a choice of custodial or insurance-based protection.
+                                Whether you’re a landlord or an agent, you’ll have peace of mind that your tenant’s deposit will be protected by the largest supplier of deposit protection in the UK.
+                            </p>
+                            <p>
+                                Computershare are pleased to announce that they have received approval from the Department of Communities and Local Government (DCLG) to operate an ‘insured’ Tenancy
+                                Deposit Protection (TDP) scheme and that, subject to the
+                            </p>
+                            <div class="dps_read"><a href="<?php echo base_url();?>blog/dps/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
+				</div>
+				<div class="col-md-3 col-sm-6">
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('DPS',3);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="dps_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="dps_loan"><a href="<?php echo base_url();?>blog/dps/" target="_blank">DPS</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="dps_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="dps_heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/DepositPensionScheme4.jpg" alt="img_logo_blue"/>
+                            <p class="dps_loan"><a href="<?php echo base_url();?>blog/dps/" target="_blank">DPS</a></p>
+                            <h4>Where do we stand currently with tenancy deposits?</h4>
+                            <p>
+                                Deposit protection was introduced eight years ago, but some confusion still remains about a landlord’s obligations. In this month’s column, Alex Byard brings us up to date…
+                            </p>
+                            <p>
+                                As we have discussed many times before, it has been mandatory for residential landlords to protect deposits taken against a new assured shorthold tenancy since April 2007.
+                            </p>
+                            <p>
+                                It is important to note that the law does not apply to any other types of tenancy, but you cannot contract out of the obligation.
+                            </p>
+                            <div class="dps_read"><a href="<?php echo base_url();?>blog/dps/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
 				</div>
 			</div>
 		</div>

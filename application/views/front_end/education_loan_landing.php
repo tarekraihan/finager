@@ -78,7 +78,7 @@
                     <p>
                         Car loan is provided by banks and non-banking financial institutes for purchasing a new or reconditioned car. You can apply for a car loan if you have enough monthly income to repay the loan. Banks will pay up to 70% of the price of the car.
                     </p>
-                    <a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_education">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>auto-loan.html"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -88,7 +88,7 @@
                     <h4 class="edu_spnrs">Home Loan</h4>
                     <p>Home loan is a loan granted by banks and other financial institutes for purchasing a home or apartment. You can apply for a home loan if you can fulfill the criteria stated by banks. Banks will grant that amount of money which you can repay easily.
                     </p>
-                    <a href="<?php echo base_url();?>en/home_loan"><span class="btn_landing_education">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>home-loan.html"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -99,7 +99,7 @@
                     <p>
                         SME loan is a loan which helps in business expansion, working capital, purchasing fixed asset for small and medium enterprises. This loan is provided by banks to encourage the entrepreneurs to develop and expand their business.
                     </p>
-                    <a href="<?php echo base_url();?>en/#"><span class="btn_landing_education">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -110,7 +110,7 @@
                     <p>
                         Personal loan is provided by banks to its customer for various reasons such as medical treatment loan, Hajj loan, and festival loan and overall any purpose to fulfill personal needs. You can get up to BDT 5 Lac for 3 year period as personal loan.
                     </p>
-                    <a href="<?php echo base_url();?>en/personal_loan"><span class="btn_landing_education">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>personal-loan.html"><span class="btn_landing_education">Go to slide</span></a>
                 </div>
             </div>
         </div>
@@ -191,82 +191,176 @@
         </div>
     </div>
 </section>
-<link href="../../index.html"/>
 <section id="heading_title">
     <div class="container-fluid">
         <div class="heading_pr">
             <div class="col-md-3 col-sm-6">
-                <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student-loan-debt.jpg" alt="img_logo_blue"/>
-                    <p class="edu_H_loan">Education Loan</p>
-                    <h4>International Student Loans</h4>
-                    <p>
-                        The International Student Loan Center provides international students and study abroad students with access to a range of loan products to help fund their
-                        education abroad. Get started by finding your student loan in just 10 seconds.
-                    </p>
-                    <p>
-                        To compare loans, the first step is to use our comparison tool above. Select the college you will be attending and the amount of money you
-                        need to borrow. You can then see the loans that meet your criteria.
-                    </p>
-                    <p>
-                        Next, see what lenders are available at your school. Compare the terms and conditions and
-                    </p>
-                    <div class="edu_home_read"><a href="<?php echo base_url();?>blog/student_loan1">Read More</a></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student_loan2.jpg" alt="img_logo_blue"/>
-                    <p class="edu_H_loan">Education Loan</p>
-                    <h4>How to Compare Student Loan Options</h4>
-                    <p>
-                        Have you already checked out our International Student Loan Comparison Tool, but realized that you weren’t exactly sure how to compare the results given?
-                        Deciding which loan is the right one for you can feel a little overwhelming, but here is a cheat sheet on how to compare your different loan options and
-                        choose the best one!
-                    </p>
-                    <p>
-                        Now, before jumping into the loan jargon here are some basic questions you should ask yourself in order to compare loans efficiently:
-                    <ul style="margin-left:15px;">
-                        <li>Do I plan to work and study at the same time?</li>
+                <?php
+                $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Education Loan',0);
+                if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                    <div class="heading_text">
+                        <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                        <p class="H_loan"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Education Loan</a></p>
+                        <h4><?php echo $post_details->post_title;?></h4>
+                        <p>
+                            <?php
+                            $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                            echo $content;
+                            ?>
+                        </p>
+                        <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }else{
+                    ?>
+                    <div class="heading_text">
+                        <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student-loan-debt.jpg" alt="img_logo_blue"/>
+                        <p class="H_loan"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Education Loan</a></p>
+                        <h4>International Student Loans</h4>
+                        <p>
+                            The International Student Loan Center provides international students and study abroad students with access to a range of loan products to help fund their
+                            education abroad. Get started by finding your student loan in just 10 seconds.
+                        </p>
+                        <p>
+                            To compare loans, the first step is to use our comparison tool above. Select the college you will be attending and the amount of money you
+                            need to borrow. You can then see the loans that meet your criteria.
+                        </p>
+                        <p>
+                            Next, see what lenders are available at your school. Compare the terms and conditions and
+                        </p>
+                        <div class="home_read"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }
+                ?>
 
-                    </ul>
-                    </p>
-                    <div class="edu_home_read"><a href="<?php echo base_url();?>blog/student_loan2">Read More</a></div>
-                </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student_loan3.jpg" alt="img_logo_blue"/>
-                    <p class="edu_H_loan">Education Loan</p>
-                    <h4>What International Student Loan is Right for Me?</h4>
-                    </p>
-                    When choosing an international student loan, there are several questions you need to take into consideration. These questions include:
-                    <p>
-                        Now, before jumping into the loan jargon here are some basic questions you should ask yourself in order to compare loans efficiently:
-                    <ul>
-                        <li>How much money can you get to pay for college costs and/or living expenses?</li>
-                        <li>How much are the monthly payments?</li>
-                        <li>When do the payments start and when do they end?</li>
-                    </ul>
-                    </p>
+                <?php
+                $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Education Loan',1);
+                if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                    <div class="heading_text">
+                        <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                        <p class="H_loan"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Education Loan</a></p>
+                        <h4><?php echo $post_details->post_title;?></h4>
+                        <p>
+                            <?php
+                            $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                            echo $content;
+                            ?>
+                        </p>
+                        <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }else{
+                    ?>
+                    <div class="heading_text">
+                        <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student_loan2.jpg" alt="img_logo_blue"/>
+                        <p class="H_loan"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Education Loan</a></p>
+                        <h4>How to Compare Student Loan Options</h4>
+                        <p>
+                            Have you already checked out our International Student Loan Comparison Tool, but realized that you weren’t exactly sure how to compare the results given?
+                            Deciding which loan is the right one for you can feel a little overwhelming, but here is a cheat sheet on how to compare your different loan options and
+                            choose the best one!
+                        </p>
+                        <p>
+                            Now, before jumping into the loan jargon here are some basic questions you should ask yourself in order to compare loans efficiently:
+                        <ul style="margin-left:15px;">
+                            <li>Do I plan to work and study at the same time?</li>
 
-                    <div class="edu_home_read"><a href="<?php echo base_url();?>blog/student_loan3">Read More</a></div>
-                </div>
+                        </ul>
+                        </p>
+                        <div class="home_read"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }
+                ?>
+
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student_loan4.jpg" alt="img_logo_blue"/>
-                    <p class="edu_H_loan">Education Loan</p>
-                    <h4><b>The top ways to get student loan forgiveness</b></h4>
-                    <p>
-                        Student loans can be a great investment in your future, or can be a huge burden if not fully thought out or abused. If you currently have a student loan or are
-                        thinking about getting student loans, you should know that student loans CANNOT discharged in bankruptcy (in most cases).
-                    </p>
-                    <p>
-                        This means that they will stick with you for the rest of your life, unless you pay them off, or,
-                    </p>
-                    <div class="edu_home_read"><a href="<?php echo base_url();?>blog/student_loan4">Read More</a></div>
-                </div>
+                <?php
+                $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Education Loan',2);
+                if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                    <div class="heading_text">
+                        <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                        <p class="H_loan"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Education Loan</a></p>
+                        <h4><?php echo $post_details->post_title;?></h4>
+                        <p>
+                            <?php
+                            $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                            echo $content;
+                            ?>
+                        </p>
+                        <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }else{
+                    ?>
+                    <div class="heading_text">
+                        <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student_loan3.jpg" alt="img_logo_blue"/>
+                        <p class="H_loan"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Education Loan</a></p>
+                        <h4>What International Student Loan is Right for Me?</h4>
+                        </p>
+                        When choosing an international student loan, there are several questions you need to take into consideration. These questions include:
+                        <p>
+                            Now, before jumping into the loan jargon here are some basic questions you should ask yourself in order to compare loans efficiently:
+                        <ul>
+                            <li>How much money can you get to pay for college costs and/or living expenses?</li>
+                            <li>How much are the monthly payments?</li>
+                            <li>When do the payments start and when do they end?</li>
+                        </ul>
+                        </p>
+
+                        <div class="home_read"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }
+                ?>
+
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <?php
+                $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Education Loan',3);
+                if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                    <div class="heading_text">
+                        <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                        <p class="H_loan"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Education Loan</a></p>
+                        <h4><?php echo $post_details->post_title;?></h4>
+                        <p>
+                            <?php
+                            $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                            echo $content;
+                            ?>
+                        </p>
+                        <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }else{
+                    ?>
+                    <div class="heading_text">
+                        <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/student_loan4.jpg" alt="img_logo_blue"/>
+                        <p class="H_loan"> <a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Education Loan</a></p>
+                        <h4><b>The top ways to get student loan forgiveness</b></h4>
+                        <p>
+                            Student loans can be a great investment in your future, or can be a huge burden if not fully thought out or abused. If you currently have a student loan or are
+                            thinking about getting student loans, you should know that student loans CANNOT discharged in bankruptcy (in most cases).
+                        </p>
+                        <p>
+                            This means that they will stick with you for the rest of your life, unless you pay them off, or,
+                        </p>
+                        <div class="home_read"><a href="<?php echo base_url();?>blog/education-loan/" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>

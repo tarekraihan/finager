@@ -82,36 +82,104 @@
 			<div class="row">
 				<h3 class="debit_head">Debit Card Top Blog</h3>
 				<div class="col-md-3 col-sm-3">
-					<a href="<?php echo base_url();?>blog/debit_card1">
-						<div class="debit_blog_box">
-							<img src="<?php echo base_url();?>resource/blog/images/debit_card7.png" alt="Image Not Found" />
-							<p><i>The Basics of Your Debit Card</i></p>
-						</div>
-					</a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Debit Card',0);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }else{
+                    ?>
+                    <a href="<?php echo base_url();?>blog">
+                        <div class="debit_blog_box">
+                            <img src="<?php echo base_url();?>resource/blog/images/debit_card6.jpg" alt="Image Not Found" />
+                            <p><i>What Is a Debit Card and How Is It Used?</i></p>
+                        </div>
+                    </a>
+                    <?php
+                    }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-3">
-					<a href="<?php echo base_url();?>blog/debit_card2">
-						<div class="debit_blog_box">
-							<img src="<?php echo base_url();?>resource/blog/images/debit_card6.jpg" alt="Image Not Found" />
-							<p><i>What Is a Debit Card and How Is It Used?</i></p>
-						</div>
-					</a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Debit Card',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }else{
+                        ?>
+                        <a href="<?php echo base_url();?>blog">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo base_url();?>resource/blog/images/debit_card6.jpg" alt="Image Not Found" />
+                                <p><i>What Is a Debit Card and How Is It Used?</i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-3">
-					<a href="<?php echo base_url();?>blog/debit_card3">
-						<div class="debit_blog_box">
-							<img src="<?php echo base_url();?>resource/blog/images/debit_card5.jpg" alt="Image Not Found" />
-							<p><i>Chip Debit Cards: What You Need to Know</i></p>
-						</div>
-					</a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Debit Card',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }else{
+                        ?>
+                        <a href="<?php echo base_url();?>blog">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo base_url();?>resource/blog/images/debit_card6.jpg" alt="Image Not Found" />
+                                <p><i>What Is a Debit Card and How Is It Used?</i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-3">
-					<a href="<?php echo base_url();?>blog/debit_card4">
-						<div class="debit_blog_box">
-							<img src="<?php echo base_url();?>resource/blog/images/debit_card4.png" alt="Image Not Found" />
-							<p><i>The Ultimate Guide to Prepaid Debit Cards</i></p>
-						</div>
-					</a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Debit Card',3);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }else{
+                        ?>
+                        <a href="<?php echo base_url();?>blog">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo base_url();?>resource/blog/images/debit_card6.jpg" alt="Image Not Found" />
+                                <p><i>What Is a Debit Card and How Is It Used?</i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
 				</div>
 			</div>
 		</div>

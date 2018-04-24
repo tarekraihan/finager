@@ -89,7 +89,7 @@
 						<p>
                             Car loan is provided by banks and non-banking financial institutes for purchasing a new or reconditioned car. You can apply for a car loan if you have enough monthly income to repay the loan. Banks will pay up to 70% of the price of the car.
 						</p>
-                        <a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_home">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>auto-loan.html"><span class="btn_landing_home">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -102,7 +102,7 @@
 						<p>
                             Personal loan is provided by banks to its customer for various reasons such as medical treatment loan, Hajj loan, and festival loan and overall any purpose to fulfill personal needs. You can get up to BDT 5 Lac for 3 year period as personal loan.
 						</p>
-                        <a href="<?php echo base_url();?>en/personal_loan"><span class="btn_landing_home">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>personal-loan.html"><span class="btn_landing_home">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -115,12 +115,12 @@
 						<p>
                             Education loan is granted by banks for helping the needy student. With the help of education loan, students fulfill their study expenses. Education loan is granted for 5 year period and up to BDT 10 lac is granted maximum loan amount.
 						</p>
-                        <a href="<?php echo base_url();?>en/education_loan"><span class="btn_landing_home">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>education-loan.html"><span class="btn_landing_home">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="Sponsored_box1">
-						<div class="spnrs"><img class="img-responsive"src="<?php echo base_url();?>resource/front_end/images/sme.jpg" alt="img_logo_blue"/></div>
+						<div class="spnrs"><img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/sme.jpg" alt="img_logo_blue"/></div>
 						<div class="auto_spnrs1">
 							<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/home-text-bg.png" alt="text-bg"/>
 							<h4>SME Loan</h4>
@@ -128,7 +128,7 @@
 						<p>
                             SME loan is a loan which helps in business expansion, working capital, purchasing fixed asset for small and medium enterprises. This loan is provided by banks to encourage the entrepreneurs to develop and expand their business.
                         </p>
-                        <a href="#"><span class="btn_landing_home">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>"><span class="btn_landing_home">Go to slide</span></a>
 						
 					</div>
 				</div>
@@ -215,71 +215,164 @@
 		</div>
 	</div>
 	</section>
-	<link href="../../index.html"/>
 	 <section id="heading_title">
 		<div class="container-fluid">
 			<div class="heading_pr">
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/hl.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Nearly half of mortgage borrowers don’t shop</h4>
-						<p>
-							Buying a home is a big purchase, but it’s just that: a purchase. When it comes to spending money on our daily expenses, we have lots of options to help us 
-							find the best deal possible. Take, for example, digital gadgets. To get a good deal you can search for sales, find coupon codes, and research whether it’s
-							less expensive to buy something from a big box retailer or on the manufacturer’s website.
-						</p>
-						<p>
-							We shop to find the best price for laptops or appliances,
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/home_loan1">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Home Loan',0);
+                    if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Home Loan</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                    ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/Home-loan2.jpg" alt="img_logo_blue"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Home Loan</a></p>
+                            <h4>Understanding the mortgage process: Your home loan toolkit</h4>
+                            <p>
+                                The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the
+                                loan that’s best for you and your family.
+                            </p>
+                            <p>
+                                To help you navigate the steps you have to take to get a mortgage, take a look at our new booklet, “Your Home Loan Toolkit: A Step-By-Step Guide .”
+                                This consumer-friendly booklet can help you as you think about, apply for, and close on a mortgage.
+                            </p>
+                            <div class="home_read"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Read More</a></div>
+                        </div>
+                    <?php
+                    }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/Home-loan2.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Understanding the mortgage process: Your home loan toolkit</h4>
-						<p>
-							The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the 
-							loan that’s best for you and your family.
-						</p>
-						<p>
-							To help you navigate the steps you have to take to get a mortgage, take a look at our new booklet, “Your Home Loan Toolkit: A Step-By-Step Guide .” 
-							This consumer-friendly booklet can help you as you think about, apply for, and close on a mortgage.
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/home_loan2">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Home Loan',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Home Loan</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/Home-loan2.jpg" alt="img_logo_blue"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Home Loan</a></p>
+                            <h4>Understanding the mortgage process: Your home loan toolkit</h4>
+                            <p>
+                                The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the
+                                loan that’s best for you and your family.
+                            </p>
+                            <p>
+                                To help you navigate the steps you have to take to get a mortgage, take a look at our new booklet, “Your Home Loan Toolkit: A Step-By-Step Guide .”
+                                This consumer-friendly booklet can help you as you think about, apply for, and close on a mortgage.
+                            </p>
+                            <div class="home_read"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/home-loan3.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Fannie Mae Homepath Program</h4>
-						<p>
-							Fannie Mae Homepath Program is now The Home Ready™ Mortgage Buying a home is a scary experience, especially when you are on a budget and trying to
-							get as many of your must-haves as possible within that budget. Getting a home at a good price, at least one that you like and that you want to live 
-							in is not easy. Fannie Mae has helped people for years to do this, though. With the Fannie Mae Homepath Program people have been able to find and purchase
-							homes easily and with fewer financial risks.  
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/home_loan3">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Home Loan',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Home Loan</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/Home-loan2.jpg" alt="img_logo_blue"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Home Loan</a></p>
+                            <h4>Understanding the mortgage process: Your home loan toolkit</h4>
+                            <p>
+                                The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the
+                                loan that’s best for you and your family.
+                            </p>
+                            <p>
+                                To help you navigate the steps you have to take to get a mortgage, take a look at our new booklet, “Your Home Loan Toolkit: A Step-By-Step Guide .”
+                                This consumer-friendly booklet can help you as you think about, apply for, and close on a mortgage.
+                            </p>
+                            <div class="home_read"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/home-loan4.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Tips For First Time Home Buyers</h4>
-						<p>
-							If you are about to buy your first house, make sure you know what you are doing and that you don’t get caught up in a rookie mistake. There are a lot of things 
-							to consider when buying a home, both financially and personally. It is not as simple as one may think. Here are a few tips for first time home buyers.
-						</p>
-						<p>
-							When visiting homes, look at how many rooms it has, the size of each room, and the home’s layout. Know what you are seeking and do measurements to calculate 
-							the appropriate size of each room, particularly your bedroom.
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/home_loan4">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Home Loan',3);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Home Loan</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="home_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/Home-loan2.jpg" alt="img_logo_blue"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Home Loan</a></p>
+                            <h4>Understanding the mortgage process: Your home loan toolkit</h4>
+                            <p>
+                                The Know Before You Owe mortgage disclosure rule makes getting a mortgage easier for homebuyers and refinancers. It helps you shop for the
+                                loan that’s best for you and your family.
+                            </p>
+                            <p>
+                                To help you navigate the steps you have to take to get a mortgage, take a look at our new booklet, “Your Home Loan Toolkit: A Step-By-Step Guide .”
+                                This consumer-friendly booklet can help you as you think about, apply for, and close on a mortgage.
+                            </p>
+                            <div class="home_read"><a href="<?php echo base_url();?>blog/home-loan/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 				</div>
 			</div>
 		</div>

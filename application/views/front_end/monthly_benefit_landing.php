@@ -103,7 +103,7 @@
                     <p>
                         FDR or Fixed Deposit Receipt is a deposit scheme where you can deposit minimum BDT 1 Lac for a certain period such as 1 year and after passing that period, bank will provide some extra amount as interest with principle amount.
                     </p>
-                    <a href="<?php echo base_url();?>en/fdr"><span class="btn_monthly_benefit">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>fdr.html"><span class="btn_monthly_benefit">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -116,7 +116,7 @@
                     <p>
                         DPS or Deposit Pension Scheme is a deposit scheme where you can deposit a small amount in monthly basis for a certain period and after that period bank will pay more money than you deposited and the extra money will be considered as interest.
                     </p>
-                    <a href="<?php echo base_url();?>en/dps"><span class="btn_monthly_benefit">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>dps.html"><span class="btn_monthly_benefit">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -129,7 +129,7 @@
                     <p>
                         Lakhpoti & Millionaire scheme is a deposit scheme where you deposited a fixed amount of money monthly for a certain period of time and after completing that period bank will pay you BDT 1Lac.
                     </p>
-                    <a href="<?php echo base_url();?>en/millionaire"><span class="btn_monthly_benefit">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>millionaire.html"><span class="btn_monthly_benefit">Go to slide</span></a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -142,7 +142,7 @@
                     <p>
                         Money maximize is a deposit scheme where you deposit a fixed amount such as BDT 1Lac and after banks defined time. Bank will pay you double amount of that deposited amount. Banks offer various maximization offers such as 1.5 times, 2 times and 3 times etc.
                     </p>
-                    <a href="<?php echo base_url();?>en/money_maximizer"><span class="btn_monthly_benefit">Go to slide</span></a>
+                    <a href="<?php echo base_url();?>money-maximizer.html"><span class="btn_monthly_benefit">Go to slide</span></a>
                 </div>
             </div>
         </div>
@@ -235,65 +235,88 @@
     <div class="container-fluid">
         <div class="heading_pr">
             <div class="col-md-3 col-sm-6">
-                <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/monthly_benefit.jpg" alt="img_logo_blue"/>
-                    <h4>Money Multiplier Plan</h4>
-                    <b>Let Your Money Multiply</b>
-                    <p>
-                        The Money Multiplier feature gives you the liquidity of a Savings Account coupled with high earnings of a Fixed Deposit. This is achieved by creating a Fixed Deposit
-                        linked to your Savings Account providing you the following unique facilities.
-                    </p>
-                    <b>Maximum Returns</b>
-                    <p>
-                        Your money is never idle. Creation of a linked FD ensures higher rate of interest on your Savings Bank Deposits. You can issue instructions through any channel such as
-                        the ICICI Bank Branch, ICICI Bank Phone Banking and ICICI Bank's
-                    </p>
-                    <div class="home_read"><a href="#">Read More</a></div>
-                </div>
+                <?php
+                $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Money Maximizer',0);
+                if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                    <div class="fdr_heading_text">
+                        <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                        <p class="fdr_loan"><a href="<?php echo base_url();?>blog/monthly-benefit-scheme/" target="_blank">Monthly Benefit Scheme</a></p>
+                        <h4><?php echo $post_details->post_title;?></h4>
+                        <p>
+                            <?php
+                            $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                            echo $content;
+                            ?>
+                        </p>
+                        <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }?>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/monthly_benefit.jpg" alt="img_logo_blue"/>
-                    <h4>How to Open a Money Market Account</h4>
-                    <p>
-                        Here’s how to open a money market account, a type of savings account that offers the security of FDIC insurance, the higher interest rates of a savings account and
-                        the flexibility of access that comes with a checking account:
-                    </p>
-                    <p>
-                        <b>• Shop around</b>. Find a bank or credit union that’s offering a competitive interest rate with the features you value the most — don’t just go for the bank down
-                        the street or where you have your checking account (unless, of course, they are offering a great deal for bundling multiple accounts). For many consumers, the
-                        highest possible interest rate will be the biggest factor,
-                    </p>
-                    <div class="home_read"><a href="#">Read More</a></div>
-                </div>
+                <?php
+                $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Monthly Benefit Scheme',1);
+                if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                    <div class="fdr_heading_text">
+                        <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                        <p class="fdr_loan"><a href="<?php echo base_url();?>blog/monthly-benefit-scheme/" target="_blank">Monthly Benefit Scheme</a></p>
+                        <h4><?php echo $post_details->post_title;?></h4>
+                        <p>
+                            <?php
+                            $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                            echo $content;
+                            ?>
+                        </p>
+                        <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }?>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/monthly_benefit.jpg" alt="img_logo_blue"/>
-                    <h4>What is a Certificate of Deposit (CD)?</h4>
-                    <p>
-                        Sold by banks, certificates of deposit (better known as CDs) are low-risk –- and relatively low-return — investments suitable for cash you don’t need for months or
-                        years. If you leave the money alone during the investment period (known as the “term” or “duration”), the bank will pay you an interest rate slightly higher than what
-                        you would have earned in a money market or checking account. All gains from CDs are taxable as income, unless they are in a tax-deferred (IRA) or tax-free (Roth IRA)
-                        account.
-                        CDs are among the safest investment a persona can make. The interest rate is determined ahead of time,
-                    </p>
-                    <div class="home_read"><a href="#">Read More</a></div>
-                </div>
+                <?php
+                $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Monthly Benefit Scheme',2);
+                if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                    <div class="fdr_heading_text">
+                        <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                        <p class="fdr_loan"><a href="<?php echo base_url();?>blog/monthly-benefit-scheme/" target="_blank">Monthly Benefit Scheme</a></p>
+                        <h4><?php echo $post_details->post_title;?></h4>
+                        <p>
+                            <?php
+                            $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                            echo $content;
+                            ?>
+                        </p>
+                        <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }?>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="heading_text">
-                    <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/monthly_benefit.jpg" alt="img_logo_blue"/>
-                    <h4>First anniversary of tenancy deposit protection</h4>
-                    <p>
-                        Deposits from over 3,500 tenants have been protected during the first year of the States’ approved tenancy deposit scheme, mydeposits Jersey. Since 2 November 2015,
-                        landlords and letting agents have been legally required to protect their tenants’ deposits by placing them in the mydeposits Jersey scheme. Under the law all landlords
-                        and agents who take a deposit from their tenant on a new, renewed or varied tenancy agreement must transfer the money to mydeposits within 30 working days of receiving
-                        it. Those who fail to do so could be fined up to £2,000.
-                    </p>
-
-                    <div class="home_read"><a href="#">Read More</a></div>
-                </div>
+                <?php
+                $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Monthly Benefit Scheme',3);
+                if($post_details) {
+                    $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                    ?>
+                    <div class="fdr_heading_text">
+                        <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                        <p class="fdr_loan"><a href="<?php echo base_url();?>blog/monthly-benefit-scheme/" target="_blank">Monthly Benefit Scheme</a></p>
+                        <h4><?php echo $post_details->post_title;?></h4>
+                        <p>
+                            <?php
+                            $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                            echo $content;
+                            ?>
+                        </p>
+                        <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                    </div>
+                    <?php
+                }?>
             </div>
         </div>
     </div>

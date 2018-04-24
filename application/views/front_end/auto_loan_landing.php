@@ -219,10 +219,9 @@
                             $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
                             ?>
                             <div class="heading_text">
-                                <img class="img-responsive"
-                                     src="<?php echo $post_image->image_url; ?>"
+                                <img class="img-responsive" src="<?php echo $post_image->image_url; ?>"
                                      alt="img_logo_blue"/>
-                                <p class="H_loan">Auto Loan</p>
+                                <p class="H_loan"><a href="<?php echo base_url();?>blog/auto-loan/" target="_blank"> Auto Loan</a></p>
                                 <h4><?php echo $post_details->post_title;?></h4>
                                 <p>
                                     <?php
@@ -247,7 +246,7 @@
                             <img class="img-responsive"
                                  src="<?php echo $post_image->image_url; ?>"
                                  alt="img_logo_blue"/>
-                            <p class="H_loan">Auto Loan</p>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/auto-loan/" target="_blank">Auto Loan</a></p>
                             <h4><?php echo $post_details->post_title;?></h4>
                             <p>
                                 <?php
@@ -272,7 +271,7 @@
                             <img class="img-responsive"
                                  src="<?php echo $post_image->image_url; ?>"
                                  alt="img_logo_blue"/>
-                            <p class="H_loan">Auto Loan</p>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/auto-loan/" target="_blank">Auto Loan</a></p>
                             <h4><?php echo $post_details->post_title;?></h4>
                             <p>
                                 <?php
@@ -297,7 +296,7 @@
                             <img class="img-responsive"
                                  src="<?php echo $post_image->image_url; ?>"
                                  alt="img_logo_blue"/>
-                            <p class="H_loan">Auto Loan</p>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/auto-loan/" target="_blank">Auto Loan</a></p>
                             <h4><?php echo $post_details->post_title;?></h4>
                             <p>
                                 <?php

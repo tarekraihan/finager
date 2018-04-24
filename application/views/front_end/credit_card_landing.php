@@ -80,36 +80,68 @@
             <div class="row">
                 <h3 class="debit_head">Credit Card Top Blog</h3>
                 <div class="col-md-3 col-sm-3">
-                    <a href="<?php echo base_url();?>blog/credit_card1">
-                        <div class="debit_blog_box">
-                            <img src="<?php echo base_url();?>resource/blog/images/CreditCard.png" alt="Image Not Found" />
-                            <p><i>6 Best Credit Card Bonuses Available Today</i></p>
-                        </div>
-                    </a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',0);
+                        if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                    <?php
+                        }
+                    ?>
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <a href="<?php echo base_url();?>blog/credit_card2">
-                        <div class="debit_blog_box">
-                            <img src="<?php echo base_url();?>resource/blog/images/credit-card3.jpg" alt="Image Not Found" />
-                            <p><i>Authorization, Clearing and Settlement: How MasterCard Works</i></p>
-                        </div>
-                    </a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <a href="<?php echo base_url();?>blog/credit_card4">
-                        <div class="debit_blog_box">
-                            <img src="<?php echo base_url();?>resource/blog/images/credit-card2.jpg" alt="Image Not Found" />
-                            <p><i>Top Ten Credit Cards – January 2017</i></p>
-                        </div>
-                    </a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <a href="<?php echo base_url();?>blog/credit_card6">
-                        <div class="debit_blog_box">
-                            <img src="<?php echo base_url();?>resource/blog/images/Creditcard4.png" alt="Image Not Found" />
-                            <p><i>Refine Your New Year’s Resolutions With These Credit Card Tools</i></p>
-                        </div>
-                    </a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',3);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
