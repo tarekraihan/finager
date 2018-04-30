@@ -92,7 +92,8 @@ body {
 .sidebar-nav li a{
     color: #fff !important;
     font-size: 12px;
-    padding: 5px 20px !important;
+    padding: 8px 20px !important;
+    font-size: 15px;
 }
 .sidebar-nav .dropdown-header {
     display: none !important;
