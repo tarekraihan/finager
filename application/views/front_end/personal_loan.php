@@ -1131,51 +1131,10 @@
 		var loan_urls = loan_url1+'-vs-'+loan_url2;
 		if(loan_url1 != '' && loan_url2 != ''){
 			window.location.href = "<?php echo base_url();?>compare-personal-loans/"+loan_urls+".html";
-		}else{
-			$('#comparison_min_two_alert').modal('show');
-		}
-
-
-	});
-
-
-   /* $('#go_compare').click(function(){
-        //alert(1);
-
-
-        var amount = $('#finalAssest').val();
-        var principal_amount = "&principal_amount="+amount;
-
-        var month = $('#finalLiability').val();
-        var month_limit = "&month_limit="+month;
-
-        var  formData = $('.cart_anchor').children('img').data();
-        var loan_id1 = "loan_id1="+formData.loan_id;
-
-        var  formData = $('.cart_anchor01').children('img').data();
-        var loan_id2 = "&loan_id2="+formData.loan_id;
-
-        var loan_ids = loan_id1+loan_id2+principal_amount+month_limit;
-        if(loan_id1 != '' && loan_id2 != ''){
-            //console.log(loan_ids);
-            $.ajax
-            ({
-                type: "POST",
-                url: "<?php //echo base_url();?>personal_loan/ajax_go_compare_page",
-                data: loan_ids,
-                success: function(msg)
-                {
-                    if(msg != 'error'){
-
-                        window.location.href = "<?php //echo base_url();?>en/personal_loan_compare";
-                    }
-                }
-            });
-        }else{
-            alert("Please add 2 card for compare ! ")
+		}else {
+            $('#comparison_min_two_alert').modal('show');
         }
 
-
-    });*/
+	});
 
 </script>

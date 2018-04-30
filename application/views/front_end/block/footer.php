@@ -155,7 +155,7 @@
                         <div role="tabpanel" class="tab-pane active" id="nofilter">
                             <div class="no_filter_tab" id="search_result">
                                 <div class="col-md-4">
-                                    <a href="<?php echo base_url();?>debit-card.html">
+                                    <a href="<?php echo base_url();?>debit-cards.html">
                                        <div class="no_filte_div">
                                           <i class="fa fa-credit-card" aria-hidden="true"></i>                                        
                                           <span>Debit Card</span>

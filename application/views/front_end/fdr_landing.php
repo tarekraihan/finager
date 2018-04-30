@@ -3,7 +3,7 @@
 		<div class="fdr_header_text">
             <h3>Fixed Deposit Receipt</h3>
 			<p>FDR comparison made easy</p>
-			<a href="<?php echo base_url(); ?>en/all_fdr" class="start_compare"><span class="fdr_landing_button flash-button">Start Comparison</span></a>
+			<a href="javascript:void(0);" class="start_compare"><span class="fdr_landing_button flash-button">Start Comparison</span></a>
 		</div>
           		<div class="container">
 			<div class="fdr_loan_icon">

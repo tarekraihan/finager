@@ -1024,33 +1024,6 @@
             });
         });
 
-/*
-        $('#go_compare').click(function(){
-
-            var  formData = $('.cart_anchor').children('img').data();
-            var loan_id1 = "loan_id1="+formData.loan_id;
-            var  formData = $('.cart_anchor01').children('img').data();
-            var loan_id2 = "&loan_id2="+formData.loan_id;
-            var amount = $('#finalAssest').val();
-            var principal_amount = "&principal_amount="+amount;
-            var year = $('#finalLiability').val();
-            var year_limit = "&year_limit="+year;
-            var loan_ids = loan_id1+loan_id2+principal_amount+year_limit;
-            if(loan_id1 != '' && loan_id2 != ''){
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo base_url();?>auto_loan/ajax_go_compare_page",
-                    data: loan_ids,
-                    success: function(msg){
-                        if(msg != 'error'){
-                            window.location.href = "<?php echo base_url();?>en/car_loan_compare";
-                        }
-                    }
-                });
-            }else{
-                alert("Please add 2 card for compare ! ");
-            }
-        });*/
 
         $('#go_compare').click(function(){
             if( ! $('.cart_anchor01').children('img').data()){
