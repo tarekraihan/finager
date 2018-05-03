@@ -11,13 +11,13 @@
                     <div class="col-sm-6 col-xs-12">
                         <ul class="footer-socio">
                             <li>
-                                <a href="javascript:;">
+                                <a href="javascript:(0);">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/Facebook-1.png">
                                 </a>
                             </li>
 
                             <li>
-                                <a href="javascript:;">
+                                <a href="javascript:(0);">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/G+-1.png">
                                 </a>
                             </li>
@@ -28,13 +28,13 @@
                             </li>
 
                             <li>
-                                <a href="javascript:;">
+                                <a href="javascript:(0);">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/RSS-1.png">
                                 </a>
                             </li>
 
                             <li>
-                                <a href="javascript:;">
+                                <a href="javascript:(0);">
                                     <img src="<?php echo base_url();?>resource/front_end/images/social/Twitter-1.png">
                                 </a>
                             </li>
@@ -69,8 +69,8 @@
                             <li><a href="<?php echo base_url();?>millionaire.html">Lakhpoti & Millionaire</a></li>
                             <li><a href="<?php echo base_url();?>money-maximizer.html">Money Maximizer</a></li>
                             <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit Scheme</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Thrusts Sector</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Thrusts Sector</a></li>
                         </ul>
                     </div>
 
@@ -95,25 +95,26 @@
                         <p class="footer-menu-title">Others</p>
 
                         <ul class="no-padding footer-menus">
-                            <li><a href="<?php echo base_url();?>">Blog</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Forum</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Tax Guide</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Calculator</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
-                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
+                            <li><a href="<?php echo base_url();?>blog/" target="_blank">Blog</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forum</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Tax Guide</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Calculator</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
                         </ul>
                     </div>
 
                     <div class="col-sm-3 col-xs-12 text-center">
                         <p class="footer-menu-title uppercase">Talk With Us</p>
 
-                        <p class="no-margin"><span class="hello">Hello Finager :</span> +8801998-123123</p>
-                        <p class="no-margin">info: info@finager.com</p>
-                        <p class="no-margin">support: support@finager.com</p>
+                        <p class="no-margin"><span class="hello">Hello Finager :</span> <a href="tel:+8801998123123">+8801998-123123</a></p>
+                        <p class="no-margin">Info: info@finager.com</p>
+                        <p class="no-margin">Support: support@finager.com</p>
+                        <p class="no-margin"><a href="<?php echo base_url();?>about-us.html">About Us</a> </p>
 
-                        <h5 class="footer-menu-title uppercase margin_top_10">Subscribe us</h5>
+                        <h5 class="footer-menu-title uppercase margin_top_10">Subscribe Us</h5>
 
                             <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail" id="txtSubscribeEmail">
                             <button type="button" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
@@ -125,7 +126,7 @@
 
                 <p class="text-center footer-ass-text no-margin">
                     finager.com&copy;2017 All right reserved. Use of this site constitutes of our
-                    <a href="<?php echo base_url();?>en/terms_condition">Terms of use</a> and <a href="<?php echo base_url();?>en/PrivacyPolicy">Privacy Policy</a>
+                    <a href="<?php echo base_url();?>terms-condition.html">Terms of use</a> and <a href="<?php echo base_url();?>privacy-policy.html">Privacy Policy</a>
                 </p>
             </div>
         </div>
@@ -154,7 +155,7 @@
                         <div role="tabpanel" class="tab-pane active" id="nofilter">
                             <div class="no_filter_tab" id="search_result">
                                 <div class="col-md-4">
-                                    <a href="<?php echo base_url();?>en/debit_card">
+                                    <a href="<?php echo base_url();?>debit-cards.html">
                                        <div class="no_filte_div">
                                           <i class="fa fa-credit-card" aria-hidden="true"></i>                                        
                                           <span>Debit Card</span>
@@ -162,7 +163,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="<?php echo base_url();?>en/home_loan">
+                                    <a href="<?php echo base_url();?>home-loan.html">
                                        <div class="no_filte_div">
                                           <i class="fa fa-home" aria-hidden="true"></i>                                       
                                           <span>Home Loan</span>
@@ -170,7 +171,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="<?php echo base_url();?>en/personal_loan">
+                                    <a href="<?php echo base_url();?>personal-loan.html">
                                        <div class="no_filte_div">
                                           <i class="fa fa-male" aria-hidden="true"></i>                                       
                                           <span>Personal Loan</span>
@@ -178,7 +179,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="<?php echo base_url();?>en/car_loan">
+                                    <a href="<?php echo base_url();?>auto-loan.html">
                                        <div class="no_filte_div">
                                           <i class="fa fa-car" aria-hidden="true"></i>                                       
                                           <span>Auto Loan</span>
@@ -186,7 +187,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="<?php echo base_url();?>en/education_loan">
+                                    <a href="<?php echo base_url();?>education-loan.html">
                                        <div class="no_filte_div">
                                           <i class="fa fa-graduation-cap" aria-hidden="true"></i>                                       
                                           <span>Education Loan</span>
@@ -194,7 +195,7 @@
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="<?php echo base_url();?>en/fdr">
+                                    <a href="<?php echo base_url();?>fdr.html">
                                        <div class="no_filte_div">
                                           <i class="fa fa-archive" aria-hidden="true"></i>                                       
                                           <span>FDR</span>
@@ -375,8 +376,7 @@ if($result){
 <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">-->
 
 <script>
-
-
+    
     function overlay(s, l) {
         $('.overlay').remove();
         if( s )
@@ -398,7 +398,44 @@ if($result){
         }else{
             $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> More info");
         }
-    });
+    })
+//stcikey sidebar START
+/*
+$(document).ready(function(){
+	function sticky_relocate() {
+		var topOffset = 0;
+		var window_top = $(window).scrollTop();
+		var footer_top = $(".footer").offset().top;
+        var target_div = $('#sticky-anchor').offset();
+		var div_top = target_div.top;
+		var div_height = $("#sidebar").height();
+		var win_height = $(window).height();
+
+        var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
+        if (isNaN(top)) {
+            console.log("something is wrong, no top");
+        } else {
+            console.log(top);
+        }
+		
+		if (window_top + div_height > footer_top){
+			$('#sidebar').removeClass('stick');    
+		}
+		else if (window_top > div_top) {
+			$('#sidebar').addClass('stick');
+		}
+		else {
+			$('#sidebar').removeClass('stick');
+		}
+	}
+
+	$(function () {
+		$(window).scroll(sticky_relocate);
+		sticky_relocate();
+	});
+});
+*/
+//stcikey sidebar END
 
     $("#buttons button").click(function() {
         var id = $(this).attr("id");
@@ -406,6 +443,7 @@ if($result){
         $("#pages div#" + id + "").css("display", "block");
     });
 
+<!--Esc key press to hide search modal-->
 
 jQuery(document).keypress(function(e) {
   if (e.keyCode == 27) {

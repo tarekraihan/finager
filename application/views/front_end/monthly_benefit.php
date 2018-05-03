@@ -744,12 +744,27 @@
 
 
     $(".draggable").on("dragstop",function(ev,ui){
-
         setTimeout(function(){ //Updated by Tarek on 14-05-2017
             data_caching();
             loadData(page = null);
         }, 1000);
+    });
 
+    $("#finalAssest,#finalLiability").change(function () {
+        loadData(page = null);
+        data_caching();
+    });
+
+    $("#alreadySaved").find(".next").click(function(){
+        setTimeout(function(){
+            loadData(page = null);
+        }, 1000);
+    });
+
+    $("#alreadySaved").find(".prev").click(function(){
+        setTimeout(function(){
+            loadData(page = null);
+        }, 1000);
     });
 
     //for show hide (more info & Available Offer)

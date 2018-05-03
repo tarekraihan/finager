@@ -19,7 +19,7 @@
     z-index: 99;
 }
 .feature-bg {
-    margin: 175px 0 !important;
+    margin: 180px 0 !important;
 }
 #home_search {
     height: 664px;
@@ -52,9 +52,7 @@ position: relative;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
 }
-.fin-about-text {
-    font-family: 'Lato', sans-serif;
-}
+
 h3.fin-about-heading>span {
 font-size: 36px;
 }
@@ -70,7 +68,7 @@ font-size: 22px;
     <div class="header container-fluid">
         <div class="feature-bg">
             <div class="find-bar">
-                <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/finager-promotional-log.png" alt="Finager Promotional Logo" /><br/><br/>
+                <img class="logo-lg" src="<?php echo base_url(); ?>resource/front_end/images/finager-logo.png" alt="Finager Promotional Logo" /><br/>
                 <div class="home-search-section" data-toggle="modal" data-target="#serchModal" >
                     <img class="search-image" src="<?php echo base_url(); ?>resource/front_end/images/10.png" alt="Search box" />
                     <p class="typewrite" data-period="3000" data-type='[ "Looking for..."]'>

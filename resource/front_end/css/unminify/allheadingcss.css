@@ -1,133 +1,133 @@
-/* for credit card page */
-#creditCard_header{
-	background-image:url(../images/CreaditCardmainpage.jpg);
-	background-size:cover;
-	background-position:center center;
-	background-repeat:no-repeat;
-	width:100%;
-	height:300px;
-}
-/* for debit card */
-#debitCard_header{
-	background-image:url(../images/Debit-Card-Main-Page-Banner.jpg);
-	background-size:cover;
-	background-position:center center;
-	background-repeat:no-repeat;
-	width:100%;
-	height:300px;
-}
-/*for home loan */
-#home_header{
-	background-image:url(../images/HomeLoanMainPageBackground1680x320.jpg);
-	background-size:cover;
-	background-position:center center;
-	background-repeat:no-repeat;
-	width:100%;
-	height:300px;
-}
-/* for personal loan */
-#personal_header{
-	background-image:url(../images/PersonalLoanMainpagebackground.jpg);
-	background-size:cover;
-	background-position:center center;
-	background-repeat:no-repeat;
-	width:100%;
-	height:300px;
-}
-/* for auto loan */
-#auto_header{
-	background-image:url(../images/CarLoanBackground.jpg);
-	background-size:cover;
-	background-position:center center;
-	background-repeat:no-repeat;
-	width:100%;
-	height:300px;
-	margin-bottom:10px;
-}
-/* Education loan start */
-#education_header_part{
-	background-image:url(../images/Education_background.jpg);
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center center;
-	width:100%;
-	height:429px;
-	position:relative;
-}
-/* for FDR Loan */
-#fdr_header{
-	background-image:url(../images/FDR-Main-Page-Banner.jpg);
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center center;
-	width:100%;
-	height:320px;
-	position:relative;
-}
-#dps_header{
-	background-image:url(../images/DPSMainPageBanner.jpg);
-	background-size:cover;
-	background-position:center center;
-	background-repeat:no-repeat;
-	width:100%;
-	height:300px;
-	margin-bottom:10px;
-}
-#education_header{
-    background-image:url(../images/Education-Loan-Main-Page-Banner.jpg);
-    background-size:cover;
-    background-position:center center;
-    background-repeat:no-repeat;
-    width:100%;
-    height:300px;
-}
-/* for home loan compare page */
-.compare_table td {
-    width: 33%;
-}
-.home-loan-Compare-hr1{
-	width:43.5%;
-}
-.home-loan-Compare-hr3{
-	width:45.3%;
-}
-.home-loan-Compare-hr4{
-	width: 39.5%;
-}
-.loan-iframe{
-	width:100%;
-	height:auto;
-	overflow:hidden;
-}
-.card_query{
-	border-bottom: 2px solid #DADADA;
-}
-.calborder {
-    width: 246px;
-    border-bottom: 2px solid #DADADA;
-}
-.monthWrap .calborder {
-    width: 244px;
-}
-.quest {
-    font-size: 14px;
-}
-#alreadySaved .inputWrapper {
-    margin: 0 0 5px 0;
-}
-#avgSave .inputWrapper {
-    margin: -4px 0 0 8px;
-}
-#tenureType label {
-    font-size: 16px;
-    margin-top: 4px;
-}
-.slideWrapper {
-    padding: 15px 20px 0 20px;
-}
-#interest .inputWrapper {
-    margin: -3px 0 0 10px;
-}
-.calcSection {
-    padding: 8px 0 0px 20px;
+/* for credit card page */
+#creditCard_header{
+	background-image:url(../images/CreaditCardmainpage.jpg);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:300px;
+}
+/* for debit card */
+#debitCard_header{
+	background-image:url(../images/Debit-Card-Main-Page-Banner.jpg);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:300px;
+}
+/*for home loan */
+#home_header{
+	background-image:url(../images/HomeLoanMainPageBackground1680x320.jpg);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:300px;
+}
+/* for personal loan */
+#personal_header{
+	background-image:url(../images/PersonalLoanMainpagebackground.jpg);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:300px;
+}
+/* for auto loan */
+#auto_header{
+	background-image:url(../images/CarLoanBackground.jpg);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:300px;
+	margin-bottom:10px;
+}
+/* Education loan start */
+#education_header_part{
+	background-image:url(../images/Education_background.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	width:100%;
+	height:429px;
+	position:relative;
+}
+/* for FDR Loan */
+#fdr_header{
+	background-image:url(../images/FDR-Main-Page-Banner.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	width:100%;
+	height:320px;
+	position:relative;
+}
+#dps_header{
+	background-image:url(../images/DPSMainPageBanner.jpg);
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	width:100%;
+	height:300px;
+	margin-bottom:10px;
+}
+#education_header{
+    background-image:url(../images/Education-Loan-Main-Page-Banner.jpg);
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    width:100%;
+    height:300px;
+}
+/* for home loan compare page */
+.compare_table td {
+    width: 33%;
+}
+.home-loan-Compare-hr1{
+	width:43.5%;
+}
+.home-loan-Compare-hr3{
+	width:45.3%;
+}
+.home-loan-Compare-hr4{
+	width: 39.5%;
+}
+.loan-iframe{
+	width:100%;
+	height:auto;
+	overflow:hidden;
+}
+.card_query{
+	border-bottom: 2px solid #DADADA;
+}
+.calborder {
+    width: 246px;
+    border-bottom: 2px solid #DADADA;
+}
+.monthWrap .calborder {
+    width: 244px;
+}
+.quest {
+    font-size: 14px;
+}
+#alreadySaved .inputWrapper {
+    margin: 0 0 5px 0;
+}
+#avgSave .inputWrapper {
+    margin: -4px 0 0 8px;
+}
+#tenureType label {
+    font-size: 16px;
+    margin-top: 4px;
+}
+.slideWrapper {
+    padding: 15px 20px 0 20px;
+}
+#interest .inputWrapper {
+    margin: -3px 0 0 10px;
+}
+.calcSection {
+    padding: 8px 0 0px 20px;
 }

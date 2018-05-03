@@ -80,36 +80,68 @@
             <div class="row">
                 <h3 class="debit_head">Credit Card Top Blog</h3>
                 <div class="col-md-3 col-sm-3">
-                    <a href="<?php echo base_url();?>blog/credit_card1">
-                        <div class="debit_blog_box">
-                            <img src="<?php echo base_url();?>resource/blog/images/CreditCard.png" alt="Image Not Found" />
-                            <p><i>6 Best Credit Card Bonuses Available Today</i></p>
-                        </div>
-                    </a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',0);
+                        if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                    <?php
+                        }
+                    ?>
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <a href="<?php echo base_url();?>blog/credit_card2">
-                        <div class="debit_blog_box">
-                            <img src="<?php echo base_url();?>resource/blog/images/credit-card3.jpg" alt="Image Not Found" />
-                            <p><i>Authorization, Clearing and Settlement: How MasterCard Works</i></p>
-                        </div>
-                    </a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <a href="<?php echo base_url();?>blog/credit_card4">
-                        <div class="debit_blog_box">
-                            <img src="<?php echo base_url();?>resource/blog/images/credit-card2.jpg" alt="Image Not Found" />
-                            <p><i>Top Ten Credit Cards – January 2017</i></p>
-                        </div>
-                    </a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <a href="<?php echo base_url();?>blog/credit_card6">
-                        <div class="debit_blog_box">
-                            <img src="<?php echo base_url();?>resource/blog/images/Creditcard4.png" alt="Image Not Found" />
-                            <p><i>Refine Your New Year’s Resolutions With These Credit Card Tools</i></p>
-                        </div>
-                    </a>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',3);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <a href="<?php echo $post_details->guid ?>" target="_blank">
+                            <div class="debit_blog_box">
+                                <img src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>" />
+                                <p><i><?php echo $post_details->post_title;?></i></p>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -140,55 +172,35 @@
 	<section id="Basic">
 		<div class="container">
 		<h3><i>The Basics</i></h3><hr/>
-			<div class="card_basic">
+			<div class="card_basic row">
 				<div class="col-md-6 col-sm-6">
-					<h4><strong>Credit Cards 101</strong></h4>
-					<p>Quick quiz: What’s the difference between a credit card and a debit card? Why is it important to carry credit? How do credit cards work? Don’t panic if you don’t…
+					<h4><strong>What is the minimum eligibility for getting a credit card?</strong></h4>
+					<p>Applicant must be a Bangladeshi citizen aged between 21 years to 60 years and his monthly income must be above BDT 20,000.
 					</p>
 					<hr/>
 				</div>
+
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>How does a user change his pin number linked with his credit card?</strong></h4>
+                    <p>A user can change his pin number by using ATM machine software or by going to the issuer and apply a request to change the pin number.
+                    </p>
+                    <hr/>
+                </div>
+
 				<div class="col-md-6 col-sm-6">
-					<h4><strong>11 Things You Should Know Before You Get Your First<br/>
-						Credit Card</strong></h4>
-					<p>Quick quiz: What’s the difference between a credit card and a debit card? Why is it important to carry credit? How do credit cards work? Don’t panic if you don’t…
+					<h4><strong>How can a user prevent credit card fraud?</strong></h4>
+					<p>A user must not share his pin number with anyone and must not select his phone number, date of birth etc. as his pin number and finally he must monitor every transaction of his card.
 					</p>
 					<hr/>
 				</div>
-			</div>
-			<div class="card_basic">
-				<div class="col-md-6 col-sm-6">
-					<h4><strong>What’s My Credit Score?</strong></h4>
-						<p>Your credit score is a number based on how you’ve repaid debts in the past. The higher it
-						is, the better you look to potential creditors (who also look to…
-						</p>
-						<hr/>
-				</div>
-				<div class="col-md-6 col-sm-6">
-					<h4><strong>How Is Credit Card Interest Calculated?</strong></h4>
-					<p>So your bank tells you that your credit card has a 15% APR. What does that actually mean?
-						How does your bank calculate your interest rate, and how does that…
-					</p>
-					<hr/>
-				</div>
-			</div>
-			<div class="card_basic">
-				<div class="col-md-6 col-sm-6">
-					<h4><strong>Secured Credit Cards vs. Unsecured: What’s the Differ<br/>
-						ence?</strong>
-					</h4>
-					<p>Here’s a catch-22: you need a credit card to boost your credit, but you can’t boost your
-						credit without a credit card. Secured credit cards can help people with poor…
-					</p>
-					<hr/>
-				</div>
-				<div class="col-md-6 col-sm-6">
-					<h4><strong>What Is a Balance Transfer and Should I Consider Doing<br/>
-						One?</strong></h4>
-					<p>In a perfect world, no one would carry a balance on their credit card. We would all pay our
-						bills in full each month and never have to worry about…
-					</p>
-					<hr/>
-				</div>
+
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>How does a user request for a replacement card?</strong></h4>
+                    <p>To request for a replacement card a user must fill the application to issue a replacement card and send it to the card section of the bank or card issuer organization.
+                    </p>
+                    <hr/>
+                </div>
+
 			</div>
 		</div>
 	</section>

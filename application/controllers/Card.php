@@ -1418,11 +1418,11 @@ class Card extends CI_Controller
                                             </tr>
                                             <tr>
                                                 <td>Minimum Credit</td>
-                                                <td>'.$row->credit_limit_min_salaried.'</td>
+                                                <td>BDT '.$row->credit_limit_min_salaried.'</td>
                                             </tr>
                                             <tr>
                                                 <td>Maximum Credit</td>
-                                                <td>'.$row->credit_limit_max_salaried.'</td>
+                                                <td>BDT '.$row->credit_limit_max_salaried.'</td>
                                             </tr>
                                             <tr>
                                                 <td>Year of Experience on Earning</td>

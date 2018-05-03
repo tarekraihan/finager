@@ -127,8 +127,8 @@ $(function(event) {
 				else if (valInput <= 50000 )
 				{
 					var marLft_input =  ((valInput/diff)-1) *35;
-					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-2});
-					$('#alreadySaved').find('.draggable').animate({left:0});
+					$(this).parents('.slideWrapper').find('ul').animate({marginLeft:-0});
+					$('#alreadySaved').find('.draggable').animate({left:35});
 				}
 
 				else if(valInput == 9950000)

@@ -19,15 +19,15 @@
 			<div class="home_loan_icon">
 				<div class="All_cradit_card">
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit="1000000-3"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-8.png" alt="Get 40 Lac"/>
-							<p>Get 40 Lac </p>
+						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit="1000000-6"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-8.png" alt="Get 20 Lac"/>
+							<p>Get 20 Lac </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit = "500000-3"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-7.png" alt="Get 20 Lac"/>
-							<p> Get 20 Lac </p>
+						<a class="land_modal maximizer_deposit_benefit" data-maximizer_deposit_benefit = "500000-6"><div class="All_card">
+							<img src="<?php echo base_url(); ?>resource/front_end/images/Money-Maximizer-7.png" alt="Get 10 Lac"/>
+							<p> Get 10 Lac </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	
@@ -90,7 +90,7 @@
 						<p>
                             FDR or Fixed Deposit Receipt is a deposit scheme where you can deposit minimum BDT 1 Lac for a certain period such as 1 year and after passing that period, bank will provide some extra amount as interest with principle amount.
                         </p>
-						<a href=""><span class="btn_mony_max">Go to slide</span></a>
+						<a href="<?php echo base_url();?>fdr.html"><span class="btn_mony_max">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -103,7 +103,7 @@
 						<p>
                             DPS or Deposit Pension Scheme is a deposit scheme where you can deposit a small amount in monthly basis for a certain period and after that period bank will pay more money than you deposited and the extra money will be considered as interest.
                         </p>
-						<a href=""><span class="btn_mony_max">Go to slide</span></a>
+						<a href="<?php echo base_url();?>dps.html"><span class="btn_mony_max">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -116,7 +116,7 @@
 						<p>
                             Lakhpoti & Millionaire scheme is a deposit scheme where you deposited a fixed amount of money monthly for a certain period of time and after completing that period bank will pay you BDT 1Lac.
                         </p>
-						<a href=""><span class="btn_mony_max">Go to slide</span></a>
+						<a href="<?php echo base_url()?>millionaire.html"><span class="btn_mony_max">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -129,7 +129,7 @@
 						<p>
                             Monthly Benefit Scheme is a deposit scheme where you deposit a certain amount of money such as BDT 1 Lac or more. Against that money, bank will pay you a fixed amount of money monthly for a certain period as interest.
                         </p>
-						<a href=""><span class="btn_mony_max">Go to slide</span></a>
+						<a href="<?php echo base_url()?>monthly-benefit.html"><span class="btn_mony_max">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -222,92 +222,127 @@
 		<div class="container-fluid">
 			<div class="heading_pr">
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
-						</p>
-						<div class="home_read"><a href="#">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Money Maximizer',0);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/money-maximizer/" target="_blank">Money Maximizer</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }?>
+
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
-						</p>
-						<div class="home_read"><a href="#">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Money Maximizer',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/money-maximizer/" target="_blank">Money Maximizer</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }?>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
-						</p>
-						<div class="home_read"><a href="#">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Money Maximizer',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/money-maximizer/" target="_blank">Money Maximizer</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }?>
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/img_logo_blue.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Home Loan</p>
-						<h4>Heading / Title</h4>
-						<p>Lorem Ipsum is simply dummy text of the printing
-							and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text ever since the 1500s,
-							when an unknown printer took a galley of type and
-							scrambled it to make a type specimen book. It has
-							survived not only five centuries, but also the leap into
-							electronic typesetting, remaining essentially
-							unchanged. It was popularised in the 1960s with the
-							release of Letraset sheets containing Lorem Ipsum
-							passages, and more recently with desktop publishing
-							software like Aldus PageMaker including versions of
-							Lorem Ipsum.
-						</p>
-						<div class="home_read"><a href="#">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Money Maximizer',3);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/money-maximizer/" target="_blank">Money Maximizer</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }?>
 				</div>
 			</div>
 		</div>
 	</section>
+
+    <section id="Basic">
+        <div class="container">
+            <h3><i>The Basics</i></h3><hr/>
+            <div class="card_basic row">
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>For how long a user can deposit his money?</strong></h4>
+                    <p>About 11 year to 12 year.
+                    </p>
+                    <hr/>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>Does any loan available against deposited money?</strong></h4>
+                    <p>Yes, 80% of the deposited amount can be available as loan amount.
+                    </p>
+                    <hr/>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>How will the maturity amount be paid to user?</strong></h4>
+                    <p>The maturity amount will be paid through user’s account which is linked with deposit scheme.
+                    </p>
+                    <hr/>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>What is the minimum eligibility for investing in Money Maximizer scheme?</strong></h4>
+                    <p>Applicant must be a Bangladeshi citizen aged between 21 years to 60 years.
+                    </p>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </section>
+
 	<section id="footer_money_max">
 		<div class="container">
 			<div class="footer_pr">

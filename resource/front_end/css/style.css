@@ -1,11 +1,16 @@
 @charset "utf-8";
 
 /* CSS Document */
-
+@font-face {
+    font-family: 'sf-pro';
+    src: url('../fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Regular.otf').format("opentype"),
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     font-size: 15px !important;
     /*font-family: 'Ubuntu', sans-serif;*/
-    font-family: 'Lato', sans-serif;
+    font-family: 'sf-pro';
     font-weight: 500;
 }
 
@@ -13,8 +18,15 @@ body {
     margin:0;
     padding:0;
     /*font-family: 'Ubuntu', sans-serif;*/
-    font-family: 'Lato', sans-serif;
+    font-family: 'sf-pro', sans-serif ;
     font-weight: 500;
+}
+.mash-menu, .mash-menu *:not(.fa){
+    font-family: 'sf-pro', sans-serif !important;
+}
+.fin-about-text {
+    font-family: 'sf-pro', sans-serif ;
+    font-size: 16px;
 }
 /*.add-to-compare, .more_info, .more_info_icon {*/
     /*background-color: #04316f;*/
@@ -27,6 +39,10 @@ body {
 /*.more_info_icon i,a {*/
     /*color: #fff !important;*/
 /*}*/
+
+.m-b-30{
+    margin-bottom: 30px;
+}
 .card_btn_apllication {
     margin: 30px 24px;
     padding: 6px 17px;
@@ -59,7 +75,7 @@ body {
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
     /*font-family: 'Ubuntu', sans-serif;*/
-    font-family: 'Lato', sans-serif;
+    font-family: 'sf-pro', sans-serif ;
     font-weight: 600 !important;
 }
 .no-list-style{
@@ -76,13 +92,14 @@ body {
 .sidebar-nav li a{
     color: #fff !important;
     font-size: 12px;
-    padding: 5px 20px !important;
+    padding: 8px 20px !important;
+    font-size: 15px;
 }
 .sidebar-nav .dropdown-header {
     display: none !important;
 }
 .nav>li>a:focus, .nav>li>a:hover{
-	background:#337ab7 !important;
+    background:#337ab7 !important;
     color:#fff;
 }
 /*Vertical menu END*/
@@ -163,19 +180,19 @@ body {
 }
 
 @media only screen and (min-width: 1281px){
-	.hamburger.is-open{
-		right: 200px !important;
-	}
+    .hamburger.is-open{
+        right: 200px !important;
+    }
 
 }
 
 @media only screen and (max-width: 1280px){
 
-	.hamburger.is-open{
+    .hamburger.is-open{
 
-		right: 195px;
+        right: 195px;
 
-	}
+    }
 
 }
 
@@ -191,11 +208,7 @@ body {
 
 #CategoryIcon {
     background: rgba(255,255,255,255);
-
-    /*background: rgba(233, 238, 245, 0.33);
-
-    box-shadow: 0px 0px 5px 1px #dedede;*/
-
+    box-shadow: 0px 0px 5px 1px #dedede;
 }
 
 #CategoryIcon{
@@ -1187,13 +1200,13 @@ section#header2 {
 
 #hiden_div {
 
-	position: fixed;
+    position: fixed;
 
-	z-index: 999;
+    z-index: 999;
 
-	right: 0;
+    right: 0;
 
-	width: 100%;
+    width: 100%;
 
     bottom:0;
 
@@ -2213,42 +2226,42 @@ a .education_landing_button{
 
 #mony_max_header_part{
 
-	/*background-image:url(../images/Money-Maximizer-Landing-Page-Banner-F.jpg);*/
+    /*background-image:url(../images/Money-Maximizer-Landing-Page-Banner-F.jpg);*/
     background-image:url(../images/banners/Money-Maximizer-New-Banner.jpg);
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-size:cover;
+    background-size:cover;
 
-	width:100%;
+    width:100%;
 
-	height:450px;
+    height:450px;
 
-	position:relative;
+    position:relative;
 
 }
 
 .mony_max_header_text {
 
-	text-align: right;
+    text-align: right;
 
-	top: 120px;
+    top: 120px;
 
-	position: relative;
+    position: relative;
 
-	float: right;
+    float: right;
 
-	margin-right: 220px;
+    margin-right: 220px;
 
 }
 
 .mony_max_header_text p {
 
-	color: #6D4848;
+    color: #6D4848;
 
-	font-size: 18px;
+    font-size: 18px;
 
-	font-style: italic;
+    font-style: italic;
 
         margin-bottom:26px;
 
@@ -2256,11 +2269,11 @@ a .education_landing_button{
 
 .mony_max_header_text h3 {
 
-	color: #585858;
+    color: #585858;
 
-	font-size: 35px;
+    font-size: 35px;
 
-	font-style: italic;
+    font-style: italic;
 
 }
 
@@ -2278,26 +2291,26 @@ a .education_landing_button{
 
 #mony_max_header{
 
-	/*background-image:url(../images/Money-Maximizer-Main-Page.jpg);*/
+    /*background-image:url(../images/Money-Maximizer-Main-Page.jpg);*/
     background-image:url(../images/banners/SND-New-Banner.jpg);
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-size:cover;
+    background-size:cover;
 
-	background-position:center center;
+    background-position:center center;
 
-	width:100%;
+    width:100%;
 
-	height:320px;
+    height:320px;
 
-	position:relative;
+    position:relative;
 
 }
 
 .btn_mony_max{
 
-	border:1px solid #CECAAA;
+    border:1px solid #CECAAA;
 
     padding: 5px 26px;
 
@@ -2313,7 +2326,7 @@ a .education_landing_button{
 
 .btn_mony_max:hover{
 
-	background-color:#CECAAA;
+    background-color:#CECAAA;
 
 }
 
@@ -2381,41 +2394,41 @@ a .education_landing_button{
 
 #money_max_biggest_brand {
 
-	background-image:url(../images/Money-Maximizer-middle.png);
+    background-image:url(../images/Money-Maximizer-middle.png);
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-size:cover;
+    background-size:cover;
 
-	height:385px;
+    height:385px;
 
-	width:100%;
+    width:100%;
 
-	background-position:center center;
+    background-position:center center;
 
-	margin-top:30px;
+    margin-top:30px;
 
 }
 
 #footer_money_max{
 
-	background-image:url(../images/Money-Maximizer-footerbg.png);
+    background-image:url(../images/Money-Maximizer-footerbg.png);
 
-	background-position:center center;
+    background-position:center center;
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-size:cover;
+    background-size:cover;
 
-	height:427px;
+    height:427px;
 
-	width:100%;
+    width:100%;
 
 }
 
 .money_max_woman {
 
-	margin-top: 36px;
+    margin-top: 36px;
 
 }
 
@@ -2563,11 +2576,11 @@ a .fdr_landing_button {
 
 #availableOffer1 {
 
-	border: 1px solid #d09f5c;
+    border: 1px solid #d09f5c;
 
-	padding: 16px;
+    padding: 16px;
 
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 
 }
 
@@ -3821,7 +3834,7 @@ a:hover {
 
 /* .personal_text p{
 
-	font-size:15px;
+    font-size:15px;
 
 } */
 
@@ -4592,7 +4605,7 @@ a:hover {
 
     width: 100%;
 
-    min-height: 580px;
+    min-height: 620px;
 
     border: 1px solid #DADADA;
 
@@ -4937,7 +4950,7 @@ a:hover {
 
     width: 100%;
 
-    min-height: 580px;
+    min-height: 610px;
 
     border: 1px solid #DADADA;
 
@@ -5127,14 +5140,14 @@ a .dps_landing_button {
 
 .best_card h4 {
 
-    margin-top: 60px;
+    margin-top: 0px;
 
     line-height:28px;
 
 }
 
 .best_card h1 {
-
+    margin-top: 100px;
     font-weight:bold;
 
 }
@@ -5369,7 +5382,7 @@ a .credit_card_button.flash-button{
 
 .debit_card_button {
 
-	background: #9F9164; /* For browsers that do not support gradients */    
+    background: #9F9164; /* For browsers that do not support gradients */    
 
     background: -webkit-linear-gradient(left, #fff, #9F9164 ); /* For Safari 5.1 to 6.0 */
 
@@ -5379,13 +5392,13 @@ a .credit_card_button.flash-button{
 
     background: linear-gradient(to right, #fff, #9F9164); /* Standard syntax (must be last) */
 
-	width: 180px;
+    width: 180px;
 
-	padding: 9px 20px;
+    padding: 9px 20px;
 
-	text-align: center;
+    text-align: center;
 
-	font-size: 16px;
+    font-size: 16px;
 
 }
 
@@ -5571,16 +5584,22 @@ a .debit_card_button.flash-button{
 }
 #Basic{
     background-image:url('../images/Back.jpg');
-    background-position:center center;
-    background-size:cover;
-    background-repeat:no-repeat;
-    height:490px;
-    width:100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+.card_basic h4 {
+    margin-top: 30px;
 }
 .card_basic p {
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 20px;
     text-align:justify;
+    min-height: 42px;
 }
 .All_card4 p {
     margin-top: 31px;
@@ -5631,7 +5650,7 @@ hr {
     border-color: #fff;
 }
 /* .card_basic {
-	margin-top: 40px;
+    margin-top: 40px;
 } */
 /* debit car start */
 .debit_card_box1 {
@@ -5783,8 +5802,10 @@ hr {
     background-position:center center;
     background-size:cover;
     background-repeat:no-repeat;
-    height:490px;
-    width:100%;
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 60px;
 }
 /* for FDR Loan */
 #fdr_header{
@@ -5918,12 +5939,17 @@ hr {
 }
 .logobar a .logo {
     max-height: 70px;
-    width: 145px;
+    width: 151px;
+}
+.mash-menu .mash-list-items>li>a{
+    font-size: 17px;
 }
 .beta-icon {
     width: 46px;
     float: right;
     margin-top: 5px;
+    position: absolute;
+    right: -5px;
 }
 /*For Footer menu*/
 .footer-logo{
@@ -6660,24 +6686,25 @@ a .auto_button.flash-button {
     font-weight: bold;
     font-size: 13px;
 }
-.bdetails_bd_bank{
-    margin-top: 5px;
-    margin-left: -15px;
+.bdetails_bd_bank {
+    margin-top: 15px;
+    margin-left: 0px;
     height: 145px;
+}
+.m-t-15{
+    margin-top: 15px;
 }
 .bdetails_text{
     text-align: justify;
     font-size: 16px;
     margin-left: -30px;
-    margin-top: 5px;
 }
 .bank_details_landing_head2{
     width: 100%;
     height: auto;
     border-bottom: 3px solid #5aafd1;
     background-color: #e8e8e8;
-    margin-left: -15px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-top: 1px solid #dedede;
     border-left: 1px solid #dedede;
     border-right: 1px solid #dedede;
@@ -6717,12 +6744,16 @@ a .auto_button.flash-button {
 }
 .bank_details_landing_box {
     border: 1px solid #d6d6d6;
-    margin: 10px;
+    margin: 10px 0 10px 0;
     width: 100%;
     height: 205px;
     box-shadow: 0px 0px 5px 0px #dedede;
     border-radius: 4px;
     cursor: pointer;
+    padding: 10px;
+}
+.bank_details_landing_box>h5{
+    height: 30px;
 }
 .bank_details_landing_box:hover {
     box-shadow: 0px 0px 12px 0px #dedede;
@@ -6817,6 +6848,7 @@ a .auto_button.flash-button {
     height: 50px;
 
     border-bottom: 3px solid #5aafd1;
+    margin-top: 10px;
 
 }
 
@@ -6824,9 +6856,9 @@ a .auto_button.flash-button {
 
     font-size: 14px;
 
-    font-weight: bold;
+    font-weight: 600;
 
-    color: #6a6a6a;
+    color: #333;
 
     text-align: left;
 
@@ -6835,11 +6867,10 @@ a .auto_button.flash-button {
 }
 
 .bank_details_right_body p {
-
     padding: 10px 16px;
-
     border-bottom:1px solid #afafb0;
-
+    font-weight: 500;
+    color: #000;
 }
 
 .bank_details_right_body p:last-child {
@@ -6909,7 +6940,10 @@ a .auto_button.flash-button {
     margin: -1px 0.5em -2px 1em;
 
 }
-
+.bank_info_details p>span {
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 14px !important;
+}
 
 
 #breadcrumbs-two a{
@@ -7054,7 +7088,7 @@ a .auto_button.flash-button {
 
 .compare-bg img {
 
-	width: 140px;
+    width: 140px;
 
 }
 
@@ -7124,59 +7158,88 @@ a .auto_button.flash-button {
 
     box-shadow: none !important;
 
-	background-color:transparent;
+    background-color:transparent;
 
-	border: none;
+    border: none;
 
-	border-radius: 0px;
+    border-radius: 0px;
 
 }
 
 .land_modal{
 
-	cursor: pointer;
+    cursor: pointer;
 
 }
 
 .beta_pop_bg{
 
-	background-image:url(../images/Fin-Pop-Up-Beta-bg.jpg);
+    background-image:url(../images/Fin-Pop-Up-Beta-bg.jpg);
 
-	width:600px;
+    width:600px;
 
-	height:500px;
+    height:500px;
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	background-position:cover;
+    background-size:contain;
 
 }
 
+@media only screen and (max-width: 767px){
+    .beta_pop_bg {
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #fffced;
+    }
+    .beta_pop_text {
+        margin-left: 26px;
+    }
+    .beta_pop_bg .input-group {
+        position: absolute !important;
+        margin-top: 296px;
+        padding: 25px;
+    }
+    .beta_pop_text {
+        text-align: center;
+        top: -100px;
+        left: 0;
+    }
+}
+.mega-blog-img-wrapper {
+    height: 94px;
+    max-width: 100%;
+}
+.mega-blog-img-wrapper img.item-image {
+    max-height: 94px;
+}
 .input-group {
 
-	position: absolute !important;
+    position: absolute !important;
 
-	margin-top: 296px;
+    margin-top: 296px;
 
-	padding: 65px;
+    padding: 65px;
 
 }
 
 .beta_pop_text {
 
-	text-align: center;
+    text-align: center;
 
-	margin-top: 333px;
+    margin-top: 333px;
 
-	position: absolute;
+    position: absolute;
 
-	margin-left: 66px;
+    margin-left: 66px;
 
 }
 
 .beta_pop_text span{
 
-	color:#e2b958;
+    color:#e2b958;
 
 }
 
@@ -7186,15 +7249,15 @@ a .auto_button.flash-button {
 
 #sidebar.stick {
 
-	position: fixed;
+    position: fixed;
 
-	top: 0;
+    top: 0;
 
-	z-index: 10;
+    z-index: 10;
 
-	transition: all 1s ease;
+    transition: all 1s ease;
 
-	width: 249px; 
+    width: 249px; 
 
 }
 
@@ -7204,43 +7267,43 @@ a .auto_button.flash-button {
 
 #privacy_header{
 
-	background-image:url(../images/PrivacyPolicyBanner.jpg);
+    background-image:url(../images/PrivacyPolicyBanner.jpg);
 
-	background-size:cover;
+    background-size:cover;
 
-	background-position:center center;
+    background-position:center center;
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	width:100%;
+    width:100%;
 
-	height:198px;
+    height:198px;
 
-	margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
 .privacy_margin{
 
-	margin-left:15px;
+    margin-left:15px;
 
 }
 
 #terms_header{
 
-	background-image:url(../images/terms-condition.jpg);
+    background-image:url(../images/terms-condition.jpg);
 
-	background-size:cover;
+    background-size:cover;
 
-	background-position:center center;
+    background-position:center center;
 
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
-	width:100%;
+    width:100%;
 
-	height:198px;
+    height:198px;
 
-	margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
@@ -7283,12 +7346,12 @@ a .auto_button.flash-button {
 /* for ExportImport */
 
 #ExportImport_header{
-	background-image:url(../images/exportImport.png);
-	background-size:cover;
-	background-position:center center;
-	background-repeat:no-repeat;
-	width:100%;
-	height:300px;
+    background-image:url(../images/exportImport.png);
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    width:100%;
+    height:300px;
 }
 .exportShadow {
     position: absolute;
@@ -7321,25 +7384,25 @@ a .auto_button.flash-button {
 
 .ExportImportAccordion .panel-heading a{
 
-	color:#000;
+    color:#000;
 
-	outline:0;
+    outline:0;
 
-	text-decoration:none;
+    text-decoration:none;
 
 }
 
 .exportImport_ol{
 
-	margin-left:20px;
+    margin-left:20px;
 
 }
 
 .export_table {
 
-	border: 1px solid #ddd;
+    border: 1px solid #ddd;
 
-	padding: 10px;
+    padding: 10px;
 
 }
 
@@ -8187,3 +8250,178 @@ object{
 ol>li, ul>li{
     list-style-position: inside;
 }
+
+/*bank details*/
+.letter-sort {
+    margin: 20px 0;
+    padding: 0;
+}
+.letter-sort>ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+.letter-sort>ul>li {
+    display: inline-block;
+    background-color: #5aafd1;
+    border: 1px solid #3c7a92;
+    border-radius: 4px;
+    margin: 5px 5px;
+    width: 57px;
+    box-shadow: inset 1px 1px 7px 1px #3c7a92;
+    text-align: center;
+}
+.letter-sort>ul>li>a {
+    color: #fff;
+    display: block;
+    padding: 5px 12px;
+}
+
+/*About Us Content START*/
+#about{
+    background-image: url(../images/about/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh; 
+    padding: 10px 0;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+.about-title{
+    text-align: center;
+    margin: 0px auto 20px auto;
+    font-weight: 900 !important;
+    margin-bottom: 10px;
+}
+.about-title>span {
+    font-weight: 900;
+    font-size: 42px;
+}
+.about-promo-bar {
+    height: 265px;
+    width: 100%;
+    background-image: url(../images/about/about-full-top-bar.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.about-promo-ul{
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    margin-top: -35px;
+}
+.about-promo-ul>li {
+    margin: -20px 0px 0 240px;
+    display: inline-block;
+    text-align: center;
+}
+.about-promo-ul>li>img{
+    height: 200px;
+    width:200px; 
+}
+.about-promo-ul>li:nth-child(1)>img{
+    margin-left: 6px;
+}
+.about-promo-ul>li:nth-child(2)>img{
+    margin-left: -7px;
+}
+.about-promo-ul>li:nth-child(3)>img{
+    margin-left: -6px;
+}
+.about-promo-ul>li>h4 {
+    font-weight: 900;
+    font-size: 30px;
+    color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 2px 2px 2px #000000;
+}
+.about_content {
+    background-color: rgba(255,255,255,0.9);
+    min-height: 450px;
+    padding: 30px;
+    margin: 0px 60px 50px 60px;
+    text-align: center;
+}
+.about_content>h4 {
+    color: #23b24b;
+    font-weight: 500;
+    font-size: 25px;
+    margin-top: 0;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.about_content>h4::after {
+    content: '';
+    display: block;
+    width: 410px;
+    height: 2px;
+    background-color: #23b24b;
+    margin: 10px auto 0 auto;
+}
+.about_content>p {
+    margin-bottom: 25px;
+}
+.about_footer{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    margin-top: 50px;
+}
+.about_content>p:first-letter {
+    font-size: 25px;
+    font-weight: 700;
+}
+@media only screen and (max-width: 1366px){
+    /* .about-promo-bar {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 0;
+    }
+    .about-promo-ul>li {
+        margin: -20px 0px 0 241px;
+    }
+    .about-promo-ul>li>img {
+        height: auto;
+        width: 115px;
+    }
+    .about-promo-ul>li:nth-child(1)>img {
+        margin-left: 10px;
+    }
+    .about-promo-ul>li:nth-child(2)>img {
+        margin-left: -7px;
+    }
+    .about-promo-ul>li:nth-child(3)>img {
+            margin-left: -74px;
+    } */
+}
+@media only screen and (max-width: 1280px){
+    .about-promo-ul>li {
+        margin: -20px 0px 0 218px;
+    }
+}
+@media only screen and (max-width: 1024px){
+    .about-promo-bar {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 0;
+    }
+    .about-promo-ul>li {
+        margin: -15px 0px 0 167px;
+    }
+    .about-promo-ul>li>img {
+        height: auto;
+        width: 115px;
+    }
+    .about-promo-ul>li:nth-child(2)>img {
+        margin-left: -47px;
+    }
+    .about-promo-ul>li:nth-child(3)>img {
+        margin-left: -150px;
+    }
+}
+/*About Us Content END*/

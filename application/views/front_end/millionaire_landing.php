@@ -81,7 +81,7 @@
 						<p>
                             FDR or Fixed Deposit Receipt is a deposit scheme where you can deposit minimum BDT 1 Lac for a certain period such as 1 year and after passing that period, bank will provide some extra amount as interest with principle amount.
                         </p>
-                        <a href="<?php echo base_url();?>en/fdr"><span class="btn_landing_millionaire">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>fdr.html"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -94,7 +94,7 @@
 						<p>
                             DPS or Deposit Pension Scheme is a deposit scheme where you can deposit a small amount in monthly basis for a certain period and after that period bank will pay more money than you deposited and the extra money will be considered as interest.
                         </p>
-                        <a href="<?php echo base_url();?>en/dps"><span class="btn_landing_millionaire">Go to slide</span></a>
+                        <a href="<?php echo base_url();?>dps.html"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -107,7 +107,7 @@
 						<p>
                             Money maximize is a deposit scheme where you deposit a fixed amount such as BDT 1Lac and after banks defined time. Bank will pay you double amount of that deposited amount. Banks offer various maximization offers such as 1.5 times, 2 times and 3 times etc.
                         </p>
-						<a href="<?php echo base_url();?>en/money_maximizer"><span class="btn_landing_millionaire">Go to slide</span></a>
+						<a href="<?php echo base_url();?>money-maximizer.html"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -120,7 +120,7 @@
 						<p>
                             Monthly Benefit Scheme is a deposit scheme where you deposit a certain amount of money such as BDT 1 Lac or more. Against that money, bank will pay you a fixed amount of money monthly for a certain period as interest.
                         </p>
-						<a href="<?php echo base_url();?>en/monthly_benefit"><span class="btn_landing_millionaire">Go to slide</span></a>
+						<a href="<?php echo base_url();?>monthly-benefit.html"><span class="btn_landing_millionaire">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -204,67 +204,197 @@
 		<div class="container-fluid">
 			<div class="heading_pr">
 				<div class="col-md-3 col-sm-6">
-					<div class="fdr_heading_text">
-						<img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati5.jpg" alt="img_logo_blue"/>
-						<p class="fdr_loan">Lakhpoti & Millionaire Scheme</p>
-						<h4>Apply Fixed Deposit | Compare FD Calculator</h4>
-						<p>
-							Central Bank of India is a public sector commercial bank. Headquartered in Mumbai, it has a large branch network of about 4,600 branches in about 27 states.
-							It is among the oldest/largest commercial banks in India.
-						</p>
-						<p>
-							The Central Bank of India offers short and long term fixed deposits. Short- term fixed deposits are those term deposits where the term-to-maturity and interest rate 
-							are fixed for a short period of time i.e. less than one year. Long-term fixed deposits are those term deposits where the
-						</p>
-						<div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpati1">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Lakhpoti &amp; Millionaire Scheme',0);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Lakhpoti & Millionaire Scheme</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati5.jpg" alt="img_logo_blue"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Lakhpoti & Millionaire Scheme</a></p>
+                            <h4>Apply Fixed Deposit | Compare FD Calculator</h4>
+                            <p>
+                                Central Bank of India is a public sector commercial bank. Headquartered in Mumbai, it has a large branch network of about 4,600 branches in about 27 states.
+                                It is among the oldest/largest commercial banks in India.
+                            </p>
+                            <p>
+                                The Central Bank of India offers short and long term fixed deposits. Short- term fixed deposits are those term deposits where the term-to-maturity and interest rate
+                                are fixed for a short period of time i.e. less than one year. Long-term fixed deposits are those term deposits where the
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="fdr_heading_text">
-						<img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati1.png" alt="img_logo_blue"/>
-						<p class="fdr_loan">Lakhpoti & Millionaire Scheme</p>
-						<h4>Best Bank Account Interest Rates</h4>
-						<p>
-							I’m seeing more signs that 2017 won’t be a repeat of 2016 in terms of the Fed. After the December rate hike of 2015, the Fed suggested in its dot plot that there would
-							be four rate hikes in 2016. The only 2016 rate hike came two weeks ago at the last FOMC meeting of the year. At that meeting the Fed’s new dot plot suggests there’ll 
-							be three rate hikes in 2017. Why should 2017 be any different? There are reasons to be optimistic even if you don’t factor in the potential positive changes from the 
-							Trump administration. Economist Tim Duy describes why he thinks three rate hikes in 2017 is more likely than one in this 
-						</p>
-						<div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpati2">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Lakhpoti &amp; Millionaire Scheme',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Lakhpoti & Millionaire Scheme</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati1.png" alt="img_logo_blue"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Lakhpoti & Millionaire Scheme</a></p>
+                            <h4>Best Bank Account Interest Rates</h4>
+                            <p>
+                                I’m seeing more signs that 2017 won’t be a repeat of 2016 in terms of the Fed. After the December rate hike of 2015, the Fed suggested in its dot plot that there would
+                                be four rate hikes in 2016. The only 2016 rate hike came two weeks ago at the last FOMC meeting of the year. At that meeting the Fed’s new dot plot suggests there’ll
+                                be three rate hikes in 2017. Why should 2017 be any different? There are reasons to be optimistic even if you don’t factor in the potential positive changes from the
+                                Trump administration. Economist Tim Duy describes why he thinks three rate hikes in 2017 is more likely than one in this
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="fdr_heading_text">
-						<img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati3.jpg" alt="img_logo_blue"/>
-						<p class="fdr_loan">Lakhpoti & Millionaire Scheme</p>
-						<h4>How to Deposit Cash at an Online-Only Bank</h4>
-						<p>
-							Online-only banks can let you deposit checks from your phone, but the same can’t be said for cash. In fact, it’s a transaction they haven’t completely figured out.
-						</p>
-						<p>
-							“Digitizing cash is the last frontier to conquer for widespread online-only bank adoptions,” says Michael Moeser, director of payments at Javelin Strategy & Research 
-							in Pleasanton, California. Approximately 1% of consumers use an Internet-only bank as their primary financial institution, according to Javelin.
-						</p>
-						<div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpati3">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Lakhpoti &amp; Millionaire Scheme',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Lakhpoti & Millionaire Scheme</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati3.jpg" alt="img_logo_blue"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Lakhpoti & Millionaire Scheme</a></p>
+                            <h4>How to Deposit Cash at an Online-Only Bank</h4>
+                            <p>
+                                Online-only banks can let you deposit checks from your phone, but the same can’t be said for cash. In fact, it’s a transaction they haven’t completely figured out.
+                            </p>
+                            <p>
+                                “Digitizing cash is the last frontier to conquer for widespread online-only bank adoptions,” says Michael Moeser, director of payments at Javelin Strategy & Research
+                                in Pleasanton, California. Approximately 1% of consumers use an Internet-only bank as their primary financial institution, according to Javelin.
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
 				</div>
 				<div class="col-md-3 col-sm-6">
-					<div class="fdr_heading_text">
-						<img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati2.jpg" alt="img_logo_blue"/>
-						<p class="fdr_loan">Lakhpoti & Millionaire Scheme</p>
-						<h4>What is Deposit Accounts?</h4>
-						<p>
-							We're a different kind of bank account comparison site, and we appreciate your taking the time to get to know us. We believe that our unparalleled coverage and our
-							"not-for-hire" approach to collecting and presenting information make us the best resource on the Web for you, the user. We encourage you to compare us against any
-							other bank account comparison site on the Web in the below areas, and we humbly think that you'll find your way back to Deposit Accounts as your go-to resource when 
-							researching and choosing a new bank account.
-						</p>
-						<div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpati4">Read More</a></div>
-					</div>
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Lakhpoti &amp; Millionaire Scheme',3);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Lakhpoti & Millionaire Scheme</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo base_url()?>resource/blog/images/lakhpati2.jpg" alt="img_logo_blue"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Lakhpoti & Millionaire Scheme</a></p>
+                            <h4>What is Deposit Accounts?</h4>
+                            <p>
+                                We're a different kind of bank account comparison site, and we appreciate your taking the time to get to know us. We believe that our unparalleled coverage and our
+                                "not-for-hire" approach to collecting and presenting information make us the best resource on the Web for you, the user. We encourage you to compare us against any
+                                other bank account comparison site on the Web in the below areas, and we humbly think that you'll find your way back to Deposit Accounts as your go-to resource when
+                                researching and choosing a new bank account.
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo base_url();?>blog/lakhpoti-millionaire-scheme/" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
 				</div>
 			</div>
 		</div>
 	</section>
+
+    <section id="Basic">
+        <div class="container">
+            <h3><i>The Basics</i></h3><hr/>
+            <div class="card_basic row">
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>For how long a user can deposit his money?</strong></h4>
+                    <p>A user can deposit his money for 25 year.
+                    </p>
+                    <hr/>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>Does any loan available against deposited money?</strong></h4>
+                    <p>Yes, 80% of the deposited amount can be available as loan amount.
+                    </p>
+                    <hr/>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>How will the maturity amount be paid to user?</strong></h4>
+                    <p>The maturity amount will be paid through user’s account which is linked with deposit scheme.
+                    </p>
+                    <hr/>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h4><strong>What is the minimum eligibility for investing in Money Maximizer scheme?</strong></h4>
+                    <p>Applicant must be a Bangladeshi citizen aged between 21 years to 60 years.
+                    </p>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </section>
+
 	<section id="fdr_footer">
 		<div class="container">
 			<div class="auto_footer_pr">

@@ -357,7 +357,7 @@ class Money_maximizer extends CI_Controller {
                                     </div>
                                     <div class="col-sm-3 col-xs-3">
                                         <div class="card_text3">
-                                            <h5>Benefit Amount</h5>
+                                            <h5>Maturity Amount</h5>
                                             <p>BDT '.number_format( $benefit_amount ).'</p>
                                         </div>
                                     </div>
