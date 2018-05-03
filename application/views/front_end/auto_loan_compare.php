@@ -93,7 +93,7 @@ if($second_auto_loan->is_non_bank == 1){
 						</tr>
 						<tr>
 							<td class="abc"><b> Selected Amount </b></td>
-							<td>BDT.<?php echo number_format($principal_amount); ?></td>
+							<td>BDT <?php echo number_format($principal_amount); ?></td>
 						</tr>
 						<tr>
 							<td><b> Interest Rate</b></td>
@@ -137,7 +137,7 @@ if($second_auto_loan->is_non_bank == 1){
 							</tr>
 							<tr>
                                 <td class="abc"><b> Selected Amount </b></td>
-                                <td>BDT. <?php echo number_format($principal_amount); ?></td>
+                                <td>BDT <?php echo number_format($principal_amount); ?></td>
 							</tr>
 							<tr>
 								<td><b> Interest Rate</b></td>
@@ -303,14 +303,14 @@ $(document).ready(function() {
 
         //alert("amoun: "+ amount+ "Month : "+ month+ "first_int :  "+ first_interest_rate+ "downpayment : "+first_downpayment);
 
-        $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
-        $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
-        $('#firstDownpaymentAmount').text("BDT. " + number_format( first_downpayment_amount, 0, '.', ',' ) );
+        $('#firstEmiAmount').text("BDT " + number_format( first_emi, 0, '.', ',' ));
+        $('#firstPayableAmount').text("BDT " + number_format( first_payable_amount, 0, '.', ',' ) );
+        $('#firstDownpaymentAmount').text("BDT " + number_format( first_downpayment_amount, 0, '.', ',' ) );
         $('#firstTenure').text(month +' Month');
 
-        $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
-        $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
-        $('#secondDownpaymentAmount').text("BDT. " + number_format( second_downpayment_amount, 0, '.', ',' ) );
+        $('#secondEmiAmount').text("BDT " + number_format( second_emi, 0, '.', ',' ));
+        $('#secondPayableAmount').text("BDT " + number_format( second_payable_amount, 0, '.', ',' ) );
+        $('#secondDownpaymentAmount').text("BDT " + number_format( second_downpayment_amount, 0, '.', ',' ) );
 		$('#secondTenure').text(month +' Month');
     }
 

@@ -540,7 +540,7 @@ class Monthly_benefit extends CI_Controller {
 
     public function ajax_monthly_benefit_caching(){
 
-        $monthly_benefit_deposit_amount = floatval ( ($this->input->post('monthly_benefit_deposit_amount')) ? $this->input->post('monthly_benefit_deposit_amount') : '50000' );
+//        $monthly_benefit_deposit_amount = floatval ( ($this->input->post('monthly_benefit_deposit_amount')) ? $this->input->post('monthly_benefit_deposit_amount') : '50000' );
         $monthly_benefit_tenure = $this->input->post('monthly_benefit_tenure');
         $monthly_benefit_bank_ids = $this->input->post('monthly_benefit_bank_ids');
         $monthly_benefit_tenure_label = $this->input->post('monthly_benefit_tenure_label');
@@ -563,7 +563,7 @@ class Monthly_benefit extends CI_Controller {
         $this->session->unset_userdata($array_items);
         $data = array(
             'monthly_benefit_tenure'  => $monthly_benefit_tenure,
-            'monthly_benefit_deposit_amount'  => $monthly_benefit_deposit_amount,
+//            'monthly_benefit_deposit_amount'  => $monthly_benefit_deposit_amount,
             'monthly_benefit_tenure_label' => $monthly_benefit_tenure_label,
             'monthly_benefit_bank_ids' => $bank_id_array
         );
@@ -575,7 +575,7 @@ class Monthly_benefit extends CI_Controller {
     public function ajax_clear_session(){
         $session = $this->input->post('session');
         if($session =='monthly_benefit'){
-            $array_items = array('monthly_benefit_tenure', 'monthly_benefit_tenure', 'monthly_benefit_tenure_label', 'monthly_benefit_bank_ids','monthly_benefit_deposit_amount');
+            $array_items = array('monthly_benefit_tenure', 'monthly_benefit_tenure', 'monthly_benefit_tenure_label', 'monthly_benefit_bank_ids');
             $this->session->unset_userdata($array_items);
 //            $this->session->sess_destroy();
 //            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");

@@ -218,9 +218,9 @@
 
                                                 <div class="col-sm-3">
                                                     <a class="btn-filter-clear"  href="javascript:void(0);" id="clear_all">
-                    <span>
-                    <i class="fa fa-refresh" aria-hidden="true"></i>
-                    </span>
+                                                        <span>
+                                                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                                                        </span>
                                                         Clear All
                                                     </a>
                                                 </div>
@@ -282,98 +282,98 @@
                             <div class="fdrTenurepadding">
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount5000" value="5000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount5000" value="5000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "5000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         5K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount50000" value="50000" class="material_radiobox" />
+                                        <input type="radio" name="deposit_amount" id="deposit_amount50000" value="50000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "50000" ) ? 'checked' :'' ?> />
                                         <span class="material_check_radio"></span>
                                         50K
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount100000" value="100000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount100000" value="100000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "100000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         1 LAC
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount1000000"  value="1000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount1000000"  value="1000000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "1000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         10 LAC
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount2500000" value="2500000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount2500000" value="2500000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "2500000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         25 LAC
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount5000000" value="5000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount5000000" value="5000000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "5000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         50 LAC
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount10000000"  value="10000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount10000000"  value="10000000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "10000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         1 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount50000000" value="50000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount50000000" value="50000000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "50000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         5 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount100000000"  value="100000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount100000000"  value="100000000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "100000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         10 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount250000000"  value="250000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount250000000"  value="250000000" class="material_radiobox" <?php echo ($this->session->userdata("fdr_deposit_amount") == "250000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         25 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount500000000" value="500000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount500000000" value="500000000" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_deposit_amount") == "500000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         50 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount1000000000" value="1000000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount1000000000" value="1000000000" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_deposit_amount") == "1000000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         100 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-left">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount2000000000" value="2000000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount2000000000" value="2000000000" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_deposit_amount") == "2000000000" ) ? 'checked' :'' ?>/>
                                         <span class="material_check_radio"></span>
                                         200 CORE
                                     </label>
                                 </div>
                                 <div class="fdr_tenure pull-right">
                                     <label class="material_radio_group fdr_radio">
-                                        <input type="radio" name="deposit_amount" id="deposit_amount5000000000" value="5000000000" class="material_radiobox"/>
+                                        <input type="radio" name="deposit_amount" id="deposit_amount5000000000" value="5000000000" class="material_radiobox"  <?php echo ($this->session->userdata("fdr_deposit_amount") == "5000000000" ) ? 'checked' :'' ?> />
                                         <span class="material_check_radio"></span>
                                         500 CORE
                                     </label>
@@ -602,7 +602,7 @@
 
 
         function data_caching(){
-            var amount = $('#deposited_amount').val();
+            var amount = $('input[name="deposit_amount"]:checked').val();
             var fdr_deposit_amount = "&fdr_deposit_amount="+amount;
 
             var fdr_user = new Array();
@@ -640,7 +640,8 @@
                 success: function(response){
                     var option = [];
                     var obj = JSON.parse(response);
-                    if(obj.fdr_deposit_amount !=''){
+                    // console.log(obj);
+                    if(obj.fdr_deposit_amount !='' && obj.fdr_deposit_amount_label !=''){
                         option.push('<li><div class="filter-option"><span>'+obj.fdr_deposit_amount_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="fdr_deposit_amount" data-fdr_deposit_amount="'+obj.fdr_deposit_amount+'"><i class="icon-close icons"></i></span></a></div></li>');
                     }
                     if(obj.fdr_i_am !=''){
@@ -718,6 +719,7 @@
         });
         $('#deposited_amount').on('keyup',function(){
             loadData( page = null );
+            data_caching();
         });
 
 
