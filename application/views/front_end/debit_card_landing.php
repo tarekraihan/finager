@@ -210,7 +210,7 @@
 		<h3><i>The Basics</i></h3><hr/>
 			<div class="card_basic row">
 				<div class="col-md-6 col-sm-6">
-					<h4><strong>What is the minimum eligibility for getting a credit card?</strong></h4>
+					<h4><strong>What is the minimum eligibility for getting a Debit card?</strong></h4>
 					<p>Applicant must be a Bangladeshi citizen aged between 21 years to 60 years.
 					</p>
 					<hr/>
@@ -224,14 +224,14 @@
                 </div>
 
 				<div class="col-md-6 col-sm-6">
-					<h4><strong>How does a user change his pin number linked with his credit card?</strong></h4>
+					<h4><strong>How does a user change his pin number linked with his Debit card?</strong></h4>
 					<p>A user can change his pin number by using ATM machine software or by going to the issuer and apply a request to change the pin number.
 					</p>
 					<hr/>
 				</div>
 
 				<div class="col-md-6 col-sm-6">
-					<h4><strong>How can a user prevent credit card fraud?</strong></h4>
+					<h4><strong>How can a user prevent Debit card fraud?</strong></h4>
 					<p>A user must not share his pin number with anyone and must not select his phone number, date of birth etc. as his pin number and finally he must monitor every transaction of his card.
 					</p>
 					<hr/>

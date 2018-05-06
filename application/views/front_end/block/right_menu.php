@@ -489,7 +489,12 @@
 
 
 
-.overlay {
+.margin_left_body .overlay_right_menu {
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 9999;
 }
 
 .margin_left_body{
