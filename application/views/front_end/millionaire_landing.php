@@ -9,16 +9,16 @@
        <div class="container">
 			<div class="millionaire_loan_icon">
 				<div class="All_cradit_card">
+                    <div class="col-md-3 col-sm-3 nopadding">
+                        <a class="land_modal millionaire_maturity_amount" data-maturity_amount = "1"><div class="All_card">
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-100-K.png" alt="Deposit for 100K"/>
+                                <p> Deposit for 100K </p>
+                            </div></a>
+                    </div>
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal millionaire_maturity_amount" data-maturity_amount = "5"><div class="All_card">
 							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-500-K.png" alt="Deposit for 500K"/>
 							<p>Deposit for 500K</p>
-						</div></a>
-					</div>
-					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal millionaire_maturity_amount" data-maturity_amount = "1"><div class="All_card">
-							<img src="<?php echo base_url(); ?>resource/front_end/images/millionaire-100-K.png" alt="Deposit for 100K"/>
-							<p> Deposit for 100K </p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">	

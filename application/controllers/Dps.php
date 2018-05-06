@@ -1201,7 +1201,7 @@ class Dps extends CI_Controller
                         </div>
                     </div>
                     <!-- More Info Tab content end -->
-                    <div class="collapse" id="availableOffer'.$row["id"].'">
+                    <div class="collapse availableOffer1" id="availableOffer'.$row["id"].'">
                         <div class="col-md-12">
                             <p><b>Available Deposits (BDT):</b> 500, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 8000, 10000.</p>
                             <p><b>Available Terms:</b> 2, 3, 4, 5, 6, 7, 8, 10.</p>
