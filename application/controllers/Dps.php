@@ -1158,7 +1158,7 @@ class Dps extends CI_Controller
                                <section id="tab">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation"><a href="#Features'.$row["id"].'" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
+                                    <li role="presentation" class="active"><a href="#Features'.$row["id"].'" aria-controls="Features" role="tab" data-toggle="tab">Features</a></li>
                                     <li role="presentation"><a href="#FeesCharges'.$row["id"].'" aria-controls="FeesCharges" role="tab" data-toggle="tab">Fees & Charges</a></li>
                                     <li role="presentation"><a href="#TermsConditions'.$row["id"].'" aria-controls="TermsConditions" role="tab" data-toggle="tab">Terms & Conditions</a></li>
                                     <li role="presentation"><a href="#Eligibility'.$row["id"].'" aria-controls="Eligibility" role="tab" data-toggle="tab">Eligibility</a></li>

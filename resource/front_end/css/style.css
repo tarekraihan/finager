@@ -2276,37 +2276,22 @@ a .education_landing_button{
     font-style: italic;
 
 }
-
 #fdr_loan {
-
     margin-top: 10px;
-
 }
-
 .form-group_fdr{
-
     padding:0 6px;
-
 }
-
 #mony_max_header{
-
-    /*background-image:url(../images/Money-Maximizer-Main-Page.jpg);*/
-    background-image:url(../images/banners/SND-New-Banner.jpg);
-
+    background-image:url(../images/Money-Maximizer-Main-Page.jpg);
     background-repeat:no-repeat;
-
     background-size:cover;
-
     background-position:center center;
-
     width:100%;
-
     height:320px;
-
     position:relative;
-
 }
+
 
 .btn_mony_max{
 
@@ -2483,7 +2468,15 @@ a .maximizer_landing_button{
     margin-bottom: 15px;
 
 }
-
+#snd_header{
+    background-image:url(../images/banners/SND-New-Banner.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+    width:100%;
+    height:300px;
+    position:relative;
+}
 /* for FDR */
 
 #fdr_header{

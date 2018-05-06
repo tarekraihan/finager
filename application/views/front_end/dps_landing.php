@@ -26,16 +26,16 @@
 							<p> Deposit for 5 Years </p>
 						</div></a>
 					</div>
+                    <div class="col-md-3 col-sm-3 nopadding">
+                        <a class="land_modal dps_tenure" data-dps_tenure="10"><div class="All_card">
+                                <img src="<?php echo base_url();?>resource/front_end/images/dps-10-years.png" alt="zero"/>
+                                <p>Deposit for 10 Years</p>
+                            </div></a>
+                    </div>
 					<div class="col-md-3 col-sm-3 nopadding">
 						<a class="land_modal dps_tenure" data-dps_tenure="13"><div class="All_card">
 							<img src="<?php echo base_url();?>resource/front_end/images/dps-15-years.png" alt="travel"/>
 							<p> Deposit for 15 Years</p>
-						</div></a>
-					</div>	
-					<div class="col-md-3 col-sm-3 nopadding">
-						<a class="land_modal dps_tenure" data-dps_tenure="10"><div class="All_card">
-							<img src="<?php echo base_url();?>resource/front_end/images/dps-10-years.png" alt="zero"/>
-							<p>Deposit for 10 Years</p>
 						</div></a>
 					</div>
 					<div class="col-md-3 col-sm-3 nopadding">
