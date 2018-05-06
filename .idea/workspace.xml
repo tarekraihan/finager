@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" afterPath="$PROJECT_DIR$/application/views/front_end/debit_card_landing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/debit_card_landing" afterPath="$PROJECT_DIR$/application/cache/debit_card_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/dps_landing" afterPath="$PROJECT_DIR$/application/cache/dps_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr" afterPath="$PROJECT_DIR$/application/cache/fdr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/fdr_landing" afterPath="$PROJECT_DIR$/application/cache/fdr_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan" afterPath="$PROJECT_DIR$/application/cache/home_loan" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/home_loan_landing" afterPath="$PROJECT_DIR$/application/cache/home_loan_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/personal_loan" afterPath="$PROJECT_DIR$/application/cache/personal_loan" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/block/right_menu.php" afterPath="$PROJECT_DIR$/application/views/front_end/block/right_menu.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/css/style.css" afterPath="$PROJECT_DIR$/resource/front_end/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -56,11 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.068966" vertical-offset="100404" max-vertical-offset="143276">
-              <caret line="5925" column="32" selection-start-line="5925" selection-start-column="32" selection-end-line="5925" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.3802817" vertical-offset="13177" max-vertical-offset="143276">
+              <caret line="791" column="16" selection-start-line="791" selection-start-column="16" selection-end-line="791" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -76,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fdr.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fdr.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44262296" vertical-offset="18335" max-vertical-offset="32980">
+            <state vertical-scroll-proportion="-5.4" vertical-offset="18335" max-vertical-offset="32980">
               <caret line="1096" column="54" selection-start-line="1096" selection-start-column="54" selection-end-line="1096" selection-end-column="54" />
               <folding />
             </state>
@@ -514,12 +505,6 @@
       <workItem from="1524746849490" duration="1209000" />
       <workItem from="1525091915458" duration="2029000" />
     </task>
-    <task id="LOCAL-00036" summary="bank_details page &amp; style.css page update">
-      <created>1509288167691</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1509288167691</updated>
-    </task>
     <task id="LOCAL-00037" summary="bank_details page &amp; style.css page update">
       <created>1510149141372</created>
       <option name="number" value="00037" />
@@ -808,7 +793,13 @@
       <option name="project" value="LOCAL" />
       <updated>1525614640561</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="design change">
+      <created>1525616735241</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1525616735241</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1301,18 +1292,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.068966" vertical-offset="100404" max-vertical-offset="143276">
-          <caret line="5925" column="32" selection-start-line="5925" selection-start-column="32" selection-end-line="5925" selection-end-column="32" />
+        <state vertical-scroll-proportion="-5.4" vertical-offset="18335" max-vertical-offset="32980">
+          <caret line="1096" column="54" selection-start-line="1096" selection-start-column="54" selection-end-line="1096" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/fdr.php">
+    <entry file="file://$PROJECT_DIR$/resource/front_end/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44262296" vertical-offset="18335" max-vertical-offset="32980">
-          <caret line="1096" column="54" selection-start-line="1096" selection-start-column="54" selection-end-line="1096" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.3802817" vertical-offset="13177" max-vertical-offset="143276">
+          <caret line="791" column="16" selection-start-line="791" selection-start-column="16" selection-end-line="791" selection-end-column="16" />
           <folding />
         </state>
       </provider>
