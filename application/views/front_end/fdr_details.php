@@ -13,15 +13,15 @@ if(!empty($id) && is_numeric($id) ){
         $bank_name = $row->bank_name;
         $bank_logo = $row->bank_logo;
     }
-	$amount = 5000;
-	if($this->session->userdata('fdr_deposit_amount')){
-		$amount = $this->session->userdata('fdr_deposit_amount');
-	}
+    $amount = 5000;
+    if($this->session->userdata('fdr_deposit_amount')){
+        $amount = is_numeric($this->session->userdata('fdr_deposit_amount')) ?  intval( $this->session->userdata('fdr_deposit_amount')) : 5000;
+    }
     $yearly_interest = floatval( $row->interest_rate ) ;
     $interest = ($yearly_interest / 100);
     $tenure = floatval($row->installment);
     $no_of_times = 12;
-    $payment = round($amount * pow(1 + $interest /$no_of_times,($no_of_times*($tenure/12))));
+    $payment = round($amount * pow(1 + $interest / $no_of_times,($no_of_times*($tenure/12))));
     $loan_facility = (!empty($row->loan_facility)) ? $row->loan_facility.'%' : 'N/A';
 
 }else{
@@ -110,7 +110,7 @@ if(!empty($id) && is_numeric($id) ){
 
 						<div class="row">
 
-							<div class="col-sm-3 col-xs-6">
+							<div class="col-sm-2 col-xs-6">
 
 								<div>
 
@@ -126,7 +126,7 @@ if(!empty($id) && is_numeric($id) ){
 
 							</div>
 
-							<div class="col-sm-1 col-xs-6">
+							<div class="col-sm-2 col-xs-6">
 
 								<div>
 
