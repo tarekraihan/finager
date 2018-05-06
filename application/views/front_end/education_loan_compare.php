@@ -83,7 +83,7 @@ if($second_education_loan->is_non_bank == 1){
 						</tr>
 						<tr>
 							<td class="abc"><b>Selected Amount </b></td>
-							<td>BDT. <?php echo number_format($principal_amount);?> </td>
+							<td>BDT <?php echo number_format($principal_amount);?> </td>
 						</tr>
 						<tr>
 							<td><b> Interest Rate</b></td>
@@ -118,7 +118,7 @@ if($second_education_loan->is_non_bank == 1){
 							</tr>
                             <tr>
                                 <td class="abc"><b>Selected Amount </b></td>
-                                <td>BDT. <?php echo number_format($principal_amount);?> </td>
+                                <td>BDT <?php echo number_format($principal_amount);?> </td>
 							</tr>
 							
 							<tr>
@@ -364,11 +364,11 @@ $(document).ready(function () {
 
         var second_emi = Math.round(amount * second_monthly_interest * (( Math.pow( (1+second_monthly_interest),month)) / ( Math.pow( ( 1 + second_monthly_interest ) , month ) -1 )));
         var second_payable_amount = second_emi * month;
-        $('#firstEmiAmount').text("BDT. " + number_format( first_emi, 0, '.', ',' ));
-        $('#firstPayableAmount').text("BDT. " + number_format( first_payable_amount, 0, '.', ',' ) );
+        $('#firstEmiAmount').text("BDT " + number_format( first_emi, 0, '.', ',' ));
+        $('#firstPayableAmount').text("BDT " + number_format( first_payable_amount, 0, '.', ',' ) );
 
-        $('#secondEmiAmount').text("BDT. " + number_format( second_emi, 0, '.', ',' ));
-        $('#secondPayableAmount').text("BDT. " + number_format( second_payable_amount, 0, '.', ',' ) );
+        $('#secondEmiAmount').text("BDT " + number_format( second_emi, 0, '.', ',' ));
+        $('#secondPayableAmount').text("BDT " + number_format( second_payable_amount, 0, '.', ',' ) );
 
     }
 

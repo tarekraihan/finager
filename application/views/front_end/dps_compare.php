@@ -111,9 +111,9 @@ if(!empty($dps_1) && is_numeric($dps_1) && !empty($dps_2) && is_numeric($dps_2) 
 			<div class="row">
 				<table class="table">
 					<tr>
-						<td><p><a href="<?php echo base_url();?>en/fdr_details/<?php echo $dps_1_row['id'];?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $dps_1_bank_logo; ?>" /></a></p></td>
+						<td><p><a href="<?php echo base_url();?>compare-dps/<?php echo $dps_1_row['slug'];?>-tk<?php echo $deposited_amount; ?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $dps_1_bank_logo; ?>" /></a></p></td>
 						<td><b><p class="text-center com_title">Comparison </p></b></td>
-						<td><a href="<?php echo base_url();?>en/fdr_details/<?php echo $dps_2_row['id'];?>"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $dps_2_bank_logo; ?>" /></a></td>
+						<td><a href="<?php echo base_url();?>compare-dps/<?php echo $dps_2_row['slug'];?>-tk<?php echo $deposited_amount; ?>.html"><img class="home_loan_img" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $dps_2_bank_logo; ?>" /></a></td>
 
 					</tr>			
 				</table>

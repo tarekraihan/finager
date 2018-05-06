@@ -664,8 +664,8 @@
         });
 
         var monthly_tenure_list = "&monthly_benefit_tenure="+monthly_tenure;
-        var amount = $('#finalAssest').val();
-        var deposit_amount = "&monthly_benefit_deposit_amount="+amount;
+        // var amount = $('#finalAssest').val();
+        // var deposit_amount = "&monthly_benefit_deposit_amount="+amount;
 
         var bank_ids = new Array();
 
@@ -676,7 +676,7 @@
 
         var monthly_benefit_tenure_label = '&monthly_benefit_tenure_label='+ $('input[name="tenure"]:checked').parent().text().trim();
 
-        var main_string = monthly_tenure_list+deposit_amount+bank_id_list+monthly_benefit_tenure_label;
+        var main_string = monthly_tenure_list+bank_id_list+monthly_benefit_tenure_label;
         main_string = main_string.substring(1, main_string.length);
         var url_str = "<?php echo base_url();?>monthly_benefit/ajax_monthly_benefit_caching/" ;
 

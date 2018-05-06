@@ -49,7 +49,7 @@ if(!empty($id) && is_numeric($id) ){
 					<div>
 						<p class="card_details_head2">Deposit Amount</p>
 						<p class="card_details_features">
-							BDT. <?php echo number_format( $maximizer_amount );?>
+							BDT <?php echo number_format( $maximizer_amount );?>
 						</p>
 					</div>
 				</div>
@@ -75,7 +75,7 @@ if(!empty($id) && is_numeric($id) ){
 							<div>
 								<p class="card_details_head2">Benefit Amount</p>
 								<p class="card_details_features">
-									BDT. <?php echo number_format( $benefit_amount );?>
+									BDT <?php echo number_format( $benefit_amount );?>
 								</p>
 							</div>
 						</div>
@@ -111,7 +111,7 @@ if(!empty($id) && is_numeric($id) ){
 					</tr>
 					<tr>
                         <td><b>  Deposit Amount</b></td>
-                        <td> BDT. <?php echo number_format($maximizer_amount)?> </td>
+                        <td> BDT <?php echo number_format($maximizer_amount)?> </td>
 					</tr>
 					<tr>
                         <td><b> Duration of Benefit</b></td>
@@ -124,7 +124,7 @@ if(!empty($id) && is_numeric($id) ){
 
 					<tr>
                         <td><b> Maturity Amount</b></td>
-                        <td>BDT. <?php echo number_format($benefit_amount)?> </td>
+                        <td>BDT <?php echo number_format($benefit_amount)?> </td>
 					</tr>
                     <tr>
                         <td><b> Credit Facility</b></td>
