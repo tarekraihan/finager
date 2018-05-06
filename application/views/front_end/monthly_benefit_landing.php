@@ -346,7 +346,7 @@
                 <hr/>
             </div>
             <div class="col-md-6 col-sm-6">
-                <h4><strong>What is the minimum eligibility for investing in Money Maximizer scheme?</strong></h4>
+                <h4><strong>What is the minimum eligibility for investing in Monthly Benefit Scheme?</strong></h4>
                 <p>Applicant must be a Bangladeshi citizen aged between 21 years to 60 years.
                 </p>
                 <hr/>

@@ -551,10 +551,10 @@ class Personal_Loan extends CI_Controller {
                                 </div>
                             </div>
                             <div class="col-sm-12 col-xs-12 home_loan_button">
-                                <div class="loan_btn_apllication pull-right">Favorite </div>
                                 <span class="more_info_icon Hloan_more_icon"><a role="button"  class="more_info" id="more_info'.$row->id.'" data-toggle="collapse" data-loan_id="'.$row->id.'"><i class="fa fa-info-circle"></i> More info</a></span>
                                 <span class="more_info_icon Hloan_more_icon"><a id="" href="javascript:void(0)" class="add-to-compare" data-loan_id="'.$row->id.'"><i class="fa fa-plus-circle"></i> Add to comparison</a></span>
                                 <span class="more_info_icon Hloan_more_icon"><a  class="rePaymentSchedule" role="button" data-toggle="collapse" data-repayment="'.$row->id.'"><i class="fa fa-plus-circle"></i> Repayment Schedule</a></span>
+                                <a class="land_modal" data-toggle="modal" data-target=".bs-example-modal-lg"><div class="loan_btn_apllication pull-right">Favorite </div></a>
                             </div>
                             <div class="collapse" id="moreInfo'.$row->id.'">
                                 <div class="col-md-12">

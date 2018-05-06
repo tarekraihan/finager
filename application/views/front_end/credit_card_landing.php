@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="best_card">
 				<h1><i>Find the best<br/> 
-					credit cards for you.</i>
+					credit cards for you</i>
 				</h1>
 				<h4><i>Whether you're looking for side-by-side comparisons,<br/> 
 					info around rewards versus points or you're ready to <br/>

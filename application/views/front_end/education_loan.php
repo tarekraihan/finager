@@ -509,6 +509,11 @@
             loadData(cur_page);
         });
 
+        $("#finalAssest,#finalLiability").change(function () {
+            loadData(page = null);
+            data_caching();
+        });
+
         function loading_show(){
             $('#loading').html("<img src='<?php echo base_url();?>resource/front_end/images/loader.gif' width='50' />").fadeIn('fast');
         }

@@ -217,15 +217,15 @@
 				</div>
 
                 <div class="col-md-6 col-sm-6">
-                    <h4><strong>How does a user change his pin number linked with his credit card?</strong></h4>
-                    <p>A user can change his pin number by using ATM machine software or by going to the issuer and apply a request to change the pin number.
+                    <h4><strong>How does a user request for a replacement card?</strong></h4>
+                    <p>To request for a replacement card a user must fill the application to issue a replacement card and send it to the card section of the bank or card issuer organization.
                     </p>
                     <hr/>
                 </div>
 
 				<div class="col-md-6 col-sm-6">
-					<h4><strong>How does a user request for a replacement card?</strong></h4>
-					<p>To request for a replacement card a user must fill the application to issue a replacement card and send it to the card section of the bank or card issuer organization.
+					<h4><strong>How does a user change his pin number linked with his credit card?</strong></h4>
+					<p>A user can change his pin number by using ATM machine software or by going to the issuer and apply a request to change the pin number.
 					</p>
 					<hr/>
 				</div>
