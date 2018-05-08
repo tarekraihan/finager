@@ -158,7 +158,7 @@
                                     <label class="red"><?php echo form_error('txtMinimumAmount');?></label>
                                 </section>
                                 <section class="col col-6"  >
-                                    <label class="label">Maximum Loan Period</label>
+                                    <label class="label">Maximum Loan Amount</label>
                                     <label class="input">
                                         <input type="number"  name="txtMaximumAmount" value="<?php echo set_value('txtMaximumAmount'); ?>" placeholder="Write Maximum Amount">
                                     </label>

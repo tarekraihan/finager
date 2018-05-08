@@ -81,33 +81,42 @@ class En extends CI_Controller {
             $geopluginURL='http://www.geoplugin.net/php.gp?ip='.$ip_address;
             $response = unserialize(@file_get_contents($geopluginURL));
 
-            $browser_name = getBrowserName();
-            $this->Common_model->data = array(
-                'page_name' => 'Home Page',
-                'event_name' => '',
-                'url' => current_url(),
-                'ip_address' => $ip_address,
-                'browser_name' => $browser_name,
-                'user_agent' => $_SERVER['HTTP_USER_AGENT'],
-                'country' => $response['geoplugin_countryName'],
-                'country_code' => $response['geoplugin_countryCode'],
-                'city' => (!empty($response['geoplugin_city']) || $response['geoplugin_city'] != '') ? $response['geoplugin_city'] : 'Not Found',
-                'region' => (!empty($response['geoplugin_region']) || $response['geoplugin_region'] != '') ? $response['geoplugin_region'] : 'Not Found',
-                'latitude' => $response['geoplugin_latitude'],
-                'longitude' => $response['geoplugin_longitude'],
-                'currency_code' => $response['geoplugin_currencyCode'],
-                'currency_symbol' =>(!empty($response['geoplugin_currencySymbol']) || $response['geoplugin_currencySymbol'] != '') ? $response['geoplugin_currencySymbol'] : 'Not Found',
-                'created' => date('Y-m-d H:i:s')
-            );
-            $this->Common_model->table_name = 'visitor_counter';
-            $result = $this->Common_model->insert();
-            if($result){
+            if(isset($response['geoplugin_latitude'])){
+                $browser_name = getBrowserName();
+                $this->Common_model->data = array(
+                    'page_name' => 'Home Page',
+                    'event_name' => '',
+                    'url' => current_url(),
+                    'ip_address' => $ip_address,
+                    'browser_name' => $browser_name,
+                    'user_agent' => $_SERVER['HTTP_USER_AGENT'],
+                    'country' => $response['geoplugin_countryName'],
+                    'country_code' => $response['geoplugin_countryCode'],
+                    'city' => (!empty($response['geoplugin_city']) || $response['geoplugin_city'] != '') ? $response['geoplugin_city'] : 'Not Found',
+                    'region' => (!empty($response['geoplugin_region']) || $response['geoplugin_region'] != '') ? $response['geoplugin_region'] : 'Not Found',
+                    'latitude' => $response['geoplugin_latitude'],
+                    'longitude' => $response['geoplugin_longitude'],
+                    'currency_code' => $response['geoplugin_currencyCode'],
+                    'currency_symbol' =>(!empty($response['geoplugin_currencySymbol']) || $response['geoplugin_currencySymbol'] != '') ? $response['geoplugin_currencySymbol'] : 'Not Found',
+                    'created' => date('Y-m-d H:i:s')
+                );
+                $this->Common_model->table_name = 'visitor_counter';
+                $result = $this->Common_model->insert();
+                if($result){
+                    $this->load->view('front_end/block/header');
+                    $this->load->view('front_end/block/right_menu');
+                    $this->load->view('front_end/block/vertical_menu');
+                    $this->load->view('front_end/index');
+                    $this->load->view('front_end/block/footer');
+                }
+            }else{
                 $this->load->view('front_end/block/header');
                 $this->load->view('front_end/block/right_menu');
                 $this->load->view('front_end/block/vertical_menu');
                 $this->load->view('front_end/index');
                 $this->load->view('front_end/block/footer');
             }
+
 
     }
 
