@@ -738,7 +738,11 @@ class Dps extends CI_Controller
                 $this->Common_model->where = array('id' => $this->input->post('txtInfoId'));
                 $res = $this->Common_model->update();
                 if($res){
-                    $installment = ($this->input->post('txtTenure') * 12);
+
+                    $result=$this->Select_model->Select_Single_Row($this->input->post('txtTenure'),"dps_tenure","id");
+
+                    $installment = ( intval($result['tenure']) * 12);
+
                     $this->Common_model->data = array();
                     $this->Common_model->data = array(
 //                        'dps_info_id' => $this->input->post('txtInfoId'),

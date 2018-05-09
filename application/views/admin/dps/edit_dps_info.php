@@ -163,6 +163,7 @@ if(isset($_GET['id'])){
                         echo $feedback;
 
                     }
+
                     ?>
                     <fieldset>
                         <section>
