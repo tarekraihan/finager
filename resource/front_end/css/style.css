@@ -5949,8 +5949,8 @@ hr {
 }
 /*For Footer menu*/
 .footer-logo{
-    width: 155px;
-    height: 55px;
+    width: 185px;
+    height: auto;
 }
 .footer{
     background: #e2e5e6;
@@ -8371,6 +8371,90 @@ ol>li, ul>li{
 .about_content>p:first-letter {
     font-size: 25px;
     font-weight: 700;
+}
+
+/*new Footer*/
+#main-footer{
+    padding: 30px;
+}
+.footer-wrapper{
+    text-align: center;
+    position: relative;
+}
+.footer-wrapper::before{
+    content: "";
+    width: calc(33.333333% - 40px);
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    display: block;
+    -webkit-transition: -webkit-transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: -webkit-transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-wrapper::after{
+    content: "";
+    width: calc(33.333333% - 40px);
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    right: 0;
+    top: 35px;
+    display: block;
+    -webkit-transition: -webkit-transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: -webkit-transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.4s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-single-menu ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+.footer-single-menu ul>li{
+    margin-bottom: 7px;
+}
+.footer-single-menu ul>li>a{
+    text-transform: uppercase;
+}
+.footer-main-menu-title{
+    font-weight: 600;
+    text-align: center;
+}
+.footer-main-menu {
+    margin-top: 30px;
+}
+.footer-main-menu ul{
+    padding: 0;
+    text-align: center;
+    list-style: none;
+}
+.footer-bottom{
+    text-align: center;
+}
+.p-relative{
+    position: relative !important;
+}
+.footer-subscribtion .input-group.p-relative {
+    margin-top: 30px !important;
+    padding: 0 !important;
+    margin-bottom: 30px;
+}
+ul.footer-socials {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin-top: 30px;
+}
+ul.footer-socials>li{
+    display: inline-block;
+    margin: 0 10px;
+}
+#main-footer{
+    display: none;
 }
 @media only screen and (max-width: 1366px){
     /* .about-promo-bar {

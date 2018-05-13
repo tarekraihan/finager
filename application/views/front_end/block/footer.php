@@ -138,6 +138,118 @@
 </div><!-- main body-->
 
 
+<div id="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="footer-wrapper">
+                    <img title="Finager Logo" class="footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer-single-menu">
+            <div class="col-sm-12 col-md-4">
+                <ul>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">terms & conditions</a></li>
+                    <li><a href="#">about</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-4"></div>
+            <div class="col-sm-12 col-md-4">
+                <ul>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">terms & conditions</a></li>
+                    <li><a href="#">about</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row footer-main-menu">
+            <div class="col-sm-12 col-md-2 col-md-offset-1">
+                <p class="footer-main-menu-title">Card</p>
+                <ul>
+                    <li><a href="#">Credit Card</a></li>
+                    <li><a href="#">Debit Card</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-12 col-md-2">
+                <p class="footer-main-menu-title">Account</p>
+                <ul>
+                    <li><a href="#">Credit Card</a></li>
+                    <li><a href="#">Debit Card</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <p class="footer-main-menu-title">Loan</p>
+                <ul>
+                    <li><a href="#">Credit Card</a></li>
+                    <li><a href="#">Debit Card</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <p class="footer-main-menu-title">Investment</p>
+                <ul>
+                    <li><a href="#">Credit Card</a></li>
+                    <li><a href="#">Debit Card</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <p class="footer-main-menu-title">Others</p>
+                <ul>
+                    <li><a href="#">Credit Card</a></li>
+                    <li><a href="#">Debit Card</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row footer-bottom">
+            <div class="col-sm-12">
+                <ul class="footer-socials">
+                    <li>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="footer-subscribtion">
+                    <div class="row">
+                        <div class="col-md-offset-4 col-md-4 col-sm-12">
+                            <div class="input-group p-relative">
+                                <input type="text" class="form-control" placeholder="NAME@EMAIL.COM">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Submit</button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                </div>
+
+                <p class="footer-copyright">finager.com © 2017</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Search Modal -->
 <div class="modal fade" id="serchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <section id="search_page">
