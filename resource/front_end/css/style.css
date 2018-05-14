@@ -8419,13 +8419,14 @@ ol>li, ul>li{
 }
 .footer-single-menu ul>li>a{
     text-transform: uppercase;
+    font-size: 14px;
 }
 .footer-main-menu-title{
     font-weight: 600;
     text-align: center;
 }
 .footer-main-menu {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 .footer-main-menu ul{
     padding: 0;
@@ -8453,8 +8454,85 @@ ul.footer-socials>li{
     display: inline-block;
     margin: 0 10px;
 }
+ul.footer-socials>li>a{
+    font-size: 23px;
+}
 #main-footer{
     display: none;
+}
+.footer-menu-wrapper{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.footer-menu-wrapper>li{
+    display: inline-block;
+    margin: 0 25px;
+}
+.footer-subscribtion .form-control, .footer-subscribtion .btn.btn-default{
+    height: 45px;
+    border-radius: 0;
+    border-color: #333;
+}
+.footer-subscribtion .btn.btn-default {
+    text-transform: uppercase;
+    color: #333;
+    padding: 6px 35px;
+}
+
+.footer-subscribtion .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #333;
+}
+.footer-subscribtion .form-control::-moz-placeholder { /* Firefox 19+ */
+    color: #333;
+}
+.footer-subscribtion .form-control::-ms-input-placeholder { /* IE 10+ */
+    color: #333;
+}
+.footer-subscribtion .form-control::-moz-placeholder { /* Firefox 18- */
+    color: #333;
+}
+.footer-subscribtion .btn.btn-default:hover {
+
+}
+.button-4 {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #333;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 0 0px 0px;
+    padding: 0px 20px;
+    text-align: center;
+    border-left: 0;
+}
+.button-4 a{
+    font-size:14px;
+    color:#333;
+    text-decoration:none;
+    line-height: 45px;
+    transition:all .5s ease;
+    z-index:2;
+    position:relative;
+    text-transform: uppercase;
+}
+.eff-4{
+    width:140px;
+    height:50px;
+    left:-140px;
+    background:#333;
+    position:absolute;
+    transition:all .5s ease;
+    z-index:1;
+}
+.button-4:hover .eff-4{
+    left:0;
+}
+.button-4:hover a{
+    color:#fff;
 }
 @media only screen and (max-width: 1366px){
     /* .about-promo-bar {

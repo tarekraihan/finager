@@ -167,40 +167,43 @@
         </div>
 
         <div class="row footer-main-menu">
-            <div class="col-sm-12 col-md-2 col-md-offset-1">
-                <p class="footer-main-menu-title">Card</p>
-                <ul>
-                    <li><a href="#">Credit Card</a></li>
-                    <li><a href="#">Debit Card</a></li>
-                </ul>
-            </div>
-
-            <div class="col-sm-12 col-md-2">
-                <p class="footer-main-menu-title">Account</p>
-                <ul>
-                    <li><a href="#">Credit Card</a></li>
-                    <li><a href="#">Debit Card</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-2">
-                <p class="footer-main-menu-title">Loan</p>
-                <ul>
-                    <li><a href="#">Credit Card</a></li>
-                    <li><a href="#">Debit Card</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-2">
-                <p class="footer-main-menu-title">Investment</p>
-                <ul>
-                    <li><a href="#">Credit Card</a></li>
-                    <li><a href="#">Debit Card</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-2">
-                <p class="footer-main-menu-title">Others</p>
-                <ul>
-                    <li><a href="#">Credit Card</a></li>
-                    <li><a href="#">Debit Card</a></li>
+            <div class="col-sm-12">
+                <ul class="footer-menu-wrapper">
+                    <li>
+                        <p class="footer-main-menu-title">Card</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="footer-main-menu-title">Account</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="footer-main-menu-title">Loan</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="footer-main-menu-title">Investment</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="footer-main-menu-title">Others</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -209,34 +212,48 @@
             <div class="col-sm-12">
                 <ul class="footer-socials">
                     <li>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        <a href="#">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        <a href="#">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        <a href="#">
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        <a href="#">
+                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        <a href="#">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-rss" aria-hidden="true"></i>
                         </a>
                     </li>
                 </ul>
 
                 <div class="footer-subscribtion">
                     <div class="row">
-                        <div class="col-md-offset-4 col-md-4 col-sm-12">
+                        <div class="col-md-offset-3 col-md-6 col-sm-12">
                             <div class="input-group p-relative">
                                 <input type="text" class="form-control" placeholder="NAME@EMAIL.COM">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Submit</button>
+                                    <!--button class="btn btn-default" type="button">Submit</button-->
+                                     <div class="button-4">
+                                         <div class="eff-4"></div>
+                                         <a href="#"> Subscribe </a>
+                                     </div>
                                 </span>
                             </div><!-- /input-group -->
                         </div>
