@@ -10,7 +10,7 @@
             <div class="col-md-3">
                 <div class="bank_info_left">
                     <div class="bank_info_logo">
-                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $institution_info['bank_logo']; ?>" alt="<?php echo $institution_info['head_office_address']; ?>">
+                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $institution_info['bank_logo']; ?>" alt="<?php echo $institution_info['bank_name']; ?>">
                     </div>
                     <div class="bank_address">
                         <p><b>Corporate Office:</b> <?php echo $institution_info['head_office_address']; ?></p>
@@ -158,12 +158,12 @@
                             <br/><br/>
                             <h3> <?php echo $institution_info['bank_name']; ?> Branch Locations</h3>
                             <div class="bank_info_map">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_map.jpg" alt="AB Bank map" />
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_map.jpg" alt="<?php echo $institution_info['bank_name']; ?>" />
                             </div>
                             <br/><br/>
                             <h3> <?php echo $institution_info['bank_name']; ?> ATM Locations</h3>
                             <div class="bank_info_map">
-                                <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_map.jpg" alt="AB Bank map" />
+                                <img src="<?php echo base_url(); ?>resource/front_end/images/bank_info_map.jpg" alt="<?php echo $institution_info['bank_name']; ?>" />
                             </div>
 							<h3>HISTORY OF  <?php echo $institution_info['bank_name']; ?></h3>
 							<p>Below is a list of some important events in banks history, including mergers and acquisitions.</p>
@@ -275,7 +275,7 @@
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $personal->bank_logo; ?>" alt="AB Bank Logo" />
+                                <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $personal->bank_logo; ?>" alt="<?php echo $personal->bank_name; ?> Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
                                 <h4><?php echo $personal->personal_loan_name;?></h4><br/>
@@ -326,7 +326,7 @@
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $auto->bank_logo; ?>" alt="AB Bank Logo" />
+                                <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $auto->bank_logo; ?>" alt="<?php echo $auto->bank_name; ?> Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
                                 <h4><?php echo $auto->auto_loan_name;?></h4><br/>
@@ -382,7 +382,7 @@
                     <div class="col-md-6">
                         <div class="bank_loan_details">
                             <div class="col-md-2 nopadding">
-                                <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $education->bank_logo; ?>" alt="AB Bank Logo" />
+                                <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $education->bank_logo; ?>" alt="<?php echo $education->bank_name; ?> Logo" />
                             </div>
                             <div class="col-md-10 nopadding">
                                 <h4><?php echo $education->loan_name;?></h4><br/>
@@ -484,7 +484,7 @@
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
                                     <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $dps->bank_logo; ?>" alt="AB Bank Logo" />
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $dps->bank_logo; ?>" alt="<?php echo $dps->bank_name; ?> Logo" />
                                     </div>
                                     <div class="col-md-10 nopadding">
                                         <h4><?php echo $dps->bank_name;?> DPS</h4><br/>
@@ -530,7 +530,7 @@
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
                                     <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $millionaire->bank_logo; ?>" alt="AB Bank Logo" />
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $millionaire->bank_logo; ?>" alt="<?php echo $millionaire->bank_name; ?> Logo" />
                                     </div>
                                     <div class="col-md-10 nopadding">
                                         <h4><?php echo $millionaire->millionaire_info_name;?></h4><br/>
@@ -569,7 +569,7 @@
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
                                     <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $money_maximizer->bank_logo; ?>" alt="AB Bank Logo" />
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $money_maximizer->bank_logo; ?>" alt="<?php echo $money_maximizer->bank_name; ?> Logo" />
                                     </div>
                                     <div class="col-md-10 nopadding">
                                         <h4><?php echo $money_maximizer->deposit_name;?></h4><br/>
@@ -609,7 +609,7 @@
                             <div class="col-md-6">
                                 <div class="bank_loan_details">
                                     <div class="col-md-2 nopadding">
-                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $monthly_benefit->bank_logo; ?>" alt="AB Bank Logo" />
+                                        <img src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $monthly_benefit->bank_logo; ?>" alt="<?php echo $monthly_benefit->bank_name; ?> Logo" />
                                     </div>
                                     <div class="col-md-10 nopadding">
                                         <h4><?php echo $monthly_benefit->deposit_name;?></h4><br/>

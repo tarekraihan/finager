@@ -75,6 +75,11 @@ class En extends CI_Controller {
 
             $this->load->driver('cache');
             $this->cache->file->save('index_page', 'index_page', 100);
+
+            $data['title'] ="Welcome to Finager";
+            $data['description'] ="Finager.com help them to take financial decisions in their everyday life.";
+            $data['keywords'] ="Loan, home Loan,Personal Loan, Bank, Investment, Credit Card, Debit Card, FDR, DPS, Auto Loan, Education Loan,Get Credit Card,  Bangladesh";
+
             /*Get user ip address*/
             $ip_address=$_SERVER['REMOTE_ADDR'];
             /*Get user ip address details with geoplugin.net*/
@@ -102,15 +107,16 @@ class En extends CI_Controller {
                 );
                 $this->Common_model->table_name = 'visitor_counter';
                 $result = $this->Common_model->insert();
+
                 if($result){
-                    $this->load->view('front_end/block/header');
+                    $this->load->view('front_end/block/header',$data);
                     $this->load->view('front_end/block/right_menu');
                     $this->load->view('front_end/block/vertical_menu');
                     $this->load->view('front_end/index');
                     $this->load->view('front_end/block/footer');
                 }
             }else{
-                $this->load->view('front_end/block/header');
+                $this->load->view('front_end/block/header',$data);
                 $this->load->view('front_end/block/right_menu');
                 $this->load->view('front_end/block/vertical_menu');
                 $this->load->view('front_end/index');
@@ -122,13 +128,16 @@ class En extends CI_Controller {
 
     public function credit_card(){
 
-            $this->load->driver('cache');
-            $this->cache->file->save('credit_card_landing', 'credit_card_landing', 100);
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/credit_card_landing');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Credit Card - Finager";
+        $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+        $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+        $this->load->driver('cache');
+        $this->cache->file->save('credit_card_landing', 'credit_card_landing', 100);
+        $this->load->view('front_end/block/header',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/credit_card_landing');
+        $this->load->view('front_end/block/footer');
 
     }
 

@@ -8,7 +8,7 @@
     </div>
     <div class="">
         <div class="col-md-2">
-            <img class="bdetails_bd_bank" src="<?php echo base_url(); ?>resource/front_end/images/bangladesh-bank.jpg" alt="bangladesh bank image" />
+            <img class="bdetails_bd_bank" src="<?php echo base_url(); ?>resource/front_end/images/bangladesh-bank.jpg" alt="bangladesh bank logo" />
         </div>
         <div class="col-md-10">
             <p class="bdetails_text m-t-15">
@@ -26,38 +26,6 @@
             <div class="bank_details_landing_head2">
                 <p>ALPHABETICAL LIST OF ALL BD BANKS</p>
             </div>
-            <!--div class="bd_sorting">
-                <span><a href="#"> A </a></span>
-                <span><a href="#">B</a></span>
-                <span><a href="#">C</a></span>
-                <span><a href="#">D</a></span>
-                <span><a href="#">E</a></span>
-                <span><a href="#">F</a></span>
-                <span><a href="#">G</a></span>
-                <span><a href="#">H</a></span>
-                <span><a href="#">I</a></span>
-                <span><a href="#">J</a></span>
-                <span><a href="#">K</a></span>
-                <span><a href="#">L</a></span>
-                <span><a href="#">M</a></span>
-                <span><a href="#">N</a></span>
-                <br><br><br>
-                <span><a href="#">O</a></span>
-                <span><a href="#">P</a></span>
-                <span><a href="#">Q</a></span>
-                <span><a href="#">R</a></span>
-                <span><a href="#">S</a></span>
-                <span><a href="#">T</a></span>
-                <span><a href="#">U</a></span>
-                <span><a href="#">V</a></span>
-                <span><a href="#">W</a></span>
-                <span><a href="#">X</a></span>
-                <span><a href="#">Y</a></span>
-                <span><a href="#">Z</a></span>
-                <span><a href="#">#</a></span>
-                <span><a href="#">Top</a></span>
-            </div-->
-
             <div class="letter-sort">
                 <ul>
                     <li><a href="#"> A </a></li>
@@ -113,7 +81,7 @@
                 ?>
                 <div class="col-md-3">
                     <div class="bank_details_landing_box">
-                        <a href="<?php echo base_url();?>bank-details/<?php echo ($row->slug) ? $row->slug : $slug;?>.html" > <img class="text-center" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" title="<?php echo $row->known_as; ?>"></a>
+                        <a href="<?php echo base_url();?>bank-details/<?php echo ($row->slug) ? $row->slug : $slug;?>.html" > <img class="text-center" src="<?php echo base_url(); ?>resource/common_images/bank_logo/<?php echo $row->bank_logo; ?>" alt="<?php echo $row->known_as; ?>" title="<?php echo $row->known_as; ?>"></a>
                         <h5 class="text-center"><?php echo $row->bank_name; ?></h5>
                     </div>
                 </div>
