@@ -1218,13 +1218,13 @@
     $(document).ready(function(){
 
         $("#txtBankName").on('change', function(){
-            call_draft_info();
+            //call_draft_info();
         });
         $("#txtNonBankName").on('change', function(){
-            call_draft_info();
+            ///call_draft_info();
         });
         $("#txtIAm").on('change', function(){
-            call_draft_info();
+            //call_draft_info();
         });
 
 
