@@ -178,221 +178,119 @@ body {
     width:100%;
     margin-top:53px;
 }
-
 @media only screen and (min-width: 1281px){
     .hamburger.is-open{
         right: 200px !important;
     }
-
 }
-
 @media only screen and (max-width: 1280px){
-
     .hamburger.is-open{
-
         right: 195px;
-
     }
-
 }
-
 .hamburger {
-
     top: 11px !important;
-
     width: 26px !important;
-
 }
-
 /* Category Icon */
 
 #CategoryIcon {
     background: rgba(255,255,255,255);
     box-shadow: 0px 0px 5px 1px #dedede;
 }
-
 #CategoryIcon{
-
     height:500px;
-
     width:auto;
-
 }
-
 .catagory-icon{
-
     margin-top:20px;
-
 }
-
 .catagory-icon h1 {
-
     text-align: center;
-
     font-size: 45px;
-
     margin: 30px;
-
 }
-
 .catagory-icon p{
-
     font-size:15px;
-
     font-weight:bold;
-
     margin-top:10px;
-
     color:gray;
-
 }
-
 .Cicon{
-
     text-align:center;
-
     margin:20px 10px;
-
     height: 140px;
-
 }
-
-
-
 .Cicon a{
-
     text-decoration:none;
-
 }
-
 .Cicon img{
-
     width:105px;
-
     -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-
     filter: grayscale(100%);
-
 }
-
 .Cicon a:hover img{
-
     -webkit-filter: grayscale(0%);
-
     filter:grayscale(0%);
-
 }
-
 .Cicon a:hover p{
-
     color: #333;
-
 }
 .svg_show_text{margin-top: 5px !important;}
 section#header2 {
-
     padding: 30px 0;
     background: rgba(233, 238, 245, 0.33);
     box-shadow: 0px 0px 5px 1px #dedede;
-
 }
-
 /*for forth page*/
-
 #forth-page{
-
     clear:both;
-
     margin-bottom:25px;
-
 }
-
 .card-deposit h1{
-
     font-size:50px;
-
     color:#3390b6;
-
     font-family:SaintAndrewsQueen;
-
 }
-
 .card-deposit p{
-
     color:#000;
-
     text-align:justify;
-
     font-family:Kalpurush Regular;
-
 }
-
 .see-more{
-
     font-family:SaintAndrewsQueen;
-
     color:#3390b6;
-
     font-weight:bolder;
-
 }
-
 .btn-aplly{
-
     float:right;
-
     margin-bottom:10px;
-
 }
-
 @font-face {
-
     font-family: SaintAndrewsQueen;
-
     src:url(../fonts/SaintAndrewsQueen.ttf);
-
 }
-
 /*for slider*/
 
 .carousel-indicators .active {
-
     width: 15px;
-
     height: 15px;
-
     margin: 0;
-
     background-color: #9a9a9b;
-
 }
-
 .carousel-indicators {
-
     bottom: -60px;
-
 }
-
 .carousel-indicators li{
-
     background-color:#cdcece;
-
     width:15px;
-
     height: 15px;
-
     border-radius:25px;
-
 }
-
 .carousel-inner>.item img{
-
     margin-left:auto;
-
     margin-right: auto;
-
     float: none;
-
 }
 
 .remittance{
@@ -8583,3 +8481,22 @@ ul.footer-socials>li>a{
     }
 }
 /*About Us Content END*/
+#sidebar-wrapper {
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    height: 100%;
+    right: -280px;
+    margin-left: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 280px;
+    z-index: 99999;
+    left: auto;
+    /*background-image: url(https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg);*/
+    background-image: url(../images/Toogle-Banner-black.jpg);
+    background-size: cover;
+    background-position: center;
+}

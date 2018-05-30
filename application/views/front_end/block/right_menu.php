@@ -52,8 +52,6 @@
 
 }
 
-
-
 #wrapper.toggled { padding-right: 280px; }
 
 
@@ -66,33 +64,12 @@
     margin-right: 0px;
 }
 
-#sidebar-wrapper {
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    height: 100%;
-    right: -280px;
-    margin-left: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    width: 280px;
-    z-index: 99999;
-    left: auto;
-    background-image: url(https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg);
-    background-size: cover;
-    background-position: center;
-}
 
 #sidebar-wrapper::-webkit-scrollbar {
 
     display: none;
 
 }
-
-
-
 #page-content-wrapper {
 
 <!-- padding-top: 70px; -->
