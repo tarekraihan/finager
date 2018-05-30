@@ -223,16 +223,11 @@ font-size: 22px;
 </section>
 <section id="header2">
     <div class="container Aboutcredit_card">
-        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-            <img title="Finager Logo" class="img-responsive about-logo" src="<?php echo base_url(); ?>resource/front_end/images/FinagerLogo.svg">
-        </div>
-        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
             <div class="header_paragrph">
-               <!-- <h3 class="fin-about-heading"><span>A</span>bout <span>F</span>inager.com</h3>-->
+               <h1 class="text-center">Upcoming Product</h1>
                 <div class="fin-about-text">
-                    <p>"finager" is a fintech initiative of core-concept inc. This is the first 360 degree financial industry platform of Bangladesh. It helps visitors taking perfect decisions on their financial affairs- providing updated, authentic and analyzed data and tools.</p>
-                    <p>In this age of knowledge based economy, you need to work with someone who knows and understands,somewhere that shares knowledge, risk and result and defines realistic objectives and the ways to reach them.</p>
-                    <p>Visit "finager.com" , a partner you can count on day after day, a partner who is committed to support your success.</p>
+                    <img src="<?php echo base_url(); ?>resource/front_end/images/Currency-rate.jpg">
                 </div>
             </div>
         </div>
