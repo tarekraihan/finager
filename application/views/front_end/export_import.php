@@ -780,7 +780,7 @@
 									
 									<p>For More Information Please Contact Export Promotion Bureau.</p>
 									<p>Address: 1, Kawran Bazar, Dhaka-1215</p>
-									<p>Website: <a href="htttp://www.epb.gov.bd">www.epb.gov.bd</a></p>
+									<p>Website: <a href="http://www.epb.gov.bd" target="_blank">www.epb.gov.bd</a></p>
 									<p>Phone: 9188821-4, 8151496, 9128377</p>
 
 							    </div>
