@@ -76,7 +76,7 @@ class En extends CI_Controller {
             $this->load->driver('cache');
             $this->cache->file->save('index_page', 'index_page', 100);
 
-            $data['title'] ="Welcome to Finager";
+            $data['title'] ="Finager.com – Your Financial Manager for Cards, Loans and Investments";
             $data['description'] ="Finager.com help them to take financial decisions in their everyday life.";
             $data['keywords'] ="Loan, home Loan,Personal Loan, Bank, Investment, Credit Card, Debit Card, FDR, DPS, Auto Loan, Education Loan,Get Credit Card,  Bangladesh";
 
@@ -128,7 +128,7 @@ class En extends CI_Controller {
 
     public function credit_card(){
 
-        $data['title'] ="Credit Card - Finager";
+        $data['title'] ="Credit Card – A way to solve your financial problem | Finager.com";
         $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
         $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
         $this->load->driver('cache');
@@ -142,158 +142,185 @@ class En extends CI_Controller {
     }
 
     public function all_credit_card(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('card', 'card', 100);
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/card');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose your best credit card @ Finager.com";
+        $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+        $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+        $this->load->driver('cache');
+        $this->cache->file->save('card', 'card', 100);
+        $this->load->view('front_end/block/header',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/card');
+        $this->load->view('front_end/block/footer');
 
     }
 
     public function card_details($url){
 
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('card_card_informations',array('slug'=>$compare[0]));
-                $data['card1'] = $query1->row_array();
-                $query2 = $this->db->get_where('card_card_informations',array('slug'=>$compare[1]));
-                $data['card2'] = $query2->row_array();
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between best credit cards @ Finager.com";
+            $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+            $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('card_card_informations',array('slug'=>$compare[0]));
+            $data['card1'] = $query1->row_array();
+            $query2 = $this->db->get_where('card_card_informations',array('slug'=>$compare[1]));
+            $data['card2'] = $query2->row_array();
 
-                $this->load->driver('cache');
-                $this->cache->file->save('card_compare', 'card_compare', 100);
-                $this->load->view('front_end/block/header',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/card_compare');
-                $this->load->view('front_end/block/footer');
-            }else{
-                $query = $this->db->get_where('card_card_informations',array('slug'=>$url));
-                $data['card_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('card_details', 'card_details', 100);
-                $this->load->view('front_end/block/header',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/card_details');
-                $this->load->view('front_end/block/footer');
-            }
+            $this->load->driver('cache');
+            $this->cache->file->save('card_compare', 'card_compare', 100);
+            $this->load->view('front_end/block/header',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/card_compare');
+            $this->load->view('front_end/block/footer');
+        }else{
+            $data['title'] ="Find information about credit card @ Finager.com";
+            $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+            $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+            $query = $this->db->get_where('card_card_informations',array('slug'=>$url));
+            $data['card_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('card_details', 'card_details', 100);
+            $this->load->view('front_end/block/header',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/card_details');
+            $this->load->view('front_end/block/footer');
+        }
 
     }
 
 
     public function debit_card(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('debit_card_landing', 'debit_card_landing', 100);
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card_landing');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Debit Card – A convenient way to live life moneyless | Finager.com";
+        $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+        $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+        $this->load->driver('cache');
+        $this->cache->file->save('debit_card_landing', 'debit_card_landing', 100);
+        $this->load->view('front_end/block/header',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/debit_card_landing');
+        $this->load->view('front_end/block/footer');
 
     }
 
     public function all_debit_card(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('debit_card', 'debit_card', 100);
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/debit_card');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose debit card suitable for you @ Finager.com";
+        $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+        $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+        $this->load->driver('cache');
+        $this->cache->file->save('debit_card', 'debit_card', 100);
+        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/debit_card');
+        $this->load->view('front_end/block/footer');
 
     }
 
 
     public function debit_card_details($url){
 
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('debit_card_info',array('slug'=>$compare[0]));
-                $data['card1'] = $query1->row_array();
-                $query2 = $this->db->get_where('debit_card_info',array('slug'=>$compare[1]));
-                $data['card2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('debit_card_compare', 'debit_card_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/debit_card_compare');
-                $this->load->view('front_end/block/footer');
-            }else{
-                $query = $this->db->get_where('debit_card_info',array('slug'=>$url));
-                $data['card_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('debit_card_details', 'debit_card_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/debit_card_details');
-                $this->load->view('front_end/block/footer');
-            }
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between available debit card @ Finager.com";
+            $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+            $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('debit_card_info',array('slug'=>$compare[0]));
+            $data['card1'] = $query1->row_array();
+            $query2 = $this->db->get_where('debit_card_info',array('slug'=>$compare[1]));
+            $data['card2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('debit_card_compare', 'debit_card_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/debit_card_compare');
+            $this->load->view('front_end/block/footer');
+        }else{
+            $data['title'] ="Choose debit card suitable for you @ Finager.com";
+            $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+            $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+            $query = $this->db->get_where('debit_card_info',array('slug'=>$url));
+            $data['card_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('debit_card_details', 'debit_card_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/debit_card_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
     public function home_loan(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('home_loan_landing', 'home_loan_landing', 100);
-            $this->load->view('front_end/block/header');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/home_loan_landing');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Home Loan – A way to build your own home | Finager.com";
+        $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+        $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+        $this->load->driver('cache');
+        $this->cache->file->save('home_loan_landing', 'home_loan_landing', 100);
+        $this->load->view('front_end/block/header',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/home_loan_landing');
+        $this->load->view('front_end/block/footer');
 
     }
 
     public function all_home_loan(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('home_loan', 'home_loan', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/home_loan');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose home loan suitable for you @ Finager.com";
+        $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+        $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+        $this->load->driver('cache');
+        $this->cache->file->save('home_loan', 'home_loan', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/home_loan');
+        $this->load->view('front_end/block/footer');
 
     }
 
     public function home_loan_compare($url){
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between all home loans offers @ Finager.com";
+            $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+            $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+            $amount = explode("-",$url);
+            $data['amount'] = ( $amount[0] ) ? $amount[0] : 60000;
+            $data['month'] = ( $amount[1] ) ? $amount[1] : 12;
+            $url = array_slice($amount,2, count($amount)-1, true);
+            $url = implode('-',$url);
+            //echo $url;die;
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('home_loan_info',array('slug'=>$compare[0]));
+            $data['loan1'] = $query1->row_array();
+            $query2 = $this->db->get_where('home_loan_info',array('slug'=>$compare[1]));
+            $data['loan2'] = $query2->row_array();
 
-            if(strpos( $url, '-vs-' ) == true){
-                $amount = explode("-",$url);
-                $data['amount'] = ( $amount[0] ) ? $amount[0] : 60000;
-                $data['month'] = ( $amount[1] ) ? $amount[1] : 12;
-                $url = array_slice($amount,2, count($amount)-1, true);
-                $url = implode('-',$url);
-                //echo $url;die;
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('home_loan_info',array('slug'=>$compare[0]));
-                $data['loan1'] = $query1->row_array();
-                $query2 = $this->db->get_where('home_loan_info',array('slug'=>$compare[1]));
-                $data['loan2'] = $query2->row_array();
-
-                $this->load->driver('cache');
-                $this->cache->file->save('home_loan_compare', 'home_loan_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/home_loan_compare');
-                $this->load->view('front_end/block/footer');
-            }else{
-                $query = $this->db->get_where('home_loan_info',array('slug'=>$url));
-                $data['home_loan_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('home_loan_details', 'home_loan_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/home_loan_details');
-                $this->load->view('front_end/block/footer');
-            }
+            $this->load->driver('cache');
+            $this->cache->file->save('home_loan_compare', 'home_loan_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/home_loan_compare');
+            $this->load->view('front_end/block/footer');
+        }else{
+            $data['title'] ="Find information about Home Loan @ Finager.com";
+            $data['description'] ="Credit Card is designed to be a privileged card for anyone to enjoy benefits to make the best of their lifestyles. This is not just a credit card; it is the modern solution for financial situations that gives you prestige and respect for every transaction you make with this card.";
+            $data['keywords'] ="Credit Card, Card,Get Credit Card, Credit Card in Bangladesh";
+            $query = $this->db->get_where('home_loan_info',array('slug'=>$url));
+            $data['home_loan_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('home_loan_details', 'home_loan_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/home_loan_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
 
@@ -304,65 +331,84 @@ class En extends CI_Controller {
 
 
     public function car_loan(){
-            $this->load->driver('cache');
-            $this->cache->file->save('auto_loan_landing', 'auto_loan_landing', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/auto_loan_landing');
-            $this->load->view('front_end/block/footer');
+        
+        $data['title'] ="Auto Loan – A financial help for purchasing your own car | Finager.com";
+        $data['description'] ="At Finager.com you can compare all the car loans offered by banks and non-banking financial institutes to choose which is better for you.You can compare them between interest rates, processing fees and other benefits. Finager.com also helps you to process your documents.";
+        $data['keywords'] ="Finager, Finager.com, Car Loan, Auto Loan, Best Car Loan, Low Interest Rate,Vehicle Loan, Low EMI Car Loan, information about car loan, information about the best auto loan, popular auto loan.";
+
+        $this->load->driver('cache');
+        $this->cache->file->save('auto_loan_landing', 'auto_loan_landing', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/auto_loan_landing');
+        $this->load->view('front_end/block/footer');
     }
 
     public function all_car_loan(){
+        $data['title'] ="Choose auto loan suitable for you @ Finager.com";
+        $data['description'] ="At Finager.com you can compare all the car loans offered by banks and non-banking financial institutes to choose which is better for you.You can compare them between interest rates, processing fees and other benefits. Finager.com also helps you to process your documents.";
+        $data['keywords'] ="Sonali Bank Ltd., Janata Bank Ltd., Agrani Bank Ltd., Rupali Bank Ltd., Bangladesh Krishi Bank, Bangladesh Development Bank Limited., Basic Bank Limited, AB Bank Limited, Bangladesh Commerce Bank Limited, Bank Asia Limited, Bengal Bank Limited, BRAC Bank Limited, City Bank Limited, Dhaka Bank Limited, Dutch-Bangla Bank Limited, Eastern Bank Limited, IFIC Bank Limited, Jamuna Bank Limited, Meghna Bank Limited, Mercantile Bank Limited, Midland Bank, Modhumoti Bank Limited, Mutual Trust Bank Limited, National Bank Limited, National Credit & Commerce Bank Limited, NRB Bank Limited, NRB Commercial Bank Limited, One Bank Limited, Premier Bank Limited, Prime Bank Limited, Pubali Bank Limited, South Bangla Agriculture & Commerce Bank Limited, Southeast Bank Limited, Standard Bank Limited, The Farmers Bank Limited, Trust Bank Limited, United Commercial Bank Limited, Uttara Bank Limited, Shimanto Bank Ltd, Islami Somaz Bank Limited, Al-Arafah Islami Bank Limited, EXIM Bank Limited, First Security Islami Bank Limited, ICB Islamic Bank Limited, Islami Bank Bangladesh Limited, Shahjalal Islami Bank Limited, Social Islami Bank Limited, Union Bank Limited, Bank Al-Falah Limited, Citibank N.A, Commercial Bank of Ceylon PLC, Habib Bank Limited, National Bank of Pakistan, Standard Chartered Bank, State Bank of India, Punjab National Bank, Woori Bank, HSBC .";
 
-            $this->load->driver('cache');
-            $this->cache->file->save('auto_loan', 'auto_loan', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/auto_loan');
-            $this->load->view('front_end/block/footer');
+        $this->load->driver('cache');
+        $this->cache->file->save('auto_loan', 'auto_loan', 100);
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/auto_loan');
+        $this->load->view('front_end/block/footer');
 
     }
 
-    public function car_loan_details(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('auto_loan_details', 'auto_loan_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/auto_loan_details');
-            $this->load->view('front_end/block/footer');
-    }
+//    public function car_loan_details(){
+//        $data['title'] ="Find information about– Auto Loan @ Finager.com";
+//        $data['description'] ="At Finager.com you can compare all the car loans offered by banks and non-banking financial institutes to choose which is better for you.You can compare them between interest rates, processing fees and other benefits. Finager.com also helps you to process your documents.";
+//        $data['keywords'] ="Sonali Bank Ltd., Janata Bank Ltd., Agrani Bank Ltd., Rupali Bank Ltd., Bangladesh Krishi Bank, Bangladesh Development Bank Limited., Basic Bank Limited, AB Bank Limited, Bangladesh Commerce Bank Limited, Bank Asia Limited, Bengal Bank Limited, BRAC Bank Limited, City Bank Limited, Dhaka Bank Limited, Dutch-Bangla Bank Limited, Eastern Bank Limited, IFIC Bank Limited, Jamuna Bank Limited, Meghna Bank Limited, Mercantile Bank Limited, Midland Bank, Modhumoti Bank Limited, Mutual Trust Bank Limited, National Bank Limited, National Credit & Commerce Bank Limited, NRB Bank Limited, NRB Commercial Bank Limited, One Bank Limited, Premier Bank Limited, Prime Bank Limited, Pubali Bank Limited, South Bangla Agriculture & Commerce Bank Limited, Southeast Bank Limited, Standard Bank Limited, The Farmers Bank Limited, Trust Bank Limited, United Commercial Bank Limited, Uttara Bank Limited, Shimanto Bank Ltd, Islami Somaz Bank Limited, Al-Arafah Islami Bank Limited, EXIM Bank Limited, First Security Islami Bank Limited, ICB Islamic Bank Limited, Islami Bank Bangladesh Limited, Shahjalal Islami Bank Limited, Social Islami Bank Limited, Union Bank Limited, Bank Al-Falah Limited, Citibank N.A, Commercial Bank of Ceylon PLC, Habib Bank Limited, National Bank of Pakistan, Standard Chartered Bank, State Bank of India, Punjab National Bank, Woori Bank, HSBC .";
+//
+//        $this->load->driver('cache');
+//        $this->cache->file->save('auto_loan_details', 'auto_loan_details', 100);
+//        $this->load->view('front_end/block/header_home_loan',$data);
+//        $this->load->view('front_end/block/right_menu');
+//        $this->load->view('front_end/block/vertical_menu');
+//        $this->load->view('front_end/auto_loan_details');
+//        $this->load->view('front_end/block/footer');
+//    }
 
 
     public function car_loan_compare($url){
 
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('auto_loan_info',array('slug'=>$compare[0]));
-                $data['loan1'] = $query1->row_array();
-                $query2 = $this->db->get_where('auto_loan_info',array('slug'=>$compare[1]));
-                $data['loan2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('auto_loan_compare', 'auto_loan_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/auto_loan_compare');
-                $this->load->view('front_end/block/footer');
-            }else{
-                $query = $this->db->get_where('auto_loan_info',array('slug'=>$url));
-                $data['loan_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('auto_loan_details', 'auto_loan_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/auto_loan_details');
-                $this->load->view('front_end/block/footer');
-            }
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between all auto loans offers @ Finager.com";
+            $data['description'] ="At Finager.com you can compare all the car loans offered by banks and non-banking financial institutes to choose which is better for you.You can compare them between interest rates, processing fees and other benefits. Finager.com also helps you to process your documents.";
+            $data['keywords'] ="Sonali Bank Ltd., Janata Bank Ltd., Agrani Bank Ltd., Rupali Bank Ltd., Bangladesh Krishi Bank, Bangladesh Development Bank Limited., Basic Bank Limited, AB Bank Limited, Bangladesh Commerce Bank Limited, Bank Asia Limited, Bengal Bank Limited, BRAC Bank Limited, City Bank Limited, Dhaka Bank Limited, Dutch-Bangla Bank Limited, Eastern Bank Limited, IFIC Bank Limited, Jamuna Bank Limited, Meghna Bank Limited, Mercantile Bank Limited, Midland Bank, Modhumoti Bank Limited, Mutual Trust Bank Limited, National Bank Limited, National Credit & Commerce Bank Limited, NRB Bank Limited, NRB Commercial Bank Limited, One Bank Limited, Premier Bank Limited, Prime Bank Limited, Pubali Bank Limited, South Bangla Agriculture & Commerce Bank Limited, Southeast Bank Limited, Standard Bank Limited, The Farmers Bank Limited, Trust Bank Limited, United Commercial Bank Limited, Uttara Bank Limited, Shimanto Bank Ltd, Islami Somaz Bank Limited, Al-Arafah Islami Bank Limited, EXIM Bank Limited, First Security Islami Bank Limited, ICB Islamic Bank Limited, Islami Bank Bangladesh Limited, Shahjalal Islami Bank Limited, Social Islami Bank Limited, Union Bank Limited, Bank Al-Falah Limited, Citibank N.A, Commercial Bank of Ceylon PLC, Habib Bank Limited, National Bank of Pakistan, Standard Chartered Bank, State Bank of India, Punjab National Bank, Woori Bank, HSBC .";
+    
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('auto_loan_info',array('slug'=>$compare[0]));
+            $data['loan1'] = $query1->row_array();
+            $query2 = $this->db->get_where('auto_loan_info',array('slug'=>$compare[1]));
+            $data['loan2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('auto_loan_compare', 'auto_loan_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/auto_loan_compare');
+            $this->load->view('front_end/block/footer');
+        }else{
+            $data['title'] ="Find information about auto loan @ Finager.com";
+            $data['description'] ="At Finager.com you can compare all the car loans offered by banks and non-banking financial institutes to choose which is better for you.You can compare them between interest rates, processing fees and other benefits. Finager.com also helps you to process your documents.";
+            $data['keywords'] ="Sonali Bank Ltd., Janata Bank Ltd., Agrani Bank Ltd., Rupali Bank Ltd., Bangladesh Krishi Bank, Bangladesh Development Bank Limited., Basic Bank Limited, AB Bank Limited, Bangladesh Commerce Bank Limited, Bank Asia Limited, Bengal Bank Limited, BRAC Bank Limited, City Bank Limited, Dhaka Bank Limited, Dutch-Bangla Bank Limited, Eastern Bank Limited, IFIC Bank Limited, Jamuna Bank Limited, Meghna Bank Limited, Mercantile Bank Limited, Midland Bank, Modhumoti Bank Limited, Mutual Trust Bank Limited, National Bank Limited, National Credit & Commerce Bank Limited, NRB Bank Limited, NRB Commercial Bank Limited, One Bank Limited, Premier Bank Limited, Prime Bank Limited, Pubali Bank Limited, South Bangla Agriculture & Commerce Bank Limited, Southeast Bank Limited, Standard Bank Limited, The Farmers Bank Limited, Trust Bank Limited, United Commercial Bank Limited, Uttara Bank Limited, Shimanto Bank Ltd, Islami Somaz Bank Limited, Al-Arafah Islami Bank Limited, EXIM Bank Limited, First Security Islami Bank Limited, ICB Islamic Bank Limited, Islami Bank Bangladesh Limited, Shahjalal Islami Bank Limited, Social Islami Bank Limited, Union Bank Limited, Bank Al-Falah Limited, Citibank N.A, Commercial Bank of Ceylon PLC, Habib Bank Limited, National Bank of Pakistan, Standard Chartered Bank, State Bank of India, Punjab National Bank, Woori Bank, HSBC .";
+    
+            $query = $this->db->get_where('auto_loan_info',array('slug'=>$url));
+            $data['loan_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('auto_loan_details', 'auto_loan_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/auto_loan_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
 
@@ -371,10 +417,10 @@ class En extends CI_Controller {
     }
 
     public function personal_loan(){
-
+        $data['title'] ="Personal Loan – A helping hand for your financial need | Finager.com";
         $this->load->driver('cache');
         $this->cache->file->save('personal_loan_landing', 'personal_loan_landing', 100);
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/personal_loan_landing');
@@ -383,43 +429,45 @@ class En extends CI_Controller {
 
 
     public function all_personal_loan(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('personal_loan', 'personal_loan', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/personal_loan');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose personal loans suitable for you @ Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('personal_loan', 'personal_loan', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/personal_loan');
+        $this->load->view('front_end/block/footer');
 
     }
 
     public function personal_loan_compare($url){
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('personal_loan_info',array('slug'=>$compare[0]));
-                $data['loan1'] = $query1->row_array();
-                $query2 = $this->db->get_where('personal_loan_info',array('slug'=>$compare[1]));
-                $data['loan2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('personal_loan_details', 'personal_loan_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/personal_loan_compare');
-                $this->load->view('front_end/block/footer');
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between all personal loan @ Finager.com";
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('personal_loan_info',array('slug'=>$compare[0]));
+            $data['loan1'] = $query1->row_array();
+            $query2 = $this->db->get_where('personal_loan_info',array('slug'=>$compare[1]));
+            $data['loan2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('personal_loan_details', 'personal_loan_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/personal_loan_compare');
+            $this->load->view('front_end/block/footer');
 
-            }else{
-                $query = $this->db->get_where('personal_loan_info',array('slug'=>$url));
-                $data['personal_loan_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('personal_loan_compare', 'personal_loan_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/personal_loan_details');
-                $this->load->view('front_end/block/footer');
-            }
+        }else{
+            $data['title'] ="Find information about all personal loans @ Finager.com";
+            $query = $this->db->get_where('personal_loan_info',array('slug'=>$url));
+            $data['personal_loan_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('personal_loan_compare', 'personal_loan_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/personal_loan_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
 
@@ -429,66 +477,69 @@ class En extends CI_Controller {
 
 
     public function education_loan(){
-            $this->load->driver('cache');
-            $this->cache->file->save('education_loan_landing', 'education_loan_landing', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/education_loan_landing');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Education Loan – A financial help to complete your higher education | Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('education_loan_landing', 'education_loan_landing', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/education_loan_landing');
+        $this->load->view('front_end/block/footer');
     }
 
 
     public function all_education_loan(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('education_loan', 'education_loan', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/education_loan');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose educational loans available for you @ Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('education_loan', 'education_loan', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/education_loan');
+        $this->load->view('front_end/block/footer');
 
     }
 
-    public function education_loan_details(){
+//    public function education_loan_details(){
+//        $data['title'] ="Choose educational loans available for you @ Finager.com";
+//        $this->load->driver('cache');
+//        $this->cache->file->save('education_loan_details', 'education_loan_details', 100);
+//        $this->load->view('front_end/block/header_home_loan',$data);
+//        $this->load->view('front_end/block/right_menu');
+//        $this->load->view('front_end/block/vertical_menu');
+//        $this->load->view('front_end/education_loan_details');
+//        $this->load->view('front_end/block/footer');
+//    }
 
+
+    public function education_loan_compare($url){
+        $data['title'] ="Compare between all education loan @ Finager.com";
+        if(strpos( $url, '-vs-' ) == true){
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('education_loan_info',array('slug'=>$compare[0]));
+            $data['loan1'] = $query1->row_array();
+            $query2 = $this->db->get_where('education_loan_info',array('slug'=>$compare[1]));
+            $data['loan2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('education_loan_compare', 'education_loan_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/education_loan_compare');
+            $this->load->view('front_end/block/footer');
+
+        }else{
+            $data['title'] ="Find information about all education loans @ Finager.com";
+            $query = $this->db->get_where('education_loan_info',array('slug'=>$url));
+            $data['education_loan_details'] = $query->row_array();
             $this->load->driver('cache');
             $this->cache->file->save('education_loan_details', 'education_loan_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/header_home_loan',$data);
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/education_loan_details');
             $this->load->view('front_end/block/footer');
-    }
-
-
-    public function education_loan_compare($url){
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('education_loan_info',array('slug'=>$compare[0]));
-                $data['loan1'] = $query1->row_array();
-                $query2 = $this->db->get_where('education_loan_info',array('slug'=>$compare[1]));
-                $data['loan2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('education_loan_compare', 'education_loan_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/education_loan_compare');
-                $this->load->view('front_end/block/footer');
-
-            }else{
-                $query = $this->db->get_where('education_loan_info',array('slug'=>$url));
-                $data['education_loan_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('education_loan_details', 'education_loan_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/education_loan_details');
-                $this->load->view('front_end/block/footer');
-            }
+        }
 
     }
 
@@ -501,10 +552,11 @@ class En extends CI_Controller {
     }
 
 
-    public function fdr(){
+    public function fdr_account(){
+        $data['title'] ="FDR – A scheme to invest your money for a fixed interest | Finager.com";
         $this->load->driver('cache');
         $this->cache->file->save('fdr_landing', 'fdr_landing', 100);
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/fdr_landing');
@@ -515,220 +567,230 @@ class En extends CI_Controller {
 
 
     public function all_fdr(){
-            $this->load->driver('cache');
-            $this->cache->file->save('fdr', 'fdr', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/fdr');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose your best investment scheme as FDR @ Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('fdr', 'fdr', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/fdr');
+        $this->load->view('front_end/block/footer');
 
     }
 
 
     public function fdr_compare($url){
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('fdr_info',array('slug'=>$compare[0]));
-                $data['fdr1'] = $query1->row_array();
-                $query2 = $this->db->get_where('fdr_info',array('slug'=>$compare[1]));
-                $data['fdr2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('fdr_compare', 'fdr_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/fdr_compare');
-                $this->load->view('front_end/block/footer');
-
-            }else{
-                $query = $this->db->get_where('fdr_info',array('slug'=>$url));
-                $data['fdr_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('fdr_details', 'fdr_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/fdr_details');
-                $this->load->view('front_end/block/footer');
-            }
-    }
-
-    public function dps(){
-
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between all FDR schemes @ Finager.com";
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('fdr_info',array('slug'=>$compare[0]));
+            $data['fdr1'] = $query1->row_array();
+            $query2 = $this->db->get_where('fdr_info',array('slug'=>$compare[1]));
+            $data['fdr2'] = $query2->row_array();
             $this->load->driver('cache');
-            $this->cache->file->save('dps_landing', 'dps_landing', 100);
-            $this->load->view('front_end/block/header_home_loan');
+            $this->cache->file->save('fdr_compare', 'fdr_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/dps_landing');
+            $this->load->view('front_end/fdr_compare');
             $this->load->view('front_end/block/footer');
+
+        }else{
+            $data['title'] ="Find information about all FDR schemes @ Finager.com";
+            $query = $this->db->get_where('fdr_info',array('slug'=>$url));
+            $data['fdr_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('fdr_details', 'fdr_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/fdr_details');
+            $this->load->view('front_end/block/footer');
+        }
+    }
+
+    public function dps_account(){
+        $data['title'] ="DPS – An investment scheme for future savings| Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('dps_landing', 'dps_landing', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/dps_landing');
+        $this->load->view('front_end/block/footer');
 
     }
 
 
     public function all_dps(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('dps', 'dps', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/dps');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose DPS suitable for you @ Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('dps', 'dps', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/dps');
+        $this->load->view('front_end/block/footer');
 
     }
 
     public function dps_compare($url){
 
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $dps_amount = explode("-tk",$compare[1]);
-                $query1 = $this->db->get_where('dps_info',array('slug'=>$compare[0]));
-                $data['dps1'] = $query1->row_array();
-                $query2 = $this->db->get_where('dps_info',array('slug'=>$dps_amount[0]));
-                $data['dps2'] = $query2->row_array();
-                $data['dps_amount'] = $dps_amount[1];
-                $this->load->driver('cache');
-                $this->cache->file->save('dps_compare', 'dps_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/dps_compare');
-                $this->load->view('front_end/block/footer');
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between all available DPS schemes @ Finager.com";
+            $compare = explode("-vs-",$url);
+            $dps_amount = explode("-tk",$compare[1]);
+            $query1 = $this->db->get_where('dps_info',array('slug'=>$compare[0]));
+            $data['dps1'] = $query1->row_array();
+            $query2 = $this->db->get_where('dps_info',array('slug'=>$dps_amount[0]));
+            $data['dps2'] = $query2->row_array();
+            $data['dps_amount'] = $dps_amount[1];
+            $this->load->driver('cache');
+            $this->cache->file->save('dps_compare', 'dps_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/dps_compare');
+            $this->load->view('front_end/block/footer');
 
-            }else{
-                $dps_data = explode("-tk",$url);
-                $query = $this->db->get_where('dps_info',array('slug'=>$dps_data[0]));
-                $data['dps_details'] = $query->row_array();
-                $data['dps_amount'] = $dps_data[1];
-                $this->load->driver('cache');
-                $this->cache->file->save('dps_details', 'dps_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/dps_details');
-                $this->load->view('front_end/block/footer');
-            }
+        }else{
+            $data['title'] ="Find information about all DPS schemes @ Finager.com";
+            $dps_data = explode("-tk",$url);
+            $query = $this->db->get_where('dps_info',array('slug'=>$dps_data[0]));
+            $data['dps_details'] = $query->row_array();
+            $data['dps_amount'] = $dps_data[1];
+            $this->load->driver('cache');
+            $this->cache->file->save('dps_details', 'dps_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/dps_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
 
     public function millionaire(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('millionaire_landing', 'millionaire_landing', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/millionaire_landing');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Millionaire Scheme – Aninvestment scheme to become a millionaire | Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('millionaire_landing', 'millionaire_landing', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/millionaire_landing');
+        $this->load->view('front_end/block/footer');
     }
 
 
 
     public function all_millionaire(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('millionaire', 'millionaire', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/millionaire');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose your best credit card @ Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('millionaire', 'millionaire', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/millionaire');
+        $this->load->view('front_end/block/footer');
 
     }
 
     public function millionaire_compare($url){
 
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('millionaire_info',array('slug'=>$compare[0]));
-                $data['millionaire1'] = $query1->row_array();
-                $query2 = $this->db->get_where('millionaire_info',array('slug'=>$compare[1]));
-                $data['millionaire2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('millionaire_compare', 'millionaire_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/millionaire_compare');
-                $this->load->view('front_end/block/footer');
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between best credit cards @ Finager.com";
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('millionaire_info',array('slug'=>$compare[0]));
+            $data['millionaire1'] = $query1->row_array();
+            $query2 = $this->db->get_where('millionaire_info',array('slug'=>$compare[1]));
+            $data['millionaire2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('millionaire_compare', 'millionaire_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/millionaire_compare');
+            $this->load->view('front_end/block/footer');
 
-            }else{
-                $query = $this->db->get_where('millionaire_info',array('slug'=>$url));
-                $data['millionaire_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('millionaire_details', 'millionaire_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/millionaire_details');
-                $this->load->view('front_end/block/footer');
-            }
+        }else{
+            $data['title'] ="Find information about credit card @ Finager.com";
+            $query = $this->db->get_where('millionaire_info',array('slug'=>$url));
+            $data['millionaire_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('millionaire_details', 'millionaire_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/millionaire_details');
+            $this->load->view('front_end/block/footer');
+        }
 
     }
 
 
 
     public function money_maximizer(){
-            $this->load->driver('cache');
-            $this->cache->file->save('money_maximizer_landing', 'money_maximizer_landing', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/money_maximizer_landing');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Money Maximizer – An easy way to maximize your investment | Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('money_maximizer_landing', 'money_maximizer_landing', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/money_maximizer_landing');
+        $this->load->view('front_end/block/footer');
 
     }
 
 
     public function all_money_maximizer(){
-
-            $this->load->driver('cache');
-            $this->cache->file->save('money_maximizer', 'money_maximizer', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/money_maximizer');
-            $this->load->view('front_end/block/footer');
+        $data['title'] ="Choose from all money maximization scheme available @ Finager.com";
+        $this->load->driver('cache');
+        $this->cache->file->save('money_maximizer', 'money_maximizer', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/money_maximizer');
+        $this->load->view('front_end/block/footer');
     }
 
     public function money_maximizer_compare($url){
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('money_maxi_info',array('slug'=>$compare[0]));
-                $data['money_maximizer1'] = $query1->row_array();
-                $query2 = $this->db->get_where('money_maxi_info',array('slug'=>$compare[1]));
-                $data['money_maximizer2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('money_maximizer_compare', 'money_maximizer_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/money_maximizer_compare');
-                $this->load->view('front_end/block/footer');
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="– Compare between all available money maximizer scheme @ Finager.com";
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('money_maxi_info',array('slug'=>$compare[0]));
+            $data['money_maximizer1'] = $query1->row_array();
+            $query2 = $this->db->get_where('money_maxi_info',array('slug'=>$compare[1]));
+            $data['money_maximizer2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('money_maximizer_compare', 'money_maximizer_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/money_maximizer_compare');
+            $this->load->view('front_end/block/footer');
 
-            }else{
-                $query = $this->db->get_where('money_maxi_info',array('slug'=>$url));
-                $data['money_maximizer_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('money_maximizer_details', 'money_maximizer_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/money_maximizer_details');
-                $this->load->view('front_end/block/footer');
-            }
+        }else{
+            $data['title'] ="Find information about all money maximizer scheme @ Finager.com";
+            $query = $this->db->get_where('money_maxi_info',array('slug'=>$url));
+            $data['money_maximizer_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('money_maximizer_details', 'money_maximizer_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/money_maximizer_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
 
 
 
     public function monthly_benefit(){
-
+        $data['title'] ="Monthly Benefit Scheme – Aninvestment scheme for regular monthly income | Finager.com";
             $this->load->driver('cache');
             $this->cache->file->save('monthly_benefit_landing', 'monthly_benefit_landing', 100);
-            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/header_home_loan',$data);
             $this->load->view('front_end/block/header_home_loan');
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
@@ -739,29 +801,31 @@ class En extends CI_Controller {
 
 
     public function all_monthly_benefit(){
-
+        $data['title'] ="Choose from all monthly benefit scheme offers @ Finager.com";
             $this->load->driver('cache');
             $this->cache->file->save('monthly_benefit', 'monthly_benefit', 100);
-            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/header_home_loan',$data);
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/monthly_benefit');
             $this->load->view('front_end/block/footer');
 
     }
-
-    public function monthly_benefit_details(){
-            $this->load->driver('cache');
-            $this->cache->file->save('monthly_benefit_details', 'monthly_benefit_details', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/monthly_benefit_details');
-            $this->load->view('front_end/block/footer');
-    }
+//
+//    public function monthly_benefit_details(){
+//        $data['title'] ="Find information about all money maximizer scheme @ Finager.com";
+//            $this->load->driver('cache');
+//            $this->cache->file->save('monthly_benefit_details', 'monthly_benefit_details', 100);
+//            $this->load->view('front_end/block/header_home_loan');
+//            $this->load->view('front_end/block/right_menu');
+//            $this->load->view('front_end/block/vertical_menu');
+//            $this->load->view('front_end/monthly_benefit_details');
+//            $this->load->view('front_end/block/footer');
+//    }
 
     public function monthly_benefit_compare($url){
             if(strpos( $url, '-vs-' ) == true){
+                $data['title'] ="Compare between all monthly benefit scheme @ Finager.com";
                 $compare = explode("-vs-",$url);
                 $query1 = $this->db->get_where('monthly_benefit_info',array('slug'=>$compare[0]));
                 $data['monthly_benefit1'] = $query1->row_array();
@@ -776,6 +840,7 @@ class En extends CI_Controller {
                 $this->load->view('front_end/block/footer');
 
             }else{
+                $data['title'] ="Find information about monthly benefit scheme @ Finager.com";
                 $query = $this->db->get_where('monthly_benefit_info',array('slug'=>$url));
                 $data['monthly_benefit_details'] = $query->row_array();
                 $this->load->driver('cache');
@@ -830,6 +895,7 @@ class En extends CI_Controller {
     }
 
     public function savings_account(){
+        $data['title'] ="Choose from all savings account offered by banks@ Finager.com";
             $this->load->driver('cache');
             $this->cache->file->save('savings_account', 'savings_account', 100);
             $this->load->view('front_end/block/header_home_loan');
@@ -844,6 +910,7 @@ class En extends CI_Controller {
     public function saving_account_compare($url){
 
             if(strpos( $url, '-vs-' ) == true){
+                $data['title'] ="Compare between all saving accounts offered by banks @ Finager.com";
                 $compare = explode("-vs-",$url);
                 $query1 = $this->db->get_where('saving_account_info',array('slug'=>$compare[0]));
                 $data['saving_account1'] = $query1->row_array();
@@ -857,6 +924,7 @@ class En extends CI_Controller {
                 $this->load->view('front_end/saving_account_compare');
                 $this->load->view('front_end/block/footer');
             }else{
+                $data['title'] ="Find information about savings accounts @ Finager.com";
                 $query = $this->db->get_where('saving_account_info',array('slug'=>$url));
                 $data['saving_account_details'] = $query->row_array();
                 $this->load->driver('cache');
@@ -1027,7 +1095,7 @@ class En extends CI_Controller {
         }
     }
 
-    public function snd(){
+    public function snd_account(){
         $this->load->driver('cache');
         $this->cache->file->save('snd_compare', 'snd_compare', 100);
         $this->load->view('front_end/block/header_home_loan');

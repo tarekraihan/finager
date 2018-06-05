@@ -20,10 +20,6 @@
     <!-- SmartAdmin RTL Support -->
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>resource/admin/css/smartadmin-rtl.min.css">
 
-    <!-- We recommend you use "your_style.css" to override SmartAdmin
-         specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-    <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-
     <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>resource/admin/css/demo.min.css">
 
@@ -50,8 +46,7 @@
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="462812130062-6rk4bss17ogse329b3mnh6duub3i2qse.apps.googleusercontent.com">
+
     <style>
 
         .error{
@@ -69,9 +64,6 @@
     <div id="logo-group">
         <span id="logo"> <img style="width:100px; height: auto" src="<?php echo base_url();?>resource/admin/img/company_logo.png" alt="finager"> </span>
     </div>
-
-    <!--<span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">Need an account?</span> <a href="register.html" class="btn btn-danger">Create account</a> </span>
--->
 </header>
 
 <div id="main" role="main">
@@ -169,26 +161,11 @@
                             <button type="button" id="btnSubmit" class="btn btn-primary">
                                 Sign in
                             </button>
-                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
                         </footer>
                     </form>
 
                 </div>
-                <!--
-                <h5 class="text-center"> - Or sign in using -</h5>
 
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="btn btn-info btn-circle"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="btn btn-warning btn-circle"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                -->
             </div>
         </div>
     </div>
