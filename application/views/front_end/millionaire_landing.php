@@ -196,7 +196,7 @@
 					you’re looking for.
 				</p>
 			</div>
-			<a href="<?php echo base_url()?>en/all_millionaire"><span class="btn_landing_millionaire_start">Get Started</span></a>
+			<a href="<?php echo base_url()?>millionaire.html"><span class="btn_landing_millionaire_start">Get Started</span></a>
 		</div>
 	</div>
 	</section>

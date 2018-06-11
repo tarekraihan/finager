@@ -671,7 +671,7 @@ class En extends CI_Controller {
 
 
     public function millionaire(){
-        $data['title'] ="Millionaire Scheme – Aninvestment scheme to become a millionaire | Finager.com";
+        $data['title'] ="Millionaire Scheme – An investment scheme to become a millionaire | Finager.com";
         $this->load->driver('cache');
         $this->cache->file->save('millionaire_landing', 'millionaire_landing', 100);
         $this->load->view('front_end/block/header_home_loan',$data);
@@ -787,7 +787,7 @@ class En extends CI_Controller {
 
 
     public function monthly_benefit(){
-        $data['title'] ="Monthly Benefit Scheme – Aninvestment scheme for regular monthly income | Finager.com";
+        $data['title'] ="Monthly Benefit Scheme – An investment scheme for regular monthly income | Finager.com";
             $this->load->driver('cache');
             $this->cache->file->save('monthly_benefit_landing', 'monthly_benefit_landing', 100);
             $this->load->view('front_end/block/header_home_loan',$data);
@@ -802,13 +802,13 @@ class En extends CI_Controller {
 
     public function all_monthly_benefit(){
         $data['title'] ="Choose from all monthly benefit scheme offers @ Finager.com";
-            $this->load->driver('cache');
-            $this->cache->file->save('monthly_benefit', 'monthly_benefit', 100);
-            $this->load->view('front_end/block/header_home_loan',$data);
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/monthly_benefit');
-            $this->load->view('front_end/block/footer');
+        $this->load->driver('cache');
+        $this->cache->file->save('monthly_benefit', 'monthly_benefit', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/monthly_benefit');
+        $this->load->view('front_end/block/footer');
 
     }
 //
@@ -824,33 +824,33 @@ class En extends CI_Controller {
 //    }
 
     public function monthly_benefit_compare($url){
-            if(strpos( $url, '-vs-' ) == true){
-                $data['title'] ="Compare between all monthly benefit scheme @ Finager.com";
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('monthly_benefit_info',array('slug'=>$compare[0]));
-                $data['monthly_benefit1'] = $query1->row_array();
-                $query2 = $this->db->get_where('monthly_benefit_info',array('slug'=>$compare[1]));
-                $data['monthly_benefit2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('monthly_benefit_details', 'monthly_benefit_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/monthly_benefit_compare');
-                $this->load->view('front_end/block/footer');
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between all monthly benefit scheme @ Finager.com";
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('monthly_benefit_info',array('slug'=>$compare[0]));
+            $data['monthly_benefit1'] = $query1->row_array();
+            $query2 = $this->db->get_where('monthly_benefit_info',array('slug'=>$compare[1]));
+            $data['monthly_benefit2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('monthly_benefit_details', 'monthly_benefit_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/monthly_benefit_compare');
+            $this->load->view('front_end/block/footer');
 
-            }else{
-                $data['title'] ="Find information about monthly benefit scheme @ Finager.com";
-                $query = $this->db->get_where('monthly_benefit_info',array('slug'=>$url));
-                $data['monthly_benefit_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('monthly_benefit_compare', 'monthly_benefit_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/monthly_benefit_details');
-                $this->load->view('front_end/block/footer');
-            }
+        }else{
+            $data['title'] ="Find information about monthly benefit scheme @ Finager.com";
+            $query = $this->db->get_where('monthly_benefit_info',array('slug'=>$url));
+            $data['monthly_benefit_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('monthly_benefit_compare', 'monthly_benefit_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/monthly_benefit_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
 
@@ -867,79 +867,79 @@ class En extends CI_Controller {
     }
 
     public function current_account_compare($url){
-
-            if(strpos( $url, '-vs-' ) == true){
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('current_account_info',array('slug'=>$compare[0]));
-                $data['current_account1'] = $query1->row_array();
-                $query2 = $this->db->get_where('current_account_info',array('slug'=>$compare[1]));
-                $data['current_account2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('current_account_details', 'current_account_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/current_account_compare');
-                $this->load->view('front_end/block/footer');
-            }else{
-                $query = $this->db->get_where('current_account_info',array('slug'=>$url));
-                $data['current_account_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('current_account_compare', 'current_account_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/current_account_details');
-                $this->load->view('front_end/block/footer');
-            }
+        if(strpos( $url, '-vs-' ) == true){
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('current_account_info',array('slug'=>$compare[0]));
+            $data['current_account1'] = $query1->row_array();
+            $query2 = $this->db->get_where('current_account_info',array('slug'=>$compare[1]));
+            $data['current_account2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('current_account_details', 'current_account_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/current_account_compare');
+            $this->load->view('front_end/block/footer');
+        }else{
+            $query = $this->db->get_where('current_account_info',array('slug'=>$url));
+            $data['current_account_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('current_account_compare', 'current_account_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/current_account_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
     public function savings_account(){
         $data['title'] ="Choose from all savings account offered by banks@ Finager.com";
-            $this->load->driver('cache');
-            $this->cache->file->save('savings_account', 'savings_account', 100);
-            $this->load->view('front_end/block/header_home_loan');
-            $this->load->view('front_end/block/right_menu');
-            $this->load->view('front_end/block/vertical_menu');
-            $this->load->view('front_end/savings_account');
-            $this->load->view('front_end/block/footer');
+        $this->load->driver('cache');
+        $this->cache->file->save('savings_account', 'savings_account', 100);
+        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/savings_account');
+        $this->load->view('front_end/block/footer');
 
     }
 
 
     public function saving_account_compare($url){
-
-            if(strpos( $url, '-vs-' ) == true){
-                $data['title'] ="Compare between all saving accounts offered by banks @ Finager.com";
-                $compare = explode("-vs-",$url);
-                $query1 = $this->db->get_where('saving_account_info',array('slug'=>$compare[0]));
-                $data['saving_account1'] = $query1->row_array();
-                $query2 = $this->db->get_where('saving_account_info',array('slug'=>$compare[1]));
-                $data['saving_account2'] = $query2->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('saving_account_compare', 'saving_account_compare', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/saving_account_compare');
-                $this->load->view('front_end/block/footer');
-            }else{
-                $data['title'] ="Find information about savings accounts @ Finager.com";
-                $query = $this->db->get_where('saving_account_info',array('slug'=>$url));
-                $data['saving_account_details'] = $query->row_array();
-                $this->load->driver('cache');
-                $this->cache->file->save('saving_account_details', 'saving_account_details', 100);
-                $this->load->view('front_end/block/header_home_loan',$data);
-                $this->load->view('front_end/block/right_menu');
-                $this->load->view('front_end/block/vertical_menu');
-                $this->load->view('front_end/saving_account_details');
-                $this->load->view('front_end/block/footer');
-            }
+        if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between all saving accounts offered by banks @ Finager.com";
+            $compare = explode("-vs-",$url);
+            $query1 = $this->db->get_where('saving_account_info',array('slug'=>$compare[0]));
+            $data['saving_account1'] = $query1->row_array();
+            $query2 = $this->db->get_where('saving_account_info',array('slug'=>$compare[1]));
+            $data['saving_account2'] = $query2->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('saving_account_compare', 'saving_account_compare', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/saving_account_compare');
+            $this->load->view('front_end/block/footer');
+        }else{
+            $data['title'] ="Find information about savings accounts @ Finager.com";
+            $query = $this->db->get_where('saving_account_info',array('slug'=>$url));
+            $data['saving_account_details'] = $query->row_array();
+            $this->load->driver('cache');
+            $this->cache->file->save('saving_account_details', 'saving_account_details', 100);
+            $this->load->view('front_end/block/header_home_loan',$data);
+            $this->load->view('front_end/block/right_menu');
+            $this->load->view('front_end/block/vertical_menu');
+            $this->load->view('front_end/saving_account_details');
+            $this->load->view('front_end/block/footer');
+        }
     }
 
     public function bank_details($url){
+
         $query = $this->db->get_where('card_bank',array('slug'=>$url));
         $data['institution_info'] = $query->row_array();
+        $data['title'] = $data['institution_info']['bank_name'].' | Finager.com';
         $data['home_loan'] = $this->Front_end_select_model->select_all_home_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
         $data['personal_loan'] = $this->Front_end_select_model->select_all_personal_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
         $data['auto_loan'] = $this->Front_end_select_model->select_all_auto_loan_by_bank_non_bank_id($data['institution_info']['id'],0);
@@ -957,7 +957,7 @@ class En extends CI_Controller {
         $data['event_histories'] = $this->Front_end_select_model->select_institution_event_history($data['institution_info']['id'],0);
         $data['event_histories2'] = $this->Front_end_select_model->select_institution_event_history2($data['institution_info']['id'],0);
 
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/bank_details',$data);
@@ -966,7 +966,8 @@ class En extends CI_Controller {
     }
 
     public function bank_details_landing(){
-        $this->load->view('front_end/block/header_home_loan');
+        $data['title'] = 'Finager.com - All banks information in one place';
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/bank_details_landing');
@@ -997,10 +998,10 @@ class En extends CI_Controller {
     }
 
     public function PrivacyPolicy(){
-
+        $data['title'] = 'Privacy Policy | Finager.com';
         $this->load->driver('cache');
         $this->cache->file->save('PrivacyPolicy', 'PrivacyPolicy', 1000);
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/PrivacyPolicy');
@@ -1008,9 +1009,10 @@ class En extends CI_Controller {
     }
 	
 	public function terms_condition(){
+        $data['title'] = 'Terns and Conditions | Finager.com';
         $this->load->driver('cache');
         $this->cache->file->save('terms_condition', 'terms_condition', 1000);
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/terms_condition');
@@ -1134,6 +1136,7 @@ class En extends CI_Controller {
     }
 
     public function about_us(){
+        $data['title'] = 'About Us | Finager.com';
         $this->load->driver('cache');
         $this->cache->file->save('about_us', 'about_us', 100);
         $this->load->view('front_end/block/header');

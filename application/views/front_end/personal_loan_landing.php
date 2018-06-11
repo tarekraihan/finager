@@ -91,7 +91,7 @@
 						<p>
                             Car loan is provided by banks and non-banking financial institutes for purchasing a new or reconditioned car. You can apply for a car loan if you have enough monthly income to repay the loan. Banks will pay up to 70% of the price of the car.
 						</p>
-						<a href="<?php echo base_url();?>en/car_loan"><span class="btn_landing_personal">Go to slide</span></a>
+						<a href="<?php echo base_url();?>auto-loan.html"><span class="btn_landing_personal">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -104,7 +104,7 @@
 						<p>
                             Education loan is granted by banks for helping the needy student. With the help of education loan, students fulfill their study expenses. Education loan is granted for 5 year period and up to BDT 10 lac is granted maximum loan amount.
 						</p>
-						<a href="<?php echo base_url();?>en/education_loan"><span class="btn_landing_personal">Go to slide</span></a>
+						<a href="<?php echo base_url();?>education-loan.html"><span class="btn_landing_personal">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -117,7 +117,7 @@
 						<p>
                             SME loan is a loan which helps in business expansion, working capital, purchasing fixed asset for small and medium enterprises. This loan is provided by banks to encourage the entrepreneurs to develop and expand their business.
                         </p>
-						<a href="<?php echo base_url();?>en/home_loan">><span class="btn_landing_personal">Go to slide</span></a>
+						<a href="<?php echo base_url();?>home-loan.html">><span class="btn_landing_personal">Go to slide</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
@@ -129,7 +129,7 @@
 						</div>
 						<p>Home loan is a loan granted by banks and other financial institutes for purchasing a home or apartment. You can apply for a home loan if you can fulfill the criteria stated by banks. Banks will grant that amount of money which you can repay easily.
                         </p>
-						<a href="<?php echo base_url();?>en/home_loan"><span class="btn_landing_personal">Go to slide</span></a>
+						<a href="<?php echo base_url();?>home-loan.html"><span class="btn_landing_personal">Go to slide</span></a>
 					</div>
 				</div>
 			</div>
@@ -218,73 +218,169 @@
 		</div>
 	</div>
 	</section>
-	<link href="../../index.html"/>
 	<section id="heading_title">
 		<div class="container-fluid">
 			<div class="heading_pr">
-				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Personal Loan</p>
-						<h4>Six Reasons to Get a Personal Loan</h4>
-						<p>
-							While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes 
-							we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution.
-						</p>
-						<p>
-							A personal loan is a type of loan that involves borrowing a set amount of money and paying the creditor off with interest in a structured 
-							payoff schedule. These loans are “unsecured” because you don’t have to put up any collateral 
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/personal_loan1">Read More</a></div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan2.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Personal Loan</p>
-						<h4>How to Get an Unsecured Personal Loan</h4>
-						<p>
-							If you want to finance an adoption, consolidate your credit card debt or move cross-country, a personal loan can help you cover your immediate expenses without breaking the bank.
-						</p>
-						<p>
-							You can get these loans, typically unsecured, in amounts ranging from $1,000 to more than $50,000. And with a good credit score, you’ll likely be able to
-							snag the most affordable interest rates, too.
-						</p>
-						
-						<div class="home_read"><a href="<?php echo base_url();?>blog/personal_loan2">Read More</a></div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan3.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Personal Loan</p>
-						<h4>What to watch out for with personal loans</h4>
-						<p>
-							If you ignore the fine print in your personal loan agreement, you could find out the hard way that you agreed to less-than-desirable terms. Look for these gotchas before signing your contract:
-						</p>
-						<p>
-							Most online lenders do not charge a fee for paying off the loan before a certain date, called prepayment penalties or exit fees. 
-							But just to be sure, always look for the words “no prepayment penalty” on your loan terms when you apply.
-						</p><br/>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/personal_loan3">Read More</a></div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="heading_text">
-						<img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan4.jpg" alt="img_logo_blue"/>
-						<p class="H_loan">Personal Loan</p>
-						<h4>Personal Loan – What you should know?</h4>
-						<p>
-							Starting from medical expenses, wedding expenses or any other financial need, personal loan seems to be the 1st option available and also the
-							most preferred option to all of us. With the ease of applying a personal loan, it has become one of the easiest forms of readily available money.
-						</p>
-						<p>
-							A personal loan is an unsecured loan given to the borrower to meet financial expenses without keeping any collateral. 
-							
-						</p>
-						<div class="home_read"><a href="<?php echo base_url();?>blog/personal_loan4">Read More</a></div>
-					</div>
-				</div>
+                <div class="col-md-3 col-sm-6">
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Debit Card',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/debit-card/" target="_blank">Debit Card</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan.jpg" alt="img_logo_blue"/>
+                            <p class="H_loan">Personal Loan</p>
+                            <h4>Six Reasons to Get a Personal Loan</h4>
+                            <p>
+                                While it would be great if we all had enough money to fund all of life’s expenses without worry, we know that’s not the case. Sometimes
+                                we have to borrow a little to keep moving forward, and that’s when a personal loan can be a good solution.
+                            </p>
+                            <p>
+                                A personal loan is a type of loan that involves borrowing a set amount of money and paying the creditor off with interest in a structured
+                                payoff schedule. These loans are “unsecured” because you don’t have to put up any collateral
+                            </p>
+                            <div class="home_read"><a href="<?php echo base_url();?>blog/personal-loan/">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="H_loan"><a href="<?php echo base_url();?>blog/credit-card/" target="_blank">Credit Card</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan2.jpg" alt="img_logo_blue"/>
+                            <p class="H_loan">Personal Loan</p>
+                            <h4>How to Get an Unsecured Personal Loan</h4>
+                            <p>
+                                If you want to finance an adoption, consolidate your credit card debt or move cross-country, a personal loan can help you cover your immediate expenses without breaking the bank.
+                            </p>
+                            <p>
+                                You can get these loans, typically unsecured, in amounts ranging from $1,000 to more than $50,000. And with a good credit score, you’ll likely be able to
+                                snag the most affordable interest rates, too.
+                            </p>
+
+                            <div class="home_read"><a href="<?php echo base_url();?>blog/personal-loan/">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('General',1);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/general/" target="_blank">General</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="H_loan"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="heading_text">
+                            <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan3.jpg" alt="img_logo_blue"/>
+                            <p class="H_loan">Personal Loan</p>
+                            <h4>What to watch out for with personal loans</h4>
+                            <p>
+                                If you ignore the fine print in your personal loan agreement, you could find out the hard way that you agreed to less-than-desirable terms. Look for these gotchas before signing your contract:
+                            </p>
+                            <p>
+                                Most online lenders do not charge a fee for paying off the loan before a certain date, called prepayment penalties or exit fees.
+                                But just to be sure, always look for the words “no prepayment penalty” on your loan terms when you apply.
+                            </p><br/>
+                            <div class="home_read"><a href="<?php echo base_url();?>blog/personal-loan/">Read More</a></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <?php
+                    $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('General',2);
+                    if($post_details) {
+                        $post_image = $this->Front_end_select_model->select_blog_post_image_url_by_post_id($post_details->ID);
+                        ?>
+                        <div class="fdr_heading_text">
+                            <img class="img-responsive" src="<?php echo $post_image->image_url; ?>" alt="<?php echo $post_details->post_title;?>"/>
+                            <p class="fdr_loan"><a href="<?php echo base_url();?>blog/general/" target="_blank">General</a></p>
+                            <h4><?php echo $post_details->post_title;?></h4>
+                            <p>
+                                <?php
+                                $content = trim_text($post_details->post_content, 500, $ellipses = true, $strip_html = true);
+                                echo $content;
+                                ?>
+                            </p>
+                            <div class="fdr_read"><a href="<?php echo $post_details->guid ?>" target="_blank">Read More</a></div>
+                        </div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="heading_text">
+                            <div class="heading_text">
+                                <img class="img-responsive" src="<?php echo base_url();?>resource/blog/images/personal_loan4.jpg" alt="img_logo_blue"/>
+                                <p class="H_loan">Personal Loan</p>
+                                <h4>Personal Loan – What you should know?</h4>
+                                <p>
+                                    Starting from medical expenses, wedding expenses or any other financial need, personal loan seems to be the 1st option available and also the
+                                    most preferred option to all of us. With the ease of applying a personal loan, it has become one of the easiest forms of readily available money.
+                                </p>
+                                <p>
+                                    A personal loan is an unsecured loan given to the borrower to meet financial expenses without keeping any collateral.
+
+                                </p>
+                                <div class="home_read"><a href="<?php echo base_url();?>blog/personal-loan/">Read More</a></div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
 			</div>
 		</div>
 	</section>
