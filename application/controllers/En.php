@@ -855,10 +855,10 @@ class En extends CI_Controller {
 
 
     public function current_account(){
-
+        $data['title'] ="Choose from all Current account offered by banks@ Finager.com";
             $this->load->driver('cache');
             $this->cache->file->save('current_account', 'current_account', 100);
-            $this->load->view('front_end/block/header_home_loan');
+            $this->load->view('front_end/block/header_home_loan',$data);
             $this->load->view('front_end/block/right_menu');
             $this->load->view('front_end/block/vertical_menu');
             $this->load->view('front_end/current_account');
@@ -868,6 +868,7 @@ class En extends CI_Controller {
 
     public function current_account_compare($url){
         if(strpos( $url, '-vs-' ) == true){
+            $data['title'] ="Compare between all current accounts offered by banks @ Finager.com";
             $compare = explode("-vs-",$url);
             $query1 = $this->db->get_where('current_account_info',array('slug'=>$compare[0]));
             $data['current_account1'] = $query1->row_array();
@@ -881,6 +882,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/current_account_compare');
             $this->load->view('front_end/block/footer');
         }else{
+            $data['title'] ="Find information about Current accounts @ Finager.com";
             $query = $this->db->get_where('current_account_info',array('slug'=>$url));
             $data['current_account_details'] = $query->row_array();
             $this->load->driver('cache');
@@ -897,7 +899,7 @@ class En extends CI_Controller {
         $data['title'] ="Choose from all savings account offered by banks@ Finager.com";
         $this->load->driver('cache');
         $this->cache->file->save('savings_account', 'savings_account', 100);
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/savings_account');
@@ -1098,9 +1100,10 @@ class En extends CI_Controller {
     }
 
     public function snd_account(){
+        $data['title'] = 'Choose from all snd account offered by banks@ Finager.com';
         $this->load->driver('cache');
         $this->cache->file->save('snd_compare', 'snd_compare', 100);
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/snd');
@@ -1110,6 +1113,7 @@ class En extends CI_Controller {
 
     public function snd_compare($url){
         if(strpos( $url, '-vs-' ) == true){
+            $data['title'] = 'Compare between all snd accounts offered by banks @ Finager.com';
             $compare = explode("-vs-",$url);
             $query1 = $this->db->get_where('snd_info',array('slug'=>$compare[0]));
             $data['snd_account1'] = $query1->row_array();
@@ -1123,6 +1127,7 @@ class En extends CI_Controller {
             $this->load->view('front_end/snd_compare');
             $this->load->view('front_end/block/footer');
         }else{
+            $data['title'] = 'Find information about snd accounts @ Finager.com';
             $query = $this->db->get_where('snd_info',array('slug'=>$url));
             $data['snd_account_details'] = $query->row_array();
             $this->load->driver('cache');

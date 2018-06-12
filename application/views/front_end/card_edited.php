@@ -390,36 +390,6 @@
 <script>
 
     $(document).on('click','.add-to-compare',function(){
-
-          /*  //$(".card-holder").removeClass("hidden").slideDown();
-            var itemImg = $(this).parents('div:eq(0)').find('.selected_card').eq(0);
-            var  formData = $(this).data();
-            var card_id = "card_id="+formData.card_id;
-
-            setTimeout(function(){
-                $.ajax
-                ({
-                    type: "POST",
-                    url: "<?php echo base_url();?>card/ajax_compare_card_image",
-                    data: card_id,
-                    success: function(msg)
-                    {
-                        //loading_hide();
-                        //console.log(msg);
-
-                        if($(".cart_anchor01").hasClass("img_active")){
-                            $(".cart_anchor01").html(msg);
-
-                        }else{
-                            $(".cart_anchor").html(msg);
-                        }
-
-                    }
-                });
-            },850);
-*/
-        //Scroll to top if cart icon is hidden on top
-
     $('html, body').animate({
     'scrollTop' : $(".cart_anchor").position().top+1500
     });
@@ -446,8 +416,6 @@
                         data: card_id,
                         success: function(msg)
                         {
-                            //loading_hide();
-                            //console.log(msg);
                             $(".cart_anchor01").html(msg);
                         }
                     });

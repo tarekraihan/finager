@@ -677,7 +677,7 @@
 
     $(document).ready(function(){
         // This function will be executed when the user scrolls the page.
-        var current_page = '<?php echo base_url();?>en/all_personal_loan';
+        var current_page = '<?php echo base_url();?>compare-personal-loans.html';
 
         var page = '<?php echo($this->uri->segment(3)) ?>';
             if( page ){
