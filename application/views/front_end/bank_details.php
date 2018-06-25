@@ -4,6 +4,7 @@
     }
    
 </style>
+<h1 style="font-size: 0px; overflow: hidden; margin: 0;"><?php echo $institution_info['bank_name']; ?> | Finager.com</h1>
 <section id="bank_details">
     <div class="container-fluid">
         <div class="row">
