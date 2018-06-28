@@ -352,7 +352,7 @@
 		<div class="container">
 			<div class="auto_footer_pr">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/JohnGreen.png">
+					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/JohnGreen.png" alt="John Green">
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
 					<h3>“One of the Great Rules of Economics According to John Green

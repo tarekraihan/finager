@@ -403,7 +403,7 @@
     <div class="container">
         <div class="edu_footer_pr">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/AdamSmith.png">
+                <img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/AdamSmith.png" alt="Adam Smith">
             </div>
             <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
                 <h3>“In regards to the price of commodities, the rise of wages operates as simple interest does, the rise of profit operates like compound interest.

@@ -359,7 +359,7 @@
     <div class="container">
         <div class="monthly_benefit_pr">
             <div class="col-md-4 col-sm-4">
-                <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/ThomasSowell.png">
+                <img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/ThomasSowell.png" alt="Thomas Sowell">
             </div>
             <div class="col-md-8 col-sm-8">
                 <h3>

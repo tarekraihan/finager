@@ -622,7 +622,7 @@
 
                 <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;Tax Guide</a> </li>
 
-                <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-rss-square" aria-hidden="true"></i>&nbsp;&nbsp;Blog </a> </li>
+                <li> <a href="https://www.finager.com/blog/" target="_blank"><i class="fa fa-rss-square" aria-hidden="true"></i>&nbsp;&nbsp;Blog </a> </li>
 
                 <hr class="sidemenu_hr">
 

@@ -347,7 +347,7 @@
 		<div class="container">
 			<div class="footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive money_max_woman" src="<?php echo base_url(); ?>resource/front_end/images/QUOTES/BertrandRussell.png">
+					<img class="img-responsive money_max_woman" src="<?php echo base_url(); ?>resource/front_end/images/QUOTES/BertrandRussell.png" alt="Bertrand Russell">
 				</div>
 				<div class="col-md-8 col-sm-8">
 					<h3 class="money_max_footer_text">“If the ordinary wage-earner worked four hours a day, there would be enough for everybody and no unemployment -- assuming a certain very moderate amount of sensible organization. This idea shocks the well-to-do, because they are convinced that the poor would not know how to use so much leisure. In America men often work long hours even when they are well off; such men, naturally, are indignant at the idea of leisure for wage-earners, except as the grim punishment of unemployment; in fact, they dislike leisure even for their sons.” </h3>

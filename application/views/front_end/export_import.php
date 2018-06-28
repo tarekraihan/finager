@@ -1,6 +1,6 @@
 	<section id="ExportImport_header">
 		<div class="exportShadow">
-            <p>Export Import</p>
+            <h1>Export Import</h1>
 		</div>
 	</section>
 	<section id="ExportImport_body">
@@ -103,7 +103,7 @@
 							</div>
 							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" />
+									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon"/>
 							    </div>
 							</div>
 					    </div>
@@ -115,7 +115,7 @@
 							</div>
 							<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" />
+									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon"/>
 							    </div>
 							</div>
 					    </div>
@@ -692,7 +692,7 @@
 							</div>
 							<div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" />
+									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon"/>
 							    </div>
 							</div>
 					    </div>
@@ -704,7 +704,7 @@
 							</div>
 							<div id="collapse13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" />
+									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon"/>
 							    </div>
 							</div>
 					    </div>
@@ -794,7 +794,7 @@
 							</div>
 							<div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" />
+									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon" />
 							    </div>
 							</div>
 					    </div>
@@ -1026,55 +1026,134 @@
 								</a>
 							</div>
 							<div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading22">
-							    <div class="panel-body">
-									<p>
-										For export development growth, govt. offered several incentives and facilities to the exporters. As an exporter, you can use 
-										these facilities to develop your commercial institute’s future, on the other hand, you can contribute in the economic 
-										development of our country and fell proud for it. Facilities are given below:
-									</p>
-									<ol class="exportImport_ol" type="a">
-										<li>Declaring 80% export oriented leather industries as 100% export-oriented industries</li>
-										<li>Other 80% export oriented leather industries as 100% export-oriented industries</li>
-										<li>Restructuring of the Export Credit Guarantee Scheme (ECGS)</li>
-										<li>Bonding Facilities for export-oriented industries</li>
-										<li>Payment of duty drawback through commercial banks</li>
-										<li>Reduced airfreight for export of all crash programme items including fruits and vegetable</li>
-										<li>Withdrawal of royalty from foreign airlines extending cargo services</li>
-										<li>In order to increase the export of agro based products, necessary assistance will be provided to the high value added agricultural products</li>
-										<li>With a view to further simplifying export procedures, from now on, export may be effected without L/C on the basis of purchase contract, agreement, purchase order or advance payment. In such cases, the exporter will be required to submit only the EXP form and the shipping Bill</li>
-										<li>Establishment of fashion institute</li>
-										<li>Import of grey clothes</li>
-										<li>Relaxation of provisions for iport of raw materials for export-oriented industries</li>
-										<li>Rebate on insurance premium</li>
-										<li>Waiver on shipment of goods: To avoid unnecessary delay in shipment of export cargo the Ministry of Shipping will grant waiver for shipment of export goods except those which are covered withing 24 hours of receipt of application in the transportation of export goods. Besides, an exporter should decide to charter an aircraft for quick transportation of his export consignment, the government will consider for according necessary permission in this regard</li>
-										<li>Direct air booking facility from Rajshahi and Syedpur airports up to the destinations shall continue for export of fresh vegetable and other perishable items produced in the northern regions of the country to ensure quick transport and preservation of quality</li>
-										<li>Exporters may obtain export credit from commercial banks upto 90% of the value of their irrevocable letter of credit/confirmed contract</li>
-										<li>For import of raw materials through back to back L/C by 100% export-oriented industries, restriction s of the import policy order or the requirement of this rules of origin shall be relaxed</li>
-										<li>IN view of the risks involved in carrying of cash foreign exchange/traveler cheque while undertaking business trip abroad, the practice of issuing credit cards to exporters against their respective foreign exchange entitlements will continue.</li>
-										<li>Duty free Import of capital machinery by export-oriented industries</li>
-										<li>Exporters are allowed to use foreign currency accounts in US dollar or Pound Sterling</li>
-										<li>Export Promotion Fund is established to provide support to producers or exporters off new and non-traditional items including those under the crash programme for product development and product and market diversification</li>
-										<li>Export on the basis of sub-contracting</li>
-										<li>Annual ceiling for dispatch of export samples</li>
-										<li>Extension of time-limit for adjustment of Export Credit form 180 days to 270 days</li>
-										<li>Offering tax holiday to export oriented industries</li>
-										<li>Import of samples for each category of garments</li>
-										<li>Increased import facilities of samples for product development</li>
-										<li>Multiple entry visa to importers and foreign investors</li>
-										<li>Strengthening training or export related matters</li>
-										<li>Income tax rebate on export earning</li>
-										<li>Exporters of manufactured products are entitled to flat rate drawback</li>
-										<li>Local raw materials used as direct import for export production for products supplied to local projects procurement in foreign exchange against international tender are regarded as “deemed export” and qualify for al export incentives and benefits including duty drawback</li>
-										<li>No overdue interest will be charged by the commercial banks in cases of export against irrevocable letter of credit on sight payment basis. In such cases, however, exporters will be required to submit necessary export documents within the specified time.</li>
-										<li>Awarding national export trophy o the most outstanding exporters</li>
-										<li>Commercially important persons are selected from the highest export performers item-wise in recognition of their contribution to export every year</li>
-										<li>Simplification of the procedure for refund of VAT pain on export support services</li>
-										<li>Bonding facilities for export-oriented industries</li>
-										<li>Participation in International Trade Fairs, Organizing Single Country Exhibitions and undertaking market development programmes abroad</li>
-										<li>Re-export & Entre-pot facility</li>
-										<li>Export related training organized under National Export Training Event by Export Promotion Bureau.</li>
-									</ol>
-							    </div>
+                                <div class="panel-body">
+                                    <ol class="exportImport_ol">
+                                        <li>Frozen Food</li>
+                                        <li>Fish (dried, salted & dehydrated)</li>
+                                        <li>Animal casings</li>
+                                        <li>Agricultural products</li>
+                                        <li>Vegetables</li>
+                                        <li>Fruits</li>
+                                        <li>Cut Flower</li>
+                                        <li>Betel Leaves</li>
+                                        <li>Potato</li>
+                                        <li>Dry fruits</li>
+                                        <li>Bay Leaves</li>
+                                        <li>Rice</li>
+                                        <li>Tobacco</li>
+                                        <li>Cigarettes</li>
+                                        <li>Feature film</li>
+                                        <li>Jewellery</li>
+                                        <li>Biscuits</li>
+                                        <li>Jamdani Saree</li>
+                                        <li>Circuit breakers</li>
+                                        <li>Tents</li>
+                                        <li>Footwear</li>
+                                        <li>Tooth Brush</li>
+                                        <li>Camera Parts</li>
+                                        <li>Hand Gloves (Leather)</li>
+                                        <li>Artificial Flowers</li>
+                                        <li>Home Textiles</li>
+                                        <li>Ceramic Tableware</li>
+                                        <li>Stainless Steel Ware</li>
+                                        <li>Electric Bulb</li>
+                                        <li>Toys</li>
+                                        <li>Printed circuit board</li>
+                                        <li>Integrated circuits</li>
+                                        <li>Zipper</li>
+                                        <li>Melamine Tableware</li>
+                                        <li>Leather Bags & Purse</li>
+                                        <li>Electric Wires</li>
+                                        <li>Telephone Cables</li>
+                                        <li>Coil Assembly</li>
+                                        <li>Generator</li>
+                                        <li>Transformer</li>
+                                        <li>Engineering Products</li>
+                                        <li>Raw cotton</li>
+                                        <li>Cotton waste</li>
+                                        <li>Black cumin seed</li>
+                                        <li>Spices</li>
+                                        <li>Tea (in packet, in bulk)</li>
+                                        <li>Crude fertilizer</li>
+                                        <li>Raw Jute </li>
+                                        <li>Tortoise & Turtles</li>
+                                        <li>Crabs</li>
+                                        <li>Duck Chest Feather</li>
+                                        <li>Ball Pen</li>
+                                        <li>Golf Shaft</li>
+                                        <li>Silk Fabrics</li>
+                                        <li>Bi-cycle</li>
+                                        <li>Accumulator Battery Parts</li>
+                                        <li>Lamp & Light Fittings</li>
+                                        <li>Aquarium Fish</li>
+                                        <li>Crude Drugs</li>
+                                        <li>Bamboo Poles</li>
+                                        <li>Beeswax</li>
+                                        <li>Jute Ropes</li>
+                                        <li>Printed Materials</li>
+                                        <li>Stationery Items</li>
+                                        <li>Textile Fabrics</li>
+                                        <li>Aluminum Household Article</li>
+                                        <li>Video/Audio Cassette</li>
+                                        <li>Radio & Recorder</li>
+                                        <li>Television Sets</li>
+                                        <li>Indicator Lamp</li>
+                                        <li>VCR/VCP</li>
+                                        <li>Ro RoFerry</li>
+                                        <li>Fishing Reel</li>
+                                        <li>Electronics</li>
+                                        <li>Computers</li>
+                                        <li>Computers Accessories</li>
+                                        <li>G.I. Pipe</li>
+                                        <li>Iron Chain</li>
+                                        <li>Cast Iron articles</li>
+                                        <li>Jackets</li>
+                                        <li>Dry food</li>
+                                        <li>Coir & Coir-products</li>
+                                        <li>Human Hair</li>
+                                        <li>Wood & Timbers</li>
+                                        <li>Copper waste</li>
+                                        <li>Hookah</li>
+                                        <li>Horns & Hooves</li>
+                                        <li>Molasses</li>
+                                        <li>Petroleum By Products</li>
+                                        <li>Naphtha</li>
+                                        <li>Furnace Oil</li>
+                                        <li>Bitumen</li>
+                                        <li>Chemical Products</li>
+                                        <li>Glycerin</li>
+                                        <li>Garment</li>
+                                        <li>Pharmaceuticals</li>
+                                        <li>Chemical fertilizer</li>
+                                        <li>Cosmetics</li>
+                                        <li>P.V.C. Pipe</li>
+                                        <li>P.V.C. Bags</li>
+                                        <li>Soap (toilet)</li>
+                                        <li>Soap (washing)</li>
+                                        <li>Newsprint Paper</li>
+                                        <li>Rayon Yarn</li>
+                                        <li>Ceramic Sanitary Ware</li>
+                                        <li>Insulator</li>
+                                        <li>Polythene Sheet</li>
+                                        <li>Synthetic Ropes</li>
+                                        <li>Specialized Textile & Household Linen</li>
+                                        <li>Leather (Curst/Finished)</li>
+                                        <li>Jute goods (all sorts)</li>
+                                        <li>Jute Yarn & Twine</li>
+                                        <li>Jute Carpet </li>
+                                        <li>Handicrafts</li>
+                                        <li>Terry Towel</li>
+                                        <li>Knit Wear</li>
+                                        <li>T-Shirts</li>
+                                        <li>Sweater</li>
+                                        <li>Ready-Made Garments</li>
+                                        <li>Shirts</li>
+                                        <li>Trousers</li>
+                                    </ol>
+                                    <p>
+                                        These are the widely exportable items and exports products from Bangladesh. We need to find out more exportable items for Bangladesh, So that the economy of Bangladesh will bring a positive change.
+                                    </p>
+                                </div>
 							</div>
 					    </div>
 						<div class="panel panel-default">
@@ -1084,9 +1163,55 @@
 								</a>
 							</div>
 							<div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading23">
-							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" />
-							    </div>
+                                <div class="panel-body">
+                                    <p>
+                                        For export development growth, govt. offered several incentives and facilities to the exporters. As an exporter, you can use
+                                        these facilities to develop your commercial institute’s future, on the other hand, you can contribute in the economic
+                                        development of our country and fell proud for it. Facilities are given below:
+                                    </p>
+                                    <ol class="exportImport_ol" strat="1">
+                                        <li>Declaring 80% export oriented leather industries as 100% export-oriented industries</li>
+                                        <li>Other 80% export oriented leather industries as 100% export-oriented industries</li>
+                                        <li>Restructuring of the Export Credit Guarantee Scheme (ECGS)</li>
+                                        <li>Bonding Facilities for export-oriented industries</li>
+                                        <li>Payment of duty drawback through commercial banks</li>
+                                        <li>Reduced airfreight for export of all crash programme items including fruits and vegetable</li>
+                                        <li>Withdrawal of royalty from foreign airlines extending cargo services</li>
+                                        <li>In order to increase the export of agro based products, necessary assistance will be provided to the high value added agricultural products</li>
+                                        <li>With a view to further simplifying export procedures, from now on, export may be effected without L/C on the basis of purchase contract, agreement, purchase order or advance payment. In such cases, the exporter will be required to submit only the EXP form and the shipping Bill</li>
+                                        <li>Establishment of fashion institute</li>
+                                        <li>Import of grey clothes</li>
+                                        <li>Relaxation of provisions for iport of raw materials for export-oriented industries</li>
+                                        <li>Rebate on insurance premium</li>
+                                        <li>Waiver on shipment of goods: To avoid unnecessary delay in shipment of export cargo the Ministry of Shipping will grant waiver for shipment of export goods except those which are covered withing 24 hours of receipt of application in the transportation of export goods. Besides, an exporter should decide to charter an aircraft for quick transportation of his export consignment, the government will consider for according necessary permission in this regard</li>
+                                        <li>Direct air booking facility from Rajshahi and Syedpur airports up to the destinations shall continue for export of fresh vegetable and other perishable items produced in the northern regions of the country to ensure quick transport and preservation of quality</li>
+                                        <li>Exporters may obtain export credit from commercial banks upto 90% of the value of their irrevocable letter of credit/confirmed contract</li>
+                                        <li>For import of raw materials through back to back L/C by 100% export-oriented industries, restriction s of the import policy order or the requirement of this rules of origin shall be relaxed</li>
+                                        <li>IN view of the risks involved in carrying of cash foreign exchange/traveler cheque while undertaking business trip abroad, the practice of issuing credit cards to exporters against their respective foreign exchange entitlements will continue.</li>
+                                        <li>Duty free Import of capital machinery by export-oriented industries</li>
+                                        <li>Exporters are allowed to use foreign currency accounts in US dollar or Pound Sterling</li>
+                                        <li>Export Promotion Fund is established to provide support to producers or exporters off new and non-traditional items including those under the crash programme for product development and product and market diversification</li>
+                                        <li>Export on the basis of sub-contracting</li>
+                                        <li>Annual ceiling for dispatch of export samples</li>
+                                        <li>Extension of time-limit for adjustment of Export Credit form 180 days to 270 days</li>
+                                        <li>Offering tax holiday to export oriented industries</li>
+                                        <li>Import of samples for each category of garments</li>
+                                        <li>Increased import facilities of samples for product development</li>
+                                        <li>Multiple entry visa to importers and foreign investors</li>
+                                        <li>Strengthening training or export related matters</li>
+                                        <li>Income tax rebate on export earning</li>
+                                        <li>Exporters of manufactured products are entitled to flat rate drawback</li>
+                                        <li>Local raw materials used as direct import for export production for products supplied to local projects procurement in foreign exchange against international tender are regarded as “deemed export” and qualify for al export incentives and benefits including duty drawback</li>
+                                        <li>No overdue interest will be charged by the commercial banks in cases of export against irrevocable letter of credit on sight payment basis. In such cases, however, exporters will be required to submit necessary export documents within the specified time.</li>
+                                        <li>Awarding national export trophy o the most outstanding exporters</li>
+                                        <li>Commercially important persons are selected from the highest export performers item-wise in recognition of their contribution to export every year</li>
+                                        <li>Simplification of the procedure for refund of VAT pain on export support services</li>
+                                        <li>Bonding facilities for export-oriented industries</li>
+                                        <li>Participation in International Trade Fairs, Organizing Single Country Exhibitions and undertaking market development programmes abroad</li>
+                                        <li>Re-export & Entre-pot facility</li>
+                                        <li>Export related training organized under National Export Training Event by Export Promotion Bureau.</li>
+                                    </ol>
+                                </div>
 							</div>
 					    </div>
 						

@@ -397,7 +397,7 @@
 		<div class="container">
 			<div class="auto_footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/QUOTES/MiltonFriedman.png">
+					<img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/QUOTES/MiltonFriedman.png" alt="Milton Friedman">
 				</div>
 				<div class="col-md-8 col-sm-8">
 					<h3>“There is one and only one social responsibility of business–to use it resources and engage in activities designed to increase its profits so long as it stays within the rules of the game, which is to say, engages in open and free competition without deception or fraud”</h3>
