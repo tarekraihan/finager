@@ -978,9 +978,10 @@ class En extends CI_Controller {
     }
 
     public function export_import(){
+        $data['title'] = 'Export Import | Finager.com';
         $this->load->driver('cache');
         $this->cache->file->save('export_import', 'export_import', 1000);
-        $this->load->view('front_end/block/header_home_loan');
+        $this->load->view('front_end/block/header_home_loan',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/export_import');
@@ -1144,7 +1145,7 @@ class En extends CI_Controller {
         $data['title'] = 'About Us | Finager.com';
         $this->load->driver('cache');
         $this->cache->file->save('about_us', 'about_us', 100);
-        $this->load->view('front_end/block/header');
+        $this->load->view('front_end/block/header',$data);
         $this->load->view('front_end/block/right_menu');
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/about_us');

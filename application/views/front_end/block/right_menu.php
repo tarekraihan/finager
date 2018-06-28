@@ -604,7 +604,7 @@
 
                 <hr class="sidemenu_hr">
 
-                <li> <a href="<?php echo base_url(); ?>all-bank-details.html"><i class="fa fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Bank Info</a> </li>
+                <li> <a href="<?php echo base_url(); ?>banks.html"><i class="fa fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Bank Info</a> </li>
 
                 <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-calculator" aria-hidden="true"></i>&nbsp;&nbsp;Calculator/Apps</a> </li>
 

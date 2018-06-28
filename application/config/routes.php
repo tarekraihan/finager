@@ -100,7 +100,10 @@ $route['compare-current-account/(:any)'] = "en/current_account_compare/$1";
 $route['snd'] = "en/snd_account";
 $route['compare-snd-account/(:any)'] = "en/snd_compare/$1";
 $route['export-import'] = "en/export_import";
-$route['all-bank-details'] = "en/bank_details_landing";
+
+$route['banks'] = "en/bank_details_landing";
+//$route['all-bank-details'] = "en/bank_details_landing";
+$route['banks/(:any)'] = "en/bank_details/$1";
 $route['bank-details/(:any)'] = "en/bank_details/$1";
 $route['about-us'] = "en/about_us";
 $route['terms-condition'] = "en/terms_condition";

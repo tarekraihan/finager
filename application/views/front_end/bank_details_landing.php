@@ -1,4 +1,4 @@
-
+<?php echo base_url();?>
 
 <div class="container-fluid m-b-30">
     <div class="col-md-12">
