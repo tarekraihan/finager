@@ -415,7 +415,7 @@
 		<div class="container">
 			<div class="home_loan_footer_pr">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/JohnMaynardKeynes.png">
+					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/JohnMaynardKeynes.png" alt="John Maynard Keynes">
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
 					<h3>“If you owe your bank a hundred pounds, you have a problem. But if you owe a million, it has.” <br>

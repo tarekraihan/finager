@@ -418,7 +418,7 @@
 		<div class="container">
 			<div class="dps_footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/WarrenBuffett.png">
+					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/WarrenBuffett.png" alt="Warren Buffett">
 				</div>
 				<div class="col-md-8 col-sm-8">
 					<h3>“There’s class warfare, all right, but it’s my class, the rich class, that’s making war, and we’re winning.”</h3>

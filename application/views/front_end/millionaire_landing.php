@@ -399,7 +399,7 @@
 		<div class="container">
 			<div class="auto_footer_pr">
 				<div class="col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/JohnRuskin.png">
+					<img class="img-responsive" src="<?php echo base_url()?>resource/front_end/images/QUOTES/JohnRuskin.png" alt="John Ruskin">
 				</div>
 				<div class="col-md-8 col-sm-8">
 					<h3>“It's unwise to pay too much, but it's worse to pay too little. When

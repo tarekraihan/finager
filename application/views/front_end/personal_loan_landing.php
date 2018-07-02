@@ -422,7 +422,7 @@
 		<div class="container">
 			<div class="personal_footer_pr">
 				<div class="col-lg-4 col-md-4 col-sm-4">
-					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/LudwigvonMises.png">
+					<img class="img-responsive" src="<?php echo base_url();?>resource/front_end/images/QUOTES/LudwigvonMises.png" alt="Ludwigvon Mises">
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-8">
 					<h3>
