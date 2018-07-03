@@ -767,7 +767,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_blog_post_by_product_category($category_name,$offset){
 
-        $sql="SELECT blog_posts.* FROM `blog_posts` INNER JOIN blog_term_relationships ON blog_term_relationships.object_id = blog_posts.ID INNER JOIN blog_term_taxonomy ON blog_term_taxonomy.term_taxonomy_id = blog_term_relationships.term_taxonomy_id INNER JOIN blog_terms ON blog_terms.term_id = blog_term_taxonomy.term_id WHERE blog_terms.name ='{$category_name}' ORDER BY blog_posts.post_date DESC LIMIT {$offset},1";
+        $sql="SELECT DISTINCT(blog_posts.ID) as post_id,blog_posts.* FROM `blog_posts` INNER JOIN blog_term_relationships ON blog_term_relationships.object_id = blog_posts.ID INNER JOIN blog_term_taxonomy ON blog_term_taxonomy.term_taxonomy_id = blog_term_relationships.term_taxonomy_id INNER JOIN blog_terms ON blog_terms.term_id = blog_term_taxonomy.term_id WHERE blog_terms.name ='{$category_name}' ORDER BY blog_posts.post_date DESC LIMIT {$offset},1";
         $query = $this->db->query($sql);
         return  $query->row();
     }
