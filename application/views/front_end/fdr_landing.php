@@ -67,7 +67,7 @@
 	<section id="Sponsored">
 		<div class="container">
 			<div class="Sponsored_heading">
-				<h2 class="fdr_link">Others Investment</h2>
+				<h2 class="fdr_link">Other Investment</h2>
 			</div>
 			<div class="Sponsored_box">
 				<div class="col-md-3 col-sm-6">
