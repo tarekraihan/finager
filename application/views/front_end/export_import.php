@@ -103,7 +103,30 @@
 							</div>
 							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon"/>
+									<p>
+                                        A letter of credit is a document/letter which is basically used in export-import bussiness. The letter of credit is used as a guarantee
+                                        by the importer/buyer’s bank to the exporter’s/seller’s bank stating that that importer/buyer’s payment to a seller/exporter will be
+                                        received on time and for the actual amount of money. If the buyer/importer is unable to make the payment on the purchase,
+                                        the buyer/importer’s bank will pay the full or remaining amount to Exporter’s. Based on importer/buyer’s Bank guarantee, exporters export
+                                        the goods to the importer. Because of this letter of credit, payment in export import is guaranteed. On the other hand,
+                                        importers/buyers also get loan from banks against this letter of credit and pay the amount after receiving goods from the seller/exporter.
+                                    </p>
+                                    Needed documents to open a letter of credit:<br>
+                                    <ol start="a">
+                                        <li>Letter of credit Application Form</li>
+                                        <li>Letter of credit Authorization Form</li>
+                                        <li>IMP Form ( Import Form )</li>
+                                        <li>Contact Form</li>
+                                        <li>Document of Charge</li>
+                                        <li>Guarantee Form</li>
+                                        <li>Import Registration Certificate</li>
+                                        <li>Membership Certificate</li>
+                                        <li>Insuarance Cover Note and Premium  Installment ship</li>
+                                        <li>Copy of proforma Invoice/Indent</li>
+                                        <li>TIN-Certificate</li>
+                                        <li>Trade license</li>
+                                        <li>VAT Certificate</li>
+                                    </ol>
 							    </div>
 							</div>
 					    </div>
@@ -115,7 +138,35 @@
 							</div>
 							<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon"/>
+									<p>
+                                        Letter of credit is issued by the buyer/importer’s bank in favour of exporter/seller but if the exporter/seller does not have enough
+                                        money or capital to export the goods then back to back letter of credit is issued by exporter/seller’s bank against buyer/importer’s
+                                        letter of credit. Back to Back letter of credit can be used as the source of money for seller/exporter to buy, proces, manufacture
+                                        and packaging the goods.
+                                    </p>
+                                    <p>
+                                        Because the two letters of credit are linked and dependent on one another, they are back-to-back letter of credit. It is important to
+                                        note that back-to-back letters of credit typically mirror each other; that is, they have the same shipping, inspection and other terms.
+                                        In this regard, the first letter of credit becomes the collateral for the second letter of credit.
+                                    </p>
+                                    Needed documents to open Back to Back letter of credit:<br>
+                                    <ol start="a">
+                                        <li>Original copy of master letter of credit;</li>
+                                        <li>Valid bonded warehouse license;</li>
+                                        <li>Textile permission letter issued by Ministry of Textiles;</li>
+                                        <li>In case of Limited Company, combined Capital Company’s incorporation certificate.</li>
+                                        <li>Letter of credit Application</li>
+                                        <li>IMP form (Import form)</li>
+                                        <li>Proforma Invoice/Indent</li>
+                                        <li>Insuarance cover note with premium installment slip.</li>
+                                        <li>Filled and signed LCA form.</li>
+                                        <li>CIB Report</li>
+                                        <li>Quota Papers for Quota goods</li>
+                                        <li>Trade License</li>
+                                        <li>Valid IRC and ERC</li>
+                                        <li>Membership Certificate of BGMEA</li>
+                                        <li>Tin Certificate etc.</li>
+                                    </ol>
 							    </div>
 							</div>
 					    </div>
