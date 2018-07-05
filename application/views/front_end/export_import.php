@@ -103,7 +103,30 @@
 							</div>
 							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon"/>
+									<p>
+                                        A letter of credit is a document/letter which is basically used in export-import bussiness. The letter of credit is used as a guarantee
+                                        by the importer/buyer’s bank to the exporter’s/seller’s bank stating that that importer/buyer’s payment to a seller/exporter will be
+                                        received on time and for the actual amount of money. If the buyer/importer is unable to make the payment on the purchase,
+                                        the buyer/importer’s bank will pay the full or remaining amount to Exporter’s. Based on importer/buyer’s Bank guarantee, exporters export
+                                        the goods to the importer. Because of this letter of credit, payment in export import is guaranteed. On the other hand,
+                                        importers/buyers also get loan from banks against this letter of credit and pay the amount after receiving goods from the seller/exporter.
+                                    </p>
+                                    Needed documents to open a letter of credit:<br>
+                                    <ol start="a">
+                                        <li>Letter of credit Application Form</li>
+                                        <li>Letter of credit Authorization Form</li>
+                                        <li>IMP Form ( Import Form )</li>
+                                        <li>Contact Form</li>
+                                        <li>Document of Charge</li>
+                                        <li>Guarantee Form</li>
+                                        <li>Import Registration Certificate</li>
+                                        <li>Membership Certificate</li>
+                                        <li>Insuarance Cover Note and Premium  Installment ship</li>
+                                        <li>Copy of proforma Invoice/Indent</li>
+                                        <li>TIN-Certificate</li>
+                                        <li>Trade license</li>
+                                        <li>VAT Certificate</li>
+                                    </ol>
 							    </div>
 							</div>
 					    </div>
@@ -115,7 +138,35 @@
 							</div>
 							<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon"/>
+									<p>
+                                        Letter of credit is issued by the buyer/importer’s bank in favour of exporter/seller but if the exporter/seller does not have enough
+                                        money or capital to export the goods then back to back letter of credit is issued by exporter/seller’s bank against buyer/importer’s
+                                        letter of credit. Back to Back letter of credit can be used as the source of money for seller/exporter to buy, proces, manufacture
+                                        and packaging the goods.
+                                    </p>
+                                    <p>
+                                        Because the two letters of credit are linked and dependent on one another, they are back-to-back letter of credit. It is important to
+                                        note that back-to-back letters of credit typically mirror each other; that is, they have the same shipping, inspection and other terms.
+                                        In this regard, the first letter of credit becomes the collateral for the second letter of credit.
+                                    </p>
+                                    Needed documents to open Back to Back letter of credit:<br>
+                                    <ol start="a">
+                                        <li>Original copy of master letter of credit;</li>
+                                        <li>Valid bonded warehouse license;</li>
+                                        <li>Textile permission letter issued by Ministry of Textiles;</li>
+                                        <li>In case of Limited Company, combined Capital Company’s incorporation certificate.</li>
+                                        <li>Letter of credit Application</li>
+                                        <li>IMP form (Import form)</li>
+                                        <li>Proforma Invoice/Indent</li>
+                                        <li>Insuarance cover note with premium installment slip.</li>
+                                        <li>Filled and signed LCA form.</li>
+                                        <li>CIB Report</li>
+                                        <li>Quota Papers for Quota goods</li>
+                                        <li>Trade License</li>
+                                        <li>Valid IRC and ERC</li>
+                                        <li>Membership Certificate of BGMEA</li>
+                                        <li>Tin Certificate etc.</li>
+                                    </ol>
 							    </div>
 							</div>
 					    </div>
@@ -757,32 +808,7 @@
 							</div>
 							<div id="collapse16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading16">
 							    <div class="panel-body">
-									<p>
-										Certificate of Origin is the document that certifies a shipment’s country of origin. It is used between members of a trading block such as European
-										Countries or where special privileges are granted to goods produced in certain countries. Certificate of Origin is commonly
-										issued by a trade promotion office, or a chamber of commerce in the exporting country. It is also called declaration of origin.
-									</p><br/>
-									<b>Documentation</b>
-									<p>The following documents must be attached to collect certificate of origin:</p>
-									<ol class="exportImport_ol" type="a">
-										<li>Duly filled certificate of origin set filled by the applicant</li>
-										<li>Shipping bill authorized by customs</li>
-										<li>Non-negotiable bill of lading</li>
-										<li>Export L/C (attested by Bank)</li>
-										<li>Back to Back L/C (attested by bank) Definite amount of pay order</li>
-										<li>Identification card issued by BGMEA</li>
-										<li>Up to date enrollment certificate</li>
-										<li>Application form of certificate of origin (supplied by EPB)</li>
-										<li>VISA Wing form (Supplied by EPB)</li>
-										<li>Commercial Invoice</li>
-										<li>Packing List</li>
-									</ol>
-									
-									<p>For More Information Please Contact Export Promotion Bureau.</p>
-									<p>Address: 1, Kawran Bazar, Dhaka-1215</p>
-									<p>Website: <a href="http://www.epb.gov.bd" target="_blank">www.epb.gov.bd</a></p>
-									<p>Phone: 9188821-4, 8151496, 9128377</p>
-
+                                    <img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon" />
 							    </div>
 							</div>
 					    </div>
@@ -794,8 +820,32 @@
 							</div>
 							<div id="collapse17" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading17">
 							    <div class="panel-body">
-									<img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon" />
-							    </div>
+                                    <p>
+                                        Certificate of Origin is the document that certifies a shipment’s country of origin. It is used between members of a trading block such as European
+                                        Countries or where special privileges are granted to goods produced in certain countries. Certificate of Origin is commonly
+                                        issued by a trade promotion office, or a chamber of commerce in the exporting country. It is also called declaration of origin.
+                                    </p><br/>
+                                    <b>Documentation</b>
+                                    <p>The following documents must be attached to collect certificate of origin:</p>
+                                    <ol class="exportImport_ol" type="a">
+                                        <li>Duly filled certificate of origin set filled by the applicant</li>
+                                        <li>Shipping bill authorized by customs</li>
+                                        <li>Non-negotiable bill of lading</li>
+                                        <li>Export L/C (attested by Bank)</li>
+                                        <li>Back to Back L/C (attested by bank) Definite amount of pay order</li>
+                                        <li>Identification card issued by BGMEA</li>
+                                        <li>Up to date enrollment certificate</li>
+                                        <li>Application form of certificate of origin (supplied by EPB)</li>
+                                        <li>VISA Wing form (Supplied by EPB)</li>
+                                        <li>Commercial Invoice</li>
+                                        <li>Packing List</li>
+                                    </ol>
+
+                                    <p>For More Information Please Contact Export Promotion Bureau.</p>
+                                    <p>Address: 1, Kawran Bazar, Dhaka-1215</p>
+                                    <p>Website: <a href="http://www.epb.gov.bd" target="_blank">www.epb.gov.bd</a></p>
+                                    <p>Phone: 9188821-4, 8151496, 9128377</p>
+                                </div>
 							</div>
 					    </div>
 						<div class="panel panel-default">
@@ -806,11 +856,7 @@
 							</div>
 							<div id="collapse18" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading18">
 							    <div class="panel-body">
-									<p>
-										Bill of Entry is a declaration by an importer or exporter of the exact nature, precise quantity and value of goods that have 
-										landed or are being shipped out. Prepared by a qualified customs clerk or broker; it is examined by customs authorities for
-										its accuracy and conformity with the tariff and regulations.
-									</p>
+                                    <img class="text-center" src="<?php echo base_url(); ?>resource/front_end/images/coming_soon_ribbon.png" alt="coming soon ribbon" />
 							    </div>
 							</div>
 					    </div>
@@ -822,11 +868,11 @@
 							</div>
 							<div id="collapse19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading19">
 							    <div class="panel-body">
-									<p>
-										A proforma invoice can also be used for shipments, containing items that are not being bought or sold, such as gifts, samples, 
-										and personal belongings, whereas a commercial invoice I used when the commodities shipped are being bought or sold. However,
-										it is best to use a customs invoice or declaration as border officials require values for the export declaration.
-									</p>
+                                    <p>
+                                        Bill of Entry is a declaration by an importer or exporter of the exact nature, precise quantity and value of goods that have
+                                        landed or are being shipped out. Prepared by a qualified customs clerk or broker; it is examined by customs authorities for
+                                        its accuracy and conformity with the tariff and regulations.
+                                    </p>
 							    </div>
 							</div>
 					    </div>
@@ -838,19 +884,11 @@
 							</div>
 							<div id="collapse20" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20">
 							    <div class="panel-body">
-									<p>
-										Generally, this certificate is collected from existing inspection organization of exporter’s country. Inspection organization
-										certified that, product quality and specific standards and other matters maintained as the description of L/C. Generally, 
-										the buyer selects inspection company. What type of inspection they perform is also suggested by the buyer.
-									</p><br/>
-									<p>To get this certificate, these documents are submitted to the local agent:</p>
-									<ol class="exportImport_ol" type="a">
-										<li>One copy of commercial Invoice</li>
-										<li>One copy of Packing List</li>
-										<li>One copy of Bill of Lading</li>
-										<li>One copy of Visa, License & Certificate of Origin each</li>
-										<li>Any Other Documents required as per L/C</li>
-									</ol>
+                                    <p>
+                                        A proforma invoice can also be used for shipments, containing items that are not being bought or sold, such as gifts, samples,
+                                        and personal belongings, whereas a commercial invoice I used when the commodities shipped are being bought or sold. However,
+                                        it is best to use a customs invoice or declaration as border officials require values for the export declaration.
+                                    </p>
 							    </div>
 							</div>
 					    </div>
@@ -862,160 +900,19 @@
 							</div>
 							<div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
 							    <div class="panel-body">
-									<h3 class="text-center">Exports list from Bangladesh:</h3>
-									<div class="col-md-4">
-										<ul>
-											<li>Frozen Food</li>
-											<li>Fish</li>
-											<li>Dried</li>
-											<li>Salted & dehydrated</li>
-											<li>Animal casings</li>
-											<li>Agricultural products</li>
-											<li>Vegetables</li>
-											<li>Fruits</li>
-											<li>Cut flower</li>
-											<li>Betel leaves</li>
-											<li>Potato</li>
-											<li>Dry fruits</li>
-											<li>Bay leaves</li>
-											<li>Rice</li>
-											<li>Tobacco</li>
-											<li>Cigarettes</li>
-											<li>Feature film</li>
-											<li>Jewellery</li>
-											<li>Biscuits</li>
-											<li>Jamdani saree</li>
-											<li>Circuit breakers</li>
-											<li>Tents</li>
-											<li>Footwear</li>
-											<li>Tooth brush</li>
-											<li>Camera parts</li>
-											<li>Iland gloves (Leater)</li>
-											<li>Artificial flowers</li>
-											<li>Home Textiles</li>
-											<li>Ceramic tableware</li>
-											<li>Stainless steel wares</li>
-											<li>Electric bulb</li>
-											<li>Toys</li>
-											<li>Printed circuit board</li>
-											<li>Integrated circuits</li>
-											<li>Integrated circuits</li>
-											<li>Others Mfd. products</li>
-											<li>Zipper</li>
-											<li>Melamine tableware’s</li>
-											<li>Leather bags & purse</li>
-											<li>Electric Wires</li>
-											<li>Telephone cables</li>
-											<li>Coil assembly</li>
-											<li>Generator</li>
-											<li>Transformer</li>
-											<li>Engineering Products</li>
-										</ul>
-									</div>
-									<div class="col-md-4">
-										<ul>
-											<li>Raw cotton</li>
-											<li>Cotton waste</li>
-											<li>Black cumin seed</li>
-											<li>Spices</li>
-											<li>Others</li>
-											<li>Tea</li>
-											<li>In packet</li>
-											<li>In bulk</li>
-											<li>Crude fertilizer</li>
-											<li>Raw jute (fiodi.com jute products supplyer)</ol>
-											<li>Tortoise & turtles</li>
-											<li>Crabs</li>
-											<li>Duck chest feather</li>
-											<li>Ball pan</li>
-											<li>Golf shaft</li>
-											<li>Silk fabrics</li>
-											<li>Other articles of leather</li>
-											<li>Bi-cycle</li>
-											<li>Gift items</li>
-											<li>Accumulator battery & parts</li>
-											<li>Lamp & light fittings</li>
-											<li>Aquarium fish</li>
-											<li>Crude drugs</li>
-											<li>Bamboo poles</li>
-											<li>Rattans</li>
-											<li>Beeswax</li>
-											<li>Jute ropes</li>
-											<li>Printed materials</li>
-											<li>Stationery items</li>
-											<li>Textile fabrics</li>
-											<li>Aluminium household article</li>
-											<li>Video/Audio cassette</li>
-											<li>Radio & Radio recorder</li>
-											<li>Television sets</li>
-											<li>Indicator Lamp</li>
-											<li>VCR/VCP</li>
-											<li>Ro Ro ferry</li>
-											<li>Fishing reel</li>
-											<li>Electronics</li>
-											<li>Computers</li>
-											<li>Computers accessories</li>
-											<li>G.I. Pipe</li>
-											<li>Iron Chain</li>
-											<li>Cast Iron articles</li>
-											<li>Jackets</li>
-										</ul>
-									</div>
-									<div class="col-md-4">
-										<ul>
-											<li>Brooms</li>
-											<li>Dry food</li>
-											<li>Coir & Coi-products</li>
-											<li>Human hair</li>
-											<li>Wood & timbers</li>
-											<li>Copra wast</li>
-											<li>Hukkanali</li>
-											<li>Horns & hooves</li>
-											<li>Molasses bh</li>
-											<li>Petroleum by products</li>
-											<li>Naphtha</li>
-											<li>Furnace oil</li>
-											<li>Bitumen</li>
-											<li>Chemical products</li>
-											<li>Glycerin</li>
-											<li>Garment</li>
-											<li>Pharmaceuticals</li>
-											<li>Chemical fertilizer</li>
-											<li>Cosmetics</li>
-											<li>P.V.C. Pipe</li>
-											<li>P.V.C. Bags</li>
-											<li>Soap toilet</li>
-											<li>Soap washing</li>
-											<li>Newsprint</li>
-											<li>Paper</li>
-											<li>Rayen yarn</li>
-											<li>Ceramic sanitary ware</li>
-											<li>Insulator</li>
-											<li>Polythene sheet</li>
-											<li>Synthetic ropes</li>
-											<li>Specialized textile & Household linen</li>
-											<li>Leather (Curst/Finished)</li>
-											<li>Jute goods (all sorts)</li>
-											<li>Jute yarn & twine</li>
-											<li>Jute carpet (fiodi.com jute products supplyer)</li>
-											<li>Jute manufactures</li>
-											<li>Handicrafts</li>
-											<li>Specialized textile & Household linen</li>
-											<li>Terry towel</li>
-											<li>Knit wear</li>
-											<li>T. Shirts</li>
-											<li>Sweater</li>
-											<li>Ready-made Garments</li>
-											<li>Shirts</li>
-											<li>Trousers</li>
-										</ul>
-									</div>
-									<p>
-										These are the widely exportable items and exports products from Bangladesh. We need to find out more exportable items for
-										Bangladesh, So that the economy of Bangladesh will bring a positive change. Bangladesh need more interested business 
-										initiative Example:One of the popular exporter of jute products from Bangladesh is www.fiodi.com they are the jute and craft 
-										exporter from Bangladesh
-									</p>
+                                    <p>
+                                        Generally, this certificate is collected from existing inspection organization of exporter’s country. Inspection organization
+                                        certified that, product quality and specific standards and other matters maintained as the description of L/C. Generally,
+                                        the buyer selects inspection company. What type of inspection they perform is also suggested by the buyer.
+                                    </p><br/>
+                                    <p>To get this certificate, these documents are submitted to the local agent:</p>
+                                    <ol class="exportImport_ol" type="a">
+                                        <li>One copy of commercial Invoice</li>
+                                        <li>One copy of Packing List</li>
+                                        <li>One copy of Bill of Lading</li>
+                                        <li>One copy of Visa, License & Certificate of Origin each</li>
+                                        <li>Any Other Documents required as per L/C</li>
+                                    </ol>
 							    </div>
 							</div>
 					    </div>
@@ -1027,131 +924,159 @@
 							</div>
 							<div id="collapse22" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading22">
                                 <div class="panel-body">
-                                    <ol class="exportImport_ol">
-                                        <li>Frozen Food</li>
-                                        <li>Fish (dried, salted & dehydrated)</li>
-                                        <li>Animal casings</li>
-                                        <li>Agricultural products</li>
-                                        <li>Vegetables</li>
-                                        <li>Fruits</li>
-                                        <li>Cut Flower</li>
-                                        <li>Betel Leaves</li>
-                                        <li>Potato</li>
-                                        <li>Dry fruits</li>
-                                        <li>Bay Leaves</li>
-                                        <li>Rice</li>
-                                        <li>Tobacco</li>
-                                        <li>Cigarettes</li>
-                                        <li>Feature film</li>
-                                        <li>Jewellery</li>
-                                        <li>Biscuits</li>
-                                        <li>Jamdani Saree</li>
-                                        <li>Circuit breakers</li>
-                                        <li>Tents</li>
-                                        <li>Footwear</li>
-                                        <li>Tooth Brush</li>
-                                        <li>Camera Parts</li>
-                                        <li>Hand Gloves (Leather)</li>
-                                        <li>Artificial Flowers</li>
-                                        <li>Home Textiles</li>
-                                        <li>Ceramic Tableware</li>
-                                        <li>Stainless Steel Ware</li>
-                                        <li>Electric Bulb</li>
-                                        <li>Toys</li>
-                                        <li>Printed circuit board</li>
-                                        <li>Integrated circuits</li>
-                                        <li>Zipper</li>
-                                        <li>Melamine Tableware</li>
-                                        <li>Leather Bags & Purse</li>
-                                        <li>Electric Wires</li>
-                                        <li>Telephone Cables</li>
-                                        <li>Coil Assembly</li>
-                                        <li>Generator</li>
-                                        <li>Transformer</li>
-                                        <li>Engineering Products</li>
-                                        <li>Raw cotton</li>
-                                        <li>Cotton waste</li>
-                                        <li>Black cumin seed</li>
-                                        <li>Spices</li>
-                                        <li>Tea (in packet, in bulk)</li>
-                                        <li>Crude fertilizer</li>
-                                        <li>Raw Jute </li>
-                                        <li>Tortoise & Turtles</li>
-                                        <li>Crabs</li>
-                                        <li>Duck Chest Feather</li>
-                                        <li>Ball Pen</li>
-                                        <li>Golf Shaft</li>
-                                        <li>Silk Fabrics</li>
-                                        <li>Bi-cycle</li>
-                                        <li>Accumulator Battery Parts</li>
-                                        <li>Lamp & Light Fittings</li>
-                                        <li>Aquarium Fish</li>
-                                        <li>Crude Drugs</li>
-                                        <li>Bamboo Poles</li>
-                                        <li>Beeswax</li>
-                                        <li>Jute Ropes</li>
-                                        <li>Printed Materials</li>
-                                        <li>Stationery Items</li>
-                                        <li>Textile Fabrics</li>
-                                        <li>Aluminum Household Article</li>
-                                        <li>Video/Audio Cassette</li>
-                                        <li>Radio & Recorder</li>
-                                        <li>Television Sets</li>
-                                        <li>Indicator Lamp</li>
-                                        <li>VCR/VCP</li>
-                                        <li>Ro RoFerry</li>
-                                        <li>Fishing Reel</li>
-                                        <li>Electronics</li>
-                                        <li>Computers</li>
-                                        <li>Computers Accessories</li>
-                                        <li>G.I. Pipe</li>
-                                        <li>Iron Chain</li>
-                                        <li>Cast Iron articles</li>
-                                        <li>Jackets</li>
-                                        <li>Dry food</li>
-                                        <li>Coir & Coir-products</li>
-                                        <li>Human Hair</li>
-                                        <li>Wood & Timbers</li>
-                                        <li>Copper waste</li>
-                                        <li>Hookah</li>
-                                        <li>Horns & Hooves</li>
-                                        <li>Molasses</li>
-                                        <li>Petroleum By Products</li>
-                                        <li>Naphtha</li>
-                                        <li>Furnace Oil</li>
-                                        <li>Bitumen</li>
-                                        <li>Chemical Products</li>
-                                        <li>Glycerin</li>
-                                        <li>Garment</li>
-                                        <li>Pharmaceuticals</li>
-                                        <li>Chemical fertilizer</li>
-                                        <li>Cosmetics</li>
-                                        <li>P.V.C. Pipe</li>
-                                        <li>P.V.C. Bags</li>
-                                        <li>Soap (toilet)</li>
-                                        <li>Soap (washing)</li>
-                                        <li>Newsprint Paper</li>
-                                        <li>Rayon Yarn</li>
-                                        <li>Ceramic Sanitary Ware</li>
-                                        <li>Insulator</li>
-                                        <li>Polythene Sheet</li>
-                                        <li>Synthetic Ropes</li>
-                                        <li>Specialized Textile & Household Linen</li>
-                                        <li>Leather (Curst/Finished)</li>
-                                        <li>Jute goods (all sorts)</li>
-                                        <li>Jute Yarn & Twine</li>
-                                        <li>Jute Carpet </li>
-                                        <li>Handicrafts</li>
-                                        <li>Terry Towel</li>
-                                        <li>Knit Wear</li>
-                                        <li>T-Shirts</li>
-                                        <li>Sweater</li>
-                                        <li>Ready-Made Garments</li>
-                                        <li>Shirts</li>
-                                        <li>Trousers</li>
-                                    </ol>
+                                    <h3 class="text-center">Exports list from Bangladesh</h3>
+                                    <div class="col-md-4">
+                                        <ul>
+                                            <li>Frozen Food</li>
+                                            <li>Fish</li>
+                                            <li>Dried</li>
+                                            <li>Salted & dehydrated</li>
+                                            <li>Animal casings</li>
+                                            <li>Agricultural products</li>
+                                            <li>Vegetables</li>
+                                            <li>Fruits</li>
+                                            <li>Cut flower</li>
+                                            <li>Betel leaves</li>
+                                            <li>Potato</li>
+                                            <li>Dry fruits</li>
+                                            <li>Bay leaves</li>
+                                            <li>Rice</li>
+                                            <li>Tobacco</li>
+                                            <li>Cigarettes</li>
+                                            <li>Feature film</li>
+                                            <li>Jewellery</li>
+                                            <li>Biscuits</li>
+                                            <li>Jamdani saree</li>
+                                            <li>Circuit breakers</li>
+                                            <li>Tents</li>
+                                            <li>Footwear</li>
+                                            <li>Tooth brush</li>
+                                            <li>Camera parts</li>
+                                            <li>Iland gloves (Leater)</li>
+                                            <li>Artificial flowers</li>
+                                            <li>Home Textiles</li>
+                                            <li>Ceramic tableware</li>
+                                            <li>Stainless steel wares</li>
+                                            <li>Electric bulb</li>
+                                            <li>Toys</li>
+                                            <li>Printed circuit board</li>
+                                            <li>Integrated circuits</li>
+                                            <li>Integrated circuits</li>
+                                            <li>Others Mfd. products</li>
+                                            <li>Zipper</li>
+                                            <li>Melamine tableware’s</li>
+                                            <li>Leather bags & purse</li>
+                                            <li>Electric Wires</li>
+                                            <li>Telephone cables</li>
+                                            <li>Coil assembly</li>
+                                            <li>Generator</li>
+                                            <li>Transformer</li>
+                                            <li>Engineering Products</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul>
+                                            <li>Raw cotton</li>
+                                            <li>Cotton waste</li>
+                                            <li>Black cumin seed</li>
+                                            <li>Spices</li>
+                                            <li>Others</li>
+                                            <li>Tea</li>
+                                            <li>In packet</li>
+                                            <li>In bulk</li>
+                                            <li>Crude fertilizer</li>
+                                            <li>Raw jute (fiodi.com jute products supplyer)</ol>
+                                            <li>Tortoise & turtles</li>
+                                            <li>Crabs</li>
+                                            <li>Duck chest feather</li>
+                                            <li>Ball pan</li>
+                                            <li>Golf shaft</li>
+                                            <li>Silk fabrics</li>
+                                            <li>Other articles of leather</li>
+                                            <li>Bi-cycle</li>
+                                            <li>Gift items</li>
+                                            <li>Accumulator battery & parts</li>
+                                            <li>Lamp & light fittings</li>
+                                            <li>Aquarium fish</li>
+                                            <li>Crude drugs</li>
+                                            <li>Bamboo poles</li>
+                                            <li>Rattans</li>
+                                            <li>Beeswax</li>
+                                            <li>Jute ropes</li>
+                                            <li>Printed materials</li>
+                                            <li>Stationery items</li>
+                                            <li>Textile fabrics</li>
+                                            <li>Aluminium household article</li>
+                                            <li>Video/Audio cassette</li>
+                                            <li>Radio & Radio recorder</li>
+                                            <li>Television sets</li>
+                                            <li>Indicator Lamp</li>
+                                            <li>VCR/VCP</li>
+                                            <li>Ro Ro ferry</li>
+                                            <li>Fishing reel</li>
+                                            <li>Electronics</li>
+                                            <li>Computers</li>
+                                            <li>Computers accessories</li>
+                                            <li>G.I. Pipe</li>
+                                            <li>Iron Chain</li>
+                                            <li>Cast Iron articles</li>
+                                            <li>Jackets</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul>
+                                            <li>Brooms</li>
+                                            <li>Dry food</li>
+                                            <li>Coir & Coi-products</li>
+                                            <li>Human hair</li>
+                                            <li>Wood & timbers</li>
+                                            <li>Copra wast</li>
+                                            <li>Hukkanali</li>
+                                            <li>Horns & hooves</li>
+                                            <li>Molasses bh</li>
+                                            <li>Petroleum by products</li>
+                                            <li>Naphtha</li>
+                                            <li>Furnace oil</li>
+                                            <li>Bitumen</li>
+                                            <li>Chemical products</li>
+                                            <li>Glycerin</li>
+                                            <li>Garment</li>
+                                            <li>Pharmaceuticals</li>
+                                            <li>Chemical fertilizer</li>
+                                            <li>Cosmetics</li>
+                                            <li>P.V.C. Pipe</li>
+                                            <li>P.V.C. Bags</li>
+                                            <li>Soap toilet</li>
+                                            <li>Soap washing</li>
+                                            <li>Newsprint</li>
+                                            <li>Paper</li>
+                                            <li>Rayen yarn</li>
+                                            <li>Ceramic sanitary ware</li>
+                                            <li>Insulator</li>
+                                            <li>Polythene sheet</li>
+                                            <li>Synthetic ropes</li>
+                                            <li>Specialized textile & Household linen</li>
+                                            <li>Leather (Curst/Finished)</li>
+                                            <li>Jute goods (all sorts)</li>
+                                            <li>Jute yarn & twine</li>
+                                            <li>Jute carpet (fiodi.com jute products supplyer)</li>
+                                            <li>Jute manufactures</li>
+                                            <li>Handicrafts</li>
+                                            <li>Specialized textile & Household linen</li>
+                                            <li>Terry towel</li>
+                                            <li>Knit wear</li>
+                                            <li>T. Shirts</li>
+                                            <li>Sweater</li>
+                                            <li>Ready-made Garments</li>
+                                            <li>Shirts</li>
+                                            <li>Trousers</li>
+                                        </ul>
+                                    </div>
                                     <p>
-                                        These are the widely exportable items and exports products from Bangladesh. We need to find out more exportable items for Bangladesh, So that the economy of Bangladesh will bring a positive change.
+                                        These are the widely exportable items and exports products from Bangladesh. We need to find out more exportable items for
+                                        Bangladesh, So that the economy of Bangladesh will bring a positive change. Bangladesh need more interested business
+                                        initiative Example:One of the popular exporter of jute products from Bangladesh is www.fiodi.com they are the jute and craft
+                                        exporter from Bangladesh
                                     </p>
                                 </div>
 							</div>
@@ -1214,7 +1139,7 @@
                                 </div>
 							</div>
 					    </div>
-						
+
 					</div>
 				</div>
 			</div>
