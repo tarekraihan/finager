@@ -2,48 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/10.png" afterPath="$PROJECT_DIR$/resource/front_end/images/10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/loan/Auto-Loan-menu-icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/loan/Auto-Loan-menu-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/Beta-Ico.png" afterPath="$PROJECT_DIR$/resource/front_end/images/Beta-Ico.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/card/Credit-Card-Manu-Icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/card/Credit-Card-Manu-Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/Currency-rate.jpg" afterPath="$PROJECT_DIR$/resource/front_end/images/Currency-rate.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/DPS-Menu-Icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/DPS-Menu-Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/card/Debit-Card-Icon-2.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/card/Debit-Card-Icon-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/DebitCard.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/DebitCard.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/loan/Edu-Laon-Menu-icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/loan/Edu-Laon-Menu-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/export/Export-Import-Menu-Icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/export/Export-Import-Menu-Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/FDR-Menu-Icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/FDR-Menu-Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/Fin-Pop-Up-Beta-bg.jpg" afterPath="$PROJECT_DIR$/resource/front_end/images/Fin-Pop-Up-Beta-bg.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/loan/Home-Loan-manu-Icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/loan/Home-Loan-manu-Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/Lakhpoti-&amp;-Millionaire-manu-icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/Lakhpoti-&amp;-Millionaire-manu-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/Money-Maximizer-Manu-Icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/Money-Maximizer-Manu-Icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/Monthly-Benefit-Scheme-menu-Icon-.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/Monthly-Benefit-Scheme-menu-Icon-.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/loan/Personal-loan-menu-icon.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/loan/Personal-loan-menu-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/SND-Menu-Icon.jpg" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/SND-Menu-Icon.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/Saving-Acc-Menu-Icon.jpg" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/investment/Saving-Acc-Menu-Icon.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/Toogle-Banner-black.jpg" afterPath="$PROJECT_DIR$/resource/front_end/images/Toogle-Banner-black.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/bankmap.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/bankmap.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/buynewcar.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/buynewcar.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/frontCard/card.png" afterPath="$PROJECT_DIR$/resource/front_end/images/frontCard/card.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/frontCard/card_2.png" afterPath="$PROJECT_DIR$/resource/front_end/images/frontCard/card_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/frontCard/card_3.png" afterPath="$PROJECT_DIR$/resource/front_end/images/frontCard/card_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/creditcard.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/creditcard.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/dps.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/dps.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/educationloan.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/educationloan.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/export/export1.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/export/export1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/export/export2.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/export/export2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/mashmenu/export/export3.png" afterPath="$PROJECT_DIR$/resource/front_end/images/mashmenu/export/export3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/fdr.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/fdr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/finager-logo.png" afterPath="$PROJECT_DIR$/resource/front_end/images/finager-logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/homeloan.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/homeloan.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/hr-bar.png" afterPath="$PROJECT_DIR$/resource/front_end/images/hr-bar.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/loan.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/loan.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/moneymarket.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/moneymarket.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/more.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/more.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/personalloan.png" afterPath="$PROJECT_DIR$/resource/front_end/images/categoryIcon/personalloan.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/about_us" afterPath="$PROJECT_DIR$/application/cache/about_us" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/export_import.php" afterPath="$PROJECT_DIR$/application/views/front_end/export_import.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/export_import" afterPath="$PROJECT_DIR$/application/cache/export_import" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -112,7 +70,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="3859" max-vertical-offset="4828">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3859" max-vertical-offset="4828">
               <caret line="227" column="59" selection-start-line="227" selection-start-column="59" selection-end-line="227" selection-end-column="59" />
               <folding />
             </state>
@@ -122,7 +80,7 @@
       <file leaf-file-name="export_import.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/export_import.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="1717" max-vertical-offset="19584">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1717" max-vertical-offset="19584">
               <caret line="127" column="64" selection-start-line="127" selection-start-column="64" selection-end-line="127" selection-end-column="64" />
               <folding />
             </state>
@@ -328,20 +286,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="finager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -392,6 +336,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -399,9 +346,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -442,12 +386,6 @@
       <workItem from="1528715207632" duration="5420000" />
       <workItem from="1528804050282" duration="3112000" />
       <workItem from="1529846432913" duration="1563000" />
-    </task>
-    <task id="LOCAL-00048" summary="Url Update for Education Loan">
-      <created>1516631391020</created>
-      <option name="number" value="00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1516631391020</updated>
     </task>
     <task id="LOCAL-00049" summary="Url Update for Millionaire">
       <created>1516719365030</created>
@@ -737,7 +675,13 @@
       <option name="project" value="LOCAL" />
       <updated>1530196117780</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="some image and export import page update">
+      <created>1530626157258</created>
+      <option name="number" value="00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1530626157266</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -753,22 +697,22 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1625964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22107969" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42339832" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -789,9 +733,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23626027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -840,7 +784,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="monthly benifit" />
     <MESSAGE value="Savings Accounts URL Complete" />
     <MESSAGE value="Current Account and Snd account url re-write completed" />
     <MESSAGE value="More Info Less Info problem solved" />
@@ -865,7 +808,8 @@
     <MESSAGE value="new footer" />
     <MESSAGE value="Solve Audit Report problem" />
     <MESSAGE value="right side menu and css page update" />
-    <option name="LAST_COMMIT_MESSAGE" value="right side menu and css page update" />
+    <MESSAGE value="some image and export import page update" />
+    <option name="LAST_COMMIT_MESSAGE" value="some image and export import page update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1220,7 +1164,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/export_import.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0" vertical-offset="1717" max-vertical-offset="19584">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1717" max-vertical-offset="19584">
           <caret line="127" column="64" selection-start-line="127" selection-start-column="64" selection-end-line="127" selection-end-column="64" />
           <folding />
         </state>
