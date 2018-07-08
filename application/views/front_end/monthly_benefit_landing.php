@@ -90,7 +90,7 @@
 <section id="Sponsored">
     <div class="container">
         <div class="home_Sponsored_heading">
-            <h2>Others Investment</h2>
+            <h2>Other Investment</h2>
         </div>
         <div class="Sponsored_box">
             <div class="col-md-3 col-sm-6">
