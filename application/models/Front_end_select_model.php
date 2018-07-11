@@ -774,7 +774,8 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_blog_post_image_url_by_post_id($post_id){
 
-        $sql="SELECT concat((select option_value from blog_options where option_name ='siteurl' limit 1),'/wp-content/uploads/',childmeta.meta_value) as image_url FROM blog_postmeta childmeta INNER JOIN blog_postmeta parentmeta ON (childmeta.post_id=parentmeta.meta_value) WHERE parentmeta.meta_key='_thumbnail_id' and childmeta.meta_key = '_wp_attached_file' AND parentmeta.post_id = {$post_id}";
+        //$sql="SELECT concat((select option_value from blog_options where option_name ='siteurl' limit 1),'/wp-content/uploads/',childmeta.meta_value) as image_url FROM blog_postmeta childmeta INNER JOIN blog_postmeta parentmeta ON (childmeta.post_id=parentmeta.meta_value) WHERE parentmeta.meta_key='_thumbnail_id' and childmeta.meta_key = '_wp_attached_file' AND parentmeta.post_id = {$post_id}";
+        $sql="SELECT blog_posts.guid as image_url FROM blog_posts LEFT JOIN blog_postmeta ON blog_posts.ID = blog_postmeta.meta_value WHERE blog_postmeta.post_id= {$post_id} AND blog_postmeta.meta_key='_thumbnail_id'";
         $query = $this->db->query($sql);
         return  $query->row();
     }
