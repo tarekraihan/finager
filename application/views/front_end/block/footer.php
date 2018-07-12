@@ -1,300 +1,270 @@
+<div class="footer container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
 
-    <div class="footer container-fluid no-padding">
-        <!--div class="container hidden">
-            <div class="row">
-                <div class="col-sm-12">
-
-                    <div class="row margin_bottom_15">
-                        <div class="col-sm-6 col-xs-12">
-                            <img title="Finager Logo" class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg" alt="Finager.com">
-                        </div>
-
-                        <div class="col-sm-6 col-xs-12">
-                            <ul class="footer-socio">
-                                <li>
-                                    <a href="javascript:(0);">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/Facebook-1.png">
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:(0);">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/G+-1.png">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/IN-1.png">
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:(0);">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/RSS-1.png">
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:(0);">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/Twitter-1.png">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="row margin_bottom_15">
+                    <div class="col-sm-6 col-xs-12">
+                        <img title="Finager Logo" class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg">
                     </div>
 
+                    <div class="col-sm-6 col-xs-12">
+                        <ul class="footer-socio">
+                            <li>
+                                <a href="javascript:(0);">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/Facebook-1.png">
+                                </a>
+                            </li>
 
-                    <div class="row">
-                        <div class="col-sm-2 col-xs-12">
-                            <p class="footer-menu-title">Loan</p>
+                            <li>
+                                <a href="javascript:(0);">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/G+-1.png">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/IN-1.png">
+                                </a>
+                            </li>
 
-                            <ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>home-loan.html">Home Loan</a></li>
-                                <li><a href="<?php echo base_url();?>personal-loan.html">Personal Loan</a></li>
-                                <li><a href="<?php echo base_url();?>auto-loan.html">Auto Loan</a></li>
-                                <li><a href="<?php echo base_url();?>education-loan.html">Education Loan</a></li>
-    						</ul>
-    						<p class="footer-menu-title">Card</p>
-    						<ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>credit-cards.html">Credit Card</a></li>
-                                <li><a href="<?php echo base_url();?>debit-cards.html">Debit Card</a></li>
-                            </ul>
-                        </div>
+                            <li>
+                                <a href="javascript:(0);">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/RSS-1.png">
+                                </a>
+                            </li>
 
-                        <div class="col-sm-2 col-xs-12">
-                            <p class="footer-menu-title">Investment</p>
-
-                            <ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>fdr.html">FDR</a></li>
-                                <li><a href="<?php echo base_url();?>dps.html">DPS</a></li>
-                                <li><a href="<?php echo base_url();?>millionaire.html">Lakhpoti & Millionaire</a></li>
-                                <li><a href="<?php echo base_url();?>money-maximizer.html">Money Maximizer</a></li>
-                                <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit Scheme</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Thrusts Sector</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-3 col-xs-12">
-                            <p class="footer-menu-title">Accounts</p>
-
-                            <ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>current-account.html">Current Account</a></li>
-                                <li><a href="<?php echo base_url();?>savings-account.html">Saving Account</a></li>
-                                <li><a href="<?php echo base_url();?>snd.html">SND Account</a></li>
-
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-2 col-xs-12">
-                            <p class="footer-menu-title">Others</p>
-
-                            <ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>blog/" target="_blank">Blog</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forum</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Tax Guide</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Calculator</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-3 col-xs-12 text-center">
-                            <p class="footer-menu-title uppercase">Talk With Us</p>
-
-                            <p class="no-margin"><span class="hello">Hello Finager :</span> <a href="tel:+8801998123123">+8801998-123123</a></p>
-                            <p class="no-margin">Info: info@finager.com</p>
-                            <p class="no-margin">Support: support@finager.com</p>
-                            <p class="no-margin"><a href="<?php echo base_url();?>about-us.html">About Us</a> </p>
-
-                            <h5 class="footer-menu-title uppercase margin_top_10">Subscribe Us</h5>
-
-                                <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail" id="txtSubscribeEmail">
-                                <button type="button" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
-
-                        </div>
-                    </div>
-
-                    <hr class="footer-hr">
-
-                    <p class="text-center footer-ass-text no-margin">
-                        finager.com&copy;2017 All right reserved. Use of this site constitutes of our
-                        <a href="<?php echo base_url();?>terms-condition.html">Terms of use</a> and <a href="<?php echo base_url();?>privacy-policy.html">Privacy Policy</a>
-                    </p>
-                </div>
-            </div>
-        </div-->
-    </div>
-
-
-    <div id="main-footer" class="footer">
-        <!-- particles.js container -->
-        <div id="particles-js"></div>
-
-        <!-- stats - count particles -->
-        <div class="count-particles">
-          <span class="js-count-particles"></span>
-        </div>
-        
-        <div class="container">
-            <div class="row m-t-30">
-                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                    <div class="footer-wrapper">
-                        <img title="Finager(Your Finance Manager)" class="footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg" alt="Finager.com">
+                            <li>
+                                <a href="javascript:(0);">
+                                    <img src="<?php echo base_url();?>resource/front_end/images/social/Twitter-1.png">
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
 
-            <div class="row footer-single-menu">
-                <div class="col-sm-12 col-md-4">
-                    <ul>
-                        <li><a href="<?php echo base_url();?>privacy-policy.html">Privacy policy</a></li>
-                        <li><a href="<?php echo base_url();?>terms-condition.html">Terms & conditions</a></li>
-                        <li><a href="<?php echo base_url();?>about-us.html">about</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-4"></div>
-                <div class="col-sm-12 col-md-4">
-                    <ul>
-                        <li><p class="no-margin"><span class="hello">Hello Finager :</span> <a href="tel:+8801998123123">+8801997-123123</a></p></li>
-                        <li><p class="no-margin">Info: <a href="mailto:info@finager.com">info@finager.com</a></p></li>
-                        <li><p class="no-margin">Support: <a href="mailto:support@finager.com">support@finager.com</a></p></li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="row footer-bottom">
-                <div class="col-sm-12">
-                    <ul class="footer-socials">
-                        <li>
-                            <a href="#" title="Facebook">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="Twitter">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="Google Plus">
-                                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="Pinterest">
-                                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="Linkedin">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="RSS Feed">
-                                <i class="fa fa-rss" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="row">
+                    <div class="col-sm-2 col-xs-12">
+                        <p class="footer-menu-title">Loan</p>
 
-                    <div class="footer-subscribtion">
-                        <div class="row">
-                            <div class="col-md-offset-3 col-md-6 col-sm-12">
-                                <div class="input-group p-relative">
-                                    <input type="text" class="form-control" placeholder="NAME@EMAIL.COM">
-                                    <span class="input-group-btn" style="font-style: inherit;">
-                                        <button class="c-btn" title="Subscribe">
-                                            <span>Subscribe</span>
-                                        </button>
-                                    </span>
-                                </div><!-- /input-group -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row footer-main-menu">
-                <div class="col-sm-12">
-
-                    <div class="footer-menu-wrapper row">    
-                        <div class="col-sm-12">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <p class="footer-main-menu-title">Card</p>
-                                    <ul>
-                                        <li><a href="<?php echo base_url();?>debit-cards.html">Debit Card</a></li>
-                                        <li><a href="<?php echo base_url();?>credit-cards.html">Credit Card</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-2">
-                                    <p class="footer-main-menu-title">Loan</p>
-                                    <ul>
-                                        <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">SME Loan</a></li>
-                                        <li><a href="<?php echo base_url();?>auto-loan.html">Auto Loan</a></li>
-                                        <li><a href="<?php echo base_url();?>home-loan.html">Home Loan</a></li>
-                                        <li><a href="<?php echo base_url();?>personal-loan.html">Personal Loan</a></li>
-                                        <li><a href="<?php echo base_url();?>education-loan.html">Education Loan</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-2">
-                                    <p class="footer-main-menu-title">Investment</p>
-                                    <ul>
-                                        <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit</a></li>
-                                        <li><a href="<?php echo base_url();?>dps.html">Pension Scheme</a></li>
-                                        <li><a href="<?php echo base_url();?>money-maximizer.html">Money Maximizer</a></li>
-                                        <li><a href="<?php echo base_url();?>fdr.html">Fixed Deposit Receipt</a></li>
-                                        <li><a href="<?php echo base_url();?>millionaire.html">Lakhpoti & Millionaire</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-2">
-                                    <p class="footer-main-menu-title">Accounts</p>
-                                    <ul>
-                                        <li><a href="<?php echo base_url();?>snd.html">SND Account</a></li>
-                                        <li><a href="<?php echo base_url();?>current-account.html">Current Account</a></li>
-                                        <li><a href="<?php echo base_url();?>savings-account.html">Savings Account</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <p class="footer-main-menu-title" style="margin-left: 80px;">Others</p>
-                                    <div class="row">
-                                        <div class="col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
-                                                <li><a href="<?php echo base_url();?>blog/" target="_blank">Blogs</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forums</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-6 col-xs-12">
-                                            <ul>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Tax Guide</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Thrust Sector</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Financial Calculator</a></li>
-                                            </ul>
-                                        </div>         
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="no-padding footer-menus">
+                            <li><a href="<?php echo base_url();?>home-loan.html">Home Loan</a></li>
+                            <li><a href="<?php echo base_url();?>personal-loan.html">Personal Loan</a></li>
+                            <li><a href="<?php echo base_url();?>auto-loan.html">Auto Loan</a></li>
+                            <li><a href="<?php echo base_url();?>education-loan.html">Education Loan</a></li>
+                        </ul>
+                        <p class="footer-menu-title">Card</p>
+                        <ul class="no-padding footer-menus">
+                            <li><a href="<?php echo base_url();?>credit-cards.html">Credit Card</a></li>
+                            <li><a href="<?php echo base_url();?>debit-cards.html">Debit Card</a></li>
+                        </ul>
                     </div>
 
-                    <p class="footer-copyright">finager.com © 2017</p>
+                    <div class="col-sm-2 col-xs-12">
+                        <p class="footer-menu-title">Investment</p>
+
+                        <ul class="no-padding footer-menus">
+                            <li><a href="<?php echo base_url();?>fdr.html">FDR</a></li>
+                            <li><a href="<?php echo base_url();?>dps.html">DPS</a></li>
+                            <li><a href="<?php echo base_url();?>millionaire.html">Lakhpoti & Millionaire</a></li>
+                            <li><a href="<?php echo base_url();?>money-maximizer.html">Money Maximizer</a></li>
+                            <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit Scheme</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Thrusts Sector</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-3 col-xs-12">
+                        <p class="footer-menu-title">Accounts</p>
+
+                        <ul class="no-padding footer-menus">
+                            <li><a href="<?php echo base_url();?>current-account.html">Current Account</a></li>
+                            <li><a href="<?php echo base_url();?>savings-account.html">Saving Account</a></li>
+                            <li><a href="<?php echo base_url();?>snd.html">SND Account</a></li>
+                            <!--
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Potential SME Sector</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Traning Calender</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">Bank Wise SME Service Centre</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Service Centre</a></li>
+                            <li><a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg">SME Blog</a></li>
+                            -->
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-2 col-xs-12">
+                        <p class="footer-menu-title">Others</p>
+
+                        <ul class="no-padding footer-menus">
+                            <li><a href="<?php echo base_url();?>blog/" target="_blank">Blog</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forum</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Tax Guide</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Calculator</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
+                            <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-3 col-xs-12 text-center">
+                        <p class="footer-menu-title uppercase">Talk With Us</p>
+
+                        <p class="no-margin"><span class="hello">Hello Finager :</span> <a href="tel:+8801998123123">+8801998-123123</a></p>
+                        <p class="no-margin">Info: info@finager.com</p>
+                        <p class="no-margin">Support: support@finager.com</p>
+                        <p class="no-margin"><a href="<?php echo base_url();?>about-us.html">About Us</a> </p>
+
+                        <h5 class="footer-menu-title uppercase margin_top_10">Subscribe Us</h5>
+
+                        <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail" id="txtSubscribeEmail">
+                        <button type="button" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
+
+                    </div>
                 </div>
+
+                <hr class="footer-hr">
+
+                <p class="text-center footer-ass-text no-margin">
+                    finager.com&copy;2017 All right reserved. Use of this site constitutes of our
+                    <a href="<?php echo base_url();?>terms-condition.html">Terms of use</a> and <a href="<?php echo base_url();?>privacy-policy.html">Privacy Policy</a>
+                </p>
             </div>
         </div>
     </div>
+</div>
+
+
+
 </div><!-- main body-->
+
+
+<div id="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="footer-wrapper">
+                    <img title="Finager Logo" class="footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer-single-menu">
+            <div class="col-sm-12 col-md-4">
+                <ul>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">terms & conditions</a></li>
+                    <li><a href="#">about</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-4"></div>
+            <div class="col-sm-12 col-md-4">
+                <ul>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">terms & conditions</a></li>
+                    <li><a href="#">about</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row footer-main-menu">
+            <div class="col-sm-12">
+                <ul class="footer-menu-wrapper">
+                    <li>
+                        <p class="footer-main-menu-title">Card</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="footer-main-menu-title">Account</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="footer-main-menu-title">Loan</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="footer-main-menu-title">Investment</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="footer-main-menu-title">Others</p>
+                        <ul>
+                            <li><a href="#">Credit Card</a></li>
+                            <li><a href="#">Debit Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row footer-bottom">
+            <div class="col-sm-12">
+                <ul class="footer-socials">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-rss" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="footer-subscribtion">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-6 col-sm-12">
+                            <div class="input-group p-relative">
+                                <input type="text" class="form-control" placeholder="NAME@EMAIL.COM">
+                                <span class="input-group-btn">
+                                    <!--button class="btn btn-default" type="button">Submit</button-->
+                                     <div class="button-4">
+                                         <div class="eff-4"></div>
+                                         <a href="#"> Subscribe </a>
+                                     </div>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                </div>
+
+                <p class="footer-copyright">finager.com © 2017</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Search Modal -->
@@ -315,86 +285,86 @@
                             <div class="no_filter_tab" id="search_result">
                                 <div class="col-md-4">
                                     <a href="<?php echo base_url();?>debit-cards.html">
-                                       <div class="no_filte_div">
-                                          <i class="fa fa-credit-card" aria-hidden="true"></i>                                        
-                                          <span>Debit Card</span>
-                                       </div>
+                                        <div class="no_filte_div">
+                                            <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                            <span>Debit Card</span>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="<?php echo base_url();?>home-loan.html">
-                                       <div class="no_filte_div">
-                                          <i class="fa fa-home" aria-hidden="true"></i>                                       
-                                          <span>Home Loan</span>
-                                       </div>
+                                        <div class="no_filte_div">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Home Loan</span>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="<?php echo base_url();?>personal-loan.html">
-                                       <div class="no_filte_div">
-                                          <i class="fa fa-male" aria-hidden="true"></i>                                       
-                                          <span>Personal Loan</span>
-                                       </div>
+                                        <div class="no_filte_div">
+                                            <i class="fa fa-male" aria-hidden="true"></i>
+                                            <span>Personal Loan</span>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="<?php echo base_url();?>auto-loan.html">
-                                       <div class="no_filte_div">
-                                          <i class="fa fa-car" aria-hidden="true"></i>                                       
-                                          <span>Auto Loan</span>
-                                       </div>
+                                        <div class="no_filte_div">
+                                            <i class="fa fa-car" aria-hidden="true"></i>
+                                            <span>Auto Loan</span>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="<?php echo base_url();?>education-loan.html">
-                                       <div class="no_filte_div">
-                                          <i class="fa fa-graduation-cap" aria-hidden="true"></i>                                       
-                                          <span>Education Loan</span>
-                                       </div>
+                                        <div class="no_filte_div">
+                                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                            <span>Education Loan</span>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-md-4">
                                     <a href="<?php echo base_url();?>fdr.html">
-                                       <div class="no_filte_div">
-                                          <i class="fa fa-archive" aria-hidden="true"></i>                                       
-                                          <span>FDR</span>
-                                       </div>
+                                        <div class="no_filte_div">
+                                            <i class="fa fa-archive" aria-hidden="true"></i>
+                                            <span>FDR</span>
+                                        </div>
                                     </a>
                                 </div>
 
-                                    </div>
-                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-            </section>
+
         </div>
-    </section>
+</div>
+</section>
+</div>
+</section>
 </div>
 
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog beta_modal" role="document">
-    <div class="modal-content">
-        <div class="beta_pop_bg">
-			<div class="form-group has-success">
-                 <h4 class="beta_pop_text">For <span>Finager Newsletter...</span></h4>
-				<div class="input-group">
-					<input type="email" class="form-control beta_pop_form" id="betaSubscribeEmail" aria-describedby="inputGroupSuccess1Status" required>
-					<a href="javascript:void(0);" id="betaSubscribButton" class="input-group-addon beta_pop_form">Send</a>
+    <div class="modal-dialog beta_modal" role="document">
+        <div class="modal-content">
+            <div class="beta_pop_bg">
+                <div class="form-group has-success">
+                    <h4 class="beta_pop_text">For <span>Finager Newsletter...</span></h4>
+                    <div class="input-group">
+                        <input type="email" class="form-control beta_pop_form" id="betaSubscribeEmail" aria-describedby="inputGroupSuccess1Status" required>
+                        <a href="javascript:void(0);" id="betaSubscribButton" class="input-group-addon beta_pop_form">Send</a>
 
-			    </div>
-			</div>
-            <div class="modal-footer" id="subscribe_message">
+                    </div>
+                </div>
+                <div class="modal-footer" id="subscribe_message">
 
+                </div>
             </div>
-	    </div>
+
+        </div>
 
     </div>
-
-  </div>
 </div>
 
 <!-- Modal -->
@@ -475,25 +445,25 @@
 
 
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" id="maintains-modal">
-  <div class="modal-dialog beta_modal" role="document">
-    <div class="modal-content">
-        <div class="maintains_pop_bg">
-			<!--div class="form-group has-success">
-                 <h4 class="beta_pop_text">For <span>Finager Newsletter...</span></h4>
-				<div class="input-group">
-					<input type="email" class="form-control beta_pop_form" id="betaSubscribeEmail" aria-describedby="inputGroupSuccess1Status" required>
-					<a href="javascript:void(0);" id="betaSubscribButton" class="input-group-addon beta_pop_form">Send</a>
+    <div class="modal-dialog beta_modal" role="document">
+        <div class="modal-content">
+            <div class="maintains_pop_bg">
+                <!--div class="form-group has-success">
+                     <h4 class="beta_pop_text">For <span>Finager Newsletter...</span></h4>
+                    <div class="input-group">
+                        <input type="email" class="form-control beta_pop_form" id="betaSubscribeEmail" aria-describedby="inputGroupSuccess1Status" required>
+                        <a href="javascript:void(0);" id="betaSubscribButton" class="input-group-addon beta_pop_form">Send</a>
 
-			    </div>
-			</div>
-            <div class="modal-footer" id="subscribe_message">
+                    </div>
+                </div>
+                <div class="modal-footer" id="subscribe_message">
 
-            </div-->
-	    </div>
+                </div-->
+            </div>
+
+        </div>
 
     </div>
-
-  </div>
 </div>
 <?php
 $result = $this->Front_end_select_model->website_under_maintenance();
@@ -531,8 +501,6 @@ if($result){
 <script src="<?php echo base_url();?>resource/front_end/js/demo.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
-
-<script src="<?php echo base_url();?>resource/front_end/js/particles.min.js"></script>
 <!-- plus a jQuery UI theme, here I use "flick" -->
 <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">-->
 
@@ -560,43 +528,43 @@ if($result){
             $('#more_info'+loan_id).html("<i class='fa fa-info-circle'></i> More info");
         }
     })
-//stcikey sidebar START
-/*
-$(document).ready(function(){
-	function sticky_relocate() {
-		var topOffset = 0;
-		var window_top = $(window).scrollTop();
-		var footer_top = $(".footer").offset().top;
-        var target_div = $('#sticky-anchor').offset();
-		var div_top = target_div.top;
-		var div_height = $("#sidebar").height();
-		var win_height = $(window).height();
+    //stcikey sidebar START
+    /*
+     $(document).ready(function(){
+     function sticky_relocate() {
+     var topOffset = 0;
+     var window_top = $(window).scrollTop();
+     var footer_top = $(".footer").offset().top;
+     var target_div = $('#sticky-anchor').offset();
+     var div_top = target_div.top;
+     var div_height = $("#sidebar").height();
+     var win_height = $(window).height();
 
-        var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
-        if (isNaN(top)) {
-            console.log("something is wrong, no top");
-        } else {
-            console.log(top);
-        }
-		
-		if (window_top + div_height > footer_top){
-			$('#sidebar').removeClass('stick');    
-		}
-		else if (window_top > div_top) {
-			$('#sidebar').addClass('stick');
-		}
-		else {
-			$('#sidebar').removeClass('stick');
-		}
-	}
+     var top = ($('#sticky-anchor').offset() || { "top": NaN }).top;
+     if (isNaN(top)) {
+     console.log("something is wrong, no top");
+     } else {
+     console.log(top);
+     }
 
-	$(function () {
-		$(window).scroll(sticky_relocate);
-		sticky_relocate();
-	});
-});
-*/
-//stcikey sidebar END
+     if (window_top + div_height > footer_top){
+     $('#sidebar').removeClass('stick');
+     }
+     else if (window_top > div_top) {
+     $('#sidebar').addClass('stick');
+     }
+     else {
+     $('#sidebar').removeClass('stick');
+     }
+     }
+
+     $(function () {
+     $(window).scroll(sticky_relocate);
+     sticky_relocate();
+     });
+     });
+     */
+    //stcikey sidebar END
 
     $("#buttons button").click(function() {
         var id = $(this).attr("id");
@@ -604,13 +572,13 @@ $(document).ready(function(){
         $("#pages div#" + id + "").css("display", "block");
     });
 
-<!--Esc key press to hide search modal-->
+    <!--Esc key press to hide search modal-->
 
-jQuery(document).keypress(function(e) {
-  if (e.keyCode == 27) {
-   jQuery("#myModal").modal('hide');
-  }
- });
+    jQuery(document).keypress(function(e) {
+        if (e.keyCode == 27) {
+            jQuery("#myModal").modal('hide');
+        }
+    });
 
     $('#search_word').on('keyup',function(){
         var search_word = 'search_word='+$(this).val();
@@ -714,149 +682,17 @@ jQuery(document).keypress(function(e) {
 
     })
 
-/*
-    $(window).on('load',function(){
-        $('#maintains-modal').modal({
-			show: true,
-			backdrop: 'static'
-		});
-    });*/
-	
-	$("#maintains-modal").on('shown.bs.modal', function() {
-	  $('.modal-backdrop').css('opacity', '0.8');
-	});
+    /*
+     $(window).on('load',function(){
+     $('#maintains-modal').modal({
+     show: true,
+     backdrop: 'static'
+     });
+     });*/
 
-    particlesJS("particles-js", {
-      "particles": {
-        "number": {
-          "value": 100,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#666"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#666"
-          },
-          "polygon": {
-            "nb_sides": 5
-          },
-          "image": {
-            "src": "img/github.svg",
-            "width": 100,
-            "height": 100
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false,
-          "anim": {
-            "enable": false,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 20,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#666",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 2,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "grab"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 140,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 200,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
+    $("#maintains-modal").on('shown.bs.modal', function() {
+        $('.modal-backdrop').css('opacity', '0.8');
     });
-
-
-    /* ---- stats.js config ---- */
-
-    /*var count_particles, stats, update;
-    stats = new Stats;
-    stats.setMode(0);
-    stats.domElement.style.position = 'absolute';
-    stats.domElement.style.left = '0px';
-    stats.domElement.style.top = '0px';
-    document.body.appendChild(stats.domElement);
-    count_particles = document.querySelector('.js-count-particles');
-    update = function() {
-      stats.begin();
-      stats.end();
-      if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-      }
-      requestAnimationFrame(update);
-    };
-    requestAnimationFrame(update);*/
 </script>
 </body>
 </html>

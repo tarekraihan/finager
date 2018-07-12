@@ -47,7 +47,8 @@ atlassian-ide-plugin.xml
 
 # Cursive Clojure plugin
 .idea/replstate.xml
-
+.idea
+application/cache/
 # Ruby plugin and RubyMine
 /.rakeTasks
 
