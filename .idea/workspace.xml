@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="Call blog post image thumb">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resource/front_end/css/mashable-menu - backup-24.07.2017.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resource/front_end/css/mashmenu-style - backup-24.07.2017.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/index_page" afterPath="$PROJECT_DIR$/application/cache/index_page" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/millionaire_landing" afterPath="$PROJECT_DIR$/application/cache/millionaire_landing" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/block/footer.php" afterPath="$PROJECT_DIR$/application/views/front_end/block/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php" afterPath="$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php" />
     </list>
     <ignored path="finager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,176 +45,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="En.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="58.192307">
-              <caret line="1052" column="62" selection-start-line="1052" selection-start-column="62" selection-end-line="1052" selection-end-column="62" />
-              <folding>
-                <element signature="n#index#0;n#En#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="96" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="snd.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/snd.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="311" column="122" selection-start-line="311" selection-start-column="121" selection-end-line="311" selection-end-column="122" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mashmenu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/block/mashmenu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="108" selection-start-line="86" selection-start-column="106" selection-end-line="86" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vertical_menu.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="vertical_menu.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2680" column="231" selection-start-line="2680" selection-start-column="222" selection-end-line="2680" selection-end-column="231" />
+            <state vertical-scroll-proportion="0.89634144">
+              <caret line="1851" column="14" selection-start-line="1851" selection-start-column="14" selection-end-line="1851" selection-end-column="14" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="right_menu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/block/right_menu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Front_end_select_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Front_end_select_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.961538">
-              <caret line="762" column="101" selection-start-line="762" selection-start-column="101" selection-end-line="762" selection-end-column="101" />
-              <folding>
-                <marker date="1531311861831" expanded="true" signature="193:1884" placeholder="SELECT DISTI... card_card_informations" />
-                <marker date="1531311861831" expanded="true" signature="2186:3884" placeholder="SELECT DISTI... card_card_informations" />
-                <marker date="1531311861831" expanded="true" signature="4057:4734" placeholder="SELECT debit... debit_card_info" />
-                <marker date="1531311861831" expanded="true" signature="5035:5719" placeholder="SELECT debit... debit_card_info" />
-                <marker date="1531311861831" expanded="true" signature="5894:6596" placeholder="SELECT debit... debit_card_info" />
-                <marker date="1531311861831" expanded="true" signature="6758:6772" placeholder="SELECT * FRO... ${$table}" />
-                <marker date="1531311861831" expanded="true" signature="6911:8633" placeholder="SELECT DISTI... card_card_informations" />
-                <marker date="1531311861831" expanded="true" signature="8777:9245" placeholder="SELECT home_... home_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="9394:9910" placeholder="SELECT perso... personal_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="10054:10757" placeholder="SELECT milli... millionaire_info" />
-                <marker date="1531311861831" expanded="true" signature="11057:11767" placeholder="SELECT milli... millionaire_info" />
-                <marker date="1531311861831" expanded="true" signature="11919:12648" placeholder="SELECT milli... millionaire_info" />
-                <marker date="1531311861831" expanded="true" signature="12804:13304" placeholder="SELECT money... money_maxi_info" />
-                <marker date="1531311861831" expanded="true" signature="13444:13896" placeholder="SELECT auto_... auto_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="14045:14397" placeholder="SELECT educa... education_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="14534:14605" placeholder="SELECT id,ca... card_card_informations" />
-                <marker date="1531311861831" expanded="true" signature="14746:15071" placeholder="SELECT home_... home_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="15215:15555" placeholder="SELECT milli... millionaire_info" />
-                <marker date="1531311861831" expanded="true" signature="15702:15903" placeholder="SELECT month... monthly_benefit_info" />
-                <marker date="1531311861831" expanded="true" signature="16048:16407" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1531311861831" expanded="true" signature="16541:16823" placeholder="SELECT snd_i... snd_info" />
-                <marker date="1531311861831" expanded="true" signature="16970:17303" placeholder="SELECT money... money_maxi_info" />
-                <marker date="1531311861831" expanded="true" signature="17448:17778" placeholder="SELECT perso... personal_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="17918:18244" placeholder="SELECT auto_... auto_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="18379:18663" placeholder="SELECT dps_i... dps_info" />
-                <marker date="1531311861831" expanded="true" signature="18798:19082" placeholder="SELECT fdr_i... fdr_info" />
-                <marker date="1531311861831" expanded="true" signature="19227:19588" placeholder="SELECT educa... education_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="19738:19892" placeholder="SELECT ${$mo... ${$model_name}" />
-                <marker date="1531311861831" expanded="true" signature="20029:20595" placeholder="SELECT DISTI... home_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="20879:21479" placeholder="SELECT DISTI... home_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="21651:22141" placeholder="SELECT DISTI... education_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="22432:22887" placeholder="SELECT DISTI... education_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="23027:23659" placeholder="SELECT DISTI... auto_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="23916:24514" placeholder="SELECT DISTI... auto_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="24659:25360" placeholder="SELECT DISTI... personal_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="25628:26336" placeholder="SELECT DISTI... personal_loan_info" />
-                <marker date="1531311861831" expanded="true" signature="26509:26618" placeholder="Select ${$fi... dps_maturity_amount" />
-                <marker date="1531311861831" expanded="true" signature="26745:27215" placeholder="SELECT dps_i... dps_info" />
-                <marker date="1531311861831" expanded="true" signature="27379:27403" placeholder="Select id FR... dps_info" />
-                <marker date="1531311861831" expanded="true" signature="27649:27758" placeholder="Select ${$fi... dps_maturity_amount" />
-                <marker date="1531311861831" expanded="true" signature="28052:28083" placeholder="Select id FR... dps_info" />
-                <marker date="1531311861831" expanded="true" signature="28361:28392" placeholder="Select id FR... dps_info" />
-                <marker date="1531311861831" expanded="true" signature="28601:28710" placeholder="Select ${$fi... dps_maturity_amount" />
-                <marker date="1531311861831" expanded="true" signature="28981:29448" placeholder="SELECT DISTI... dps_info" />
-                <marker date="1531311861831" expanded="true" signature="29587:29970" placeholder="SELECT DISTI... fdr_info" />
-                <marker date="1531311861831" expanded="true" signature="30217:30681" placeholder="SELECT DISTI... fdr_info" />
-                <marker date="1531311861831" expanded="true" signature="30821:31292" placeholder="SELECT DISTI... fdr_info" />
-                <marker date="1531311861831" expanded="true" signature="31442:31876" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1531311861831" expanded="true" signature="32146:32588" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1531311861831" expanded="true" signature="32769:33233" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1531311861831" expanded="true" signature="33393:33876" placeholder="SELECT educa... education_loan_info_vs_expenses_considered" />
-                <marker date="1531311861831" expanded="true" signature="34017:34450" placeholder="SELECT curre... current_account_info" />
-                <marker date="1531311861831" expanded="true" signature="34720:35160" placeholder="SELECT curre... current_account_info" />
-                <marker date="1531311861831" expanded="true" signature="35311:35781" placeholder="SELECT curre... current_account_info" />
-                <marker date="1531311861831" expanded="true" signature="35924:36392" placeholder="SELECT money... money_maxi_info" />
-                <marker date="1531311861831" expanded="true" signature="36653:37128" placeholder="SELECT money... money_maxi_info" />
-                <marker date="1531311861831" expanded="true" signature="37274:37635" placeholder="SELECT month... monthly_benefit_info" />
-                <marker date="1531311861831" expanded="true" signature="37771:38095" placeholder="SELECT month... monthly_benefit_info" />
-                <marker date="1531311861831" expanded="true" signature="38363:38694" placeholder="SELECT month... monthly_benefit_info" />
-                <marker date="1531311861831" expanded="true" signature="38841:38913" placeholder="SELECT * FRO... search_index" />
-                <marker date="1531311861831" expanded="true" signature="39045:39098" placeholder="SELECT * FRO... active_website" />
-                <marker date="1531311861831" expanded="true" signature="39234:39327" placeholder="SELECT `id`,... card_bank" />
-                <marker date="1531311861831" expanded="true" signature="39467:39834" placeholder="SELECT snd_i... snd_info" />
-                <marker date="1531311861831" expanded="true" signature="40080:40455" placeholder="SELECT snd_i... snd_info" />
-                <marker date="1531311861831" expanded="true" signature="40619:41013" placeholder="SELECT DISTI... snd_info" />
-                <marker date="1531311861831" expanded="true" signature="41317:41354" placeholder="SELECT * FRO... ${$table_name}" />
-                <marker date="1531311861831" expanded="true" signature="42032:42247" placeholder="SELECT home_... " />
-                <marker date="1531311861831" expanded="true" signature="42938:43185" placeholder="SELECT perso... " />
-                <marker date="1531311861831" expanded="true" signature="43856:44026" placeholder="SELECT auto_... " />
-                <marker date="1531311861831" expanded="true" signature="44723:45035" placeholder="SELECT educa... " />
-                <marker date="1531311861831" expanded="true" signature="45677:45817" placeholder="SELECT fdr_i... " />
-                <marker date="1531311861831" expanded="true" signature="46466:46604" placeholder="SELECT `dps_... " />
-                <marker date="1531311861831" expanded="true" signature="47315:47657" placeholder="SELECT `mill... " />
-                <marker date="1531311861831" expanded="true" signature="48369:48608" placeholder="SELECT `mone... " />
-                <marker date="1531311861831" expanded="true" signature="49339:49550" placeholder="SELECT `mont... " />
-                <marker date="1531311861831" expanded="true" signature="50263:51960" placeholder="SELECT DISTI... card_card_informations" />
-                <marker date="1531311861831" expanded="true" signature="52169:52852" placeholder="SELECT debit... debit_card_info" />
-                <marker date="1531311861831" expanded="true" signature="53069:53509" placeholder="SELECT savin... saving_account_info" />
-                <marker date="1531311861831" expanded="true" signature="53722:54161" placeholder="SELECT curre... current_account_info" />
-                <marker date="1531311861831" expanded="true" signature="54355:54728" placeholder="SELECT snd_i... snd_info" />
-                <marker date="1531311861831" expanded="true" signature="54925:55007" placeholder="SELECT * FRO... institution_event_history" />
-                <marker date="1531311861831" expanded="true" signature="55199:55284" placeholder="SELECT * FRO... institution_event_history" />
-                <marker date="1531311861831" expanded="true" signature="55455:55895" placeholder="SELECT DISTI... blog_posts" />
-                <marker date="1531311861831" expanded="true" signature="56063:56434" placeholder="SELECT conca... blog_postmeta" />
-                <marker date="1531311861831" expanded="true" signature="56461:56468" placeholder="SELECT conca... blog_postmeta" />
-                <marker date="1531311861831" expanded="true" signature="56461:56663" placeholder="SELECT blog_... blog_posts" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3455084">
-              <caret line="664" column="48" selection-start-line="664" selection-start-column="48" selection-end-line="664" selection-end-column="48" />
-              <folding>
-                <marker date="1531403086977" expanded="true" signature="21797:21926" placeholder="..." />
-                <marker date="1531403086977" expanded="true" signature="21828:21916" placeholder="{...}" />
-                <marker date="1531403086977" expanded="true" signature="21866:21908" placeholder="{&quot;show&quot;: true...}" />
-                <marker date="1531403086977" expanded="true" signature="23579:23685" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -291,7 +123,6 @@
         <option value="$PROJECT_DIR$/application/views/front_end/bank_details.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/bank_details_landing.php" />
-        <option value="$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php" />
         <option value="$PROJECT_DIR$/application/views/front_end/block/right_menu.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/application/views/front_end/about_us.php" />
@@ -307,6 +138,7 @@
         <option value="$PROJECT_DIR$/application/models/Front_end_select_model.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/application/views/front_end/block/footer.php" />
+        <option value="$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php" />
       </list>
     </option>
   </component>
@@ -373,6 +205,86 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front_end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front_end" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="block" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -386,128 +298,15 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\git\finager\application" />
-      <recent name="D:\xampp\htdocs\git\finager\application\views\front_end" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\xampp\htdocs\git\finager\resource\front_end\images" />
       <recent name="E:\xampp\htdocs\git\finager" />
       <recent name="D:\xampp\htdocs\git\finager\resource\front_end\images" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/application/cache/index_page</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/application/views/front_end/block/footer.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resource/front_end/js/common.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resource/front_end/images/Fin-Fab.png</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\git\finager\application" />
+      <recent name="D:\xampp\htdocs\git\finager\application\views\front_end" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -591,12 +390,6 @@
       <workItem from="1528715207632" duration="5420000" />
       <workItem from="1528804050282" duration="3112000" />
       <workItem from="1529846432913" duration="1563000" />
-    </task>
-    <task id="LOCAL-00050" summary="Url Update for Millionaire">
-      <created>1516719465968</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1516719465968</updated>
     </task>
     <task id="LOCAL-00051" summary="Url Update for Millionaire">
       <created>1517152119911</created>
@@ -886,7 +679,13 @@
       <option name="project" value="LOCAL" />
       <updated>1531312640159</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="replace old footer">
+      <created>1531403634146</created>
+      <option name="number" value="00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1531403634146</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -894,9 +693,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -986,7 +785,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Savings Accounts URL Complete" />
     <MESSAGE value="Current Account and Snd account url re-write completed" />
     <MESSAGE value="More Info Less Info problem solved" />
     <MESSAGE value="index page &amp; footer page logo change" />
@@ -1011,7 +809,8 @@
     <MESSAGE value="Solve Audit Report problem" />
     <MESSAGE value="right side menu and css page update" />
     <MESSAGE value="Call blog post image thumb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Call blog post image thumb" />
+    <MESSAGE value="replace old footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace old footer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1020,6 +819,154 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="96" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/snd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="311" column="122" selection-start-line="311" selection-start-column="121" selection-end-line="311" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/mashmenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="108" selection-start-line="86" selection-start-column="106" selection-end-line="86" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2680" column="231" selection-start-line="2680" selection-start-column="222" selection-end-line="2680" selection-end-column="231" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/right_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Front_end_select_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="762" column="101" selection-start-line="762" selection-start-column="101" selection-end-line="762" selection-end-column="101" />
+          <folding>
+            <marker date="1531311861831" expanded="true" signature="193:1884" placeholder="SELECT DISTI... card_card_informations" />
+            <marker date="1531311861831" expanded="true" signature="2186:3884" placeholder="SELECT DISTI... card_card_informations" />
+            <marker date="1531311861831" expanded="true" signature="4057:4734" placeholder="SELECT debit... debit_card_info" />
+            <marker date="1531311861831" expanded="true" signature="5035:5719" placeholder="SELECT debit... debit_card_info" />
+            <marker date="1531311861831" expanded="true" signature="5894:6596" placeholder="SELECT debit... debit_card_info" />
+            <marker date="1531311861831" expanded="true" signature="6758:6772" placeholder="SELECT * FRO... ${$table}" />
+            <marker date="1531311861831" expanded="true" signature="6911:8633" placeholder="SELECT DISTI... card_card_informations" />
+            <marker date="1531311861831" expanded="true" signature="8777:9245" placeholder="SELECT home_... home_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="9394:9910" placeholder="SELECT perso... personal_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="10054:10757" placeholder="SELECT milli... millionaire_info" />
+            <marker date="1531311861831" expanded="true" signature="11057:11767" placeholder="SELECT milli... millionaire_info" />
+            <marker date="1531311861831" expanded="true" signature="11919:12648" placeholder="SELECT milli... millionaire_info" />
+            <marker date="1531311861831" expanded="true" signature="12804:13304" placeholder="SELECT money... money_maxi_info" />
+            <marker date="1531311861831" expanded="true" signature="13444:13896" placeholder="SELECT auto_... auto_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="14045:14397" placeholder="SELECT educa... education_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="14534:14605" placeholder="SELECT id,ca... card_card_informations" />
+            <marker date="1531311861831" expanded="true" signature="14746:15071" placeholder="SELECT home_... home_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="15215:15555" placeholder="SELECT milli... millionaire_info" />
+            <marker date="1531311861831" expanded="true" signature="15702:15903" placeholder="SELECT month... monthly_benefit_info" />
+            <marker date="1531311861831" expanded="true" signature="16048:16407" placeholder="SELECT savin... saving_account_info" />
+            <marker date="1531311861831" expanded="true" signature="16541:16823" placeholder="SELECT snd_i... snd_info" />
+            <marker date="1531311861831" expanded="true" signature="16970:17303" placeholder="SELECT money... money_maxi_info" />
+            <marker date="1531311861831" expanded="true" signature="17448:17778" placeholder="SELECT perso... personal_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="17918:18244" placeholder="SELECT auto_... auto_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="18379:18663" placeholder="SELECT dps_i... dps_info" />
+            <marker date="1531311861831" expanded="true" signature="18798:19082" placeholder="SELECT fdr_i... fdr_info" />
+            <marker date="1531311861831" expanded="true" signature="19227:19588" placeholder="SELECT educa... education_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="19738:19892" placeholder="SELECT ${$mo... ${$model_name}" />
+            <marker date="1531311861831" expanded="true" signature="20029:20595" placeholder="SELECT DISTI... home_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="20879:21479" placeholder="SELECT DISTI... home_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="21651:22141" placeholder="SELECT DISTI... education_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="22432:22887" placeholder="SELECT DISTI... education_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="23027:23659" placeholder="SELECT DISTI... auto_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="23916:24514" placeholder="SELECT DISTI... auto_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="24659:25360" placeholder="SELECT DISTI... personal_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="25628:26336" placeholder="SELECT DISTI... personal_loan_info" />
+            <marker date="1531311861831" expanded="true" signature="26509:26618" placeholder="Select ${$fi... dps_maturity_amount" />
+            <marker date="1531311861831" expanded="true" signature="26745:27215" placeholder="SELECT dps_i... dps_info" />
+            <marker date="1531311861831" expanded="true" signature="27379:27403" placeholder="Select id FR... dps_info" />
+            <marker date="1531311861831" expanded="true" signature="27649:27758" placeholder="Select ${$fi... dps_maturity_amount" />
+            <marker date="1531311861831" expanded="true" signature="28052:28083" placeholder="Select id FR... dps_info" />
+            <marker date="1531311861831" expanded="true" signature="28361:28392" placeholder="Select id FR... dps_info" />
+            <marker date="1531311861831" expanded="true" signature="28601:28710" placeholder="Select ${$fi... dps_maturity_amount" />
+            <marker date="1531311861831" expanded="true" signature="28981:29448" placeholder="SELECT DISTI... dps_info" />
+            <marker date="1531311861831" expanded="true" signature="29587:29970" placeholder="SELECT DISTI... fdr_info" />
+            <marker date="1531311861831" expanded="true" signature="30217:30681" placeholder="SELECT DISTI... fdr_info" />
+            <marker date="1531311861831" expanded="true" signature="30821:31292" placeholder="SELECT DISTI... fdr_info" />
+            <marker date="1531311861831" expanded="true" signature="31442:31876" placeholder="SELECT savin... saving_account_info" />
+            <marker date="1531311861831" expanded="true" signature="32146:32588" placeholder="SELECT savin... saving_account_info" />
+            <marker date="1531311861831" expanded="true" signature="32769:33233" placeholder="SELECT savin... saving_account_info" />
+            <marker date="1531311861831" expanded="true" signature="33393:33876" placeholder="SELECT educa... education_loan_info_vs_expenses_considered" />
+            <marker date="1531311861831" expanded="true" signature="34017:34450" placeholder="SELECT curre... current_account_info" />
+            <marker date="1531311861831" expanded="true" signature="34720:35160" placeholder="SELECT curre... current_account_info" />
+            <marker date="1531311861831" expanded="true" signature="35311:35781" placeholder="SELECT curre... current_account_info" />
+            <marker date="1531311861831" expanded="true" signature="35924:36392" placeholder="SELECT money... money_maxi_info" />
+            <marker date="1531311861831" expanded="true" signature="36653:37128" placeholder="SELECT money... money_maxi_info" />
+            <marker date="1531311861831" expanded="true" signature="37274:37635" placeholder="SELECT month... monthly_benefit_info" />
+            <marker date="1531311861831" expanded="true" signature="37771:38095" placeholder="SELECT month... monthly_benefit_info" />
+            <marker date="1531311861831" expanded="true" signature="38363:38694" placeholder="SELECT month... monthly_benefit_info" />
+            <marker date="1531311861831" expanded="true" signature="38841:38913" placeholder="SELECT * FRO... search_index" />
+            <marker date="1531311861831" expanded="true" signature="39045:39098" placeholder="SELECT * FRO... active_website" />
+            <marker date="1531311861831" expanded="true" signature="39234:39327" placeholder="SELECT `id`,... card_bank" />
+            <marker date="1531311861831" expanded="true" signature="39467:39834" placeholder="SELECT snd_i... snd_info" />
+            <marker date="1531311861831" expanded="true" signature="40080:40455" placeholder="SELECT snd_i... snd_info" />
+            <marker date="1531311861831" expanded="true" signature="40619:41013" placeholder="SELECT DISTI... snd_info" />
+            <marker date="1531311861831" expanded="true" signature="41317:41354" placeholder="SELECT * FRO... ${$table_name}" />
+            <marker date="1531311861831" expanded="true" signature="42032:42247" placeholder="SELECT home_... " />
+            <marker date="1531311861831" expanded="true" signature="42938:43185" placeholder="SELECT perso... " />
+            <marker date="1531311861831" expanded="true" signature="43856:44026" placeholder="SELECT auto_... " />
+            <marker date="1531311861831" expanded="true" signature="44723:45035" placeholder="SELECT educa... " />
+            <marker date="1531311861831" expanded="true" signature="45677:45817" placeholder="SELECT fdr_i... " />
+            <marker date="1531311861831" expanded="true" signature="46466:46604" placeholder="SELECT `dps_... " />
+            <marker date="1531311861831" expanded="true" signature="47315:47657" placeholder="SELECT `mill... " />
+            <marker date="1531311861831" expanded="true" signature="48369:48608" placeholder="SELECT `mone... " />
+            <marker date="1531311861831" expanded="true" signature="49339:49550" placeholder="SELECT `mont... " />
+            <marker date="1531311861831" expanded="true" signature="50263:51960" placeholder="SELECT DISTI... card_card_informations" />
+            <marker date="1531311861831" expanded="true" signature="52169:52852" placeholder="SELECT debit... debit_card_info" />
+            <marker date="1531311861831" expanded="true" signature="53069:53509" placeholder="SELECT savin... saving_account_info" />
+            <marker date="1531311861831" expanded="true" signature="53722:54161" placeholder="SELECT curre... current_account_info" />
+            <marker date="1531311861831" expanded="true" signature="54355:54728" placeholder="SELECT snd_i... snd_info" />
+            <marker date="1531311861831" expanded="true" signature="54925:55007" placeholder="SELECT * FRO... institution_event_history" />
+            <marker date="1531311861831" expanded="true" signature="55199:55284" placeholder="SELECT * FRO... institution_event_history" />
+            <marker date="1531311861831" expanded="true" signature="55455:55895" placeholder="SELECT DISTI... blog_posts" />
+            <marker date="1531311861831" expanded="true" signature="56063:56434" placeholder="SELECT conca... blog_postmeta" />
+            <marker date="1531311861831" expanded="true" signature="56461:56468" placeholder="SELECT conca... blog_postmeta" />
+            <marker date="1531311861831" expanded="true" signature="56461:56663" placeholder="SELECT blog_... blog_posts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1531403086977" expanded="true" signature="21797:21926" placeholder="..." />
+            <marker date="1531403086977" expanded="true" signature="21828:21916" placeholder="{...}" />
+            <marker date="1531403086977" expanded="true" signature="21866:21908" placeholder="{&quot;show&quot;: true...}" />
+            <marker date="1531403086977" expanded="true" signature="23579:23685" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/front_end/block/right_menu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1252,22 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="96" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/snd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="311" column="122" selection-start-line="311" selection-start-column="121" selection-end-line="311" selection-end-column="122" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/blog/loan/car_loan6.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34592146">
@@ -1282,30 +1213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/right_menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/mashmenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="108" selection-start-line="86" selection-start-column="106" selection-end-line="86" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2680" column="231" selection-start-line="2680" selection-start-column="222" selection-end-line="2680" selection-end-column="231" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45813283">
@@ -1313,9 +1220,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3455084">
+          <caret line="664" column="48" selection-start-line="664" selection-start-column="48" selection-end-line="664" selection-end-column="48" />
+          <folding>
+            <marker date="1531403086977" expanded="true" signature="21797:21926" placeholder="..." />
+            <marker date="1531403086977" expanded="true" signature="21828:21916" placeholder="{...}" />
+            <marker date="1531403086977" expanded="true" signature="21866:21908" placeholder="{&quot;show&quot;: true...}" />
+            <marker date="1531403086977" expanded="true" signature="23579:23685" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Front_end_select_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.961538">
+        <state vertical-scroll-proportion="0.56367224">
           <caret line="762" column="101" selection-start-line="762" selection-start-column="101" selection-end-line="762" selection-end-column="101" />
           <folding>
             <marker date="1531311861831" expanded="true" signature="193:1884" placeholder="SELECT DISTI... card_card_informations" />
@@ -1408,9 +1328,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/right_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.016781837">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/mashmenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.016781837">
+          <caret line="86" column="108" selection-start-line="86" selection-start-column="106" selection-end-line="86" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/snd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.016781837">
+          <caret line="311" column="122" selection-start-line="311" selection-start-column="121" selection-end-line="311" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46298125">
+          <caret line="34" column="96" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/En.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="58.192307">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1052" column="62" selection-start-line="1052" selection-start-column="62" selection-end-line="1052" selection-end-column="62" />
           <folding>
             <element signature="n#index#0;n#En#0;n#!!top" expanded="false" />
@@ -1418,16 +1370,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/footer.php">
+    <entry file="file://$PROJECT_DIR$/application/views/front_end/block/vertical_menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3455084">
-          <caret line="664" column="48" selection-start-line="664" selection-start-column="48" selection-end-line="664" selection-end-column="48" />
-          <folding>
-            <marker date="1531403086977" expanded="true" signature="21797:21926" placeholder="..." />
-            <marker date="1531403086977" expanded="true" signature="21828:21916" placeholder="{...}" />
-            <marker date="1531403086977" expanded="true" signature="21866:21908" placeholder="{&quot;show&quot;: true...}" />
-            <marker date="1531403086977" expanded="true" signature="23579:23685" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.89634144">
+          <caret line="1851" column="14" selection-start-line="1851" selection-start-column="14" selection-end-line="1851" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
