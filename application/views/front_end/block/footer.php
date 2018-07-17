@@ -169,7 +169,7 @@
                 <div class="col-sm-12">
                     <ul class="footer-socials">
                         <li>
-                            <a href="#" title="Facebook">
+                            <a href="https://www.facebook.com/finagerbd" title="Facebook">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -179,7 +179,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" title="Google Plus">
+                            <a href="https://plus.google.com/104488422816509683343" title="Google Plus">
                                 <i class="fa fa-google-plus" aria-hidden="true"></i>
                             </a>
                         </li>
