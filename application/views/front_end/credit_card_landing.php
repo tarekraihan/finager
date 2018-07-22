@@ -79,7 +79,7 @@
         <div class="container">
             <div class="row">
                 <h3 class="debit_head">Credit Card Top Blog</h3>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-3 col-sm-3 col-xs-12">
                     <?php
                     $post_details = $this->Front_end_select_model->select_blog_post_by_product_category('Credit Card',0);
                         if($post_details) {

@@ -645,5 +645,56 @@
     #creditCard_header {
         background-size: contain;
     }
-
+    ul.footer-socials {
+        margin-top: 0 !important;
+    }
+    .footer-menu-wrapper li>a{
+        text-align: center;
+        display: block;
+    }
+    .footer-main-menu-title{
+        text-align: center !important;
+    }
+    p.footer-main-menu-title:last-of-type {
+        margin-left: 0 !important;
+    }
+    .logobar{
+        z-index: 9999 !important;
+    }
+    #home_header_part, #biggest_brand{
+        height: auto !important;
+        text-align: center;
+    }
+    .home_header_text {
+        margin-right: 15px !important;
+        text-align: center !important;
+    }
+    .home_loan_footer_pr h3 {
+        color: #3c3838 !important;
+        margin-top: 70px;
+        font-size: 22px;
+        margin-bottom: 60px;
+    }
+    .home_loan_footer_text {
+        color: #000 !important;
+    }
+    .bigest_text, .bigest_text1{
+        margin: 0 !important;
+    }
+    .debit_blog_box {
+        position: relative;
+        display: block;
+        margin-bottom: 20px;
+        clear: both;
+    }
+    .debit_blog_box p, .debit_blog_box img {
+        position: relative !important;
+        margin: 0px 0 0 0 !important;
+    }
+    .best_card h1, .best_card h4, .best_card {
+        text-align: center;
+    }
+    span.credit_card_button.flash-button.pull-right {
+        float: none !important;
+    }
 }
