@@ -649,10 +649,13 @@
         margin-top: 0 !important;
     }
     .footer-menu-wrapper li>a{
-        text-align: center;
+        text-align: left;
         display: block;
     }
     .footer-main-menu-title{
+        text-align: left !important;
+    }
+    .xs-text-center{
         text-align: center !important;
     }
     p.footer-main-menu-title:last-of-type {

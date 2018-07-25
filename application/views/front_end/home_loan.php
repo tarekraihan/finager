@@ -4,7 +4,7 @@
 *  Design : S. M. Rubiyet        *
 *  UI : Sifuddin Lokman          *
 *  Programmer : Tarek Raihan     *
-*  Date : 09-11-2016		     *
+*  Date : 09-11-2016             *
 **********************************/
 
 -->
@@ -41,6 +41,7 @@
 </section>
 
 <!--Filter bar by bank START -->
+<h1 class="sec-tag">Choose home loan suitable for you @ Finager.com</h1>
 <div class="container">
     <section id="filter-bar">
         <div class="row">
@@ -518,6 +519,15 @@
         }
     });
 
+    setTimeout(function(){
+        //alert($("#finalAssest").val());
+        $("#finalAssest").focus();
+        $("#finalAssest").blur();
+
+        $("#finalLiability").focus();
+        $("#finalLiability").blur();
+    },500);
+
     /*
     $(document).on("scroll",function () {
         var scroller_anchor = $("#sidebar").offset().top;
@@ -733,7 +743,7 @@
             loadData(page = null);
             data_caching();
         } );
-		// Stop dragging calculator and fire event for search
+        // Stop dragging calculator and fire event for search
          $(".draggable").on("dragstop",function(ev,ui){
             setTimeout(function(){ //Updated by Tarek on 14-05-2017
                 loadData(page = null);
@@ -837,7 +847,7 @@
         });
 
         $('#searchHomeLoan').on('click', '.rePaymentSchedule', function (){
-			var amount = $('#finalAssest').val();
+            var amount = $('#finalAssest').val();
             var month = $('#finalCustAge').val();
             var  formData = $(this).data();
             var repayment = formData.repayment;
@@ -858,40 +868,40 @@
         }else{
             if($(".cart_anchor").hasClass("img_active")){
 
-				var cart01 = $('.cart_anchor01');
-				var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
-				if (imgtodrag01) {
-					var imgclone01 = imgtodrag01.clone()
-						.offset({
-						top: imgtodrag01.offset().top,
-						left: imgtodrag01.offset().left
-					}).css({'opacity': '0.7',
-							'position': 'absolute',
-							'height': '150px',
-							'width': '150px',
-							'z-index': '100'
-					}).appendTo($('body')).animate({
-						'top': cart01.offset().top,
-							'left': cart01.offset().left + 10,
-							'width': 75,
-							'height': 75
-					}, 1000, 'easeInOutExpo');
-					setTimeout(function () {
-						cart01.effect("shake", {
-							times: 2
-						}, 200);
-					}, 1000);
-					imgclone01.animate({
-						'width': 0,
-						'height': 0
-					}, function () {
-						$(this).detach()
-					});
-				}
+                var cart01 = $('.cart_anchor01');
+                var imgtodrag01 = $(this).parents('.full-card').find('.selected_card').eq(0);
+                if (imgtodrag01) {
+                    var imgclone01 = imgtodrag01.clone()
+                        .offset({
+                        top: imgtodrag01.offset().top,
+                        left: imgtodrag01.offset().left
+                    }).css({'opacity': '0.7',
+                            'position': 'absolute',
+                            'height': '150px',
+                            'width': '150px',
+                            'z-index': '100'
+                    }).appendTo($('body')).animate({
+                        'top': cart01.offset().top,
+                            'left': cart01.offset().left + 10,
+                            'width': 75,
+                            'height': 75
+                    }, 1000, 'easeInOutExpo');
+                    setTimeout(function () {
+                        cart01.effect("shake", {
+                            times: 2
+                        }, 200);
+                    }, 1000);
+                    imgclone01.animate({
+                        'width': 0,
+                        'height': 0
+                    }, function () {
+                        $(this).detach()
+                    });
+                }
 
-				$(".cart_anchor01").addClass("img_active");
+                $(".cart_anchor01").addClass("img_active");
                 $(this).addClass("hidden");
-				var  formData = $(this).data();
+                var  formData = $(this).data();
                 var home_id = "home_id="+formData.home_id;
                 setTimeout(function(){
                     $.ajax({
@@ -905,40 +915,40 @@
                 });
             }else{
 
-				var cart = $('.cart_anchor');
-				var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
-				if (imgtodrag) {
-					var imgclone = imgtodrag.clone()
-						.offset({
-						top: imgtodrag.offset().top,
-						left: imgtodrag.offset().left
-					}).css({'opacity': '0.7',
-							'position': 'absolute',
-							'height': '150px',
-							'width': '150px',
-							'z-index': '100'
-					}).appendTo($('body')).animate({
-						'top': cart.offset().top + 10,
-							'left': cart.offset().left + 10,
-							'width': 75,
-							'height': 75
-					}, 1000, 'easeInOutExpo');
+                var cart = $('.cart_anchor');
+                var imgtodrag = $(this).parents('.full-card').find('.selected_card').eq(0);
+                if (imgtodrag) {
+                    var imgclone = imgtodrag.clone()
+                        .offset({
+                        top: imgtodrag.offset().top,
+                        left: imgtodrag.offset().left
+                    }).css({'opacity': '0.7',
+                            'position': 'absolute',
+                            'height': '150px',
+                            'width': '150px',
+                            'z-index': '100'
+                    }).appendTo($('body')).animate({
+                        'top': cart.offset().top + 10,
+                            'left': cart.offset().left + 10,
+                            'width': 75,
+                            'height': 75
+                    }, 1000, 'easeInOutExpo');
                     setTimeout(function () {
-						cart.effect("shake", {
-							times: 2
-						}, 200);
-					}, 1000);
+                        cart.effect("shake", {
+                            times: 2
+                        }, 200);
+                    }, 1000);
 
-					imgclone.animate({
-						'width': 0,
-						'height': 0
-					}, function () {
-						$(this).detach()
-					});
-				}
-				var  formData = $(this).data();
+                    imgclone.animate({
+                        'width': 0,
+                        'height': 0
+                    }, function () {
+                        $(this).detach()
+                    });
+                }
+                var  formData = $(this).data();
                 var home_id = "home_id="+formData.home_id;
-				setTimeout(function(){
+                setTimeout(function(){
                     $.ajax({
                         type: "POST",
                         url: "<?php echo base_url();?>home_loan/ajax_compare_home_loan_image",
@@ -949,8 +959,8 @@
                     });
                 });
 
-				$(".cart_anchor").addClass("img_active");
-				$(this).addClass("hidden");
+                $(".cart_anchor").addClass("img_active");
+                $(this).addClass("hidden");
             }
         }
     });

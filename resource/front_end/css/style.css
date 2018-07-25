@@ -75,20 +75,26 @@ body {
     color: #fff;
 }
 .loan_btn_apllication {
-    margin:  -15px 24px;
-    padding: 6px 17px;
-    border-radius: 10px;
-    background-color: #04316f;
+    margin: 0;
     color: #fff;
     width: 86px;
-    height: 33px;
+    height: 30px;
     font-weight: bold;
-    box-shadow: 3px 4px #000000b3;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+    background: -o-linear-gradient(50deg,#45cafc,#303f9f)!important;
+    background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+    font-weight: 500;
+    padding: 4px 17px;
+    margin-top: -10px;
 }
-.loan_btn_apllication:hover {
+.fdr_right_bar .loan_btn_apllication {
+    margin-top: -5px;
+}
+/*.loan_btn_apllication:hover {
     background-color: #fff;
     color: #04316f;
-}
+}*/
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
     /*font-family: 'Ubuntu', sans-serif;*/
     font-family: 'AvenirLTStd';

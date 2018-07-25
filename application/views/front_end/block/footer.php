@@ -1,134 +1,4 @@
 
-    <div class="footer container-fluid no-padding">
-        <!--div class="container hidden">
-            <div class="row">
-                <div class="col-sm-12">
-
-                    <div class="row margin_bottom_15">
-                        <div class="col-sm-6 col-xs-12">
-                            <img title="Finager Logo" class="pull-left footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg" alt="Finager.com">
-                        </div>
-
-                        <div class="col-sm-6 col-xs-12">
-                            <ul class="footer-socio">
-                                <li>
-                                    <a href="javascript:(0);">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/Facebook-1.png">
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:(0);">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/G+-1.png">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/IN-1.png">
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:(0);">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/RSS-1.png">
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:(0);">
-                                        <img src="<?php echo base_url();?>resource/front_end/images/social/Twitter-1.png">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-sm-2 col-xs-12">
-                            <p class="footer-menu-title">Loan</p>
-
-                            <ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>home-loan.html">Home Loan</a></li>
-                                <li><a href="<?php echo base_url();?>personal-loan.html">Personal Loan</a></li>
-                                <li><a href="<?php echo base_url();?>auto-loan.html">Auto Loan</a></li>
-                                <li><a href="<?php echo base_url();?>education-loan.html">Education Loan</a></li>
-    						</ul>
-    						<p class="footer-menu-title">Card</p>
-    						<ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>credit-cards.html">Credit Card</a></li>
-                                <li><a href="<?php echo base_url();?>debit-cards.html">Debit Card</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-2 col-xs-12">
-                            <p class="footer-menu-title">Investment</p>
-
-                            <ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>fdr.html">FDR</a></li>
-                                <li><a href="<?php echo base_url();?>dps.html">DPS</a></li>
-                                <li><a href="<?php echo base_url();?>millionaire.html">Lakhpoti & Millionaire</a></li>
-                                <li><a href="<?php echo base_url();?>money-maximizer.html">Money Maximizer</a></li>
-                                <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit Scheme</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Thrusts Sector</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-3 col-xs-12">
-                            <p class="footer-menu-title">Accounts</p>
-
-                            <ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>current-account.html">Current Account</a></li>
-                                <li><a href="<?php echo base_url();?>savings-account.html">Saving Account</a></li>
-                                <li><a href="<?php echo base_url();?>snd.html">SND Account</a></li>
-
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-2 col-xs-12">
-                            <p class="footer-menu-title">Others</p>
-
-                            <ul class="no-padding footer-menus">
-                                <li><a href="<?php echo base_url();?>blog/" target="_blank">Blog</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forum</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Tax Guide</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Calculator</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
-                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-3 col-xs-12 text-center">
-                            <p class="footer-menu-title uppercase">Talk With Us</p>
-
-                            <p class="no-margin"><span class="hello">Hello Finager :</span> <a href="tel:+8801998123123">+8801998-123123</a></p>
-                            <p class="no-margin">Info: info@finager.com</p>
-                            <p class="no-margin">Support: support@finager.com</p>
-                            <p class="no-margin"><a href="<?php echo base_url();?>about-us.html">About Us</a> </p>
-
-                            <h5 class="footer-menu-title uppercase margin_top_10">Subscribe Us</h5>
-
-                                <input type="email" class="form-control margin_bottom_10 subscribe-footer" placeholder="Your email address" name="txtEmail" id="txtSubscribeEmail">
-                                <button type="button" id="btnSubscribeSubmit" class="btn footer-submit-btn subscribe-footer-btn">Submit</button>
-
-                        </div>
-                    </div>
-
-                    <hr class="footer-hr">
-
-                    <p class="text-center footer-ass-text no-margin">
-                        finager.com&copy;2017 All right reserved. Use of this site constitutes of our
-                        <a href="<?php echo base_url();?>terms-condition.html">Terms of use</a> and <a href="<?php echo base_url();?>privacy-policy.html">Privacy Policy</a>
-                    </p>
-                </div>
-            </div>
-        </div-->
-    </div>
-
-
     <div id="main-footer" class="footer">
         <!-- particles.js container -->
         <div id="particles-js"></div>
@@ -223,7 +93,7 @@
                     <div class="footer-menu-wrapper row">    
                         <div class="col-sm-12">
                             <div class="row">
-                                <div class="col-sm-2">
+                                <div class="col-sm-2 col-xs-6">
                                     <p class="footer-main-menu-title">Card</p>
                                     <ul>
                                         <li><a href="<?php echo base_url();?>debit-cards.html">Debit Card</a></li>
@@ -231,7 +101,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2">
+                                <div class="col-sm-2 col-xs-6">
                                     <p class="footer-main-menu-title">Loan</p>
                                     <ul>
                                         <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">SME Loan</a></li>
@@ -242,7 +112,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2">
+                                <div class="col-sm-2 col-xs-6">
                                     <p class="footer-main-menu-title">Investment</p>
                                     <ul>
                                         <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit</a></li>
@@ -253,7 +123,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2">
+                                <div class="col-sm-2 col-xs-6">
                                     <p class="footer-main-menu-title">Accounts</p>
                                     <ul>
                                         <li><a href="<?php echo base_url();?>snd.html">SND Account</a></li>
@@ -262,10 +132,10 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-4">
-                                    <p class="footer-main-menu-title" style="margin-left: 80px;">Others</p>
+                                <div class="col-sm-4 col-xs-12">
+                                    <p class="footer-main-menu-title xs-text-center" style="margin-left: 80px;">Others</p>
                                     <div class="row">
-                                        <div class="col-sm-6 col-xs-12">
+                                        <div class="col-sm-6 col-xs-6">
                                             <ul>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
                                                 <li><a href="<?php echo base_url();?>blog/" target="_blank">Blogs</a></li>
@@ -274,7 +144,7 @@
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-sm-6 col-xs-12">
+                                        <div class="col-sm-6 col-xs-6">
                                             <ul>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
