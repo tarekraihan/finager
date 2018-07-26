@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5c8c93-c5e8-48b9-8e52-8caf2ac92d4d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/General.php" afterPath="$PROJECT_DIR$/application/controllers/General.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/general/add_branch_information.php" afterPath="$PROJECT_DIR$/application/views/admin/general/add_branch_information.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/general/update_bank_non_bank_information.php" afterPath="$PROJECT_DIR$/application/views/admin/general/update_bank_non_bank_information.php" />
     </list>
     <ignored path="finager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -581,12 +578,6 @@
       <workItem from="1528804050282" duration="3112000" />
       <workItem from="1529846432913" duration="1563000" />
     </task>
-    <task id="LOCAL-00053" summary="monthly benifit">
-      <created>1517497681406</created>
-      <option name="number" value="00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1517497681406</updated>
-    </task>
     <task id="LOCAL-00054" summary="Savings Accounts URL Complete">
       <created>1517759766978</created>
       <option name="number" value="00054" />
@@ -875,7 +866,13 @@
       <option name="project" value="LOCAL" />
       <updated>1531828964169</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Solve Bank information update problem">
+      <created>1532615908776</created>
+      <option name="number" value="00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1532615908776</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -883,10 +880,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22708334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.760075" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -896,7 +894,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7938719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -975,7 +972,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="More Info Less Info problem solved" />
     <MESSAGE value="index page &amp; footer page logo change" />
     <MESSAGE value="style sheet &amp; more page" />
     <MESSAGE value="1280 responsive isses and monthly benifit 100000 value initial" />
@@ -1000,7 +996,8 @@
     <MESSAGE value="Call blog post image thumb" />
     <MESSAGE value="replace old footer" />
     <MESSAGE value="change vertical menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="change vertical menu" />
+    <MESSAGE value="Solve Bank information update problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solve Bank information update problem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
