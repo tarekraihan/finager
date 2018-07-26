@@ -279,6 +279,7 @@ class General extends CI_Controller {
 
     public function update_bank_non_bank_info($msg=''){
         if ($this->session->userdata('email_address')) {
+
             if ($msg == 'success') {
                 $data['feedback'] = '<div id="message" class="text-center alert alert-success">Successfully Save !!</div>';
             } else if ($msg == 'error') {

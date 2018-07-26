@@ -152,7 +152,7 @@
                                                 <section class="col col-6">
                                                     <label class="label">Routing No </label>
                                                     <label class="input">
-                                                        <input type="text" id="txtRoutingNo" name="txtRoutingNo" value="<?php echo set_value('txtRoutingNo'); ?>" placeholder="Write routing no">
+                                                        <input type="text" id="txtRoutingNo" name="txtRoutingNo" value="<?php echo set_value('txtRoutingNo'); ?>" placeholder="Write routing no" >
                                                     </label>
                                                     <label class="red"><?php echo form_error('txtRoutingNo');?></label>
                                                 </section>

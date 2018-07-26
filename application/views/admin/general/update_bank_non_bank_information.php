@@ -241,7 +241,7 @@ if(isset($_GET['id'])){
                                                     <label class="input">
                                                         <input type="text" maxlength="50" name="txtRoutingNo" value="<?php if(isset($row["routing_no"]) && $row["routing_no"] != ""){echo $row["routing_no"];}else{echo set_value('txtRoutingNo');} ?>" placeholder="Write Routing No">
                                                     </label>
-                                                    <label class="red"><?php echo form_error('txtHeadOfficeAddress');?></label>
+                                                    <label class="red"><?php echo form_error('txtRoutingNo');?></label>
                                                 </section>
                                             </div>
 
