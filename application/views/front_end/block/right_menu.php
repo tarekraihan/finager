@@ -602,6 +602,8 @@
 
                 <li> <a href="<?php echo base_url(); ?>export-import.html"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp;&nbsp;Export Import</a> </li>
 
+                <li> <a href="javascript:;" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;SME</a> </li>
+
                 <hr class="sidemenu_hr">
 
                 <li> <a href="<?php echo base_url(); ?>banks.html"><i class="fa fa-university" aria-hidden="true"></i>&nbsp;&nbsp;Bank Info</a> </li>
