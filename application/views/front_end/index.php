@@ -437,14 +437,99 @@ font-size: 22px;
                 </div>
 
             </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="header2">
+
+    <div class="container Aboutcredit_card">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            <div class="header_paragrph">
+
+               <h1 class="text-center">Today's Currency Exchange Rate</h1>
+               <p class="text-center">By Bangladesh Bank</p>
+
+                <div class="row" id="rate-focus">
+
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="div-focus">
+                            <label>USD</label>
+                            <div class="flag USD"></div>
+                            <h4>
+                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                            </h4>     
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="div-focus">
+                            <label>EUR</label>
+                            <div class="flag EUR"></div>
+                            <h4>
+                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                            </h4>     
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="div-focus">
+                            <label>GBP</label>
+                            <div class="flag GBP"></div>
+                            <h4>
+                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                            </h4>     
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="div-focus">
+                            <label>YEN</label>
+                            <div class="flag YEN"></div>
+                            <h4>
+                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                            </h4>     
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="div-focus">
+                            <label>AUD</label>
+                            <div class="flag AUD"></div>
+                            <h4>
+                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                            </h4>     
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="div-focus">
+                            <label>INR</label>
+                            <div class="flag INR"></div>
+                            <h4>
+                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                            </h4>     
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <a href="#" class="rate-more-button">Find Bank Exchange Rates Here</a>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
-
 </section>
 
-<section id="header2">
+
+<section id="header1">
 
     <div class="container Aboutcredit_card">
 
@@ -452,7 +537,7 @@ font-size: 22px;
 
             <div class="header_paragrph">
 
-               <h1 class="text-center">Upcoming Product</h1>
+               <h1 class="text-center m-b-40">Upcoming Product</h1>
 
                 <div class="fin-about-text">
 
@@ -553,5 +638,4 @@ font-size: 22px;
         </div>
 
     </div>
-
 </section>
