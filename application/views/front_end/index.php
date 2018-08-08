@@ -453,74 +453,157 @@ font-size: 22px;
                <h1 class="text-center">Today's Currency Exchange Rate</h1>
                <p class="text-center">By Bangladesh Bank</p>
 
-                <div class="row" id="rate-focus">
+               <div class="m-t-30">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs currency-tab" role="tablist">
+                        <li role="presentation" class="active">
+                            <a id="rate-sel" href="#Sell" aria-controls="Sell" role="tab" data-toggle="tab"><!-- <i class="fa fa-handshake-o" aria-hidden="true"></i> --> Sell</a>
+                        </li>
+                        <li role="presentation">
+                            <a id="rate-buy" href="#Buy" aria-controls="Buy" role="tab" data-toggle="tab"><!-- <i class="fa fa-money" aria-hidden="true"></i> --> Buy</a>
+                        </li>
+                    </ul>
 
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="div-focus">
-                            <label>USD</label>
-                            <div class="flag USD"></div>
-                            <h4>
-                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
-                            </h4>     
+                    <div class="currency-update"><small>Last Update: 12/12/2018</small></div>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="Sell">
+                            <div class="row rate-focus" id="rate-focus-sell">
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>USD</label>
+                                        <div class="flag USD"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>80<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>EUR</label>
+                                        <div class="flag EUR"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>101<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>GBP</label>
+                                        <div class="flag GBP"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>78<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>YEN</label>
+                                        <div class="flag YEN"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>AUD</label>
+                                        <div class="flag AUD"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>90<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>INR</label>
+                                        <div class="flag INR"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>1<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <a href="#" class="rate-more-button">Find Bank Exchange Rates Here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="Buy">
+                            <div class="row rate-focus" id="rate-focus-buy">
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>AUD</label>
+                                        <div class="flag AUD"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>EUR</label>
+                                        <div class="flag EUR"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>GBP</label>
+                                        <div class="flag GBP"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>USD</label>
+                                        <div class="flag USD"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>YEN</label>
+                                        <div class="flag YEN"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="div-focus">
+                                        <label>INR</label>
+                                        <div class="flag INR"></div>
+                                        <h4>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                        </h4>     
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <a href="#" class="rate-more-button">Find Bank Exchange Rates Here</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="div-focus">
-                            <label>EUR</label>
-                            <div class="flag EUR"></div>
-                            <h4>
-                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
-                            </h4>     
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="div-focus">
-                            <label>GBP</label>
-                            <div class="flag GBP"></div>
-                            <h4>
-                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
-                            </h4>     
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="div-focus">
-                            <label>YEN</label>
-                            <div class="flag YEN"></div>
-                            <h4>
-                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
-                            </h4>     
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="div-focus">
-                            <label>AUD</label>
-                            <div class="flag AUD"></div>
-                            <h4>
-                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
-                            </h4>     
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <div class="div-focus">
-                            <label>INR</label>
-                            <div class="flag INR"></div>
-                            <h4>
-                                <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
-                            </h4>     
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                        <a href="#" class="rate-more-button">Find Bank Exchange Rates Here</a>
-                    </div>
-
                 </div>
-
             </div>
 
         </div>
@@ -639,3 +722,4 @@ font-size: 22px;
 
     </div>
 </section>
+

@@ -114,3 +114,7 @@ $('.Cicon_a').hover(function(){
         $(this).children('p').removeClass('svg_show_text');
     }
 );
+
+$('#rate-sel, #rate-buy').click(function(){
+    $('.div-focus').addClass('animated zoomIn');
+});

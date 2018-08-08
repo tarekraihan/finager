@@ -8817,15 +8817,17 @@ h1.sec-tag{
 
 /*Currency calculator START*/
 .m-b-40{margin-bottom: 40px;}
+.m-t-40{margin-top: 40px;}
+.m-t-30{margin-top: 30px;}
 #header1 {
     padding: 30px 0;
     background: rgba(233, 238, 245, 0);
     box-shadow: 0px 0px 5px 1px #dedede;
 }
-div#rate-focus {
-    margin-top: 40px;
+div.rate-focus {
+    margin-top: 20px;
 }
-#rate-focus .div-focus {
+.rate-focus .div-focus {
     background: #fff;
     padding: 20px;
     float: right;
@@ -8833,49 +8835,60 @@ div#rate-focus {
     border: 1px solid #fff;
     border-radius: 0px;
     margin-bottom: 30px;
-    border: 1px solid #EAEAEA;
+    border: 1px solid #e6e5e5;
     box-shadow: 0px 0px 2px 2px #f2f2f2;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
-#rate-focus label{
+.rate-focus .div-focus:hover {
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+    transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+           -webkit-transition: all 0.5s ease;
+}
+.rate-focus label{
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700;
 }
-#rate-focus .USD {
+.rate-focus .USD {
     background-position: -10px -9px !important;
 }
-#rate-focus .EUR {
+.rate-focus .EUR {
     background-position: -96px -9px !important;
 }
-#rate-focus .GBP {
+.rate-focus .GBP {
     background-position: -53px -9px !important;
 }
-#rate-focus .YEN {
+.rate-focus .YEN {
     background-position: -311px -9px !important;
 }
-#rate-focus .AUD {
+.rate-focus .AUD {
     background-position: -139px -9px !important;
 }
 
-#rate-focus .INR {
+.rate-focus .INR {
     background-position: -354px -39px !important;
 }
 
 
-#rate-focus .flag {
+.rate-focus .flag {
     background: url(../images/flags.png);
     width: 33px;
     height: 21px;
     float: right;
 }
-#rate-focus h4 {
-    color: #5b007f;
+.rate-focus h4 {
+    color: #2f66ba;
     font-size: 40px;
     font-weight: 700;
     text-align: center;
 }
-#rate-focus h4 span, #rate-focus h4 i {
+.rate-focus h4 span, .rate-focus h4 i {
     font-size: 18px;
     font-weight: 300;
 }
@@ -8889,5 +8902,27 @@ div#rate-focus {
     font-weight: 500;
     padding: 10px 17px;
     line-height: 4;
+}
+.currency-tab{
+
+}
+.currency-tab.nav-tabs>li>a{
+    padding: 10px 30px;
+    font-size: 18px !important;
+    color: #333;
+    border: 0;
+    background-color: transparent !important;
+}
+.currency-tab.nav-tabs>li.active>a, .currency-tab.nav-tabs>li.active>a:focus, .currency-tab.nav-tabs>li.active>a:hover{
+    color: #2f66ba !important;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid #2f66ba;
+}
+.currency-update{
+    float: right;
+    margin-top: -20px;
+    font-size: 18px
 }
 /*Currency calculator END*/
