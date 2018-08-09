@@ -8925,4 +8925,22 @@ div.rate-focus {
     margin-top: -20px;
     font-size: 18px
 }
+.m-b-10{
+    margin-bottom: 10px;
+}
+#filter-carousel .carousel-indicators{
+    display: none !important;
+}
+img.currency-bank-logo {
+    max-width: 55px;
+}
+#currency-table tr td, #currency-table tr th{
+    text-align: center;
+}
+#currency-table thead>tr>th{
+    font-size: 15px;
+}
+/*.buy_rate_amount{
+    display: none;
+}*/
 /*Currency calculator END*/

@@ -1192,6 +1192,18 @@ class En extends CI_Controller {
 
     }
 
+    public function currency_details(){
+        $data['title'] = 'Currency Details | Finager.com';
+        $data['description'] ="We, the members of Finager.com offers all real time information to you for your help in choosing cards, loans and investments.";
+        $this->load->driver('cache');
+        $this->cache->file->save('currency_details', 'currency_details', 100);
+        $this->load->view('front_end/block/header',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/currency_details');
+        $this->load->view('front_end/block/footer');
+
+    }
 
 
 }
