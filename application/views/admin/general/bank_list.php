@@ -63,6 +63,7 @@
                                         <thead>
                                         <tr>
                                             <th data-hide="phone">No.</th>
+                                            <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Bank ID  </th>
                                             <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Bank Name  </th>
                                             <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Logo </th>
                                             <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i>Known As</th>
@@ -92,6 +93,7 @@
                                             ?>
                                             <tr>
                                                 <td class="text-center"><?php echo $sl; ?></td>
+                                                <td ><?php echo $row->id;?></td>
                                                 <td ><?php echo $row->bank_name;?></td>
                                                 <td ><img src="<?php echo base_url(); ?>/resource/common_images/bank_logo/<?php if($row->bank_logo =="&lt;" || $row->bank_logo == null){echo 'dummy_logo.png';}else{echo $row->bank_logo;}?>" style="height:auto; width:80px;"></td>
                                                 <td ><?php echo $row->known_as;?></td>
