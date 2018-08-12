@@ -451,7 +451,7 @@ font-size: 22px;
             <div class="header_paragrph">
 
                <h1 class="text-center">Today's Currency Exchange Rate</h1>
-               <p class="text-center">By Bangladesh Bank</p>
+               <p class="text-center">Information Provided by Bangladesh Bank</p>
 
                <div class="m-t-30">
                     <!-- Nav tabs -->
@@ -475,7 +475,7 @@ font-size: 22px;
                                         <label>USD</label>
                                         <div class="flag USD"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>80<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>80<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -485,7 +485,7 @@ font-size: 22px;
                                         <label>EUR</label>
                                         <div class="flag EUR"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>101<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>101<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -495,7 +495,7 @@ font-size: 22px;
                                         <label>GBP</label>
                                         <div class="flag GBP"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>78<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>78<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -505,7 +505,7 @@ font-size: 22px;
                                         <label>YEN</label>
                                         <div class="flag YEN"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>68<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -515,7 +515,7 @@ font-size: 22px;
                                         <label>AUD</label>
                                         <div class="flag AUD"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>90<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>90<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -525,7 +525,7 @@ font-size: 22px;
                                         <label>INR</label>
                                         <div class="flag INR"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>1<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>1<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -542,7 +542,7 @@ font-size: 22px;
                                         <label>AUD</label>
                                         <div class="flag AUD"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>68<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -552,7 +552,7 @@ font-size: 22px;
                                         <label>EUR</label>
                                         <div class="flag EUR"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>68<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -562,7 +562,7 @@ font-size: 22px;
                                         <label>GBP</label>
                                         <div class="flag GBP"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>68<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -572,7 +572,7 @@ font-size: 22px;
                                         <label>USD</label>
                                         <div class="flag USD"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>68<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -582,7 +582,7 @@ font-size: 22px;
                                         <label>YEN</label>
                                         <div class="flag YEN"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>68<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>
@@ -592,7 +592,7 @@ font-size: 22px;
                                         <label>INR</label>
                                         <div class="flag INR"></div>
                                         <h4>
-                                            <i class="fa fa-inr" aria-hidden="true"></i>68<span>.2925</span>
+                                            <span class="landing-currency-symb">৳</span>68<span>.2925</span>
                                         </h4>     
                                     </div>
                                 </div>

@@ -22,9 +22,68 @@
         margin-top: 0;
     }
 
+    #currency_header {
+        background-image: none; 
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #dedede;
+        background-color: #eaeaea;
+    }
+
 </style>
 
-<section id="auto_header">
+<section id="currency_header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="top-currency-cal">
+                    <div class="currency-converter--panel">
+                        <div class="currency-converter--row">
+                            <div class="currency-converter--column currency-converter--you">
+                                <label for="currency-converter--you" class="currency-converter--column--title"> </label>
+                                <div class="currency-converter--input-group is-focused" data-new-direction="to-recipient">
+                                    <div class="currency-converter--currencies-dropdown">
+                                        <select id="currency-converter--you" data-theme="currency" data-dropdown-parent=".currency-converter--input-group--dropdown--you" class="select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                            <option value="EUR" data-currency-name="Euro">EUR</option>
+                                            <option value="GBP" data-currency-name="British Pound">GBP</option>
+                                            <option value="YEN" data-currency-name="Japan Yen">YEN</option>
+                                            <option value="USD" data-currency-name="US Dollar">USD</option>
+                                        </select>
+                                    </div>
+                                    <label for="currency-converter--input--you" class="sr-only">Amount</label>
+                                    <input type="text" value="10000" name="currency-converter--input--you" id="currency-converter--input--you" class="currency-converter--input-text currency-converter--input--you is-invalid">
+                                    <div class="currency-converter--input-group--dropdown--you"></div>
+                                </div>
+                            </div>
+
+                            <div class="currency-converter--column currency-converter--recipient">
+                                <label for="currency-converter--recipient" class="currency-converter--column--title"> </label>
+                                <div class="currency-converter--input-group" data-new-direction="to-you">
+                                    <div class="currency-converter--currencies-dropdown" id="currency-bdt">
+                                        <span class="select2 select2-container select2-container--currency select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-currency-converter--recipient-container"><span class="select2-selection__rendered" id="select2-currency-converter--recipient-container" title="BDT">BDT</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                    </div>
+                                    <label for="currency-converter--input--recipient" class="sr-only">Amount</label>
+                                    <input type="text" name="currency-converter--input--recipient" id="currency-converter--input--recipient" class="currency-converter--input-text currency-converter--input--recipient" value="80000">
+                                    <div class="currency-converter--input-group--dropdown--recipient"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="currency-converter--row">
+                            <div class="currency-converter--status">
+                                <p class="currency-converter--status--item currency-converter--status--success is-active">
+                                    <span class="currency-converter--status--item--text">Information Provided by Bangladesh Bank</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
 </section>
 
 <!--Filter bar by bank START -->
@@ -238,7 +297,7 @@
                         <p>I Want to</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
-                                <input type="radio" name="i_want" id="iWant1" value="1" class="material_radiobox">
+                                <input type="radio" name="i_want" id="iWant1" value="1" class="material_radiobox" checked="">
                                 <span class="material_check_radio"></span>
                                 Buy                             
                             </label>
@@ -291,6 +350,10 @@
                         <p>Amount</p>
                         <div class="form-group_fdr">
                             <input type="text" name="" class="form-control m-b-10" id="" value="" placeholder="Enter Amount">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" id="basic-addon2">@example.com</span>
+                            </div>
                             <button class="btn btn-primary btn-block m-b-10">Submit</button>
                         </div>
                     </div>
@@ -305,7 +368,60 @@
                     <div id="loading" class="text-center"></div>
                 </div>
                 
-                <table id="currency-table" class="display" style="width:100%">
+                <table id="currency-table-buy" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Bank Logo</th>
+                            <th>Currency Short Code</th>
+                            <th>Sell Rate</th>
+                            <th>Central Bank Sell</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/AB-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Alfalah.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Commercial-Bank-of-Ceylon.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Agrani-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Dutch-Bangla-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table id="currency-table-sell" class="hidden" style="width:100%">
                     <thead>
                         <tr>
                             <th>Bank Logo</th>
@@ -409,7 +525,7 @@
     });
 
     $(document).ready(function() {
-        $('#currency-table').DataTable({
+        $('#currency-table-buy, #currency-table-sell').DataTable({
             "searching": false,
             "ordering": true,
             "info": false,
