@@ -21,25 +21,16 @@
     #sidebar{
         margin-top: 0;
     }
-
-    #currency_header {
-        background-image: none; 
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 300px;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #dedede;
-        background-color: #eaeaea;
-    }
-
 </style>
 
 <section id="currency_header">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
+                <div class="currency-title-section">
+                    <h1>Exchange Rates</h1>
+                    <h4>Check foreign exchange rates on the most popular currency pairs here <br>before you initiate your money transfer</h4>
+                </div>
                 <div class="top-currency-cal">
                     <div class="currency-converter--panel">
                         <div class="currency-converter--row">
@@ -349,10 +340,9 @@
                     <div class="card_query">
                         <p>Amount</p>
                         <div class="form-group_fdr">
-                            <input type="text" name="" class="form-control m-b-10" id="" value="" placeholder="Enter Amount">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                                <span class="input-group-addon" id="basic-addon2">@example.com</span>
+                                <span class="input-group-addon" id="basic-addon2">৳</span>
+                                <input type="text" class="form-control" placeholder="Enter Amount" aria-describedby="basic-addon2">
                             </div>
                             <button class="btn btn-primary btn-block m-b-10">Submit</button>
                         </div>
@@ -421,15 +411,13 @@
                     </tbody>
                 </table>
 
-                <table id="currency-table-sell" class="hidden" style="width:100%">
+                <table id="currency-table-sell" class="hidden display" style="width:100%">
                     <thead>
                         <tr>
                             <th>Bank Logo</th>
                             <th>Currency Short Code</th>
                             <th class="buy_rate_amount">Buy Rate</th>
-                            <th>Sell Rate</th>
                             <th class="buy_rate_amount">Central Bank Buy</th>
-                            <th>Central Bank Sell</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -439,9 +427,7 @@
                             </td>
                             <td>AUD</td>
                             <td class="buy_rate_amount">76.88</td>
-                            <td>70.45</td>
                             <td class="buy_rate_amount">75.56</td>
-                            <td>68.99</td>
                         </tr>
                         <tr>
                             <td>
@@ -449,9 +435,7 @@
                             </td>
                             <td>AUD</td>
                             <td class="buy_rate_amount">76.88</td>
-                            <td>70.45</td>
                             <td class="buy_rate_amount">75.56</td>
-                            <td>68.99</td>
                         </tr>
                         <tr>
                             <td>
@@ -459,9 +443,7 @@
                             </td>
                             <td>AUD</td>
                             <td class="buy_rate_amount">76.88</td>
-                            <td>70.45</td>
                             <td class="buy_rate_amount">75.56</td>
-                            <td>68.99</td>
                         </tr>
                         <tr>
                             <td>
@@ -469,9 +451,7 @@
                             </td>
                             <td>AUD</td>
                             <td class="buy_rate_amount">76.88</td>
-                            <td>70.45</td>
                             <td class="buy_rate_amount">75.56</td>
-                            <td>68.99</td>
                         </tr>
                         <tr>
                             <td>
@@ -479,9 +459,7 @@
                             </td>
                             <td>AUD</td>
                             <td class="buy_rate_amount">76.88</td>
-                            <td>70.45</td>
                             <td class="buy_rate_amount">75.56</td>
-                            <td>68.99</td>
                         </tr>
                     </tbody>
                 </table>
@@ -531,5 +509,19 @@
             "info": false,
             "paging": false
         });
+    });
+
+    $('#iWant1').click(function(){
+        if($(this).is(':checked') == true){
+            $('#currency-table-buy').removeClass('hidden');
+            $('#currency-table-sell').addClass('hidden');
+        }
+    });
+
+    $('#iWant2').click(function(){
+        if($(this).is(':checked') == true){
+            $('#currency-table-buy').addClass('hidden');
+            $('#currency-table-sell').removeClass('hidden');
+        }
     });
 </script>

@@ -455,16 +455,20 @@ font-size: 22px;
 
                <div class="m-t-30">
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs currency-tab" role="tablist">
-                        <li role="presentation" class="active">
-                            <a id="rate-sel" href="#Sell" aria-controls="Sell" role="tab" data-toggle="tab"><!-- <i class="fa fa-handshake-o" aria-hidden="true"></i> --> Sell</a>
+                    <ul class="nav nav-tabs currency-tab row" role="tablist">
+                        <li role="presentation" class="active col-sm-4">
+                            <a id="rate-sel" href="#Sell" aria-controls="Sell" role="tab" data-toggle="tab"><!-- <i class="fa fa-handshake-o" aria-hidden="true"></i> --> Today's Currency Sell Rate</a>
                         </li>
-                        <li role="presentation">
-                            <a id="rate-buy" href="#Buy" aria-controls="Buy" role="tab" data-toggle="tab"><!-- <i class="fa fa-money" aria-hidden="true"></i> --> Buy</a>
+                        <li role="presentation" class="col-sm-4">
+                            <a id="rate-buy" href="#Buy" aria-controls="Buy" role="tab" data-toggle="tab">Today's Currency Buy Rate</a>
+                        </li>
+
+                        <li role="presentation" class="col-sm-4">
+                            <a id="" href="javascript:;" disabled="disabled">Last Update: 12/12/2018</a>
                         </li>
                     </ul>
 
-                    <div class="currency-update"><small>Last Update: 12/12/2018</small></div>
+                    <!--div class="currency-update"><small>Last Update: 12/12/2018</small></div-->
 
                     <!-- Tab panes -->
                     <div class="tab-content">

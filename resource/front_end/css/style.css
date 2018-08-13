@@ -8917,6 +8917,7 @@ div.rate-focus {
     color: #333;
     border: 0;
     background-color: transparent !important;
+    text-align: center;
 }
 .currency-tab.nav-tabs>li.active>a, .currency-tab.nav-tabs>li.active>a:focus, .currency-tab.nav-tabs>li.active>a:hover{
     color: #2f66ba !important;
@@ -9000,7 +9001,8 @@ img.currency-bank-logo {
 .currency-converter--panel {
     border-radius: 8px;
     padding: 15px 30px;
-    margin-top: 70px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .currency-converter[data-message=true]:not(.currency-converter--business-type--tabs)+.currency-converter--panel {
@@ -9325,6 +9327,51 @@ select#currency-converter--you option{
     color: #fff;
     line-height: 60px;
     padding: 0px 20px;
+}
+#currency_header {
+    background-image: none; 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dedede;
+    background-color: #eaeaea;
+}
+.currency-title-section>h1, .currency-title-section>h4 {
+    font-weight: 500 !important;
+}
+.currency-title-section>h4{
+    font-size: 22px;
+}
+table#currency-table-sell thead>tr>th, table#currency-table-buy thead>tr>th {
+    background-color: #2f87b7;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+}
+
+table#currency-table-sell.no-footer, table#currency-table-buy.no-footer {
+    border: 1px solid #2f87b7;
+}
+
+table#currency-table-sell tbody tr:hover td, table#currency-table-buy tbody tr:hover td{
+    background-color: #34a3d7 !important;
+    color: #fff;
+}
+table#currency-table-sell tbody tr>td, table#currency-table-buy tbody tr>td {
+    border-right: 2px solid #f1f1f1 !important;
+}
+.form-group_fdr>.input-group {
+    margin: 0 0 10px 0;
+    position: relative !important;
+    padding: 0 !important;
+}
+.currency-title-section {
+    text-align: center;
+    margin-top: 50px;
 }
 /*.buy_rate_amount{
     display: none;
