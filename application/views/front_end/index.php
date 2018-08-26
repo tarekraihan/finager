@@ -479,8 +479,13 @@ font-size: 22px;
                                         <label>USD</label>
                                         <div class="flag USD"></div>
                                         <h4>
-                                            <span class="landing-currency-symb">৳</span>80<span>.2925</span>
-                                        </h4>     
+                                            <span>৳</span>
+                                            80.29
+                                            <span class="text-danger">
+                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                            </span>
+                                        </h4>  
+                                        <p>Last Day Rate 82.98</p>   
                                     </div>
                                 </div>
 
@@ -489,8 +494,13 @@ font-size: 22px;
                                         <label>EUR</label>
                                         <div class="flag EUR"></div>
                                         <h4>
-                                            <span class="landing-currency-symb">৳</span>101<span>.2925</span>
-                                        </h4>     
+                                            <span>৳</span>
+                                            100.29
+                                            <span class="text-success">
+                                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                            </span>
+                                        </h4>  
+                                        <p>Last Day Rate 90.98</p>     
                                     </div>
                                 </div>
 
@@ -499,8 +509,13 @@ font-size: 22px;
                                         <label>GBP</label>
                                         <div class="flag GBP"></div>
                                         <h4>
-                                            <span class="landing-currency-symb">৳</span>78<span>.2925</span>
-                                        </h4>     
+                                            <span>৳</span>
+                                            80.29
+                                            <span class="text-danger">
+                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                            </span>
+                                        </h4>  
+                                        <p>Last Day Rate 82.98</p>   
                                     </div>
                                 </div>
 
@@ -509,8 +524,13 @@ font-size: 22px;
                                         <label>YEN</label>
                                         <div class="flag YEN"></div>
                                         <h4>
-                                            <span class="landing-currency-symb">৳</span>68<span>.2925</span>
-                                        </h4>     
+                                            <span>৳</span>
+                                            80.29
+                                            <span class="text-danger">
+                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                            </span>
+                                        </h4>  
+                                        <p>Last Day Rate 82.98</p>    
                                     </div>
                                 </div>
 
@@ -519,8 +539,13 @@ font-size: 22px;
                                         <label>AUD</label>
                                         <div class="flag AUD"></div>
                                         <h4>
-                                            <span class="landing-currency-symb">৳</span>90<span>.2925</span>
-                                        </h4>     
+                                            <span>৳</span>
+                                            80.29
+                                            <span class="text-danger">
+                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                            </span>
+                                        </h4>  
+                                        <p>Last Day Rate 82.98</p>   
                                     </div>
                                 </div>
 
@@ -529,13 +554,18 @@ font-size: 22px;
                                         <label>INR</label>
                                         <div class="flag INR"></div>
                                         <h4>
-                                            <span class="landing-currency-symb">৳</span>1<span>.2925</span>
-                                        </h4>     
+                                            <span>৳</span>
+                                            80.29
+                                            <span class="text-danger">
+                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                            </span>
+                                        </h4>  
+                                        <p>Last Day Rate 82.98</p>   
                                     </div>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <a href="#" class="rate-more-button">Find Bank Exchange Rates Here</a>
+                                    <a href="http://asdf.sujatbarua.com/currency-details.html" class="rate-more-button">Find Bank Exchange Rates Here</a>
                                 </div>
                             </div>
                         </div>
@@ -602,7 +632,7 @@ font-size: 22px;
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <a href="#" class="rate-more-button">Find Bank Exchange Rates Here</a>
+                                    <a href="http://asdf.sujatbarua.com/currency-details.html" class="rate-more-button">Find Bank Exchange Rates Here</a>
                                 </div>
                             </div>
                         </div>

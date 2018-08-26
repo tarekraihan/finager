@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="https://thdoan.github.io/bootstrap-select/css/bootstrap-select.css">
 <style type="text/css">
 
     .sidebar-absolute{
@@ -38,11 +39,18 @@
                                 <label for="currency-converter--you" class="currency-converter--column--title"> </label>
                                 <div class="currency-converter--input-group is-focused" data-new-direction="to-recipient">
                                     <div class="currency-converter--currencies-dropdown">
-                                        <select id="currency-converter--you" data-theme="currency" data-dropdown-parent=".currency-converter--input-group--dropdown--you" class="select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <!-- <select id="currency-converter--you" data-theme="currency" data-dropdown-parent=".currency-converter--input-group--dropdown--you" class="select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             <option value="EUR" data-currency-name="Euro">EUR</option>
                                             <option value="GBP" data-currency-name="British Pound">GBP</option>
                                             <option value="YEN" data-currency-name="Japan Yen">YEN</option>
                                             <option value="USD" data-currency-name="US Dollar">USD</option>
+                                        </select> -->
+
+                                        <select title="Select your select2-hidden-accessible" class="selectpicker" id="currency-converter--you" data-theme="currency" data-dropdown-parent=".currency-converter--input-group--dropdown--you">
+                                          <option value="USD" data-thumbnail="https://www.ultimatedrivingtours.com/wp-content/uploads/2018/02/united-states-of-america-usa.png">USD</option>
+                                          <option value="GBP" data-thumbnail="http://shop.flagshop.com/media/catalog/product/cache/1/thumbnail/128x128/9df78eab33525d08d6e5fb8d27136e95/f/l/flag-world-euro-union.gif">EUR</option>
+                                          <option value="YEN" data-thumbnail="https://www.theflagshop.co.uk/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/j/a/japan-flag-8x5.gif">YEN</option>
+                                          <option value="EUR" data-thumbnail="http://tsatours.com/wp-content/uploads/2012/02/UK-flag.gif">GBP</option>
                                         </select>
                                     </div>
                                     <label for="currency-converter--input--you" class="sr-only">Amount</label>
@@ -63,14 +71,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="currency-converter--row">
-                            <div class="currency-converter--status">
-                                <p class="currency-converter--status--item currency-converter--status--success is-active">
-                                    <span class="currency-converter--status--item--text">Information Provided by Bangladesh Bank</span>
-                                </p>
-                            </div>
-                        </div>
                     </div>
+                </div>
+
+                <div class="top-currency-cal-info">
+                    <p class="currency-status"><span>1</span> USD = BDT <span>76.66</span></p>
+                    <p class="currency-converter--status--item currency-converter--status--success is-active">
+                        <span class="currency-converter--status--item--text">Information Provided by Bangladesh Bank</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -281,7 +289,7 @@
 
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar_parent">
 
-				<div id="sticky-anchor"></div>
+                <div id="sticky-anchor"></div>
 
                 <div class="home_loan_left_bar" id="sidebar">
                     <div class="card_query">
@@ -341,8 +349,8 @@
                         <p>Amount</p>
                         <div class="form-group_fdr">
                             <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon2">৳</span>
-                                <input type="text" class="form-control" placeholder="Enter Amount" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" id="search-currency-symbol">৳</span>
+                                <input type="text" class="form-control" placeholder="Enter Amount" aria-describedby="search-currency-symbol">
                             </div>
                             <button class="btn btn-primary btn-block m-b-10">Submit</button>
                         </div>
@@ -473,6 +481,7 @@
 
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://thdoan.github.io/bootstrap-select/js/bootstrap-select.js"></script>
 <script>
 
     // This function will be executed when the user scrolls the page.
@@ -522,6 +531,22 @@
         if($(this).is(':checked') == true){
             $('#currency-table-buy').addClass('hidden');
             $('#currency-table-sell').removeClass('hidden');
+        }
+    });
+
+    $(document).on('click','input[name="Currency"]',function(){
+        var this_id = $(this).attr('id');
+        if(this_id == 'USD'){
+            $('#search-currency-symbol').html('$');
+        }
+        else if(this_id == 'GBP'){
+            $('#search-currency-symbol').html('£');
+        }
+        else if(this_id == 'EURO'){
+            $('#search-currency-symbol').html('€');
+        }
+        else if(this_id == 'YEN'){
+            $('#search-currency-symbol').html('¥');
         }
     });
 </script>
