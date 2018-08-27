@@ -658,7 +658,7 @@ font-size: 22px;
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-                        <p>Last Update: 12/12/2018</p>
+                        <p style="margin-top: -10px;">Last Update: 12/12/2018</p>
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
