@@ -8923,15 +8923,21 @@ div.rate-focus {
     font-size: 18px !important;
     color: #333;
     border: 0;
-    background-color: transparent !important;
+    background-color: !important;
     text-align: center;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    box-shadow: inset 0px 0px 10px 2px #dedede;
 }
-.currency-tab.nav-tabs>li.active>a, .currency-tab.nav-tabs>li.active>a:focus, .currency-tab.nav-tabs>li.active>a:hover{
-    color: #2f66ba !important;
+.currency-tab.nav-tabs>li>a:hover, .currency-tab.nav-tabs>li.active>a, .currency-tab.nav-tabs>li.active>a:focus, .currency-tab.nav-tabs>li.active>a:hover{
+    color: #ffffff !important;
     border-top: 0;
     border-left: 0;
     border-right: 0;
     border-bottom: 2px solid #2f66ba;
+    background-color: #2f66ba !important;
+    border-radius: 6px;
+    box-shadow: none;
 }
 .currency-update{
     float: right;
@@ -9449,4 +9455,5 @@ table.dataTable.no-footer {
     max-height: 32px;
     max-width: 32px;
 }
+*{outline: 0 !important;}
 /*Currency calculator END*/
