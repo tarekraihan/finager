@@ -9168,11 +9168,13 @@ input.currency-converter--input-text {
 
 .currency-converter--input-group.is-focused input.currency-converter--input-text,
 input.currency-converter--input-text:focus {
-    border: 3px solid #37bdf7
+    border: 2px solid #37bdf7
 }
 
 .currency-converter--input--you:focus, .currency-converter--input--recipient:focus {
-    border: 3px solid #6dd3ff !important;
+    /*border: 3px solid #6dd3ff !important;*/
+    border: 1px solid #75ceff !important;
+    box-shadow: 0px 0px 4px 1px #89d9ff;
 }
 
 .currency-converter--input-group--dropdown--recipient,

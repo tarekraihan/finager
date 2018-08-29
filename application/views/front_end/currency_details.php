@@ -482,8 +482,8 @@
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://thdoan.github.io/bootstrap-select/js/bootstrap-select.js"></script>
+<script type="text/javascript" src="http://www.decorplanit.com/plugin/autoNumeric-1.9.18.js"></script>
 <script>
-
     // This function will be executed when the user scrolls the page.
     $(document).on("scroll",function () {
         var header = $("#sidebar").offset().top;
@@ -518,7 +518,55 @@
             "info": false,
             "paging": false
         });
+
+        $(function($) {
+            $('#currency-converter--input--you').autoNumeric('init', {  lZero: 'deny', aSep: ',', mDec: 0 });    
+        });
     });
+
+    //cursor blink
+    jQuery.fn.putCursorAtEnd = function() {
+      return this.each(function() {
+        // Cache references
+        var $el = $(this),
+            el = this;
+
+        // Only focus if input isn't already
+        if (!$el.is(":focus")) {
+         $el.focus();
+        }
+
+        // If this function exists... (IE 9+)
+        if (el.setSelectionRange) {
+          // Double the length because Opera is inconsistent about whether a carriage return is one character or two.
+          var len = $el.val().length * 2;
+          // Timeout seems to be required for Blink
+          setTimeout(function() {
+            el.setSelectionRange(len, len);
+          }, 1);
+        
+        } else {
+          // As a fallback, replace the contents with itself
+          // Doesn't work in Chrome, but Chrome supports setSelectionRange
+          $el.val($el.val());
+        }
+        // Scroll to the bottom, in case we're in a tall textarea
+        // (Necessary for Firefox and Chrome)
+        this.scrollTop = 999999;
+      });
+    };
+
+    (function() {
+      var searchInput = $("#currency-converter--input--you");
+      searchInput
+        .putCursorAtEnd() // should be chainable
+        .on("focus", function() { // could be on any event
+          searchInput.putCursorAtEnd()
+        });
+      
+    })();
+
+    
 
     $('#iWant1').click(function(){
         if($(this).is(':checked') == true){
@@ -549,4 +597,6 @@
             $('#search-currency-symbol').html('¥');
         }
     });
+
+
 </script>

@@ -456,10 +456,10 @@ font-size: 22px;
                <div class="m-t-30">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs currency-tab row" role="tablist">
-                        <li role="presentation" class="active col-sm-4">
+                        <li role="presentation" class="active col-sm-6">
                             <a id="rate-sel" href="#Sell" aria-controls="Sell" role="tab" data-toggle="tab"><!-- <i class="fa fa-handshake-o" aria-hidden="true"></i> --> Today's Currency Sell Rate</a>
                         </li>
-                        <li role="presentation" class="col-sm-4">
+                        <li role="presentation" class="col-sm-6">
                             <a id="rate-buy" href="#Buy" aria-controls="Buy" role="tab" data-toggle="tab">Today's Currency Buy Rate</a>
                         </li>
 
