@@ -9388,7 +9388,7 @@ table#currency-table-sell thead>tr>th, table#currency-table-buy thead>tr>th {
 /*.buy_rate_amount{
     display: none;
 }*/
-#currency-table-buy tbody tr {
+#currency-table-buy tbody tr, #currency-table-sell tbody tr {
     box-shadow: 0 0 10px #ccc;
 }
 .top-currency-cal-info {
@@ -9436,13 +9436,16 @@ table#currency-table-sell.no-footer, table#currency-table-buy.no-footer {
     border-spacing: 0px 10px;
     margin-top: -10px;
 }
-table#currency-table-buy tbody tr>td:first-child {
+table#currency-table-buy tbody tr>td:first-child
+table#currency-table-sell tbody tr>td:first-child,  {
     border-left: 2px solid #dedede;
 }
 table#currency-table-sell tbody tr>td, table#currency-table-buy tbody tr>td {
     border-bottom: 2px solid #dedede !important;
     border-top: 2px solid #dedede !important;
     border-right: 2px solid #dedede !important;
+    padding: 12px 10px;
+    font-size: 16px;
 }
 table.dataTable.no-footer {
     border-bottom: 0 !important;

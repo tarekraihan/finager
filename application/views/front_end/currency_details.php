@@ -410,7 +410,47 @@
                         </tr>
                         <tr>
                             <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Dutch-Bangla-Bank.png">
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/City-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Exim-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Islami-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Meghna-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/United-Commercial-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Asia.png">
                             </td>
                             <td>AUD</td>
                             <td>70.45</td>
@@ -431,43 +471,107 @@
                     <tbody>
                         <tr>
                             <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Meghna-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/United-Commercial-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Asia.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/AB-Bank.png">
                             </td>
                             <td>AUD</td>
-                            <td class="buy_rate_amount">76.88</td>
-                            <td class="buy_rate_amount">75.56</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
                         </tr>
                         <tr>
                             <td>
                                 <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Alfalah.png">
                             </td>
                             <td>AUD</td>
-                            <td class="buy_rate_amount">76.88</td>
-                            <td class="buy_rate_amount">75.56</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
                         </tr>
                         <tr>
                             <td>
                                 <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Commercial-Bank-of-Ceylon.png">
                             </td>
                             <td>AUD</td>
-                            <td class="buy_rate_amount">76.88</td>
-                            <td class="buy_rate_amount">75.56</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
                         </tr>
                         <tr>
                             <td>
                                 <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Agrani-Bank.png">
                             </td>
                             <td>AUD</td>
-                            <td class="buy_rate_amount">76.88</td>
-                            <td class="buy_rate_amount">75.56</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
                         </tr>
                         <tr>
                             <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Dutch-Bangla-Bank.png">
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/City-Bank.png">
                             </td>
                             <td>AUD</td>
-                            <td class="buy_rate_amount">76.88</td>
-                            <td class="buy_rate_amount">75.56</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Exim-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Islami-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Meghna-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/United-Commercial-Bank.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Asia.png">
+                            </td>
+                            <td>AUD</td>
+                            <td>70.45</td>
+                            <td>68.99</td>
                         </tr>
                     </tbody>
                 </table>
