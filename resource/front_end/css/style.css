@@ -9467,4 +9467,13 @@ table.dataTable.no-footer {
     color: #fff;
     padding-top: 8px;*/
 }
+@media only screen and (max-width: 980px){
+    input.currency-converter--input-text {
+        height: 64px;
+        width: 100%;
+    }
+    .top-currency-cal-info {
+        max-width: 100%;
+    }
+}
 /*Currency calculator END*/

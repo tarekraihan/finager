@@ -456,10 +456,10 @@ font-size: 22px;
                <div class="m-t-30">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs currency-tab row" role="tablist">
-                        <li role="presentation" class="active col-sm-6">
+                        <li role="presentation" class="active col-sm-6 col-xs-12">
                             <a id="rate-sel" href="#Sell" aria-controls="Sell" role="tab" data-toggle="tab"><!-- <i class="fa fa-handshake-o" aria-hidden="true"></i> --> Today's Currency Sell Rate</a>
                         </li>
-                        <li role="presentation" class="col-sm-6">
+                        <li role="presentation" class="col-sm-6 col-xs-12">
                             <a id="rate-buy" href="#Buy" aria-controls="Buy" role="tab" data-toggle="tab">Today's Currency Buy Rate</a>
                         </li>
 
@@ -471,7 +471,7 @@ font-size: 22px;
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="Sell">
                             <div class="row rate-focus" id="rate-focus-sell">
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>USD</label>
                                         <div class="flag USD"></div>
@@ -486,7 +486,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>EUR</label>
                                         <div class="flag EUR"></div>
@@ -501,7 +501,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>GBP</label>
                                         <div class="flag GBP"></div>
@@ -516,7 +516,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>YEN</label>
                                         <div class="flag YEN"></div>
@@ -531,7 +531,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>AUD</label>
                                         <div class="flag AUD"></div>
@@ -546,7 +546,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>INR</label>
                                         <div class="flag INR"></div>
@@ -564,7 +564,7 @@ font-size: 22px;
                         </div>
                         <div role="tabpanel" class="tab-pane" id="Buy">
                             <div class="row rate-focus" id="rate-focus-sell">
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>USD</label>
                                         <div class="flag USD"></div>
@@ -579,7 +579,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>EUR</label>
                                         <div class="flag EUR"></div>
@@ -594,7 +594,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>GBP</label>
                                         <div class="flag GBP"></div>
@@ -609,7 +609,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>YEN</label>
                                         <div class="flag YEN"></div>
@@ -624,7 +624,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>AUD</label>
                                         <div class="flag AUD"></div>
@@ -639,7 +639,7 @@ font-size: 22px;
                                     </div>
                                 </div>
 
-                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
                                         <label>INR</label>
                                         <div class="flag INR"></div>
