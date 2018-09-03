@@ -9456,6 +9456,12 @@ table.dataTable.no-footer {
 .currency-converter--currencies-dropdown .media-object{
     max-height: 32px;
     max-width: 32px;
+    margin-top: 5px;
 }
 *{outline: 0 !important;}
+.currency-converter--currencies-dropdown .bootstrap-select.btn-group .dropdown-menu li a:hover {
+    /*background-color: #2f87b7;
+    color: #fff;
+    padding-top: 8px;*/
+}
 /*Currency calculator END*/

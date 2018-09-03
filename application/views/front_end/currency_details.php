@@ -47,10 +47,10 @@
                                         </select> -->
 
                                         <select title="Select your select2-hidden-accessible" class="selectpicker" id="currency-converter--you" data-theme="currency" data-dropdown-parent=".currency-converter--input-group--dropdown--you">
-                                          <option value="USD" data-thumbnail="https://www.ultimatedrivingtours.com/wp-content/uploads/2018/02/united-states-of-america-usa.png">USD</option>
-                                          <option value="GBP" data-thumbnail="http://shop.flagshop.com/media/catalog/product/cache/1/thumbnail/128x128/9df78eab33525d08d6e5fb8d27136e95/f/l/flag-world-euro-union.gif">EUR</option>
-                                          <option value="YEN" data-thumbnail="https://www.theflagshop.co.uk/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/j/a/japan-flag-8x5.gif">YEN</option>
-                                          <option value="EUR" data-thumbnail="http://tsatours.com/wp-content/uploads/2012/02/UK-flag.gif">GBP</option>
+                                          <option value="USD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/usd.png">USD</option>
+                                          <option value="EURO" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/euro.png">EUR</option>
+                                          <option value="YEN" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/yen.gif">YEN</option>
+                                          <option value="GBP" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/gbp.gif">GBP</option>
                                         </select>
                                     </div>
                                     <label for="currency-converter--input--you" class="sr-only">Amount</label>
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="top-currency-cal-info">
-                    <p class="currency-status"><span>1</span> USD = BDT <span>76.66</span></p>
+                    <p class="currency-status"><span>1</span> <span id="info-curr">USD</span> = BDT <span>76.66</span></p>
                     <p class="currency-converter--status--item currency-converter--status--success is-active">
                         <span class="currency-converter--status--item--text">Information Provided by Bangladesh Bank</span>
                     </p>
@@ -521,6 +521,11 @@
 
         $(function($) {
             $('#currency-converter--input--you').autoNumeric('init', {  lZero: 'deny', aSep: ',', mDec: 0 });    
+        });
+
+        $('#currency-converter--you').on('change', function(){
+           var selected = $('.selectpicker option:selected').val();
+           $('#info-curr').html(selected);
         });
     });
 
