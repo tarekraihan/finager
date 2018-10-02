@@ -48,6 +48,7 @@ $second_loan_facility = (!empty($second_fdr->loan_facility)) ? $second_fdr->loan
 
 ?>
 
+	<h1 class="sec-tag">Compare between all FDR schemes @ Finager.com</h1>
 	<section id="card_compare_default">
 		<div class="container">
 			<div class="row">

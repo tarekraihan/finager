@@ -624,14 +624,14 @@
 
 	$(document).ready(function(){
         $(document).on('change','#princpAmt',function(){
-            var principle_amount = $(this).text();
+            //var principle_amount = $(this).text();
             //var cal_loan_amount = $(this).text();
-            alert(principle_amount);
-            $('#chart_loan_amount').text(principle_amount);
+            console.log('df');
+            //$('#chart_loan_amount').html(principle_amount);
         });
 		//alert(localStorage.getItem("home_loan_principal_amount"));
 		//location.reload();
-		$('#finalAssest').val('100000');
+		$('#finalAssest').val(localStorage.getItem("home_loan_principal_amount"));
 		
 		
 	    var plot2 = $.jqplot('pie2', [[['Total Amount',7],['Loan Amount	',88],['Tenure',5],['Interest Rate',5]]], {
