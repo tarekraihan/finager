@@ -178,7 +178,7 @@
 <script src="<?php echo base_url();?>resource/admin/js/plugin/pace/pace.min.js"></script>
 
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="<?php echo base_url();?>resource/admin/js/jquery-3.3.1.min.js"></script>
 <script> if (!window.jQuery) { document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');} </script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -244,18 +244,17 @@
             }
         });
 
-        $(document).on("click touchstart ","#btnSubmit",function(){
+        $(document).on("click touchstart","#btnSubmit",function(){
             $.ajax({
                 type:"POST",
                 url:"<?php echo base_url();?>backdoor/admin_login",
                 data:$("#login_form").serialize(),
                 success: function(response){
-                    if(response == "success"){
-                        console.log(response);
-                        window.location.href = "<?php echo base_url();?>backdoor/dashboard"
+                    if(response === 'success'){
+                        var url = "<?php echo base_url();?>backdoor/dashboard";
+                        window.location.href = url;
                     }else{
                         location.reload();
-                        console.log(response);
                     }
                 }
             });
@@ -288,12 +287,12 @@
                         url:"<?php echo base_url();?>backdoor/admin_login",
                         data:$("#login_form").serialize(),
                         success: function(response){
-                            if(response != "error"){
-                                console.log(response);
-                                window.location.href = "<?php echo base_url();?>backdoor/dashboard"
+                            if(response === 'success' ){
+                                var url = "<?php echo base_url();?>backdoor/dashboard";
+                                window.location.href = url;
                             }else{
                                 location.reload();
-                                console.log(response);
+                                
                             }
                         }
                     });
@@ -305,13 +304,13 @@
 
     });
 
-function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-}
+// function onSignIn(googleUser) {
+//     var profile = googleUser.getBasicProfile();
+//     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+//     console.log('Name: ' + profile.getName());
+//     console.log('Image URL: ' + profile.getImageUrl());
+//     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+// }
 </script>
 
 </body>

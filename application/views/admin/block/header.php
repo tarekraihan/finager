@@ -59,7 +59,8 @@
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
     <link rel="apple-touch-startup-image" href="<?php echo base_url();?>resource/admin/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="<?php echo base_url(); ?>resource/admin/js/jquery-3.3.1.min.js"></script>
     <link href="<?php echo base_url(); ?>resource/admin/css/fileinput.min.css" rel="stylesheet"/>
     <?php echo (isset($map)) ? $map['js'] : '' ;?>
 </head>

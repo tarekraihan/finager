@@ -18,7 +18,7 @@ class Backdoor extends CI_Controller {
 
     public function index()
     {
-        if(!$this->session->userdata('email_address')){
+        if(!$this->session->userdata('admin_role')){
             $this->load->view('admin/login');
         }else{
             $this->dashboard();
@@ -27,7 +27,7 @@ class Backdoor extends CI_Controller {
 
     public function dashboard()
     {
-        if ($this->session->userdata('email_address')) {
+        if ($this->session->userdata('admin_role')) {
             $data['title'] = "Finager - Dashboard";
             $this->load->view('admin/block/header',$data);
             $this->load->view('admin/block/left_nav');
@@ -443,7 +443,7 @@ class Backdoor extends CI_Controller {
         }
     }
 
- public function edit_access_control(){
+    public function edit_access_control(){
         if ($this->session->userdata('email_address')) {
 
             $this->form_validation->set_rules('txtAdminUser', 'Admin User', 'trim|required');
@@ -516,26 +516,37 @@ class Backdoor extends CI_Controller {
         $password = trim($this->input->post('txtPassword'));
 
         $check = $this->Select_model->check_admin_user($email,$password);
-        if($check == true){
+       
+        if($check === true){
 
             $check_active=$this->Select_model->check_admin_user_status($email,$password);
-            if($check_active == true){
+         
+            if($check_active === true){
                 $result=$this->Select_model->select_admin_user($email,$password);
-                //print_r($result);
+                
                 if ($result->num_rows() > 0)
                 {
-
                     $row = $result->row();
-                    $data['admin_role'] = $row->admin_role;
-                    $data['admin_user_id'] = $row->id;
-                    $data['first_name'] = $row->first_name;
-                    $data['last_name'] = $row->last_name;
-                    $data['email_address'] = $row->email_address;
-                    $data['phone_no'] = $row->phone_no;
-                    $data['password'] = $row->password;
-                    $data['profile_picture'] = $row->profile_picture;
-                    $data['admin_first_login'] = $row->admin_first_login;
+                    $data = [
+                        'admin_role' => $row->admin_role,
+                        'admin_user_id' => $row->id,
+                        'first_name' => $row->first_name,
+                        'last_name' => $row->last_name,
+                        'email_address' => $row->email_address,
+                        'phone_no' => $row->phone_no,
+                        'password' => $row->password,
+                        'profile_picture' => $row->profile_picture,
+                        'admin_first_login' => $row->admin_first_login
+                    ];
+                    //$_SESSION = $data;
                     $this->session->set_userdata($data);
+
+                    // $response = [
+                    //     "process" => true,
+                    //     "message" => "Successfully Login",
+                    //     "session" => json_encode($_SESSION)
+                    // ];
+                    // echo json_encode($response);
                     echo 'success';
                 }
             }else{
