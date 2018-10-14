@@ -109,6 +109,8 @@ $route['about-us'] = "en/about_us";
 $route['terms-condition'] = "en/terms_condition";
 $route['privacy-policy'] = "en/PrivacyPolicy";
 $route['currency-details'] = "en/currency_details";
+
+$route['loan-calculator'] = "en/loan_calculator";
 /*
 $default_controller = "En";
 $controller_exceptions = array('admin','forums');

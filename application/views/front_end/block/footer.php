@@ -1,4 +1,6 @@
 
+
+
     <div id="main-footer" class="footer">
         <!-- particles.js container -->
         <div id="particles-js"></div>
@@ -12,7 +14,7 @@
             <div class="row m-t-30">
                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                     <div class="footer-wrapper">
-                        <img title="Finager(Your Finance Manager)" class="footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg" alt="Finager.com">
+                        <img title="Finager(Your Finance Manager)" class="footer-logo" src="<?php echo base_url();?>resource/front_end/images/FinagerLogo.svg">
                     </div>
                 </div>
             </div>
@@ -28,7 +30,7 @@
                 <div class="col-sm-12 col-md-4"></div>
                 <div class="col-sm-12 col-md-4">
                     <ul>
-                        <li><p class="no-margin"><span class="hello">Hello Finager :</span> <a href="tel:+8801998123123">+8801997-123123</a></p></li>
+                        <li><p class="no-margin"><span class="hello">Hello Finager :</span> <a href="tel:+8801998123123">+8801998-123123</a></p></li>
                         <li><p class="no-margin">Info: <a href="mailto:info@finager.com">info@finager.com</a></p></li>
                         <li><p class="no-margin">Support: <a href="mailto:support@finager.com">support@finager.com</a></p></li>
                     </ul>
@@ -39,7 +41,7 @@
                 <div class="col-sm-12">
                     <ul class="footer-socials">
                         <li>
-                            <a href="https://www.facebook.com/finagerbd" title="Facebook">
+                            <a href="#" title="Facebook">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -49,7 +51,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://plus.google.com/104488422816509683343" title="Google Plus">
+                            <a href="#" title="Google Plus">
                                 <i class="fa fa-google-plus" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -93,7 +95,7 @@
                     <div class="footer-menu-wrapper row">    
                         <div class="col-sm-12">
                             <div class="row">
-                                <div class="col-sm-2 col-xs-6">
+                                <div class="col-sm-2">
                                     <p class="footer-main-menu-title">Card</p>
                                     <ul>
                                         <li><a href="<?php echo base_url();?>debit-cards.html">Debit Card</a></li>
@@ -101,10 +103,10 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2 col-xs-6">
+                                <div class="col-sm-2">
                                     <p class="footer-main-menu-title">Loan</p>
                                     <ul>
-                                        <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">SME Loan</a></li>
+                                        <li><a href="#">SME Loan</a></li>
                                         <li><a href="<?php echo base_url();?>auto-loan.html">Auto Loan</a></li>
                                         <li><a href="<?php echo base_url();?>home-loan.html">Home Loan</a></li>
                                         <li><a href="<?php echo base_url();?>personal-loan.html">Personal Loan</a></li>
@@ -112,7 +114,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2 col-xs-6">
+                                <div class="col-sm-2">
                                     <p class="footer-main-menu-title">Investment</p>
                                     <ul>
                                         <li><a href="<?php echo base_url();?>monthly-benefit.html">Monthly Benefit</a></li>
@@ -123,7 +125,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-2 col-xs-6">
+                                <div class="col-sm-2">
                                     <p class="footer-main-menu-title">Accounts</p>
                                     <ul>
                                         <li><a href="<?php echo base_url();?>snd.html">SND Account</a></li>
@@ -132,10 +134,10 @@
                                     </ul>
                                 </div>
 
-                                <div class="col-sm-4 col-xs-12">
-                                    <p class="footer-main-menu-title xs-text-center" style="margin-left: 80px;">Others</p>
+                                <div class="col-sm-4">
+                                    <p class="footer-main-menu-title" style="margin-left: 80px;">Others</p>
                                     <div class="row">
-                                        <div class="col-sm-6 col-xs-6">
+                                        <div class="col-sm-6 col-xs-12">
                                             <ul>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Maps</a></li>
                                                 <li><a href="<?php echo base_url();?>blog/" target="_blank">Blogs</a></li>
@@ -144,7 +146,7 @@
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-sm-6 col-xs-6">
+                                        <div class="col-sm-6 col-xs-12">
                                             <ul>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forex</a></li>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Insurance</a></li>
@@ -403,11 +405,13 @@ if($result){
 <script src="<?php echo base_url();?>resource/front_end/js/function_script.js"></script>
 
 <script src="<?php echo base_url();?>resource/front_end/js/particles.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
 <!-- plus a jQuery UI theme, here I use "flick" -->
 <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">-->
 
 <script>
-
     function overlay(s, l) {
         $('.overlay').remove();
         if( s )
@@ -710,7 +714,7 @@ jQuery(document).keypress(function(e) {
 
     /* ---- stats.js config ---- */
 
-    /*var count_particles, stats, update;
+    var count_particles, stats, update;
     stats = new Stats;
     stats.setMode(0);
     stats.domElement.style.position = 'absolute';
@@ -726,7 +730,7 @@ jQuery(document).keypress(function(e) {
       }
       requestAnimationFrame(update);
     };
-    requestAnimationFrame(update);*/
+    requestAnimationFrame(update);
 </script>
 </body>
 </html>
