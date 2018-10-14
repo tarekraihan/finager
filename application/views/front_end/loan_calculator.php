@@ -122,9 +122,12 @@
                                                 </div>
                                             </div>
                                             <div id="loanamountslider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 16.5%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 16.5%;"></span></div>
+                                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                                            </div>
+
                                             <div id="loanamountsteps" class="steps"><span class="tick" style="left: 0%;">|<br><span class="marker">0</span></span><span class="tick hidden-xs" style="left: 12.5%;">|<br><span class="marker">25L</span></span><span class="tick" style="left: 25%;">|<br><span class="marker">50L</span></span><span class="tick hidden-xs" style="left: 37.5%;">|<br><span class="marker">75L</span></span><span class="tick" style="left: 50%;">|<br><span class="marker">100L</span></span><span class="tick hidden-xs" style="left: 62.5%;">|<br><span class="marker">125L</span></span><span class="tick" style="left: 75%;">|<br><span class="marker">150L</span></span><span class="tick hidden-xs" style="left: 87.5%;">|<br><span class="marker">175L</span></span><span class="tick" style="left: 100%;">|<br><span class="marker">200L</span></span>
                                             </div>
+
                                             <div class="sep form-group lint">
                                                 <label class="col-md-4 control-label" for="loaninterest">Interest Rate</label>
                                                 <div class="col-md-6">
@@ -134,9 +137,13 @@
                                                 </div>
                                             </div>
                                             <div id="loaninterestslider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 36.6667%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 36.6667%;"></span></div>
-                                            <div id="loanintereststeps" class="steps"><span class="tick" style="left: 0%;">|<br><span class="marker">5</span></span><span class="tick" style="left: 16.67%;">|<br><span class="marker">7.5</span></span><span class="tick" style="left: 33.34%;">|<br><span class="marker">10</span></span><span class="tick" style="left: 50%;">|<br><span class="marker">12.5</span></span><span class="tick" style="left: 66.67%;">|<br><span class="marker">15</span></span><span class="tick" style="left: 83.34%;">|<br><span class="marker">17.5</span></span><span class="tick" style="left: 100%;">|<br><span class="marker">20</span></span>
+                                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
                                             </div>
+
+                                            <div id="loanintereststeps" class="steps">
+                                                <span class="tick" style="left: 0%;">|<br><span class="marker">5</span></span><span class="tick" style="left: 16.67%;">|<br><span class="marker">7.5</span></span><span class="tick" style="left: 33.34%;">|<br><span class="marker">10</span></span><span class="tick" style="left: 50%;">|<br><span class="marker">12.5</span></span><span class="tick" style="left: 66.67%;">|<br><span class="marker">15</span></span><span class="tick" style="left: 83.34%;">|<br><span class="marker">17.5</span></span><span class="tick" style="left: 100%;">|<br><span class="marker">20</span></span>
+                                            </div>
+
                                             <div class="sep form-group form-inline lterm">
                                                 <label class="col-md-4 control-label" for="loanterm">Loan Tenure</label>
                                                 <div class="col-md-6">
@@ -154,7 +161,9 @@
                                                 </div>
                                             </div>
                                             <div id="loantermslider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 66.6667%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 66.6667%;"></span></div>
+                                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                                            </div>
+                                            
                                             <div id="loantermsteps" class="steps"><span class="tick" style="left: 0%;">|<br><span class="marker">0</span></span><span class="tick" style="left: 16.67%;">|<br><span class="marker">5</span></span><span class="tick" style="left: 33.33%;">|<br><span class="marker">10</span></span><span class="tick" style="left: 50%;">|<br><span class="marker">15</span></span><span class="tick" style="left: 66.67%;">|<br><span class="marker">20</span></span><span class="tick" style="left: 83.33%;">|<br><span class="marker">25</span></span><span class="tick" style="left: 100%;">|<br><span class="marker">30</span></span>
                                             </div>
                                         </div>
