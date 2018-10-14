@@ -64,7 +64,15 @@
         border: 1px solid #cccccc;
         padding: 15px 15px 15px 15px
     }
-    
+    .datepicker.dropdown-menu{
+        min-width: 285px !important;
+    }
+    .datepicker table {
+        width: 100% !important;
+    }
+    .prev, .next {
+        top: 2px !important;
+    }
     @media (max-width:780px) {
         #pl-7 .panel-grid-cell {
             float: none;
@@ -110,6 +118,158 @@
                                     <li id="home-loan" class="active"><a href="https://emicalculator.net/#">Home Loan</a></li>
                                 </ul>
                                 <div class="cleardiv"></div>
+
+                                <div class="htmltextarea section hidden">
+                                    <div class="innerMdlWrapper">
+                                        <!-- Middle Inner START-->
+                                        <div class="innerMdlInner">
+                                            <div class="calcWrapper">
+                                                <div class="clear"></div>
+                                                <!--Calculator Banner END-->
+                                                <div class="selectCalcWrapper" style="display:none;">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="savingCalculator" value="" title="Year" name="selCalc">
+                                                        <label for="savingCalculator">Home Loan Calculator</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="depositCalculator" value="" title="Year" name="selCalc"  checked="checked">
+                                                        <label for="depositCalculator">Personal Loan Calculator</label>
+                                                    </div>
+                                                </div>
+                                                <div class="savingsContainer emiContainer">
+                                                    <div class="leftCont">
+                                                        <!--Amount Already Saved START-->
+                                                        <div class="slideWrapper" id="alreadySaved">
+                                                            <div class="inputWrapper"> <span class="rupee"></span>
+                                                                <div class="inputField">
+                                                                    <div class="inpLft"></div>
+                                                                    <div class="inpMdl">
+                                                                        <input type="text" name="" value="0" id="finalAssest" class="input_LoanAmt"/>
+                                                                    </div>
+                                                                    <div class="inpRt"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!--Calculator Section START-->
+                                                            <div class="calcContainer">
+                                                                <div class="calcSection calborder">
+                                                                    <div class="dragBox">
+                                                                        <div class="drag"> <span></span>
+                                                                            <div class="sliderHover"></div>
+                                                                            <div class="draggable ui-widget-content drag3"> </div>
+                                                                       </div>
+                                                                        <div class="clear"></div>
+                                                                        <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
+                                                                        <div class="slideImg" id="finacialAssest">
+                                                                            <ul></ul>
+                                                                        </div>
+                                                                        <div class="prev"></div>
+                                                                        <div class="next active"></div>
+                                                                    </div>
+                                                                    <div class="hideVal">50000</div>
+                                                                </div>
+                                                            </div>
+                                                            <!--Calculator Section END-->
+                                                        </div>
+                                                        <!--Amount Already Saved END-->
+                                                        <div class="slideWrapper hidden" id="avgSave">
+                                                            <div class="inputWrapper">
+                                                                <div class="inputField">
+                                                                    <div class="inpLft"></div>
+                                                                    <div class="inpMdl">
+                                                                        <input type="text" name="" value="1" id="finalCustAge" maxlength="3" class="input_LoanPeriod"/>
+                                                                    </div>
+                                                                    <div class="inpRt"></div>
+                                                                </div>
+                                                                <div class="inpRadio">
+                                                                    <div id="tenureType">
+                                                                        <label>Year</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!--Calculator Section START-->
+                                                            <div class="calcContainer yearWrap" style="display:none">
+                                                                <div class="calcSection calborder">
+                                                                    <div class="dragBox">
+                                                                        <div class="drag"> <span></span>
+                                                                            <div class="draggable ui-widget-content drag3"></div>
+                                                                        </div>
+                                                                        <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
+                                                                        <div class="slideImg" id="custAge">
+                                                                            <ul>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="prev"></div>
+                                                                        <div class="next active"></div>
+                                                                    </div>
+                                                                    <div class="hideVal">5</div>
+                                                                </div>
+                                                            </div>
+                                                            <!--Calculator Section END-->
+                                                            <!--Calculator Section START-->
+                                                            <div class="calcContainer monthWrap">
+                                                                <div class="calcSection calborder">
+                                                                    <div class="dragBox">
+                                                                        <div class="drag2"> <span></span>
+                                                                            <div class="draggable draggable2 ui-widget-content drag3"></div>
+                                                                        </div>
+                                                                        <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
+                                                                        <div class="slideImg" id="monthExp">
+                                                                            <ul>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <!--<div class="prev"></div><div class="next active"></div>-->
+                                                                    </div>
+                                                                    <div class="hideVal">5</div>
+                                                                </div>
+                                                            </div>
+                                                            <!--Calculator Section END-->
+                                                        </div>
+                                                        <div class="slideWrapper" id="interest">
+                                                            <div class="inputWrapper">
+                                                                <div class="inputField">
+                                                                    <div class="inpLft"></div>
+                                                                    <div class="inpMdl">
+                                                                        <input type="text" name="" value="8" id="finalLiability" class="input_AIR"/>
+                                                                    </div>
+                                                                    <div class="inpRt"></div>
+                                                                </div>
+                                                                <span class="perc">Year</span>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <!--Calculator Section START-->
+                                                            <div class="calcContainer">
+                                                                <div class="calcSection">
+                                                                    <div class="dragBox">
+                                                                        <div class="drag"> <span></span>
+                                                                            <div class="draggable ui-widget-content drag3"></div>
+                                                                        </div>
+                                                                        <div class="clear"></div>
+                                                                        <!--<div class="highLight"><input type="text" value="0" id="dragAssest"/></div>-->
+                                                                        <div class="slideImg" id="liability">
+                                                                            <ul>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="prev"></div>
+                                                                        <div class="next active"></div>
+                                                                    </div>
+                                                                    <div class="hideVal">1</div>
+                                                                </div>
+                                                            </div>
+                                                            <!--Calculator Section END-->
+                                                        </div>
+                                                        <!--<a href="javascript:;" class="submit">Submit</a>-->
+                                                        <input type="hidden" id="input_Payment" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                <div class="clearfix"></div>
+
                                 <div id="emicalculatorinnerformwrapper">
                                     <form id="emicalculatorform" class="">
                                         <div class="form-horizontal" id="emicalculatorinnerform">
@@ -121,9 +281,10 @@
                                                         <span class="input-group-addon">   ৳</span></div>
                                                 </div>
                                             </div>
+
                                             <div id="loanamountslider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                                                 <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
-                                            </div>
+                                            </div> 
 
                                             <div id="loanamountsteps" class="steps"><span class="tick" style="left: 0%;">|<br><span class="marker">0</span></span><span class="tick hidden-xs" style="left: 12.5%;">|<br><span class="marker">25L</span></span><span class="tick" style="left: 25%;">|<br><span class="marker">50L</span></span><span class="tick hidden-xs" style="left: 37.5%;">|<br><span class="marker">75L</span></span><span class="tick" style="left: 50%;">|<br><span class="marker">100L</span></span><span class="tick hidden-xs" style="left: 62.5%;">|<br><span class="marker">125L</span></span><span class="tick" style="left: 75%;">|<br><span class="marker">150L</span></span><span class="tick hidden-xs" style="left: 87.5%;">|<br><span class="marker">175L</span></span><span class="tick" style="left: 100%;">|<br><span class="marker">200L</span></span>
                                             </div>
@@ -163,7 +324,7 @@
                                             <div id="loantermslider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                                                 <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
                                             </div>
-                                            
+
                                             <div id="loantermsteps" class="steps"><span class="tick" style="left: 0%;">|<br><span class="marker">0</span></span><span class="tick" style="left: 16.67%;">|<br><span class="marker">5</span></span><span class="tick" style="left: 33.33%;">|<br><span class="marker">10</span></span><span class="tick" style="left: 50%;">|<br><span class="marker">15</span></span><span class="tick" style="left: 66.67%;">|<br><span class="marker">20</span></span><span class="tick" style="left: 83.33%;">|<br><span class="marker">25</span></span><span class="tick" style="left: 100%;">|<br><span class="marker">30</span></span>
                                             </div>
                                         </div>
@@ -205,7 +366,7 @@
                                     <div class="col-sm-6 col-md-4">
                                         <div class="input-group">
                                             <input class="form-control" id="startmonthyear" name="startmonthyear" value="" type="text" readonly="readonly">
-                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span></div>
+                                            <span class="input-group-addon" id="startmonthyear_addon"><i class="fa fa-calendar"></i></span></div>
                                     </div>
                                 </div>
                             </form>
@@ -249,10 +410,16 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/slider.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/commoncalculator.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/emicalculator.js"></script>
+
+<script src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
 <script>
     jQuery(function($){
         $('#calculate_btn').click(function(){
             $('#calculate_result, #emipaymentdetails').removeClass('hidden');
+        });
+
+        $("#startmonthyear_addon").click(function(){
+            $("#startmonthyear").focus(); 
         });
     });
 </script>
