@@ -576,4 +576,62 @@ class Backdoor extends CI_Controller {
         redirect(base_url().'backdoor', 'refresh');
     }
 
+
+
+    public function upload_currency_rate(){
+        $first_name = $this->input->post('txtFirstName');
+        $last_name = $this->input->post('txtLastName');
+        $mobile = $this->input->post('txtPhoneNo');
+        $password = $this->input->post('txtPassword');
+
+        $this->form_validation->set_rules('txtFirstName','First Name','trim|required');
+        $this->form_validation->set_rules('txtLastName','Last Name','trim|required');
+        $this->form_validation->set_rules('txtPhoneNo','Mobile No','trim|required|min_length[10]|max_length[14]');
+        $this->form_validation->set_rules('txtPassword','Password','trim|required|min_length[6]|max_length[15]');
+        $this->form_validation->set_rules('txtConfirmPassword','Confirm Password','matches[txtPassword]');
+
+        if ($this->form_validation->run() == FALSE) {
+            $html  =    '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+            $html .=    validation_errors();
+            $html .=    '</div>';
+            echo $html;
+        } else {
+            $this->Common_model->data = array(
+                'first_name'=> htmlentities($first_name),
+                'last_name'=> htmlentities($last_name),
+                'phone_no'=> htmlentities($mobile),
+                'password'=> md5( $password ),
+                'actual_password'=> htmlentities($password ),
+                'admin_first_login' => 0,
+                'modified_by' => $this->session->userdata('admin_user_id'),
+                'modified' => date('Y-m-d h:i:s')
+            );
+
+
+            $this->Common_model->table_name = "tbl_admin_user";
+            $this->Common_model->where = array('id' => $this->session->userdata('admin_user_id'));
+            $result = $this->Common_model->update();
+
+
+            $data['admin_first_login'] = 0;
+            $data['first_name'] = $first_name;
+            $data['last_name'] = $last_name;
+            $data['password'] = md5($password);
+            $this->session->set_userdata($data);
+
+
+            if($result){
+                $html  =    '<div class="alert alert-success" role="alert"><strong> Thank You!</strong> You successfully update your information</a> </div>';
+                echo $html;
+            }else{
+                $html  =    '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>';
+                $html .=    'Something going wrong. Please try again!';
+                $html .=    '</div>';
+                echo $html;
+            }
+
+        }
+    }
+
+
 }
