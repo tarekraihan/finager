@@ -119,7 +119,7 @@
                                 </ul>
                                 <div class="cleardiv"></div>
 
-                                <div class="htmltextarea section hidden">
+                                <div class="htmltextarea section">
                                     <div class="innerMdlWrapper">
                                         <!-- Middle Inner START-->
                                         <div class="innerMdlInner">
@@ -172,7 +172,7 @@
                                                             <!--Calculator Section END-->
                                                         </div>
                                                         <!--Amount Already Saved END-->
-                                                        <div class="slideWrapper hidden" id="avgSave">
+                                                        <div class="slideWrapper" id="avgSave">
                                                             <div class="inputWrapper">
                                                                 <div class="inputField">
                                                                     <div class="inpLft"></div>
@@ -219,7 +219,7 @@
                                                                             <ul>
                                                                             </ul>
                                                                         </div>
-                                                                        <!--<div class="prev"></div><div class="next active"></div>-->
+                                                                        <div class="prev"></div><div class="next active"></div>
                                                                     </div>
                                                                     <div class="hideVal">5</div>
                                                                 </div>
@@ -235,7 +235,7 @@
                                                                     </div>
                                                                     <div class="inpRt"></div>
                                                                 </div>
-                                                                <span class="perc">Year</span>
+                                                                <span class="perc">%</span>
                                                             </div>
                                                             <div class="clear"></div>
                                                             <!--Calculator Section START-->
@@ -271,7 +271,7 @@
                                 <div class="clearfix"></div>
 
                                 <div id="emicalculatorinnerformwrapper">
-                                    <form id="emicalculatorform" class="">
+                                    <form id="emicalculatorform" class="hidden">
                                         <div class="form-horizontal" id="emicalculatorinnerform">
                                             <div class="form-group lamount">
                                                 <label class="col-md-4 control-label" for="loanamount"><strong>Home Loan Amount</strong></label>
@@ -333,6 +333,7 @@
                                         <input id="loandata" name="loandata" value="" type="hidden">
                                         <input id="calcversion" name="calcversion" value="4.0" type="hidden">
                                     </form>
+
                                     <div class="text-center" style="margin: 15px 0;">
                                         <button class="btn btn-success" id="calculate_btn">Calculate</button>
                                     </div>
@@ -411,15 +412,43 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/commoncalculator.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/emicalculator.js"></script>
 
-<script src="<?php echo base_url();?>resource/front_end/js/personal-loan-calculator.js"></script>
+<script src="<?php echo base_url();?>resource/front_end/js/loan-calculator.js"></script>
 <script>
     jQuery(function($){
         $('#calculate_btn').click(function(){
             $('#calculate_result, #emipaymentdetails').removeClass('hidden');
+            calculation_change();
         });
 
         $("#startmonthyear_addon").click(function(){
             $("#startmonthyear").focus(); 
+        });
+
+        function calculation_change(){
+            var loan_amount = $('#finalAssest').val();
+            var interest_rate = $('#finalLiability').val();
+            var tenure_year = $('#finalCustAge').val();
+
+
+            $('#loanamount').val(loan_amount);
+            $('#loaninterest').val(interest_rate);
+            $('#loanterm').val(tenure_year);
+
+            $('#loanamount').trigger('change');
+            $('#loaninterest').trigger('change');
+            $('#loanterm').trigger('change');
+        }
+
+        $(".leftCont").find(".next,.prev").click(function(){
+            setTimeout(function(){ 
+                calculation_change();
+            }, 1000);
+        });
+
+        $(".draggable").on("dragstop",function(ev,ui){
+            setTimeout(function(){ //Updated by Tarek on 14-05-2017
+                calculation_change();
+            }, 1000);
         });
     });
 </script>

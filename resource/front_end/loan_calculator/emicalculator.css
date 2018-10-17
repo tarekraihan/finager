@@ -632,6 +632,39 @@ span.date {
     }
 }
 
+/*Emi calculator START*/
+.savingsContainer .leftCont, .slideWrapper, .calcContainer, .calborder, .calcSection .dragBox, .calcSection .dragBox .slideImg {
+    width: 100%;
+}
+.calcSection .dragBox .drag {
+    width: 640px;
+}
+.dragBox .prev, .dragBox .next {
+    top: -4px !important;
+}
+.calcSection .dragBox .drag span, .calcSection .dragBox .drag2 span {
+    background: url(http://localhost/git/finager/resource/front_end/cal_images/slider-rt-bg.png);
+    right: 210px;
+}
+.calcSection .dragBox .next {
+    right: 180px;
+}
+.calcSection .dragBox .slideImg {
+    width: 633px;
+}
+.calcSection {
+    width: 100% !important;
+}
+.monthWrap .calcSection .dragBox {
+    width: 100%;
+}
+.calcSection .dragBox .drag2 {
+    width: 640px;
+}
+.monthWrap .calcSection .dragBox .slideImg {
+    width: 640px;
+}
+/*Emi calculator END*/
 @media print {
     body {
         visibility: hidden
