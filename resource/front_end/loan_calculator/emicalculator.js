@@ -236,13 +236,13 @@ function tc() {
             data: s,
             yAxis: 0,
             legendIndex: 2,
-            color: "#303f9f"
+            color: "#BFBFBF"
         }, {
             name: "Principal",
             data: e,
             yAxis: 0,
             legendIndex: 1,
-            color: "#45cafc"
+            color: "#2B4D6D"
         }, {
             name: "Balance",
             data: n,
@@ -312,13 +312,13 @@ function sc() {
             data: [{
                 name: "Principal Loan Amount",
                 y: d,
-                color: "#45cafc"
+                color: "#2B4D6D"
             }, {
                 name: "Total Interest",
                 y: n * k - d,
                 sliced: !0,
                 selected: !0,
-                color: "#303f9f"
+                color: "#D5872B"
             }]
         }]
     })

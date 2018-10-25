@@ -140,8 +140,9 @@
                                                     <div class="leftCont">
                                                         <!--Amount Already Saved START-->
                                                         <div class="slideWrapper" id="alreadySaved">
-                                                            <div class="inputWrapper"> <span class="rupee"></span>
+                                                            <div class="inputWrapper"><span class="rupee">Loan Amount (৳)</span>
                                                                 <div class="inputField">
+
                                                                     <div class="inpLft"></div>
                                                                     <div class="inpMdl">
                                                                         <input type="text" name="" value="0" id="finalAssest" class="input_LoanAmt"/>
@@ -174,6 +175,11 @@
                                                         <!--Amount Already Saved END-->
                                                         <div class="slideWrapper" id="avgSave">
                                                             <div class="inputWrapper">
+                                                                <div class="inpRadio">
+                                                                    <div id="tenureType">
+                                                                        <label>Loan Period (Year)</label>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="inputField">
                                                                     <div class="inpLft"></div>
                                                                     <div class="inpMdl">
@@ -181,11 +187,7 @@
                                                                     </div>
                                                                     <div class="inpRt"></div>
                                                                 </div>
-                                                                <div class="inpRadio">
-                                                                    <div id="tenureType">
-                                                                        <label>Year</label>
-                                                                    </div>
-                                                                </div>
+                                                                
                                                             </div>
                                                             <div class="clear"></div>
                                                             <!--Calculator Section START-->
@@ -228,6 +230,7 @@
                                                         </div>
                                                         <div class="slideWrapper" id="interest">
                                                             <div class="inputWrapper">
+                                                                <span class="perc">Interest Rate (%)</span>
                                                                 <div class="inputField">
                                                                     <div class="inpLft"></div>
                                                                     <div class="inpMdl">
@@ -235,7 +238,7 @@
                                                                     </div>
                                                                     <div class="inpRt"></div>
                                                                 </div>
-                                                                <span class="perc">%</span>
+                                                                
                                                             </div>
                                                             <div class="clear"></div>
                                                             <!--Calculator Section START-->
@@ -334,9 +337,9 @@
                                         <input id="calcversion" name="calcversion" value="4.0" type="hidden">
                                     </form>
 
-                                    <div class="text-center" style="margin: 15px 0;">
+                                    <!-- <div class="text-center" style="margin: 15px 0;">
                                         <button class="btn btn-success" id="calculate_btn">Calculate</button>
-                                    </div>
+                                    </div> -->
                                     <div id="calculate_result" class="row gutter-left gutter-right hidden">
                                         <div id="emipaymentsummary" class="col-sm-5 col-md-6 no-gutter-left no-gutter-right">
                                             <div id="emiamount">
@@ -415,10 +418,14 @@
 <script src="<?php echo base_url();?>resource/front_end/js/loan-calculator.js"></script>
 <script>
     jQuery(function($){
-        $('#calculate_btn').click(function(){
+        /*$('#calculate_btn').click(function(){
+            
+        });*/
+
+        setTimeout(function(){
             $('#calculate_result, #emipaymentdetails').removeClass('hidden');
             calculation_change();
-        });
+        },1000);
 
         $("#startmonthyear_addon").click(function(){
             $("#startmonthyear").focus(); 

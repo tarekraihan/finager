@@ -16,7 +16,7 @@
 
 .ui-widget-content {
     border: 0 none!important;
-    background: #ccc!important
+    background: #ccc;
 }
 
 .ui-state-default,
@@ -106,7 +106,8 @@ ul.loanproduct-nav li a:hover {
 
 ul.loanproduct-nav li.active a {
     background: #eee;
-    border-bottom-color: transparent
+    border-bottom-color: transparent;
+    visibility: hidden !important;
 }
 
 #home-loan a {
@@ -296,7 +297,7 @@ ul.loanproduct-nav li.active a {
 }
 
 #emipaymenttable table th {
-    background: #dedede;
+    background: #bfbfbf;
     text-align: center;
     padding: 5px;
     font-size: 11px
@@ -341,17 +342,17 @@ ul.loanproduct-nav li.active a {
 }
 
 #principalheader {
-    background: none repeat scroll 0 0 #303f9f!important;
+    background: none repeat scroll 0 0 #2B4D6D!important;
     color: #fff
 }
 
 #interestheader {
-    background: none repeat scroll 0 0 #45cafc!important;
+    background: none repeat scroll 0 0 #D5872B!important;
     color: #fff
 }
 
 #balanceheader {
-    background: none repeat scroll 0 0 #296e88!important;
+    background: none repeat scroll 0 0 #404140!important;
     color: #fff
 }
 
@@ -401,7 +402,7 @@ td.paymentyear {
 
 td.currency {
     border-left: 0 none!important;
-    text-align: right!important
+    /* text-align: right!important */
 }
 
 td.monthyearwrapper {
@@ -644,10 +645,10 @@ span.date {
 }
 .calcSection .dragBox .drag span, .calcSection .dragBox .drag2 span {
     background: url(http://localhost/git/finager/resource/front_end/cal_images/slider-rt-bg.png);
-    right: 210px;
+    right: 120px;
 }
 .calcSection .dragBox .next {
-    right: 180px;
+    right: 90px;
 }
 .calcSection .dragBox .slideImg {
     width: 633px;
@@ -663,6 +664,43 @@ span.date {
 }
 .monthWrap .calcSection .dragBox .slideImg {
     width: 640px;
+}
+#alreadySaved .inputWrapper{
+    width: 240px;
+}
+.inputWrapper .rupee {
+    width: 120px;
+    margin-top: 2px;
+    margin-left: 12px;
+}
+div#tenureType>label {
+    margin-right: 10px;
+    font-weight: 500;
+}
+div#interest .perc {
+    font-size: 16px;
+    margin-right: 10px;
+}
+#interest .inputWrapper {
+    width: 211px;
+}
+#avgSave .inputWrapper {
+    margin: -4px 0 0 4px;
+}
+.calcSection .dragBox {
+    padding-left: 90px;
+}
+.calcSection .dragBox .prev {
+    left: 72px;
+}
+#alreadySaved .inputWrapper {
+    margin: 0 0 5px 103px;
+}
+#avgSave .inputWrapper {
+    margin: -4px 0 0 106px;
+}
+#interest .inputWrapper {
+    margin: -3px 0 0 110px;
 }
 /*Emi calculator END*/
 @media print {

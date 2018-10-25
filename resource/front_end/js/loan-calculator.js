@@ -676,7 +676,7 @@ $(function(event) {
         {
             $('.yearWrap').show();
             $('.monthWrap').hide();
-            $('#tenureType').find('label').text('Year');
+            //$('#tenureType').find('label').text('Year');
             $('#finalAssest').val(0);
             $('#finalLiability').val(1);
             $('#finalCustAge').val(1);
@@ -685,10 +685,10 @@ $(function(event) {
         {
             $('.yearWrap').hide();
             $('.monthWrap').show();
-            $('#tenureType').find('label').text('Month');
-            $('#finalAssest').val(1000000);
-            $('#finalLiability').val(5);
-            $('#finalCustAge').val(1);
+            //$('#tenureType').find('label').text('Year');
+            $('#finalAssest').val(2000000);
+            $('#finalLiability').val(10);
+            $('#finalCustAge').val(12);
         }
         pmtCalc();
         /*Reset All the values*/
@@ -731,7 +731,7 @@ function detectDragPosition(_this)
         return false;
     }
     lftPostion = parseInt(_this.css('left'));
-    lftPosArray =[0,2,3,3,175,400];
+    lftPosArray =[0,2,3,50,610,640];
     prevActionArray =['prevFast','prevSlow','middleSection','nextSlow','nextFast'];
     for(var i = 0; i < lftPosArray.length ; i++)
     {
@@ -1042,8 +1042,9 @@ function dragLiAdjustFunction(){
 
 setTimeout(function(){
     $('#alreadySaved').find('.ui-draggable').css('left',70);
-    $('#interest').find('.ui-draggable').css('left',140);
-    $('#finacialAssest').children('ul').css('margin-left',-490);
+    $('#interest').find('.ui-draggable').css('left',315);
+    $('#avgSave').find('.ui-draggable').css('left',385);
+    $('#finacialAssest').children('ul').css('margin-left',-1195);
     $('#alreadySaved').find('.prev').addClass('active');
 },500);
 // Calculator Functionality END
