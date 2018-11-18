@@ -23,17 +23,48 @@ function gc(a) {
     }), jQuery(this))
 }
 
+var selectedDate;
+var getChangedDate;
 function ec() {
     jQuery("#startmonthyear").attr("readonly", !0), jQuery("#startmonthyear").datepicker({
-        format: "M yyyy",
-        minViewMode: 1,
+        format: "dd/mm/yyyy",
+        //minViewMode: 1,
         autoclose: !0
     }).on("changeDate", function() {
-        jQuery(this).datepicker("getDate").toDateString() != db.c.toDateString() && (db.c = jQuery(this).datepicker("getDate"), X())
+        selectedDate = jQuery(this).datepicker("getDate");
+        getChangedDate = selectedDate;
+        getSelectedDate();
+        selectedDate.toDateString() != db.c.toDateString() && (db.c = jQuery(this).datepicker("getDate"), X());
     }).on("hide", function() {
         jQuery("#startmonthyear").blur()
-    }), db.c = new Date, jQuery("#startmonthyear").datepicker("setDate", db.c)
+    }), db.c = new Date, jQuery("#startmonthyear").datepicker("setDate", db.c);
 }
+
+
+/*custom Date option START*/
+
+//var res = selected_date.slice(9, 11);
+//var dateResult;
+
+var finalResult;
+var dateResult;
+function getSelectedDate(){
+    setTimeout(function(){
+        var selected_date = String(db.c);
+        dateResult = selected_date.slice(8, 11);
+        finalResult = dateResult;
+    },1000);
+}
+getSelectedDate();
+
+
+/*
+jQuery("#startmonthyear").on("changeDate", function() {
+    var aasd = getSelectedDate();
+    console.log('org'+ aasd);
+});*/
+
+/*custom Date option END*/
 
 function fc() {
     jQuery("#loanamount").unbind("change"), jQuery("#loaninterest").unbind("change"), jQuery("#loanterm").unbind("change"), jQuery("#emicalculatorform input[name='loantenure']").unbind("change"), jQuery("#emicalculatorform input[name='emischeme']").unbind("change")
@@ -254,19 +285,22 @@ function tc() {
     })
 }
 
-function uc() {
-    q = '<table><tr><th class="col-xs-2 col-md-1" id="yearheader">Year</th><th class="col-sm-2 hidden-xs" id="principalheader">Principal<br/>(A)</th><th class="col-xs-3 col-sm-2 visible-xs" id="principalheader">Principal</th><th class="col-sm-2 hidden-xs" id="interestheader">Interest<br/>(B)</th><th class="col-xs-3 col-sm-2 visible-xs" id="interestheader">Interest</th><th class="col-sm-3 hidden-xs" id="totalheader">Total Payment<br/>(A + B)</th><th class="col-xs-4 col-sm-3" id="balanceheader">Balance</th><th class="col-md-1 hidden-xs hidden-sm" id="paidtodateheader">Loan Paid To Date</th></tr>';
-    for (var a = 0, e = 0, s = v.length; s > e; e++) {
-        var n = v[e];
-        q += '<tr class="yearlypaymentdetails"><td id="year' + n + '" class="col-xs-2 col-md-1 paymentyear toggle">' + n + '</td><td class="col-xs-3 col-sm-2 currency">৳ ' + Globalize.format(w[n], "n", "en-IN") + '</td><td class="col-xs-3 col-sm-2 currency">৳ ' + Globalize.format(x[n], "n", "en-IN") + '</td><td class="col-sm-3 hidden-xs currency">৳ ' + Globalize.format(w[n] + x[n], "n", "en-IN") + '</td><td class="col-xs-4 col-sm-3 currency">৳ ' + Globalize.format(Zb[n], "n", "en-IN") + '</td><td class="col-md-1 hidden-xs hidden-sm paidtodateyear">' + Globalize.format($b[n], "n2", "en-IN") + "%</td></tr>", q += '<tr id="monthyear' + n + '" class="monthlypaymentdetails"><td class="row monthyearwrapper" colspan="6"><div class="monthlypaymentcontainer"><table>';
-        for (var t = y.length; t > a && y[a].getFullYear() == n;) q += '<tr><td class="col-xs-2 col-md-1 paymentmonthyear">' + cc[y[a].getMonth()] + '</td><td class="col-xs-3 col-sm-2 currency">৳ ' + Globalize.format(z[a], "n", "en-IN") + '</td><td class="col-xs-3 col-sm-2 currency">৳ ' + Globalize.format(U[a], "n", "en-IN") + '</td><td class="col-sm-3 hidden-xs currency">৳ ' + Globalize.format(z[a] + U[a], "n", "en-IN") + '</td><td class="col-xs-4 col-sm-3 currency">৳ ' + Globalize.format(V[a], "n", "en-IN") + '</td><td class="col-md-1 hidden-xs hidden-sm paidtodatemonthyear">' + Globalize.format(bc[a++], "n2", "en-IN") + "%</td></tr>";
-        q += "</table></div></td></tr>"
+
+    function uc() {
+        setTimeout(function(){
+            q = '<table><tr><th class="col-xs-2 col-md-1" id="yearheader">Year</th><th class="col-sm-2 hidden-xs" id="principalheader">Principal<br/>(A)</th><th class="col-xs-3 col-sm-2 visible-xs" id="principalheader">Principal</th><th class="col-sm-2 hidden-xs" id="interestheader">Interest<br/>(B)</th><th class="col-xs-3 col-sm-2 visible-xs" id="interestheader">Interest</th><th class="col-sm-3 hidden-xs" id="totalheader">Total Payment<br/>(A + B)</th><th class="col-xs-4 col-sm-3" id="balanceheader">Balance</th><th class="col-md-1 hidden-xs hidden-sm" id="paidtodateheader">Loan Paid To Date</th></tr>';
+            for (var a = 0, e = 0, s = v.length; s > e; e++) {
+                var n = v[e];
+                q += '<tr class="yearlypaymentdetails"><td id="year' + n + '" class="col-xs-2 col-md-1 paymentyear toggle">' + n + '</td><td class="col-xs-3 col-sm-2 currency">৳ ' + Globalize.format(w[n], "n", "en-IN") + '</td><td class="col-xs-3 col-sm-2 currency">৳ ' + Globalize.format(x[n], "n", "en-IN") + '</td><td class="col-sm-3 hidden-xs currency">৳ ' + Globalize.format(w[n] + x[n], "n", "en-IN") + '</td><td class="col-xs-4 col-sm-3 currency">৳ ' + Globalize.format(Zb[n], "n", "en-IN") + '</td><td class="col-md-1 hidden-xs hidden-sm paidtodateyear">' + Globalize.format($b[n], "n2", "en-IN") + "%</td></tr>", q += '<tr id="monthyear' + n + '" class="monthlypaymentdetails"><td class="row monthyearwrapper" colspan="6"><div class="monthlypaymentcontainer"><table>';
+                for (var t = y.length; t > a && y[a].getFullYear() == n;) q += '<tr><td class="col-xs-2 col-md-1 paymentmonthyear">' + finalResult + cc[y[a].getMonth()] + '</td><td class="col-xs-3 col-sm-2 currency">৳ ' + Globalize.format(z[a], "n", "en-IN") + '</td><td class="col-xs-3 col-sm-2 currency">৳ ' + Globalize.format(U[a], "n", "en-IN") + '</td><td class="col-sm-3 hidden-xs currency">৳ ' + Globalize.format(z[a] + U[a], "n", "en-IN") + '</td><td class="col-xs-4 col-sm-3 currency">৳ ' + Globalize.format(V[a], "n", "en-IN") + '</td><td class="col-md-1 hidden-xs hidden-sm paidtodatemonthyear">' + Globalize.format(bc[a++], "n2", "en-IN") + "%</td></tr>";
+                q += "</table></div></td></tr>"
+            }
+            q += "</table>", jQuery("#emipaymenttable").html(q), jQuery("#emipaymenttable tr.monthlypaymentdetails").find("div").hide(), jQuery("#emipaymenttable td.toggle").click(function() {
+                var a = jQuery(this).attr("id");
+                jQuery(this).toggleClass("toggle-open"), jQuery("tr#month" + a).find("div").slideToggle()
+            })
+        },1000);
     }
-    q += "</table>", jQuery("#emipaymenttable").html(q), jQuery("#emipaymenttable tr.monthlypaymentdetails").find("div").hide(), jQuery("#emipaymenttable td.toggle").click(function() {
-        var a = jQuery(this).attr("id");
-        jQuery(this).toggleClass("toggle-open"), jQuery("tr#month" + a).find("div").slideToggle()
-    })
-}
 
 function sc() {
     new Highcharts.Chart({

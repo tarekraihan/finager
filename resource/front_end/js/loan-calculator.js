@@ -539,7 +539,6 @@ $(function(event) {
     })
 
     $( ".draggable" ).mouseout(function(){
-
     });
 
     $( ".draggable" ).mouseup(function(){
@@ -559,6 +558,7 @@ $(function(event) {
         /*  */
         var leftPosCal = parseInt($(this).css('left'))/35;
         var leftPos = Math.ceil(leftPosCal)*35;
+        //alert(leftPos);
 
         var thMar = Math.abs(parseInt($(this).css('left')));
         var ulMar = thMar + 45 + Math.abs(parseInt($(this).parents('.dragBox').find('.slideImg ul').css('margin-left')));
@@ -568,14 +568,14 @@ $(function(event) {
         if( ulMar >= ulWid ){
             if($(this).parents('.calcSection').find('.draggable2').length)
             {
-                $(this).parents('.calcSection').find('.draggable, .highLight ').css('left',277);
+                $(this).parents('.calcSection').find('.draggable, .highLight ').css('left',640);
             }
             else
             {
-                $(this).parents('.calcSection').find('.draggable, .highLight ').css('left',385);
+                $(this).parents('.calcSection').find('.draggable, .highLight ').css('left',640);
             }
         }
-        else if(leftPos < 350){
+        else if(leftPos < 640){
 
             $(this).parents('.calcSection').find('.draggable, .highLight ').css('left',leftPos);
         }
@@ -592,10 +592,40 @@ $(function(event) {
         },200);
         clickEventFlag = false;
         dragEventFlag = false;
+
+        /*
+        var prevX = -1;
+        $('.draggable').draggable({
+            drag: function(e) {
+                //console.log(e.pageX);
+                var init_pos = leftPos;
+                var current_pos = e.pageX;
+
+                if(prevX == -1) {
+                    prevX = e.pageX;    
+                    return false;
+                }
+                // dragged left
+                if(prevX > e.pageX) {
+                    console.log('dragged left');
+                    console.log(current_pos);
+                }
+                else if(prevX < e.pageX) { // dragged right
+                    console.log('dragged right');
+                }
+                prevX = e.pageX;
+            },
+            stop: function(e){
+                var last_val = e.pageX;
+                alert('prev'+last_val);
+                
+            },
+        });
+        */
     })
     $('.next').click(function(){
         var marLft = parseInt( $(this).parents('.calcSection').find('ul').css('margin-left'));
-        var newULWidth = (parseInt($(this).parents('.calcSection').find('ul').css('width')) - 435);
+        var newULWidth = (parseInt($(this).parents('.calcSection').find('ul').css('width')) - 640);
         lftPostion = parseInt($(this).parents('.calcSection').find('.draggable').css('left'));
         _this=$(this).parents('.calcSection').find('.draggable');
         var $this = $(this);
@@ -702,7 +732,6 @@ $(function(event) {
 
         $('.slideWrapper').find('.draggable, .highLight ').css('left',0);
         /*Reset All the values*/
-
     });
 
     $('.selectCalcWrapper .radiobox').eq(1).click();
@@ -844,14 +873,6 @@ function finalCalculation(){
 
     var ageLmt =25;
     ageVal=25;
-    /*if(ageVal <= 50)
-     {
-     ageVal=20;
-     }
-     else
-     {
-     ageVal=12;
-     }*/
     var result1 = (expenseVal * 1 * ageVal);
     var result2 = liabilityVal - assestVal - lifeCoverVal + featureGoalVal;
     var finalResult = parseInt( result1 + result2);
@@ -875,7 +896,7 @@ function finalCalculation(){
 function animaredSlides(prev1Action)
 {
     var marLft = parseInt( _this.parents('.calcSection').find('ul').css('margin-left'));
-    var newULWidth = (parseInt(_this.parents('.calcSection').find('ul').css('width')) - 415);
+    var newULWidth = (parseInt(_this.parents('.calcSection').find('ul').css('width')) - 640);
 
 
     if(prev1Action == 'prevSlow')
@@ -1031,14 +1052,15 @@ function addCommas(nStr)
 
 function dragLiAdjustFunction(){
     var ths = $('.dragLiAdjust').parents('.dragBox').find('.slideImg ul');
-    var a = b = c = 0, v = 35, m = Math.abs(parseInt(ths.css('margin-left')));
+    var a = b = c = 0, v = 35, m = Math.abs(parseInt(ths.css('margin-right')));
     for(var i=0; i<ths.find('li').length; i++){
-        a=v*i, c=a+35, b=a+17;
+        a=v*i, c=a-35, b=a-17;
         if(m>=a && m<=b){ m = a; break; }
         else if(m>b && m<=c){ m = c; break; }
     }
-    ths.css({'margin-left': '-'+m+'px'});
+    ths.css({'margin-right': '-'+m+'px'});
 }
+
 
 setTimeout(function(){
     $('#alreadySaved').find('.ui-draggable').css('left',70);

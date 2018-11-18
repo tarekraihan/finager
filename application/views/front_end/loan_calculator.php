@@ -73,6 +73,7 @@
     .prev, .next {
         top: 2px !important;
     }
+    .print_title{display: none;}
     @media (max-width:780px) {
         #pl-7 .panel-grid-cell {
             float: none;
@@ -98,6 +99,11 @@
             margin-bottom: 30px
         }
     }
+    @media print {
+        .calculator_actions{display: none !important;}
+        #emicalculatorform, .monthlypaymentcontainer, .print_title{display: block !important; }
+        .htmltextarea .innerMdlWrapper, #loanamountslider, #loanamountsteps,#loaninterestslider,#loanintereststeps, #loantermslider, #loantermsteps, .tenure-choice{display: none !important;}
+    }
 </style>
 
 <div class="m-t-40 wrap container" role="document">
@@ -112,10 +118,33 @@
 
                 <div class="calculatorcontainer">
                     <div class="emicalculatorcontainer">
+                        <div class="row">
+                            <div class="col-sm-12 text-right">
+                                <h1 class="print_title" style="text-align: center;"> EMI Calculator </h1>
+                                <ul class="calculator_actions">
+                                    <li>
+                                        <a href="javascript:;" title="Print" class="ecalprint">
+                                            <img src="<?php echo base_url();?>resource/front_end/images/calculator/printer(2).png" alt="" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Email">
+                                            <img src="<?php echo base_url();?>resource/front_end/images/calculator/email.png" alt="" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Info">
+                                            <img src="<?php echo base_url();?>resource/front_end/images/calculator/info.png" alt="" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <div id="loanformcontainer" class="row">
                             <div id="emicalculatordashboard" class="col-sm-12">
                                 <ul class="loanproduct-nav">
-                                    <li id="home-loan" class="active"><a href="https://emicalculator.net/#">Home Loan</a></li>
+                                    <li id="home-loan" class="active"><a href="#">Home Loan</a></li>
                                 </ul>
                                 <div class="cleardiv"></div>
 
@@ -125,6 +154,7 @@
                                         <div class="innerMdlInner">
                                             <div class="calcWrapper">
                                                 <div class="clear"></div>
+
                                                 <!--Calculator Banner END-->
                                                 <div class="selectCalcWrapper" style="display:none;">
                                                     <div class="radiobox">
@@ -397,6 +427,18 @@
                                     </tbody>
                                 </table>
                             </div>
+                            
+                            <!-- Print -->
+                            <!-- <div id="ecalprintandshare">
+                                <p id="ecalprintandsharetext">Want to print OR share a custom link to your EMI calculation (with all your numbers pre-filled)?</p>
+                                <a title="Print this page" class="ecalprint btn btn-primary btn-lg" href="#" role="button"><i class="fa fa-print"></i> Print</a>
+                                <a title="Share this EMI calculation with friends &amp; family" class="ecalshare btn btn-primary btn-lg hidden" href="#" role="button"><i class="fa fa-link"></i> Share</a>
+                                <div id="loader"><i class="fa fa-spinner fa-pulse"></i></div>
+                            </div>
+                            <div id="ecalsharelink" class="form-group hidden" style="display: none;">
+                                <label class="control-label" for="sharelink">Copy and share this link</label>
+                                <input class="form-control" name="sharelink" id="sharelink" readonly="readonly" type="text" value="https://ecal.in/">
+                            </div>  -->
                         </div>
                     </div>
                 </div>
@@ -421,7 +463,6 @@
         /*$('#calculate_btn').click(function(){
             
         });*/
-
         setTimeout(function(){
             $('#calculate_result, #emipaymentdetails').removeClass('hidden');
             calculation_change();
@@ -453,7 +494,13 @@
         });
 
         $(".draggable").on("dragstop",function(ev,ui){
-            setTimeout(function(){ //Updated by Tarek on 14-05-2017
+            setTimeout(function(){ 
+                calculation_change();
+            }, 1000);
+        });
+
+        $("#finalAssest,#finalLiability,#finalCustAge").change(function () {
+            setTimeout(function(){ 
                 calculation_change();
             }, 1000);
         });
