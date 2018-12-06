@@ -3,6 +3,7 @@
 /*********************************
 *  Design : S. M. Rubiyet        *
 *  UI : Sifuddin Lokman          *
+*  Javascript : Syed Shah Riage          *
 *  Programmer : Tarek Raihan     *
 *  Date : 09-11-2016             *
 **********************************/

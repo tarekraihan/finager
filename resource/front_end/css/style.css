@@ -9478,6 +9478,16 @@ table.dataTable.no-footer {
     color: #fff;
     padding-top: 8px;*/
 }
+.calculator_actions{
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.calculator_actions>li{
+    display: inline-block;
+    list-style: none; 
+    margin-left: 15px;
+}
 @media only screen and (max-width: 980px){
     input.currency-converter--input-text {
         height: 64px;
