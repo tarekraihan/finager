@@ -8875,6 +8875,17 @@ div.rate-focus {
     background-position: -354px -39px !important;
 }
 
+.rate-focus .CAD {
+    background-position: -182px -9px !important;
+}
+
+.rate-focus .SGD {
+    background-position: -225px -9px !important;
+}
+.rate-focus .CNH {
+    background-position: -743PX -9px !important;
+}
+
 
 .rate-focus .flag {
     background: url(../images/flags.png);

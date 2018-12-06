@@ -372,7 +372,7 @@ class Card extends CI_Controller
     {
         $this->load->library('upload');
         $config['upload_path'] = $path;
-        $config['allowed_types'] = 'jpg|png|jpeg';
+        $config['allowed_types'] = 'jpg|png|jpeg|xlsx';
         $config['max_size'] = '2048';
         $config['file_name'] = '1';
         $this->upload->initialize($config);

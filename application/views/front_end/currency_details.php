@@ -23,7 +23,6 @@
         margin-top: 0;
     }
 </style>
-
 <section id="currency_header">
     <div class="container">
         <div class="row">
@@ -39,22 +38,20 @@
                                 <label for="currency-converter--you" class="currency-converter--column--title"> </label>
                                 <div class="currency-converter--input-group is-focused" data-new-direction="to-recipient">
                                     <div class="currency-converter--currencies-dropdown">
-                                        <!-- <select id="currency-converter--you" data-theme="currency" data-dropdown-parent=".currency-converter--input-group--dropdown--you" class="select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                            <option value="EUR" data-currency-name="Euro">EUR</option>
-                                            <option value="GBP" data-currency-name="British Pound">GBP</option>
-                                            <option value="YEN" data-currency-name="Japan Yen">YEN</option>
-                                            <option value="USD" data-currency-name="US Dollar">USD</option>
-                                        </select> -->
-
                                         <select title="Select your select2-hidden-accessible" class="selectpicker" id="currency-converter--you" data-theme="currency" data-dropdown-parent=".currency-converter--input-group--dropdown--you">
                                           <option value="USD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/usd.png">USD</option>
-                                          <option value="EURO" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/euro.png">EUR</option>
-                                          <option value="YEN" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/yen.gif">YEN</option>
+                                          <option value="EUR" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/euro.png">EUR</option>
+                                          <option value="JPY" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/yen.gif">JYP</option>
                                           <option value="GBP" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/gbp.gif">GBP</option>
+                                          <option value="AUD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/asd.png">AUD</option>
+                                          <option value="INR" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/inr.png">INR</option>
+                                          <option value="CAD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/cad.png">CAD</option>
+                                          <option value="SGD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/sgd.png">SGD</option>
+                                          <option value="CHN" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/chn.png">CHN</option>
                                         </select>
                                     </div>
                                     <label for="currency-converter--input--you" class="sr-only">Amount</label>
-                                    <input type="text" value="10000" name="currency-converter--input--you" id="currency-converter--input--you" class="currency-converter--input-text currency-converter--input--you is-invalid">
+                                    <input type="text" value="1000" name="currency-converter--input--you" id="currency-converter--input--you" class="currency-converter--input-text currency-converter--input--you is-invalid">
                                     <div class="currency-converter--input-group--dropdown--you"></div>
                                 </div>
                             </div>
@@ -66,7 +63,7 @@
                                         <span class="select2 select2-container select2-container--currency select2-container--below" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-currency-converter--recipient-container"><span class="select2-selection__rendered" id="select2-currency-converter--recipient-container" title="BDT">BDT</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                                     </div>
                                     <label for="currency-converter--input--recipient" class="sr-only">Amount</label>
-                                    <input type="text" name="currency-converter--input--recipient" id="currency-converter--input--recipient" class="currency-converter--input-text currency-converter--input--recipient" value="80000">
+                                    <input type="text" name="currency-converter--input--recipient" id="currency-converter--input--recipient" class="currency-converter--input-text currency-converter--input--recipient is-invalid" value="">
                                     <div class="currency-converter--input-group--dropdown--recipient"></div>
                                 </div>
                             </div>
@@ -75,7 +72,8 @@
                 </div>
 
                 <div class="top-currency-cal-info">
-                    <p class="currency-status"><span>1</span> <span id="info-curr">USD</span> = BDT <span>76.66</span></p>
+                    <p class="currency-status"><span>1</span> <span id="info-curr">USD</span> = BDT <span id="currency_in_bdt">76.66</span></p>
+                    <input type="hidden" id="currency_rate" name="currency_rate" />
                     <p class="currency-converter--status--item currency-converter--status--success is-active">
                         <span class="currency-converter--status--item--text">Information Provided by Bangladesh Bank</span>
                     </p>
@@ -93,15 +91,9 @@
                 <div class="bank-filter">
                     <p class="bank-small-filter">50 of 50 results filtered by:</p>
                     <div class="bank-big-filter">
-
-                        <!--<div class="dropdown mega-dropdown">
-                            <a href="javascript:;" class="dropdown-toggle">
-                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                            </a>
-                        </div>-->
                         <ul class="filter-by">
                             <li class="dropdown mega-dropdown">
-                                <a href="javascript:;" class="dropdown-toggle">
+                                <a href="javascript:(0);" class="dropdown-toggle">
                                     Filter By: Bank
                                     <span>
                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -120,8 +112,8 @@
                                                 <div class="item active row">
                                                     <?php
                                                     $selected_bank_ids = array();
-                                                    if(isset($this->session->userdata['auto_loan_bank_ids'])){
-                                                        $bank_ids = array_values($this->session->userdata['auto_loan_bank_ids']);
+                                                    if(isset($this->session->userdata['currency_bank_ids'])){
+                                                        $bank_ids = array_values($this->session->userdata['currency_bank_ids']);
                                                         foreach($bank_ids as $bank_id){
                                                             $selected_bank = explode("=",$bank_id);
                                                             array_push($selected_bank_ids,$selected_bank[0]);
@@ -296,14 +288,18 @@
                         <p>I Want to</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
-                                <input type="radio" name="i_want" id="iWant1" value="1" class="material_radiobox" checked="">
+                            <?php if($this->session->userdata("currency_i_want")){ ?>
+                                <input type="radio" name="i_want" id="iWant1" value="Buy" class="material_radiobox"  <?php echo ($this->session->userdata("currency_i_want") =="Buy") ? 'checked' :'' ?>>
+                            <?php }else{ ?>    
+                                <input type="radio" name="i_want" id="iWant1" value="Buy" class="material_radiobox" checked >
+                            <?php } ?>
                                 <span class="material_check_radio"></span>
                                 Buy                             
                             </label>
                             <br>
                         
                             <label class="material_radio_group">
-                                <input type="radio" name="i_want" id="iWant2" value="2" class="material_radiobox">
+                                <input type="radio" name="i_want" id="iWant2" value="Sell" class="material_radiobox"  <?php echo ($this->session->userdata("currency_i_want") =="Sell") ? 'checked' :'' ?>>
                                 <span class="material_check_radio"></span>
                                 Sell                                
                             </label>
@@ -316,30 +312,34 @@
                         <p>Currency</p>
                         <div class="query_radio">
                             <label class="material_radio_group">
-                                <input type="radio" name="Currency" id="USD" value="1" class="material_radiobox">
+                            <?php if($this->session->userdata("currency")){ ?>
+                                <input type="radio" name="currency" id="USD" value="USD" class="material_radiobox"  <?php echo ($this->session->userdata("currency") =="USD") ? 'checked' :'' ?>>
+                            <?php  }else{ ?>
+                                <input type="radio" name="currency" id="USD" value="USD" class="material_radiobox" checked >
+                            <?php } ?>
                                 <span class="material_check_radio"></span>
                                 USD                               
                             </label>
                             <br>
                         
                             <label class="material_radio_group">
-                                <input type="radio" name="Currency" id="GBP" value="2" class="material_radiobox">
+                                <input type="radio" name="currency" id="GBP" value="GBP" class="material_radiobox"  <?php echo ($this->session->userdata("currency") =="GBP") ? 'checked' :'' ?>>
                                 <span class="material_check_radio"></span>
                                 GBP                          
                             </label>
                             <br> 
 
                             <label class="material_radio_group">
-                                <input type="radio" name="Currency" id="EURO" value="2" class="material_radiobox">
+                                <input type="radio" name="currency" id="EUR" value="EUR" class="material_radiobox"  <?php echo ($this->session->userdata("currency") =="EUR") ? 'checked' :'' ?>>
                                 <span class="material_check_radio"></span>
-                                EURO                          
+                                EUR
                             </label>
                             <br> 
 
                             <label class="material_radio_group">
-                                <input type="radio" name="Currency" id="YEN" value="2" class="material_radiobox">
+                                <input type="radio" name="currency" id="JPY" value="JPY" class="material_radiobox"  <?php echo ($this->session->userdata("currency") =="JPY") ? 'checked' :'' ?>>
                                 <span class="material_check_radio"></span>
-                                YEN                          
+                                JPY                          
                             </label>
                             <br> 
                         </div>
@@ -349,10 +349,10 @@
                         <p>Amount</p>
                         <div class="form-group_fdr">
                             <div class="input-group">
-                                <span class="input-group-addon" id="search-currency-symbol">৳</span>
-                                <input type="text" class="form-control" placeholder="Enter Amount" aria-describedby="search-currency-symbol">
+                                <span class="input-group-addon" id="search-currency-symbol">$</span>
+                                <input type="text" id="finalAssest" value=" <?php echo ($this->session->userdata("currency_amount") ) ? $this->session->userdata("currency_amount") :'1000' ?>" class="form-control" placeholder="Enter Amount" aria-describedby="search-currency-symbol">
                             </div>
-                            <button class="btn btn-primary btn-block m-b-10">Submit</button>
+                            <button id="searchCurrency" class="btn btn-primary btn-block m-b-10">Submit</button>
                         </div>
                     </div>
 
@@ -365,214 +365,35 @@
                 <div id="searchAutoLoan">
                     <div id="loading" class="text-center"></div>
                 </div>
-                
                 <table id="currency-table-buy" class="display" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Bank Logo</th>
-                            <th>Currency Short Code</th>
+                            <th class="no-sort">Bank Logo</th>
+                            <th class="no-sort">Short Code</th>
                             <th>Sell Rate</th>
-                            <th>Central Bank Sell</th>
+                            <th>Sell Amount
+                            <th>Sell Rate <br/>(Central Bank)</th>
+                            <th>Sell Amount <br/>(Central Bank)</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/AB-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Alfalah.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Commercial-Bank-of-Ceylon.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Agrani-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/City-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Exim-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Islami-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Meghna-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/United-Commercial-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Asia.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
+
+                    <tbody id="searchSell">
+                    
                     </tbody>
                 </table>
-
                 <table id="currency-table-sell" class="hidden display" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Bank Logo</th>
-                            <th>Currency Short Code</th>
-                            <th class="buy_rate_amount">Buy Rate</th>
-                            <th class="buy_rate_amount">Central Bank Buy</th>
+                            <th class="no-sort">Bank Logo</th>
+                            <th class="no-sort">Short Code</th>
+                            <th >Buy Rate</th>
+                            <th >Buy Amount</th>
+                            <th >Buy Rate <br/>(Central Bank)</th>
+                            <th >Buy Amount <br/>(Central Bank)</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Meghna-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/United-Commercial-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Asia.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/AB-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Alfalah.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Commercial-Bank-of-Ceylon.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Agrani-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/City-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Exim-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Islami-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Meghna-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/United-Commercial-Bank.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/Bank-Asia.png">
-                            </td>
-                            <td>AUD</td>
-                            <td>70.45</td>
-                            <td>68.99</td>
-                        </tr>
+                    <tbody id="searchBuy">
+                   
                     </tbody>
                 </table>
 
@@ -616,22 +437,240 @@
     });
 
     $(document).ready(function() {
-        $('#currency-table-buy, #currency-table-sell').DataTable({
-            "searching": false,
-            "ordering": true,
-            "info": false,
-            "paging": false
-        });
+       
+         function loadData(){
+            var currency = "&currency=" + $('input[name="currency"]:checked').val();
+          
+            var amount = $('#finalAssest').val().trim();
+            var principal_amount = "&amount="+amount;
+            
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val());
+            });
+            var bank_id_list = "&currency_bank_ids="+bank_ids;
 
-        $(function($) {
-            $('#currency-converter--input--you').autoNumeric('init', {  lZero: 'deny', aSep: ',', mDec: 0 });    
+            var main_string = currency+principal_amount+bank_id_list;
+            main_string = main_string.substring(1, main_string.length);
+            var url_str = "<?php echo base_url();?>currency_rate/ajax_get_currency_rate/";
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                beforeSend: function() {
+                    //overlay(true,true);
+                },
+                success: function(response){
+                    var data = JSON.parse(response);
+                    var response_sell ='';
+                    var response_buy = '';
+                    data.forEach(function(element) {
+                        
+                        response_sell += '<tr>' +
+                            '<td> ' +
+                                '<img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/'+ element.bank_logo+ '">'+
+                            '</td>'+
+                            '<td>'+ element.currency_name +'</td>'+
+                            '<td>BDT '+ Number(element.bank_buy_rate).toFixed(2) +'</td>'+
+                            '<td>BDT '+ Number(element.bank_buy_rate_amount).toFixed(2)+ '</td>'+
+                            '<td>BDT '+ Number(element.central_bank_buy_rate).toFixed(2)+'</td>'+
+                            '<td>BDT '+ Number(element.central_bank_buy_rate_amount).toFixed(2)+'</td>'+
+                            '</tr>';
+                            response_buy += '<tr>' +
+                            '<td> ' +
+                                '<img class="currency-bank-logo" src="<?php echo base_url();?>resource/common_images/bank_logo/'+ element.bank_logo+ '">'+
+                            '</td>'+
+                            '<td>'+ element.currency_name +'</td>'+
+                            '<td>BDT '+ Number(element.bank_sell_rate).toFixed(2) +'</td>'+
+                            '<td>BDT '+ Number(element.bank_sell_rate_amount).toFixed(2) + '</td>'+
+                            '<td>BDT '+ Number(element.central_bank_sell_rate).toFixed(2) +'</td>'+
+                            '<td>BDT '+ Number(element.central_bank_sell_rate_amount).toFixed(2) +'</td>'+
+                            '</tr>';
+                    });
+                    $("#searchSell").html(response_sell);
+                    $("#searchBuy").html(response_buy);
+                }
+
+            });
+        }
+
+        function data_caching(){
+            var currency = "&currency=" + $('input[name="currency"]:checked').val();
+            var i_want = "&currency_i_want=" + $('input[name="i_want"]:checked').val();
+          
+            var amount = $('#finalAssest').val().trim();
+            var principal_amount = "&amount="+amount;
+            
+            var bank_ids = new Array();
+            $('input[name="bank_id"]:checked').each(function(){
+                bank_ids.push($(this).val()+'='+$(this).parent('.material_checkbox_group').find('.filter-check-name').text().trim());
+
+            });
+            var bank_id_list = "&currency_bank_ids="+bank_ids;
+
+            var main_string = currency+principal_amount+bank_id_list+i_want;
+            main_string = main_string.substring(1, main_string.length);
+            
+            var url_str = "<?php echo base_url();?>currency_rate/ajax_currency_rate_caching/";
+
+            $.ajax({
+                type: "POST",
+                url: url_str,
+                data: main_string,
+                cache: false,
+                beforeSend: function() {
+                    //overlay(true,true);
+                },
+                success: function(response){
+                    var option = [];
+                    var obj = JSON.parse(response);
+                    if(obj.currency_i_want !=''){
+                        option.push('<li><div class="filter-option"><span>'+obj.currency_i_want_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="currency_i_want" data-currency_i_want="'+obj.currency_i_want+'"><i class="icon-close icons"></i></span></a></div></li>');
+                    }
+
+                    if(obj.currency !=''){
+                        option.push('<li><div class="filter-option"><span>'+obj.currency_label+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="currency" data-currency="'+ obj.currency +'"><i class="icon-close icons"></i></span></a></div></li>');
+                    }
+
+                    if(obj.currency_bank_ids.length > 0 ){
+                        for (var i = 0; i < obj.currency_bank_ids.length; i++) {
+                            var bank_id = obj.currency_bank_ids[i].split("=");
+                            option.push('<li><div class="filter-option"><span>'+bank_id[1]+'</span><span class="filter-icon-wrapper"><a href="javascript:void(0);" class="currency_bank_id" data-currency_bank_id="'+ bank_id[0] +'"><i class="icon-close icons"></i></span></a></div></li>');
+                        }
+
+                    }
+                    $(".filter-list").html(option);
+                }
+            });
+        }
+
+
+        loadData();
+        data_caching();
+        $("input[type='checkbox'], input[name='currency']").on( "click", function() {
+            loadData();
+            data_caching();
+        } );
+        $(" #searchCurrency ").on( "click", function() {
+            loadData();
+            data_caching();
+        } );
+
+
+        $('#currency-table-buy, #currency-table-sell').DataTable({
+            searching: false,
+            info: false,
+            paging: false,
+            bSort: false,
+            columnDefs: [
+                { targets: [1],orderable: true }
+            ]
         });
 
         $('#currency-converter--you').on('change', function(){
            var selected = $('.selectpicker option:selected').val();
            $('#info-curr').html(selected);
+           var currency = <?php echo json_encode($currency); ?>;
+           var currency_exchange_in_bdt = {
+               USD : currency.USD.central_bank_sell_rate,
+               EUR : currency.EUR.central_bank_sell_rate,
+               JPY : currency.JPY.central_bank_sell_rate,
+               GBP : currency.GBP.central_bank_sell_rate,
+               AUD : currency.AUD.central_bank_sell_rate,
+               INR : currency.INR.central_bank_sell_rate,
+               CAD : currency.CAD.central_bank_sell_rate,
+               SGD : currency.SGD.central_bank_sell_rate,
+               CHN : currency.CHN.central_bank_sell_rate
+           };
+           
+           $('#currency_in_bdt').text(currency_exchange_in_bdt[selected]);
+           $('#currency_rate').val(currency_exchange_in_bdt[selected]);
+           calculation_when_change_btd();
+        }).trigger("change");
+
+        $('#currency-converter--input--recipient').on('keyup', function(){
+            var currency_rate = $("#currency_rate").val();
+            var bdt_amount = $("#currency-converter--input--recipient").val();
+            
+            var calculated_amount = (parseFloat(bdt_amount) / parseFloat(currency_rate)).toFixed(2);
+          
+            $("#currency-converter--input--you").val( check_after_decimal_digits_are_non_zero(calculated_amount) );
         });
+
+        $('#currency-converter--input--you').on('keyup', function(){
+            calculation_when_change_btd();
+        }).trigger("keyup");
+
+        $(document).on('click','#clear_all',function(){
+            var data = 'session=currency';
+            $.ajax
+            ({
+                type: "POST",
+                url: "<?php echo base_url();?>currency_rate/ajax_clear_session",
+                data:data,
+                success: function(response)
+                {
+                    window.location.href = window.location.href;
+
+                }
+            });
+        });
+
+
+        $(document).on('click', '.currency_bank_id', function (){
+            var  formData = $(this).data();
+            var currency_bank_id = formData.currency_bank_id;
+            $('#filter-bank-'+currency_bank_id).prop('checked', false);
+            var data = 'currency_bank_id='+currency_bank_id;
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>currency_rate/unset_currency_bank_id_session",
+                data: data,
+                success: function(msg){
+                    loadData();
+                }
+            });
+
+        });
+
+        
+        $(document).on('click','input[name="currency"]',function(){
+            var this_id = $(this).attr('id');
+            if(this_id == 'USD'){
+                $('#search-currency-symbol').html('$');
+            }
+            else if(this_id == 'GBP'){
+                $('#search-currency-symbol').html('£');
+            }
+            else if(this_id == 'EUR'){
+                $('#search-currency-symbol').html('€');
+            }
+            else if(this_id == 'JPY'){
+                $('#search-currency-symbol').html('¥');
+            }
+        }).trigger('click');
+
     });
+
+     
+
+    function calculation_when_change_btd(){
+        var currency_rate = $("#currency_rate").val();
+        
+        var foreign_amount = $("#currency-converter--input--you").val(); 
+       
+        var calculated_amount = (parseFloat(foreign_amount) * parseFloat(currency_rate)).toFixed(2);
+        $("#currency-converter--input--recipient").val( check_after_decimal_digits_are_non_zero(calculated_amount) );
+    }
+    function check_after_decimal_digits_are_non_zero(val){
+        var num_array = val.toString().split(".");
+        if(num_array.length == 1 || num_array[1] == "00"){
+            return parseInt( num_array[0] );
+        }else{
+            return val;
+        }
+    }
 
     //cursor blink
     jQuery.fn.putCursorAtEnd = function() {
@@ -675,7 +714,6 @@
       
     })();
 
-    
 
     $('#iWant1').click(function(){
         if($(this).is(':checked') == true){
@@ -691,21 +729,6 @@
         }
     });
 
-    $(document).on('click','input[name="Currency"]',function(){
-        var this_id = $(this).attr('id');
-        if(this_id == 'USD'){
-            $('#search-currency-symbol').html('$');
-        }
-        else if(this_id == 'GBP'){
-            $('#search-currency-symbol').html('£');
-        }
-        else if(this_id == 'EURO'){
-            $('#search-currency-symbol').html('€');
-        }
-        else if(this_id == 'YEN'){
-            $('#search-currency-symbol').html('¥');
-        }
-    });
 
 
 </script>

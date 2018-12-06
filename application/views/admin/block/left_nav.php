@@ -84,6 +84,10 @@ foreach($module_id as $k){
                     <li>
                         <a href="<?php echo base_url();?>general/add_meta_tag_description">Add Tags & Description</a>
                     </li>
+                    
+                    <li>
+                        <a href="<?php echo base_url();?>backdoor/upload_currency_rate">Upload Daily Exchange Rate</a>
+                    </li>
                     <!--<li>-->
                     <!--    <a href="--><?php //echo base_url();?><!--general/meta_tags">Add Tags & Description</a>-->
                     <!--</li>-->
@@ -710,6 +714,32 @@ foreach($module_id as $k){
                 <ul>
                     <li>
                         <a href="<?php echo base_url();?>backdoor/search_index">Search Index</a>
+                    </li>
+                </ul>
+            </li>
+                <?php
+            
+           
+            }
+            ?>
+            <?php
+            $i = 0;
+            if( $admin_role == 'super admin' || $admin_role == 'admin'){
+                $i = 1;
+            }else if(count($modules) > 0){
+                foreach($modules as $module){
+                    if($module == 17){
+                        $i = 1;
+                    }
+                }
+            }
+            if($i > 0){
+            ?>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Exchange Rate</span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url();?>backdoor/upload_currency_rate">Upload Daily Exchange Rate</a>
                     </li>
                 </ul>
             </li>

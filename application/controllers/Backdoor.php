@@ -8,6 +8,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Start Date : 29-02-2016                    *
  * Last Update : 29-02-2016                   *
  **********************************************/
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Reader\Csv;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+ 
 
 class Backdoor extends CI_Controller {
 
@@ -576,60 +580,167 @@ class Backdoor extends CI_Controller {
         redirect(base_url().'backdoor', 'refresh');
     }
 
+    public function valid_date($date)
+    {
+        $current_year = date("Y");
+        $exchange_date =  explode(".", $date);
+        if($exchange_date[0] <= 0 || 31 < $exchange_date[0] || strlen( $exchange_date[0]) > 2 ){
+            $this->form_validation->set_message('valid_date', 'The Exchange Date is not in valid format (Ex: dd.mm.YYYY)');
+            return false;
+        }else if($exchange_date[1] <= 0 || 12 < $exchange_date[1] || strlen( $exchange_date[1]) > 2 ){
+                $this->form_validation->set_message('valid_date', 'The Exchange Date is not in valid format (Ex: dd.mm.YYYY)');
+                return false;
+        }else if($exchange_date[2] <= 2015 || strlen( $exchange_date[2]) !== 4 ){
+            $this->form_validation->set_message('valid_date', 'The Exchange Date is not in valid format (Ex: dd.mm.YYYY)');
+            return false;
+        }else if( $current_year < $exchange_date[2]){
+            $this->form_validation->set_message('valid_date', 'The Exchange Date year is not allowed over '.$current_year);
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
 
-
-    public function upload_currency_rate(){
-        $first_name = $this->input->post('txtFirstName');
-        $last_name = $this->input->post('txtLastName');
-        $mobile = $this->input->post('txtPhoneNo');
-        $password = $this->input->post('txtPassword');
-
-        $this->form_validation->set_rules('txtFirstName','First Name','trim|required');
-        $this->form_validation->set_rules('txtLastName','Last Name','trim|required');
-        $this->form_validation->set_rules('txtPhoneNo','Mobile No','trim|required|min_length[10]|max_length[14]');
-        $this->form_validation->set_rules('txtPassword','Password','trim|required|min_length[6]|max_length[15]');
-        $this->form_validation->set_rules('txtConfirmPassword','Confirm Password','matches[txtPassword]');
-
-        if ($this->form_validation->run() == FALSE) {
-            $html  =    '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>';
-            $html .=    validation_errors();
-            $html .=    '</div>';
-            echo $html;
-        } else {
-            $this->Common_model->data = array(
-                'first_name'=> htmlentities($first_name),
-                'last_name'=> htmlentities($last_name),
-                'phone_no'=> htmlentities($mobile),
-                'password'=> md5( $password ),
-                'actual_password'=> htmlentities($password ),
-                'admin_first_login' => 0,
-                'modified_by' => $this->session->userdata('admin_user_id'),
-                'modified' => date('Y-m-d h:i:s')
-            );
-
-
-            $this->Common_model->table_name = "tbl_admin_user";
-            $this->Common_model->where = array('id' => $this->session->userdata('admin_user_id'));
-            $result = $this->Common_model->update();
-
-
-            $data['admin_first_login'] = 0;
-            $data['first_name'] = $first_name;
-            $data['last_name'] = $last_name;
-            $data['password'] = md5($password);
-            $this->session->set_userdata($data);
-
-
-            if($result){
-                $html  =    '<div class="alert alert-success" role="alert"><strong> Thank You!</strong> You successfully update your information</a> </div>';
-                echo $html;
-            }else{
-                $html  =    '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>';
-                $html .=    'Something going wrong. Please try again!';
-                $html .=    '</div>';
-                echo $html;
+    public function upload_currency_rate($msg=""){
+        
+        if ($this->session->userdata('email_address')) {
+            if($msg == 'success') {
+                $data['feedback'] = '<div id="message"  class="text-center alert alert-success">Successfully Save !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message"  class="text-center alert alert-error">'.$this->session->flashdata('error_message').'!</div>';
             }
 
+            $this->form_validation->set_rules('exchange_date', 'Exchange Date', 'trim|required|callback_valid_date');
+
+
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Exchange Rate";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/currency_exchange/upload_exchange_rate');
+                $this->load->view('admin/block/footer');
+            }else{
+                $upload_result = $this->do_upload('./upload_file', 'file');
+                $data = [];
+                $error = false;
+                $result = false;
+                
+                $file_mimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+ 
+                if(isset($_FILES['file']['name']) && in_array($_FILES['file']['type'], $file_mimes)) {
+                
+                    $arr_file = explode('.', $_FILES['file']['name']);
+                    $extension = end($arr_file);
+                
+                    if('csv' == $extension) {
+                        $reader = new \PhpOffice\PhpSpreadsheet\Reader\Csv();
+                    }else if('xls' == $extension) {
+                        $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
+                    }else {
+                        $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+                    }
+                
+                    $spreadsheet = $reader->load('./upload_file/'.$upload_result['file_name']);
+
+                    $rowIterator = $spreadsheet->getActiveSheet()->getRowIterator();
+                    foreach($rowIterator as $row){
+                        $cellIterator = $row->getCellIterator();
+                        foreach ($cellIterator as $cell) {
+                            $data[$row->getRowIndex()][$cell->getColumn()] = $cell->getCalculatedValue();
+                        }
+                    }
+
+                    if($data[1]["A"] !=="BankName" || $data[1]["B"] !=="BankId" || $data[1]["C"] !=="Currency" || $data[1]["D"] !=="BuyRate" || $data[1]["E"] !=="SellRate" || $data[1]["F"] !=="BbBuyRate"  || $data[1]["G"] !=="BbSellRate"){
+                        $this->session->set_flashdata('error_message', 'Invalid Data Format');
+                        $error = true;
+                    }else{
+                        foreach($data as $row){
+                            if($row['A'] !=='BankName'){
+                                $date = date('Y-m-d h:i:s');
+                                $this->Common_model->data = array(
+                                    'bank_id' => (int) $row['B'],
+                                    'currency_name'=> (string) $row['C'],
+                                    'bank_buy_rate'=> (float) $row['D'],
+                                    'bank_sell_rate'=> (float) $row['E'],
+                                    'central_bank_buy_rate'=> (float) $row['F'],
+                                    'central_bank_sell_rate'=> (float) $row['G'],
+                                    'date_of_exchange_rate'=> date('Y-m-d', strtotime($this->input->post('exchange_date'))),
+                                    'created_on' => $date ,
+                                    'created_by'=>$this->session->userdata('admin_user_id')
+                                );
+                                $this->Common_model->table_name = 'daily_exchange_rate';
+                                $result = $this->Common_model->insert();
+                                $this->Common_model->table_name = 'daily_exchange_rate_history';
+                                 $this->Common_model->insert();
+                            }
+                        }
+                    }
+    
+                }else{
+                    $this->session->set_flashdata('error_message', 'Invalid File Format');
+                    $error = true;
+                }
+               
+                if ($result) {
+                    redirect(base_url().'backdoor/upload_currency_rate/success');
+                } else {
+                    redirect(base_url().'backdoor/upload_currency_rate/error');
+                }
+            }
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
+
+    
+    public function delete_currency_rate($msg=""){
+        
+        if ($this->session->userdata('email_address')) {
+            if($msg == 'success') {
+                $data['feedback'] = '<div id="message"  class="text-center alert alert-warning">Delete Successfully !!</div>';
+            } else if ($msg == 'error') {
+                $data['feedback'] = '<div id="message"  class="text-center alert alert-error">'.$this->session->flashdata('error_message').'!</div>';
+            }
+            $this->form_validation->set_rules('exchange_date', 'Exchange Date', 'trim|required');
+            if ($this->form_validation->run() == FALSE){
+                $data['title'] = "Exchange Rate";
+                $this->load->view('admin/block/header',$data);
+                $this->load->view('admin/block/left_nav');
+                $this->load->view('admin/currency_exchange/delete_currency_rate');
+                $this->load->view('admin/block/footer');
+            }else{
+                
+                $exchange_date =  date('Y-m-d', strtotime($this->input->post('exchange_date')));
+                $result = $this->Delete_model->Delete_All_Exchange_Rate_By_Date($exchange_date);
+               
+                if ($result) {
+                    redirect(base_url().'backdoor/delete_currency_rate/success');
+                } else {
+                    redirect(base_url().'backdoor/delete_currency_rate/error');
+                }
+            }
+        }else {
+            $this->session->set_flashdata('error_message', '1');
+            redirect(base_url().'backdoor/dashboard');
+        }
+    }
+
+
+    public function do_upload($path, $field = '',$file_name='')
+    {
+        $this->load->library('upload');
+        $config['upload_path'] = $path;
+        $config['allowed_types'] = 'xlsx|csv|xls';
+        $config['max_size'] = '2048';
+        $config['file_name'] = $file_name ? $file_name : '1';
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload($field)) {
+            return $this->upload->display_errors();
+        } else {
+            return $this->upload->data();
         }
     }
 

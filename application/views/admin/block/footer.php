@@ -490,8 +490,7 @@ you can add as many as you like
         });
 
         $('#go_maintenance').datetimepicker({
-            format: 'DD-MM-YYYY hh:mm A',
-            minDate : moment().valueOf(),
+            format: 'DD-MM-YYYY',
             sideBySide: false,
             useCurrent: false,
             showClose: true,
@@ -508,6 +507,9 @@ you can add as many as you like
             toolbarPlacement: 'bottom'
 
         });
+
+
+        $('#exchange_date').datepicker();
 
         $("#update_admin_info").validate({
             rules: {

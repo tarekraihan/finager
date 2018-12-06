@@ -81,6 +81,7 @@ class En extends CI_Controller {
             $data['description'] ="At Finager.com we provide complete financial solution to you for any kind of problem related to cards, loans and investment.";
             $data['keywords'] ="Loan, home Loan,Personal Loan, Bank, Investment, Credit Card, Debit Card, FDR, DPS, Auto Loan, Education Loan,Get Credit Card,  Bangladesh";
 
+            $data['currency_exchange'] = $this->Select_model->Select_Central_Bank_Exchange_Rate();
             /*Get user ip address*/
             $ip_address=$_SERVER['REMOTE_ADDR'];
             /*Get user ip address details with geoplugin.net*/
@@ -108,7 +109,6 @@ class En extends CI_Controller {
                 );
                 $this->Common_model->table_name = 'visitor_counter';
                 $result = $this->Common_model->insert();
-
                 if($result){
                     $this->load->view('front_end/block/header',$data);
                     $this->load->view('front_end/block/right_menu');
@@ -1195,6 +1195,9 @@ class En extends CI_Controller {
     public function currency_details(){
         $data['title'] = 'Currency Details | Finager.com';
         $data['description'] ="We, the members of Finager.com offers all real time information to you for your help in choosing cards, loans and investments.";
+        $data['currency_rate'] = $this->Select_model->axios_select_exchange_rate_for_list_view();
+        $data['currency'] = $this->Select_model->currency_rate();
+        
         $this->load->driver('cache');
         $this->cache->file->save('currency_details', 'currency_details', 100);
         $this->load->view('front_end/block/header',$data);
