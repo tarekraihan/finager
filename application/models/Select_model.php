@@ -1974,7 +1974,7 @@ class Select_Model extends CI_Model
 
     public function currency_rate()
     {
-        $sql = "SELECT DISTINCT(currency_name), central_bank_buy_rate, central_bank_sell_rate, date_of_exchange_rate FROM `daily_exchange_rate` ORDER BY date_of_exchange_rate DESC LIMIT 0,6";
+        $sql = "SELECT DISTINCT(currency_name), central_bank_buy_rate, central_bank_sell_rate, date_of_exchange_rate FROM `daily_exchange_rate` ORDER BY date_of_exchange_rate DESC LIMIT 0,9";
         $query = $this->db->query($sql);
         $result = array();
         foreach($query->result() as $row){

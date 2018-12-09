@@ -47,7 +47,7 @@
                                           <option value="INR" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/inr.png">INR</option>
                                           <option value="CAD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/cad.png">CAD</option>
                                           <option value="SGD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/sgd.png">SGD</option>
-                                          <option value="CHN" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/chn.png">CHN</option>
+                                          <option value="CNH" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/chn.png">CNH</option>
                                         </select>
                                     </div>
                                     <label for="currency-converter--input--you" class="sr-only">Amount</label>
@@ -581,9 +581,8 @@
                INR : currency.INR.central_bank_sell_rate,
                CAD : currency.CAD.central_bank_sell_rate,
                SGD : currency.SGD.central_bank_sell_rate,
-               CHN : currency.CHN.central_bank_sell_rate
+               CNH : currency.CNH.central_bank_sell_rate
            };
-           
            $('#currency_in_bdt').text(currency_exchange_in_bdt[selected]);
            $('#currency_rate').val(currency_exchange_in_bdt[selected]);
            calculation_when_change_btd();
@@ -635,21 +634,23 @@
         });
 
         
-        $(document).on('click','input[name="currency"]',function(){
+        $('input[name="currency"]').on('change',function(){
             var this_id = $(this).attr('id');
-            if(this_id == 'USD'){
+            var selected_currency = $('input[name="currency"]:checked').val();
+            console.log('currency==',selected_currency)
+            if(this_id == 'USD' || selected_currency == 'USD'){
                 $('#search-currency-symbol').html('$');
             }
-            else if(this_id == 'GBP'){
+            else if(this_id == 'GBP' || selected_currency == 'GBP'){
                 $('#search-currency-symbol').html('£');
             }
-            else if(this_id == 'EUR'){
+            else if(this_id == 'EUR' || selected_currency == 'EUR'){
                 $('#search-currency-symbol').html('€');
             }
-            else if(this_id == 'JPY'){
+            else{
                 $('#search-currency-symbol').html('¥');
             }
-        }).trigger('click');
+        }).trigger('change');
 
     });
 

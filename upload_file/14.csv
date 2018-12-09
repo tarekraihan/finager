@@ -1,0 +1,496 @@
+BankName,BankId,Currency,BuyRate,SellRate,BbBuyRate,BbSellRate
+SBACBL,30,USD,84.5,85.75,83.8,83.83
+NRB Bank Ltd.,24,USD,84.25,85.5,83.8,83.83
+The Farmers Bank Limited,34,USD,,,83.8,83.83
+Meghna Bank Ltd.,9,USD,83.5,86,83.8,83.83
+Agrani Bank Limited,58,USD,85.15,86.15,83.8,83.83
+Pubali Bank Limited,29,USD,85,86.1,83.8,83.83
+Rupali Bank Limited,59,USD,85.15,86.15,83.8,83.83
+Sonali Bank Limited,56,USD,85.2,86.2,83.8,83.83
+Uttara Bank Limited,38,USD,85,86.5,83.8,83.83
+Bangladesh Krishi Bank,63,USD,85.2,86.2,83.8,83.83
+BDBL,61,USD,85.2,86.2,83.8,83.83
+AB Bank Ltd.,13,USD,84.8,86.3,83.8,83.83
+The City Bank Ltd.,33,USD,84.5,85.8,83.8,83.83
+IFIC Bank Ltd.,16,USD,85,86,83.8,83.83
+Islami Bank Bangladesh Ltd.,39,USD,84.5,85.8,83.8,83.83
+National Bank Ltd.,22,USD,84.5,86,83.8,83.83
+United Commercial Bank Ltd.,37,USD,84.5,86,83.8,83.83
+Al-Arafa Islami Bank Ltd.,40,USD,84.5,86.5,83.8,83.83
+ICB Islamic Bank Ltd.,46,USD,84.75,86.2,83.8,83.83
+BASIC Bank Ltd.,60,USD,85,86.5,83.8,83.83
+South East Bank Ltd.,31,USD,84,85.5,83.8,83.83
+Dhaka Bank Ltd.,14,USD,83.25,84.75,83.8,83.83
+Eastern Bank Ltd.,11,USD,83.25,84.5,83.8,83.83
+Prime Bank Ltd.,28,USD,84,85.5,83.8,83.83
+NCCBL,23,USD,84.5,86,83.8,83.83
+Dutch-Bangla Bank Ltd.,15,USD,84.75,86,83.8,83.83
+Mercantile Bank Ltd.,18,USD,83.5,85.5,83.8,83.83
+Standard Bank Ltd.,32,USD,83.75,85,83.8,83.83
+One Bank Ltd.,27,USD,84,85,83.8,83.83
+EXIM Bank Ltd.,41,USD,84.95,85.75,83.8,83.83
+Bangladesh Commerce Bank Ltd.,12,USD,83.5,85,83.8,83.83
+Bank Asia Ltd.,10,USD,83.75,85.75,83.8,83.83
+The Premier Bank Ltd.,35,USD,83,84.5,83.8,83.83
+Mutual Trust Bank Ltd.,21,USD,83.75,85.75,83.8,83.83
+FSIBL,44,USD,84.4,85.9,83.8,83.83
+Trust Bank Ltd.,36,USD,85.25,86.25,83.8,83.83
+Standard Chartered Bank,53,USD,82.85,85.35,83.8,83.83
+Habib Bank Ltd.,50,USD,84.5,85.5,83.8,83.83
+Commercial Bank of Ceylon,49,USD,83.75,85.75,83.8,83.83
+State Bank of India,54,USD,84.5,85.5,83.8,83.83
+Woori Bank,55,USD,-,-,83.8,83.83
+Bank Alfalah Limited,47,USD,85.6,87.1,83.8,83.83
+Citi Bank N.A.,64,USD,83.75,85.75,83.8,83.83
+HSBC,51,USD,83.85,85.6,83.8,83.83
+Jamuna Bank Ltd.,17,USD,85,86,83.8,83.83
+Brac Bank Limited,8,USD,84.25,85.75,83.8,83.83
+Shahjalal Islami Bank Ltd.,43,USD,85,86.5,83.8,83.83
+NRB Commercial Bank Ltd.,25,USD,83.9,85.4,83.8,83.83
+Midland Bank Limited,19,USD,83.85,85.5,83.8,83.83
+Modhumoti Bank Limited,20,USD,84.5,86,83.8,83.83
+NRB Global Bank Limited,26,USD,83,84.5,83.8,83.83
+Union Bank Limited,45,USD,,,83.8,83.83
+Janata Bank Limited,57,USD,85.2,86.2,83.8,83.83
+Social Islami Bank Ltd.,42,USD,85.25,86.5,83.8,83.83
+National Bank of Pakistan,52,USD,84,85,83.8,83.83
+SBACBL,30,EUR,97,101,95.5,95.5075
+NRB Bank Ltd.,24,EUR,96.6,98.09,95.5,95.5075
+The Farmers Bank Limited,34,EUR,,,95.5,95.5075
+Meghna Bank Ltd.,9,EUR,92.09,98.9,95.5,95.5075
+Agrani Bank Limited,58,EUR,96.5,100.5,95.5,95.5075
+Pubali Bank Limited,29,EUR,93.3,99.05,95.5,95.5075
+Rupali Bank Limited,59,EUR,96,100,95.5,95.5075
+Sonali Bank Limited,56,EUR,94.6,98.6,95.5,95.5075
+Uttara Bank Limited,38,EUR,94.3298,98.1652,95.5,95.5075
+Bangladesh Krishi Bank,63,EUR,21,22.2,95.5,95.5075
+BDBL,61,EUR,94.6,98.6,95.5,95.5075
+AB Bank Ltd.,13,EUR,96.02,100.01,95.5,95.5075
+The City Bank Ltd.,33,EUR,95.23,101,95.5,95.5075
+IFIC Bank Ltd.,16,EUR,94.3862,97.6162,95.5,95.5075
+Islami Bank Bangladesh Ltd.,39,EUR,96.7,99.2,95.5,95.5075
+National Bank Ltd.,22,EUR,95.05,98.2,95.5,95.5075
+United Commercial Bank Ltd.,37,EUR,93.3614,98.6354,95.5,95.5075
+Al-Arafa Islami Bank Ltd.,40,EUR,96,100,95.5,95.5075
+ICB Islamic Bank Ltd.,46,EUR,97.8991,101.599,95.5,95.5075
+BASIC Bank Ltd.,60,EUR,94.676,99.903,95.5,95.5075
+South East Bank Ltd.,31,EUR,94.16,99.36,95.5,95.5075
+Dhaka Bank Ltd.,14,EUR,95.1433,98.1433,95.5,95.5075
+Eastern Bank Ltd.,11,EUR,93.19,98.72,95.5,95.5075
+Prime Bank Ltd.,28,EUR,95.3185,99.102,95.5,95.5075
+NCCBL,23,EUR,92.029,98.9896,95.5,95.5075
+Dutch-Bangla Bank Ltd.,15,EUR,94.99,99.99,95.5,95.5075
+Mercantile Bank Ltd.,18,EUR,94.9131,99.0473,95.5,95.5075
+Standard Bank Ltd.,32,EUR,93,99,95.5,95.5075
+One Bank Ltd.,27,EUR,-,-,95.5,95.5075
+EXIM Bank Ltd.,41,EUR,97.5,100,95.5,95.5075
+Bangladesh Commerce Bank Ltd.,12,EUR,93.6472,98.1472,95.5,95.5075
+Bank Asia Ltd.,10,EUR,90.38,100.92,95.5,95.5075
+The Premier Bank Ltd.,35,EUR,93.4139,97.2422,95.5,95.5075
+Mutual Trust Bank Ltd.,21,EUR,95.0455,99.0455,95.5,95.5075
+FSIBL,44,EUR,94.2207,99.9686,95.5,95.5075
+Trust Bank Ltd.,36,EUR,94.91,99.79,95.5,95.5075
+Standard Chartered Bank,53,EUR,95.04,98.8,95.5,95.5075
+Habib Bank Ltd.,50,EUR,94.48,98.32,95.5,95.5075
+Commercial Bank of Ceylon,49,EUR,92.2802,97.358,95.5,95.5075
+State Bank of India,54,EUR,100,104,95.5,95.5075
+Woori Bank,55,EUR,-,-,95.5,95.5075
+Bank Alfalah Limited,47,EUR,-,-,95.5,95.5075
+Citi Bank N.A.,64,EUR,101,104,95.5,95.5075
+HSBC,51,EUR,94.0095,97.1196,95.5,95.5075
+Jamuna Bank Ltd.,17,EUR,98,101,95.5,95.5075
+Brac Bank Limited,8,EUR,96.8719,100.7742,95.5,95.5075
+Shahjalal Islami Bank Ltd.,43,EUR,96.26,99.26,95.5,95.5075
+NRB Commercial Bank Ltd.,25,EUR,96.5,99.5,95.5,95.5075
+Midland Bank Limited,19,EUR,94.4936,99.3172,95.5,95.5075
+Modhumoti Bank Limited,20,EUR,93.111,98.651,95.5,95.5075
+NRB Global Bank Limited,26,EUR,94,98,95.5,95.5075
+Union Bank Limited,45,EUR,,,95.5,95.5075
+Janata Bank Limited,57,EUR,95.7,98.7,95.5,95.5075
+Social Islami Bank Ltd.,42,EUR,97.89,100.39,95.5,95.5075
+National Bank of Pakistan,52,EUR,-,-,95.5,95.5075
+SBACBL,30,GBP,107,111,108.973,107.9898
+NRB Bank Ltd.,24,GBP,109.36,110.85,108.973,107.9898
+The Farmers Bank Limited,34,GBP,,,108.973,107.9898
+Meghna Bank Ltd.,9,GBP,103.34,111.44,108.973,107.9898
+Agrani Bank Limited,58,GBP,108.5,112.5,108.973,107.9898
+Pubali Bank Limited,29,GBP,105.3,111,108.973,107.9898
+Rupali Bank Limited,59,GBP,108,112,108.973,107.9898
+Sonali Bank Limited,56,GBP,106.1,110.1,108.973,107.9898
+Uttara Bank Limited,38,GBP,106.5581,109.1785,108.973,107.9898
+Bangladesh Krishi Bank,63,GBP,108.5,112.5,108.973,107.9898
+BDBL,61,GBP,106.1,110.1,108.973,107.9898
+AB Bank Ltd.,13,GBP,109.12,113.13,108.973,107.9898
+The City Bank Ltd.,33,GBP,108.03,114.01,108.973,107.9898
+IFIC Bank Ltd.,16,GBP,106.966,109.8454,108.973,107.9898
+Islami Bank Bangladesh Ltd.,39,GBP,107.6,110.6,108.973,107.9898
+National Bank Ltd.,22,GBP,109.5,112.5,108.973,107.9898
+United Commercial Bank Ltd.,37,GBP,105.8829,111.3311,108.973,107.9898
+Al-Arafa Islami Bank Ltd.,40,GBP,108,112,108.973,107.9898
+ICB Islamic Bank Ltd.,46,GBP,112.2973,114.1902,108.973,107.9898
+BASIC Bank Ltd.,60,GBP,107.9792,112.6033,108.973,107.9898
+South East Bank Ltd.,31,GBP,108.62,112.62,108.973,107.9898
+Dhaka Bank Ltd.,14,GBP,107.855,110.855,108.973,107.9898
+Eastern Bank Ltd.,11,GBP,105.26,111.42,108.973,107.9898
+Prime Bank Ltd.,28,GBP,106.6499,110.8121,108.973,107.9898
+NCCBL,23,GBP,104.3224,111.5662,108.973,107.9898
+Dutch-Bangla Bank Ltd.,15,GBP,108.02,113.02,108.973,107.9898
+Mercantile Bank Ltd.,18,GBP,108.7659,112.4541,108.973,107.9898
+Standard Bank Ltd.,32,GBP,106,111,108.973,107.9898
+One Bank Ltd.,27,GBP,-,-,108.973,107.9898
+EXIM Bank Ltd.,41,GBP,109.5,112.5,108.973,107.9898
+Bangladesh Commerce Bank Ltd.,12,GBP,105.2331,109.7331,108.973,107.9898
+Bank Asia Ltd.,10,GBP,101.94,112.82,108.973,107.9898
+The Premier Bank Ltd.,35,GBP,105.8781,109.9604,108.973,107.9898
+Mutual Trust Bank Ltd.,21,GBP,109.6056,113.6056,108.973,107.9898
+FSIBL,44,GBP,106.2142,111.1727,108.973,107.9898
+Trust Bank Ltd.,36,GBP,108.38,112.38,108.973,107.9898
+Standard Chartered Bank,53,GBP,107.56,111.86,108.973,107.9898
+Habib Bank Ltd.,50,GBP,111.09,116.09,108.973,107.9898
+Commercial Bank of Ceylon,49,GBP,105.7039,111.4886,108.973,107.9898
+State Bank of India,54,GBP,115,119,108.973,107.9898
+Woori Bank,55,GBP,-,-,108.973,107.9898
+Bank Alfalah Limited,47,GBP,-,-,108.973,107.9898
+Citi Bank N.A.,64,GBP,115,118,108.973,107.9898
+HSBC,51,GBP,106.5532,109.7642,108.973,107.9898
+Jamuna Bank Ltd.,17,GBP,112,115,108.973,107.9898
+Brac Bank Limited,8,GBP,108.9539,113.336,108.973,107.9898
+Shahjalal Islami Bank Ltd.,43,GBP,110.27,113.27,108.973,107.9898
+NRB Commercial Bank Ltd.,25,GBP,110.5,113.5,108.973,107.9898
+Midland Bank Limited,19,GBP,108.6596,113.9531,108.973,107.9898
+Modhumoti Bank Limited,20,GBP,105.059,110.688,108.973,107.9898
+NRB Global Bank Limited,26,GBP,106.5,110.5,108.973,107.9898
+Union Bank Limited,45,GBP,,,108.973,107.9898
+Janata Bank Limited,57,GBP,107.9,110.8,108.973,107.9898
+Social Islami Bank Ltd.,42,GBP,-,-,108.973,107.9898
+National Bank of Pakistan,52,GBP,-,-,108.973,107.9898
+SBACBL,30,JPY,      -,      -,0.77,0.7468
+NRB Bank Ltd.,24,JPY,      -,      -,0.77,0.7468
+The Farmers Bank Limited,34,JPY,      -,      -,0.77,0.7468
+Meghna Bank Ltd.,9,JPY,      -,      -,0.77,0.7468
+Agrani Bank Limited,58,JPY,0.67,0.75,0.77,0.7468
+Pubali Bank Limited,29,JPY,0.65,0.73,0.77,0.7468
+Rupali Bank Limited,59,JPY,      -,      -,0.77,0.7468
+Sonali Bank Limited,56,JPY,0.7185,0.7415,0.77,0.7468
+Uttara Bank Limited,38,JPY,      -,      -,0.77,0.7468
+Bangladesh Krishi Bank,63,JPY,      -,      -,0.77,0.7468
+BDBL,61,JPY,      -,      -,0.77,0.7468
+AB Bank Ltd.,13,JPY,      -,      -,0.77,0.7468
+The City Bank Ltd.,33,JPY,      -,      -,0.77,0.7468
+IFIC Bank Ltd.,16,JPY,      -,      -,0.77,0.7468
+Islami Bank Bangladesh Ltd.,39,JPY,      -,      -,0.77,0.7468
+National Bank Ltd.,22,JPY,0.7333,0.7595,0.77,0.7468
+United Commercial Bank Ltd.,37,JPY,      -,      -,0.77,0.7468
+Al-Arafa Islami Bank Ltd.,40,JPY,      -,      -,0.77,0.7468
+ICB Islamic Bank Ltd.,46,JPY,      -,      -,0.77,0.7468
+BASIC Bank Ltd.,60,JPY,      -,      -,0.77,0.7468
+South East Bank Ltd.,31,JPY,      -,      -,0.77,0.7468
+Dhaka Bank Ltd.,14,JPY,      -,      -,0.77,0.7468
+Eastern Bank Ltd.,11,JPY,      -,      -,0.77,0.7468
+Prime Bank Ltd.,28,JPY,      -,      -,0.77,0.7468
+NCCBL,23,JPY,      -,      -,0.77,0.7468
+Dutch-Bangla Bank Ltd.,15,JPY,      -,      -,0.77,0.7468
+Mercantile Bank Ltd.,18,JPY,      -,      -,0.77,0.7468
+Standard Bank Ltd.,32,JPY,      -,      -,0.77,0.7468
+One Bank Ltd.,27,JPY,      -,      -,0.77,0.7468
+EXIM Bank Ltd.,41,JPY,      -,      -,0.77,0.7468
+Bangladesh Commerce Bank Ltd.,12,JPY,      -,      -,0.77,0.7468
+Bank Asia Ltd.,10,JPY,      -,      -,0.77,0.7468
+The Premier Bank Ltd.,35,JPY,      -,      -,0.77,0.7468
+Mutual Trust Bank Ltd.,21,JPY,      -,      -,0.77,0.7468
+FSIBL,44,JPY,      -,      -,0.77,0.7468
+Trust Bank Ltd.,36,JPY,      -,      -,0.77,0.7468
+Standard Chartered Bank,53,JPY,      -,      -,0.77,0.7468
+Habib Bank Ltd.,50,JPY,      -,      -,0.77,0.7468
+Commercial Bank of Ceylon,49,JPY,0.7161,0.7585,0.77,0.7468
+State Bank of India,54,JPY,      -,      -,0.77,0.7468
+Woori Bank,55,JPY,      -,      -,0.77,0.7468
+Bank Alfalah Limited,47,JPY,      -,      -,0.77,0.7468
+Citi Bank N.A.,64,JPY,      -,      -,0.77,0.7468
+HSBC,51,JPY,      -,      -,0.77,0.7468
+Jamuna Bank Ltd.,17,JPY,      -,      -,0.77,0.7468
+Brac Bank Limited,8,JPY,      -,      -,0.77,0.7468
+Shahjalal Islami Bank Ltd.,43,JPY,      -,      -,0.77,0.7468
+NRB Commercial Bank Ltd.,25,JPY,      -,      -,0.77,0.7468
+Midland Bank Limited,19,JPY,      -,      -,0.77,0.7468
+Modhumoti Bank Limited,20,JPY,,,0.77,0.7468
+NRB Global Bank Limited,26,JPY,      -,      -,0.77,0.7468
+Union Bank Limited,45,JPY,      -,      -,0.77,0.7468
+Janata Bank Limited,57,JPY,      -,      -,0.77,0.7468
+Social Islami Bank Limited,42,JPY,      -,      -,0.77,0.7468
+National Bank of Pakistan,52,JPY,      -,      -,0.77,0.7468
+SBACBL,30,AUD,,,60.3996,60.4164
+NRB Bank Ltd.,24,AUD,,,60.3996,60.4164
+The Farmers Bank Limited,34,AUD,,,60.3996,60.4164
+Meghna Bank Ltd.,9,AUD,,,60.3996,60.4164
+Agrani Bank Limited,58,AUD,,,60.3996,60.4164
+Pubali Bank Limited,29,AUD,,,60.3996,60.4164
+Rupali Bank Limited,59,AUD,,,60.3996,60.4164
+Sonali Bank Limited,56,AUD,,,60.3996,60.4164
+Uttara Bank Limited,38,AUD,,,60.3996,60.4164
+Bangladesh Krishi Bank,63,AUD,,,60.3996,60.4164
+BDBL,61,AUD,,,60.3996,60.4164
+AB Bank Ltd.,13,AUD,,,60.3996,60.4164
+The City Bank Ltd.,33,AUD,,,60.3996,60.4164
+IFIC Bank Ltd.,16,AUD,,,60.3996,60.4164
+Islami Bank Bangladesh Ltd.,39,AUD,,,60.3996,60.4164
+National Bank Ltd.,22,AUD,,,60.3996,60.4164
+United Commercial Bank Ltd.,37,AUD,,,60.3996,60.4164
+Al-Arafa Islami Bank Ltd.,40,AUD,,,60.3996,60.4164
+ICB Islamic Bank Ltd.,46,AUD,,,60.3996,60.4164
+BASIC Bank Ltd.,60,AUD,,,60.3996,60.4164
+South East Bank Ltd.,31,AUD,,,60.3996,60.4164
+Dhaka Bank Ltd.,14,AUD,,,60.3996,60.4164
+Eastern Bank Ltd.,11,AUD,,,60.3996,60.4164
+Prime Bank Ltd.,28,AUD,,,60.3996,60.4164
+NCCBL,23,AUD,,,60.3996,60.4164
+Dutch-Bangla Bank Ltd.,15,AUD,,,60.3996,60.4164
+Mercantile Bank Ltd.,18,AUD,,,60.3996,60.4164
+Standard Bank Ltd.,32,AUD,,,60.3996,60.4164
+One Bank Ltd.,27,AUD,,,60.3996,60.4164
+EXIM Bank Ltd.,41,AUD,,,60.3996,60.4164
+Bangladesh Commerce Bank Ltd.,12,AUD,,,60.3996,60.4164
+Bank Asia Ltd.,10,AUD,,,60.3996,60.4164
+The Premier Bank Ltd.,35,AUD,,,60.3996,60.4164
+Mutual Trust Bank Ltd.,21,AUD,,,60.3996,60.4164
+FSIBL,44,AUD,,,60.3996,60.4164
+Trust Bank Ltd.,36,AUD,,,60.3996,60.4164
+Standard Chartered Bank,53,AUD,,,60.3996,60.4164
+Habib Bank Ltd.,50,AUD,,,60.3996,60.4164
+Commercial Bank of Ceylon,49,AUD,,,60.3996,60.4164
+State Bank of India,54,AUD,,,60.3996,60.4164
+Woori Bank,55,AUD,,,60.3996,60.4164
+Bank Alfalah Limited,47,AUD,,,60.3996,60.4164
+Citi Bank N.A.,64,AUD,,,60.3996,60.4164
+HSBC,51,AUD,,,60.3996,60.4164
+Jamuna Bank Ltd.,17,AUD,,,60.3996,60.4164
+Brac Bank Limited,8,AUD,,,60.3996,60.4164
+Shahjalal Islami Bank Ltd.,43,AUD,,,60.3996,60.4164
+NRB Commercial Bank Ltd.,25,AUD,,,60.3996,60.4164
+Midland Bank Limited,19,AUD,,,60.3996,60.4164
+Modhumoti Bank Limited,20,AUD,,,60.3996,60.4164
+NRB Global Bank Limited,26,AUD,,,60.3996,60.4164
+Union Bank Limited,45,AUD,,,60.3996,60.4164
+Janata Bank Limited,57,AUD,,,60.3996,60.4164
+Social Islami Bank Ltd.,42,AUD,,,60.3996,60.4164
+National Bank of Pakistan,52,AUD,,,60.3996,60.4164
+SBACBL,30,INR,,,1.1839,1.1842
+NRB Bank Ltd.,24,INR,,,1.1839,1.1842
+The Farmers Bank Limited,34,INR,,,1.1839,1.1842
+Meghna Bank Ltd.,9,INR,,,1.1839,1.1842
+Agrani Bank Limited,58,INR,,,1.1839,1.1842
+Pubali Bank Limited,29,INR,,,1.1839,1.1842
+Rupali Bank Limited,59,INR,,,1.1839,1.1842
+Sonali Bank Limited,56,INR,,,1.1839,1.1842
+Uttara Bank Limited,38,INR,,,1.1839,1.1842
+Bangladesh Krishi Bank,63,INR,,,1.1839,1.1842
+BDBL,61,INR,,,1.1839,1.1842
+AB Bank Ltd.,13,INR,,,1.1839,1.1842
+The City Bank Ltd.,33,INR,,,1.1839,1.1842
+IFIC Bank Ltd.,16,INR,,,1.1839,1.1842
+Islami Bank Bangladesh Ltd.,39,INR,,,1.1839,1.1842
+National Bank Ltd.,22,INR,,,1.1839,1.1842
+United Commercial Bank Ltd.,37,INR,,,1.1839,1.1842
+Al-Arafa Islami Bank Ltd.,40,INR,,,1.1839,1.1842
+ICB Islamic Bank Ltd.,46,INR,,,1.1839,1.1842
+BASIC Bank Ltd.,60,INR,,,1.1839,1.1842
+South East Bank Ltd.,31,INR,,,1.1839,1.1842
+Dhaka Bank Ltd.,14,INR,,,1.1839,1.1842
+Eastern Bank Ltd.,11,INR,,,1.1839,1.1842
+Prime Bank Ltd.,28,INR,,,1.1839,1.1842
+NCCBL,23,INR,,,1.1839,1.1842
+Dutch-Bangla Bank Ltd.,15,INR,,,1.1839,1.1842
+Mercantile Bank Ltd.,18,INR,,,1.1839,1.1842
+Standard Bank Ltd.,32,INR,,,1.1839,1.1842
+One Bank Ltd.,27,INR,,,1.1839,1.1842
+EXIM Bank Ltd.,41,INR,,,1.1839,1.1842
+Bangladesh Commerce Bank Ltd.,12,INR,,,1.1839,1.1842
+Bank Asia Ltd.,10,INR,,,1.1839,1.1842
+The Premier Bank Ltd.,35,INR,,,1.1839,1.1842
+Mutual Trust Bank Ltd.,21,INR,,,1.1839,1.1842
+FSIBL,44,INR,,,1.1839,1.1842
+Trust Bank Ltd.,36,INR,,,1.1839,1.1842
+Standard Chartered Bank,53,INR,,,1.1839,1.1842
+Habib Bank Ltd.,50,INR,,,1.1839,1.1842
+Commercial Bank of Ceylon,49,INR,,,1.1839,1.1842
+State Bank of India,54,INR,,,1.1839,1.1842
+Woori Bank,55,INR,,,1.1839,1.1842
+Bank Alfalah Limited,47,INR,,,1.1839,1.1842
+Citi Bank N.A.,64,INR,,,1.1839,1.1842
+HSBC,51,INR,,,1.1839,1.1842
+Jamuna Bank Ltd.,17,INR,,,1.1839,1.1842
+Brac Bank Limited,8,INR,,,1.1839,1.1842
+Shahjalal Islami Bank Ltd.,43,INR,,,1.1839,1.1842
+NRB Commercial Bank Ltd.,25,INR,,,1.1839,1.1842
+Midland Bank Limited,19,INR,,,1.1839,1.1842
+Modhumoti Bank Limited,20,INR,,,1.1839,1.1842
+NRB Global Bank Limited,26,INR,,,1.1839,1.1842
+Union Bank Limited,45,INR,,,1.1839,1.1842
+Janata Bank Limited,57,INR,,,1.1839,1.1842
+Social Islami Bank Ltd.,42,INR,,,1.1839,1.1842
+National Bank of Pakistan,52,INR,,,1.1839,1.1842
+SBACBL,30,CAD,,,62.9738,62.9927
+NRB Bank Ltd.,24,CAD,,,62.9738,62.9927
+The Farmers Bank Limited,34,CAD,,,62.9738,62.9927
+Meghna Bank Ltd.,9,CAD,,,62.9738,62.9927
+Agrani Bank Limited,58,CAD,,,62.9738,62.9927
+Pubali Bank Limited,29,CAD,,,62.9738,62.9927
+Rupali Bank Limited,59,CAD,,,62.9738,62.9927
+Sonali Bank Limited,56,CAD,,,62.9738,62.9927
+Uttara Bank Limited,38,CAD,,,62.9738,62.9927
+Bangladesh Krishi Bank,63,CAD,,,62.9738,62.9927
+BDBL,61,CAD,,,62.9738,62.9927
+AB Bank Ltd.,13,CAD,,,62.9738,62.9927
+The City Bank Ltd.,33,CAD,,,62.9738,62.9927
+IFIC Bank Ltd.,16,CAD,,,62.9738,62.9927
+Islami Bank Bangladesh Ltd.,39,CAD,,,62.9738,62.9927
+National Bank Ltd.,22,CAD,,,62.9738,62.9927
+United Commercial Bank Ltd.,37,CAD,,,62.9738,62.9927
+Al-Arafa Islami Bank Ltd.,40,CAD,,,62.9738,62.9927
+ICB Islamic Bank Ltd.,46,CAD,,,62.9738,62.9927
+BASIC Bank Ltd.,60,CAD,,,62.9738,62.9927
+South East Bank Ltd.,31,CAD,,,62.9738,62.9927
+Dhaka Bank Ltd.,14,CAD,,,62.9738,62.9927
+Eastern Bank Ltd.,11,CAD,,,62.9738,62.9927
+Prime Bank Ltd.,28,CAD,,,62.9738,62.9927
+NCCBL,23,CAD,,,62.9738,62.9927
+Dutch-Bangla Bank Ltd.,15,CAD,,,62.9738,62.9927
+Mercantile Bank Ltd.,18,CAD,,,62.9738,62.9927
+Standard Bank Ltd.,32,CAD,,,62.9738,62.9927
+One Bank Ltd.,27,CAD,,,62.9738,62.9927
+EXIM Bank Ltd.,41,CAD,,,62.9738,62.9927
+Bangladesh Commerce Bank Ltd.,12,CAD,,,62.9738,62.9927
+Bank Asia Ltd.,10,CAD,,,62.9738,62.9927
+The Premier Bank Ltd.,35,CAD,,,62.9738,62.9927
+Mutual Trust Bank Ltd.,21,CAD,,,62.9738,62.9927
+FSIBL,44,CAD,,,62.9738,62.9927
+Trust Bank Ltd.,36,CAD,,,62.9738,62.9927
+Standard Chartered Bank,53,CAD,,,62.9738,62.9927
+Habib Bank Ltd.,50,CAD,,,62.9738,62.9927
+Commercial Bank of Ceylon,49,CAD,,,62.9738,62.9927
+State Bank of India,54,CAD,,,62.9738,62.9927
+Woori Bank,55,CAD,,,62.9738,62.9927
+Bank Alfalah Limited,47,CAD,,,62.9738,62.9927
+Citi Bank N.A.,64,CAD,,,62.9738,62.9927
+HSBC,51,CAD,,,62.9738,62.9927
+Jamuna Bank Ltd.,17,CAD,,,62.9738,62.9927
+Brac Bank Limited,8,CAD,,,62.9738,62.9927
+Shahjalal Islami Bank Ltd.,43,CAD,,,62.9738,62.9927
+NRB Commercial Bank Ltd.,25,CAD,,,62.9738,62.9927
+Midland Bank Limited,19,CAD,,,62.9738,62.9927
+Modhumoti Bank Limited,20,CAD,,,62.9738,62.9927
+NRB Global Bank Limited,26,CAD,,,62.9738,62.9927
+Union Bank Limited,45,CAD,,,62.9738,62.9927
+Janata Bank Limited,57,CAD,,,62.9738,62.9927
+Social Islami Bank Ltd.,42,CAD,,,62.9738,62.9927
+National Bank of Pakistan,52,CAD,,,62.9738,62.9927
+SBACBL,30,SGD,,,61.2096,61.2588
+NRB Bank Ltd.,24,SGD,,,61.2096,61.2588
+The Farmers Bank Limited,34,SGD,,,61.2096,61.2588
+Meghna Bank Ltd.,9,SGD,,,61.2096,61.2588
+Agrani Bank Limited,58,SGD,,,61.2096,61.2588
+Pubali Bank Limited,29,SGD,,,61.2096,61.2588
+Rupali Bank Limited,59,SGD,,,61.2096,61.2588
+Sonali Bank Limited,56,SGD,,,61.2096,61.2588
+Uttara Bank Limited,38,SGD,,,61.2096,61.2588
+Bangladesh Krishi Bank,63,SGD,,,61.2096,61.2588
+BDBL,61,SGD,,,61.2096,61.2588
+AB Bank Ltd.,13,SGD,,,61.2096,61.2588
+The City Bank Ltd.,33,SGD,,,61.2096,61.2588
+IFIC Bank Ltd.,16,SGD,,,61.2096,61.2588
+Islami Bank Bangladesh Ltd.,39,SGD,,,61.2096,61.2588
+National Bank Ltd.,22,SGD,,,61.2096,61.2588
+United Commercial Bank Ltd.,37,SGD,,,61.2096,61.2588
+Al-Arafa Islami Bank Ltd.,40,SGD,,,61.2096,61.2588
+ICB Islamic Bank Ltd.,46,SGD,,,61.2096,61.2588
+BASIC Bank Ltd.,60,SGD,,,61.2096,61.2588
+South East Bank Ltd.,31,SGD,,,61.2096,61.2588
+Dhaka Bank Ltd.,14,SGD,,,61.2096,61.2588
+Eastern Bank Ltd.,11,SGD,,,61.2096,61.2588
+Prime Bank Ltd.,28,SGD,,,61.2096,61.2588
+NCCBL,23,SGD,,,61.2096,61.2588
+Dutch-Bangla Bank Ltd.,15,SGD,,,61.2096,61.2588
+Mercantile Bank Ltd.,18,SGD,,,61.2096,61.2588
+Standard Bank Ltd.,32,SGD,,,61.2096,61.2588
+One Bank Ltd.,27,SGD,,,61.2096,61.2588
+EXIM Bank Ltd.,41,SGD,,,61.2096,61.2588
+Bangladesh Commerce Bank Ltd.,12,SGD,,,61.2096,61.2588
+Bank Asia Ltd.,10,SGD,,,61.2096,61.2588
+The Premier Bank Ltd.,35,SGD,,,61.2096,61.2588
+Mutual Trust Bank Ltd.,21,SGD,,,61.2096,61.2588
+FSIBL,44,SGD,,,61.2096,61.2588
+Trust Bank Ltd.,36,SGD,,,61.2096,61.2588
+Standard Chartered Bank,53,SGD,,,61.2096,61.2588
+Habib Bank Ltd.,50,SGD,,,61.2096,61.2588
+Commercial Bank of Ceylon,49,SGD,,,61.2096,61.2588
+State Bank of India,54,SGD,,,61.2096,61.2588
+Woori Bank,55,SGD,,,61.2096,61.2588
+Bank Alfalah Limited,47,SGD,,,61.2096,61.2588
+Citi Bank N.A.,64,SGD,,,61.2096,61.2588
+HSBC,51,SGD,,,61.2096,61.2588
+Jamuna Bank Ltd.,17,SGD,,,61.2096,61.2588
+Brac Bank Limited,8,SGD,,,61.2096,61.2588
+Shahjalal Islami Bank Ltd.,43,SGD,,,61.2096,61.2588
+NRB Commercial Bank Ltd.,25,SGD,,,61.2096,61.2588
+Midland Bank Limited,19,SGD,,,61.2096,61.2588
+Modhumoti Bank Limited,20,SGD,,,61.2096,61.2588
+NRB Global Bank Limited,26,SGD,,,61.2096,61.2588
+Union Bank Limited,45,SGD,,,61.2096,61.2588
+Janata Bank Limited,57,SGD,,,61.2096,61.2588
+Social Islami Bank Ltd.,42,SGD,,,61.2096,61.2588
+National Bank of Pakistan,52,SGD,,,61.2096,61.2588
+SBACBL,30,CNH,,,12.1811,12.1889
+NRB Bank Ltd.,24,CNH,,,12.1811,12.1889
+The Farmers Bank Limited,34,CNH,,,12.1811,12.1889
+Meghna Bank Ltd.,9,CNH,,,12.1811,12.1889
+Agrani Bank Limited,58,CNH,,,12.1811,12.1889
+Pubali Bank Limited,29,CNH,,,12.1811,12.1889
+Rupali Bank Limited,59,CNH,,,12.1811,12.1889
+Sonali Bank Limited,56,CNH,,,12.1811,12.1889
+Uttara Bank Limited,38,CNH,,,12.1811,12.1889
+Bangladesh Krishi Bank,63,CNH,,,12.1811,12.1889
+BDBL,61,CNH,,,12.1811,12.1889
+AB Bank Ltd.,13,CNH,,,12.1811,12.1889
+The City Bank Ltd.,33,CNH,,,12.1811,12.1889
+IFIC Bank Ltd.,16,CNH,,,12.1811,12.1889
+Islami Bank Bangladesh Ltd.,39,CNH,,,12.1811,12.1889
+National Bank Ltd.,22,CNH,,,12.1811,12.1889
+United Commercial Bank Ltd.,37,CNH,,,12.1811,12.1889
+Al-Arafa Islami Bank Ltd.,40,CNH,,,12.1811,12.1889
+ICB Islamic Bank Ltd.,46,CNH,,,12.1811,12.1889
+BASIC Bank Ltd.,60,CNH,,,12.1811,12.1889
+South East Bank Ltd.,31,CNH,,,12.1811,12.1889
+Dhaka Bank Ltd.,14,CNH,,,12.1811,12.1889
+Eastern Bank Ltd.,11,CNH,,,12.1811,12.1889
+Prime Bank Ltd.,28,CNH,,,12.1811,12.1889
+NCCBL,23,CNH,,,12.1811,12.1889
+Dutch-Bangla Bank Ltd.,15,CNH,,,12.1811,12.1889
+Mercantile Bank Ltd.,18,CNH,,,12.1811,12.1889
+Standard Bank Ltd.,32,CNH,,,12.1811,12.1889
+One Bank Ltd.,27,CNH,,,12.1811,12.1889
+EXIM Bank Ltd.,41,CNH,,,12.1811,12.1889
+Bangladesh Commerce Bank Ltd.,12,CNH,,,12.1811,12.1889
+Bank Asia Ltd.,10,CNH,,,12.1811,12.1889
+The Premier Bank Ltd.,35,CNH,,,12.1811,12.1889
+Mutual Trust Bank Ltd.,21,CNH,,,12.1811,12.1889
+FSIBL,44,CNH,,,12.1811,12.1889
+Trust Bank Ltd.,36,CNH,,,12.1811,12.1889
+Standard Chartered Bank,53,CNH,,,12.1811,12.1889
+Habib Bank Ltd.,50,CNH,,,12.1811,12.1889
+Commercial Bank of Ceylon,49,CNH,,,12.1811,12.1889
+State Bank of India,54,CNH,,,12.1811,12.1889
+Woori Bank,55,CNH,,,12.1811,12.1889
+Bank Alfalah Limited,47,CNH,,,12.1811,12.1889
+Citi Bank N.A.,64,CNH,,,12.1811,12.1889
+HSBC,51,CNH,,,12.1811,12.1889
+Jamuna Bank Ltd.,17,CNH,,,12.1811,12.1889
+Brac Bank Limited,8,CNH,,,12.1811,12.1889
+Shahjalal Islami Bank Ltd.,43,CNH,,,12.1811,12.1889
+NRB Commercial Bank Ltd.,25,CNH,,,12.1811,12.1889
+Midland Bank Limited,19,CNH,,,12.1811,12.1889
+Modhumoti Bank Limited,20,CNH,,,12.1811,12.1889
+NRB Global Bank Limited,26,CNH,,,12.1811,12.1889
+Union Bank Limited,45,CNH,,,12.1811,12.1889
+Janata Bank Limited,57,CNH,,,12.1811,12.1889
+Social Islami Bank Ltd.,42,CNH,,,12.1811,12.1889
+National Bank of Pakistan,52,CNH,,,12.1811,12.1889

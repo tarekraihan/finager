@@ -690,16 +690,16 @@ font-size: 22px;
                                         <h4>
                                             <span>৳</span>
                                             <?php 
-                                                if($currency_exchange['INR']){
-                                                    echo number_format($currency_exchange['INR'][0]->central_bank_buy_rate, 2);
+                                                if($currency_exchange['CAD']){
+                                                    echo number_format($currency_exchange['CAD'][0]->central_bank_buy_rate, 2);
                                                 }
-                                                if( $currency_exchange['INR'][0]->central_bank_buy_rate > $currency_exchange['INR'][1]->central_bank_buy_rate){
+                                                if( $currency_exchange['CAD'][0]->central_bank_buy_rate > $currency_exchange['CAD'][1]->central_bank_buy_rate){
                                                     ?>
                                                     <span class="text-success">
                                                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                                                     </span>
                                                     <?php 
-                                                }else if( $currency_exchange['INR'][0]->central_bank_buy_rate == $currency_exchange['INR'][1]->central_bank_buy_rate){
+                                                }else if( $currency_exchange['CAD'][0]->central_bank_buy_rate == $currency_exchange['CAD'][1]->central_bank_buy_rate){
                                                     ?>
                                                     <span class="text-warning">
                                                     <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
@@ -714,7 +714,7 @@ font-size: 22px;
                                                 }
                                             ?>
                                         </h4>  
-                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['INR'][1]->central_bank_buy_rate, 2); ?></p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['CAD'][1]->central_bank_buy_rate, 2); ?></p>   
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12">
@@ -724,16 +724,16 @@ font-size: 22px;
                                         <h4>
                                             <span>৳</span>
                                             <?php 
-                                                if($currency_exchange['INR']){
-                                                    echo number_format($currency_exchange['INR'][0]->central_bank_buy_rate, 2);
+                                                if($currency_exchange['SGD']){
+                                                    echo number_format($currency_exchange['SGD'][0]->central_bank_buy_rate, 2);
                                                 }
-                                                if( $currency_exchange['INR'][0]->central_bank_buy_rate > $currency_exchange['INR'][1]->central_bank_buy_rate){
+                                                if( $currency_exchange['SGD'][0]->central_bank_buy_rate > $currency_exchange['SGD'][1]->central_bank_buy_rate){
                                                     ?>
                                                     <span class="text-success">
                                                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                                                     </span>
                                                     <?php 
-                                                }else if( $currency_exchange['INR'][0]->central_bank_buy_rate == $currency_exchange['INR'][1]->central_bank_buy_rate){
+                                                }else if( $currency_exchange['SGD'][0]->central_bank_buy_rate == $currency_exchange['SGD'][1]->central_bank_buy_rate){
                                                     ?>
                                                     <span class="text-warning">
                                                     <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
@@ -748,7 +748,7 @@ font-size: 22px;
                                                 }
                                             ?>
                                         </h4>  
-                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['INR'][1]->central_bank_buy_rate, 2); ?></p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['SGD'][1]->central_bank_buy_rate, 2); ?></p>   
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12">
@@ -758,16 +758,16 @@ font-size: 22px;
                                         <h4>
                                             <span>৳</span>
                                             <?php 
-                                                if($currency_exchange['INR']){
-                                                    echo number_format($currency_exchange['INR'][0]->central_bank_buy_rate, 2);
+                                                if($currency_exchange['CNH']){
+                                                    echo number_format($currency_exchange['CNH'][0]->central_bank_buy_rate, 2);
                                                 }
-                                                if( $currency_exchange['INR'][0]->central_bank_buy_rate > $currency_exchange['INR'][1]->central_bank_buy_rate){
+                                                if( $currency_exchange['CNH'][0]->central_bank_buy_rate > $currency_exchange['CNH'][1]->central_bank_buy_rate){
                                                     ?>
                                                     <span class="text-success">
                                                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                                                     </span>
                                                     <?php 
-                                                }else if( $currency_exchange['INR'][0]->central_bank_buy_rate == $currency_exchange['INR'][1]->central_bank_buy_rate){
+                                                }else if( $currency_exchange['CNH'][0]->central_bank_buy_rate == $currency_exchange['CNH'][1]->central_bank_buy_rate){
                                                     ?>
                                                     <span class="text-warning">
                                                     <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
@@ -782,7 +782,7 @@ font-size: 22px;
                                                 }
                                             ?>
                                         </h4>  
-                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['INR'][1]->central_bank_buy_rate, 2); ?></p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['CNH'][1]->central_bank_buy_rate, 2); ?></p>   
                                     </div>
                                 </div>
                             </div>
@@ -1005,16 +1005,16 @@ font-size: 22px;
                                         <h4>
                                             <span>৳</span>
                                             <?php 
-                                                if($currency_exchange['INR']){
-                                                    echo number_format($currency_exchange['INR'][0]->central_bank_sell_rate, 2);
+                                                if($currency_exchange['CAD']){
+                                                    echo number_format($currency_exchange['CAD'][0]->central_bank_sell_rate, 2);
                                                 }
-                                                if( $currency_exchange['INR'][0]->central_bank_sell_rate > $currency_exchange['INR'][1]->central_bank_sell_rate){
+                                                if( $currency_exchange['CAD'][0]->central_bank_sell_rate > $currency_exchange['CAD'][1]->central_bank_sell_rate){
                                                     ?>
                                                     <span class="text-success">
                                                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                                                     </span>
                                                     <?php 
-                                                }else if( $currency_exchange['INR'][0]->central_bank_sell_rate == $currency_exchange['INR'][1]->central_bank_sell_rate){
+                                                }else if( $currency_exchange['CAD'][0]->central_bank_sell_rate == $currency_exchange['CAD'][1]->central_bank_sell_rate){
                                                     ?>
                                                     <span class="text-warning">
                                                     <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
@@ -1029,7 +1029,7 @@ font-size: 22px;
                                                 }
                                             ?>
                                         </h4>  
-                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['INR'][1]->central_bank_sell_rate, 2); ?></p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['CAD'][1]->central_bank_sell_rate, 2); ?></p>   
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12">
@@ -1039,16 +1039,16 @@ font-size: 22px;
                                         <h4>
                                             <span>৳</span>
                                             <?php 
-                                                if($currency_exchange['INR']){
-                                                    echo number_format($currency_exchange['INR'][0]->central_bank_sell_rate, 2);
+                                                if($currency_exchange['SGD']){
+                                                    echo number_format($currency_exchange['SGD'][0]->central_bank_sell_rate, 2);
                                                 }
-                                                if( $currency_exchange['INR'][0]->central_bank_sell_rate > $currency_exchange['INR'][1]->central_bank_sell_rate){
+                                                if( $currency_exchange['SGD'][0]->central_bank_sell_rate > $currency_exchange['SGD'][1]->central_bank_sell_rate){
                                                     ?>
                                                     <span class="text-success">
                                                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                                                     </span>
                                                     <?php 
-                                                }else if( $currency_exchange['INR'][0]->central_bank_sell_rate == $currency_exchange['INR'][1]->central_bank_sell_rate){
+                                                }else if( $currency_exchange['SGD'][0]->central_bank_sell_rate == $currency_exchange['SGD'][1]->central_bank_sell_rate){
                                                     ?>
                                                     <span class="text-warning">
                                                     <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
@@ -1063,7 +1063,7 @@ font-size: 22px;
                                                 }
                                             ?>
                                         </h4>  
-                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['INR'][1]->central_bank_sell_rate, 2); ?></p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['SGD'][1]->central_bank_sell_rate, 2); ?></p>   
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12">
@@ -1073,16 +1073,16 @@ font-size: 22px;
                                         <h4>
                                             <span>৳</span>
                                             <?php 
-                                                if($currency_exchange['INR']){
-                                                    echo number_format($currency_exchange['INR'][0]->central_bank_sell_rate, 2);
+                                                if($currency_exchange['CNH']){
+                                                    echo number_format($currency_exchange['CNH'][0]->central_bank_sell_rate, 2);
                                                 }
-                                                if( $currency_exchange['INR'][0]->central_bank_sell_rate > $currency_exchange['INR'][1]->central_bank_sell_rate){
+                                                if( $currency_exchange['CNH'][0]->central_bank_sell_rate > $currency_exchange['CNH'][1]->central_bank_sell_rate){
                                                     ?>
                                                     <span class="text-success">
                                                         <i class="fa fa-chevron-up" aria-hidden="true"></i>
                                                     </span>
                                                     <?php 
-                                                }else if( $currency_exchange['INR'][0]->central_bank_sell_rate == $currency_exchange['INR'][1]->central_bank_sell_rate){
+                                                }else if( $currency_exchange['CNH'][0]->central_bank_sell_rate == $currency_exchange['CNH'][1]->central_bank_sell_rate){
                                                     ?>
                                                     <span class="text-warning">
                                                     <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
@@ -1097,7 +1097,7 @@ font-size: 22px;
                                                 }
                                             ?>
                                         </h4>  
-                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['INR'][1]->central_bank_sell_rate, 2); ?></p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['CNH'][1]->central_bank_sell_rate, 2); ?></p>   
                                     </div>
                                 </div>
                             </div>
