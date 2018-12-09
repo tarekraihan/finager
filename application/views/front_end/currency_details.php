@@ -646,8 +646,7 @@
             }
             else if(this_id == 'EUR' || selected_currency == 'EUR'){
                 $('#search-currency-symbol').html('€');
-            }
-            else{
+            }else{
                 $('#search-currency-symbol').html('¥');
             }
         }).trigger('change');
