@@ -780,4 +780,50 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         return  $query->row();
     }
 
+    
+    public function axios_select_exchange_rate_for_list_view($query_string,$amount)//To Show exchange rate list
+    {
+        $amoun = $amount ? $amount : 1000;
+       
+        $sql = "SELECT DAYNAME(date_of_exchange_rate) AS day_name , date_of_exchange_rate, day(date_of_exchange_rate) AS day FROM `daily_exchange_rate_history` ORDER BY date_of_exchange_rate DESC LIMIT 1";
+        $query = $this->db->query($sql);
+        $result = $query->row();
+        
+        $date = date("Y-m-d", strtotime($result->date_of_exchange_rate));
+       
+
+        $sql1 = "SELECT holiday_date from bank_holiday";
+        $query1 = $this->db->query($sql1);
+        
+        $holidays = [];
+        foreach($query1->result_array() as $row ){
+            array_push($holidays,date("Y-m-d", strtotime($row['holiday_date'])));
+        }
+
+        if(in_array($date, $holidays)){
+            $date = date("Y-m-d", strtotime("-1 day", strtotime($date)));
+        }
+
+
+        if(date('l', strtotime($date)) == "Sunday")
+        {
+            $date = date("Y-m-d", strtotime($date));
+        }else if(date('l', strtotime($date)) == "Saturday")
+        {
+            $date = date("Y-m-d", strtotime("-2 days", strtotime($date)));
+        }else if (date('l', strtotime($date)) == "Friday"){
+            $date = date("Y-m-d", strtotime("-1 days", strtotime($date)));
+        }
+      
+        $sql2 = "SELECT daily_exchange_rate.*,(daily_exchange_rate.bank_buy_rate * $amoun) as bank_buy_rate_amount,(daily_exchange_rate.bank_sell_rate * $amoun) as bank_sell_rate_amount,card_bank.bank_name ,(daily_exchange_rate.central_bank_buy_rate * $amoun) as central_bank_buy_rate_amount,(daily_exchange_rate.central_bank_sell_rate * $amoun) as central_bank_sell_rate_amount,card_bank.bank_name ,card_bank.bank_logo FROM `daily_exchange_rate` LEFT JOIN card_bank ON card_bank.id = daily_exchange_rate.bank_id WHERE date_of_exchange_rate = '$date' ".$query_string ;
+
+        $query2 = $this->db->query($sql2);
+        $result2 = array();
+        foreach($query2->result() as $row){
+            $result2[] = $row;
+        }
+        return $result2;
+    }
+
+
 }

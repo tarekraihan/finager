@@ -997,7 +997,7 @@ function pmtCalc()
     {
         //alert('year')
         $('#totalAmtPay').text(addCommas(Math.ceil(pmt*($('.input_LoanPeriod').val()*12)))); //Total Amount Payable
-        $('#totalInterest').text(addCommas(Math.ceil(pmt*($('.input_LoanPeriod').val()*12))-$('.input_LoanAmt').val())); //Total Interest Payable
+        $('#totalInterest').text(addCommas(Math.ceil(pmt*($('.input_LoanPeriod').val()))-$('.input_LoanAmt').val())); //Total Interest Payable
     }
     else if(inpSelected=='Personal Loan Calculator')
     {

@@ -44,5 +44,19 @@ class Delete_Model extends CI_Model {
         $result=$this->db->query($query);
     }
 
+    function Delete_All_Exchange_Rate_By_Date( $exchange_date ){
+
+        $query="DELETE FROM `daily_exchange_rate_history` WHERE `date_of_exchange_rate`='$exchange_date'";
+        $query1="DELETE FROM `daily_exchange_rate` WHERE `date_of_exchange_rate`='$exchange_date'";
+        $result=$this->db->query($query);
+        $result1=$this->db->query($query1);
+
+        if( $result && $result1 ){
+           return true;
+        }else{
+            return false;
+        }
+    }
+
 
 } 

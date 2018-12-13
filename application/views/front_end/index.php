@@ -477,12 +477,32 @@ font-size: 22px;
                                         <div class="flag USD"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['USD']){
+                                                    echo number_format($currency_exchange['USD'][0]->central_bank_buy_rate, 2);
+                                                }
+                                                if( $currency_exchange['USD'][0]->central_bank_buy_rate > $currency_exchange['USD'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['USD'][0]->central_bank_buy_rate == $currency_exchange['USD'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['USD'][1]->central_bank_buy_rate, 2); ?></p>   
                                     </div>
                                 </div>
 
@@ -492,12 +512,32 @@ font-size: 22px;
                                         <div class="flag EUR"></div>
                                         <h4>
                                             <span>৳</span>
-                                            100.29
-                                            <span class="text-success">
-                                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['EUR']){
+                                                    echo number_format($currency_exchange['EUR'][0]->central_bank_buy_rate, 2);
+                                                }
+                                                if( $currency_exchange['EUR'][0]->central_bank_buy_rate > $currency_exchange['EUR'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['EUR'][0]->central_bank_buy_rate == $currency_exchange['EUR'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 90.98</p>     
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['EUR'][1]->central_bank_buy_rate, 2); ?></p>     
                                     </div>
                                 </div>
 
@@ -507,27 +547,69 @@ font-size: 22px;
                                         <div class="flag GBP"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['GBP']){
+                                                    echo number_format($currency_exchange['GBP'][0]->central_bank_buy_rate, 2);
+                                                }
+
+                                                if( $currency_exchange['GBP'][0]->central_bank_buy_rate > $currency_exchange['GBP'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['GBP'][0]->central_bank_buy_rate == $currency_exchange['GBP'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
+                                            
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['GBP'][1]->central_bank_buy_rate, 2); ?></p>   
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
-                                        <label>YEN</label>
+                                        <label>JPY</label>
                                         <div class="flag YEN"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['JPY']){
+                                                    echo number_format($currency_exchange['JPY'][0]->central_bank_buy_rate, 2);
+                                                }
+                                                if( $currency_exchange['JPY'][0]->central_bank_buy_rate > $currency_exchange['JPY'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['JPY'][0]->central_bank_buy_rate == $currency_exchange['JPY'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>    
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['JPY'][1]->central_bank_buy_rate, 2); ?></p>    
                                     </div>
                                 </div>
 
@@ -537,12 +619,33 @@ font-size: 22px;
                                         <div class="flag AUD"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['AUD']){
+                                                    echo number_format($currency_exchange['AUD'][0]->central_bank_buy_rate, 2);
+                                                }
+
+                                                if( $currency_exchange['AUD'][0]->central_bank_buy_rate > $currency_exchange['AUD'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['AUD'][0]->central_bank_buy_rate == $currency_exchange['AUD'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['AUD'][1]->central_bank_buy_rate, 2); ?></p>   
                                     </div>
                                 </div>
 
@@ -552,12 +655,134 @@ font-size: 22px;
                                         <div class="flag INR"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['INR']){
+                                                    echo number_format($currency_exchange['INR'][0]->central_bank_buy_rate, 2);
+                                                }
+                                                if( $currency_exchange['INR'][0]->central_bank_buy_rate > $currency_exchange['INR'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['INR'][0]->central_bank_buy_rate == $currency_exchange['INR'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['INR'][1]->central_bank_buy_rate, 2); ?></p>   
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="div-focus">
+                                        <label>CAD</label>
+                                        <div class="flag CAD"></div>
+                                        <h4>
+                                            <span>৳</span>
+                                            <?php 
+                                                if($currency_exchange['CAD']){
+                                                    echo number_format($currency_exchange['CAD'][0]->central_bank_buy_rate, 2);
+                                                }
+                                                if( $currency_exchange['CAD'][0]->central_bank_buy_rate > $currency_exchange['CAD'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['CAD'][0]->central_bank_buy_rate == $currency_exchange['CAD'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
+                                        </h4>  
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['CAD'][1]->central_bank_buy_rate, 2); ?></p>   
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="div-focus">
+                                        <label>SGD</label>
+                                        <div class="flag SGD"></div>
+                                        <h4>
+                                            <span>৳</span>
+                                            <?php 
+                                                if($currency_exchange['SGD']){
+                                                    echo number_format($currency_exchange['SGD'][0]->central_bank_buy_rate, 2);
+                                                }
+                                                if( $currency_exchange['SGD'][0]->central_bank_buy_rate > $currency_exchange['SGD'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['SGD'][0]->central_bank_buy_rate == $currency_exchange['SGD'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
+                                        </h4>  
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['SGD'][1]->central_bank_buy_rate, 2); ?></p>   
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="div-focus">
+                                        <label>CNH</label>
+                                        <div class="flag CNH"></div>
+                                        <h4>
+                                            <span>৳</span>
+                                            <?php 
+                                                if($currency_exchange['CNH']){
+                                                    echo number_format($currency_exchange['CNH'][0]->central_bank_buy_rate, 2);
+                                                }
+                                                if( $currency_exchange['CNH'][0]->central_bank_buy_rate > $currency_exchange['CNH'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['CNH'][0]->central_bank_buy_rate == $currency_exchange['CNH'][1]->central_bank_buy_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
+                                        </h4>  
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['CNH'][1]->central_bank_buy_rate, 2); ?></p>   
                                     </div>
                                 </div>
                             </div>
@@ -570,12 +795,32 @@ font-size: 22px;
                                         <div class="flag USD"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['USD']){
+                                                    echo number_format($currency_exchange['USD'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['USD'][0]->central_bank_sell_rate > $currency_exchange['USD'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['USD'][0]->central_bank_sell_rate == $currency_exchange['USD'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['USD'][1]->central_bank_sell_rate, 2); ?></p>   
                                     </div>
                                 </div>
 
@@ -585,12 +830,32 @@ font-size: 22px;
                                         <div class="flag EUR"></div>
                                         <h4>
                                             <span>৳</span>
-                                            100.29
-                                            <span class="text-success">
-                                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['EUR']){
+                                                    echo number_format($currency_exchange['EUR'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['EUR'][0]->central_bank_sell_rate > $currency_exchange['EUR'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['EUR'][0]->central_bank_sell_rate == $currency_exchange['EUR'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 90.98</p>     
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['EUR'][1]->central_bank_sell_rate, 2); ?></p>     
                                     </div>
                                 </div>
 
@@ -600,27 +865,67 @@ font-size: 22px;
                                         <div class="flag GBP"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['GBP']){
+                                                    echo number_format($currency_exchange['GBP'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['GBP'][0]->central_bank_sell_rate > $currency_exchange['GBP'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['GBP'][0]->central_bank_sell_rate == $currency_exchange['GBP'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['GBP'][1]->central_bank_sell_rate, 2); ?></p>   
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 col-sm-6 col-xs-12">
                                     <div class="div-focus">
-                                        <label>YEN</label>
+                                        <label>JPY</label>
                                         <div class="flag YEN"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['JPY']){
+                                                    echo number_format($currency_exchange['JPY'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['JPY'][0]->central_bank_sell_rate > $currency_exchange['JPY'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['JPY'][0]->central_bank_sell_rate == $currency_exchange['JPY'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>    
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['JPY'][1]->central_bank_sell_rate, 2); ?></p>    
                                     </div>
                                 </div>
 
@@ -630,12 +935,32 @@ font-size: 22px;
                                         <div class="flag AUD"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['AUD']){
+                                                    echo number_format($currency_exchange['AUD'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['AUD'][0]->central_bank_sell_rate > $currency_exchange['AUD'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['AUD'][0]->central_bank_sell_rate == $currency_exchange['AUD'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['AUD'][1]->central_bank_sell_rate, 2); ?></p>   
                                     </div>
                                 </div>
 
@@ -645,12 +970,134 @@ font-size: 22px;
                                         <div class="flag INR"></div>
                                         <h4>
                                             <span>৳</span>
-                                            80.29
-                                            <span class="text-danger">
-                                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                                            </span>
+                                            <?php 
+                                                if($currency_exchange['INR']){
+                                                    echo number_format($currency_exchange['INR'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['INR'][0]->central_bank_sell_rate > $currency_exchange['INR'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['INR'][0]->central_bank_sell_rate == $currency_exchange['INR'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
                                         </h4>  
-                                        <p>Last Day Rate 82.98</p>   
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['INR'][1]->central_bank_sell_rate, 2); ?></p>   
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="div-focus">
+                                        <label>CAD</label>
+                                        <div class="flag CAD"></div>
+                                        <h4>
+                                            <span>৳</span>
+                                            <?php 
+                                                if($currency_exchange['CAD']){
+                                                    echo number_format($currency_exchange['CAD'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['CAD'][0]->central_bank_sell_rate > $currency_exchange['CAD'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['CAD'][0]->central_bank_sell_rate == $currency_exchange['CAD'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
+                                        </h4>  
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['CAD'][1]->central_bank_sell_rate, 2); ?></p>   
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="div-focus">
+                                        <label>SGD</label>
+                                        <div class="flag SGD"></div>
+                                        <h4>
+                                            <span>৳</span>
+                                            <?php 
+                                                if($currency_exchange['SGD']){
+                                                    echo number_format($currency_exchange['SGD'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['SGD'][0]->central_bank_sell_rate > $currency_exchange['SGD'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['SGD'][0]->central_bank_sell_rate == $currency_exchange['SGD'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
+                                        </h4>  
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['SGD'][1]->central_bank_sell_rate, 2); ?></p>   
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="div-focus">
+                                        <label>CNH</label>
+                                        <div class="flag CNH"></div>
+                                        <h4>
+                                            <span>৳</span>
+                                            <?php 
+                                                if($currency_exchange['CNH']){
+                                                    echo number_format($currency_exchange['CNH'][0]->central_bank_sell_rate, 2);
+                                                }
+                                                if( $currency_exchange['CNH'][0]->central_bank_sell_rate > $currency_exchange['CNH'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-success">
+                                                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }else if( $currency_exchange['CNH'][0]->central_bank_sell_rate == $currency_exchange['CNH'][1]->central_bank_sell_rate){
+                                                    ?>
+                                                    <span class="text-warning">
+                                                    <img src="<?php echo base_url();?>resource/front_end/fonts/equals.png" width="25" />
+                                                    </span>
+                                                    <?php 
+                                                }else{
+                                                    ?>
+                                                    <span class="text-danger">
+                                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                                    </span>
+                                                    <?php 
+                                                }
+                                            ?>
+                                        </h4>  
+                                        <p>Last Day Rate ৳ <?php echo number_format($currency_exchange['CNH'][1]->central_bank_sell_rate, 2); ?></p>   
                                     </div>
                                 </div>
                             </div>
@@ -658,11 +1105,11 @@ font-size: 22px;
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 text-right">
-                        <p style="margin-top: -10px;">Last Update: 12/12/2018</p>
+                        <p style="margin-top: -10px;">Last Update: <?php echo date('d/m/Y',strtotime($currency_exchange['INR'][0]->date_of_exchange_rate)) ?></p>
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                        <a href="http://asdf.sujatbarua.com/currency-details.html" class="rate-more-button">Find Bank Exchange Rates Here</a>
+                        <a href="<?php echo base_url();?>currency-details.html" class="rate-more-button">Find Bank Exchange Rates Here</a>
                     </div>
                 </div>
             </div>
