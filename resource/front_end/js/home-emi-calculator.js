@@ -231,7 +231,7 @@ $(function(event) {
         var _this=$(this);
         //alert(valInput)
         if(valInput < 1){
-            alert("Minimum Year should be 1 & Maximum Year should be 25");
+            alert("Minimum Interest Rate should be 1 & Maximum Interest Rate should be 25");
             _this.val(1);
             _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:0});
             _this.parents('#interest').find('.draggable').css('left',0);
@@ -250,7 +250,7 @@ $(function(event) {
          *******************Year*******************
          *******************************************/
         else if(valInput > 25){
-            alert("Minimum Year should be 1 & Maximum Year should be 25");
+            alert("Minimum Interest Rate should be 1 & Maximum Interest Rate should be 25");
             _this.val(1);
             _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'0'});
             _this.parents('#interest').find('.draggable').css('left','0');
@@ -307,8 +307,89 @@ $(function(event) {
 
             finalCalculation();
         }
+    });
 
+    $('#avgSave .inputWrapper input').blur(function(){
+        var valInput =parseFloat( $(this).val());
+        var _this=$(this);
+        //alert(valInput)
+        if(valInput < 1){
+            alert("Minimum Year should be 1 & Maximum Year should be 25");
+            _this.val(1);
+            _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:0});
+            _this.parents('#avgSave').find('.draggable').css('left',0);
+            finalCalculation();
+        }
+        /*else if(valInput >= 23){
+         //alert("Max Age should be 1 & Maximum Age should be 30")
+         _this.val(23);
+         _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-1025px'});
+         _this.parents('#interest').find('.draggable').css('left','384px');
+         finalCalculation();
+         //alert(_this.parents('.slideWrapper').find('.calcContainer ul').css('margin-left'));
+         }*/
 
+        /*********************************
+         *******************Year*******************
+         *******************************************/
+        else if(valInput > 25){
+            alert("Minimum Year should be 1 & Maximum Year should be 25");
+            _this.val(1);
+            _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'0'});
+            _this.parents('#avgSave').find('.draggable').css('left','0');
+            finalCalculation();
+        }
+        else if(valInput == 21){
+            _this.val(21);
+            _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-525px'});
+            _this.parents('#avgSave').find('.draggable').css('left','175px');
+            finalCalculation();
+        }
+        else if(valInput == 22){
+            _this.val(22);
+            _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-560px'});
+            _this.parents('#avgSave').find('.draggable').css('left','175px');
+            finalCalculation();
+        }
+        else if(valInput == 23){
+            _this.val(23);
+            _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-595px'});
+            _this.parents('#avgSave').find('.draggable').css('left','175px');
+            finalCalculation();
+        }
+        else if(valInput == 24){
+            _this.val(24);
+            _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-630px'});
+            _this.parents('#avgSave').find('.draggable').css('left','175px');
+            finalCalculation();
+        }
+        else if(valInput == 25){
+            _this.val(25);
+            _this.parents('.slideWrapper').find('.calcContainer ul').animate({marginLeft:'-665px'});
+            _this.parents('#avgSave').find('.draggable').css('left','175px');
+            finalCalculation();
+        }
+        else{
+            var diff = parseFloat($(this).parents('#avgSave').find('.hideVal').text());
+            //alert(diff)
+            _this.parents('.calcSection').find('.highLight').css('visibility','visible').find('input').val(valInput);
+            _this.parents('#avgSave').find('.draggable').css('left',0);
+            /*if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Home Loan Calculator')
+             {
+             var marLft_input =  ((valInput-8)/0.25)*35;
+             }
+             else*/
+            if($('.selectCalcWrapper .radiobox.checked').find('label').text()=='Personal Loan Calculator')
+            {
+                var marLft_input =  ((valInput)-1)*35;
+                //alert(marLft_input);
+            }
+
+            //alert(marLft_input)
+            _this.parents('.slideWrapper').find('#monthExp ul').animate({marginLeft:-marLft_input});
+
+            finalCalculation();
+        }
     });
 
 
@@ -1052,13 +1133,13 @@ function addCommas(nStr)
 
 function dragLiAdjustFunction(){
     var ths = $('.dragLiAdjust').parents('.dragBox').find('.slideImg ul');
-    var a = b = c = 0, v = 35, m = Math.abs(parseInt(ths.css('margin-right')));
+    var a = b = c = 0, v = 35, m = Math.abs(parseInt(ths.css('margin-left')));
     for(var i=0; i<ths.find('li').length; i++){
-        a=v*i, c=a-35, b=a-17;
+        a=v*i, c=a+35, b=a+17;
         if(m>=a && m<=b){ m = a; break; }
         else if(m>b && m<=c){ m = c; break; }
     }
-    ths.css({'margin-right': '-'+m+'px'});
+    ths.css({'margin-left': '-'+m+'px'});
 }
 
 

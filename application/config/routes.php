@@ -111,6 +111,8 @@ $route['privacy-policy'] = "en/PrivacyPolicy";
 $route['currency-details'] = "en/currency_details";
 
 $route['loan-calculator'] = "en/loan_calculator";
+$route['personal-loan-calculator'] = "en/personal_loan_calculator";
+$route['auto-loan-calculator'] = "en/auto_loan_calculator";
 /*
 $default_controller = "En";
 $controller_exceptions = array('admin','forums');

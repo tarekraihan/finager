@@ -267,20 +267,20 @@ function tc() {
             data: s,
             yAxis: 0,
             legendIndex: 2,
-            color: "#BFBFBF"
+            color: "#cccccc"
         }, {
             name: "Principal",
             data: e,
             yAxis: 0,
             legendIndex: 1,
-            color: "#2B4D6D"
+            color: "#4070c0"
         }, {
             name: "Balance",
             data: n,
             type: "spline",
             yAxis: 1,
             legendIndex: 3,
-            color: "#B8204C"
+            color: "#e86968"
         }]
     })
 }
@@ -312,6 +312,7 @@ function sc() {
             plotBorderWidth: null,
             plotShadow: !1
         },
+
         title: {
             text: "Break-up of Total Payment"
         },
@@ -328,7 +329,8 @@ function sc() {
                 cursor: "pointer",
                 dataLabels: {
                     style: {
-                        textShadow: !1
+                        //textShadow: !1,
+                        fontSize: 13
                     },
                     enabled: !0,
                     distance: -30,
@@ -346,13 +348,13 @@ function sc() {
             data: [{
                 name: "Principal Loan Amount",
                 y: d,
-                color: "#2B4D6D"
+                color: "#4070c0"
             }, {
                 name: "Total Interest",
                 y: n * k - d,
                 sliced: !0,
                 selected: !0,
-                color: "#D5872B"
+                color: "#d8d8d8"
             }]
         }]
     })
