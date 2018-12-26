@@ -117,7 +117,7 @@
                 <article class="post-7 page type-page status-publish hentry">
                     <div class="page-header">
                         <h1>
-                            Personal Loan EMI Calculator EMI Calculator
+                            Student Loan EMI Calculator EMI Calculator
                         </h1>
                     </div>
 
@@ -478,7 +478,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/commoncalculator.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/emicalculator.js"></script>
 
-<script src="<?php echo base_url();?>resource/front_end/js/personal-emi-calculator.js"></script>
+<script src="<?php echo base_url();?>resource/front_end/js/student-emi-calculator.js"></script>
 <script>
     jQuery(function($){
 

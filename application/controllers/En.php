@@ -1244,5 +1244,17 @@ class En extends CI_Controller {
 
     }
 
+    public function student_loan_calculator(){
+        $data['title'] = 'Student Loan Calculator | Finager.com';
+        $this->load->driver('cache');
+        $this->cache->file->save('student_loan_calculator', 'student_loan_calculator', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/student_loan_calculator');
+        $this->load->view('front_end/block/footer');
+
+    }
+
 
 }
