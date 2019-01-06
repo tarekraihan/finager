@@ -1253,7 +1253,39 @@ class En extends CI_Controller {
         $this->load->view('front_end/block/vertical_menu');
         $this->load->view('front_end/student_loan_calculator');
         $this->load->view('front_end/block/footer');
+    }
 
+    public function medical_loan_calculator(){
+        $data['title'] = 'Medical Loan Calculator | Finager.com';
+        $this->load->driver('cache');
+        $this->cache->file->save('medical_loan_calculator', 'medical_loan_calculator', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/medical_loan_calculator');
+        $this->load->view('front_end/block/footer');
+    }
+
+    public function marriage_loan_calculator(){
+        $data['title'] = 'Marriage Loan Calculator | Finager.com';
+        $this->load->driver('cache');
+        $this->cache->file->save('marriage_loan_calculator', 'marriage_loan_calculator', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/marriage_loan_calculator');
+        $this->load->view('front_end/block/footer');
+    }
+
+    public function travel_loan_calculator(){
+        $data['title'] = 'Travel Loan Calculator | Finager.com';
+        $this->load->driver('cache');
+        $this->cache->file->save('travel_loan_calculator', 'travel_loan_calculator', 100);
+        $this->load->view('front_end/block/header_home_loan',$data);
+        $this->load->view('front_end/block/right_menu');
+        $this->load->view('front_end/block/vertical_menu');
+        $this->load->view('front_end/travel_loan_calculator');
+        $this->load->view('front_end/block/footer');
     }
 
 

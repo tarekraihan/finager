@@ -114,6 +114,9 @@ $route['loan-calculator'] = "en/loan_calculator";
 $route['personal-loan-calculator'] = "en/personal_loan_calculator";
 $route['auto-loan-calculator'] = "en/auto_loan_calculator";
 $route['student-loan-calculator'] = "en/student_loan_calculator";
+$route['medical-loan-calculator'] = "en/medical_loan_calculator";
+$route['marriage-loan-calculator'] = "en/marriage_loan_calculator";
+$route['travel-loan-calculator'] = "en/travel_loan_calculator";
 /*
 $default_controller = "En";
 $controller_exceptions = array('admin','forums');
