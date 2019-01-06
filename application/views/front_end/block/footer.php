@@ -412,6 +412,8 @@ if($result){
 <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">-->
 
 <script>
+    // console.log("%c Stop!", "color: red; font-size: 50px; font-weight: bold");
+    //console.log("%c This is a browser feature intended for developers.","font-size:25px");
     function overlay(s, l) {
         $('.overlay').remove();
         if( s )
@@ -731,6 +733,8 @@ jQuery(document).keypress(function(e) {
       requestAnimationFrame(update);
     };
     requestAnimationFrame(update);
+
 </script>
+
 </body>
 </html>
