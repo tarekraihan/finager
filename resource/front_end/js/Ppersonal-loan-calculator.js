@@ -400,20 +400,20 @@ $(function(event) {
 		}
 		else if($(this).find('label').text()=='Personal Loan Calculator')
 		{
-			for(var k=0; k<17; k++){
-				/*if(k>=1 && k<=30){
-					custAgeLi += "<li>"+ k +"</li>";
-				}*/
+            for(var k=0; k<201; k++){
+                /*if(k>=1 && k<=30){
+                 custAgeLi += "<li>"+ k +"</li>";
+                 }*/
 
-				/****************
-				****Year Range***
-				***************/
-				if(k>=1 && k<=60){
-					intVal = k*6;
-					intRate += "<li>"+ intVal +"</li>";		
-				}
-			}
-		}
+                /****************
+                 ****Year Range***
+                 ***************/
+                if(k>=1 && k<=31){
+                    intVal = k*1
+                    intRate += "<li>"+ intVal +"</li>";
+                }
+            }
+        }
 		$("#liability ul").html(intRate);
 	});
 	

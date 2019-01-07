@@ -32,12 +32,12 @@
 
 .calculatorcontainer {
     background: #eee;
-    padding: 10px;
+    padding: 0px;
     border-radius: 4px;
 }
 
 .emicalculatorcontainer {
-    background: #eee;
+    background: #fff;
 }
 
 #emicalculatordashboard,
@@ -54,7 +54,7 @@
 }
 
 #emicalculatorinnerformwrapper {
-    background: #eee;
+    background: #fff;
     border-top: 1px solid #ccc
 }
 
@@ -190,7 +190,7 @@ ul.loanproduct-nav li.active a {
 #emipaymentsummary {
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
 #emipaymentsummary h4 {
@@ -204,7 +204,8 @@ ul.loanproduct-nav li.active a {
 }
 
 #emipaymentsummary span {
-    padding: 0 5px
+    padding: 0 5px;
+    font-weight: 700;
 }
 
 #startmonthyear {
@@ -213,7 +214,7 @@ ul.loanproduct-nav li.active a {
 }
 
 #emipiechart {
-    background: #eee;
+    background: #fff;
     border-radius: 4px;
     border: 1px solid #ccc;
     text-align: center;
@@ -266,14 +267,22 @@ ul.loanproduct-nav li.active a {
 }
 
 #emipaymentscheduleheader {
-    background: #eee;
+    background: #4070c0;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #2c518e;
     margin-bottom: 20px;
     padding: 10px 0;
-    text-align: center
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
 }
-
+#emipaymentscheduleheader>label {
+    font-weight: 500;
+    font-size: 16px;
+}
+span#startmonthyear_addon>i {
+    color: #2b4c82;
+}
 #emibarchart {
     clear: both;
     border-radius: 4px;
@@ -290,14 +299,14 @@ ul.loanproduct-nav li.active a {
 
 #emipaymenttable table {
     width: 100%;
-    background: #eee;
+    background: #fbfbfb;
     border-collapse: separate;
     border-spacing: 0;
     border-radius: 4px
 }
 
 #emipaymenttable table th {
-    background: #bfbfbf;
+    background: #dadada;
     text-align: center;
     padding: 5px;
     font-size: 11px
@@ -341,18 +350,18 @@ ul.loanproduct-nav li.active a {
     border-bottom-right-radius: 4px
 }
 
-#principalheader {
+/* #principalheader {
     background: none repeat scroll 0 0 #2B4D6D!important;
     color: #fff
-}
+} */
 
-#interestheader {
-    background: none repeat scroll 0 0 #D5872B!important;
+/* #interestheader {
+    background: none repeat scroll 0 0 #de995a!important;
     color: #fff
-}
+} */
 
 #balanceheader {
-    background: none repeat scroll 0 0 #404140!important;
+    background: none repeat scroll 0 0 #305ca5!important;
     color: #fff
 }
 
@@ -602,7 +611,8 @@ span.date {
         border: 1px solid #ccc;
         border-radius: 4px;
         border-top-right-radius: 0;
-        border-top-left-radius: 0
+        border-top-left-radius: 0;
+        background-color: #eee;
     }
     ul.loanproduct-nav {
         padding-left: 0
@@ -701,6 +711,26 @@ div#interest .perc {
 }
 #interest .inputWrapper {
     margin: -3px 0 0 110px;
+}
+#emiamount p>span {
+    font-size: 35px;
+}
+#emitotalinterest>p{
+    font-size: 22px;
+}
+#emitotalamount>p {
+    font-size: 25px;
+}
+.savingsContainer.emiContainer {
+    margin-top: 30px;
+}
+#yearheader, #interestheader {
+    background: none repeat scroll 0 0 #305ca5!important;
+    color: #fff;
+}
+#loan-calculator-type .filter-option {
+    border: 0 !important;
+    box-shadow: none !important;
 }
 /*Emi calculator END*/
 @media print {

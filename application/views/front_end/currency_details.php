@@ -637,7 +637,7 @@
         $('input[name="currency"]').on('change',function(){
             var this_id = $(this).attr('id');
             var selected_currency = $('input[name="currency"]:checked').val();
-            console.log('currency==',selected_currency)
+           // console.log('currency==',selected_currency)
             if(this_id == 'USD' || selected_currency == 'USD'){
                 $('#search-currency-symbol').html('$');
             }

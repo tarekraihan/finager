@@ -117,7 +117,7 @@
                 <article class="post-7 page type-page status-publish hentry">
                     <div class="page-header">
                         <h1>
-                            Home Loan EMI Calculator
+                            Student Loan EMI Calculator EMI Calculator
                         </h1>
                     </div>
 
@@ -150,8 +150,8 @@
                                 <div class="col-sm-4 col-sm-offset-4" id="loan-calculator-type">
                                     <select name="" class="form-control selectpicker">
                                         <option  value="">Select Loan Type</option>
-                                        <option selected="" value="" data-thumbnail="https://thdoan.github.io/bootstrap-select/images/icon-chrome.png">Home Loan Calculator</option>
-                                        <option value="" data-thumbnail="https://thdoan.github.io/bootstrap-select/images/icon-firefox.png">Personal Loan Calculator</option>
+                                        <option value="" data-thumbnail="https://thdoan.github.io/bootstrap-select/images/icon-chrome.png">Home Loan Calculator</option>
+                                        <option selected="" value="" data-thumbnail="https://thdoan.github.io/bootstrap-select/images/icon-firefox.png">Personal Loan Calculator</option>
                                         <option value="" data-thumbnail="https://thdoan.github.io/bootstrap-select/images/icon-safari.png">Car Loan Calculator</option>
                                     </select>
                                 </div>
@@ -212,7 +212,7 @@
                                                                             <div class="prev"></div>
                                                                             <div class="next active"></div>
                                                                         </div>
-                                                                        <div class="hideVal">50000</div>
+                                                                        <div class="hideVal">25000</div>
                                                                     </div>
                                                                 </div>
                                                                 <!--Calculator Section END-->
@@ -222,7 +222,7 @@
                                                                 <div class="inputWrapper">
                                                                     <div class="inpRadio">
                                                                         <div id="tenureType">
-                                                                            <label>Loan Period (Year)</label>
+                                                                            <label>Loan Period (Month)</label>
                                                                         </div>
                                                                     </div>
                                                                     <div class="inputField">
@@ -478,7 +478,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/commoncalculator.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>resource/front_end/loan_calculator/emicalculator.js"></script>
 
-<script src="<?php echo base_url();?>resource/front_end/js/home-emi-calculator.js"></script>
+<script src="<?php echo base_url();?>resource/front_end/js/student-emi-calculator.js"></script>
 <script>
     jQuery(function($){
 
@@ -495,6 +495,7 @@
             var loan_amount = $('#finalAssest').val();
             var interest_rate = $('#finalLiability').val();
             var tenure_year = $('#finalCustAge').val();
+            tenure_year = tenure_year/12;
 
 
             $('#loanamount').val(loan_amount);

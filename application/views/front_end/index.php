@@ -1109,7 +1109,7 @@ font-size: 22px;
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                        <a href="<?php echo base_url();?>currency-details.html" class="rate-more-button">Find Bank Exchange Rates Here</a>
+                        <a href="<?php echo base_url();?>currency-rates.html" class="rate-more-button">Find Bank Exchange Rates Here</a>
                     </div>
                 </div>
             </div>
