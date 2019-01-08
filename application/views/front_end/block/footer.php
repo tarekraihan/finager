@@ -143,7 +143,7 @@
                                                 <li><a href="<?php echo base_url();?>blog/" target="_blank">Blogs</a></li>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forums</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
+                                                <li><a href="<?php echo base_url();?>currency-rates.html">Currency Rates</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-6 col-xs-12">
