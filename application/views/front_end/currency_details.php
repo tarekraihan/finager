@@ -567,7 +567,7 @@
 
         loadData();
         data_caching();
-        $("input[type='checkbox'], input[name='currency']").on( "click", function() {
+        $("input[type='checkbox'], input[name='currency'], input[name='i_want']").on( "click", function() {
             loadData();
             data_caching();
         } );
