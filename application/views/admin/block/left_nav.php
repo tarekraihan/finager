@@ -17,7 +17,7 @@ foreach($module_id as $k){
 				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
 					
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-                        <img src="<?php echo base_url();?>resource/admin/img/avatars/sunny.png" alt="me" class="online" />
+                        <img src="<?php echo base_url();?>resource/common_images/admin_users/<?php echo "tarek.jpg";?>" alt="me" class="online" />
 						<span>
 							<?php echo ucfirst($this->session->userdata('first_name'));?> <?php echo ucfirst($this->session->userdata('last_name'));?>
 						</span>
