@@ -58,5 +58,18 @@ class Delete_Model extends CI_Model {
         }
     }
 
+    function Delete_Old_Exchange_Rates()
+    {
+
+        $query="DELETE FROM `daily_exchange_rate` WHERE id < (SELECT MAX(id) FROM `daily_exchange_rate`)-1500 ORDER BY id DESC";
+        $result=$this->db->query($query);
+        
+        if( $result ){
+            return true;
+         }else{
+             return false;
+         }
+    }
+
 
 } 

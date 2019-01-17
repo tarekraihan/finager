@@ -55,6 +55,7 @@ class Backdoor extends CI_Controller {
 
             if ($this->form_validation->run() == FALSE){
                 $data['title'] = "User - Admin Role";
+                $data['title'] = "User - Admin Role";
                 $this->load->view('admin/block/header',$data);
                 $this->load->view('admin/block/left_nav');
                 $this->load->view('admin/admin_user_role');

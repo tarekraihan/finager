@@ -620,7 +620,7 @@
 
                 <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-eercast" aria-hidden="true"></i>&nbsp;&nbsp;Gold Rate </a> </li>
 
-                <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;&nbsp;Money Rate</a> </li>
+                <li> <a href="<?php echo base_url();?>currency-rates.html"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;&nbsp;Currency Rates</a> </li>
 
                 <li> <a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;&nbsp;Tax Guide</a> </li>
 

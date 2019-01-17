@@ -108,7 +108,7 @@ $route['bank-details/(:any)'] = "en/bank_details/$1";
 $route['about-us'] = "en/about_us";
 $route['terms-condition'] = "en/terms_condition";
 $route['privacy-policy'] = "en/PrivacyPolicy";
-$route['currency-details'] = "en/currency_details";
+$route['currency-rates'] = "en/currency_details";
 
 $route['loan-calculator'] = "en/loan_calculator";
 $route['personal-loan-calculator'] = "en/personal_loan_calculator";

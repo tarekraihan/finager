@@ -31,7 +31,7 @@
         <section id="widget-grid" class="">
             <!-- row -->
             <div class="row">
-                <article class="col-sm-12 col-md-12 col-lg-6">
+                <article class="col-sm-12 col-md-12 col-lg-3">
                     <!-- Widget ID (each widget will need unique ID)-->
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
                         <header>
@@ -89,7 +89,7 @@
                 </article>
                 <!-- END COL -->
                 <!-- NEW WIDGET START -->
-                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
                     <!-- Widget ID (each widget will need unique ID)-->
                     <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                         <header>
@@ -108,12 +108,13 @@
                                 <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
                                     <thead>
                                     <tr>
-                                        <th data-hide="phone">NO.</th>
+                                        <th data-hide="phone">No.</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> No of Rows</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Central Bank Sell Rate</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Central Bank Buy Rate</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Exchange Rate Date</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Uploaded By</th>
+                                        <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Upload Date</th>
                                         <th data-class="expand"><i class="text-muted hidden-md hidden-sm hidden-xs"></i> Action</th>
                                     </tr>
                                     </thead>
@@ -131,6 +132,7 @@
                                             <td class="text-center"><?php echo $row->central_bank_sell_rate;?></td>
                                             <td class="text-center"><?php echo date('d M Y', strtotime($row->date_of_exchange_rate));?></td>
                                             <td class="text-center"><?php echo $row->uploaded_by;?></td>
+                                            <td class="text-center"><?php echo date('d M Y', strtotime($row->created_on)); ?></td>
                                             <td class="text-center"><a class="btn btn-danger" href="<?php echo base_url().'backdoor/delete_currency_rate';?>?exchange_date=<?php echo date('Y-m-d', strtotime($row->date_of_exchange_rate));?>">Delete</a></td>
                                         </tr>
                                         <?php

@@ -39,15 +39,34 @@
                                 <div class="currency-converter--input-group is-focused" data-new-direction="to-recipient">
                                     <div class="currency-converter--currencies-dropdown">
                                         <select title="Select your select2-hidden-accessible" class="selectpicker" id="currency-converter--you" data-theme="currency" data-dropdown-parent=".currency-converter--input-group--dropdown--you">
-                                          <option value="USD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/usd.png">USD</option>
-                                          <option value="EUR" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/euro.png">EUR</option>
-                                          <option value="JPY" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/yen.gif">JYP</option>
-                                          <option value="GBP" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/gbp.gif">GBP</option>
-                                          <option value="AUD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/asd.png">AUD</option>
+                                        <?php if($currency['USD']->central_bank_buy_rate !="0.0000") { ?>
+                                            <option value="USD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/usd.png">USD</option>
+                                        <?php } ?>
+                                        <?php if($currency['EUR']->central_bank_buy_rate !="0.0000") { ?>
+                                            <option value="EUR" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/euro.png">EUR</option>
+                                        <?php } ?>
+                                        <?php if($currency['JPY']->central_bank_buy_rate !="0.0000") { ?>
+                                            <option value="JPY" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/yen.gif">JPY</option>
+                                        <?php } ?>
+                                        <?php if($currency['GBP']->central_bank_buy_rate !="0.0000") { ?>
+                                            <option value="GBP" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/gbp.gif">GBP</option>
+                                        <?php } ?>
+                                        <?php if($currency['AUD']->central_bank_buy_rate !="0.0000") { ?>
+                                            <option value="AUD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/asd.png">AUD</option>
+                                        <?php } ?>
+                                          
+                                        <?php if($currency['INR']->central_bank_buy_rate !="0.0000") { ?>
                                           <option value="INR" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/inr.png">INR</option>
-                                          <option value="CAD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/cad.png">CAD</option>
-                                          <option value="SGD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/sgd.png">SGD</option>
+                                        <?php } ?>
+                                        <?php if($currency['CAD']->central_bank_buy_rate !="0.0000") { ?>
+                                            <option value="CAD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/cad.png">CAD</option>
+                                        <?php } ?>
+                                        <?php if($currency['SGD']->central_bank_buy_rate !="0.0000") { ?>
+                                            <option value="SGD" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/sgd.png">SGD</option>
+                                        <?php } ?>
+                                        <?php if($currency['CNH']->central_bank_buy_rate !="0.0000") { ?>
                                           <option value="CNH" data-thumbnail="<?php echo base_url();?>resource/front_end/images/currency-icon/chn.png">CNH</option>
+                                        <?php } ?>
                                         </select>
                                     </div>
                                     <label for="currency-converter--input--you" class="sr-only">Amount</label>
@@ -548,7 +567,7 @@
 
         loadData();
         data_caching();
-        $("input[type='checkbox'], input[name='currency']").on( "click", function() {
+        $("input[type='checkbox'], input[name='currency'], input[name='i_want']").on( "click", function() {
             loadData();
             data_caching();
         } );
@@ -637,7 +656,7 @@
         $('input[name="currency"]').on('change',function(){
             var this_id = $(this).attr('id');
             var selected_currency = $('input[name="currency"]:checked').val();
-            console.log('currency==',selected_currency)
+           // console.log('currency==',selected_currency)
             if(this_id == 'USD' || selected_currency == 'USD'){
                 $('#search-currency-symbol').html('$');
             }

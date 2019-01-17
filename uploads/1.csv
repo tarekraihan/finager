@@ -1,0 +1,53 @@
+BankName,BankId,Currency,BuyRate,SellRate,BbBuyRate,BbSellRate
+SBACBL,8,USD,83.25,83.25,83.75,83.75
+NRB Bank Ltd.,9,USD,83.4,83.4,83.75,83.75
+The Farmers Bank Limited,10,USD,83.85,83.85,83.75,83.75
+Meghna Bank Ltd.,11,USD,82.5,82.5,83.75,83.75
+Agrani Bank Limited,12,USD,83.6,83.6,83.75,83.75
+Pubali Bank Limited,13,USD,84,84,83.75,83.75
+Rupali Bank Limited,14,USD,84,84,83.75,83.75
+Sonali Bank Limited,15,USD,83.7,83.7,83.75,83.75
+Uttara Bank Limited,16,USD,83.75,83.75,83.75,83.75
+Bangladesh Krishi Bank,17,USD,83.9,83.9,83.75,83.75
+BDBL,18,USD,83.7,83.7,83.75,83.75
+AB Bank Ltd.,19,USD,84.2,84.2,83.75,83.75
+The City Bank Ltd.,20,USD,83,83,83.75,83.75
+IFIC Bank Ltd.,21,USD,84,84,83.75,83.75
+Islami Bank Bangladesh Ltd.,22,USD,83.5,83.5,83.75,83.75
+National Bank Ltd.,23,USD,83.15,83.15,83.75,83.75
+United Commercial Bank Ltd.,24,USD,83,83,83.75,83.75
+Al-Arafa Islami Bank Ltd.,25,USD,83.5,83.5,83.75,83.75
+ICB Islamic Bank Ltd.,26,USD,84.5,84.5,83.75,83.75
+BASIC Bank Ltd.,27,USD,84,84,83.75,83.75
+South East Bank Ltd.,28,USD,82.5,82.5,83.75,83.75
+Dhaka Bank Ltd.,29,USD,82.5,82.5,83.75,83.75
+Eastern Bank Ltd.,30,USD,82.25,82.25,83.75,83.75
+Prime Bank Ltd.,31,USD,83.5,83.5,83.75,83.75
+NCCBL,32,USD,83.25,83.25,83.75,83.75
+Dutch-Bangla Bank Ltd.,33,USD,84.5,84.5,83.75,83.75
+Mercantile Bank Ltd.,34,USD,83.5,83.5,83.75,83.75
+Standard Bank Ltd.,35,USD,83.5,83.5,83.75,83.75
+One Bank Ltd.,36,USD,84,84,83.75,83.75
+EXIM Bank Ltd.,37,USD,84.2,84.2,83.75,83.75
+Bangladesh Commerce Bank Ltd.,38,USD,83.5,83.5,83.75,83.75
+Bank Asia Ltd.,39,USD,82.5,82.5,83.75,83.75
+The Premier Bank Ltd.,40,USD,83,83,83.75,83.75
+Mutual Trust Bank Ltd.,41,USD,82.5,82.5,83.75,83.75
+FSIBL,42,USD,83.55,83.55,83.75,83.75
+Trust Bank Ltd.,43,USD,84,84,83.75,83.75
+Standard Chartered Bank,44,USD,82.75,82.75,83.75,83.75
+Habib Bank Ltd.,45,USD,84.5,84.5,83.75,83.75
+Commercial Bank of Ceylon,46,USD,83,83,83.75,83.75
+State Bank of India,47,USD,84.5,84.5,83.75,83.75
+Woori Bank,48,USD,-,-,83.75,83.75
+Bank Alfalah Limited,49,USD,83.2,83.2,83.75,83.75
+Citi Bank N.A.,50,USD,83.75,83.75,83.75,83.75
+HSBC,51,USD,83.5,83.5,83.75,83.75
+Jamuna Bank Ltd.,52,USD,84.25,84.25,83.75,83.75
+Brac Bank Limited,53,USD,84,84,83.75,83.75
+Shahjalal Islami Bank Ltd.,54,USD,84,84,83.75,83.75
+NRB Commercial Bank Ltd.,55,USD,83.4,83.4,83.75,83.75
+Midland Bank Limited,56,USD,83,83,83.75,83.75
+Modhumoti Bank Limited,57,USD,83.5,83.5,83.75,83.75
+NRB Global Bank Limited,58,USD,83,83,83.75,83.75
+Union Bank Limited,59,USD,83.55,83.55,83.75,83.75

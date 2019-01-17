@@ -1917,7 +1917,7 @@ class Select_Model extends CI_Model
 
     public function Select_Exchange_Rate()
     {
-        $sql = "SELECT COUNT(day(daily_exchange_rate.date_of_exchange_rate)) as number_of_rows, daily_exchange_rate.central_bank_buy_rate, daily_exchange_rate.central_bank_sell_rate, daily_exchange_rate.date_of_exchange_rate, CONCAT(admin1.first_name ,' ' ,admin1.last_name) as uploaded_by FROM `daily_exchange_rate` LEFT JOIN tbl_admin_user admin1 ON admin1.id= daily_exchange_rate.created_by GROUP BY daily_exchange_rate.date_of_exchange_rate ORDER BY daily_exchange_rate.date_of_exchange_rate DESC";
+        $sql = "SELECT COUNT(day(daily_exchange_rate.date_of_exchange_rate)) as number_of_rows, daily_exchange_rate.central_bank_buy_rate, daily_exchange_rate.central_bank_sell_rate, daily_exchange_rate.date_of_exchange_rate, CONCAT(admin1.first_name ,' ' ,admin1.last_name) as uploaded_by, daily_exchange_rate.created_on FROM `daily_exchange_rate` LEFT JOIN tbl_admin_user admin1 ON admin1.id= daily_exchange_rate.created_by GROUP BY daily_exchange_rate.date_of_exchange_rate ORDER BY daily_exchange_rate.date_of_exchange_rate DESC";
         $query = $this->db->query($sql);
         return $query;
     }

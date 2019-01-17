@@ -374,17 +374,17 @@ font-size: 22px;
 
                     <div class="Cicon">
 
-                        <a class="land_modal Cicon_a" data-toggle="modal" data-target=".bs-example-modal-lg">
+                        <a class="land_modal Cicon_a" href="<?php echo base_url();?>currency-rates.html">
 
-                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/moneymarket.png" alt="Money Market"/>
+                            <img class="svg_img" src="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/moneymarket.png" alt="Currency Rates"/>
 
                             <object class="svg_icon hidden" type="image/svg+xml" data="<?php echo base_url(); ?>resource/front_end/images/categoryIcon/moneymarket.svg">
 
-                                Money Market
+                                Currency Rates
 
                             </object>
 
-                            <p>Money Market</p>
+                            <p>Currency Rates</p>
 
                         </a>
 
@@ -1109,7 +1109,7 @@ font-size: 22px;
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                        <a href="<?php echo base_url();?>currency-details.html" class="rate-more-button">Find Bank Exchange Rates Here</a>
+                        <a href="<?php echo base_url();?>currency-rates.html" class="rate-more-button">Find Bank Exchange Rates Here</a>
                     </div>
                 </div>
             </div>
@@ -1132,7 +1132,7 @@ font-size: 22px;
 
                 <div class="fin-about-text">
 
-                    <img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/Currency-rate.jpg" alt="Currency Rate">
+                    <img class="img-responsive" src="<?php echo base_url(); ?>resource/front_end/images/Up-Comming-Calculator.jpg" alt="Currency Calculator">
 
                 </div>
 

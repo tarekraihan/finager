@@ -143,7 +143,7 @@
                                                 <li><a href="<?php echo base_url();?>blog/" target="_blank">Blogs</a></li>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Events</a></li>
                                                 <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Forums</a></li>
-                                                <li><a href="javascript:(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Money Rate</a></li>
+                                                <li><a href="<?php echo base_url();?>currency-rates.html">Currency Rates</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-6 col-xs-12">
@@ -412,6 +412,8 @@ if($result){
 <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">-->
 
 <script>
+    // console.log("%c Stop!", "color: red; font-size: 50px; font-weight: bold");
+    //console.log("%c This is a browser feature intended for developers.","font-size:25px");
     function overlay(s, l) {
         $('.overlay').remove();
         if( s )
@@ -731,6 +733,8 @@ jQuery(document).keypress(function(e) {
       requestAnimationFrame(update);
     };
     requestAnimationFrame(update);
+
 </script>
+
 </body>
 </html>
