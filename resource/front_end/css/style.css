@@ -3155,12 +3155,10 @@ a:hover {
 }
 
 .auto_footer_pr h3 {
-
     color: #fff;
-
     margin-top: 85px;
     font-size: 22px;
-
+    text-shadow: 2px 2px #000000;
 }
 
 .auto_footer_pr img {
@@ -7822,6 +7820,7 @@ div#filter-carousel {
     background-repeat:no-repeat;
 
     background-size:cover;
+    background-position: center;
 
     width:100%;
 
@@ -7876,6 +7875,7 @@ div#filter-carousel {
     background-repeat:no-repeat;
 
     background-size:cover;
+    background-position: center;
 
     width:100%;
 
@@ -7884,6 +7884,7 @@ div#filter-carousel {
     position:relative;
 
     margin-bottom:10px;
+
 
 }
 .saving-account {
