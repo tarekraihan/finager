@@ -736,7 +736,7 @@ class Backdoor extends CI_Controller {
         $config['upload_path'] = $path;
         $config['allowed_types'] = 'xlsx|csv|xls';
         $config['max_size'] = '2048';
-        $config['file_name'] = $file_name ? $file_name : '1';
+        $config['file_name'] = $file_name ? $file_name : rand(10,100000);
         $this->upload->initialize($config);
         if (!$this->upload->do_upload($field)) {
             return $this->upload->display_errors();

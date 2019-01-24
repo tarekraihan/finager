@@ -457,7 +457,7 @@
 
     $(document).ready(function() {
        
-         function loadData(){
+        function  loadData(){
             var currency = "&currency=" + $('input[name="currency"]:checked').val();
           
             var amount = $('#finalAssest').val().trim();
