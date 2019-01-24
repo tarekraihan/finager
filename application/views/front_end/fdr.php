@@ -654,7 +654,7 @@
 
                                         <span class="material_check_radio"></span>
 
-                                        1 CORE
+                                        1 CRORE
 
                                     </label>
 
@@ -668,7 +668,7 @@
 
                                         <span class="material_check_radio"></span>
 
-                                        5 CORE
+                                        5 CRORE
 
                                     </label>
 
@@ -682,7 +682,7 @@
 
                                         <span class="material_check_radio"></span>
 
-                                        10 CORE
+                                        10 CRORE
 
                                     </label>
 
@@ -696,7 +696,7 @@
 
                                         <span class="material_check_radio"></span>
 
-                                        25 CORE
+                                        25 CRORE
 
                                     </label>
 
@@ -710,7 +710,7 @@
 
                                         <span class="material_check_radio"></span>
 
-                                        50 CORE
+                                        50 CRORE
 
                                     </label>
 
@@ -724,7 +724,7 @@
 
                                         <span class="material_check_radio"></span>
 
-                                        100 CORE
+                                        100 CRORE
 
                                     </label>
 
@@ -738,7 +738,7 @@
 
                                         <span class="material_check_radio"></span>
 
-                                        200 CORE
+                                        200 CRORE
 
                                     </label>
 
@@ -752,7 +752,7 @@
 
                                         <span class="material_check_radio"></span>
 
-                                        500 CORE
+                                        500 CRORE
 
                                     </label>
 
