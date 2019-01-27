@@ -5,9 +5,8 @@
         $id=$_GET['applicant_id'];
         $table='auto_applicant';
         $id_field='id';
-        $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
-            
         $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+        $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
         $delete_date = array(
             "module_name" => "Auto Loan",
             "delete_details" => "Delete auto loan applicant type name ",

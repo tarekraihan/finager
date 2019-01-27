@@ -4,9 +4,8 @@ if(isset($_GET['cc_type_id']))
     $id=$_GET['cc_type_id'];
     $table='card_credit_card_type';
     $id_field='id';
-    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
-    
     $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
     $delete_date = array(
         "module_name" => "Credit Card",
         "delete_details" => "Delete credit card cc_type items ",

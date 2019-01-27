@@ -5,8 +5,8 @@ if(isset($_GET['feature_id']))
     $id=$_GET['feature_id'];
     $table='auto_features';
     $id_field='id';
-    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
     $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
     $delete_date = array(
         "module_name" => "Auto Loan",
         "delete_details" => "Delete auto loan features items ",

@@ -4,10 +4,10 @@ if(isset($_GET['loan_id']))
     $id=$_GET['loan_id'];
     $table='auto_loan_info';
     $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
     $this->Delete_model->Delete_All_Row($id=$id,$table='auto_loan_info_vs_i_am',$id_field='auto_loan_info_id');
     
-    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
     $delete_date = array(
         "module_name" => "Auto Loan",
         "delete_details" => "Delete auto loan informations items ",
