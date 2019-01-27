@@ -716,6 +716,12 @@ class Backdoor extends CI_Controller {
                 
                 $exchange_date =  date('Y-m-d', strtotime($this->input->post('exchange_date')));
                 $result = $this->Delete_model->Delete_All_Exchange_Rate_By_Date($exchange_date);
+                $delete_date = array(
+                    "module_name" => "Currency Rate",
+                    "delete_details" => "Delete Currency Rate for the Date : ".date("d-M-Y",strtotime($exchange_date)),
+                    "deleted_by" => $this->session->userdata('admin_user_id')
+                );
+                $this->Delete_model->Delete_log($delete_date);
                
                 if ($result) {
                     redirect(base_url().'backdoor/delete_currency_rate/success');
@@ -746,4 +752,15 @@ class Backdoor extends CI_Controller {
     }
 
 
+    public function delete_logs(){
+        if ($this->session->userdata('email_address')) {
+            $data['title'] = "Finager - Delete Logs";
+            $this->load->view('admin/block/header',$data);
+            $this->load->view('admin/block/left_nav');
+            $this->load->view('admin/delete_log');
+            $this->load->view('admin/block/footer');
+        }else {
+            redirect('backdoor');
+        }
+    }
 }

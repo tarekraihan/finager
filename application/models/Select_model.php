@@ -2112,5 +2112,11 @@ class Select_Model extends CI_Model
         // return $result;
     }
 
+    public function select_all_delete_items(){
+        $sql = "SELECT delete_logs.*, tbl_admin_user.first_name, tbl_admin_user.last_name FROM delete_logs LEFT JOIN tbl_admin_user ON tbl_admin_user.id = delete_logs.deleted_by ORDER BY delete_logs.id DESC";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 
 }

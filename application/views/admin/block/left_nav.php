@@ -86,7 +86,7 @@ foreach($module_id as $k){
                     </li>
                     
                     <li>
-                        <a href="<?php echo base_url();?>backdoor/upload_currency_rate">Upload Daily Exchange Rate</a>
+                        <a href="<?php echo base_url();?>backdoor/delete_logs">Delete Logs</a>
                     </li>
                     <!--<li>-->
                     <!--    <a href="--><?php //echo base_url();?><!--general/meta_tags">Add Tags & Description</a>-->

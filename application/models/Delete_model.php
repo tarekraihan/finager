@@ -44,6 +44,12 @@ class Delete_Model extends CI_Model {
         $result=$this->db->query($query);
     }
 
+    function Delete_log($data){
+        $this->db->set($data);
+        $this->db->insert('delete_logs');
+        return $this->db->insert_id();
+    }
+
     function Delete_All_Exchange_Rate_By_Date( $exchange_date ){
 
         $query="DELETE FROM `daily_exchange_rate_history` WHERE `date_of_exchange_rate`='$exchange_date'";
