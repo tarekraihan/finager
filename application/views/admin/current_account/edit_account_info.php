@@ -5,6 +5,15 @@ if(isset($_GET['id'])){
     $table='current_account_info';
     $id_field='id';
     $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+    $delete_date = array(
+        "module_name" => "Current Account",
+        "delete_details" => "Delete current account info items ",
+        "deleted_by" => $this->session->userdata('admin_user_id'),
+        "table_name" => $table,
+        "deleted_data" => json_encode($row)
+    );
+    $this->Delete_model->Delete_log($delete_date);
 }else{
     $row['id']='';
     $row['bank_id']='';
