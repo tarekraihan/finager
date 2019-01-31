@@ -5,7 +5,17 @@ if(isset($_GET['i_am_id']))
     $id=$_GET['i_am_id'];
     $table='snd_account_i_am';
     $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+
+    $delete_date = array(
+        "module_name" => "SND Deposit",
+        "delete_details" => "Delete snd deposit i am items ",
+        "deleted_by" => $this->session->userdata('admin_user_id'),
+        "table_name" => $table,
+        "deleted_data" => json_encode($row)
+    );
+    $this->Delete_model->Delete_log($delete_date);
 }
 ?>
 <!-- MAIN PANEL -->

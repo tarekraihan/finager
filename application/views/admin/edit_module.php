@@ -5,7 +5,17 @@ if(isset($_GET['module_id']))
     $id=$_GET['module_id'];
     $table='finager_modules';
     $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+
+    $delete_date = array(
+        "module_name" => "Finager Module",
+        "delete_details" => "Delete finager module items ",
+        "deleted_by" => $this->session->userdata('admin_user_id'),
+        "table_name" => $table,
+        "deleted_data" => json_encode($row)
+    );
+    $this->Delete_model->Delete_log($delete_date);
 }
 
 if(isset($_GET['id']))
