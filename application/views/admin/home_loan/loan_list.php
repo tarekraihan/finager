@@ -4,7 +4,17 @@ if(isset($_GET['loan_id']))
     $id=$_GET['loan_id'];
     $table='home_loan_info';
     $id_field='id';
-    $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
+        $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+
+        $delete_date = array(
+            "module_name" => "Home loan",
+            "delete_details" => "Delete home loan info items ",
+            "deleted_by" => $this->session->userdata('admin_user_id'),
+            "table_name" => $table,
+            "deleted_data" => json_encode($row)
+        );
+        $this->Delete_model->Delete_log($delete_date);
     $this->Delete_model->Delete_All_Row($id=$id,$table='home_loan_user_home_loan_info',$id_field='home_loan_info_id');
     $this->Delete_model->Delete_All_Row($id=$id,$table='home_loan_applicant_type_home_loan_info',$id_field='home_loan_info_id');
 }
