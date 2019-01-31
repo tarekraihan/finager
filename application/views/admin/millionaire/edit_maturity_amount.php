@@ -5,7 +5,17 @@ if(isset($_GET['maturity_amount_id']))
     $id=$_GET['maturity_amount_id'];
     $table='millionaire_maturity_amount';
     $id_field='id';
+    $row=$this->Select_model->Select_Single_Row($id,$table,$id_field);
     $this->Delete_model->Delete_Single_Row($id,$table,$id_field);
+
+    $delete_date = array(
+        "module_name" => "Millionaire",
+        "delete_details" => "Delete millionaire maturity amount items ",
+        "deleted_by" => $this->session->userdata('admin_user_id'),
+        "table_name" => $table,
+        "deleted_data" => json_encode($row)
+    );
+    $this->Delete_model->Delete_log($delete_date);
 }
 
 if(isset($_GET['id'])){
