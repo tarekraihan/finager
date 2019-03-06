@@ -369,7 +369,7 @@
                         <div class="form-group_fdr">
                             <div class="input-group">
                                 <span class="input-group-addon" id="search-currency-symbol">$</span>
-                                <input type="text" id="finalAssest" value=" <?php echo ($this->session->userdata("currency_amount") ) ? $this->session->userdata("currency_amount") :'1000' ?>" class="form-control" placeholder="Enter Amount" aria-describedby="search-currency-symbol">
+                                <input type="text" id="finalAssest" value="<?php echo ($this->session->userdata("currency_amount") ) ? $this->session->userdata("currency_amount") :'1000' ?>" class="form-control" placeholder="Enter Amount" aria-describedby="search-currency-symbol">
                             </div>
                             <button id="searchCurrency" class="btn btn-primary btn-block m-b-10">Submit</button>
                         </div>
@@ -457,7 +457,7 @@
 
     $(document).ready(function() {
        
-        function loadData(){
+        function  loadData(){
             var currency = "&currency=" + $('input[name="currency"]:checked').val();
           
             var amount = $('#finalAssest').val().trim();
@@ -472,20 +472,21 @@
             var main_string = currency+principal_amount+bank_id_list;
             main_string = main_string.substring(1, main_string.length);
             var url_str = "<?php echo base_url();?>currency_rate/ajax_get_currency_rate/";
+            var attampt = 0;
             $.ajax({
                 type: "POST",
                 url: url_str,
                 data: main_string,
+                dataType: "json",
                 cache: false,
                 beforeSend: function() {
-                    overlay(true,true);
+                    //overlay(true,true);
                 },
                 success: function(response){
                     var data = JSON.parse(response);
                     var response_sell ='';
                     var response_buy = '';
-                    if(data && data.length){
-                        data.forEach(function(element) {
+                    data.forEach(function(element) {
                         
                         response_sell += '<tr>' +
                             '<td> ' +
@@ -507,33 +508,14 @@
                             '<td>BDT '+ Number(element.central_bank_sell_rate).toFixed(2) +'</td>'+
                             '<td>BDT '+ Number(element.central_bank_sell_rate_amount).toFixed(2) +'</td>'+
                             '</tr>';
-                        });
+                    });
                    
-                    }else{
-                        response_sell += '<tr>' +
-                            '<td colspan="5"> ' +
-                                '<p style="text-align:center"> No Data Found </p>'+
-                            '</td>'+
-                            '</tr>';
-                        response_buy += '<tr>' +
-                            '<td colspan="5"> ' +
-                                '<p style="text-align:center"> No Data Found </p>'+
-                            '</td>'+
-                            '</tr>';
-                    }
-
                     $("#searchSell").html(response_sell);
                     $("#searchBuy").html(response_buy);
-
-                    overlay(false);
-                },
-                error : function(error){
-                    location.reload();
                 }
-
             });
         }
-       
+
         function data_caching(){
             var currency = "&currency=" + $('input[name="currency"]:checked').val();
             var i_want = "&currency_i_want=" + $('input[name="i_want"]:checked').val();
@@ -597,15 +579,15 @@
         } );
 
 
-        // $('#currency-table-buy, #currency-table-sell').DataTable({
-        //     searching: false,
-        //     info: false,
-        //     paging: false,
-        //     bSort: false,
-        //     columnDefs: [
-        //         { targets: [1],orderable: true }
-        //     ]
-        // });
+        $('#currency-table-buy, #currency-table-sell').DataTable({
+            searching: false,
+            info: false,
+            paging: false,
+            bSort: false,
+            columnDefs: [
+                { targets: [1],orderable: true }
+            ]
+        });
 
         $('#currency-converter--you').on('change', function(){
            var selected = $('.selectpicker option:selected').val();
@@ -667,7 +649,6 @@
                 data: data,
                 success: function(msg){
                     loadData();
-                    data_caching();
                 }
             });
 

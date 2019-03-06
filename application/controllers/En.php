@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class En extends CI_Controller {
     public function __construct() {
         parent:: __construct();
-
+      
     }
 
    function getBrowserName(){
@@ -1197,7 +1197,6 @@ class En extends CI_Controller {
         $data['description'] ="We, the members of Finager.com offers all real time information to you for your help in choosing cards, loans and investments.";
         $data['currency_rate'] = $this->Select_model->axios_select_exchange_rate_for_list_view();
         $data['currency'] = $this->Select_model->currency_rate();
-        
         $this->load->driver('cache');
         $this->cache->file->save('currency_details', 'currency_details', 100);
         $this->load->view('front_end/block/header',$data);

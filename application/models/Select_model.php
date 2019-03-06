@@ -1734,7 +1734,6 @@ class Select_Model extends CI_Model
     {
         $sql="SELECT education_loan_info.id,education_loan_info.is_non_bank, education_loan_info.loan_name,education_loan_info.min_loan_amount,education_loan_info.max_loan_amount,education_loan_info.`avg_interest`,education_loan_info.is_fixed,education_loan_info.`fixed_interest`,card_bank.bank_name,card_bank.bank_logo , general_non_bank.non_bank_name,general_non_bank.bank_logo AS non_bank_logo,  education_loan_info.modified,  admin1.first_name as created_first_name,admin1.last_name as created_last_name ,admin2.first_name as modified_first_name,admin2.last_name as modified_last_name  FROM education_loan_info LEFT JOIN card_bank ON card_bank.id=education_loan_info.bank_id LEFT JOIN general_non_bank ON general_non_bank.id = education_loan_info.non_bank_id  LEFT JOIN tbl_admin_user admin1 ON admin1.id= education_loan_info.created_by LEFT JOIN tbl_admin_user admin2 ON admin2.id= education_loan_info.modified_by  ORDER BY education_loan_info.id ASC";
         $query=$this->db->query($sql);
-//        print_r($query); die;
         $result="";
 
         if($query->num_rows() > 0)
@@ -1930,8 +1929,7 @@ class Select_Model extends CI_Model
         
         $from_date = date("Y-m-d", strtotime($result->date_of_exchange_rate));
         $to_date =  date("Y-m-d", strtotime("-1 day", strtotime($result->date_of_exchange_rate)));
-       
-
+      
         $sql1 = "SELECT holiday_date from bank_holiday";
         $query1 = $this->db->query($sql1);
         
@@ -1962,7 +1960,15 @@ class Select_Model extends CI_Model
             $from_date = date("Y-m-d", strtotime("-1 days", strtotime($from_date)));
             $to_date = date("Y-m-d", strtotime("-2 days", strtotime($from_date)));
         }
-      
+        if(in_array($from_date, $holidays)){
+            $from_date = date("Y-m-d", strtotime("-1 day", strtotime($from_date)));
+            $to_date = date("Y-m-d", strtotime("-1 day", strtotime($to_date)));
+        }
+        
+        if(in_array($to_date, $holidays)){
+            $to_date = date("Y-m-d", strtotime("-1 day", strtotime($to_date)));
+        }
+        
         $sql2 = "SELECT currency_name,central_bank_buy_rate,central_bank_sell_rate, date_of_exchange_rate FROM `daily_exchange_rate_history` WHERE date_of_exchange_rate BETWEEN '$to_date' AND '$from_date' GROUP BY currency_name,date_of_exchange_rate ORDER BY date_of_exchange_rate DESC";
         $query2 = $this->db->query($sql2);
         $result2 = array();
@@ -2063,53 +2069,19 @@ class Select_Model extends CI_Model
         }
       
         $sql2 = "SELECT daily_exchange_rate_history.*,(daily_exchange_rate_history.bank_buy_rate * 1000) as bank_buy_rate_amount,(daily_exchange_rate_history.bank_sell_rate * 1000) as bank_sell_rate_amount,card_bank.bank_name ,(daily_exchange_rate_history.central_bank_buy_rate * 1000) as central_bank_buy_rate_amount,(daily_exchange_rate_history.central_bank_sell_rate * 1000) as central_bank_sell_rate_amount,card_bank.bank_name ,card_bank.bank_logo FROM `daily_exchange_rate_history` LEFT JOIN card_bank ON card_bank.id = daily_exchange_rate_history.bank_id WHERE date_of_exchange_rate = '$date' AND currency_name ='USD'";
-        //$sql2 = "SELECT currency_name,central_bank_buy_rate,central_bank_sell_rate, date_of_exchange_rate FROM `daily_exchange_rate_history` WHERE date_of_exchange_rate = '$date' GROUP BY currency_name,date_of_exchange_rate ORDER BY date_of_exchange_rate DESC";
         $query2 = $this->db->query($sql2);
-        $result2 = array();
-        foreach($query2->result() as $row){
-            $result2[] = $row;
+        
+        if($query2){
+            $result2 = array();
+            foreach($query2->result() as $row){
+                $result2[] = $row;
+            }
+            return json_encode($result2);
+        }else{
+            $result2 = array( "process"=>false);
+            return json_encode( $result2);
         }
-        return $result2;
-        // $result="";
-
-        // if($query->num_rows() > 0)
-        // {
-        //     $sl=1;
-        //     foreach($query->result() as $row)
-        //     {
-        //         $bank = "";
-        //         if($row->is_non_bank == 1){
-        //             $bank = $row->non_bank_name;
-        //         }else{
-        //             $bank = $row->bank_name;
-        //         }
-        //         $bank_logo = "";
-        //         if($row->is_non_bank == 1){
-        //             $bank_logo = $row->non_bank_logo;
-        //         }else{
-        //             $bank_logo = $row->bank_logo;
-        //         }
-
-        //         $interest =($row->is_fixed =='0')? $row->avg_interest.' % (Avg)' : $row->fixed_interest.' % (Fixed)';
-        //         $result.='<tr>
-		// 			<td lang="bn">'. $sl.'</td>
-		// 			<td class="center"><img src="'. base_url().'resource/common_images/bank_logo/'.$bank_logo.'" style="height:auto; width:80px;"/></td>
-		// 			<td class="center">'.$row->loan_name.'</td>
-		// 			 <td class="center">'.$bank.'</td>
-		// 			 <td class="center"> BDT '.$row->min_loan_amount.' - '.$row->max_loan_amount.'</td>
-		// 			 <td class="center"> '.$interest.'</td>
-		// 			 <td class="center">'.$row->created_first_name.' '.$row->created_last_name. '</td>
-		// 			 <td class="center">'.$row->modified_first_name.' '.$row->modified_last_name. '</td>
-		// 			 <td class="center">'.date("j F Y",strtotime($row->modified)).'</td>';
-
-        //         $result.='</td>
-        //             <td><a href="'.base_url().'education_loan/edit_loan_info?id='.$row->id.'" class="edit"><i class="fa fa-pencil-square-o fa-lg"></i></a><a href="?loan_id='. $row->id.'" onclick="return confirm(\'Are you really want to delete this item\')" class="delete"> <i class="fa fa-trash-o fa-lg"></i></a></td>
-
-		// 			</tr>';
-        //         $sl++;
-        //     }
-        // }
-        // return $result;
+        
     }
 
     public function select_all_delete_items(){

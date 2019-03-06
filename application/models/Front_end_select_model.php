@@ -767,7 +767,7 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
 
     public function select_blog_post_by_product_category($category_name,$offset){
 
-        $sql="SELECT DISTINCT(blog_posts.ID) as post_id,blog_posts.* FROM `blog_posts` INNER JOIN blog_term_relationships ON blog_term_relationships.object_id = blog_posts.ID INNER JOIN blog_term_taxonomy ON blog_term_taxonomy.term_taxonomy_id = blog_term_relationships.term_taxonomy_id INNER JOIN blog_terms ON blog_terms.term_id = blog_term_taxonomy.term_id WHERE blog_terms.name ='{$category_name}' ORDER BY blog_posts.post_date DESC LIMIT {$offset},1";
+        $sql="SELECT DISTINCT(blog_posts.ID) as post_id,blog_posts.* FROM `blog_posts` INNER JOIN blog_term_relationships ON blog_term_relationships.object_id = blog_posts.ID INNER JOIN blog_term_taxonomy ON blog_term_taxonomy.term_taxonomy_id = blog_term_relationships.term_taxonomy_id INNER JOIN blog_terms ON blog_terms.term_id = blog_term_taxonomy.term_id WHERE  blog_posts.post_status='publish' AND blog_terms.name ='{$category_name}' ORDER BY blog_posts.post_date DESC LIMIT {$offset},1";
         $query = $this->db->query($sql);
         return  $query->row();
     }
@@ -814,7 +814,10 @@ card_fees_charges ON card_fees_charges.card_id = card_card_informations.id INNER
         }else if (date('l', strtotime($date)) == "Friday"){
             $date = date("Y-m-d", strtotime("-1 days", strtotime($date)));
         }
-      
+        if(in_array($date, $holidays)){
+            $date = date("Y-m-d", strtotime("-1 day", strtotime($date)));
+        }
+        
         $sql2 = "SELECT daily_exchange_rate.*,(daily_exchange_rate.bank_buy_rate * $amoun) as bank_buy_rate_amount,(daily_exchange_rate.bank_sell_rate * $amoun) as bank_sell_rate_amount,card_bank.bank_name ,(daily_exchange_rate.central_bank_buy_rate * $amoun) as central_bank_buy_rate_amount,(daily_exchange_rate.central_bank_sell_rate * $amoun) as central_bank_sell_rate_amount,card_bank.bank_name ,card_bank.bank_logo FROM `daily_exchange_rate` LEFT JOIN card_bank ON card_bank.id = daily_exchange_rate.bank_id WHERE date_of_exchange_rate = '$date' ".$query_string ;
 
         $query2 = $this->db->query($sql2);

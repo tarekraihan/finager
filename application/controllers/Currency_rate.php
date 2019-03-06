@@ -18,7 +18,7 @@ class Currency_rate extends CI_Controller
     }
 
     public function ajax_get_currency_rate(){
-
+        //ini_set('max_execution_time', 120);
         $amount = $this->input->post('amount');
         $currency = $this->input->post('currency');
        
@@ -44,9 +44,9 @@ class Currency_rate extends CI_Controller
         $query = implode(' AND ',$WHERE);
         if(!empty($query)) {$query = ' AND '.$query ;}
         $query .= ' ORDER BY daily_exchange_rate.bank_sell_rate ASC , daily_exchange_rate.bank_buy_rate ASC';
-        //echo $query;
+       
         $res = $this->Front_end_select_model->axios_select_exchange_rate_for_list_view($query, $amount );
-      
+        
         echo json_encode($res);
     }
 
