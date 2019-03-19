@@ -1923,10 +1923,10 @@ class Select_Model extends CI_Model
 
     public function Select_Central_Bank_Exchange_Rate()
     {
-        $sql = "SELECT DAYNAME(date_of_exchange_rate) AS day_name , date_of_exchange_rate, day(date_of_exchange_rate) AS day FROM `daily_exchange_rate_history` ORDER BY date_of_exchange_rate DESC LIMIT 1";
+        $sql = "SELECT DAYNAME(date_of_exchange_rate) AS day_name , date_of_exchange_rate, day(date_of_exchange_rate) AS day FROM `daily_exchange_rate` ORDER BY date_of_exchange_rate DESC LIMIT 1";
         $query = $this->db->query($sql);
         $result = $query->row();
-        
+
         $from_date = date("Y-m-d", strtotime($result->date_of_exchange_rate));
         $to_date =  date("Y-m-d", strtotime("-1 day", strtotime($result->date_of_exchange_rate)));
       
@@ -1938,37 +1938,24 @@ class Select_Model extends CI_Model
             array_push($holidays,date("Y-m-d", strtotime($row['holiday_date'])));
         }
 
-        if(in_array($from_date, $holidays)){
-            $from_date = date("Y-m-d", strtotime("-1 day", strtotime($from_date)));
-            $to_date = date("Y-m-d", strtotime("-1 day", strtotime($to_date)));
+        foreach($holidays as $holiday){
+            if($holiday === $to_date){
+                $to_date = date("Y-m-d", strtotime("-1 day", strtotime($to_date)));
+            }
         }
-
-        if(in_array($to_date, $holidays)){
-            $to_date = date("Y-m-d", strtotime("-1 day", strtotime($to_date)));
-        }
-        
-
-        if(date('l', strtotime($from_date)) == "Sunday")
+        if(date('l', strtotime($to_date)) == "Saturday")
         {
-            $from_date = date("Y-m-d", strtotime($from_date));
-            $to_date = date("Y-m-d", strtotime("-3 days", strtotime($from_date)));
-        }else if(date('l', strtotime($from_date)) == "Saturday")
-        {
-            $from_date = date("Y-m-d", strtotime("-2 days", strtotime($from_date)));
-            $to_date = date("Y-m-d", strtotime("-3 days", strtotime($from_date)));
-        }else if (date('l', strtotime($from_date)) == "Friday"){
-            $from_date = date("Y-m-d", strtotime("-1 days", strtotime($from_date)));
-            $to_date = date("Y-m-d", strtotime("-2 days", strtotime($from_date)));
-        }
-        if(in_array($from_date, $holidays)){
-            $from_date = date("Y-m-d", strtotime("-1 day", strtotime($from_date)));
-            $to_date = date("Y-m-d", strtotime("-1 day", strtotime($to_date)));
+            $to_date = date("Y-m-d", strtotime("-2 days", strtotime($to_date)));
+        }else if (date('l', strtotime($to_date)) == "Friday"){
+            $to_date = date("Y-m-d", strtotime("-1 days", strtotime($to_date)));
         }
         
-        if(in_array($to_date, $holidays)){
-            $to_date = date("Y-m-d", strtotime("-1 day", strtotime($to_date)));
+        foreach($holidays as $holiday){
+            if($holiday === $to_date){
+                $to_date = date("Y-m-d", strtotime("-1 day", strtotime($to_date)));
+            }
         }
-        
+       
         $sql2 = "SELECT currency_name,central_bank_buy_rate,central_bank_sell_rate, date_of_exchange_rate FROM `daily_exchange_rate_history` WHERE date_of_exchange_rate BETWEEN '$to_date' AND '$from_date' GROUP BY currency_name,date_of_exchange_rate ORDER BY date_of_exchange_rate DESC";
         $query2 = $this->db->query($sql2);
         $result2 = array();
